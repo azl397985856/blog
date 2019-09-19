@@ -17,6 +17,17 @@ favicon: https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0
 # 作者头像，会出现在文章标题下方，不同于侧边栏的大头像
 avatar: https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4
 
+# RSS
+feed:
+    type: atom
+    path: atom.xml
+    limit: 20
+    hub:
+    content:
+    content_limit:
+    content_limit_delim: ' '
+
+
 # gittalk评论
 gitalk:
   clientID: aea1377036afe4cd0343
