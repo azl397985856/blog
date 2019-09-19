@@ -27,6 +27,7 @@ feed:
     content_limit:
     content_limit_delim: ' '
 
+google_analytics_key: G-FVTTYT432Q
 
 # gittalk评论
 gitalk:
