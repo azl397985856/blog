@@ -185,4 +185,4 @@ Comlink， 就很好地解决了这个问题，即使用Comlink提供的`proxy`,
 
 之后我的文章同步到微信公众号 脑洞前端 ，您可以关注获取最新的文章，或者和我进行交流。
 
-<img src="https://user-gold-cdn.xitu.io/2019/8/13/16c8aa2e7849ca80?w=430&h=430&f=jpeg&s=41111" width = "50%" height = "50%" alt="gongzhonghao" align=center />
+<img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-085421.jpg" width = "50%" height = "50%" alt="gongzhonghao" align=center />
