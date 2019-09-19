@@ -15,13 +15,13 @@ tags: [leetcode, 数据结构, 算法, 学习方法]
 对于我来说，`刷题的过程其实就是学习数据结构和算法的过程`， 不仅仅是为了刷题而刷题，这样你才能感受到`刷题的乐趣`。
 
 
-![](https://user-gold-cdn.xitu.io/2019/9/15/16d34a92669d583f?w=500&h=260&f=png&s=30726)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075756.png)
 
 ## 第一遍按tag刷，第二遍一题多解，多题同解
 个人建议，第一遍刷的时候可以先快速按照tag过一遍，快速感受一下常见数据结构和算法的套路，这样自己有一个感性的认识。
 
 
-![](https://user-gold-cdn.xitu.io/2019/9/15/16d34af3ddf30610?w=394&h=653&f=png&s=79514)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075757.png)
 
 第二遍我们就不能像第一遍那样了，这个阶段我们需要多个角度思考问题，尽量做到`一题多解，多题同解`。我们需要对问题的本质做一些深度的理解，将来碰到类似的问题我们才能够触类旁通。
 
@@ -35,12 +35,12 @@ tags: [leetcode, 数据结构, 算法, 学习方法]
 信息输入大脑后，遗忘也就随之开始了。遗忘率随时间的流逝而先快后慢，特别是在刚刚识记的短时间里，遗忘最快，这就是著名的艾宾浩斯遗忘曲线。
 
 
-![](https://user-gold-cdn.xitu.io/2019/9/15/16d34ae112676f0a?w=220&h=148&f=png&s=55518)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075758.png)
 
 anki就是根据`艾宾浩斯记忆曲线`开发的一个软件，它是一个使记忆变得容易的学习软件。因为它是一个自定义多功能的记忆方式，可以大大减少你的学习时间，也可以大大提高 你的学习容量。 对于我本人而言，我在anki里面写了很多leetcode题目和套路的Card，然后anki会自动帮我安排复习时间，大大减少我的认知负担，提高了我的复习效率。
 
 
-![](https://user-gold-cdn.xitu.io/2019/9/15/16d34ae9b43a9605?w=225&h=225&f=png&s=42854)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-75759.png)
 
 这个是我的[anki card](https://github.com/azl397985856/leetcode/blob/master/assets/anki/leetcode.apkg) 大家可以直接导入使用，但是还是建议大家自己制作卡片，毕竟每个人情况不一样，并且制作卡片的过程也是记忆的过程。
 
@@ -82,7 +82,7 @@ anki - 文件 - 导入 - 下拉格式选择“打包的 anki集合”，然后�
 *   字符串：前缀树（字典树） ／ 后缀树
 
 
-![](https://user-gold-cdn.xitu.io/2019/9/15/16d34a702ee6abdb?w=720&h=717&f=png&s=254323)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075800.png)
 (图片来自leetcode)
 
 ## 坚持
@@ -91,11 +91,11 @@ anki - 文件 - 导入 - 下拉格式选择“打包的 anki集合”，然后�
 为了督促自己，同时帮助大家成长，我在群里举办《每日一题》活动，每日一题是在交流群（包括微信和qq）里进行的一种活动，大家一起 解一道题，这样讨论问题更加集中，会得到更多的反馈。而且 这些题目可以被记录下来，日后会进行筛选添加到仓库的题解模块。
 
 
-![](https://user-gold-cdn.xitu.io/2019/9/15/16d34a9abf693714?w=908&h=855&f=png&s=88982)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075801.png)
 
 
 
-![](https://user-gold-cdn.xitu.io/2019/9/15/16d34aa2d293b9e1?w=1491&h=656&f=png&s=328640)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075802.png)
 
 大家如果发现自己很难坚持下去，也可以加入我的群聊，我们互相监督。 另外我还专门组建了slack群，有兴趣的可以加群后在群里喊即可。
 

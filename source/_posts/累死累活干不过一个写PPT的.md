@@ -82,13 +82,13 @@ tags: [技能, PPT]
 最后我们只需要对比优化前后的总体打包时间差异即可。
 
 
-![](https://user-gold-cdn.xitu.io/2019/8/7/16c6a14366aef836?w=516&h=193&f=png&s=27377)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075808.png)
 
 这对于老板来说可能已经够了，但是这缺乏一些精确性，我们无法知道通过优化了哪个环节进行
 减少了打包时间。 因此一种简单的改进是将打包划分为多个阶段，每个阶段分别进行统计计时⌛️ 。
 
 
-![](https://user-gold-cdn.xitu.io/2019/8/7/16c6a1471a9e96fd?w=604&h=278&f=png&s=33005)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075810.png)
 
 #### 包的大小
 
@@ -97,20 +97,20 @@ tags: [技能, PPT]
 我们当然可以只统计总体包大小。
 
 
-![](https://user-gold-cdn.xitu.io/2019/8/7/16c6a14a849890d6?w=466&h=195&f=png&s=17122)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-75811.png)
 
 但是为了获得更加灵活的定制和更加精确的范围我们可以对包进行一定的划分。
 这个划分可以是业务纬度，也可以是纯技术纬度。
 
 
-![](https://user-gold-cdn.xitu.io/2019/8/7/16c6a14d149f1eaa?w=540&h=215&f=png&s=40097)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075811.png)
 
 #### 打包命令
 
 这部分比较简单，我们只需要简单地统计手动操作的次数即可。
 
 
-![](https://user-gold-cdn.xitu.io/2019/8/7/16c6a14f27b2aa13?w=540&h=198&f=png&s=22691)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075813.png)
 
 
 通过收集以上的数据，我们就可以用数据来表示我们的成果，让数据说话，关于如何
@@ -131,7 +131,7 @@ tags: [技能, PPT]
 说到测量，普遍接受的方式是，在浏览器中进行打点，将浏览器打开网页的过程看作是一个旅行。
 那么我们每到一个地方就拍张带有时间的照片（事件），最后我们对这些照片按照时间进行排列， 然后分析哪部分是我们的瓶颈点等。
 
-![performance-api](https://user-gold-cdn.xitu.io/2019/8/7/16c6a137a32e8772?w=655&h=391&f=png&s=79248)
+![performance-api](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-75814.png)
 
 有了这些timing 我们可以很方便的计算各项性能指标。我们还可以自定义一些我们关心的指标，比如请求时间（成功和失败分开统计），较长js操作时间，或者比较重要的功能等。
 
@@ -139,7 +139,7 @@ tags: [技能, PPT]
 
 这样我们就很容易展示出这样的画面：
 
-![render-perf](https://user-gold-cdn.xitu.io/2019/8/7/16c6a1389145e22a?w=521&h=256&f=png&s=31239)
+![render-perf](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075814.png)
 
 
 ### 人效提升
@@ -156,7 +156,7 @@ tags: [技能, PPT]
 我们考虑将需求进行拆分，变成一个个任务。一个需求可能有多个任务。
 
 
-![](https://user-gold-cdn.xitu.io/2019/8/7/16c6a15232cf28c2?w=359&h=330&f=png&s=30812)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075816.png)
 
 我们考虑对每一个任务进行计时，而不是需求，因为需求有太大的差异。
 我们可以针对任务进行分类，然后我们的目标就可以变成“减少同类任务的交付时长”。
@@ -164,13 +164,13 @@ tags: [技能, PPT]
 但是这种粒度似乎还是有点大。我们可以采取标签的形式，对任务进行交叉分类。
 
 
-![](https://user-gold-cdn.xitu.io/2019/8/7/16c6a156cf092f52?w=394&h=332&f=png&s=33995)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-75817.png)
 
 
 任务纬度可能还是有点太大，我们可以采取更小的粒度划分，比如模块和组件。
 
 
-![](https://user-gold-cdn.xitu.io/2019/8/7/16c6a15930164534?w=790&h=380&f=png&s=60771)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075817.png)
 
 这样我们的统计纬度就丰富起来了，我们不仅可以总体进行统计分析，我们还可以根据tag和tag的组合进行汇总。
 
@@ -226,7 +226,7 @@ tags: [技能, PPT]
 > 这个网站能做的图表种类比较少。
 
 
-![](https://user-gold-cdn.xitu.io/2019/8/7/16c6a15ea5dbd27d?w=1362&h=564&f=png&s=124793)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075819.png)
 
 当然作为一名前端我们也可以自己写代码去更灵活地展示我们的数据，比如[D3](https://d3js.org/)
 或者百度的[echarts](https://echarts.baidu.com/)
@@ -234,7 +234,7 @@ tags: [技能, PPT]
 > 任何类型的图表都可以做，只有你想不到，没有它做不到。
 
 
-![](https://user-gold-cdn.xitu.io/2019/8/7/16c6a160abef0de1?w=1275&h=573&f=png&s=1109135)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-75820.png)
 
 相对折中一点，我们可以选择支持代码定制的一些产品，在特殊情况我们可以自定义。
 
@@ -246,7 +246,7 @@ tags: [技能, PPT]
 比如[slides](https://slides.com/) 。
 
 
-![](https://user-gold-cdn.xitu.io/2019/8/7/16c6a163ca2a6508?w=1415&h=674&f=png&s=165813)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075821.png)
 
 另一种方式通过写代码的方式实现，作为程序员我推荐使用第二种。
 这里推荐一款`nodejs cli 工具` [nodeppt](https://github.com/ksky521/nodeppt),
@@ -254,7 +254,7 @@ tags: [技能, PPT]
 上面提到的slides背后的原理就是它。
 
 
-![](https://user-gold-cdn.xitu.io/2019/8/7/16c6a165a0e55104?w=1389&h=665&f=png&s=1321958)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075822.png)
 
 ## 总结
 
@@ -290,7 +290,7 @@ tags: [技能, PPT]
 
 ### QQ 群
 
-![qq-group-chat](https://user-gold-cdn.xitu.io/2019/8/5/16c5fb6d0757dc39?w=226&h=290&f=png&s=19216)
+![qq-group-chat](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-75823.png)
 
 ### 微信群
 
