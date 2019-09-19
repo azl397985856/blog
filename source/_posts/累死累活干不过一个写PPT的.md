@@ -2,6 +2,8 @@
 ---
 title: 累死累活干不过一个写PPT的
 tags: [技能, PPT]
+gitalk:
+  id: /wiki/material-x/
 ---
 无论是身处什么行业什么领域，数据分析越来越成为一向必不可少的技能，
 而运用数据思维进行决策更能产生形成高质量的决策结果。
@@ -282,7 +284,7 @@ tags: [技能, PPT]
 
 之后我的文章同步到微信公众号 脑洞前端 ，您可以关注获取最新的文章，或者和我进行交流。
 
-<img src="https://user-gold-cdn.xitu.io/2019/8/5/16c5fb6c45413c3d?w=430&h=430&f=jpeg&s=41111" width = "50%" height = "50%" alt="gongzhonghao" align=center />
+<img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-085421.jpg" width = "50%" height = "50%" alt="gongzhonghao" align=center />
 
 ## 交流群
 
@@ -294,6 +296,6 @@ tags: [技能, PPT]
 
 ### 微信群
 
-<img src="https://user-gold-cdn.xitu.io/2019/8/5/16c5fb6fbd13af65?w=512&h=512&f=jpeg&s=56509" width = "50%" height = "50%" alt="JavaScript" align=center />
+<img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-085457.jpg" width = "50%" height = "50%" alt="JavaScript" align=center />
 
 (由于微信的限制，100 个人以上只能邀请加入， 你可以添加我的机器人回复“大前端”拉你进群)

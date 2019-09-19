@@ -6,10 +6,24 @@
 title: lucifer的网络博客
 subtitle: 
 description: 
-keywords: 前端 leetocde 数据结构 算法
+keywords: 前端 leetocde 数据结构 算法 lucifer
 author: lucifer
 language: zh-CN
 timezone:
+
+# 网站图标
+favicon: https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4
+
+# 作者头像，会出现在文章标题下方，不同于侧边栏的大头像
+avatar: https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4
+
+# gittalk评论
+gitalk:
+  clientID: aea1377036afe4cd0343
+  clientSecret: 815c638dea8644b7a4b97905707cf72b45555f6d
+  repo: blog
+  owner: azl397985856
+  admin: [azl397985856]
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
