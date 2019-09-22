@@ -1,6 +1,10 @@
 ---
 title: 一文看懂《最大子序列和问题》
 tags: [LeetCode, 数据结构, 算法, 数组]
+categories: 
+  - [算法, 子序列]
+  - [数据结构, 数组]
+  - [LeetCode]
 ---
 
 最大子序列和是一道经典的算法题， leetcode 也有原题《53.maximum-sum-subarray》，今天我们就来彻底攻克它。

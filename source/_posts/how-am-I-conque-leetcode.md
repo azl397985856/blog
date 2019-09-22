@@ -1,6 +1,11 @@
 ---
 title: 我是如何刷 LeetCode 的？
 tags: [LeetCode, 数据结构, 算法, 学习方法]
+categories: 
+  - [算法]
+  - [数据结构]
+  - [LeetCode]
+  - [学习方法]
 ---
 我就是那个 @量子位 答案里面提到的“lucifer 小哥哥”。
 
