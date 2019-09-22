@@ -142,8 +142,8 @@ function reverse(list, start, end) {
 function RShift(list, k) {
   const n = list.length;
   if (k % n === 0) return;
-  reverse(list, 0, k - 1);
-  reverse(list, k, n - 1);
+  reverse(list, 0, n - k - 1);
+  reverse(list, n - k, n - 1);
   reverse(list, 0, n - 1);
   return list;
 }
