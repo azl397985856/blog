@@ -121,9 +121,9 @@ function RShift(list, k) {
 
 我们来看下另外一种方法 - 经典的`三次翻转法`，我们可以这么做：
 
-- 先把[0, k - 1]翻转
-- 然后把[k, n - 1]翻转
-- 最后把[0, n - 1]翻转
+- 先把[0, n - 1]翻转
+- 然后把[0, k - 1]翻转
+- 最后把[k, n - 1]翻转
 
 ![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-21-163907.png)
 
@@ -142,9 +142,9 @@ function reverse(list, start, end) {
 function RShift(list, k) {
   const n = list.length;
   if (k % n === 0) return;
-  reverse(list, 0, n - k - 1);
-  reverse(list, n - k, n - 1);
   reverse(list, 0, n - 1);
+  reverse(list, 0, k - 1);
+  reverse(list, k, n - 1);
   return list;
 }
 ```
