@@ -145,11 +145,11 @@ function RShift(list, k) {
 
 我们来看下另外一种方法 - 经典的`三次翻转法`，我们可以这么做：
 
-- 先把[0, n - 1]翻转
-- 然后把[0, k - 1]翻转
-- 最后把[k, n - 1]翻转
+- 先把[0, n - k - 1]翻转
+- 然后把[n - k, n - 1]翻转
+- 最后把[0, n - 1]翻转
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-21-163907.png)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-22-095115.png)
 
 ```js
 function reverse(list, start, end) {
@@ -166,12 +166,23 @@ function reverse(list, start, end) {
 function RShift(list, k) {
   const n = list.length;
   if (k % n === 0) return;
+  reverse(list, 0, n - k - 1);
+  reverse(list, n - k, n - 1);
   reverse(list, 0, n - 1);
-  reverse(list, 0, k - 1);
-  reverse(list, k, n - 1);
   return list;
 }
 ```
+
+这里给一个简单的数学证明：
+
+- 对于[0, n - k - 1] 部分，我们翻转一次后新的坐标y和之前的坐标x的关系可以表示为`y = n - 1 - k - x`
+- 对于[n - k, n -1] 部分，我们翻转一次后新的坐标y和之前的坐标x的关系可以表示为`y = 2 * n - 1 - k - x`
+- 最后我们整体进行翻转的时候，新的坐标y和之前的坐标x的关系可以表示为
+
+   1. `y = n - 1 - (n - 1 - k - x)` 即 `y = k + x` (0 <= x <= n - k - 1)
+   2. `y = n - 1 - (2 * n - 1 - k - x)` 即 `y = k + x - n` (n - k <= x <= n - 1)
+
+正好满足我们的位移条件。
 
 这种做法时间复杂度是 O(N)空间复杂度 O(1)，终于满足了我们的要求。
 
