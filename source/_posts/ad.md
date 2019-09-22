@@ -22,7 +22,7 @@ categories:
 
 本书作者王争，前 Google 工程师，从事 Google 翻译相关的开发工作，深入研究算法数十年。现任某金融公司资深系统架构师，核心业务接口平台负责人，负责公司核心业务的架构设计、开发，以及可用性、高性能等相关技术问题的解决。
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-22-121243.jpg)
+![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E-%E5%B8%B8%E8%A7%84%E8%BD%AE%E6%92%AD%E5%9B%BE.jpg)
 
 ## 你能获得什么？
 1、掌握数据结构与算法的核心知识
