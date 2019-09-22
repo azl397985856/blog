@@ -4,9 +4,9 @@
 
 # Site
 title: lucifer的网络博客
-subtitle: 
-description: 
-keywords: 前端 leetocde 数据结构 算法 lucifer
+subtitle: LeetCode 前端
+description: lucifer的个人博客，用来记录LeeCode刷题过程和心得，以及构建大前端知识体系
+keywords: 前端 leetocde 数据结构 算法 lucifer 大前端 性能优化 前端架构 前端工程化
 author: lucifer
 language: zh-CN
 timezone:
@@ -26,7 +26,7 @@ feed:
     content:
     content_limit:
     content_limit_delim: ' '
-
+# 统计
 google_analytics_key: G-FVTTYT432Q
 baidu_analytics_key: 576ec211e11a69128667eb8c11a6cffe
 
