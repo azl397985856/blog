@@ -35,6 +35,10 @@ categories:
 
 后期可能会有大幅度修改，希望大家提出宝贵意见，以特别的方式参与到这本书的编写中来。
 
+## 2W star截图
+
+![](https://tva1.sinaimg.cn/large/006y8mN6ly1g7r4ef4fwej30rm0ld75g.jpg)
+
 ## Star 曲线
 
 ![](https://tva1.sinaimg.cn/large/006y8mN6ly1g7pom0rbu6j30p00f1glo.jpg)
