@@ -130,7 +130,7 @@ class Solution:
 
 举例说明，如下图：
 
-![53.maximum-sum-subarray-divideconquer](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-114742.jpg)
+![](https://tva1.sinaimg.cn/large/006y8mN6ly1g83bdq90iwj31400u0ad6.jpg)
 (by [snowan](https://github.com/snowan))
 
 这种做法的时间复杂度为 O(N\*logN), 空间复杂度为 O(1)。
