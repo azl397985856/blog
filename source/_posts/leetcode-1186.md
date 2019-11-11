@@ -157,7 +157,7 @@ class Solution:
 
 ## 相关题目
 
-- [42.trapping-rain-water](./42.trapping-rain-water.md)
+- [42.trapping-rain-water](https://github.com/azl397985856/leetcode/blob/master/problems/42.trapping-rain-water.md)
 
 
 
