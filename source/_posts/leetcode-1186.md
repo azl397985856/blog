@@ -3,6 +3,10 @@ title: 【LeetCode题解】1186.删除一次得到子数组最大和
 tags: [LeetCode]
 ---
 
+LeetCode 1186题，最大子数组的进阶版本。
+
+<!-- more -->
+
 ## 题目地址
 
 https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/
