@@ -13,6 +13,11 @@ categories:
 ![](https://tva1.sinaimg.cn/large/006y8mN6gy1g7d50s2862j30r10iwjrx.jpg)
 [地址](https://jsconf.com/)
 
+## React Conf
+
+![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8wabkh6lyj31gk0a5jrl.jpg)
+[地址](https://conf.reactjs.org/)
+
 ## Google IO
 
 ![](https://tva1.sinaimg.cn/large/006y8mN6gy1g7d51qe2drj31200h674i.jpg)
@@ -27,3 +32,17 @@ categories:
 
 ![](https://tva1.sinaimg.cn/large/006y8mN6gy1g7d52uctmoj31110hiwhd.jpg)
 [地址](https://www.infoq.com/qcon/)
+
+
+
+## 更多技术大会
+
+- https://juejin.im/events
+- https://segmentfault.com/events
+- https://www.huodongxing.com
+- https://www.bagevent.com
+- https://www.hdb.com
+- https://www.meetup.com
+- ...
+
+欢迎大家补充～
