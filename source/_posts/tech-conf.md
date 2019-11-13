@@ -3,10 +3,15 @@ title: 值得关注的技术类大会
 tags: [技术大会, JSConf, Google IO, D2, QCon]
 categories: 
   - [技术大会, JSConf]
+  - [技术大会, React Conf]
   - [技术大会, Google IO]
   - [技术大会, D2]
   - [技术大会, QCon]
 ---
+
+作为一个技术人，怎么能不参加和关注几场技术大会呢？让我们来看下那些你不能错过的技术大会吧。
+
+<!-- more -->
 
 ## JSConf
 

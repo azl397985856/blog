@@ -5,8 +5,9 @@ categories:
   - [LeetCode, LeetCode题解书]
 ---
 
-<!-- more -->
+写给我敬爱的作者们，关于“云写书”的初衷，愿景，规划以及具体细节。
 
+<!-- more -->
 
 ## 初衷
 
