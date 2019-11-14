@@ -1,6 +1,8 @@
 ---
 title: [RFC]XX公司监控平台需求和技术调研
-tags: [RFC]
+tags: [RFC, 调研]
+categories: 
+  - [RFC, 调研]
 ---
 
 ## 背景
