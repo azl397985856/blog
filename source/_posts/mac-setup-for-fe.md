@@ -7,6 +7,12 @@ tags: [Mac, 装机, 必备软件]
 
 <!-- more -->
 
+##   开箱
+
+![](https://tva1.sinaimg.cn/large/006y8mN6ly1g994m51omoj30u01ppn1d.jpg)
+
+![](https://tva1.sinaimg.cn/large/006y8mN6ly1g994ny143uj30p40nctad.jpg)
+
 ## 配置和价格
 
 在正式开始之前，我们先来介绍下主机的配置。
@@ -26,6 +32,9 @@ tags: [Mac, 装机, 必备软件]
 
 - [文字版](https://github.com/azl397985856/mac-setup)
 - [视频版P1&P2](https://www.bilibili.com/video/av76756338)
-> 视频录制的声音比较小，可能是B站的压缩算法引起的，我本地的视频声音正常，如果需要的话也可以联系我索要原版视频
+
+> 视频录制的声音比较小
+
+## Next
 
 本期视频只是一个简单的装机，以及系统配置。并不涉及到软件的深度使用，如果感兴趣可以给我留言，我会在之后给大家带来相关的攻略。
