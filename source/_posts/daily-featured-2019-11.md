@@ -33,21 +33,21 @@ categories:
 
 下载地址：
 
-- [Chrome Bookmarks](./assets/2019-11/ChromeBookmarks.alfredworkflow)
+- [Chrome Bookmarks](https://github.com/azl397985856/daily-featured/tree/master/assets/2019-11/ChromeBookmarks.alfredworkflow)
 
-- [Colors](./assets/2019-11/Colors.alfredworkflow)
+- [Colors](https://github.com/azl397985856/daily-featured/tree/master/assets/2019-11/Colors.alfredworkflow)
 
-- [Dash](./assets/2019-11/Dash.alfredworkflow)
+- [Dash](https://github.com/azl397985856/daily-featured/tree/master/assets/2019-11Dash.alfredworkflow)
 
-- [Kill Process](./assets/2019-11/KillProcess.alfredworkflow)
+- [Kill Process](https://github.com/azl397985856/daily-featured/tree/master/assets/2019-11/KillProcess.alfredworkflow)
 
-- [RamdaDocs](./assets/2019-11/RamdaDocs.alfredworkflow)
+- [RamdaDocs](https://github.com/azl397985856/daily-featured/tree/master/assets/2019-11/RamdaDocs.alfredworkflow)
 
-- [TerminalFinder](./assets/2019-11/TerminalFinder.alfredworkflow)
+- [TerminalFinder](https://github.com/azl397985856/daily-featured/tree/master/assets/2019-11/TerminalFinder.alfredworkflow)
 
-- [Yosemite iOS Simulator](./assets/2019-11/YosemiteiOSSimulator.alfredworkflow)
+- [Yosemite iOS Simulator](https://github.com/azl397985856/daily-featured/tree/master/assets/2019-11/YosemiteiOSSimulator.alfredworkflow)
 
-- [Youdao](./assets/2019-11/Youdao.alfredworkflow)
+- [Youdao](https://github.com/azl397985856/daily-featured/tree/master/assets/2019-11/Youdao.alfredworkflow)
 
 ### 2019-11-27[软件]
 
