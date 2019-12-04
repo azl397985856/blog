@@ -1,7 +1,17 @@
+---
+title: 每日一荐 2019-11 汇总
+tags: [每日一荐]
+categories: 
+  - [每日一荐, 2019-11]
+---
 
-# 每日一荐
+![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8d0sktqrwj30hs07maae.jpg)
 
 每天给你推荐一个新奇，好玩，高品质的开源库，好文，观点或言论等。
+
+项目主页维护当前月份的内容，想看往期内容，可以去[每日一荐主仓库](https://github.com/azl397985856/daily-featured)翻到下方历史汇总部分，然后选择自己感兴趣的月份点进去即可。
+
+<!-- more -->
 
 ## 2019-11
 
