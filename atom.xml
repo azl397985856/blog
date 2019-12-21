@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>lucifer的网络博客</title>
+  
+  <subtitle>LeetCode 前端</subtitle>
+  <link href="/blog/atom.xml" rel="self"/>
+  
+  <link href="https://lucifer.ren/blog/"/>
+  <updated>2019-12-11T04:35:19.047Z</updated>
+  <id>https://lucifer.ren/blog/</id>
+  
+  <author>
+    <name>lucifer</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>致作者</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/to-author/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/to-author/</id>
+    <published>2019-12-11T04:35:19.047Z</published>
+    <updated>2019-12-11T04:35:19.047Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;写给我敬爱的作者们，关于“云写书”的初衷，愿景，规划以及具体细节。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="LeetCode题解书" scheme="https://lucifer.ren/blog/categories/LeetCode/LeetCode%E9%A2%98%E8%A7%A3%E4%B9%A6/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用web-component搭建企业级组件库</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/web-components-enterprize/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/web-components-enterprize/</id>
+    <published>2019-12-11T04:35:19.047Z</published>
+    <updated>2019-12-11T04:35:19.047Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前端目前比较主流的框架有react，vuejs，angular等。 我们通常去搭建组件库的时候都是基于某一种框架去搭建，比如ant-design是基于react搭建的UI组件库，而elementUI则是基于vuejs搭建的组件库。&lt;/p&gt;
+&lt;p&gt;虽然目前社区有相关工具，提供框架之间的转化服务，比如讲vuejs组件转化为react组件。但是毕竟是不同的框架，有不同的标准。因此框架api发生变动，那么你就需要重写转化逻辑，显然是不灵活的，因此我们暂不讨论这种情况。作为公司而言，就需要为不同的框架写不同的组件库，尽管逻辑都是一样的。&lt;/p&gt;
+&lt;p&gt;另外如果框架升级，比如从1.x升级到2.x，那么对应组件库就需要升级，如果公司的组件库有很多（vuejs，react，angular等），那么这种升级的概率就会更大。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="组件化" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/%E7%BB%84%E4%BB%B6%E5%8C%96/"/>
+    
+      <category term="web-component" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/web-component/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="组件化" scheme="https://lucifer.ren/blog/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/"/>
+    
+      <category term="web-component" scheme="https://lucifer.ren/blog/tags/web-component/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>累死累活干不过一个写PPT的</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/ppt-data/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/ppt-data/</id>
+    <published>2019-12-11T04:35:19.046Z</published>
+    <updated>2019-12-11T04:35:19.046Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;无论是身处什么行业什么领域，数据分析越来越成为一向必不可少的技能，&lt;br&gt;而运用数据思维进行决策更能产生形成高质量的决策结果。&lt;/p&gt;
+&lt;p&gt;随着互联网的不断发展和物联网设备的不断普及，我们日常生活中的各种数据被存储下来，让我们可以通过定量分析数据，利用数据实现更好的决策制定。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技能" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E8%83%BD/"/>
+    
+      <category term="PPT" scheme="https://lucifer.ren/blog/tags/PPT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一文搞懂《链表反转》</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/reverseList/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/reverseList/</id>
+    <published>2019-12-11T04:35:19.046Z</published>
+    <updated>2019-12-11T04:35:19.046Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;翻转链表一直都是热门题目，笔者就在某大型互联网公司的面试题中碰到过这种题目，这种题目很常常见，相对应的变形和扩展也很多，今天我们就来攻克它吧。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="链表反转" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC/"/>
+    
+      <category term="链表" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="字节跳动" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    
+      <category term="链表" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【RFC】XXX 公司监控体系需求与技术调研</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/rfc-monitor/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/rfc-monitor/</id>
+    <published>2019-12-11T04:35:19.046Z</published>
+    <updated>2019-12-11T04:35:19.046Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="RFC" scheme="https://lucifer.ren/blog/tags/RFC/"/>
+    
+      <category term="技术调研" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/"/>
+    
+      <category term="监控" scheme="https://lucifer.ren/blog/tags/%E7%9B%91%E6%8E%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>文科生都能看懂的循环移位算法</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/rotate-list/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/rotate-list/</id>
+    <published>2019-12-11T04:35:19.046Z</published>
+    <updated>2019-12-21T11:32:55.151Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;循环移位问题真的是一个特别经典的问题了，今天我们就来攻克它。&lt;/p&gt;
+&lt;p&gt;循环移位的表现形式有很多种，就数据结构来说包括&lt;code&gt;数组&lt;/code&gt;，&lt;code&gt;字符串&lt;/code&gt;，&lt;code&gt;链表&lt;/code&gt;等。就算法来说，有&lt;code&gt;包含问题&lt;/code&gt;，&lt;code&gt;直接移动问题&lt;/code&gt;，还有&lt;code&gt;查找问题&lt;/code&gt;等。&lt;/p&gt;
+&lt;p&gt;虽然表现形式有很多，但是本质都是一样的，因为从逻辑上来讲其实他们都是线性数据结构，那么让我们来看一下吧。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="循环移位" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D/"/>
+    
+      <category term="链表" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/"/>
+    
+      <category term="字符串" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="编程之美" scheme="https://lucifer.ren/blog/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数组" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="链表" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+      <category term="循环移位" scheme="https://lucifer.ren/blog/tags/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D/"/>
+    
+      <category term="字符串" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="编程之美" scheme="https://lucifer.ren/blog/tags/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>值得关注的技术类大会</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/tech-conf/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/tech-conf/</id>
+    <published>2019-12-11T04:35:19.046Z</published>
+    <updated>2019-12-11T04:35:19.046Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;作为一个技术人，怎么能不参加和关注几场技术大会呢？让我们来看下那些你不能错过的技术大会吧。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术大会" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/"/>
+    
+      <category term="JSConf" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/JSConf/"/>
+    
+      <category term="React Conf" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/React-Conf/"/>
+    
+      <category term="Google IO" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/Google-IO/"/>
+    
+      <category term="D2" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/D2/"/>
+    
+      <category term="QCon" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/QCon/"/>
+    
+    
+      <category term="技术大会" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/"/>
+    
+      <category term="JSConf" scheme="https://lucifer.ren/blog/tags/JSConf/"/>
+    
+      <category term="Google IO" scheme="https://lucifer.ren/blog/tags/Google-IO/"/>
+    
+      <category term="D2" scheme="https://lucifer.ren/blog/tags/D2/"/>
+    
+      <category term="QCon" scheme="https://lucifer.ren/blog/tags/QCon/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>纪念LeetCode项目Star突破2W</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/thanksGaving-2/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/thanksGaving-2/</id>
+    <published>2019-12-11T04:35:19.046Z</published>
+    <updated>2019-12-11T04:35:19.046Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;假期这几天我买了《逆转裁判 123》合集，面对着这香喷喷的冷饭吃了半天。从 GBA 玩到 NDS，从 NDS 玩到 3DS, 现在 NS 虽然没有出新作有点遗憾。不过有了高清重制，也当是个回忆和收藏了 🎉🎉&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://lucifer.ren/blog/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="技术" scheme="https://lucifer.ren/blog/categories/%E6%97%A5%E8%AE%B0/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="日记" scheme="https://lucifer.ren/blog/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我是如何刷 LeetCode 的？</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/how-am-I-conque-leetcode/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/how-am-I-conque-leetcode/</id>
+    <published>2019-12-11T04:35:19.045Z</published>
+    <updated>2019-12-11T04:35:19.045Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我就是那个 @量子位 答案里面提到的“lucifer 小哥哥”。&lt;/p&gt;
+&lt;p&gt;我本人从开始准备算法以来，大概经过了几个月的时间，这期间自己成长了很多，从刷题菜鸡，到现在对刷题套路，题型有了自己的理解，感受还是蛮多的。我本人不是算法高手，算是勤能补拙类型。不过经过几个月的学习和练习，不仅面试变得更加得心应手，而且在工作中写更容易写出干净优雅，性能好的代码。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="学习方法" scheme="https://lucifer.ren/blog/categories/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="学习方法" scheme="https://lucifer.ren/blog/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>零基础的前端开发初学者应如何系统地学习？</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/how-am-I-learn-fe/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/how-am-I-learn-fe/</id>
+    <published>2019-12-11T04:35:19.045Z</published>
+    <updated>2019-12-11T04:35:19.045Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;回想四年前我刚入行的时候，那时候很多人对于前端的看法是“切图，画页面，有个编辑器+浏览器就能干，门槛低”，现在已经完全不是那样了，可以说现在的前端这个职业的门槛虽然还是没怎么变，但是整个行业的门槛提升了，换句话说就是整个行业对于前端这个职位要求更高了，对于前端小白的需求量降低，对于高级前端的需求量还在上升，甚至是供小于求的局面。从市场经济学角度上讲你只有进入到高级级别，才能真正吃到行业的红利。  因此想要入行的朋友要先想清楚，不要头脑发热，如果你想清楚了，那么请继续往下看。&lt;br&gt;说实话，现在的前端大环境对初学者来说实在有点不友好，学习资料鱼龙混杂，良莠不齐，有质量很高的学习资料，也有谬论，前后不一，观点错误，或者讲述不清晰的。 更可怕的是质量低下的文章有时候更受欢迎，因此需要大家有很好的甄别能力，但这对于初学者来说实在有些困难，我在这里就来谈一下 &lt;code&gt;初学者如何少走弯路，并且系统性地学习前端&lt;/code&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="学习方法" scheme="https://lucifer.ren/blog/categories/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="学习方法" scheme="https://lucifer.ren/blog/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://lucifer.ren/blog/2019/12/11/ibinhouse/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/ibinhouse/</id>
+    <published>2019-12-11T04:35:19.045Z</published>
+    <updated>2019-12-11T04:35:19.045Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>从老鼠试毒问题来看二分法</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/laoshushidu/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/laoshushidu/</id>
+    <published>2019-12-11T04:35:19.045Z</published>
+    <updated>2019-12-11T04:35:19.045Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;很多人对于二分法的理解比较片面，之前碰到一个题目，从一个先升序后降序的数列中，比如 1 2 3 7 4 3 2 中运用二分法去查找一个给定的元素，很多人说根本不能二分，因为没有排序。其实 这道题完全可以使用二分查找进行解答， 如果你觉得不可以的话，很可能对二分法理解还比较片面。  这里以另外一个更加有趣（至少我认为）的例子来讲解一下二分法。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="二分法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【LeetCode题解】1186.删除一次得到子数组最大和</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/leetcode-1186/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/leetcode-1186/</id>
+    <published>2019-12-11T04:35:19.045Z</published>
+    <updated>2019-12-11T04:35:19.045Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;LeetCode 1186题，最大子数组的进阶版本。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从零打造一个舒服的Mac开发环境 - 装机篇</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/mac-setup-for-fe/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/mac-setup-for-fe/</id>
+    <published>2019-12-11T04:35:19.045Z</published>
+    <updated>2019-12-11T04:35:19.045Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前两天新买的16寸mac pro到手了。 本来想直接将旧电脑的数据做一个迁移，但是有同学反应想看“如何从零打造一个舒适的开发环境”，于是就有了这篇文章。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Mac" scheme="https://lucifer.ren/blog/tags/Mac/"/>
+    
+      <category term="装机" scheme="https://lucifer.ren/blog/tags/%E8%A3%85%E6%9C%BA/"/>
+    
+      <category term="必备软件" scheme="https://lucifer.ren/blog/tags/%E5%BF%85%E5%A4%87%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>每日一荐 2019-11 汇总</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/daily-featured-2019-11/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/daily-featured-2019-11/</id>
+    <published>2019-12-11T04:35:19.044Z</published>
+    <updated>2019-12-11T04:35:19.044Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/006y8mN6ly1g8d0sktqrwj30hs07maae.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;每天给你推荐一个新奇，好玩，高品质的开源库，好文，观点或言论等。&lt;/p&gt;
+&lt;p&gt;项目主页维护当前月份的内容，想看往期内容，可以去&lt;a href=&quot;https://github.com/azl397985856/daily-featured&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;每日一荐主仓库&lt;/a&gt;翻到下方历史汇总部分，然后选择自己感兴趣的月份点进去即可。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="每日一荐" scheme="https://lucifer.ren/blog/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/"/>
+    
+      <category term="2019-11" scheme="https://lucifer.ren/blog/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/2019-11/"/>
+    
+    
+      <category term="每日一荐" scheme="https://lucifer.ren/blog/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《LeetCode题解攻略》 - 草稿目录</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/draft/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/draft/</id>
+    <published>2019-12-11T04:35:19.044Z</published>
+    <updated>2019-12-11T04:35:19.044Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这个我为自己的新书写的一个目录，计划在一星期左右定下来大体目录，然后投入完善，希望大家多提意见，你的意见很可能会影响到这本书的内容，期待你以特别的方式参与进来，此致敬礼。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="书" scheme="https://lucifer.ren/blog/categories/%E4%B9%A6/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E4%B9%A6/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="书" scheme="https://lucifer.ren/blog/tags/%E4%B9%A6/"/>
+    
+      <category term="草稿" scheme="https://lucifer.ren/blog/tags/%E8%8D%89%E7%A8%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《一文看懂浏览器事件循环》</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/event-loop/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/event-loop/</id>
+    <published>2019-12-11T04:35:19.044Z</published>
+    <updated>2019-12-11T04:35:19.044Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;实际上浏览器的事件循环标准是由 HTML 标准规定的，具体来说就是由whatwg规定的，具体内容可以参考&lt;a href=&quot;https://html.spec.whatwg.org/multipage/webappapis.html#event-loops&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;event-loops in browser&lt;/a&gt;。而NodeJS中事件循环其实也略有不同，具体可以参考&lt;a href=&quot;https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#what-is-the-event-loop&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;event-loops in nodejs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我们在讲解&lt;code&gt;事件模型&lt;/code&gt;的时候，多次提到了事件循环。 &lt;code&gt;事件&lt;/code&gt;指的是其所处理的对象就是事件本身，每一个浏览器都至少有一个事件循环，一个事件循环至少有一个任务队列。&lt;code&gt;循环&lt;/code&gt;指的是其永远处于一个“无限循环”中。不断将注册的回调函数推入到执行栈。&lt;/p&gt;
+&lt;p&gt;那么事件循环究竟是用来做什么的？浏览器的事件循环和NodeJS的事件循环有什么不同？让我们从零开始，一步一步探究背后的原因。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="浏览器" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="浏览器" scheme="https://lucifer.ren/blog/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+      <category term="事件循环" scheme="https://lucifer.ren/blog/tags/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>每日一荐 2019-10 汇总</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/daily-featured-2019-10/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/daily-featured-2019-10/</id>
+    <published>2019-12-11T04:35:19.043Z</published>
+    <updated>2019-12-11T04:35:19.044Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/006y8mN6ly1g8d0sktqrwj30hs07maae.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;每天给你推荐一个新奇，好玩，高品质的开源库，好文，观点或言论等。&lt;/p&gt;
+&lt;p&gt;项目主页维护当前月份的内容，想看往期内容，可以去&lt;a href=&quot;https://github.com/azl397985856/daily-featured&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;每日一荐主仓库&lt;/a&gt;翻到下方历史汇总部分，然后选择自己感兴趣的月份点进去即可。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="每日一荐" scheme="https://lucifer.ren/blog/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/"/>
+    
+      <category term="2019-10" scheme="https://lucifer.ren/blog/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/2019-10/"/>
+    
+    
+      <category term="每日一荐" scheme="https://lucifer.ren/blog/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>布隆过滤器</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/bloom-filter/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/bloom-filter/</id>
+    <published>2019-12-11T04:35:19.042Z</published>
+    <updated>2019-12-11T04:35:19.042Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;假设你现在要处理这样一个问题，你有一个网站并且拥有&lt;code&gt;很多&lt;/code&gt;访客，每当有用户访问时，你想知道这个ip是不是第一次访问你的网站。你会怎么做呢？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="布隆过滤器" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浏览器事件模型</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/browser-event/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/browser-event/</id>
+    <published>2019-12-11T04:35:19.042Z</published>
+    <updated>2019-12-11T04:35:19.042Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我想你很可能听说过&lt;code&gt;事件驱动&lt;/code&gt;, 但是事件驱动到底是什么？为什么说浏览器是事件驱动的呢？为什么 NodeJS 也是事件驱动的 ？ 两者是一回事么？&lt;/p&gt;
+&lt;p&gt;实际上不管是浏览器还是 Nodejs 都是事件驱动的，都有自己的事件模型。在这里，我们只讲解浏览器端的事件模型，如果对 Nodejs 事件模型感兴趣的，请期待我的 Nodejs 部分的讲解。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="浏览器" scheme="https://lucifer.ren/blog/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+      <category term="事件" scheme="https://lucifer.ren/blog/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E4%BA%8B%E4%BB%B6/"/>
+    
+    
+      <category term="浏览器" scheme="https://lucifer.ren/blog/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+      <category term="事件" scheme="https://lucifer.ren/blog/tags/%E4%BA%8B%E4%BB%B6/"/>
+    
+  </entry>
+  
+</feed>
