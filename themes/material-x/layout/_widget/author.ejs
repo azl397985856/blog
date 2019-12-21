@@ -1,0 +1,36 @@
+<section class='widget <%- item.widget %>'>
+  <div class='content <%= theme.style %>'>
+    <% if(item.avatar) { %>
+      <div class='avatar'>
+        <img class='avatar' src='<%- url_for(item.avatar) %>'/>
+      </div>
+    <%} %>
+    <% if (item.title || item.body || item.jinrishici) { %>
+      <div class='text'>
+        <% if (item.title){ %>
+          <h2><%- item.title %></h2>
+        <% } %>
+        <% if (item.body){ %>
+          <%- markdown(item.body) %>
+        <% } %>
+        <% if (item.jinrishici){ %>
+          <p><span id="jinrishici-sentence"><%- item.jinrishici != true ? item.jinrishici : config.title %></span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        <% } %>
+      </div>
+    <% } %>
+    <% if (item.social == true && theme.social) { %>
+      <div class="social-wrapper">
+        <% (theme.social||[]).forEach(function(value){ %>
+          <% if (value.url && value.icon) { %>
+            <a href="<%- url_for(value.url) %>"
+              class="social <%- value.icon %> flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          <%}%>
+        <%})%>
+      </div>
+    <% } %>
+  </div>
+</section>

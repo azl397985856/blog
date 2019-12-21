@@ -1,0 +1,231 @@
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<% if (theme.search && theme.search.enable) { %>
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "<%- theme.search.google_api_key %>";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "<%- theme.search.google_engine_id %>";
+    var ALGOLIA_API_KEY = "<%- theme.search.algolia_api_key %>";
+    var ALGOLIA_APP_ID = "<%- theme.search.algolia_app_id %>";
+    var ALGOLIA_INDEX_NAME = "<%- theme.search.algolia_index_name %>";
+    var AZURE_SERVICE_NAME = "<%- theme.search.azure_service_name %>";
+    var AZURE_INDEX_NAME = "<%- theme.search.azure_index_name %>";
+    var AZURE_QUERY_KEY = "<%- theme.search.azure_query_key %>";
+    var BAIDU_API_ID = "<%- theme.search.baidu_api_id %>";
+    var SEARCH_SERVICE = "<%- theme.search.service%>" || "hexo";
+    var ROOT = "<%- config.root %>"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+<% } %>
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+<% if (theme.scrollreveal == true) { %>
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+<% } %>
+<% if (theme.nodewaves == true) { %>
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+<% } %>
+<% if (theme.busuanzi == true) { %>
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+<% } %>
+<% if (theme.fastclick == true) { %>
+  <!-- fastclick -->
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+  </script>
+<% } %>
+
+<% if (theme.backstretch && (theme.backstretch.images || page.images)) { %>
+  <% var imgs = theme.backstretch.images || page.images; %>
+  <% var posi = null;
+  if (theme.backstretch.position == 'cover') {
+    posi = '.cover';
+  }
+   %>
+  <% if (imgs != undefined && theme.backstretch.position != undefined){ %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('<%- posi %>') {
+          $('<%- posi %>').backstretch(
+          <%- '["' + imgs.join('", "') + '"]' %>,
+          {
+            duration: "<%- theme.backstretch.duration %>",
+            fade: "<%- theme.backstretch.fade %>"
+          });
+        } else {
+          $.backstretch(
+          <%- '["' + imgs.join('", "') + '"]' %>,
+          {
+            duration: "<%- theme.backstretch.duration %>",
+            fade: "<%- theme.backstretch.fade %>"
+          });
+        }
+      });
+    </script>
+  <% } %>
+<% } %>
+
+
+<%
+  var enableDisqus = false;
+  var enableLivere = false;
+  var enableGitalk = false;
+  var enableValine = false;
+  if (page && page.comments == true) {
+    if (config.disqus_shortname) {
+      enableDisqus = true;
+    }
+    if (config.livere_uid) {
+      enableLivere = true;
+    }
+    if (config.gitalk) {
+      enableGitalk = true;
+    }
+    if (theme.valine.enable && config.leancloud) {
+      enableValine = true;
+    }
+  }
+%>
+<% if (enableDisqus){ %>
+  <script>
+    var disqus_shortname = '<%= config.disqus_shortname %>';
+    <% if (page.permalink){ %>
+      var disqus_url = '<%= page.permalink %>';
+    <% } %>
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+<% } %>
+<% if (enableLivere){ %>
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+<% } %>
+<% if (enableGitalk) { %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "<%- config.gitalk.clientID %>",
+      clientSecret: "<%- config.gitalk.clientSecret %>",
+      repo: "<%- config.gitalk.repo %>",
+      owner: "<%- config.gitalk.owner %>",
+      admin: "<%- config.gitalk.admin %>",
+      <% if(page.gitalk && page.gitalk.id) { %>
+        id: "<%= page.gitalk.id %>",
+      <% } else { %>
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      <% } %>
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
+<% } %>
+
+<% if (enableValine){ %>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <% if (theme.valine.volantis == true) { %>
+    <% if (theme.info && theme.info.cdn && theme.info.cdn.js && theme.info.cdn.js.volantis) { %>
+      <%- js(theme.info.cdn.js.volantis) %>
+    <% } else { %>
+      <%- js(['js/volantis.js']) %>
+    <% } %>
+  <% } else { %>
+    <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-valine@1.3.4/js/valine.min.js"></script>
+  <% } %>
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = '<%= theme.valine.guest_info %>'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = '<%= theme.valine.notify %>' == true;
+  var verify = '<%= theme.valine.verify %>' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    <% if(page.valine && page.valine.path) { %>
+      path: "<%= page.valine.path %>",
+    <% } %>
+    appId: "<%= config.leancloud.app_id %>",
+    appKey: "<%= config.leancloud.app_key %>",
+    placeholder: "<%= (page.valine && page.valine.placeholder) ? page.valine.placeholder : theme.valine.placeholder %>",
+    pageSize:'<%= theme.valine.pageSize %>',
+    avatar:'<%= theme.valine.avatar %>',
+    lang:'<%= theme.valine.lang %>',
+    highlight:'<%= theme.valine.highlight %>'
+  })
+  </script>
+<% } %>
+
+<% if (theme.info && theme.info.cdn && theme.info.cdn.js && theme.info.cdn.js.app) { %>
+  <%- js(theme.info.cdn.js.app) %>
+<% } else { %>
+  <%- js(['js/app.js']) %>
+<% } %>
+<% if (theme.info && theme.info.cdn && theme.info.cdn.js && theme.info.cdn.js.search) { %>
+  <%- js(theme.info.cdn.js.search) %>
+<% } else { %>
+  <%- js(['js/search.js']) %>
+<% } %>
+
+<% if (page.layout == 'links') { %>
+  <%- js('https://cdn.jsdelivr.net/gh/toddmotto/echo@1.7.3/src/echo.js') %>
+  <script>
+    echo.init({
+      offset: 100,
+      throttle: 250,
+      unload: false,
+      callback: function (element, op) {
+        // console.log(element, 'has been', op + 'ed');
+      }
+    });
+  </script>
+<% } %>
+
+<!-- 复制 -->
+<%- partial('_third-party/clipboard') %>
+
+<!-- fancybox -->
+<%- partial('_third-party/fancybox') %>
+
+
+<% if (config.import && config.import.script){ %>
+<% (config.import.script||[]).forEach(function(item){ %>
+<%- item %><% }) %>
+<% } %>

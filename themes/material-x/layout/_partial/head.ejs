@@ -1,0 +1,96 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <%
+    var title = page.title;
+    if (is_archive()) {
+      title = 'Archives';
+      if (is_month())
+        title += ': ' + page.year + '/' + page.month;
+      else if (is_year())
+        title += ': ' + page.year;
+    }
+    else if (is_category())
+      title = 'Category: ' + page.category;
+    else if (is_tag())
+      title = 'Tag: ' + page.tag;
+  %>
+  <title><% if (title) { %><%= title %> | <% } %><%= config.title %></title>
+  <% if (page.keywords && config.keywords){ %>
+  <meta name="keywords" content="<%- page.keywords %>, <%- config.keywords %>">
+  <% } else if (page.keywords) { %>
+  <meta name="keywords" content="<%- page.keywords %>">
+  <% } else if (config.keywords) { %>
+  <meta name="keywords" content="<%- config.keywords %>">
+  <% } %>
+  <% if (page.description && config.description){ %>
+  <meta name="description" content="<%- page.description %>, <%- config.description %>">
+  <% } else if (page.description) { %>
+  <meta name="description" content="<%- page.description %>">
+  <% } else if (config.description) { %>
+  <meta name="description" content="<%- config.description %>">
+  <% } %>
+
+  <% if (config.feed && config.feed.path){ %>
+  <%- feed_tag(config.feed.path, {title: config.title}) %>
+  <% } %>
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  <% if (config.import && config.import.meta){ %>
+  <% (config.import.meta||[]).forEach(function(item){ %>
+  <%- item %><% }) %>
+  <% } %>
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <% if (theme.nodewaves == true) { %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  <% } %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  <% if (config.import && config.import.link){ %>
+  <% (config.import.link||[]).forEach(function(item){ %>
+  <%- item %><% }) %>
+  <% } %>
+
+  <% if (config.favicon) { %>
+  <link rel="shortcut icon" type='image/x-icon' href="<%- url_for(config.favicon) %>">
+  <% } %>
+
+  <% if (theme.info && theme.info.cdn && theme.info.cdn.css && theme.info.cdn.css.style) { %>
+    <%- css(theme.info.cdn.css.style) %>
+  <% } else { %>
+    <%- css('style.css') %>
+  <% } %>
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  <% if (config.google_analytics_key) { %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<%- config.google_analytics_key %>"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '<%- config.google_analytics_key %>');
+    </script>
+  <% } %>
+  <% if (config.baidu_analytics_key) { %>
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?<%= config.baidu_analytics_key %>";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  <% } %>
+</head>
