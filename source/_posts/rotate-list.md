@@ -1,7 +1,7 @@
 ---
 title: 文科生都能看懂的循环移位算法
 tags: [循环移位, 数组, 字符串, 链表, 数据结构, 算法, 编程之美]
-categories: 
+categories:
   - [算法, 循环移位]
   - [数据结构, 数组]
   - [数据结构, 链表]
@@ -15,10 +15,13 @@ categories:
 循环移位的表现形式有很多种，就数据结构来说包括`数组`，`字符串`，`链表`等。就算法来说，有`包含问题`，`直接移动问题`，还有`查找问题`等。
 
 虽然表现形式有很多，但是本质都是一样的，因为从逻辑上来讲其实他们都是线性数据结构，那么让我们来看一下吧。
+
 <!-- more -->
+
 ## 数组循环移位
 
-LeetCode 和 编程之美等都有这道题目，题目难度为Easy。[LeeCode链接](https://leetcode-cn.com/problems/rotate-array/)
+LeetCode 和 编程之美等都有这道题目，题目难度为 Easy。[LeeCode 链接](https://leetcode-cn.com/problems/rotate-array/)
+
 ### 题目描述
 
 ```
@@ -36,7 +39,7 @@ LeetCode 和 编程之美等都有这道题目，题目难度为Easy。[LeeCode�
 
 输入: [-1,-100,3,99] 和 k = 2
 输出: [3,99,-1,-100]
-解释: 
+解释:
 向右旋转 1 步: [99,-1,-100,3]
 向右旋转 2 步: [3,99,-1,-100]
 说明:
@@ -46,7 +49,7 @@ LeetCode 和 编程之美等都有这道题目，题目难度为Easy。[LeeCode�
 
 ```
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-21-163244.png)
+![](https://tva1.sinaimg.cn/large/006tNbRwly1ga4j21nsctj30o8048glq.jpg)
 
 ### 不符合题意的解法
 
@@ -64,7 +67,7 @@ function RShift(list, k) {
   const n = list.length;
 
   for (let i = 0; i < n; i++) {
-    list[i] = copy[(k + i) % n];
+    list[(k + i) % n] = copy[i];
   }
   return list;
 }
@@ -95,9 +98,9 @@ function RShift(list, k) {
 
 ### 时间换空间
 
-我们来试一下常数空间复杂度的解法，这种做法思路很简单，我们只需要每次移动一位，移动 k 次即可，移动一次的时间复杂度是 1，k 次共用一个变量即可，因此总的时间复杂度可以降低到 1。
+我们来试一下常数空间复杂度的解法，这种做法思路很简单，我们只需要每次移动一位，移动 k 次即可，移动一次的时间复杂度是 1，k 次共用一个变量即可，因此总的空间复杂度可以降低到 1。
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-21-163157.png)
+![](https://tva1.sinaimg.cn/large/006tNbRwly1ga4ieydb7ij30pw0bejsa.jpg)
 
 我们来看下代码，这次我们把上面提到的 k 为负数的情况考虑进去。
 
@@ -125,7 +128,7 @@ function RShift(list, k) {
 虽然上面的解法是常数空间复杂度，但是时间复杂度是 O(N \* K)，K 取值不限制的话，就是 O(N^2)，
 还是不满足题意。不过没关系，我们继续思考。
 
-我们再来看一种空间换时间的做法，这种做法的思路是拼接一个完全一样的数据到当前数据的尾部，然后问题就转化为`截取数组使之满足右移的效果`，这样的时间复杂度 O(N),空间复杂度是 O(N).
+我们再来看一种空间换时间的做法，这种做法的思路是拼接一个完全一样的数组到当前数组的尾部，然后问题就转化为`截取数组使之满足右移的效果`，这样的时间复杂度 O(N),空间复杂度是 O(N).
 
 ![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-21-163458.png)
 
@@ -175,12 +178,12 @@ function RShift(list, k) {
 
 这里给一个简单的数学证明：
 
-- 对于[0, n - k - 1] 部分，我们翻转一次后新的坐标y和之前的坐标x的关系可以表示为`y = n - 1 - k - x`
-- 对于[n - k, n -1] 部分，我们翻转一次后新的坐标y和之前的坐标x的关系可以表示为`y = 2 * n - 1 - k - x`
-- 最后我们整体进行翻转的时候，新的坐标y和之前的坐标x的关系可以表示为
+- 对于[0, n - k - 1] 部分，我们翻转一次后新的坐标 y 和之前的坐标 x 的关系可以表示为`y = n - 1 - k - x`
+- 对于[n - k, n -1] 部分，我们翻转一次后新的坐标 y 和之前的坐标 x 的关系可以表示为`y = 2 * n - 1 - k - x`
+- 最后我们整体进行翻转的时候，新的坐标 y 和之前的坐标 x 的关系可以表示为
 
-   1. `y = n - 1 - (n - 1 - k - x)` 即 `y = k + x` (0 <= x <= n - k - 1)
-   2. `y = n - 1 - (2 * n - 1 - k - x)` 即 `y = k + x - n` (n - k <= x <= n - 1)
+  1.  `y = n - 1 - (n - 1 - k - x)` 即 `y = k + x` (0 <= x <= n - k - 1)
+  2.  `y = n - 1 - (2 * n - 1 - k - x)` 即 `y = k + x - n` (n - k <= x <= n - 1)
 
 正好满足我们的位移条件。
 
@@ -314,28 +317,26 @@ function RIncludes(s1, s2) {
 ```js
 var rotateRight = function(head, k) {
   if (head === null || head.next === null) return head;
-  const dummy = {
-    next: head,
-  };
-  let p1 = dummy;
-  let n = 0;
+  let p1 = head;
+  let n = 1;
+  let res = null;
 
   while (p1 && p1.next) {
     p1 = p1.next;
     n++;
   }
-  let cur = 0;
-  let p2 = dummy;
+  let cur = 1;
+  let p2 = head;
 
   while (cur < n - (k % n)) {
     p2 = p2.next;
     cur++;
   }
-  p1.next = dummy.next;
-  dummy.next = p2.next;
+  p1.next = head;
+  res = p2.next;
   p2.next = null;
 
-  return dummy.next;
+  return res;
 };
 ```
 
