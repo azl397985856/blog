@@ -10,12 +10,9 @@ info:
       search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/search.js
       volantis: https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0.5/js/volantis.min.js
 
-
-
 ############################### 主题风格 ###############################
 # style: material    # material: 导航栏和标题栏背景是主题色
-style: pure        # pure: 导航栏和标题栏背景是白色
-
+style: pure # pure: 导航栏和标题栏背景是白色
 
 ############################### 服务开关 ###############################
 scrollreveal: true
@@ -23,42 +20,38 @@ nodewaves: true
 busuanzi: true
 # fastclick: true
 
-
-
 ############################### 默认值 ###############################
 # 音乐控件的默认配置，如果sidebar或者page里没有提供，就取这里的参数
 music:
-  enable: true      # 是否启用
-  color: '#1BCDFC'  # 主题色
+  enable: true # 是否启用
+  color: "#1BCDFC" # 主题色
   mode: circulation # random （随机） single （单曲） circulation （列表循环） order （列表）
-  server: netease   # netease（网易云音乐）tencent（QQ音乐） xiami（虾米） kugou（酷狗）
-  type: playlist    # song （单曲） album （专辑） playlist （歌单） search （搜索）
-  id: 2615636388    # 歌曲/专辑/歌单 ID
-  volume: 0.7       # 音量, 0~1
-  autoplay: false   # 自动播放
+  server: netease # netease（网易云音乐）tencent（QQ音乐） xiami（虾米） kugou（酷狗）
+  type: playlist # song （单曲） album （专辑） playlist （歌单） search （搜索）
+  id: 2615636388 # 歌曲/专辑/歌单 ID
+  volume: 0.7 # 音量, 0~1
+  autoplay: false # 自动播放
 
 # 友链页头像占位图
-avatar_placeholder: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png
+avatar_placeholder: https://tva1.sinaimg.cn/large/006tNbRwly1ga7tcgy34zj30eq0eqq32.jpg
 
 # 日期格式 http://momentjs.com/docs/
-date_format: 'YYYY-MM-DD' # 文章发布日期的格式
-updated_date_format: 'll' # 文章更新日期的格式
+date_format: "YYYY-MM-DD" # 文章发布日期的格式
+updated_date_format: "ll" # 文章更新日期的格式
 
 # 幻灯片
 backstretch:
-  position: cover  # cover: 封面背景   full: 整个网页背景
+  position: cover # cover: 封面背景   full: 整个网页背景
   duration: 6000 # 持续时间（毫秒）
-  fade: 2500     # 渐变（毫秒）
+  fade: 2500 # 渐变（毫秒）
   images:
     - https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg
-
-
 
 ############################### 自定义 ###############################
 # page的封面
 cover:
-  scheme: search    # 后期将会提供多种封面方案
-  height: half      # full（默认值）: 首页封面占据整个第一屏幕，其他页面占半个屏幕高度， half: 所有页面都封面都只占半个屏幕高度
+  scheme: search # 后期将会提供多种封面方案
+  height: half # full（默认值）: 首页封面占据整个第一屏幕，其他页面占半个屏幕高度， half: 所有页面都封面都只占半个屏幕高度
   title: lucifer
   # logo: assets/logo.png    # logo和title只显示一个，若同时设置，则只显示logo
   # search_placeholder: '搜索'
@@ -80,7 +73,6 @@ cover:
       icon: fas fa-info-circle
       url: about/
       rel: nofollow
-
 
 # 桌面端导航栏菜单
 menu_desktop:
@@ -134,7 +126,6 @@ layout:
     sidebar: [author, toc, grid, category, tagcloud, list, related_posts]
   # 其他的页面布局暂时等于文章列表
 
-
 # 侧边栏小部件配置
 sidebar:
   - widget: author
@@ -176,9 +167,9 @@ sidebar:
       url: https://music.163.com/playlist?id=2649561572&userid=632167080
       rel: external nofollow noopener noreferrer
       target: _blank
-    server: netease   # netease（网易云音乐）tencent（QQ音乐） xiami（虾米） kugou（酷狗）
-    type: playlist    # song （单曲） album （专辑） playlist （歌单） search （搜索）
-    id: 2615636388     # 歌曲/专辑/歌单 ID
+    server: netease # netease（网易云音乐）tencent（QQ音乐） xiami（虾米） kugou（酷狗）
+    type: playlist # song （单曲） album （专辑） playlist （歌单） search （搜索）
+    id: 2615636388 # 歌曲/专辑/歌单 ID
   - widget: list
     icon: fas fa-thumbs-up
     title: 强烈推荐
@@ -194,8 +185,6 @@ sidebar:
       - name: 简历主题
         url: https://mxclub.github.io/resume/
 
-
-
 # 社交信息
 social:
   - icon: fas fa-rss
@@ -208,7 +197,6 @@ social:
     url: https://github.com/azl397985856
   - icon: fas fa-headphones-alt
     url: https://music.163.com/playlist?id=978545815&userid=632167080
-
 
 # 分享按钮
 # 当id为qrcode时需要安装插件  npm i -S hexo-helper-qrcode
@@ -232,10 +220,7 @@ share:
   #   name: QRcode
   #   img: https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png
 
-
-
 # footer: '页脚文字，支持[markdown](/)'
-
 
 ############################### 评论系统 ###############################
 # disqus_shortname: 要使用哪个请复制到根目录配置文件！
@@ -249,7 +234,6 @@ share:
 # leancloud: 要使用哪个请复制到根目录配置文件！
 #   app_id: 你的appId
 #   app_key: 你的appKey
-
 
 ############################### 杂项，请勿删除 ###############################
 #valine配置

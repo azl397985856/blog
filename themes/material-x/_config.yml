@@ -33,7 +33,7 @@ music:
   autoplay: false # 自动播放
 
 # 友链页头像占位图
-avatar_placeholder: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png
+avatar_placeholder: https://tva1.sinaimg.cn/large/006tNbRwly1ga7tcgy34zj30eq0eqq32.jpg
 
 # 日期格式 http://momentjs.com/docs/
 date_format: "YYYY-MM-DD" # 文章发布日期的格式
