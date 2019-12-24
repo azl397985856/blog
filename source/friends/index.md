@@ -6,7 +6,7 @@ links:
     icon: fab fa-js-square
     items:
       - name: 麋鹿鲁哟
-        avatar: https://images.cnblogs.com/cnblogs_com/elkyo/1558759/o_o_my.jpg
+        avatar: https://tva1.sinaimg.cn/large/006tNbRwly1ga7tim49k2j3050050wem.jpg
         url: https://www.cnblogs.com/miluluyo/
         backgroundColor: "linear-gradient(#ffdde1, #A770EF)" # 卡片背景颜色
         textColor: "#fff" # 卡片文字颜色
