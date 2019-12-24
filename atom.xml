@@ -363,6 +363,24 @@
   </entry>
   
   <entry>
+    <title>【LeetCode题解】1186.删除一次得到子数组最大和</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/leetcode-1186/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/leetcode-1186/</id>
+    <published>2019-12-11T04:35:19.045Z</published>
+    <updated>2019-12-11T04:35:19.045Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;LeetCode 1186题，最大子数组的进阶版本。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>从零打造一个舒服的Mac开发环境 - 装机篇</title>
     <link href="https://lucifer.ren/blog/2019/12/11/mac-setup-for-fe/"/>
     <id>https://lucifer.ren/blog/2019/12/11/mac-setup-for-fe/</id>
@@ -381,24 +399,6 @@
       <category term="装机" scheme="https://lucifer.ren/blog/tags/%E8%A3%85%E6%9C%BA/"/>
     
       <category term="必备软件" scheme="https://lucifer.ren/blog/tags/%E5%BF%85%E5%A4%87%E8%BD%AF%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【LeetCode题解】1186.删除一次得到子数组最大和</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/leetcode-1186/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/leetcode-1186/</id>
-    <published>2019-12-11T04:35:19.045Z</published>
-    <updated>2019-12-11T04:35:19.045Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;LeetCode 1186题，最大子数组的进阶版本。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
   </entry>
   
