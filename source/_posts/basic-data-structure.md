@@ -282,7 +282,7 @@ return, children, sibling 也都是一个 fiber，因此 fiber 看起来就是�
 ![](https://tva1.sinaimg.cn/large/006tNbRwgy1gajhqov8pjj306y06mweo.jpg)
 （图片来自 https://zh.wikipedia.org/wiki/K-d%E6%A0%91）
 
-### 二叉树
+#### 二叉树
 
 二叉树是节点度数不超过二的树，是树的一种特殊子集，有趣的是二叉树这种被限制的树结构却能够表示和实现所有的树，
 它背后的原理正是`长子 + 兄弟`法，用邓老师的话说就是`二叉树是多叉树的特例，但在有根且有序时，其描述能力却足以覆盖后者`。
@@ -314,7 +314,7 @@ return, children, sibling 也都是一个 fiber，因此 fiber 看起来就是�
 
 另外我也专门开设了[二叉树的遍历](./binary-tree-traversal.md)章节, 具体细节和算法可以去那里查看。
 
-#### 堆
+##### 堆
 
 堆其实是一种优先级队列，在很多语言都有对应的内置数据结构，很遗憾 javascript 没有这种原生的数据结构。
 不过这对我们理解和运用不会有影响。
@@ -336,7 +336,7 @@ return, children, sibling 也都是一个 fiber，因此 fiber 看起来就是�
 
 - [295.find-median-from-data-stream](../problems/295.find-median-from-data-stream.md)
 
-#### 二叉查找树
+##### 二叉查找树
 
 二叉排序树（Binary Sort Tree），又称二叉查找树（Binary Search Tree），亦称二叉搜索树。
 
@@ -362,7 +362,7 @@ return, children, sibling 也都是一个 fiber，因此 fiber 看起来就是�
 
 - [98.validate-binary-search-tree](../problems/98.validate-binary-search-tree.md)
 
-### 二叉平衡树
+##### 二叉平衡树
 
 平衡树是计算机科学中的一类数据结构，为改进的二叉查找树。一般的二叉查找树的查询复杂度取决于目标结点到树根的距离（即深度），因此当结点的深度普遍较大时，查询的均摊复杂度会上升。为了实现更高效的查询，产生了平衡树。
 
@@ -382,15 +382,15 @@ return, children, sibling 也都是一个 fiber，因此 fiber 看起来就是�
 
 - 查询后继
 
-#### AVL
+###### AVL
 
 是最早被发明的自平衡二叉查找树。在 AVL 树中，任一节点对应的两棵子树的最大高度差为 1，因此它也被称为高度平衡树。查找、插入和删除在平均和最坏情况下的时间复杂度都是 {\displaystyle O(\log {n})} O(\log{n})。增加和删除元素的操作则可能需要借由一次或多次树旋转，以实现树的重新平衡。AVL 树得名于它的发明者 G. M. Adelson-Velsky 和 Evgenii Landis，他们在 1962 年的论文 An algorithm for the organization of information 中公开了这一数据结构。 节点的平衡因子是它的左子树的高度减去它的右子树的高度（有时相反）。带有平衡因子 1、0 或 -1 的节点被认为是平衡的。带有平衡因子 -2 或 2 的节点被认为是不平衡的，并需要重新平衡这个树。平衡因子可以直接存储在每个节点中，或从可能存储在节点中的子树高度计算出来。
 
-#### 红黑树
+###### 红黑树
 
 在 1972 年由鲁道夫·贝尔发明，被称为"对称二叉 B 树"，它现代的名字源于 Leo J. Guibas 和 Robert Sedgewick 于 1978 年写的一篇论文。红黑树的结构复杂，但它的操作有着良好的最坏情况运行时间，并且在实践中高效：它可以在 {\displaystyle O(\log {n})} O(\log{n})时间内完成查找，插入和删除，这里的 n 是树中元素的数目
 
-### 字典树(前缀树)
+#### 字典树(前缀树)
 
 又称 Trie 树，是一种树形结构。典型应用是用于统计，排序和保存大量的字符串（但不仅限于字符串），所以经常被搜索引擎系统用于文本词频统计。它的优点是：利用字符串的公共前缀来减少查询时间，最大限度地减少无谓的字符串比较，查询效率比哈希树高。
 
@@ -403,7 +403,7 @@ return, children, sibling 也都是一个 fiber，因此 fiber 看起来就是�
 - 从根节点到某一节点，路径上经过的字符连接起来，为该节点对应的字符串；
 - 每个节点的所有子节点包含的字符都不相同。
 
-#### immutable 与 字典树
+##### immutable 与 字典树
 
 `immutableJS`的底层就是`share + tree`. 这样看的话，其实和字典树是一致的。
 
@@ -418,7 +418,7 @@ return, children, sibling 也都是一个 fiber，因此 fiber 看起来就是�
 
 图论〔Graph Theory〕是数学的一个分支。它以图为研究对象。图论中的图是由若干给定的点及连接两点的线所构成的图形，这种图形通常用来描述某些事物之间的某种特定关系，用点代表事物，用连接两点的线表示相应两个事物间具有这种关系。
 
-## 图的表示方法
+### 图的表示方法
 
 - 邻接矩阵(常见)
 
@@ -450,7 +450,7 @@ return, children, sibling 也都是一个 fiber，因此 fiber 看起来就是�
 
 （图片来自 https://zhuanlan.zhihu.com/p/25498681）
 
-## 图的遍历
+### 图的遍历
 
 图的遍历就是要找出图中所有的点，一般有以下两种方法：
 
