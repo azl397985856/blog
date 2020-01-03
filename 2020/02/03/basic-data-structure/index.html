@@ -482,7 +482,7 @@
 </ul>
 <p>实际使用的树有可能会更复杂，比如使用在游戏中的碰撞检测可能会用到四叉树或者八叉树。以及 k 维的树结构 <code>k-d 树</code>等。</p>
 <p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gajhqov8pjj306y06mweo.jpg" alt><br>（图片来自 <a href="https://zh.wikipedia.org/wiki/K-d%E6%A0%91）" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/K-d%E6%A0%91）</a></p>
-<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>二叉树是节点度数不超过二的树，是树的一种特殊子集，有趣的是二叉树这种被限制的树结构却能够表示和实现所有的树，<br>它背后的原理正是<code>长子 + 兄弟</code>法，用邓老师的话说就是<code>二叉树是多叉树的特例，但在有根且有序时，其描述能力却足以覆盖后者</code>。</p>
+<h4 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h4><p>二叉树是节点度数不超过二的树，是树的一种特殊子集，有趣的是二叉树这种被限制的树结构却能够表示和实现所有的树，<br>它背后的原理正是<code>长子 + 兄弟</code>法，用邓老师的话说就是<code>二叉树是多叉树的特例，但在有根且有序时，其描述能力却足以覆盖后者</code>。</p>
 <blockquote>
 <p>实际上， 在你使用<code>长子 + 兄弟</code>法表示树的同时，进行 45 度角旋转即可。</p>
 </blockquote>
@@ -505,7 +505,7 @@
 <li>真二叉树 （所有节点的度数只能是偶数，即只能为 0 或者 2）</li>
 </ul>
 <p>另外我也专门开设了<a href="./binary-tree-traversal.md">二叉树的遍历</a>章节, 具体细节和算法可以去那里查看。</p>
-<h4 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h4><p>堆其实是一种优先级队列，在很多语言都有对应的内置数据结构，很遗憾 javascript 没有这种原生的数据结构。<br>不过这对我们理解和运用不会有影响。</p>
+<h5 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h5><p>堆其实是一种优先级队列，在很多语言都有对应的内置数据结构，很遗憾 javascript 没有这种原生的数据结构。<br>不过这对我们理解和运用不会有影响。</p>
 <p>堆的特点：</p>
 <ul>
 <li>在一个 最小堆(min heap) 中, 如果 P 是 C 的一个父级节点, 那么 P 的 key(或 value)应小于或等于 C 的对应值.<br>正因为此，堆顶元素一定是最小的，我们会利用这个特点求最小值或者第 k 小的值。</li>
@@ -520,7 +520,7 @@
 <ul>
 <li><a href="../problems/295.find-median-from-data-stream.md">295.find-median-from-data-stream</a></li>
 </ul>
-<h4 id="二叉查找树"><a href="#二叉查找树" class="headerlink" title="二叉查找树"></a>二叉查找树</h4><p>二叉排序树（Binary Sort Tree），又称二叉查找树（Binary Search Tree），亦称二叉搜索树。</p>
+<h5 id="二叉查找树"><a href="#二叉查找树" class="headerlink" title="二叉查找树"></a>二叉查找树</h5><p>二叉排序树（Binary Sort Tree），又称二叉查找树（Binary Search Tree），亦称二叉搜索树。</p>
 <p>二叉查找树具有下列性质的二叉树：</p>
 <ul>
 <li>若左子树不空，则左子树上所有节点的值均小于它的根节点的值；</li>
@@ -536,7 +536,7 @@
 <ul>
 <li><a href="../problems/98.validate-binary-search-tree.md">98.validate-binary-search-tree</a></li>
 </ul>
-<h3 id="二叉平衡树"><a href="#二叉平衡树" class="headerlink" title="二叉平衡树"></a>二叉平衡树</h3><p>平衡树是计算机科学中的一类数据结构，为改进的二叉查找树。一般的二叉查找树的查询复杂度取决于目标结点到树根的距离（即深度），因此当结点的深度普遍较大时，查询的均摊复杂度会上升。为了实现更高效的查询，产生了平衡树。</p>
+<h5 id="二叉平衡树"><a href="#二叉平衡树" class="headerlink" title="二叉平衡树"></a>二叉平衡树</h5><p>平衡树是计算机科学中的一类数据结构，为改进的二叉查找树。一般的二叉查找树的查询复杂度取决于目标结点到树根的距离（即深度），因此当结点的深度普遍较大时，查询的均摊复杂度会上升。为了实现更高效的查询，产生了平衡树。</p>
 <p>在这里，平衡指所有叶子的深度趋于平衡，更广义的是指在树上所有可能查找的均摊复杂度偏低。</p>
 <p>一些数据库引擎内部就是用的这种数据结构，其目标也是将查询的操作降低到 logn（树的深度），可以简单理解为<code>树在数据结构层面构造了二分查找算法</code>。</p>
 <p>基本操作：</p>
@@ -552,9 +552,9 @@
 <li><p>查询后继</p>
 </li>
 </ul>
-<h4 id="AVL"><a href="#AVL" class="headerlink" title="AVL"></a>AVL</h4><p>是最早被发明的自平衡二叉查找树。在 AVL 树中，任一节点对应的两棵子树的最大高度差为 1，因此它也被称为高度平衡树。查找、插入和删除在平均和最坏情况下的时间复杂度都是 {\displaystyle O(\log {n})} O(\log{n})。增加和删除元素的操作则可能需要借由一次或多次树旋转，以实现树的重新平衡。AVL 树得名于它的发明者 G. M. Adelson-Velsky 和 Evgenii Landis，他们在 1962 年的论文 An algorithm for the organization of information 中公开了这一数据结构。 节点的平衡因子是它的左子树的高度减去它的右子树的高度（有时相反）。带有平衡因子 1、0 或 -1 的节点被认为是平衡的。带有平衡因子 -2 或 2 的节点被认为是不平衡的，并需要重新平衡这个树。平衡因子可以直接存储在每个节点中，或从可能存储在节点中的子树高度计算出来。</p>
-<h4 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h4><p>在 1972 年由鲁道夫·贝尔发明，被称为”对称二叉 B 树”，它现代的名字源于 Leo J. Guibas 和 Robert Sedgewick 于 1978 年写的一篇论文。红黑树的结构复杂，但它的操作有着良好的最坏情况运行时间，并且在实践中高效：它可以在 {\displaystyle O(\log {n})} O(\log{n})时间内完成查找，插入和删除，这里的 n 是树中元素的数目</p>
-<h3 id="字典树-前缀树"><a href="#字典树-前缀树" class="headerlink" title="字典树(前缀树)"></a>字典树(前缀树)</h3><p>又称 Trie 树，是一种树形结构。典型应用是用于统计，排序和保存大量的字符串（但不仅限于字符串），所以经常被搜索引擎系统用于文本词频统计。它的优点是：利用字符串的公共前缀来减少查询时间，最大限度地减少无谓的字符串比较，查询效率比哈希树高。</p>
+<h6 id="AVL"><a href="#AVL" class="headerlink" title="AVL"></a>AVL</h6><p>是最早被发明的自平衡二叉查找树。在 AVL 树中，任一节点对应的两棵子树的最大高度差为 1，因此它也被称为高度平衡树。查找、插入和删除在平均和最坏情况下的时间复杂度都是 {\displaystyle O(\log {n})} O(\log{n})。增加和删除元素的操作则可能需要借由一次或多次树旋转，以实现树的重新平衡。AVL 树得名于它的发明者 G. M. Adelson-Velsky 和 Evgenii Landis，他们在 1962 年的论文 An algorithm for the organization of information 中公开了这一数据结构。 节点的平衡因子是它的左子树的高度减去它的右子树的高度（有时相反）。带有平衡因子 1、0 或 -1 的节点被认为是平衡的。带有平衡因子 -2 或 2 的节点被认为是不平衡的，并需要重新平衡这个树。平衡因子可以直接存储在每个节点中，或从可能存储在节点中的子树高度计算出来。</p>
+<h6 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h6><p>在 1972 年由鲁道夫·贝尔发明，被称为”对称二叉 B 树”，它现代的名字源于 Leo J. Guibas 和 Robert Sedgewick 于 1978 年写的一篇论文。红黑树的结构复杂，但它的操作有着良好的最坏情况运行时间，并且在实践中高效：它可以在 {\displaystyle O(\log {n})} O(\log{n})时间内完成查找，插入和删除，这里的 n 是树中元素的数目</p>
+<h4 id="字典树-前缀树"><a href="#字典树-前缀树" class="headerlink" title="字典树(前缀树)"></a>字典树(前缀树)</h4><p>又称 Trie 树，是一种树形结构。典型应用是用于统计，排序和保存大量的字符串（但不仅限于字符串），所以经常被搜索引擎系统用于文本词频统计。它的优点是：利用字符串的公共前缀来减少查询时间，最大限度地减少无谓的字符串比较，查询效率比哈希树高。</p>
 <p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1gajj0g78e6j30al06qwfc.jpg" alt></p>
 <p>(图来自 <a href="https://baike.baidu.com/item/%E5%AD%97%E5%85%B8%E6%A0%91/9825209?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/%E5%AD%97%E5%85%B8%E6%A0%91/9825209?fr=aladdin</a>)<br>它有 3 个基本性质：</p>
 <ul>
@@ -562,14 +562,14 @@
 <li>从根节点到某一节点，路径上经过的字符连接起来，为该节点对应的字符串；</li>
 <li>每个节点的所有子节点包含的字符都不相同。</li>
 </ul>
-<h4 id="immutable-与-字典树"><a href="#immutable-与-字典树" class="headerlink" title="immutable 与 字典树"></a>immutable 与 字典树</h4><p><code>immutableJS</code>的底层就是<code>share + tree</code>. 这样看的话，其实和字典树是一致的。</p>
+<h5 id="immutable-与-字典树"><a href="#immutable-与-字典树" class="headerlink" title="immutable 与 字典树"></a>immutable 与 字典树</h5><p><code>immutableJS</code>的底层就是<code>share + tree</code>. 这样看的话，其实和字典树是一致的。</p>
 <p>相关算法：</p>
 <ul>
 <li><a href="../problems/208.implement-trie-prefix-tree.md">208.implement-trie-prefix-tree</a></li>
 </ul>
 <h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><p>前面讲的数据结构都可以看成是图的特例。 前面提到了二叉树完全可以实现其他树结构，<br>其实有向图也完全可以实现无向图和混合图，因此有向图的研究一直是重点考察对象。</p>
 <p>图论〔Graph Theory〕是数学的一个分支。它以图为研究对象。图论中的图是由若干给定的点及连接两点的线所构成的图形，这种图形通常用来描述某些事物之间的某种特定关系，用点代表事物，用连接两点的线表示相应两个事物间具有这种关系。</p>
-<h2 id="图的表示方法"><a href="#图的表示方法" class="headerlink" title="图的表示方法"></a>图的表示方法</h2><ul>
+<h3 id="图的表示方法"><a href="#图的表示方法" class="headerlink" title="图的表示方法"></a>图的表示方法</h3><ul>
 <li>邻接矩阵(常见)</li>
 </ul>
 <p>空间复杂度 O(n^2),n 为顶点个数。</p>
@@ -592,7 +592,7 @@
 <p>可以看出在无向图中，邻接矩阵关于对角线对称，而邻接链表总有两条对称的边<br>而在有向无权图中：</p>
 <p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1gaji7giyerj30k00aq0ux.jpg" alt></p>
 <p>（图片来自 <a href="https://zhuanlan.zhihu.com/p/25498681）" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/25498681）</a></p>
-<h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><p>图的遍历就是要找出图中所有的点，一般有以下两种方法：</p>
+<h3 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h3><p>图的遍历就是要找出图中所有的点，一般有以下两种方法：</p>
 <ol>
 <li>深度优先遍历：(Depth First Search, DFS)</li>
 </ol>
@@ -612,7 +612,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-03T17:59:38+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-03T18:06:08+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年1月3日</p>
@@ -858,7 +858,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#线性结构"><span class="toc-text">线性结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组"><span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#React-Hooks"><span class="toc-text">React Hooks</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#队列"><span class="toc-text">队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈"><span class="toc-text">栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链表"><span class="toc-text">链表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#React-Fiber"><span class="toc-text">React Fiber</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非线性结构"><span class="toc-text">非线性结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#树"><span class="toc-text">树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉树"><span class="toc-text">二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#堆"><span class="toc-text">堆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二叉查找树"><span class="toc-text">二叉查找树</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉平衡树"><span class="toc-text">二叉平衡树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#AVL"><span class="toc-text">AVL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#红黑树"><span class="toc-text">红黑树</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字典树-前缀树"><span class="toc-text">字典树(前缀树)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#immutable-与-字典树"><span class="toc-text">immutable 与 字典树</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图"><span class="toc-text">图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图的表示方法"><span class="toc-text">图的表示方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图的遍历"><span class="toc-text">图的遍历</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#线性结构"><span class="toc-text">线性结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组"><span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#React-Hooks"><span class="toc-text">React Hooks</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#队列"><span class="toc-text">队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈"><span class="toc-text">栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链表"><span class="toc-text">链表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#React-Fiber"><span class="toc-text">React Fiber</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非线性结构"><span class="toc-text">非线性结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#树"><span class="toc-text">树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#二叉树"><span class="toc-text">二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#堆"><span class="toc-text">堆</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二叉查找树"><span class="toc-text">二叉查找树</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二叉平衡树"><span class="toc-text">二叉平衡树</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#AVL"><span class="toc-text">AVL</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#红黑树"><span class="toc-text">红黑树</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字典树-前缀树"><span class="toc-text">字典树(前缀树)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#immutable-与-字典树"><span class="toc-text">immutable 与 字典树</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图"><span class="toc-text">图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#图的表示方法"><span class="toc-text">图的表示方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图的遍历"><span class="toc-text">图的遍历</span></a></li></ol></li></ol>
     </div>
   </section>
 
