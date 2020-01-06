@@ -477,34 +477,6 @@
   </entry>
   
   <entry>
-    <title>《一文看懂浏览器事件循环》</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/event-loop/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/event-loop/</id>
-    <published>2019-12-11T04:35:19.044Z</published>
-    <updated>2019-12-11T04:35:19.044Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;实际上浏览器的事件循环标准是由 HTML 标准规定的，具体来说就是由whatwg规定的，具体内容可以参考&lt;a href=&quot;https://html.spec.whatwg.org/multipage/webappapis.html#event-loops&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;event-loops in browser&lt;/a&gt;。而NodeJS中事件循环其实也略有不同，具体可以参考&lt;a href=&quot;https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#what-is-the-event-loop&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;event-loops in nodejs&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;我们在讲解&lt;code&gt;事件模型&lt;/code&gt;的时候，多次提到了事件循环。 &lt;code&gt;事件&lt;/code&gt;指的是其所处理的对象就是事件本身，每一个浏览器都至少有一个事件循环，一个事件循环至少有一个任务队列。&lt;code&gt;循环&lt;/code&gt;指的是其永远处于一个“无限循环”中。不断将注册的回调函数推入到执行栈。&lt;/p&gt;
-&lt;p&gt;那么事件循环究竟是用来做什么的？浏览器的事件循环和NodeJS的事件循环有什么不同？让我们从零开始，一步一步探究背后的原因。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="浏览器" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="浏览器" scheme="https://lucifer.ren/blog/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
-      <category term="事件循环" scheme="https://lucifer.ren/blog/tags/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/"/>
-    
-  </entry>
-  
-  <entry>
     <title>《LeetCode题解攻略》 - 草稿目录</title>
     <link href="https://lucifer.ren/blog/2019/12/11/draft/"/>
     <id>https://lucifer.ren/blog/2019/12/11/draft/</id>
@@ -531,6 +503,34 @@
       <category term="书" scheme="https://lucifer.ren/blog/tags/%E4%B9%A6/"/>
     
       <category term="草稿" scheme="https://lucifer.ren/blog/tags/%E8%8D%89%E7%A8%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《一文看懂浏览器事件循环》</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/event-loop/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/event-loop/</id>
+    <published>2019-12-11T04:35:19.044Z</published>
+    <updated>2019-12-11T04:35:19.044Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;实际上浏览器的事件循环标准是由 HTML 标准规定的，具体来说就是由whatwg规定的，具体内容可以参考&lt;a href=&quot;https://html.spec.whatwg.org/multipage/webappapis.html#event-loops&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;event-loops in browser&lt;/a&gt;。而NodeJS中事件循环其实也略有不同，具体可以参考&lt;a href=&quot;https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#what-is-the-event-loop&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;event-loops in nodejs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我们在讲解&lt;code&gt;事件模型&lt;/code&gt;的时候，多次提到了事件循环。 &lt;code&gt;事件&lt;/code&gt;指的是其所处理的对象就是事件本身，每一个浏览器都至少有一个事件循环，一个事件循环至少有一个任务队列。&lt;code&gt;循环&lt;/code&gt;指的是其永远处于一个“无限循环”中。不断将注册的回调函数推入到执行栈。&lt;/p&gt;
+&lt;p&gt;那么事件循环究竟是用来做什么的？浏览器的事件循环和NodeJS的事件循环有什么不同？让我们从零开始，一步一步探究背后的原因。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="浏览器" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="浏览器" scheme="https://lucifer.ren/blog/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+      <category term="事件循环" scheme="https://lucifer.ren/blog/tags/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/"/>
     
   </entry>
   
