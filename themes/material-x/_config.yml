@@ -13,6 +13,7 @@ info:
 ############################### 主题风格 ###############################
 # style: material    # material: 导航栏和标题栏背景是主题色
 style: pure # pure: 导航栏和标题栏背景是白色
+word_count: true # 开启字数统计
 
 ############################### 服务开关 ###############################
 scrollreveal: true
@@ -105,7 +106,7 @@ layout:
   # 文章列表（主页、自定义的列表）布局
   posts:
     # 列表中每一篇文章的meta信息
-    meta: [title, author, date, categories, top]
+    meta: [title, author, date, categories, top, word]
     # 列表类页面的侧边栏
     sidebar: [author, list, grid, category, tagcloud]
   # 文章页面布局
@@ -115,7 +116,7 @@ layout:
     # 默认的meta信息，文章中没有配置则按照这里的配置来显示，设置为false则不显示
     # 其中，title只在header中有效，music和thumbnail无需在这里设置，文章中有则显示
     # 如果tags放置在meta.header中，那么在post列表中不显示（因为卡片下方已经有了）
-    header: [title, author, date, categories, counter, top]
+    header: [title, author, date, categories, counter, top, word]
     footer: [updated, tags, share]
     # 文章页面的侧边栏
     sidebar: [author, toc, grid, category, tagcloud, list, related_posts]

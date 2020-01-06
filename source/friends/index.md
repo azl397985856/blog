@@ -21,8 +21,8 @@ links:
         border: "none"
         tags:
           - 美图秀秀
-          - lucifer师门
-  - group: Java大佬
+          - lucifer 师门
+  - group: Java 大佬
     icon: fab fa-java
     items:
       - name: AugustRush
@@ -42,6 +42,14 @@ links:
         backgroundColor: "#49c0f0"
         tags:
           - Leetcode
+          - 算法竞赛
+      - name: CodingMan
+        avatar: https://tva1.sinaimg.cn/large/006tNbRwly1gamuvwgctyj30kp0kpq42.jpg
+        url: https://www.codingman.club
+        textColor: "#fff"
+        backgroundColor: "#49c0f0"
+        tags:
+          - C++
           - 算法竞赛
 ---
 
