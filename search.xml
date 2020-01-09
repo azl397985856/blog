@@ -29,6 +29,39 @@
     
     
     <entry>
+      <title>掌握前缀表达式真的可以为所欲为！</title>
+      <link href="/blog/2020/01/09/1310.xor-queries-of-a-subarray/"/>
+      <url>/blog/2020/01/09/1310.xor-queries-of-a-subarray/</url>
+      
+        <content type="html"><![CDATA[<p>前缀表达式是一种非常常见和重要的知识点，如果你还不知道，那就赶紧点进来看看吧！</p><a id="more"></a><h1 id="题目地址（1310-子数组异或查询）"><a href="#题目地址（1310-子数组异或查询）" class="headerlink" title="题目地址（1310. 子数组异或查询）"></a>题目地址（1310. 子数组异或查询）</h1><p><a href="https://leetcode-cn.com/problems/xor-queries-of-a-subarray" target="_blank" rel="noopener">https://leetcode-cn.com/problems/xor-queries-of-a-subarray</a></p><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">有一个正整数数组 arr，现给你一个对应的查询数组 queries，其中 queries[i] = [Li, Ri]。</span><br><span class="line"></span><br><span class="line">对于每个查询 i，请你计算从 Li 到 Ri 的 XOR 值（即 arr[Li] xor arr[Li+1] xor ... xor arr[Ri]）作为本次查询的结果。</span><br><span class="line"></span><br><span class="line">并返回一个包含给定查询 queries 所有结果的数组。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">示例 1：</span><br><span class="line"></span><br><span class="line">输入：arr = [1,3,4,8], queries = [[0,1],[1,2],[0,3],[3,3]]</span><br><span class="line">输出：[2,7,14,8]</span><br><span class="line">解释：</span><br><span class="line">数组中元素的二进制表示形式是：</span><br><span class="line">1 = 0001</span><br><span class="line">3 = 0011</span><br><span class="line">4 = 0100</span><br><span class="line">8 = 1000</span><br><span class="line">查询的 XOR 值为：</span><br><span class="line">[0,1] = 1 xor 3 = 2</span><br><span class="line">[1,2] = 3 xor 4 = 7</span><br><span class="line">[0,3] = 1 xor 3 xor 4 xor 8 = 14</span><br><span class="line">[3,3] = 8</span><br><span class="line">示例 2：</span><br><span class="line"></span><br><span class="line">输入：arr = [4,8,2,10], queries = [[2,3],[1,3],[0,0],[0,3]]</span><br><span class="line">输出：[8,0,4,4]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">1 &lt;= arr.length &lt;= 3 * 10^4</span><br><span class="line">1 &lt;= arr[i] &lt;= 10^9</span><br><span class="line">1 &lt;= queries.length &lt;= 3 * 10^4</span><br><span class="line">queries[i].length == 2</span><br><span class="line">0 &lt;= queries[i][0] &lt;= queries[i][1] &lt; arr.length</span><br></pre></td></tr></table></figure><h2 id="暴力法"><a href="#暴力法" class="headerlink" title="暴力法"></a>暴力法</h2><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>最直观的思路是双层循环即可，果不其然超时了。</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">xorQueries</span><span class="params">(self, arr: List[int], queries: List[List[int]])</span> -&gt; List[int]:</span></span><br><span class="line"> res = []</span><br><span class="line">        <span class="keyword">for</span> (L, R) <span class="keyword">in</span> queries:</span><br><span class="line">            i = L</span><br><span class="line">            xor = <span class="number">0</span></span><br><span class="line">            <span class="keyword">while</span> i &lt;= R:</span><br><span class="line">                xor ^= arr[i]</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            res.append(xor)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure><h2 id="前缀表达式"><a href="#前缀表达式" class="headerlink" title="前缀表达式"></a>前缀表达式</h2><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>比较常见的是前缀和，这个概念其实很容易理解，即一个数组中，第 n 位存储的是数组前 n 个数字的和。</p><p>对 [1,2,3,4,5,6] 来说，其前缀和可以是 pre=[1,3,6,10,15,21]。我们可以使用公式 pre[𝑖]=pre[𝑖−1]+nums[𝑖]得到每一位前缀和的值，从而通过前缀和进行相应的计算和解题。其实前缀和的概念很简单，但困难的是如何在题目中使用前缀和以及如何使用前缀和的关系来进行解题。</p><p>这道题是前缀对前缀异或，我们利用了异或的性质 <code>x ^ y ^ x = y</code>。</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaqll5r048j30fm0bfglz.jpg" alt></p><h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><p>代码支持 Python3，Java，C++：</p><p>Python Code：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># @lc app=leetcode.cn id=1218 lang=python3</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># [1218] 最长定差子序列</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># @lc code=start</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">xorQueries</span><span class="params">(self, arr: List[int], queries: List[List[int]])</span> -&gt; List[int]:</span></span><br><span class="line">pre = [<span class="number">0</span>]</span><br><span class="line">        res = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(arr)):</span><br><span class="line">            pre.append(pre[i] ^ arr[i])</span><br><span class="line">        <span class="keyword">for</span> (L, R) <span class="keyword">in</span> queries:</span><br><span class="line">            res.append(pre[L] ^ pre[R + <span class="number">1</span>])</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="comment"># @lc code=end</span></span><br></pre></td></tr></table></figure><p>Java Code：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] xorQueries(<span class="keyword">int</span>[] arr, <span class="keyword">int</span>[][] queries) &#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">int</span>[] preXor = <span class="keyword">new</span> <span class="keyword">int</span>[arr.length];</span><br><span class="line">      preXor[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arr.length; i++)</span><br><span class="line">          preXor[i] = preXor[i - <span class="number">1</span>] ^ arr[i - <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">      <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[queries.length];</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; queries.length; i++) &#123;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">int</span> left = queries[i][<span class="number">0</span>], right = queries[i][<span class="number">1</span>];</span><br><span class="line">          res[i] = arr[right] ^ preXor[right] ^ preXor[left];</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> res;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><p>C++ Code:</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; xorQueries(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; queries) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;res;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;arr.<span class="built_in">size</span>(); ++i)&#123;</span><br><span class="line">            arr[i]^=arr[i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;temp :queries)&#123;</span><br><span class="line">            <span class="keyword">if</span>(temp[<span class="number">0</span>]==<span class="number">0</span>)&#123;</span><br><span class="line">                res.push_back(arr[temp[<span class="number">1</span>]]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                res.push_back(arr[temp[<span class="number">0</span>]<span class="number">-1</span>]^arr[temp[<span class="number">1</span>]]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h2 id="关键点解析"><a href="#关键点解析" class="headerlink" title="关键点解析"></a>关键点解析</h2><ul><li>异或的性质 x ^ y ^ x = y</li><li>前缀表达式</li></ul><h2 id="相关题目"><a href="#相关题目" class="headerlink" title="相关题目"></a>相关题目</h2><ul><li><a href="https://leetcode-cn.com/problems/range-sum-query-immutable/description/" target="_blank" rel="noopener">303. 区域和检索 - 数组不可变</a></li></ul><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1gaql7eqyg6j30u00ft0vx.jpg" alt></p><ul><li><a href="https://lucifer.ren/blog/2019/12/11/leetcode-1186/">1186.删除一次得到子数组最大和</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构 </category>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 前缀和 </tag>
+            
+            <tag> 前缀表达式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>每日一荐 2019-12 汇总</title>
       <link href="/blog/2020/01/01/daily-featured-2019-12/"/>
       <url>/blog/2020/01/01/daily-featured-2019-12/</url>
@@ -146,9 +179,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> LeetCode </category>
           
@@ -161,11 +194,11 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
-            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> LeetCode </tag>
             
             <tag> 字节跳动 </tag>
             
@@ -210,13 +243,13 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
           
-          <category> 数组 </category>
+          <category> 算法 </category>
           
           <category> LeetCode </category>
+          
+          <category> 数组 </category>
           
           <category> 循环移位 </category>
           
@@ -331,9 +364,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 学习方法 </category>
           
@@ -344,15 +377,28 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
-            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
             
+            <tag> LeetCode </tag>
+            
             <tag> 学习方法 </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/blog/2019/12/11/ibinhouse/"/>
+      <url>/blog/2019/12/11/ibinhouse/</url>
+      
+        <content type="html"><![CDATA[<p>信息输入大脑后，遗忘也就随之开始了。遗忘率随时间的流逝而先快后慢，特别是在刚刚识记的短时间里，遗忘最快，这就是著名的艾宾浩斯遗忘曲线。</p>]]></content>
+      
+      
       
     </entry>
     
@@ -382,19 +428,6 @@
             <tag> 学习方法 </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/blog/2019/12/11/ibinhouse/"/>
-      <url>/blog/2019/12/11/ibinhouse/</url>
-      
-        <content type="html"><![CDATA[<p>信息输入大脑后，遗忘也就随之开始了。遗忘率随时间的流逝而先快后慢，特别是在刚刚识记的短时间里，遗忘最快，这就是著名的艾宾浩斯遗忘曲线。</p>]]></content>
-      
-      
       
     </entry>
     
@@ -515,11 +548,11 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
-            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> LeetCode </tag>
             
             <tag> 书 </tag>
             
@@ -684,26 +717,26 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 子序列 </category>
           
-          <category> 数组 </category>
-          
           <category> LeetCode </category>
+          
+          <category> 数组 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> LeetCode </tag>
-            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> LeetCode </tag>
             
             <tag> 数组 </tag>
             
