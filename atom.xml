@@ -43,6 +43,34 @@
   </entry>
   
   <entry>
+    <title>LeetCode一道令人发指的陷阱题</title>
+    <link href="https://lucifer.ren/blog/2020/01/10/1297.maximum-number-of-occurrences-of-a-substring/"/>
+    <id>https://lucifer.ren/blog/2020/01/10/1297.maximum-number-of-occurrences-of-a-substring/</id>
+    <published>2020-01-10T04:34:25.412Z</published>
+    <updated>2020-01-10T04:36:32.041Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;LeetCode 有一些题目会给你设置陷阱，给你一些干扰信息。这个时候你需要小心，不要被他们带跑偏了。那么是什么样的陷阱呢？让我们来看一下！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="陷阱题" scheme="https://lucifer.ren/blog/tags/%E9%99%B7%E9%98%B1%E9%A2%98/"/>
+    
+      <category term="滑动窗口" scheme="https://lucifer.ren/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
+    
+  </entry>
+  
+  <entry>
     <title>掌握前缀表达式真的可以为所欲为！</title>
     <link href="https://lucifer.ren/blog/2020/01/09/1310.xor-queries-of-a-subarray/"/>
     <id>https://lucifer.ren/blog/2020/01/09/1310.xor-queries-of-a-subarray/</id>
@@ -168,42 +196,6 @@
   </entry>
   
   <entry>
-    <title>一文搞懂《链表反转》</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/reverseList/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/reverseList/</id>
-    <published>2019-12-11T04:35:19.046Z</published>
-    <updated>2019-12-11T04:35:19.046Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;翻转链表一直都是热门题目，笔者就在某大型互联网公司的面试题中碰到过这种题目，这种题目很常常见，相对应的变形和扩展也很多，今天我们就来攻克它吧。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-      <category term="链表反转" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC/"/>
-    
-      <category term="链表" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="字节跳动" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
-    
-      <category term="链表" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E8%A1%A8/"/>
-    
-  </entry>
-  
-  <entry>
     <title>【RFC】XXX 公司监控体系需求与技术调研</title>
     <link href="https://lucifer.ren/blog/2019/12/11/rfc-monitor/"/>
     <id>https://lucifer.ren/blog/2019/12/11/rfc-monitor/</id>
@@ -228,54 +220,6 @@
       <category term="技术调研" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/"/>
     
       <category term="监控" scheme="https://lucifer.ren/blog/tags/%E7%9B%91%E6%8E%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>文科生都能看懂的循环移位算法</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/rotate-list/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/rotate-list/</id>
-    <published>2019-12-11T04:35:19.046Z</published>
-    <updated>2019-12-21T11:32:55.151Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;循环移位问题真的是一个特别经典的问题了，今天我们就来攻克它。&lt;/p&gt;
-&lt;p&gt;循环移位的表现形式有很多种，就数据结构来说包括&lt;code&gt;数组&lt;/code&gt;，&lt;code&gt;字符串&lt;/code&gt;，&lt;code&gt;链表&lt;/code&gt;等。就算法来说，有&lt;code&gt;包含问题&lt;/code&gt;，&lt;code&gt;直接移动问题&lt;/code&gt;，还有&lt;code&gt;查找问题&lt;/code&gt;等。&lt;/p&gt;
-&lt;p&gt;虽然表现形式有很多，但是本质都是一样的，因为从逻辑上来讲其实他们都是线性数据结构，那么让我们来看一下吧。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-      <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="循环移位" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D/"/>
-    
-      <category term="链表" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/"/>
-    
-      <category term="字符串" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-      <category term="编程之美" scheme="https://lucifer.ren/blog/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数组" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="链表" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E8%A1%A8/"/>
-    
-      <category term="循环移位" scheme="https://lucifer.ren/blog/tags/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D/"/>
-    
-      <category term="字符串" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-      <category term="编程之美" scheme="https://lucifer.ren/blog/tags/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
     
   </entry>
   
@@ -336,6 +280,90 @@
     
     
       <category term="日记" scheme="https://lucifer.ren/blog/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一文搞懂《链表反转》</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/reverseList/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/reverseList/</id>
+    <published>2019-12-11T04:35:19.046Z</published>
+    <updated>2019-12-11T04:35:19.046Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;翻转链表一直都是热门题目，笔者就在某大型互联网公司的面试题中碰到过这种题目，这种题目很常常见，相对应的变形和扩展也很多，今天我们就来攻克它吧。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="链表反转" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC/"/>
+    
+      <category term="链表" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="字节跳动" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    
+      <category term="链表" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>文科生都能看懂的循环移位算法</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/rotate-list/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/rotate-list/</id>
+    <published>2019-12-11T04:35:19.046Z</published>
+    <updated>2019-12-21T11:32:55.151Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;循环移位问题真的是一个特别经典的问题了，今天我们就来攻克它。&lt;/p&gt;
+&lt;p&gt;循环移位的表现形式有很多种，就数据结构来说包括&lt;code&gt;数组&lt;/code&gt;，&lt;code&gt;字符串&lt;/code&gt;，&lt;code&gt;链表&lt;/code&gt;等。就算法来说，有&lt;code&gt;包含问题&lt;/code&gt;，&lt;code&gt;直接移动问题&lt;/code&gt;，还有&lt;code&gt;查找问题&lt;/code&gt;等。&lt;/p&gt;
+&lt;p&gt;虽然表现形式有很多，但是本质都是一样的，因为从逻辑上来讲其实他们都是线性数据结构，那么让我们来看一下吧。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="循环移位" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D/"/>
+    
+      <category term="链表" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/"/>
+    
+      <category term="字符串" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="编程之美" scheme="https://lucifer.ren/blog/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数组" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="链表" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+      <category term="循环移位" scheme="https://lucifer.ren/blog/tags/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D/"/>
+    
+      <category term="字符串" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="编程之美" scheme="https://lucifer.ren/blog/tags/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
     
   </entry>
   
@@ -531,34 +559,6 @@
       <category term="书" scheme="https://lucifer.ren/blog/tags/%E4%B9%A6/"/>
     
       <category term="草稿" scheme="https://lucifer.ren/blog/tags/%E8%8D%89%E7%A8%BF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《一文看懂浏览器事件循环》</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/event-loop/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/event-loop/</id>
-    <published>2019-12-11T04:35:19.044Z</published>
-    <updated>2019-12-11T04:35:19.044Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;实际上浏览器的事件循环标准是由 HTML 标准规定的，具体来说就是由whatwg规定的，具体内容可以参考&lt;a href=&quot;https://html.spec.whatwg.org/multipage/webappapis.html#event-loops&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;event-loops in browser&lt;/a&gt;。而NodeJS中事件循环其实也略有不同，具体可以参考&lt;a href=&quot;https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#what-is-the-event-loop&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;event-loops in nodejs&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;我们在讲解&lt;code&gt;事件模型&lt;/code&gt;的时候，多次提到了事件循环。 &lt;code&gt;事件&lt;/code&gt;指的是其所处理的对象就是事件本身，每一个浏览器都至少有一个事件循环，一个事件循环至少有一个任务队列。&lt;code&gt;循环&lt;/code&gt;指的是其永远处于一个“无限循环”中。不断将注册的回调函数推入到执行栈。&lt;/p&gt;
-&lt;p&gt;那么事件循环究竟是用来做什么的？浏览器的事件循环和NodeJS的事件循环有什么不同？让我们从零开始，一步一步探究背后的原因。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="浏览器" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="浏览器" scheme="https://lucifer.ren/blog/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
-      <category term="事件循环" scheme="https://lucifer.ren/blog/tags/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/"/>
     
   </entry>
   
