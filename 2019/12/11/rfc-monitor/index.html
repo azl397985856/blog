@@ -379,13 +379,16 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量。</p>
+        <p>线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量，建立完善的监控体系可以很好的解决这个问题。</p>
+<a id="more"></a>
+
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量。</p>
 <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>期望有一套工具，系统或者平台，可以满足：</p>
 <ol>
 <li>在收到用户反馈的时候能够快速重现问题并解决。</li>
 <li>测试同学发现问题，不需要花费大量事件和开发人员重现，沟通，以及记录问题重现路径等</li>
 <li>线上发现问题可以进行告警，防止大规模用户有问题，并且不能及时感知和解决。</li>
-<li>缩短团队内部BUG修复的闭环流程，减少非本质复杂度问题的干扰，快速将问题聚焦到具体的代码。</li>
+<li>缩短团队内部 BUG 修复的闭环流程，减少非本质复杂度问题的干扰，快速将问题聚焦到具体的代码。</li>
 </ol>
 <p>带着上面的需求，我们来看下市面上已有的经典方案， 在这里挑选几个具有代表性的。</p>
 <h2 id="市面上已有的方案对比"><a href="#市面上已有的方案对比" class="headerlink" title="市面上已有的方案对比"></a>市面上已有的方案对比</h2><h3 id="LogRocket"><a href="#LogRocket" class="headerlink" title="LogRocket"></a>LogRocket</h3><p>一句话概括： 用看录像的方式重现问题。</p>
@@ -398,24 +401,24 @@
 <h4 id="价格"><a href="#价格" class="headerlink" title="价格"></a>价格</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8lgqwlgj30rg0n3wf0.jpg" alt></p>
 <h3 id="Sentry"><a href="#Sentry" class="headerlink" title="Sentry"></a>Sentry</h3><p>一句话概括： 开源，强大的监控平台。</p>
 <p>官网地址： <a href="https://sentry.io/" target="_blank" rel="noopener">https://sentry.io/</a></p>
-<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p>功能较多，提供了较多的概念和功能，比如Context，ENvironments，Breadcrumbs等。另外其和CI，CD集成地也非常好。 详细内容： <a href="https://docs.sentry.io/workflow/releases/?platform=node" target="_blank" rel="noopener">https://docs.sentry.io/workflow/releases/?platform=node</a></p>
-<p>另外其支持的平台和扩展功能非常多，如果对这部分有特殊要求，Sentry无疑是优先考虑的选择。</p>
+<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p>功能较多，提供了较多的概念和功能，比如 Context，ENvironments，Breadcrumbs 等。另外其和 CI，CD 集成地也非常好。 详细内容： <a href="https://docs.sentry.io/workflow/releases/?platform=node" target="_blank" rel="noopener">https://docs.sentry.io/workflow/releases/?platform=node</a></p>
+<p>另外其支持的平台和扩展功能非常多，如果对这部分有特殊要求，Sentry 无疑是优先考虑的选择。</p>
 <h4 id="接入方式-1"><a href="#接入方式-1" class="headerlink" title="接入方式"></a>接入方式</h4><ul>
-<li><p>Sign up for an account</p>
-</li>
-<li><p>Install your SDK</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Using yarn</span></span><br><span class="line">$ yarn add @sentry/node@5.8.0</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Configure it</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Sentry = <span class="built_in">require</span>(<span class="string">'@sentry/node'</span>);</span><br><span class="line">Sentry.init(&#123; <span class="attr">dsn</span>: <span class="string">'https://&lt;key&gt;@sentry.io/&lt;project&gt;'</span> &#125;);</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>Sign up for an account</li>
+<li>Install your SDK</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Using yarn</span></span><br><span class="line">$ yarn add @sentry/node@5.8.0</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Configure it</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Sentry = <span class="built_in">require</span>(<span class="string">"@sentry/node"</span>);</span><br><span class="line">Sentry.init(&#123; <span class="attr">dsn</span>: <span class="string">"https://&lt;key&gt;@sentry.io/&lt;project&gt;"</span> &#125;);</span><br></pre></td></tr></table></figure>
+
 <h4 id="价格-1"><a href="#价格-1" class="headerlink" title="价格"></a>价格</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8qipkskj30x10jt758.jpg" alt></p>
 <h3 id="FunDebug"><a href="#FunDebug" class="headerlink" title="FunDebug"></a>FunDebug</h3><p>一句话概括：国内知名度较高的监控工具，国内业务这块很有竞争力。</p>
 <p><a href="https://www.fundebug.com/" target="_blank" rel="noopener">https://www.fundebug.com/</a></p>
-<h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h4><p>支持小程序，小游戏。多种现成的报警方式，支持WebHook，智能报警（同样的代码产生的同一个错误，在不同浏览器上的报错信息是各不相同的），内置团队协作工具。</p>
-<h4 id="接入方式-2"><a href="#接入方式-2" class="headerlink" title="接入方式"></a>接入方式</h4><p>这里以Vue项目为例。</p>
+<h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h4><p>支持小程序，小游戏。多种现成的报警方式，支持 WebHook，智能报警（同样的代码产生的同一个错误，在不同浏览器上的报错信息是各不相同的），内置团队协作工具。</p>
+<h4 id="接入方式-2"><a href="#接入方式-2" class="headerlink" title="接入方式"></a>接入方式</h4><p>这里以 Vue 项目为例。</p>
 <ol>
 <li><p>免费注册</p>
 </li>
@@ -426,13 +429,13 @@
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install fundebug-javascript fundebug-vue --save</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> fundebug <span class="keyword">from</span> <span class="string">"fundebug-javascript"</span>;</span><br><span class="line"><span class="keyword">import</span> fundebugVue <span class="keyword">from</span> <span class="string">"fundebug-vue"</span>;</span><br><span class="line">fundebug.init(&#123;</span><br><span class="line">    apikey: <span class="string">"API-KEY"</span></span><br><span class="line">&#125;)</span><br><span class="line">fundebugVue(fundebug, Vue);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> fundebug <span class="keyword">from</span> <span class="string">"fundebug-javascript"</span>;</span><br><span class="line"><span class="keyword">import</span> fundebugVue <span class="keyword">from</span> <span class="string">"fundebug-vue"</span>;</span><br><span class="line">fundebug.init(&#123;</span><br><span class="line">  apikey: <span class="string">"API-KEY"</span></span><br><span class="line">&#125;);</span><br><span class="line">fundebugVue(fundebug, Vue);</span><br></pre></td></tr></table></figure>
 
 <h4 id="价格-2"><a href="#价格-2" class="headerlink" title="价格"></a>价格</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w9mhtq44j30x60mb3z3.jpg" alt></p>
 <h2 id="其他后期可能功能点"><a href="#其他后期可能功能点" class="headerlink" title="其他后期可能功能点"></a>其他后期可能功能点</h2><ol>
 <li><p>性能监控</p>
 </li>
-<li><p>用户行为监控（已经有埋点，不不确定是否可以Cover这个需求）</p>
+<li><p>用户行为监控（已经有埋点，不不确定是否可以 Cover 这个需求）</p>
 </li>
 </ol>
 <h2 id="自研"><a href="#自研" class="headerlink" title="自研"></a>自研</h2><p>假设我们已经做好了我们自己的监控平台，我们需要对公司内部甚至外部宣传我们的监控平台，我们会怎么进行宣传。</p>
@@ -451,30 +454,32 @@
 <h3 id="架构与选型"><a href="#架构与选型" class="headerlink" title="架构与选型"></a>架构与选型</h3><p>对外都宣传完了，我们需要具体开始进行架构与选型了。</p>
 <h4 id="定义对外接口"><a href="#定义对外接口" class="headerlink" title="定义对外接口"></a>定义对外接口</h4><p>我们对外宣传的目标是<code>接入方便，侵入性小</code>。因此一定要简洁，这里参考了以上几个平台的写法，其实这几个平台的都是大同小异。</p>
 <ol>
-<li><p>注册应用获取AppId</p>
-</li>
-<li><p>安装</p>
+<li>注册应用获取 AppId</li>
+<li>安装</li>
+</ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save @lucifer/monitor</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>引用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> monitor <span class="keyword">from</span> <span class="string">'@lucifer/monitor'</span></span><br><span class="line">monitor.init(&#123;</span><br><span class="line">    user: &#123;</span><br><span class="line">        name: <span class="string">''</span>,</span><br><span class="line">        email: <span class="string">''</span>,</span><br><span class="line">        mobile: <span class="string">''</span>,</span><br><span class="line">        isVIP: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    appId: <span class="string">'lucifer520'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>多端和多框架支持</p>
-</li>
+
+<ol start="3">
+<li>引用</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> monitor <span class="keyword">from</span> <span class="string">"@lucifer/monitor"</span>;</span><br><span class="line">monitor.init(&#123;</span><br><span class="line">  user: &#123;</span><br><span class="line">    name: <span class="string">""</span>,</span><br><span class="line">    email: <span class="string">""</span>,</span><br><span class="line">    mobile: <span class="string">""</span>,</span><br><span class="line">    isVIP: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  appId: <span class="string">"lucifer520"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>多端和多框架支持</li>
 </ol>
 <p>Vue：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue form <span class="string">'vue'</span>;</span><br><span class="line"><span class="keyword">import</span> monitor <span class="keyword">from</span> <span class="string">'@lucifer/connectors/vue'</span>;</span><br><span class="line">monitor.init(&#123;</span><br><span class="line">    user: &#123;</span><br><span class="line">        name: <span class="string">''</span>,</span><br><span class="line">        email: <span class="string">''</span>,</span><br><span class="line">        mobile: <span class="string">''</span>,</span><br><span class="line">        isVIP: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    appId: <span class="string">'lucifer520'</span></span><br><span class="line">&#125;)</span><br><span class="line">monitor.use(Vue)</span><br></pre></td></tr></table></figure>
 
 <p>Wechat：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> monitor <span class="keyword">from</span> <span class="string">'@lucifer/connectors/wechat'</span>;</span><br><span class="line">monitor.init(&#123;</span><br><span class="line">    user: &#123;</span><br><span class="line">        name: <span class="string">''</span>,</span><br><span class="line">        email: <span class="string">''</span>,</span><br><span class="line">        mobile: <span class="string">''</span>,</span><br><span class="line">        isVIP: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    appId: <span class="string">'lucifer520'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> monitor <span class="keyword">from</span> <span class="string">"@lucifer/connectors/wechat"</span>;</span><br><span class="line">monitor.init(&#123;</span><br><span class="line">  user: &#123;</span><br><span class="line">    name: <span class="string">""</span>,</span><br><span class="line">    email: <span class="string">""</span>,</span><br><span class="line">    mobile: <span class="string">""</span>,</span><br><span class="line">    isVIP: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  appId: <span class="string">"lucifer520"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h4 id="定义内部接口"><a href="#定义内部接口" class="headerlink" title="定义内部接口"></a>定义内部接口</h4><p>架构图：</p>
 <p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8xj6xnibej30xd0hzgo5.jpg" alt></p>
 <p>接口系统交互图会在详细设计中给出，这里只给出大致范围：</p>
 <ul>
-<li>logs服务器和告警平台的交互接口</li>
-<li>rules的规则解析</li>
-<li>logs的解析</li>
+<li>logs 服务器和告警平台的交互接口</li>
+<li>rules 的规则解析</li>
+<li>logs 的解析</li>
 <li>构建系统对接</li>
 <li>调试系统对接</li>
 <li>…</li>
@@ -495,10 +500,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-12-11T12:35:19+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-10T13:21:06+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2019年12月11日</p>
+    <p>更新于 2020年1月10日</p>
   </a>
 </div>
 
@@ -528,7 +533,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2019/12/11/rfc-monitor/&title=【RFC】XXX 公司监控体系需求与技术调研 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2019/12/11/rfc-monitor/&title=【RFC】XXX 公司监控体系需求与技术调研 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量，建立完善的监控体系可以很好的解决这个问题。"
           
           >
           
@@ -540,7 +545,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2019/12/11/rfc-monitor/&title=【RFC】XXX 公司监控体系需求与技术调研 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2019/12/11/rfc-monitor/&title=【RFC】XXX 公司监控体系需求与技术调研 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量，建立完善的监控体系可以很好的解决这个问题。"
           
           >
           
@@ -552,7 +557,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2019/12/11/rfc-monitor/&title=【RFC】XXX 公司监控体系需求与技术调研 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary="
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2019/12/11/rfc-monitor/&title=【RFC】XXX 公司监控体系需求与技术调研 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量，建立完善的监控体系可以很好的解决这个问题。"
           
           >
           
@@ -600,16 +605,16 @@
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/blog/2019/12/11/tech-conf/" rel="prev" title="值得关注的技术类大会">
+                              <a href="/blog/2019/12/11/reverseList/" rel="prev" title="一文搞懂《链表反转》">
                                   
-                                      值得关注的技术类大会
+                                      一文搞懂《链表反转》
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/技术大会/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 技术大会</a> <a class="tag" href="/blog/tags/JSConf/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> JSConf</a> <a class="tag" href="/blog/tags/Google-IO/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Google IO</a> <a class="tag" href="/blog/tags/D2/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> D2</a> <a class="tag" href="/blog/tags/QCon/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> QCon</a>
+                                  <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a> <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/字节跳动/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 字节跳动</a> <a class="tag" href="/blog/tags/链表/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 链表</a>
                               </h6>
                           
                       </span>
