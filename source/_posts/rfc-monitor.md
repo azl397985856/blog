@@ -3,19 +3,22 @@ title: 【RFC】XXX 公司监控体系需求与技术调研
 tags: [RFC, 技术调研, 监控]
 ---
 
+线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量，建立完善的监控体系可以很好的解决这个问题。
+
+<!-- more -->
 
 ## 背景
 
 线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量。
 
 ## 需求
+
 期望有一套工具，系统或者平台，可以满足：
 
 1. 在收到用户反馈的时候能够快速重现问题并解决。
 2. 测试同学发现问题，不需要花费大量事件和开发人员重现，沟通，以及记录问题重现路径等
 3. 线上发现问题可以进行告警，防止大规模用户有问题，并且不能及时感知和解决。
-4. 缩短团队内部BUG修复的闭环流程，减少非本质复杂度问题的干扰，快速将问题聚焦到具体的代码。
-
+4. 缩短团队内部 BUG 修复的闭环流程，减少非本质复杂度问题的干扰，快速将问题聚焦到具体的代码。
 
 带着上面的需求，我们来看下市面上已有的经典方案， 在这里挑选几个具有代表性的。
 
@@ -37,7 +40,6 @@ tags: [RFC, 技术调研, 监控]
 
 更多功能： https://docs.logrocket.com/docs
 
-
 #### 接入方式
 
 ![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8kqmquvj313k0opwfb.jpg)
@@ -54,24 +56,26 @@ tags: [RFC, 技术调研, 监控]
 
 #### 特点
 
-功能较多，提供了较多的概念和功能，比如Context，ENvironments，Breadcrumbs等。另外其和CI，CD集成地也非常好。 详细内容： https://docs.sentry.io/workflow/releases/?platform=node
+功能较多，提供了较多的概念和功能，比如 Context，ENvironments，Breadcrumbs 等。另外其和 CI，CD 集成地也非常好。 详细内容： https://docs.sentry.io/workflow/releases/?platform=node
 
-另外其支持的平台和扩展功能非常多，如果对这部分有特殊要求，Sentry无疑是优先考虑的选择。
+另外其支持的平台和扩展功能非常多，如果对这部分有特殊要求，Sentry 无疑是优先考虑的选择。
 
 #### 接入方式
 
 - Sign up for an account
 - Install your SDK
+
 ```bash
 # Using yarn
 $ yarn add @sentry/node@5.8.0
 ```
-- Configure it
-```js
-const Sentry = require('@sentry/node');
-Sentry.init({ dsn: 'https://<key>@sentry.io/<project>' });
-```
 
+- Configure it
+
+```js
+const Sentry = require("@sentry/node");
+Sentry.init({ dsn: "https://<key>@sentry.io/<project>" });
+```
 
 #### 价格
 
@@ -85,11 +89,11 @@ https://www.fundebug.com/
 
 #### 特点
 
-支持小程序，小游戏。多种现成的报警方式，支持WebHook，智能报警（同样的代码产生的同一个错误，在不同浏览器上的报错信息是各不相同的），内置团队协作工具。
+支持小程序，小游戏。多种现成的报警方式，支持 WebHook，智能报警（同样的代码产生的同一个错误，在不同浏览器上的报错信息是各不相同的），内置团队协作工具。
 
 #### 接入方式
 
-这里以Vue项目为例。
+这里以 Vue 项目为例。
 
 1. 免费注册
 
@@ -106,11 +110,10 @@ npm install fundebug-javascript fundebug-vue --save
 import * as fundebug from "fundebug-javascript";
 import fundebugVue from "fundebug-vue";
 fundebug.init({
-    apikey: "API-KEY"
-})
+  apikey: "API-KEY"
+});
 fundebugVue(fundebug, Vue);
 ```
-
 
 #### 价格
 
@@ -120,15 +123,13 @@ fundebugVue(fundebug, Vue);
 
 1. 性能监控
 
-2. 用户行为监控（已经有埋点，不不确定是否可以Cover这个需求）
-
+2. 用户行为监控（已经有埋点，不不确定是否可以 Cover 这个需求）
 
 ## 自研
 
 假设我们已经做好了我们自己的监控平台，我们需要对公司内部甚至外部宣传我们的监控平台，我们会怎么进行宣传。
 
 然后带着这些东西，我们进行规划，技术选型，排期，写代码，测试，上线。
-
 
 ### 宣传语
 
@@ -138,8 +139,7 @@ fundebugVue(fundebug, Vue);
 4. 重现率高，能够准确重现用户的现场情况
 5. 打通报警系统
 6. 打通调试平台
-...
-
+   ...
 
 ### 优劣分析
 
@@ -161,28 +161,32 @@ fundebugVue(fundebug, Vue);
 
 我们对外宣传的目标是`接入方便，侵入性小`。因此一定要简洁，这里参考了以上几个平台的写法，其实这几个平台的都是大同小异。
 
+1. 注册应用获取 AppId
+2. 安装
 
-1. 注册应用获取AppId
-2.  安装
 ```bash
 npm i --save @lucifer/monitor
 ```
+
 3. 引用
+
 ```js
-import monitor from '@lucifer/monitor'
+import monitor from "@lucifer/monitor";
 monitor.init({
-    user: {
-        name: '',
-        email: '',
-        mobile: '',
-        isVIP: true
-    },
-    appId: 'lucifer520'
-})
+  user: {
+    name: "",
+    email: "",
+    mobile: "",
+    isVIP: true
+  },
+  appId: "lucifer520"
+});
 ```
+
 4. 多端和多框架支持
 
 Vue：
+
 ```js
 import Vue form 'vue';
 import monitor from '@lucifer/connectors/vue';
@@ -201,19 +205,17 @@ monitor.use(Vue)
 Wechat：
 
 ```js
-import monitor from '@lucifer/connectors/wechat';
+import monitor from "@lucifer/connectors/wechat";
 monitor.init({
-    user: {
-        name: '',
-        email: '',
-        mobile: '',
-        isVIP: true
-    },
-    appId: 'lucifer520'
-})
+  user: {
+    name: "",
+    email: "",
+    mobile: "",
+    isVIP: true
+  },
+  appId: "lucifer520"
+});
 ```
-
-
 
 #### 定义内部接口
 
@@ -223,22 +225,18 @@ monitor.init({
 
 接口系统交互图会在详细设计中给出，这里只给出大致范围：
 
-- logs服务器和告警平台的交互接口
-- rules的规则解析
-- logs的解析
+- logs 服务器和告警平台的交互接口
+- rules 的规则解析
+- logs 的解析
 - 构建系统对接
 - 调试系统对接
 - ...
-
-
 
 #### 业务形态特点
 
 - 数据量会随着采集规模增大而增加，因此预估用户数量以及增长速度对系统架构设计有很大影响
 - 终端的上报策略对影响很大，断网，弱网等情况如何上报也对结果有影响
 
-
 #### 框架选型 & 规范 & 约定
-
 
 暂无
