@@ -38,6 +38,36 @@
   </entry>
   
   <entry>
+    <title>原来状态机也可以用来刷 LeetCode？</title>
+    <link href="https://lucifer.ren/blog/2020/01/12/1262.greatest-sum-divisible-by-three/"/>
+    <id>https://lucifer.ren/blog/2020/01/12/1262.greatest-sum-divisible-by-three/</id>
+    <published>2020-01-12T09:02:00.924Z</published>
+    <updated>2020-01-12T09:06:56.830Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;什么？ 状态机还可以用来刷 LeetCode？ 如果你还不知道，那么就快进来看看吧！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="状态机" scheme="https://lucifer.ren/blog/tags/%E7%8A%B6%E6%80%81%E6%9C%BA/"/>
+    
+      <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="贪心" scheme="https://lucifer.ren/blog/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+  </entry>
+  
+  <entry>
     <title>LeetCode一道令人发指的陷阱题</title>
     <link href="https://lucifer.ren/blog/2020/01/10/1297.maximum-number-of-occurrences-of-a-substring/"/>
     <id>https://lucifer.ren/blog/2020/01/10/1297.maximum-number-of-occurrences-of-a-substring/</id>
@@ -191,6 +221,42 @@
   </entry>
   
   <entry>
+    <title>一文搞懂《链表反转》</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/reverseList/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/reverseList/</id>
+    <published>2019-12-11T04:35:19.046Z</published>
+    <updated>2019-12-11T04:35:19.046Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;翻转链表一直都是热门题目，笔者就在某大型互联网公司的面试题中碰到过这种题目，这种题目很常常见，相对应的变形和扩展也很多，今天我们就来攻克它吧。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="链表反转" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC/"/>
+    
+      <category term="链表" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="字节跳动" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    
+      <category term="链表" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【RFC】XXX 公司监控体系需求与技术调研</title>
     <link href="https://lucifer.ren/blog/2019/12/11/rfc-monitor/"/>
     <id>https://lucifer.ren/blog/2019/12/11/rfc-monitor/</id>
@@ -213,38 +279,72 @@
   </entry>
   
   <entry>
-    <title>一文搞懂《链表反转》</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/reverseList/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/reverseList/</id>
+    <title>文科生都能看懂的循环移位算法</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/rotate-list/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/rotate-list/</id>
     <published>2019-12-11T04:35:19.046Z</published>
-    <updated>2019-12-11T04:35:19.046Z</updated>
+    <updated>2019-12-21T11:32:55.151Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;翻转链表一直都是热门题目，笔者就在某大型互联网公司的面试题中碰到过这种题目，这种题目很常常见，相对应的变形和扩展也很多，今天我们就来攻克它吧。&lt;/p&gt;
+      &lt;p&gt;循环移位问题真的是一个特别经典的问题了，今天我们就来攻克它。&lt;/p&gt;
+&lt;p&gt;循环移位的表现形式有很多种，就数据结构来说包括&lt;code&gt;数组&lt;/code&gt;，&lt;code&gt;字符串&lt;/code&gt;，&lt;code&gt;链表&lt;/code&gt;等。就算法来说，有&lt;code&gt;包含问题&lt;/code&gt;，&lt;code&gt;直接移动问题&lt;/code&gt;，还有&lt;code&gt;查找问题&lt;/code&gt;等。&lt;/p&gt;
+&lt;p&gt;虽然表现形式有很多，但是本质都是一样的，因为从逻辑上来讲其实他们都是线性数据结构，那么让我们来看一下吧。&lt;/p&gt;
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
     
-      <category term="链表反转" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC/"/>
+      <category term="循环移位" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D/"/>
+    
+      <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
       <category term="链表" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/"/>
     
+      <category term="字符串" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+      <category term="编程之美" scheme="https://lucifer.ren/blog/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
+    
     
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="字节跳动" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+      <category term="数组" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E7%BB%84/"/>
     
       <category term="链表" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+      <category term="循环移位" scheme="https://lucifer.ren/blog/tags/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D/"/>
+    
+      <category term="字符串" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="编程之美" scheme="https://lucifer.ren/blog/tags/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>纪念LeetCode项目Star突破2W</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/thanksGaving-2/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/thanksGaving-2/</id>
+    <published>2019-12-11T04:35:19.046Z</published>
+    <updated>2019-12-11T04:35:19.046Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;假期这几天我买了《逆转裁判 123》合集，面对着这香喷喷的冷饭吃了半天。从 GBA 玩到 NDS，从 NDS 玩到 3DS, 现在 NS 虽然没有出新作有点遗憾。不过有了高清重制，也当是个回忆和收藏了 🎉🎉&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://lucifer.ren/blog/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="技术" scheme="https://lucifer.ren/blog/categories/%E6%97%A5%E8%AE%B0/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="日记" scheme="https://lucifer.ren/blog/tags/%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
@@ -287,76 +387,6 @@
   </entry>
   
   <entry>
-    <title>纪念LeetCode项目Star突破2W</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/thanksGaving-2/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/thanksGaving-2/</id>
-    <published>2019-12-11T04:35:19.046Z</published>
-    <updated>2019-12-11T04:35:19.046Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;假期这几天我买了《逆转裁判 123》合集，面对着这香喷喷的冷饭吃了半天。从 GBA 玩到 NDS，从 NDS 玩到 3DS, 现在 NS 虽然没有出新作有点遗憾。不过有了高清重制，也当是个回忆和收藏了 🎉🎉&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="日记" scheme="https://lucifer.ren/blog/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="技术" scheme="https://lucifer.ren/blog/categories/%E6%97%A5%E8%AE%B0/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="日记" scheme="https://lucifer.ren/blog/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>文科生都能看懂的循环移位算法</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/rotate-list/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/rotate-list/</id>
-    <published>2019-12-11T04:35:19.046Z</published>
-    <updated>2019-12-21T11:32:55.151Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;循环移位问题真的是一个特别经典的问题了，今天我们就来攻克它。&lt;/p&gt;
-&lt;p&gt;循环移位的表现形式有很多种，就数据结构来说包括&lt;code&gt;数组&lt;/code&gt;，&lt;code&gt;字符串&lt;/code&gt;，&lt;code&gt;链表&lt;/code&gt;等。就算法来说，有&lt;code&gt;包含问题&lt;/code&gt;，&lt;code&gt;直接移动问题&lt;/code&gt;，还有&lt;code&gt;查找问题&lt;/code&gt;等。&lt;/p&gt;
-&lt;p&gt;虽然表现形式有很多，但是本质都是一样的，因为从逻辑上来讲其实他们都是线性数据结构，那么让我们来看一下吧。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-      <category term="循环移位" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D/"/>
-    
-      <category term="链表" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/"/>
-    
-      <category term="字符串" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-      <category term="编程之美" scheme="https://lucifer.ren/blog/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数组" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="链表" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E8%A1%A8/"/>
-    
-      <category term="循环移位" scheme="https://lucifer.ren/blog/tags/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D/"/>
-    
-      <category term="字符串" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-      <category term="编程之美" scheme="https://lucifer.ren/blog/tags/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
-    
-  </entry>
-  
-  <entry>
     <title>我是如何刷 LeetCode 的？</title>
     <link href="https://lucifer.ren/blog/2019/12/11/how-am-I-conque-leetcode/"/>
     <id>https://lucifer.ren/blog/2019/12/11/how-am-I-conque-leetcode/</id>
@@ -370,44 +400,22 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="学习方法" scheme="https://lucifer.ren/blog/categories/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
     
     
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
     
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
       <category term="学习方法" scheme="https://lucifer.ren/blog/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://lucifer.ren/blog/2019/12/11/ibinhouse/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/ibinhouse/</id>
-    <published>2019-12-11T04:35:19.045Z</published>
-    <updated>2019-12-11T04:35:19.045Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
@@ -432,6 +440,28 @@
       <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="学习方法" scheme="https://lucifer.ren/blog/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://lucifer.ren/blog/2019/12/11/ibinhouse/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/ibinhouse/</id>
+    <published>2019-12-11T04:35:19.045Z</published>
+    <updated>2019-12-11T04:35:19.045Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
     
   </entry>
   
@@ -518,36 +548,6 @@
     
     
       <category term="每日一荐" scheme="https://lucifer.ren/blog/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《LeetCode题解攻略》 - 草稿目录</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/draft/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/draft/</id>
-    <published>2019-12-11T04:35:19.044Z</published>
-    <updated>2019-12-11T04:35:19.044Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这个我为自己的新书写的一个目录，计划在一星期左右定下来大体目录，然后投入完善，希望大家多提意见，你的意见很可能会影响到这本书的内容，期待你以特别的方式参与进来，此致敬礼。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="书" scheme="https://lucifer.ren/blog/categories/%E4%B9%A6/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E4%B9%A6/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="书" scheme="https://lucifer.ren/blog/tags/%E4%B9%A6/"/>
-    
-      <category term="草稿" scheme="https://lucifer.ren/blog/tags/%E8%8D%89%E7%A8%BF/"/>
     
   </entry>
   
