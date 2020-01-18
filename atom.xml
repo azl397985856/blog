@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-01-18T15:54:15.497Z</updated>
+  <updated>2020-01-18T15:59:33.965Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>一行代码就可以通过 LeetCod？来看下我是怎么做到的！</title>
+    <title>一行代码就可以通过 LeetCode？来看下我是怎么做到的！</title>
     <link href="https://lucifer.ren/blog/2020/01/18/1227.airplane-seat-assignment-probability/"/>
     <id>https://lucifer.ren/blog/2020/01/18/1227.airplane-seat-assignment-probability/</id>
     <published>2020-01-18T15:46:42.563Z</published>
-    <updated>2020-01-18T15:54:15.497Z</updated>
+    <updated>2020-01-18T15:59:33.965Z</updated>
     
     <summary type="html">
     
@@ -239,27 +239,6 @@
   </entry>
   
   <entry>
-    <title>累死累活干不过一个写PPT的</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/ppt-data/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/ppt-data/</id>
-    <published>2019-12-11T04:35:19.046Z</published>
-    <updated>2019-12-11T04:35:19.046Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;无论是身处什么行业什么领域，数据分析越来越成为一向必不可少的技能，&lt;br&gt;而运用数据思维进行决策更能产生形成高质量的决策结果。&lt;/p&gt;
-&lt;p&gt;随着互联网的不断发展和物联网设备的不断普及，我们日常生活中的各种数据被存储下来，让我们可以通过定量分析数据，利用数据实现更好的决策制定。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="技能" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E8%83%BD/"/>
-    
-      <category term="PPT" scheme="https://lucifer.ren/blog/tags/PPT/"/>
-    
-  </entry>
-  
-  <entry>
     <title>一文搞懂《链表反转》</title>
     <link href="https://lucifer.ren/blog/2019/12/11/reverseList/"/>
     <id>https://lucifer.ren/blog/2019/12/11/reverseList/</id>
@@ -296,54 +275,6 @@
   </entry>
   
   <entry>
-    <title>文科生都能看懂的循环移位算法</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/rotate-list/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/rotate-list/</id>
-    <published>2019-12-11T04:35:19.046Z</published>
-    <updated>2019-12-21T11:32:55.151Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;循环移位问题真的是一个特别经典的问题了，今天我们就来攻克它。&lt;/p&gt;
-&lt;p&gt;循环移位的表现形式有很多种，就数据结构来说包括&lt;code&gt;数组&lt;/code&gt;，&lt;code&gt;字符串&lt;/code&gt;，&lt;code&gt;链表&lt;/code&gt;等。就算法来说，有&lt;code&gt;包含问题&lt;/code&gt;，&lt;code&gt;直接移动问题&lt;/code&gt;，还有&lt;code&gt;查找问题&lt;/code&gt;等。&lt;/p&gt;
-&lt;p&gt;虽然表现形式有很多，但是本质都是一样的，因为从逻辑上来讲其实他们都是线性数据结构，那么让我们来看一下吧。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-      <category term="循环移位" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D/"/>
-    
-      <category term="链表" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/"/>
-    
-      <category term="字符串" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-      <category term="编程之美" scheme="https://lucifer.ren/blog/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数组" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="链表" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E8%A1%A8/"/>
-    
-      <category term="循环移位" scheme="https://lucifer.ren/blog/tags/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D/"/>
-    
-      <category term="字符串" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-      <category term="编程之美" scheme="https://lucifer.ren/blog/tags/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
-    
-  </entry>
-  
-  <entry>
     <title>【RFC】XXX 公司监控体系需求与技术调研</title>
     <link href="https://lucifer.ren/blog/2019/12/11/rfc-monitor/"/>
     <id>https://lucifer.ren/blog/2019/12/11/rfc-monitor/</id>
@@ -362,6 +293,27 @@
       <category term="技术调研" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/"/>
     
       <category term="监控" scheme="https://lucifer.ren/blog/tags/%E7%9B%91%E6%8E%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>累死累活干不过一个写PPT的</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/ppt-data/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/ppt-data/</id>
+    <published>2019-12-11T04:35:19.046Z</published>
+    <updated>2019-12-11T04:35:19.046Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;无论是身处什么行业什么领域，数据分析越来越成为一向必不可少的技能，&lt;br&gt;而运用数据思维进行决策更能产生形成高质量的决策结果。&lt;/p&gt;
+&lt;p&gt;随着互联网的不断发展和物联网设备的不断普及，我们日常生活中的各种数据被存储下来，让我们可以通过定量分析数据，利用数据实现更好的决策制定。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技能" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E8%83%BD/"/>
+    
+      <category term="PPT" scheme="https://lucifer.ren/blog/tags/PPT/"/>
     
   </entry>
   
@@ -422,6 +374,54 @@
     
     
       <category term="日记" scheme="https://lucifer.ren/blog/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>文科生都能看懂的循环移位算法</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/rotate-list/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/rotate-list/</id>
+    <published>2019-12-11T04:35:19.046Z</published>
+    <updated>2019-12-21T11:32:55.151Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;循环移位问题真的是一个特别经典的问题了，今天我们就来攻克它。&lt;/p&gt;
+&lt;p&gt;循环移位的表现形式有很多种，就数据结构来说包括&lt;code&gt;数组&lt;/code&gt;，&lt;code&gt;字符串&lt;/code&gt;，&lt;code&gt;链表&lt;/code&gt;等。就算法来说，有&lt;code&gt;包含问题&lt;/code&gt;，&lt;code&gt;直接移动问题&lt;/code&gt;，还有&lt;code&gt;查找问题&lt;/code&gt;等。&lt;/p&gt;
+&lt;p&gt;虽然表现形式有很多，但是本质都是一样的，因为从逻辑上来讲其实他们都是线性数据结构，那么让我们来看一下吧。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="循环移位" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D/"/>
+    
+      <category term="链表" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/"/>
+    
+      <category term="字符串" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="编程之美" scheme="https://lucifer.ren/blog/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数组" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="链表" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+      <category term="循环移位" scheme="https://lucifer.ren/blog/tags/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D/"/>
+    
+      <category term="字符串" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="编程之美" scheme="https://lucifer.ren/blog/tags/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
     
   </entry>
   
@@ -527,6 +527,24 @@
   </entry>
   
   <entry>
+    <title>【LeetCode题解】1186.删除一次得到子数组最大和</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/leetcode-1186/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/leetcode-1186/</id>
+    <published>2019-12-11T04:35:19.045Z</published>
+    <updated>2019-12-11T04:35:19.045Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;LeetCode 1186题，最大子数组的进阶版本。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>从零打造一个舒服的Mac开发环境 - 装机篇</title>
     <link href="https://lucifer.ren/blog/2019/12/11/mac-setup-for-fe/"/>
     <id>https://lucifer.ren/blog/2019/12/11/mac-setup-for-fe/</id>
@@ -545,24 +563,6 @@
       <category term="装机" scheme="https://lucifer.ren/blog/tags/%E8%A3%85%E6%9C%BA/"/>
     
       <category term="必备软件" scheme="https://lucifer.ren/blog/tags/%E5%BF%85%E5%A4%87%E8%BD%AF%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【LeetCode题解】1186.删除一次得到子数组最大和</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/leetcode-1186/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/leetcode-1186/</id>
-    <published>2019-12-11T04:35:19.045Z</published>
-    <updated>2019-12-11T04:35:19.045Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;LeetCode 1186题，最大子数组的进阶版本。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
   </entry>
   
