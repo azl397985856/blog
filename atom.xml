@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-01-18T15:59:33.965Z</updated>
+  <updated>2020-01-29T11:48:34.735Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【LeetCode日记】 874. 模拟行走机器人</title>
+    <link href="https://lucifer.ren/blog/2020/01/29/874.walking-robot-simulation/"/>
+    <id>https://lucifer.ren/blog/2020/01/29/874.walking-robot-simulation/</id>
+    <published>2020-01-29T11:34:39.765Z</published>
+    <updated>2020-01-29T11:48:34.735Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是一道 LeetCode 难度为 easy 的题目，没有高深的算法，有的只是套路，我们来看下。&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode日记" scheme="https://lucifer.ren/blog/tags/LeetCode%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>一行代码就可以通过 LeetCode？来看下我是怎么做到的！</title>
@@ -541,28 +568,6 @@
     
     
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从零打造一个舒服的Mac开发环境 - 装机篇</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/mac-setup-for-fe/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/mac-setup-for-fe/</id>
-    <published>2019-12-11T04:35:19.045Z</published>
-    <updated>2019-12-11T04:35:19.045Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前两天新买的16寸mac pro到手了。 本来想直接将旧电脑的数据做一个迁移，但是有同学反应想看“如何从零打造一个舒适的开发环境”，于是就有了这篇文章。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Mac" scheme="https://lucifer.ren/blog/tags/Mac/"/>
-    
-      <category term="装机" scheme="https://lucifer.ren/blog/tags/%E8%A3%85%E6%9C%BA/"/>
-    
-      <category term="必备软件" scheme="https://lucifer.ren/blog/tags/%E5%BF%85%E5%A4%87%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   
