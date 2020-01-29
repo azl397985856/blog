@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-01-29T14:46:16.752Z</updated>
+  <updated>2020-01-29T14:50:43.468Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lucifer.ren/blog/2020/01/29/50.powx-n/"/>
     <id>https://lucifer.ren/blog/2020/01/29/50.powx-n/</id>
     <published>2020-01-29T14:44:15.972Z</published>
-    <updated>2020-01-29T14:46:16.752Z</updated>
+    <updated>2020-01-29T14:50:43.468Z</updated>
     
     <summary type="html">
     
@@ -247,6 +247,28 @@
   </entry>
   
   <entry>
+    <title>致作者</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/to-author/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/to-author/</id>
+    <published>2019-12-11T04:35:19.047Z</published>
+    <updated>2019-12-11T04:35:19.047Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;写给我敬爱的作者们，关于“云写书”的初衷，愿景，规划以及具体细节。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="LeetCode题解书" scheme="https://lucifer.ren/blog/categories/LeetCode/LeetCode%E9%A2%98%E8%A7%A3%E4%B9%A6/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用web-component搭建企业级组件库</title>
     <link href="https://lucifer.ren/blog/2019/12/11/web-components-enterprize/"/>
     <id>https://lucifer.ren/blog/2019/12/11/web-components-enterprize/</id>
@@ -273,28 +295,6 @@
       <category term="组件化" scheme="https://lucifer.ren/blog/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/"/>
     
       <category term="web-component" scheme="https://lucifer.ren/blog/tags/web-component/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>致作者</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/to-author/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/to-author/</id>
-    <published>2019-12-11T04:35:19.047Z</published>
-    <updated>2019-12-11T04:35:19.047Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;写给我敬爱的作者们，关于“云写书”的初衷，愿景，规划以及具体细节。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-      <category term="LeetCode题解书" scheme="https://lucifer.ren/blog/categories/LeetCode/LeetCode%E9%A2%98%E8%A7%A3%E4%B9%A6/"/>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
   </entry>
   
@@ -486,6 +486,39 @@
   </entry>
   
   <entry>
+    <title>我是如何刷 LeetCode 的？</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/how-am-I-conque-leetcode/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/how-am-I-conque-leetcode/</id>
+    <published>2019-12-11T04:35:19.045Z</published>
+    <updated>2019-12-11T04:35:19.045Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我就是那个 @量子位 答案里面提到的“lucifer 小哥哥”。&lt;/p&gt;
+&lt;p&gt;我本人从开始准备算法以来，大概经过了几个月的时间，这期间自己成长了很多，从刷题菜鸡，到现在对刷题套路，题型有了自己的理解，感受还是蛮多的。我本人不是算法高手，算是勤能补拙类型。不过经过几个月的学习和练习，不仅面试变得更加得心应手，而且在工作中写更容易写出干净优雅，性能好的代码。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="学习方法" scheme="https://lucifer.ren/blog/categories/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="学习方法" scheme="https://lucifer.ren/blog/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>零基础的前端开发初学者应如何系统地学习？</title>
     <link href="https://lucifer.ren/blog/2019/12/11/how-am-I-learn-fe/"/>
     <id>https://lucifer.ren/blog/2019/12/11/how-am-I-learn-fe/</id>
@@ -528,39 +561,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>我是如何刷 LeetCode 的？</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/how-am-I-conque-leetcode/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/how-am-I-conque-leetcode/</id>
-    <published>2019-12-11T04:35:19.045Z</published>
-    <updated>2019-12-11T04:35:19.045Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我就是那个 @量子位 答案里面提到的“lucifer 小哥哥”。&lt;/p&gt;
-&lt;p&gt;我本人从开始准备算法以来，大概经过了几个月的时间，这期间自己成长了很多，从刷题菜鸡，到现在对刷题套路，题型有了自己的理解，感受还是蛮多的。我本人不是算法高手，算是勤能补拙类型。不过经过几个月的学习和练习，不仅面试变得更加得心应手，而且在工作中写更容易写出干净优雅，性能好的代码。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="学习方法" scheme="https://lucifer.ren/blog/categories/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="学习方法" scheme="https://lucifer.ren/blog/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
