@@ -268,33 +268,6 @@
     
     
     <entry>
-      <title>致作者</title>
-      <link href="/blog/2019/12/11/to-author/"/>
-      <url>/blog/2019/12/11/to-author/</url>
-      
-        <content type="html"><![CDATA[<p>写给我敬爱的作者们，关于“云写书”的初衷，愿景，规划以及具体细节。</p><a id="more"></a><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><p>建立作者群，让大家参与进来的目的有三个。</p><ol><li>缩短写作的周期</li></ol><p>我希望这本书尽快与大家见面，毕竟时间就是金钱，一个人的力量还是很有限的，目前计划作者控制在2-10个人，参与人数不限制。</p><ol start="2"><li>结识志同道合的朋友，将来可以继续合作</li></ol><p>本来计划写别的书的，只是突然觉得LeetCode题解这块受众更大，大家普遍希望有这么一本书，因此才决定先写这本。我也希望之后写别的书的时候大家也可以在一起合作。</p><ol start="3"><li>更好地推广</li></ol><p>作者们也可以起到很好地宣传作用，毕竟是自己深度参与的书，大家宣传的意愿很会有的。</p><h2 id="愿景"><a href="#愿景" class="headerlink" title="愿景"></a>愿景</h2><p>背靠着 Github LeetCode排名第一的项目，再加上多个媒体平台的宣传推广，我个人觉得市场还是有的，另外市面上的多是以数据结构和算法为基础进行讲解，而不是LeetCode题解方面，这方面我认为是一个缺口。</p><p>另外我看了很多相关的资料，包括电子书，实体书以及博客，官方articles等，决定要不就是不够系统，要不就是不够通俗易懂。</p><p><code>我的受众群体是想找工作的LeetCode新手，帮助他们攻克一些高频题目，掌握解题技巧，更加有效率地刷题</code></p><h2 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h2><ul><li>2019-10 建立初步的成员名单，制定写作规范，联系LeetCode官方授权</li><li>2019-11 分配章节给大家，大家分别书写</li><li>2019-12 汇总大家的文章，进行审阅 &amp; 校验</li></ul><h2 id="Code-Style"><a href="#Code-Style" class="headerlink" title="Code Style"></a>Code Style</h2><p>TODO</p><h2 id="文章格式"><a href="#文章格式" class="headerlink" title="文章格式"></a>文章格式</h2><p>TODO</p><h2 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h2><p>这个是我之前写的大纲，需要微调， 大家可以先大概看一下 <a href="https://lucifer.ren/blog/2019/10/03/draft/">https://lucifer.ren/blog/2019/10/03/draft/</a></p><h2 id="样张"><a href="#样张" class="headerlink" title="样张"></a>样张</h2><ul><li><p><a href="https://lucifer.ren/blog/2019/09/22/reverseList/">一文搞懂《链表反转》</a></p></li><li><p><a href="https://lucifer.ren/blog/2019/09/21/rotate-list/">文科生都能看懂的循环移位算法</a></p></li><li><p><a href="https://lucifer.ren/blog/2019/09/20/LSS/">一文看懂《最大子序列和问题》</a></p></li></ul><h2 id="如何参与"><a href="#如何参与" class="headerlink" title="如何参与"></a>如何参与</h2><p>要参加写作的， 给出你写过的文章，最好LeetCode或者算法相关，然后等待我审核，写文章的时候语言要求python，不会的可以花几个小时学习一下。</p><p>另外需要提供三种语言(分别是JS，Java和Python)的代码到我新建的一个<a href="https://github.com/leetcode-book/leetcode-solutions/tree/master/ch01" target="_blank" rel="noopener">仓库</a>中，专门给这本书放源码，按照语言和章节划分一下。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g88ad0upwwj30ta08pwfv.jpg" alt></p><p>作者们别忘记让我拉你进组织，我们的组织是<code>https://github.com/leetcode-book</code></p><p>如果语言有什么困难，直接群里沟通，我相信语言不是问题。 另外大家写题解的时候，一定少用语言特有的东西。</p><blockquote><p>有能力的欢迎提供其他语言的代码实现</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> LeetCode </category>
-          
-          <category> LeetCode题解书 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> LeetCode </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>使用web-component搭建企业级组件库</title>
       <link href="/blog/2019/12/11/web-components-enterprize/"/>
       <url>/blog/2019/12/11/web-components-enterprize/</url>
@@ -320,6 +293,33 @@
             <tag> 组件化 </tag>
             
             <tag> web-component </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>致作者</title>
+      <link href="/blog/2019/12/11/to-author/"/>
+      <url>/blog/2019/12/11/to-author/</url>
+      
+        <content type="html"><![CDATA[<p>写给我敬爱的作者们，关于“云写书”的初衷，愿景，规划以及具体细节。</p><a id="more"></a><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><p>建立作者群，让大家参与进来的目的有三个。</p><ol><li>缩短写作的周期</li></ol><p>我希望这本书尽快与大家见面，毕竟时间就是金钱，一个人的力量还是很有限的，目前计划作者控制在2-10个人，参与人数不限制。</p><ol start="2"><li>结识志同道合的朋友，将来可以继续合作</li></ol><p>本来计划写别的书的，只是突然觉得LeetCode题解这块受众更大，大家普遍希望有这么一本书，因此才决定先写这本。我也希望之后写别的书的时候大家也可以在一起合作。</p><ol start="3"><li>更好地推广</li></ol><p>作者们也可以起到很好地宣传作用，毕竟是自己深度参与的书，大家宣传的意愿很会有的。</p><h2 id="愿景"><a href="#愿景" class="headerlink" title="愿景"></a>愿景</h2><p>背靠着 Github LeetCode排名第一的项目，再加上多个媒体平台的宣传推广，我个人觉得市场还是有的，另外市面上的多是以数据结构和算法为基础进行讲解，而不是LeetCode题解方面，这方面我认为是一个缺口。</p><p>另外我看了很多相关的资料，包括电子书，实体书以及博客，官方articles等，决定要不就是不够系统，要不就是不够通俗易懂。</p><p><code>我的受众群体是想找工作的LeetCode新手，帮助他们攻克一些高频题目，掌握解题技巧，更加有效率地刷题</code></p><h2 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h2><ul><li>2019-10 建立初步的成员名单，制定写作规范，联系LeetCode官方授权</li><li>2019-11 分配章节给大家，大家分别书写</li><li>2019-12 汇总大家的文章，进行审阅 &amp; 校验</li></ul><h2 id="Code-Style"><a href="#Code-Style" class="headerlink" title="Code Style"></a>Code Style</h2><p>TODO</p><h2 id="文章格式"><a href="#文章格式" class="headerlink" title="文章格式"></a>文章格式</h2><p>TODO</p><h2 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h2><p>这个是我之前写的大纲，需要微调， 大家可以先大概看一下 <a href="https://lucifer.ren/blog/2019/10/03/draft/">https://lucifer.ren/blog/2019/10/03/draft/</a></p><h2 id="样张"><a href="#样张" class="headerlink" title="样张"></a>样张</h2><ul><li><p><a href="https://lucifer.ren/blog/2019/09/22/reverseList/">一文搞懂《链表反转》</a></p></li><li><p><a href="https://lucifer.ren/blog/2019/09/21/rotate-list/">文科生都能看懂的循环移位算法</a></p></li><li><p><a href="https://lucifer.ren/blog/2019/09/20/LSS/">一文看懂《最大子序列和问题》</a></p></li></ul><h2 id="如何参与"><a href="#如何参与" class="headerlink" title="如何参与"></a>如何参与</h2><p>要参加写作的， 给出你写过的文章，最好LeetCode或者算法相关，然后等待我审核，写文章的时候语言要求python，不会的可以花几个小时学习一下。</p><p>另外需要提供三种语言(分别是JS，Java和Python)的代码到我新建的一个<a href="https://github.com/leetcode-book/leetcode-solutions/tree/master/ch01" target="_blank" rel="noopener">仓库</a>中，专门给这本书放源码，按照语言和章节划分一下。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g88ad0upwwj30ta08pwfv.jpg" alt></p><p>作者们别忘记让我拉你进组织，我们的组织是<code>https://github.com/leetcode-book</code></p><p>如果语言有什么困难，直接群里沟通，我相信语言不是问题。 另外大家写题解的时候，一定少用语言特有的东西。</p><blockquote><p>有能力的欢迎提供其他语言的代码实现</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+          <category> LeetCode题解书 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
             
         </tags>
       
@@ -534,6 +534,48 @@
     
     
     <entry>
+      <title>零基础的前端开发初学者应如何系统地学习？</title>
+      <link href="/blog/2019/12/11/how-am-I-learn-fe/"/>
+      <url>/blog/2019/12/11/how-am-I-learn-fe/</url>
+      
+        <content type="html"><![CDATA[<p>回想四年前我刚入行的时候，那时候很多人对于前端的看法是“切图，画页面，有个编辑器+浏览器就能干，门槛低”，现在已经完全不是那样了，可以说现在的前端这个职业的门槛虽然还是没怎么变，但是整个行业的门槛提升了，换句话说就是整个行业对于前端这个职位要求更高了，对于前端小白的需求量降低，对于高级前端的需求量还在上升，甚至是供小于求的局面。从市场经济学角度上讲你只有进入到高级级别，才能真正吃到行业的红利。  因此想要入行的朋友要先想清楚，不要头脑发热，如果你想清楚了，那么请继续往下看。<br>说实话，现在的前端大环境对初学者来说实在有点不友好，学习资料鱼龙混杂，良莠不齐，有质量很高的学习资料，也有谬论，前后不一，观点错误，或者讲述不清晰的。 更可怕的是质量低下的文章有时候更受欢迎，因此需要大家有很好的甄别能力，但这对于初学者来说实在有些困难，我在这里就来谈一下 <code>初学者如何少走弯路，并且系统性地学习前端</code>。</p><a id="more"></a><h2 id="兴趣是最好的老师"><a href="#兴趣是最好的老师" class="headerlink" title="兴趣是最好的老师"></a>兴趣是最好的老师</h2><p>兴趣不管对于学习什么来说都是最好的老师。当然前端也不例外，如果你对这一门感兴趣，绝对会对你有很大的帮助。</p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075824.png" alt></p><p>关于如何培养兴趣，我提一点，你可以尝试去做一些小的“发明创造”，从而激发自己内心的“成就感”。这些小发明可以是一些小工具，小页面。你可以从开源社区，比如Github或者一些论坛，甚至自己的生活中收集一些创作素材。对于我来说，我就做过一个“前端开发工作流”的软件，“siri”， “小门神”等，从而带来成就感，提升自己的兴趣。</p><h2 id="权威，权威，还是权威"><a href="#权威，权威，还是权威" class="headerlink" title="权威，权威，还是权威"></a>权威，权威，还是权威</h2><p>其实技术越往上走，越会关注标准，关注协议等更上层和抽象的东西。而制定这些协议和标准的人往往都是世界上的“殿堂级”程序员，因此关注这些东西对于他们来说就是权威，对他们来说就非常很重要，但是这对于初学者来说似乎还比较遥远。那么初学者如何对接“权威”呢？<br>刚才提到了网上的学习资料参差不齐，这其实对于入门学习来说是很不利的，就像童年时期对于整个人生的影响一样，入门阶段对于整个前端开发生涯的影响也是巨大的。关于如何初学者如何对接权威，我这里总结了以下三点：<br>看一些权威的书籍，包括前端基础，软件工程以及算法等。这里不太建议看太老的，毕竟技术的发展是很快的，以前非常经典的书并一定适合看了，尤其是初学者而言。这里前端方面我重点推荐两本书，一本是《你不知道的JS》，一本是《JavaScript语言精粹》。除了前端，你还可以看一些软工类的书，我个人比较喜欢的有《程序员修炼之道》等，算法类的有《图解算法》，《编程之美》等。其他的我就不一一赘述了，想要更多书单的可以私信我。</p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075825.png" alt></p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075828.png" alt></p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075830.png" alt></p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075833.png" alt></p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075836.png" alt></p><ul><li>查权威资料。 这里我推荐两个，一个是<a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener">MDN</a>的文章，真的是又全面又专业，绝对是前端开发必备神器，哪里不会点哪里。 另外推荐一个<a href="https://developers.google.com/web/fundamentals/" target="_blank" rel="noopener">Google开发者</a> ， 里面干货很多，绝对权威。<br>这里顺便再安利一个软件，用来查文档什么的，简直如虎添翼，这个软件的名字是Dash，大家可以把自己常用的框架，类库等导进去，想用的时候直接查询即可，比去网上搜更快更高效，这个软件对于定制的支持度也是蛮高的，谁用谁知道。</li></ul><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075837.png" alt><br>（大家可以看到我下载了很多documentation）</p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-75838.png" alt><br>（你可以直达某一个documentation搜索，也可以全局搜索，甚至可以搜goole和stackoverflow，是不是很贴心？）</p><ul><li>关注一些圈内权威人士。 我一般会关注几个圈内比较知名的人的知乎，微博和twitter。这是我关注的<a href="https://github.com/azl397985856?tab=following" target="_blank" rel="noopener">Github的权威人士列表</a>。其实这些都是公开的，你也可以点开我的知乎，微博资料看我或者大佬们关注了谁。</li></ul><h2 id="做一些完整的简单项目"><a href="#做一些完整的简单项目" class="headerlink" title="做一些完整的简单项目"></a>做一些完整的简单项目</h2><p>大家可以尝试做一些简单的项目，不要嫌简单。 在做的过程往往能发现很多问题，如果有问题那这正好是自己提高的机会。 如果你觉得很简单，也没有关系，你可以思考一下，我有没有可能做的更好？我能不能把这些东西封装起来，建立更高一层的抽象（A New Level of Abstraction），做到DRY(Don’t Repeat Yourself)。<br>接下来就是关于怎么找项目。 你可以找个正式工作或者实习来做，也可以自己找一些小项目来练手， 比较常见的练手项目有模仿某个网站，APP或者搭建自己的个人主页，博客系统等。做好了不仅可以当敲门砖，说不定会收益很长时间呢。实在没有什么项目练手，这里再推荐一个网站，你可以再上面打怪升级。<a href="https://user-gold-cdn.xitu.io/2019/9/15/16d34514876b8c4d" target="_blank" rel="noopener">freecodecamp</a><br>现在你已经掌握了前端开发的基本概念和技能，那么如何做到更进一步，持续成长，做到高级呢？我相信这是很多人的疑问，下面我们就来看一下。</p><h2 id="学习路线"><a href="#学习路线" class="headerlink" title="学习路线"></a>学习路线</h2><p>你可能已经听过过大前端这个词，我这里不是劝退你哦。以下内容很高能，不过很多知识点不知道没关系，因为就算是工作了很多年了老手也很难了解其中的大半知识点。<br>我个人为了让自己巩固知识，同时也为了帮助他人，总结了大前端下的30多个主题内容，内容覆盖大前端的方方面面，虽然是从面试角度出发，但是你用来提升自己，查缺补漏也是很有用的。</p><p>多图预警：</p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075842.png" alt></p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075843.png" alt></p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075844.png" alt></p><p>拿《编程题》主题来说，我总结了各大公司常考的几十道题目。<br><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075847.png" alt></p><p>对于其他主题也是一样，我都会尽可能地深度讲解和剖析，并且从多方面理解，我相信这是在市面上很少见的。</p><p>而且我还画了很多图，来帮助大家理解一些抽象的知识点。</p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075850.png" alt></p><p>项目地址： <a href="https://lucifer.ren/fe-interview/#/">https://lucifer.ren/fe-interview/#/</a>   欢迎围观。</p><h2 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h2><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075854.png" alt></p><p>实话实说，很多优秀的思想，规范，写法我都是从优秀的开源项目中学来的。 我会不定期阅读一些优秀的开源项目源码，也会参与到开源的工作中去，这给我自己带来了很大的提升。 不仅技术得到了提升，团队协作，规范化等方面也有了质的提高，另外还认识了一些优秀的人。四年来，我阅读了很多优秀的源码，也尝试自己去造一些轮子，并开源出去，回馈社区。</p><h2 id="输入-输出"><a href="#输入-输出" class="headerlink" title="输入 + 输出"></a>输入 + 输出</h2><p>前面重点讲述的是输入。 其实学习的过程不仅仅是输入，输出也是很好的学习方法。 输出的形式有很多，比如写博客，讲给别人，开源出去让别人用等。 这其实是很好的学习机会，这种学习方法可以让你的成长速度呈指数型增长，因此千万不要小看它。 我会通过以练代学的方式来学习，比如我学习React，我会迅速看文档，然后写demo，最后我会自己<a href="https://github.com/azl397985856/mono-react" target="_blank" rel="noopener">《从零实现React》</a>来内化它。</p><p>我还会定期做总结，写文章，写开源项目，做分享等，目的一方面是影响他人，另一方面是成长自己。</p><h2 id="持续学习"><a href="#持续学习" class="headerlink" title="持续学习"></a>持续学习</h2><p>选择了技术这条路，就要做好持续学习，每日精进的准备，跟上时代潮流是很有必要的。</p><ul><li>日报周报。 大家可以订阅一些前端方面的日报周报，这方面其实有很多，这里只推荐一个我常看的一个<a href="https://javascriptweekly.com" target="_blank" rel="noopener">JavaScript周刊</a>。我自己也出了一款<a href="https://github.com/azl397985856/daily-featured" target="_blank" rel="noopener">《每日一荐》</a>, 每天推荐一个优秀的开源项目，优秀文章， 周一到周五我们不见不散。</li></ul><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075855.png" alt></p><ul><li>深度参与开源项目。 关于如何参与开源项目其实可以另起一篇文章了，这里不再赘述，感性的话，我会再写一篇文章，大家记得关注我就好。</li><li>定期总结，技术输出。 我的习惯是对于学习的内容定期和不定期地进行总结。 比如最近我在总结的[《leetcode题解》]（现在有18k+ ✨了）(<a href="https://github.com/azl397985856/leetcode)，[《大前端面试宝典》](https://github.com/azl397985856/fe-interview)" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode)，[《大前端面试宝典》](https://github.com/azl397985856/fe-interview)</a></li></ul><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075856.png" alt></p><blockquote><p>千万不要觉得算法对前端不重要，算法，网络，操作系统属于基础，从事相关工作的都应该认真学习，打好基础才行。</p></blockquote><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>大家可以关注我的公众号《脑洞前端》，公众号后台回复“大前端”，拉你进《大前端面试宝典 - 图解前端群》。回复“leetcode”，拉你进《leetcode题解交流群》</p><p>最后祝大家在前端的路上越走越远。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> 学习方法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 学习方法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/blog/2019/12/11/ibinhouse/"/>
+      <url>/blog/2019/12/11/ibinhouse/</url>
+      
+        <content type="html"><![CDATA[<p>信息输入大脑后，遗忘也就随之开始了。遗忘率随时间的流逝而先快后慢，特别是在刚刚识记的短时间里，遗忘最快，这就是著名的艾宾浩斯遗忘曲线。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>我是如何刷 LeetCode 的？</title>
       <link href="/blog/2019/12/11/how-am-I-conque-leetcode/"/>
       <url>/blog/2019/12/11/how-am-I-conque-leetcode/</url>
@@ -571,35 +613,6 @@
     
     
     <entry>
-      <title>零基础的前端开发初学者应如何系统地学习？</title>
-      <link href="/blog/2019/12/11/how-am-I-learn-fe/"/>
-      <url>/blog/2019/12/11/how-am-I-learn-fe/</url>
-      
-        <content type="html"><![CDATA[<p>回想四年前我刚入行的时候，那时候很多人对于前端的看法是“切图，画页面，有个编辑器+浏览器就能干，门槛低”，现在已经完全不是那样了，可以说现在的前端这个职业的门槛虽然还是没怎么变，但是整个行业的门槛提升了，换句话说就是整个行业对于前端这个职位要求更高了，对于前端小白的需求量降低，对于高级前端的需求量还在上升，甚至是供小于求的局面。从市场经济学角度上讲你只有进入到高级级别，才能真正吃到行业的红利。  因此想要入行的朋友要先想清楚，不要头脑发热，如果你想清楚了，那么请继续往下看。<br>说实话，现在的前端大环境对初学者来说实在有点不友好，学习资料鱼龙混杂，良莠不齐，有质量很高的学习资料，也有谬论，前后不一，观点错误，或者讲述不清晰的。 更可怕的是质量低下的文章有时候更受欢迎，因此需要大家有很好的甄别能力，但这对于初学者来说实在有些困难，我在这里就来谈一下 <code>初学者如何少走弯路，并且系统性地学习前端</code>。</p><a id="more"></a><h2 id="兴趣是最好的老师"><a href="#兴趣是最好的老师" class="headerlink" title="兴趣是最好的老师"></a>兴趣是最好的老师</h2><p>兴趣不管对于学习什么来说都是最好的老师。当然前端也不例外，如果你对这一门感兴趣，绝对会对你有很大的帮助。</p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075824.png" alt></p><p>关于如何培养兴趣，我提一点，你可以尝试去做一些小的“发明创造”，从而激发自己内心的“成就感”。这些小发明可以是一些小工具，小页面。你可以从开源社区，比如Github或者一些论坛，甚至自己的生活中收集一些创作素材。对于我来说，我就做过一个“前端开发工作流”的软件，“siri”， “小门神”等，从而带来成就感，提升自己的兴趣。</p><h2 id="权威，权威，还是权威"><a href="#权威，权威，还是权威" class="headerlink" title="权威，权威，还是权威"></a>权威，权威，还是权威</h2><p>其实技术越往上走，越会关注标准，关注协议等更上层和抽象的东西。而制定这些协议和标准的人往往都是世界上的“殿堂级”程序员，因此关注这些东西对于他们来说就是权威，对他们来说就非常很重要，但是这对于初学者来说似乎还比较遥远。那么初学者如何对接“权威”呢？<br>刚才提到了网上的学习资料参差不齐，这其实对于入门学习来说是很不利的，就像童年时期对于整个人生的影响一样，入门阶段对于整个前端开发生涯的影响也是巨大的。关于如何初学者如何对接权威，我这里总结了以下三点：<br>看一些权威的书籍，包括前端基础，软件工程以及算法等。这里不太建议看太老的，毕竟技术的发展是很快的，以前非常经典的书并一定适合看了，尤其是初学者而言。这里前端方面我重点推荐两本书，一本是《你不知道的JS》，一本是《JavaScript语言精粹》。除了前端，你还可以看一些软工类的书，我个人比较喜欢的有《程序员修炼之道》等，算法类的有《图解算法》，《编程之美》等。其他的我就不一一赘述了，想要更多书单的可以私信我。</p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075825.png" alt></p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075828.png" alt></p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075830.png" alt></p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075833.png" alt></p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075836.png" alt></p><ul><li>查权威资料。 这里我推荐两个，一个是<a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener">MDN</a>的文章，真的是又全面又专业，绝对是前端开发必备神器，哪里不会点哪里。 另外推荐一个<a href="https://developers.google.com/web/fundamentals/" target="_blank" rel="noopener">Google开发者</a> ， 里面干货很多，绝对权威。<br>这里顺便再安利一个软件，用来查文档什么的，简直如虎添翼，这个软件的名字是Dash，大家可以把自己常用的框架，类库等导进去，想用的时候直接查询即可，比去网上搜更快更高效，这个软件对于定制的支持度也是蛮高的，谁用谁知道。</li></ul><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075837.png" alt><br>（大家可以看到我下载了很多documentation）</p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-75838.png" alt><br>（你可以直达某一个documentation搜索，也可以全局搜索，甚至可以搜goole和stackoverflow，是不是很贴心？）</p><ul><li>关注一些圈内权威人士。 我一般会关注几个圈内比较知名的人的知乎，微博和twitter。这是我关注的<a href="https://github.com/azl397985856?tab=following" target="_blank" rel="noopener">Github的权威人士列表</a>。其实这些都是公开的，你也可以点开我的知乎，微博资料看我或者大佬们关注了谁。</li></ul><h2 id="做一些完整的简单项目"><a href="#做一些完整的简单项目" class="headerlink" title="做一些完整的简单项目"></a>做一些完整的简单项目</h2><p>大家可以尝试做一些简单的项目，不要嫌简单。 在做的过程往往能发现很多问题，如果有问题那这正好是自己提高的机会。 如果你觉得很简单，也没有关系，你可以思考一下，我有没有可能做的更好？我能不能把这些东西封装起来，建立更高一层的抽象（A New Level of Abstraction），做到DRY(Don’t Repeat Yourself)。<br>接下来就是关于怎么找项目。 你可以找个正式工作或者实习来做，也可以自己找一些小项目来练手， 比较常见的练手项目有模仿某个网站，APP或者搭建自己的个人主页，博客系统等。做好了不仅可以当敲门砖，说不定会收益很长时间呢。实在没有什么项目练手，这里再推荐一个网站，你可以再上面打怪升级。<a href="https://user-gold-cdn.xitu.io/2019/9/15/16d34514876b8c4d" target="_blank" rel="noopener">freecodecamp</a><br>现在你已经掌握了前端开发的基本概念和技能，那么如何做到更进一步，持续成长，做到高级呢？我相信这是很多人的疑问，下面我们就来看一下。</p><h2 id="学习路线"><a href="#学习路线" class="headerlink" title="学习路线"></a>学习路线</h2><p>你可能已经听过过大前端这个词，我这里不是劝退你哦。以下内容很高能，不过很多知识点不知道没关系，因为就算是工作了很多年了老手也很难了解其中的大半知识点。<br>我个人为了让自己巩固知识，同时也为了帮助他人，总结了大前端下的30多个主题内容，内容覆盖大前端的方方面面，虽然是从面试角度出发，但是你用来提升自己，查缺补漏也是很有用的。</p><p>多图预警：</p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075842.png" alt></p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075843.png" alt></p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075844.png" alt></p><p>拿《编程题》主题来说，我总结了各大公司常考的几十道题目。<br><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075847.png" alt></p><p>对于其他主题也是一样，我都会尽可能地深度讲解和剖析，并且从多方面理解，我相信这是在市面上很少见的。</p><p>而且我还画了很多图，来帮助大家理解一些抽象的知识点。</p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075850.png" alt></p><p>项目地址： <a href="https://lucifer.ren/fe-interview/#/">https://lucifer.ren/fe-interview/#/</a>   欢迎围观。</p><h2 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h2><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075854.png" alt></p><p>实话实说，很多优秀的思想，规范，写法我都是从优秀的开源项目中学来的。 我会不定期阅读一些优秀的开源项目源码，也会参与到开源的工作中去，这给我自己带来了很大的提升。 不仅技术得到了提升，团队协作，规范化等方面也有了质的提高，另外还认识了一些优秀的人。四年来，我阅读了很多优秀的源码，也尝试自己去造一些轮子，并开源出去，回馈社区。</p><h2 id="输入-输出"><a href="#输入-输出" class="headerlink" title="输入 + 输出"></a>输入 + 输出</h2><p>前面重点讲述的是输入。 其实学习的过程不仅仅是输入，输出也是很好的学习方法。 输出的形式有很多，比如写博客，讲给别人，开源出去让别人用等。 这其实是很好的学习机会，这种学习方法可以让你的成长速度呈指数型增长，因此千万不要小看它。 我会通过以练代学的方式来学习，比如我学习React，我会迅速看文档，然后写demo，最后我会自己<a href="https://github.com/azl397985856/mono-react" target="_blank" rel="noopener">《从零实现React》</a>来内化它。</p><p>我还会定期做总结，写文章，写开源项目，做分享等，目的一方面是影响他人，另一方面是成长自己。</p><h2 id="持续学习"><a href="#持续学习" class="headerlink" title="持续学习"></a>持续学习</h2><p>选择了技术这条路，就要做好持续学习，每日精进的准备，跟上时代潮流是很有必要的。</p><ul><li>日报周报。 大家可以订阅一些前端方面的日报周报，这方面其实有很多，这里只推荐一个我常看的一个<a href="https://javascriptweekly.com" target="_blank" rel="noopener">JavaScript周刊</a>。我自己也出了一款<a href="https://github.com/azl397985856/daily-featured" target="_blank" rel="noopener">《每日一荐》</a>, 每天推荐一个优秀的开源项目，优秀文章， 周一到周五我们不见不散。</li></ul><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075855.png" alt></p><ul><li>深度参与开源项目。 关于如何参与开源项目其实可以另起一篇文章了，这里不再赘述，感性的话，我会再写一篇文章，大家记得关注我就好。</li><li>定期总结，技术输出。 我的习惯是对于学习的内容定期和不定期地进行总结。 比如最近我在总结的[《leetcode题解》]（现在有18k+ ✨了）(<a href="https://github.com/azl397985856/leetcode)，[《大前端面试宝典》](https://github.com/azl397985856/fe-interview)" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode)，[《大前端面试宝典》](https://github.com/azl397985856/fe-interview)</a></li></ul><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075856.png" alt></p><blockquote><p>千万不要觉得算法对前端不重要，算法，网络，操作系统属于基础，从事相关工作的都应该认真学习，打好基础才行。</p></blockquote><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>大家可以关注我的公众号《脑洞前端》，公众号后台回复“大前端”，拉你进《大前端面试宝典 - 图解前端群》。回复“leetcode”，拉你进《leetcode题解交流群》</p><p>最后祝大家在前端的路上越走越远。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端 </category>
-          
-          <category> 学习方法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 前端 </tag>
-            
-            <tag> 学习方法 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>从老鼠试毒问题来看二分法</title>
       <link href="/blog/2019/12/11/laoshushidu/"/>
       <url>/blog/2019/12/11/laoshushidu/</url>
@@ -621,19 +634,6 @@
             <tag> 算法 </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/blog/2019/12/11/ibinhouse/"/>
-      <url>/blog/2019/12/11/ibinhouse/</url>
-      
-        <content type="html"><![CDATA[<p>信息输入大脑后，遗忘也就随之开始了。遗忘率随时间的流逝而先快后慢，特别是在刚刚识记的短时间里，遗忘最快，这就是著名的艾宾浩斯遗忘曲线。</p>]]></content>
-      
-      
       
     </entry>
     
@@ -802,35 +802,6 @@
     
     
     <entry>
-      <title>布隆过滤器</title>
-      <link href="/blog/2019/12/11/bloom-filter/"/>
-      <url>/blog/2019/12/11/bloom-filter/</url>
-      
-        <content type="html"><![CDATA[<p>假设你现在要处理这样一个问题，你有一个网站并且拥有<code>很多</code>访客，每当有用户访问时，你想知道这个ip是不是第一次访问你的网站。你会怎么做呢？</p><a id="more"></a><h3 id="hashtable-可以么"><a href="#hashtable-可以么" class="headerlink" title="hashtable 可以么"></a>hashtable 可以么</h3><p>一个显而易见的答案是将所有的ip用hashtable存起来，每次访问都去hashtable中取，然后判断即可。但是题目说了网站有<code>很多</code>访客，<br>假如有10亿个用户访问过，每个ip的长度是4 byte，那么你一共需要4 * 1000000000 = 4000000000Bytes = 4G , 如果是判断URL黑名单，<br>由于每个URL会更长，那么需要的空间可能会远远大于你的期望。</p><h3 id="bit"><a href="#bit" class="headerlink" title="bit"></a>bit</h3><p>另一个稍微难想到的解法是bit， 我们知道bit有0和1两种状态，那么用来表示存在，不存在再合适不过了。</p><p>加入有10亿个ip，我们就可以用10亿个bit来存储，那么你一共需要 1 * 1000000000 = (4000000000 / 8) Bytes = 128M, 变为原来的1/32,<br>如果是存储URL这种更长的字符串，效率会更高。 </p><p>基于这种想法，我们只需要两个操作，set(ip) 和 has(ip)</p><p>这样做有两个非常致命的缺点：</p><ol><li>当样本分布极度不均匀的时候，会造成很大空间上的浪费</li></ol><blockquote><p>我们可以通过散列函数来解决</p></blockquote><ol start="2"><li>当元素不是整型（比如URL）的时候，BitSet就不适用了</li></ol><blockquote><p>我们还是可以使用散列函数来解决， 甚至可以多hash几次</p></blockquote><h3 id="布隆过滤器"><a href="#布隆过滤器" class="headerlink" title="布隆过滤器"></a>布隆过滤器</h3><p>布隆过滤器其实就是<code>bit + 多个散列函数</code>,  如果经过多次散列的值再bit上都为1，那么可能存在(可能有冲突)。 如果<br>有一个不为1，那么一定不存在（一个值经过散列函数得到的值一定是唯一的），这也是布隆过滤器的一个重要特点。</p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-22-041300.jpg" alt="bloom-filter-url"></p><h3 id="布隆过滤器的应用"><a href="#布隆过滤器的应用" class="headerlink" title="布隆过滤器的应用"></a>布隆过滤器的应用</h3><ol><li><p>网络爬虫<br>判断某个URL是否已经被爬取过</p></li><li><p>K-V数据库 判断某个key是否存在</p></li></ol><p>比如Hbase的每个Region中都包含一个BloomFilter，用于在查询时快速判断某个key在该region中是否存在。</p><ol start="3"><li>钓鱼网站识别</li></ol><p>浏览器有时候会警告用户，访问的网站很可能是钓鱼网站，用的就是这种技术</p><blockquote><p>从这个算法大家可以对 tradeoff(取舍) 有更入的理解。</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> 算法 </category>
-          
-          <category> 布隆过滤器 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 数据结构 </tag>
-            
-            <tag> 算法 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>浏览器事件模型</title>
       <link href="/blog/2019/12/11/browser-event/"/>
       <url>/blog/2019/12/11/browser-event/</url>
@@ -852,6 +823,35 @@
             <tag> 浏览器 </tag>
             
             <tag> 事件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>布隆过滤器</title>
+      <link href="/blog/2019/12/11/bloom-filter/"/>
+      <url>/blog/2019/12/11/bloom-filter/</url>
+      
+        <content type="html"><![CDATA[<p>假设你现在要处理这样一个问题，你有一个网站并且拥有<code>很多</code>访客，每当有用户访问时，你想知道这个ip是不是第一次访问你的网站。你会怎么做呢？</p><a id="more"></a><h3 id="hashtable-可以么"><a href="#hashtable-可以么" class="headerlink" title="hashtable 可以么"></a>hashtable 可以么</h3><p>一个显而易见的答案是将所有的ip用hashtable存起来，每次访问都去hashtable中取，然后判断即可。但是题目说了网站有<code>很多</code>访客，<br>假如有10亿个用户访问过，每个ip的长度是4 byte，那么你一共需要4 * 1000000000 = 4000000000Bytes = 4G , 如果是判断URL黑名单，<br>由于每个URL会更长，那么需要的空间可能会远远大于你的期望。</p><h3 id="bit"><a href="#bit" class="headerlink" title="bit"></a>bit</h3><p>另一个稍微难想到的解法是bit， 我们知道bit有0和1两种状态，那么用来表示存在，不存在再合适不过了。</p><p>加入有10亿个ip，我们就可以用10亿个bit来存储，那么你一共需要 1 * 1000000000 = (4000000000 / 8) Bytes = 128M, 变为原来的1/32,<br>如果是存储URL这种更长的字符串，效率会更高。 </p><p>基于这种想法，我们只需要两个操作，set(ip) 和 has(ip)</p><p>这样做有两个非常致命的缺点：</p><ol><li>当样本分布极度不均匀的时候，会造成很大空间上的浪费</li></ol><blockquote><p>我们可以通过散列函数来解决</p></blockquote><ol start="2"><li>当元素不是整型（比如URL）的时候，BitSet就不适用了</li></ol><blockquote><p>我们还是可以使用散列函数来解决， 甚至可以多hash几次</p></blockquote><h3 id="布隆过滤器"><a href="#布隆过滤器" class="headerlink" title="布隆过滤器"></a>布隆过滤器</h3><p>布隆过滤器其实就是<code>bit + 多个散列函数</code>,  如果经过多次散列的值再bit上都为1，那么可能存在(可能有冲突)。 如果<br>有一个不为1，那么一定不存在（一个值经过散列函数得到的值一定是唯一的），这也是布隆过滤器的一个重要特点。</p><p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-22-041300.jpg" alt="bloom-filter-url"></p><h3 id="布隆过滤器的应用"><a href="#布隆过滤器的应用" class="headerlink" title="布隆过滤器的应用"></a>布隆过滤器的应用</h3><ol><li><p>网络爬虫<br>判断某个URL是否已经被爬取过</p></li><li><p>K-V数据库 判断某个key是否存在</p></li></ol><p>比如Hbase的每个Region中都包含一个BloomFilter，用于在查询时快速判断某个key在该region中是否存在。</p><ol start="3"><li>钓鱼网站识别</li></ol><p>浏览器有时候会警告用户，访问的网站很可能是钓鱼网站，用的就是这种技术</p><blockquote><p>从这个算法大家可以对 tradeoff(取舍) 有更入的理解。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+          <category> 布隆过滤器 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
