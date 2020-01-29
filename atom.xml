@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-01-29T12:05:37.678Z</updated>
+  <updated>2020-01-29T14:46:16.752Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【LeetCode日记】 50. Pow(x, n)</title>
+    <link href="https://lucifer.ren/blog/2020/01/29/50.powx-n/"/>
+    <id>https://lucifer.ren/blog/2020/01/29/50.powx-n/</id>
+    <published>2020-01-29T14:44:15.972Z</published>
+    <updated>2020-01-29T14:46:16.752Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是一道让我们实现系统函数的造轮子题目，我们来看下。&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="数学" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
+    
+      <category term="位运算" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode日记" scheme="https://lucifer.ren/blog/tags/LeetCode%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>【LeetCode日记】 874. 模拟行走机器人</title>
@@ -323,6 +356,28 @@
   </entry>
   
   <entry>
+    <title>【RFC】XXX 公司监控体系需求与技术调研</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/rfc-monitor/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/rfc-monitor/</id>
+    <published>2019-12-11T04:35:19.046Z</published>
+    <updated>2020-01-10T05:21:06.180Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量，建立完善的监控体系可以很好的解决这个问题。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="RFC" scheme="https://lucifer.ren/blog/tags/RFC/"/>
+    
+      <category term="技术调研" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/"/>
+    
+      <category term="监控" scheme="https://lucifer.ren/blog/tags/%E7%9B%91%E6%8E%A7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>文科生都能看懂的循环移位算法</title>
     <link href="https://lucifer.ren/blog/2019/12/11/rotate-list/"/>
     <id>https://lucifer.ren/blog/2019/12/11/rotate-list/</id>
@@ -409,28 +464,6 @@
   </entry>
   
   <entry>
-    <title>【RFC】XXX 公司监控体系需求与技术调研</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/rfc-monitor/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/rfc-monitor/</id>
-    <published>2019-12-11T04:35:19.046Z</published>
-    <updated>2020-01-10T05:21:06.180Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量，建立完善的监控体系可以很好的解决这个问题。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="RFC" scheme="https://lucifer.ren/blog/tags/RFC/"/>
-    
-      <category term="技术调研" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/"/>
-    
-      <category term="监控" scheme="https://lucifer.ren/blog/tags/%E7%9B%91%E6%8E%A7/"/>
-    
-  </entry>
-  
-  <entry>
     <title>纪念LeetCode项目Star突破2W</title>
     <link href="https://lucifer.ren/blog/2019/12/11/thanksGaving-2/"/>
     <id>https://lucifer.ren/blog/2019/12/11/thanksGaving-2/</id>
@@ -510,28 +543,6 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="https://lucifer.ren/blog/2019/12/11/ibinhouse/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/ibinhouse/</id>
-    <published>2019-12-11T04:35:19.045Z</published>
-    <updated>2019-12-11T04:35:19.045Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>从老鼠试毒问题来看二分法</title>
     <link href="https://lucifer.ren/blog/2019/12/11/laoshushidu/"/>
     <id>https://lucifer.ren/blog/2019/12/11/laoshushidu/</id>
@@ -554,20 +565,24 @@
   </entry>
   
   <entry>
-    <title>【LeetCode题解】1186.删除一次得到子数组最大和</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/leetcode-1186/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/leetcode-1186/</id>
+    <title></title>
+    <link href="https://lucifer.ren/blog/2019/12/11/ibinhouse/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/ibinhouse/</id>
     <published>2019-12-11T04:35:19.045Z</published>
     <updated>2019-12-11T04:35:19.045Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;LeetCode 1186题，最大子数组的进阶版本。&lt;/p&gt;
+      
+      
+        
+        
+          
+        
+      
     
     </summary>
     
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
   </entry>
   
