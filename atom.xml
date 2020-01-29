@@ -323,28 +323,6 @@
   </entry>
   
   <entry>
-    <title>【RFC】XXX 公司监控体系需求与技术调研</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/rfc-monitor/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/rfc-monitor/</id>
-    <published>2019-12-11T04:35:19.046Z</published>
-    <updated>2020-01-10T05:21:06.180Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量，建立完善的监控体系可以很好的解决这个问题。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="RFC" scheme="https://lucifer.ren/blog/tags/RFC/"/>
-    
-      <category term="技术调研" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/"/>
-    
-      <category term="监控" scheme="https://lucifer.ren/blog/tags/%E7%9B%91%E6%8E%A7/"/>
-    
-  </entry>
-  
-  <entry>
     <title>文科生都能看懂的循环移位算法</title>
     <link href="https://lucifer.ren/blog/2019/12/11/rotate-list/"/>
     <id>https://lucifer.ren/blog/2019/12/11/rotate-list/</id>
@@ -427,6 +405,28 @@
       <category term="D2" scheme="https://lucifer.ren/blog/tags/D2/"/>
     
       <category term="QCon" scheme="https://lucifer.ren/blog/tags/QCon/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【RFC】XXX 公司监控体系需求与技术调研</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/rfc-monitor/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/rfc-monitor/</id>
+    <published>2019-12-11T04:35:19.046Z</published>
+    <updated>2020-01-10T05:21:06.180Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量，建立完善的监控体系可以很好的解决这个问题。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="RFC" scheme="https://lucifer.ren/blog/tags/RFC/"/>
+    
+      <category term="技术调研" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/"/>
+    
+      <category term="监控" scheme="https://lucifer.ren/blog/tags/%E7%9B%91%E6%8E%A7/"/>
     
   </entry>
   
