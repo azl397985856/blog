@@ -401,27 +401,6 @@
   </entry>
   
   <entry>
-    <title>累死累活干不过一个写PPT的</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/ppt-data/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/ppt-data/</id>
-    <published>2019-12-11T04:35:19.046Z</published>
-    <updated>2019-12-11T04:35:19.046Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;无论是身处什么行业什么领域，数据分析越来越成为一向必不可少的技能，&lt;br&gt;而运用数据思维进行决策更能产生形成高质量的决策结果。&lt;/p&gt;
-&lt;p&gt;随着互联网的不断发展和物联网设备的不断普及，我们日常生活中的各种数据被存储下来，让我们可以通过定量分析数据，利用数据实现更好的决策制定。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="技能" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E8%83%BD/"/>
-    
-      <category term="PPT" scheme="https://lucifer.ren/blog/tags/PPT/"/>
-    
-  </entry>
-  
-  <entry>
     <title>一文搞懂《链表反转》</title>
     <link href="https://lucifer.ren/blog/2019/12/11/reverseList/"/>
     <id>https://lucifer.ren/blog/2019/12/11/reverseList/</id>
@@ -454,6 +433,27 @@
       <category term="字节跳动" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
     
       <category term="链表" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>累死累活干不过一个写PPT的</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/ppt-data/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/ppt-data/</id>
+    <published>2019-12-11T04:35:19.046Z</published>
+    <updated>2019-12-11T04:35:19.046Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;无论是身处什么行业什么领域，数据分析越来越成为一向必不可少的技能，&lt;br&gt;而运用数据思维进行决策更能产生形成高质量的决策结果。&lt;/p&gt;
+&lt;p&gt;随着互联网的不断发展和物联网设备的不断普及，我们日常生活中的各种数据被存储下来，让我们可以通过定量分析数据，利用数据实现更好的决策制定。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技能" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E8%83%BD/"/>
+    
+      <category term="PPT" scheme="https://lucifer.ren/blog/tags/PPT/"/>
     
   </entry>
   
