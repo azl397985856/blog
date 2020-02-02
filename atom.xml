@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-02-01T14:48:16.559Z</updated>
+  <updated>2020-02-02T07:05:11.796Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BigPipe和微前端</title>
+    <link href="https://lucifer.ren/blog/2020/02/02/bigpipe-and-micro-fe/"/>
+    <id>https://lucifer.ren/blog/2020/02/02/bigpipe-and-micro-fe/</id>
+    <published>2020-02-01T16:00:00.000Z</published>
+    <updated>2020-02-02T07:05:11.796Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;你可能听说过 BigPipe，这是一个十多年前的技术，而 BigPipe 通常都会跟“性能优化”同时被提起。微前端也是一个很早被提出的技术，但是最近几年才开始比较流行。而目前微前端能够解决的最大的问题恐怕就是遗留系统改造。我们可以将新技术构造的系统和旧技术构造的系统完美融合到一起，彼此构建，发布，运行等不受干扰。 那么 BigPipe 究竟和微前端有什么关系呢，我为什么要把这两个放到一起来看？&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="BigPipe" scheme="https://lucifer.ren/blog/tags/BigPipe/"/>
+    
+      <category term="微前端" scheme="https://lucifer.ren/blog/tags/%E5%BE%AE%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>Floyd-Warshall 解题模板，助你快速AC</title>
@@ -401,6 +421,65 @@
   </entry>
   
   <entry>
+    <title>累死累活干不过一个写PPT的</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/ppt-data/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/ppt-data/</id>
+    <published>2019-12-11T04:35:19.046Z</published>
+    <updated>2019-12-11T04:35:19.046Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;无论是身处什么行业什么领域，数据分析越来越成为一向必不可少的技能，&lt;br&gt;而运用数据思维进行决策更能产生形成高质量的决策结果。&lt;/p&gt;
+&lt;p&gt;随着互联网的不断发展和物联网设备的不断普及，我们日常生活中的各种数据被存储下来，让我们可以通过定量分析数据，利用数据实现更好的决策制定。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技能" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E8%83%BD/"/>
+    
+      <category term="PPT" scheme="https://lucifer.ren/blog/tags/PPT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>值得关注的技术类大会</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/tech-conf/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/tech-conf/</id>
+    <published>2019-12-11T04:35:19.046Z</published>
+    <updated>2019-12-11T04:35:19.046Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;作为一个技术人，怎么能不参加和关注几场技术大会呢？让我们来看下那些你不能错过的技术大会吧。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术大会" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/"/>
+    
+      <category term="JSConf" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/JSConf/"/>
+    
+      <category term="React Conf" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/React-Conf/"/>
+    
+      <category term="Google IO" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/Google-IO/"/>
+    
+      <category term="D2" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/D2/"/>
+    
+      <category term="QCon" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/QCon/"/>
+    
+    
+      <category term="技术大会" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/"/>
+    
+      <category term="JSConf" scheme="https://lucifer.ren/blog/tags/JSConf/"/>
+    
+      <category term="Google IO" scheme="https://lucifer.ren/blog/tags/Google-IO/"/>
+    
+      <category term="D2" scheme="https://lucifer.ren/blog/tags/D2/"/>
+    
+      <category term="QCon" scheme="https://lucifer.ren/blog/tags/QCon/"/>
+    
+  </entry>
+  
+  <entry>
     <title>一文搞懂《链表反转》</title>
     <link href="https://lucifer.ren/blog/2019/12/11/reverseList/"/>
     <id>https://lucifer.ren/blog/2019/12/11/reverseList/</id>
@@ -437,23 +516,24 @@
   </entry>
   
   <entry>
-    <title>累死累活干不过一个写PPT的</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/ppt-data/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/ppt-data/</id>
+    <title>纪念LeetCode项目Star突破2W</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/thanksGaving-2/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/thanksGaving-2/</id>
     <published>2019-12-11T04:35:19.046Z</published>
     <updated>2019-12-11T04:35:19.046Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;无论是身处什么行业什么领域，数据分析越来越成为一向必不可少的技能，&lt;br&gt;而运用数据思维进行决策更能产生形成高质量的决策结果。&lt;/p&gt;
-&lt;p&gt;随着互联网的不断发展和物联网设备的不断普及，我们日常生活中的各种数据被存储下来，让我们可以通过定量分析数据，利用数据实现更好的决策制定。&lt;/p&gt;
+      &lt;p&gt;假期这几天我买了《逆转裁判 123》合集，面对着这香喷喷的冷饭吃了半天。从 GBA 玩到 NDS，从 NDS 玩到 3DS, 现在 NS 虽然没有出新作有点遗憾。不过有了高清重制，也当是个回忆和收藏了 🎉🎉&lt;/p&gt;
     
     </summary>
     
+      <category term="日记" scheme="https://lucifer.ren/blog/categories/%E6%97%A5%E8%AE%B0/"/>
     
-      <category term="技能" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E8%83%BD/"/>
+      <category term="技术" scheme="https://lucifer.ren/blog/categories/%E6%97%A5%E8%AE%B0/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="PPT" scheme="https://lucifer.ren/blog/tags/PPT/"/>
+    
+      <category term="日记" scheme="https://lucifer.ren/blog/tags/%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
@@ -524,99 +604,6 @@
       <category term="字符串" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
       <category term="编程之美" scheme="https://lucifer.ren/blog/tags/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>值得关注的技术类大会</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/tech-conf/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/tech-conf/</id>
-    <published>2019-12-11T04:35:19.046Z</published>
-    <updated>2019-12-11T04:35:19.046Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;作为一个技术人，怎么能不参加和关注几场技术大会呢？让我们来看下那些你不能错过的技术大会吧。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术大会" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/"/>
-    
-      <category term="JSConf" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/JSConf/"/>
-    
-      <category term="React Conf" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/React-Conf/"/>
-    
-      <category term="Google IO" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/Google-IO/"/>
-    
-      <category term="D2" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/D2/"/>
-    
-      <category term="QCon" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/QCon/"/>
-    
-    
-      <category term="技术大会" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/"/>
-    
-      <category term="JSConf" scheme="https://lucifer.ren/blog/tags/JSConf/"/>
-    
-      <category term="Google IO" scheme="https://lucifer.ren/blog/tags/Google-IO/"/>
-    
-      <category term="D2" scheme="https://lucifer.ren/blog/tags/D2/"/>
-    
-      <category term="QCon" scheme="https://lucifer.ren/blog/tags/QCon/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>纪念LeetCode项目Star突破2W</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/thanksGaving-2/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/thanksGaving-2/</id>
-    <published>2019-12-11T04:35:19.046Z</published>
-    <updated>2019-12-11T04:35:19.046Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;假期这几天我买了《逆转裁判 123》合集，面对着这香喷喷的冷饭吃了半天。从 GBA 玩到 NDS，从 NDS 玩到 3DS, 现在 NS 虽然没有出新作有点遗憾。不过有了高清重制，也当是个回忆和收藏了 🎉🎉&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="日记" scheme="https://lucifer.ren/blog/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="技术" scheme="https://lucifer.ren/blog/categories/%E6%97%A5%E8%AE%B0/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="日记" scheme="https://lucifer.ren/blog/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我是如何刷 LeetCode 的？</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/how-am-I-conque-leetcode/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/how-am-I-conque-leetcode/</id>
-    <published>2019-12-11T04:35:19.045Z</published>
-    <updated>2019-12-11T04:35:19.045Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我就是那个 @量子位 答案里面提到的“lucifer 小哥哥”。&lt;/p&gt;
-&lt;p&gt;我本人从开始准备算法以来，大概经过了几个月的时间，这期间自己成长了很多，从刷题菜鸡，到现在对刷题套路，题型有了自己的理解，感受还是蛮多的。我本人不是算法高手，算是勤能补拙类型。不过经过几个月的学习和练习，不仅面试变得更加得心应手，而且在工作中写更容易写出干净优雅，性能好的代码。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="学习方法" scheme="https://lucifer.ren/blog/categories/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="学习方法" scheme="https://lucifer.ren/blog/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
