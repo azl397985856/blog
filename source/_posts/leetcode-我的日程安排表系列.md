@@ -475,7 +475,7 @@ class MyCalendarThree(object):
 
 比如预定[1,3]和[5,7]，我们产生一个预定即可：
 
-![image.png](http://ww1.sinaimg.cn/large/e9f490c8ly1gbj44qiakoj213y0ao0tm.jpg)
+![image.png](http://ww1.sinaimg.cn/large/e9f490c8ly1gbj50c37suj212q0bcq3t.jpg)
 
 再比如预定[1,5]和[3,7]，我们需要两个预定：
 
