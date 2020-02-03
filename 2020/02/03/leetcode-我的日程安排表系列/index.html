@@ -480,7 +480,7 @@
 <h2 id="Count-Map-法"><a href="#Count-Map-法" class="headerlink" title="Count Map 法"></a>Count Map 法</h2><h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>这个是我在看了 Discussion <a href="https://leetcode.com/problems/my-calendar-iii/discuss/176950/C%2B%2B-Map-Solution-beats-95%2B" target="_blank" rel="noopener">[C++] Map Solution, beats 95%+</a> 之后写的解法，解法非常巧妙。</p>
 <p>我们使用一个 count map 来存储所有的预定，对于每次插入，我们执行<code>count[start] += 1</code>和<code>count[end] -= 1</code>。 count[t] 表示从 t 开始到下一个 t 我们有几个预定。因此我们需要对 count 进行排序才行。 我们维护一个最大值来 cnt 来表示需要的预定数。</p>
 <p>比如预定[1,3]和[5,7]，我们产生一个预定即可：</p>
-<p><img src="http://ww1.sinaimg.cn/large/e9f490c8ly1gbj44qiakoj213y0ao0tm.jpg" alt="image.png"></p>
+<p><img src="http://ww1.sinaimg.cn/large/e9f490c8ly1gbj50c37suj212q0bcq3t.jpg" alt="image.png"></p>
 <p>再比如预定[1,5]和[3,7]，我们需要两个预定：</p>
 <p><img src="http://ww1.sinaimg.cn/large/e9f490c8ly1gbj45oq6fhj213e0ca0tm.jpg" alt="image.png"></p>
 <p>我们可以使用红黑树来简化时间复杂度，如果你使用的是 Java，可以直接使用现成的数据结构 TreeMap。我这里偷懒，每次都排序，时间复杂度会很高，但是可以 AC。</p>
@@ -509,7 +509,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-03T12:52:45+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-03T13:15:48+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年2月3日</p>
