@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-02-08T12:20:31.345Z</updated>
+  <updated>2020-02-18T16:02:35.989Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>贪婪策略系列 - 覆盖篇</title>
+    <link href="https://lucifer.ren/blog/2020/02/19/leetcode-greedy/"/>
+    <id>https://lucifer.ren/blog/2020/02/19/leetcode-greedy/</id>
+    <published>2020-02-18T16:00:52.081Z</published>
+    <updated>2020-02-18T16:02:35.989Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;贪婪策略是一种常见的算法思想，具体是指，在对问题求解时，总是做出在当前看来是最好的选择。也就是说，不从整体最优上加以考虑，他所做出的是在某种意义上的局部最优解。贪心算法不是对所有问题都能得到整体最优解，关键是贪心策略的选择，选择的贪心策略必须具备无后效性，即某个状态以前的过程不会影响以后的状态，只与当前状态有关，这点和动态规划一样。&lt;/p&gt;
+&lt;p&gt;LeetCode 上对于贪婪策略有 73 道题目。我们将其分成几个类型来讲解，截止目前我们暂时只提供&lt;code&gt;覆盖&lt;/code&gt;问题，其他的可以期待我的新书或者之后的题解文章。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="贪婪" scheme="https://lucifer.ren/blog/categories/%E8%B4%AA%E5%A9%AA/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="算法系列" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="贪婪" scheme="https://lucifer.ren/blog/tags/%E8%B4%AA%E5%A9%AA/"/>
+    
+  </entry>
   
   <entry>
     <title>构造二叉树系列</title>
@@ -148,9 +175,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="字符串" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
@@ -183,9 +210,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
@@ -218,13 +245,13 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="数学" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/"/>
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
+    
+      <category term="数学" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="位运算" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
@@ -289,11 +316,11 @@
       <category term="动态规划" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
     
-      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="概率" scheme="https://lucifer.ren/blog/tags/%E6%A6%82%E7%8E%87/"/>
     
@@ -520,9 +547,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
     
@@ -544,72 +571,40 @@
   </entry>
   
   <entry>
-    <title>【RFC】XXX 公司监控体系需求与技术调研</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/rfc-monitor/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/rfc-monitor/</id>
+    <title>值得关注的技术类大会</title>
+    <link href="https://lucifer.ren/blog/2019/12/11/tech-conf/"/>
+    <id>https://lucifer.ren/blog/2019/12/11/tech-conf/</id>
     <published>2019-12-11T04:35:19.046Z</published>
-    <updated>2020-01-10T05:21:06.180Z</updated>
+    <updated>2019-12-11T04:35:19.046Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量，建立完善的监控体系可以很好的解决这个问题。&lt;/p&gt;
+      &lt;p&gt;作为一个技术人，怎么能不参加和关注几场技术大会呢？让我们来看下那些你不能错过的技术大会吧。&lt;/p&gt;
     
     </summary>
     
+      <category term="技术大会" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/"/>
     
-      <category term="RFC" scheme="https://lucifer.ren/blog/tags/RFC/"/>
+      <category term="JSConf" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/JSConf/"/>
     
-      <category term="技术调研" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/"/>
+      <category term="React Conf" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/React-Conf/"/>
     
-      <category term="监控" scheme="https://lucifer.ren/blog/tags/%E7%9B%91%E6%8E%A7/"/>
+      <category term="Google IO" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/Google-IO/"/>
     
-  </entry>
-  
-  <entry>
-    <title>文科生都能看懂的循环移位算法</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/rotate-list/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/rotate-list/</id>
-    <published>2019-12-11T04:35:19.046Z</published>
-    <updated>2020-02-14T06:38:25.945Z</updated>
+      <category term="D2" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/D2/"/>
     
-    <summary type="html">
-    
-      &lt;p&gt;循环移位问题真的是一个特别经典的问题了，今天我们就来攻克它。&lt;/p&gt;
-&lt;p&gt;循环移位的表现形式有很多种，就数据结构来说包括&lt;code&gt;数组&lt;/code&gt;，&lt;code&gt;字符串&lt;/code&gt;，&lt;code&gt;链表&lt;/code&gt;等。就算法来说，有&lt;code&gt;包含问题&lt;/code&gt;，&lt;code&gt;直接移动问题&lt;/code&gt;，还有&lt;code&gt;查找问题&lt;/code&gt;等。&lt;/p&gt;
-&lt;p&gt;虽然表现形式有很多，但是本质都是一样的，因为从逻辑上来讲其实他们都是线性数据结构，那么让我们来看一下吧。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="字符串" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-      <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="循环移位" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D/"/>
-    
-      <category term="链表" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/"/>
-    
-      <category term="编程之美" scheme="https://lucifer.ren/blog/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
+      <category term="QCon" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/QCon/"/>
     
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="技术大会" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/"/>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="JSConf" scheme="https://lucifer.ren/blog/tags/JSConf/"/>
     
-      <category term="数组" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E7%BB%84/"/>
+      <category term="Google IO" scheme="https://lucifer.ren/blog/tags/Google-IO/"/>
     
-      <category term="链表" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E8%A1%A8/"/>
+      <category term="D2" scheme="https://lucifer.ren/blog/tags/D2/"/>
     
-      <category term="循环移位" scheme="https://lucifer.ren/blog/tags/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D/"/>
-    
-      <category term="字符串" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-      <category term="编程之美" scheme="https://lucifer.ren/blog/tags/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
+      <category term="QCon" scheme="https://lucifer.ren/blog/tags/QCon/"/>
     
   </entry>
   
