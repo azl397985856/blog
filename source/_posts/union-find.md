@@ -68,8 +68,6 @@ class UF:
 
 如果你想要更好的性能，这个模板更适合你，相应地代码稍微有一点复杂。
 
-````python
-
 ```python
 class UF:
     parent = {}
@@ -100,6 +98,6 @@ class UF:
         self.cnt -= 1
     def connected(self, p, q):
         return self.find(p) == self.find(q)
-````
+```
 
 大家可以根据情况使用不同的模板。
