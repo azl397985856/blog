@@ -49,10 +49,7 @@ class UF:
     parent = {}
     cnt = 0
     def __init__(self, M):
-        n = len(M)
-        for i in range(n):
-            self.parent[i] = i
-            self.cnt += 1
+        # 初始化 parent 和 cnt
 
     def find(self, x):
         while x != self.parent[x]:
@@ -74,11 +71,7 @@ class UF:
     size = {}
     cnt = 0
     def __init__(self, M):
-        n = len(M)
-        for i in range(n):
-            self.parent[i] = i
-            self.size[i] = 1
-            self.cnt += 1
+        # 初始化 parent，size 和 cnt
 
     def find(self, x):
         while x != self.parent[x]:
