@@ -7,11 +7,15 @@ categories:
 
 关于并查集的题目不少，官方给的数据是 30 道（截止 2020-02-20），但是有一些题目虽然官方没有贴`并查集`标签，但是使用并查集来说确非常简单。这类题目如果掌握模板，那么刷这种题会非常快，并且犯错的概率会大大降低，这就是模板的好处。
 
+<!-- more -->
+
 我这里总结了几道并查集的题目：
 
 - [547.朋友圈](https://leetcode-cn.com/problems/friend-circles/solution/mo-ban-ti-bing-cha-ji-python3-by-fe-lucifer-2/)
 - [721. 账户合并](https://leetcode-cn.com/problems/accounts-merge/solution/mo-ban-ti-bing-cha-ji-python3-by-fe-lucifer-3/)
 - [990. 等式方程的可满足性](https://leetcode-cn.com/problems/satisfiability-of-equality-equations/solution/mo-ban-ti-bing-cha-ji-python3-by-fe-lucifer/)
+
+大家可以学了模板之后去套用一下上面的三道题，做不出来的可以看看我的题解。
 
 ## 并查集概述
 
