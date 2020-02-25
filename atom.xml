@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-02-20T11:10:06.792Z</updated>
+  <updated>2020-02-25T02:41:25.898Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每日一荐 2020-01 汇总</title>
+    <link href="https://lucifer.ren/blog/2020/02/25/daily-featured-2020-01/"/>
+    <id>https://lucifer.ren/blog/2020/02/25/daily-featured-2020-01/</id>
+    <published>2020-02-25T02:39:51.279Z</published>
+    <updated>2020-02-25T02:41:25.898Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/006y8mN6ly1g8d0sktqrwj30hs07maae.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;每天给你推荐一个新奇，好玩，高品质的开源库，好文，观点或言论等。&lt;/p&gt;
+&lt;p&gt;项目主页维护当前月份的内容，想看往期内容，可以去&lt;a href=&quot;https://github.com/azl397985856/daily-featured&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;每日一荐主仓库&lt;/a&gt;翻到下方历史汇总部分，然后选择自己感兴趣的月份点进去即可。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="每日一荐" scheme="https://lucifer.ren/blog/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/"/>
+    
+      <category term="2020-01" scheme="https://lucifer.ren/blog/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/2020-01/"/>
+    
+    
+      <category term="每日一荐" scheme="https://lucifer.ren/blog/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/"/>
+    
+  </entry>
   
   <entry>
     <title>【算法提高班】并查集</title>
@@ -464,7 +488,7 @@
     <link href="https://lucifer.ren/blog/2020/01/01/daily-featured-2019-12/"/>
     <id>https://lucifer.ren/blog/2020/01/01/daily-featured-2019-12/</id>
     <published>2020-01-01T12:33:17.345Z</published>
-    <updated>2020-01-01T12:33:53.858Z</updated>
+    <updated>2020-02-25T02:41:19.734Z</updated>
     
     <summary type="html">
     
@@ -553,42 +577,6 @@
       <category term="技能" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E8%83%BD/"/>
     
       <category term="PPT" scheme="https://lucifer.ren/blog/tags/PPT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一文搞懂《链表反转》</title>
-    <link href="https://lucifer.ren/blog/2019/12/11/reverseList/"/>
-    <id>https://lucifer.ren/blog/2019/12/11/reverseList/</id>
-    <published>2019-12-11T04:35:19.046Z</published>
-    <updated>2019-12-11T04:35:19.046Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;翻转链表一直都是热门题目，笔者就在某大型互联网公司的面试题中碰到过这种题目，这种题目很常常见，相对应的变形和扩展也很多，今天我们就来攻克它吧。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-      <category term="链表反转" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC/"/>
-    
-      <category term="链表" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="字节跳动" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
-    
-      <category term="链表" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E8%A1%A8/"/>
     
   </entry>
   
