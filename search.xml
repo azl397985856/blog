@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>一文带你 AC 十道题【滑动窗口】</title>
+      <link href="/blog/2020/03/16/slide-window/"/>
+      <url>/blog/2020/03/16/slide-window/</url>
+      
+        <content type="html"><![CDATA[<p>笔者最早接触滑动窗口是<code>滑动窗口协议</code>，滑动窗口协议（Sliding Window Protocol），属于 TCP 协议的一种应用，用于网络数据传输时的流量控制，以避免拥塞的发生。 发送方和接收方分别有一个窗口大小 w1 和 w2。窗口大小可能会根据网络流量的变化而有所不同，但是在更简单的实现中它们是固定的。窗口大小必须大于零才能进行任何操作。</p><p>我们算法中的滑动窗口也是类似，只不过包括的情况更加广泛。实际上上面的滑动窗口在某一个时刻就是固定窗口大小的滑动窗口，随着网络流量等因素改变窗口大小也会随着改变。接下来我们讲下算法中的滑动窗口。</p><a id="more"></a><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>滑动窗口是一种解决问题的思路和方法，通常用来解决一些连续问题。 比如 LeetCode 的 <a href="https://leetcode-cn.com/problems/minimum-size-subarray-sum/solution/209-chang-du-zui-xiao-de-zi-shu-zu-hua-dong-chua-2/" target="_blank" rel="noopener">209. 长度最小的子数组</a>。更多滑动窗口题目见下方<code>题目列表</code>。</p><h2 id="常见套路"><a href="#常见套路" class="headerlink" title="常见套路"></a>常见套路</h2><p>滑动窗口主要用来处理连续问题。比如题目求解“连续子串 xxxx”，“连续子数组 xxxx”，就应该可以想到滑动窗口。能不能解决另说，但是这种敏感性还是要有的。</p><p>从类型上说主要有：</p><ul><li>固定窗口大小</li><li>窗口大小不固定，求解最大的满足条件的窗口</li><li>窗口大小不固定，求解最小的满足条件的窗口（上面的 209 题就属于这种）</li></ul><p>后面两种我们统称为<code>可变窗口</code>。当然不管是哪种类型基本的思路都是一样的，不一样的仅仅是代码细节。</p><h3 id="固定窗口大小"><a href="#固定窗口大小" class="headerlink" title="固定窗口大小"></a>固定窗口大小</h3><p>对于固定窗口，我们只需要固定初始化左右指针 l 和 r，分别表示的窗口的左右顶点，并且保证：</p><ol><li>l 初始化为 0</li><li>初始化 r，使得 r - l + 1 等于窗口大小</li><li>同时移动 l 和 r</li><li>判断窗口内的连续元素是否满足题目限定的条件<ul><li>4.1 如果满足，再判断是否需要更新最优解，如果需要则更新最优解</li><li>4.2 如果不满足，则继续。</li></ul></li></ol><p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcw0pwdhmwj308z0d53yt.jpg" alt></p><h3 id="可变窗口大小"><a href="#可变窗口大小" class="headerlink" title="可变窗口大小"></a>可变窗口大小</h3><p>对于可变窗口，我们同样固定初始化左右指针 l 和 r，分别表示的窗口的左右顶点。后面有所不同，我们需要保证：</p><ol><li>l 和 r 都初始化为 0</li><li>r 指针移动一步</li><li>判断窗口内的连续元素是否满足题目限定的条件<ul><li>4.1 如果满足，再判断是否需要更新最优解，如果需要则更新最优解。并尝试通过移动 l 指针缩小窗口大小。循环执行 4.1</li><li>4.2 如果不满足，则继续。</li></ul></li></ol><p>形象地来看的话，就是 r 指针不停向右移动，l 指针仅仅在窗口满足条件之后才会移动，起到窗口收缩的效果。</p><p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcw0ouuplaj30d90d50t3.jpg" alt></p><h2 id="模板代码"><a href="#模板代码" class="headerlink" title="模板代码"></a>模板代码</h2><p>以下是 209 题目的代码，使用 Python 编写，大家意会即可。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minSubArrayLen</span><span class="params">(self, s: int, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        l = total = <span class="number">0</span></span><br><span class="line">        ans = len(nums) + <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> r <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            total += nums[r]</span><br><span class="line">            <span class="keyword">while</span> total &gt;= s:</span><br><span class="line">                ans = min(ans, r - l + <span class="number">1</span>)</span><br><span class="line">                total -= nums[l]</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span>  <span class="number">0</span> <span class="keyword">if</span> ans == len(nums) + <span class="number">1</span> <span class="keyword">else</span> ans</span><br></pre></td></tr></table></figure><h2 id="题目列表"><a href="#题目列表" class="headerlink" title="题目列表"></a>题目列表</h2><p>以下题目有的信息比较直接，有的题目信息比较隐蔽，需要自己发掘</p><ul><li><a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/solution/pythonjavascript-hua-dong-chuang-kou-3-wu-zhong-fu/" target="_blank" rel="noopener">【Python，JavaScript】滑动窗口（3. 无重复字符的最长子串）</a></li><li><a href="https://leetcode-cn.com/problems/minimum-window-substring/solution/python-hua-dong-chuang-kou-76-zui-xiao-fu-gai-zi-c/" target="_blank" rel="noopener">76. 最小覆盖子串</a></li><li><a href="https://leetcode-cn.com/problems/minimum-size-subarray-sum/solution/209-chang-du-zui-xiao-de-zi-shu-zu-hua-dong-chua-2/" target="_blank" rel="noopener">209. 长度最小的子数组</a></li><li><a href="https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/solution/python-hua-dong-chuang-kou-438-zhao-dao-zi-fu-chua/" target="_blank" rel="noopener">【Python】滑动窗口（438. 找到字符串中所有字母异位词）</a></li><li><a href="https://leetcode-cn.com/problems/fruit-into-baskets/solution/904-shui-guo-cheng-lan-python3-by-fe-lucifer/" target="_blank" rel="noopener">【904. 水果成篮】（Python3）</a></li><li><a href="https://leetcode-cn.com/problems/binary-subarrays-with-sum/solution/930-he-xiang-tong-de-er-yuan-zi-shu-zu-javapython-/" target="_blank" rel="noopener">【930. 和相同的二元子数组】（Java，Python）</a></li><li><a href="https://leetcode-cn.com/problems/subarrays-with-k-different-integers/solution/992-k-ge-bu-tong-zheng-shu-de-zi-shu-zu-hua-dong-c/" target="_blank" rel="noopener">【992. K 个不同整数的子数组】滑动窗口（Python）</a></li><li><a href="https://leetcode-cn.com/problems/max-consecutive-ones-iii/solution/1004-zui-da-lian-xu-1de-ge-shu-iii-hua-dong-chuang/" target="_blank" rel="noopener">【1004. 最大连续 1 的个数 III】滑动窗口（Python3）</a></li><li><a href="https://leetcode.com/problems/replace-the-substring-for-balanced-string/discuss/408978/javacpython-sliding-window/367697" target="_blank" rel="noopener">【1234. 替换子串得到平衡字符串】[Java/C++/Python] Sliding Window</a></li><li><a href="https://leetcode-cn.com/problems/count-number-of-nice-subarrays/solution/1248-tong-ji-you-mei-zi-shu-zu-hua-dong-chuang-kou/" target="_blank" rel="noopener">【1248. 统计「优美子数组」】滑动窗口（Python）</a></li></ul><h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul><li><a href="https://leetcode.com/problems/binary-subarrays-with-sum/discuss/186683/" target="_blank" rel="noopener">LeetCode Sliding Window Series Discussion</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+          <category> 算法，滑动窗口 </category>
+          
+          <category> 数据结构，数组 </category>
+          
+          <category> 数据结构，字符串 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 滑动窗口 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【LeetCode 日记】85. 最大矩形</title>
       <link href="/blog/2020/03/04/85.maximal-rectangle/"/>
       <url>/blog/2020/03/04/85.maximal-rectangle/</url>
@@ -433,13 +464,13 @@
             
             <tag> 算法 </tag>
             
-            <tag> 动态规划 </tag>
-            
             <tag> 数学 </tag>
             
             <tag> 概率 </tag>
             
             <tag> 递归 </tag>
+            
+            <tag> 动态规划 </tag>
             
         </tags>
       
@@ -470,9 +501,9 @@
             
             <tag> 算法 </tag>
             
-            <tag> 状态机 </tag>
-            
             <tag> 动态规划 </tag>
+            
+            <tag> 状态机 </tag>
             
             <tag> 贪心 </tag>
             
@@ -723,49 +754,6 @@
     
     
     <entry>
-      <title>值得关注的技术类大会</title>
-      <link href="/blog/2019/12/11/tech-conf/"/>
-      <url>/blog/2019/12/11/tech-conf/</url>
-      
-        <content type="html"><![CDATA[<p>作为一个技术人，怎么能不参加和关注几场技术大会呢？让我们来看下那些你不能错过的技术大会吧。</p><a id="more"></a><h2 id="JSConf"><a href="#JSConf" class="headerlink" title="JSConf"></a>JSConf</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7d50s2862j30r10iwjrx.jpg" alt><br><a href="https://jsconf.com/" target="_blank" rel="noopener">地址</a></p><h2 id="React-Conf"><a href="#React-Conf" class="headerlink" title="React Conf"></a>React Conf</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8wabkh6lyj31gk0a5jrl.jpg" alt><br><a href="https://conf.reactjs.org/" target="_blank" rel="noopener">地址</a></p><h2 id="Google-IO"><a href="#Google-IO" class="headerlink" title="Google IO"></a>Google IO</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7d51qe2drj31200h674i.jpg" alt><br><a href="https://events.google.com/io/" target="_blank" rel="noopener">地址</a></p><h2 id="D2"><a href="#D2" class="headerlink" title="D2"></a>D2</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7d52bgjgpj30sm0hr76u.jpg" alt><br><a href="http://d2forum.alibaba-inc.com/#/index?_k=ug35gm" target="_blank" rel="noopener">地址</a></p><h2 id="QCon"><a href="#QCon" class="headerlink" title="QCon"></a>QCon</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7d52uctmoj31110hiwhd.jpg" alt><br><a href="https://www.infoq.com/qcon/" target="_blank" rel="noopener">地址</a></p><h2 id="更多技术大会"><a href="#更多技术大会" class="headerlink" title="更多技术大会"></a>更多技术大会</h2><ul><li><a href="https://juejin.im/events" target="_blank" rel="noopener">https://juejin.im/events</a></li><li><a href="https://segmentfault.com/events" target="_blank" rel="noopener">https://segmentfault.com/events</a></li><li><a href="https://www.huodongxing.com" target="_blank" rel="noopener">https://www.huodongxing.com</a></li><li><a href="https://www.bagevent.com" target="_blank" rel="noopener">https://www.bagevent.com</a></li><li><a href="https://www.hdb.com" target="_blank" rel="noopener">https://www.hdb.com</a></li><li><a href="https://www.meetup.com" target="_blank" rel="noopener">https://www.meetup.com</a></li><li>…</li></ul><p>欢迎大家补充～</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术大会 </category>
-          
-          <category> JSConf </category>
-          
-          <category> React Conf </category>
-          
-          <category> Google IO </category>
-          
-          <category> D2 </category>
-          
-          <category> QCon </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 技术大会 </tag>
-            
-            <tag> JSConf </tag>
-            
-            <tag> Google IO </tag>
-            
-            <tag> D2 </tag>
-            
-            <tag> QCon </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>【RFC】XXX 公司监控体系需求与技术调研</title>
       <link href="/blog/2019/12/11/rfc-monitor/"/>
       <url>/blog/2019/12/11/rfc-monitor/</url>
@@ -832,6 +820,49 @@
             <tag> 字符串 </tag>
             
             <tag> 编程之美 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>值得关注的技术类大会</title>
+      <link href="/blog/2019/12/11/tech-conf/"/>
+      <url>/blog/2019/12/11/tech-conf/</url>
+      
+        <content type="html"><![CDATA[<p>作为一个技术人，怎么能不参加和关注几场技术大会呢？让我们来看下那些你不能错过的技术大会吧。</p><a id="more"></a><h2 id="JSConf"><a href="#JSConf" class="headerlink" title="JSConf"></a>JSConf</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7d50s2862j30r10iwjrx.jpg" alt><br><a href="https://jsconf.com/" target="_blank" rel="noopener">地址</a></p><h2 id="React-Conf"><a href="#React-Conf" class="headerlink" title="React Conf"></a>React Conf</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8wabkh6lyj31gk0a5jrl.jpg" alt><br><a href="https://conf.reactjs.org/" target="_blank" rel="noopener">地址</a></p><h2 id="Google-IO"><a href="#Google-IO" class="headerlink" title="Google IO"></a>Google IO</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7d51qe2drj31200h674i.jpg" alt><br><a href="https://events.google.com/io/" target="_blank" rel="noopener">地址</a></p><h2 id="D2"><a href="#D2" class="headerlink" title="D2"></a>D2</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7d52bgjgpj30sm0hr76u.jpg" alt><br><a href="http://d2forum.alibaba-inc.com/#/index?_k=ug35gm" target="_blank" rel="noopener">地址</a></p><h2 id="QCon"><a href="#QCon" class="headerlink" title="QCon"></a>QCon</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7d52uctmoj31110hiwhd.jpg" alt><br><a href="https://www.infoq.com/qcon/" target="_blank" rel="noopener">地址</a></p><h2 id="更多技术大会"><a href="#更多技术大会" class="headerlink" title="更多技术大会"></a>更多技术大会</h2><ul><li><a href="https://juejin.im/events" target="_blank" rel="noopener">https://juejin.im/events</a></li><li><a href="https://segmentfault.com/events" target="_blank" rel="noopener">https://segmentfault.com/events</a></li><li><a href="https://www.huodongxing.com" target="_blank" rel="noopener">https://www.huodongxing.com</a></li><li><a href="https://www.bagevent.com" target="_blank" rel="noopener">https://www.bagevent.com</a></li><li><a href="https://www.hdb.com" target="_blank" rel="noopener">https://www.hdb.com</a></li><li><a href="https://www.meetup.com" target="_blank" rel="noopener">https://www.meetup.com</a></li><li>…</li></ul><p>欢迎大家补充～</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术大会 </category>
+          
+          <category> JSConf </category>
+          
+          <category> React Conf </category>
+          
+          <category> Google IO </category>
+          
+          <category> D2 </category>
+          
+          <category> QCon </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术大会 </tag>
+            
+            <tag> JSConf </tag>
+            
+            <tag> Google IO </tag>
+            
+            <tag> D2 </tag>
+            
+            <tag> QCon </tag>
             
         </tags>
       
@@ -973,6 +1004,25 @@
     
     
     <entry>
+      <title>【LeetCode题解】1186.删除一次得到子数组最大和</title>
+      <link href="/blog/2019/12/11/leetcode-1186/"/>
+      <url>/blog/2019/12/11/leetcode-1186/</url>
+      
+        <content type="html"><![CDATA[<p>LeetCode 1186题，最大子数组的进阶版本。</p><a id="more"></a><h2 id="题目地址"><a href="#题目地址" class="headerlink" title="题目地址"></a>题目地址</h2><p><a href="https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/" target="_blank" rel="noopener">https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/</a></p><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">给你一个整数数组，返回它的某个 非空 子数组（连续元素）在执行一次可选的删除操作后，所能得到的最大元素总和。</span><br><span class="line"></span><br><span class="line">换句话说，你可以从原数组中选出一个子数组，并可以决定要不要从中删除一个元素（只能删一次哦），（删除后）子数组中至少应当有一个元素，然后该子数组（剩下）的元素总和是所有子数组之中最大的。</span><br><span class="line"></span><br><span class="line">注意，删除一个元素后，子数组 不能为空。</span><br><span class="line"></span><br><span class="line">请看示例：</span><br><span class="line"></span><br><span class="line">示例 1：</span><br><span class="line"></span><br><span class="line">输入：arr = [1,-2,0,3]</span><br><span class="line">输出：4</span><br><span class="line">解释：我们可以选出 [1, -2, 0, 3]，然后删掉 -2，这样得到 [1, 0, 3]，和最大。</span><br><span class="line">示例 2：</span><br><span class="line"></span><br><span class="line">输入：arr = [1,-2,-2,3]</span><br><span class="line">输出：3</span><br><span class="line">解释：我们直接选出 [3]，这就是最大和。</span><br><span class="line">示例 3：</span><br><span class="line"></span><br><span class="line">输入：arr = [-1,-1,-1,-1]</span><br><span class="line">输出：-1</span><br><span class="line">解释：最后得到的子数组不能为空，所以我们不能选择 [-1] 并从中删去 -1 来得到 0。</span><br><span class="line">     我们应该直接选择 [-1]，或者选择 [-1, -1] 再从中删去一个 -1。</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">1 &lt;= arr.length &lt;= 10^5</span><br><span class="line">-10^4 &lt;= arr[i] &lt;= 10^4</span><br></pre></td></tr></table></figure><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="暴力法"><a href="#暴力法" class="headerlink" title="暴力法"></a>暴力法</h3><p>符合知觉的做法是求出所有的情况，然后取出最大的。 我们只需要两层循环接口，外循环用于确定我们丢弃的元素，内循环用于计算subArraySum。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">maximumSum</span><span class="params">(self, arr: List[int])</span> -&gt; int:</span></span><br><span class="line">      res = arr[<span class="number">0</span>]</span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">maxSubSum</span><span class="params">(arr, skip)</span>:</span></span><br><span class="line">          res = maxSub = float(<span class="string">"-inf"</span>)</span><br><span class="line">         </span><br><span class="line">          <span class="keyword">for</span> i <span class="keyword">in</span> range(len(arr)):</span><br><span class="line">              <span class="keyword">if</span> i == skip:</span><br><span class="line">                  <span class="keyword">continue</span></span><br><span class="line">              maxSub = max(arr[i], maxSub + arr[i])</span><br><span class="line">              res = max(res, maxSub)</span><br><span class="line">          <span class="keyword">return</span> res</span><br><span class="line"><span class="comment"># 这里循环到了len(arr)项，表示的是一个都不删除的情况</span></span><br><span class="line">      <span class="keyword">for</span> i <span class="keyword">in</span> range(len(arr) + <span class="number">1</span>):</span><br><span class="line">          res = max(res, maxSubSum(arr, i))</span><br><span class="line">      <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure><h3 id="空间换时间"><a href="#空间换时间" class="headerlink" title="空间换时间"></a>空间换时间</h3><p>上面的做法在LC上会TLE， 因此我们需要换一种思路，既然超时了，我们是否可以从空间换时间的角度思考呢？我们可以分别从头尾遍历，建立两个subArraySub的数组l和r。 其实这个不难想到，很多题目都用到了这个技巧。</p><p>具体做法：</p><ul><li>一层遍历， 建立l数组，l[i]表示从左边开始的以arr[i]结尾的subArraySum的最大值</li><li>一层遍历， 建立r数组，r[i]表示从右边开始的以arr[i]结尾的subArraySum的最大值</li><li>一层遍历， 计算 l[i - 1] + r[i + 1] 的最大值 <blockquote><p>l[i - 1] + r[i + 1]的含义就是删除arr[i]的子数组最大值</p></blockquote></li><li>上面的这个步骤得到了删除一个的子数组最大值， 不删除的只需要在上面循环顺便计算一下即可</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maximumSum</span><span class="params">(self, arr: List[int])</span> -&gt; int:</span></span><br><span class="line">        n = len(arr)</span><br><span class="line">        l = [arr[<span class="number">0</span>]] * n</span><br><span class="line">        r = [arr[n - <span class="number">1</span>]] * n</span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> arr[<span class="number">0</span>]</span><br><span class="line">        res = arr[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</span><br><span class="line">            l[i] = max(l[i - <span class="number">1</span>] + arr[i], arr[i])</span><br><span class="line">            res = max(res, l[i])</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">2</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            r[i] = max(r[i + <span class="number">1</span>] + arr[i], arr[i])</span><br><span class="line">            res = max(res, r[i])</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n - <span class="number">1</span>):</span><br><span class="line">            res = max(res, l[i - <span class="number">1</span>] + r[i + <span class="number">1</span>])</span><br><span class="line">      </span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure><h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p>上面的算法虽然时间上有所改善，但是正如标题所说，空间复杂度是O(n),有没有办法改进呢？答案是使用动态规划。</p><p>具体过程：</p><ul><li>定义max0，表示以arr[i]结尾且一个都不漏的最大子数组和</li><li>定义max1，表示以arr[i]或者arr[i - 1]结尾，可以漏一个的最大子数组和</li><li>遍历数组，更新max1和max0（注意先更新max1，因为max1用到了上一个max0）</li><li>其中<code>max1 = max(max1 + arr[i], max0)</code>, 即删除arr[i - 1]或者删除arr[i]</li><li>其中<code>max0 = max(max0 + arr[i], arr[i])</code>， 一个都不删除</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># @lc app=leetcode.cn id=1186 lang=python3</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># [1186] 删除一次得到子数组最大和</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># @lc code=start</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maximumSum</span><span class="params">(self, arr: List[int])</span> -&gt; int:</span></span><br><span class="line">        <span class="comment"># DP</span></span><br><span class="line">        max0 = arr[<span class="number">0</span>]</span><br><span class="line">        max1 = arr[<span class="number">0</span>]</span><br><span class="line">        res = arr[<span class="number">0</span>]</span><br><span class="line">        n = len(arr)</span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> max0</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</span><br><span class="line">            <span class="comment"># 先更新max1，再更新max0，因为max1用到了上一个max0</span></span><br><span class="line">            max1 = max(max1 + arr[i], max0)</span><br><span class="line">            max0 = max(max0 + arr[i], arr[i])</span><br><span class="line">            res = max(res, max0, max1)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># @lc code=end</span></span><br></pre></td></tr></table></figure><h2 id="关键点解析"><a href="#关键点解析" class="headerlink" title="关键点解析"></a>关键点解析</h2><ul><li>空间换时间</li><li>头尾双数组</li><li>动态规划</li></ul><h2 id="相关题目"><a href="#相关题目" class="headerlink" title="相关题目"></a>相关题目</h2><ul><li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/42.trapping-rain-water.md" target="_blank" rel="noopener">42.trapping-rain-water</a></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>从零打造一个舒服的Mac开发环境 - 装机篇</title>
       <link href="/blog/2019/12/11/mac-setup-for-fe/"/>
       <url>/blog/2019/12/11/mac-setup-for-fe/</url>
@@ -988,25 +1038,6 @@
             <tag> 装机 </tag>
             
             <tag> 必备软件 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>【LeetCode题解】1186.删除一次得到子数组最大和</title>
-      <link href="/blog/2019/12/11/leetcode-1186/"/>
-      <url>/blog/2019/12/11/leetcode-1186/</url>
-      
-        <content type="html"><![CDATA[<p>LeetCode 1186题，最大子数组的进阶版本。</p><a id="more"></a><h2 id="题目地址"><a href="#题目地址" class="headerlink" title="题目地址"></a>题目地址</h2><p><a href="https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/" target="_blank" rel="noopener">https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/</a></p><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">给你一个整数数组，返回它的某个 非空 子数组（连续元素）在执行一次可选的删除操作后，所能得到的最大元素总和。</span><br><span class="line"></span><br><span class="line">换句话说，你可以从原数组中选出一个子数组，并可以决定要不要从中删除一个元素（只能删一次哦），（删除后）子数组中至少应当有一个元素，然后该子数组（剩下）的元素总和是所有子数组之中最大的。</span><br><span class="line"></span><br><span class="line">注意，删除一个元素后，子数组 不能为空。</span><br><span class="line"></span><br><span class="line">请看示例：</span><br><span class="line"></span><br><span class="line">示例 1：</span><br><span class="line"></span><br><span class="line">输入：arr = [1,-2,0,3]</span><br><span class="line">输出：4</span><br><span class="line">解释：我们可以选出 [1, -2, 0, 3]，然后删掉 -2，这样得到 [1, 0, 3]，和最大。</span><br><span class="line">示例 2：</span><br><span class="line"></span><br><span class="line">输入：arr = [1,-2,-2,3]</span><br><span class="line">输出：3</span><br><span class="line">解释：我们直接选出 [3]，这就是最大和。</span><br><span class="line">示例 3：</span><br><span class="line"></span><br><span class="line">输入：arr = [-1,-1,-1,-1]</span><br><span class="line">输出：-1</span><br><span class="line">解释：最后得到的子数组不能为空，所以我们不能选择 [-1] 并从中删去 -1 来得到 0。</span><br><span class="line">     我们应该直接选择 [-1]，或者选择 [-1, -1] 再从中删去一个 -1。</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">1 &lt;= arr.length &lt;= 10^5</span><br><span class="line">-10^4 &lt;= arr[i] &lt;= 10^4</span><br></pre></td></tr></table></figure><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="暴力法"><a href="#暴力法" class="headerlink" title="暴力法"></a>暴力法</h3><p>符合知觉的做法是求出所有的情况，然后取出最大的。 我们只需要两层循环接口，外循环用于确定我们丢弃的元素，内循环用于计算subArraySum。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">maximumSum</span><span class="params">(self, arr: List[int])</span> -&gt; int:</span></span><br><span class="line">      res = arr[<span class="number">0</span>]</span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">maxSubSum</span><span class="params">(arr, skip)</span>:</span></span><br><span class="line">          res = maxSub = float(<span class="string">"-inf"</span>)</span><br><span class="line">         </span><br><span class="line">          <span class="keyword">for</span> i <span class="keyword">in</span> range(len(arr)):</span><br><span class="line">              <span class="keyword">if</span> i == skip:</span><br><span class="line">                  <span class="keyword">continue</span></span><br><span class="line">              maxSub = max(arr[i], maxSub + arr[i])</span><br><span class="line">              res = max(res, maxSub)</span><br><span class="line">          <span class="keyword">return</span> res</span><br><span class="line"><span class="comment"># 这里循环到了len(arr)项，表示的是一个都不删除的情况</span></span><br><span class="line">      <span class="keyword">for</span> i <span class="keyword">in</span> range(len(arr) + <span class="number">1</span>):</span><br><span class="line">          res = max(res, maxSubSum(arr, i))</span><br><span class="line">      <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure><h3 id="空间换时间"><a href="#空间换时间" class="headerlink" title="空间换时间"></a>空间换时间</h3><p>上面的做法在LC上会TLE， 因此我们需要换一种思路，既然超时了，我们是否可以从空间换时间的角度思考呢？我们可以分别从头尾遍历，建立两个subArraySub的数组l和r。 其实这个不难想到，很多题目都用到了这个技巧。</p><p>具体做法：</p><ul><li>一层遍历， 建立l数组，l[i]表示从左边开始的以arr[i]结尾的subArraySum的最大值</li><li>一层遍历， 建立r数组，r[i]表示从右边开始的以arr[i]结尾的subArraySum的最大值</li><li>一层遍历， 计算 l[i - 1] + r[i + 1] 的最大值 <blockquote><p>l[i - 1] + r[i + 1]的含义就是删除arr[i]的子数组最大值</p></blockquote></li><li>上面的这个步骤得到了删除一个的子数组最大值， 不删除的只需要在上面循环顺便计算一下即可</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maximumSum</span><span class="params">(self, arr: List[int])</span> -&gt; int:</span></span><br><span class="line">        n = len(arr)</span><br><span class="line">        l = [arr[<span class="number">0</span>]] * n</span><br><span class="line">        r = [arr[n - <span class="number">1</span>]] * n</span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> arr[<span class="number">0</span>]</span><br><span class="line">        res = arr[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</span><br><span class="line">            l[i] = max(l[i - <span class="number">1</span>] + arr[i], arr[i])</span><br><span class="line">            res = max(res, l[i])</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">2</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            r[i] = max(r[i + <span class="number">1</span>] + arr[i], arr[i])</span><br><span class="line">            res = max(res, r[i])</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n - <span class="number">1</span>):</span><br><span class="line">            res = max(res, l[i - <span class="number">1</span>] + r[i + <span class="number">1</span>])</span><br><span class="line">      </span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure><h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p>上面的算法虽然时间上有所改善，但是正如标题所说，空间复杂度是O(n),有没有办法改进呢？答案是使用动态规划。</p><p>具体过程：</p><ul><li>定义max0，表示以arr[i]结尾且一个都不漏的最大子数组和</li><li>定义max1，表示以arr[i]或者arr[i - 1]结尾，可以漏一个的最大子数组和</li><li>遍历数组，更新max1和max0（注意先更新max1，因为max1用到了上一个max0）</li><li>其中<code>max1 = max(max1 + arr[i], max0)</code>, 即删除arr[i - 1]或者删除arr[i]</li><li>其中<code>max0 = max(max0 + arr[i], arr[i])</code>， 一个都不删除</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># @lc app=leetcode.cn id=1186 lang=python3</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># [1186] 删除一次得到子数组最大和</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># @lc code=start</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maximumSum</span><span class="params">(self, arr: List[int])</span> -&gt; int:</span></span><br><span class="line">        <span class="comment"># DP</span></span><br><span class="line">        max0 = arr[<span class="number">0</span>]</span><br><span class="line">        max1 = arr[<span class="number">0</span>]</span><br><span class="line">        res = arr[<span class="number">0</span>]</span><br><span class="line">        n = len(arr)</span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> max0</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</span><br><span class="line">            <span class="comment"># 先更新max1，再更新max0，因为max1用到了上一个max0</span></span><br><span class="line">            max1 = max(max1 + arr[i], max0)</span><br><span class="line">            max0 = max(max0 + arr[i], arr[i])</span><br><span class="line">            res = max(res, max0, max1)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># @lc code=end</span></span><br></pre></td></tr></table></figure><h2 id="关键点解析"><a href="#关键点解析" class="headerlink" title="关键点解析"></a>关键点解析</h2><ul><li>空间换时间</li><li>头尾双数组</li><li>动态规划</li></ul><h2 id="相关题目"><a href="#相关题目" class="headerlink" title="相关题目"></a>相关题目</h2><ul><li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/42.trapping-rain-water.md" target="_blank" rel="noopener">42.trapping-rain-water</a></li></ul>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> LeetCode </tag>
             
         </tags>
       
