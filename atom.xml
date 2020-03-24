@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-03-16T13:54:26.063Z</updated>
+  <updated>2020-03-24T11:20:06.813Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>位运算</title>
+    <link href="https://lucifer.ren/blog/2020/03/24/bit/"/>
+    <id>https://lucifer.ren/blog/2020/03/24/bit/</id>
+    <published>2020-03-23T16:00:00.000Z</published>
+    <updated>2020-03-24T11:20:06.813Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我这里总结了几道位运算的题目分享给大家，分别是 136和137， 260 和  645， 总共加起来四道题。 四道题全部都是位运算的套路，如果你想练习位运算的话，不要错过哦～～&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="位运算" scheme="https://lucifer.ren/blog/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    
+  </entry>
+  
+  <entry>
     <title>一文带你 AC 十道题【滑动窗口】</title>
     <link href="https://lucifer.ren/blog/2020/03/16/slide-window/"/>
     <id>https://lucifer.ren/blog/2020/03/16/slide-window/</id>
     <published>2020-03-16T13:53:30.342Z</published>
-    <updated>2020-03-16T13:54:26.063Z</updated>
+    <updated>2020-03-17T02:15:12.628Z</updated>
     
     <summary type="html">
     
@@ -439,13 +459,13 @@
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
     
+      <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
       <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="概率" scheme="https://lucifer.ren/blog/tags/%E6%A6%82%E7%8E%87/"/>
     
       <category term="递归" scheme="https://lucifer.ren/blog/tags/%E9%80%92%E5%BD%92/"/>
-    
-      <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
@@ -471,9 +491,9 @@
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
       <category term="状态机" scheme="https://lucifer.ren/blog/tags/%E7%8A%B6%E6%80%81%E6%9C%BA/"/>
+    
+      <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
       <category term="贪心" scheme="https://lucifer.ren/blog/tags/%E8%B4%AA%E5%BF%83/"/>
     
@@ -553,30 +573,6 @@
     
     
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每日一荐 2019-12 汇总</title>
-    <link href="https://lucifer.ren/blog/2020/01/01/daily-featured-2019-12/"/>
-    <id>https://lucifer.ren/blog/2020/01/01/daily-featured-2019-12/</id>
-    <published>2020-01-01T12:33:17.345Z</published>
-    <updated>2020-02-25T02:41:19.734Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/006y8mN6ly1g8d0sktqrwj30hs07maae.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;每天给你推荐一个新奇，好玩，高品质的开源库，好文，观点或言论等。&lt;/p&gt;
-&lt;p&gt;项目主页维护当前月份的内容，想看往期内容，可以去&lt;a href=&quot;https://github.com/azl397985856/daily-featured&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;每日一荐主仓库&lt;/a&gt;翻到下方历史汇总部分，然后选择自己感兴趣的月份点进去即可。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="每日一荐" scheme="https://lucifer.ren/blog/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/"/>
-    
-      <category term="2019-12" scheme="https://lucifer.ren/blog/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/2019-12/"/>
-    
-    
-      <category term="每日一荐" scheme="https://lucifer.ren/blog/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/"/>
     
   </entry>
   
