@@ -240,3 +240,8 @@ monitor.init({
 #### 框架选型 & 规范 & 约定
 
 暂无
+
+## 其他解决方案
+
+- Badjs
+- FrontJS
