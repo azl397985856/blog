@@ -26,8 +26,8 @@ links:
     icon: fab fa-java
     items:
       - name: AugustRush
-        # avatar: https://augustrush8.com/public/images/logo.jpg
-        url: https://augustrush8.com
+        avatar: https://blog.augustrush8.com/public/images/logo.jpg
+        url: https://blog.augustrush8.com
         textColor: "#fff"
         backgroundColor: "rgba(51,103,126, .6)" # 卡片背景颜色
         tags:
