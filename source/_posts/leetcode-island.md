@@ -66,6 +66,33 @@ class Solution:
 - 时间复杂度：$O(N ^ 2)$
 - 空间复杂度：$O(N ^ 2)$
 
+
+## 优化
+
+由于数组删除第一个元素（上面代码的queue.pop(0)）是$O(N)$的时间复杂度，我们可以使用deque优化，代码如下：
+
+```python
+   def maxDistance(self, grid: List[List[int]]) -> int:
+        from collections import deque
+        N = len(grid)
+        steps = -1
+        q = deque([(i, j) for i in range(N) for j in range(N) if grid[i][j] == 1])
+        if len(q) == 0 or len(q) == N ** 2:
+            return steps
+        move = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+        while len(q) > 0:
+            for _ in range(len(q)):
+                x, y = q.popleft()
+                for dx, dy in move:
+                    nx, ny = x + dx, y + dy
+                    if 0 <= nx < N and 0 <= ny < N and grid[nx][ny] == 0:
+                        q.append((nx, ny))
+                        grid[nx][ny] = -1
+            steps += 1
+
+        return steps
+```
+
 更多题解可以访问我的LeetCode题解仓库：https://github.com/azl397985856/leetcode  。 目前已经接近30K star啦。
 
 大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的LeetCode题解
