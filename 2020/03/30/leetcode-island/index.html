@@ -323,7 +323,7 @@
   <div class='new-meta-item category'>
     <a href='/blog/categories/算法/BFS/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>数据结构&nbsp;/&nbsp;算法&nbsp;/&nbsp;hashtable&nbsp;/&nbsp;BFS</p>
+      <p>算法&nbsp;/&nbsp;数据结构&nbsp;/&nbsp;hashtable&nbsp;/&nbsp;BFS</p>
     </a>
   </div>
 
@@ -361,7 +361,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">583字</span>
+          <span class="post-count">738字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -369,7 +369,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">2分</span>
+          <span class="post-count">3分</span>
         </span>
       </span>
     </div>
@@ -420,6 +420,9 @@
 <li>时间复杂度：$O(N ^ 2)$</li>
 <li>空间复杂度：$O(N ^ 2)$</li>
 </ul>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>由于数组删除第一个元素（上面代码的queue.pop(0)）是$O(N)$的时间复杂度，我们可以使用deque优化，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">maxDistance</span><span class="params">(self, grid: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">     <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">     N = len(grid)</span><br><span class="line">     steps = <span class="number">-1</span></span><br><span class="line">     q = deque([(i, j) <span class="keyword">for</span> i <span class="keyword">in</span> range(N) <span class="keyword">for</span> j <span class="keyword">in</span> range(N) <span class="keyword">if</span> grid[i][j] == <span class="number">1</span>])</span><br><span class="line">     <span class="keyword">if</span> len(q) == <span class="number">0</span> <span class="keyword">or</span> len(q) == N ** <span class="number">2</span>:</span><br><span class="line">         <span class="keyword">return</span> steps</span><br><span class="line">     move = [(<span class="number">-1</span>, <span class="number">0</span>), (<span class="number">1</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">-1</span>), (<span class="number">0</span>, <span class="number">1</span>)]</span><br><span class="line">     <span class="keyword">while</span> len(q) &gt; <span class="number">0</span>:</span><br><span class="line">         <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(q)):</span><br><span class="line">             x, y = q.popleft()</span><br><span class="line">             <span class="keyword">for</span> dx, dy <span class="keyword">in</span> move:</span><br><span class="line">                 nx, ny = x + dx, y + dy</span><br><span class="line">                 <span class="keyword">if</span> <span class="number">0</span> &lt;= nx &lt; N <span class="keyword">and</span> <span class="number">0</span> &lt;= ny &lt; N <span class="keyword">and</span> grid[nx][ny] == <span class="number">0</span>:</span><br><span class="line">                     q.append((nx, ny))</span><br><span class="line">                     grid[nx][ny] = <span class="number">-1</span></span><br><span class="line">         steps += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">     <span class="keyword">return</span> steps</span><br></pre></td></tr></table></figure>
+
 <p>更多题解可以访问我的LeetCode题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a>  。 目前已经接近30K star啦。</p>
 <p>大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的LeetCode题解</p>
 <p><img src="https://pic.leetcode-cn.com/89ef69abbf02a2957838499a96ce3fbb26830aae52e3ab90392e328c2670cddc-file_1581478989502" alt></p>
@@ -434,7 +437,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-30T18:15:03+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-30T18:19:43+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年3月30日</p>
@@ -695,7 +698,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优化"><span class="toc-text">优化</span></a></li></ol>
     </div>
   </section>
 

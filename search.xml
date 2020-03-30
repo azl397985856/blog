@@ -8,14 +8,14 @@
       <link href="/blog/2020/03/30/leetcode-island/"/>
       <url>/blog/2020/03/30/leetcode-island/</url>
       
-        <content type="html"><![CDATA[<p>LeetCode上有很多小岛题，虽然官方没有这个标签， 但是在我这里都差不多。不管是思路还是套路都比较类似，大家可以结合起来练习。</p><ul><li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/200.number-of-islands.md" target="_blank" rel="noopener">200.number-of-islands</a></li><li><a href="https://leetcode-cn.com/problems/max-area-of-island/solution/695-dao-yu-de-zui-da-mian-ji-dfspython3-by-fe-luci/" target="_blank" rel="noopener">695.max-area-of-island</a></li></ul><p>​<a id="more"></a></p><p>原题地址：<a href="https://leetcode-cn.com/problems/as-far-from-land-as-possible/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/as-far-from-land-as-possible/</a></p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这里我们继续使用上面两道题的套路，即不用visited，而是原地修改。由于这道题求解的是最远的距离，而距离我们可以使用BFS来做。算法：</p><ul><li>对于每一个海洋，我们都向四周扩展，寻找最近的陆地，每次扩展steps加1。</li><li>如果找到了陆地，我们返回steps。</li><li>我们的目标就是所有steps中的最大值。</li></ul><p>实际上面算法有很多重复计算，如图中间绿色的区域，向外扩展的时候，如果其周边四个海洋的距离已经计算出来了，那么没必要扩展到陆地。实际上只需要扩展到周边的四个海洋格子就好了，其距离陆地的最近距离就是1 + 周边四个格子中到达陆地的最小距离。</p><p><img src="https://pic.leetcode-cn.com/23e21821e14238829dd7021a620895f40a8e42127cfe372e4791d025bb655afc.jpg" alt></p><p>我们考虑优化。 </p><ul><li>将所有陆地加入队列，而不是海洋。</li><li>陆地不断扩展到海洋，每扩展一次就steps加1，直到无法扩展位置。</li><li>最终返回steps即可。</li></ul><p>图解：</p><p><img src="https://pic.leetcode-cn.com/8001c1390fb0d1a402eea5010594a303651b4a09ac6ddcd12d72b5b8a9d37295.jpg" alt></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxDistance</span><span class="params">(self, grid: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">        n = len(grid)</span><br><span class="line">        steps = <span class="number">-1</span></span><br><span class="line">        queue = [(i, j) <span class="keyword">for</span> i <span class="keyword">in</span> range(n) <span class="keyword">for</span> j <span class="keyword">in</span> range(n) <span class="keyword">if</span> grid[i][j] == <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> len(queue) == <span class="number">0</span> <span class="keyword">or</span> len(queue) == n ** <span class="number">2</span>: <span class="keyword">return</span> steps</span><br><span class="line">        <span class="keyword">while</span> len(queue) &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(queue)): </span><br><span class="line">                x, y = queue.pop(<span class="number">0</span>)</span><br><span class="line">                <span class="keyword">for</span> xi, yj <span class="keyword">in</span> [(x + <span class="number">1</span>, y), (x - <span class="number">1</span>, y), (x, y + <span class="number">1</span>), (x, y - <span class="number">1</span>)]:</span><br><span class="line">                    <span class="keyword">if</span> xi &gt;= <span class="number">0</span> <span class="keyword">and</span> xi &lt; n <span class="keyword">and</span> yj &gt;= <span class="number">0</span> <span class="keyword">and</span> yj &lt; n <span class="keyword">and</span> grid[xi][yj] == <span class="number">0</span>:</span><br><span class="line">                        queue.append((xi, yj))</span><br><span class="line">                        grid[xi][yj] = <span class="number">-1</span></span><br><span class="line">            steps += <span class="number">1</span></span><br><span class="line">                </span><br><span class="line">        <span class="keyword">return</span> steps</span><br></pre></td></tr></table></figure><blockquote><p>由于没有early return，steps 其实会多算一次。 我们可以返回值减去1，也可以steps初始化为-1。这里我选择是steps初始化为-1</p></blockquote><p><strong><em>复杂度分析</em></strong></p><ul><li>时间复杂度：$O(N ^ 2)$</li><li>空间复杂度：$O(N ^ 2)$</li></ul><p>更多题解可以访问我的LeetCode题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a>  。 目前已经接近30K star啦。</p><p>大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的LeetCode题解</p><p><img src="https://pic.leetcode-cn.com/89ef69abbf02a2957838499a96ce3fbb26830aae52e3ab90392e328c2670cddc-file_1581478989502" alt></p>]]></content>
+        <content type="html"><![CDATA[<p>LeetCode上有很多小岛题，虽然官方没有这个标签， 但是在我这里都差不多。不管是思路还是套路都比较类似，大家可以结合起来练习。</p><ul><li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/200.number-of-islands.md" target="_blank" rel="noopener">200.number-of-islands</a></li><li><a href="https://leetcode-cn.com/problems/max-area-of-island/solution/695-dao-yu-de-zui-da-mian-ji-dfspython3-by-fe-luci/" target="_blank" rel="noopener">695.max-area-of-island</a></li></ul><p>​<a id="more"></a></p><p>原题地址：<a href="https://leetcode-cn.com/problems/as-far-from-land-as-possible/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/as-far-from-land-as-possible/</a></p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这里我们继续使用上面两道题的套路，即不用visited，而是原地修改。由于这道题求解的是最远的距离，而距离我们可以使用BFS来做。算法：</p><ul><li>对于每一个海洋，我们都向四周扩展，寻找最近的陆地，每次扩展steps加1。</li><li>如果找到了陆地，我们返回steps。</li><li>我们的目标就是所有steps中的最大值。</li></ul><p>实际上面算法有很多重复计算，如图中间绿色的区域，向外扩展的时候，如果其周边四个海洋的距离已经计算出来了，那么没必要扩展到陆地。实际上只需要扩展到周边的四个海洋格子就好了，其距离陆地的最近距离就是1 + 周边四个格子中到达陆地的最小距离。</p><p><img src="https://pic.leetcode-cn.com/23e21821e14238829dd7021a620895f40a8e42127cfe372e4791d025bb655afc.jpg" alt></p><p>我们考虑优化。 </p><ul><li>将所有陆地加入队列，而不是海洋。</li><li>陆地不断扩展到海洋，每扩展一次就steps加1，直到无法扩展位置。</li><li>最终返回steps即可。</li></ul><p>图解：</p><p><img src="https://pic.leetcode-cn.com/8001c1390fb0d1a402eea5010594a303651b4a09ac6ddcd12d72b5b8a9d37295.jpg" alt></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxDistance</span><span class="params">(self, grid: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">        n = len(grid)</span><br><span class="line">        steps = <span class="number">-1</span></span><br><span class="line">        queue = [(i, j) <span class="keyword">for</span> i <span class="keyword">in</span> range(n) <span class="keyword">for</span> j <span class="keyword">in</span> range(n) <span class="keyword">if</span> grid[i][j] == <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> len(queue) == <span class="number">0</span> <span class="keyword">or</span> len(queue) == n ** <span class="number">2</span>: <span class="keyword">return</span> steps</span><br><span class="line">        <span class="keyword">while</span> len(queue) &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(queue)): </span><br><span class="line">                x, y = queue.pop(<span class="number">0</span>)</span><br><span class="line">                <span class="keyword">for</span> xi, yj <span class="keyword">in</span> [(x + <span class="number">1</span>, y), (x - <span class="number">1</span>, y), (x, y + <span class="number">1</span>), (x, y - <span class="number">1</span>)]:</span><br><span class="line">                    <span class="keyword">if</span> xi &gt;= <span class="number">0</span> <span class="keyword">and</span> xi &lt; n <span class="keyword">and</span> yj &gt;= <span class="number">0</span> <span class="keyword">and</span> yj &lt; n <span class="keyword">and</span> grid[xi][yj] == <span class="number">0</span>:</span><br><span class="line">                        queue.append((xi, yj))</span><br><span class="line">                        grid[xi][yj] = <span class="number">-1</span></span><br><span class="line">            steps += <span class="number">1</span></span><br><span class="line">                </span><br><span class="line">        <span class="keyword">return</span> steps</span><br></pre></td></tr></table></figure><blockquote><p>由于没有early return，steps 其实会多算一次。 我们可以返回值减去1，也可以steps初始化为-1。这里我选择是steps初始化为-1</p></blockquote><p><strong><em>复杂度分析</em></strong></p><ul><li>时间复杂度：$O(N ^ 2)$</li><li>空间复杂度：$O(N ^ 2)$</li></ul><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>由于数组删除第一个元素（上面代码的queue.pop(0)）是$O(N)$的时间复杂度，我们可以使用deque优化，代码如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">maxDistance</span><span class="params">(self, grid: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">     <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">     N = len(grid)</span><br><span class="line">     steps = <span class="number">-1</span></span><br><span class="line">     q = deque([(i, j) <span class="keyword">for</span> i <span class="keyword">in</span> range(N) <span class="keyword">for</span> j <span class="keyword">in</span> range(N) <span class="keyword">if</span> grid[i][j] == <span class="number">1</span>])</span><br><span class="line">     <span class="keyword">if</span> len(q) == <span class="number">0</span> <span class="keyword">or</span> len(q) == N ** <span class="number">2</span>:</span><br><span class="line">         <span class="keyword">return</span> steps</span><br><span class="line">     move = [(<span class="number">-1</span>, <span class="number">0</span>), (<span class="number">1</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">-1</span>), (<span class="number">0</span>, <span class="number">1</span>)]</span><br><span class="line">     <span class="keyword">while</span> len(q) &gt; <span class="number">0</span>:</span><br><span class="line">         <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(q)):</span><br><span class="line">             x, y = q.popleft()</span><br><span class="line">             <span class="keyword">for</span> dx, dy <span class="keyword">in</span> move:</span><br><span class="line">                 nx, ny = x + dx, y + dy</span><br><span class="line">                 <span class="keyword">if</span> <span class="number">0</span> &lt;= nx &lt; N <span class="keyword">and</span> <span class="number">0</span> &lt;= ny &lt; N <span class="keyword">and</span> grid[nx][ny] == <span class="number">0</span>:</span><br><span class="line">                     q.append((nx, ny))</span><br><span class="line">                     grid[nx][ny] = <span class="number">-1</span></span><br><span class="line">         steps += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">     <span class="keyword">return</span> steps</span><br></pre></td></tr></table></figure><p>更多题解可以访问我的LeetCode题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a>  。 目前已经接近30K star啦。</p><p>大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的LeetCode题解</p><p><img src="https://pic.leetcode-cn.com/89ef69abbf02a2957838499a96ce3fbb26830aae52e3ab90392e328c2670cddc-file_1581478989502" alt></p>]]></content>
       
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -355,9 +355,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 字符串 </category>
           
@@ -394,9 +394,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -433,13 +433,13 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
           
-          <category> hashtable </category>
+          <category> 数据结构 </category>
           
           <category> 数学 </category>
+          
+          <category> hashtable </category>
           
           <category> 位运算 </category>
           
@@ -516,11 +516,11 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> 数学 </tag>
             
             <tag> 概率 </tag>
             
@@ -778,9 +778,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> LeetCode </category>
           
@@ -842,9 +842,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 字符串 </category>
           
@@ -876,6 +876,33 @@
             <tag> 字符串 </tag>
             
             <tag> 编程之美 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>纪念LeetCode项目Star突破2W</title>
+      <link href="/blog/2019/12/11/thanksGaving-2/"/>
+      <url>/blog/2019/12/11/thanksGaving-2/</url>
+      
+        <content type="html"><![CDATA[<p>假期这几天我买了《逆转裁判 123》合集，面对着这香喷喷的冷饭吃了半天。从 GBA 玩到 NDS，从 NDS 玩到 3DS, 现在 NS 虽然没有出新作有点遗憾。不过有了高清重制，也当是个回忆和收藏了 🎉🎉</p><a id="more"></a><p>目前打通了第一第二关，剩下的过一段时间再玩好啦 😁<br><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppozhetbj30u01ppdjp.jpg" alt></p><p>回到正题，就在今天，我的《leetcode 题解》项目成功突破 2w star， 并且现在 Github 搜索关键字”LeetCode”我的项目已经排名第一啦，这是继 1W star 之后的第二个巨大突破，非常感谢大家一路以来的支持和陪伴。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7q10kli5lj310m0fm74y.jpg" alt></p><p>最近在写一本关于LeetCode题解的书，有很多人表示想买，这无形之中给了我很大的压力，名字还没定，暂时给它取一个代号《攻克 LeetCode》。 </p><h2 id="新书《攻克-LeetCode》"><a href="#新书《攻克-LeetCode》" class="headerlink" title="新书《攻克 LeetCode》"></a>新书《攻克 LeetCode》</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppnnvb7yj305i04b744.jpg" alt></p><p>这里是<a href="https://lucifer.ren/blog/2019/10/03/draft/">《攻克 LeetCode》的草稿目录</a>，目前有 20 章的内容，本书要讲的内容就是 LeetCode 上反复出现的算法，经过我进一步提炼，抽取数百道题目在这里进行讲解，帮助大家理清整体思绪，从而高效率地刷题，做到事半功倍。我这里总结了 7 个常见的数据结构和 7 个常见的算法以及 5 个常见的算法思想。</p><p>7 个数据结构分别是： <code>数组，栈，队列，链表，二叉树，散列表，图</code></p><p>7 个算法分别是：<code>二分法，递归，回溯法，排序，双指针，滑动窗口，并查集</code></p><p>5 个算法思想分别是：<code>分治，贪心，深度优先遍历，广度优先遍历，动态规划</code></p><p>只有掌握了这些基础的数据结构和算法，更为复杂的算法才能得心应手，事半功倍。而 LeetCode 的题目虽然不断出新，但是最终用到的算法永远是那几个，很多题目都是穿着新的衣服的老面孔了。大家学好这些基础套路之后会更加明白这个道理。</p><p>后期可能会有大幅度修改，希望大家提出宝贵意见，以特别的方式参与到这本书的编写中来。</p><h2 id="2W-star截图"><a href="#2W-star截图" class="headerlink" title="2W star截图"></a>2W star截图</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7r4ef4fwej30rm0ld75g.jpg" alt></p><h2 id="Star-曲线"><a href="#Star-曲线" class="headerlink" title="Star 曲线"></a>Star 曲线</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pom0rbu6j30p00f1glo.jpg" alt></p><p>(star 增长曲线图)</p><h2 id="知乎引流"><a href="#知乎引流" class="headerlink" title="知乎引流"></a>知乎引流</h2><p><a href="https://github.com/azl397985856/leetcode/blob/master/thanksGiving.md" target="_blank" rel="noopener">上次</a>主要讲了项目从开始建立到拥有 1W star 的经历，本次书接前文，继续讲一下后面的故事。</p><p>上回提到知乎上的“量子位”在帮我做宣传，引入了不小的流量。 我就想为什么不自己去拉流量呢？我自己以作者的角度去回答一些问题岂不是更好，更受欢迎么？于是我就开始在知乎上回答问题，很开心其中一个还获得了专业认可。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7poxozmrmj30jw0gl0tp.jpg" alt></p><p>事实上并没有我想的那么好，我回答了两个 LeetCode 话题的内容，虽然也有几百的点赞和感谢，但是这离我的目标还差很远。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pox4k95zj309q0b1mxa.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7poz07qsrj30jk0h4q3y.jpg" alt></p><p>但是转念一想，我知乎刚起步，也没什么粉丝，并且写答案的时间也就一个月左右，这样想就好多了。 我相信将来会有更多的人看到我的答案，然后加入进来。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pozi8bfrj308907w747.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppnep24xj30to0pwaar.jpg" alt></p><h2 id="建立自己的博客"><a href="#建立自己的博客" class="headerlink" title="建立自己的博客"></a>建立自己的博客</h2><p>现在我发表的文章都是在各大平台。这有一个很大的问题就是各个平台很难满足你的需求，比如按照标签，按照日期进行归档。 甚至很多平台的阅读体验很差，比如没有导航功能，广告太多等。因此我觉得自己搭建一个博客还是很有必要的，这个渠道也为我吸引了少部分的流量，目前添加的主要内容大概有：</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp2i0818j308m07awej.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp2vru72j30800hct8p.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp34fjowj307z08za9y.jpg" alt></p><p>总体上来说效果还是不错的，之后的文章会在博客首发，各个平台也会陆续更新，感兴趣的可以来个 RSS 订阅，订阅方式已经在<a href="https://lucifer.ren/blog/2019/09/30/daily-featured-2019-09/">《每日一荐 - 九月刊》</a>里面介绍了。</p><h2 id="GithubDaily-的-推荐"><a href="#GithubDaily-的-推荐" class="headerlink" title="GithubDaily 的 推荐"></a>GithubDaily 的 推荐</h2><p>GithubDaily 转载了量子位的文章也为我的仓库涨了至少几百的 star，非常感谢。GithubDaily 是一个拥有 3W 多读者的公众号，大家有兴趣的可以关注一波。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp8r6isnj30kl0eq3yo.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp9drlz0j30j90arq31.jpg" alt></p><h2 id="其他自媒体的推荐"><a href="#其他自媒体的推荐" class="headerlink" title="其他自媒体的推荐"></a>其他自媒体的推荐</h2><p>一些其他自媒体也会帮忙推广我的项目</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppmlm7gyj30u00y10v5.jpg" alt></p><h2 id="口耳相传"><a href="#口耳相传" class="headerlink" title="口耳相传"></a>口耳相传</h2><p>我后来才知道竟然有海外华侨和一些华人社区都能看到我了。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppm3upr0j30ky0mmmxv.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppk0hlauj30ss1bmq5d.jpg" alt><br>（一亩三分地是一个集中讨论美国加拿大留学的论坛）</p><p>另外通过朋友之间口耳相传的介绍也变得越来越多。</p><p>非常感谢大家一直以来的陪伴和支持，我们一起努力，加油 💪。</p><p>如果你还没有加入我们，看了这篇文章想加入，那么可以访问我的项目主页 <a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">leetcode 题解</a><br>我在这里等着你。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日记 </category>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日记 </tag>
             
         </tags>
       
@@ -927,33 +954,6 @@
     
     
     <entry>
-      <title>纪念LeetCode项目Star突破2W</title>
-      <link href="/blog/2019/12/11/thanksGaving-2/"/>
-      <url>/blog/2019/12/11/thanksGaving-2/</url>
-      
-        <content type="html"><![CDATA[<p>假期这几天我买了《逆转裁判 123》合集，面对着这香喷喷的冷饭吃了半天。从 GBA 玩到 NDS，从 NDS 玩到 3DS, 现在 NS 虽然没有出新作有点遗憾。不过有了高清重制，也当是个回忆和收藏了 🎉🎉</p><a id="more"></a><p>目前打通了第一第二关，剩下的过一段时间再玩好啦 😁<br><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppozhetbj30u01ppdjp.jpg" alt></p><p>回到正题，就在今天，我的《leetcode 题解》项目成功突破 2w star， 并且现在 Github 搜索关键字”LeetCode”我的项目已经排名第一啦，这是继 1W star 之后的第二个巨大突破，非常感谢大家一路以来的支持和陪伴。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7q10kli5lj310m0fm74y.jpg" alt></p><p>最近在写一本关于LeetCode题解的书，有很多人表示想买，这无形之中给了我很大的压力，名字还没定，暂时给它取一个代号《攻克 LeetCode》。 </p><h2 id="新书《攻克-LeetCode》"><a href="#新书《攻克-LeetCode》" class="headerlink" title="新书《攻克 LeetCode》"></a>新书《攻克 LeetCode》</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppnnvb7yj305i04b744.jpg" alt></p><p>这里是<a href="https://lucifer.ren/blog/2019/10/03/draft/">《攻克 LeetCode》的草稿目录</a>，目前有 20 章的内容，本书要讲的内容就是 LeetCode 上反复出现的算法，经过我进一步提炼，抽取数百道题目在这里进行讲解，帮助大家理清整体思绪，从而高效率地刷题，做到事半功倍。我这里总结了 7 个常见的数据结构和 7 个常见的算法以及 5 个常见的算法思想。</p><p>7 个数据结构分别是： <code>数组，栈，队列，链表，二叉树，散列表，图</code></p><p>7 个算法分别是：<code>二分法，递归，回溯法，排序，双指针，滑动窗口，并查集</code></p><p>5 个算法思想分别是：<code>分治，贪心，深度优先遍历，广度优先遍历，动态规划</code></p><p>只有掌握了这些基础的数据结构和算法，更为复杂的算法才能得心应手，事半功倍。而 LeetCode 的题目虽然不断出新，但是最终用到的算法永远是那几个，很多题目都是穿着新的衣服的老面孔了。大家学好这些基础套路之后会更加明白这个道理。</p><p>后期可能会有大幅度修改，希望大家提出宝贵意见，以特别的方式参与到这本书的编写中来。</p><h2 id="2W-star截图"><a href="#2W-star截图" class="headerlink" title="2W star截图"></a>2W star截图</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7r4ef4fwej30rm0ld75g.jpg" alt></p><h2 id="Star-曲线"><a href="#Star-曲线" class="headerlink" title="Star 曲线"></a>Star 曲线</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pom0rbu6j30p00f1glo.jpg" alt></p><p>(star 增长曲线图)</p><h2 id="知乎引流"><a href="#知乎引流" class="headerlink" title="知乎引流"></a>知乎引流</h2><p><a href="https://github.com/azl397985856/leetcode/blob/master/thanksGiving.md" target="_blank" rel="noopener">上次</a>主要讲了项目从开始建立到拥有 1W star 的经历，本次书接前文，继续讲一下后面的故事。</p><p>上回提到知乎上的“量子位”在帮我做宣传，引入了不小的流量。 我就想为什么不自己去拉流量呢？我自己以作者的角度去回答一些问题岂不是更好，更受欢迎么？于是我就开始在知乎上回答问题，很开心其中一个还获得了专业认可。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7poxozmrmj30jw0gl0tp.jpg" alt></p><p>事实上并没有我想的那么好，我回答了两个 LeetCode 话题的内容，虽然也有几百的点赞和感谢，但是这离我的目标还差很远。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pox4k95zj309q0b1mxa.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7poz07qsrj30jk0h4q3y.jpg" alt></p><p>但是转念一想，我知乎刚起步，也没什么粉丝，并且写答案的时间也就一个月左右，这样想就好多了。 我相信将来会有更多的人看到我的答案，然后加入进来。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pozi8bfrj308907w747.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppnep24xj30to0pwaar.jpg" alt></p><h2 id="建立自己的博客"><a href="#建立自己的博客" class="headerlink" title="建立自己的博客"></a>建立自己的博客</h2><p>现在我发表的文章都是在各大平台。这有一个很大的问题就是各个平台很难满足你的需求，比如按照标签，按照日期进行归档。 甚至很多平台的阅读体验很差，比如没有导航功能，广告太多等。因此我觉得自己搭建一个博客还是很有必要的，这个渠道也为我吸引了少部分的流量，目前添加的主要内容大概有：</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp2i0818j308m07awej.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp2vru72j30800hct8p.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp34fjowj307z08za9y.jpg" alt></p><p>总体上来说效果还是不错的，之后的文章会在博客首发，各个平台也会陆续更新，感兴趣的可以来个 RSS 订阅，订阅方式已经在<a href="https://lucifer.ren/blog/2019/09/30/daily-featured-2019-09/">《每日一荐 - 九月刊》</a>里面介绍了。</p><h2 id="GithubDaily-的-推荐"><a href="#GithubDaily-的-推荐" class="headerlink" title="GithubDaily 的 推荐"></a>GithubDaily 的 推荐</h2><p>GithubDaily 转载了量子位的文章也为我的仓库涨了至少几百的 star，非常感谢。GithubDaily 是一个拥有 3W 多读者的公众号，大家有兴趣的可以关注一波。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp8r6isnj30kl0eq3yo.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp9drlz0j30j90arq31.jpg" alt></p><h2 id="其他自媒体的推荐"><a href="#其他自媒体的推荐" class="headerlink" title="其他自媒体的推荐"></a>其他自媒体的推荐</h2><p>一些其他自媒体也会帮忙推广我的项目</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppmlm7gyj30u00y10v5.jpg" alt></p><h2 id="口耳相传"><a href="#口耳相传" class="headerlink" title="口耳相传"></a>口耳相传</h2><p>我后来才知道竟然有海外华侨和一些华人社区都能看到我了。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppm3upr0j30ky0mmmxv.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppk0hlauj30ss1bmq5d.jpg" alt><br>（一亩三分地是一个集中讨论美国加拿大留学的论坛）</p><p>另外通过朋友之间口耳相传的介绍也变得越来越多。</p><p>非常感谢大家一直以来的陪伴和支持，我们一起努力，加油 💪。</p><p>如果你还没有加入我们，看了这篇文章想加入，那么可以访问我的项目主页 <a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">leetcode 题解</a><br>我在这里等着你。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 日记 </category>
-          
-          <category> 技术 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 日记 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>我是如何刷 LeetCode 的？</title>
       <link href="/blog/2019/12/11/how-am-I-conque-leetcode/"/>
       <url>/blog/2019/12/11/how-am-I-conque-leetcode/</url>
@@ -963,13 +963,13 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
           
-          <category> LeetCode </category>
+          <category> 数据结构 </category>
           
           <category> 学习方法 </category>
+          
+          <category> LeetCode </category>
           
       </categories>
       
@@ -983,33 +983,6 @@
             <tag> LeetCode </tag>
             
             <tag> 学习方法 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>从老鼠试毒问题来看二分法</title>
-      <link href="/blog/2019/12/11/laoshushidu/"/>
-      <url>/blog/2019/12/11/laoshushidu/</url>
-      
-        <content type="html"><![CDATA[<p>很多人对于二分法的理解比较片面，之前碰到一个题目，从一个先升序后降序的数列中，比如 1 2 3 7 4 3 2 中运用二分法去查找一个给定的元素，很多人说根本不能二分，因为没有排序。其实 这道题完全可以使用二分查找进行解答， 如果你觉得不可以的话，很可能对二分法理解还比较片面。  这里以另外一个更加有趣（至少我认为）的例子来讲解一下二分法。</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>面试题： 有1000个一模一样的瓶子，其中有1瓶是毒药，老鼠喝了有毒的会在24h之后死亡。求最少需要多少老鼠才能在24h里找到有毒的那瓶。</p><h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><p>这道题的解法有很多，今天我们来聊下用二分法来解这道题。 这道题似乎和我们看的的常见的二分法有很大的区别，但是仔细想一下， 二分法本质是将问题的规模缩小到原有的一半，带着这样的思想我们再来看一下。类似的，三分法就是将问题规模缩小为原来的1/3. </p><p>我们先对1000个瓶子进行编号，从1-1000这样子。 不过我们不是通过我们大家平时生活中使用的十进制，而是使用再计算机中使用的二进制， 同时让大家感受一下二进制的魅力。</p><p>为了方便讲解，我们假设不是1000个瓶子，而是4个。</p><p>我们来编一下号：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">00 // #1</span><br><span class="line">01 // #2</span><br><span class="line">10 // #3</span><br><span class="line">11 // #4</span><br></pre></td></tr></table></figure><p>我们的目标是找到哪个瓶子有毒，换句话说我们目标是找到有毒瓶子的编号，再换句话说我们的目标是<br>找到有毒瓶子的3个bit分别是什么，是0还是1.</p><p>比如有毒的是3号瓶子，那么我们就是想确认第一个bit是0，第二个bit是1，第三个bit是1，即011，转化为10进制就是3号。</p><p>那么如何确定每一个bit是什么呢？   回想一下，我们手上有老鼠，老鼠有两个state，alive 或者 died，这就是我们拥有的全部。</p><p>接下来我们逐一对瓶子进行分组，分组的依据就是每一个bit的值。</p><p>比如:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// 00 01     #g1:1  第一个bit是0</span><br><span class="line">// 10 11     #g1:2  第一个bit是1</span><br><span class="line">// 00 10     #g2:1  第二个bit是0</span><br><span class="line">// 01 11     #g2:2  第二个bit是1</span><br></pre></td></tr></table></figure><p>我们来找第一个老鼠#1 来喝g:1:1, 如果他死了，那么毒就在这一组，也就是说毒的第一个bit是0，否则是1</p><p>我们来找第二个老鼠#2 来喝g:2:1, 如果他死了，那么毒就在这一组，也就是说毒的第二个bit是0，否则是1</p><p>所以我们可以看出, 两只老鼠就搞定了，我们按照这个思路，可以推到出1000个瓶子只需要10个瓶子, 即  log2 1000， 2的10次方是1024，因此10个老鼠够了，如果1025个瓶子的话，就需要11个老鼠了。</p><p>如果你仔细思考的话，不难看出，我们是在用老鼠喝了水之后的反应（生或死）来进行判断每一个bit的数字，不管生死，我们总能得出这个bit的值，是0还是1.  因此每使用一只老鼠我们都将问题规模缩小为原来的1／2. 这是典型的二分法。</p><h3 id="这是最优解么"><a href="#这是最优解么" class="headerlink" title="这是最优解么"></a>这是最优解么</h3><p>是的，这是最优解，如果你愿意用严格的数学来证明的话，你可以试一下数学归纳法。  如果你想感性的判断一下的话，可以继续往下读。</p><p>什么是最优解？  最优解就是要让未知世界无机可乘，也就是说在最坏的情况下得到最优（现实世界都是未知的）。上面的例子，不管小老鼠是生还是死，我们都可以将问题规模缩小到1/2. 也就是说最坏的情况就是最好的情况，也就是说没有最坏情况。</p><p>那么我们是否可以将问题规模缩小的1／3 或者更小呢？</p><h3 id="我们可以三分么"><a href="#我们可以三分么" class="headerlink" title="我们可以三分么"></a>我们可以三分么</h3><p>简单来说，不可以， 因为老鼠只有两种observable state， 即alive， died. 假如我们有10个小球，其中有一个是异常的，其他9个都是一样的，我们怎么才能通过最少的称量来确定是哪一个异常，是重还是轻？ 这个时候我们就可以使用三分法了，为什么？因为天平有三个state， 平衡，左倾，右倾，使得我们”有可能“ 将问题规模缩小为1/3， 事实上，确实可以实现将问题规模缩小到1/3。</p><p>我会在之后的文章中进行讲解小球的问题最优策略， 并解释为什么这是最优策略。 </p><h3 id="Bonus"><a href="#Bonus" class="headerlink" title="Bonus"></a>Bonus</h3><p>基于比较的排序都无法逃脱nlogn时间复杂度的命运，这是为什么？能否利用本篇文章的思想进行解释？</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 算法 </category>
-          
-          <category> 二分法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 算法 </tag>
             
         </tags>
       
@@ -1054,6 +1027,33 @@
         <content type="html"><![CDATA[<p>信息输入大脑后，遗忘也就随之开始了。遗忘率随时间的流逝而先快后慢，特别是在刚刚识记的短时间里，遗忘最快，这就是著名的艾宾浩斯遗忘曲线。</p>]]></content>
       
       
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>从老鼠试毒问题来看二分法</title>
+      <link href="/blog/2019/12/11/laoshushidu/"/>
+      <url>/blog/2019/12/11/laoshushidu/</url>
+      
+        <content type="html"><![CDATA[<p>很多人对于二分法的理解比较片面，之前碰到一个题目，从一个先升序后降序的数列中，比如 1 2 3 7 4 3 2 中运用二分法去查找一个给定的元素，很多人说根本不能二分，因为没有排序。其实 这道题完全可以使用二分查找进行解答， 如果你觉得不可以的话，很可能对二分法理解还比较片面。  这里以另外一个更加有趣（至少我认为）的例子来讲解一下二分法。</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>面试题： 有1000个一模一样的瓶子，其中有1瓶是毒药，老鼠喝了有毒的会在24h之后死亡。求最少需要多少老鼠才能在24h里找到有毒的那瓶。</p><h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><p>这道题的解法有很多，今天我们来聊下用二分法来解这道题。 这道题似乎和我们看的的常见的二分法有很大的区别，但是仔细想一下， 二分法本质是将问题的规模缩小到原有的一半，带着这样的思想我们再来看一下。类似的，三分法就是将问题规模缩小为原来的1/3. </p><p>我们先对1000个瓶子进行编号，从1-1000这样子。 不过我们不是通过我们大家平时生活中使用的十进制，而是使用再计算机中使用的二进制， 同时让大家感受一下二进制的魅力。</p><p>为了方便讲解，我们假设不是1000个瓶子，而是4个。</p><p>我们来编一下号：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">00 // #1</span><br><span class="line">01 // #2</span><br><span class="line">10 // #3</span><br><span class="line">11 // #4</span><br></pre></td></tr></table></figure><p>我们的目标是找到哪个瓶子有毒，换句话说我们目标是找到有毒瓶子的编号，再换句话说我们的目标是<br>找到有毒瓶子的3个bit分别是什么，是0还是1.</p><p>比如有毒的是3号瓶子，那么我们就是想确认第一个bit是0，第二个bit是1，第三个bit是1，即011，转化为10进制就是3号。</p><p>那么如何确定每一个bit是什么呢？   回想一下，我们手上有老鼠，老鼠有两个state，alive 或者 died，这就是我们拥有的全部。</p><p>接下来我们逐一对瓶子进行分组，分组的依据就是每一个bit的值。</p><p>比如:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// 00 01     #g1:1  第一个bit是0</span><br><span class="line">// 10 11     #g1:2  第一个bit是1</span><br><span class="line">// 00 10     #g2:1  第二个bit是0</span><br><span class="line">// 01 11     #g2:2  第二个bit是1</span><br></pre></td></tr></table></figure><p>我们来找第一个老鼠#1 来喝g:1:1, 如果他死了，那么毒就在这一组，也就是说毒的第一个bit是0，否则是1</p><p>我们来找第二个老鼠#2 来喝g:2:1, 如果他死了，那么毒就在这一组，也就是说毒的第二个bit是0，否则是1</p><p>所以我们可以看出, 两只老鼠就搞定了，我们按照这个思路，可以推到出1000个瓶子只需要10个瓶子, 即  log2 1000， 2的10次方是1024，因此10个老鼠够了，如果1025个瓶子的话，就需要11个老鼠了。</p><p>如果你仔细思考的话，不难看出，我们是在用老鼠喝了水之后的反应（生或死）来进行判断每一个bit的数字，不管生死，我们总能得出这个bit的值，是0还是1.  因此每使用一只老鼠我们都将问题规模缩小为原来的1／2. 这是典型的二分法。</p><h3 id="这是最优解么"><a href="#这是最优解么" class="headerlink" title="这是最优解么"></a>这是最优解么</h3><p>是的，这是最优解，如果你愿意用严格的数学来证明的话，你可以试一下数学归纳法。  如果你想感性的判断一下的话，可以继续往下读。</p><p>什么是最优解？  最优解就是要让未知世界无机可乘，也就是说在最坏的情况下得到最优（现实世界都是未知的）。上面的例子，不管小老鼠是生还是死，我们都可以将问题规模缩小到1/2. 也就是说最坏的情况就是最好的情况，也就是说没有最坏情况。</p><p>那么我们是否可以将问题规模缩小的1／3 或者更小呢？</p><h3 id="我们可以三分么"><a href="#我们可以三分么" class="headerlink" title="我们可以三分么"></a>我们可以三分么</h3><p>简单来说，不可以， 因为老鼠只有两种observable state， 即alive， died. 假如我们有10个小球，其中有一个是异常的，其他9个都是一样的，我们怎么才能通过最少的称量来确定是哪一个异常，是重还是轻？ 这个时候我们就可以使用三分法了，为什么？因为天平有三个state， 平衡，左倾，右倾，使得我们”有可能“ 将问题规模缩小为1/3， 事实上，确实可以实现将问题规模缩小到1/3。</p><p>我会在之后的文章中进行讲解小球的问题最优策略， 并解释为什么这是最优策略。 </p><h3 id="Bonus"><a href="#Bonus" class="headerlink" title="Bonus"></a>Bonus</h3><p>基于比较的排序都无法逃脱nlogn时间复杂度的命运，这是为什么？能否利用本篇文章的思想进行解释？</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+          <category> 二分法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -1316,9 +1316,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 子序列 </category>
           
