@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-03-24T11:20:06.813Z</updated>
+  <updated>2020-03-30T10:15:03.414Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,11 +17,46 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【LeetCode日记】 1162. 地图分析</title>
+    <link href="https://lucifer.ren/blog/2020/03/30/leetcode-island/"/>
+    <id>https://lucifer.ren/blog/2020/03/30/leetcode-island/</id>
+    <published>2020-03-30T10:13:36.154Z</published>
+    <updated>2020-03-30T10:15:03.414Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;LeetCode上有很多小岛题，虽然官方没有这个标签， 但是在我这里都差不多。不管是思路还是套路都比较类似，大家可以结合起来练习。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/azl397985856/leetcode/blob/master/problems/200.number-of-islands.md&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;200.number-of-islands&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/max-area-of-island/solution/695-dao-yu-de-zui-da-mian-ji-dfspython3-by-fe-luci/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;695.max-area-of-island&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
+    
+      <category term="BFS" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/BFS/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode日记" scheme="https://lucifer.ren/blog/tags/LeetCode%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>位运算</title>
     <link href="https://lucifer.ren/blog/2020/03/24/bit/"/>
     <id>https://lucifer.ren/blog/2020/03/24/bit/</id>
     <published>2020-03-23T16:00:00.000Z</published>
-    <updated>2020-03-24T11:20:06.813Z</updated>
+    <updated>2020-03-27T02:48:13.455Z</updated>
     
     <summary type="html">
     
@@ -459,13 +494,13 @@
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
       <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="概率" scheme="https://lucifer.ren/blog/tags/%E6%A6%82%E7%8E%87/"/>
     
       <category term="递归" scheme="https://lucifer.ren/blog/tags/%E9%80%92%E5%BD%92/"/>
+    
+      <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
@@ -491,9 +526,9 @@
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="状态机" scheme="https://lucifer.ren/blog/tags/%E7%8A%B6%E6%80%81%E6%9C%BA/"/>
-    
       <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="状态机" scheme="https://lucifer.ren/blog/tags/%E7%8A%B6%E6%80%81%E6%9C%BA/"/>
     
       <category term="贪心" scheme="https://lucifer.ren/blog/tags/%E8%B4%AA%E5%BF%83/"/>
     
@@ -552,27 +587,6 @@
       <category term="前缀和" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
       <category term="前缀表达式" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构快速盘点</title>
-    <link href="https://lucifer.ren/blog/2020/01/03/basic-data-structure/"/>
-    <id>https://lucifer.ren/blog/2020/01/03/basic-data-structure/</id>
-    <published>2020-01-02T16:00:00.000Z</published>
-    <updated>2020-01-14T01:56:11.121Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这篇文章不是讲解数据结构的文章，而是结合现实的场景帮助大家&lt;code&gt;理解和复习&lt;/code&gt;数据结构与算法，&lt;br&gt;如果你的数据结构基础很差，建议先去看一些基础教程，再转过来看。&lt;/p&gt;
-&lt;p&gt;本篇文章的定位是侧重于前端的，通过学习前端中实际场景的数据结构，从而加深大家对数据结构的理解和认识。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
