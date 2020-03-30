@@ -26,12 +26,12 @@ links:
     icon: fab fa-java
     items:
       - name: AugustRush
-        avatar: https://augustrush8.com/public/images/logo.jpg
-        url: https://heternally.github.io/
+        # avatar: https://augustrush8.com/public/images/logo.jpg
+        url: https://augustrush8.com
         textColor: "#fff"
         backgroundColor: "rgba(51,103,126, .6)" # 卡片背景颜色
         tags:
-          - Java
+          - 主攻Java技术栈，喜欢猎奇，欢迎交流。
   - group: 算法大佬
     icon: fas fa-code
     items:
@@ -51,6 +51,20 @@ links:
         tags:
           - C++
           - 算法竞赛
+      - name: godweiyang
+        avatar: https://godweiyang.com/medias/avatars/avatar.jpg
+        url: https://godweiyang.com
+        textColor: "#fff"
+        backgroundColor: "#49c0f0"
+        tags:
+          - 公众号【算法码上来】，分享深度学习与NLP算法
+      - name: Mzdora's 博客
+        avatar: https://tva1.sinaimg.cn/large/00831rSTly1gdc5h0ok8yj30hs0hsglz.jpg
+        url: http://mzdora.info/blog/
+        textColor: "#fff"
+        backgroundColor: "#49c0f0"
+        tags:
+          - 啥也不会，盼着天上掉Offer。
 ---
 
 ## 我的友链卡片
@@ -58,7 +72,7 @@ links:
 博客名称：lucifer 的网络博客
 博客网址：https://lucifer.ren/blog/
 博客头像：https://tva1.sinaimg.cn/large/006tNbRwly1ga7ognflh9j30b40b4q3w.jpg
-博客介绍：一个脑洞很大的程序员。
+博客介绍：一个脑洞很大的程序员，Github 30K LeetCode项目，公众号《脑洞前端》。
 
 ## 加入我
 
