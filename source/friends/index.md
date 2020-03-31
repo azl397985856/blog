@@ -22,6 +22,14 @@ links:
         tags:
           - 美图秀秀
           - lucifer 师门
+      - name: GodGc's World
+        avatar: http://www.godrry.com/usr/uploads/2019/05/3794677130.jpg
+        url: http://www.godrry.com/
+        backgroundColor: "linear-gradient(#ffdde1, #A770EF)" # 卡片背景颜色
+        textColor: "#fff" # 卡片文字颜色
+        border: "none"
+        tags:
+          - Once a developer, always a developer | 前端开发工程师。
   - group: Java 大佬
     icon: fab fa-java
     items:
@@ -67,12 +75,17 @@ links:
           - 啥也不会，盼着天上掉Offer。
 ---
 
+博客名称：
+博客网址：
+博客头像：
+博客介绍：
+
 ## 我的友链卡片
 
 博客名称：lucifer 的网络博客
 博客网址：https://lucifer.ren/blog/
 博客头像：https://tva1.sinaimg.cn/large/006tNbRwly1ga7ognflh9j30b40b4q3w.jpg
-博客介绍：一个脑洞很大的程序员，Github 30K LeetCode项目，公众号《脑洞前端》。
+博客介绍：一个脑洞很大的程序员，Github 30K LeetCode 项目，公众号《脑洞前端》。
 
 ## 加入我
 
