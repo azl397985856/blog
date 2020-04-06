@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-03-30T10:19:43.600Z</updated>
+  <updated>2020-04-06T04:12:09.213Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《饥饿站台》</title>
+    <link href="https://lucifer.ren/blog/2020/04/06/movie-eager-game/"/>
+    <id>https://lucifer.ren/blog/2020/04/06/movie-eager-game/</id>
+    <published>2020-04-06T03:28:24.257Z</published>
+    <updated>2020-04-06T04:12:09.213Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;《饥饿站台》 （西班牙语：El hoyo）是一部 2019 年的西班牙科幻惊悚电影。导演为加尔德图．加兹特鲁—乌鲁蒂亚里，编剧为佩德罗．里书罗、大卫・狄索拉；由伊万·马萨格、安东尼亚·圣·胡安、佐里昂・埃奎勒、埃米利奥·布阿勒、亚莉珊卓·马桑凯主演。电影情节设于一个塔状的监狱中，囚犯从监狱中间逐渐下降的大平台拿取食物。2019 年 9 月 6 日于 2019 年多伦多国际影展举行首映。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="电影" scheme="https://lucifer.ren/blog/tags/%E7%94%B5%E5%BD%B1/"/>
+    
+  </entry>
   
   <entry>
     <title>【LeetCode日记】 1162. 地图分析</title>
@@ -34,9 +52,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
@@ -349,9 +367,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="字符串" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
@@ -384,9 +402,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
@@ -419,13 +437,13 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="数学" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/"/>
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
+    
+      <category term="数学" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="位运算" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
@@ -490,11 +508,11 @@
       <category term="动态规划" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
     
-      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="概率" scheme="https://lucifer.ren/blog/tags/%E6%A6%82%E7%8E%87/"/>
     
@@ -559,34 +577,6 @@
       <category term="陷阱题" scheme="https://lucifer.ren/blog/tags/%E9%99%B7%E9%98%B1%E9%A2%98/"/>
     
       <category term="滑动窗口" scheme="https://lucifer.ren/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>掌握前缀表达式真的可以为所欲为！</title>
-    <link href="https://lucifer.ren/blog/2020/01/09/1310.xor-queries-of-a-subarray/"/>
-    <id>https://lucifer.ren/blog/2020/01/09/1310.xor-queries-of-a-subarray/</id>
-    <published>2020-01-09T12:51:02.477Z</published>
-    <updated>2020-01-09T12:54:20.701Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前缀表达式是一种非常常见和重要的知识点，如果你还不知道，那就赶紧点进来看看吧！&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="前缀和" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
-    
-      <category term="前缀表达式" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
   </entry>
   
