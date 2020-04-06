@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-04-06T04:12:09.213Z</updated>
+  <updated>2020-04-06T04:37:52.843Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,17 +17,44 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>《82 年生的金智英》</title>
+    <link href="https://lucifer.ren/blog/2020/04/06/82-jinzhiying/"/>
+    <id>https://lucifer.ren/blog/2020/04/06/82-jinzhiying/</id>
+    <published>2020-04-05T16:00:00.000Z</published>
+    <updated>2020-04-06T04:37:52.843Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;《82 年生的金智英》（韩文原始名： 82년생 김지영）是一部由同名小说改编，于 2019 年 10 月 23 号在韩国上映的韩国电影。由金度英执导，郑裕美、孔刘主演。该片讲述出生于 1982 年的三十多岁平凡女性金智英，在产子后因为周围人事变化，以及家庭中婆婆等家人的言行一度造成其心理疾病，以及在其丈夫和家人的帮助下寻找自我恢复。&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="电影" scheme="https://lucifer.ren/blog/categories/%E7%94%B5%E5%BD%B1/"/>
+    
+      <category term="观后感" scheme="https://lucifer.ren/blog/categories/%E7%94%B5%E5%BD%B1/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
+    
+    
+      <category term="电影" scheme="https://lucifer.ren/blog/tags/%E7%94%B5%E5%BD%B1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>《饥饿站台》</title>
     <link href="https://lucifer.ren/blog/2020/04/06/movie-eager-game/"/>
     <id>https://lucifer.ren/blog/2020/04/06/movie-eager-game/</id>
-    <published>2020-04-06T03:28:24.257Z</published>
-    <updated>2020-04-06T04:12:09.213Z</updated>
+    <published>2020-04-05T16:00:00.000Z</published>
+    <updated>2020-04-06T04:19:54.516Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;《饥饿站台》 （西班牙语：El hoyo）是一部 2019 年的西班牙科幻惊悚电影。导演为加尔德图．加兹特鲁—乌鲁蒂亚里，编剧为佩德罗．里书罗、大卫・狄索拉；由伊万·马萨格、安东尼亚·圣·胡安、佐里昂・埃奎勒、埃米利奥·布阿勒、亚莉珊卓·马桑凯主演。电影情节设于一个塔状的监狱中，囚犯从监狱中间逐渐下降的大平台拿取食物。2019 年 9 月 6 日于 2019 年多伦多国际影展举行首映。&lt;/p&gt;
     
     </summary>
+    
+      <category term="电影" scheme="https://lucifer.ren/blog/categories/%E7%94%B5%E5%BD%B1/"/>
+    
+      <category term="观后感" scheme="https://lucifer.ren/blog/categories/%E7%94%B5%E5%BD%B1/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
     
     
       <category term="电影" scheme="https://lucifer.ren/blog/tags/%E7%94%B5%E5%BD%B1/"/>
@@ -52,9 +79,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
@@ -367,9 +394,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="字符串" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
@@ -402,15 +429,15 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
-      <category term="就地算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%B0%B1%E5%9C%B0%E7%AE%97%E6%B3%95/"/>
-    
       <category term="Hard" scheme="https://lucifer.ren/blog/categories/Hard/"/>
+    
+      <category term="就地算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%B0%B1%E5%9C%B0%E7%AE%97%E6%B3%95/"/>
     
     
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
@@ -437,13 +464,13 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数学" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
       <category term="位运算" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
@@ -508,11 +535,11 @@
       <category term="动态规划" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
     
+      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
+    
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="概率" scheme="https://lucifer.ren/blog/tags/%E6%A6%82%E7%8E%87/"/>
     
@@ -549,34 +576,6 @@
       <category term="状态机" scheme="https://lucifer.ren/blog/tags/%E7%8A%B6%E6%80%81%E6%9C%BA/"/>
     
       <category term="贪心" scheme="https://lucifer.ren/blog/tags/%E8%B4%AA%E5%BF%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode一道令人发指的陷阱题</title>
-    <link href="https://lucifer.ren/blog/2020/01/10/1297.maximum-number-of-occurrences-of-a-substring/"/>
-    <id>https://lucifer.ren/blog/2020/01/10/1297.maximum-number-of-occurrences-of-a-substring/</id>
-    <published>2020-01-10T04:34:25.412Z</published>
-    <updated>2020-01-10T04:36:32.041Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;LeetCode 有一些题目会给你设置陷阱，给你一些干扰信息。这个时候你需要小心，不要被他们带跑偏了。那么是什么样的陷阱呢？让我们来看一下！&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="陷阱题" scheme="https://lucifer.ren/blog/tags/%E9%99%B7%E9%98%B1%E9%A2%98/"/>
-    
-      <category term="滑动窗口" scheme="https://lucifer.ren/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
     
   </entry>
   
