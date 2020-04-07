@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-04-07T03:21:21.673Z</updated>
+  <updated>2020-04-07T07:19:33.015Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>或许是一本可以彻底改变你刷 LeetCode 效率的题解书</title>
+    <link href="https://lucifer.ren/blog/2020/04/07/leetcode-book.intro/"/>
+    <id>https://lucifer.ren/blog/2020/04/07/leetcode-book.intro/</id>
+    <published>2020-04-07T07:01:24.450Z</published>
+    <updated>2020-04-07T07:19:33.015Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;经过了半年时间打磨，投入诸多人力，这本 LeetCode 题解书终于快要和大家见面了。目前已经完成了大部分章节的编写工作，预计经过一段时间的打磨就会和大家见面啦 💐💐💐💐💐。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="我的书" scheme="https://lucifer.ren/blog/tags/%E6%88%91%E7%9A%84%E4%B9%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>每日一荐 2020-03 汇总</title>
@@ -103,9 +123,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
@@ -418,9 +438,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="字符串" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
@@ -453,9 +473,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
@@ -488,13 +508,13 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数学" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
       <category term="位运算" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
@@ -531,45 +551,6 @@
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode日记" scheme="https://lucifer.ren/blog/tags/LeetCode%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一行代码就可以通过 LeetCode？来看下我是怎么做到的！</title>
-    <link href="https://lucifer.ren/blog/2020/01/18/1227.airplane-seat-assignment-probability/"/>
-    <id>https://lucifer.ren/blog/2020/01/18/1227.airplane-seat-assignment-probability/</id>
-    <published>2020-01-18T15:46:42.563Z</published>
-    <updated>2020-01-18T15:59:33.965Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这是一道 LeetCode 为数不多的概率题，我们来看下。&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数学" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="概率" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E6%A6%82%E7%8E%87/"/>
-    
-      <category term="递归" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E9%80%92%E5%BD%92/"/>
-    
-      <category term="动态规划" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="概率" scheme="https://lucifer.ren/blog/tags/%E6%A6%82%E7%8E%87/"/>
-    
-      <category term="递归" scheme="https://lucifer.ren/blog/tags/%E9%80%92%E5%BD%92/"/>
     
   </entry>
   
