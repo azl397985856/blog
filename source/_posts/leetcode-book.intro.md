@@ -21,6 +21,7 @@ tags: [LeetCode, 我的书]
 - [作者 - lucifer](https://leetcode-cn.com/u/fe-lucifer/)
 - [作者 - BY](https://leetcode-cn.com/u/bruceyuj/)
 - [作者 - fanlu](https://www.fanlucloud.com/)
+- [作者 - lazybing](https://leetcode.com/libinglimit/)
 
 # 样张
 
