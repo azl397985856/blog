@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-04-07T11:13:53.307Z</updated>
+  <updated>2020-04-12T05:10:46.392Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>『不要再问我头像如何变灰了，试试这几种滤镜吧！』</title>
+    <link href="https://lucifer.ren/blog/2020/04/12/canvas-filter/"/>
+    <id>https://lucifer.ren/blog/2020/04/12/canvas-filter/</id>
+    <published>2020-04-11T16:00:00.000Z</published>
+    <updated>2020-04-12T05:10:46.392Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在实际的工作中，有时候会有一些需求，让你做一些图片的滤镜效果，比如将图片变成黑白，调整图片亮度等。本文手把手教你如何实现&lt;code&gt;五种滤镜效果&lt;/code&gt;，核心代码总共不到 70 行。&lt;/p&gt;
+&lt;p&gt;笔者所在的公司就有一个需求需要用到图片处理的知识，大概场景我来描述一下：&lt;/p&gt;
+&lt;p&gt;用户可以手动上传印章，并且支持给印章设置不同的显示效果，这里的效果具体指的是“线条的清晰程度”，如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gdqrt9ppu9j30j606pjsb.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;这里我们使用 Canvas 来实现。如果你对 Canvas 不熟悉，建议看下之前我写的一篇文章&lt;a href=&quot;https://cloud.tencent.com/developer/article/1494747&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;100 * 100 Canvas 占用内存多大&lt;/a&gt;，花上几分钟看完，基本上够看懂这篇文章了。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Canvas" scheme="https://lucifer.ren/blog/tags/Canvas/"/>
+    
+      <category term="图片处理" scheme="https://lucifer.ren/blog/tags/%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86/"/>
+    
+      <category term="滤镜" scheme="https://lucifer.ren/blog/tags/%E6%BB%A4%E9%95%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>或许是一本可以彻底改变你刷 LeetCode 效率的题解书</title>
@@ -479,9 +505,9 @@
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
-      <category term="Hard" scheme="https://lucifer.ren/blog/categories/Hard/"/>
-    
       <category term="就地算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%B0%B1%E5%9C%B0%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="Hard" scheme="https://lucifer.ren/blog/categories/Hard/"/>
     
     
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
@@ -517,33 +543,6 @@
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
       <category term="位运算" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode日记" scheme="https://lucifer.ren/blog/tags/LeetCode%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【LeetCode日记】 874. 模拟行走机器人</title>
-    <link href="https://lucifer.ren/blog/2020/01/29/874.walking-robot-simulation/"/>
-    <id>https://lucifer.ren/blog/2020/01/29/874.walking-robot-simulation/</id>
-    <published>2020-01-29T11:34:39.765Z</published>
-    <updated>2020-01-29T12:05:37.678Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这是一道 LeetCode 难度为 easy 的题目，没有高深的算法，有的只是套路，我们来看下。&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
     
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
