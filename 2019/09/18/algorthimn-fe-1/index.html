@@ -388,11 +388,11 @@
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
         <p>这是一个我在公司内部做的一个《数据结构与算法在前端领域的应用》主题演讲的一个前菜。<br>希望通过这个分享让大家认识到其实前端领域也有很多算法的，从而加深前端同学对算法的认识。</p>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g93fslj2pbj30kv113ach.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51jlf4ij30kv11375x.jpg" alt></p>
 <a id="more"></a>
 <h2 id="为什么大家觉得算法没用"><a href="#为什么大家觉得算法没用" class="headerlink" title="为什么大家觉得算法没用"></a>为什么大家觉得算法没用</h2><p>在我的职业生涯中，碰到很多非算法岗的研发同学吐槽“算法在实际业务中没什么用”，<br>甚至在面试官也问过我这个问题。我们姑且不来判断这句话正确与否，我们先来看下为什么大家会有这样的想法。</p>
 <p>我发现很多人喜欢用冰山这个图来表示这种只看到总体的一小部分的情况。<br>我也来借用一下这个创意。</p>
-<p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112727.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51k9cocj30lk09x75c.jpg" alt></p>
 <p>根据我的经验，我们写的业务代码通常不到总包体的 5%， 下面是我以前做过的一个实际项目的代码分布。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ du -sh node_modules <span class="comment"># 429M</span></span><br><span class="line">$ du -sh src <span class="comment"># 7.7M</span></span><br></pre></td></tr></table></figure>
 
@@ -404,7 +404,7 @@
 <blockquote>
 <p>图中黄色的代表我自己实现过。</p>
 </blockquote>
-<p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112728.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51kp9q4j30ic0cxwfd.jpg" alt></p>
 <p>这些都是前端开发过程的一些东西， 他们多多少少涉及到了数据结构和算法的知识</p>
 <p>下面我们来简单分析一下。</p>
 <h3 id="VDOM"><a href="#VDOM" class="headerlink" title="VDOM"></a>VDOM</h3><p>事实上 VDOM 就是一种数据结构，但是它并不是我们在《数据结构与算法》课程中学习到的一些现成的数据结构。</p>
@@ -453,15 +453,15 @@
 <p>比如你可以用 vue 组件写一个递归，实现一些递归的功能，也是可以的，<br>但是大多数人都想不到。</p>
 <p>接下来，我会举几个例子来说明“算法在日常开发中的应用”。<br>注意，以下所有的例子均来自我的实际业务需求。</p>
 <h3 id="第一个例子-撤销与重做"><a href="#第一个例子-撤销与重做" class="headerlink" title="第一个例子 - 撤销与重做"></a>第一个例子 - 撤销与重做</h3><h4 id="业务描述"><a href="#业务描述" class="headerlink" title="业务描述"></a>业务描述</h4><p>某一天，可(gai)爱(si)的产品提了一个需求，”我们的系统需要支持用户撤销和重做最近十次的操作。“</p>
-<p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112729.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51lnlu0j306v06nglv.jpg" alt></p>
 <p>让我们来回忆一下纯函数。</p>
-<p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112730.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51mlsw9j30hn0argma.jpg" alt></p>
 <p>纯函数有一个特性是给定输入，输出总是一样的。</p>
 <blockquote>
 <p>关于函数式编程可以参考我之前的<a href="https://github.com/azl397985856/functional-programming" target="_blank" rel="noopener">几篇文章</a><br>和<a href="https://slides.com/azl397985856/functional-programming-4" target="_blank" rel="noopener">一个分享</a></p>
 </blockquote>
 <p>我们对问题进行一些简化，假设我们的应用是纯粹的数据驱动，也就是说满足<code>纯</code>的特性。</p>
-<p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112731.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51n37b0j30fu0903yy.jpg" alt></p>
 <p>我们继续引入第二个知识点 - <code>reducer</code>.</p>
 <p>reducer 是一个纯函数，函数签名为<code>(store1, action1) =&gt; store2</code>。<br>即给定 state 和 action，一定会返回确定的新的 state。</p>
 <blockquote>
@@ -469,37 +469,37 @@
 </blockquote>
 <p>假设我们的应用初始 state 为 state1， 我们按照时间先后顺序分别发送了三个 action，<br>action1, action2, action3。</p>
 <p>我们用一个图来表示就是这样的：</p>
-<p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112732.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51o27clj30mi06n3z4.jpg" alt></p>
 <p>运用简单的数据知识，我们不难推导出如下关系：</p>
-<p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112733.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51ov68aj30l806ngm6.jpg" alt></p>
 <blockquote>
 <p>如果对这部分知识点还比较迷茫，可以看下我之前的一篇文章，<a href="https://juejin.im/post/5a9e6a61f265da239866c7a3" target="_blank" rel="noopener">从零实现一个 Redux</a></p>
 </blockquote>
 <h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>基础知识铺垫完了，我们来看一下怎么解决这个问题。</p>
 <p>第一种方案，我们可以将每次的store，即store1, store2, store3都存起来。<br>比如我想回退到第二步，我们只需要将store2取出来，覆盖当前store，然后重新渲染即可。<br>这种方案很直观，可以满足我们的业务需求。<br>但是缺点也很明显，store在这里被存储了很多。 每次发送一个action都会有一个新的store被存起来。<br>当我们应用比较大的时候，或者用户触发了很多action的时候，会占据大量内存。<br>实际场景中性能上我们很难接受。</p>
-<p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112734.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51pe9v8j30fz06hwes.jpg" alt></p>
 <p>第二种方案，有了上面的铺垫，我们发现， 事实上我们没必要存储所有的store。<br>因为store可以被计算出来。因此我们只要存储action即可。<br>比如我们要回退到第二步，我们拿出来store1，然后和action运算一次，得到store2，<br>然后将store2覆盖到当前的store即可。</p>
-<p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112735.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51pvzp9j30g8073jrr.jpg" alt></p>
 <p>这种做法，只需要存储一个store1， 以及若干个action。 action相对于store来说要小很多。<br>这是这种做法相比与上一种的优势。同时由于每次都需要从头（store1）开始计算，<br>因此是一种典型的“时间换空间”的优化手段。</p>
 <p>实际上这种做法，我们可以进行小小的优化。比如我们设置多个snapshot，<br>然后我们就不必每次从头开始计算，而是算出最近的一个snapshot，<br>然后计算即可。 无疑这种做法可以减少很多计算量，但是会增加空间占用。<br>这是典型的“空间换时间”， 如果根据实际业务进行取舍是关键。</p>
 <p>第三种方案，我们可以用树来表示我们的store。每次修改store，我们不是将整个store<br>销毁然后创建一个新的，而是重用可以重用的部分。</p>
-<p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112736.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51qsh7fj30kp0ajab6.jpg" alt></p>
 <p>如图我要修改 <code>store.user.age</code>。我们只需要将root和user的引用进行修改，同时替换age节点即可。</p>
 <p>如果大家对immutable研究比较深的话应该能发现，这其实就是immutable的原理</p>
 <h3 id="第二个例子-巨型Mapper的优化"><a href="#第二个例子-巨型Mapper的优化" class="headerlink" title="第二个例子 - 巨型Mapper的优化"></a>第二个例子 - 巨型Mapper的优化</h3><h4 id="业务描述-1"><a href="#业务描述-1" class="headerlink" title="业务描述"></a>业务描述</h4><p>由于业务需要，我们需要在前端缓存一些HTTP请求。<br>我们设计了如下的数据结构，其中key表示资源的URL，<br>value会上次服务端的返回值。</p>
 <p>现在我们的项目中已经有上千个接口，当接口多起来之后，缓存占用会比较大，我们如何对此进行优化？</p>
 <p>注： 我们的key中的前缀是有规律的，即有很多重复的数据在。 返回值也有可能是有很多重复的。</p>
-<p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112737.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51rq707j309h087js1.jpg" alt></p>
 <p>这是一个典型的数据压缩算法。数据压缩算法有很多，我这里就不介绍了，大家可以自行了解一下。</p>
 <p>对数据压缩算法感兴趣的，可以看下我之前写的<a href="https://github.com/azl397985856/leetcode/blob/master/thinkings/run-length-encode-and-huffman-encode.md" target="_blank" rel="noopener">游程编码和哈夫曼编码</a></p>
 <h3 id="第三个例子-实现自动联想功能"><a href="#第三个例子-实现自动联想功能" class="headerlink" title="第三个例子 - 实现自动联想功能"></a>第三个例子 - 实现自动联想功能</h3><h4 id="业务描述-2"><a href="#业务描述-2" class="headerlink" title="业务描述"></a>业务描述</h4><p>现在很多输入框都带了自动联想的功能， 很多组件库也实现了自动填充组件。</p>
 <p>现在需要你完成这个功能，你会怎么做？</p>
-<p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112739.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51s6v4vj309w030aa3.jpg" alt></p>
 <p>我们可以用前缀树，很高效的完成这个工作。</p>
-<p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112741.png" alt="prefix-tree"></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51sr2ivj30mz0gq406.jpg" alt="prefix-tree"></p>
 <p>对这部分原理感兴趣的可以看下我的<a href="https://github.com/azl397985856/leetcode/blob/master/problems/208.implement-trie-prefix-tree.md" target="_blank" rel="noopener">这个题解</a></p>
 <h3 id="第四个例子-相似度检测"><a href="#第四个例子-相似度检测" class="headerlink" title="第四个例子 - 相似度检测"></a>第四个例子 - 相似度检测</h3><h4 id="业务描述-3"><a href="#业务描述-3" class="headerlink" title="业务描述"></a>业务描述</h4><p>由于业务需要，我们需要对字符串进行相似度检测。<br>对于相似度超过一定阀值的数据，我们认为它是同一个数据。</p>
-<p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112742.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51tk5bxj30it07s403.jpg" alt></p>
 <p>关于相似度检测，我们其实可以借助“最小编辑距离”算法。<br>对于两个字符串a和b，如果a和b的编辑距离越小，我们认为越相似，<br>反之越不相似。 特殊情况，如果编辑距离为0表示是相同的字符串，<br>相似度为100%。  我们可以加入自己的计算因子，将相似度<br>离散在0 - 100%之间。</p>
 <p>这部分的内容，我在介绍Git的时候介绍过了，这里不再重复。</p>
 <p>其实我们可以进一步扩展一下，比如<code>对于一些无意义的词不计入统计范围</code>，我们可以怎么做？</p>
@@ -520,10 +520,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-12-11T12:35:19+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-13T14:47:57+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2019年12月11日</p>
+    <p>更新于 2020年4月13日</p>
   </a>
 </div>
 

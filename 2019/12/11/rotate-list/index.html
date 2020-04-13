@@ -395,7 +395,7 @@
 <h2 id="数组循环移位"><a href="#数组循环移位" class="headerlink" title="数组循环移位"></a>数组循环移位</h2><p>LeetCode 和 编程之美等都有这道题目，题目难度为 Easy。<a href="https://leetcode-cn.com/problems/rotate-array/" target="_blank" rel="noopener">LeeCode 链接</a></p>
 <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。</span><br><span class="line"></span><br><span class="line">示例 1:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,4,5,6,7] 和 k = 3</span><br><span class="line">输出: [5,6,7,1,2,3,4]</span><br><span class="line">解释:</span><br><span class="line">向右旋转 1 步: [7,1,2,3,4,5,6]</span><br><span class="line">向右旋转 2 步: [6,7,1,2,3,4,5]</span><br><span class="line">向右旋转 3 步: [5,6,7,1,2,3,4]</span><br><span class="line">示例 2:</span><br><span class="line"></span><br><span class="line">输入: [-1,-100,3,99] 和 k = 2</span><br><span class="line">输出: [3,99,-1,-100]</span><br><span class="line">解释:</span><br><span class="line">向右旋转 1 步: [99,-1,-100,3]</span><br><span class="line">向右旋转 2 步: [3,99,-1,-100]</span><br><span class="line">说明:</span><br><span class="line"></span><br><span class="line">尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。</span><br><span class="line">要求使用空间复杂度为 O(1) 的 原地 算法。</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1ga4j21nsctj30o8048glq.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54rgugtj30o8048mxf.jpg" alt></p>
 <h3 id="不符合题意的解法"><a href="#不符合题意的解法" class="headerlink" title="不符合题意的解法"></a>不符合题意的解法</h3><p>如果你拿到这道题没有思路，不要紧张，因为你不是一个人。</p>
 <p>让我们先不要管题目的时间和空间复杂度的限制， 来用最最普通的方式实现它，看能不能得出一点思路。</p>
 <p>最简单的做法就是新开辟一个完全一样的数组，然后每次移动的时候从 copy 的数组中取即可，由于新开辟的数组不会被改变，因此这种做法可行，我们直接看下代码：</p>
@@ -413,13 +413,13 @@
 </ul>
 <p>上面两个问题的答案都是<code>有效</code>。 因为 k 就算再大，我们只需要求模，求模的值当成新的 k 即可。<br>因此 k 最大不过就是 n。 如果 n 很大，由于我们的算法是 O(N)的复杂度，也就是线性，这个复杂度还是比较理想的。</p>
 <h3 id="时间换空间"><a href="#时间换空间" class="headerlink" title="时间换空间"></a>时间换空间</h3><p>我们来试一下常数空间复杂度的解法，这种做法思路很简单，我们只需要每次移动一位，移动 k 次即可，移动一次的时间复杂度是 1，k 次共用一个变量即可，因此总的空间复杂度可以降低到 1。</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1ga4ieydb7ij30pw0bejsa.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54ruiucj30pw0bemyf.jpg" alt></p>
 <p>我们来看下代码，这次我们把上面提到的 k 为负数的情况考虑进去。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">RShift</span>(<span class="params">list, k</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> n = list.length;</span><br><span class="line">  <span class="keyword">if</span> (k % n === <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> cnt = <span class="built_in">Math</span>.abs(k &gt; <span class="number">0</span> ? k % n : n + (k % n));</span><br><span class="line">  <span class="keyword">let</span> t = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> (cnt--) &#123;</span><br><span class="line">    t = list[n - <span class="number">1</span>];</span><br><span class="line">    <span class="comment">// 右移一位</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = n - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">      list[i] = list[i - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    list[<span class="number">0</span>] = t;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>虽然上面的解法是常数空间复杂度，但是时间复杂度是 O(N * K)，K 取值不限制的话，就是 O(N^2)，<br>还是不满足题意。不过没关系，我们继续思考。</p>
 <p>我们再来看一种空间换时间的做法，这种做法的思路是拼接一个完全一样的数组到当前数组的尾部，然后问题就转化为<code>截取数组使之满足右移的效果</code>，这样的时间复杂度 O(N),空间复杂度是 O(N).</p>
-<p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-21-163458.png" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54sbcbnj30jm0403yb.jpg" alt></p>
 <p>我们看下代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">RShift</span>(<span class="params">list, k</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> n = list.length;</span><br><span class="line">  <span class="keyword">let</span> i = <span class="built_in">Math</span>.abs(k &gt; <span class="number">0</span> ? k % n : n + (k % n));</span><br><span class="line">  <span class="keyword">return</span> list.concat([...list]).slice(n - i, n * <span class="number">2</span> - i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -430,7 +430,7 @@
 <li>然后把[n - k, n - 1]翻转</li>
 <li>最后把[0, n - 1]翻转</li>
 </ul>
-<p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-22-095115.png" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54tbiz3j30dd072wec.jpg" alt></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverse</span>(<span class="params">list, start, end</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> t = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> (start &lt; end) &#123;</span><br><span class="line">    t = list[start];</span><br><span class="line">    list[start] = list[end];</span><br><span class="line">    list[end] = t;</span><br><span class="line">    start++;</span><br><span class="line">    end--;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">RShift</span>(<span class="params">list, k</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> n = list.length;</span><br><span class="line">  <span class="keyword">if</span> (k % n === <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">  reverse(list, <span class="number">0</span>, n - k - <span class="number">1</span>);</span><br><span class="line">  reverse(list, n - k, n - <span class="number">1</span>);</span><br><span class="line">  reverse(list, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这里给一个简单的数学证明：</p>
@@ -470,7 +470,7 @@
 
 <h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>其实这个思路简单，就是先找到<code>断点</code>，然后重新拼接链表即可。这个断点其实就是第<code>n - k % n</code>个节点， 其中 k 为右移的位数，n 为链表长度。这里取模的原因和上面一样，为了防止 k 过大做的无谓运算。但是这道题目限定了 k 是非负数，那么我们就不需要做这个判断了。</p>
 <p>如图所示：</p>
-<p><img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-21-164709.png" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54v6q7cj30ce04nt8j.jpg" alt></p>
 <p>代码也很简单，我们来看下。</p>
 <h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> rotateRight = <span class="function"><span class="keyword">function</span>(<span class="params">head, k</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (head === <span class="literal">null</span> || head.next === <span class="literal">null</span>) <span class="keyword">return</span> head;</span><br><span class="line">  <span class="keyword">let</span> p1 = head;</span><br><span class="line">  <span class="keyword">let</span> n = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">let</span> res = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> (p1 &amp;&amp; p1.next) &#123;</span><br><span class="line">    p1 = p1.next;</span><br><span class="line">    n++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> cur = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">let</span> p2 = head;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> (cur &lt; n - (k % n)) &#123;</span><br><span class="line">    p2 = p2.next;</span><br><span class="line">    cur++;</span><br><span class="line">  &#125;</span><br><span class="line">  p1.next = head;</span><br><span class="line">  res = p2.next;</span><br><span class="line">  p2.next = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
@@ -491,10 +491,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-14T14:38:25+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-13T14:50:26+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年2月14日</p>
+    <p>更新于 2020年4月13日</p>
   </a>
 </div>
 
@@ -582,16 +582,16 @@
                       <span class="art-item-left">
                           <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                           <h4>
-                              <a href="/blog/2019/12/11/thanksGaving-2/" rel="prev" title="纪念LeetCode项目Star突破2W">
+                              <a href="/blog/2019/12/11/reverseList/" rel="prev" title="一文搞懂《链表反转》">
                                 
-                                    纪念LeetCode项目Star突破2W
+                                    一文搞懂《链表反转》
                                 
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/日记/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 日记</a>
+                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a> <a class="tag" href="/blog/tags/字节跳动/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 字节跳动</a> <a class="tag" href="/blog/tags/链表/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 链表</a>
                               </h6>
                           
                       </span>
@@ -602,16 +602,16 @@
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/blog/2019/12/11/how-am-I-conque-leetcode/" rel="prev" title="我是如何刷 LeetCode 的？">
+                              <a href="/blog/2019/12/11/rfc-monitor/" rel="prev" title="【RFC】XXX 公司监控体系需求与技术调研">
                                   
-                                      我是如何刷 LeetCode 的？
+                                      【RFC】XXX 公司监控体系需求与技术调研
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a> <a class="tag" href="/blog/tags/学习方法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 学习方法</a>
+                                  <a class="tag" href="/blog/tags/RFC/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> RFC</a> <a class="tag" href="/blog/tags/技术调研/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 技术调研</a> <a class="tag" href="/blog/tags/监控/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 监控</a>
                               </h6>
                           
                       </span>
