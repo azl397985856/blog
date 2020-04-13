@@ -12,7 +12,7 @@ categories:
 <!-- more -->
 ## 程序员必会的数据结构与算法
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-22-%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E4%BC%9A%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95.jpg)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51dcng8j30u01spjwj.jpg)
 
 ## 订阅量TOP1
 这本书是订阅量Top1，50000+程序员的算法课堂，整个专栏会涵盖100 多个算法真实项目场景案例，更难得的是它跟市面上晦涩的算法书籍不同的是，还手绘了一些清晰易懂的详解图（总共有 300 多张），市面上的大多数的算法教程都看过，走心的说，这个专栏是市面上唯一一门真正适用于工程师的专栏，作者是前Google工程师王争，相信会开启你的趣味学习算法之旅。
@@ -22,7 +22,7 @@ categories:
 
 本书作者王争，前 Google 工程师，从事 Google 翻译相关的开发工作，深入研究算法数十年。现任某金融公司资深系统架构师，核心业务接口平台负责人，负责公司核心业务的架构设计、开发，以及可用性、高性能等相关技术问题的解决。
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E-%E5%B8%B8%E8%A7%84%E8%BD%AE%E6%92%AD%E5%9B%BE.jpg)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51emu5oj30yi0emgmm.jpg)
 
 ## 你能获得什么？
 1、掌握数据结构与算法的核心知识
@@ -41,10 +41,10 @@ categories:
 
 ## 课程目录
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-22-%E4%B8%93%E6%A0%8F%E7%9B%AE%E5%BD%95.jpg)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51g47doj30ku2swqad.jpg)
 
 ## 订阅福利
 
 扫描下方二维码订阅即可，新人立减30元，另外我本人提供返现11元（到手88元），直接加我微信`DevelopeEngineer`即可。另外再送你199元限时学习礼包，你可以先领券再购买，领券地址：http://gk.link/a/108qc
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-22-121600.jpg)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51hy79vj30u01hdgq9.jpg)

@@ -2,6 +2,7 @@
 title: 累死累活干不过一个写PPT的
 tags: [技能, PPT]
 ---
+
 无论是身处什么行业什么领域，数据分析越来越成为一向必不可少的技能，
 而运用数据思维进行决策更能产生形成高质量的决策结果。
 
@@ -30,9 +31,9 @@ tags: [技能, PPT]
 
 我是一个对技术充满兴趣的程序员, 擅长前端工程化，前端性能优化，前端标准化等。
 
-做过.net， 搞过Java，现在是一名前端工程师。
+做过.net， 搞过 Java，现在是一名前端工程师。
 
-除了我的本职工作外，我会在开源社区进行一些输出和分享，GitHub 共计获得1.5W star。比较受欢迎的项目有[leetcode题解](https://github.com/azl397985856/leetcode) , [宇宙最强的前端面试指南](https://github.com/azl397985856/fe-interview) 和
+除了我的本职工作外，我会在开源社区进行一些输出和分享，GitHub 共计获得 1.5W star。比较受欢迎的项目有[leetcode 题解](https://github.com/azl397985856/leetcode) , [宇宙最强的前端面试指南](https://github.com/azl397985856/fe-interview) 和
 [我的第一本小书](https://github.com/azl397985856/automate-everything)
 
 ## 收集数据
@@ -48,6 +49,7 @@ tags: [技能, PPT]
 ```
 打包时间 =  阶段1 时间 + 阶段2 时间 + 阶段3 时间
 ```
+
 我们减少打包时间肯定要减少其中一个或多个。
 
 有时候我们无法找到这种简单的分解，那就教大家另外一个技巧：运用对比。
@@ -71,7 +73,7 @@ tags: [技能, PPT]
 
 你接到了这样一个任务，你会如何去做？
 
-这里我们不考虑具体的具体思路和细节。 假设你的架构思路，方案规划，各种fallback已经想好了。
+这里我们不考虑具体的具体思路和细节。 假设你的架构思路，方案规划，各种 fallback 已经想好了。
 我们如何通过上面提到的让数据说话的角度来收集数据呢？ 换句话说，我们需要收集哪些数据？
 
 #### 打包时间
@@ -80,14 +82,12 @@ tags: [技能, PPT]
 
 最后我们只需要对比优化前后的总体打包时间差异即可。
 
-
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075808.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds546t088j30ec05dq3e.jpg)
 
 这对于老板来说可能已经够了，但是这缺乏一些精确性，我们无法知道通过优化了哪个环节进行
-减少了打包时间。 因此一种简单的改进是将打包划分为多个阶段，每个阶段分别进行统计计时⌛️ 。
+减少了打包时间。 因此一种简单的改进是将打包划分为多个阶段，每个阶段分别进行统计计时 ⌛️ 。
 
-
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075810.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds547ajtij30gs07q74w.jpg)
 
 #### 包的大小
 
@@ -95,22 +95,18 @@ tags: [技能, PPT]
 
 我们当然可以只统计总体包大小。
 
-
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-75811.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds548de0gj30cy05fmxc.jpg)
 
 但是为了获得更加灵活的定制和更加精确的范围我们可以对包进行一定的划分。
 这个划分可以是业务纬度，也可以是纯技术纬度。
 
-
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075811.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54a42mjj30f005z3zb.jpg)
 
 #### 打包命令
 
 这部分比较简单，我们只需要简单地统计手动操作的次数即可。
 
-
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075813.png)
-
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54azmgwj30f005i3yu.jpg)
 
 通过收集以上的数据，我们就可以用数据来表示我们的成果，让数据说话，关于如何
 使用这些数据，我们稍后讨论。
@@ -130,48 +126,41 @@ tags: [技能, PPT]
 说到测量，普遍接受的方式是，在浏览器中进行打点，将浏览器打开网页的过程看作是一个旅行。
 那么我们每到一个地方就拍张带有时间的照片（事件），最后我们对这些照片按照时间进行排列， 然后分析哪部分是我们的瓶颈点等。
 
-![performance-api](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-75814.png)
+![performance-api](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54bnum5j30i70avdhp.jpg)
 
-有了这些timing 我们可以很方便的计算各项性能指标。我们还可以自定义一些我们关心的指标，比如请求时间（成功和失败分开统计），较长js操作时间，或者比较重要的功能等。
+有了这些 timing 我们可以很方便的计算各项性能指标。我们还可以自定义一些我们关心的指标，比如请求时间（成功和失败分开统计），较长 js 操作时间，或者比较重要的功能等。
 
 总之收集到这些数据之后，我们只需要根据我们的需求去定制一些指标即可。
 
 这样我们就很容易展示出这样的画面：
 
-![render-perf](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075814.png)
-
+![render-perf](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54dcbs2j30eh074gm6.jpg)
 
 ### 人效提升
 
 假如你是一个项目的管理者，上级分配给你一个任务，要在未来几个季度去做“研发效率提升”，
 也就是提高“交付速度”。 你会怎么做这件事？
 
-
 #### 任务
-
 
 这个事情是比较主观的了，因此我们切实需要一些可以量化的东西来辅助我们。
 
 我们考虑将需求进行拆分，变成一个个任务。一个需求可能有多个任务。
 
-
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075816.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54e97btj309z0960ta.jpg)
 
 我们考虑对每一个任务进行计时，而不是需求，因为需求有太大的差异。
 我们可以针对任务进行分类，然后我们的目标就可以变成“减少同类任务的交付时长”。
 
 但是这种粒度似乎还是有点大。我们可以采取标签的形式，对任务进行交叉分类。
 
-
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-75817.png)
-
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54fb9nfj30ay09874x.jpg)
 
 任务纬度可能还是有点太大，我们可以采取更小的粒度划分，比如模块和组件。
 
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54gb6a0j30ly0akabf.jpg)
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075817.png)
-
-这样我们的统计纬度就丰富起来了，我们不仅可以总体进行统计分析，我们还可以根据tag和tag的组合进行汇总。
+这样我们的统计纬度就丰富起来了，我们不仅可以总体进行统计分析，我们还可以根据 tag 和 tag 的组合进行汇总。
 
 比如一个典型的统计结果大概是：
 
@@ -185,9 +174,9 @@ tags: [技能, PPT]
  - task2 (tagA)
  - task3 (tagC)
 ```
- 
- 比如这里有一种tag叫“是否复用了以前的代码”，
- 那么我们就很容易统计出组件复用率，也就很容易很直观地知道前后的差距了。
+
+比如这里有一种 tag 叫“是否复用了以前的代码”，
+那么我们就很容易统计出组件复用率，也就很容易很直观地知道前后的差距了。
 
 ### 用户拉新和留存
 
@@ -204,7 +193,8 @@ tags: [技能, PPT]
 - 流失的老用户 (tagB)
 - 地址位置 (tagA)
 ```
-假如我的tag有两个分别是 用户id和时间， 我们就可以方便地统计每个用户的活动数据趋势。
+
+假如我的 tag 有两个分别是 用户 id 和时间， 我们就可以方便地统计每个用户的活动数据趋势。
 
 ## 让数据说话
 
@@ -216,7 +206,7 @@ tags: [技能, PPT]
 但是我相信作为个人，你需要的种类不会很多。因此自己根据自身的实际情况，
 挑选适合自己的几种类型，做到迎刃有余就足够了。
 
-对于我而言，我常用的是饼图，用来表示分布关系。  曲线图用来表示趋势。
+对于我而言，我常用的是饼图，用来表示分布关系。 曲线图用来表示趋势。
 用柱状图表示对比+趋势。用热度图表示离散的数据分布等等。
 
 我们可以使用一些现有的成熟的产品来帮助我们将刚才我们收集到的数据转化为各种图表，
@@ -224,36 +214,32 @@ tags: [技能, PPT]
 
 > 这个网站能做的图表种类比较少。
 
-
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075819.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54h7bnqj311u0fotbt.jpg)
 
 当然作为一名前端我们也可以自己写代码去更灵活地展示我们的数据，比如[D3](https://d3js.org/)
 或者百度的[echarts](https://echarts.baidu.com/)
 
 > 任何类型的图表都可以做，只有你想不到，没有它做不到。
 
-
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-75820.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54j1tkej30zf0fx1kx.jpg)
 
 相对折中一点，我们可以选择支持代码定制的一些产品，在特殊情况我们可以自定义。
 
 ## 累死累活干不过做 PPT 的
 
-有了这些数据图表，是时候写一份PPT来秀一下了。
+有了这些数据图表，是时候写一份 PPT 来秀一下了。
 
 一种方式是使用你电脑的办公软件或者一些在线的幻灯片制作工具做，
 比如[slides](https://slides.com/) 。
 
-
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075821.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54k60j2j313b0iqwip.jpg)
 
 另一种方式通过写代码的方式实现，作为程序员我推荐使用第二种。
 这里推荐一款`nodejs cli 工具` [nodeppt](https://github.com/ksky521/nodeppt),
 还有另外一个`JS 框架` [reveal.js](https://github.com/hakimel/reveal.js) 。
-上面提到的slides背后的原理就是它。
+上面提到的 slides 背后的原理就是它。
 
-
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075822.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54lsifcj312l0ih7wh.jpg)
 
 ## 总结
 
@@ -267,7 +253,7 @@ tags: [技能, PPT]
 有了数据之后，我们需要通过一些手段将其数据展示出来，给人直观的感受，最好有视觉冲击感。
 这里我推荐了几个工具和平台，大家可以根据自己的情况选择。
 
-最后结合我们实际情况，PPT是一个很好的展示自己的东西，不管是晋升还是宣传都是很好的方式，
+最后结合我们实际情况，PPT 是一个很好的展示自己的东西，不管是晋升还是宣传都是很好的方式，
 这里我也推荐了几个产品，帮助大家更快更好地将图表展示出来。
 
 让数据开口说话，你就可以少说一点，并且摆数据就是摆事实，
@@ -281,7 +267,7 @@ tags: [技能, PPT]
 
 之后我的文章同步到微信公众号 脑洞前端 ，您可以关注获取最新的文章，或者和我进行交流。
 
-<img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-085421.jpg" width = "50%" height = "50%" alt="gongzhonghao" align=center />
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds4sh51a6j30km0komyv.jpg" width = "50%" height = "50%" alt="gongzhonghao" align=center />
 
 ## 交流群
 
@@ -289,10 +275,10 @@ tags: [技能, PPT]
 
 ### QQ 群
 
-![qq-group-chat](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-75823.png)
+![qq-group-chat](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54ma44fj306a082q36.jpg)
 
 ### 微信群
 
-<img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-085457.jpg" width = "50%" height = "50%" alt="JavaScript" align=center />
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5735kizj30e80e80tb.jpg" width = "50%" height = "50%" alt="JavaScript" align=center />
 
 (由于微信的限制，100 个人以上只能邀请加入， 你可以添加我的机器人回复“大前端”拉你进群)

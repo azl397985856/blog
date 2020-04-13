@@ -35,7 +35,7 @@ categories:
 布隆过滤器其实就是`bit + 多个散列函数`,  如果经过多次散列的值再bit上都为1，那么可能存在(可能有冲突)。 如果
 有一个不为1，那么一定不存在（一个值经过散列函数得到的值一定是唯一的），这也是布隆过滤器的一个重要特点。
 
-![bloom-filter-url](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-22-041300.jpg)
+![bloom-filter-url](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53hxbw7j31dw0j2wgm.jpg)
 
 ### 布隆过滤器的应用
 

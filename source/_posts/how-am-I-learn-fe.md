@@ -14,7 +14,7 @@ categories:
 兴趣不管对于学习什么来说都是最好的老师。当然前端也不例外，如果你对这一门感兴趣，绝对会对你有很大的帮助。
 
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075824.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53pi54uj307n0533zi.jpg)
 
 关于如何培养兴趣，我提一点，你可以尝试去做一些小的“发明创造”，从而激发自己内心的“成就感”。这些小发明可以是一些小工具，小页面。你可以从开源社区，比如Github或者一些论坛，甚至自己的生活中收集一些创作素材。对于我来说，我就做过一个“前端开发工作流”的软件，“siri”， “小门神”等，从而带来成就感，提升自己的兴趣。
 
@@ -25,29 +25,29 @@ categories:
 看一些权威的书籍，包括前端基础，软件工程以及算法等。这里不太建议看太老的，毕竟技术的发展是很快的，以前非常经典的书并一定适合看了，尤其是初学者而言。这里前端方面我重点推荐两本书，一本是《你不知道的JS》，一本是《JavaScript语言精粹》。除了前端，你还可以看一些软工类的书，我个人比较喜欢的有《程序员修炼之道》等，算法类的有《图解算法》，《编程之美》等。其他的我就不一一赘述了，想要更多书单的可以私信我。
 
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075825.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53qfn9kj305g075q4a.jpg)
 
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075828.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53rhdv2j307405hdhv.jpg)
 
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075830.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53sd7z6j305j071abq.jpg)
 
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075833.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53ssxrrj3069069q3o.jpg)
 
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075836.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53taxn9j3069069gn7.jpg)
 
 - 查权威资料。 这里我推荐两个，一个是[MDN](https://developer.mozilla.org/zh-CN/)的文章，真的是又全面又专业，绝对是前端开发必备神器，哪里不会点哪里。 另外推荐一个[Google开发者](https://developers.google.com/web/fundamentals/) ， 里面干货很多，绝对权威。
 这里顺便再安利一个软件，用来查文档什么的，简直如虎添翼，这个软件的名字是Dash，大家可以把自己常用的框架，类库等导进去，想用的时候直接查询即可，比去网上搜更快更高效，这个软件对于定制的支持度也是蛮高的，谁用谁知道。
 
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075837.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53ud6lbj311e0hbac8.jpg)
 （大家可以看到我下载了很多documentation）
 
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-75838.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53vpntmj311f0lpgs5.jpg)
 （你可以直达某一个documentation搜索，也可以全局搜索，甚至可以搜goole和stackoverflow，是不是很贴心？）
 
 - 关注一些圈内权威人士。 我一般会关注几个圈内比较知名的人的知乎，微博和twitter。这是我关注的[Github的权威人士列表](https://github.com/azl397985856?tab=following)。其实这些都是公开的，你也可以点开我的知乎，微博资料看我或者大佬们关注了谁。
@@ -66,30 +66,30 @@ categories:
 多图预警：
 
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075842.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53wloptj304m0gsq3j.jpg)
 
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075843.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53wyi87j304u0g0q38.jpg)
 
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075844.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53xg7qnj308807et8u.jpg)
 
 拿《编程题》主题来说，我总结了各大公司常考的几十道题目。
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075847.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53ydbowj30d70hs765.jpg)
 
 对于其他主题也是一样，我都会尽可能地深度讲解和剖析，并且从多方面理解，我相信这是在市面上很少见的。
 
 而且我还画了很多图，来帮助大家理解一些抽象的知识点。
 
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075850.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53zeayjj30mx0i4jys.jpg)
 
 项目地址： https://lucifer.ren/fe-interview/#/   欢迎围观。
 
 ## 开源项目
 
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075854.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds540ejvxj309o041weh.jpg)
 
 实话实说，很多优秀的思想，规范，写法我都是从优秀的开源项目中学来的。 我会不定期阅读一些优秀的开源项目源码，也会参与到开源的工作中去，这给我自己带来了很大的提升。 不仅技术得到了提升，团队协作，规范化等方面也有了质的提高，另外还认识了一些优秀的人。四年来，我阅读了很多优秀的源码，也尝试自己去造一些轮子，并开源出去，回馈社区。
 
@@ -105,11 +105,11 @@ categories:
 
 - 日报周报。 大家可以订阅一些前端方面的日报周报，这方面其实有很多，这里只推荐一个我常看的一个[JavaScript周刊](https://javascriptweekly.com)。我自己也出了一款[《每日一荐》](https://github.com/azl397985856/daily-featured), 每天推荐一个优秀的开源项目，优秀文章， 周一到周五我们不见不散。
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075855.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds5425gxxj30r20ghwhz.jpg)
 - 深度参与开源项目。 关于如何参与开源项目其实可以另起一篇文章了，这里不再赘述，感性的话，我会再写一篇文章，大家记得关注我就好。
 - 定期总结，技术输出。 我的习惯是对于学习的内容定期和不定期地进行总结。 比如最近我在总结的[《leetcode题解》]（现在有18k+ ✨了）(https://github.com/azl397985856/leetcode)，[《大前端面试宝典》](https://github.com/azl397985856/fe-interview)
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075856.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds5432xphj30k00jxago.jpg)
 
 
 > 千万不要觉得算法对前端不重要，算法，网络，操作系统属于基础，从事相关工作的都应该认真学习，打好基础才行。

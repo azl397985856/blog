@@ -51,7 +51,7 @@ Vue 提供了更加细粒度的更新组件的方式，甚至无需用户参与�
 比如之前 React 执行了一个 100ms 的更新过程，对于新的调和算法，
 会将这个过程划分为多个过程，当然每一份时间很可能是不同的。
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112752.jpg)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds527o2fmj30in07iaar.jpg)
 
 由于总时间不会减少，我们设置还增加了调度（上面我提到的两条）的代码，
 因此单纯从总时间上，甚至是一种倒退。但是为什么用户会感觉到更快了呢？
@@ -61,7 +61,7 @@ Vue 提供了更加细粒度的更新组件的方式，甚至无需用户参与�
 
 事实上， React 核心的算法包含了三个核心部分，分别是`Scheduler，`， `Reconciliation`，`Renderer`。
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112753.jpg)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds5284v44j30kn08rabb.jpg)
 
 - scheduler 用于决定何时去执行。
 
@@ -80,7 +80,7 @@ scheduler。 对于用户而言，界面交互，动画，界面更新的优先�
 
 这部分的算法实际上就是一个“阉割版的最小编辑树算法”。
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112754.jpg)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds528kezaj30ke09s75f.jpg)
 
 - renderer 使用 Reconciliation 的计算结果，然后将这部分差异，最小化更新到视图。可以是 DOM，也可以是
   native， 理论上可以是任何一种渲染容器。
@@ -107,7 +107,7 @@ fiber 正是模拟了调用栈，并且通过链表来重新组织，一方面�
 
 我们可以把每一个组件都看成一个 view，然而我们的工作就是计算所有的组件的最新的 view。
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112755.jpg)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds529530zj30h103y0t2.jpg)
 
 那么 fiber 是如何完成“增量更新”呢？ 秘诀就是它相当于“重新实现了浏览器调用栈”。
 
@@ -135,7 +135,7 @@ fiber 正是模拟了调用栈，并且通过链表来重新组织，一方面�
 
 
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-20-112757.jpg)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds52aevumj30ds08wwfk.jpg)
 
 其中具体的算法，我预计会在我的[从零开始开发一个 React](https://github.com/azl397985856/mono-react) 中更新。
 

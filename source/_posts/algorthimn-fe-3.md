@@ -2,9 +2,10 @@
 title: 数据结构与算法在前端领域的应用 - 第三篇
 tags: [前端, 数据结构, 算法]
 date: 2019-09-20
-categories: 
+categories:
   - [前端, 算法]
 ---
+
 这是本系列文章的第三篇，这里我将带你从新的视角来看当前的前端应用，
 虽然这其中涉及到的道理很简单，但是这部分知识很少被人看到，更不要说推广和应用了。
 
@@ -36,7 +37,7 @@ categories:
 
 Chrome 采用多进程架构，其顶层存在一个 Browser process 用以协调浏览器的其它进程。
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075803.jpg)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds5220bt0j30k00bjdgl.jpg)
 (图来自 https://zhuanlan.zhihu.com/p/47407398)
 
 这也是为什么 chrome 明明只打开了一个 tab，却出现了 4 个进程的原因。
@@ -70,7 +71,7 @@ Chrome 采用多进程架构，其顶层存在一个 Browser process 用以协�
 
 工作线程能够分担主线程的计算压力，进而主线程可以获得更多的空闲时间，从而更快地响应用户行为。
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075804.jpg)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds522xxxtj31400u0gnl.jpg)
 
 工作线程主要有 Web Woker 和 Service Worker 两种。
 
@@ -84,6 +85,7 @@ Chrome 采用多进程架构，其顶层存在一个 Browser process 用以协�
 > 一旦创建， 一个 worker 可以将消息发送到创建它的 JavaScript 代码,
 
 #### Service Worker
+
 以下摘自[MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API)
 
 > Service workers 本质上充当 Web 应用程序与浏览器之间的代理服务器，
@@ -94,23 +96,21 @@ Chrome 采用多进程架构，其顶层存在一个 Browser process 用以协�
 
 ## 重新思考我们的前端应用
 
-工作线程尤其是Web Worker的出现一部分原因就是为了分担主线程的压力。
+工作线程尤其是 Web Worker 的出现一部分原因就是为了分担主线程的压力。
 
 整个过程就像主线程发布命令，然后工作线程执行，执行完毕将执行结果通过消息的形式传递给主线程。
 
 我们以包工头包工程，然后将工作交给各个单位去做的角度来看的话，大概是这样的：
 
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds523elypj30mt0cgq57.jpg)
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075805.png)
+实际上工作工作进程，尤其是 WebWorker 已经出现很长时间了。但是很多时候我们并没有充分使用，甚至连使用都没使用。
 
-实际上工作工作进程，尤其是WebWorker已经出现很长时间了。但是很多时候我们并没有充分使用，甚至连使用都没使用。
-
-
-下面以Web Worker为例， 我们来深度挖掘一下工作线程的潜力。
+下面以 Web Worker 为例， 我们来深度挖掘一下工作线程的潜力。
 
 前面的文章，我们谈了很多前端领域的算法，有框架层面的也有应用层面的。
 
-前面提到了React的调和算法，这部分代码耗时其实还是蛮大的，React16重构了
+前面提到了 React 的调和算法，这部分代码耗时其实还是蛮大的，React16 重构了
 整个调和算法，但是总体的计算成本还是没有减少，甚至是增加的。
 
 > 关于调和算法可以参考我的另外一篇文章[前端领域的数据结构与算法解读 - fiber](https://juejin.im/post/5d479ae551882505de0f1525)
@@ -121,15 +121,14 @@ Chrome 采用多进程架构，其顶层存在一个 Browser process 用以协�
 
 如果将这些抽离出我们主线程的话，我们的应用大概会是这样的：
 
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds524dw4nj30hb0d940f.jpg)
 
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075806.png)
-
-这样做主线程只负责UI展示，以及事件分发处理等工作，这样就大大减轻了主线程的负担，我们就可以更快速地响应用户了。
+这样做主线程只负责 UI 展示，以及事件分发处理等工作，这样就大大减轻了主线程的负担，我们就可以更快速地响应用户了。
 然后在计算结果完成之后，我们只需要通知主线程，主线程做出响应即可。
 可以看出，在项目复杂到一定程度，这种优化带来的效果是非常大的。
 
-我们来开一下脑洞， 假如流行的前端框架比如React内置了这种线程分离的功能，
-即将调和算法交给WebWorker来处理，会给前端带来怎么样的变化？
+我们来开一下脑洞， 假如流行的前端框架比如 React 内置了这种线程分离的功能，
+即将调和算法交给 WebWorker 来处理，会给前端带来怎么样的变化？
 
 假如我们可以涉及一个算法，智能地根据当前系统的硬件条件和网络状态，
 自动判断应该将哪部分交给工作线程，哪部分代码交给主线程，会是怎么样的场景？
@@ -140,29 +139,26 @@ Chrome 采用多进程架构，其顶层存在一个 Browser process 用以协�
 
 上述描述的场景非常美好，但是同样地也会有一些挑战。
 
-第一个挑战就是操作繁琐，比如webworker只支持单独文件引入，再比如不支持函数序列化,以及反复序列化带来的性能问题， 还有和webworker通信是异步的等等。
+第一个挑战就是操作繁琐，比如 webworker 只支持单独文件引入，再比如不支持函数序列化,以及反复序列化带来的性能问题， 还有和 webworker 通信是异步的等等。
 
-但是这些问题都有很成熟的解决方案，比如对于操作比较繁琐这个问题我们就可以通过使用一些封装好web worker操作的库。[comlink](https://github.com/GoogleChromeLabs/comlink) 就是一个非常不错的web worker的封装工具库。
+但是这些问题都有很成熟的解决方案，比如对于操作比较繁琐这个问题我们就可以通过使用一些封装好 web worker 操作的库。[comlink](https://github.com/GoogleChromeLabs/comlink) 就是一个非常不错的 web worker 的封装工具库。
 
-
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-075807.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds525clcbj31kw0ntjt5.jpg)
 
 对于不支持单文件引入，我们其实可以用`Blob`, `createObjectURL`的方式模拟，
-当然社区中其实也有了成熟的解决方案，如果你使用webpack构建的话，有一个`worker-loader`可以直接用。
+当然社区中其实也有了成熟的解决方案，如果你使用 webpack 构建的话，有一个`worker-loader`可以直接用。
 
 对于函数序列化这个问题，我们无法传递函数给工作线程，其实上面提到的
-Comlink， 就很好地解决了这个问题，即使用Comlink提供的`proxy`,
+Comlink， 就很好地解决了这个问题，即使用 Comlink 提供的`proxy`,
 你可以将一个代理传递到工作线程。
 
 对于反复序列化带来的性能问题，我们其实可以使用一种叫`对象转移（Transferable Objects）`的技术，幸运的是这个特性的浏览器兼容性也不错。
 
-
-![](https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-75808.png)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds526p8ufj312h0a2dhn.jpg)
 
 对于异步的问题，我们可以采取一定的取舍。 即我们
 本地每次保存一份最近一份的结果拷贝，我们只需要每次返回这个拷贝，
-然后在webworker计算结果返回的时候更新拷贝即可。
-
+然后在 webworker 计算结果返回的时候更新拷贝即可。
 
 ## 总结
 
@@ -173,7 +169,7 @@ Comlink， 就很好地解决了这个问题，即使用Comlink提供的`proxy`,
 分别是主线程 Main thread ， 工作线程 Worker thread，光栅线程 Raster thread
 和排版线程 Compositor thread。
 
-然后详细介绍了主线程和工作线程，并以webworker为例，讲述了如何利用工作线程为我们的主线程分担负担。为了消化这部分知识，建议你自己动手实践一下。
+然后详细介绍了主线程和工作线程，并以 webworker 为例，讲述了如何利用工作线程为我们的主线程分担负担。为了消化这部分知识，建议你自己动手实践一下。
 
 虽然我们的愿望很好，但是这其中在应用的过程之中还是有一些坑的，我这里列觉了一些常见的坑，并给出了解决方案。
 
@@ -187,4 +183,4 @@ Comlink， 就很好地解决了这个问题，即使用Comlink提供的`proxy`,
 
 之后我的文章同步到微信公众号 脑洞前端 ，您可以关注获取最新的文章，或者和我进行交流。
 
-<img src="https://lucifer-1259702774.cos.ap-shanghai.myqcloud.com/2019-09-19-085421.jpg" width = "50%" height = "50%" alt="gongzhonghao" align=center />
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds4sh51a6j30km0komyv.jpg" width = "50%" height = "50%" alt="gongzhonghao" align=center />
