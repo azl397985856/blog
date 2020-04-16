@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-04-12T05:10:46.392Z</updated>
+  <updated>2020-04-16T09:12:46.894Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>纪念LeetCode项目Star突破3W</title>
+    <link href="https://lucifer.ren/blog/2020/04/16/thanksGiving3/"/>
+    <id>https://lucifer.ren/blog/2020/04/16/thanksGiving3/</id>
+    <published>2020-04-16T03:26:35.438Z</published>
+    <updated>2020-04-16T09:12:46.894Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;差不多一年的时间，项目收获了第 3W 个 Star，平均差不多一天 100 左右的 star，非常感谢大家的关注和支持。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://lucifer.ren/blog/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="技术" scheme="https://lucifer.ren/blog/categories/%E6%97%A5%E8%AE%B0/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="日记" scheme="https://lucifer.ren/blog/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>『不要再问我头像如何变灰了，试试这几种滤镜吧！』</title>
@@ -149,9 +171,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
@@ -464,9 +486,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="字符串" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
@@ -499,9 +521,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
@@ -517,39 +539,6 @@
       <category term="LeetCode日记" scheme="https://lucifer.ren/blog/tags/LeetCode%E6%97%A5%E8%AE%B0/"/>
     
       <category term="Hard" scheme="https://lucifer.ren/blog/tags/Hard/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【LeetCode日记】 50. Pow(x, n)</title>
-    <link href="https://lucifer.ren/blog/2020/01/29/50.powx-n/"/>
-    <id>https://lucifer.ren/blog/2020/01/29/50.powx-n/</id>
-    <published>2020-01-29T14:44:15.972Z</published>
-    <updated>2020-01-29T14:50:43.468Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这是一道让我们实现系统函数的造轮子题目，我们来看下。&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="数学" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
-    
-      <category term="位运算" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode日记" scheme="https://lucifer.ren/blog/tags/LeetCode%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
