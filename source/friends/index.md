@@ -68,7 +68,7 @@ links:
           - 公众号【算法码上来】，分享深度学习与NLP算法
       - name: Mzdora's 博客
         avatar: https://tva1.sinaimg.cn/large/00831rSTly1gdc5h0ok8yj30hs0hsglz.jpg
-        url: http://mzdora.info/blog/
+        url: http://mzdora.info/
         textColor: "#fff"
         backgroundColor: "#49c0f0"
         tags:
