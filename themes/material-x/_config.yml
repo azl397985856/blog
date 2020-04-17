@@ -61,14 +61,15 @@ cover:
     - name: 主页
       icon: fas fa-home
       url: /
+    - name: 官网
+      icon: fas fa-laptop-code
+      url: http://leetcode-solution.cn/
     - name: 友链
       icon: fas fa-link
       url: friends/
-      rel: nofollow
-    - name: 关于我
-      icon: fas fa-info-circle
+    - name: 联系我
+      icon: fas fa-id-card-alt
       url: about/
-      rel: nofollow
 
 # 桌面端导航栏菜单
 menu_desktop:
@@ -78,15 +79,12 @@ menu_desktop:
   - name: 分类
     icon: fas fa-folder-open
     url: categories/
-    rel: nofollow
   - name: 标签
     icon: fas fa-hashtag
     url: tags/
-    rel: nofollow
   - name: 归档
     icon: fas fa-archive
     url: archives/
-    rel: nofollow
 
 # 手机端导航菜单（从右上角的按钮点击展开）
 menu_mobile:
@@ -96,11 +94,9 @@ menu_mobile:
   - name: 文章归档
     icon: fas fa-archive
     url: archives/
-    rel: nofollow
   - name: 关于小站
     icon: fas fa-info-circle
     url: about/
-    rel: nofollow
 
 layout:
   # 文章列表（主页、自定义的列表）布局
@@ -145,13 +141,11 @@ sidebar:
     more:
       icon: fas fa-expand-arrows-alt
       url: categories/
-      rel: nofollow
   - widget: tagcloud
     icon: fas fa-tags
     more:
       icon: fas fa-expand-arrows-alt
       url: tags/
-      rel: nofollow
   # - widget: related_posts # 需要安装插件  npm i -S hexo-related-popular-posts
   - widget: music
     icon: fas fa-compact-disc
