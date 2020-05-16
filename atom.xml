@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-05-05T12:41:31.066Z</updated>
+  <updated>2020-05-16T03:54:00.785Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【LeetCode日记】 343. 整数拆分</title>
+    <link href="https://lucifer.ren/blog/2020/05/16/343.integer-break/"/>
+    <id>https://lucifer.ren/blog/2020/05/16/343.integer-break/</id>
+    <published>2020-05-16T03:52:36.605Z</published>
+    <updated>2020-05-16T03:54:00.785Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;希望通过这篇题解让大家知道“题解区的水有多深”，让大家知道“什么才是好的题解”。&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
+    
+      <category term="动态规划" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="Medium" scheme="https://lucifer.ren/blog/categories/Medium/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode日记" scheme="https://lucifer.ren/blog/tags/LeetCode%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="Medium" scheme="https://lucifer.ren/blog/tags/Medium/"/>
+    
+  </entry>
   
   <entry>
     <title>为什么eslint没有 no-magic-string？</title>
@@ -493,41 +528,6 @@
       <category term="图" scheme="https://lucifer.ren/blog/tags/%E5%9B%BE/"/>
     
       <category term="Floyd-Warshall" scheme="https://lucifer.ren/blog/tags/Floyd-Warshall/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【LeetCode日记】 1332. 删除回文子序列</title>
-    <link href="https://lucifer.ren/blog/2020/02/01/1332.remove-palindromic-subsequences/"/>
-    <id>https://lucifer.ren/blog/2020/02/01/1332.remove-palindromic-subsequences/</id>
-    <published>2020-02-01T12:26:45.779Z</published>
-    <updated>2020-02-01T12:28:46.186Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;LeetCode 上有很多抖机灵的题目，需要你仔细审题，否则很容易被套路。这里就有一道，我们来看下。&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="字符串" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-      <category term="回文" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%9B%9E%E6%96%87/"/>
-    
-      <category term="Easy" scheme="https://lucifer.ren/blog/categories/Easy/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode日记" scheme="https://lucifer.ren/blog/tags/LeetCode%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="Easy" scheme="https://lucifer.ren/blog/tags/Easy/"/>
     
   </entry>
   
