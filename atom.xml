@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-05-16T03:54:00.785Z</updated>
+  <updated>2020-05-20T12:24:20.924Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【LeetCode日记】 1371. 每个元音包含偶数次的最长子字符串</title>
+    <link href="https://lucifer.ren/blog/2020/05/20/1371.find-the-longest-substring-containing-vowels-in-even-count/"/>
+    <id>https://lucifer.ren/blog/2020/05/20/1371.find-the-longest-substring-containing-vowels-in-even-count/</id>
+    <published>2020-05-20T12:22:21.514Z</published>
+    <updated>2020-05-20T12:24:20.924Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这道题还是蛮有意思的，我用了多种方法来解决，干货满满，点进来看看？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="前缀和" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    
+      <category term="状态压缩" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="前缀和" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    
+      <category term="状态压缩" scheme="https://lucifer.ren/blog/tags/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9/"/>
+    
+  </entry>
   
   <entry>
     <title>【LeetCode日记】 343. 整数拆分</title>
@@ -496,38 +526,6 @@
       <category term="BigPipe" scheme="https://lucifer.ren/blog/tags/BigPipe/"/>
     
       <category term="微前端" scheme="https://lucifer.ren/blog/tags/%E5%BE%AE%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Floyd-Warshall 解题模板，助你快速AC</title>
-    <link href="https://lucifer.ren/blog/2020/02/01/1334.find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/"/>
-    <id>https://lucifer.ren/blog/2020/02/01/1334.find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/</id>
-    <published>2020-02-01T14:45:03.057Z</published>
-    <updated>2020-02-01T14:48:16.559Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Floyd-Warshall 是解决任意两点间的最短路径的一种算法，LeetCode 有很多题目都用了，掌握这套解题模板帮你快速 AC。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="图" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/"/>
-    
-      <category term="解题模板" scheme="https://lucifer.ren/blog/categories/%E8%A7%A3%E9%A2%98%E6%A8%A1%E6%9D%BF/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="解题模板" scheme="https://lucifer.ren/blog/tags/%E8%A7%A3%E9%A2%98%E6%A8%A1%E6%9D%BF/"/>
-    
-      <category term="图" scheme="https://lucifer.ren/blog/tags/%E5%9B%BE/"/>
-    
-      <category term="Floyd-Warshall" scheme="https://lucifer.ren/blog/tags/Floyd-Warshall/"/>
     
   </entry>
   
