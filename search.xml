@@ -8,7 +8,7 @@
       <link href="/blog/2020/05/21/hacker-drawer/"/>
       <url>/blog/2020/05/21/hacker-drawer/</url>
       
-        <content type="html"><![CDATA[<h2 id="14-梦寐以求的编程语言"><a href="#14-梦寐以求的编程语言" class="headerlink" title="14. 梦寐以求的编程语言"></a>14. 梦寐以求的编程语言</h2><p>让我们试着描述黑客心中梦寐以求的语言来为以上内容做个小结。</p><p>这种语言干净简练，具有最高层次的抽象和互动性，而且很容易装备，可以只用很少的代码就解决常见的问题。不管是什么程序，你真正要写的代码几乎都与你自己的特定设置有关，其他具有普遍性的问题都有现成的函数库可以调用。</p><p>这种语言的句法短到令人生疑。你输入的命令中，没有任何一个字是多余的，甚至用到 shift 键的机会也很少。</p><p>这种语言的抽象程度很高，甚至你可以快速写出一个程序的原型。然后，等到你开始优化的时候，它还提供一个真正出色的性能分析器，告诉你应该重点关注什么地方。你能让多重循环快得难以置信，并且在需要的地方还能直接嵌入字节码。</p><p>这种语言有大量优秀的范例可供学习，并且非常符合直觉，你只需要花几分钟阅读范例就能领会应该如何使用此种语言。你偶尔才需要查阅操作手册， 它很薄，里面关于限定条件和例外情况的警告寥寥无几。</p><p>这种语言内核很小，但很强大。各个函数库高度独立，并且和内核一样经过精心设计，它们都能很好地协同工作。语言的每个部分就像精密照相机的各种零件一样完美契合，不需要为了兼容性问题放弃或者保留某些功能。所有的函数库的源码都能很容易得到。这种语言能很轻松地与操作系统和其他语言开发的应用程序对话。</p><p>这种语言以层的方式构建。较高的抽象层透明地构建在较低的抽象层上。如果有需要的话，你可以直接使用较低的抽象层。</p><p>除了一些绝对必要隐藏的东西。这种语言的所有细节对使用者都是透明的。它提供的抽象能力只是为了方便你开发，而不是强迫你按照它的方式行事。事实上，它鼓励你参与它的设计，给你提供与语言创作者平等的权利。你能够对它的任何部分加以改变， 甚至包括它的语法。它尽可能让你自己定义的部分与它本身定义的部分处于同等地位，这种梦幻般的编程语言不仅开放源码，更开放自身的设计。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="14-梦寐以求的编程语言"><a href="#14-梦寐以求的编程语言" class="headerlink" title="14. 梦寐以求的编程语言"></a>14. 梦寐以求的编程语言</h2><p>让我们试着描述黑客心中梦寐以求的语言来为以上内容做个小结。</p><p>这种语言干净简练，具有<code>最高层次的抽象和互动性，而且很容易装备</code>，可以只用很少的代码就解决常见的问题。不管是什么程序，你真正要写的代码几乎都与你自己的特定设置有关，其他具有普遍性的问题都有现成的函数库可以调用。</p><p>这种语言的句法短到令人生疑。你输入的命令中，<code>没有任何一个字是多余的，甚至用到 shift 键的机会也很少</code>。</p><p>这种语言的抽象程度很高，甚至你可以快速写出一个程序的原型。然后，等到你开始优化的时候，它还提供一个<code>真正出色的性能分析器</code>，告诉你应该重点关注什么地方。你能让多重循环快得难以置信，并且在需要的地方还能直接嵌入字节码。</p><p>这种语言有大量优秀的范例可供学习，并且<code>非常符合直觉</code>，你只需要花几分钟阅读范例就能领会应该如何使用此种语言。你偶尔才需要查阅操作手册， 它很薄，里面关于限定条件和例外情况的警告寥寥无几。</p><p>这种语言内核很小，但很强大。各个<code>函数库高度独立</code>，并且和内核一样经过精心设计，它们都能很好地协同工作。语言的每个部分就像精密照相机的各种零件一样<code>完美契合</code>，不需要为了兼容性问题放弃或者保留某些功能。所有的函数库的源码都能很容易得到。这种语言能很轻松地与操作系统和其他语言开发的应用程序对话。</p><p>这种语言<code>以层的方式构建</code>。较高的抽象层透明地构建在较低的抽象层上。如果有需要的话，你可以直接使用较低的抽象层。</p><p>除了一些绝对必要隐藏的东西。这种语言的所有细节对使用者都是<code>透明</code>的。它提供的抽象能力只是为了方便你开发，而不是强迫你按照它的方式行事。事实上，它鼓励你参与它的设计，给你提供与语言创作者平等的权利。你能够对它的任何部分加以改变， 甚至包括它的语法。它尽可能<code>让你自己定义的部分与它本身定义的部分处于同等地位</code>，这种梦幻般的编程语言不仅开放源码，更开放自身的设计。</p>]]></content>
       
       
       <categories>
@@ -1247,9 +1247,9 @@
           
           <category> 数据结构 </category>
           
-          <category> 学习方法 </category>
-          
           <category> LeetCode </category>
+          
+          <category> 学习方法 </category>
           
       </categories>
       
@@ -1271,29 +1271,13 @@
     
     
     <entry>
-      <title>零基础的前端开发初学者应如何系统地学习？</title>
-      <link href="/blog/2019/12/11/how-am-I-learn-fe/"/>
-      <url>/blog/2019/12/11/how-am-I-learn-fe/</url>
+      <title></title>
+      <link href="/blog/2019/12/11/ibinhouse/"/>
+      <url>/blog/2019/12/11/ibinhouse/</url>
       
-        <content type="html"><![CDATA[<p>回想四年前我刚入行的时候，那时候很多人对于前端的看法是“切图，画页面，有个编辑器+浏览器就能干，门槛低”，现在已经完全不是那样了，可以说现在的前端这个职业的门槛虽然还是没怎么变，但是整个行业的门槛提升了，换句话说就是整个行业对于前端这个职位要求更高了，对于前端小白的需求量降低，对于高级前端的需求量还在上升，甚至是供小于求的局面。从市场经济学角度上讲你只有进入到高级级别，才能真正吃到行业的红利。  因此想要入行的朋友要先想清楚，不要头脑发热，如果你想清楚了，那么请继续往下看。<br>说实话，现在的前端大环境对初学者来说实在有点不友好，学习资料鱼龙混杂，良莠不齐，有质量很高的学习资料，也有谬论，前后不一，观点错误，或者讲述不清晰的。 更可怕的是质量低下的文章有时候更受欢迎，因此需要大家有很好的甄别能力，但这对于初学者来说实在有些困难，我在这里就来谈一下 <code>初学者如何少走弯路，并且系统性地学习前端</code>。</p><a id="more"></a><h2 id="兴趣是最好的老师"><a href="#兴趣是最好的老师" class="headerlink" title="兴趣是最好的老师"></a>兴趣是最好的老师</h2><p>兴趣不管对于学习什么来说都是最好的老师。当然前端也不例外，如果你对这一门感兴趣，绝对会对你有很大的帮助。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53pi54uj307n0533zi.jpg" alt></p><p>关于如何培养兴趣，我提一点，你可以尝试去做一些小的“发明创造”，从而激发自己内心的“成就感”。这些小发明可以是一些小工具，小页面。你可以从开源社区，比如Github或者一些论坛，甚至自己的生活中收集一些创作素材。对于我来说，我就做过一个“前端开发工作流”的软件，“siri”， “小门神”等，从而带来成就感，提升自己的兴趣。</p><h2 id="权威，权威，还是权威"><a href="#权威，权威，还是权威" class="headerlink" title="权威，权威，还是权威"></a>权威，权威，还是权威</h2><p>其实技术越往上走，越会关注标准，关注协议等更上层和抽象的东西。而制定这些协议和标准的人往往都是世界上的“殿堂级”程序员，因此关注这些东西对于他们来说就是权威，对他们来说就非常很重要，但是这对于初学者来说似乎还比较遥远。那么初学者如何对接“权威”呢？<br>刚才提到了网上的学习资料参差不齐，这其实对于入门学习来说是很不利的，就像童年时期对于整个人生的影响一样，入门阶段对于整个前端开发生涯的影响也是巨大的。关于如何初学者如何对接权威，我这里总结了以下三点：<br>看一些权威的书籍，包括前端基础，软件工程以及算法等。这里不太建议看太老的，毕竟技术的发展是很快的，以前非常经典的书并一定适合看了，尤其是初学者而言。这里前端方面我重点推荐两本书，一本是《你不知道的JS》，一本是《JavaScript语言精粹》。除了前端，你还可以看一些软工类的书，我个人比较喜欢的有《程序员修炼之道》等，算法类的有《图解算法》，《编程之美》等。其他的我就不一一赘述了，想要更多书单的可以私信我。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53qfn9kj305g075q4a.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53rhdv2j307405hdhv.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53sd7z6j305j071abq.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53ssxrrj3069069q3o.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53taxn9j3069069gn7.jpg" alt></p><ul><li>查权威资料。 这里我推荐两个，一个是<a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener">MDN</a>的文章，真的是又全面又专业，绝对是前端开发必备神器，哪里不会点哪里。 另外推荐一个<a href="https://developers.google.com/web/fundamentals/" target="_blank" rel="noopener">Google开发者</a> ， 里面干货很多，绝对权威。<br>这里顺便再安利一个软件，用来查文档什么的，简直如虎添翼，这个软件的名字是Dash，大家可以把自己常用的框架，类库等导进去，想用的时候直接查询即可，比去网上搜更快更高效，这个软件对于定制的支持度也是蛮高的，谁用谁知道。</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53ud6lbj311e0hbac8.jpg" alt><br>（大家可以看到我下载了很多documentation）</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53vpntmj311f0lpgs5.jpg" alt><br>（你可以直达某一个documentation搜索，也可以全局搜索，甚至可以搜goole和stackoverflow，是不是很贴心？）</p><ul><li>关注一些圈内权威人士。 我一般会关注几个圈内比较知名的人的知乎，微博和twitter。这是我关注的<a href="https://github.com/azl397985856?tab=following" target="_blank" rel="noopener">Github的权威人士列表</a>。其实这些都是公开的，你也可以点开我的知乎，微博资料看我或者大佬们关注了谁。</li></ul><h2 id="做一些完整的简单项目"><a href="#做一些完整的简单项目" class="headerlink" title="做一些完整的简单项目"></a>做一些完整的简单项目</h2><p>大家可以尝试做一些简单的项目，不要嫌简单。 在做的过程往往能发现很多问题，如果有问题那这正好是自己提高的机会。 如果你觉得很简单，也没有关系，你可以思考一下，我有没有可能做的更好？我能不能把这些东西封装起来，建立更高一层的抽象（A New Level of Abstraction），做到DRY(Don’t Repeat Yourself)。<br>接下来就是关于怎么找项目。 你可以找个正式工作或者实习来做，也可以自己找一些小项目来练手， 比较常见的练手项目有模仿某个网站，APP或者搭建自己的个人主页，博客系统等。做好了不仅可以当敲门砖，说不定会收益很长时间呢。实在没有什么项目练手，这里再推荐一个网站，你可以再上面打怪升级。<a href="https://user-gold-cdn.xitu.io/2019/9/15/16d34514876b8c4d" target="_blank" rel="noopener">freecodecamp</a><br>现在你已经掌握了前端开发的基本概念和技能，那么如何做到更进一步，持续成长，做到高级呢？我相信这是很多人的疑问，下面我们就来看一下。</p><h2 id="学习路线"><a href="#学习路线" class="headerlink" title="学习路线"></a>学习路线</h2><p>你可能已经听过过大前端这个词，我这里不是劝退你哦。以下内容很高能，不过很多知识点不知道没关系，因为就算是工作了很多年了老手也很难了解其中的大半知识点。<br>我个人为了让自己巩固知识，同时也为了帮助他人，总结了大前端下的30多个主题内容，内容覆盖大前端的方方面面，虽然是从面试角度出发，但是你用来提升自己，查缺补漏也是很有用的。</p><p>多图预警：</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53wloptj304m0gsq3j.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53wyi87j304u0g0q38.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53xg7qnj308807et8u.jpg" alt></p><p>拿《编程题》主题来说，我总结了各大公司常考的几十道题目。<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53ydbowj30d70hs765.jpg" alt></p><p>对于其他主题也是一样，我都会尽可能地深度讲解和剖析，并且从多方面理解，我相信这是在市面上很少见的。</p><p>而且我还画了很多图，来帮助大家理解一些抽象的知识点。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53zeayjj30mx0i4jys.jpg" alt></p><p>项目地址： <a href="https://lucifer.ren/fe-interview/#/">https://lucifer.ren/fe-interview/#/</a>   欢迎围观。</p><h2 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h2><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds540ejvxj309o041weh.jpg" alt></p><p>实话实说，很多优秀的思想，规范，写法我都是从优秀的开源项目中学来的。 我会不定期阅读一些优秀的开源项目源码，也会参与到开源的工作中去，这给我自己带来了很大的提升。 不仅技术得到了提升，团队协作，规范化等方面也有了质的提高，另外还认识了一些优秀的人。四年来，我阅读了很多优秀的源码，也尝试自己去造一些轮子，并开源出去，回馈社区。</p><h2 id="输入-输出"><a href="#输入-输出" class="headerlink" title="输入 + 输出"></a>输入 + 输出</h2><p>前面重点讲述的是输入。 其实学习的过程不仅仅是输入，输出也是很好的学习方法。 输出的形式有很多，比如写博客，讲给别人，开源出去让别人用等。 这其实是很好的学习机会，这种学习方法可以让你的成长速度呈指数型增长，因此千万不要小看它。 我会通过以练代学的方式来学习，比如我学习React，我会迅速看文档，然后写demo，最后我会自己<a href="https://github.com/azl397985856/mono-react" target="_blank" rel="noopener">《从零实现React》</a>来内化它。</p><p>我还会定期做总结，写文章，写开源项目，做分享等，目的一方面是影响他人，另一方面是成长自己。</p><h2 id="持续学习"><a href="#持续学习" class="headerlink" title="持续学习"></a>持续学习</h2><p>选择了技术这条路，就要做好持续学习，每日精进的准备，跟上时代潮流是很有必要的。</p><ul><li>日报周报。 大家可以订阅一些前端方面的日报周报，这方面其实有很多，这里只推荐一个我常看的一个<a href="https://javascriptweekly.com" target="_blank" rel="noopener">JavaScript周刊</a>。我自己也出了一款<a href="https://github.com/azl397985856/daily-featured" target="_blank" rel="noopener">《每日一荐》</a>, 每天推荐一个优秀的开源项目，优秀文章， 周一到周五我们不见不散。</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5425gxxj30r20ghwhz.jpg" alt></p><ul><li>深度参与开源项目。 关于如何参与开源项目其实可以另起一篇文章了，这里不再赘述，感性的话，我会再写一篇文章，大家记得关注我就好。</li><li>定期总结，技术输出。 我的习惯是对于学习的内容定期和不定期地进行总结。 比如最近我在总结的[《leetcode题解》]（现在有18k+ ✨了）(<a href="https://github.com/azl397985856/leetcode)，[《大前端面试宝典》](https://github.com/azl397985856/fe-interview)" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode)，[《大前端面试宝典》](https://github.com/azl397985856/fe-interview)</a></li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5432xphj30k00jxago.jpg" alt></p><blockquote><p>千万不要觉得算法对前端不重要，算法，网络，操作系统属于基础，从事相关工作的都应该认真学习，打好基础才行。</p></blockquote><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>大家可以关注我的公众号《脑洞前端》，公众号后台回复“大前端”，拉你进《大前端面试宝典 - 图解前端群》。回复“leetcode”，拉你进《leetcode题解交流群》</p><p>最后祝大家在前端的路上越走越远。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端 </category>
-          
-          <category> 学习方法 </category>
-          
-      </categories>
+        <content type="html"><![CDATA[<p>信息输入大脑后，遗忘也就随之开始了。遗忘率随时间的流逝而先快后慢，特别是在刚刚识记的短时间里，遗忘最快，这就是著名的艾宾浩斯遗忘曲线。</p>]]></content>
       
       
-        <tags>
-            
-            <tag> 前端 </tag>
-            
-            <tag> 学习方法 </tag>
-            
-        </tags>
       
     </entry>
     
@@ -1327,13 +1311,29 @@
     
     
     <entry>
-      <title></title>
-      <link href="/blog/2019/12/11/ibinhouse/"/>
-      <url>/blog/2019/12/11/ibinhouse/</url>
+      <title>零基础的前端开发初学者应如何系统地学习？</title>
+      <link href="/blog/2019/12/11/how-am-I-learn-fe/"/>
+      <url>/blog/2019/12/11/how-am-I-learn-fe/</url>
       
-        <content type="html"><![CDATA[<p>信息输入大脑后，遗忘也就随之开始了。遗忘率随时间的流逝而先快后慢，特别是在刚刚识记的短时间里，遗忘最快，这就是著名的艾宾浩斯遗忘曲线。</p>]]></content>
+        <content type="html"><![CDATA[<p>回想四年前我刚入行的时候，那时候很多人对于前端的看法是“切图，画页面，有个编辑器+浏览器就能干，门槛低”，现在已经完全不是那样了，可以说现在的前端这个职业的门槛虽然还是没怎么变，但是整个行业的门槛提升了，换句话说就是整个行业对于前端这个职位要求更高了，对于前端小白的需求量降低，对于高级前端的需求量还在上升，甚至是供小于求的局面。从市场经济学角度上讲你只有进入到高级级别，才能真正吃到行业的红利。  因此想要入行的朋友要先想清楚，不要头脑发热，如果你想清楚了，那么请继续往下看。<br>说实话，现在的前端大环境对初学者来说实在有点不友好，学习资料鱼龙混杂，良莠不齐，有质量很高的学习资料，也有谬论，前后不一，观点错误，或者讲述不清晰的。 更可怕的是质量低下的文章有时候更受欢迎，因此需要大家有很好的甄别能力，但这对于初学者来说实在有些困难，我在这里就来谈一下 <code>初学者如何少走弯路，并且系统性地学习前端</code>。</p><a id="more"></a><h2 id="兴趣是最好的老师"><a href="#兴趣是最好的老师" class="headerlink" title="兴趣是最好的老师"></a>兴趣是最好的老师</h2><p>兴趣不管对于学习什么来说都是最好的老师。当然前端也不例外，如果你对这一门感兴趣，绝对会对你有很大的帮助。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53pi54uj307n0533zi.jpg" alt></p><p>关于如何培养兴趣，我提一点，你可以尝试去做一些小的“发明创造”，从而激发自己内心的“成就感”。这些小发明可以是一些小工具，小页面。你可以从开源社区，比如Github或者一些论坛，甚至自己的生活中收集一些创作素材。对于我来说，我就做过一个“前端开发工作流”的软件，“siri”， “小门神”等，从而带来成就感，提升自己的兴趣。</p><h2 id="权威，权威，还是权威"><a href="#权威，权威，还是权威" class="headerlink" title="权威，权威，还是权威"></a>权威，权威，还是权威</h2><p>其实技术越往上走，越会关注标准，关注协议等更上层和抽象的东西。而制定这些协议和标准的人往往都是世界上的“殿堂级”程序员，因此关注这些东西对于他们来说就是权威，对他们来说就非常很重要，但是这对于初学者来说似乎还比较遥远。那么初学者如何对接“权威”呢？<br>刚才提到了网上的学习资料参差不齐，这其实对于入门学习来说是很不利的，就像童年时期对于整个人生的影响一样，入门阶段对于整个前端开发生涯的影响也是巨大的。关于如何初学者如何对接权威，我这里总结了以下三点：<br>看一些权威的书籍，包括前端基础，软件工程以及算法等。这里不太建议看太老的，毕竟技术的发展是很快的，以前非常经典的书并一定适合看了，尤其是初学者而言。这里前端方面我重点推荐两本书，一本是《你不知道的JS》，一本是《JavaScript语言精粹》。除了前端，你还可以看一些软工类的书，我个人比较喜欢的有《程序员修炼之道》等，算法类的有《图解算法》，《编程之美》等。其他的我就不一一赘述了，想要更多书单的可以私信我。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53qfn9kj305g075q4a.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53rhdv2j307405hdhv.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53sd7z6j305j071abq.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53ssxrrj3069069q3o.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53taxn9j3069069gn7.jpg" alt></p><ul><li>查权威资料。 这里我推荐两个，一个是<a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener">MDN</a>的文章，真的是又全面又专业，绝对是前端开发必备神器，哪里不会点哪里。 另外推荐一个<a href="https://developers.google.com/web/fundamentals/" target="_blank" rel="noopener">Google开发者</a> ， 里面干货很多，绝对权威。<br>这里顺便再安利一个软件，用来查文档什么的，简直如虎添翼，这个软件的名字是Dash，大家可以把自己常用的框架，类库等导进去，想用的时候直接查询即可，比去网上搜更快更高效，这个软件对于定制的支持度也是蛮高的，谁用谁知道。</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53ud6lbj311e0hbac8.jpg" alt><br>（大家可以看到我下载了很多documentation）</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53vpntmj311f0lpgs5.jpg" alt><br>（你可以直达某一个documentation搜索，也可以全局搜索，甚至可以搜goole和stackoverflow，是不是很贴心？）</p><ul><li>关注一些圈内权威人士。 我一般会关注几个圈内比较知名的人的知乎，微博和twitter。这是我关注的<a href="https://github.com/azl397985856?tab=following" target="_blank" rel="noopener">Github的权威人士列表</a>。其实这些都是公开的，你也可以点开我的知乎，微博资料看我或者大佬们关注了谁。</li></ul><h2 id="做一些完整的简单项目"><a href="#做一些完整的简单项目" class="headerlink" title="做一些完整的简单项目"></a>做一些完整的简单项目</h2><p>大家可以尝试做一些简单的项目，不要嫌简单。 在做的过程往往能发现很多问题，如果有问题那这正好是自己提高的机会。 如果你觉得很简单，也没有关系，你可以思考一下，我有没有可能做的更好？我能不能把这些东西封装起来，建立更高一层的抽象（A New Level of Abstraction），做到DRY(Don’t Repeat Yourself)。<br>接下来就是关于怎么找项目。 你可以找个正式工作或者实习来做，也可以自己找一些小项目来练手， 比较常见的练手项目有模仿某个网站，APP或者搭建自己的个人主页，博客系统等。做好了不仅可以当敲门砖，说不定会收益很长时间呢。实在没有什么项目练手，这里再推荐一个网站，你可以再上面打怪升级。<a href="https://user-gold-cdn.xitu.io/2019/9/15/16d34514876b8c4d" target="_blank" rel="noopener">freecodecamp</a><br>现在你已经掌握了前端开发的基本概念和技能，那么如何做到更进一步，持续成长，做到高级呢？我相信这是很多人的疑问，下面我们就来看一下。</p><h2 id="学习路线"><a href="#学习路线" class="headerlink" title="学习路线"></a>学习路线</h2><p>你可能已经听过过大前端这个词，我这里不是劝退你哦。以下内容很高能，不过很多知识点不知道没关系，因为就算是工作了很多年了老手也很难了解其中的大半知识点。<br>我个人为了让自己巩固知识，同时也为了帮助他人，总结了大前端下的30多个主题内容，内容覆盖大前端的方方面面，虽然是从面试角度出发，但是你用来提升自己，查缺补漏也是很有用的。</p><p>多图预警：</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53wloptj304m0gsq3j.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53wyi87j304u0g0q38.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53xg7qnj308807et8u.jpg" alt></p><p>拿《编程题》主题来说，我总结了各大公司常考的几十道题目。<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53ydbowj30d70hs765.jpg" alt></p><p>对于其他主题也是一样，我都会尽可能地深度讲解和剖析，并且从多方面理解，我相信这是在市面上很少见的。</p><p>而且我还画了很多图，来帮助大家理解一些抽象的知识点。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53zeayjj30mx0i4jys.jpg" alt></p><p>项目地址： <a href="https://lucifer.ren/fe-interview/#/">https://lucifer.ren/fe-interview/#/</a>   欢迎围观。</p><h2 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h2><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds540ejvxj309o041weh.jpg" alt></p><p>实话实说，很多优秀的思想，规范，写法我都是从优秀的开源项目中学来的。 我会不定期阅读一些优秀的开源项目源码，也会参与到开源的工作中去，这给我自己带来了很大的提升。 不仅技术得到了提升，团队协作，规范化等方面也有了质的提高，另外还认识了一些优秀的人。四年来，我阅读了很多优秀的源码，也尝试自己去造一些轮子，并开源出去，回馈社区。</p><h2 id="输入-输出"><a href="#输入-输出" class="headerlink" title="输入 + 输出"></a>输入 + 输出</h2><p>前面重点讲述的是输入。 其实学习的过程不仅仅是输入，输出也是很好的学习方法。 输出的形式有很多，比如写博客，讲给别人，开源出去让别人用等。 这其实是很好的学习机会，这种学习方法可以让你的成长速度呈指数型增长，因此千万不要小看它。 我会通过以练代学的方式来学习，比如我学习React，我会迅速看文档，然后写demo，最后我会自己<a href="https://github.com/azl397985856/mono-react" target="_blank" rel="noopener">《从零实现React》</a>来内化它。</p><p>我还会定期做总结，写文章，写开源项目，做分享等，目的一方面是影响他人，另一方面是成长自己。</p><h2 id="持续学习"><a href="#持续学习" class="headerlink" title="持续学习"></a>持续学习</h2><p>选择了技术这条路，就要做好持续学习，每日精进的准备，跟上时代潮流是很有必要的。</p><ul><li>日报周报。 大家可以订阅一些前端方面的日报周报，这方面其实有很多，这里只推荐一个我常看的一个<a href="https://javascriptweekly.com" target="_blank" rel="noopener">JavaScript周刊</a>。我自己也出了一款<a href="https://github.com/azl397985856/daily-featured" target="_blank" rel="noopener">《每日一荐》</a>, 每天推荐一个优秀的开源项目，优秀文章， 周一到周五我们不见不散。</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5425gxxj30r20ghwhz.jpg" alt></p><ul><li>深度参与开源项目。 关于如何参与开源项目其实可以另起一篇文章了，这里不再赘述，感性的话，我会再写一篇文章，大家记得关注我就好。</li><li>定期总结，技术输出。 我的习惯是对于学习的内容定期和不定期地进行总结。 比如最近我在总结的[《leetcode题解》]（现在有18k+ ✨了）(<a href="https://github.com/azl397985856/leetcode)，[《大前端面试宝典》](https://github.com/azl397985856/fe-interview)" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode)，[《大前端面试宝典》](https://github.com/azl397985856/fe-interview)</a></li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5432xphj30k00jxago.jpg" alt></p><blockquote><p>千万不要觉得算法对前端不重要，算法，网络，操作系统属于基础，从事相关工作的都应该认真学习，打好基础才行。</p></blockquote><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>大家可以关注我的公众号《脑洞前端》，公众号后台回复“大前端”，拉你进《大前端面试宝典 - 图解前端群》。回复“leetcode”，拉你进《leetcode题解交流群》</p><p>最后祝大家在前端的路上越走越远。</p>]]></content>
       
       
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> 学习方法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 学习方法 </tag>
+            
+        </tags>
       
     </entry>
     
