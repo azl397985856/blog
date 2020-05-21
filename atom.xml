@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-05-20T12:38:23.796Z</updated>
+  <updated>2020-05-21T11:32:18.877Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《黑客与画家》摘抄</title>
+    <link href="https://lucifer.ren/blog/2020/05/21/hacker-drawer/"/>
+    <id>https://lucifer.ren/blog/2020/05/21/hacker-drawer/</id>
+    <published>2020-05-21T11:10:31.720Z</published>
+    <updated>2020-05-21T11:32:18.877Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="书摘" scheme="https://lucifer.ren/blog/categories/%E4%B9%A6%E6%91%98/"/>
+    
+    
+      <category term="书摘" scheme="https://lucifer.ren/blog/tags/%E4%B9%A6%E6%91%98/"/>
+    
+  </entry>
   
   <entry>
     <title>【LeetCode日记】 1371. 每个元音包含偶数次的最长子字符串</title>
@@ -506,26 +532,6 @@
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
       <category term="算法系列" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>BigPipe和微前端</title>
-    <link href="https://lucifer.ren/blog/2020/02/02/bigpipe-and-micro-fe/"/>
-    <id>https://lucifer.ren/blog/2020/02/02/bigpipe-and-micro-fe/</id>
-    <published>2020-02-01T16:00:00.000Z</published>
-    <updated>2020-02-02T07:05:11.796Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;你可能听说过 BigPipe，这是一个十多年前的技术，而 BigPipe 通常都会跟“性能优化”同时被提起。微前端也是一个很早被提出的技术，但是最近几年才开始比较流行。而目前微前端能够解决的最大的问题恐怕就是遗留系统改造。我们可以将新技术构造的系统和旧技术构造的系统完美融合到一起，彼此构建，发布，运行等不受干扰。 那么 BigPipe 究竟和微前端有什么关系呢，我为什么要把这两个放到一起来看？&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="BigPipe" scheme="https://lucifer.ren/blog/tags/BigPipe/"/>
-    
-      <category term="微前端" scheme="https://lucifer.ren/blog/tags/%E5%BE%AE%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
