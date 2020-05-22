@@ -73,6 +73,13 @@ links:
         backgroundColor: "#49c0f0"
         tags:
           - 啥也不会，盼着天上掉Offer。
+      - name: windliang
+        avatar: https://windliang.wang/images/head.jpg
+        url: https://windliang.wang/
+        textColor: "#fff"
+        backgroundColor: "#49c0f0"
+        tags:
+          - leetcode 刷题详细题解，计算机相关知识
 ---
 
 ## 我的友链卡片
