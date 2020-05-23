@@ -8,7 +8,7 @@
       <link href="/blog/2020/05/23/91-algo/"/>
       <url>/blog/2020/05/23/91-algo/</url>
       
-        <content type="html"><![CDATA[<p>力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。</p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg" width="50%"><p>​<a id="more"></a></p><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><p>为了让想学习的人能够真正学习到东西， 我打算新开一个栏目《91 天学算法》，在 91 天内来帮助那些想要学习算法，提升自己算法能力的同学，帮助大家建立完整的算法知识体系。</p><p>群里每天都会有题目，推荐大家讨论当天的题目。我们会帮助大家规划学习路线，91 天见证不一样的自己。群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2b2zkclnj30xm0b6aat.jpg" alt></p><h2 id="活动时间"><a href="#活动时间" class="headerlink" title="活动时间"></a>活动时间</h2><p>2020-06-01 至 2020-08-30</p><h2 id="你能够得到什么？"><a href="#你能够得到什么？" class="headerlink" title="你能够得到什么？"></a>你能够得到什么？</h2><ol><li>显著提高你的刷题效率，让你少走弯路</li><li>掌握常见面试题的思路和解法</li><li>掌握常见套路，了解常见算法的本质，横向对比各种题目</li><li>纵向剖析一道题，多种方法不同角度解决同一题目</li></ol><h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ul><li>🈲️ 不允许经常闲聊</li><li>🈲️ 不允许发广告，软文（只能发算法相关的技术文章）</li><li>✅ 一周至少参与一次打卡</li></ul><blockquote><p>违反上述条件的人员会被强制清退</p></blockquote><h2 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h2><h3 id="基础篇（30-天）"><a href="#基础篇（30-天）" class="headerlink" title="基础篇（30 天）"></a>基础篇（30 天）</h3><ul><li>栈</li><li>树</li><li>哈希表</li><li>递归</li><li>双指针</li><li>…</li></ul><h3 id="进阶篇（30-天）"><a href="#进阶篇（30-天）" class="headerlink" title="进阶篇（30 天）"></a>进阶篇（30 天）</h3><ul><li>高频面试题</li><li>堆</li><li>前缀树</li><li>并查集</li><li>剪枝</li><li>跳表</li><li>KMP</li><li>…</li></ul><h3 id="专题篇（31-天）"><a href="#专题篇（31-天）" class="headerlink" title="专题篇（31 天）"></a>专题篇（31 天）</h3><ul><li>二分法</li><li>滑动窗口</li><li>位运算</li><li>背包问题</li><li>搜索（BFS，DFS，回溯）</li><li>动态规划</li><li>分治</li><li>贪心</li><li>…</li></ul><h2 id="游戏规则"><a href="#游戏规则" class="headerlink" title="游戏规则"></a>游戏规则</h2><ul><li>每天会根据课程大纲的规划，出一道相关题目。</li><li>大家可以在指定的 Github 仓库中打卡（不可以抄作业哦），对于不会做的题目可以在群里提问。</li><li>第二天会对前一天的题目进行讲解。</li></ul><h2 id="奖励"><a href="#奖励" class="headerlink" title="奖励"></a>奖励</h2><ul><li>对于坚持打卡满一个月的同学，可以参加抽奖，奖品包括<code>算法模拟面试</code>，算法相关的图书等</li><li>连续打卡七天可以获得补签卡一张哦</li></ul><h2 id="冲鸭"><a href="#冲鸭" class="headerlink" title="冲鸭"></a>冲鸭</h2><p>为了大家的学习体验，防止不相关人员进群，同时为了更好地展开工作，我们决定采用 QQ 群的方式进行，希望大家能够理解哦。</p><p>对了，还有一句话，<code>前 20 个进群的小伙伴免费哦 ~</code>，20 名之后的小伙伴采取阶梯收费的形式，也就是说来的越晚收费越高，还不赶紧加入？</p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2awluei3j30ku11ct9v.jpg" width="50%">]]></content>
+        <content type="html"><![CDATA[<p>力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。</p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg" width="50%"><p>​<a id="more"></a></p><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><p>为了让想学习的人能够真正学习到东西， 我打算新开一个栏目《91 天学算法》，在 91 天内来帮助那些想要学习算法，提升自己算法能力的同学，帮助大家建立完整的算法知识体系。</p><p>群里每天都会有题目，推荐大家讨论当天的题目。我们会帮助大家规划学习路线，91 天见证不一样的自己。群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2b2zkclnj30xm0b6aat.jpg" alt></p><h2 id="活动时间"><a href="#活动时间" class="headerlink" title="活动时间"></a>活动时间</h2><p><code>2020-06-01</code> 至 <code>2020-08-30</code></p><h2 id="你能够得到什么？"><a href="#你能够得到什么？" class="headerlink" title="你能够得到什么？"></a>你能够得到什么？</h2><ol><li>显著提高你的刷题效率，让你少走弯路</li><li>掌握常见面试题的思路和解法</li><li>掌握常见套路，了解常见算法的本质，横向对比各种题目</li><li>纵向剖析一道题，多种方法不同角度解决同一题目</li></ol><h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ul><li>🈲️ 不允许经常闲聊</li><li>🈲️ 不允许发广告，软文（只能发算法相关的技术文章）</li><li>✅ 一周至少参与一次打卡</li></ul><blockquote><p>违反上述条件的人员会被强制清退</p></blockquote><h2 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h2><h3 id="基础篇（30-天）"><a href="#基础篇（30-天）" class="headerlink" title="基础篇（30 天）"></a>基础篇（30 天）</h3><ul><li>栈</li><li>树</li><li>哈希表</li><li>递归</li><li>双指针</li><li>…</li></ul><h3 id="进阶篇（30-天）"><a href="#进阶篇（30-天）" class="headerlink" title="进阶篇（30 天）"></a>进阶篇（30 天）</h3><ul><li>高频面试题</li><li>堆</li><li>前缀树</li><li>并查集</li><li>剪枝</li><li>跳表</li><li>KMP</li><li>…</li></ul><h3 id="专题篇（31-天）"><a href="#专题篇（31-天）" class="headerlink" title="专题篇（31 天）"></a>专题篇（31 天）</h3><ul><li>二分法</li><li>滑动窗口</li><li>位运算</li><li>背包问题</li><li>搜索（BFS，DFS，回溯）</li><li>动态规划</li><li>分治</li><li>贪心</li><li>…</li></ul><h2 id="游戏规则"><a href="#游戏规则" class="headerlink" title="游戏规则"></a>游戏规则</h2><ul><li>每天会根据课程大纲的规划，出一道相关题目。</li><li>大家可以在指定的 Github 仓库中打卡（不可以抄作业哦），对于不会做的题目可以在群里提问。</li><li>第二天会对前一天的题目进行讲解。</li></ul><h2 id="奖励"><a href="#奖励" class="headerlink" title="奖励"></a>奖励</h2><ul><li>对于坚持打卡满一个月的同学，可以参加抽奖，奖品包括<code>算法模拟面试</code>，算法相关的图书等</li><li>连续打卡七天可以获得补签卡一张哦</li></ul><h2 id="冲鸭"><a href="#冲鸭" class="headerlink" title="冲鸭"></a>冲鸭</h2><p>为了大家的学习体验，防止不相关人员进群，同时为了更好地展开工作，我们决定采用 QQ 群的方式进行，希望大家能够理解哦。</p><p>对了，还有一句话，<code>前 20 个进群的小伙伴免费哦 ~</code>，20 名之后的小伙伴采取阶梯收费的形式，也就是说来的越晚收费越高，还不赶紧加入？</p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2awluei3j30ku11ct9v.jpg" width="50%">]]></content>
       
       
       <categories>
@@ -108,9 +108,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -328,9 +328,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -670,9 +670,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 字符串 </category>
           
@@ -709,9 +709,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -748,13 +748,13 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
           
-          <category> hashtable </category>
+          <category> 数据结构 </category>
           
           <category> 数学 </category>
+          
+          <category> hashtable </category>
           
           <category> 位运算 </category>
           
@@ -831,17 +831,17 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
             
-            <tag> 动态规划 </tag>
-            
-            <tag> 数学 </tag>
-            
             <tag> 概率 </tag>
             
             <tag> 递归 </tag>
+            
+            <tag> 动态规划 </tag>
             
         </tags>
       
@@ -872,9 +872,9 @@
             
             <tag> 算法 </tag>
             
-            <tag> 状态机 </tag>
-            
             <tag> 动态规划 </tag>
+            
+            <tag> 状态机 </tag>
             
             <tag> 贪心 </tag>
             
@@ -1093,9 +1093,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> LeetCode </category>
           
@@ -1157,9 +1157,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 字符串 </category>
           
@@ -1278,9 +1278,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 学习方法 </category>
           
@@ -1631,9 +1631,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 子序列 </category>
           
