@@ -21,6 +21,10 @@ categories:
 
 ![](https://tva1.sinaimg.cn/large/007S8ZIlly1gf2b2zkclnj30xm0b6aat.jpg)
 
+## 活动时间
+
+2020-06-01 至 2020-08-30
+
 ## 你能够得到什么？
 
 1. 显著提高你的刷题效率，让你少走弯路
