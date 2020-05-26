@@ -118,29 +118,24 @@ return 合适的值
 
 ### 左右端点指针
 
-- Pair with Target Sum (easy)
-- Remove Duplicates (easy)
-- Squaring a Sorted Array (easy)
-- Triplet Sum to Zero (medium)
-- Triplet Sum Close to Target (medium)
-- Triplets with Smaller Sum (medium)
-- Subarrays with Product Less than a Target (medium)
-- Dutch National Flag Problem (medium)
-  > 下面是二分类型
-- Order-agnostic Binary Search (easy)
-- Ceiling of a Number (medium)
-- Next Letter (medium)
-- Number Range (medium)
-- Search in a Sorted Infinite Array (medium)
-- Minimum Difference Element (medium)
-- Bitonic Array Maximum (easy)
+- 16. 3Sum Closest (Medium)
+- 713. Subarray Product Less Than K (Medium)
+- 977. Squares of a Sorted Array (Easy)
+- Dutch National Flag Problem
+
+> 下面是二分类型
+
+- 33. Search in Rotated Sorted Array (Medium)
+- 875. Koko Eating Bananas（Medium）
+- 881. Boats to Save People（Medium）
 
 ### 快慢指针
 
-- LinkedList Cycle (easy)
-- Start of LinkedList Cycle (medium)
-- Happy Number (medium)
-- Middle of the LinkedList (easy)
+- 26. Remove Duplicates from Sorted Array（Easy）
+- 141. Linked List Cycle (Easy)
+- 142. Linked List Cycle II（Medium）
+- 287. Find the Duplicate Number（Medium）
+- 202. Happy Number (Easy)
 
 ### 固定间距指针
 
