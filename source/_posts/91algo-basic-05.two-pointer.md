@@ -139,5 +139,6 @@ return 合适的值
 
 ### 固定间距指针
 
-- Maximum Number of Vowels in a Substring of Given Length（medium）
-  > 固定窗口大小的滑动窗口见专题篇的滑动窗口专题（暂未发布）
+- 1456. Maximum Number of Vowels in a Substring of Given Length（Medium）
+
+> 固定窗口大小的滑动窗口见专题篇的滑动窗口专题（暂未发布）
