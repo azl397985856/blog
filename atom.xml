@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-05-25T10:01:48.588Z</updated>
+  <updated>2020-05-26T10:37:32.494Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【91算法-基础篇】05.双指针</title>
+    <link href="https://lucifer.ren/blog/2020/05/26/91algo-basic-05.two-pointer/"/>
+    <id>https://lucifer.ren/blog/2020/05/26/91algo-basic-05.two-pointer/</id>
+    <published>2020-05-26T10:36:22.697Z</published>
+    <updated>2020-05-26T10:37:32.494Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;code&gt;前天想加入却没能加入的小伙伴可以进来啦，直接扫描文末二维码即可。&lt;/code&gt;&lt;/p&gt;
+&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg&quot; width=&quot;50%&quot;&gt;
+
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>回炉重铸， 91 天见证不一样的自己（2）</title>
@@ -152,9 +185,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
@@ -352,9 +385,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
@@ -505,33 +538,6 @@
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
       <category term="算法系列" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>贪婪策略系列 - 覆盖篇</title>
-    <link href="https://lucifer.ren/blog/2020/02/19/leetcode-greedy/"/>
-    <id>https://lucifer.ren/blog/2020/02/19/leetcode-greedy/</id>
-    <published>2020-02-18T16:00:52.081Z</published>
-    <updated>2020-02-18T16:02:35.989Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;贪婪策略是一种常见的算法思想，具体是指，在对问题求解时，总是做出在当前看来是最好的选择。也就是说，不从整体最优上加以考虑，他所做出的是在某种意义上的局部最优解。贪心算法不是对所有问题都能得到整体最优解，关键是贪心策略的选择，选择的贪心策略必须具备无后效性，即某个状态以前的过程不会影响以后的状态，只与当前状态有关，这点和动态规划一样。&lt;/p&gt;
-&lt;p&gt;LeetCode 上对于贪婪策略有 73 道题目。我们将其分成几个类型来讲解，截止目前我们暂时只提供&lt;code&gt;覆盖&lt;/code&gt;问题，其他的可以期待我的新书或者之后的题解文章。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-      <category term="贪婪" scheme="https://lucifer.ren/blog/categories/%E8%B4%AA%E5%A9%AA/"/>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="算法系列" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97/"/>
-    
-      <category term="贪婪" scheme="https://lucifer.ren/blog/tags/%E8%B4%AA%E5%A9%AA/"/>
     
   </entry>
   
