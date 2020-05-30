@@ -183,3 +183,7 @@ return 合适的值
 - 1456. Maximum Number of Vowels in a Substring of Given Length（Medium）
 
 > 固定窗口大小的滑动窗口见专题篇的滑动窗口专题（暂未发布）
+
+## 其他
+
+有时候也不能太思维定式，比如 https://leetcode-cn.com/problems/consecutive-characters/，这道题根本就没必要双指针什么的。
