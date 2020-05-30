@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-05-30T03:37:17.467Z</updated>
+  <updated>2020-05-30T03:48:38.167Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>倒计时两天～91算法，儿童节发车！</title>
+    <link href="https://lucifer.ren/blog/2020/05/30/91algo-05-30/"/>
+    <id>https://lucifer.ren/blog/2020/05/30/91algo-05-30/</id>
+    <published>2020-05-30T03:40:06.964Z</published>
+    <updated>2020-05-30T03:48:38.167Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;code&gt;前天想加入却没能加入的小伙伴可以进来啦，直接扫描文末二维码即可。&lt;/code&gt;&lt;/p&gt;
+&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg&quot; width=&quot;50%&quot;&gt;
+
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>【91算法-基础篇】05.双指针</title>
@@ -54,7 +87,7 @@
     <link href="https://lucifer.ren/blog/2020/05/25/91-algo2/"/>
     <id>https://lucifer.ren/blog/2020/05/25/91-algo2/</id>
     <published>2020-05-25T09:23:53.498Z</published>
-    <updated>2020-05-25T10:01:48.588Z</updated>
+    <updated>2020-05-30T03:52:03.239Z</updated>
     
     <summary type="html">
     
@@ -87,7 +120,7 @@
     <link href="https://lucifer.ren/blog/2020/05/23/91-algo/"/>
     <id>https://lucifer.ren/blog/2020/05/23/91-algo/</id>
     <published>2020-05-23T02:31:23.707Z</published>
-    <updated>2020-05-29T06:33:39.026Z</updated>
+    <updated>2020-05-30T03:50:06.710Z</updated>
     
     <summary type="html">
     
@@ -516,28 +549,6 @@
     
     
       <category term="每日一荐" scheme="https://lucifer.ren/blog/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【算法提高班】并查集</title>
-    <link href="https://lucifer.ren/blog/2020/02/20/union-find/"/>
-    <id>https://lucifer.ren/blog/2020/02/20/union-find/</id>
-    <published>2020-02-20T10:41:19.407Z</published>
-    <updated>2020-02-20T11:10:06.792Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;关于并查集的题目不少，官方给的数据是 30 道（截止 2020-02-20），但是有一些题目虽然官方没有贴&lt;code&gt;并查集&lt;/code&gt;标签，但是使用并查集来说确非常简单。这类题目如果掌握模板，那么刷这种题会非常快，并且犯错的概率会大大降低，这就是模板的好处。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="算法系列" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97/"/>
     
   </entry>
   
