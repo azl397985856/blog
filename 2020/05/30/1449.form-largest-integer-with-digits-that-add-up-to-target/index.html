@@ -318,7 +318,7 @@
   <div class='new-meta-item category'>
     <a href='/blog/categories/算法/背包问题/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>数据结构&nbsp;/&nbsp;算法&nbsp;/&nbsp;数组&nbsp;/&nbsp;动态规划&nbsp;/&nbsp;背包问题</p>
+      <p>算法&nbsp;/&nbsp;数据结构&nbsp;/&nbsp;数组&nbsp;/&nbsp;动态规划&nbsp;/&nbsp;背包问题</p>
     </a>
   </div>
 
@@ -408,10 +408,10 @@
 
 <p>注意等号左边是 i，右边是 i - 1，这很好理解，因为 i 只能取一次嘛。</p>
 <p>那么如果我们不降序遍历会怎么样呢？</p>
-<p><img src="https://pic.leetcode-cn.com/b1203f07a56331bc46a1db3e48a125fa510c820cd50f6eb79d3519243c73073b-image.png" alt="image.png"></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfaqt9hh8hj30uy0giabo.jpg" alt></p>
 <p>如图橙色部分表示已经遍历的部分，而让我们去用[j - cost[i - 1]] 往前面回溯的时候，实际上回溯的是 dp[i]j - cost[i - 1]]，而不是 dp[i - 1]j - cost[i - 1]]。</p>
 <p>如果是降序就可以了，如图：</p>
-<p><img src="https://pic.leetcode-cn.com/94b2a758d325b217651a5e9eb771cea27d09aa8a6fc1e9cd454a78f030565707-image.png" alt="image.png"></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfaqtkc1cmj30u80fcmyo.jpg" alt></p>
 <p>这个明白的话，我们继续思考为什么完全背包就要不降序了呢？</p>
 <p>我们还是像上面一样写出二维的代码：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span> to N + <span class="number">1</span>:</span><br><span class="line">   <span class="keyword">for</span> j <span class="keyword">in</span> <span class="number">1</span> to V + <span class="number">1</span>:</span><br><span class="line">       dp[i][j] = max(dp[i - <span class="number">1</span>][j], dp[i][j - cost[i - <span class="number">1</span>])</span><br></pre></td></tr></table></figure>
@@ -433,11 +433,11 @@
 <li>空间复杂度：$O(target)$</li>
 </ul>
 <h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p>最后贴几个我写过的背包问题，让大家看看历史是多么的相似。</p>
-<p><img src="https://pic.leetcode-cn.com/b38fea68a51705d1aa13693a3caca037fe283e941f02e5b6b40cff003e1aed14-image.png" alt="image.png"><br>（<a href="https://github.com/azl397985856/leetcode/blob/master/problems/322.coin-change.md" target="_blank" rel="noopener">322. 硬币找零(完全背包问题)</a>）</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfaqty4tg3j31iq0sotdg.jpg" alt><br>（<a href="https://github.com/azl397985856/leetcode/blob/master/problems/322.coin-change.md" target="_blank" rel="noopener">322. 硬币找零(完全背包问题)</a>）</p>
 <blockquote>
 <p>这里内外循环和本题正好是反的，我只是为了”秀技”(好玩)，实际上在这里对答案并不影响。</p>
 </blockquote>
-<p><img src="https://pic.leetcode-cn.com/d58c77c2c3fda3209f8b70500c41681922423f2f256cb6b2fcfefd78072f3e89-image.png" alt="image.png"><br>（<a href="https://github.com/azl397985856/leetcode/blob/master/problems/518.coin-change-2.md" target="_blank" rel="noopener">518. 零钱兑换 II</a>）</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfaqu6xzg5j31go0gwq4o.jpg" alt><br>（<a href="https://github.com/azl397985856/leetcode/blob/master/problems/518.coin-change-2.md" target="_blank" rel="noopener">518. 零钱兑换 II</a>）</p>
 <blockquote>
 <p>这里内外循环和本题正好是反的，但是这里必须这么做，否则结果是不对的，具体可以点进去链接看我那个题解</p>
 </blockquote>
@@ -465,7 +465,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-30T19:54:14+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-30T20:21:52+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年5月30日</p>
