@@ -387,7 +387,7 @@
 <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">给定一个二叉树，检查它是否是镜像对称的。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">例如，二叉树 [1,2,2,3,4,4,3] 是对称的。</span><br><span class="line"></span><br><span class="line">    1</span><br><span class="line">   / \</span><br><span class="line">  2   2</span><br><span class="line"> / \ / \</span><br><span class="line">3  4 4  3</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:</span><br><span class="line"></span><br><span class="line">    1</span><br><span class="line">   / \</span><br><span class="line">  2   2</span><br><span class="line">   \   \</span><br><span class="line">   3    3</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">进阶：</span><br><span class="line"></span><br><span class="line">你可以运用递归和迭代两种方法解决这个问题吗？</span><br></pre></td></tr></table></figure>
 
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>看到这题的时候，我的第一直觉是 DFS。然后我就想:<code>如果左子树是镜像，并且右子树也是镜像，是不是就说明整体是镜像？</code>。经过几秒的思考， 这显然是不对的，不符合题意。</p>
-<p><img src="https://pic.leetcode-cn.com/c02473264b39ed7910c93ffc1d6d1e1d6e364a08487fcb40d52e58dacb29d014-image.png" alt="image.png"></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfbmeoo45bj31200iuabh.jpg" alt></p>
 <p>很明显其中左子树中的节点会和右子树中的节点进行比较，我把比较的元素进行了颜色区分，方便大家看。</p>
 <p>这里我的想法是：<code>遍历每一个节点的时候，我都可以通过某种方法知道它对应的对称节点是谁。这样的话我直接比较两者是否一致就行了。</code></p>
 <p>最初我的想法是两次遍历，第一次遍历的同时将遍历结果存储到哈希表中，然后第二次遍历去哈希表取。</p>
@@ -422,7 +422,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-31T14:29:13+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-31T14:34:19+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年5月31日</p>
