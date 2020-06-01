@@ -6,6 +6,12 @@ categories:
   - [力扣加加]
 ---
 
+力扣加加，一个努力做西湖区最好的算法题解的团队。
+
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg" width="50%">
+
+​<!-- more -->
+
 ```
 脑洞前端：你已经长大了，是时候自己写题解了。
 力扣加加：。。。
