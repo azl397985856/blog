@@ -62,7 +62,7 @@ categories:
 
 > 关注加加，星标加加～
 
-<img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" width="50%">
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" width="100%">
 
 ### 官网
 
