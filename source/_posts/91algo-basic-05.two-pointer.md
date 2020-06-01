@@ -187,3 +187,5 @@ return 合适的值
 ## 其他
 
 有时候也不能太思维定式，比如 https://leetcode-cn.com/problems/consecutive-characters/，这道题根本就没必要双指针什么的。
+
+再比如：https://lucifer.ren/blog/2020/05/31/101.symmetric-tree/
