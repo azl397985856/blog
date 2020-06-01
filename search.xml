@@ -8,7 +8,7 @@
       <link href="/blog/2020/06/01/leetcode-pp/"/>
       <url>/blog/2020/06/01/leetcode-pp/</url>
       
-        <content type="html"><![CDATA[<p>力扣加加，一个努力做西湖区最好的算法题解的团队。</p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg" width="50%"><p>​<a id="more"></a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">脑洞前端：你已经长大了，是时候自己写题解了。</span><br><span class="line">力扣加加：。。。</span><br></pre></td></tr></table></figure><p>独立的原因是让公众号的定位更加清晰，喜欢我的题解的朋友可以关注力扣加加，喜欢我的前端架构剖析，徒手造框架的朋友可以关注脑洞前端。当然如果你同时关注两个，那我会感动到哭。</p><p>虽然是新的公众号，但是我的初心不变，依然是<code>力求用清晰直白的方式还原解题过程，努力做西湖区最好的算法题解</code>。最后感谢大家一路以来的支持，我一定不负众望，越做越好。</p><h2 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h2><p>预计力扣加加会推出<strong>五个</strong>板块。</p><h3 id="91-算法"><a href="#91-算法" class="headerlink" title="91 算法"></a>91 算法</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfctrpi6sfj30xm0b6js7.jpg" alt></p><p>通过在 91 天的集中训练，帮助大家摆脱困境，征服算法。我们会帮助大家规划学习路线，91 天见证不一样的自己。群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。<strong>我会在结束之后将讲义和题解放到公众号号</strong>。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcubuzax3j30h9086gm6.jpg" alt><br>（仓库部分内容）</p><h3 id="算法题解"><a href="#算法题解" class="headerlink" title="算法题解"></a>算法题解</h3><p>就是对力扣中的题目进行讲解，尤其是经典的题目。并且尽量从多个角度思路，帮助大家纵向打开解题思路。目前差不多有几百的题解了。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuje66ltj30wl0migsw.jpg" alt></p><h3 id="专题讲解"><a href="#专题讲解" class="headerlink" title="专题讲解"></a>专题讲解</h3><p>对于共性比较强的，我会抽离成专题形式，帮助大家横向打开解题思路。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcucqfgczj30am0fgabj.jpg" alt><br>（之后会陆续加入更多专题）</p><h3 id="视频题解"><a href="#视频题解" class="headerlink" title="视频题解"></a>视频题解</h3><p>对于一些题目采用视频的方式可能更加直观方便，之后还会考虑直播。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcueie2w0j31bf07nwhl.jpg" alt></p><h3 id="刷题工具"><a href="#刷题工具" class="headerlink" title="刷题工具"></a>刷题工具</h3><p>初步规划了两个小工具，之后出测试版本会第一时间告诉大家，如果你对开发小工具感兴趣，也可以点击公众号的联系我来和我取得联系。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcun5uakzj31j20u0kc3.jpg" alt><br>（力扣加加刷题小助手）</p><h2 id="悬赏令"><a href="#悬赏令" class="headerlink" title="悬赏令"></a>悬赏令</h2><p>大家在日常生活或是在刷题过程中有时一定会产生一些疑问，百度谷歌翻来覆去的找也找不到心中所期待的答案，因此，大家可以通过<strong>力扣加加</strong>来将这些疑问提出来，不定期从大家的问题中挑选出比较经典的几个问题来供大家一起讨论，大致的问题类型如下：</p><ul><li>日常生活中有个问题想用数据结构+算法解决，但苦于思路不清晰</li><li>问题本身比较纠结，网上众说纷纭，找不到明确的答案</li><li>脑洞问题等等</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcwc7ow13j30la0cewgf.jpg" alt><br>（比如这种问题）</p><p>被抽中的问题对应的朋友及问题回答出色的朋友可以获得准备的小礼物哦！</p><p>最后，每周我们会根据公众号后台的阅读量及分享次数最多的小伙伴给予现金奖励奖励哦～。分享最多 <code>1</code> 人 <code>8.88</code> 红包，阅读最多的 <code>1</code> 人 <code>6.66</code> 红包。</p><p>不是第一也没有关系，我们会从分享排名 <code>2-10</code>撒 名的小伙伴中随机抽取<code>2个</code> 8.88 元红包，阅读排名 <code>2-10</code> 名的小伙伴中随机抽取<code>2个</code> 6.88 元红包，</p><blockquote><p>每周末，我们会对本周的数据进行统计，并随机抽取幸运的小伙伴，并对中奖结果在力扣加加公众号进行公布，中奖的小伙伴请主动联系我哦。领奖时间截止到每周末的 24:00。</p></blockquote><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><h3 id="公众号"><a href="#公众号" class="headerlink" title="公众号"></a>公众号</h3><p>点关注，不迷路。如果再给 ➕ 个星标就更棒啦！</p><blockquote><p>关注加加，星标加加～</p></blockquote><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" width="100%"><h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><ul><li><a href="http://leetcode-solution.cn/" target="_blank" rel="noopener">力扣加加官网</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>力扣加加，一个努力做西湖区最好的算法题解的团队。</p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg" width="50%"><p>​<a id="more"></a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">脑洞前端：你已经长大了，是时候自己写题解了。</span><br><span class="line">力扣加加：。。。</span><br></pre></td></tr></table></figure><p>独立的原因是让公众号的定位更加清晰，喜欢我的题解的朋友可以关注力扣加加，喜欢我的前端架构剖析，徒手造框架的朋友可以关注脑洞前端。当然如果你同时关注两个，那我会感动到哭。</p><p>虽然是新的公众号，但是我的初心不变，依然是<code>力求用清晰直白的方式还原解题过程，努力做西湖区最好的算法题解</code>。最后感谢大家一路以来的支持，我一定不负众望，越做越好。</p><h2 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h2><p>预计力扣加加会推出<strong>五个</strong>板块。</p><h3 id="91-算法"><a href="#91-算法" class="headerlink" title="91 算法"></a>91 算法</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfctrpi6sfj30xm0b6js7.jpg" alt></p><p>通过在 91 天的集中训练，帮助大家摆脱困境，征服算法。我们会帮助大家规划学习路线，91 天见证不一样的自己。群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。<strong>我会在结束之后将讲义和题解放到公众号号</strong>。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcubuzax3j30h9086gm6.jpg" alt><br>（仓库部分内容）</p><h3 id="算法题解"><a href="#算法题解" class="headerlink" title="算法题解"></a>算法题解</h3><p>就是对力扣中的题目进行讲解，尤其是经典的题目。并且尽量从多个角度思路，帮助大家纵向打开解题思路。目前差不多有几百的题解了。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuje66ltj30wl0migsw.jpg" alt></p><h3 id="专题讲解"><a href="#专题讲解" class="headerlink" title="专题讲解"></a>专题讲解</h3><p>对于共性比较强的，我会抽离成专题形式，帮助大家横向打开解题思路。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcucqfgczj30am0fgabj.jpg" alt><br>（之后会陆续加入更多专题）</p><h3 id="视频题解"><a href="#视频题解" class="headerlink" title="视频题解"></a>视频题解</h3><p>对于一些题目采用视频的方式可能更加直观方便，之后还会考虑直播。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcueie2w0j31bf07nwhl.jpg" alt></p><h3 id="刷题工具"><a href="#刷题工具" class="headerlink" title="刷题工具"></a>刷题工具</h3><p>初步规划了两个小工具，之后出测试版本会第一时间告诉大家，如果你对开发小工具感兴趣，也可以点击公众号的联系我来和我取得联系。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcun5uakzj31j20u0kc3.jpg" alt><br>（力扣加加刷题小助手）</p><h2 id="悬赏令"><a href="#悬赏令" class="headerlink" title="悬赏令"></a>悬赏令</h2><p>大家在日常生活或是在刷题过程中有时一定会产生一些疑问，百度谷歌翻来覆去的找也找不到心中所期待的答案，因此，大家可以通过<strong>力扣加加</strong>来将这些疑问提出来，不定期从大家的问题中挑选出比较经典的几个问题来供大家一起讨论，大致的问题类型如下：</p><ul><li>日常生活中有个问题想用数据结构+算法解决，但苦于思路不清晰</li><li>问题本身比较纠结，网上众说纷纭，找不到明确的答案</li><li>脑洞问题等等</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcwc7ow13j30la0cewgf.jpg" alt><br>（比如这种问题）</p><p>被抽中的问题对应的朋友及问题回答出色的朋友可以获得准备的小礼物哦！</p><p>最后，每周我们会根据公众号后台的阅读量及分享次数最多的小伙伴给予现金奖励奖励哦～。分享最多 <code>1</code> 人 <code>8.88</code> 红包，阅读最多的 <code>1</code> 人 <code>6.66</code> 红包。</p><p>不是第一也没有关系，我们会从分享排名 <code>2-10</code>撒 名的小伙伴中随机抽取<code>2个</code> 8.88 元红包，阅读排名 <code>2-10</code> 名的小伙伴中随机抽取<code>2个</code> 6.88 元红包，</p><blockquote><p>每周日，我们会对本周的数据进行统计，并随机抽取幸运的小伙伴，并对中奖结果在力扣加加公众号进行公布，中奖的小伙伴请主动联系我哦。领奖时间截止到每周日的 24:00。</p></blockquote><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><h3 id="公众号"><a href="#公众号" class="headerlink" title="公众号"></a>公众号</h3><p>点关注，不迷路。如果再给 ➕ 个星标就更棒啦！</p><blockquote><p>关注加加，星标加加～</p></blockquote><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" width="100%"><h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><ul><li><a href="http://leetcode-solution.cn/" target="_blank" rel="noopener">力扣加加官网</a></li></ul>]]></content>
       
       
       <categories>
@@ -44,9 +44,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -81,9 +81,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -116,9 +116,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -353,9 +353,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -573,9 +573,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -915,9 +915,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 字符串 </category>
           
@@ -954,9 +954,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -993,13 +993,13 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
           
-          <category> hashtable </category>
+          <category> 数据结构 </category>
           
           <category> 数学 </category>
+          
+          <category> hashtable </category>
           
           <category> 位运算 </category>
           
@@ -1076,17 +1076,17 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
             
-            <tag> 动态规划 </tag>
-            
-            <tag> 数学 </tag>
-            
             <tag> 概率 </tag>
             
             <tag> 递归 </tag>
+            
+            <tag> 动态规划 </tag>
             
         </tags>
       
@@ -1117,9 +1117,9 @@
             
             <tag> 算法 </tag>
             
-            <tag> 状态机 </tag>
-            
             <tag> 动态规划 </tag>
+            
+            <tag> 状态机 </tag>
             
             <tag> 贪心 </tag>
             
@@ -1338,9 +1338,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> LeetCode </category>
           
@@ -1402,9 +1402,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 字符串 </category>
           
@@ -1523,9 +1523,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 学习方法 </category>
           
@@ -1580,19 +1580,6 @@
     
     
     <entry>
-      <title></title>
-      <link href="/blog/2019/12/11/ibinhouse/"/>
-      <url>/blog/2019/12/11/ibinhouse/</url>
-      
-        <content type="html"><![CDATA[<p>信息输入大脑后，遗忘也就随之开始了。遗忘率随时间的流逝而先快后慢，特别是在刚刚识记的短时间里，遗忘最快，这就是著名的艾宾浩斯遗忘曲线。</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>从老鼠试毒问题来看二分法</title>
       <link href="/blog/2019/12/11/laoshushidu/"/>
       <url>/blog/2019/12/11/laoshushidu/</url>
@@ -1614,6 +1601,19 @@
             <tag> 算法 </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/blog/2019/12/11/ibinhouse/"/>
+      <url>/blog/2019/12/11/ibinhouse/</url>
+      
+        <content type="html"><![CDATA[<p>信息输入大脑后，遗忘也就随之开始了。遗忘率随时间的流逝而先快后慢，特别是在刚刚识记的短时间里，遗忘最快，这就是著名的艾宾浩斯遗忘曲线。</p>]]></content>
+      
+      
       
     </entry>
     
@@ -1689,6 +1689,37 @@
     
     
     <entry>
+      <title>《一文看懂浏览器事件循环》</title>
+      <link href="/blog/2019/12/11/event-loop/"/>
+      <url>/blog/2019/12/11/event-loop/</url>
+      
+        <content type="html"><![CDATA[<p>实际上浏览器的事件循环标准是由 HTML 标准规定的，具体来说就是由whatwg规定的，具体内容可以参考<a href="https://html.spec.whatwg.org/multipage/webappapis.html#event-loops" target="_blank" rel="noopener">event-loops in browser</a>。而NodeJS中事件循环其实也略有不同，具体可以参考<a href="https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#what-is-the-event-loop" target="_blank" rel="noopener">event-loops in nodejs</a></p><p>我们在讲解<code>事件模型</code>的时候，多次提到了事件循环。 <code>事件</code>指的是其所处理的对象就是事件本身，每一个浏览器都至少有一个事件循环，一个事件循环至少有一个任务队列。<code>循环</code>指的是其永远处于一个“无限循环”中。不断将注册的回调函数推入到执行栈。</p><p>那么事件循环究竟是用来做什么的？浏览器的事件循环和NodeJS的事件循环有什么不同？让我们从零开始，一步一步探究背后的原因。</p><a id="more"></a><h2 id="为什么要有事件循环"><a href="#为什么要有事件循环" class="headerlink" title="为什么要有事件循环"></a>为什么要有事件循环</h2><h3 id="JS引擎"><a href="#JS引擎" class="headerlink" title="JS引擎"></a>JS引擎</h3><p>要回答这个问题，我们先来看一个简单的例子：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">c();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">b();</span><br><span class="line">&#125;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure><p>以上一段简单的JS代码，究竟是怎么被浏览器执行的？</p><p>首先，浏览器想要执行JS脚本，需要一个“东西”，将JS脚本（本质上是一个纯文本），变成一段机器可以理解并执行的计算机指令。这个“东西”就是JS引擎，它实际上会将JS脚本进行编译和执行，整个过程非常复杂，这里不再过多介绍，感兴趣可以期待下我的V8章节，如无特殊说明，以下都拿V8来举例子。</p><p>有两个非常核心的构成，<code>执行栈</code>和<code>堆</code>。执行栈中存放正在执行的代码，堆中存放变量的值，通常是不规则的。</p><p>当V8执行到<code>a()</code>这一行代码的时候，a会被压入栈顶。</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ltfr1pfij307j06gt8h.jpg" alt></p><p>在a的内部，我们碰到了<code>b()</code>，这个时候b被压入栈顶。</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lth4pggfj307906rwe9.jpg" alt></p><p>在b的内部，我们又碰到了<code>c()</code>，这个时候c被压入栈顶。</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ltert9f5j307i06p0si.jpg" alt></p><p>c执行完毕之后，会从栈顶移除。</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lth4pggfj307906rwe9.jpg" alt></p><p>函数返回到b，b也执行完了，b也从栈顶移除。</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ltfr1pfij307j06gt8h.jpg" alt></p><p>同样a也会被移除。</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ltkvl983j3079068q2p.jpg" alt></p><p>整个过程用动画来表示就是这样的：</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lx8oasxag30gn09y0wq.gif" alt><br>(<a href="http://latentflip.com/loupe/?code=ZnVuY3Rpb24gYygpIHt9CmZ1bmN0aW9uIGIoKSB7CgljKCk7Cn0KZnVuY3Rpb24gYSgpIHsKCWIoKTsKfQphKCk7!!!" target="_blank" rel="noopener">在线观看</a>)</p><p>这个时候我们还没有涉及到<code>堆内存</code>和<code>执行上下文栈</code>，一切还比较简单，这些内容我们放到后面来讲。</p><h3 id="DOM-和-WEB-API"><a href="#DOM-和-WEB-API" class="headerlink" title="DOM 和 WEB API"></a>DOM 和 WEB API</h3><p>现在我们有了可以执行JS的引擎，但是我们的目标是<code>构建用户界面</code>，而传统的前端用户界面是基于DOM构建的，因此我们需要引入DOM。DOM是<code>文档对象模型</code>，其提供了一系列JS可以直接调用的接口，理论上其可以提供其他语言的接口，而不仅仅是JS。 而且除了DOM接口可以给JS调用，浏览器还提供了一些WEB API。 DOM也好，WEB API也好，本质上和JS没有什么关系，完全不一回事。JS对应的ECMA规范，V8用来实现ECMA规范，其他的它不管。 这也是JS引擎和JS执行环境的区别，V8是JS引擎，用来执行JS代码，浏览器和Node是JS执行环境，其提供一些JS可以调用的API即<code>JS bindings</code>。</p><p>由于浏览器的存在，现在JS可以操作DOM和WEB API了，看起来是可以构建用户界面啦。 有一点需要提前讲清楚，V8只有栈和堆，其他诸如事件循环，DOM，WEB API它一概不知。原因前面其实已经讲过了，因为V8只负责JS代码的编译执行，你给V8一段JS代码，它就从头到尾一口气执行下去，中间不会停止。</p><p>另外这里我还要继续提一下，JS执行栈和渲染线程是相互阻塞的。为什么呢？ 本质上因为JS太灵活了，它可以去获取DOM中的诸如坐标等信息。 如果两者同时执行，就有可能发生冲突，比如我先获取了某一个DOM节点的x坐标，下一时刻坐标变了。 JS又用这个“旧的”坐标进行计算然后赋值给DOM，冲突便发生了。 解决冲突的方式有两种：</p><ol><li>限制JS的能力，你只能在某些时候使用某些API。 这种做法极其复杂，还会带来很多使用不便。</li><li>JS和渲染线程不同时执行就好了，一种方法就是现在广泛采用的<code>相互阻塞</code>。 实际上这也是目前浏览器广泛采用的方式。</li></ol><h3 id="单线程-or-多线程-or-异步"><a href="#单线程-or-多线程-or-异步" class="headerlink" title="单线程 or 多线程 or 异步"></a>单线程 or 多线程 or 异步</h3><p>前面提到了<code>你给V8一段JS代码，它就从头到尾一口气执行下去，中间不会停止</code>。 为什么不停止，可以设计成可停止么，就好像C语言一样？</p><p>假设我们需要获取用户信息，获取用户的文章，获取用的朋友。</p><h4 id="单线程无异步"><a href="#单线程无异步" class="headerlink" title="单线程无异步"></a>单线程无异步</h4><p>由于是单线程无异步，因此我们三个接口需要采用同步方式。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fetchUserInfoSync().then(doSomethingA); <span class="comment">// 1s</span></span><br><span class="line">fetchMyArcticlesSync().then(doSomethingB);<span class="comment">// 3s</span></span><br><span class="line">fetchMyFriendsSync().then(doSomethingC);<span class="comment">// 2s</span></span><br></pre></td></tr></table></figure><p>由于上面三个请求都是同步执行的，因此上面的代码会先执行<code>fetchUserInfoSync</code>，一秒之后执行<code>fetchMyArcticlesSync</code>，再过三秒执行<code>fetchMyFriendsSync</code>。 最可怕的是我们刚才说了<code>JS执行栈和渲染线程是相互阻塞的</code>。 因此用户就在这期间根本无法操作，界面无法响应，这显然是无法接受的。</p><h4 id="多线程无异步"><a href="#多线程无异步" class="headerlink" title="多线程无异步"></a>多线程无异步</h4><p>由于是多线程无异步，虽然我们三个接口仍然需要采用同步方式，但是我们可以将代码分别在多个线程执行，比如我们将这段代码放在三个线程中执行。</p><p>线程一：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fetchUserInfoSync().then(doSomethingA); <span class="comment">// 1s</span></span><br></pre></td></tr></table></figure><p>线程二：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fetchMyArcticlesSync().then(doSomethingB); <span class="comment">// 3s</span></span><br></pre></td></tr></table></figure><p>线程三：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fetchMyFriendsSync().then(doSomethingC); <span class="comment">// 2s</span></span><br></pre></td></tr></table></figure><p><img src="http://ww1.sinaimg.cn/large/e9f490c8ly1g9lzjslxcaj20lr08nmy3.jpg" alt="1575538849801.jpg"></p><p>由于三块代码同时执行，因此总的时间最理想的情况下取决与最慢的时间，也就是3s，这一点和使用异步的方式是一样的（当然前提是请求之间无依赖）。为什么要说最理想呢？由于三个线程都可以对DOM和堆内存进行访问，因此很有可能会冲突，冲突的原因和我上面提到的JS线程和渲染线程的冲突的原因没有什么本质不同。因此最理想情况没有任何冲突的话是3s，但是如果有冲突，我们就需要借助于诸如<code>锁</code>来解决，这样时间就有可能高于3s了。 相应地编程模型也会更复杂，处理过锁的程序员应该会感同身受。</p><h4 id="单线程-异步"><a href="#单线程-异步" class="headerlink" title="单线程 + 异步"></a>单线程 + 异步</h4><p>如果还是使用单线程，改成异步是不是会好点？问题的是关键是如何实现异步呢？这就是我们要讲的主题 - <code>事件循环</code>。</p><h2 id="事件循环究竟是怎么实现异步的？"><a href="#事件循环究竟是怎么实现异步的？" class="headerlink" title="事件循环究竟是怎么实现异步的？"></a>事件循环究竟是怎么实现异步的？</h2><p>我们知道浏览器中JS线程只有一个，如果没有事件循环，就会造成一个问题。 即如果JS发起了一个异步IO请求，在等待结果返回的这个时间段，后面的代码都会被阻塞。 我们知道JS主线程和渲染进程是相互阻塞的，因此这就会造成浏览器假死。 如何解决这个问题？ 一个有效的办法就是我们这节要讲的<code>事件循环</code>。</p><p>其实<code>事件循环就是用来做调度的，浏览器和NodeJS中的事件循坏就好像操作系统的调度器一样。</code>操作系统的调度器决定何时将什么资源分配给谁。对于有线程模型的计算机，那么操作系统执行代码的最小单位就是线程，资源分配的最小单位就是进程，代码执行的过程由操作系统进行调度，整个调度过程非常复杂。  我们知道现在很多电脑都是多核的，为了让多个core同时发挥作用，即没有一个core是特别闲置的，也没有一个core是特别累的。操作系统的调度器会进行某一种神秘算法，从而保证每一个core都可以分配到任务。 这也就是我们使用NodeJS做集群的时候，Worker节点数量通常设置为core的数量的原因，调度器会尽量将每一个Worker平均分配到每一个core，当然这个过程并不是确定的，即不一定调度器是这么分配的，但是很多时候都会这样。</p><p>了解了操作系统调度器的原理，我们不妨继续回头看一下事件循环。 事件循环本质上也是做调度的，只不过调度的对象变成了JS的执行。事件循环决定了V8什么时候执行什么代码。<code>V8只是负责JS代码的解析和执行，其他它一概不知。</code>浏览器或者NodeJS中触发事件之后，到事件的监听函数被V8执行这个时间段的所有工作都是事件循环在起作用。</p><p>我们来小结一下：</p><ol><li>对于V8来说，它有：</li></ol><ul><li>调用栈（call stack）<blockquote><p>这里的单线程指的是只有一个call stack。只有一个call stack 意味着同一时间只能执行一段代码。</p></blockquote></li><li>堆（heap）</li></ul><ol start="2"><li>对于浏览器运行环境来说：</li></ol><ul><li>WEB API</li><li>DOM API</li><li>任务队列</li></ul><blockquote><p>事件来触发事件循环进行流动</p></blockquote><p>以如下代码为例：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">c();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">setTimeout(b, <span class="number">2000</span>)</span><br><span class="line">&#125;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure><p>执行过程是这样的：</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lxcn39hhg30go080dj1.gif" alt><br>(<a href="http://latentflip.com/loupe/?code=ZnVuY3Rpb24gYygpIHt9CmZ1bmN0aW9uIGIoKSB7CgljKCk7Cn0KZnVuY3Rpb24gYSgpIHsKCXNldFRpbWVvdXQoYiwgMjAwMCkKfQphKCk7!!!" target="_blank" rel="noopener">在线观看</a>)</p><p>因此事件循环之所以可以实现异步，是因为碰到异步执行的代码“比如fetch，setTimeout”，浏览器会将用户注册的回调函数存起来，然后继续执行后面的代码。等到未来某一个时刻，“异步任务”完成了，会触发一个事件，浏览器会将“任务的详细信息”作为参数传递给之前用户绑定的回调函数。具体来说，就是将用户绑定的回调函数推入浏览器的执行栈。</p><p>但并不是说随便推入的，只有浏览器将当然要执行的JS脚本“一口气”执行完，要”换气“的时候才会去检查有没有要被处理的“消息”。<br>如果于则将对应消息绑定的回调函数推入栈。当然如果没有绑定事件，这个事件消息实际上会被丢弃，不被处理。比如用户触发了一个click事件，但是用户没有绑定click事件的监听函数，那么实际上这个事件会被丢弃掉。</p><p>我们来看一下加入用户交互之后是什么样的，拿点击事件来说：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$.on(<span class="string">'button'</span>, <span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="title">onClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'You clicked the button!'</span>);    </span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hi!"</span>);</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timeout</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Click the button!"</span>);</span><br><span class="line">&#125;, <span class="number">5000</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Welcome to loupe."</span>);</span><br></pre></td></tr></table></figure><p>上述代码每次点击按钮，都会发送一个事件，由于我们绑定了一个监听函数。因此每次点击，都会有一个点击事件的消息产生，浏览器会在“空闲的时候”对应将用户绑定的事件处理函数推入栈中执行。</p><p>伪代码:</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line"><span class="keyword">if</span> (queue.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">queue.processNextMessage()</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>动画演示：</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lxzvlth0g30go07yhc7.gif" alt><br>(<a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D" target="_blank" rel="noopener">在线观看</a>)</p><h3 id="加入宏任务-amp-微任务"><a href="#加入宏任务-amp-微任务" class="headerlink" title="加入宏任务&amp;微任务"></a>加入宏任务&amp;微任务</h3><p>我们来看一个更复制的例子感受一下。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>)</span><br><span class="line">&#125;, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="number">3</span>)</span><br><span class="line">&#125;).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">4</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span>)</span><br></pre></td></tr></table></figure><p>上面的代码会输出：1、5、3、4、2。 如果你想要非常严谨的解释可以参考 whatwg 对其进行的描述 -<a href="https://html.spec.whatwg.org/multipage/webappapis.html#event-loop-processing-model" target="_blank" rel="noopener">event-loop-processing-model</a>。</p><p>下面我会对其进行一个简单的解释。</p><ul><li>浏览器首先执行宏任务，也就是我们script（仅仅执行一次）</li><li>完成之后检查是否存在微任务，然后不停执行，直到清空队列</li><li>执行宏任务</li></ul><p>其中：</p><p>宏任务主要包含：setTimeout、setInterval、setImmediate、I/O、UI交互事件</p><p>微任务主要包含：Promise、process.nextTick、MutaionObserver 等</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9hfldyzj2j30g909xt8z.jpg" alt></p><p>有了这个知识，我们不难得出上面代码的输出结果。</p><p>由此我们可以看出，<code>宏任务&amp;微任务</code>只是实现异步过程中，我们对于信号的处理顺序不同而已。如果我们不加区分，全部放到一个队列，就不会有<code>宏任务&amp;微任务</code>。这种人为划分优先级的过程，在某些时候非常有用。</p><h3 id="加入执行上下文栈"><a href="#加入执行上下文栈" class="headerlink" title="加入执行上下文栈"></a>加入执行上下文栈</h3><p>说到执行上下文，就不得不提到<code>浏览器执行JS函数其实是分两个过程的</code>。一个是创建阶段<code>Creation Phase</code>,一个是执行阶段<code>Execution Phase</code>。</p><p>同执行栈一样，浏览器每遇到一个函数，也会将当前函数的执行上下文栈推入栈顶。</p><p>举个例子：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line"><span class="keyword">const</span> n = <span class="number">3</span></span><br><span class="line"><span class="built_in">console</span>.log(num + n)</span><br><span class="line">&#125;</span><br><span class="line">c(num);</span><br><span class="line">&#125;</span><br><span class="line">b(num);</span><br><span class="line">&#125;</span><br><span class="line">a(<span class="number">1</span>);</span><br></pre></td></tr></table></figure><p>遇到上面的代码。 首先会将a的压入执行栈，我们开始进行创建阶段<code>Creation Phase</code>， 将a的执行上下文压入栈。然后初始化a的执行上下文，分别是VO，ScopeChain（VO chain）和 This。 从这里我们也可以看出，this其实是动态决定的。VO指的是<code>variables, functions 和 arguments</code>。 并且执行上下文栈也会同步随着执行栈的销毁而销毁。</p><p>伪代码表示：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> EC  = &#123;</span><br><span class="line">    <span class="string">'scopeChain'</span>: &#123; &#125;,</span><br><span class="line">    <span class="string">'variableObject'</span>: &#123; &#125;,</span><br><span class="line">    <span class="string">'this'</span>: &#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lyjjb6ecj30mh0c0aa2.jpg" alt></p><p>我们来重点看一下ScopeChain(VO chain)。如上图的执行上下文大概长这个样子，伪代码：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">global.VO = &#123;</span><br><span class="line">    a: pointer to a(),</span><br><span class="line">    scopeChain: [global.VO]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a.VO = &#123;</span><br><span class="line">    b: pointer to b(),</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;</span><br><span class="line"><span class="number">0</span>: <span class="number">1</span></span><br><span class="line">&#125;,</span><br><span class="line">    scopeChain: [a.VO, global.VO]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">b.VO = &#123;</span><br><span class="line">c: pointer to c(),</span><br><span class="line"><span class="built_in">arguments</span>: &#123;</span><br><span class="line"><span class="number">0</span>: <span class="number">1</span></span><br><span class="line">&#125;,</span><br><span class="line">scopeChain: [b.VO, a.VO, global.VO]</span><br><span class="line">&#125;</span><br><span class="line">c.VO = &#123;</span><br><span class="line"><span class="built_in">arguments</span>: &#123;</span><br><span class="line"><span class="number">0</span>: <span class="number">1</span></span><br><span class="line">&#125;,</span><br><span class="line">n: <span class="number">3</span></span><br><span class="line">scopeChain: [c.VO, b.VO, a.VO, global.VO]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>引擎查找变量的时候，会先从VOC开始找，找不到会继续去VOB…，直到GlobalVO，如果GlobalVO也找不到会返回<code>Referrence Error</code>，整个过程类似原型链的查找。</p><p>值得一提的是，JS是词法作用域，也就是静态作用域。换句话说就是作用域取决于代码定义的位置，而不是执行的位置，<code>这也就是闭包产生的本质原因</code>。 如果上面的代码改造成下面的：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">a()</span><br><span class="line">b()</span><br><span class="line">c()</span><br></pre></td></tr></table></figure><p>或者这种：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">c();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">b();</span><br><span class="line">&#125;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure><p>其执行上下文栈虽然都是一样的，但是其对应的scopeChain则完全不同，因为函数定义的位置发生了变化。拿上面的代码片段来说,c.VO会变成这样：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">c.VO = &#123;</span><br><span class="line">scopeChain: [c.VO, global.VO]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>也就是说其再也无法获取到a和b中的VO了。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过这篇文章，希望你对单线程，多线程，异步，事件循环，事件驱动等知识点有了更深的理解和感悟。除了这些大的层面，我们还从执行栈，执行上下文栈角度讲解了我们代码是如何被浏览器运行的，我们顺便还解释了作用域和闭包产生的本质原因。</p><p>最后我总结了一个浏览器运行代码的整体原理图，希望对你有帮助：</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lzm6dww0j30kw0pjt8s.jpg" alt></p><p>下一节<code>浏览器的事件循环和NodeJS的事件循环有什么不同</code>, 敬请期待～</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="https://blog.logrocket.com/a-complete-guide-to-the-node-js-event-loop/" target="_blank" rel="noopener">Node.js event loop - logrocket</a></li><li><a href="https://nodejs.org/de/docs/guides/event-loop-timers-and-nexttick/" target="_blank" rel="noopener">event-loop - nodejs.org</a></li><li><a href="http://davidshariff.com/blog/what-is-the-execution-context-in-javascript/" target="_blank" rel="noopener">what-is-the-execution-context-in-javascript</a></li><li><a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ" target="_blank" rel="noopener">Event Loop in JS - youtube </a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> 浏览器 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 浏览器 </tag>
+            
+            <tag> 事件循环 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《LeetCode题解攻略》 - 草稿目录</title>
       <link href="/blog/2019/12/11/draft/"/>
       <url>/blog/2019/12/11/draft/</url>
@@ -1724,37 +1755,6 @@
     
     
     <entry>
-      <title>《一文看懂浏览器事件循环》</title>
-      <link href="/blog/2019/12/11/event-loop/"/>
-      <url>/blog/2019/12/11/event-loop/</url>
-      
-        <content type="html"><![CDATA[<p>实际上浏览器的事件循环标准是由 HTML 标准规定的，具体来说就是由whatwg规定的，具体内容可以参考<a href="https://html.spec.whatwg.org/multipage/webappapis.html#event-loops" target="_blank" rel="noopener">event-loops in browser</a>。而NodeJS中事件循环其实也略有不同，具体可以参考<a href="https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#what-is-the-event-loop" target="_blank" rel="noopener">event-loops in nodejs</a></p><p>我们在讲解<code>事件模型</code>的时候，多次提到了事件循环。 <code>事件</code>指的是其所处理的对象就是事件本身，每一个浏览器都至少有一个事件循环，一个事件循环至少有一个任务队列。<code>循环</code>指的是其永远处于一个“无限循环”中。不断将注册的回调函数推入到执行栈。</p><p>那么事件循环究竟是用来做什么的？浏览器的事件循环和NodeJS的事件循环有什么不同？让我们从零开始，一步一步探究背后的原因。</p><a id="more"></a><h2 id="为什么要有事件循环"><a href="#为什么要有事件循环" class="headerlink" title="为什么要有事件循环"></a>为什么要有事件循环</h2><h3 id="JS引擎"><a href="#JS引擎" class="headerlink" title="JS引擎"></a>JS引擎</h3><p>要回答这个问题，我们先来看一个简单的例子：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">c();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">b();</span><br><span class="line">&#125;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure><p>以上一段简单的JS代码，究竟是怎么被浏览器执行的？</p><p>首先，浏览器想要执行JS脚本，需要一个“东西”，将JS脚本（本质上是一个纯文本），变成一段机器可以理解并执行的计算机指令。这个“东西”就是JS引擎，它实际上会将JS脚本进行编译和执行，整个过程非常复杂，这里不再过多介绍，感兴趣可以期待下我的V8章节，如无特殊说明，以下都拿V8来举例子。</p><p>有两个非常核心的构成，<code>执行栈</code>和<code>堆</code>。执行栈中存放正在执行的代码，堆中存放变量的值，通常是不规则的。</p><p>当V8执行到<code>a()</code>这一行代码的时候，a会被压入栈顶。</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ltfr1pfij307j06gt8h.jpg" alt></p><p>在a的内部，我们碰到了<code>b()</code>，这个时候b被压入栈顶。</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lth4pggfj307906rwe9.jpg" alt></p><p>在b的内部，我们又碰到了<code>c()</code>，这个时候c被压入栈顶。</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ltert9f5j307i06p0si.jpg" alt></p><p>c执行完毕之后，会从栈顶移除。</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lth4pggfj307906rwe9.jpg" alt></p><p>函数返回到b，b也执行完了，b也从栈顶移除。</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ltfr1pfij307j06gt8h.jpg" alt></p><p>同样a也会被移除。</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ltkvl983j3079068q2p.jpg" alt></p><p>整个过程用动画来表示就是这样的：</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lx8oasxag30gn09y0wq.gif" alt><br>(<a href="http://latentflip.com/loupe/?code=ZnVuY3Rpb24gYygpIHt9CmZ1bmN0aW9uIGIoKSB7CgljKCk7Cn0KZnVuY3Rpb24gYSgpIHsKCWIoKTsKfQphKCk7!!!" target="_blank" rel="noopener">在线观看</a>)</p><p>这个时候我们还没有涉及到<code>堆内存</code>和<code>执行上下文栈</code>，一切还比较简单，这些内容我们放到后面来讲。</p><h3 id="DOM-和-WEB-API"><a href="#DOM-和-WEB-API" class="headerlink" title="DOM 和 WEB API"></a>DOM 和 WEB API</h3><p>现在我们有了可以执行JS的引擎，但是我们的目标是<code>构建用户界面</code>，而传统的前端用户界面是基于DOM构建的，因此我们需要引入DOM。DOM是<code>文档对象模型</code>，其提供了一系列JS可以直接调用的接口，理论上其可以提供其他语言的接口，而不仅仅是JS。 而且除了DOM接口可以给JS调用，浏览器还提供了一些WEB API。 DOM也好，WEB API也好，本质上和JS没有什么关系，完全不一回事。JS对应的ECMA规范，V8用来实现ECMA规范，其他的它不管。 这也是JS引擎和JS执行环境的区别，V8是JS引擎，用来执行JS代码，浏览器和Node是JS执行环境，其提供一些JS可以调用的API即<code>JS bindings</code>。</p><p>由于浏览器的存在，现在JS可以操作DOM和WEB API了，看起来是可以构建用户界面啦。 有一点需要提前讲清楚，V8只有栈和堆，其他诸如事件循环，DOM，WEB API它一概不知。原因前面其实已经讲过了，因为V8只负责JS代码的编译执行，你给V8一段JS代码，它就从头到尾一口气执行下去，中间不会停止。</p><p>另外这里我还要继续提一下，JS执行栈和渲染线程是相互阻塞的。为什么呢？ 本质上因为JS太灵活了，它可以去获取DOM中的诸如坐标等信息。 如果两者同时执行，就有可能发生冲突，比如我先获取了某一个DOM节点的x坐标，下一时刻坐标变了。 JS又用这个“旧的”坐标进行计算然后赋值给DOM，冲突便发生了。 解决冲突的方式有两种：</p><ol><li>限制JS的能力，你只能在某些时候使用某些API。 这种做法极其复杂，还会带来很多使用不便。</li><li>JS和渲染线程不同时执行就好了，一种方法就是现在广泛采用的<code>相互阻塞</code>。 实际上这也是目前浏览器广泛采用的方式。</li></ol><h3 id="单线程-or-多线程-or-异步"><a href="#单线程-or-多线程-or-异步" class="headerlink" title="单线程 or 多线程 or 异步"></a>单线程 or 多线程 or 异步</h3><p>前面提到了<code>你给V8一段JS代码，它就从头到尾一口气执行下去，中间不会停止</code>。 为什么不停止，可以设计成可停止么，就好像C语言一样？</p><p>假设我们需要获取用户信息，获取用户的文章，获取用的朋友。</p><h4 id="单线程无异步"><a href="#单线程无异步" class="headerlink" title="单线程无异步"></a>单线程无异步</h4><p>由于是单线程无异步，因此我们三个接口需要采用同步方式。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fetchUserInfoSync().then(doSomethingA); <span class="comment">// 1s</span></span><br><span class="line">fetchMyArcticlesSync().then(doSomethingB);<span class="comment">// 3s</span></span><br><span class="line">fetchMyFriendsSync().then(doSomethingC);<span class="comment">// 2s</span></span><br></pre></td></tr></table></figure><p>由于上面三个请求都是同步执行的，因此上面的代码会先执行<code>fetchUserInfoSync</code>，一秒之后执行<code>fetchMyArcticlesSync</code>，再过三秒执行<code>fetchMyFriendsSync</code>。 最可怕的是我们刚才说了<code>JS执行栈和渲染线程是相互阻塞的</code>。 因此用户就在这期间根本无法操作，界面无法响应，这显然是无法接受的。</p><h4 id="多线程无异步"><a href="#多线程无异步" class="headerlink" title="多线程无异步"></a>多线程无异步</h4><p>由于是多线程无异步，虽然我们三个接口仍然需要采用同步方式，但是我们可以将代码分别在多个线程执行，比如我们将这段代码放在三个线程中执行。</p><p>线程一：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fetchUserInfoSync().then(doSomethingA); <span class="comment">// 1s</span></span><br></pre></td></tr></table></figure><p>线程二：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fetchMyArcticlesSync().then(doSomethingB); <span class="comment">// 3s</span></span><br></pre></td></tr></table></figure><p>线程三：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fetchMyFriendsSync().then(doSomethingC); <span class="comment">// 2s</span></span><br></pre></td></tr></table></figure><p><img src="http://ww1.sinaimg.cn/large/e9f490c8ly1g9lzjslxcaj20lr08nmy3.jpg" alt="1575538849801.jpg"></p><p>由于三块代码同时执行，因此总的时间最理想的情况下取决与最慢的时间，也就是3s，这一点和使用异步的方式是一样的（当然前提是请求之间无依赖）。为什么要说最理想呢？由于三个线程都可以对DOM和堆内存进行访问，因此很有可能会冲突，冲突的原因和我上面提到的JS线程和渲染线程的冲突的原因没有什么本质不同。因此最理想情况没有任何冲突的话是3s，但是如果有冲突，我们就需要借助于诸如<code>锁</code>来解决，这样时间就有可能高于3s了。 相应地编程模型也会更复杂，处理过锁的程序员应该会感同身受。</p><h4 id="单线程-异步"><a href="#单线程-异步" class="headerlink" title="单线程 + 异步"></a>单线程 + 异步</h4><p>如果还是使用单线程，改成异步是不是会好点？问题的是关键是如何实现异步呢？这就是我们要讲的主题 - <code>事件循环</code>。</p><h2 id="事件循环究竟是怎么实现异步的？"><a href="#事件循环究竟是怎么实现异步的？" class="headerlink" title="事件循环究竟是怎么实现异步的？"></a>事件循环究竟是怎么实现异步的？</h2><p>我们知道浏览器中JS线程只有一个，如果没有事件循环，就会造成一个问题。 即如果JS发起了一个异步IO请求，在等待结果返回的这个时间段，后面的代码都会被阻塞。 我们知道JS主线程和渲染进程是相互阻塞的，因此这就会造成浏览器假死。 如何解决这个问题？ 一个有效的办法就是我们这节要讲的<code>事件循环</code>。</p><p>其实<code>事件循环就是用来做调度的，浏览器和NodeJS中的事件循坏就好像操作系统的调度器一样。</code>操作系统的调度器决定何时将什么资源分配给谁。对于有线程模型的计算机，那么操作系统执行代码的最小单位就是线程，资源分配的最小单位就是进程，代码执行的过程由操作系统进行调度，整个调度过程非常复杂。  我们知道现在很多电脑都是多核的，为了让多个core同时发挥作用，即没有一个core是特别闲置的，也没有一个core是特别累的。操作系统的调度器会进行某一种神秘算法，从而保证每一个core都可以分配到任务。 这也就是我们使用NodeJS做集群的时候，Worker节点数量通常设置为core的数量的原因，调度器会尽量将每一个Worker平均分配到每一个core，当然这个过程并不是确定的，即不一定调度器是这么分配的，但是很多时候都会这样。</p><p>了解了操作系统调度器的原理，我们不妨继续回头看一下事件循环。 事件循环本质上也是做调度的，只不过调度的对象变成了JS的执行。事件循环决定了V8什么时候执行什么代码。<code>V8只是负责JS代码的解析和执行，其他它一概不知。</code>浏览器或者NodeJS中触发事件之后，到事件的监听函数被V8执行这个时间段的所有工作都是事件循环在起作用。</p><p>我们来小结一下：</p><ol><li>对于V8来说，它有：</li></ol><ul><li>调用栈（call stack）<blockquote><p>这里的单线程指的是只有一个call stack。只有一个call stack 意味着同一时间只能执行一段代码。</p></blockquote></li><li>堆（heap）</li></ul><ol start="2"><li>对于浏览器运行环境来说：</li></ol><ul><li>WEB API</li><li>DOM API</li><li>任务队列</li></ul><blockquote><p>事件来触发事件循环进行流动</p></blockquote><p>以如下代码为例：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">c();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">setTimeout(b, <span class="number">2000</span>)</span><br><span class="line">&#125;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure><p>执行过程是这样的：</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lxcn39hhg30go080dj1.gif" alt><br>(<a href="http://latentflip.com/loupe/?code=ZnVuY3Rpb24gYygpIHt9CmZ1bmN0aW9uIGIoKSB7CgljKCk7Cn0KZnVuY3Rpb24gYSgpIHsKCXNldFRpbWVvdXQoYiwgMjAwMCkKfQphKCk7!!!" target="_blank" rel="noopener">在线观看</a>)</p><p>因此事件循环之所以可以实现异步，是因为碰到异步执行的代码“比如fetch，setTimeout”，浏览器会将用户注册的回调函数存起来，然后继续执行后面的代码。等到未来某一个时刻，“异步任务”完成了，会触发一个事件，浏览器会将“任务的详细信息”作为参数传递给之前用户绑定的回调函数。具体来说，就是将用户绑定的回调函数推入浏览器的执行栈。</p><p>但并不是说随便推入的，只有浏览器将当然要执行的JS脚本“一口气”执行完，要”换气“的时候才会去检查有没有要被处理的“消息”。<br>如果于则将对应消息绑定的回调函数推入栈。当然如果没有绑定事件，这个事件消息实际上会被丢弃，不被处理。比如用户触发了一个click事件，但是用户没有绑定click事件的监听函数，那么实际上这个事件会被丢弃掉。</p><p>我们来看一下加入用户交互之后是什么样的，拿点击事件来说：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$.on(<span class="string">'button'</span>, <span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="title">onClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'You clicked the button!'</span>);    </span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hi!"</span>);</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timeout</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Click the button!"</span>);</span><br><span class="line">&#125;, <span class="number">5000</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Welcome to loupe."</span>);</span><br></pre></td></tr></table></figure><p>上述代码每次点击按钮，都会发送一个事件，由于我们绑定了一个监听函数。因此每次点击，都会有一个点击事件的消息产生，浏览器会在“空闲的时候”对应将用户绑定的事件处理函数推入栈中执行。</p><p>伪代码:</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line"><span class="keyword">if</span> (queue.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">queue.processNextMessage()</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>动画演示：</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lxzvlth0g30go07yhc7.gif" alt><br>(<a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D" target="_blank" rel="noopener">在线观看</a>)</p><h3 id="加入宏任务-amp-微任务"><a href="#加入宏任务-amp-微任务" class="headerlink" title="加入宏任务&amp;微任务"></a>加入宏任务&amp;微任务</h3><p>我们来看一个更复制的例子感受一下。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>)</span><br><span class="line">&#125;, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="number">3</span>)</span><br><span class="line">&#125;).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">4</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span>)</span><br></pre></td></tr></table></figure><p>上面的代码会输出：1、5、3、4、2。 如果你想要非常严谨的解释可以参考 whatwg 对其进行的描述 -<a href="https://html.spec.whatwg.org/multipage/webappapis.html#event-loop-processing-model" target="_blank" rel="noopener">event-loop-processing-model</a>。</p><p>下面我会对其进行一个简单的解释。</p><ul><li>浏览器首先执行宏任务，也就是我们script（仅仅执行一次）</li><li>完成之后检查是否存在微任务，然后不停执行，直到清空队列</li><li>执行宏任务</li></ul><p>其中：</p><p>宏任务主要包含：setTimeout、setInterval、setImmediate、I/O、UI交互事件</p><p>微任务主要包含：Promise、process.nextTick、MutaionObserver 等</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9hfldyzj2j30g909xt8z.jpg" alt></p><p>有了这个知识，我们不难得出上面代码的输出结果。</p><p>由此我们可以看出，<code>宏任务&amp;微任务</code>只是实现异步过程中，我们对于信号的处理顺序不同而已。如果我们不加区分，全部放到一个队列，就不会有<code>宏任务&amp;微任务</code>。这种人为划分优先级的过程，在某些时候非常有用。</p><h3 id="加入执行上下文栈"><a href="#加入执行上下文栈" class="headerlink" title="加入执行上下文栈"></a>加入执行上下文栈</h3><p>说到执行上下文，就不得不提到<code>浏览器执行JS函数其实是分两个过程的</code>。一个是创建阶段<code>Creation Phase</code>,一个是执行阶段<code>Execution Phase</code>。</p><p>同执行栈一样，浏览器每遇到一个函数，也会将当前函数的执行上下文栈推入栈顶。</p><p>举个例子：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line"><span class="keyword">const</span> n = <span class="number">3</span></span><br><span class="line"><span class="built_in">console</span>.log(num + n)</span><br><span class="line">&#125;</span><br><span class="line">c(num);</span><br><span class="line">&#125;</span><br><span class="line">b(num);</span><br><span class="line">&#125;</span><br><span class="line">a(<span class="number">1</span>);</span><br></pre></td></tr></table></figure><p>遇到上面的代码。 首先会将a的压入执行栈，我们开始进行创建阶段<code>Creation Phase</code>， 将a的执行上下文压入栈。然后初始化a的执行上下文，分别是VO，ScopeChain（VO chain）和 This。 从这里我们也可以看出，this其实是动态决定的。VO指的是<code>variables, functions 和 arguments</code>。 并且执行上下文栈也会同步随着执行栈的销毁而销毁。</p><p>伪代码表示：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> EC  = &#123;</span><br><span class="line">    <span class="string">'scopeChain'</span>: &#123; &#125;,</span><br><span class="line">    <span class="string">'variableObject'</span>: &#123; &#125;,</span><br><span class="line">    <span class="string">'this'</span>: &#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lyjjb6ecj30mh0c0aa2.jpg" alt></p><p>我们来重点看一下ScopeChain(VO chain)。如上图的执行上下文大概长这个样子，伪代码：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">global.VO = &#123;</span><br><span class="line">    a: pointer to a(),</span><br><span class="line">    scopeChain: [global.VO]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a.VO = &#123;</span><br><span class="line">    b: pointer to b(),</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;</span><br><span class="line"><span class="number">0</span>: <span class="number">1</span></span><br><span class="line">&#125;,</span><br><span class="line">    scopeChain: [a.VO, global.VO]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">b.VO = &#123;</span><br><span class="line">c: pointer to c(),</span><br><span class="line"><span class="built_in">arguments</span>: &#123;</span><br><span class="line"><span class="number">0</span>: <span class="number">1</span></span><br><span class="line">&#125;,</span><br><span class="line">scopeChain: [b.VO, a.VO, global.VO]</span><br><span class="line">&#125;</span><br><span class="line">c.VO = &#123;</span><br><span class="line"><span class="built_in">arguments</span>: &#123;</span><br><span class="line"><span class="number">0</span>: <span class="number">1</span></span><br><span class="line">&#125;,</span><br><span class="line">n: <span class="number">3</span></span><br><span class="line">scopeChain: [c.VO, b.VO, a.VO, global.VO]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>引擎查找变量的时候，会先从VOC开始找，找不到会继续去VOB…，直到GlobalVO，如果GlobalVO也找不到会返回<code>Referrence Error</code>，整个过程类似原型链的查找。</p><p>值得一提的是，JS是词法作用域，也就是静态作用域。换句话说就是作用域取决于代码定义的位置，而不是执行的位置，<code>这也就是闭包产生的本质原因</code>。 如果上面的代码改造成下面的：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">a()</span><br><span class="line">b()</span><br><span class="line">c()</span><br></pre></td></tr></table></figure><p>或者这种：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">c();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">b();</span><br><span class="line">&#125;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure><p>其执行上下文栈虽然都是一样的，但是其对应的scopeChain则完全不同，因为函数定义的位置发生了变化。拿上面的代码片段来说,c.VO会变成这样：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">c.VO = &#123;</span><br><span class="line">scopeChain: [c.VO, global.VO]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>也就是说其再也无法获取到a和b中的VO了。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过这篇文章，希望你对单线程，多线程，异步，事件循环，事件驱动等知识点有了更深的理解和感悟。除了这些大的层面，我们还从执行栈，执行上下文栈角度讲解了我们代码是如何被浏览器运行的，我们顺便还解释了作用域和闭包产生的本质原因。</p><p>最后我总结了一个浏览器运行代码的整体原理图，希望对你有帮助：</p><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lzm6dww0j30kw0pjt8s.jpg" alt></p><p>下一节<code>浏览器的事件循环和NodeJS的事件循环有什么不同</code>, 敬请期待～</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="https://blog.logrocket.com/a-complete-guide-to-the-node-js-event-loop/" target="_blank" rel="noopener">Node.js event loop - logrocket</a></li><li><a href="https://nodejs.org/de/docs/guides/event-loop-timers-and-nexttick/" target="_blank" rel="noopener">event-loop - nodejs.org</a></li><li><a href="http://davidshariff.com/blog/what-is-the-execution-context-in-javascript/" target="_blank" rel="noopener">what-is-the-execution-context-in-javascript</a></li><li><a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ" target="_blank" rel="noopener">Event Loop in JS - youtube </a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端 </category>
-          
-          <category> 浏览器 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 前端 </tag>
-            
-            <tag> 浏览器 </tag>
-            
-            <tag> 事件循环 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>每日一荐 2019-10 汇总</title>
       <link href="/blog/2019/12/11/daily-featured-2019-10/"/>
       <url>/blog/2019/12/11/daily-featured-2019-10/</url>
@@ -1774,35 +1774,6 @@
         <tags>
             
             <tag> 每日一荐 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>布隆过滤器</title>
-      <link href="/blog/2019/12/11/bloom-filter/"/>
-      <url>/blog/2019/12/11/bloom-filter/</url>
-      
-        <content type="html"><![CDATA[<p>假设你现在要处理这样一个问题，你有一个网站并且拥有<code>很多</code>访客，每当有用户访问时，你想知道这个ip是不是第一次访问你的网站。你会怎么做呢？</p><a id="more"></a><h3 id="hashtable-可以么"><a href="#hashtable-可以么" class="headerlink" title="hashtable 可以么"></a>hashtable 可以么</h3><p>一个显而易见的答案是将所有的ip用hashtable存起来，每次访问都去hashtable中取，然后判断即可。但是题目说了网站有<code>很多</code>访客，<br>假如有10亿个用户访问过，每个ip的长度是4 byte，那么你一共需要4 * 1000000000 = 4000000000Bytes = 4G , 如果是判断URL黑名单，<br>由于每个URL会更长，那么需要的空间可能会远远大于你的期望。</p><h3 id="bit"><a href="#bit" class="headerlink" title="bit"></a>bit</h3><p>另一个稍微难想到的解法是bit， 我们知道bit有0和1两种状态，那么用来表示存在，不存在再合适不过了。</p><p>加入有10亿个ip，我们就可以用10亿个bit来存储，那么你一共需要 1 * 1000000000 = (4000000000 / 8) Bytes = 128M, 变为原来的1/32,<br>如果是存储URL这种更长的字符串，效率会更高。 </p><p>基于这种想法，我们只需要两个操作，set(ip) 和 has(ip)</p><p>这样做有两个非常致命的缺点：</p><ol><li>当样本分布极度不均匀的时候，会造成很大空间上的浪费</li></ol><blockquote><p>我们可以通过散列函数来解决</p></blockquote><ol start="2"><li>当元素不是整型（比如URL）的时候，BitSet就不适用了</li></ol><blockquote><p>我们还是可以使用散列函数来解决， 甚至可以多hash几次</p></blockquote><h3 id="布隆过滤器"><a href="#布隆过滤器" class="headerlink" title="布隆过滤器"></a>布隆过滤器</h3><p>布隆过滤器其实就是<code>bit + 多个散列函数</code>,  如果经过多次散列的值再bit上都为1，那么可能存在(可能有冲突)。 如果<br>有一个不为1，那么一定不存在（一个值经过散列函数得到的值一定是唯一的），这也是布隆过滤器的一个重要特点。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53hxbw7j31dw0j2wgm.jpg" alt="bloom-filter-url"></p><h3 id="布隆过滤器的应用"><a href="#布隆过滤器的应用" class="headerlink" title="布隆过滤器的应用"></a>布隆过滤器的应用</h3><ol><li><p>网络爬虫<br>判断某个URL是否已经被爬取过</p></li><li><p>K-V数据库 判断某个key是否存在</p></li></ol><p>比如Hbase的每个Region中都包含一个BloomFilter，用于在查询时快速判断某个key在该region中是否存在。</p><ol start="3"><li>钓鱼网站识别</li></ol><p>浏览器有时候会警告用户，访问的网站很可能是钓鱼网站，用的就是这种技术</p><blockquote><p>从这个算法大家可以对 tradeoff(取舍) 有更入的理解。</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> 算法 </category>
-          
-          <category> 布隆过滤器 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 数据结构 </tag>
-            
-            <tag> 算法 </tag>
             
         </tags>
       
@@ -1832,6 +1803,35 @@
             <tag> 浏览器 </tag>
             
             <tag> 事件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>布隆过滤器</title>
+      <link href="/blog/2019/12/11/bloom-filter/"/>
+      <url>/blog/2019/12/11/bloom-filter/</url>
+      
+        <content type="html"><![CDATA[<p>假设你现在要处理这样一个问题，你有一个网站并且拥有<code>很多</code>访客，每当有用户访问时，你想知道这个ip是不是第一次访问你的网站。你会怎么做呢？</p><a id="more"></a><h3 id="hashtable-可以么"><a href="#hashtable-可以么" class="headerlink" title="hashtable 可以么"></a>hashtable 可以么</h3><p>一个显而易见的答案是将所有的ip用hashtable存起来，每次访问都去hashtable中取，然后判断即可。但是题目说了网站有<code>很多</code>访客，<br>假如有10亿个用户访问过，每个ip的长度是4 byte，那么你一共需要4 * 1000000000 = 4000000000Bytes = 4G , 如果是判断URL黑名单，<br>由于每个URL会更长，那么需要的空间可能会远远大于你的期望。</p><h3 id="bit"><a href="#bit" class="headerlink" title="bit"></a>bit</h3><p>另一个稍微难想到的解法是bit， 我们知道bit有0和1两种状态，那么用来表示存在，不存在再合适不过了。</p><p>加入有10亿个ip，我们就可以用10亿个bit来存储，那么你一共需要 1 * 1000000000 = (4000000000 / 8) Bytes = 128M, 变为原来的1/32,<br>如果是存储URL这种更长的字符串，效率会更高。 </p><p>基于这种想法，我们只需要两个操作，set(ip) 和 has(ip)</p><p>这样做有两个非常致命的缺点：</p><ol><li>当样本分布极度不均匀的时候，会造成很大空间上的浪费</li></ol><blockquote><p>我们可以通过散列函数来解决</p></blockquote><ol start="2"><li>当元素不是整型（比如URL）的时候，BitSet就不适用了</li></ol><blockquote><p>我们还是可以使用散列函数来解决， 甚至可以多hash几次</p></blockquote><h3 id="布隆过滤器"><a href="#布隆过滤器" class="headerlink" title="布隆过滤器"></a>布隆过滤器</h3><p>布隆过滤器其实就是<code>bit + 多个散列函数</code>,  如果经过多次散列的值再bit上都为1，那么可能存在(可能有冲突)。 如果<br>有一个不为1，那么一定不存在（一个值经过散列函数得到的值一定是唯一的），这也是布隆过滤器的一个重要特点。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53hxbw7j31dw0j2wgm.jpg" alt="bloom-filter-url"></p><h3 id="布隆过滤器的应用"><a href="#布隆过滤器的应用" class="headerlink" title="布隆过滤器的应用"></a>布隆过滤器的应用</h3><ol><li><p>网络爬虫<br>判断某个URL是否已经被爬取过</p></li><li><p>K-V数据库 判断某个key是否存在</p></li></ol><p>比如Hbase的每个Region中都包含一个BloomFilter，用于在查询时快速判断某个key在该region中是否存在。</p><ol start="3"><li>钓鱼网站识别</li></ol><p>浏览器有时候会警告用户，访问的网站很可能是钓鱼网站，用的就是这种技术</p><blockquote><p>从这个算法大家可以对 tradeoff(取舍) 有更入的理解。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+          <category> 布隆过滤器 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -1876,9 +1876,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
