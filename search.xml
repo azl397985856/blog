@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>力扣加加闪亮登场～</title>
+      <link href="/blog/2020/06/01/leetcode-pp/"/>
+      <url>/blog/2020/06/01/leetcode-pp/</url>
+      
+        <content type="html"><![CDATA[<p>力扣加加，一个努力做西湖区最好的算法题解的团队。</p><p>就在今天力扣加加正式脱离【脑洞前端】，成为了一个独立的的公众号。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfctrj7xw6j30u70u0jtx.jpg" alt></p><p>​<a id="more"></a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">脑洞前端：你已经长大了，是时候自己写题解了。</span><br><span class="line">力扣加加：。。。</span><br></pre></td></tr></table></figure><p>独立的原因是让公众号的定位更加清晰，喜欢我的题解的朋友可以关注力扣加加，喜欢我的前端架构剖析，徒手造框架的朋友可以关注脑洞前端。当然如果你同时关注两个，那我会感动到哭。</p><p>虽然是新的公众号，但是我的初心不变，依然是<code>力求用清晰直白的方式还原解题过程，努力做西湖区最好的算法题解</code>。最后感谢大家一路以来的支持，我一定不负众望，越做越好。</p><h2 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h2><p>预计力扣加加会推出五个板块。</p><ul><li>91 算法。通过在 91 天的集中训练，帮助大家摆脱困境，征服算法。我们会帮助大家规划学习路线，91 天见证不一样的自己。群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。<strong>我会在结束之后将讲义和题解放到公众号号</strong>。</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfctrpi6sfj30xm0b6js7.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcubuzax3j30h9086gm6.jpg" alt><br>（仓库部分内容）</p><ul><li>算法题解。就是对力扣中的题目进行讲解，尤其是经典的题目。并且尽量从多个角度思路，帮助大家纵向打开解题思路。目前差不多有几百的题解了。</li><li>专题讲解。对于共性比较强的，我会抽离成专题形式，帮助大家横向打开解题思路。</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcucqfgczj30am0fgabj.jpg" alt><br>（之后会陆续加入更多专题）</p><ul><li>视频题解。对于一些题目采用视频的方式可能更加直观方便，之后还会考虑直播。</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcueie2w0j31bf07nwhl.jpg" alt></p><ul><li>刷题工具。初步规划了两个小工具，之后出测试版本会第一时间告诉大家，如果你对开发小工具感兴趣，也可以点击公众号的联系我来和我取得联系。</li></ul><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>点关注，不迷路。如果再给 ➕ 个星标就更棒啦！</p><blockquote><p>关注加加，星标加加～</p></blockquote><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcu8cusf8j30p00dwwhg.jpg" alt></p><ul><li><a href="http://leetcode-solution.cn/" target="_blank" rel="noopener">力扣加加官网</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 力扣加加 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 算法提高班 </tag>
+            
+            <tag> 力扣加加 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【LeetCode日记】 312. 戳气球</title>
       <link href="/blog/2020/06/01/312.burst-balloons/"/>
       <url>/blog/2020/06/01/312.burst-balloons/</url>
@@ -1034,9 +1065,9 @@
           
           <category> 数学 </category>
           
-          <category> 动态规划 </category>
-          
           <category> 概率 </category>
+          
+          <category> 动态规划 </category>
           
           <category> 递归 </category>
           
@@ -1375,9 +1406,9 @@
           
           <category> 算法 </category>
           
-          <category> 数组 </category>
-          
           <category> 字符串 </category>
+          
+          <category> 数组 </category>
           
           <category> LeetCode </category>
           
@@ -1836,35 +1867,6 @@
     
     
     <entry>
-      <title>《数据结构与算法之美》-为工程师量身打造的数据结构与算法私教课</title>
-      <link href="/blog/2019/12/11/ad/"/>
-      <url>/blog/2019/12/11/ad/</url>
-      
-        <content type="html"><![CDATA[<p>很多人问我如何系统地学习数据结构与算法，是看书，刷题还是看视频？</p><p>这个问题没有一个放之四海而皆准的答案，这是一个因人而异的东西，我之前给初学者推荐过邓俊辉老师免费的《数据结构与算法》课程，以及为《算法图解》这本书。 然而这些只是适合初学者，真正想要掌握数据结构与算法还是不够的，学习了基础之后如何进阶呢？像《算法导论》这些经典书籍，虽然很全面，但是过于缺乏重点。很多人学起来都非常困难。而市面很多在线课程或者线下课程，大多是为了“应试”，只讲一些看似通用，实则脱离真实开发场景的内容。因此这里给大家推荐一本书《数据结构与算法之美》。</p><a id="more"></a><h2 id="程序员必会的数据结构与算法"><a href="#程序员必会的数据结构与算法" class="headerlink" title="程序员必会的数据结构与算法"></a>程序员必会的数据结构与算法</h2><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51dcng8j30u01spjwj.jpg" alt></p><h2 id="订阅量-TOP1"><a href="#订阅量-TOP1" class="headerlink" title="订阅量 TOP1"></a>订阅量 TOP1</h2><p>这本书是订阅量 Top1，50000+程序员的算法课堂，整个专栏会涵盖 100 多个算法真实项目场景案例，更难得的是它跟市面上晦涩的算法书籍不同的是，还手绘了一些清晰易懂的详解图（总共有 300 多张），市面上的大多数的算法教程都看过，走心的说，这个专栏是市面上唯一一门真正适用于工程师的专栏，作者是前 Google 工程师王争，相信会开启你的趣味学习算法之旅。</p><h2 id="作者简介"><a href="#作者简介" class="headerlink" title="作者简介"></a>作者简介</h2><p>本书作者王争，前 Google 工程师，从事 Google 翻译相关的开发工作，深入研究算法数十年。现任某金融公司资深系统架构师，核心业务接口平台负责人，负责公司核心业务的架构设计、开发，以及可用性、高性能等相关技术问题的解决。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51emu5oj30yi0emgmm.jpg" alt></p><h2 id="你能获得什么？"><a href="#你能获得什么？" class="headerlink" title="你能获得什么？"></a>你能获得什么？</h2><p>1、掌握数据结构与算法的核心知识</p><p>我根据自己研读数十本算法书籍和多年项目开发的经验，精选了 20 个最实用数据结构和算法结合具体的软件开发实例，由浅入深进行讲解背后的设计思想，并适时总结一些实用“宝典”，保证你印象深刻，并且能够迅速对应到实际工作场景中。</p><p>2、提升算法思维，训练解决实际开发工作难题的强能力</p><p>这部分我会讲一些不是那么常用的数据结构和算法。虽然不常用，但是并不是说他们没用。设置这一部分的目的，是为了让你开拓视野，强化训练算法思维、逻辑思维。如果说学完基础部分可以考 80 分，那掌握这一部分就能让你成为尖子生。再回过来说，不管是现在流行的区块链技术还是人工智能，核心代码实现中都会涉及到这些算法。</p><p>3、学习开源框架、底层系统的设计原理，提升工作实战技能</p><p>最后我会通过实战部分串讲一下前面讲到的数据结构和算法，并且结合 Redis、Disruptor 这样的开源项目，剖析它们背后的数据结构和算法，帮你提升读懂源码的能力（JDK 很多源码，不乏大量的数据结构，例如大家喜闻乐见的面试题 HashMap）。</p><p>我掰着指头数了下，整个专栏会涵盖 100 多个算法真实项目场景案例。我还手绘了一些清晰易懂的详解图，帮你理解核心概念和实现过程，展示每个知识点的框架逻辑，让晦涩难懂的算法变得轻松有趣。</p><h2 id="课程目录"><a href="#课程目录" class="headerlink" title="课程目录"></a>课程目录</h2><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51g47doj30ku2swqad.jpg" alt></p><h2 id="订阅福利"><a href="#订阅福利" class="headerlink" title="订阅福利"></a>订阅福利</h2><p>扫描下方二维码订阅即可，新人立减 30 元，另外我本人提供返现 11 元（到手 88 元），直接加我微信<code>DevelopeEngineer</code>即可。另外再送你 199 元限时学习礼包，你可以先领券再购买，领券地址：<a href="http://gk.link/a/108qc" target="_blank" rel="noopener">http://gk.link/a/108qc</a></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51hy79vj30u01hdgq9.jpg" alt></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 数据结构 </category>
-          
-          <category> 算法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 数据结构 </tag>
-            
-            <tag> 算法 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>一文看懂《最大子序列和问题》</title>
       <link href="/blog/2019/12/11/LSS/"/>
       <url>/blog/2019/12/11/LSS/</url>
@@ -1896,6 +1898,35 @@
             <tag> LeetCode </tag>
             
             <tag> 数组 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《数据结构与算法之美》-为工程师量身打造的数据结构与算法私教课</title>
+      <link href="/blog/2019/12/11/ad/"/>
+      <url>/blog/2019/12/11/ad/</url>
+      
+        <content type="html"><![CDATA[<p>很多人问我如何系统地学习数据结构与算法，是看书，刷题还是看视频？</p><p>这个问题没有一个放之四海而皆准的答案，这是一个因人而异的东西，我之前给初学者推荐过邓俊辉老师免费的《数据结构与算法》课程，以及为《算法图解》这本书。 然而这些只是适合初学者，真正想要掌握数据结构与算法还是不够的，学习了基础之后如何进阶呢？像《算法导论》这些经典书籍，虽然很全面，但是过于缺乏重点。很多人学起来都非常困难。而市面很多在线课程或者线下课程，大多是为了“应试”，只讲一些看似通用，实则脱离真实开发场景的内容。因此这里给大家推荐一本书《数据结构与算法之美》。</p><a id="more"></a><h2 id="程序员必会的数据结构与算法"><a href="#程序员必会的数据结构与算法" class="headerlink" title="程序员必会的数据结构与算法"></a>程序员必会的数据结构与算法</h2><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51dcng8j30u01spjwj.jpg" alt></p><h2 id="订阅量-TOP1"><a href="#订阅量-TOP1" class="headerlink" title="订阅量 TOP1"></a>订阅量 TOP1</h2><p>这本书是订阅量 Top1，50000+程序员的算法课堂，整个专栏会涵盖 100 多个算法真实项目场景案例，更难得的是它跟市面上晦涩的算法书籍不同的是，还手绘了一些清晰易懂的详解图（总共有 300 多张），市面上的大多数的算法教程都看过，走心的说，这个专栏是市面上唯一一门真正适用于工程师的专栏，作者是前 Google 工程师王争，相信会开启你的趣味学习算法之旅。</p><h2 id="作者简介"><a href="#作者简介" class="headerlink" title="作者简介"></a>作者简介</h2><p>本书作者王争，前 Google 工程师，从事 Google 翻译相关的开发工作，深入研究算法数十年。现任某金融公司资深系统架构师，核心业务接口平台负责人，负责公司核心业务的架构设计、开发，以及可用性、高性能等相关技术问题的解决。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51emu5oj30yi0emgmm.jpg" alt></p><h2 id="你能获得什么？"><a href="#你能获得什么？" class="headerlink" title="你能获得什么？"></a>你能获得什么？</h2><p>1、掌握数据结构与算法的核心知识</p><p>我根据自己研读数十本算法书籍和多年项目开发的经验，精选了 20 个最实用数据结构和算法结合具体的软件开发实例，由浅入深进行讲解背后的设计思想，并适时总结一些实用“宝典”，保证你印象深刻，并且能够迅速对应到实际工作场景中。</p><p>2、提升算法思维，训练解决实际开发工作难题的强能力</p><p>这部分我会讲一些不是那么常用的数据结构和算法。虽然不常用，但是并不是说他们没用。设置这一部分的目的，是为了让你开拓视野，强化训练算法思维、逻辑思维。如果说学完基础部分可以考 80 分，那掌握这一部分就能让你成为尖子生。再回过来说，不管是现在流行的区块链技术还是人工智能，核心代码实现中都会涉及到这些算法。</p><p>3、学习开源框架、底层系统的设计原理，提升工作实战技能</p><p>最后我会通过实战部分串讲一下前面讲到的数据结构和算法，并且结合 Redis、Disruptor 这样的开源项目，剖析它们背后的数据结构和算法，帮你提升读懂源码的能力（JDK 很多源码，不乏大量的数据结构，例如大家喜闻乐见的面试题 HashMap）。</p><p>我掰着指头数了下，整个专栏会涵盖 100 多个算法真实项目场景案例。我还手绘了一些清晰易懂的详解图，帮你理解核心概念和实现过程，展示每个知识点的框架逻辑，让晦涩难懂的算法变得轻松有趣。</p><h2 id="课程目录"><a href="#课程目录" class="headerlink" title="课程目录"></a>课程目录</h2><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51g47doj30ku2swqad.jpg" alt></p><h2 id="订阅福利"><a href="#订阅福利" class="headerlink" title="订阅福利"></a>订阅福利</h2><p>扫描下方二维码订阅即可，新人立减 30 元，另外我本人提供返现 11 元（到手 88 元），直接加我微信<code>DevelopeEngineer</code>即可。另外再送你 199 元限时学习礼包，你可以先领券再购买，领券地址：<a href="http://gk.link/a/108qc" target="_blank" rel="noopener">http://gk.link/a/108qc</a></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51hy79vj30u01hdgq9.jpg" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构 </category>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       

@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-06-01T02:21:26.558Z</updated>
+  <updated>2020-06-01T08:07:03.286Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>力扣加加闪亮登场～</title>
+    <link href="https://lucifer.ren/blog/2020/06/01/leetcode-pp/"/>
+    <id>https://lucifer.ren/blog/2020/06/01/leetcode-pp/</id>
+    <published>2020-06-01T07:25:20.807Z</published>
+    <updated>2020-06-01T08:07:03.286Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。&lt;/p&gt;
+&lt;p&gt;就在今天力扣加加正式脱离【脑洞前端】，成为了一个独立的的公众号。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gfctrj7xw6j30u70u0jtx.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>【LeetCode日记】 312. 戳气球</title>
@@ -547,33 +576,6 @@
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="位运算" scheme="https://lucifer.ren/blog/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一文带你 AC 十道题【滑动窗口】</title>
-    <link href="https://lucifer.ren/blog/2020/03/16/slide-window/"/>
-    <id>https://lucifer.ren/blog/2020/03/16/slide-window/</id>
-    <published>2020-03-16T13:53:30.342Z</published>
-    <updated>2020-03-17T02:15:12.628Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;笔者最早接触滑动窗口是&lt;code&gt;滑动窗口协议&lt;/code&gt;，滑动窗口协议（Sliding Window Protocol），属于 TCP 协议的一种应用，用于网络数据传输时的流量控制，以避免拥塞的发生。 发送方和接收方分别有一个窗口大小 w1 和 w2。窗口大小可能会根据网络流量的变化而有所不同，但是在更简单的实现中它们是固定的。窗口大小必须大于零才能进行任何操作。&lt;/p&gt;
-&lt;p&gt;我们算法中的滑动窗口也是类似，只不过包括的情况更加广泛。实际上上面的滑动窗口在某一个时刻就是固定窗口大小的滑动窗口，随着网络流量等因素改变窗口大小也会随着改变。接下来我们讲下算法中的滑动窗口。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-      <category term="算法，滑动窗口" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95%EF%BC%8C%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
-    
-      <category term="数据结构，数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="数据结构，字符串" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-    
-      <category term="滑动窗口" scheme="https://lucifer.ren/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
     
   </entry>
   
