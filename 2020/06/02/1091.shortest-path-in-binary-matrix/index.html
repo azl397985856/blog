@@ -364,7 +364,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">5分</span>
+          <span class="post-count">6分</span>
         </span>
       </span>
     </div>
@@ -383,9 +383,8 @@
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
         <p>​<a id="more"></a></p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>在一个 N × N 的方形网格中，每个单元格有两种状态：空（0）或者阻塞（1）。</p>
-<p>一条从左上角到右下角、长度为 k 的畅通路径，由满足下述条件的单元格 C_1, C_2, …, C_k 组成：</p>
-<p>相邻单元格 C<em>i 和 C</em>{i+1} 在八个方向之一上连通（此时，C<em>i 和 C</em>{i+1} 不同且共享边或角）<br>C_1 位于 (0, 0)（即，值为 grid[0][0]）<br>C_k 位于 (N-1, N-1)（即，值为 grid[N-1][n-1]）<br>如果 C_i 位于 (r, c)，则 grid[r][c] 为空（即，grid[r][c] == 0）<br>返回这条从左上角到右下角的最短畅通路径的长度。如果不存在这样的路径，返回 -1 。</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">在一个 N × N 的方形网格中，每个单元格有两种状态：空（0）或者阻塞（1）。</span><br><span class="line"></span><br><span class="line">一条从左上角到右下角、长度为 k 的畅通路径，由满足下述条件的单元格 C_1, C_2, ..., C_k 组成：</span><br><span class="line"></span><br><span class="line">相邻单元格 C*i 和 C*&#123;i+1&#125; 在八个方向之一上连通（此时，C*i 和 C*&#123;i+1&#125; 不同且共享边或角）</span><br><span class="line">C_1 位于 (0, 0)（即，值为 grid[0][0]）</span><br><span class="line">C_k 位于 (N-1, N-1)（即，值为 grid[N-1][n-1]）</span><br><span class="line">如果 C_i 位于 (r, c)，则 grid[r][c] 为空（即，grid[r][c] == 0）</span><br><span class="line">返回这条从左上角到右下角的最短畅通路径的长度。如果不存在这样的路径，返回 -1 。</span><br></pre></td></tr></table></figure>
+
 <p>示例 1：</p>
 <p>输入：[[0,1],[1,0]]</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfdxfinc0vj30k90kfdge.jpg" alt></p>
@@ -400,7 +399,7 @@
 <p>1 &lt;= grid.length == grid[0].length &lt;= 100<br>grid[i][j] 为 0 或 1</p>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这道题乍一看很像之前写过的一些“机器人”。但是不同的地方在于机器人只能“向下移动和向右移动”，因此机器人那个题目就很适合用动态规划来做。为什么呢？</p>
 <p>因为这道题可以移动的范围是八个方向，题目给的示例不是很好，我这里给大家画了一个示例。我相信你一看就明白了。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfdxlvzihxj30c30afae6.jpg" alt><br>（图 1）</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfe09lk8j2j30d30awwin.jpg" alt><br>（图 1）</p>
 <p>如图，我们发现每一个点的状态其实依赖了周围八个方向。如果我们使用动态规划来求解的时候，我们如何遍历（枚举所有子问题）呢？ 由于每一个 cell 依赖了周围八个 cell，那么我应该先更新谁呢？这个问题就会比较复杂。</p>
 <p>具体来说， 当我需要计算 dp[1][2]的值的时候，实际上我需要先计算<code>dp[0][2]</code>，<code>dp[1][1]</code>，<code>dp[2][2]</code> … 等八个值，这样才能确定 dp[1][2]的值。而计算 dp[0][2] 又是八个值，dp[1][1]等也是同理。 这样就会很复杂。</p>
 <p>而如果你做题比较多的话，分析到这里会发现，应该会想到 BFS。 即使你做题不多，那么根据题目给出的关键字<strong>最短</strong>畅通路径，也应该想到 BFS 才对。</p>
@@ -410,7 +409,7 @@
 
 <p>（Python BFS 模板代码）</p>
 <p>我来用伪代码解释下这段代码的意思：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">template BFS(board) &#123;</span><br><span class="line">  边界处理</span><br><span class="line">  seen = set() # 存储已经遍历过的节点，防止环的出现。</span><br><span class="line">  初始化队列</span><br><span class="line">  steps = 0</span><br><span class="line"></span><br><span class="line">  while 队列不为空 &#123;</span><br><span class="line">    逐个取出队列中的元素（不包括在 while 循环内新添加的）</span><br><span class="line">    if 满足条件 return steps</span><br><span class="line">    for dir in dirs &#123;</span><br><span class="line">      将周围的都加到队列，注意边界处理</span><br><span class="line">    &#125;</span><br><span class="line">    steps += 1</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return steps</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">template BFS(board) &#123;</span><br><span class="line">  边界处理</span><br><span class="line">  seen = set() # 存储已经遍历过的节点，防止环的出现。</span><br><span class="line">  初始化队列</span><br><span class="line">  steps = 0</span><br><span class="line"></span><br><span class="line">  while 队列不为空 &#123;</span><br><span class="line">    逐个取出队列中的元素（不包括在 while 循环内新添加的）</span><br><span class="line">    if 满足条件 return steps</span><br><span class="line">    for dir in dirs &#123;</span><br><span class="line">      将周围的都加到队列，注意边界处理</span><br><span class="line">    &#125;</span><br><span class="line">    steps += 1</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return 不存在（一般是 -1）</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>（BFS 模板伪代码）</p>
 <p>大家可以根据我的伪代码，自己定制属于自己的模板。</p>
@@ -452,7 +451,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-02T15:41:48+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-02T16:10:17+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年6月2日</p>
@@ -464,7 +463,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/数学/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>数学</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/数据结构/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>数据结构</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/算法/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>算法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/BFS/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>BFS</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/数据结构/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>数据结构</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/算法/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>算法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/数学/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>数学</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/BFS/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>BFS</p></a></div>
 
 
         
