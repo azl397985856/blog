@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-06-01T09:27:46.330Z</updated>
+  <updated>2020-06-02T07:41:48.505Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>听说这题套个BFS模板就可以 AC？</title>
+    <link href="https://lucifer.ren/blog/2020/06/02/1091.shortest-path-in-binary-matrix/"/>
+    <id>https://lucifer.ren/blog/2020/06/02/1091.shortest-path-in-binary-matrix/</id>
+    <published>2020-06-02T06:08:24.143Z</published>
+    <updated>2020-06-02T07:41:48.505Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;​
+    
+    </summary>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="BFS" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/BFS/"/>
+    
+    
+      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="BFS" scheme="https://lucifer.ren/blog/tags/BFS/"/>
+    
+  </entry>
   
   <entry>
     <title>力扣加加闪亮登场～</title>
@@ -58,9 +86,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -90,9 +118,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
@@ -121,9 +149,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -342,9 +370,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
@@ -542,13 +570,13 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="BFS" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/BFS/"/>
+    
+      <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
     
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
@@ -556,26 +584,6 @@
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode日记" scheme="https://lucifer.ren/blog/tags/LeetCode%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>位运算</title>
-    <link href="https://lucifer.ren/blog/2020/03/24/bit/"/>
-    <id>https://lucifer.ren/blog/2020/03/24/bit/</id>
-    <published>2020-03-23T16:00:00.000Z</published>
-    <updated>2020-03-27T02:48:13.455Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我这里总结了几道位运算的题目分享给大家，分别是 136和137， 260 和  645， 总共加起来四道题。 四道题全部都是位运算的套路，如果你想练习位运算的话，不要错过哦～～&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="位运算" scheme="https://lucifer.ren/blog/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
   </entry>
   
