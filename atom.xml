@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-06-03T08:17:19.648Z</updated>
+  <updated>2020-06-06T10:26:56.634Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,18 +17,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>刷题效率低？或许你就差这么一个插件</title>
+    <link href="https://lucifer.ren/blog/2020/06/06/algo-chrome-extension/"/>
+    <id>https://lucifer.ren/blog/2020/06/06/algo-chrome-extension/</id>
+    <published>2020-06-06T10:14:06.364Z</published>
+    <updated>2020-06-06T10:26:56.634Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这两天我写了一个浏览器插件，这个插件的定位就是帮助大家提高刷题效率。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gfiqhxykhtj32m10u0qdc.jpg&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="扩展程序" scheme="https://lucifer.ren/blog/tags/%E6%89%A9%E5%B1%95%E7%A8%8B%E5%BA%8F/"/>
+    
+      <category term="Chrome" scheme="https://lucifer.ren/blog/tags/Chrome/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【异议！】第一期 《这个🦅题的复杂度怎么分析？》</title>
     <link href="https://lucifer.ren/blog/2020/06/03/over-fancy01/"/>
     <id>https://lucifer.ren/blog/2020/06/03/over-fancy01/</id>
     <published>2020-06-02T16:00:00.000Z</published>
-    <updated>2020-06-03T08:17:19.648Z</updated>
+    <updated>2020-06-03T08:46:26.345Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;力扣加加，努力做西湖区最好的算法题解。&lt;/p&gt;
 &lt;p&gt;去年的一年时间，我在群里每天都会出题给大家做。但是就在 2020-03 开始，力扣也开展了每日一题活动。我突然觉得这个每日一题的必要性变得小了很多，并且逐渐减少了出题频率。但是我还是不愿意放弃大家一起集中进行交流学习的机会。于是我打算新开辟一个专题，这个专题一方面要和力扣官方的每日一题重合度低，另一方面要让大家有参与的热情。&lt;/p&gt;
 &lt;p&gt; 于是【异议！】系列应运而生。它是个什么东西呢？ 我相信大家一定在平时刷算法的过程中，一定遇到过“这解法怎么想到的？”，“这解法不对吧？”的情况，并且可悲的是没有人能够回答你。来这里，&lt;strong&gt;力扣加加&lt;/strong&gt; 来回答你。 我们会对大家提出的问题进行筛选，将有意义的问题开放出来给大家讨论和学习。&lt;/p&gt;
-&lt;p&gt;本次给大家带来的是【异议！】系列第一篇。&lt;/p&gt;
+&lt;p&gt;本次给大家带来的/是【异议！】系列&lt;strong&gt;第一篇&lt;/strong&gt;。&lt;/p&gt;
     
     </summary>
     
@@ -541,28 +570,6 @@
     
       &lt;p&gt;《82 年生的金智英》（韩文原始名： 82년생 김지영）是一部由同名小说改编，于 2019 年 10 月 23 号在韩国上映的韩国电影。由金度英执导，郑裕美、孔刘主演。该片讲述出生于 1982 年的三十多岁平凡女性金智英，在产子后因为周围人事变化，以及家庭中婆婆等家人的言行一度造成其心理疾病，以及在其丈夫和家人的帮助下寻找自我恢复。&lt;/p&gt;
 &lt;p&gt;​
-    
-    </summary>
-    
-      <category term="电影" scheme="https://lucifer.ren/blog/categories/%E7%94%B5%E5%BD%B1/"/>
-    
-      <category term="观后感" scheme="https://lucifer.ren/blog/categories/%E7%94%B5%E5%BD%B1/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
-    
-    
-      <category term="电影" scheme="https://lucifer.ren/blog/tags/%E7%94%B5%E5%BD%B1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《饥饿站台》</title>
-    <link href="https://lucifer.ren/blog/2020/04/06/movie-eager-game/"/>
-    <id>https://lucifer.ren/blog/2020/04/06/movie-eager-game/</id>
-    <published>2020-04-05T16:00:00.000Z</published>
-    <updated>2020-04-06T04:19:54.516Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;《饥饿站台》 （西班牙语：El hoyo）是一部 2019 年的西班牙科幻惊悚电影。导演为加尔德图．加兹特鲁—乌鲁蒂亚里，编剧为佩德罗．里书罗、大卫・狄索拉；由伊万·马萨格、安东尼亚·圣·胡安、佐里昂・埃奎勒、埃米利奥·布阿勒、亚莉珊卓·马桑凯主演。电影情节设于一个塔状的监狱中，囚犯从监狱中间逐渐下降的大平台拿取食物。2019 年 9 月 6 日于 2019 年多伦多国际影展举行首映。&lt;/p&gt;
     
     </summary>
     
