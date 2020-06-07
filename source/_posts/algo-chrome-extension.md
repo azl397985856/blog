@@ -50,6 +50,10 @@ PS: 对于收录的题，展示效果类似上面的截图。对于未收录的�
 
 ![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfiqrr2v4gj30n00io3zj.jpg)
 
+## 视频
+
+我这里录制了一个视频，关于这个插件的。https://www.bilibili.com/video/BV1UK4y1x7zj/
+
 ## 如何贡献
 
 - 关注公众号《力扣加加》，点击更多 - 联系我，添加我为好友，备注插件开发。
