@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-06-08T02:14:44.289Z</updated>
+  <updated>2020-06-08T10:51:55.415Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端测试最佳实践（持续更新，建议收藏）</title>
+    <link href="https://lucifer.ren/blog/2020/06/08/fe-test-best-practice/"/>
+    <id>https://lucifer.ren/blog/2020/06/08/fe-test-best-practice/</id>
+    <published>2020-06-08T10:50:57.061Z</published>
+    <updated>2020-06-08T10:51:55.415Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近公司在推行单元测试，但是一些同事对于单元测试只是了解，甚至不怎么了解。因此推动单元测试的阻碍是有的，这种阻碍除了人的层面，还有基础设施的层面。希望通过本文，一方面加深大家对前端测试最佳实践的认知，另一方面可以作为手册，在日常开发中做参考。本文也会不断更新，期待你的参与。&lt;/p&gt;
+&lt;p&gt;如果大家对前端测试不太清楚，可以先看下文末我写的科普短文。如果你已经对前端测试有所了解，并且希望对前端测试有更深入的了解，以及对如何写出更好的单元测试有兴趣的话，那就让我们开始吧。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="测试" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="测试" scheme="https://lucifer.ren/blog/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="单元测试" scheme="https://lucifer.ren/blog/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="vue" scheme="https://lucifer.ren/blog/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>《丢鸡蛋问题》重制版来袭～</title>
@@ -113,11 +142,11 @@
       <category term="BFS" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/BFS/"/>
     
     
+      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
+    
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="BFS" scheme="https://lucifer.ren/blog/tags/BFS/"/>
     
@@ -165,9 +194,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -197,9 +226,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
@@ -228,9 +257,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -449,9 +478,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
@@ -559,30 +588,6 @@
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
       <category term="我的书" scheme="https://lucifer.ren/blog/tags/%E6%88%91%E7%9A%84%E4%B9%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每日一荐 2020-03 汇总</title>
-    <link href="https://lucifer.ren/blog/2020/04/07/daily-featured-2020-03/"/>
-    <id>https://lucifer.ren/blog/2020/04/07/daily-featured-2020-03/</id>
-    <published>2020-04-07T03:20:43.505Z</published>
-    <updated>2020-04-07T03:21:21.673Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/006y8mN6ly1g8d0sktqrwj30hs07maae.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;每天给你推荐一个新奇，好玩，高品质的开源库，好文，观点或言论等。&lt;/p&gt;
-&lt;p&gt;项目主页维护当前月份的内容，想看往期内容，可以去&lt;a href=&quot;https://github.com/azl397985856/daily-featured&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;每日一荐主仓库&lt;/a&gt;翻到下方历史汇总部分，然后选择自己感兴趣的月份点进去即可。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="每日一荐" scheme="https://lucifer.ren/blog/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/"/>
-    
-      <category term="2020-03" scheme="https://lucifer.ren/blog/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/2020-03/"/>
-    
-    
-      <category term="每日一荐" scheme="https://lucifer.ren/blog/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/"/>
     
   </entry>
   
