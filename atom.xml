@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-06-06T10:51:33.671Z</updated>
+  <updated>2020-06-08T01:57:41.465Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《丢鸡蛋问题》重制版来袭～</title>
+    <link href="https://lucifer.ren/blog/2020/06/08/887.super-egg-drop/"/>
+    <id>https://lucifer.ren/blog/2020/06/08/887.super-egg-drop/</id>
+    <published>2020-06-07T16:00:00.000Z</published>
+    <updated>2020-06-08T01:57:41.465Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是一道 LeetCode 难度为 Hard 的题目，很多大公司都会考，来看看。&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
   
   <entry>
     <title>刷题效率低？或许你就差这么一个插件</title>
@@ -556,29 +583,6 @@
     
     
       <category term="每日一荐" scheme="https://lucifer.ren/blog/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《82 年生的金智英》</title>
-    <link href="https://lucifer.ren/blog/2020/04/06/82-jinzhiying/"/>
-    <id>https://lucifer.ren/blog/2020/04/06/82-jinzhiying/</id>
-    <published>2020-04-05T16:00:00.000Z</published>
-    <updated>2020-04-06T04:37:52.843Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;《82 年生的金智英》（韩文原始名： 82년생 김지영）是一部由同名小说改编，于 2019 年 10 月 23 号在韩国上映的韩国电影。由金度英执导，郑裕美、孔刘主演。该片讲述出生于 1982 年的三十多岁平凡女性金智英，在产子后因为周围人事变化，以及家庭中婆婆等家人的言行一度造成其心理疾病，以及在其丈夫和家人的帮助下寻找自我恢复。&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="电影" scheme="https://lucifer.ren/blog/categories/%E7%94%B5%E5%BD%B1/"/>
-    
-      <category term="观后感" scheme="https://lucifer.ren/blog/categories/%E7%94%B5%E5%BD%B1/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
-    
-    
-      <category term="电影" scheme="https://lucifer.ren/blog/tags/%E7%94%B5%E5%BD%B1/"/>
     
   </entry>
   
