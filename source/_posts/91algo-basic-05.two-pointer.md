@@ -159,33 +159,33 @@ return 合适的值
 
 ### 左右端点指针
 
-- 16. 3Sum Closest (Medium)
-- 713. Subarray Product Less Than K (Medium)
-- 977. Squares of a Sorted Array (Easy)
+- 16.3Sum Closest (Medium)
+- 713.Subarray Product Less Than K (Medium)
+- 977.Squares of a Sorted Array (Easy)
 - Dutch National Flag Problem
 
 > 下面是二分类型
 
-- 33. Search in Rotated Sorted Array (Medium)
-- 875. Koko Eating Bananas（Medium）
-- 881. Boats to Save People（Medium）
+- 33.Search in Rotated Sorted Array (Medium)
+- 875.Koko Eating Bananas（Medium）
+- 881.Boats to Save People（Medium）
 
 ### 快慢指针
 
-- 26. Remove Duplicates from Sorted Array（Easy）
-- 141. Linked List Cycle (Easy)
-- 142. Linked List Cycle II（Medium）
-- 287. Find the Duplicate Number（Medium）
-- 202. Happy Number (Easy)
+- 26.Remove Duplicates from Sorted Array（Easy）
+- 141.Linked List Cycle (Easy)
+- 142.Linked List Cycle II（Medium）
+- 287.Find the Duplicate Number（Medium）
+- 202.Happy Number (Easy)
 
 ### 固定间距指针
 
-- 1456. Maximum Number of Vowels in a Substring of Given Length（Medium）
+- 1456.Maximum Number of Vowels in a Substring of Given Length（Medium）
 
 > 固定窗口大小的滑动窗口见专题篇的滑动窗口专题（暂未发布）
 
 ## 其他
 
-有时候也不能太思维定式，比如 https://leetcode-cn.com/problems/consecutive-characters/，这道题根本就没必要双指针什么的。
+有时候也不能太思维定式，比如 https://leetcode-cn.com/problems/consecutive-characters/ 这道题根本就没必要双指针什么的。
 
 再比如：https://lucifer.ren/blog/2020/05/31/101.symmetric-tree/
