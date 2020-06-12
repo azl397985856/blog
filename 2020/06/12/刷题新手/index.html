@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>【异议！】第一期 《这个🦅题的复杂度怎么分析？》 | lucifer的网络博客</title>
+  <title>lucifer的网络博客</title>
   
   <meta name="keywords" content="前端 leetocde 数据结构 算法 lucifer 大前端 性能优化 前端架构 前端工程化">
   
@@ -274,8 +274,8 @@
         
   
     <h1 class="title">
-      <a href="/blog/2020/06/03/over-fancy01/">
-        【异议！】第一期 《这个🦅题的复杂度怎么分析？》
+      <a href="/blog/2020/06/12/刷题新手/">
+        2020-06-12
       </a>
     </h1>
   
@@ -306,7 +306,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-06-03</p>
+    <p>2020-06-12</p>
   </a>
 </div>
 
@@ -314,14 +314,6 @@
         
           
             
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/categories/异议！/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>异议！</p>
-    </a>
-  </div>
-
 
           
         
@@ -356,7 +348,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">1.7k字</span>
+          <span class="post-count">2.7k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -364,7 +356,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">6分</span>
+          <span class="post-count">9分</span>
         </span>
       </span>
     </div>
@@ -382,53 +374,100 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>力扣加加，努力做西湖区最好的算法题解。</p>
-<p>去年的一年时间，我在群里每天都会出题给大家做。但是就在 2020-03 开始，力扣也开展了每日一题活动。我突然觉得这个每日一题的必要性变得小了很多，并且逐渐减少了出题频率。但是我还是不愿意放弃大家一起集中进行交流学习的机会。于是我打算新开辟一个专题，这个专题一方面要和力扣官方的每日一题重合度低，另一方面要让大家有参与的热情。</p>
-<p> 于是【异议！】系列应运而生。它是个什么东西呢？ 我相信大家一定在平时刷算法的过程中，一定遇到过“这解法怎么想到的？”，“这解法不对吧？”的情况，并且可悲的是没有人能够回答你。来这里，<strong>力扣加加</strong> 来回答你。 我们会对大家提出的问题进行筛选，将有意义的问题开放出来给大家讨论和学习。</p>
-<p>本次给大家带来的/是【异议！】系列<strong>第一篇</strong>。</p>
-<a id="more"></a>
+        <h1 id="算法小白如何高效、快速刷-leetcode？"><a href="#算法小白如何高效、快速刷-leetcode？" class="headerlink" title="算法小白如何高效、快速刷 leetcode？"></a>算法小白如何高效、快速刷 leetcode？</h1><p>我本身刷了大概 600 道左右的题目，总结 200 多篇的题解，另外总结了十多个常见的算法专题，基本已经覆盖了大多数的常见考点和题型，全部放在我的 Github <a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。</p>
+<p>然而作为一个新手，看着茫茫多的题解和资料难免会陷入一种“不知从何开始”的境地。<strong>不必担心，你不是一个人。</strong></p>
+<p>实际上，我最近一直在思考“初学者如何快速提高自己的算法能力，高效刷题”。因此我也一直在不断定位自己，最终我对自己作出了定位“用清晰直白的语言还原解题全过程，做西湖区最好的算法题解”。</p>
+<p>然而我意识到，我进去了一个很大的误区。我的想法一直是“努力帮助算法小白提高算法能力，高效刷题”。然而算法小白除了清晰直白的算法题解外，还需要系统的前置知识。因此我的假设“大家都会基础的数据结构和算法”很可能就是不成立的。</p>
+<h2 id="小白阶段划分"><a href="#小白阶段划分" class="headerlink" title="小白阶段划分"></a>小白阶段划分</h2><p>如果让我对算法小白进行一个阶段划分的话，我会将其分为：</p>
+<h3 id="阶段一-系统学习数据结构和算法知识。"><a href="#阶段一-系统学习数据结构和算法知识。" class="headerlink" title="阶段一 系统学习数据结构和算法知识。"></a>阶段一 系统学习数据结构和算法知识。</h3><p>第一，你不能根本不懂得基础，比如根本不知道什么哈希表，或者只知道其简单的 API。</p>
+<p>第二，你不能从网上不断搜索知识，因为这些知识是零散的，不利于新手形成自己的<strong>算法观</strong>。</p>
+<p>当你成功跨越了上面两个坎，那么恭喜你，你可以进入下一个阶段啦。</p>
+<h3 id="阶段二-针对性刷题。"><a href="#阶段二-针对性刷题。" class="headerlink" title="阶段二 针对性刷题。"></a>阶段二 针对性刷题。</h3><p>比如按照力扣的标签去刷。因此上面的学习阶段并不见得你要学习完所有的基础再去刷，而是学习一个专题就可以针对性地刷。比如我学了二分法，就可以找一个二分法的题目刷一下。</p>
+<p>如果你跨越完上面两个坎，那么恭喜你， 你已经不是算法小白了（至少对于非算法岗来说）。</p>
+<h2 id="我的算法观"><a href="#我的算法观" class="headerlink" title="我的算法观"></a>我的算法观</h2><p>继续回到刚才的问题“我的定位误区”。正因为很多小白没有跨越阶段一，因此我的所谓的“用清晰直白的语言还原解题全过程，做西湖区最好的算法题解”对他们没有实质帮助。他们迫切需要的是一个<strong>系统地整理算法思想，套路</strong> 的东西。因此我准备搞 <a href="https://lucifer.ren/blog/2020/05/23/91-algo/">91</a>，这个就是后话，不再这里赘述。</p>
+<p>注意，上面我提到了一个名次<strong>算法观</strong>。我并不知道这个词是否真的存在，不过这并不重要。如果不存在我就赋予其含义，如果存在我就来重新定义它。</p>
+<p>算法观指的是你对于算法全面的认识。比如我拿到一个题目，如何审题，如何抽象成算法模型，如何根据模型选取合适的数据结构和算法。这就需要你对各种数据结构与算法的特性，使用场景有着身后的理解。</p>
+<p>我举一个例子，这个例子就是今天（2020-06-12）我的 91 群的每日一题。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfpg154rgbj30dc0hrace.jpg" alt></p>
+<p>API 示例：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, capacity: int)</span>:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, key: int)</span> -&gt; int:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">put</span><span class="params">(self, key: int, value: int)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Your LRUCache object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = LRUCache(capacity)</span></span><br><span class="line"><span class="comment"># param_1 = obj.get(key)</span></span><br><span class="line"><span class="comment"># obj.put(key,value)</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="事情的起源"><a href="#事情的起源" class="headerlink" title="事情的起源"></a>事情的起源</h2><p>昨天有人在我的力扣题解下留言，说我的时间复杂度解释有问题。思考再三，决定将这个问题抛出来大家一起讨论一下，我会在明天的公众号给大家公布参考答案。对于回答正确且点赞数最高的，我会送出 <strong>8.88</strong> 的现金红包，参与方式以及要求在文末。</p>
-<p>其实这是一道前几天的力扣官方每日一题，我们先来看一下题目描述：</p>
-<p>给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。</p>
-<p>求在该柱状图中，能够勾勒出来的矩形的最大面积。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfewdafiexj305805odft.jpg" alt></p>
-<p>以上是柱状图的示例，其中每个柱子的宽度为 1，给定的高度为  [2,1,5,6,2,3]。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfewdi9rmlj305805o0sv.jpg" alt></p>
-<p>图中阴影部分为所能勾勒出的最大矩形面积，其面积为  10  个单位。</p>
-<p>示例:</p>
-<p>输入: [2,1,5,6,2,3]</p>
-<p>输出: 10</p>
-<h2 id="那么问题来了"><a href="#那么问题来了" class="headerlink" title="那么问题来了"></a>那么问题来了</h2><p>这个题目我给出了四个解法，其中前两个是超时的，后两个是可以 AC 的。</p>
-<p>而后两个可以 AC 的有一个是单调栈的解法，这个单调栈的解法有两个精妙的地方。第一是哨兵元素的选取，第二是是用了一个栈而不是两个。</p>
-<p>另外一个可以 AC 的解法，也就是今天我们要讨论的解法，这个解法使用了两个数组，相对于单调栈的复杂度，其常系数更大，但是其思路同样巧妙。</p>
-<p>为了大家更好的理解这个解法，我这里贴一下它的未被优化版本。思路为：</p>
-<p>暴力尝试<code>所有可能的矩形</code>。从中心向两边进行扩展。对于每一个 i，我们计算出其左边第一个高度小于它的索引 p，同样地，计算出右边第一个高度小于它的索引 q。那么以 i 为最低点能够构成的面积就是<code>(q - p - 1) * heights[i]</code>。 这种算法毫无疑问也是正确的。 假设 f(i) 表示求以 i 为最低点的情况下，所能形成的最大矩阵面积。那么原问题转化为<code>max(f(0), f(1), f(2), ..., f(n - 1))</code>。</p>
-<p>具体算法如下：</p>
-<ul>
-<li>我们使用 l 和 r 数组。l[i] 表示 左边第一个高度小于它的索引，r[i] 表示 右边第一个高度小于它的索引。</li>
-<li>我们从前往后求出 l，再从后往前计算出 r。</li>
-<li>再次遍历求出所有的可能面积，并取出最大的。</li>
-</ul>
-<p>代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">largestRectangleArea</span><span class="params">(self, heights: List[int])</span> -&gt; int:</span></span><br><span class="line">        n = len(heights)</span><br><span class="line">        l, r, ans = [<span class="number">-1</span>] * n, [n] * n, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</span><br><span class="line">            j = i - <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> j &gt;= <span class="number">0</span> <span class="keyword">and</span> heights[j] &gt;= heights[i]:</span><br><span class="line">                j -= <span class="number">1</span></span><br><span class="line">            l[i] = j</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">2</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            j = i + <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> j &lt; n <span class="keyword">and</span> heights[j] &gt;= heights[i]:</span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">            r[i] = j</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            ans = max(ans, heights[i] * (r[i] - l[i] - <span class="number">1</span>))</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
-
-<p>其实 while 循环内部是没有必要一格一格移动的。 举例来说，对于数组[1,2,3,4,5]，我们要建立 r 数组。我们从 4 开始，4 的右侧第一个小于它索引的是 n（表示不存在）。同样 3 的右侧第一个小于它索引的也是 n（表示不存在），以此类推。如果用上面的解法的话，我们每次都需要从当前位置遍历到尾部，时间复杂度为$O(N^2)$。</p>
-<p>实际上，比如遍历到 2 的时候，我们拿 2 和前面的 3 比较，发现 3 比 2 大，并且我们之前计算出了比 3 大的右侧第一个小于它索引的是 n，也就是说我们可以直接移动到 n 继续搜索，因为<strong>这中间的都比 3 大，自然比 2 大了，没有比较的意义</strong>。 这样看来时间复杂度就被优化到了$O(N)$。</p>
-<p>代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">largestRectangleArea</span><span class="params">(self, heights: List[int])</span> -&gt; int:</span></span><br><span class="line">        n = len(heights)</span><br><span class="line">        l, r, ans = [<span class="number">-1</span>] * n, [n] * n, <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</span><br><span class="line">            j = i - <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> j &gt;= <span class="number">0</span> <span class="keyword">and</span> heights[j] &gt;= heights[i]:</span><br><span class="line">                j = l[j]</span><br><span class="line">            l[i] = j</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">2</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            j = i + <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> j &lt; n <span class="keyword">and</span> heights[j] &gt;= heights[i]:</span><br><span class="line">                j = r[j]</span><br><span class="line">            r[i] = j</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            ans = max(ans, heights[i] * (r[i] - l[i] - <span class="number">1</span>))</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
-
-<p>这位读者看到这里产生了一个疑问，这个疑问就是我开篇所讲的。我们来看下他是怎么说的。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfexzj6zm3j31ae0b8q4w.jpg" alt></p>
-<p>这位读者提到<strong>交替的这种情况时间复杂度会退化到$O(N^2)$</strong>，那么实际情况真的是这样么？</p>
-<h2 id="悬赏"><a href="#悬赏" class="headerlink" title="悬赏"></a>悬赏</h2><p>大家对上面的优化后的算法复杂度是怎么看的？请留言告诉我！ 需要注意的是：</p>
+<p>按照上面的过程，我们来<strong>套</strong>一个。</p>
 <ol>
-<li>我们所说的复杂度是渐进复杂度，也就是说是忽略常数项的。而这里我要求你<strong>带上常系数</strong>。</li>
-<li>这里要求计算的是<strong>整个完整算法</strong>的复杂度。</li>
-<li>请分别说出该算法在<code>最差情况</code>，<code>最好情况</code>下的复杂度。</li>
+<li>如何审题</li>
 </ol>
-<p>参与方式：<code>复制链接，并在浏览器打开，然后在里面评论即可</code>。链接地址：<a href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/84-zhu-zhuang-tu-zhong-zui-da-de-ju-xing-duo-chong/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/84-zhu-zhuang-tu-zhong-zui-da-de-ju-xing-duo-chong/</a></p>
-<p>大家也可以关注我的公众号《力扣加加》获取更多更新鲜的 LeetCode 题解。</p>
+<p>看完题的话，只要抓住一个核心点即可。对于本题，核心点在于 <strong>删除最久未使用</strong>，<strong>O(1)时间</strong>。</p>
+<ol start="2">
+<li>抽象算法模型</li>
+</ol>
+<p>这个题目是一个设计题。API 帮我们设计好了，只需要填充功能即可，也就是说算法模型不需要我们抽象了。</p>
+<ol start="3">
+<li>根据模型选取合适的数据结构和算法</li>
+</ol>
+<p>我们的算法有两个操作：<strong>get</strong> 和 <strong>put</strong>。既然要支持这两个操作，肯定要有一个地方存数据。那么我们存到哪里呢？数组？链表？哈希表？其中链表又有很多，单向双向，循环不循环。</p>
+<p>由于第一步审题过程中，我们获取到 <strong>O(1)时间</strong> 这个关键信息。那么：</p>
+<ul>
+<li>数组无法做到更新，删除 $O(1)$</li>
+<li>链表无法做到查找，更新，删除 $O(1)$。</li>
+</ul>
+<blockquote>
+<p>有的人说链表更新，删除是 $O(1)$，那么我要问你如何找到需要删除的节点呢？遍历找到的话最坏情况下就是 $O(N)$</p>
+</blockquote>
+<ul>
+<li>哈希表是无序的，因此不能实现 <strong>删除最久未使用</strong>。</li>
+</ul>
+<p>似乎单独使用三种的任何一种都是不可以的。那么我们考虑组合多种数据结构。</p>
+<p>我刚才说了链表只所以删除和更新都是 $O(N)$，是因为查找的时间损耗。</p>
+<p>具体来说，我要删除图中值为 3 的节点，需要移动一次。因为我只能从头开始遍历去找。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfpoa6nxlmj30ft03i0sv.jpg" alt><br>（图 1）</p>
+<p>又或者我要更新图中值为 7 的节点，则需要移动两次。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfpobio49mj30eq02q0su.jpg" alt></p>
+<p>（图 2）</p>
+<p>有没有什么办法可以省去这种遍历的时间损耗呢？其实我们的根本目的是<strong>找到目标节点</strong>， 而找到目标节点最暴力的方式是<strong>遍历</strong>。有没有巧妙一点的方法呢？毫无疑问，如果不借助额外的空间，这是不可能的。我们的想法只有<strong>空间换时间</strong>。</p>
+<p>假设有这么一种数据结构，你告诉它你想要查的对象，它能帮你在 $O(1)$ 的时间内找到并返回给你结果。结合这个<strong>神秘数据结构</strong>和链表是不是我们就完成这道题了？这个神秘的数据结构就是哈希表。如果你对哈希表熟悉的话，想到几乎应该是瞬间的事情。如果不熟悉，那么经过排除，也应该可以得出这个结论。相信你随着做题数的增加，这种<strong>算法直觉</strong>会更加敏锐。</p>
+<p>然而上面的空间复杂度是 $O(N)$。如果我的内存有限，不能承受 $O(N)$ 的空间，怎么办呢？相应地，我们可能就需要牺牲时间。那么问题是我们必须要退化到 $O(N)$ 么？显然不是，我们可以搞一些<strong>存档点</strong>。比如：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfpognuvp6j30vb051q3n.jpg" alt></p>
+<p>这样，我们需要操作 1 前面的，我们就从头开始遍历，如果需要操作 1 后面的，就从 1 开始遍历。时间复杂度最坏的情况可以降低到 $O(N / 2)$。通过进一步增加<strong>存档点</strong>，可以进一步减少时间，但是会增加空间。这是一种<strong>取舍</strong>。类似的取舍在实际工程中很多，这里不展开。 如果你了解过跳表， 实际上，上面的算法就是跳表的基本思想。</p>
+<p>如果对每一道题你都能按照上面的流程走一遍，并且基于增加适当扩展，我相信你的刷题效率会高得可怕。</p>
+<h2 id="每道题都想这么多么？"><a href="#每道题都想这么多么？" class="headerlink" title="每道题都想这么多么？"></a>每道题都想这么多么？</h2><p>强烈建议新手都按照上面的逻辑进行思考，做题，并写题解总结。这样随着做题数的增加，量变引起质变，你会发现上面的几个步骤做下来很可能就是<strong>几秒钟的事情</strong>。如果你擅长图解，或者你经常看别人的图解（比如我的），那么这种图解能够帮你更快地检索大脑中的信息，这个时间会更短。</p>
+<blockquote>
+<p>图解就是大脑检索信息的哈希表？哈哈，Maybe。</p>
+</blockquote>
+<h2 id="题解的水很深"><a href="#题解的水很深" class="headerlink" title="题解的水很深"></a>题解的水很深</h2><p>我看了很多人的题解直接就是两句话，然后跟上代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def integerBreak(self, n: int) -&gt; int:</span><br><span class="line">        dp = [1] * (n + 1)</span><br><span class="line">        for i in range(3, n + 1):</span><br><span class="line">            for j in range(1, i):</span><br><span class="line">                dp[i] = max(j * dp[i - j], j * (i - j), dp[i])</span><br><span class="line">        return dp[n]</span><br></pre></td></tr></table></figure>
+
+<p>这种题解说实话，只针对那些”自己会， 然后去题解区看看有没有新的更好的解法的人“。但是大多数看题解的人是那种自己没思路，不会做的人。那么这种题解就没什么用了。</p>
+<p>我认为好的题解应该是新手友好的，并且能够将解题人思路完整展现的题解。比如看到这个题目，我首先想到了什么（对错没有关系），然后头脑中经过怎么样的筛选将算法筛选到具体某一个或某几个。我的最终算法是如何想到的，有没有一些先行知识。</p>
+<p>当然我也承认自己有很多题解也是直接给的答案，这对很多人来说用处不大，甚至有可能有反作用，给他们一种”我已经会了“的假象。实际上他们根本不懂解题人本身原本的想法， 也许是写题解的人觉得”这很自然“，也可能”只是为了秀技“。</p>
+<h2 id="刷题顺序"><a href="#刷题顺序" class="headerlink" title="刷题顺序"></a>刷题顺序</h2><p>最后给小白一个刷题顺序，帮助大家最大化利用自己的时间。</p>
+<h3 id="基础篇（30-天）"><a href="#基础篇（30-天）" class="headerlink" title="基础篇（30 天）"></a>基础篇（30 天）</h3><p>基础永远是最重要的，先把最最基础的这些搞熟，磨刀不误砍柴工。</p>
+<ul>
+<li>数组，队列，栈</li>
+<li>链表</li>
+<li>树与递归</li>
+<li>哈希表</li>
+<li>双指针</li>
+</ul>
+<h3 id="思想篇（30-天）"><a href="#思想篇（30-天）" class="headerlink" title="思想篇（30 天）"></a>思想篇（30 天）</h3><p>这些思想是投资回报率极高的，强烈推荐每一个小的专题花一定的时间掌握。</p>
+<ul>
+<li>二分</li>
+<li>滑动窗口</li>
+<li>搜索（BFS，DFS，回溯）</li>
+<li>动态规划</li>
+</ul>
+<h3 id="提高篇（31-天）"><a href="#提高篇（31-天）" class="headerlink" title="提高篇（31 天）"></a>提高篇（31 天）</h3><p>这部分收益没那么明显，并且往往需要一定的技术积累。出现的频率相对而言比较低。但是有的题目需要你使用这些技巧。又或者可以使用这些技巧可以实现<strong>降维打击</strong>。</p>
+<ul>
+<li>贪心</li>
+<li>分治</li>
+<li>位运算</li>
+<li>KMP &amp; RK</li>
+<li>并查集</li>
+<li>前缀树</li>
+<li>线段树</li>
+<li>堆</li>
+</ul>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>目前，我本人也在写一本题解方面的书包括近期组织的 91 算法 ，其目标受众正是“阶段一到阶段二”。为了真正帮助刷题小白成长，我打算画三个月的时间对数据结构和算法进行系统总结，帮助大家跨过阶段一。当然我还会不断更新题解，通过清晰直白的方式来让大家跨越阶段二。</p>
+<p>大家也可以关注我的公众号《力扣加加》获取更多更新鲜的 LeetCode 题解</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" alt></p>
 
       </div>
@@ -441,10 +480,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-03T16:46:26+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-12T18:33:33+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年6月3日</p>
+    <p>更新于 2020年6月12日</p>
   </a>
 </div>
 
@@ -452,9 +491,6 @@
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/异议！/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>异议！</p></a></div>
-
 
         
       
@@ -464,7 +500,7 @@
   <div class="-mob-share-list share-body">
     
       
-        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3aQW4CMQwFUO5/aSp1hYSG/u8MFWTerFAFGb8s3NjO7RY/99/n8fPjX57//vysrHzag4GB8bWM5PVHL0u+cxR08qtiazAwMC7AyFNhG24SVvLbP2LGwMDAeLn0LE0n62NgYGDMEm6bgl+zMTAwMHJGkhDz1yeF6+y9J9TiGBgYX8iYDQb+5/Pb5xsYGBgfz7iXz6x9Nitii6gwMDC2ZiRjxbytlpSv+dggL4kxMDCuw5gtnYCT42Z7RQMDA+M6jFnrKrkq8b7G2eGhEAMDY1PGelh5umxh+T8ADAyMvRntwa7dobYYbq+AYGBgXIExS6wtbNZEGw47MTAwLsMozpXlIHMWdFEAY2BgbM1YKTuHDbLRBhWNQgwMjI0Ys0tdbSjt4bIumzEwMC7JaENPwp0l62hTMDAwNmXMBgN5ek02JS9QDxMuBgbG1owTWlovk+9KE60uoTEwMDZlJD/LD20rzbWEffh9DAyMrRl5k2tW4rYXvPK3RKUsBgbGFow2zeVLr1zaWOoXYmBgbMqYXcxKmv6zkWcdAwYGxtaM2aLr987agjkaS2BgYGzKmDXoZ+OB9oBYlMcYGBhbM/InXy4PeuW6BgYGxtUY+UWHNi2+5SQ7uxaGgYGxBSNveLXHwWG7vxwbYGBgYMwCbUvQJTwGBgbGcpk6GyEkm4iBgXEdRpJGk7TbjjCTTawnsRgYGNsxVgYDs6R81qHztPkGBgbG5zJ+AJzK5lTVLcrpAAAAAElFTkSuQmCC'>
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACN0lEQVR42u3aQW7DMAxE0dz/0g7QVTeS/4hyAFNfq6BNEz0vpiKpzwev62/NfzL6q//vvAZr9P7NS4YMGa9lXNM139AcOfq00XtGn0w+TYYMGScw5iHLN5Rm4/yhkL3JkCFDRvp6fojkQSxDhgwZFUY9lGXIkCFjjUGKWBKsKSx9NBtqcRkyZLyQkQ4Gfvn6wfmGDBkyXsK4wpW2zHbF9M2uZMiQ0ZrBR4lp+KKyM7y6cTOEkCFDRlNGJUbTCxlpWRvEvQwZMlozOIA33dILFvNYT1t4MmTI6Mcgrfb6eIA8FB7QwdlWhgwZLRhPRO3a4S99rDftNhkyZDRirBWxpNFG4njb4EGGDBmtGby5n44q0yYaKYlvvkuGDBlNGZvLyPJgkl9KQ/83ZMiQ0Y6RDiB33fXgh9Hhb2XIkNGawa9TpEXp2jBgrfUmQ4aM3gx+IKtE8FqxWjrhypAhox2DxGja7uebI2F9E/0yZMhozeDBSspREsT88BePEGTIkHEwo1LipiPPynBUhgwZXRmVqw/8iysHPlTuypAh4xjG041+8oAWYTJkyGjNqJSma9fF+OUMXhjLkCGjN+MKVxqRPHBJG2546JQhQ0ZrRhp29aYbb7TxwacMGTJOYJANodNleIEsHW0GN0dkyJDRlEFCdtc1r7R4RmWwDBkyZFSa9TjW00tpi4ErQ4aMwxg8UslrftyUIUPGmQxexJLtpgPLdDghQ4aM0xil0pE0wnClWR8/yJAhox3jC8AMhJqlyNNZAAAAAElFTkSuQmCC'>
         
           <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png">
         
@@ -474,10 +510,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2020/06/03/over-fancy01/&title=【异议！】第一期 《这个🦅题的复杂度怎么分析？》 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=力扣加加，努力做西湖区最好的算法题解。
-去年的一年时间，我在群里每天都会出题给大家做。但是就在 2020-03 开始，力扣也开展了每日一题活动。我突然觉得这个每日一题的必要性变得小了很多，并且逐渐减少了出题频率。但是我还是不愿意放弃大家一起集中进行交流学习的机会。于是我打算新开辟一个专题，这个专题一方面要和力扣官方的每日一题重合度低，另一方面要让大家有参与的热情。
- 于是【异议！】系列应运而生。它是个什么东西呢？ 我相信大家一定在平时刷算法的过程中，一定遇到过“这解法怎么想到的？”，“这解法不对吧？”的情况，并且可悲的是没有人能够回答你。来这里，力扣加加 来回答你。 我们会对大家提出的问题进行筛选，将有意义的问题开放出来给大家讨论和学习。
-本次给大家带来的/是【异议！】系列第一篇。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2020/06/12/刷题新手/&title= | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary="
           
           >
           
@@ -489,10 +522,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2020/06/03/over-fancy01/&title=【异议！】第一期 《这个🦅题的复杂度怎么分析？》 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=力扣加加，努力做西湖区最好的算法题解。
-去年的一年时间，我在群里每天都会出题给大家做。但是就在 2020-03 开始，力扣也开展了每日一题活动。我突然觉得这个每日一题的必要性变得小了很多，并且逐渐减少了出题频率。但是我还是不愿意放弃大家一起集中进行交流学习的机会。于是我打算新开辟一个专题，这个专题一方面要和力扣官方的每日一题重合度低，另一方面要让大家有参与的热情。
- 于是【异议！】系列应运而生。它是个什么东西呢？ 我相信大家一定在平时刷算法的过程中，一定遇到过“这解法怎么想到的？”，“这解法不对吧？”的情况，并且可悲的是没有人能够回答你。来这里，力扣加加 来回答你。 我们会对大家提出的问题进行筛选，将有意义的问题开放出来给大家讨论和学习。
-本次给大家带来的/是【异议！】系列第一篇。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2020/06/12/刷题新手/&title= | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary="
           
           >
           
@@ -504,10 +534,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2020/06/03/over-fancy01/&title=【异议！】第一期 《这个🦅题的复杂度怎么分析？》 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=力扣加加，努力做西湖区最好的算法题解。
-去年的一年时间，我在群里每天都会出题给大家做。但是就在 2020-03 开始，力扣也开展了每日一题活动。我突然觉得这个每日一题的必要性变得小了很多，并且逐渐减少了出题频率。但是我还是不愿意放弃大家一起集中进行交流学习的机会。于是我打算新开辟一个专题，这个专题一方面要和力扣官方的每日一题重合度低，另一方面要让大家有参与的热情。
- 于是【异议！】系列应运而生。它是个什么东西呢？ 我相信大家一定在平时刷算法的过程中，一定遇到过“这解法怎么想到的？”，“这解法不对吧？”的情况，并且可悲的是没有人能够回答你。来这里，力扣加加 来回答你。 我们会对大家提出的问题进行筛选，将有意义的问题开放出来给大家讨论和学习。
-本次给大家带来的/是【异议！】系列第一篇。"
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2020/06/12/刷题新手/&title= | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary="
           
           >
           
@@ -531,40 +558,21 @@
       
           <div class="prev-next">
               
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                          <h4>
-                              <a href="/blog/2020/06/06/algo-chrome-extension/" rel="prev" title="刷题效率低？或许你就差这么一个插件">
-                                
-                                    刷题效率低？或许你就差这么一个插件
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/扩展程序/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 扩展程序</a> <a class="tag" href="/blog/tags/Chrome/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Chrome</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
               
                   <section class="next">
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/blog/2020/06/02/1091.shortest-path-in-binary-matrix/" rel="prev" title="听说这题套个BFS模板就可以 AC？">
+                              <a href="/blog/2020/06/09/面试题46. 把数字翻译成字符串/" rel="prev" title="【LeetCode 日记】面试题46. 把数字翻译成字符串">
                                   
-                                      听说这题套个BFS模板就可以 AC？
+                                      【LeetCode 日记】面试题46. 把数字翻译成字符串
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/数学/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数学</a> <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/BFS/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> BFS</a>
+                                  <a class="tag" href="/blog/tags/数据结构，算法，LeetCode-日记，中等/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构，算法，LeetCode 日记，中等</a>
                               </h6>
                           
                       </span>
@@ -606,7 +614,7 @@
 
   <script>
     window.subData = {
-      title: '【异议！】第一期 《这个🦅题的复杂度怎么分析？》',
+      title: '',
       tools: true
     }
   </script>
@@ -715,7 +723,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#事情的起源"><span class="toc-text">事情的起源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#那么问题来了"><span class="toc-text">那么问题来了</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#悬赏"><span class="toc-text">悬赏</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#算法小白如何高效、快速刷-leetcode？"><span class="toc-text">算法小白如何高效、快速刷 leetcode？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#小白阶段划分"><span class="toc-text">小白阶段划分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#阶段一-系统学习数据结构和算法知识。"><span class="toc-text">阶段一 系统学习数据结构和算法知识。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#阶段二-针对性刷题。"><span class="toc-text">阶段二 针对性刷题。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我的算法观"><span class="toc-text">我的算法观</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#每道题都想这么多么？"><span class="toc-text">每道题都想这么多么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解的水很深"><span class="toc-text">题解的水很深</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#刷题顺序"><span class="toc-text">刷题顺序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基础篇（30-天）"><span class="toc-text">基础篇（30 天）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思想篇（30-天）"><span class="toc-text">思想篇（30 天）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提高篇（31-天）"><span class="toc-text">提高篇（31 天）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后"><span class="toc-text">最后</span></a></li></ol></li></ol>
     </div>
   </section>
 
