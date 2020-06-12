@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-06-12T10:33:33.623Z</updated>
+  <updated>2020-06-12T10:39:15.494Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,24 +17,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>算法小白如何高效、快速刷 leetcode？</title>
     <link href="https://lucifer.ren/blog/2020/06/12/%E5%88%B7%E9%A2%98%E6%96%B0%E6%89%8B/"/>
     <id>https://lucifer.ren/blog/2020/06/12/刷题新手/</id>
     <published>2020-06-12T05:08:50.617Z</published>
-    <updated>2020-06-12T10:33:33.623Z</updated>
+    <updated>2020-06-12T10:39:15.494Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;p&gt;我本身刷了大概 600 道左右的题目，总结 200 多篇的题解，另外总结了十多个常见的算法专题，基本已经覆盖了大多数的常见考点和题型，全部放在我的 Github &lt;a href=&quot;https://github.com/azl397985856/leetcode&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/azl397985856/leetcode&lt;/a&gt; 。&lt;/p&gt;
+&lt;p&gt;然而作为一个新手，看着茫茫多的题解和资料难免会陷入一种“不知从何开始”的境地。&lt;strong&gt;不必担心，你不是一个人。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;实际上，我最近一直在思考“初学者如何快速提高自己的算法能力，高效刷题”。因此我也一直在不断定位自己，最终我对自己作出了定位“用清晰直白的语言还原解题全过程，做西湖区最好的算法题解”。&lt;/p&gt;
+&lt;p&gt;然而我意识到，我进去了一个很大的误区。我的想法一直是“努力帮助算法小白提高算法能力，高效刷题”。然而算法小白除了清晰直白的算法题解外，还需要系统的前置知识。因此我的假设“大家都会基础的数据结构和算法”很可能就是不成立的。&lt;/p&gt;
     
     </summary>
     
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="经验分享" scheme="https://lucifer.ren/blog/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="经验分享" scheme="https://lucifer.ren/blog/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
@@ -186,11 +191,11 @@
       <category term="BFS" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/BFS/"/>
     
     
-      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="BFS" scheme="https://lucifer.ren/blog/tags/BFS/"/>
     
@@ -238,9 +243,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -270,9 +275,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
@@ -301,9 +306,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -522,9 +527,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
