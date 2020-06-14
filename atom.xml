@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-06-12T10:51:39.356Z</updated>
+  <updated>2020-06-14T07:46:06.467Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一招吃遍力扣四道题，妈妈再也不用担心我被套路啦～</title>
+    <link href="https://lucifer.ren/blog/2020/06/13/%E5%88%A0%E9%99%A4%E9%97%AE%E9%A2%98/"/>
+    <id>https://lucifer.ren/blog/2020/06/13/删除问题/</id>
+    <published>2020-06-13T13:12:04.222Z</published>
+    <updated>2020-06-14T07:46:06.467Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我花了几天时间，从力扣中精选了四道相同思想的题目，来帮助大家解套，如果觉得文章对你有用，记得点赞分享，让我看到你的认可，有动力继续做下去。&lt;/p&gt;
+&lt;p&gt;这就是接下来要给大家讲的四个题，其中 1081 和 316 题只是换了说法而已。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/remove-duplicate-letters/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;316. 去除重复字母&lt;/a&gt;(困难)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/create-maximum-number/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;321. 拼接最大数&lt;/a&gt;(困难)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/remove-k-digits/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;402. 移掉 K 位数字&lt;/a&gt;(中等)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1081. 不同字符的最小子序列&lt;/a&gt;（中等）&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="经验分享" scheme="https://lucifer.ren/blog/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"/>
+    
+      <category term="困难" scheme="https://lucifer.ren/blog/tags/%E5%9B%B0%E9%9A%BE/"/>
+    
+      <category term="中等" scheme="https://lucifer.ren/blog/tags/%E4%B8%AD%E7%AD%89/"/>
+    
+      <category term="删除 k 个字符" scheme="https://lucifer.ren/blog/tags/%E5%88%A0%E9%99%A4-k-%E4%B8%AA%E5%AD%97%E7%AC%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>算法小白如何高效、快速刷 leetcode？</title>
@@ -569,28 +606,6 @@
       <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="eslint" scheme="https://lucifer.ren/blog/tags/eslint/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>纪念LeetCode项目Star突破3W</title>
-    <link href="https://lucifer.ren/blog/2020/04/16/thanksGiving3/"/>
-    <id>https://lucifer.ren/blog/2020/04/16/thanksGiving3/</id>
-    <published>2020-04-16T03:26:35.438Z</published>
-    <updated>2020-04-16T09:20:37.814Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;差不多一年的时间，项目收获了第 3W 个 Star，平均差不多一天 100 左右的 star，非常感谢大家的关注和支持。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="日记" scheme="https://lucifer.ren/blog/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="技术" scheme="https://lucifer.ren/blog/categories/%E6%97%A5%E8%AE%B0/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="日记" scheme="https://lucifer.ren/blog/tags/%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
