@@ -485,7 +485,7 @@
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfs9viibxvj30gq08qjsf.jpg" alt></p>
 <p>我们可以清楚地看出函数的调用关系。即错误是在 c 中发生的，而 c 是 b 调用的，b 是 a 调用的。这个函数调用栈是为了方便开发者定位问题而存在的。</p>
 <p>上面的代码，我们并没有 catch 错误，因此上面才会有<strong>uncaught Error</strong>。</p>
-<p>那么如过我们 catch ，会发生什么样的变化呢？catch 的位置会对结果产生什么样的影响？在 a ，b，c 中 catch 的效果是一样的么？</p>
+<p>那么如果我们 catch ，会发生什么样的变化呢？catch 的位置会对结果产生什么样的影响？在 a ，b，c 中 catch 的效果是一样的么？</p>
 <p>我们来分别看下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  b();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  c();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"an error  occured"</span>);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure>
 
@@ -566,7 +566,7 @@
 <p>我强烈建议将异常保留在编译时，而不是运行时。不妨极端一点来看：假如所有的异常都在编译时发生，而一定不会在运行时发生。那么我们是不是就可以<strong>信心满满</strong>地对应用进行重构啦?</p>
 <p>幸运的是，我们能够做到。只不过如果当前语言做不到的话，则需要对现有的语言体系进行改造。这种改造成本真的很大。不仅仅是 API，编程模型也发生了翻天覆地的变化，不然函数式也不会这么多年没有得到普及了。</p>
 <blockquote>
-<p>不熟悉函数编程的可以看看我之前写的<a href="https://github.com/azl397985856/functional-programming" target="_blank" rel="noopener">函数式编程入门篇</a>。</p>
+<p>不熟悉函数编程的可以看看我之前写的<a href="https://github.com/azl397985856/functional-programming" title="函数式编程入门篇" target="_blank" rel="noopener">函数式编程入门篇</a>。</p>
 </blockquote>
 <p>如果才能彻底消除异常呢？在回答这个问题之前，我们先来看下一门号称<strong>没有运行时异常</strong>的语言 <a href="https://guide.elm-lang.org/error_handling/" target="_blank" rel="noopener">elm</a>。elm 是一门可以编译为 JS 的函数式编程语言，其封装了诸如网络 IO 等副作用，是一种声明式可推导的语言。 有趣的是，elm 也有异常处理。 elm 中关于异常处理（Error Handling）部分有两个小节的内容，分别是：<code>Maybe</code> 和 <code>Result</code>。elm 之所以没有运行时异常的一个原因就是它们。 一句话概括“为什么 elm 没有异常”的话，那就是<strong>elm 把异常看作数据（data）</strong>。</p>
 <p>举个简单的例子：</p>
@@ -643,7 +643,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-15T23:26:20+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-15T23:36:32+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年6月15日</p>
