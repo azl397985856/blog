@@ -90,7 +90,7 @@ t()
 
 ### 运行时异常
 
-相信大家对运行时异常非常熟悉。这恐怕是广大前端碰到最多的异常类型了。众所周知的 [NPE（Null Pointer Exception）](https://zh.wikipedia.org/wiki/%E7%A9%BA%E6%8C%87%E6%A8%99#NullPointerException) 就是运行时异常。
+相信大家对运行时异常非常熟悉。这恐怕是广大前端碰到最多的异常类型了。众所周知的 [NPE（Null Pointer Exception）](https://zh.wikipedia.org/wiki/%E7%A9%BA%E6%8C%87%E6%A8%99#NullPointerException "Null Pointer Exception") 就是运行时异常。
 
 将上面的例子稍加改造，得到下面代码：
 
@@ -113,7 +113,7 @@ t();
 
 ## 异常的传播
 
-异常的传播和我之前写的[浏览器事件模型](https://lucifer.ren/blog/2019/12/11/browser-event/)有很大的相似性。只不过那个是作用在 **DOM 这样的数据结构**，这个则是作用在**函数调用栈这种数据结构**，并且事件传播存在捕获阶段，异常传播是没有的。不同 C 语言，JS 中异常传播是自动的，不需要程序员手动地一层层传递。如果一个异常没有被 catch，它会沿着函数调用栈一层层传播直到栈空。
+异常的传播和我之前写的[浏览器事件模型](https://lucifer.ren/blog/2019/12/11/browser-event/ "浏览器事件模型")有很大的相似性。只不过那个是作用在 **DOM 这样的数据结构**，这个则是作用在**函数调用栈这种数据结构**，并且事件传播存在捕获阶段，异常传播是没有的。不同 C 语言，JS 中异常传播是自动的，不需要程序员手动地一层层传递。如果一个异常没有被 catch，它会沿着函数调用栈一层层传播直到栈空。
 
 异常处理中有两个关键词，它们是**throw（抛出异常）** 和 **catch（处理异常）**。 当一个异常被抛出的时候，异常的传播就开始了。异常会不断传播直到遇到第一个 catch。 如果程序员没有手动 catch，那么一般而言程序会抛出类似**unCaughtError**，表示发生了一个异常，并且这个异常没有被程序中的任何 catch 语言处理。未被捕获的异常通常会被打印在控制台上，里面有详细的堆栈信息，从而帮助程序员快速排查问题。实际上我们的程序的目标是**避免 unCaughtError**这种异常，而不是一般性的异常。
 
@@ -253,7 +253,7 @@ if err != nil {
 
 ```
 
-这是和 Java 和 JS 等语言使用的 try catch 不一样的的地方，Go 是通过 panic recover defer 机制来进行异常处理的。感兴趣的可以去看看 [Go 源码关于错误测试部分](https://github.com/golang/go/blob/master/src/os/error_test.go)
+这是和 Java 和 JS 等语言使用的 try catch 不一样的的地方，Go 是通过 panic recover defer 机制来进行异常处理的。感兴趣的可以去看看 [Go 源码关于错误测试部分](https://github.com/golang/go/blob/master/src/os/error_test.go "Go 源码关于错误测试部分")
 
 可能大家对 Go 不太熟悉。没关系，我们来继续看下 shell。实际上 shell 也是通过返回值来处理异常的，我们可以通过 \$? 拿到上一个命令的返回值，这本质上也是一种调用栈的传播行为，而且是通过返回值而不是捕获来处理异常的。
 
@@ -515,7 +515,7 @@ Thrown:
 
 其本质在于 fs.readFile 的函数调用已经成功，并从调用栈返回并执行到下一行的`console.log('lucifer')`。因此错误发生的时候，调用栈是空的，这一点可以从上面的错误堆栈信息中看出来。
 
-> 不明白为什么调用栈是空的同学可以看下我之前写的[《《一文看懂浏览器事件循环》》](https://lucifer.ren/blog/2019/12/11/event-loop/)
+> 不明白为什么调用栈是空的同学可以看下我之前写的[《一文看懂浏览器事件循环》](https://lucifer.ren/blog/2019/12/11/event-loop/ "《一文看懂浏览器事件循环》")
 
 而 try catch 的作用仅仅是捕获当前调用栈的错误（上面异常传播部分已经讲过了）。因此异步的错误是无法捕获的，比如；
 
