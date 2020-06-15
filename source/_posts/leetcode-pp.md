@@ -1,7 +1,6 @@
 ---
 title: 力扣加加闪亮登场～
 tags: [数据结构, 算法, 算法提高班, 力扣加加]
-top: true
 categories:
   - [力扣加加]
 ---
