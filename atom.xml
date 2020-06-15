@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-06-15T09:30:38.286Z</updated>
+  <updated>2020-06-15T15:18:21.886Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,24 +17,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>你不知道的前端异常处理（万字长文，建议收藏）</title>
     <link href="https://lucifer.ren/blog/2020/06/14/error-catch/"/>
     <id>https://lucifer.ren/blog/2020/06/14/error-catch/</id>
     <published>2020-06-14T07:54:17.496Z</published>
-    <updated>2020-06-15T09:30:38.286Z</updated>
+    <updated>2020-06-15T15:18:21.886Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;p&gt;除了调试，处理异常或许是程序员编程时间占比最高的了。我们天天和各种异常打交道，就好像我们天天和 Bug 打交道一样。因此正确认识异常，并作出合适的异常处理就显得很重要了。&lt;/p&gt;
+&lt;p&gt;我们先尝试抛开前端这个限定条件，来看下更广泛意义上程序的报错以及异常处理。不管是什么语言，都会有异常的发生。而我们程序员要做的就是正确识别程序中的各种异常，并针对其做相应的&lt;strong&gt;异常处理&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;然而，很多人对异常的处理方式是&lt;strong&gt;事后修补&lt;/strong&gt;，即某个异常发生的时候，增加对应的条件判断，这真的是一种非常低效的开发方式，非常不推荐大家这么做。那么究竟如何正确处理异常呢？由于不同语言有不同的特性，因此异常处理方式也不尽相同。但是异常处理的思维框架一定是一致的。本文就&lt;strong&gt;前端&lt;/strong&gt;异常进行详细阐述，但是读者也可以稍加修改延伸到其他各个领域。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文讨论的异常指的是软件异常，而非硬件异常。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="异常处理" scheme="https://lucifer.ren/blog/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
     
   </entry>
   
@@ -265,7 +270,7 @@
     <link href="https://lucifer.ren/blog/2020/06/01/leetcode-pp/"/>
     <id>https://lucifer.ren/blog/2020/06/01/leetcode-pp/</id>
     <published>2020-06-01T07:25:20.807Z</published>
-    <updated>2020-06-01T09:27:46.330Z</updated>
+    <updated>2020-06-15T13:58:36.552Z</updated>
     
     <summary type="html">
     
@@ -488,7 +493,7 @@
     <link href="https://lucifer.ren/blog/2020/05/23/91-algo/"/>
     <id>https://lucifer.ren/blog/2020/05/23/91-algo/</id>
     <published>2020-05-23T02:31:23.707Z</published>
-    <updated>2020-05-30T03:50:06.710Z</updated>
+    <updated>2020-06-15T13:58:42.690Z</updated>
     
     <summary type="html">
     
