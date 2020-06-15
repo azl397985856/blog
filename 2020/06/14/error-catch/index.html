@@ -415,7 +415,7 @@
 
 <p>上面的代码由于存在语法错误，不会编译通过，因此并不会打印<code>start</code>，侧面证明了这是一个编译时异常。尽管 JS 是解释语言，也依然存在编译阶段，这是必然的，因此自然也会有编译异常。</p>
 <p>总的来说，编译异常可以在代码被编译成最终代码前被发现，因此对我们的伤害更小。接下来，看一下令人心生畏惧的<strong>运行时异常</strong>。</p>
-<h3 id="运行时异常"><a href="#运行时异常" class="headerlink" title="运行时异常"></a>运行时异常</h3><p>相信大家对运行时异常非常熟悉。这恐怕是广大前端碰到最多的异常类型了。众所周知的 <a href="https://zh.wikipedia.org/wiki/%E7%A9%BA%E6%8C%87%E6%A8%99#NullPointerException" target="_blank" rel="noopener">NPE（Null Pointer Exception）</a> 就是运行时异常。</p>
+<h3 id="运行时异常"><a href="#运行时异常" class="headerlink" title="运行时异常"></a>运行时异常</h3><p>相信大家对运行时异常非常熟悉。这恐怕是广大前端碰到最多的异常类型了。众所周知的 <a href="https://zh.wikipedia.org/wiki/%E7%A9%BA%E6%8C%87%E6%A8%99#NullPointerException" title="Null Pointer Exception" target="_blank" rel="noopener">NPE（Null Pointer Exception）</a> 就是运行时异常。</p>
 <p>将上面的例子稍加改造，得到下面代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">t</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"start"</span>);</span><br><span class="line">  <span class="keyword">throw</span> <span class="number">1</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"end"</span>);</span><br><span class="line">&#125;</span><br><span class="line">t();</span><br></pre></td></tr></table></figure>
 
@@ -425,7 +425,7 @@
 <p>注意 end 没有打印，并且 t 没有弹出栈。实际上 t 最终还是会被弹出的，只不过和普通的返回不一样。</p>
 </blockquote>
 <p>如上，则会打印出<code>start</code>。由于异常是在代码运行过程中抛出的，因此这个异常属于运行时异常。相对于编译时异常，这种异常更加难以发现。上面的例子可能比较简单，但是如果我的异常是隐藏在某一个流程控制语句（比如 if else）里面呢？程序就可能在客户的电脑走入那个抛出异常的 if 语句，而在你的电脑走入另一条。这就是著名的 <strong>《在我电脑上好好的》</strong> 事件。</p>
-<h2 id="异常的传播"><a href="#异常的传播" class="headerlink" title="异常的传播"></a>异常的传播</h2><p>异常的传播和我之前写的<a href="https://lucifer.ren/blog/2019/12/11/browser-event/">浏览器事件模型</a>有很大的相似性。只不过那个是作用在 <strong>DOM 这样的数据结构</strong>，这个则是作用在<strong>函数调用栈这种数据结构</strong>，并且事件传播存在捕获阶段，异常传播是没有的。不同 C 语言，JS 中异常传播是自动的，不需要程序员手动地一层层传递。如果一个异常没有被 catch，它会沿着函数调用栈一层层传播直到栈空。</p>
+<h2 id="异常的传播"><a href="#异常的传播" class="headerlink" title="异常的传播"></a>异常的传播</h2><p>异常的传播和我之前写的<a href="https://lucifer.ren/blog/2019/12/11/browser-event/" title="浏览器事件模型">浏览器事件模型</a>有很大的相似性。只不过那个是作用在 <strong>DOM 这样的数据结构</strong>，这个则是作用在<strong>函数调用栈这种数据结构</strong>，并且事件传播存在捕获阶段，异常传播是没有的。不同 C 语言，JS 中异常传播是自动的，不需要程序员手动地一层层传递。如果一个异常没有被 catch，它会沿着函数调用栈一层层传播直到栈空。</p>
 <p>异常处理中有两个关键词，它们是<strong>throw（抛出异常）</strong> 和 <strong>catch（处理异常）</strong>。 当一个异常被抛出的时候，异常的传播就开始了。异常会不断传播直到遇到第一个 catch。 如果程序员没有手动 catch，那么一般而言程序会抛出类似<strong>unCaughtError</strong>，表示发生了一个异常，并且这个异常没有被程序中的任何 catch 语言处理。未被捕获的异常通常会被打印在控制台上，里面有详细的堆栈信息，从而帮助程序员快速排查问题。实际上我们的程序的目标是<strong>避免 unCaughtError</strong>这种异常，而不是一般性的异常。</p>
 <h3 id="一点小前提"><a href="#一点小前提" class="headerlink" title="一点小前提"></a>一点小前提</h3><p>由于 JS 的 Error 对象没有 code 属性，只能根据 message 来呈现，不是很方便。我这里进行了简单的扩展，后面很多地方我用的都是自己扩展的 Error ，而不是原生 JS Error ，不再赘述。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">oldError = <span class="built_in">Error</span>;</span><br><span class="line"><span class="built_in">Error</span> = <span class="function"><span class="keyword">function</span> (<span class="params">&#123; code, message, fileName, lineNumber &#125;</span>) </span>&#123;</span><br><span class="line">  error = <span class="keyword">new</span> oldError(message, fileName, lineNumber);</span><br><span class="line">  error.code = code;</span><br><span class="line">  <span class="keyword">return</span> error;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -460,7 +460,7 @@
 <p>然而在 Go 等返回值可以为复数的语言中，我们无需使用上面蹩脚的方式，而是可以：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">res, err := divide(<span class="string">"foo"</span>, <span class="string">"bar"</span>);</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    log.Fatal(err)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>这是和 Java 和 JS 等语言使用的 try catch 不一样的的地方，Go 是通过 panic recover defer 机制来进行异常处理的。感兴趣的可以去看看 <a href="https://github.com/golang/go/blob/master/src/os/error_test.go" target="_blank" rel="noopener">Go 源码关于错误测试部分</a></p>
+<p>这是和 Java 和 JS 等语言使用的 try catch 不一样的的地方，Go 是通过 panic recover defer 机制来进行异常处理的。感兴趣的可以去看看 <a href="https://github.com/golang/go/blob/master/src/os/error_test.go" title="Go 源码关于错误测试部分" target="_blank" rel="noopener">Go 源码关于错误测试部分</a></p>
 <p>可能大家对 Go 不太熟悉。没关系，我们来继续看下 shell。实际上 shell 也是通过返回值来处理异常的，我们可以通过 $? 拿到上一个命令的返回值，这本质上也是一种调用栈的传播行为，而且是通过返回值而不是捕获来处理异常的。</p>
 <blockquote>
 <p>作为函数返回值处理和 try catch 一样，这是语言的设计者和开发者共同决定的一件事情。</p>
@@ -534,7 +534,7 @@
 <p><code>脑洞前端</code>是会被打印出来的。</p>
 <p>其本质在于 fs.readFile 的函数调用已经成功，并从调用栈返回并执行到下一行的<code>console.log(&#39;lucifer&#39;)</code>。因此错误发生的时候，调用栈是空的，这一点可以从上面的错误堆栈信息中看出来。</p>
 <blockquote>
-<p>不明白为什么调用栈是空的同学可以看下我之前写的<a href="https://lucifer.ren/blog/2019/12/11/event-loop/">《《一文看懂浏览器事件循环》》</a></p>
+<p>不明白为什么调用栈是空的同学可以看下我之前写的<a href="https://lucifer.ren/blog/2019/12/11/event-loop/" title="《一文看懂浏览器事件循环》">《一文看懂浏览器事件循环》</a></p>
 </blockquote>
 <p>而 try catch 的作用仅仅是捕获当前调用栈的错误（上面异常传播部分已经讲过了）。因此异步的错误是无法捕获的，比如；</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  fs.readFile(<span class="string">"something-not-exist.lucifer"</span>, (err, data) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      <span class="keyword">throw</span> err;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"catching an error"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -643,7 +643,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-15T23:18:21+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-15T23:26:20+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年6月15日</p>
