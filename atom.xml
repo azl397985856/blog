@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-06-14T07:46:06.467Z</updated>
+  <updated>2020-06-15T09:30:38.286Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://lucifer.ren/blog/2020/06/14/error-catch/"/>
+    <id>https://lucifer.ren/blog/2020/06/14/error-catch/</id>
+    <published>2020-06-14T07:54:17.496Z</published>
+    <updated>2020-06-15T09:30:38.286Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>一招吃遍力扣四道题，妈妈再也不用担心我被套路啦～</title>
@@ -582,30 +604,6 @@
       <category term="LeetCode日记" scheme="https://lucifer.ren/blog/tags/LeetCode%E6%97%A5%E8%AE%B0/"/>
     
       <category term="Medium" scheme="https://lucifer.ren/blog/tags/Medium/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>为什么eslint没有 no-magic-string？</title>
-    <link href="https://lucifer.ren/blog/2020/05/05/why-no-magic-string/"/>
-    <id>https://lucifer.ren/blog/2020/05/05/why-no-magic-string/</id>
-    <published>2020-05-04T16:00:00.000Z</published>
-    <updated>2020-05-05T12:41:31.066Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近参加了几次公司组内的 Code Review， 发现了一些问题。其中一些问题可以通过工具（比如 eslint）解决。 我们就想着通过工具自动化的方式进行解决。 而这些工具中有一些是现成的，比如 魔法数。 大家对魔法数的看法也是莫衷一是。本文通过&lt;code&gt;讲解什么是魔法数，eslint 是怎么检查魔法数的，以及思考为什么eslint 偏爱数字，而不是偏爱字符串来&lt;/code&gt; 来深入剖析一下魔法数。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="eslint" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/eslint/"/>
-    
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="eslint" scheme="https://lucifer.ren/blog/tags/eslint/"/>
     
   </entry>
   
