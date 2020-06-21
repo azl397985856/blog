@@ -1,5 +1,5 @@
 ---
-title: 你不知道的 TypeScript 泛型
+title: 你不知道的 TypeScript 泛型（万字长文，建议收藏）
 tags: [前端, TypeScript, 泛型]
 categories: [前端, TypeScript, 泛型]
 ---
