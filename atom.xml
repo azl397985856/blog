@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-06-21T08:41:43.363Z</updated>
+  <updated>2020-07-01T08:53:58.091Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,11 +17,87 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>你的衣服我扒了 - 《最长公共子序列》</title>
+    <link href="https://lucifer.ren/blog/2020/07/01/LCS/"/>
+    <id>https://lucifer.ren/blog/2020/07/01/LCS/</id>
+    <published>2020-07-01T06:38:48.291Z</published>
+    <updated>2020-07-01T08:53:58.091Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前出了一篇&lt;a href=&quot;https://lucifer.ren/blog/2020/06/20/LIS/&quot;&gt;穿上衣服我就不认识你了？来聊聊最长上升子序列&lt;/a&gt;，收到了大家的一致好评。今天给大家带来的依然是换皮题 - 最长公共子序列系列。&lt;/p&gt;
+&lt;p&gt;最长公共子序列是一个很经典的算法题。有的会直接让你求最长上升子序列，有的则会换个说法，但最终考察的还是最长公共子序列。那么问题来了，它穿上衣服你还看得出来是么？&lt;/p&gt;
+&lt;p&gt;如果你完全看不出来了，说明抽象思维还不到火候。经常看我的题解的同学应该会知道，我经常强调&lt;code&gt;抽象思维&lt;/code&gt;。没有抽象思维，所有的题目对你来说都是新题。你无法将之前做题的经验迁移到这道题，那你做的题意义何在？&lt;/p&gt;
+&lt;p&gt;虽然抽象思维很难练成，但是幸好算法套路是有限的，经常考察的题型更是有限的。从这些入手，或许可以让你轻松一些。本文就从一个经典到不行的题型《最长公共子序列》，来帮你进一步理解&lt;code&gt;抽象思维&lt;/code&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意。 本文是帮助你识别套路，从横向上理清解题的思维框架，并没有采用最优解，所有的题目给的解法可能不是最优的，但是都可以通过所有的测试用例。如果你想看最优解，可以直接去讨论区看。或者期待我的&lt;code&gt;深入剖析系列&lt;/code&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="动态规划" scheme="https://lucifer.ren/blog/categories/LeetCode/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    
+      <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="最长公共子序列" scheme="https://lucifer.ren/blog/tags/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://lucifer.ren/blog/2020/06/28/loading/"/>
+    <id>https://lucifer.ren/blog/2020/06/28/loading/</id>
+    <published>2020-06-28T06:32:12.918Z</published>
+    <updated>2020-06-30T03:30:51.536Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://lucifer.ren/blog/2020/06/23/bfs_dfs/"/>
+    <id>https://lucifer.ren/blog/2020/06/23/bfs_dfs/</id>
+    <published>2020-06-23T14:59:04.822Z</published>
+    <updated>2020-06-24T06:00:45.681Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>穿上衣服我就不认识你了？来聊聊最长上升子序列</title>
     <link href="https://lucifer.ren/blog/2020/06/20/LIS/"/>
     <id>https://lucifer.ren/blog/2020/06/20/LIS/</id>
     <published>2020-06-20T10:58:30.938Z</published>
-    <updated>2020-06-21T08:41:43.363Z</updated>
+    <updated>2020-06-21T09:24:54.698Z</updated>
     
     <summary type="html">
     
@@ -52,7 +128,7 @@
     <link href="https://lucifer.ren/blog/2020/06/16/ts-generics/"/>
     <id>https://lucifer.ren/blog/2020/06/16/ts-generics/</id>
     <published>2020-06-16T01:53:19.384Z</published>
-    <updated>2020-06-21T08:44:37.558Z</updated>
+    <updated>2020-06-21T09:18:03.796Z</updated>
     
     <summary type="html">
     
@@ -320,11 +396,11 @@
       <category term="BFS" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/BFS/"/>
     
     
-      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="BFS" scheme="https://lucifer.ren/blog/tags/BFS/"/>
     
@@ -372,9 +448,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -404,9 +480,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
@@ -435,9 +511,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -517,98 +593,6 @@
       <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
     
       <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>回炉重铸， 91 天见证不一样的自己（2）</title>
-    <link href="https://lucifer.ren/blog/2020/05/25/91-algo2/"/>
-    <id>https://lucifer.ren/blog/2020/05/25/91-algo2/</id>
-    <published>2020-05-25T09:23:53.498Z</published>
-    <updated>2020-05-30T03:52:03.239Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;code&gt;前天想加入却没能加入的小伙伴可以进来啦，直接扫描文末二维码即可。&lt;/code&gt;&lt;/p&gt;
-&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg&quot; width=&quot;50%&quot;&gt;
-
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>回炉重铸， 91 天见证不一样的自己</title>
-    <link href="https://lucifer.ren/blog/2020/05/23/91-algo/"/>
-    <id>https://lucifer.ren/blog/2020/05/23/91-algo/</id>
-    <published>2020-05-23T02:31:23.707Z</published>
-    <updated>2020-06-15T13:58:42.690Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
-&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg&quot; width=&quot;50%&quot;&gt;
-
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《黑客与画家》摘抄</title>
-    <link href="https://lucifer.ren/blog/2020/05/21/hacker-drawer/"/>
-    <id>https://lucifer.ren/blog/2020/05/21/hacker-drawer/</id>
-    <published>2020-05-21T11:10:31.720Z</published>
-    <updated>2020-05-21T11:36:55.720Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="书摘" scheme="https://lucifer.ren/blog/categories/%E4%B9%A6%E6%91%98/"/>
-    
-    
-      <category term="书摘" scheme="https://lucifer.ren/blog/tags/%E4%B9%A6%E6%91%98/"/>
     
   </entry>
   
