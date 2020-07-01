@@ -442,7 +442,7 @@ function trace<T extends Sizeable>(arg: T): T {
 
 这个时候 T 就不再是任意类型，而是被实现接口的 shape，当然你也可以继承多个接口。**类型约束是非常常见的操作，大家一定要掌握。**
 
-> 有的人可能说我直接将 Trace 的参数限定为 Sizeable 类型可以么？如果你这么做，会有类型丢失的风险，详情可以参考这篇文章[A use case for TypeScript Generics](https://juliangaramendy.dev/when-ts-generics/)。
+> 有的人可能说我直接将 Trace 的参数限定为 Sizeable 类型可以么？如果你这么做，会有类型丢失的风险，详情可以参考这篇文章[A use case for TypeScript Generics](https://juliangaramendy.dev/when-ts-generics/ "A use case for TypeScript Generics")。
 
 ## 常见的泛型
 
@@ -468,7 +468,7 @@ const a: Array = ["1"];
 
 ### React.FC
 
-大家如果开发过 React 的 TS 应用，一定知道 `React.FC` 这个类型。我们来看下它是如何[定义](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts)的：
+大家如果开发过 React 的 TS 应用，一定知道 `React.FC` 这个类型。我们来看下它是如何[定义](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts "React.FC Type Definition")的：
 
 ```js
 type FC<P = {}> = FunctionComponent<P>;
@@ -605,7 +605,7 @@ interface Array<T = string> {
 type CutTail<Tuple extends any[]> = Reverse<CutHead<Reverse<Tuple>>>;
 ```
 
-如上代码中， Reverse 是将参数列表反转，CutHead 是将数组第一项切掉。因此 CutTail 的意思就是将传递进来的参数列表反转，切掉第一个参数，然后反转回来。换句话说就是切掉参数列表的最后一项。 比如，一个函数是 function fn (a: string, b: number, c: boolean):boolean {}，那么经过操作`type cutTailFn = CutTail<typeof fn>`，可以返回`(a: string, b:number) => boolean`。 具体实现可以参考[Typescript 复杂泛型实践：如何切掉函数参数表的最后一个参数？](https://zhuanlan.zhihu.com/p/147248333)。 在这里，你知道泛型支持嵌套就够了。
+如上代码中， Reverse 是将参数列表反转，CutHead 是将数组第一项切掉。因此 CutTail 的意思就是将传递进来的参数列表反转，切掉第一个参数，然后反转回来。换句话说就是切掉参数列表的最后一项。 比如，一个函数是 function fn (a: string, b: number, c: boolean):boolean {}，那么经过操作`type cutTailFn = CutTail<typeof fn>`，可以返回`(a: string, b:number) => boolean`。 具体实现可以参考[Typescript 复杂泛型实践：如何切掉函数参数表的最后一个参数？](https://zhuanlan.zhihu.com/p/147248333 "Typescript 复杂泛型实践：如何切掉函数参数表的最后一个参数？")。 在这里，你知道泛型支持嵌套就够了。
 
 ### 泛型支持递归
 
@@ -629,7 +629,7 @@ declare var HTMLElement: {
 };。
 ```
 
-（[HTMLElement](https://github.com/microsoft/TypeScript/blob/master/lib/lib.dom.d.ts)）
+（[HTMLElement](https://github.com/microsoft/TypeScript/blob/master/lib/lib.dom.d.ts "HTMLElement Type Definition")）
 
 上面是**递归声明**，我们再来看一个更复杂一点的递归形式 - **递归调用**，这个递归调用的功能是：**递归地将类型中所有的属性都变成可选**。类似于深拷贝那样，只不过这不是拷贝操作，而是变成可选，并且是作用在类型，而不是值。
 
@@ -647,13 +647,13 @@ type PartialedWindow = DeepPartial<Window>; // 现在window 上所有属性都�
 
 虽然泛型支持函数的嵌套，甚至递归，但是其语法能力肯定和 JS 没法比， 想要实现一个泛型功能真的不是一件容易的事情。这里提供几个例子，看完这几个例子，相信你至少可以达到比葫芦画瓢的水平。这样多看多练，慢慢水平就上来了。
 
-截止目前（2020-06-21），TS 提供了 [16 种工具类型](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialt)。
+截止目前（2020-06-21），TS 提供了 [16 种工具类型](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialt "TS 官方的16 种工具类型")。
 
 ![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfzuu9kjtnj30g80nqmze.jpg)
 
 （官方提供的工具类型）
 
-除了官方的工具类型，还有一些社区的工具类型，比如[type-fest](https://github.com/sindresorhus/type-fest)，你可以直接用或者去看看源码看看高手是怎么玩类型的。
+除了官方的工具类型，还有一些社区的工具类型，比如[type-fest](https://github.com/sindresorhus/type-fest "type-fest")，你可以直接用或者去看看源码看看高手是怎么玩类型的。
 
 我挑选几个工具类，给大家讲一下**实现原理**。
 
@@ -711,7 +711,7 @@ type Func = (value: number) => string;
 const foo: ReturnType<Func> = "1";
 ```
 
-更多参考[TS - es5.d.ts](https://github.com/microsoft/TypeScript/blob/master/src/lib/es5.d.ts#L1431) 这些泛型可以极大减少大家的冗余代码，大家可以在自己的项目中自定义一些工具类泛型。
+更多参考[TS - es5.d.ts](https://github.com/microsoft/TypeScript/blob/master/src/lib/es5.d.ts#L1431 "TS - es5.d.ts") 这些泛型可以极大减少大家的冗余代码，大家可以在自己的项目中自定义一些工具类泛型。
 
 ## Bonus - 接口智能提示
 

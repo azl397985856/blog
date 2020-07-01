@@ -155,7 +155,7 @@ https://leetcode-cn.com/problems/non-overlapping-intervals/
 
 ### 代码
 
-> 你看代码多像
+**你看代码多像**
 
 ```py
 class Solution:
@@ -218,7 +218,7 @@ https://leetcode-cn.com/problems/maximum-length-of-pair-chain/
 
 ### 代码
 
-> 这代码更像了！
+**这代码更像了！**
 
 ```py
 class Solution:
@@ -274,7 +274,7 @@ Example:
 
 ### 代码
 
-> 你看代码多像
+**代码像不像？**
 
 ```py
 class Solution:
@@ -300,9 +300,9 @@ class Solution:
 
 ## More
 
-其他的我就不一一说了。比如 [673. 最长递增子序列的个数](https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/)（滴滴面试题）。 不就是求出最长序列，之后再循环比对一次就可以得出答案了么？
+其他的我就不一一说了。比如 [673. 最长递增子序列的个数](https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/) （滴滴面试题）。 不就是求出最长序列，之后再循环比对一次就可以得出答案了么？
 
-[491. 递增子序列](https://leetcode-cn.com/problems/increasing-subsequences/) 由于需要找到所有的递增子序列，因此动态规划就不行了，妥妥回溯就行了，套一个模板就出来了。回溯的模板可以看我之前写的[回溯专题](https://github.com/azl397985856/leetcode/blob/master/problems/90.subsets-ii.md)。
+[491. 递增子序列](https://leetcode-cn.com/problems/increasing-subsequences/) 由于需要找到所有的递增子序列，因此动态规划就不行了，妥妥回溯就行了，套一个模板就出来了。回溯的模板可以看我之前写的[回溯专题](https://github.com/azl397985856/leetcode/blob/master/problems/90.subsets-ii.md "回溯专题")。
 
 大家把我讲的思路搞懂，这几个题一写，还怕碰到类似的题不会么？**只有熟练掌握基础的数据结构与算法，才能对复杂问题迎刃有余。** 最长上升子序列就是一个非常经典的基础算法，把它彻底搞懂，再去面对出题人的各种换皮就不怕了。相反，如果你不去思考题目背后的逻辑，就会刷地很痛苦。题目稍微一变化你就不会了，这也是为什么很多人说**刷了很多题，但是碰到新的题目还是不会做**的原因之一。关注公众号力扣加加，努力用清晰直白的语言还原解题思路，并且有大量图解，手把手教你识别套路，高效刷题。
 
