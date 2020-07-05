@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-07-01T09:19:11.838Z</updated>
+  <updated>2020-07-05T08:05:26.136Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>想去力扣当前端，TypeScript 需要掌握到什么程度？</title>
+    <link href="https://lucifer.ren/blog/2020/07/05/leetcode-interview-ts/"/>
+    <id>https://lucifer.ren/blog/2020/07/05/leetcode-interview-ts/</id>
+    <published>2020-07-05T01:48:03.757Z</published>
+    <updated>2020-07-05T08:05:26.136Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2018 年底的时候，力扣发布了岗位招聘，其中就有前端，仓库地址：&lt;a href=&quot;https://github.com/LeetCode-OpenSource/hire&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/LeetCode-OpenSource/hire&lt;/a&gt; 。与大多数 JD 不同， 其提供了 5 道题， 并注明了&lt;code&gt;完成一个或多个面试题，获取免第一轮面试的面试机会。完成的题目越多，质量越高，在面试中的加分更多。完成后的代码可以任意形式发送给 jobs@lingkou.com。以上几个问题完成一个或多个都有可能获得面试机会，具体情况取决于提交给我们的代码。&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1ggfv55mufyj30u00wh0z0.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;（力扣中国前端工程师 JD）&lt;/p&gt;
+&lt;p&gt;今天我们就来看下第二题：&lt;code&gt;编写复杂的 TypeScript 类型&lt;/code&gt;。通过这道题来看下， TypeScript 究竟要到什么水平才能进力扣当前端？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;其它四道题也蛮有意思的，值得一看。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="TypeScript" scheme="https://lucifer.ren/blog/categories/TypeScript/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="TypeScript" scheme="https://lucifer.ren/blog/tags/TypeScript/"/>
+    
+  </entry>
   
   <entry>
     <title>你的衣服我扒了 - 《最长公共子序列》</title>
@@ -562,39 +592,6 @@
     <summary type="html">
     
       &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;code&gt;前天想加入却没能加入的小伙伴可以进来啦，直接扫描文末二维码即可。&lt;/code&gt;&lt;/p&gt;
-&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg&quot; width=&quot;50%&quot;&gt;
-
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>回炉重铸， 91 天见证不一样的自己</title>
-    <link href="https://lucifer.ren/blog/2020/05/23/91-algo/"/>
-    <id>https://lucifer.ren/blog/2020/05/23/91-algo/</id>
-    <published>2020-05-23T02:31:23.707Z</published>
-    <updated>2020-06-15T13:58:42.690Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
 &lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg&quot; width=&quot;50%&quot;&gt;
 
 &lt;p&gt;​
