@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-07-13T02:43:42.111Z</updated>
+  <updated>2020-07-13T03:14:38.788Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,24 +17,30 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>immutablejs 是如何优化我们的代码的？</title>
     <link href="https://lucifer.ren/blog/2020/07/05/immutable-js/"/>
     <id>https://lucifer.ren/blog/2020/07/05/immutable-js/</id>
     <published>2020-07-05T09:07:23.926Z</published>
-    <updated>2020-07-13T02:43:42.111Z</updated>
+    <updated>2020-07-13T03:14:38.788Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;p&gt;前一段时间群里有小伙伴问 lucifer 我一个问题：”immutablejs 是什么？有什么用？“。我当时的回答是：&lt;code&gt;immutablejs 就是 tree + sharing，解决了数据可变性带来的问题，并顺便优化了性能&lt;/code&gt;。今天给大家来详细解释一下这句话。&lt;/p&gt;
     
     </summary>
     
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="React" scheme="https://lucifer.ren/blog/categories/React/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="React" scheme="https://lucifer.ren/blog/tags/React/"/>
+    
+      <category term="immutablejs" scheme="https://lucifer.ren/blog/tags/immutablejs/"/>
+    
+      <category term="immutable" scheme="https://lucifer.ren/blog/tags/immutable/"/>
     
   </entry>
   
