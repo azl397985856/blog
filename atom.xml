@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-07-21T10:21:57.832Z</updated>
+  <updated>2020-07-26T14:39:44.168Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,11 +17,51 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>一文带你看懂二叉树的序列化</title>
+    <link href="https://lucifer.ren/blog/2020/07/24/serialize/"/>
+    <id>https://lucifer.ren/blog/2020/07/24/serialize/</id>
+    <published>2020-07-24T12:52:41.698Z</published>
+    <updated>2020-07-26T14:39:44.168Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们先来看下什么是序列化，以下定义来自维基百科：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;序列化（serialization）在计算机科学的数据处理中，是指将数据结构或对象状态转换成可取用格式（例如存成文件，存于缓冲，或经由网络中发送），以留待后续在相同或另一台计算机环境中，能恢复原先状态的过程。依照序列化格式重新获取字节的结果时，可以利用它来产生与原始对象相同语义的副本。对于许多对象，像是使用大量引用的复杂对象，这种序列化重建的过程并不容易。面向对象中的对象序列化，并不概括之前原始对象所关系的函数。这种过程也称为对象编组（marshalling）。从一系列字节提取数据结构的反向操作，是反序列化（也称为解编组、deserialization、unmarshalling）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可见，序列化和反序列化在计算机科学中的应用还是非常广泛的。就拿 LeetCode 平台来说，其允许用户输入形如：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[1,2,3,null,null,4,5]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;这样的数据结构来描述一颗树：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gh2dqqnyzwj30ba0baglw.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;([1,2,3,null,null,4,5] 对应的二叉树)&lt;/p&gt;
+&lt;p&gt;其实序列化和反序列化只是一个概念，不是一种具体的算法，而是很多的算法。并且针对不同的数据结构，算法也会不一样。本文主要讲述的是二叉树的序列化和反序列化。看完本文之后，你就可以放心大胆地去 AC 以下两道题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/serialize-and-deserialize-bst/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;449. 序列化和反序列化二叉搜索树(中等)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;297. 二叉树的序列化与反序列化(困难)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="算法，序列化" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95%EF%BC%8C%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    
+      <category term="数据结构，二叉树" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+    
+      <category term="二叉树" scheme="https://lucifer.ren/blog/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+      <category term="序列化" scheme="https://lucifer.ren/blog/tags/%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
     <title>平衡二叉树专题</title>
     <link href="https://lucifer.ren/blog/2020/07/21/balanced-tree/"/>
     <id>https://lucifer.ren/blog/2020/07/21/balanced-tree/</id>
     <published>2020-07-20T16:00:00.000Z</published>
-    <updated>2020-07-21T10:21:57.832Z</updated>
+    <updated>2020-07-25T02:01:36.934Z</updated>
     
     <summary type="html">
     
@@ -564,39 +604,6 @@
       <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
     
       <category term="DFS" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/DFS/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode日记" scheme="https://lucifer.ren/blog/tags/LeetCode%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【LeetCode日记】 1449. 数位成本和为目标值的最大数字</title>
-    <link href="https://lucifer.ren/blog/2020/05/30/1449.form-largest-integer-with-digits-that-add-up-to-target/"/>
-    <id>https://lucifer.ren/blog/2020/05/30/1449.form-largest-integer-with-digits-that-add-up-to-target/</id>
-    <published>2020-05-30T11:51:01.444Z</published>
-    <updated>2020-05-30T12:21:52.715Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这是一道难度 Hard 的经典背包问题，属于完全背包问题，来看看背包问题的套路吧～&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="动态规划" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-      <category term="背包问题" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
     
     
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
