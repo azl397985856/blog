@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-07-26T14:39:44.168Z</updated>
+  <updated>2020-08-03T03:42:51.121Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《我是你的妈妈呀》 - 第一期</title>
+    <link href="https://lucifer.ren/blog/2020/08/03/mother-01/"/>
+    <id>https://lucifer.ren/blog/2020/08/03/mother-01/</id>
+    <published>2020-08-02T16:00:00.000Z</published>
+    <updated>2020-08-03T03:42:51.121Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;记得我初中的时候，学校发的一个小册子的名字就是母题啥的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1ghbhlyhaadj308c08c3yv.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;大概意思是市面上的题（尤其是中考题）都是这些母题生的，都是它们的儿子。&lt;/p&gt;
+&lt;p&gt;熟悉我的朋友应该知道，我有一个风格：”喜欢用通俗易懂的语言以及图片，还原解题过程“。包括我是如何抽象的，如何与其他题目建立联系的等。比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters/solution/yi-zhao-chi-bian-li-kou-si-dao-ti-ma-ma-zai-ye-b-6/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;一招吃遍力扣四道题，妈妈再也不用担心我被套路啦～&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/wildcard-matching/solution/chao-ji-xiang-xi-ji-yi-hua-di-gui-tu-jie-dai-ni-yi/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;超级详细记忆化递归，图解，带你一次攻克三道 Hard 套路题（44. 通配符匹配）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/solution/chuan-shang-yi-fu-wo-jiu-bu-ren-shi-ni-liao-lai-3/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;穿上衣服我就不认识你了？来聊聊最长上升子序列&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/integer-break/solution/ba-yi-ba-zhe-chong-ti-de-wai-tao-343-zheng-shu-cha/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;扒一扒这种题的外套（343. 整数拆分）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果把这个思考过程称之为自顶向下的话，那么实际上能写出来取决于你：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;是否有良好的抽象能力&lt;/li&gt;
+&lt;li&gt;是否有足够的基础知识&lt;/li&gt;
+&lt;li&gt;是否能与学过的基础知识建立联系&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果反着呢? 我先把所有抽象之后的纯粹的东西掌握，也就是母题。那么遇到新的题，我就往上套呗？这就是我在《LeetCode 题解仓库》中所说的&lt;strong&gt;只有熟练掌握基础的数据结构与算法，才能对复杂问题迎刃有余。&lt;/strong&gt; 这种思路就是&lt;strong&gt;自底向上&lt;/strong&gt;。（有点像动态规划?） 市面上的题那么多，但是题目类型就是那几种。甚至出题人出题的时候都是根据以前的题目变个条件，变个说法从而搞出一个“新”的题。&lt;/p&gt;
+&lt;p&gt;这个专题的目标就是从反的方向来，我们先学习和记忆底层的被抽象过的经典的题目。遇到新的题目，就往这些母题上套即可。&lt;/p&gt;
+&lt;p&gt;那让我们来自底向上看下第一期的这八道母题吧~&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="母题" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E6%AF%8D%E9%A2%98/"/>
+    
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="母题" scheme="https://lucifer.ren/blog/tags/%E6%AF%8D%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>一文带你看懂二叉树的序列化</title>
@@ -98,9 +140,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -513,11 +555,11 @@
       <category term="BFS" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/BFS/"/>
     
     
+      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
+    
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="BFS" scheme="https://lucifer.ren/blog/tags/BFS/"/>
     
@@ -565,45 +607,15 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
       <category term="动态规划" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
       <category term="回溯" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%9B%9E%E6%BA%AF/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode日记" scheme="https://lucifer.ren/blog/tags/LeetCode%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【LeetCode日记】 101. 对称二叉树</title>
-    <link href="https://lucifer.ren/blog/2020/05/31/101.symmetric-tree/"/>
-    <id>https://lucifer.ren/blog/2020/05/31/101.symmetric-tree/</id>
-    <published>2020-05-31T06:28:36.936Z</published>
-    <updated>2020-05-31T10:11:06.175Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;​
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="hashtable" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/hashtable/"/>
-    
-      <category term="DFS" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/DFS/"/>
     
     
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
