@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-08-04T03:55:47.660Z</updated>
+  <updated>2020-08-09T03:25:22.406Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>好未来-北京-视频面试</title>
+    <link href="https://lucifer.ren/blog/2020/08/09/interview-log-haoweilai/"/>
+    <id>https://lucifer.ren/blog/2020/08/09/interview-log-haoweilai/</id>
+    <published>2020-08-09T02:46:33.410Z</published>
+    <updated>2020-08-09T03:25:22.406Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;作者：阿吉&lt;/li&gt;
+&lt;li&gt;整理&amp;amp;点评：lucifer&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="面经" scheme="https://lucifer.ren/blog/categories/%E9%9D%A2%E7%BB%8F/"/>
+    
+      <category term="校招" scheme="https://lucifer.ren/blog/categories/%E6%A0%A1%E6%8B%9B/"/>
+    
+      <category term="好未来" scheme="https://lucifer.ren/blog/categories/%E5%A5%BD%E6%9C%AA%E6%9D%A5/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="面经" scheme="https://lucifer.ren/blog/tags/%E9%9D%A2%E7%BB%8F/"/>
+    
+      <category term="校招" scheme="https://lucifer.ren/blog/tags/%E6%A0%A1%E6%8B%9B/"/>
+    
+      <category term="好未来" scheme="https://lucifer.ren/blog/tags/%E5%A5%BD%E6%9C%AA%E6%9D%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>上帝视角看 TypeScript</title>
@@ -605,35 +640,6 @@
       <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="BFS" scheme="https://lucifer.ren/blog/tags/BFS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>力扣加加闪亮登场～</title>
-    <link href="https://lucifer.ren/blog/2020/06/01/leetcode-pp/"/>
-    <id>https://lucifer.ren/blog/2020/06/01/leetcode-pp/</id>
-    <published>2020-06-01T07:25:20.807Z</published>
-    <updated>2020-06-15T13:58:36.552Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。&lt;/p&gt;
-&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg&quot; width=&quot;50%&quot;&gt;
-
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
     
   </entry>
   

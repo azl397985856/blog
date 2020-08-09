@@ -4,6 +4,43 @@
   
     
     <entry>
+      <title>好未来-北京-视频面试</title>
+      <link href="/blog/2020/08/09/interview-log-haoweilai/"/>
+      <url>/blog/2020/08/09/interview-log-haoweilai/</url>
+      
+        <content type="html"><![CDATA[<ul><li>作者：阿吉</li><li>整理&amp;点评：lucifer</li></ul><a id="more"></a><h2 id="为什么要写这个面经？"><a href="#为什么要写这个面经？" class="headerlink" title="为什么要写这个面经？"></a>为什么要写这个面经？</h2><p>lucifer 说让我写一下秋招面经，但我很菜，一开始不想写的。最主要的是不想暴露自己的菜，虽然群佬都知道我比较菜。</p><p>lucifer 的群大概是我唯一一个每时每刻都能得到响应的群吧。很开心当时只是随便加了一下，但认识了好多大佬，经常在群里问一些很没头脑的问题，但总有人会艾特我回答，尽可能去触摸自己的知识边界帮我解答，大家都在交流（技术+扯皮）。</p><p>比较遗憾没偷学到 lucifer 的算法能力，也没能白嫖到小漾的美图。在 lucifer 群里开群语音，还有幸白嫖过川川(若川大佬)的声音 hhhhhh。大概我挺希望小漾看到这个文章能主动点晒照一下 hhhh（感觉第二天我就没了）。</p><h2 id="面试体验"><a href="#面试体验" class="headerlink" title="面试体验"></a>面试体验</h2><p>好未来的四位面试官给予的面试体验很舒服。四面面试官说话一直用“您”。四面面试快结束的时候：</p><ul><li><p>我：“我们的时间价值并不对等，所以很感谢您愿意抽时间面试我”</p></li><li><p>面试官：“不，我们的时间是对等的，我们今天只是在平等的交流”。</p></li></ul><p>好未来的面试体验可能是目前秋招面试最舒服的，因为平时喜欢看很多闲书（面试很少会问的那种），把那些知识都有机会和面试官进行了分享。</p><blockquote><p>面试官的问题用 Q 表示， 我的回答用 A 表示，序号表示第几个。 比如 Q5 表示面试官的第五个问题， A8 表示我对第八个问题的回答。</p></blockquote><h2 id="一面（男）"><a href="#一面（男）" class="headerlink" title="一面（男）"></a>一面（男）</h2><h3 id="面试内容"><a href="#面试内容" class="headerlink" title="面试内容"></a>面试内容</h3><ul><li>Q1: 聊项目，聊实习公司，问什么时候开始学前端</li><li>A1: 大二</li><li>Q2: 说一下排序算法。手撕冒泡，快排及其优化</li><li>A2: blabla</li></ul><blockquote><p>lucifer 小提示: 要可以手撕才行哦。</p></blockquote><ul><li><p>Q3: TCP 和 UDP 区别。TCP 为什么是可靠的？</p></li><li><p>A3: 《计网 自顶向下》，同时说了应用场景。</p></li><li><p>Q4: 三次握手，四次挥手</p></li><li><p>A4: 过程，字段，为何两次不行，各自作用。SYN 半连接攻击。</p></li><li><p>Q5: 谈一下 HTTP</p></li><li><p>A5:<br>详细说 HTTP 1.0 1.1 2 3<br>细说文本格式和二进制格式（这个很感谢 feiker 大表哥在群里说了下），以及 HPACK，应用层和传输层的队头阻塞，多路复用和多路分解<br>瞎扯了一下 302 303 307 在 RFC 规范中的发展历史，其实是跟浏览器大战年代相关的。</p></li><li><p>Q6: 浏览器缓存</p></li><li><p>A6:<br>四级：Service Work, Memory Cache, Disk Cache, Push Cache<br>HTTP 控制的缓存位于 Disk Cache，即强缓存和协商缓存。二者中间的启发式缓存。</p></li><li><p>Q7: CDN</p></li><li><p>A7: content dispatch newwork。 《计网 自顶向下》</p></li><li><p>Q8: 从 URL 到浏览器渲染，仅围绕 HTTP 相关展开</p></li><li><p>A8: 因为仅涉及 HTTP，除了常规回答，谈了下 webkit 里的三类资源加载器，以及网络栈。</p></li><li><p>Q9: 编译性语言 和 解释性语言的区别</p></li><li><p>A9: java，js。引申 JVM 和 V8。以及 V8 在早些年间拒绝采用中间码（《了不起的 nodejs》那本书比较老，里面就是无中间码），后来又采用了。其实最开始的原因就是考虑到移动端存储量。</p></li><li><p>Q10: 单线程的原因，好处</p></li><li><p>A10: JS 多线程对 DOM 的坏处。引申 webkit 多线程，看面试官比较感兴趣，又分析了浏览器的多进程架构，以及 Renderer 进程的四个配置项。</p></li></ul><h2 id="二面-男"><a href="#二面-男" class="headerlink" title="二面-男"></a>二面-男</h2><h3 id="面试内容-1"><a href="#面试内容-1" class="headerlink" title="面试内容"></a>面试内容</h3><ul><li>Q1: 聊项目，前端倒计时，IOS 兼容等</li><li>A1: …</li><li>Q2: 各种排序的时间复杂度</li><li>A2: …</li></ul><blockquote><p>lucifer 小提示: 不要死记硬背。</p></blockquote><ul><li>Q3: 手撕代码</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tpl</span>(<span class="params">template, data</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输入</span></span><br><span class="line">tpl(<span class="string">'&lt;div class=&#123;%className%&#125;&gt;&#123;%name%&#125;&lt;/div&gt;'</span>, &#123;<span class="attr">className</span>:<span class="string">'hd'</span>, <span class="attr">name</span>:<span class="number">123</span>&#125;)</span><br><span class="line"><span class="comment">// 输出</span></span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"hd"</span>&gt;<span class="number">123</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 面试时编码思路：根据浏览器的词法分析去做，用stack。但存在问题。</span></span><br></pre></td></tr></table></figure><ul><li><p>A3:…</p></li><li><p>Q4: 看代码说输出，作用域</p></li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.a + a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">  fn1();</span><br><span class="line">&#125;</span><br><span class="line">fn2();</span><br><span class="line"><span class="comment">// 扯了一下this指向，以及C++中作用域的_variable表默认添加。</span></span><br></pre></td></tr></table></figure><ul><li><p>A4: …</p></li><li><p>Q5: 你对闭包的理解</p></li><li><p>A5: 函数执行的保护机制。围绕函数执行机制（后来 lucifer 男神讲可以从词法作用域说，但毕竟是面试，感觉从函数执行来讲比较 ok），结合 V8 生成 AST 角度去谈何为闭包。具像为作用域链，及其 2 个表象。优缺点。理论应用：在 Vue 中的应用 Dep()，React 中的应用 Redux dispatch，设计模式中单例模式。项目应用：H5 前端自拟倒计时 destroyed 销毁引用。</p></li></ul><h2 id="三面-女"><a href="#三面-女" class="headerlink" title="三面-女"></a>三面-女</h2><h3 id="面试内容-2"><a href="#面试内容-2" class="headerlink" title="面试内容"></a>面试内容</h3><ul><li>Q1: 自我介绍</li><li>A1: 叫 AJ，来自 X，能干活。</li><li>Q2: 聊点你的学校经历吧</li><li>A2: 在校职务…</li><li>Q3: 为什么选择前端</li><li>A3: 经过大一尝试过 java,py,cnn 后决定，前端作为当下的生存技能。兴趣不局限于此。</li></ul><blockquote><p>lucifer 小提示: 不要把自己局限到前端。</p></blockquote><ul><li>Q4: 为什么不现在就去学后端</li><li>A4: 我明白自己每个阶段想要的是什么，当下秋招的我应该找一份匹配自己的工作。</li><li>Q5: 未来三年的职业规划</li><li>A5: 业务崽。</li><li>Q6: 实习公司，对比百度、腾讯、小米，最不喜欢哪一个？</li><li>A6: 从不同的层面去说最喜欢哪家。</li><li>Q7: 你觉得你的缺点有什么</li><li>A7: 不喜欢跟人争执，浪费时间且无趣。</li><li>Q8: 为什么会投我们公司，了解我们吗</li><li>A8: 很好的朋友在开课吧(然哥)，给我说好未来还挺不错的。秒投了。</li><li>Q9: 我们的业务有…你喜欢哪个业务啊</li><li>A10: 直播吧</li></ul><h2 id="四面-男"><a href="#四面-男" class="headerlink" title="四面-男"></a>四面-男</h2><h3 id="面试内容-3"><a href="#面试内容-3" class="headerlink" title="面试内容"></a>面试内容</h3><ul><li>Q1: Vue 那种左右界面，中间的竖线可以滑动，左右布局跟着变化，怎么去做优化，可以从哪些角度触发</li><li>A1: 不会。尝试从 Vue Object.freeze() 和 提升图层角度去说。</li><li>Q2: GPU 硬件加速渲染说下原理</li><li>A2: 不会。从 CSS3 触发的角度说了下。</li><li>Q3: HTTPS 性能损耗在哪里？</li><li>A3: TLS 握手。从《计算机网络 自顶向下》那本书里提的角度简单说了下。同时认为非对称加密算法对服务端资源消耗比较大。</li><li>Q4: 你如何去解决前端人员被需求压满，然后做业务觉得没有技术成长</li><li>A4: 不局限在功能点的开发，真正理解业务，理解业务流程中的数据流向以及坑点。当在当前环境遇到技术瓶颈要跳槽时，带着已有经验去下一个环境。</li><li>Q5. 谈谈 WebSocket，然后怎么去改造。</li><li>A5: 简单说了一点理论，直言没实践过。</li></ul><blockquote><p>lucifer 小提示: 可以自己实现一个 WebSocket 玩玩就啥都知道了。</p></blockquote><ul><li>Q6: 直播业务中，常用的协议是什么</li><li>A6: 仅知道 webRTC。</li><li>Q7: 海量数据找出最大的 K 个，怎么找？时间复杂度是多少？</li><li>A7: lucifer 之前的文章应该有过，没记牢固。简单说了下。</li></ul><blockquote><p>lucifer 小提示：我们只需要建立一个大小为 K 的小顶堆，N 个数分别入堆，最后堆顶的元素就是第 K 大的。 时间复杂度 $O(NlogK)$</p></blockquote><ul><li>Q8: 了解好未来吗？为什么要来？</li><li>A8: 做教育的。我哥推荐的。</li></ul><p>PS: 面试白菜起步。SP 面是四面。</p><h2 id="lucifer-点评"><a href="#lucifer-点评" class="headerlink" title="lucifer 点评"></a>lucifer 点评</h2><p>由于是校招的原因，整个面试过程比较注重的是基础知识以及思考和学习方式。并且可以看出侧重点依然是：</p><ul><li>网络（TCP，DNS，HTTP，HTTPS，浏览器缓存等）</li><li>浏览器渲染（GPU 硬件加速， webkit 原理等）</li><li>数据结构与算法（排序算法，复杂度分析，堆的应用等）</li></ul><p>对于每一个部分，我们首先要做的是建立大局观，这样即使错，也不会错到哪去。大局观建立好了，相当于基本的知识框架有了，接下来就是填充知识框架了。这个阶段最主要的就是巩固复习和查缺补漏。经过这样的一个学习，相信你也能够在面试中崭露头角，获得心仪的 offer。</p><p>大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的前端硬核文章，带你认识你不知道的前端。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfxro1x125j30oz0dw43s.jpg" alt></p><p>公众号【 <a href="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" target="_blank" rel="noopener">力扣加加</a>】<br>知乎专栏【 <a href="https://www.zhihu.com/people/lu-xiao-13-70" target="_blank" rel="noopener">Lucifer - 知乎</a>】</p><p>点关注，不迷路！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> 面经 </category>
+          
+          <category> 校招 </category>
+          
+          <category> 好未来 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 面经 </tag>
+            
+            <tag> 校招 </tag>
+            
+            <tag> 好未来 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>上帝视角看 TypeScript</title>
       <link href="/blog/2020/08/04/ts-internal/"/>
       <url>/blog/2020/08/04/ts-internal/</url>
@@ -1903,27 +1940,6 @@
     
     
     <entry>
-      <title>累死累活干不过一个写PPT的</title>
-      <link href="/blog/2019/12/11/ppt-data/"/>
-      <url>/blog/2019/12/11/ppt-data/</url>
-      
-        <content type="html"><![CDATA[<p>无论是身处什么行业什么领域，数据分析越来越成为一向必不可少的技能，<br>而运用数据思维进行决策更能产生形成高质量的决策结果。</p><p>随着互联网的不断发展和物联网设备的不断普及，我们日常生活中的各种数据被存储下来，让我们可以通过定量分析数据，利用数据实现更好的决策制定。</p><a id="more"></a><p>现在越来越多的公司开始注重这一块，一方面自建数据体系，一方面去买一些数据。而对于我们个人似乎还没有意识到或者开始挖掘数据对我们的价值。</p><p>笔者最近的工作大都是做一些基础设施搭建和流程优化相关的工作。<br>这部分工作对很多人来说都是“隐形”的，对上层使用者来说很难有很大的感知。<br>对于领导来说，如果你只是闷头去做事情，他们也是很难知道你干的怎么样，如果这之间再加上<br>你没有什么反馈，就会给同事和领导一种“不靠谱”的感觉。</p><p>因此给予反馈和直观展示自己劳动成果的能力就显得非常重要。<br>然而如果你能很好展示自己的劳动成果，那么只需要将这个给老板看就是一种很好很直观的反馈。</p><p>这篇文章，我们来谈一下，如何量化我们的工作，如何将我们的工作成果展示出来。<br>如何让同事，让领导体会到我们工作的成果。我会通过几个例子来帮助大家快速理解，以及掌握这门“技术”<br>。</p><p>《让数据开口说话》是我给这篇文章的标题，让数据开口说话，你就可以少说一点，并且摆数据就是摆事实，<br>数据带来的说服力要比你说的话强很多。</p><h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>我是一个对技术充满兴趣的程序员, 擅长前端工程化，前端性能优化，前端标准化等。</p><p>做过.net， 搞过 Java，现在是一名前端工程师。</p><p>除了我的本职工作外，我会在开源社区进行一些输出和分享，GitHub 共计获得 1.5W star。比较受欢迎的项目有<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">leetcode 题解</a> , <a href="https://github.com/azl397985856/fe-interview" target="_blank" rel="noopener">宇宙最强的前端面试指南</a> 和<br><a href="https://github.com/azl397985856/automate-everything" target="_blank" rel="noopener">我的第一本小书</a></p><h2 id="收集数据"><a href="#收集数据" class="headerlink" title="收集数据"></a>收集数据</h2><p>如果让数据开头说话，那么首先第一步你要有数据。</p><p>因此我们的第一步就是收集数据，那么在这之前你需要知道你需要什么数据。<br>这部分的内容随着每个人任务不同肯定是不一样的。因此有着很大的灵活性，</p><p>有一个指导思想就是对关键指标分解。<br>比如我现在要做打包时间进行优化，那么打包时间由哪些时间决定。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">打包时间 =  阶段1 时间 + 阶段2 时间 + 阶段3 时间</span><br></pre></td></tr></table></figure><p>我们减少打包时间肯定要减少其中一个或多个。</p><p>有时候我们无法找到这种简单的分解，那就教大家另外一个技巧：运用对比。</p><p>一方面可以基于时间进行对比，比如环比增长，同比增长等数据都是这么来的。</p><p>另一方面我们可以基于用户属性进行对比，比如用户年龄，性别，偏好，操作系统类型，<br>地域属性等。</p><p>下面我举几个例子。</p><h3 id="打包优化"><a href="#打包优化" class="headerlink" title="打包优化"></a>打包优化</h3><p>假如你被分配了一个任务。让你对项目的打包过程进行优化。</p><ul><li><p>你需要对打包时间进行优化，减少打包的时间</p></li><li><p>你需要对打包的最终产物进行优化，减少打出的包的包体大小。</p></li><li><p>将打包变得尽可能的简单，也就说尽量减少人为的操作过程。</p></li></ul><p>你接到了这样一个任务，你会如何去做？</p><p>这里我们不考虑具体的具体思路和细节。 假设你的架构思路，方案规划，各种 fallback 已经想好了。<br>我们如何通过上面提到的让数据说话的角度来收集数据呢？ 换句话说，我们需要收集哪些数据？</p><h4 id="打包时间"><a href="#打包时间" class="headerlink" title="打包时间"></a>打包时间</h4><p>对于打包时间的数据，最简单的我们计算一下总体的打包时间。</p><p>最后我们只需要对比优化前后的总体打包时间差异即可。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds546t088j30ec05dq3e.jpg" alt></p><p>这对于老板来说可能已经够了，但是这缺乏一些精确性，我们无法知道通过优化了哪个环节进行<br>减少了打包时间。 因此一种简单的改进是将打包划分为多个阶段，每个阶段分别进行统计计时 ⌛️ 。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds547ajtij30gs07q74w.jpg" alt></p><h4 id="包的大小"><a href="#包的大小" class="headerlink" title="包的大小"></a>包的大小</h4><p>包的大小的数据其实和上面讲的打包时间思路类似。</p><p>我们当然可以只统计总体包大小。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds548de0gj30cy05fmxc.jpg" alt></p><p>但是为了获得更加灵活的定制和更加精确的范围我们可以对包进行一定的划分。<br>这个划分可以是业务纬度，也可以是纯技术纬度。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54a42mjj30f005z3zb.jpg" alt></p><h4 id="打包命令"><a href="#打包命令" class="headerlink" title="打包命令"></a>打包命令</h4><p>这部分比较简单，我们只需要简单地统计手动操作的次数即可。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54azmgwj30f005i3yu.jpg" alt></p><p>通过收集以上的数据，我们就可以用数据来表示我们的成果，让数据说话，关于如何<br>使用这些数据，我们稍后讨论。</p><h3 id="页面加载性能优化"><a href="#页面加载性能优化" class="headerlink" title="页面加载性能优化"></a>页面加载性能优化</h3><p>假如你被分配了一个任务。让你对项目的页面加载速度进行优化。<br>你会怎么做？</p><p>这个任务有点太宽泛了，更多的时候会有一些更精确的指标，<br>比如将网络状态为<code>fast 3G</code>的<code>中端机型</code>的白屏时间降低到<code>3s以内</code>。</p><h4 id="timing"><a href="#timing" class="headerlink" title="timing"></a>timing</h4><p>性能优化的第一步就是测量，没有测量就没有优化。我们不能为了优化而优化， 而是看到了某些点需要优化才去优化的。 而发现这个点一个重要的方式就是要靠测量。</p><p>说到测量，普遍接受的方式是，在浏览器中进行打点，将浏览器打开网页的过程看作是一个旅行。<br>那么我们每到一个地方就拍张带有时间的照片（事件），最后我们对这些照片按照时间进行排列， 然后分析哪部分是我们的瓶颈点等。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54bnum5j30i70avdhp.jpg" alt="performance-api"></p><p>有了这些 timing 我们可以很方便的计算各项性能指标。我们还可以自定义一些我们关心的指标，比如请求时间（成功和失败分开统计），较长 js 操作时间，或者比较重要的功能等。</p><p>总之收集到这些数据之后，我们只需要根据我们的需求去定制一些指标即可。</p><p>这样我们就很容易展示出这样的画面：</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54dcbs2j30eh074gm6.jpg" alt="render-perf"></p><h3 id="人效提升"><a href="#人效提升" class="headerlink" title="人效提升"></a>人效提升</h3><p>假如你是一个项目的管理者，上级分配给你一个任务，要在未来几个季度去做“研发效率提升”，<br>也就是提高“交付速度”。 你会怎么做这件事？</p><h4 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h4><p>这个事情是比较主观的了，因此我们切实需要一些可以量化的东西来辅助我们。</p><p>我们考虑将需求进行拆分，变成一个个任务。一个需求可能有多个任务。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54e97btj309z0960ta.jpg" alt></p><p>我们考虑对每一个任务进行计时，而不是需求，因为需求有太大的差异。<br>我们可以针对任务进行分类，然后我们的目标就可以变成“减少同类任务的交付时长”。</p><p>但是这种粒度似乎还是有点大。我们可以采取标签的形式，对任务进行交叉分类。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54fb9nfj30ay09874x.jpg" alt></p><p>任务纬度可能还是有点太大，我们可以采取更小的粒度划分，比如模块和组件。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54gb6a0j30ly0akabf.jpg" alt></p><p>这样我们的统计纬度就丰富起来了，我们不仅可以总体进行统计分析，我们还可以根据 tag 和 tag 的组合进行汇总。</p><p>比如一个典型的统计结果大概是：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- task1 (tagA)</span><br><span class="line"> - module1 (tagA)</span><br><span class="line">   - component1 (tagB)</span><br><span class="line">   - component2 (tagA)</span><br><span class="line"> - module2 (tagB)</span><br><span class="line"> - module3 (tagB)</span><br><span class="line">- task2 (tagA)</span><br><span class="line">- task3 (tagC)</span><br></pre></td></tr></table></figure><p>比如这里有一种 tag 叫“是否复用了以前的代码”，<br>那么我们就很容易统计出组件复用率，也就很容易很直观地知道前后的差距了。</p><h3 id="用户拉新和留存"><a href="#用户拉新和留存" class="headerlink" title="用户拉新和留存"></a>用户拉新和留存</h3><p>再比如我们需要做“用户拉新和留存”，我们应该怎么做？</p><p>这个留做思考题，大家可以思考一下。</p><p>我这里抛砖引玉一下，比如我们的统计纬度可以是：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- 用户访问时长 (tagA)</span><br><span class="line">- 跳出率 (tagB)</span><br><span class="line">- 新用户 (tagA)</span><br><span class="line">- 流失的老用户 (tagB)</span><br><span class="line">- 地址位置 (tagA)</span><br></pre></td></tr></table></figure><p>假如我的 tag 有两个分别是 用户 id 和时间， 我们就可以方便地统计每个用户的活动数据趋势。</p><h2 id="让数据说话"><a href="#让数据说话" class="headerlink" title="让数据说话"></a>让数据说话</h2><p>有了数据，我们如何通过数据来增强表现力呢？</p><p>一种非常有效的措施是可视化。现在的可视化引擎和工具有很多，功能也非常复杂。</p><p>但是我发现我个人需要的就那么几个，可能大家每个人需要的种类不大一样，<br>但是我相信作为个人，你需要的种类不会很多。因此自己根据自身的实际情况，<br>挑选适合自己的几种类型，做到迎刃有余就足够了。</p><p>对于我而言，我常用的是饼图，用来表示分布关系。 曲线图用来表示趋势。<br>用柱状图表示对比+趋势。用热度图表示离散的数据分布等等。</p><p>我们可以使用一些现有的成熟的产品来帮助我们将刚才我们收集到的数据转化为各种图表，<br>比如 <a href="https://www.canva.com/" target="_blank" rel="noopener">画布</a></p><blockquote><p>这个网站能做的图表种类比较少。</p></blockquote><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54h7bnqj311u0fotbt.jpg" alt></p><p>当然作为一名前端我们也可以自己写代码去更灵活地展示我们的数据，比如<a href="https://d3js.org/" target="_blank" rel="noopener">D3</a><br>或者百度的<a href="https://echarts.baidu.com/" target="_blank" rel="noopener">echarts</a></p><blockquote><p>任何类型的图表都可以做，只有你想不到，没有它做不到。</p></blockquote><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54j1tkej30zf0fx1kx.jpg" alt></p><p>相对折中一点，我们可以选择支持代码定制的一些产品，在特殊情况我们可以自定义。</p><h2 id="累死累活干不过做-PPT-的"><a href="#累死累活干不过做-PPT-的" class="headerlink" title="累死累活干不过做 PPT 的"></a>累死累活干不过做 PPT 的</h2><p>有了这些数据图表，是时候写一份 PPT 来秀一下了。</p><p>一种方式是使用你电脑的办公软件或者一些在线的幻灯片制作工具做，<br>比如<a href="https://slides.com/" target="_blank" rel="noopener">slides</a> 。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54k60j2j313b0iqwip.jpg" alt></p><p>另一种方式通过写代码的方式实现，作为程序员我推荐使用第二种。<br>这里推荐一款<code>nodejs cli 工具</code> <a href="https://github.com/ksky521/nodeppt" target="_blank" rel="noopener">nodeppt</a>,<br>还有另外一个<code>JS 框架</code> <a href="https://github.com/hakimel/reveal.js" target="_blank" rel="noopener">reveal.js</a> 。<br>上面提到的 slides 背后的原理就是它。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54lsifcj312l0ih7wh.jpg" alt></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这篇文章我主要讲述了如何量化我们的工作，并将我们的工作成果展示出来。<br>从而摆脱“干了很多事情，却说不出来，甚至功劳被人无情拿走的尴尬局面”。</p><p>首先我们将了如何收集数据，收集数据的一些技巧，这里通过几个实际工作的例子，分别是“打包优化”，“性能优化”，“人效提升”，<br>“用户留存” ，来帮助大家理解这个<br>过程，掌握这个技巧。</p><p>有了数据之后，我们需要通过一些手段将其数据展示出来，给人直观的感受，最好有视觉冲击感。<br>这里我推荐了几个工具和平台，大家可以根据自己的情况选择。</p><p>最后结合我们实际情况，PPT 是一个很好的展示自己的东西，不管是晋升还是宣传都是很好的方式，<br>这里我也推荐了几个产品，帮助大家更快更好地将图表展示出来。</p><p>让数据开口说话，你就可以少说一点，并且摆数据就是摆事实，<br>数据带来的说服力要比你说的话强很多。</p><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>最近我重新整理了下自己的公众号，并且我还给他换了一个名字《脑洞前端》，它是一个帮助你打开大前端新世界大门的钥匙 🔑，在这里你可以听到新奇的观点，看到一些技术尝新，还会收到系统性总结和思考。</p><p>我会尽量通过图的形式来阐述一些概念和逻辑，帮助大家快速理解，图解前端是我的目标。</p><p>之后我的文章同步到微信公众号 脑洞前端 ，您可以关注获取最新的文章，或者和我进行交流。</p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds4sh51a6j30km0komyv.jpg" width="50%" height="50%" alt="gongzhonghao" align="center"><h2 id="交流群"><a href="#交流群" class="headerlink" title="交流群"></a>交流群</h2><p>现在还是初级阶段，需要大家的意见和反馈，为了减少沟通成本，我组建了交流群。大家可以扫码进入</p><h3 id="QQ-群"><a href="#QQ-群" class="headerlink" title="QQ 群"></a>QQ 群</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54ma44fj306a082q36.jpg" alt="qq-group-chat"></p><h3 id="微信群"><a href="#微信群" class="headerlink" title="微信群"></a>微信群</h3><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5735kizj30e80e80tb.jpg" width="50%" height="50%" alt="JavaScript" align="center"><p>(由于微信的限制，100 个人以上只能邀请加入， 你可以添加我的机器人回复“大前端”拉你进群)</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 技能 </tag>
-            
-            <tag> PPT </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>一文搞懂《链表反转》</title>
       <link href="/blog/2019/12/11/reverseList/"/>
       <url>/blog/2019/12/11/reverseList/</url>
@@ -1965,64 +1981,19 @@
     
     
     <entry>
-      <title>【RFC】XXX 公司监控体系需求与技术调研</title>
-      <link href="/blog/2019/12/11/rfc-monitor/"/>
-      <url>/blog/2019/12/11/rfc-monitor/</url>
+      <title>累死累活干不过一个写PPT的</title>
+      <link href="/blog/2019/12/11/ppt-data/"/>
+      <url>/blog/2019/12/11/ppt-data/</url>
       
-        <content type="html"><![CDATA[<p>线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量，建立完善的监控体系可以很好的解决这个问题。</p><a id="more"></a><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量。</p><h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>期望有一套工具，系统或者平台，可以满足：</p><ol><li>在收到用户反馈的时候能够快速重现问题并解决。</li><li>测试同学发现问题，不需要花费大量事件和开发人员重现，沟通，以及记录问题重现路径等</li><li>线上发现问题可以进行告警，防止大规模用户有问题，并且不能及时感知和解决。</li><li>缩短团队内部 BUG 修复的闭环流程，减少非本质复杂度问题的干扰，快速将问题聚焦到具体的代码。</li></ol><p>带着上面的需求，我们来看下市面上已有的经典方案， 在这里挑选几个具有代表性的。</p><h2 id="市面上已有的方案对比"><a href="#市面上已有的方案对比" class="headerlink" title="市面上已有的方案对比"></a>市面上已有的方案对比</h2><h3 id="LogRocket"><a href="#LogRocket" class="headerlink" title="LogRocket"></a>LogRocket</h3><p>一句话概括： 用看录像的方式重现问题。</p><p>官网地址： <a href="https://logrocket.com/" target="_blank" rel="noopener">https://logrocket.com/</a></p><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8nsefw6j31ji0braaj.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8mp9lp5j31bc0qr410.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8myz28pj31su0u0ta3.jpg" alt></p><p>更多功能： <a href="https://docs.logrocket.com/docs" target="_blank" rel="noopener">https://docs.logrocket.com/docs</a></p><h4 id="接入方式"><a href="#接入方式" class="headerlink" title="接入方式"></a>接入方式</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8kqmquvj313k0opwfb.jpg" alt></p><h4 id="价格"><a href="#价格" class="headerlink" title="价格"></a>价格</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8lgqwlgj30rg0n3wf0.jpg" alt></p><h3 id="Sentry"><a href="#Sentry" class="headerlink" title="Sentry"></a>Sentry</h3><p>一句话概括： 开源，强大的监控平台。</p><p>官网地址： <a href="https://sentry.io/" target="_blank" rel="noopener">https://sentry.io/</a></p><h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p>功能较多，提供了较多的概念和功能，比如 Context，ENvironments，Breadcrumbs 等。另外其和 CI，CD 集成地也非常好。 详细内容： <a href="https://docs.sentry.io/workflow/releases/?platform=node" target="_blank" rel="noopener">https://docs.sentry.io/workflow/releases/?platform=node</a></p><p>另外其支持的平台和扩展功能非常多，如果对这部分有特殊要求，Sentry 无疑是优先考虑的选择。</p><h4 id="接入方式-1"><a href="#接入方式-1" class="headerlink" title="接入方式"></a>接入方式</h4><ul><li>Sign up for an account</li><li>Install your SDK</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Using yarn</span></span><br><span class="line">$ yarn add @sentry/node@5.8.0</span><br></pre></td></tr></table></figure><ul><li>Configure it</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Sentry = <span class="built_in">require</span>(<span class="string">"@sentry/node"</span>);</span><br><span class="line">Sentry.init(&#123; <span class="attr">dsn</span>: <span class="string">"https://&lt;key&gt;@sentry.io/&lt;project&gt;"</span> &#125;);</span><br></pre></td></tr></table></figure><h4 id="价格-1"><a href="#价格-1" class="headerlink" title="价格"></a>价格</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8qipkskj30x10jt758.jpg" alt></p><h3 id="FunDebug"><a href="#FunDebug" class="headerlink" title="FunDebug"></a>FunDebug</h3><p>一句话概括：国内知名度较高的监控工具，国内业务这块很有竞争力。</p><p><a href="https://www.fundebug.com/" target="_blank" rel="noopener">https://www.fundebug.com/</a></p><h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h4><p>支持小程序，小游戏。多种现成的报警方式，支持 WebHook，智能报警（同样的代码产生的同一个错误，在不同浏览器上的报错信息是各不相同的），内置团队协作工具。</p><h4 id="接入方式-2"><a href="#接入方式-2" class="headerlink" title="接入方式"></a>接入方式</h4><p>这里以 Vue 项目为例。</p><ol><li><p>免费注册</p></li><li><p>创建项目</p></li><li><p>配置</p></li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install fundebug-javascript fundebug-vue --save</span><br></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> fundebug <span class="keyword">from</span> <span class="string">"fundebug-javascript"</span>;</span><br><span class="line"><span class="keyword">import</span> fundebugVue <span class="keyword">from</span> <span class="string">"fundebug-vue"</span>;</span><br><span class="line">fundebug.init(&#123;</span><br><span class="line">  apikey: <span class="string">"API-KEY"</span></span><br><span class="line">&#125;);</span><br><span class="line">fundebugVue(fundebug, Vue);</span><br></pre></td></tr></table></figure><h4 id="价格-2"><a href="#价格-2" class="headerlink" title="价格"></a>价格</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w9mhtq44j30x60mb3z3.jpg" alt></p><h2 id="其他后期可能功能点"><a href="#其他后期可能功能点" class="headerlink" title="其他后期可能功能点"></a>其他后期可能功能点</h2><ol><li><p>性能监控</p></li><li><p>用户行为监控（已经有埋点，不不确定是否可以 Cover 这个需求）</p></li></ol><h2 id="自研"><a href="#自研" class="headerlink" title="自研"></a>自研</h2><p>假设我们已经做好了我们自己的监控平台，我们需要对公司内部甚至外部宣传我们的监控平台，我们会怎么进行宣传。</p><p>然后带着这些东西，我们进行规划，技术选型，排期，写代码，测试，上线。</p><h3 id="宣传语"><a href="#宣传语" class="headerlink" title="宣传语"></a>宣传语</h3><ol><li>接入方便，侵入性小</li><li>支持多端，扩展性强（支持多种框架定制接入），完美契合业务发展</li><li>打通客服系统，开发直接对接到客户，免去了中间对接的信息缺失和时间损耗。</li><li>重现率高，能够准确重现用户的现场情况</li><li>打通报警系统</li><li>打通调试平台<br>…</li></ol><h3 id="优劣分析"><a href="#优劣分析" class="headerlink" title="优劣分析"></a>优劣分析</h3><h4 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h4><p>完美契合我们自身的业务，后期好维护和增添功能</p><h4 id="劣势"><a href="#劣势" class="headerlink" title="劣势"></a>劣势</h4><p>如果功能需要做的超出市面，需要耗费巨大的人力和财力。</p><p>如果市面上不断发展，功能不能断完善，内部如果想要这样的功能要么继续追赶，要不买一套商用的，但是之前的努力岂不是白费了。除非内部两套系统，但是这种模式未免太反直觉。</p><h3 id="架构与选型"><a href="#架构与选型" class="headerlink" title="架构与选型"></a>架构与选型</h3><p>对外都宣传完了，我们需要具体开始进行架构与选型了。</p><h4 id="定义对外接口"><a href="#定义对外接口" class="headerlink" title="定义对外接口"></a>定义对外接口</h4><p>我们对外宣传的目标是<code>接入方便，侵入性小</code>。因此一定要简洁，这里参考了以上几个平台的写法，其实这几个平台的都是大同小异。</p><ol><li>注册应用获取 AppId</li><li>安装</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save @lucifer/monitor</span><br></pre></td></tr></table></figure><ol start="3"><li>引用</li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> monitor <span class="keyword">from</span> <span class="string">"@lucifer/monitor"</span>;</span><br><span class="line">monitor.init(&#123;</span><br><span class="line">  user: &#123;</span><br><span class="line">    name: <span class="string">""</span>,</span><br><span class="line">    email: <span class="string">""</span>,</span><br><span class="line">    mobile: <span class="string">""</span>,</span><br><span class="line">    isVIP: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  appId: <span class="string">"lucifer520"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><ol start="4"><li>多端和多框架支持</li></ol><p>Vue：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue form <span class="string">'vue'</span>;</span><br><span class="line"><span class="keyword">import</span> monitor <span class="keyword">from</span> <span class="string">'@lucifer/connectors/vue'</span>;</span><br><span class="line">monitor.init(&#123;</span><br><span class="line">    user: &#123;</span><br><span class="line">        name: <span class="string">''</span>,</span><br><span class="line">        email: <span class="string">''</span>,</span><br><span class="line">        mobile: <span class="string">''</span>,</span><br><span class="line">        isVIP: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    appId: <span class="string">'lucifer520'</span></span><br><span class="line">&#125;)</span><br><span class="line">monitor.use(Vue)</span><br></pre></td></tr></table></figure><p>Wechat：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> monitor <span class="keyword">from</span> <span class="string">"@lucifer/connectors/wechat"</span>;</span><br><span class="line">monitor.init(&#123;</span><br><span class="line">  user: &#123;</span><br><span class="line">    name: <span class="string">""</span>,</span><br><span class="line">    email: <span class="string">""</span>,</span><br><span class="line">    mobile: <span class="string">""</span>,</span><br><span class="line">    isVIP: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  appId: <span class="string">"lucifer520"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h4 id="定义内部接口"><a href="#定义内部接口" class="headerlink" title="定义内部接口"></a>定义内部接口</h4><p>架构图：</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8xj6xnibej30xd0hzgo5.jpg" alt></p><p>接口系统交互图会在详细设计中给出，这里只给出大致范围：</p><ul><li>logs 服务器和告警平台的交互接口</li><li>rules 的规则解析</li><li>logs 的解析</li><li>构建系统对接</li><li>调试系统对接</li><li>…</li></ul><h4 id="业务形态特点"><a href="#业务形态特点" class="headerlink" title="业务形态特点"></a>业务形态特点</h4><ul><li>数据量会随着采集规模增大而增加，因此预估用户数量以及增长速度对系统架构设计有很大影响</li><li>终端的上报策略对影响很大，断网，弱网等情况如何上报也对结果有影响</li></ul><h4 id="框架选型-amp-规范-amp-约定"><a href="#框架选型-amp-规范-amp-约定" class="headerlink" title="框架选型 &amp; 规范 &amp; 约定"></a>框架选型 &amp; 规范 &amp; 约定</h4><p>暂无</p><h2 id="其他解决方案"><a href="#其他解决方案" class="headerlink" title="其他解决方案"></a>其他解决方案</h2><ul><li>Badjs</li><li>FrontJS</li></ul>]]></content>
+        <content type="html"><![CDATA[<p>无论是身处什么行业什么领域，数据分析越来越成为一向必不可少的技能，<br>而运用数据思维进行决策更能产生形成高质量的决策结果。</p><p>随着互联网的不断发展和物联网设备的不断普及，我们日常生活中的各种数据被存储下来，让我们可以通过定量分析数据，利用数据实现更好的决策制定。</p><a id="more"></a><p>现在越来越多的公司开始注重这一块，一方面自建数据体系，一方面去买一些数据。而对于我们个人似乎还没有意识到或者开始挖掘数据对我们的价值。</p><p>笔者最近的工作大都是做一些基础设施搭建和流程优化相关的工作。<br>这部分工作对很多人来说都是“隐形”的，对上层使用者来说很难有很大的感知。<br>对于领导来说，如果你只是闷头去做事情，他们也是很难知道你干的怎么样，如果这之间再加上<br>你没有什么反馈，就会给同事和领导一种“不靠谱”的感觉。</p><p>因此给予反馈和直观展示自己劳动成果的能力就显得非常重要。<br>然而如果你能很好展示自己的劳动成果，那么只需要将这个给老板看就是一种很好很直观的反馈。</p><p>这篇文章，我们来谈一下，如何量化我们的工作，如何将我们的工作成果展示出来。<br>如何让同事，让领导体会到我们工作的成果。我会通过几个例子来帮助大家快速理解，以及掌握这门“技术”<br>。</p><p>《让数据开口说话》是我给这篇文章的标题，让数据开口说话，你就可以少说一点，并且摆数据就是摆事实，<br>数据带来的说服力要比你说的话强很多。</p><h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>我是一个对技术充满兴趣的程序员, 擅长前端工程化，前端性能优化，前端标准化等。</p><p>做过.net， 搞过 Java，现在是一名前端工程师。</p><p>除了我的本职工作外，我会在开源社区进行一些输出和分享，GitHub 共计获得 1.5W star。比较受欢迎的项目有<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">leetcode 题解</a> , <a href="https://github.com/azl397985856/fe-interview" target="_blank" rel="noopener">宇宙最强的前端面试指南</a> 和<br><a href="https://github.com/azl397985856/automate-everything" target="_blank" rel="noopener">我的第一本小书</a></p><h2 id="收集数据"><a href="#收集数据" class="headerlink" title="收集数据"></a>收集数据</h2><p>如果让数据开头说话，那么首先第一步你要有数据。</p><p>因此我们的第一步就是收集数据，那么在这之前你需要知道你需要什么数据。<br>这部分的内容随着每个人任务不同肯定是不一样的。因此有着很大的灵活性，</p><p>有一个指导思想就是对关键指标分解。<br>比如我现在要做打包时间进行优化，那么打包时间由哪些时间决定。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">打包时间 =  阶段1 时间 + 阶段2 时间 + 阶段3 时间</span><br></pre></td></tr></table></figure><p>我们减少打包时间肯定要减少其中一个或多个。</p><p>有时候我们无法找到这种简单的分解，那就教大家另外一个技巧：运用对比。</p><p>一方面可以基于时间进行对比，比如环比增长，同比增长等数据都是这么来的。</p><p>另一方面我们可以基于用户属性进行对比，比如用户年龄，性别，偏好，操作系统类型，<br>地域属性等。</p><p>下面我举几个例子。</p><h3 id="打包优化"><a href="#打包优化" class="headerlink" title="打包优化"></a>打包优化</h3><p>假如你被分配了一个任务。让你对项目的打包过程进行优化。</p><ul><li><p>你需要对打包时间进行优化，减少打包的时间</p></li><li><p>你需要对打包的最终产物进行优化，减少打出的包的包体大小。</p></li><li><p>将打包变得尽可能的简单，也就说尽量减少人为的操作过程。</p></li></ul><p>你接到了这样一个任务，你会如何去做？</p><p>这里我们不考虑具体的具体思路和细节。 假设你的架构思路，方案规划，各种 fallback 已经想好了。<br>我们如何通过上面提到的让数据说话的角度来收集数据呢？ 换句话说，我们需要收集哪些数据？</p><h4 id="打包时间"><a href="#打包时间" class="headerlink" title="打包时间"></a>打包时间</h4><p>对于打包时间的数据，最简单的我们计算一下总体的打包时间。</p><p>最后我们只需要对比优化前后的总体打包时间差异即可。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds546t088j30ec05dq3e.jpg" alt></p><p>这对于老板来说可能已经够了，但是这缺乏一些精确性，我们无法知道通过优化了哪个环节进行<br>减少了打包时间。 因此一种简单的改进是将打包划分为多个阶段，每个阶段分别进行统计计时 ⌛️ 。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds547ajtij30gs07q74w.jpg" alt></p><h4 id="包的大小"><a href="#包的大小" class="headerlink" title="包的大小"></a>包的大小</h4><p>包的大小的数据其实和上面讲的打包时间思路类似。</p><p>我们当然可以只统计总体包大小。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds548de0gj30cy05fmxc.jpg" alt></p><p>但是为了获得更加灵活的定制和更加精确的范围我们可以对包进行一定的划分。<br>这个划分可以是业务纬度，也可以是纯技术纬度。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54a42mjj30f005z3zb.jpg" alt></p><h4 id="打包命令"><a href="#打包命令" class="headerlink" title="打包命令"></a>打包命令</h4><p>这部分比较简单，我们只需要简单地统计手动操作的次数即可。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54azmgwj30f005i3yu.jpg" alt></p><p>通过收集以上的数据，我们就可以用数据来表示我们的成果，让数据说话，关于如何<br>使用这些数据，我们稍后讨论。</p><h3 id="页面加载性能优化"><a href="#页面加载性能优化" class="headerlink" title="页面加载性能优化"></a>页面加载性能优化</h3><p>假如你被分配了一个任务。让你对项目的页面加载速度进行优化。<br>你会怎么做？</p><p>这个任务有点太宽泛了，更多的时候会有一些更精确的指标，<br>比如将网络状态为<code>fast 3G</code>的<code>中端机型</code>的白屏时间降低到<code>3s以内</code>。</p><h4 id="timing"><a href="#timing" class="headerlink" title="timing"></a>timing</h4><p>性能优化的第一步就是测量，没有测量就没有优化。我们不能为了优化而优化， 而是看到了某些点需要优化才去优化的。 而发现这个点一个重要的方式就是要靠测量。</p><p>说到测量，普遍接受的方式是，在浏览器中进行打点，将浏览器打开网页的过程看作是一个旅行。<br>那么我们每到一个地方就拍张带有时间的照片（事件），最后我们对这些照片按照时间进行排列， 然后分析哪部分是我们的瓶颈点等。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54bnum5j30i70avdhp.jpg" alt="performance-api"></p><p>有了这些 timing 我们可以很方便的计算各项性能指标。我们还可以自定义一些我们关心的指标，比如请求时间（成功和失败分开统计），较长 js 操作时间，或者比较重要的功能等。</p><p>总之收集到这些数据之后，我们只需要根据我们的需求去定制一些指标即可。</p><p>这样我们就很容易展示出这样的画面：</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54dcbs2j30eh074gm6.jpg" alt="render-perf"></p><h3 id="人效提升"><a href="#人效提升" class="headerlink" title="人效提升"></a>人效提升</h3><p>假如你是一个项目的管理者，上级分配给你一个任务，要在未来几个季度去做“研发效率提升”，<br>也就是提高“交付速度”。 你会怎么做这件事？</p><h4 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h4><p>这个事情是比较主观的了，因此我们切实需要一些可以量化的东西来辅助我们。</p><p>我们考虑将需求进行拆分，变成一个个任务。一个需求可能有多个任务。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54e97btj309z0960ta.jpg" alt></p><p>我们考虑对每一个任务进行计时，而不是需求，因为需求有太大的差异。<br>我们可以针对任务进行分类，然后我们的目标就可以变成“减少同类任务的交付时长”。</p><p>但是这种粒度似乎还是有点大。我们可以采取标签的形式，对任务进行交叉分类。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54fb9nfj30ay09874x.jpg" alt></p><p>任务纬度可能还是有点太大，我们可以采取更小的粒度划分，比如模块和组件。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54gb6a0j30ly0akabf.jpg" alt></p><p>这样我们的统计纬度就丰富起来了，我们不仅可以总体进行统计分析，我们还可以根据 tag 和 tag 的组合进行汇总。</p><p>比如一个典型的统计结果大概是：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- task1 (tagA)</span><br><span class="line"> - module1 (tagA)</span><br><span class="line">   - component1 (tagB)</span><br><span class="line">   - component2 (tagA)</span><br><span class="line"> - module2 (tagB)</span><br><span class="line"> - module3 (tagB)</span><br><span class="line">- task2 (tagA)</span><br><span class="line">- task3 (tagC)</span><br></pre></td></tr></table></figure><p>比如这里有一种 tag 叫“是否复用了以前的代码”，<br>那么我们就很容易统计出组件复用率，也就很容易很直观地知道前后的差距了。</p><h3 id="用户拉新和留存"><a href="#用户拉新和留存" class="headerlink" title="用户拉新和留存"></a>用户拉新和留存</h3><p>再比如我们需要做“用户拉新和留存”，我们应该怎么做？</p><p>这个留做思考题，大家可以思考一下。</p><p>我这里抛砖引玉一下，比如我们的统计纬度可以是：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- 用户访问时长 (tagA)</span><br><span class="line">- 跳出率 (tagB)</span><br><span class="line">- 新用户 (tagA)</span><br><span class="line">- 流失的老用户 (tagB)</span><br><span class="line">- 地址位置 (tagA)</span><br></pre></td></tr></table></figure><p>假如我的 tag 有两个分别是 用户 id 和时间， 我们就可以方便地统计每个用户的活动数据趋势。</p><h2 id="让数据说话"><a href="#让数据说话" class="headerlink" title="让数据说话"></a>让数据说话</h2><p>有了数据，我们如何通过数据来增强表现力呢？</p><p>一种非常有效的措施是可视化。现在的可视化引擎和工具有很多，功能也非常复杂。</p><p>但是我发现我个人需要的就那么几个，可能大家每个人需要的种类不大一样，<br>但是我相信作为个人，你需要的种类不会很多。因此自己根据自身的实际情况，<br>挑选适合自己的几种类型，做到迎刃有余就足够了。</p><p>对于我而言，我常用的是饼图，用来表示分布关系。 曲线图用来表示趋势。<br>用柱状图表示对比+趋势。用热度图表示离散的数据分布等等。</p><p>我们可以使用一些现有的成熟的产品来帮助我们将刚才我们收集到的数据转化为各种图表，<br>比如 <a href="https://www.canva.com/" target="_blank" rel="noopener">画布</a></p><blockquote><p>这个网站能做的图表种类比较少。</p></blockquote><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54h7bnqj311u0fotbt.jpg" alt></p><p>当然作为一名前端我们也可以自己写代码去更灵活地展示我们的数据，比如<a href="https://d3js.org/" target="_blank" rel="noopener">D3</a><br>或者百度的<a href="https://echarts.baidu.com/" target="_blank" rel="noopener">echarts</a></p><blockquote><p>任何类型的图表都可以做，只有你想不到，没有它做不到。</p></blockquote><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54j1tkej30zf0fx1kx.jpg" alt></p><p>相对折中一点，我们可以选择支持代码定制的一些产品，在特殊情况我们可以自定义。</p><h2 id="累死累活干不过做-PPT-的"><a href="#累死累活干不过做-PPT-的" class="headerlink" title="累死累活干不过做 PPT 的"></a>累死累活干不过做 PPT 的</h2><p>有了这些数据图表，是时候写一份 PPT 来秀一下了。</p><p>一种方式是使用你电脑的办公软件或者一些在线的幻灯片制作工具做，<br>比如<a href="https://slides.com/" target="_blank" rel="noopener">slides</a> 。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54k60j2j313b0iqwip.jpg" alt></p><p>另一种方式通过写代码的方式实现，作为程序员我推荐使用第二种。<br>这里推荐一款<code>nodejs cli 工具</code> <a href="https://github.com/ksky521/nodeppt" target="_blank" rel="noopener">nodeppt</a>,<br>还有另外一个<code>JS 框架</code> <a href="https://github.com/hakimel/reveal.js" target="_blank" rel="noopener">reveal.js</a> 。<br>上面提到的 slides 背后的原理就是它。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54lsifcj312l0ih7wh.jpg" alt></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这篇文章我主要讲述了如何量化我们的工作，并将我们的工作成果展示出来。<br>从而摆脱“干了很多事情，却说不出来，甚至功劳被人无情拿走的尴尬局面”。</p><p>首先我们将了如何收集数据，收集数据的一些技巧，这里通过几个实际工作的例子，分别是“打包优化”，“性能优化”，“人效提升”，<br>“用户留存” ，来帮助大家理解这个<br>过程，掌握这个技巧。</p><p>有了数据之后，我们需要通过一些手段将其数据展示出来，给人直观的感受，最好有视觉冲击感。<br>这里我推荐了几个工具和平台，大家可以根据自己的情况选择。</p><p>最后结合我们实际情况，PPT 是一个很好的展示自己的东西，不管是晋升还是宣传都是很好的方式，<br>这里我也推荐了几个产品，帮助大家更快更好地将图表展示出来。</p><p>让数据开口说话，你就可以少说一点，并且摆数据就是摆事实，<br>数据带来的说服力要比你说的话强很多。</p><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>最近我重新整理了下自己的公众号，并且我还给他换了一个名字《脑洞前端》，它是一个帮助你打开大前端新世界大门的钥匙 🔑，在这里你可以听到新奇的观点，看到一些技术尝新，还会收到系统性总结和思考。</p><p>我会尽量通过图的形式来阐述一些概念和逻辑，帮助大家快速理解，图解前端是我的目标。</p><p>之后我的文章同步到微信公众号 脑洞前端 ，您可以关注获取最新的文章，或者和我进行交流。</p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds4sh51a6j30km0komyv.jpg" width="50%" height="50%" alt="gongzhonghao" align="center"><h2 id="交流群"><a href="#交流群" class="headerlink" title="交流群"></a>交流群</h2><p>现在还是初级阶段，需要大家的意见和反馈，为了减少沟通成本，我组建了交流群。大家可以扫码进入</p><h3 id="QQ-群"><a href="#QQ-群" class="headerlink" title="QQ 群"></a>QQ 群</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54ma44fj306a082q36.jpg" alt="qq-group-chat"></p><h3 id="微信群"><a href="#微信群" class="headerlink" title="微信群"></a>微信群</h3><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5735kizj30e80e80tb.jpg" width="50%" height="50%" alt="JavaScript" align="center"><p>(由于微信的限制，100 个人以上只能邀请加入， 你可以添加我的机器人回复“大前端”拉你进群)</p>]]></content>
       
-      
-      
-        <tags>
-            
-            <tag> RFC </tag>
-            
-            <tag> 技术调研 </tag>
-            
-            <tag> 监控 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>值得关注的技术类大会</title>
-      <link href="/blog/2019/12/11/tech-conf/"/>
-      <url>/blog/2019/12/11/tech-conf/</url>
-      
-        <content type="html"><![CDATA[<p>作为一个技术人，怎么能不参加和关注几场技术大会呢？让我们来看下那些你不能错过的技术大会吧。</p><a id="more"></a><h2 id="JSConf"><a href="#JSConf" class="headerlink" title="JSConf"></a>JSConf</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7d50s2862j30r10iwjrx.jpg" alt><br><a href="https://jsconf.com/" target="_blank" rel="noopener">地址</a></p><h2 id="React-Conf"><a href="#React-Conf" class="headerlink" title="React Conf"></a>React Conf</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8wabkh6lyj31gk0a5jrl.jpg" alt><br><a href="https://conf.reactjs.org/" target="_blank" rel="noopener">地址</a></p><h2 id="Google-IO"><a href="#Google-IO" class="headerlink" title="Google IO"></a>Google IO</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7d51qe2drj31200h674i.jpg" alt><br><a href="https://events.google.com/io/" target="_blank" rel="noopener">地址</a></p><h2 id="D2"><a href="#D2" class="headerlink" title="D2"></a>D2</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7d52bgjgpj30sm0hr76u.jpg" alt><br><a href="http://d2forum.alibaba-inc.com/#/index?_k=ug35gm" target="_blank" rel="noopener">地址</a></p><h2 id="QCon"><a href="#QCon" class="headerlink" title="QCon"></a>QCon</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7d52uctmoj31110hiwhd.jpg" alt><br><a href="https://www.infoq.com/qcon/" target="_blank" rel="noopener">地址</a></p><h2 id="更多技术大会"><a href="#更多技术大会" class="headerlink" title="更多技术大会"></a>更多技术大会</h2><ul><li><a href="https://juejin.im/events" target="_blank" rel="noopener">https://juejin.im/events</a></li><li><a href="https://segmentfault.com/events" target="_blank" rel="noopener">https://segmentfault.com/events</a></li><li><a href="https://www.huodongxing.com" target="_blank" rel="noopener">https://www.huodongxing.com</a></li><li><a href="https://www.bagevent.com" target="_blank" rel="noopener">https://www.bagevent.com</a></li><li><a href="https://www.hdb.com" target="_blank" rel="noopener">https://www.hdb.com</a></li><li><a href="https://www.meetup.com" target="_blank" rel="noopener">https://www.meetup.com</a></li><li>…</li></ul><p>欢迎大家补充～</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术大会 </category>
-          
-          <category> JSConf </category>
-          
-          <category> React Conf </category>
-          
-          <category> Google IO </category>
-          
-          <category> D2 </category>
-          
-          <category> QCon </category>
-          
-      </categories>
       
       
         <tags>
             
-            <tag> 技术大会 </tag>
+            <tag> 技能 </tag>
             
-            <tag> JSConf </tag>
-            
-            <tag> Google IO </tag>
-            
-            <tag> D2 </tag>
-            
-            <tag> QCon </tag>
+            <tag> PPT </tag>
             
         </tags>
       
@@ -2074,6 +2045,72 @@
             <tag> 字符串 </tag>
             
             <tag> 编程之美 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>值得关注的技术类大会</title>
+      <link href="/blog/2019/12/11/tech-conf/"/>
+      <url>/blog/2019/12/11/tech-conf/</url>
+      
+        <content type="html"><![CDATA[<p>作为一个技术人，怎么能不参加和关注几场技术大会呢？让我们来看下那些你不能错过的技术大会吧。</p><a id="more"></a><h2 id="JSConf"><a href="#JSConf" class="headerlink" title="JSConf"></a>JSConf</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7d50s2862j30r10iwjrx.jpg" alt><br><a href="https://jsconf.com/" target="_blank" rel="noopener">地址</a></p><h2 id="React-Conf"><a href="#React-Conf" class="headerlink" title="React Conf"></a>React Conf</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8wabkh6lyj31gk0a5jrl.jpg" alt><br><a href="https://conf.reactjs.org/" target="_blank" rel="noopener">地址</a></p><h2 id="Google-IO"><a href="#Google-IO" class="headerlink" title="Google IO"></a>Google IO</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7d51qe2drj31200h674i.jpg" alt><br><a href="https://events.google.com/io/" target="_blank" rel="noopener">地址</a></p><h2 id="D2"><a href="#D2" class="headerlink" title="D2"></a>D2</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7d52bgjgpj30sm0hr76u.jpg" alt><br><a href="http://d2forum.alibaba-inc.com/#/index?_k=ug35gm" target="_blank" rel="noopener">地址</a></p><h2 id="QCon"><a href="#QCon" class="headerlink" title="QCon"></a>QCon</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7d52uctmoj31110hiwhd.jpg" alt><br><a href="https://www.infoq.com/qcon/" target="_blank" rel="noopener">地址</a></p><h2 id="更多技术大会"><a href="#更多技术大会" class="headerlink" title="更多技术大会"></a>更多技术大会</h2><ul><li><a href="https://juejin.im/events" target="_blank" rel="noopener">https://juejin.im/events</a></li><li><a href="https://segmentfault.com/events" target="_blank" rel="noopener">https://segmentfault.com/events</a></li><li><a href="https://www.huodongxing.com" target="_blank" rel="noopener">https://www.huodongxing.com</a></li><li><a href="https://www.bagevent.com" target="_blank" rel="noopener">https://www.bagevent.com</a></li><li><a href="https://www.hdb.com" target="_blank" rel="noopener">https://www.hdb.com</a></li><li><a href="https://www.meetup.com" target="_blank" rel="noopener">https://www.meetup.com</a></li><li>…</li></ul><p>欢迎大家补充～</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术大会 </category>
+          
+          <category> JSConf </category>
+          
+          <category> React Conf </category>
+          
+          <category> Google IO </category>
+          
+          <category> D2 </category>
+          
+          <category> QCon </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术大会 </tag>
+            
+            <tag> JSConf </tag>
+            
+            <tag> Google IO </tag>
+            
+            <tag> D2 </tag>
+            
+            <tag> QCon </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【RFC】XXX 公司监控体系需求与技术调研</title>
+      <link href="/blog/2019/12/11/rfc-monitor/"/>
+      <url>/blog/2019/12/11/rfc-monitor/</url>
+      
+        <content type="html"><![CDATA[<p>线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量，建立完善的监控体系可以很好的解决这个问题。</p><a id="more"></a><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量。</p><h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>期望有一套工具，系统或者平台，可以满足：</p><ol><li>在收到用户反馈的时候能够快速重现问题并解决。</li><li>测试同学发现问题，不需要花费大量事件和开发人员重现，沟通，以及记录问题重现路径等</li><li>线上发现问题可以进行告警，防止大规模用户有问题，并且不能及时感知和解决。</li><li>缩短团队内部 BUG 修复的闭环流程，减少非本质复杂度问题的干扰，快速将问题聚焦到具体的代码。</li></ol><p>带着上面的需求，我们来看下市面上已有的经典方案， 在这里挑选几个具有代表性的。</p><h2 id="市面上已有的方案对比"><a href="#市面上已有的方案对比" class="headerlink" title="市面上已有的方案对比"></a>市面上已有的方案对比</h2><h3 id="LogRocket"><a href="#LogRocket" class="headerlink" title="LogRocket"></a>LogRocket</h3><p>一句话概括： 用看录像的方式重现问题。</p><p>官网地址： <a href="https://logrocket.com/" target="_blank" rel="noopener">https://logrocket.com/</a></p><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8nsefw6j31ji0braaj.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8mp9lp5j31bc0qr410.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8myz28pj31su0u0ta3.jpg" alt></p><p>更多功能： <a href="https://docs.logrocket.com/docs" target="_blank" rel="noopener">https://docs.logrocket.com/docs</a></p><h4 id="接入方式"><a href="#接入方式" class="headerlink" title="接入方式"></a>接入方式</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8kqmquvj313k0opwfb.jpg" alt></p><h4 id="价格"><a href="#价格" class="headerlink" title="价格"></a>价格</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8lgqwlgj30rg0n3wf0.jpg" alt></p><h3 id="Sentry"><a href="#Sentry" class="headerlink" title="Sentry"></a>Sentry</h3><p>一句话概括： 开源，强大的监控平台。</p><p>官网地址： <a href="https://sentry.io/" target="_blank" rel="noopener">https://sentry.io/</a></p><h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p>功能较多，提供了较多的概念和功能，比如 Context，ENvironments，Breadcrumbs 等。另外其和 CI，CD 集成地也非常好。 详细内容： <a href="https://docs.sentry.io/workflow/releases/?platform=node" target="_blank" rel="noopener">https://docs.sentry.io/workflow/releases/?platform=node</a></p><p>另外其支持的平台和扩展功能非常多，如果对这部分有特殊要求，Sentry 无疑是优先考虑的选择。</p><h4 id="接入方式-1"><a href="#接入方式-1" class="headerlink" title="接入方式"></a>接入方式</h4><ul><li>Sign up for an account</li><li>Install your SDK</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Using yarn</span></span><br><span class="line">$ yarn add @sentry/node@5.8.0</span><br></pre></td></tr></table></figure><ul><li>Configure it</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Sentry = <span class="built_in">require</span>(<span class="string">"@sentry/node"</span>);</span><br><span class="line">Sentry.init(&#123; <span class="attr">dsn</span>: <span class="string">"https://&lt;key&gt;@sentry.io/&lt;project&gt;"</span> &#125;);</span><br></pre></td></tr></table></figure><h4 id="价格-1"><a href="#价格-1" class="headerlink" title="价格"></a>价格</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8qipkskj30x10jt758.jpg" alt></p><h3 id="FunDebug"><a href="#FunDebug" class="headerlink" title="FunDebug"></a>FunDebug</h3><p>一句话概括：国内知名度较高的监控工具，国内业务这块很有竞争力。</p><p><a href="https://www.fundebug.com/" target="_blank" rel="noopener">https://www.fundebug.com/</a></p><h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h4><p>支持小程序，小游戏。多种现成的报警方式，支持 WebHook，智能报警（同样的代码产生的同一个错误，在不同浏览器上的报错信息是各不相同的），内置团队协作工具。</p><h4 id="接入方式-2"><a href="#接入方式-2" class="headerlink" title="接入方式"></a>接入方式</h4><p>这里以 Vue 项目为例。</p><ol><li><p>免费注册</p></li><li><p>创建项目</p></li><li><p>配置</p></li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install fundebug-javascript fundebug-vue --save</span><br></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> fundebug <span class="keyword">from</span> <span class="string">"fundebug-javascript"</span>;</span><br><span class="line"><span class="keyword">import</span> fundebugVue <span class="keyword">from</span> <span class="string">"fundebug-vue"</span>;</span><br><span class="line">fundebug.init(&#123;</span><br><span class="line">  apikey: <span class="string">"API-KEY"</span></span><br><span class="line">&#125;);</span><br><span class="line">fundebugVue(fundebug, Vue);</span><br></pre></td></tr></table></figure><h4 id="价格-2"><a href="#价格-2" class="headerlink" title="价格"></a>价格</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w9mhtq44j30x60mb3z3.jpg" alt></p><h2 id="其他后期可能功能点"><a href="#其他后期可能功能点" class="headerlink" title="其他后期可能功能点"></a>其他后期可能功能点</h2><ol><li><p>性能监控</p></li><li><p>用户行为监控（已经有埋点，不不确定是否可以 Cover 这个需求）</p></li></ol><h2 id="自研"><a href="#自研" class="headerlink" title="自研"></a>自研</h2><p>假设我们已经做好了我们自己的监控平台，我们需要对公司内部甚至外部宣传我们的监控平台，我们会怎么进行宣传。</p><p>然后带着这些东西，我们进行规划，技术选型，排期，写代码，测试，上线。</p><h3 id="宣传语"><a href="#宣传语" class="headerlink" title="宣传语"></a>宣传语</h3><ol><li>接入方便，侵入性小</li><li>支持多端，扩展性强（支持多种框架定制接入），完美契合业务发展</li><li>打通客服系统，开发直接对接到客户，免去了中间对接的信息缺失和时间损耗。</li><li>重现率高，能够准确重现用户的现场情况</li><li>打通报警系统</li><li>打通调试平台<br>…</li></ol><h3 id="优劣分析"><a href="#优劣分析" class="headerlink" title="优劣分析"></a>优劣分析</h3><h4 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h4><p>完美契合我们自身的业务，后期好维护和增添功能</p><h4 id="劣势"><a href="#劣势" class="headerlink" title="劣势"></a>劣势</h4><p>如果功能需要做的超出市面，需要耗费巨大的人力和财力。</p><p>如果市面上不断发展，功能不能断完善，内部如果想要这样的功能要么继续追赶，要不买一套商用的，但是之前的努力岂不是白费了。除非内部两套系统，但是这种模式未免太反直觉。</p><h3 id="架构与选型"><a href="#架构与选型" class="headerlink" title="架构与选型"></a>架构与选型</h3><p>对外都宣传完了，我们需要具体开始进行架构与选型了。</p><h4 id="定义对外接口"><a href="#定义对外接口" class="headerlink" title="定义对外接口"></a>定义对外接口</h4><p>我们对外宣传的目标是<code>接入方便，侵入性小</code>。因此一定要简洁，这里参考了以上几个平台的写法，其实这几个平台的都是大同小异。</p><ol><li>注册应用获取 AppId</li><li>安装</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save @lucifer/monitor</span><br></pre></td></tr></table></figure><ol start="3"><li>引用</li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> monitor <span class="keyword">from</span> <span class="string">"@lucifer/monitor"</span>;</span><br><span class="line">monitor.init(&#123;</span><br><span class="line">  user: &#123;</span><br><span class="line">    name: <span class="string">""</span>,</span><br><span class="line">    email: <span class="string">""</span>,</span><br><span class="line">    mobile: <span class="string">""</span>,</span><br><span class="line">    isVIP: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  appId: <span class="string">"lucifer520"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><ol start="4"><li>多端和多框架支持</li></ol><p>Vue：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue form <span class="string">'vue'</span>;</span><br><span class="line"><span class="keyword">import</span> monitor <span class="keyword">from</span> <span class="string">'@lucifer/connectors/vue'</span>;</span><br><span class="line">monitor.init(&#123;</span><br><span class="line">    user: &#123;</span><br><span class="line">        name: <span class="string">''</span>,</span><br><span class="line">        email: <span class="string">''</span>,</span><br><span class="line">        mobile: <span class="string">''</span>,</span><br><span class="line">        isVIP: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    appId: <span class="string">'lucifer520'</span></span><br><span class="line">&#125;)</span><br><span class="line">monitor.use(Vue)</span><br></pre></td></tr></table></figure><p>Wechat：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> monitor <span class="keyword">from</span> <span class="string">"@lucifer/connectors/wechat"</span>;</span><br><span class="line">monitor.init(&#123;</span><br><span class="line">  user: &#123;</span><br><span class="line">    name: <span class="string">""</span>,</span><br><span class="line">    email: <span class="string">""</span>,</span><br><span class="line">    mobile: <span class="string">""</span>,</span><br><span class="line">    isVIP: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  appId: <span class="string">"lucifer520"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h4 id="定义内部接口"><a href="#定义内部接口" class="headerlink" title="定义内部接口"></a>定义内部接口</h4><p>架构图：</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8xj6xnibej30xd0hzgo5.jpg" alt></p><p>接口系统交互图会在详细设计中给出，这里只给出大致范围：</p><ul><li>logs 服务器和告警平台的交互接口</li><li>rules 的规则解析</li><li>logs 的解析</li><li>构建系统对接</li><li>调试系统对接</li><li>…</li></ul><h4 id="业务形态特点"><a href="#业务形态特点" class="headerlink" title="业务形态特点"></a>业务形态特点</h4><ul><li>数据量会随着采集规模增大而增加，因此预估用户数量以及增长速度对系统架构设计有很大影响</li><li>终端的上报策略对影响很大，断网，弱网等情况如何上报也对结果有影响</li></ul><h4 id="框架选型-amp-规范-amp-约定"><a href="#框架选型-amp-规范-amp-约定" class="headerlink" title="框架选型 &amp; 规范 &amp; 约定"></a>框架选型 &amp; 规范 &amp; 约定</h4><p>暂无</p><h2 id="其他解决方案"><a href="#其他解决方案" class="headerlink" title="其他解决方案"></a>其他解决方案</h2><ul><li>Badjs</li><li>FrontJS</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> RFC </tag>
+            
+            <tag> 技术调研 </tag>
+            
+            <tag> 监控 </tag>
             
         </tags>
       
@@ -2146,19 +2183,6 @@
     
     
     <entry>
-      <title></title>
-      <link href="/blog/2019/12/11/ibinhouse/"/>
-      <url>/blog/2019/12/11/ibinhouse/</url>
-      
-        <content type="html"><![CDATA[<p>信息输入大脑后，遗忘也就随之开始了。遗忘率随时间的流逝而先快后慢，特别是在刚刚识记的短时间里，遗忘最快，这就是著名的艾宾浩斯遗忘曲线。</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>零基础的前端开发初学者应如何系统地学习？</title>
       <link href="/blog/2019/12/11/how-am-I-learn-fe/"/>
       <url>/blog/2019/12/11/how-am-I-learn-fe/</url>
@@ -2182,6 +2206,19 @@
             <tag> 学习方法 </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/blog/2019/12/11/ibinhouse/"/>
+      <url>/blog/2019/12/11/ibinhouse/</url>
+      
+        <content type="html"><![CDATA[<p>信息输入大脑后，遗忘也就随之开始了。遗忘率随时间的流逝而先快后慢，特别是在刚刚识记的短时间里，遗忘最快，这就是著名的艾宾浩斯遗忘曲线。</p>]]></content>
+      
+      
       
     </entry>
     
@@ -2377,35 +2414,6 @@
     
     
     <entry>
-      <title>布隆过滤器</title>
-      <link href="/blog/2019/12/11/bloom-filter/"/>
-      <url>/blog/2019/12/11/bloom-filter/</url>
-      
-        <content type="html"><![CDATA[<p>假设你现在要处理这样一个问题，你有一个网站并且拥有<code>很多</code>访客，每当有用户访问时，你想知道这个ip是不是第一次访问你的网站。你会怎么做呢？</p><a id="more"></a><h3 id="hashtable-可以么"><a href="#hashtable-可以么" class="headerlink" title="hashtable 可以么"></a>hashtable 可以么</h3><p>一个显而易见的答案是将所有的ip用hashtable存起来，每次访问都去hashtable中取，然后判断即可。但是题目说了网站有<code>很多</code>访客，<br>假如有10亿个用户访问过，每个ip的长度是4 byte，那么你一共需要4 * 1000000000 = 4000000000Bytes = 4G , 如果是判断URL黑名单，<br>由于每个URL会更长，那么需要的空间可能会远远大于你的期望。</p><h3 id="bit"><a href="#bit" class="headerlink" title="bit"></a>bit</h3><p>另一个稍微难想到的解法是bit， 我们知道bit有0和1两种状态，那么用来表示存在，不存在再合适不过了。</p><p>加入有10亿个ip，我们就可以用10亿个bit来存储，那么你一共需要 1 * 1000000000 = (4000000000 / 8) Bytes = 128M, 变为原来的1/32,<br>如果是存储URL这种更长的字符串，效率会更高。 </p><p>基于这种想法，我们只需要两个操作，set(ip) 和 has(ip)</p><p>这样做有两个非常致命的缺点：</p><ol><li>当样本分布极度不均匀的时候，会造成很大空间上的浪费</li></ol><blockquote><p>我们可以通过散列函数来解决</p></blockquote><ol start="2"><li>当元素不是整型（比如URL）的时候，BitSet就不适用了</li></ol><blockquote><p>我们还是可以使用散列函数来解决， 甚至可以多hash几次</p></blockquote><h3 id="布隆过滤器"><a href="#布隆过滤器" class="headerlink" title="布隆过滤器"></a>布隆过滤器</h3><p>布隆过滤器其实就是<code>bit + 多个散列函数</code>,  如果经过多次散列的值再bit上都为1，那么可能存在(可能有冲突)。 如果<br>有一个不为1，那么一定不存在（一个值经过散列函数得到的值一定是唯一的），这也是布隆过滤器的一个重要特点。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53hxbw7j31dw0j2wgm.jpg" alt="bloom-filter-url"></p><h3 id="布隆过滤器的应用"><a href="#布隆过滤器的应用" class="headerlink" title="布隆过滤器的应用"></a>布隆过滤器的应用</h3><ol><li><p>网络爬虫<br>判断某个URL是否已经被爬取过</p></li><li><p>K-V数据库 判断某个key是否存在</p></li></ol><p>比如Hbase的每个Region中都包含一个BloomFilter，用于在查询时快速判断某个key在该region中是否存在。</p><ol start="3"><li>钓鱼网站识别</li></ol><p>浏览器有时候会警告用户，访问的网站很可能是钓鱼网站，用的就是这种技术</p><blockquote><p>从这个算法大家可以对 tradeoff(取舍) 有更入的理解。</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> 算法 </category>
-          
-          <category> 布隆过滤器 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 数据结构 </tag>
-            
-            <tag> 算法 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>浏览器事件模型</title>
       <link href="/blog/2019/12/11/browser-event/"/>
       <url>/blog/2019/12/11/browser-event/</url>
@@ -2427,6 +2435,35 @@
             <tag> 浏览器 </tag>
             
             <tag> 事件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>布隆过滤器</title>
+      <link href="/blog/2019/12/11/bloom-filter/"/>
+      <url>/blog/2019/12/11/bloom-filter/</url>
+      
+        <content type="html"><![CDATA[<p>假设你现在要处理这样一个问题，你有一个网站并且拥有<code>很多</code>访客，每当有用户访问时，你想知道这个ip是不是第一次访问你的网站。你会怎么做呢？</p><a id="more"></a><h3 id="hashtable-可以么"><a href="#hashtable-可以么" class="headerlink" title="hashtable 可以么"></a>hashtable 可以么</h3><p>一个显而易见的答案是将所有的ip用hashtable存起来，每次访问都去hashtable中取，然后判断即可。但是题目说了网站有<code>很多</code>访客，<br>假如有10亿个用户访问过，每个ip的长度是4 byte，那么你一共需要4 * 1000000000 = 4000000000Bytes = 4G , 如果是判断URL黑名单，<br>由于每个URL会更长，那么需要的空间可能会远远大于你的期望。</p><h3 id="bit"><a href="#bit" class="headerlink" title="bit"></a>bit</h3><p>另一个稍微难想到的解法是bit， 我们知道bit有0和1两种状态，那么用来表示存在，不存在再合适不过了。</p><p>加入有10亿个ip，我们就可以用10亿个bit来存储，那么你一共需要 1 * 1000000000 = (4000000000 / 8) Bytes = 128M, 变为原来的1/32,<br>如果是存储URL这种更长的字符串，效率会更高。 </p><p>基于这种想法，我们只需要两个操作，set(ip) 和 has(ip)</p><p>这样做有两个非常致命的缺点：</p><ol><li>当样本分布极度不均匀的时候，会造成很大空间上的浪费</li></ol><blockquote><p>我们可以通过散列函数来解决</p></blockquote><ol start="2"><li>当元素不是整型（比如URL）的时候，BitSet就不适用了</li></ol><blockquote><p>我们还是可以使用散列函数来解决， 甚至可以多hash几次</p></blockquote><h3 id="布隆过滤器"><a href="#布隆过滤器" class="headerlink" title="布隆过滤器"></a>布隆过滤器</h3><p>布隆过滤器其实就是<code>bit + 多个散列函数</code>,  如果经过多次散列的值再bit上都为1，那么可能存在(可能有冲突)。 如果<br>有一个不为1，那么一定不存在（一个值经过散列函数得到的值一定是唯一的），这也是布隆过滤器的一个重要特点。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53hxbw7j31dw0j2wgm.jpg" alt="bloom-filter-url"></p><h3 id="布隆过滤器的应用"><a href="#布隆过滤器的应用" class="headerlink" title="布隆过滤器的应用"></a>布隆过滤器的应用</h3><ol><li><p>网络爬虫<br>判断某个URL是否已经被爬取过</p></li><li><p>K-V数据库 判断某个key是否存在</p></li></ol><p>比如Hbase的每个Region中都包含一个BloomFilter，用于在查询时快速判断某个key在该region中是否存在。</p><ol start="3"><li>钓鱼网站识别</li></ol><p>浏览器有时候会警告用户，访问的网站很可能是钓鱼网站，用的就是这种技术</p><blockquote><p>从这个算法大家可以对 tradeoff(取舍) 有更入的理解。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+          <category> 布隆过滤器 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
