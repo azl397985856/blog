@@ -59,12 +59,12 @@
     <link href="https://lucifer.ren/blog/2020/08/11/webkit-intro/"/>
     <id>https://lucifer.ren/blog/2020/08/11/webkit-intro/</id>
     <published>2020-08-10T16:00:00.000Z</published>
-    <updated>2020-08-11T06:36:47.541Z</updated>
+    <updated>2020-08-11T06:40:39.406Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;作者: 阿吉&lt;br&gt;校对&amp;amp;整理: lucifer&lt;/p&gt;
-&lt;p&gt;当下浏览器内核注意有 Webkit、Blink 等。本文分析注意是自 2001 年 Webkit 从 KHTML 分离出去并开源后，各大浏览器厂商魔改 Webkit 的时期，这些魔改的内核最终以 Chromium 受众最多而脱颖而出。本文就以 Chromium 浏览器架构为基础，逐层探入进行剖析。&lt;/p&gt;
+&lt;p&gt;当下浏览器内核主要有 Webkit、Blink 等。本文分析注意是自 2001 年 Webkit 从 KHTML 分离出去并开源后，各大浏览器厂商魔改 Webkit 的时期，这些魔改的内核最终以 Chromium 受众最多而脱颖而出。本文就以 Chromium 浏览器架构为基础，逐层探入进行剖析。&lt;/p&gt;
     
     </summary>
     
@@ -295,9 +295,9 @@
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
-      <category term="Medium" scheme="https://lucifer.ren/blog/categories/Medium/"/>
-    
       <category term="双指针" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+      <category term="Medium" scheme="https://lucifer.ren/blog/categories/Medium/"/>
     
     
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
