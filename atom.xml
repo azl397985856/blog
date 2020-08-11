@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-08-11T06:36:47.541Z</updated>
+  <updated>2020-08-11T06:39:21.487Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TypeScript 类型系统（草稿）</title>
+    <link href="https://lucifer.ren/blog/2020/08/13/ts-type-system/"/>
+    <id>https://lucifer.ren/blog/2020/08/13/ts-type-system/</id>
+    <published>2020-08-12T16:00:00.000Z</published>
+    <updated>2020-08-11T06:39:21.487Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="浏览器" scheme="https://lucifer.ren/blog/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+      <category term="浏览器" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+      <category term="webkit" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/webkit/"/>
+    
+      <category term="webkit" scheme="https://lucifer.ren/blog/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/webkit/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="浏览器" scheme="https://lucifer.ren/blog/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+      <category term="webkit" scheme="https://lucifer.ren/blog/tags/webkit/"/>
+    
+  </entry>
   
   <entry>
     <title>Webkit 内核初探</title>
@@ -46,28 +84,6 @@
       <category term="浏览器" scheme="https://lucifer.ren/blog/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
     
       <category term="webkit" scheme="https://lucifer.ren/blog/tags/webkit/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://lucifer.ren/blog/2020/08/10/ts-type-system/"/>
-    <id>https://lucifer.ren/blog/2020/08/10/ts-type-system/</id>
-    <published>2020-08-10T01:54:47.764Z</published>
-    <updated>2020-08-10T11:52:42.060Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
