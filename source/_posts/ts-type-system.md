@@ -1,4 +1,12 @@
-# TypeScript 类型系统
+---
+title: TypeScript 类型系统（草稿）
+tags: [前端, 浏览器, webkit]
+date: 2020-08-13
+categories:
+  - [前端, 浏览器]
+  - [前端, webkit]
+  - [浏览器, webkit]
+---
 
 ## 类型系统是 TypeScript 最主要的功能
 
