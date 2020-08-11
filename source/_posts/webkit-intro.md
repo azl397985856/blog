@@ -11,7 +11,7 @@ categories:
 作者: 阿吉
 校对&整理: lucifer
 
-当下浏览器内核注意有 Webkit、Blink 等。本文分析注意是自 2001 年 Webkit 从 KHTML 分离出去并开源后，各大浏览器厂商魔改 Webkit 的时期，这些魔改的内核最终以 Chromium 受众最多而脱颖而出。本文就以 Chromium 浏览器架构为基础，逐层探入进行剖析。
+当下浏览器内核主要有 Webkit、Blink 等。本文分析注意是自 2001 年 Webkit 从 KHTML 分离出去并开源后，各大浏览器厂商魔改 Webkit 的时期，这些魔改的内核最终以 Chromium 受众最多而脱颖而出。本文就以 Chromium 浏览器架构为基础，逐层探入进行剖析。
 
 <!-- more -->
 
