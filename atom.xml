@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-08-11T06:39:21.487Z</updated>
+  <updated>2020-08-13T02:13:27.876Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,11 +17,46 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>提前批算法工程师面试之路</title>
+    <link href="https://lucifer.ren/blog/2020/08/13/interview-log-tqp/"/>
+    <id>https://lucifer.ren/blog/2020/08/13/interview-log-tqp/</id>
+    <published>2020-08-13T02:12:17.419Z</published>
+    <updated>2020-08-13T02:13:27.876Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;作者：宝石&lt;/li&gt;
+&lt;li&gt;校对&amp;amp;整理：lucifer&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="面经" scheme="https://lucifer.ren/blog/categories/%E9%9D%A2%E7%BB%8F/"/>
+    
+      <category term="校招" scheme="https://lucifer.ren/blog/categories/%E6%A0%A1%E6%8B%9B/"/>
+    
+      <category term="百度" scheme="https://lucifer.ren/blog/categories/%E7%99%BE%E5%BA%A6/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="面经" scheme="https://lucifer.ren/blog/tags/%E9%9D%A2%E7%BB%8F/"/>
+    
+      <category term="校招" scheme="https://lucifer.ren/blog/tags/%E6%A0%A1%E6%8B%9B/"/>
+    
+      <category term="百度" scheme="https://lucifer.ren/blog/tags/%E7%99%BE%E5%BA%A6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>TypeScript 类型系统（草稿）</title>
     <link href="https://lucifer.ren/blog/2020/08/13/ts-type-system/"/>
     <id>https://lucifer.ren/blog/2020/08/13/ts-type-system/</id>
     <published>2020-08-12T16:00:00.000Z</published>
-    <updated>2020-08-11T06:39:21.487Z</updated>
+    <updated>2020-08-11T09:00:08.674Z</updated>
     
     <summary type="html">
     
@@ -289,9 +324,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -631,35 +666,6 @@
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>刷题效率低？或许你就差这么一个插件</title>
-    <link href="https://lucifer.ren/blog/2020/06/06/algo-chrome-extension/"/>
-    <id>https://lucifer.ren/blog/2020/06/06/algo-chrome-extension/</id>
-    <published>2020-06-06T10:14:06.364Z</published>
-    <updated>2020-06-06T10:51:33.671Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这两天我写了一个浏览器插件，这个插件的定位就是帮助大家提高刷题效率。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gfiqhxykhtj32m10u0qdc.jpg&quot; alt&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="扩展程序" scheme="https://lucifer.ren/blog/tags/%E6%89%A9%E5%B1%95%E7%A8%8B%E5%BA%8F/"/>
-    
-      <category term="Chrome" scheme="https://lucifer.ren/blog/tags/Chrome/"/>
     
   </entry>
   
