@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-08-13T02:13:27.876Z</updated>
+  <updated>2020-08-16T08:38:29.167Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TypeScript 类型系统</title>
+    <link href="https://lucifer.ren/blog/2020/08/15/ts-type-system/"/>
+    <id>https://lucifer.ren/blog/2020/08/15/ts-type-system/</id>
+    <published>2020-08-14T16:00:00.000Z</published>
+    <updated>2020-08-16T08:38:29.167Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教程。但是目前为止没有一个我特别满意的。原因有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;它们大多数没有一个清晰的主线，而是按照 API 组织章节的，内容在&lt;strong&gt;逻辑上&lt;/strong&gt;比较零散。&lt;/li&gt;
+&lt;li&gt;大多是“讲是什么，怎么用“，而不是”讲为什么，讲原理“。&lt;/li&gt;
+&lt;li&gt;大多数内容比较枯燥，趣味性比较低。都是干巴巴的文字，没有图片，缺乏能够引起强烈共鸣的例子。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此我的想法是做一套不同市面上大多数的 TypeScript 学习教程。以人类认知的角度思考问题，学习 TypeScript，通过通俗易懂的例子和图片来帮助大家建立 TypeScript 世界观。 而本篇文章则是这个系列的开篇。&lt;/p&gt;
+&lt;p&gt;系列安排：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/08/04/ts-internal/&quot; title=&quot;上帝视角看 TypeScrip&quot;&gt;上帝视角看 TypeScript&lt;/a&gt;（已发布）&lt;/li&gt;
+&lt;li&gt;TypeScript 类型系统（就是本文）&lt;/li&gt;
+&lt;li&gt;types 和 @types 是什么？&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/06/16/ts-generics/&quot; title=&quot;你不知道的 TypeScript 泛型（万字长文，建议收藏）&quot;&gt;你不知道的 TypeScript 泛型（万字长文，建议收藏）&lt;/a&gt;（已发布）&lt;/li&gt;
+&lt;li&gt;TypeScript 配置文件该怎么写？&lt;/li&gt;
+&lt;li&gt;TypeScript 是如何与 React，Vue，Webpack 集成的？&lt;/li&gt;
+&lt;li&gt;TypeScript 练习题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;目录将来可能会有所调整。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;注意，我的系列文章基本不会讲 API，因此需要你有一定的 TypeScript 使用基础，推荐两个学习资料。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://jkchao.github.io/typescript-book-chinese/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;深入理解 TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.typescriptlang.org/docs/home&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方文档&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;结合这两个资料和我的系列教程，掌握 TypeScript 指日可待。&lt;/p&gt;
+&lt;p&gt;接下来，我们通过几个方面来从宏观的角度来看一下 TypeScript。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="TypeScript" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/TypeScript/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="TypeScript" scheme="https://lucifer.ren/blog/tags/TypeScript/"/>
+    
+  </entry>
   
   <entry>
     <title>提前批算法工程师面试之路</title>
@@ -48,44 +98,6 @@
       <category term="校招" scheme="https://lucifer.ren/blog/tags/%E6%A0%A1%E6%8B%9B/"/>
     
       <category term="百度" scheme="https://lucifer.ren/blog/tags/%E7%99%BE%E5%BA%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TypeScript 类型系统（草稿）</title>
-    <link href="https://lucifer.ren/blog/2020/08/13/ts-type-system/"/>
-    <id>https://lucifer.ren/blog/2020/08/13/ts-type-system/</id>
-    <published>2020-08-12T16:00:00.000Z</published>
-    <updated>2020-08-11T09:00:08.674Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="浏览器" scheme="https://lucifer.ren/blog/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
-      <category term="浏览器" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
-      <category term="webkit" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/webkit/"/>
-    
-      <category term="webkit" scheme="https://lucifer.ren/blog/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/webkit/"/>
-    
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="浏览器" scheme="https://lucifer.ren/blog/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
-      <category term="webkit" scheme="https://lucifer.ren/blog/tags/webkit/"/>
     
   </entry>
   
@@ -217,7 +229,7 @@
     <link href="https://lucifer.ren/blog/2020/08/03/mother-01/"/>
     <id>https://lucifer.ren/blog/2020/08/03/mother-01/</id>
     <published>2020-08-02T16:00:00.000Z</published>
-    <updated>2020-08-03T03:55:20.423Z</updated>
+    <updated>2020-08-13T05:47:53.521Z</updated>
     
     <summary type="html">
     
@@ -324,15 +336,15 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
-      <category term="双指针" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
-    
       <category term="Medium" scheme="https://lucifer.ren/blog/categories/Medium/"/>
+    
+      <category term="双指针" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
     
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
