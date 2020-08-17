@@ -30,6 +30,14 @@ links:
         border: "none"
         tags:
           - Once a developer, always a developer | 前端开发工程师。
+      - name: 若川的博客
+        avatar: https://avatar-static.segmentfault.com/221/196/2211965068-5cf3a535a13d9_huge256
+        url: https://lxchuan12.cn
+        backgroundColor: "linear-gradient(#ffdde1, #A770EF)" # 卡片背景颜色
+        textColor: "#fff" # 卡片文字颜色
+        border: "none"
+        tags:
+          - 撰写了学习源码整体架构系列8篇，公众号《若川视野》
   - group: Java 大佬
     icon: fab fa-java
     items:
