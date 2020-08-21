@@ -16,8 +16,8 @@ TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教
 
 系列安排：
 
-- 上帝视角看 TypeScript（已发布）
-- TypeScript 类型系统（已发布）
+- [上帝视角看 TypeScript（已发布）](https://lucifer.ren/blog/2020/08/04/ts-internal/)
+- [TypeScript 类型系统（已发布）](https://lucifer.ren/blog/2020/08/15/ts-type-system/)
 - types 和 @types 是什么？（就是本文）
 - [你不知道的 TypeScript 泛型（万字长文，建议收藏）](https://lucifer.ren/blog/2020/06/16/ts-generics/)（已发布）
 - TypeScript 配置文件该怎么写？
