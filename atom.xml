@@ -43,6 +43,36 @@
   </entry>
   
   <entry>
+    <title>types 和 @types 是什么？</title>
+    <link href="https://lucifer.ren/blog/2020/08/16/ts-type/"/>
+    <id>https://lucifer.ren/blog/2020/08/16/ts-type/</id>
+    <published>2020-08-15T16:00:00.000Z</published>
+    <updated>2020-08-21T10:02:04.893Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="TypeScript" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/TypeScript/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="TypeScript" scheme="https://lucifer.ren/blog/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>TypeScript 类型系统</title>
     <link href="https://lucifer.ren/blog/2020/08/15/ts-type-system/"/>
     <id>https://lucifer.ren/blog/2020/08/15/ts-type-system/</id>
@@ -368,9 +398,9 @@
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
-      <category term="双指针" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
-    
       <category term="Medium" scheme="https://lucifer.ren/blog/categories/Medium/"/>
+    
+      <category term="双指针" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
     
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
@@ -648,35 +678,6 @@
     
     
       <category term="数据结构，算法，LeetCode 日记，中等" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E7%AE%97%E6%B3%95%EF%BC%8CLeetCode-%E6%97%A5%E8%AE%B0%EF%BC%8C%E4%B8%AD%E7%AD%89/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端测试最佳实践（持续更新，建议收藏）</title>
-    <link href="https://lucifer.ren/blog/2020/06/08/fe-test-best-practice/"/>
-    <id>https://lucifer.ren/blog/2020/06/08/fe-test-best-practice/</id>
-    <published>2020-06-08T10:50:57.061Z</published>
-    <updated>2020-06-08T10:51:55.415Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近公司在推行单元测试，但是一些同事对于单元测试只是了解，甚至不怎么了解。因此推动单元测试的阻碍是有的，这种阻碍除了人的层面，还有基础设施的层面。希望通过本文，一方面加深大家对前端测试最佳实践的认知，另一方面可以作为手册，在日常开发中做参考。本文也会不断更新，期待你的参与。&lt;/p&gt;
-&lt;p&gt;如果大家对前端测试不太清楚，可以先看下文末我写的科普短文。如果你已经对前端测试有所了解，并且希望对前端测试有更深入的了解，以及对如何写出更好的单元测试有兴趣的话，那就让我们开始吧。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="测试" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="测试" scheme="https://lucifer.ren/blog/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-      <category term="单元测试" scheme="https://lucifer.ren/blog/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
-    
-      <category term="vue" scheme="https://lucifer.ren/blog/tags/vue/"/>
     
   </entry>
   
