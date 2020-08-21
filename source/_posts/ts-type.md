@@ -1,7 +1,7 @@
 ---
 title: types 和 @types 是什么？
 tags: [前端, TypeScript]
-date: 2020-08-16
+date: 2020-08-21
 categories:
   - [前端, TypeScript]
 ---
