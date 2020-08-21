@@ -8,7 +8,7 @@
       <link href="/blog/2020/08/21/ts-type/"/>
       <url>/blog/2020/08/21/ts-type/</url>
       
-        <content type="html"><![CDATA[<p>TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教程。但是目前为止没有一个我特别满意的。原因有：</p><ul><li>它们大多数没有一个清晰的主线，而是按照 API 组织章节的，内容在<strong><em>逻辑上</em></strong>比较零散。</li><li>大多是“讲是什么，怎么用“，而不是”讲为什么，讲原理“。</li><li>大多数内容比较枯燥，趣味性比较低。都是干巴巴的文字，没有图片，缺乏能够引起强烈共鸣的例子。</li></ul><p>因此我的想法是做一套不同市面上大多数的 TypeScript 学习教程。以人类认知的角度思考问题，学习 TypeScript，通过通俗易懂的例子和图片来帮助大家建立 TypeScript 世界观。</p><p>系列安排：</p><ul><li>上帝视角看 TypeScript（已发布）</li><li>TypeScript 类型系统（已发布）</li><li>types 和 @types 是什么？（就是本文）</li><li><a href="https://lucifer.ren/blog/2020/06/16/ts-generics/">你不知道的 TypeScript 泛型（万字长文，建议收藏）</a>（已发布）</li><li>TypeScript 配置文件该怎么写？</li><li>TypeScript 是如何与 React，Vue，Webpack 集成的？</li><li>TypeScript 练习题</li></ul><blockquote><p>目录将来可能会有所调整。</p></blockquote><p>注意，我的系列文章基本不会讲 API，因此需要你有一定的 TypeScript 使用基础，推荐两个学习资料。</p><ul><li><a href="https://jkchao.github.io/typescript-book-chinese/" target="_blank" rel="noopener">深入理解 TypeScript</a></li><li><a href="https://www.typescriptlang.org/docs/home" target="_blank" rel="noopener">官方文档</a></li></ul><p>结合这两个资料和我的系列教程，掌握 TypeScript 指日可待。</p><p>接下来，我们通过几个方面来从宏观的角度来看一下 TypeScript。</p><a id="more"></a><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li>作者：feiker &amp; Lucifer</li></ul><p>TypeScript 中有几个概念和名字很像，会让初学者傻傻分不清楚。比如配置文件中的 <strong><em>types 和 typeRoots</em></strong>，并且还有一个 @types。接触过 TypeScript 的人一定接触过它们， 这几个有什么区别和联系呢？今天就带你来重新认识下它们。</p><h2 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h2><p>这里我通过一个例子来说明一下什么是 @types，这样大家理解起来更深刻一点。</p><p>当我们用 npm 等包管理工具安装第三方包的时候，有些包并不是 TypeScript 编写的，其本身并不支持 TypeScript。这种情况下，如果我们在 TypeScript 项目中引入了这种包，则会编译报错(没有设置 allowJS)。举个例子，当我们通过<code>npm install jquery --save</code> 安装 jquery 包并引用的时候，TypeScript 会报错。</p><blockquote><p>allowJS 是 TypeScript 1.8 引进的一个编译项。</p></blockquote><p><img src="2020-08-11/DCBEF22E-3FF4-4A3A-8CC2-95E8628386D4.png" alt></p><p>报错内容如下：</p><blockquote><p>Could not find a declaration file for module ‘jquery’. Try <code>npm install @types/jquery</code> if it exists or add a new declaration (.d.ts) file containing <code>declare module &#39;jquery&#39;;</code></p></blockquote><p>这里的意思是 TypeScript 没有找到 jquery 这个包的定义，你可以通过<code>npm install @types/jquery</code>安装相关声明，或者自己定义一份.d.ts 文件，并将 jquery 声明为 module。</p><p>值得一提的是，并不是所有的包都可以通过这种方式解决的， 能解决的是 DefinitelyTyped<br>组织已经写好定义的包， 好消息是比较流行的大多数包都有。 如果你想查一个包是否在 @type 下，可以访问 <a href="https://microsoft.github.io/TypeSearch/" target="_blank" rel="noopener">https://microsoft.github.io/TypeSearch/</a></p><h2 id="包类型定义的查找"><a href="#包类型定义的查找" class="headerlink" title="包类型定义的查找"></a>包类型定义的查找</h2><p>试想一下， 全世界不是 TypeScript 编写的包多了去了。即使你的包是 TypeScript 编写的，如果你没有导出声明文件，也是没用的。（TypeScript 默认不会导出声明文件，只会编译输出 JavaScript 文件）。因此 TypeScript 必须对这种情况提供解决方案，而上面的两种方案就是 TypeScript 官方提出的， 你可以选择适合你的方案。</p><blockquote><p>我的推荐是尽量使用 @types 下的声明，实在没有，再使用第二种方法。</p></blockquote><p>这里简单介绍下原理，即 TypeScript 是怎么找定义的，什么情况会找不到定义而报类似上面举的例子的错误。</p><p>就好像 node 的包查找是先在当前文件夹找 node_modules，在它下找递归找，如果找不到则往上层目录继续找，直到顶部一样， TypeScript 类型查找也是类似的方式。</p><p>具体来说就是：</p><ul><li>TypeScript 编译器先在当前编译上下文找 jquery 的定义。</li><li>如果找不到，则会去 node_modules 中的@types （默认情况，目录可以修改，后面会提到）目录下去寻找对应包名的模块声明文件。</li></ul><blockquote><p><code>@types/*</code>模块声明文件由社区维护，通过发布到@types 空间下。 <a href="https://github.com/DefinitelyTyped/DefinitelyTyped" target="_blank" rel="noopener">GitHub - DefinitelyTyped/DefinitelyTyped: The repository for high quality TypeScript type definitions.</a></p></blockquote><h2 id="变量类型定义的查找"><a href="#变量类型定义的查找" class="headerlink" title="变量类型定义的查找"></a>变量类型定义的查找</h2><p>和包查找类似，默认情况下变量类型定义的查找也会去 @types 下去寻找。只不过并不是直接去 @types 找，而是有一定的优先级， 这个过程类似原型链或者作用域链。</p><p>比如如下代码：</p><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user: User = &#123; name: <span class="string">"lucifer"</span> &#125;;</span><br></pre></td></tr></table></figure><ul><li>Typescript 则会先在本模块查找 User 的定义。</li><li>如果找到，则直接返回。 如果找不到， 则会到全局作用域找，而这个全局默认就是指的就是 @types 下的所有类型定义。</li></ul><blockquote><p>也就是说 @types 下的定义都是全局的。当然你可以导入 @types 下导出的定义，使得它们的作用域变成你的模块内部，前提是它的类型是模块化的。/</p></blockquote><h2 id="typeRoots-与-types"><a href="#typeRoots-与-types" class="headerlink" title="typeRoots 与 types"></a>typeRoots 与 types</h2><p>前面说了 TypeScript 会默认引入<code>node_modules</code>下的所有<code>@types</code>声明，但是开发者也可以通过修改<code>tsconfig.json</code>的配置来约束.</p><p>tsconfig.json 中有两个配置和类型引入有关。</p><ol><li><code>typeRoots</code>: 用来指定默认的类型声明文件查找路径，默认为<code>node_modules/@types</code>, 指定<code>typeRoots</code>后，TypeScript 编译器会从指定的路径去引入声明文件，而不是<code>node_modules/@types</code>, 比如以下配置会从<code>typings</code>路径下去搜索声明</li></ol><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="attr">"typeRoots"</span>: [<span class="string">"./typings"</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="2"><li><code>types</code>: TypeScript 编译器会默认引入<code>typeRoot</code>下所有的声明文件，但是有时候我们并<strong><em>不希望全局引入所有定义</em></strong>，而是仅引入部分模块。这种情景下可以通过<code>types</code>指定模块名只引入我们想要的模块，比如以下只会引入 jquery 的声明文件</li></ol><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="attr">"types"</span>: [<span class="string">"jquery"</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol><li>typeRoots 是 tsconfig 中 compilerOptions 的一个配置项，typeRoots 下面的包会被 ts 编译器自动包含进来，typeRoots 默认指向 node_modules/@types。</li><li>@types 是 npm 的 scope 命名空间，和@babel 类似，@types 下的所有包会默认被引入，你可以通过修改 compilerOptions 来修改默认策略。</li><li>types 和 typeRoots 一样也是 compilerOptions 的配置，指定 types 后，typeRoots 下只有被指定的包才会被引入。</li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="https://github.com/DefinitelyTyped/DefinitelyTyped" target="_blank" rel="noopener">GitHub - DefinitelyTyped/DefinitelyTyped: The repository for high quality TypeScript type definitions.</a></li><li><a href="https://jkchao.github.io/typescript-book-chinese/typings/types.html" target="_blank" rel="noopener">@types | 深入理解 TypeScript</a></li><li><a href="https://www.tslang.cn/docs/handbook/tsconfig-json.html" target="_blank" rel="noopener">tsconfig.json · TypeScript 中文网 · TypeScript——JavaScript 的超集</a></li><li><a href="https://segmentfault.com/a/1190000013514680" target="_blank" rel="noopener">理解 Typescript 配置文件 - 个人文章 - SegmentFault 思否</a></li></ul><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的前端硬核文章，带你认识你不知道的前端。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfxro1x125j30oz0dw43s.jpg" alt></p><p>公众号【 <a href="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" target="_blank" rel="noopener">力扣加加</a>】<br>知乎专栏【 <a href="https://www.zhihu.com/people/lu-xiao-13-70" target="_blank" rel="noopener">Lucifer - 知乎</a>】</p><p>点关注，不迷路！</p>]]></content>
+        <content type="html"><![CDATA[<p>TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教程。但是目前为止没有一个我特别满意的。原因有：</p><ul><li>它们大多数没有一个清晰的主线，而是按照 API 组织章节的，内容在<strong><em>逻辑上</em></strong>比较零散。</li><li>大多是“讲是什么，怎么用“，而不是”讲为什么，讲原理“。</li><li>大多数内容比较枯燥，趣味性比较低。都是干巴巴的文字，没有图片，缺乏能够引起强烈共鸣的例子。</li></ul><p>因此我的想法是做一套不同市面上大多数的 TypeScript 学习教程。以人类认知的角度思考问题，学习 TypeScript，通过通俗易懂的例子和图片来帮助大家建立 TypeScript 世界观。</p><p>系列安排：</p><ul><li>上帝视角看 TypeScript（已发布）</li><li>TypeScript 类型系统（已发布）</li><li>types 和 @types 是什么？（就是本文）</li><li><a href="https://lucifer.ren/blog/2020/06/16/ts-generics/">你不知道的 TypeScript 泛型（万字长文，建议收藏）</a>（已发布）</li><li>TypeScript 配置文件该怎么写？</li><li>TypeScript 是如何与 React，Vue，Webpack 集成的？</li><li>TypeScript 练习题</li></ul><blockquote><p>目录将来可能会有所调整。</p></blockquote><p>注意，我的系列文章基本不会讲 API，因此需要你有一定的 TypeScript 使用基础，推荐两个学习资料。</p><ul><li><a href="https://jkchao.github.io/typescript-book-chinese/" target="_blank" rel="noopener">深入理解 TypeScript</a></li><li><a href="https://www.typescriptlang.org/docs/home" target="_blank" rel="noopener">官方文档</a></li></ul><p>结合这两个资料和我的系列教程，掌握 TypeScript 指日可待。</p><p>接下来，我们通过几个方面来从宏观的角度来看一下 TypeScript。</p><a id="more"></a><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li>作者：feiker &amp; Lucifer</li></ul><p>TypeScript 中有几个概念和名字很像，会让初学者傻傻分不清楚。比如配置文件中的 <strong><em>types 和 typeRoots</em></strong>，并且还有一个 @types。接触过 TypeScript 的人一定接触过它们， 这几个有什么区别和联系呢？今天就带你来重新认识下它们。</p><h2 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h2><p>这里我通过一个例子来说明一下什么是 @types，这样大家理解起来更深刻一点。</p><p>当我们用 npm 等包管理工具安装第三方包的时候，有些包并不是 TypeScript 编写的，自然也不会导出 TypeScript 声明文件。这种情况下，如果我们在 TypeScript 项目中引入了这种包，则会编译报错(没有设置 allowJS)。举个例子，当我们通过<code>npm install jquery --save</code> 安装 jquery 包并引用的时候，TypeScript 会报错。</p><blockquote><p>allowJS 是 TypeScript 1.8 引进的一个编译项。</p></blockquote><p><img src="2020-08-11/DCBEF22E-3FF4-4A3A-8CC2-95E8628386D4.png" alt></p><p>报错内容如下：</p><blockquote><p>Could not find a declaration file for module ‘jquery’. Try <code>npm install @types/jquery</code> if it exists or add a new declaration (.d.ts) file containing <code>declare module &#39;jquery&#39;;</code></p></blockquote><p>这里的意思是 TypeScript 没有找到 jquery 这个包的定义，你可以通过<code>npm install @types/jquery</code>安装相关声明，或者自己定义一份.d.ts 文件，并将 jquery 声明为 module。</p><p>全世界不是 TypeScript 编写的包多了去了。即使你的包是 TypeScript 编写的，如果你没有导出声明文件，也是没用的。（TypeScript 默认不会导出声明文件，只会编译输出 JavaScript 文件）。因此 TypeScript 必须对这种情况提供解决方案，而上面的两种方案（安装 @types 和 自己 declare module）就是 TypeScript 官方提出的， 你可以选择适合你的方案。我的推荐是尽量使用 @types 下的声明，实在没有，再使用第二种方法。</p><p>值得一提的是，并不是所有的包都可以通过这种方式解决的， 能解决的是 DefinitelyTyped 组织已经写好定义的包， 好消息是比较流行的包基本都有。 如果你想查一个包是否在 @type 下，可以访问 <a href="https://microsoft.github.io/TypeSearch/" target="_blank" rel="noopener">https://microsoft.github.io/TypeSearch/</a></p><p>那么 TypeScript 是怎么找定义的，什么情况会找不到定义而报类似上面举的例子的错误，这里简单介绍下原理。</p><h2 id="包类型定义的查找"><a href="#包类型定义的查找" class="headerlink" title="包类型定义的查找"></a>包类型定义的查找</h2><p>就好像 node 的包查找是先在当前文件夹找 node_modules，在它下找递归找，如果找不到则往上层目录继续找，直到顶部一样， TypeScript 类型查找也是类似的方式。</p><p>具体来说就是：</p><ul><li>TypeScript 编译器先在当前编译上下文找 jquery 的定义。</li><li>如果找不到，则会去 node_modules 中的@types （默认情况，目录可以修改，后面会提到）目录下去寻找对应包名的模块声明文件。</li></ul><blockquote><p><code>@types/*</code>模块声明文件由社区维护，通过发布到@types 空间下。 <a href="https://github.com/DefinitelyTyped/DefinitelyTyped" target="_blank" rel="noopener">GitHub - DefinitelyTyped/DefinitelyTyped: The repository for high quality TypeScript type definitions.</a></p></blockquote><h2 id="变量类型定义的查找"><a href="#变量类型定义的查找" class="headerlink" title="变量类型定义的查找"></a>变量类型定义的查找</h2><p>和包查找类似，默认情况下变量类型定义的查找也会去 @types 下去寻找。只不过并不是直接去 @types 找，而是有一定的优先级， 这个过程类似原型链或者作用域链。</p><p>比如如下代码：</p><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user: User = &#123; name: <span class="string">"lucifer"</span> &#125;;</span><br></pre></td></tr></table></figure><ul><li>Typescript 则会先在本模块查找 User 的定义。</li><li>如果找到，则直接返回。 如果找不到， 则会到全局作用域找，而这个全局默认就是指的就是 @types 下的所有类型定义。（注意目录页是可以配的）</li></ul><blockquote><p>也就是说 @types 下的定义都是全局的。当然你可以导入 @types 下导出的定义，使得它们的作用域变成你的模块内部。</p></blockquote><h2 id="typeRoots-与-types"><a href="#typeRoots-与-types" class="headerlink" title="typeRoots 与 types"></a>typeRoots 与 types</h2><p>前面说了 TypeScript 会默认引入<code>node_modules</code>下的所有<code>@types</code>声明，但是开发者也可以通过修改<code>tsconfig.json</code>的配置来修改默认的行为.</p><p>tsconfig.json 中有两个配置和类型引入有关。</p><ol><li><code>typeRoots</code>: 用来指定默认的类型声明文件查找路径，默认为<code>node_modules/@types</code>, 指定<code>typeRoots</code>后，TypeScript 编译器会从指定的路径去引入声明文件，而不是<code>node_modules/@types</code>, 比如以下配置会从<code>typings</code>路径下去搜索声明</li></ol><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="attr">"typeRoots"</span>: [<span class="string">"./typings"</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="2"><li><code>types</code>: TypeScript 编译器会默认引入<code>typeRoot</code>下所有的声明文件，但是有时候我们并<strong><em>不希望全局引入所有定义</em></strong>，而是仅引入部分模块。这种情景下可以通过<code>types</code>指定模块名只引入我们想要的模块，比如以下只会引入 jquery 的声明文件</li></ol><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="attr">"types"</span>: [<span class="string">"jquery"</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol><li>typeRoots 是 tsconfig 中 compilerOptions 的一个配置项，typeRoots 下面的包会被 ts 编译器自动包含进来，typeRoots 默认指向 node_modules/@types。</li><li>@types 是 npm 的 scope 命名空间，和@babel 类似，@types 下的所有包会默认被引入，你可以通过修改 compilerOptions 来修改默认策略。</li><li>types 和 typeRoots 一样也是 compilerOptions 的配置，指定 types 后，typeRoots 下只有被指定的包才会被引入。</li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="https://github.com/DefinitelyTyped/DefinitelyTyped" target="_blank" rel="noopener">GitHub - DefinitelyTyped/DefinitelyTyped: The repository for high quality TypeScript type definitions.</a></li><li><a href="https://jkchao.github.io/typescript-book-chinese/typings/types.html" target="_blank" rel="noopener">@types | 深入理解 TypeScript</a></li><li><a href="https://www.tslang.cn/docs/handbook/tsconfig-json.html" target="_blank" rel="noopener">tsconfig.json · TypeScript 中文网 · TypeScript——JavaScript 的超集</a></li><li><a href="https://segmentfault.com/a/1190000013514680" target="_blank" rel="noopener">理解 Typescript 配置文件 - 个人文章 - SegmentFault 思否</a></li></ul><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的前端硬核文章，带你认识你不知道的前端。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfxro1x125j30oz0dw43s.jpg" alt></p><p>公众号【 <a href="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" target="_blank" rel="noopener">力扣加加</a>】<br>知乎专栏【 <a href="https://www.zhihu.com/people/lu-xiao-13-70" target="_blank" rel="noopener">Lucifer - 知乎</a>】</p><p>点关注，不迷路！</p>]]></content>
       
       
       <categories>
@@ -339,9 +339,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -784,11 +784,11 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> 数学 </tag>
             
             <tag> BFS </tag>
             
@@ -839,9 +839,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -876,9 +876,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -911,9 +911,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -1148,9 +1148,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -1368,13 +1368,13 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
           
-          <category> hashtable </category>
+          <category> 数据结构 </category>
           
           <category> BFS </category>
+          
+          <category> hashtable </category>
           
       </categories>
       
@@ -1710,9 +1710,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 字符串 </category>
           
@@ -1749,9 +1749,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -1788,13 +1788,13 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
           
-          <category> hashtable </category>
+          <category> 数据结构 </category>
           
           <category> 数学 </category>
+          
+          <category> hashtable </category>
           
           <category> 位运算 </category>
           
@@ -1860,9 +1860,9 @@
           
           <category> 数学 </category>
           
-          <category> 动态规划 </category>
-          
           <category> 概率 </category>
+          
+          <category> 动态规划 </category>
           
           <category> 递归 </category>
           
@@ -1871,17 +1871,17 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
             
-            <tag> 数学 </tag>
+            <tag> 动态规划 </tag>
             
             <tag> 概率 </tag>
             
             <tag> 递归 </tag>
-            
-            <tag> 动态规划 </tag>
             
         </tags>
       
@@ -1912,9 +1912,9 @@
             
             <tag> 算法 </tag>
             
-            <tag> 动态规划 </tag>
-            
             <tag> 状态机 </tag>
+            
+            <tag> 动态规划 </tag>
             
             <tag> 贪心 </tag>
             
@@ -2112,9 +2112,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> LeetCode </category>
           
@@ -2136,6 +2136,29 @@
             <tag> 字节跳动 </tag>
             
             <tag> 链表 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【RFC】XXX 公司监控体系需求与技术调研</title>
+      <link href="/blog/2019/12/11/rfc-monitor/"/>
+      <url>/blog/2019/12/11/rfc-monitor/</url>
+      
+        <content type="html"><![CDATA[<p>线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量，建立完善的监控体系可以很好的解决这个问题。</p><a id="more"></a><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量。</p><h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>期望有一套工具，系统或者平台，可以满足：</p><ol><li>在收到用户反馈的时候能够快速重现问题并解决。</li><li>测试同学发现问题，不需要花费大量事件和开发人员重现，沟通，以及记录问题重现路径等</li><li>线上发现问题可以进行告警，防止大规模用户有问题，并且不能及时感知和解决。</li><li>缩短团队内部 BUG 修复的闭环流程，减少非本质复杂度问题的干扰，快速将问题聚焦到具体的代码。</li></ol><p>带着上面的需求，我们来看下市面上已有的经典方案， 在这里挑选几个具有代表性的。</p><h2 id="市面上已有的方案对比"><a href="#市面上已有的方案对比" class="headerlink" title="市面上已有的方案对比"></a>市面上已有的方案对比</h2><h3 id="LogRocket"><a href="#LogRocket" class="headerlink" title="LogRocket"></a>LogRocket</h3><p>一句话概括： 用看录像的方式重现问题。</p><p>官网地址： <a href="https://logrocket.com/" target="_blank" rel="noopener">https://logrocket.com/</a></p><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8nsefw6j31ji0braaj.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8mp9lp5j31bc0qr410.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8myz28pj31su0u0ta3.jpg" alt></p><p>更多功能： <a href="https://docs.logrocket.com/docs" target="_blank" rel="noopener">https://docs.logrocket.com/docs</a></p><h4 id="接入方式"><a href="#接入方式" class="headerlink" title="接入方式"></a>接入方式</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8kqmquvj313k0opwfb.jpg" alt></p><h4 id="价格"><a href="#价格" class="headerlink" title="价格"></a>价格</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8lgqwlgj30rg0n3wf0.jpg" alt></p><h3 id="Sentry"><a href="#Sentry" class="headerlink" title="Sentry"></a>Sentry</h3><p>一句话概括： 开源，强大的监控平台。</p><p>官网地址： <a href="https://sentry.io/" target="_blank" rel="noopener">https://sentry.io/</a></p><h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p>功能较多，提供了较多的概念和功能，比如 Context，ENvironments，Breadcrumbs 等。另外其和 CI，CD 集成地也非常好。 详细内容： <a href="https://docs.sentry.io/workflow/releases/?platform=node" target="_blank" rel="noopener">https://docs.sentry.io/workflow/releases/?platform=node</a></p><p>另外其支持的平台和扩展功能非常多，如果对这部分有特殊要求，Sentry 无疑是优先考虑的选择。</p><h4 id="接入方式-1"><a href="#接入方式-1" class="headerlink" title="接入方式"></a>接入方式</h4><ul><li>Sign up for an account</li><li>Install your SDK</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Using yarn</span></span><br><span class="line">$ yarn add @sentry/node@5.8.0</span><br></pre></td></tr></table></figure><ul><li>Configure it</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Sentry = <span class="built_in">require</span>(<span class="string">"@sentry/node"</span>);</span><br><span class="line">Sentry.init(&#123; <span class="attr">dsn</span>: <span class="string">"https://&lt;key&gt;@sentry.io/&lt;project&gt;"</span> &#125;);</span><br></pre></td></tr></table></figure><h4 id="价格-1"><a href="#价格-1" class="headerlink" title="价格"></a>价格</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8qipkskj30x10jt758.jpg" alt></p><h3 id="FunDebug"><a href="#FunDebug" class="headerlink" title="FunDebug"></a>FunDebug</h3><p>一句话概括：国内知名度较高的监控工具，国内业务这块很有竞争力。</p><p><a href="https://www.fundebug.com/" target="_blank" rel="noopener">https://www.fundebug.com/</a></p><h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h4><p>支持小程序，小游戏。多种现成的报警方式，支持 WebHook，智能报警（同样的代码产生的同一个错误，在不同浏览器上的报错信息是各不相同的），内置团队协作工具。</p><h4 id="接入方式-2"><a href="#接入方式-2" class="headerlink" title="接入方式"></a>接入方式</h4><p>这里以 Vue 项目为例。</p><ol><li><p>免费注册</p></li><li><p>创建项目</p></li><li><p>配置</p></li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install fundebug-javascript fundebug-vue --save</span><br></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> fundebug <span class="keyword">from</span> <span class="string">"fundebug-javascript"</span>;</span><br><span class="line"><span class="keyword">import</span> fundebugVue <span class="keyword">from</span> <span class="string">"fundebug-vue"</span>;</span><br><span class="line">fundebug.init(&#123;</span><br><span class="line">  apikey: <span class="string">"API-KEY"</span></span><br><span class="line">&#125;);</span><br><span class="line">fundebugVue(fundebug, Vue);</span><br></pre></td></tr></table></figure><h4 id="价格-2"><a href="#价格-2" class="headerlink" title="价格"></a>价格</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w9mhtq44j30x60mb3z3.jpg" alt></p><h2 id="其他后期可能功能点"><a href="#其他后期可能功能点" class="headerlink" title="其他后期可能功能点"></a>其他后期可能功能点</h2><ol><li><p>性能监控</p></li><li><p>用户行为监控（已经有埋点，不不确定是否可以 Cover 这个需求）</p></li></ol><h2 id="自研"><a href="#自研" class="headerlink" title="自研"></a>自研</h2><p>假设我们已经做好了我们自己的监控平台，我们需要对公司内部甚至外部宣传我们的监控平台，我们会怎么进行宣传。</p><p>然后带着这些东西，我们进行规划，技术选型，排期，写代码，测试，上线。</p><h3 id="宣传语"><a href="#宣传语" class="headerlink" title="宣传语"></a>宣传语</h3><ol><li>接入方便，侵入性小</li><li>支持多端，扩展性强（支持多种框架定制接入），完美契合业务发展</li><li>打通客服系统，开发直接对接到客户，免去了中间对接的信息缺失和时间损耗。</li><li>重现率高，能够准确重现用户的现场情况</li><li>打通报警系统</li><li>打通调试平台<br>…</li></ol><h3 id="优劣分析"><a href="#优劣分析" class="headerlink" title="优劣分析"></a>优劣分析</h3><h4 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h4><p>完美契合我们自身的业务，后期好维护和增添功能</p><h4 id="劣势"><a href="#劣势" class="headerlink" title="劣势"></a>劣势</h4><p>如果功能需要做的超出市面，需要耗费巨大的人力和财力。</p><p>如果市面上不断发展，功能不能断完善，内部如果想要这样的功能要么继续追赶，要不买一套商用的，但是之前的努力岂不是白费了。除非内部两套系统，但是这种模式未免太反直觉。</p><h3 id="架构与选型"><a href="#架构与选型" class="headerlink" title="架构与选型"></a>架构与选型</h3><p>对外都宣传完了，我们需要具体开始进行架构与选型了。</p><h4 id="定义对外接口"><a href="#定义对外接口" class="headerlink" title="定义对外接口"></a>定义对外接口</h4><p>我们对外宣传的目标是<code>接入方便，侵入性小</code>。因此一定要简洁，这里参考了以上几个平台的写法，其实这几个平台的都是大同小异。</p><ol><li>注册应用获取 AppId</li><li>安装</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save @lucifer/monitor</span><br></pre></td></tr></table></figure><ol start="3"><li>引用</li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> monitor <span class="keyword">from</span> <span class="string">"@lucifer/monitor"</span>;</span><br><span class="line">monitor.init(&#123;</span><br><span class="line">  user: &#123;</span><br><span class="line">    name: <span class="string">""</span>,</span><br><span class="line">    email: <span class="string">""</span>,</span><br><span class="line">    mobile: <span class="string">""</span>,</span><br><span class="line">    isVIP: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  appId: <span class="string">"lucifer520"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><ol start="4"><li>多端和多框架支持</li></ol><p>Vue：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue form <span class="string">'vue'</span>;</span><br><span class="line"><span class="keyword">import</span> monitor <span class="keyword">from</span> <span class="string">'@lucifer/connectors/vue'</span>;</span><br><span class="line">monitor.init(&#123;</span><br><span class="line">    user: &#123;</span><br><span class="line">        name: <span class="string">''</span>,</span><br><span class="line">        email: <span class="string">''</span>,</span><br><span class="line">        mobile: <span class="string">''</span>,</span><br><span class="line">        isVIP: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    appId: <span class="string">'lucifer520'</span></span><br><span class="line">&#125;)</span><br><span class="line">monitor.use(Vue)</span><br></pre></td></tr></table></figure><p>Wechat：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> monitor <span class="keyword">from</span> <span class="string">"@lucifer/connectors/wechat"</span>;</span><br><span class="line">monitor.init(&#123;</span><br><span class="line">  user: &#123;</span><br><span class="line">    name: <span class="string">""</span>,</span><br><span class="line">    email: <span class="string">""</span>,</span><br><span class="line">    mobile: <span class="string">""</span>,</span><br><span class="line">    isVIP: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  appId: <span class="string">"lucifer520"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h4 id="定义内部接口"><a href="#定义内部接口" class="headerlink" title="定义内部接口"></a>定义内部接口</h4><p>架构图：</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8xj6xnibej30xd0hzgo5.jpg" alt></p><p>接口系统交互图会在详细设计中给出，这里只给出大致范围：</p><ul><li>logs 服务器和告警平台的交互接口</li><li>rules 的规则解析</li><li>logs 的解析</li><li>构建系统对接</li><li>调试系统对接</li><li>…</li></ul><h4 id="业务形态特点"><a href="#业务形态特点" class="headerlink" title="业务形态特点"></a>业务形态特点</h4><ul><li>数据量会随着采集规模增大而增加，因此预估用户数量以及增长速度对系统架构设计有很大影响</li><li>终端的上报策略对影响很大，断网，弱网等情况如何上报也对结果有影响</li></ul><h4 id="框架选型-amp-规范-amp-约定"><a href="#框架选型-amp-规范-amp-约定" class="headerlink" title="框架选型 &amp; 规范 &amp; 约定"></a>框架选型 &amp; 规范 &amp; 约定</h4><p>暂无</p><h2 id="其他解决方案"><a href="#其他解决方案" class="headerlink" title="其他解决方案"></a>其他解决方案</h2><ul><li>Badjs</li><li>FrontJS</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> RFC </tag>
+            
+            <tag> 技术调研 </tag>
+            
+            <tag> 监控 </tag>
             
         </tags>
       
@@ -2174,9 +2197,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 字符串 </category>
           
@@ -2208,29 +2231,6 @@
             <tag> 字符串 </tag>
             
             <tag> 编程之美 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>【RFC】XXX 公司监控体系需求与技术调研</title>
-      <link href="/blog/2019/12/11/rfc-monitor/"/>
-      <url>/blog/2019/12/11/rfc-monitor/</url>
-      
-        <content type="html"><![CDATA[<p>线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量，建立完善的监控体系可以很好的解决这个问题。</p><a id="more"></a><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量。</p><h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>期望有一套工具，系统或者平台，可以满足：</p><ol><li>在收到用户反馈的时候能够快速重现问题并解决。</li><li>测试同学发现问题，不需要花费大量事件和开发人员重现，沟通，以及记录问题重现路径等</li><li>线上发现问题可以进行告警，防止大规模用户有问题，并且不能及时感知和解决。</li><li>缩短团队内部 BUG 修复的闭环流程，减少非本质复杂度问题的干扰，快速将问题聚焦到具体的代码。</li></ol><p>带着上面的需求，我们来看下市面上已有的经典方案， 在这里挑选几个具有代表性的。</p><h2 id="市面上已有的方案对比"><a href="#市面上已有的方案对比" class="headerlink" title="市面上已有的方案对比"></a>市面上已有的方案对比</h2><h3 id="LogRocket"><a href="#LogRocket" class="headerlink" title="LogRocket"></a>LogRocket</h3><p>一句话概括： 用看录像的方式重现问题。</p><p>官网地址： <a href="https://logrocket.com/" target="_blank" rel="noopener">https://logrocket.com/</a></p><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8nsefw6j31ji0braaj.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8mp9lp5j31bc0qr410.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8myz28pj31su0u0ta3.jpg" alt></p><p>更多功能： <a href="https://docs.logrocket.com/docs" target="_blank" rel="noopener">https://docs.logrocket.com/docs</a></p><h4 id="接入方式"><a href="#接入方式" class="headerlink" title="接入方式"></a>接入方式</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8kqmquvj313k0opwfb.jpg" alt></p><h4 id="价格"><a href="#价格" class="headerlink" title="价格"></a>价格</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8lgqwlgj30rg0n3wf0.jpg" alt></p><h3 id="Sentry"><a href="#Sentry" class="headerlink" title="Sentry"></a>Sentry</h3><p>一句话概括： 开源，强大的监控平台。</p><p>官网地址： <a href="https://sentry.io/" target="_blank" rel="noopener">https://sentry.io/</a></p><h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p>功能较多，提供了较多的概念和功能，比如 Context，ENvironments，Breadcrumbs 等。另外其和 CI，CD 集成地也非常好。 详细内容： <a href="https://docs.sentry.io/workflow/releases/?platform=node" target="_blank" rel="noopener">https://docs.sentry.io/workflow/releases/?platform=node</a></p><p>另外其支持的平台和扩展功能非常多，如果对这部分有特殊要求，Sentry 无疑是优先考虑的选择。</p><h4 id="接入方式-1"><a href="#接入方式-1" class="headerlink" title="接入方式"></a>接入方式</h4><ul><li>Sign up for an account</li><li>Install your SDK</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Using yarn</span></span><br><span class="line">$ yarn add @sentry/node@5.8.0</span><br></pre></td></tr></table></figure><ul><li>Configure it</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Sentry = <span class="built_in">require</span>(<span class="string">"@sentry/node"</span>);</span><br><span class="line">Sentry.init(&#123; <span class="attr">dsn</span>: <span class="string">"https://&lt;key&gt;@sentry.io/&lt;project&gt;"</span> &#125;);</span><br></pre></td></tr></table></figure><h4 id="价格-1"><a href="#价格-1" class="headerlink" title="价格"></a>价格</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8qipkskj30x10jt758.jpg" alt></p><h3 id="FunDebug"><a href="#FunDebug" class="headerlink" title="FunDebug"></a>FunDebug</h3><p>一句话概括：国内知名度较高的监控工具，国内业务这块很有竞争力。</p><p><a href="https://www.fundebug.com/" target="_blank" rel="noopener">https://www.fundebug.com/</a></p><h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h4><p>支持小程序，小游戏。多种现成的报警方式，支持 WebHook，智能报警（同样的代码产生的同一个错误，在不同浏览器上的报错信息是各不相同的），内置团队协作工具。</p><h4 id="接入方式-2"><a href="#接入方式-2" class="headerlink" title="接入方式"></a>接入方式</h4><p>这里以 Vue 项目为例。</p><ol><li><p>免费注册</p></li><li><p>创建项目</p></li><li><p>配置</p></li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install fundebug-javascript fundebug-vue --save</span><br></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> fundebug <span class="keyword">from</span> <span class="string">"fundebug-javascript"</span>;</span><br><span class="line"><span class="keyword">import</span> fundebugVue <span class="keyword">from</span> <span class="string">"fundebug-vue"</span>;</span><br><span class="line">fundebug.init(&#123;</span><br><span class="line">  apikey: <span class="string">"API-KEY"</span></span><br><span class="line">&#125;);</span><br><span class="line">fundebugVue(fundebug, Vue);</span><br></pre></td></tr></table></figure><h4 id="价格-2"><a href="#价格-2" class="headerlink" title="价格"></a>价格</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w9mhtq44j30x60mb3z3.jpg" alt></p><h2 id="其他后期可能功能点"><a href="#其他后期可能功能点" class="headerlink" title="其他后期可能功能点"></a>其他后期可能功能点</h2><ol><li><p>性能监控</p></li><li><p>用户行为监控（已经有埋点，不不确定是否可以 Cover 这个需求）</p></li></ol><h2 id="自研"><a href="#自研" class="headerlink" title="自研"></a>自研</h2><p>假设我们已经做好了我们自己的监控平台，我们需要对公司内部甚至外部宣传我们的监控平台，我们会怎么进行宣传。</p><p>然后带着这些东西，我们进行规划，技术选型，排期，写代码，测试，上线。</p><h3 id="宣传语"><a href="#宣传语" class="headerlink" title="宣传语"></a>宣传语</h3><ol><li>接入方便，侵入性小</li><li>支持多端，扩展性强（支持多种框架定制接入），完美契合业务发展</li><li>打通客服系统，开发直接对接到客户，免去了中间对接的信息缺失和时间损耗。</li><li>重现率高，能够准确重现用户的现场情况</li><li>打通报警系统</li><li>打通调试平台<br>…</li></ol><h3 id="优劣分析"><a href="#优劣分析" class="headerlink" title="优劣分析"></a>优劣分析</h3><h4 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h4><p>完美契合我们自身的业务，后期好维护和增添功能</p><h4 id="劣势"><a href="#劣势" class="headerlink" title="劣势"></a>劣势</h4><p>如果功能需要做的超出市面，需要耗费巨大的人力和财力。</p><p>如果市面上不断发展，功能不能断完善，内部如果想要这样的功能要么继续追赶，要不买一套商用的，但是之前的努力岂不是白费了。除非内部两套系统，但是这种模式未免太反直觉。</p><h3 id="架构与选型"><a href="#架构与选型" class="headerlink" title="架构与选型"></a>架构与选型</h3><p>对外都宣传完了，我们需要具体开始进行架构与选型了。</p><h4 id="定义对外接口"><a href="#定义对外接口" class="headerlink" title="定义对外接口"></a>定义对外接口</h4><p>我们对外宣传的目标是<code>接入方便，侵入性小</code>。因此一定要简洁，这里参考了以上几个平台的写法，其实这几个平台的都是大同小异。</p><ol><li>注册应用获取 AppId</li><li>安装</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save @lucifer/monitor</span><br></pre></td></tr></table></figure><ol start="3"><li>引用</li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> monitor <span class="keyword">from</span> <span class="string">"@lucifer/monitor"</span>;</span><br><span class="line">monitor.init(&#123;</span><br><span class="line">  user: &#123;</span><br><span class="line">    name: <span class="string">""</span>,</span><br><span class="line">    email: <span class="string">""</span>,</span><br><span class="line">    mobile: <span class="string">""</span>,</span><br><span class="line">    isVIP: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  appId: <span class="string">"lucifer520"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><ol start="4"><li>多端和多框架支持</li></ol><p>Vue：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue form <span class="string">'vue'</span>;</span><br><span class="line"><span class="keyword">import</span> monitor <span class="keyword">from</span> <span class="string">'@lucifer/connectors/vue'</span>;</span><br><span class="line">monitor.init(&#123;</span><br><span class="line">    user: &#123;</span><br><span class="line">        name: <span class="string">''</span>,</span><br><span class="line">        email: <span class="string">''</span>,</span><br><span class="line">        mobile: <span class="string">''</span>,</span><br><span class="line">        isVIP: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    appId: <span class="string">'lucifer520'</span></span><br><span class="line">&#125;)</span><br><span class="line">monitor.use(Vue)</span><br></pre></td></tr></table></figure><p>Wechat：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> monitor <span class="keyword">from</span> <span class="string">"@lucifer/connectors/wechat"</span>;</span><br><span class="line">monitor.init(&#123;</span><br><span class="line">  user: &#123;</span><br><span class="line">    name: <span class="string">""</span>,</span><br><span class="line">    email: <span class="string">""</span>,</span><br><span class="line">    mobile: <span class="string">""</span>,</span><br><span class="line">    isVIP: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  appId: <span class="string">"lucifer520"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h4 id="定义内部接口"><a href="#定义内部接口" class="headerlink" title="定义内部接口"></a>定义内部接口</h4><p>架构图：</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8xj6xnibej30xd0hzgo5.jpg" alt></p><p>接口系统交互图会在详细设计中给出，这里只给出大致范围：</p><ul><li>logs 服务器和告警平台的交互接口</li><li>rules 的规则解析</li><li>logs 的解析</li><li>构建系统对接</li><li>调试系统对接</li><li>…</li></ul><h4 id="业务形态特点"><a href="#业务形态特点" class="headerlink" title="业务形态特点"></a>业务形态特点</h4><ul><li>数据量会随着采集规模增大而增加，因此预估用户数量以及增长速度对系统架构设计有很大影响</li><li>终端的上报策略对影响很大，断网，弱网等情况如何上报也对结果有影响</li></ul><h4 id="框架选型-amp-规范-amp-约定"><a href="#框架选型-amp-规范-amp-约定" class="headerlink" title="框架选型 &amp; 规范 &amp; 约定"></a>框架选型 &amp; 规范 &amp; 约定</h4><p>暂无</p><h2 id="其他解决方案"><a href="#其他解决方案" class="headerlink" title="其他解决方案"></a>其他解决方案</h2><ul><li>Badjs</li><li>FrontJS</li></ul>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> RFC </tag>
-            
-            <tag> 技术调研 </tag>
-            
-            <tag> 监控 </tag>
             
         </tags>
       
@@ -2318,9 +2318,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> LeetCode </category>
           
@@ -2671,9 +2671,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           

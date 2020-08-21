@@ -356,7 +356,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">1.7k字</span>
+          <span class="post-count">1.8k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -416,7 +416,7 @@
 </ul>
 <p>TypeScript 中有几个概念和名字很像，会让初学者傻傻分不清楚。比如配置文件中的 <strong><em>types 和 typeRoots</em></strong>，并且还有一个 @types。接触过 TypeScript 的人一定接触过它们， 这几个有什么区别和联系呢？今天就带你来重新认识下它们。</p>
 <h2 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h2><p>这里我通过一个例子来说明一下什么是 @types，这样大家理解起来更深刻一点。</p>
-<p>当我们用 npm 等包管理工具安装第三方包的时候，有些包并不是 TypeScript 编写的，其本身并不支持 TypeScript。这种情况下，如果我们在 TypeScript 项目中引入了这种包，则会编译报错(没有设置 allowJS)。举个例子，当我们通过<code>npm install jquery --save</code> 安装 jquery 包并引用的时候，TypeScript 会报错。</p>
+<p>当我们用 npm 等包管理工具安装第三方包的时候，有些包并不是 TypeScript 编写的，自然也不会导出 TypeScript 声明文件。这种情况下，如果我们在 TypeScript 项目中引入了这种包，则会编译报错(没有设置 allowJS)。举个例子，当我们通过<code>npm install jquery --save</code> 安装 jquery 包并引用的时候，TypeScript 会报错。</p>
 <blockquote>
 <p>allowJS 是 TypeScript 1.8 引进的一个编译项。</p>
 </blockquote>
@@ -426,13 +426,10 @@
 <p>Could not find a declaration file for module ‘jquery’. Try <code>npm install @types/jquery</code> if it exists or add a new declaration (.d.ts) file containing <code>declare module &#39;jquery&#39;;</code></p>
 </blockquote>
 <p>这里的意思是 TypeScript 没有找到 jquery 这个包的定义，你可以通过<code>npm install @types/jquery</code>安装相关声明，或者自己定义一份.d.ts 文件，并将 jquery 声明为 module。</p>
-<p>值得一提的是，并不是所有的包都可以通过这种方式解决的， 能解决的是 DefinitelyTyped<br>组织已经写好定义的包， 好消息是比较流行的大多数包都有。 如果你想查一个包是否在 @type 下，可以访问 <a href="https://microsoft.github.io/TypeSearch/" target="_blank" rel="noopener">https://microsoft.github.io/TypeSearch/</a></p>
-<h2 id="包类型定义的查找"><a href="#包类型定义的查找" class="headerlink" title="包类型定义的查找"></a>包类型定义的查找</h2><p>试想一下， 全世界不是 TypeScript 编写的包多了去了。即使你的包是 TypeScript 编写的，如果你没有导出声明文件，也是没用的。（TypeScript 默认不会导出声明文件，只会编译输出 JavaScript 文件）。因此 TypeScript 必须对这种情况提供解决方案，而上面的两种方案就是 TypeScript 官方提出的， 你可以选择适合你的方案。</p>
-<blockquote>
-<p>我的推荐是尽量使用 @types 下的声明，实在没有，再使用第二种方法。</p>
-</blockquote>
-<p>这里简单介绍下原理，即 TypeScript 是怎么找定义的，什么情况会找不到定义而报类似上面举的例子的错误。</p>
-<p>就好像 node 的包查找是先在当前文件夹找 node_modules，在它下找递归找，如果找不到则往上层目录继续找，直到顶部一样， TypeScript 类型查找也是类似的方式。</p>
+<p>全世界不是 TypeScript 编写的包多了去了。即使你的包是 TypeScript 编写的，如果你没有导出声明文件，也是没用的。（TypeScript 默认不会导出声明文件，只会编译输出 JavaScript 文件）。因此 TypeScript 必须对这种情况提供解决方案，而上面的两种方案（安装 @types 和 自己 declare module）就是 TypeScript 官方提出的， 你可以选择适合你的方案。我的推荐是尽量使用 @types 下的声明，实在没有，再使用第二种方法。</p>
+<p>值得一提的是，并不是所有的包都可以通过这种方式解决的， 能解决的是 DefinitelyTyped 组织已经写好定义的包， 好消息是比较流行的包基本都有。 如果你想查一个包是否在 @type 下，可以访问 <a href="https://microsoft.github.io/TypeSearch/" target="_blank" rel="noopener">https://microsoft.github.io/TypeSearch/</a></p>
+<p>那么 TypeScript 是怎么找定义的，什么情况会找不到定义而报类似上面举的例子的错误，这里简单介绍下原理。</p>
+<h2 id="包类型定义的查找"><a href="#包类型定义的查找" class="headerlink" title="包类型定义的查找"></a>包类型定义的查找</h2><p>就好像 node 的包查找是先在当前文件夹找 node_modules，在它下找递归找，如果找不到则往上层目录继续找，直到顶部一样， TypeScript 类型查找也是类似的方式。</p>
 <p>具体来说就是：</p>
 <ul>
 <li>TypeScript 编译器先在当前编译上下文找 jquery 的定义。</li>
@@ -447,12 +444,12 @@
 
 <ul>
 <li>Typescript 则会先在本模块查找 User 的定义。</li>
-<li>如果找到，则直接返回。 如果找不到， 则会到全局作用域找，而这个全局默认就是指的就是 @types 下的所有类型定义。</li>
+<li>如果找到，则直接返回。 如果找不到， 则会到全局作用域找，而这个全局默认就是指的就是 @types 下的所有类型定义。（注意目录页是可以配的）</li>
 </ul>
 <blockquote>
-<p>也就是说 @types 下的定义都是全局的。当然你可以导入 @types 下导出的定义，使得它们的作用域变成你的模块内部，前提是它的类型是模块化的。/</p>
+<p>也就是说 @types 下的定义都是全局的。当然你可以导入 @types 下导出的定义，使得它们的作用域变成你的模块内部。</p>
 </blockquote>
-<h2 id="typeRoots-与-types"><a href="#typeRoots-与-types" class="headerlink" title="typeRoots 与 types"></a>typeRoots 与 types</h2><p>前面说了 TypeScript 会默认引入<code>node_modules</code>下的所有<code>@types</code>声明，但是开发者也可以通过修改<code>tsconfig.json</code>的配置来约束.</p>
+<h2 id="typeRoots-与-types"><a href="#typeRoots-与-types" class="headerlink" title="typeRoots 与 types"></a>typeRoots 与 types</h2><p>前面说了 TypeScript 会默认引入<code>node_modules</code>下的所有<code>@types</code>声明，但是开发者也可以通过修改<code>tsconfig.json</code>的配置来修改默认的行为.</p>
 <p>tsconfig.json 中有两个配置和类型引入有关。</p>
 <ol>
 <li><code>typeRoots</code>: 用来指定默认的类型声明文件查找路径，默认为<code>node_modules/@types</code>, 指定<code>typeRoots</code>后，TypeScript 编译器会从指定的路径去引入声明文件，而不是<code>node_modules/@types</code>, 比如以下配置会从<code>typings</code>路径下去搜索声明</li>
@@ -490,7 +487,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-21T18:15:53+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-21T18:23:39+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年8月21日</p>
