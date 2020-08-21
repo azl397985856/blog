@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-08-21T10:09:11.112Z</updated>
+  <updated>2020-08-21T10:15:53.188Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lucifer.ren/blog/2020/08/21/ts-type/"/>
     <id>https://lucifer.ren/blog/2020/08/21/ts-type/</id>
     <published>2020-08-20T16:00:00.000Z</published>
-    <updated>2020-08-21T10:09:11.112Z</updated>
+    <updated>2020-08-21T10:15:53.188Z</updated>
     
     <summary type="html">
     
@@ -31,7 +31,7 @@
 &lt;li&gt;大多是“讲是什么，怎么用“，而不是”讲为什么，讲原理“。&lt;/li&gt;
 &lt;li&gt;大多数内容比较枯燥，趣味性比较低。都是干巴巴的文字，没有图片，缺乏能够引起强烈共鸣的例子。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;因此我的想法是做一套不同市面上大多数的 TypeScript 学习教程。以人类认知的角度思考问题，学习 TypeScript，通过通俗易懂的例子和图片来帮助大家建立 TypeScript 世界观。 &lt;/p&gt;
+&lt;p&gt;因此我的想法是做一套不同市面上大多数的 TypeScript 学习教程。以人类认知的角度思考问题，学习 TypeScript，通过通俗易懂的例子和图片来帮助大家建立 TypeScript 世界观。&lt;/p&gt;
 &lt;p&gt;系列安排：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;上帝视角看 TypeScript（已发布）&lt;/li&gt;
