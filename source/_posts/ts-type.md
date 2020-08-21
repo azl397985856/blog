@@ -47,7 +47,7 @@ TypeScript 中有几个概念和名字很像，会让初学者傻傻分不清楚
 
 这里我通过一个例子来说明一下什么是 @types，这样大家理解起来更深刻一点。
 
-当我们用 npm 等包管理工具安装第三方包的时候，有些包并不是 TypeScript 编写的，其本身并不支持 TypeScript。这种情况下，如果我们在 TypeScript 项目中引入了这种包，则会编译报错(没有设置 allowJS)。举个例子，当我们通过`npm install jquery --save` 安装 jquery 包并引用的时候，TypeScript 会报错。
+当我们用 npm 等包管理工具安装第三方包的时候，有些包并不是 TypeScript 编写的，自然也不会导出 TypeScript 声明文件。这种情况下，如果我们在 TypeScript 项目中引入了这种包，则会编译报错(没有设置 allowJS)。举个例子，当我们通过`npm install jquery --save` 安装 jquery 包并引用的时候，TypeScript 会报错。
 
 > allowJS 是 TypeScript 1.8 引进的一个编译项。
 
@@ -59,16 +59,13 @@ TypeScript 中有几个概念和名字很像，会让初学者傻傻分不清楚
 
 这里的意思是 TypeScript 没有找到 jquery 这个包的定义，你可以通过`npm install @types/jquery`安装相关声明，或者自己定义一份.d.ts 文件，并将 jquery 声明为 module。
 
-值得一提的是，并不是所有的包都可以通过这种方式解决的， 能解决的是 DefinitelyTyped
-组织已经写好定义的包， 好消息是比较流行的大多数包都有。 如果你想查一个包是否在 @type 下，可以访问 https://microsoft.github.io/TypeSearch/
+全世界不是 TypeScript 编写的包多了去了。即使你的包是 TypeScript 编写的，如果你没有导出声明文件，也是没用的。（TypeScript 默认不会导出声明文件，只会编译输出 JavaScript 文件）。因此 TypeScript 必须对这种情况提供解决方案，而上面的两种方案（安装 @types 和 自己 declare module）就是 TypeScript 官方提出的， 你可以选择适合你的方案。我的推荐是尽量使用 @types 下的声明，实在没有，再使用第二种方法。
+
+值得一提的是，并不是所有的包都可以通过这种方式解决的， 能解决的是 DefinitelyTyped 组织已经写好定义的包， 好消息是比较流行的包基本都有。 如果你想查一个包是否在 @type 下，可以访问 https://microsoft.github.io/TypeSearch/
+
+那么 TypeScript 是怎么找定义的，什么情况会找不到定义而报类似上面举的例子的错误，这里简单介绍下原理。
 
 ## 包类型定义的查找
-
-试想一下， 全世界不是 TypeScript 编写的包多了去了。即使你的包是 TypeScript 编写的，如果你没有导出声明文件，也是没用的。（TypeScript 默认不会导出声明文件，只会编译输出 JavaScript 文件）。因此 TypeScript 必须对这种情况提供解决方案，而上面的两种方案就是 TypeScript 官方提出的， 你可以选择适合你的方案。
-
-> 我的推荐是尽量使用 @types 下的声明，实在没有，再使用第二种方法。
-
-这里简单介绍下原理，即 TypeScript 是怎么找定义的，什么情况会找不到定义而报类似上面举的例子的错误。
 
 就好像 node 的包查找是先在当前文件夹找 node_modules，在它下找递归找，如果找不到则往上层目录继续找，直到顶部一样， TypeScript 类型查找也是类似的方式。
 
@@ -90,13 +87,13 @@ const user: User = { name: "lucifer" };
 ```
 
 - Typescript 则会先在本模块查找 User 的定义。
-- 如果找到，则直接返回。 如果找不到， 则会到全局作用域找，而这个全局默认就是指的就是 @types 下的所有类型定义。
+- 如果找到，则直接返回。 如果找不到， 则会到全局作用域找，而这个全局默认就是指的就是 @types 下的所有类型定义。（注意目录页是可以配的）
 
-> 也就是说 @types 下的定义都是全局的。当然你可以导入 @types 下导出的定义，使得它们的作用域变成你的模块内部，前提是它的类型是模块化的。/
+> 也就是说 @types 下的定义都是全局的。当然你可以导入 @types 下导出的定义，使得它们的作用域变成你的模块内部。
 
 ## typeRoots 与 types
 
-前面说了 TypeScript 会默认引入`node_modules`下的所有`@types`声明，但是开发者也可以通过修改`tsconfig.json`的配置来约束.
+前面说了 TypeScript 会默认引入`node_modules`下的所有`@types`声明，但是开发者也可以通过修改`tsconfig.json`的配置来修改默认的行为.
 
 tsconfig.json 中有两个配置和类型引入有关。
 
