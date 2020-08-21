@@ -8,11 +8,11 @@ categories:
 
 TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教程。但是目前为止没有一个我特别满意的。原因有：
 
-- 它们大多数没有一个清晰的主线，而是按照 API 组织章节的，内容在***逻辑上***比较零散。
+- 它们大多数没有一个清晰的主线，而是按照 API 组织章节的，内容在**_逻辑上_**比较零散。
 - 大多是“讲是什么，怎么用“，而不是”讲为什么，讲原理“。
 - 大多数内容比较枯燥，趣味性比较低。都是干巴巴的文字，没有图片，缺乏能够引起强烈共鸣的例子。
 
-因此我的想法是做一套不同市面上大多数的 TypeScript 学习教程。以人类认知的角度思考问题，学习 TypeScript，通过通俗易懂的例子和图片来帮助大家建立 TypeScript 世界观。 
+因此我的想法是做一套不同市面上大多数的 TypeScript 学习教程。以人类认知的角度思考问题，学习 TypeScript，通过通俗易懂的例子和图片来帮助大家建立 TypeScript 世界观。
 
 系列安排：
 
@@ -41,13 +41,15 @@ TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教
 
 - 作者：feiker & Lucifer
 
-TypeScript 中有几个概念和名字很像，会让初学者傻傻分不清楚。比如配置文件中的 ***types 和 typeRoots***，并且还有一个 @types。接触过 TypeScript 的人一定接触过它们， 这几个有什么区别和联系呢？今天就带你来重新认识下它们。
+TypeScript 中有几个概念和名字很像，会让初学者傻傻分不清楚。比如配置文件中的 **_types 和 typeRoots_**，并且还有一个 @types。接触过 TypeScript 的人一定接触过它们， 这几个有什么区别和联系呢？今天就带你来重新认识下它们。
 
 ## 一个例子
 
 这里我通过一个例子来说明一下什么是 @types，这样大家理解起来更深刻一点。
 
-当我们用 npm 等包管理工具安装第三方包的时候，有些包并不是 TypeScript 编写的，其本身并不支持 TypeScript。这种情况下，如果我们在 TypeScript 项目中引入了这种包，则会编译报错。举个例子，当我们通过`npm install jquery --save` 安装 jquery 包并引用的时候，TypeScript 会报错。
+当我们用 npm 等包管理工具安装第三方包的时候，有些包并不是 TypeScript 编写的，其本身并不支持 TypeScript。这种情况下，如果我们在 TypeScript 项目中引入了这种包，则会编译报错(没有设置 allowJS)。举个例子，当我们通过`npm install jquery --save` 安装 jquery 包并引用的时候，TypeScript 会报错。
+
+> allowJS 是 TypeScript 1.8 引进的一个编译项。
 
 ![](2020-08-11/DCBEF22E-3FF4-4A3A-8CC2-95E8628386D4.png)
 
@@ -56,6 +58,9 @@ TypeScript 中有几个概念和名字很像，会让初学者傻傻分不清楚
 > Could not find a declaration file for module ‘jquery’. Try `npm install @types/jquery` if it exists or add a new declaration (.d.ts) file containing `declare module 'jquery';`
 
 这里的意思是 TypeScript 没有找到 jquery 这个包的定义，你可以通过`npm install @types/jquery`安装相关声明，或者自己定义一份.d.ts 文件，并将 jquery 声明为 module。
+
+值得一提的是，并不是所有的包都可以通过这种方式解决的， 能解决的是 DefinitelyTyped
+组织已经写好定义的包， 好消息是比较流行的大多数包都有。 如果你想查一个包是否在 @type 下，可以访问 https://microsoft.github.io/TypeSearch/
 
 ## 包类型定义的查找
 
@@ -72,7 +77,7 @@ TypeScript 中有几个概念和名字很像，会让初学者傻傻分不清楚
 - TypeScript 编译器先在当前编译上下文找 jquery 的定义。
 - 如果找不到，则会去 node_modules 中的@types （默认情况，目录可以修改，后面会提到）目录下去寻找对应包名的模块声明文件。
 
-> `@types/*`模块声明文件由社区维护，通过发布到@types 空间下。 [GitHub - DefinitelyTyped/DefinitelyTyped: The repository for high quality TypeScript type definitions.](https://github.com/DefinitelyTyped/DefinitelyTyped) 
+> `@types/*`模块声明文件由社区维护，通过发布到@types 空间下。 [GitHub - DefinitelyTyped/DefinitelyTyped: The repository for high quality TypeScript type definitions.](https://github.com/DefinitelyTyped/DefinitelyTyped)
 
 ## 变量类型定义的查找
 
@@ -105,7 +110,7 @@ tsconfig.json 中有两个配置和类型引入有关。
 }
 ```
 
-2. `types`: TypeScript 编译器会默认引入`typeRoot`下所有的声明文件，但是有时候我们并***不希望全局引入所有定义***，而是仅引入部分模块。这种情景下可以通过`types`指定模块名只引入我们想要的模块，比如以下只会引入 jquery 的声明文件
+2. `types`: TypeScript 编译器会默认引入`typeRoot`下所有的声明文件，但是有时候我们并**_不希望全局引入所有定义_**，而是仅引入部分模块。这种情景下可以通过`types`指定模块名只引入我们想要的模块，比如以下只会引入 jquery 的声明文件
 
 ```json
 {
