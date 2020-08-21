@@ -72,7 +72,7 @@ TypeScript 中有几个概念和名字很像，会让初学者傻傻分不清楚
 - TypeScript 编译器先在当前编译上下文找 jquery 的定义。
 - 如果找不到，则会去 node_modules 中的@types （默认情况，目录可以修改，后面会提到）目录下去寻找对应包名的模块声明文件。
 
-> `@types/*`模块声明文件由社区维护，通过发布到@types 空间下。/ [GitHub - DefinitelyTyped/DefinitelyTyped: The repository for high quality TypeScript type definitions.](https://github.com/DefinitelyTyped/DefinitelyTyped) 
+> `@types/*`模块声明文件由社区维护，通过发布到@types 空间下。 [GitHub - DefinitelyTyped/DefinitelyTyped: The repository for high quality TypeScript type definitions.](https://github.com/DefinitelyTyped/DefinitelyTyped) 
 
 ## 变量类型定义的查找
 
