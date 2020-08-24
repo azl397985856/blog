@@ -51,8 +51,6 @@ TypeScript 中有几个概念和名字很像，会让初学者傻傻分不清楚
 
 > allowJS 是 TypeScript 1.8 引进的一个编译项。
 
-![](2020-08-11/DCBEF22E-3FF4-4A3A-8CC2-95E8628386D4.png)
-
 报错内容如下：
 
 > Could not find a declaration file for module ‘jquery’. Try `npm install @types/jquery` if it exists or add a new declaration (.d.ts) file containing `declare module 'jquery';`
