@@ -78,9 +78,9 @@ a = [];
 var a: number = 1;
 a = "lucifer"; // error
 var b: any = 1;
-a = "lucifer"; // ok
-a = {}; // ok
-a = []; // ok
+b = "lucifer"; // ok
+b = {}; // ok
+b = []; // ok
 ```
 
 我们不能将 string 类型的值赋值给变量 a， 因为 string 和 number 类型不兼容。而我们可以将 string,Object,Array 类型的值赋值给 b，因此 它们和 any 类型兼容。简单来说就是，一旦一个变量被标注了某种类型，那么其就只能接受这个类型以及它的子类型。
