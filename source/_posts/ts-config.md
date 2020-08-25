@@ -1,5 +1,5 @@
 ---
-title: typeScript 配置文件该怎么写？
+title: TypeScript 配置文件该怎么写？
 tags: [前端, TypeScript]
 date: 2020-08-24
 categories:
