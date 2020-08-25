@@ -430,7 +430,7 @@
 <p>上面的值是有类型的。比如 1 是 number 类型，”lucifer” 是字符串类型， {} 是对象类型， [] 是数组类型。而变量 a 是没有固定类型的。</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghsqh8ere4j30qc0iygmv.jpg" alt></p>
 <p>对于 Typescript 来说， 一个变量只能接受和它类型兼容的类型的值。说起来比较拗口， 看个例子就明白了。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a: <span class="built_in">number</span> = <span class="number">1</span>;</span><br><span class="line">a = <span class="string">"lucifer"</span>; <span class="comment">// error</span></span><br><span class="line"><span class="keyword">var</span> b: <span class="built_in">any</span> = <span class="number">1</span>;</span><br><span class="line">a = <span class="string">"lucifer"</span>; <span class="comment">// ok</span></span><br><span class="line">a = &#123;&#125;; <span class="comment">// ok</span></span><br><span class="line">a = []; <span class="comment">// ok</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a: <span class="built_in">number</span> = <span class="number">1</span>;</span><br><span class="line">a = <span class="string">"lucifer"</span>; <span class="comment">// error</span></span><br><span class="line"><span class="keyword">var</span> b: <span class="built_in">any</span> = <span class="number">1</span>;</span><br><span class="line">b = <span class="string">"lucifer"</span>; <span class="comment">// ok</span></span><br><span class="line">b = &#123;&#125;; <span class="comment">// ok</span></span><br><span class="line">b = []; <span class="comment">// ok</span></span><br></pre></td></tr></table></figure>
 
 <p>我们不能将 string 类型的值赋值给变量 a， 因为 string 和 number 类型不兼容。而我们可以将 string,Object,Array 类型的值赋值给 b，因此 它们和 any 类型兼容。简单来说就是，一旦一个变量被标注了某种类型，那么其就只能接受这个类型以及它的子类型。</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghsqgexx68j30q80j6ta0.jpg" alt></p>
@@ -563,10 +563,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-16T16:38:29+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-25T20:04:01+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年8月16日</p>
+    <p>更新于 2020年8月25日</p>
   </a>
 </div>
 
