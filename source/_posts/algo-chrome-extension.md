@@ -9,6 +9,10 @@ categories:
 
 ![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfiqhxykhtj32m10u0qdc.jpg)
 
+## 获取方式
+
+关注公众号《力扣加加》回复 刷题插件 即可。
+
 <!-- more -->
 
 ## 功能介绍
@@ -39,7 +43,7 @@ categories:
 
 > 具体做什么，等出来之后再和大家同步
 
-## 如何使用（暂时没开放下载，正式开放时间等公众号通知）
+## 如何使用
 
 - 下载插件
 - 用 chrome 浏览器，访问 chrome://extensions/
