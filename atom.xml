@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-08-30T06:07:32.303Z</updated>
+  <updated>2020-09-03T12:16:25.861Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用最优雅的方式打开终端</title>
+    <link href="https://lucifer.ren/blog/2020/09/03/iterm-window-hotkey/"/>
+    <id>https://lucifer.ren/blog/2020/09/03/iterm-window-hotkey/</id>
+    <published>2020-09-03T12:15:27.867Z</published>
+    <updated>2020-09-03T12:16:25.861Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;如何快速呼出终端&quot;&gt;&lt;a href=&quot;#如何快速呼出终端&quot; class=&quot;headerlink&quot; title=&quot;如何快速呼出终端&quot;&gt;&lt;/a&gt;如何快速呼出终端&lt;/h2&gt;&lt;p&gt;终端或许是作为一个程序员，使用最多的工具之一了。最近就有朋友问我的终端是如何做到快速呼出的。先上效果图：&lt;/p&gt;
+&lt;p&gt;接下来就教你&lt;strong&gt;随时随地，用最优雅的方式&lt;/strong&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="工具" scheme="https://lucifer.ren/blog/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="效率" scheme="https://lucifer.ren/blog/tags/%E6%95%88%E7%8E%87/"/>
+    
+      <category term="命令行" scheme="https://lucifer.ren/blog/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>对《丢鸡蛋问题》的一点补充</title>
@@ -531,9 +556,9 @@
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
-      <category term="双指针" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
-    
       <category term="Medium" scheme="https://lucifer.ren/blog/categories/Medium/"/>
+    
+      <category term="双指针" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
     
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
@@ -698,33 +723,6 @@
       <category term="TypeScript" scheme="https://lucifer.ren/blog/tags/TypeScript/"/>
     
       <category term="泛型" scheme="https://lucifer.ren/blog/tags/%E6%B3%9B%E5%9E%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>你不知道的前端异常处理（万字长文，建议收藏）</title>
-    <link href="https://lucifer.ren/blog/2020/06/14/error-catch/"/>
-    <id>https://lucifer.ren/blog/2020/06/14/error-catch/</id>
-    <published>2020-06-14T07:54:17.496Z</published>
-    <updated>2020-06-15T15:36:32.817Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;除了调试，处理异常或许是程序员编程时间占比最高的了。我们天天和各种异常打交道，就好像我们天天和 Bug 打交道一样。因此正确认识异常，并作出合适的异常处理就显得很重要了。&lt;/p&gt;
-&lt;p&gt;我们先尝试抛开前端这个限定条件，来看下更广泛意义上程序的报错以及异常处理。不管是什么语言，都会有异常的发生。而我们程序员要做的就是正确识别程序中的各种异常，并针对其做相应的&lt;strong&gt;异常处理&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;然而，很多人对异常的处理方式是&lt;strong&gt;事后修补&lt;/strong&gt;，即某个异常发生的时候，增加对应的条件判断，这真的是一种非常低效的开发方式，非常不推荐大家这么做。那么究竟如何正确处理异常呢？由于不同语言有不同的特性，因此异常处理方式也不尽相同。但是异常处理的思维框架一定是一致的。本文就&lt;strong&gt;前端&lt;/strong&gt;异常进行详细阐述，但是读者也可以稍加修改延伸到其他各个领域。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本文讨论的异常指的是软件异常，而非硬件异常。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="异常处理" scheme="https://lucifer.ren/blog/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
     
   </entry>
   
