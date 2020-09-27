@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-09-14T09:06:58.597Z</updated>
+  <updated>2020-09-27T05:14:21.930Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,92 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://lucifer.ren/blog/2020/09/27/atMostK/"/>
+    <id>https://lucifer.ren/blog/2020/09/27/atMostK/</id>
+    <published>2020-09-27T05:14:21.930Z</published>
+    <updated>2020-09-27T05:14:21.930Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>TypeScript 练习题</title>
+    <link href="https://lucifer.ren/blog/2020/09/27/ts-exercises/"/>
+    <id>https://lucifer.ren/blog/2020/09/27/ts-exercises/</id>
+    <published>2020-09-26T16:00:00.000Z</published>
+    <updated>2020-09-27T09:07:56.984Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教程。但是目前为止没有一个我特别满意的。原因有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;它们大多数没有一个清晰的主线，而是按照 API 组织章节的，内容在&lt;strong&gt;逻辑上&lt;/strong&gt;比较零散。&lt;/li&gt;
+&lt;li&gt;大多是“讲是什么，怎么用“，而不是”讲为什么，讲原理“。&lt;/li&gt;
+&lt;li&gt;大多数内容比较枯燥，趣味性比较低。都是干巴巴的文字，没有图片，缺乏能够引起强烈共鸣的例子。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此我的想法是做一套不同市面上大多数的 TypeScript 学习教程。以人类认知的角度思考问题，学习 TypeScript，通过通俗易懂的例子和图片来帮助大家建立 TypeScript 世界观。&lt;/p&gt;
+&lt;p&gt;系列安排：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/08/04/ts-internal/&quot;&gt;上帝视角看 TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/08/15/ts-type-system/&quot;&gt;TypeScript 类型系统&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/08/21/ts-type/&quot;&gt;types 和 @types 是什么？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/06/16/ts-generics/&quot;&gt;你不知道的 TypeScript 泛型（万字长文，建议收藏）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/08/24/ts-config/&quot;&gt;TypeScript 配置文件该怎么写？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;TypeScript 是如何与 React，Vue，Webpack 集成的？&lt;/li&gt;
+&lt;li&gt;TypeScript 练习题（就是本文）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;目录将来可能会有所调整。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;注意，我的系列文章基本不会讲 API，因此需要你有一定的 TypeScript 使用基础，推荐两个学习资料。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://jkchao.github.io/typescript-book-chinese/&quot; title=&quot;深入理解 TypeScript&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;深入理解 TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.typescriptlang.org/docs/home&quot; title=&quot;TypeScript 官方文档&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;TypeScript 官方文档&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;结合这两个资料和我的系列教程，掌握 TypeScript 指日可待。&lt;/p&gt;
+&lt;p&gt;接下来，我们通过几个方面来从宏观的角度来看一下 TypeScript。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="TypeScript" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/TypeScript/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="TypeScript" scheme="https://lucifer.ren/blog/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://lucifer.ren/blog/2020/09/19/generator&amp;iterator/"/>
+    <id>https://lucifer.ren/blog/2020/09/19/generator&amp;iterator/</id>
+    <published>2020-09-19T06:36:38.225Z</published>
+    <updated>2020-09-19T06:44:59.504Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>字节跳动的算法面试题是什么难度？（第二弹）</title>
@@ -30,9 +116,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -72,9 +158,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -172,9 +258,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -320,7 +406,7 @@
     <link href="https://lucifer.ren/blog/2020/08/15/ts-type-system/"/>
     <id>https://lucifer.ren/blog/2020/08/15/ts-type-system/</id>
     <published>2020-08-14T16:00:00.000Z</published>
-    <updated>2020-08-25T12:04:01.103Z</updated>
+    <updated>2020-09-24T07:48:29.039Z</updated>
     
     <summary type="html">
     
@@ -330,7 +416,7 @@
 &lt;li&gt;大多是“讲是什么，怎么用“，而不是”讲为什么，讲原理“。&lt;/li&gt;
 &lt;li&gt;大多数内容比较枯燥，趣味性比较低。都是干巴巴的文字，没有图片，缺乏能够引起强烈共鸣的例子。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;因此我的想法是做一套不同市面上大多数的 TypeScript 学习教程。以人类认知的角度思考问题，学习 TypeScript，通过通俗易懂的例子和图片来帮助大家建立 TypeScript 世界观。 而本篇文章则是这个系列的开篇。&lt;/p&gt;
+&lt;p&gt;因此我的想法是做一套不同市面上大多数的 TypeScript 学习教程。以人类认知的角度思考问题，学习 TypeScript，通过通俗易懂的例子和图片来帮助大家建立 TypeScript 世界观。&lt;/p&gt;
 &lt;p&gt;系列安排：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/08/04/ts-internal/&quot; title=&quot;上帝视角看 TypeScrip&quot;&gt;上帝视角看 TypeScript&lt;/a&gt;（已发布）&lt;/li&gt;
@@ -635,15 +721,15 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
-      <category term="双指针" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
-    
       <category term="Medium" scheme="https://lucifer.ren/blog/categories/Medium/"/>
+    
+      <category term="双指针" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
     
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
@@ -653,96 +739,6 @@
       <category term="LeetCode日记" scheme="https://lucifer.ren/blog/tags/LeetCode%E6%97%A5%E8%AE%B0/"/>
     
       <category term="Medium" scheme="https://lucifer.ren/blog/tags/Medium/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>immutablejs 是如何优化我们的代码的？</title>
-    <link href="https://lucifer.ren/blog/2020/07/05/immutable-js/"/>
-    <id>https://lucifer.ren/blog/2020/07/05/immutable-js/</id>
-    <published>2020-07-05T09:07:23.926Z</published>
-    <updated>2020-07-15T05:04:48.156Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前一段时间群里有小伙伴问 lucifer 我一个问题：”immutablejs 是什么？有什么用？“。我当时的回答是：&lt;code&gt;immutablejs 就是 tree + sharing，解决了数据可变性带来的问题，并顺便优化了性能&lt;/code&gt;。今天给大家来详细解释一下这句话。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="React" scheme="https://lucifer.ren/blog/categories/React/"/>
-    
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="React" scheme="https://lucifer.ren/blog/tags/React/"/>
-    
-      <category term="immutablejs" scheme="https://lucifer.ren/blog/tags/immutablejs/"/>
-    
-      <category term="immutable" scheme="https://lucifer.ren/blog/tags/immutable/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>想去力扣当前端，TypeScript 需要掌握到什么程度？</title>
-    <link href="https://lucifer.ren/blog/2020/07/05/leetcode-interview-ts/"/>
-    <id>https://lucifer.ren/blog/2020/07/05/leetcode-interview-ts/</id>
-    <published>2020-07-05T01:48:03.757Z</published>
-    <updated>2020-07-05T08:05:26.136Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;2018 年底的时候，力扣发布了岗位招聘，其中就有前端，仓库地址：&lt;a href=&quot;https://github.com/LeetCode-OpenSource/hire&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/LeetCode-OpenSource/hire&lt;/a&gt; 。与大多数 JD 不同， 其提供了 5 道题， 并注明了&lt;code&gt;完成一个或多个面试题，获取免第一轮面试的面试机会。完成的题目越多，质量越高，在面试中的加分更多。完成后的代码可以任意形式发送给 jobs@lingkou.com。以上几个问题完成一个或多个都有可能获得面试机会，具体情况取决于提交给我们的代码。&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1ggfv55mufyj30u00wh0z0.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;（力扣中国前端工程师 JD）&lt;/p&gt;
-&lt;p&gt;今天我们就来看下第二题：&lt;code&gt;编写复杂的 TypeScript 类型&lt;/code&gt;。通过这道题来看下， TypeScript 究竟要到什么水平才能进力扣当前端？&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;其它四道题也蛮有意思的，值得一看。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="TypeScript" scheme="https://lucifer.ren/blog/categories/TypeScript/"/>
-    
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="TypeScript" scheme="https://lucifer.ren/blog/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>你的衣服我扒了 - 《最长公共子序列》</title>
-    <link href="https://lucifer.ren/blog/2020/07/01/LCS/"/>
-    <id>https://lucifer.ren/blog/2020/07/01/LCS/</id>
-    <published>2020-07-01T06:38:48.291Z</published>
-    <updated>2020-07-01T09:19:11.838Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;之前出了一篇&lt;a href=&quot;https://lucifer.ren/blog/2020/06/20/LIS/&quot;&gt;穿上衣服我就不认识你了？来聊聊最长上升子序列&lt;/a&gt;，收到了大家的一致好评。今天给大家带来的依然是换皮题 - 最长公共子序列系列。&lt;/p&gt;
-&lt;p&gt;最长公共子序列是一个很经典的算法题。有的会直接让你求最长上升子序列，有的则会换个说法，但最终考察的还是最长公共子序列。那么问题来了，它穿上衣服你还看得出来是么？&lt;/p&gt;
-&lt;p&gt;如果你完全看不出来了，说明抽象思维还不到火候。经常看我的题解的同学应该会知道，我经常强调&lt;code&gt;抽象思维&lt;/code&gt;。没有抽象思维，所有的题目对你来说都是新题。你无法将之前做题的经验迁移到这道题，那你做的题意义何在？&lt;/p&gt;
-&lt;p&gt;虽然抽象思维很难练成，但是幸好算法套路是有限的，经常考察的题型更是有限的。从这些入手，或许可以让你轻松一些。本文就从一个经典到不行的题型《最长公共子序列》，来帮你进一步理解&lt;code&gt;抽象思维&lt;/code&gt;。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;注意。 本文是帮助你识别套路，从横向上理清解题的思维框架，并没有采用最优解，所有的题目给的解法可能不是最优的，但是都可以通过所有的测试用例。如果你想看最优解，可以直接去讨论区看。或者期待我的&lt;code&gt;深入剖析系列&lt;/code&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-      <category term="动态规划" scheme="https://lucifer.ren/blog/categories/LeetCode/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-    
-      <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="最长公共子序列" scheme="https://lucifer.ren/blog/tags/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/"/>
     
   </entry>
   
