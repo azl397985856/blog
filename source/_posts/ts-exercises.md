@@ -50,7 +50,7 @@ TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教
 
 > 想重置进度，清空缓存，无痕模式或者换浏览器都可以。
 
-题目中涉及到的知识点我基本也都在之前的文章中提到了，如果你没有看过，强烈建议先完成前面的教程，然后将上面的题目自己做一遍之后再看本文。
+题目中涉及到的知识点我基本也都在之前的文章中提到了，如果你没有看过，强烈建议先完成前面的教程，然后将上面的题目自己做一遍之后再看本文。另外一定要按照顺序读， 因此前面的题目都是后面的铺垫。
 
 为了不让文章太过于冗长， 本篇文章分两次发布， 一次 8 道题，一共十六道。每道题都有思路，前置知识以及代码。
 
@@ -676,19 +676,9 @@ export function logPerson(person: Person) {
 
 export function filterPersons(
   persons: Person[],
-  personType: "admin",
-  criteria: Partial<Person>
-): Admin[];
-export function filterPersons(
-  persons: Person[],
-  personType: "user",
-  criteria: Partial<Person>
-): User[];
-export function filterPersons(
-  persons: Person[],
   personType: string,
-  criteria: Partial<Person>
-): Person[] {
+  criteria: unknown
+): unknown[] {
   return persons
     .filter((person) => person.type === personType)
     .filter((person) => {
@@ -931,7 +921,7 @@ interface Admin {
   role: string;
 }
 
-type PowerUser = Omit<User & Admin, "type"> & { type: "powerUser" };
+type PowerUser = unknown;
 
 export type Person = User | Admin | PowerUser;
 
