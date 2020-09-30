@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-09-27T05:14:21.930Z</updated>
+  <updated>2020-09-30T06:09:44.236Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,16 +17,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>【西法带你学算法】一次搞定前缀和</title>
     <link href="https://lucifer.ren/blog/2020/09/27/atMostK/"/>
     <id>https://lucifer.ren/blog/2020/09/27/atMostK/</id>
     <published>2020-09-27T05:14:21.930Z</published>
-    <updated>2020-09-27T05:14:21.930Z</updated>
+    <updated>2020-09-30T06:09:44.236Z</updated>
     
     <summary type="html">
     
+      &lt;p&gt;我花了几天时间，从力扣中精选了五道相同思想的题目，来帮助大家解套，如果觉得文章对你有用，记得点赞分享，让我看到你的认可，有动力继续做下去。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/unique-substrings-in-wraparound-string/&quot; title=&quot;467. 环绕字符串中唯一的子字符串&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;467. 环绕字符串中唯一的子字符串&lt;/a&gt;(中等)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/number-of-subarrays-with-bounded-maximum/&quot; title=&quot;795. 区间子数组个数&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;795. 区间子数组个数&lt;/a&gt;(中等)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/fruit-into-baskets/&quot; title=&quot;904. 水果成篮&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;904. 水果成篮&lt;/a&gt;(中等)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/subarrays-with-k-different-integers/&quot; title=&quot;992. K 个不同整数的子数组&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;992. K 个不同整数的子数组&lt;/a&gt;（困难）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/corporate-flight-bookings/&quot; title=&quot;1109. 航班预订统计&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1109. 航班预订统计&lt;/a&gt;(中等)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;前四道题都是滑动窗口的子类型，我们知道滑动窗口适合在题目要求连续的情况下使用， 而&lt;a href=&quot;https://oi-wiki.org/basic/prefix-sum/&quot; title=&quot;前缀和&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;前缀和&lt;/a&gt;也是如此。二者在连续问题中，对于&lt;strong&gt;优化时间复杂度&lt;/strong&gt;有着很重要的意义。 因此如果一道题你可以用暴力解决出来，而且题目恰好有连续的限制， 那么滑动窗口和前缀和等技巧就应该被想到。&lt;/p&gt;
+&lt;p&gt;除了这几道题， 还有很多题目都是类似的套路， 大家可以在学习过程中进行体会。今天我们就来一起学习一下。&lt;/p&gt;
+    
     </summary>
     
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+    
+      <category term="滑动窗口" scheme="https://lucifer.ren/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
+    
+      <category term="前缀和" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="经验分享" scheme="https://lucifer.ren/blog/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"/>
+    
+      <category term="困难" scheme="https://lucifer.ren/blog/tags/%E5%9B%B0%E9%9A%BE/"/>
+    
+      <category term="中等" scheme="https://lucifer.ren/blog/tags/%E4%B8%AD%E7%AD%89/"/>
+    
+      <category term="子数组" scheme="https://lucifer.ren/blog/tags/%E5%AD%90%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="k 问题" scheme="https://lucifer.ren/blog/tags/k-%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   
@@ -35,7 +66,7 @@
     <link href="https://lucifer.ren/blog/2020/09/27/ts-exercises/"/>
     <id>https://lucifer.ren/blog/2020/09/27/ts-exercises/</id>
     <published>2020-09-26T16:00:00.000Z</published>
-    <updated>2020-09-27T09:07:56.984Z</updated>
+    <updated>2020-09-29T02:31:28.926Z</updated>
     
     <summary type="html">
     
@@ -103,15 +134,18 @@
   </entry>
   
   <entry>
-    <title>字节跳动的算法面试题是什么难度？（第二弹）</title>
-    <link href="https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex-2017/"/>
-    <id>https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex-2017/</id>
+    <title>字节跳动的算法面试题是什么难度？</title>
+    <link href="https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex/"/>
+    <id>https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex/</id>
     <published>2020-09-05T16:00:00.000Z</published>
-    <updated>2020-09-14T09:06:58.597Z</updated>
+    <updated>2020-09-06T13:14:52.739Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;由于 lucifer 我是一个小前端， 最近也在准备写一个《前端如何搞定算法面试》的专栏，因此最近没少看各大公司的面试题。都说字节跳动算法题比较难，我就先拿 ta 下手，做了几套 。这次我们就拿一套 &lt;code&gt;字节跳动2017秋招编程题汇总&lt;/code&gt;来看下字节的算法笔试题的难度几何。地址：&lt;a href=&quot;https://www.nowcoder.com/test/6035789/summary&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.nowcoder.com/test/6035789/summary&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;由于 lucifer 我是一个小前端， 最近也在准备写一个《前端如何搞定算法面试》的专栏，因此最近没少看各大公司的面试题。都说字节跳动算法题比较难，我就先拿 ta 下手，做了几套 。这次我们就拿一套 &lt;code&gt;2018 年的前端校招（第四批）&lt;/code&gt;来看下字节的算法笔试题的难度几何。地址：&lt;a href=&quot;https://www.nowcoder.com/test/8536639/summary&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.nowcoder.com/test/8536639/summary&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;实际上，这套字节的前端岗位笔试题和后端以及算法岗位的笔试题也只有一道题目（红包的设计题被换成了另外一个设计题）不一样而已，因此也不需要担心你不是前端，题目类型和难度和你的岗位不匹配。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;​
     
     </summary>
@@ -142,18 +176,15 @@
   </entry>
   
   <entry>
-    <title>字节跳动的算法面试题是什么难度？</title>
-    <link href="https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex/"/>
-    <id>https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex/</id>
+    <title>字节跳动的算法面试题是什么难度？（第二弹）</title>
+    <link href="https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex-2017/"/>
+    <id>https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex-2017/</id>
     <published>2020-09-05T16:00:00.000Z</published>
-    <updated>2020-09-06T13:14:52.739Z</updated>
+    <updated>2020-09-14T09:06:58.597Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;由于 lucifer 我是一个小前端， 最近也在准备写一个《前端如何搞定算法面试》的专栏，因此最近没少看各大公司的面试题。都说字节跳动算法题比较难，我就先拿 ta 下手，做了几套 。这次我们就拿一套 &lt;code&gt;2018 年的前端校招（第四批）&lt;/code&gt;来看下字节的算法笔试题的难度几何。地址：&lt;a href=&quot;https://www.nowcoder.com/test/8536639/summary&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.nowcoder.com/test/8536639/summary&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;实际上，这套字节的前端岗位笔试题和后端以及算法岗位的笔试题也只有一道题目（红包的设计题被换成了另外一个设计题）不一样而已，因此也不需要担心你不是前端，题目类型和难度和你的岗位不匹配。&lt;/p&gt;
-&lt;/blockquote&gt;
+      &lt;p&gt;由于 lucifer 我是一个小前端， 最近也在准备写一个《前端如何搞定算法面试》的专栏，因此最近没少看各大公司的面试题。都说字节跳动算法题比较难，我就先拿 ta 下手，做了几套 。这次我们就拿一套 &lt;code&gt;字节跳动2017秋招编程题汇总&lt;/code&gt;来看下字节的算法笔试题的难度几何。地址：&lt;a href=&quot;https://www.nowcoder.com/test/6035789/summary&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.nowcoder.com/test/6035789/summary&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;​
     
     </summary>
@@ -727,9 +758,9 @@
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
-      <category term="Medium" scheme="https://lucifer.ren/blog/categories/Medium/"/>
-    
       <category term="双指针" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+      <category term="Medium" scheme="https://lucifer.ren/blog/categories/Medium/"/>
     
     
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
