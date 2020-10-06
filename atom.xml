@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-09-30T06:09:44.236Z</updated>
+  <updated>2020-10-06T03:45:59.216Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>百度的算法面试题 - 祖玛游戏</title>
+    <link href="https://lucifer.ren/blog/2020/10/06/zuma-game/"/>
+    <id>https://lucifer.ren/blog/2020/10/06/zuma-game/</id>
+    <published>2020-10-06T03:44:33.838Z</published>
+    <updated>2020-10-06T03:45:59.216Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是一道百度的算法面试题， 让我来拷拷你~。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="Hard" scheme="https://lucifer.ren/blog/categories/Hard/"/>
+    
+      <category term="回溯" scheme="https://lucifer.ren/blog/categories/%E5%9B%9E%E6%BA%AF/"/>
+    
+      <category term="双指针" scheme="https://lucifer.ren/blog/categories/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+    
+      <category term="Hard" scheme="https://lucifer.ren/blog/tags/Hard/"/>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="回溯" scheme="https://lucifer.ren/blog/tags/%E5%9B%9E%E6%BA%AF/"/>
+    
+      <category term="双指针" scheme="https://lucifer.ren/blog/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+  </entry>
   
   <entry>
     <title>【西法带你学算法】一次搞定前缀和</title>
@@ -150,9 +182,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -189,9 +221,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -289,9 +321,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -735,41 +767,6 @@
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="二叉树" scheme="https://lucifer.ren/blog/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【LeetCode日记】 611. 有效三角形的个数</title>
-    <link href="https://lucifer.ren/blog/2020/07/20/611.triangle/"/>
-    <id>https://lucifer.ren/blog/2020/07/20/611.triangle/</id>
-    <published>2020-07-20T11:58:28.740Z</published>
-    <updated>2020-07-20T11:59:18.279Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;题目地址： &lt;a href=&quot;https://leetcode-cn.com/problems/valid-triangle-number/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode-cn.com/problems/valid-triangle-number/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="双指针" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
-    
-      <category term="Medium" scheme="https://lucifer.ren/blog/categories/Medium/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode日记" scheme="https://lucifer.ren/blog/tags/LeetCode%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="Medium" scheme="https://lucifer.ren/blog/tags/Medium/"/>
     
   </entry>
   
