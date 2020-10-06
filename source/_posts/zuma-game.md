@@ -1,6 +1,7 @@
 ---
 title: 百度的算法面试题 - 祖玛游戏
 tags: [Hard, LeetCode, 回溯, 双指针]
+date: 2020-10-06
 categories:
   - [LeetCode]
   - [Hard]
