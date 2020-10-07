@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-10-06T03:55:55.427Z</updated>
+  <updated>2020-10-07T11:29:21.429Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>西法喊你参加模拟面试~</title>
+    <link href="https://lucifer.ren/blog/2020/10/07/mock-interview/"/>
+    <id>https://lucifer.ren/blog/2020/10/07/mock-interview/</id>
+    <published>2020-10-06T16:00:00.000Z</published>
+    <updated>2020-10-07T11:29:21.429Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;很多粉丝向西法我反应：&lt;code&gt;做了很多题。看到新的题目还是不会， 看了题解之后又觉得自己会，但是自己写又写不出来。&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这个现象实际上很常见， 破局的最有效方法就是&lt;strong&gt;多做题&lt;/strong&gt;。 是真正地做出来，而不是看了会了，要自己从零 coding。&lt;/p&gt;
+&lt;p&gt;我之前讲过&lt;strong&gt;对于新手的建议是按 tag 刷， 对于老手或者马上要面试的我建议随机刷。&lt;/strong&gt; 今天我在补充一句，那就是不管大家用哪种方式刷，建议大家都通过模拟面试或者竞赛的形式刷。 时间条件允许的可以参加周赛，不允许的则可以模拟面试。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="模拟面试" scheme="https://lucifer.ren/blog/categories/%E6%A8%A1%E6%8B%9F%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="模拟面试" scheme="https://lucifer.ren/blog/tags/%E6%A8%A1%E6%8B%9F%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>百度的算法面试题 - 祖玛游戏</title>
@@ -75,9 +99,9 @@
       <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
     
     
-      <category term="滑动窗口" scheme="https://lucifer.ren/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
-    
       <category term="前缀和" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    
+      <category term="滑动窗口" scheme="https://lucifer.ren/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
     
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
@@ -166,15 +190,18 @@
   </entry>
   
   <entry>
-    <title>字节跳动的算法面试题是什么难度？（第二弹）</title>
-    <link href="https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex-2017/"/>
-    <id>https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex-2017/</id>
+    <title>字节跳动的算法面试题是什么难度？</title>
+    <link href="https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex/"/>
+    <id>https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex/</id>
     <published>2020-09-05T16:00:00.000Z</published>
-    <updated>2020-09-14T09:06:58.597Z</updated>
+    <updated>2020-09-06T13:14:52.739Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;由于 lucifer 我是一个小前端， 最近也在准备写一个《前端如何搞定算法面试》的专栏，因此最近没少看各大公司的面试题。都说字节跳动算法题比较难，我就先拿 ta 下手，做了几套 。这次我们就拿一套 &lt;code&gt;字节跳动2017秋招编程题汇总&lt;/code&gt;来看下字节的算法笔试题的难度几何。地址：&lt;a href=&quot;https://www.nowcoder.com/test/6035789/summary&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.nowcoder.com/test/6035789/summary&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;由于 lucifer 我是一个小前端， 最近也在准备写一个《前端如何搞定算法面试》的专栏，因此最近没少看各大公司的面试题。都说字节跳动算法题比较难，我就先拿 ta 下手，做了几套 。这次我们就拿一套 &lt;code&gt;2018 年的前端校招（第四批）&lt;/code&gt;来看下字节的算法笔试题的难度几何。地址：&lt;a href=&quot;https://www.nowcoder.com/test/8536639/summary&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.nowcoder.com/test/8536639/summary&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;实际上，这套字节的前端岗位笔试题和后端以及算法岗位的笔试题也只有一道题目（红包的设计题被换成了另外一个设计题）不一样而已，因此也不需要担心你不是前端，题目类型和难度和你的岗位不匹配。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;​
     
     </summary>
@@ -205,18 +232,15 @@
   </entry>
   
   <entry>
-    <title>字节跳动的算法面试题是什么难度？</title>
-    <link href="https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex/"/>
-    <id>https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex/</id>
+    <title>字节跳动的算法面试题是什么难度？（第二弹）</title>
+    <link href="https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex-2017/"/>
+    <id>https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex-2017/</id>
     <published>2020-09-05T16:00:00.000Z</published>
-    <updated>2020-09-06T13:14:52.739Z</updated>
+    <updated>2020-09-14T09:06:58.597Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;由于 lucifer 我是一个小前端， 最近也在准备写一个《前端如何搞定算法面试》的专栏，因此最近没少看各大公司的面试题。都说字节跳动算法题比较难，我就先拿 ta 下手，做了几套 。这次我们就拿一套 &lt;code&gt;2018 年的前端校招（第四批）&lt;/code&gt;来看下字节的算法笔试题的难度几何。地址：&lt;a href=&quot;https://www.nowcoder.com/test/8536639/summary&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.nowcoder.com/test/8536639/summary&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;实际上，这套字节的前端岗位笔试题和后端以及算法岗位的笔试题也只有一道题目（红包的设计题被换成了另外一个设计题）不一样而已，因此也不需要担心你不是前端，题目类型和难度和你的岗位不匹配。&lt;/p&gt;
-&lt;/blockquote&gt;
+      &lt;p&gt;由于 lucifer 我是一个小前端， 最近也在准备写一个《前端如何搞定算法面试》的专栏，因此最近没少看各大公司的面试题。都说字节跳动算法题比较难，我就先拿 ta 下手，做了几套 。这次我们就拿一套 &lt;code&gt;字节跳动2017秋招编程题汇总&lt;/code&gt;来看下字节的算法笔试题的难度几何。地址：&lt;a href=&quot;https://www.nowcoder.com/test/6035789/summary&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.nowcoder.com/test/6035789/summary&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;​
     
     </summary>
@@ -677,17 +701,29 @@
     <link href="https://lucifer.ren/blog/2020/08/03/mother-01/"/>
     <id>https://lucifer.ren/blog/2020/08/03/mother-01/</id>
     <published>2020-08-02T16:00:00.000Z</published>
-    <updated>2020-08-13T05:47:53.521Z</updated>
+    <updated>2020-10-07T11:29:14.785Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;p&gt;记得我初中的时候，学校发的一个小册子的名字就是母题啥的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1ghbhlyhaadj308c08c3yv.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;大概意思是市面上的题（尤其是中考题）都是这些母题生的，都是它们的儿子。&lt;/p&gt;
+&lt;p&gt;熟悉我的朋友应该知道，我有一个风格：”喜欢用通俗易懂的语言以及图片，还原解题过程“。包括我是如何抽象的，如何与其他题目建立联系的等。比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters/solution/yi-zhao-chi-bian-li-kou-si-dao-ti-ma-ma-zai-ye-b-6/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;一招吃遍力扣四道题，妈妈再也不用担心我被套路啦～&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/wildcard-matching/solution/chao-ji-xiang-xi-ji-yi-hua-di-gui-tu-jie-dai-ni-yi/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;超级详细记忆化递归，图解，带你一次攻克三道 Hard 套路题（44. 通配符匹配）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/solution/chuan-shang-yi-fu-wo-jiu-bu-ren-shi-ni-liao-lai-3/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;穿上衣服我就不认识你了？来聊聊最长上升子序列&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/integer-break/solution/ba-yi-ba-zhe-chong-ti-de-wai-tao-343-zheng-shu-cha/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;扒一扒这种题的外套（343. 整数拆分）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果把这个思考过程称之为自顶向下的话，那么实际上能写出来取决于你：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;是否有良好的抽象能力&lt;/li&gt;
+&lt;li&gt;是否有足够的基础知识&lt;/li&gt;
+&lt;li&gt;是否能与学过的基础知识建立联系&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果反着呢? 我先把所有抽象之后的纯粹的东西掌握，也就是母题。那么遇到新的题，我就往上套呗？这就是我在《LeetCode 题解仓库》中所说的&lt;strong&gt;只有熟练掌握基础的数据结构与算法，才能对复杂问题迎刃有余。&lt;/strong&gt; 这种思路就是&lt;strong&gt;自底向上&lt;/strong&gt;。（有点像动态规划?） 市面上的题那么多，但是题目类型就是那几种。甚至出题人出题的时候都是根据以前的题目变个条件，变个说法从而搞出一个“新”的题。&lt;/p&gt;
+&lt;p&gt;这个专题的目标就是从反的方向来，我们先学习和记忆底层的被抽象过的经典的题目。遇到新的题目，就往这些母题上套即可。&lt;/p&gt;
+&lt;p&gt;那让我们来自底向上看下第一期的这八道母题吧~&lt;/p&gt;
     
     </summary>
     
@@ -739,34 +775,6 @@
       <category term="二叉树" scheme="https://lucifer.ren/blog/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
       <category term="序列化" scheme="https://lucifer.ren/blog/tags/%E5%BA%8F%E5%88%97%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>平衡二叉树专题</title>
-    <link href="https://lucifer.ren/blog/2020/07/21/balanced-tree/"/>
-    <id>https://lucifer.ren/blog/2020/07/21/balanced-tree/</id>
-    <published>2020-07-20T16:00:00.000Z</published>
-    <updated>2020-07-25T02:01:36.934Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;力扣关于平衡二叉树的题目还是有一些的，并且都非常经典，推荐大家练习。今天给大家精选了 4 道题，如果你彻底搞明白了这几道题，碰到其他的平衡二叉树的题目应该不至于没有思路。当你领会了我的思路之后， 建议再找几个题目练手，巩固一下学习成果。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="平衡二叉树" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
-      <category term="二叉搜索树" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="二叉树" scheme="https://lucifer.ren/blog/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
   </entry>
   
