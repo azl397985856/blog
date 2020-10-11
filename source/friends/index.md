@@ -38,6 +38,14 @@ links:
         border: "none"
         tags:
           - 撰写了学习源码整体架构系列8篇，公众号《若川视野》
+      - name: 童欧巴博客
+        avatar: https://cdn.jsdelivr.net/gh/Geekhyt/blogimgbed/blog/avatar.jpeg
+        url: https://hungryturbo.com
+        backgroundColor: "linear-gradient(#ffdde1, #A770EF)" # 卡片背景颜色
+        textColor: "#fff" # 卡片文字颜色
+        border: "none"
+        tags:
+          - 公众号《前端食堂》，吃好每一顿
       - name: 腐烂的橘子
         avatar: https://hexo-ziming.oss-cn-beijing.aliyuncs.com/blog-Hexo/20200903082843.png
         url: https://www.ziming.xyz
