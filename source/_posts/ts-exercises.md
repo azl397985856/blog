@@ -39,7 +39,7 @@ TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教
 
 ## 前言
 
-本文涉及的题目一共十六道，全部都可以在 [typescript-exercises](https://typescript-exercises.github.io/ "typescript-exercises") 上在线提交。
+本文涉及的题目一共十五道，全部都可以在 [typescript-exercises](https://typescript-exercises.github.io/ "typescript-exercises") 上在线提交。
 
 ![](https://tva1.sinaimg.cn/large/007S8ZIlly1gj1sl6j7pij31560p4ad7.jpg)
 
@@ -52,7 +52,7 @@ TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教
 
 题目中涉及到的知识点我基本也都在之前的文章中提到了，如果你没有看过，强烈建议先完成前面的教程，然后将上面的题目自己做一遍之后再看本文。另外一定要按照顺序读， 因此前面的题目都是后面的铺垫。
 
-为了不让文章太过于冗长， 本篇文章分两次发布， 一次 8 道题，一共十六道。每道题都有思路，前置知识以及代码。
+为了不让文章太过于冗长， 本篇文章分两次发布， 这一次是 8 道题，一共十五道。每道题都有思路，前置知识以及代码。
 
 ## 题目一
 
