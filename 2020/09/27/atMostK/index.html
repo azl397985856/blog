@@ -560,6 +560,11 @@
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gj8k7w0bqyj30qh07540b.jpg" alt></p>
 <p>一种思路就是在 i 的位置 + k， 然后利用前缀和的技巧给 i 到 n 的元素都加上 k。但是题目需要加的是一个区间， j + 1 及其之后的元素会被多加一个 k。一个简单的技巧就是给 j + 1 的元素减去 k，这样正负就可以抵消。</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gj8k997nmbj30q9074dhm.jpg" alt></p>
+<blockquote>
+<ol start="1094">
+<li>拼车 是这道题的换皮题， 思路一模一样。</li>
+</ol>
+</blockquote>
 <h3 id="代码（Python）-4"><a href="#代码（Python）-4" class="headerlink" title="代码（Python）"></a>代码（Python）</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">corpFlightBookings</span><span class="params">(self, bookings: List[List[int]], n: int)</span> -&gt; List[int]:</span></span><br><span class="line">        counter = [<span class="number">0</span>] * (n + <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i, j, k <span class="keyword">in</span> bookings:</span><br><span class="line">            counter[i - <span class="number">1</span>] += k</span><br><span class="line">            <span class="keyword">if</span> j &lt; n: counter[j] -= k</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n + <span class="number">1</span>):</span><br><span class="line">            counter[i] += counter[i - <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">return</span> counter[:<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
 
 <p><strong>复杂度分析</strong></p>
@@ -596,10 +601,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-30T14:09:44+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-20T13:42:28+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年9月30日</p>
+    <p>更新于 2020年10月20日</p>
   </a>
 </div>
 

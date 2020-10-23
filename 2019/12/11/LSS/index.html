@@ -316,9 +316,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/blog/categories/算法/子序列/' rel="nofollow">
+    <a href='/blog/categories/LeetCode/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>数据结构&nbsp;/&nbsp;算法&nbsp;/&nbsp;数组&nbsp;/&nbsp;LeetCode&nbsp;/&nbsp;子序列</p>
+      <p>算法&nbsp;/&nbsp;数据结构&nbsp;/&nbsp;数组&nbsp;/&nbsp;子序列&nbsp;/&nbsp;LeetCode</p>
     </a>
   </div>
 
@@ -454,7 +454,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MaximumSubarrayDP</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">int</span> currMaxSum = nums[<span class="number">0</span>];</span><br><span class="line">     <span class="keyword">int</span> maxSum = nums[<span class="number">0</span>];</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">       currMaxSum = Math.max(currMaxSum + nums[i], nums[i]);</span><br><span class="line">       maxSum = Math.max(maxSum, currMaxSum);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> maxSum;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Python 3:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxSubArray</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        n = len(nums)</span><br><span class="line">        max_sum_ending_curr_index = max_sum = nums[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</span><br><span class="line">            max_sum_ending_curr_index = max(max_sum_ending_curr_index + nums[i], nums[i])</span><br><span class="line">            max_sum = max(max_sum_ending_curr_index, max_sum)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> max_sum</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxSubArray</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        dp = [<span class="number">0</span>] * len(nums)</span><br><span class="line">        ans = dp[<span class="number">0</span>] = nums[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(nums)):</span><br><span class="line">            dp[i] = max(nums[i], dp[i - <span class="number">1</span>] + nums[i])</span><br><span class="line">            ans = max(ans, dp[i])</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
 
 <h2 id="解法四-数学分析"><a href="#解法四-数学分析" class="headerlink" title="解法四 - 数学分析"></a>解法四 - 数学分析</h2><h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>我们来通过数学分析来看一下这个题目。</p>
 <p>我们定义函数 S(i) ，它的功能是计算以 0（包括 0）开始加到 i（包括 i）的值。</p>
@@ -484,10 +484,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-13T14:50:26+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-23T14:03:44+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年4月13日</p>
+    <p>更新于 2020年10月23日</p>
   </a>
 </div>
 
@@ -569,16 +569,16 @@
                       <span class="art-item-left">
                           <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                           <h4>
-                              <a href="/blog/2019/12/11/ad/" rel="prev" title="《数据结构与算法之美》-为工程师量身打造的数据结构与算法私教课">
+                              <a href="/blog/2019/12/11/daily-featured-2019-09/" rel="prev" title="每日一荐 2019-09 汇总">
                                 
-                                    《数据结构与算法之美》-为工程师量身打造的数据结构与算法私教课
+                                    每日一荐 2019-09 汇总
                                 
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a>
+                                  <a class="tag" href="/blog/tags/每日一荐/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 每日一荐</a>
                               </h6>
                           
                       </span>
@@ -589,16 +589,16 @@
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/blog/2019/09/21/algorthimn-fe-4/" rel="prev" title="数据结构与算法在前端领域的应用 - 第四篇">
+                              <a href="/blog/2019/12/11/ad/" rel="prev" title="《数据结构与算法之美》-为工程师量身打造的数据结构与算法私教课">
                                   
-                                      数据结构与算法在前端领域的应用 - 第四篇
+                                      《数据结构与算法之美》-为工程师量身打造的数据结构与算法私教课
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/前端/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 前端</a>
+                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a>
                               </h6>
                           
                       </span>
