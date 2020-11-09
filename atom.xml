@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-11-08T03:04:01.955Z</updated>
+  <updated>2020-11-09T02:58:56.322Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>几乎刷完了力扣所有的链表题，我发现了这些东西。。。</title>
+    <link href="https://lucifer.ren/blog/2020/11/08/linked-list/"/>
+    <id>https://lucifer.ren/blog/2020/11/08/linked-list/</id>
+    <published>2020-11-07T16:00:00.000Z</published>
+    <updated>2020-11-09T02:58:56.322Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/0081Kckwly1gki5nbjcgqj31be0u0q5w.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我后继续完善，将其他专题逐步完善起来。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;大家也可以使用 vscode blink-mind 打开源文件查看，里面有一些笔记可以点开查看。源文件可以去我的公众号《力扣加加》回复脑图获取，以后脑图也会持续更新更多内容。vscode 插件地址：&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;大家好，我是 lucifer。今天给大家带来的专题是《链表》。很多人觉得链表是一个很难的专题。实际上，只要你掌握了诀窍，它并没那么难。接下来，我们展开说说。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/tag/linked-list/&quot; title=&quot;链表标签&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;链表标签&lt;/a&gt;在 leetcode 一共有 &lt;strong&gt;54 道题&lt;/strong&gt;。 为了准备这个专题，我花了几天时间将 leetcode 几乎所有的链表题目都刷了一遍。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/0081Kckwly1gki5vhm12jj310y0raadh.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;可以看出，除了六个上锁的，其他我都刷了一遍。而实际上，这六个上锁的也没有什么难度，甚至和其他 48 道题差不多。&lt;/p&gt;
+&lt;p&gt;通过集中刷这些题，我发现了一些有趣的信息，今天就分享给大家。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="链表" scheme="https://lucifer.ren/blog/categories/%E9%93%BE%E8%A1%A8/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="链表" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>单调栈解题模板秒杀八道题</title>
@@ -239,9 +270,9 @@
       <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
     
     
-      <category term="滑动窗口" scheme="https://lucifer.ren/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
-    
       <category term="前缀和" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    
+      <category term="滑动窗口" scheme="https://lucifer.ren/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
     
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
@@ -710,39 +741,6 @@
       <category term="校招" scheme="https://lucifer.ren/blog/tags/%E6%A0%A1%E6%8B%9B/"/>
     
       <category term="百度" scheme="https://lucifer.ren/blog/tags/%E7%99%BE%E5%BA%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Webkit 内核初探</title>
-    <link href="https://lucifer.ren/blog/2020/08/11/webkit-intro/"/>
-    <id>https://lucifer.ren/blog/2020/08/11/webkit-intro/</id>
-    <published>2020-08-10T16:00:00.000Z</published>
-    <updated>2020-08-11T06:40:39.406Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;作者: 阿吉&lt;br&gt;校对&amp;amp;整理: lucifer&lt;/p&gt;
-&lt;p&gt;当下浏览器内核主要有 Webkit、Blink 等。本文分析注意是自 2001 年 Webkit 从 KHTML 分离出去并开源后，各大浏览器厂商魔改 Webkit 的时期，这些魔改的内核最终以 Chromium 受众最多而脱颖而出。本文就以 Chromium 浏览器架构为基础，逐层探入进行剖析。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="浏览器" scheme="https://lucifer.ren/blog/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
-      <category term="浏览器" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
-      <category term="webkit" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/webkit/"/>
-    
-      <category term="webkit" scheme="https://lucifer.ren/blog/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/webkit/"/>
-    
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="浏览器" scheme="https://lucifer.ren/blog/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
-      <category term="webkit" scheme="https://lucifer.ren/blog/tags/webkit/"/>
     
   </entry>
   
