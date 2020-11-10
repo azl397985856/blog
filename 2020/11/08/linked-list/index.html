@@ -474,10 +474,10 @@
 <p>链表的话，很多语言没有内置的数组类型。比如力扣通常使用如下的类来模拟。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</span><br><span class="line">     <span class="keyword">int</span> val;</span><br><span class="line">     ListNode next;</span><br><span class="line">     ListNode() &#123;&#125;</span><br><span class="line">     ListNode(<span class="keyword">int</span> val) &#123; <span class="keyword">this</span>.val = val; &#125;</span><br><span class="line">     ListNode(<span class="keyword">int</span> val, ListNode next) &#123; <span class="keyword">this</span>.val = val; <span class="keyword">this</span>.next = next; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>我们是不能直接调用 push 方法的。想一下，如果当你实现这个，你怎么做？你可以先自己想一下，再往下看。</p>
+<p>我们是不能直接调用 push 方法的。想一下，如果让你实现这个，你怎么做？你可以先自己想一下，再往下看。</p>
 <p>3…2…1</p>
 <p>ok，其实很简单。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设 cur 是链表的尾部节点</span></span><br><span class="line">tail.next = <span class="keyword">new</span> ListNode(<span class="string">'lucifer'</span>)</span><br><span class="line">tail = tail.next</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设 tail 是链表的尾部节点</span></span><br><span class="line">tail.next = <span class="keyword">new</span> ListNode(<span class="string">'lucifer'</span>)</span><br><span class="line">tail = tail.next</span><br></pre></td></tr></table></figure>
 
 <p>经过上面两行代码之后， tail 仍然指向尾部节点。是不是很简单，你学会了么？</p>
 <p>这有什么用？比如有的题目需要你复制一个新的链表， 你是不是需要开辟一个新的链表头，然后不断拼接（push）复制的节点？这就用上了。</p>
@@ -753,7 +753,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-09T10:58:56+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-09T18:50:26+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年11月9日</p>
