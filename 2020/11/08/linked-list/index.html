@@ -532,7 +532,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">next = cur.next</span><br><span class="line">cur.next = pre</span><br><span class="line"></span><br><span class="line">cur = next</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkhsft0cyuj30wa0s80ux.jpg" alt></p>
-<p>那么环呢？ 实际上， 环不用解决。因为如何我们是从前往后遍历，那么实际上，前面的链表已经被反转了，因此上面我的图是错的。正确的图应该是：</p>
+<p>那么环呢？ 实际上， 环不用解决。因为如果我们是从前往后遍历，那么实际上，前面的链表已经被反转了，因此上面我的图是错的。正确的图应该是：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkhsi5tiorj311y0gcwg1.jpg" alt></p>
 <p>至此为止，我们可以写出如下代码：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 翻转一个子链表，并返回新的头与尾</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(self, head: ListNode, tail: ListNode)</span>:</span></span><br><span class="line">    cur = head</span><br><span class="line">    pre = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">while</span> cur != tail:</span><br><span class="line">        <span class="comment"># 留下联系方式</span></span><br><span class="line">        next = cur.next</span><br><span class="line">        <span class="comment"># 修改指针</span></span><br><span class="line">        cur.next = pre</span><br><span class="line">        <span class="comment"># 继续往下走</span></span><br><span class="line">        pre = cur</span><br><span class="line">        cur = next</span><br><span class="line">    <span class="comment"># 反转后的新的头尾节点返回出去</span></span><br><span class="line">    <span class="keyword">return</span> tail, head</span><br></pre></td></tr></table></figure>
@@ -753,10 +753,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-09T18:50:26+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-10T16:28:13+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年11月9日</p>
+    <p>更新于 2020年11月10日</p>
   </a>
 </div>
 
