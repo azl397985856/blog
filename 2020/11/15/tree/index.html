@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>【LeetCode日记】 1162. 地图分析 | lucifer的网络博客</title>
+  <title>lucifer的网络博客</title>
   
   <meta name="keywords" content="前端 leetocde 数据结构 算法 lucifer 大前端 性能优化 前端架构 前端工程化">
   
@@ -274,8 +274,8 @@
         
   
     <h1 class="title">
-      <a href="/blog/2020/03/30/leetcode-island/">
-        【LeetCode日记】 1162. 地图分析
+      <a href="/blog/2020/11/15/tree/">
+        2020-11-15
       </a>
     </h1>
   
@@ -306,7 +306,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-03-30</p>
+    <p>2020-11-15</p>
   </a>
 </div>
 
@@ -314,14 +314,6 @@
         
           
             
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/categories/数据结构/hashtable/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>算法&nbsp;/&nbsp;数据结构&nbsp;/&nbsp;BFS&nbsp;/&nbsp;hashtable</p>
-    </a>
-  </div>
-
 
           
         
@@ -356,7 +348,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">738字</span>
+          <span class="post-count">4.1k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -364,7 +356,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">3分</span>
+          <span class="post-count">14分</span>
         </span>
       </span>
     </div>
@@ -382,46 +374,131 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>LeetCode上有很多小岛题，虽然官方没有这个标签， 但是在我这里都差不多。不管是思路还是套路都比较类似，大家可以结合起来练习。</p>
-<ul>
-<li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/200.number-of-islands.md" target="_blank" rel="noopener">200.number-of-islands</a></li>
-<li><a href="https://leetcode-cn.com/problems/max-area-of-island/solution/695-dao-yu-de-zui-da-mian-ji-dfspython3-by-fe-luci/" target="_blank" rel="noopener">695.max-area-of-island</a></li>
-</ul>
-<p>​<a id="more"></a></p>
-<p>原题地址：<a href="https://leetcode-cn.com/problems/as-far-from-land-as-possible/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/as-far-from-land-as-possible/</a></p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这里我们继续使用上面两道题的套路，即不用visited，而是原地修改。由于这道题求解的是最远的距离，而距离我们可以使用BFS来做。算法：</p>
-<ul>
-<li>对于每一个海洋，我们都向四周扩展，寻找最近的陆地，每次扩展steps加1。</li>
-<li>如果找到了陆地，我们返回steps。</li>
-<li>我们的目标就是所有steps中的最大值。</li>
-</ul>
-<p>实际上面算法有很多重复计算，如图中间绿色的区域，向外扩展的时候，如果其周边四个海洋的距离已经计算出来了，那么没必要扩展到陆地。实际上只需要扩展到周边的四个海洋格子就好了，其距离陆地的最近距离就是1 + 周边四个格子中到达陆地的最小距离。</p>
-<p><img src="https://pic.leetcode-cn.com/23e21821e14238829dd7021a620895f40a8e42127cfe372e4791d025bb655afc.jpg" alt></p>
-<p>我们考虑优化。 </p>
-<ul>
-<li>将所有陆地加入队列，而不是海洋。</li>
-<li>陆地不断扩展到海洋，每扩展一次就steps加1，直到无法扩展位置。</li>
-<li>最终返回steps即可。</li>
-</ul>
-<p>图解：</p>
-<p><img src="https://pic.leetcode-cn.com/8001c1390fb0d1a402eea5010594a303651b4a09ac6ddcd12d72b5b8a9d37295.jpg" alt></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxDistance</span><span class="params">(self, grid: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">        n = len(grid)</span><br><span class="line">        steps = <span class="number">-1</span></span><br><span class="line">        queue = [(i, j) <span class="keyword">for</span> i <span class="keyword">in</span> range(n) <span class="keyword">for</span> j <span class="keyword">in</span> range(n) <span class="keyword">if</span> grid[i][j] == <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> len(queue) == <span class="number">0</span> <span class="keyword">or</span> len(queue) == n ** <span class="number">2</span>: <span class="keyword">return</span> steps</span><br><span class="line">        <span class="keyword">while</span> len(queue) &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(queue)): </span><br><span class="line">                x, y = queue.pop(<span class="number">0</span>)</span><br><span class="line">                <span class="keyword">for</span> xi, yj <span class="keyword">in</span> [(x + <span class="number">1</span>, y), (x - <span class="number">1</span>, y), (x, y + <span class="number">1</span>), (x, y - <span class="number">1</span>)]:</span><br><span class="line">                    <span class="keyword">if</span> xi &gt;= <span class="number">0</span> <span class="keyword">and</span> xi &lt; n <span class="keyword">and</span> yj &gt;= <span class="number">0</span> <span class="keyword">and</span> yj &lt; n <span class="keyword">and</span> grid[xi][yj] == <span class="number">0</span>:</span><br><span class="line">                        queue.append((xi, yj))</span><br><span class="line">                        grid[xi][yj] = <span class="number">-1</span></span><br><span class="line">            steps += <span class="number">1</span></span><br><span class="line">                </span><br><span class="line">        <span class="keyword">return</span> steps</span><br></pre></td></tr></table></figure>
-
+        <h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpk96ipn3j310w0u0wjc.jpg" alt></p>
+<p>先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我后继续完善，将其他专题逐步完善起来。</p>
 <blockquote>
-<p>由于没有early return，steps 其实会多算一次。 我们可以返回值减去1，也可以steps初始化为-1。这里我选择是steps初始化为-1</p>
+<p>大家也可以使用 vscode blink-mind 打开源文件查看，里面有一些笔记可以点开查看。源文件可以去我的公众号《力扣加加》回复脑图获取，以后脑图也会持续更新更多内容。vscode 插件地址：<a href="https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind" target="_blank" rel="noopener">https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind</a></p>
 </blockquote>
-<p><strong><em>复杂度分析</em></strong></p>
+<p>大家好，我是 lucifer。今天给大家带来的专题是《树》。很多人觉得树是一个很难的专题。实际上，只要你掌握了诀窍，它并没那么难。接下来，我们展开说说。</p>
+<p><a href="https://leetcode-cn.com/tag/tree/" title="树标签" target="_blank" rel="noopener">树标签</a>在 leetcode 一共有 <strong>175 道题</strong>。 为了准备这个专题，我花了几天时间将 leetcode 几乎所有的树题目都刷了一遍。</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpkbu92m2j30u00vg0xu.jpg" alt></p>
+<p>除了 35 个上锁的，1 个不能做的题（1628 题不知道为啥做不了）， 4 个标着树的标签但是却是图的题目，其他我都刷了一遍。通过集中刷这些题，我发现了一些有趣的信息，今天就分享给大家。</p>
+<a id="more"></a>
+
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>计算机的数据结构是对现实世界物体间关系的一种抽象。比如家族的族谱，公司架构中的人员组织关系，电脑中的文件夹结构，html 渲染的 dom 结构等等，这些有层次关系的结构在计算机领域都叫做树。</p>
+<p>我们平时做题时候的树其实是一种逻辑结构。</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><blockquote>
+<p>树的基本概念难度都不大，为了节省篇幅，我这里简单过一下。对于你不熟悉的点，大家自行去查找一下相关资料。</p>
+</blockquote>
+<p>树是一种非线性数据结构。树结构的基本单位是节点。节点之间的链接，称为分支（branch）。节点与分支形成树状，结构的开端，称为根（root），或根结点。根节点之外的节点，称为子节点（child）。没有链接到其他子节点的节点，称为叶节点（leaf）。如下图是一个典型的树结构：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfjv3xmkknj30jb0cymxw.jpg" alt></p>
+<p>每个节点可以用以下数据结构来表示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Node &#123;</span><br><span class="line">	value: any; <span class="comment">// 当前节点的值</span></span><br><span class="line">	children: Array&lt;Node&gt;; <span class="comment">// 指向其儿子</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其他重要概念：</p>
 <ul>
-<li>时间复杂度：$O(N ^ 2)$</li>
-<li>空间复杂度：$O(N ^ 2)$</li>
+<li>树的高度：节点到叶子节点的最大值就是其高度。</li>
+<li>树的深度：高度和深度是相反的，高度是从下往上数，深度是从上往下。因此根节点的深度和叶子节点的高度是 0。</li>
+<li>树的层：根开始定义，根为第一层，根的孩子为第二层。</li>
+<li>二叉树，三叉树，。。。 N 叉树，由其子节点最多可以有几个决定，最多有 N 个就是 N 叉树。</li>
 </ul>
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>由于数组删除第一个元素（上面代码的queue.pop(0)）是$O(N)$的时间复杂度，我们可以使用deque优化，代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">maxDistance</span><span class="params">(self, grid: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">     <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">     N = len(grid)</span><br><span class="line">     steps = <span class="number">-1</span></span><br><span class="line">     q = deque([(i, j) <span class="keyword">for</span> i <span class="keyword">in</span> range(N) <span class="keyword">for</span> j <span class="keyword">in</span> range(N) <span class="keyword">if</span> grid[i][j] == <span class="number">1</span>])</span><br><span class="line">     <span class="keyword">if</span> len(q) == <span class="number">0</span> <span class="keyword">or</span> len(q) == N ** <span class="number">2</span>:</span><br><span class="line">         <span class="keyword">return</span> steps</span><br><span class="line">     move = [(<span class="number">-1</span>, <span class="number">0</span>), (<span class="number">1</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">-1</span>), (<span class="number">0</span>, <span class="number">1</span>)]</span><br><span class="line">     <span class="keyword">while</span> len(q) &gt; <span class="number">0</span>:</span><br><span class="line">         <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(q)):</span><br><span class="line">             x, y = q.popleft()</span><br><span class="line">             <span class="keyword">for</span> dx, dy <span class="keyword">in</span> move:</span><br><span class="line">                 nx, ny = x + dx, y + dy</span><br><span class="line">                 <span class="keyword">if</span> <span class="number">0</span> &lt;= nx &lt; N <span class="keyword">and</span> <span class="number">0</span> &lt;= ny &lt; N <span class="keyword">and</span> grid[nx][ny] == <span class="number">0</span>:</span><br><span class="line">                     q.append((nx, ny))</span><br><span class="line">                     grid[nx][ny] = <span class="number">-1</span></span><br><span class="line">         steps += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">     <span class="keyword">return</span> steps</span><br></pre></td></tr></table></figure>
+<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>二叉树是树结构的一种，两个叉就是说每个节点最多只有两个子节点，我们习惯称之为左节点和右节点。</p>
+<blockquote>
+<p>注意这个只是名字而已，并不是实际位置上的左右</p>
+</blockquote>
+<p>二叉树也是我们做算法题最常见的一种树，因此我们花大篇幅介绍它，大家也要花大量时间重点掌握。</p>
+<p>二叉树可以用以下数据结构表示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Node &#123;</span><br><span class="line">	value: any; <span class="comment">// 当前节点的值</span></span><br><span class="line">	left: Node | null; <span class="comment">// 左儿子</span></span><br><span class="line">	right: Node | null; <span class="comment">// 右儿子</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>更多题解可以访问我的LeetCode题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a>  。 目前已经接近30K star啦。</p>
-<p>大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的LeetCode题解</p>
-<p><img src="https://pic.leetcode-cn.com/89ef69abbf02a2957838499a96ce3fbb26830aae52e3ab90392e328c2670cddc-file_1581478989502" alt></p>
+<h4 id="二叉树分类"><a href="#二叉树分类" class="headerlink" title="二叉树分类"></a>二叉树分类</h4><ul>
+<li>完全二叉树</li>
+<li>满二叉树</li>
+<li>二叉搜索树</li>
+<li><a href="https://github.com/azl397985856/leetcode/blob/master/thinkings/balanced-tree.md" target="_blank" rel="noopener">平衡二叉树</a></li>
+<li>红黑树</li>
+<li>。。。</li>
+</ul>
+<h4 id="二叉树的表示"><a href="#二叉树的表示" class="headerlink" title="二叉树的表示"></a>二叉树的表示</h4><ul>
+<li>链表存储</li>
+<li>数组存储。非常适合完全二叉树</li>
+</ul>
+<h2 id="树题难度几何？"><a href="#树题难度几何？" class="headerlink" title="树题难度几何？"></a>树题难度几何？</h2><p>从官方的难度标签来看，树的题目处于困难难度的一共是 14 道， 这其中还有 1 个标着树的标签但是却是图的题目，因此困难率是 13 / 175 ，也就是 7.4 % 左右。如果排除上锁的 5 道，困难的只有 9 道。这些大多数的困难题，相信你看完本节的内容，也可以做出来。</p>
+<p>从通过率来看，只有<strong>不到三分之一</strong>的题目平均通过率在 50% 以下，其他（绝大多数的题目）通过率都是 50%以上。50% 是一个什么概念呢？这么说吧，BFS 的平均通过率差不多在 50%。 而大家认为比较难的，二分法和动态规划的平均通过率差不多 40%。</p>
+<p>因此大家不要有压力， 树和链表一样是相对容易的专题，今天 lucifer 给大家带来了一个口诀<strong>一个中心，两个基本点，三种题型，四个重要概念，七个技巧</strong>，帮助你克服树这个难关。</p>
+<h2 id="一个中心"><a href="#一个中心" class="headerlink" title="一个中心"></a>一个中心</h2><p>一个中心指的是<strong>树的遍历</strong>。整个树的专题只有一个中心点，那就是树的遍历。</p>
+<p>不管是什么题目，核心就是树的遍历。当然你只会树的的遍历肯定是不行的，但是这是一切的基础，不会树的遍历后面讲的都是白搭。</p>
+<p>而树的遍历又可以分为两个基本类型，分别是深度优先遍历和广度优先遍历。这两种遍历方式并不是树特有的，但却伴随树的所有题目。值得注意的是，这两种遍历方式只是一种逻辑而已，因此理论可以应用于任何数据结构，比如 <a href="https://github.com/azl397985856/leetcode/blob/master/problems/365.water-and-jug-problem.md" title="365. 水壶问题" target="_blank" rel="noopener">365. 水壶问题</a> 中，就可以对水壶的状态使用广度优先遍历，而水壶的状态可以用<strong>一个二元组</strong>来表示。</p>
+<blockquote>
+<p>遗憾的是这道题的广度优先遍历解法在 LeetCode 上提交会超时</p>
+</blockquote>
+<p>这两种遍历方式，我们在下面的两个基本点部分给大家详细介绍。</p>
+<h2 id="两个基本点"><a href="#两个基本点" class="headerlink" title="两个基本点"></a>两个基本点</h2><p>上面提到了树的遍历有两种基本方式，分别是深度优先遍历（以下简称 DFS）和广度优先遍历（以下简称 BFS）。这两种遍历方式下面又会细分几种方式。</p>
+<p><strong>DFS 由于借助了函数调用栈，因此可以轻松地使用递归来实现。</strong> 而 BFS 适合求最短距离，这个和层次遍历是不一样的，很多人搞混。这里强调一下，层次遍历和 BFS 是<strong>完全不一样</strong>的东西。<strong>BFS 的核心在于求最短问题时候可以提前终止，这才是它的核心价值。层次遍历只是 BFS 的副产物</strong>。实际上，我们也可以使用 DFS 实现层次遍历的效果，借助于递归，代码甚至会更简单。这个提前终止不同于 DFS 的剪枝的提前终止，而是找到最近目标的提前终止。比如我要找距离最近的目标节点，BFS 找到目标节点就可以直接返回。而 DFS 要穷举所有可能才能找到最近的，这才是 BFS 的核心价值。</p>
+<blockquote>
+<p>如果找到任意一个满足条件的节点就好了，不必最近的，那么 DFS 和 BFS 没有太大差别。同时为了书写简单，我们通常会选择 DFS。</p>
+</blockquote>
+<p>以上就是两种遍历方式的相同点和不同点，下面我们对两者进行一个相信的讲解。</p>
+<h3 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h3><p>深度优先搜索算法（英语：Depth-First-Search，DFS）是一种用于遍历或搜索树或图的算法。沿着树的深度遍历树的节点，尽可能深的搜索树的分支。当节点 v 的所在边都己被探寻过，搜索将回溯到发现节点 v 的那条边的起始节点。这一过程一直进行到已发现从源节点可达的所有节点为止。如果还存在未被发现的节点，则选择其中一个作为源节点并重复以上过程，整个进程反复进行直到所有节点都被访问为止，属于<strong>盲目搜索</strong>。</p>
+<p>深度优先搜索是图论中的经典算法，利用深度优先搜索算法可以产生目标图的相应拓扑排序表，利用拓扑排序表可以方便的解决很多相关的图论问题，如最大路径问题等等。因发明「深度优先搜索算法」，约翰 · 霍普克洛夫特与罗伯特 · 塔扬在 1986 年共同获得计算机领域的最高奖：图灵奖。</p>
+<p>截止目前（2020-02-21），深度优先遍历在 LeetCode 中的题目是 129 道。在 LeetCode 中的题型绝对是超级大户了。而对于树的题目，我们基本上都可以使用 DFS 来解决，甚至我们可以基于 DFS 来做广度优先遍历。并不一定说 DFS 不可以做 BFS（广度优先遍历）的事情。而且由于 DFS 通常我们可以基于递归去做，因此算法会更简洁。 在对性能有很高邀请的场合，我建议你使用迭代，否则尽量使用递归，不仅写起来简单快速，还不容易出错。</p>
+<h4 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h4><ol>
+<li>首先将根节点放入<strong>stack</strong>中。</li>
+<li>从<em>stack</em>中取出第一个节点，并检验它是否为目标。如果找到所有的节点，则结束搜寻并回传结果。否则将它某一个尚未检验过的直接子节点加入<strong>stack</strong>中。</li>
+<li>重复步骤 2。</li>
+<li>如果不存在未检测过的直接子节点。将上一级节点加入<strong>stack</strong>中。<br>重复步骤 2。</li>
+<li>重复步骤 4。</li>
+<li>若<strong>stack</strong>为空，表示整张图都检查过了——亦即图中没有欲搜寻的目标。结束搜寻并回传“找不到目标”。</li>
+</ol>
+<p><strong>这里的 stack 可以理解为自己实现的栈，也可以理解为调用栈。如果是调用栈的时候就是递归，如果是自己实现的栈的话就是迭代。</strong></p>
+<h4 id="算法模板"><a href="#算法模板" class="headerlink" title="算法模板"></a>算法模板</h4><p>一个典型的通用的 DFS 模板可能是这样的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> visited = &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dfs</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (满足特定条件）&#123;</span><br><span class="line">		<span class="comment">// 返回结果 or 退出搜索空间</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	visited[i] = <span class="literal">true</span> <span class="comment">// 将当前状态标为已搜索</span></span><br><span class="line">	<span class="keyword">for</span> (根据i能到达的下个状态j) &#123;</span><br><span class="line">		<span class="keyword">if</span> (!visited[j]) &#123; <span class="comment">// 如果状态j没有被搜索过</span></span><br><span class="line">			dfs(j)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>上面的 visited 是为了防止由于环的存在造成的死循环的。 而我们知道树是不存在环的，因此树的题目大多数不需要 visited，除非你对树的结构做了修改，比如就左子树的 left 指针指向自身，此时会有环。再比如 <a href="https://leetcode-cn.com/problems/copy-list-with-random-pointer/" target="_blank" rel="noopener">138. 复制带随机指针的链表</a> 这道题需要记录已经复制的节点，这些需要记录 visited 信息的树的题目<strong>少之又少</strong>。</p>
+<p>因此一个树的 DFS 更多是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dfs</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (满足特定条件）&#123;</span><br><span class="line">		<span class="comment">// 返回结果 or 退出搜索空间</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">const</span> child <span class="keyword">of</span> root.children) &#123;</span><br><span class="line">        dfs(child)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>而几乎所有的题目几乎都是二叉树，因此下面这个模板更常见。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dfs</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (满足特定条件）&#123;</span><br><span class="line">		<span class="comment">// 返回结果 or 退出搜索空间</span></span><br><span class="line">	&#125;</span><br><span class="line">    dfs(root.left)</span><br><span class="line">    dfs(root.right)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>而我们不同的题目除了 if (满足特定条件部分不同之外)，还会写一些特有的逻辑，这些逻辑写的位置不同，效果也截然不同。那么位置不同会有什么影响，什么时候应该写哪里呢？接下来，我们就聊聊两种常见的 DFS 方式。</p>
+<h4 id="两种常见分类"><a href="#两种常见分类" class="headerlink" title="两种常见分类"></a>两种常见分类</h4><p>前序遍历和后续遍历是最常见的两种 DFS 方式。而另外一种遍历方式 （中序遍历）一般用于平衡二叉树，这个我们后面的<strong>四个重要概念</strong>部分再讲。</p>
+<h5 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h5><p>如果你的代码大概是这么写的（注意主要逻辑的位置）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dfs</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (满足特定条件）&#123;</span><br><span class="line">		<span class="comment">// 返回结果 or 退出搜索空间</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 主要逻辑</span></span><br><span class="line">    dfs(root.left)</span><br><span class="line">    dfs(root.right)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>那么此时我们称为前序遍历。</p>
+<h5 id="后续遍历"><a href="#后续遍历" class="headerlink" title="后续遍历"></a>后续遍历</h5><p>而如果你的代码大概是这么写的（注意主要逻辑的位置）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dfs</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (满足特定条件）&#123;</span><br><span class="line">		<span class="comment">// 返回结果 or 退出搜索空间</span></span><br><span class="line">    &#125;</span><br><span class="line">    dfs(root.left)</span><br><span class="line">    dfs(root.right)</span><br><span class="line">    <span class="comment">// 主要逻辑</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>那么此时我们称为后序遍历。</p>
+<p>值得注意的是， 我们有时也会会写出这样的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dfs</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (满足特定条件）&#123;</span><br><span class="line">		<span class="comment">// 返回结果 or 退出搜索空间</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 做一些事</span></span><br><span class="line">    dfs(root.left)</span><br><span class="line">    dfs(root.right)</span><br><span class="line">    <span class="comment">// 做另外的事</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如上代码，我们在进入和退出左右子树的时候分别执行了一些代码。那么这个时候，是前序遍历还是后续遍历呢？实际上，这属于混合遍历了。不过我们这里只考虑<strong>主逻辑</strong>的位置，关键词是<strong>主逻辑</strong>。</p>
+<p>如果代码主逻辑在左右子树之前执行，那么就是前序遍历。如果代码主逻辑在左右子树之后执行，那么就是后序遍历。关于更详细的内容， 我会在<strong>七个技巧</strong> 中的<strong>前后遍历</strong>部分讲解，大家先留个印象，知道有着两种方式就好。</p>
+<h3 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h3><p>树的遍历的两种方式分别是 DFS 和 BFS，刚才的 DFS 我们简单过了一下前序和后序遍历，对它们有了一个简单印象，后面我们继续深入。这一小节，我们来看下树的另外一种遍历方式 - BFS。</p>
+<p>BFS 也是图论中算法的一种，不同于 DFS， BFS 采用横向搜索的方式，在数据结构上通常采用队列结构。 注意，DFS 我们借助的是栈来完成，而这里借助的是队列。</p>
+<p>BFS 比较适合找<strong>最短距离/路径</strong>和<strong>某一个距离的目标</strong>。比如<code>给定一个二叉树，在树的最后一行找到最左边的值。</code>，此题是力扣 513 的原题。这不就是求距离根节点<strong>最远距离</strong>的目标么？ 一个 BFS 模板就解决了。</p>
+<h4 id="算法流程-1"><a href="#算法流程-1" class="headerlink" title="算法流程"></a>算法流程</h4><ol>
+<li>首先将根节点放入队列中。</li>
+<li>从队列中取出第一个节点，并检验它是否为目标。<ul>
+<li>如果找到目标，则结束搜索并回传结果。</li>
+<li>否则将它所有尚未检验过的直接子节点加入队列中。</li>
+</ul>
+</li>
+<li>若队列为空，表示整张图都检查过了——亦即图中没有欲搜索的目标。结束搜索并回传“找不到目标”。</li>
+<li>重复步骤 2。</li>
+</ol>
+<h4 id="算法模板-1"><a href="#算法模板-1" class="headerlink" title="算法模板"></a>算法模板</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> visited = &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bfs</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> q = <span class="keyword">new</span> Queue()</span><br><span class="line">	q.push(初始状态)</span><br><span class="line">	<span class="keyword">while</span>(q.length) &#123;</span><br><span class="line">		<span class="keyword">let</span> i = q.pop()</span><br><span class="line">        <span class="keyword">if</span> (visited[i]) <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">if</span> (i 是我们要找的目标) <span class="keyword">return</span> 结果</span><br><span class="line">		<span class="keyword">for</span> (i的可抵达状态j) &#123;</span><br><span class="line">			<span class="keyword">if</span> (j 合法) &#123;</span><br><span class="line">				q.push(j)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> 没找到</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="两种常见分类-1"><a href="#两种常见分类-1" class="headerlink" title="两种常见分类"></a>两种常见分类</h4><p>BFS 我目前使用的模板就两种，这两个模板可以解决所有的树的 BFS 问题。</p>
+<p>前面我提到了“BFS 比较适合找<strong>最短距离/路径</strong>和<strong>某一个距离的目标</strong>”。 如果我需要求的是最短距离/路径，我是不关心我走到第几步的，这个时候可是用不标记层的目标。而如果我需要求距离某个节点距离小于 k 的所有节点，这个时候第几步这个信息就值得被记录了。</p>
+<blockquote>
+<p>小于 k 或者 等于 k 也是同理。</p>
+</blockquote>
+<h5 id="标记层"><a href="#标记层" class="headerlink" title="标记层"></a>标记层</h5><p>一个常见的 BFS 模板，代入题目只需要根据题目微调即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bfs</span><span class="params">(k)</span>:</span></span><br><span class="line">        <span class="comment"># 使用双端队列，而不是数组。因为数组从头部删除元素的时间复杂度为 N，双端队列的底层实现其实是链表。</span></span><br><span class="line">        queue = collections.deque([root])</span><br><span class="line">        <span class="comment"># 记录层数</span></span><br><span class="line">        steps = <span class="number">0</span></span><br><span class="line">        <span class="comment"># 队列不空，生命不止！</span></span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            size = len(queue)</span><br><span class="line">            <span class="comment"># 遍历当前层的所有节点</span></span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> range(size):</span><br><span class="line">                node = queue.popleft()</span><br><span class="line">                <span class="keyword">if</span> (step == k) <span class="keyword">return</span> node</span><br><span class="line">                <span class="keyword">if</span> node.right:</span><br><span class="line">                    queue.append(node.right)</span><br><span class="line">                <span class="keyword">if</span> node.left:</span><br><span class="line">                    queue.append(node.left)</span><br><span class="line">            <span class="comment"># 遍历完当前层所有的节点后 steps + 1</span></span><br><span class="line">            steps += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="不标记层"><a href="#不标记层" class="headerlink" title="不标记层"></a>不标记层</h5><h2 id="三种题型"><a href="#三种题型" class="headerlink" title="三种题型"></a>三种题型</h2><h2 id="四个重要概念"><a href="#四个重要概念" class="headerlink" title="四个重要概念"></a>四个重要概念</h2><h2 id="七个技巧"><a href="#七个技巧" class="headerlink" title="七个技巧"></a>七个技巧</h2>
       </div>
       
         <br>
@@ -432,10 +509,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-30T18:19:43+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-15T15:14:51+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年3月30日</p>
+    <p>更新于 2020年11月15日</p>
   </a>
 </div>
 
@@ -443,9 +520,6 @@
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/数据结构/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>数据结构</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/算法/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>算法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/LeetCode日记/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>LeetCode日记</p></a></div>
-
 
         
       
@@ -455,7 +529,7 @@
   <div class="-mob-share-list share-body">
     
       
-        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aS47CMBAFQO5/aWY9imJeuw1S7MoKQeK4WLTcn9crvt6X6/r9+M7xmnffLL4wMDAey3gPr5xxfX2+0es9+d4wMDDOYdxFsGTpu3XyO8fs8d4wMDAwxp+T09o4dM69CwMDA6O6dCcRzY+JGBgYGHlAjBYNgmy1nLcsF8fAwHggY+6Q95vPX+lvYGBgPIrxLl6dItranfx7OwYGxtaMudfk4ThPdKsBFwMD4zRG3kTMQ2o+FpY81TosYmBgbMFIHpsryeUDYckA2YfVMDAwjmFU09dVRfy5kN2a7MDAwNiIkQ9bVBPdTlsUAwPjNMYvMZ1kuJzKYmBgbMHIg2AyzjV36MzHxW7/SgwMjK0Z1aL8XFAeb3fu11s8BgbG1oxqT7DTnsx55TELDAyM7RhJOf4bCW2hMZk0WTEwMI5hJAG0Exzzqzy6gYGBcSRjLkGda1UuPsNiYGBsyshDXl6yrx4BO0EcAwNjb0behlyVpuYJcx7WMTAwTmYkh7NOy7M66hEV3TAwMLZm5K2CfPBr1ehYYSAMAwPjAEZemMs3t6CgljyFgYGxKWOuudgJmqvaEhgYGOcw5oJdfnys/h0JrxOyMTAwnsvoDGlVi2tJUS8P1hgYGKcxOke3aojsHPs+DFtgYGBgFAcm8hUm25b5QhgYGEcyOmW4aj4dtSUwMDAOYMyNbeWpZrJytamAgYFxDiNPHfv3V5sEi5uaGBgYz2P8AXLvS6nTtzIKAAAAAElFTkSuQmCC'>
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLklEQVR42u3awW7EIAxF0fz/T6frKgq9z2amAm5WVUUTDgvXxr4u/NwvD1nzXPn8q+cbrk88MmTIWJZBPp+u4b95w8RHI0OGjAMYJBSma8bgcczk35UhQ4aM8RqyiXEAJQFXhgwZMlLGOLHjyH8OuDJkyFiQQQrUNCDy1PCrtbgMGTIWZPBb9+///JH+hgwZMpZi3OHT583aya9dyZAhY2tG5zNpsUqu4VolsQwZMjZldEYfZl2upUfQOjkZMmQsyEiDHf8wP4J0yAz935AhQ8Z2DD4wQUJhen1PeMXbQRkyZGzB4EkY31D/aCZMi8iQIWMjBi9ZeQOADFWkb0DBV4YMGVszZiWIvGEwa8wrvk2UIUPGgoxaQEwbk7wMriWXMmTIOIfBk7baqMTcIvaPzoYMGTI2YvC2Zacx0GlbBteCMmTI2JRRKylJ2E2LYf6219RQhgwZxzDSsYlZb2g1TWXIkHEMgxSKtcu4TiMTHY0MGTK2ZtQ2l45BpJhaWStDhoxzGHzTPGjWBsLi9FGGDBkHMGqv5rxa2OVhXYYMGecweDJXw/M1/OBkyJCxN+MOn1qJ2wn05FsyZMjYm9EPdrz45Bdn5MhqIVuGDBnrMtIgywe80k3XWg4yZMg4h8FTN3LR32kqpKFfhgwZMjiJtx7T7aJ3ypAhQ0Y4NlELu/xiblrAlSFDxlIMPjDBE0Sy6bTonXDdJkOGjAUZPFGL5zh4CRoG3GLqKUOGjPUYP2Afk2FTpbfvAAAAAElFTkSuQmCC'>
         
           <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png">
         
@@ -465,12 +539,15 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2020/03/30/leetcode-island/&title=【LeetCode日记】 1162. 地图分析 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=LeetCode上有很多小岛题，虽然官方没有这个标签， 但是在我这里都差不多。不管是思路还是套路都比较类似，大家可以结合起来练习。
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2020/11/15/tree/&title= | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=树
+先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我后继续完善，将其他专题逐步完善起来。
 
-200.number-of-islands
-695.max-area-of-island
+大家也可以使用 vscode blink-mind 打开源文件查看，里面有一些笔记可以点开查看。源文件可以去我的公众号《力扣加加》回复脑图获取，以后脑图也会持续更新更多内容。vscode 插件地址：https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind
 
-​"
+大家好，我是 lucifer。今天给大家带来的专题是《树》。很多人觉得树是一个很难的专题。实际上，只要你掌握了诀窍，它并没那么难。接下来，我们展开说说。
+树标签在 leetcode 一共有 175 道题。 为了准备这个专题，我花了几天时间将 leetcode 几乎所有的树题目都刷了一遍。
+
+除了 35 个上锁的，1 个不能做的题（1628 题不知道为啥做不了）， 4 个标着树的标签但是却是图的题目，其他我都刷了一遍。通过集中刷这些题，我发现了一些有趣的信息，今天就分享给大家。"
           
           >
           
@@ -482,12 +559,15 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2020/03/30/leetcode-island/&title=【LeetCode日记】 1162. 地图分析 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=LeetCode上有很多小岛题，虽然官方没有这个标签， 但是在我这里都差不多。不管是思路还是套路都比较类似，大家可以结合起来练习。
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2020/11/15/tree/&title= | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=树
+先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我后继续完善，将其他专题逐步完善起来。
 
-200.number-of-islands
-695.max-area-of-island
+大家也可以使用 vscode blink-mind 打开源文件查看，里面有一些笔记可以点开查看。源文件可以去我的公众号《力扣加加》回复脑图获取，以后脑图也会持续更新更多内容。vscode 插件地址：https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind
 
-​"
+大家好，我是 lucifer。今天给大家带来的专题是《树》。很多人觉得树是一个很难的专题。实际上，只要你掌握了诀窍，它并没那么难。接下来，我们展开说说。
+树标签在 leetcode 一共有 175 道题。 为了准备这个专题，我花了几天时间将 leetcode 几乎所有的树题目都刷了一遍。
+
+除了 35 个上锁的，1 个不能做的题（1628 题不知道为啥做不了）， 4 个标着树的标签但是却是图的题目，其他我都刷了一遍。通过集中刷这些题，我发现了一些有趣的信息，今天就分享给大家。"
           
           >
           
@@ -499,12 +579,15 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2020/03/30/leetcode-island/&title=【LeetCode日记】 1162. 地图分析 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=LeetCode上有很多小岛题，虽然官方没有这个标签， 但是在我这里都差不多。不管是思路还是套路都比较类似，大家可以结合起来练习。
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2020/11/15/tree/&title= | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=树
+先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我后继续完善，将其他专题逐步完善起来。
 
-200.number-of-islands
-695.max-area-of-island
+大家也可以使用 vscode blink-mind 打开源文件查看，里面有一些笔记可以点开查看。源文件可以去我的公众号《力扣加加》回复脑图获取，以后脑图也会持续更新更多内容。vscode 插件地址：https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind
 
-​"
+大家好，我是 lucifer。今天给大家带来的专题是《树》。很多人觉得树是一个很难的专题。实际上，只要你掌握了诀窍，它并没那么难。接下来，我们展开说说。
+树标签在 leetcode 一共有 175 道题。 为了准备这个专题，我花了几天时间将 leetcode 几乎所有的树题目都刷了一遍。
+
+除了 35 个上锁的，1 个不能做的题（1628 题不知道为啥做不了）， 4 个标着树的标签但是却是图的题目，其他我都刷了一遍。通过集中刷这些题，我发现了一些有趣的信息，今天就分享给大家。"
           
           >
           
@@ -528,40 +611,21 @@
       
           <div class="prev-next">
               
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                          <h4>
-                              <a href="/blog/2020/04/06/movie-eager-game/" rel="prev" title="《饥饿站台》">
-                                
-                                    《饥饿站台》
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/电影/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 电影</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
               
                   <section class="next">
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/blog/2020/03/24/bit/" rel="prev" title="位运算">
+                              <a href="/blog/2020/11/08/linked-list/" rel="prev" title="几乎刷完了力扣所有的链表题，我发现了这些东西。。。">
                                   
-                                      位运算
+                                      几乎刷完了力扣所有的链表题，我发现了这些东西。。。
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/位运算/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 位运算</a>
+                                  <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a> <a class="tag" href="/blog/tags/链表/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 链表</a>
                               </h6>
                           
                       </span>
@@ -603,7 +667,7 @@
 
   <script>
     window.subData = {
-      title: '【LeetCode日记】 1162. 地图分析',
+      title: '',
       tools: true
     }
   </script>
@@ -712,7 +776,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优化"><span class="toc-text">优化</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#树"><span class="toc-text">树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉树"><span class="toc-text">二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#二叉树分类"><span class="toc-text">二叉树分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二叉树的表示"><span class="toc-text">二叉树的表示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#树题难度几何？"><span class="toc-text">树题难度几何？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一个中心"><span class="toc-text">一个中心</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#两个基本点"><span class="toc-text">两个基本点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#深度优先遍历"><span class="toc-text">深度优先遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#算法流程"><span class="toc-text">算法流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#算法模板"><span class="toc-text">算法模板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#两种常见分类"><span class="toc-text">两种常见分类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#前序遍历"><span class="toc-text">前序遍历</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#后续遍历"><span class="toc-text">后续遍历</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#广度优先遍历"><span class="toc-text">广度优先遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#算法流程-1"><span class="toc-text">算法流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#算法模板-1"><span class="toc-text">算法模板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#两种常见分类-1"><span class="toc-text">两种常见分类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#标记层"><span class="toc-text">标记层</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#不标记层"><span class="toc-text">不标记层</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三种题型"><span class="toc-text">三种题型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四个重要概念"><span class="toc-text">四个重要概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七个技巧"><span class="toc-text">七个技巧</span></a></li></ol></li></ol>
     </div>
   </section>
 
