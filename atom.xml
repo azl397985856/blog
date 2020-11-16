@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-11-15T07:14:51.931Z</updated>
+  <updated>2020-11-16T06:28:51.534Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -21,19 +21,17 @@
     <link href="https://lucifer.ren/blog/2020/11/15/tree/"/>
     <id>https://lucifer.ren/blog/2020/11/15/tree/</id>
     <published>2020-11-15T00:36:44.527Z</published>
-    <updated>2020-11-15T07:14:51.931Z</updated>
+    <updated>2020-11-16T06:28:51.534Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;树&quot;&gt;&lt;a href=&quot;#树&quot; class=&quot;headerlink&quot; title=&quot;树&quot;&gt;&lt;/a&gt;树&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/0081Kckwly1gkpk96ipn3j310w0u0wjc.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我后继续完善，将其他专题逐步完善起来。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;大家也可以使用 vscode blink-mind 打开源文件查看，里面有一些笔记可以点开查看。源文件可以去我的公众号《力扣加加》回复脑图获取，以后脑图也会持续更新更多内容。vscode 插件地址：&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;大家好，我是 lucifer。今天给大家带来的专题是《树》。很多人觉得树是一个很难的专题。实际上，只要你掌握了诀窍，它并没那么难。接下来，我们展开说说。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/tag/tree/&quot; title=&quot;树标签&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;树标签&lt;/a&gt;在 leetcode 一共有 &lt;strong&gt;175 道题&lt;/strong&gt;。 为了准备这个专题，我花了几天时间将 leetcode 几乎所有的树题目都刷了一遍。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/0081Kckwly1gkpkbu92m2j30u00vg0xu.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;除了 35 个上锁的，1 个不能做的题（1628 题不知道为啥做不了）， 4 个标着树的标签但是却是图的题目，其他我都刷了一遍。通过集中刷这些题，我发现了一些有趣的信息，今天就分享给大家。&lt;/p&gt;
+      
+      
+        
+        
+          
+        
+      
     
     </summary>
     
@@ -45,7 +43,7 @@
     <link href="https://lucifer.ren/blog/2020/11/08/linked-list/"/>
     <id>https://lucifer.ren/blog/2020/11/08/linked-list/</id>
     <published>2020-11-07T16:00:00.000Z</published>
-    <updated>2020-11-10T08:28:13.719Z</updated>
+    <updated>2020-11-16T05:52:27.862Z</updated>
     
     <summary type="html">
     
@@ -294,9 +292,9 @@
       <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
     
     
-      <category term="滑动窗口" scheme="https://lucifer.ren/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
-    
       <category term="前缀和" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    
+      <category term="滑动窗口" scheme="https://lucifer.ren/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
     
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
@@ -385,22 +383,25 @@
   </entry>
   
   <entry>
-    <title>字节跳动的算法面试题是什么难度？（第二弹）</title>
-    <link href="https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex-2017/"/>
-    <id>https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex-2017/</id>
+    <title>字节跳动的算法面试题是什么难度？</title>
+    <link href="https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex/"/>
+    <id>https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex/</id>
     <published>2020-09-05T16:00:00.000Z</published>
-    <updated>2020-09-14T09:06:58.597Z</updated>
+    <updated>2020-09-06T13:14:52.739Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;由于 lucifer 我是一个小前端， 最近也在准备写一个《前端如何搞定算法面试》的专栏，因此最近没少看各大公司的面试题。都说字节跳动算法题比较难，我就先拿 ta 下手，做了几套 。这次我们就拿一套 &lt;code&gt;字节跳动2017秋招编程题汇总&lt;/code&gt;来看下字节的算法笔试题的难度几何。地址：&lt;a href=&quot;https://www.nowcoder.com/test/6035789/summary&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.nowcoder.com/test/6035789/summary&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;由于 lucifer 我是一个小前端， 最近也在准备写一个《前端如何搞定算法面试》的专栏，因此最近没少看各大公司的面试题。都说字节跳动算法题比较难，我就先拿 ta 下手，做了几套 。这次我们就拿一套 &lt;code&gt;2018 年的前端校招（第四批）&lt;/code&gt;来看下字节的算法笔试题的难度几何。地址：&lt;a href=&quot;https://www.nowcoder.com/test/8536639/summary&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.nowcoder.com/test/8536639/summary&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;实际上，这套字节的前端岗位笔试题和后端以及算法岗位的笔试题也只有一道题目（红包的设计题被换成了另外一个设计题）不一样而已，因此也不需要担心你不是前端，题目类型和难度和你的岗位不匹配。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;​
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -424,25 +425,22 @@
   </entry>
   
   <entry>
-    <title>字节跳动的算法面试题是什么难度？</title>
-    <link href="https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex/"/>
-    <id>https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex/</id>
+    <title>字节跳动的算法面试题是什么难度？（第二弹）</title>
+    <link href="https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex-2017/"/>
+    <id>https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex-2017/</id>
     <published>2020-09-05T16:00:00.000Z</published>
-    <updated>2020-09-06T13:14:52.739Z</updated>
+    <updated>2020-09-14T09:06:58.597Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;由于 lucifer 我是一个小前端， 最近也在准备写一个《前端如何搞定算法面试》的专栏，因此最近没少看各大公司的面试题。都说字节跳动算法题比较难，我就先拿 ta 下手，做了几套 。这次我们就拿一套 &lt;code&gt;2018 年的前端校招（第四批）&lt;/code&gt;来看下字节的算法笔试题的难度几何。地址：&lt;a href=&quot;https://www.nowcoder.com/test/8536639/summary&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.nowcoder.com/test/8536639/summary&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;实际上，这套字节的前端岗位笔试题和后端以及算法岗位的笔试题也只有一道题目（红包的设计题被换成了另外一个设计题）不一样而已，因此也不需要担心你不是前端，题目类型和难度和你的岗位不匹配。&lt;/p&gt;
-&lt;/blockquote&gt;
+      &lt;p&gt;由于 lucifer 我是一个小前端， 最近也在准备写一个《前端如何搞定算法面试》的专栏，因此最近没少看各大公司的面试题。都说字节跳动算法题比较难，我就先拿 ta 下手，做了几套 。这次我们就拿一套 &lt;code&gt;字节跳动2017秋招编程题汇总&lt;/code&gt;来看下字节的算法笔试题的难度几何。地址：&lt;a href=&quot;https://www.nowcoder.com/test/6035789/summary&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.nowcoder.com/test/6035789/summary&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;​
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -540,9 +538,9 @@
     
     </summary>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     

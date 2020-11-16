@@ -402,7 +402,7 @@
 <p>（图 2. 数组和链表的物理存储图）</p>
 <p>不难看出，数组和链表只是使用物理内存的两种方式。</p>
 <p>数组是连续的内存空间，通常每一个单位的大小也是固定的，因此可以按下标随机访问。而链表则不一定连续，因此其查找只能依靠别的方式，一般我们是通过一个叫 next 指针来遍历查找。链表其实就是一个结构体。 比如一个可能的单链表的定义可以是：</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> ListNode&lt;T&gt; &#123;</span><br><span class="line">  data: T;</span><br><span class="line">  next: ListNode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> ListNode&lt;T&gt; &#123;</span><br><span class="line">  data: T;</span><br><span class="line">  next: ListNode&lt;T&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>data 是数据域，存放数据，next 是一个指向下一个节点的指针。</p>
 <p>链表是一种物理存储单元上非连续、非顺序的存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的。链表由一系列结点（链表中每一个元素称为结点）组成，结点可以在运行时动态生成。</p>
@@ -565,7 +565,7 @@
 <li>如果题目的头节点可能被移除，那么考虑使用虚拟节点，这样<strong>头节点就变成了中间节点</strong>，就不需要为头节点做特殊判断了。</li>
 <li>题目让你返回的不是原本的头节点，而是尾部节点或者其他中间节点，这个时候要注意指针的变化。</li>
 </ul>
-<p>以上两者部分的具体内容，我们在稍微讲到的虚拟头部分讲解。老规矩，大家留个印象即可。</p>
+<p>以上两者部分的具体内容，我们在稍后讲到的虚拟头部分讲解。老规矩，大家留个印象即可。</p>
 <h3 id="前后序"><a href="#前后序" class="headerlink" title="前后序"></a>前后序</h3><p>ok，是时候填坑了。上面提到了链表结构天生具有递归性，那么使用递归的解法或者递归的思维都会对我们解题有帮助。</p>
 <p>在 <a href="https://github.com/azl397985856/leetcode/blob/master/thinkings/binary-tree-traversal.md" target="_blank" rel="noopener">二叉树遍历</a> 部分，我讲了二叉树的三种流行的遍历方法，分别是前序遍历，中序遍历和后序遍历。</p>
 <p>前中后序实际上是指的当前节点相对子节点的处理顺序。如果先处理当前节点再处理子节点，那么就是前序。如果先处理左节点，再处理当前节点，最后处理右节点，就是中序遍历。后序遍历自然是最后处理当前节点了。</p>
@@ -583,7 +583,7 @@
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(head)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next: <span class="keyword">return</span> head</span><br><span class="line">    res = dfs(head.next)</span><br><span class="line">    <span class="comment"># 主逻辑（改变指针）在进入后面的节点的后面，也就是递归返回的过程会执行到</span></span><br><span class="line">    head.next.next = head</span><br><span class="line">    head.next = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
 
 <p>可以看出，这两种写法不管是边界，入参，还是代码都不太一样。为什么会有这样的差异呢？</p>
-<p>回答这个问题也不难，大家只要记住一个很简单的一句话就好了，那就是<strong>如果是前序遍历，那么你可以想象前面的链表都处理好了，怎么处理的不用管</strong>。相应地<strong>如果是后续遍历，那么你可以想象后面的链表都处理好了，怎么处理的不用管</strong>。这句话的正确性也是毋庸置疑。</p>
+<p>回答这个问题也不难，大家只要记住一个很简单的一句话就好了，那就是<strong>如果是前序遍历，那么你可以想象前面的链表都处理好了，怎么处理的不用管</strong>。相应地<strong>如果是后序遍历，那么你可以想象后面的链表都处理好了，怎么处理的不用管</strong>。这句话的正确性也是毋庸置疑。</p>
 <p>如下图，是前序遍历的时候，我们应该画的图。大家把注意力集中在中间的框（子结构）就行了，同时注意两点。</p>
 <ol>
 <li>前面的已经处理好了</li>
@@ -753,10 +753,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-10T16:28:13+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-16T13:52:27+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年11月10日</p>
+    <p>更新于 2020年11月16日</p>
   </a>
 </div>
 
