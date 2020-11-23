@@ -599,41 +599,6 @@
 <li><a href="https://lucifer.ren/blog/2020/11/08/linked-list/">几乎刷完了力扣所有的链表题，我发现了这些东西。。。</a></li>
 <li>几乎刷完了力扣所有的树题，我发现了这些东西。。。(就是本文)</li>
 </ul>
-<h2 id="一点絮叨"><a href="#一点絮叨" class="headerlink" title="一点絮叨"></a>一点絮叨</h2><p>首先亮一下本文的主角 - 树（我的化妆技术还行吧^_^）：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkyz162e1ij30lu0ssdhm.jpg" alt></p>
-<p><a href="https://leetcode-cn.com/tag/tree/" title="树标签" target="_blank" rel="noopener">树标签</a>在 leetcode 一共有 <strong>175 道题</strong>。 为了准备这个专题，我花了几天时间将 leetcode 几乎所有的树题目都刷了一遍。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpkbu92m2j30u00vg0xu.jpg" alt></p>
-<p>除了 35 个上锁的，1 个不能做的题（1628 题不知道为啥做不了）， 4 个标着树的标签但却是图的题目，其他我都刷了一遍。通过集中刷这些题，我发现了一些有趣的信息，今天就分享给大家。</p>
-<h2 id="食用指南"><a href="#食用指南" class="headerlink" title="食用指南"></a>食用指南</h2><p>大家好，我是 lucifer。今天给大家带来的是《树》专题。另外为了保持章节的聚焦性和实用性，省去了一些内容，比如哈夫曼树，前缀树，平衡二叉树（红黑树等），二叉堆。这些内容相对来说实用性没有那么强，如果大家对这些内容也感兴趣，可以关注下我的仓库 <a href="https://github.com/azl397985856/leetcode" title="leetcode 算法题解" target="_blank" rel="noopener">leetcode 算法题解</a>，大家有想看的内容也可以留言告诉我哦~</p>
-<p>另外要提前告知大家的是本文所讲的很多内容都很依赖于递归。关于递归的练习我推荐大家把递归过程画到纸上，手动代入几次。等大脑熟悉了递归之后就不用这么辛苦了。 实在懒得画图的同学也可以找一个可视化递归的网站，比如 <a href="https://recursion.now.sh/。" target="_blank" rel="noopener">https://recursion.now.sh/。</a> 等你对递归有了一定的理解之后就仔细研究一下树的各种遍历方法，再把本文看完，最后把文章末尾的题目做一做，搞定个递归问题不大。</p>
-<blockquote>
-<p>文章的后面《两个基本点 - 深度优先遍历》部分，对于如何练习树的遍历的递归思维我也提出了一种方法</p>
-</blockquote>
-<p>最后要强调的是，本文只是帮助你搞定树题目的常见套路，但不是说树的所有题目涉及的考点都讲。比如树状 DP 这种不在本文的讨论范围，因为这种题更侧重的是 DP，如果你不懂 DP 多半是做不出来的，你需要的是学完树和 DP 之后再去学树状 DP。如果你对这些内容感兴趣，可以期待我的后续专题。</p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>提到树大家更熟悉的是现实中的树，而现实中的树是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkydk0w4uoj31750u0amg.jpg" alt></p>
-<p>而计算机中的树其实是现实中的树的倒影。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkydoh5we8j31bl0u0kjn.jpg" alt></p>
-<p>计算机的数据结构是对现实世界物体间关系的一种抽象。比如家族的族谱，公司架构中的人员组织关系，电脑中的文件夹结构，html 渲染的 dom 结构等等，这些有层次关系的结构在计算机领域都叫做树。</p>
-<p>首先明确一下，树其实是一种逻辑结构。比如笔者平时写复杂递归的时候，尽管笔者做的题目不是树，也会画一个递归树帮助自己理解。</p>
-<blockquote>
-<p>树是一种重要的思维工具</p>
-</blockquote>
-<p>以最简单的计算 fibonacci 数列为例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n == <span class="number">0</span> || n == <span class="number">1</span>) <span class="keyword">return</span> n;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> fn(n - <span class="number">1</span>) + fn(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>很明显它的入参和返回值都不是树，但是却不影响我们用树的思维去思考。</p>
-<p>继续回到上面的代码，根据上面的代码可以画出如下的递归树。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkqv37r0x4j30f90iot9s.jpg" alt></p>
-<p>其中树的边表示的是返回值，树节点表示的是需要计算的值，即 fn(n）。</p>
-<p>以计算 5 的 fibbonacci 为例，过程大概是这样的（动图演示）：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkqvazbxs8g30gi0my4qp.gif" alt></p>
-<p><strong>这其实就是一个树的后序遍历</strong>，你说树（逻辑上的树）是不是很重要？关于后序遍历咱们后面再讲，现在大家知道是这么回事就行。</p>
-<p>大家也可以去 <a href="https://recursion.now.sh/" title="递归可视化网站" target="_blank" rel="noopener">这个网站</a> 查看上面算法的单步执行效果。当然这个网站还有更多的算法的动画演示。</p>
-<blockquote>
-<p>上面的图箭头方向是为了方便大家理解。其实箭头方向变成向下的才是真的树结构。</p>
-</blockquote>
-<p>广义的树真的很有用，但是它范围太大了。 本文所讲的树的题目是比较狭隘的树，指的是输入（参数）或者输出（返回值）是树结构的题目。</p>
       
         <div class="readmore">
           <a href="/blog/2020/11/23/tree/" class="flat-box">
