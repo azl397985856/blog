@@ -305,6 +305,177 @@
       
         
   <h2 class="title">
+    <a href="/blog/2020/11/23/tree/">
+      几乎刷完了力扣所有的树题，我发现了这些东西。。。
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-11-23</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/树/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>树</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">20.2k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">74分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkybjfbpubj30uo0u0gqz.jpg" alt></p>
+<p>先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我会继续完善，将其他专题逐步完善起来。</p>
+<blockquote>
+<p>大家也可以使用 vscode blink-mind 打开源文件查看，里面有一些笔记可以点开查看。源文件可以去我的公众号《力扣加加》回复脑图获取，以后脑图也会持续更新更多内容。vscode 插件地址：<a href="https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind" target="_blank" rel="noopener">https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind</a></p>
+</blockquote>
+<p>本系列包含以下专题：</p>
+<ul>
+<li><a href="https://lucifer.ren/blog/2020/11/08/linked-list/">几乎刷完了力扣所有的链表题，我发现了这些东西。。。</a></li>
+<li>几乎刷完了力扣所有的树题，我发现了这些东西。。。(就是本文)</li>
+</ul>
+<h2 id="一点絮叨"><a href="#一点絮叨" class="headerlink" title="一点絮叨"></a>一点絮叨</h2><p>首先亮一下本文的主角 - 树（我的化妆技术还行吧^_^）：</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkyz162e1ij30lu0ssdhm.jpg" alt></p>
+<p><a href="https://leetcode-cn.com/tag/tree/" title="树标签" target="_blank" rel="noopener">树标签</a>在 leetcode 一共有 <strong>175 道题</strong>。 为了准备这个专题，我花了几天时间将 leetcode 几乎所有的树题目都刷了一遍。</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpkbu92m2j30u00vg0xu.jpg" alt></p>
+<p>除了 35 个上锁的，1 个不能做的题（1628 题不知道为啥做不了）， 4 个标着树的标签但却是图的题目，其他我都刷了一遍。通过集中刷这些题，我发现了一些有趣的信息，今天就分享给大家。</p>
+<h2 id="食用指南"><a href="#食用指南" class="headerlink" title="食用指南"></a>食用指南</h2><p>大家好，我是 lucifer。今天给大家带来的是《树》专题。另外为了保持章节的聚焦性和实用性，省去了一些内容，比如哈夫曼树，前缀树，平衡二叉树（红黑树等），二叉堆。这些内容相对来说实用性没有那么强，如果大家对这些内容也感兴趣，可以关注下我的仓库 <a href="https://github.com/azl397985856/leetcode" title="leetcode 算法题解" target="_blank" rel="noopener">leetcode 算法题解</a>，大家有想看的内容也可以留言告诉我哦~</p>
+<p>另外要提前告知大家的是本文所讲的很多内容都很依赖于递归。关于递归的练习我推荐大家把递归过程画到纸上，手动代入几次。等大脑熟悉了递归之后就不用这么辛苦了。 实在懒得画图的同学也可以找一个可视化递归的网站，比如 <a href="https://recursion.now.sh/。" target="_blank" rel="noopener">https://recursion.now.sh/。</a> 等你对递归有了一定的理解之后就仔细研究一下树的各种遍历方法，再把本文看完，最后把文章末尾的题目做一做，搞定个递归问题不大。</p>
+<blockquote>
+<p>文章的后面《两个基本点 - 深度优先遍历》部分，对于如何练习树的遍历的递归思维我也提出了一种方法</p>
+</blockquote>
+<p>最后要强调的是，本文只是帮助你搞定树题目的常见套路，但不是说树的所有题目涉及的考点都讲。比如树状 DP 这种不在本文的讨论范围，因为这种题更侧重的是 DP，如果你不懂 DP 多半是做不出来的，你需要的是学完树和 DP 之后再去学树状 DP。如果你对这些内容感兴趣，可以期待我的后续专题。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>提到树大家更熟悉的是现实中的树，而现实中的树是这样的：</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkydk0w4uoj31750u0amg.jpg" alt></p>
+<p>而计算机中的树其实是现实中的树的倒影。</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkydoh5we8j31bl0u0kjn.jpg" alt></p>
+<p>计算机的数据结构是对现实世界物体间关系的一种抽象。比如家族的族谱，公司架构中的人员组织关系，电脑中的文件夹结构，html 渲染的 dom 结构等等，这些有层次关系的结构在计算机领域都叫做树。</p>
+<p>首先明确一下，树其实是一种逻辑结构。比如笔者平时写复杂递归的时候，尽管笔者做的题目不是树，也会画一个递归树帮助自己理解。</p>
+<blockquote>
+<p>树是一种重要的思维工具</p>
+</blockquote>
+<p>以最简单的计算 fibonacci 数列为例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n == <span class="number">0</span> || n == <span class="number">1</span>) <span class="keyword">return</span> n;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> fn(n - <span class="number">1</span>) + fn(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>很明显它的入参和返回值都不是树，但是却不影响我们用树的思维去思考。</p>
+<p>继续回到上面的代码，根据上面的代码可以画出如下的递归树。</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkqv37r0x4j30f90iot9s.jpg" alt></p>
+<p>其中树的边表示的是返回值，树节点表示的是需要计算的值，即 fn(n）。</p>
+<p>以计算 5 的 fibbonacci 为例，过程大概是这样的（动图演示）：</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkqvazbxs8g30gi0my4qp.gif" alt></p>
+<p><strong>这其实就是一个树的后序遍历</strong>，你说树（逻辑上的树）是不是很重要？关于后序遍历咱们后面再讲，现在大家知道是这么回事就行。</p>
+<p>大家也可以去 <a href="https://recursion.now.sh/" title="递归可视化网站" target="_blank" rel="noopener">这个网站</a> 查看上面算法的单步执行效果。当然这个网站还有更多的算法的动画演示。</p>
+<blockquote>
+<p>上面的图箭头方向是为了方便大家理解。其实箭头方向变成向下的才是真的树结构。</p>
+</blockquote>
+<p>广义的树真的很有用，但是它范围太大了。 本文所讲的树的题目是比较狭隘的树，指的是输入（参数）或者输出（返回值）是树结构的题目。</p>
+      
+        <div class="readmore">
+          <a href="/blog/2020/11/23/tree/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/tags/LeetCode/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> LeetCode</a>
+        
+          <a href="/blog/tags/树/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 树</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
     <a href="/blog/2020/11/08/linked-list/">
       几乎刷完了力扣所有的链表题，我发现了这些东西。。。
     </a>
@@ -395,7 +566,7 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gki5nbjcgqj31be0u0q5w.jpg" alt></p>
-<p>先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我后继续完善，将其他专题逐步完善起来。</p>
+<p>先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我会继续完善，将其他专题逐步完善起来。</p>
 <blockquote>
 <p>大家也可以使用 vscode blink-mind 打开源文件查看，里面有一些笔记可以点开查看。源文件可以去我的公众号《力扣加加》回复脑图获取，以后脑图也会持续更新更多内容。vscode 插件地址：<a href="https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind" target="_blank" rel="noopener">https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind</a></p>
 </blockquote>
@@ -821,9 +992,9 @@
     
       <div class="full-width auto-padding tags">
         
-          <a href="/blog/tags/前缀和/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 前缀和</a>
-        
           <a href="/blog/tags/滑动窗口/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 滑动窗口</a>
+        
+          <a href="/blog/tags/前缀和/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 前缀和</a>
         
           <a href="/blog/tags/LeetCode/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> LeetCode</a>
         
@@ -1513,125 +1684,6 @@
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/blog/2020/04/07/leetcode-book.intro/">
-      或许是一本可以彻底改变你刷 LeetCode 效率的题解书
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://lucifer.ren/blog" rel="nofollow">
-        
-          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
-        
-        <p>lucifer</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-04-07</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-  
-    <div style="margin-right: 10px;">
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-keyboard"></i>
-          <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">4.2k字</span>
-        </span>
-      </span>
-      &nbsp; | &nbsp;
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-hourglass-half"></i>
-          <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">16分</span>
-        </span>
-      </span>
-    </div>
-  
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>经过了半年时间打磨，投入诸多人力，这本 LeetCode 题解书终于快要和大家见面了。目前已经完成了大部分章节的编写工作，预计经过一段时间的打磨就会和大家见面啦 💐💐💐💐💐。</p>
-      
-        <div class="readmore">
-          <a href="/blog/2020/04/07/leetcode-book.intro/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/tags/LeetCode/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> LeetCode</a>
-        
-          <a href="/blog/tags/我的书/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 我的书</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
     
   </section>
   
@@ -1641,7 +1693,7 @@
         <div class="prev-next">
           
           <p class="current">
-            1 / 2
+            1 / 3
           </p>
           
             <a class="next" rel="next" href="/blog/tags/LeetCode/page/2/">
@@ -2064,6 +2116,8 @@
         
           <li><a class="flat-box" title="/blog/categories/栈/" href="/blog/categories/栈/"><div class='name'>栈</div><div class='badge'>(1)</div></a></li>
         
+          <li><a class="flat-box" title="/blog/categories/树/" href="/blog/categories/树/"><div class='name'>树</div><div class='badge'>(1)</div></a></li>
+        
           <li><a class="flat-box" title="/blog/categories/校招/" href="/blog/categories/校招/"><div class='name'>校招</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box" title="/blog/categories/模拟面试/" href="/blog/categories/模拟面试/"><div class='name'>模拟面试</div><div class='badge'>(1)</div></a></li>
@@ -2212,7 +2266,7 @@
 </header>
 
     <div class='content pure'>
-      <a href="/blog/tags/91天学算法/" style="font-size: 17.33px; color: #828282">91天学算法</a> <a href="/blog/tags/BFS/" style="font-size: 14px; color: #999">BFS</a> <a href="/blog/tags/BigPipe/" style="font-size: 14px; color: #999">BigPipe</a> <a href="/blog/tags/Canvas/" style="font-size: 14px; color: #999">Canvas</a> <a href="/blog/tags/Chrome/" style="font-size: 14px; color: #999">Chrome</a> <a href="/blog/tags/D2/" style="font-size: 14px; color: #999">D2</a> <a href="/blog/tags/Easy/" style="font-size: 14px; color: #999">Easy</a> <a href="/blog/tags/Floyd-Warshall/" style="font-size: 14px; color: #999">Floyd-Warshall</a> <a href="/blog/tags/Google-IO/" style="font-size: 14px; color: #999">Google IO</a> <a href="/blog/tags/Hard/" style="font-size: 14.83px; color: #939393">Hard</a> <a href="/blog/tags/JSConf/" style="font-size: 14px; color: #999">JSConf</a> <a href="/blog/tags/LeetCode/" style="font-size: 21.5px; color: #666">LeetCode</a> <a href="/blog/tags/LeetCode日记/" style="font-size: 20.67px; color: #6c6c6c">LeetCode日记</a> <a href="/blog/tags/Mac/" style="font-size: 14px; color: #999">Mac</a> <a href="/blog/tags/Medium/" style="font-size: 14.83px; color: #939393">Medium</a> <a href="/blog/tags/PPT/" style="font-size: 14px; color: #999">PPT</a> <a href="/blog/tags/QCon/" style="font-size: 14px; color: #999">QCon</a> <a href="/blog/tags/RFC/" style="font-size: 14px; color: #999">RFC</a> <a href="/blog/tags/React/" style="font-size: 14px; color: #999">React</a> <a href="/blog/tags/TypeScript/" style="font-size: 19.83px; color: #717171">TypeScript</a> <a href="/blog/tags/eslint/" style="font-size: 14px; color: #999">eslint</a> <a href="/blog/tags/immutable/" style="font-size: 14px; color: #999">immutable</a> <a href="/blog/tags/immutablejs/" style="font-size: 14px; color: #999">immutablejs</a> <a href="/blog/tags/k-问题/" style="font-size: 14px; color: #999">k 问题</a> <a href="/blog/tags/vue/" style="font-size: 14px; color: #999">vue</a> <a href="/blog/tags/web-component/" style="font-size: 14px; color: #999">web-component</a> <a href="/blog/tags/webkit/" style="font-size: 14px; color: #999">webkit</a> <a href="/blog/tags/中等/" style="font-size: 14.83px; color: #939393">中等</a> <a href="/blog/tags/书/" style="font-size: 14px; color: #999">书</a> <a href="/blog/tags/书摘/" style="font-size: 14px; color: #999">书摘</a> <a href="/blog/tags/事件/" style="font-size: 14px; color: #999">事件</a> <a href="/blog/tags/事件循环/" style="font-size: 14px; color: #999">事件循环</a> <a href="/blog/tags/二叉树/" style="font-size: 15.67px; color: #8e8e8e">二叉树</a> <a href="/blog/tags/位运算/" style="font-size: 14px; color: #999">位运算</a> <a href="/blog/tags/删除-k-个字符/" style="font-size: 14px; color: #999">删除 k 个字符</a> <a href="/blog/tags/刷题/" style="font-size: 14px; color: #999">刷题</a> <a href="/blog/tags/前端/" style="font-size: 22.33px; color: #606060">前端</a> <a href="/blog/tags/前缀和/" style="font-size: 15.67px; color: #8e8e8e">前缀和</a> <a href="/blog/tags/前缀表达式/" style="font-size: 14px; color: #999">前缀表达式</a> <a href="/blog/tags/力扣加加/" style="font-size: 18.17px; color: #7d7d7d">力扣加加</a> <a href="/blog/tags/动态规划/" style="font-size: 19px; color: #777">动态规划</a> <a href="/blog/tags/单元测试/" style="font-size: 14px; color: #999">单元测试</a> <a href="/blog/tags/单调栈/" style="font-size: 14px; color: #999">单调栈</a> <a href="/blog/tags/双指针/" style="font-size: 14px; color: #999">双指针</a> <a href="/blog/tags/命令行/" style="font-size: 14px; color: #999">命令行</a> <a href="/blog/tags/回溯/" style="font-size: 14px; color: #999">回溯</a> <a href="/blog/tags/困难/" style="font-size: 14.83px; color: #939393">困难</a> <a href="/blog/tags/图/" style="font-size: 14px; color: #999">图</a> <a href="/blog/tags/图片处理/" style="font-size: 14px; color: #999">图片处理</a> <a href="/blog/tags/好未来/" style="font-size: 14px; color: #999">好未来</a> <a href="/blog/tags/子数组/" style="font-size: 14px; color: #999">子数组</a> <a href="/blog/tags/字符串/" style="font-size: 14px; color: #999">字符串</a> <a href="/blog/tags/字节跳动/" style="font-size: 15.67px; color: #8e8e8e">字节跳动</a> <a href="/blog/tags/学习方法/" style="font-size: 14.83px; color: #939393">学习方法</a> <a href="/blog/tags/工具/" style="font-size: 14px; color: #999">工具</a> <a href="/blog/tags/序列化/" style="font-size: 14px; color: #999">序列化</a> <a href="/blog/tags/异常处理/" style="font-size: 14px; color: #999">异常处理</a> <a href="/blog/tags/异议！/" style="font-size: 14px; color: #999">异议！</a> <a href="/blog/tags/循环移位/" style="font-size: 14px; color: #999">循环移位</a> <a href="/blog/tags/微前端/" style="font-size: 14px; color: #999">微前端</a> <a href="/blog/tags/必备软件/" style="font-size: 14px; color: #999">必备软件</a> <a href="/blog/tags/我的书/" style="font-size: 14px; color: #999">我的书</a> <a href="/blog/tags/扩展程序/" style="font-size: 14px; color: #999">扩展程序</a> <a href="/blog/tags/技术大会/" style="font-size: 14px; color: #999">技术大会</a> <a href="/blog/tags/技术调研/" style="font-size: 14px; color: #999">技术调研</a> <a href="/blog/tags/技能/" style="font-size: 14px; color: #999">技能</a> <a href="/blog/tags/插件/" style="font-size: 14px; color: #999">插件</a> <a href="/blog/tags/效率/" style="font-size: 14px; color: #999">效率</a> <a href="/blog/tags/数学/" style="font-size: 14.83px; color: #939393">数学</a> <a href="/blog/tags/数据结构/" style="font-size: 23.17px; color: #5b5b5b">数据结构</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，Hard/" style="font-size: 14.83px; color: #939393">数据结构，算法，LeetCode 日记，Hard</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，中等/" style="font-size: 14px; color: #999">数据结构，算法，LeetCode 日记，中等</a> <a href="/blog/tags/数组/" style="font-size: 14.83px; color: #939393">数组</a> <a href="/blog/tags/日记/" style="font-size: 14.83px; color: #939393">日记</a> <a href="/blog/tags/最长上升子序列/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/blog/tags/最长公共子序列/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/blog/tags/栈/" style="font-size: 14px; color: #999">栈</a> <a href="/blog/tags/校招/" style="font-size: 14.83px; color: #939393">校招</a> <a href="/blog/tags/概率/" style="font-size: 14px; color: #999">概率</a> <a href="/blog/tags/模拟面试/" style="font-size: 14px; color: #999">模拟面试</a> <a href="/blog/tags/母题/" style="font-size: 14px; color: #999">母题</a> <a href="/blog/tags/每日一荐/" style="font-size: 18.17px; color: #7d7d7d">每日一荐</a> <a href="/blog/tags/泛型/" style="font-size: 14.83px; color: #939393">泛型</a> <a href="/blog/tags/测试/" style="font-size: 14px; color: #999">测试</a> <a href="/blog/tags/浏览器/" style="font-size: 15.67px; color: #8e8e8e">浏览器</a> <a href="/blog/tags/滑动窗口/" style="font-size: 17.33px; color: #828282">滑动窗口</a> <a href="/blog/tags/滤镜/" style="font-size: 14px; color: #999">滤镜</a> <a href="/blog/tags/状态压缩/" style="font-size: 14px; color: #999">状态压缩</a> <a href="/blog/tags/状态机/" style="font-size: 14px; color: #999">状态机</a> <a href="/blog/tags/电子书/" style="font-size: 14px; color: #999">电子书</a> <a href="/blog/tags/电影/" style="font-size: 14.83px; color: #939393">电影</a> <a href="/blog/tags/百度/" style="font-size: 14px; color: #999">百度</a> <a href="/blog/tags/监控/" style="font-size: 14px; color: #999">监控</a> <a href="/blog/tags/算法/" style="font-size: 24px; color: #555">算法</a> <a href="/blog/tags/算法提高班/" style="font-size: 18.17px; color: #7d7d7d">算法提高班</a> <a href="/blog/tags/算法系列/" style="font-size: 16.5px; color: #888">算法系列</a> <a href="/blog/tags/组件化/" style="font-size: 14px; color: #999">组件化</a> <a href="/blog/tags/经验分享/" style="font-size: 15.67px; color: #8e8e8e">经验分享</a> <a href="/blog/tags/编程之美/" style="font-size: 14px; color: #999">编程之美</a> <a href="/blog/tags/草稿/" style="font-size: 14px; color: #999">草稿</a> <a href="/blog/tags/装机/" style="font-size: 14px; color: #999">装机</a> <a href="/blog/tags/解题模板/" style="font-size: 14px; color: #999">解题模板</a> <a href="/blog/tags/贪婪/" style="font-size: 14px; color: #999">贪婪</a> <a href="/blog/tags/贪心/" style="font-size: 14px; color: #999">贪心</a> <a href="/blog/tags/递归/" style="font-size: 14px; color: #999">递归</a> <a href="/blog/tags/链表/" style="font-size: 15.67px; color: #8e8e8e">链表</a> <a href="/blog/tags/陷阱题/" style="font-size: 14px; color: #999">陷阱题</a> <a href="/blog/tags/面经/" style="font-size: 14.83px; color: #939393">面经</a> <a href="/blog/tags/面试/" style="font-size: 14.83px; color: #939393">面试</a>
+      <a href="/blog/tags/91天学算法/" style="font-size: 17.33px; color: #828282">91天学算法</a> <a href="/blog/tags/BFS/" style="font-size: 14px; color: #999">BFS</a> <a href="/blog/tags/BigPipe/" style="font-size: 14px; color: #999">BigPipe</a> <a href="/blog/tags/Canvas/" style="font-size: 14px; color: #999">Canvas</a> <a href="/blog/tags/Chrome/" style="font-size: 14px; color: #999">Chrome</a> <a href="/blog/tags/D2/" style="font-size: 14px; color: #999">D2</a> <a href="/blog/tags/Easy/" style="font-size: 14px; color: #999">Easy</a> <a href="/blog/tags/Floyd-Warshall/" style="font-size: 14px; color: #999">Floyd-Warshall</a> <a href="/blog/tags/Google-IO/" style="font-size: 14px; color: #999">Google IO</a> <a href="/blog/tags/Hard/" style="font-size: 14.83px; color: #939393">Hard</a> <a href="/blog/tags/JSConf/" style="font-size: 14px; color: #999">JSConf</a> <a href="/blog/tags/LeetCode/" style="font-size: 21.5px; color: #666">LeetCode</a> <a href="/blog/tags/LeetCode日记/" style="font-size: 20.67px; color: #6c6c6c">LeetCode日记</a> <a href="/blog/tags/Mac/" style="font-size: 14px; color: #999">Mac</a> <a href="/blog/tags/Medium/" style="font-size: 14.83px; color: #939393">Medium</a> <a href="/blog/tags/PPT/" style="font-size: 14px; color: #999">PPT</a> <a href="/blog/tags/QCon/" style="font-size: 14px; color: #999">QCon</a> <a href="/blog/tags/RFC/" style="font-size: 14px; color: #999">RFC</a> <a href="/blog/tags/React/" style="font-size: 14px; color: #999">React</a> <a href="/blog/tags/TypeScript/" style="font-size: 19.83px; color: #717171">TypeScript</a> <a href="/blog/tags/eslint/" style="font-size: 14px; color: #999">eslint</a> <a href="/blog/tags/immutable/" style="font-size: 14px; color: #999">immutable</a> <a href="/blog/tags/immutablejs/" style="font-size: 14px; color: #999">immutablejs</a> <a href="/blog/tags/k-问题/" style="font-size: 14px; color: #999">k 问题</a> <a href="/blog/tags/vue/" style="font-size: 14px; color: #999">vue</a> <a href="/blog/tags/web-component/" style="font-size: 14px; color: #999">web-component</a> <a href="/blog/tags/webkit/" style="font-size: 14px; color: #999">webkit</a> <a href="/blog/tags/中等/" style="font-size: 14.83px; color: #939393">中等</a> <a href="/blog/tags/书/" style="font-size: 14px; color: #999">书</a> <a href="/blog/tags/书摘/" style="font-size: 14px; color: #999">书摘</a> <a href="/blog/tags/事件/" style="font-size: 14px; color: #999">事件</a> <a href="/blog/tags/事件循环/" style="font-size: 14px; color: #999">事件循环</a> <a href="/blog/tags/二叉树/" style="font-size: 15.67px; color: #8e8e8e">二叉树</a> <a href="/blog/tags/位运算/" style="font-size: 14px; color: #999">位运算</a> <a href="/blog/tags/删除-k-个字符/" style="font-size: 14px; color: #999">删除 k 个字符</a> <a href="/blog/tags/刷题/" style="font-size: 14px; color: #999">刷题</a> <a href="/blog/tags/前端/" style="font-size: 22.33px; color: #606060">前端</a> <a href="/blog/tags/前缀和/" style="font-size: 15.67px; color: #8e8e8e">前缀和</a> <a href="/blog/tags/前缀表达式/" style="font-size: 14px; color: #999">前缀表达式</a> <a href="/blog/tags/力扣加加/" style="font-size: 18.17px; color: #7d7d7d">力扣加加</a> <a href="/blog/tags/动态规划/" style="font-size: 19px; color: #777">动态规划</a> <a href="/blog/tags/单元测试/" style="font-size: 14px; color: #999">单元测试</a> <a href="/blog/tags/单调栈/" style="font-size: 14px; color: #999">单调栈</a> <a href="/blog/tags/双指针/" style="font-size: 14px; color: #999">双指针</a> <a href="/blog/tags/命令行/" style="font-size: 14px; color: #999">命令行</a> <a href="/blog/tags/回溯/" style="font-size: 14px; color: #999">回溯</a> <a href="/blog/tags/困难/" style="font-size: 14.83px; color: #939393">困难</a> <a href="/blog/tags/图/" style="font-size: 14px; color: #999">图</a> <a href="/blog/tags/图片处理/" style="font-size: 14px; color: #999">图片处理</a> <a href="/blog/tags/好未来/" style="font-size: 14px; color: #999">好未来</a> <a href="/blog/tags/子数组/" style="font-size: 14px; color: #999">子数组</a> <a href="/blog/tags/字符串/" style="font-size: 14px; color: #999">字符串</a> <a href="/blog/tags/字节跳动/" style="font-size: 15.67px; color: #8e8e8e">字节跳动</a> <a href="/blog/tags/学习方法/" style="font-size: 14.83px; color: #939393">学习方法</a> <a href="/blog/tags/工具/" style="font-size: 14px; color: #999">工具</a> <a href="/blog/tags/序列化/" style="font-size: 14px; color: #999">序列化</a> <a href="/blog/tags/异常处理/" style="font-size: 14px; color: #999">异常处理</a> <a href="/blog/tags/异议！/" style="font-size: 14px; color: #999">异议！</a> <a href="/blog/tags/循环移位/" style="font-size: 14px; color: #999">循环移位</a> <a href="/blog/tags/微前端/" style="font-size: 14px; color: #999">微前端</a> <a href="/blog/tags/必备软件/" style="font-size: 14px; color: #999">必备软件</a> <a href="/blog/tags/我的书/" style="font-size: 14px; color: #999">我的书</a> <a href="/blog/tags/扩展程序/" style="font-size: 14px; color: #999">扩展程序</a> <a href="/blog/tags/技术大会/" style="font-size: 14px; color: #999">技术大会</a> <a href="/blog/tags/技术调研/" style="font-size: 14px; color: #999">技术调研</a> <a href="/blog/tags/技能/" style="font-size: 14px; color: #999">技能</a> <a href="/blog/tags/插件/" style="font-size: 14px; color: #999">插件</a> <a href="/blog/tags/效率/" style="font-size: 14px; color: #999">效率</a> <a href="/blog/tags/数学/" style="font-size: 14.83px; color: #939393">数学</a> <a href="/blog/tags/数据结构/" style="font-size: 23.17px; color: #5b5b5b">数据结构</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，Hard/" style="font-size: 14.83px; color: #939393">数据结构，算法，LeetCode 日记，Hard</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，中等/" style="font-size: 14px; color: #999">数据结构，算法，LeetCode 日记，中等</a> <a href="/blog/tags/数组/" style="font-size: 14.83px; color: #939393">数组</a> <a href="/blog/tags/日记/" style="font-size: 14.83px; color: #939393">日记</a> <a href="/blog/tags/最长上升子序列/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/blog/tags/最长公共子序列/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/blog/tags/栈/" style="font-size: 14px; color: #999">栈</a> <a href="/blog/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/blog/tags/校招/" style="font-size: 14.83px; color: #939393">校招</a> <a href="/blog/tags/概率/" style="font-size: 14px; color: #999">概率</a> <a href="/blog/tags/模拟面试/" style="font-size: 14px; color: #999">模拟面试</a> <a href="/blog/tags/母题/" style="font-size: 14px; color: #999">母题</a> <a href="/blog/tags/每日一荐/" style="font-size: 18.17px; color: #7d7d7d">每日一荐</a> <a href="/blog/tags/泛型/" style="font-size: 14.83px; color: #939393">泛型</a> <a href="/blog/tags/测试/" style="font-size: 14px; color: #999">测试</a> <a href="/blog/tags/浏览器/" style="font-size: 15.67px; color: #8e8e8e">浏览器</a> <a href="/blog/tags/滑动窗口/" style="font-size: 17.33px; color: #828282">滑动窗口</a> <a href="/blog/tags/滤镜/" style="font-size: 14px; color: #999">滤镜</a> <a href="/blog/tags/状态压缩/" style="font-size: 14px; color: #999">状态压缩</a> <a href="/blog/tags/状态机/" style="font-size: 14px; color: #999">状态机</a> <a href="/blog/tags/电子书/" style="font-size: 14px; color: #999">电子书</a> <a href="/blog/tags/电影/" style="font-size: 14.83px; color: #939393">电影</a> <a href="/blog/tags/百度/" style="font-size: 14px; color: #999">百度</a> <a href="/blog/tags/监控/" style="font-size: 14px; color: #999">监控</a> <a href="/blog/tags/算法/" style="font-size: 24px; color: #555">算法</a> <a href="/blog/tags/算法提高班/" style="font-size: 18.17px; color: #7d7d7d">算法提高班</a> <a href="/blog/tags/算法系列/" style="font-size: 16.5px; color: #888">算法系列</a> <a href="/blog/tags/组件化/" style="font-size: 14px; color: #999">组件化</a> <a href="/blog/tags/经验分享/" style="font-size: 15.67px; color: #8e8e8e">经验分享</a> <a href="/blog/tags/编程之美/" style="font-size: 14px; color: #999">编程之美</a> <a href="/blog/tags/草稿/" style="font-size: 14px; color: #999">草稿</a> <a href="/blog/tags/装机/" style="font-size: 14px; color: #999">装机</a> <a href="/blog/tags/解题模板/" style="font-size: 14px; color: #999">解题模板</a> <a href="/blog/tags/贪婪/" style="font-size: 14px; color: #999">贪婪</a> <a href="/blog/tags/贪心/" style="font-size: 14px; color: #999">贪心</a> <a href="/blog/tags/递归/" style="font-size: 14px; color: #999">递归</a> <a href="/blog/tags/链表/" style="font-size: 15.67px; color: #8e8e8e">链表</a> <a href="/blog/tags/陷阱题/" style="font-size: 14px; color: #999">陷阱题</a> <a href="/blog/tags/面经/" style="font-size: 14.83px; color: #939393">面经</a> <a href="/blog/tags/面试/" style="font-size: 14.83px; color: #939393">面试</a>
     </div>
   </section>
 
