@@ -692,7 +692,7 @@
 <h4 id="天生适合查找"><a href="#天生适合查找" class="headerlink" title="天生适合查找"></a>天生适合查找</h4><p>二叉查找树，之所以叫查找树就是因为其非常适合查找。</p>
 <p>举个例子，如下一颗二叉查找树，我们想找节点值小于且最接近 58 的节点，搜索的流程如图所示：</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluh33ttoj30rs0mudhi.jpg" alt="bst"><br>（图片来自 <a href="https://www.geeksforgeeks.org/floor-in-binary-search-tree-bst/）" target="_blank" rel="noopener">https://www.geeksforgeeks.org/floor-in-binary-search-tree-bst/）</a></p>
-<p>可以看出每次向下走，都会排除了一个分支，如果一颗二叉搜索树同时也是一颗二叉平衡树的话，那么其搜索过程时间复杂度就是 $O(logN)$。实际上，<strong>平衡二叉搜索树的查找和有序数组的二分查找本质都是一样的，只是数据的存储方式不同罢了</strong>。那为什么有了有序数组二分，还需要二叉搜索树呢？原因在于树的结构对于动态数据比较优友好，比如数据是频繁变动的，比如经常添加和删除，那么就可以使用二叉搜索树。理论上添加和删除的时间复杂度都是 $O(h)$，其中 h 为树的高度，如果是一颗平衡二叉搜索树，那么时间复杂度就是 $O(logN)$。而数组的添加和删除的时间复杂度为 $O(N)$，其中 N 为数组长度。</p>
+<p>可以看出每次向下走，都会排除了一个分支，如果一颗二叉搜索树同时也是一颗二叉平衡树的话，那么其搜索过程时间复杂度就是 $O(logN)$。实际上，<strong>平衡二叉搜索树的查找和有序数组的二分查找本质都是一样的，只是数据的存储方式不同罢了</strong>。那为什么有了有序数组二分，还需要二叉搜索树呢？原因在于树的结构对于动态数据比较友好，比如数据是频繁变动的，比如经常添加和删除，那么就可以使用二叉搜索树。理论上添加和删除的时间复杂度都是 $O(h)$，其中 h 为树的高度，如果是一颗平衡二叉搜索树，那么时间复杂度就是 $O(logN)$。而数组的添加和删除的时间复杂度为 $O(N)$，其中 N 为数组长度。</p>
 <p><strong>方便搜索，是二叉搜索树核心的设计初衷。不让查找算法时间复杂度退化到线性是平衡二叉树的初衷</strong>。</p>
 <p>我们平时说的二分很多是数组的二分，因为数组可以随机访问嘛。不过这种二分实在太狭义了，二分的本质是将问题规模缩小到一半，因此二分和数据结构没有本质关系，但是不同的数据结构却给二分赋予了不同的色彩。比如跳表就是链表的二分，二叉搜索树就是树的二分等。随着大家对算法和数据结构的了解的加深，会发现更多有意思的东西^_^</p>
 <h4 id="中序遍历是有序的"><a href="#中序遍历是有序的" class="headerlink" title="中序遍历是有序的"></a>中序遍历是有序的</h4><p>另外二叉查找树有一个性质，这个性质对于做题很多帮助，那就是： <strong>二叉搜索树的中序遍历的结果是一个有序数组</strong>。 比如 <a href="https://github.com/azl397985856/leetcode/blob/master/problems/98.validate-binary-search-tree.md" target="_blank" rel="noopener">98. 验证二叉搜索树</a> 就可以直接中序遍历，并<strong>一边遍历一边判断遍历结果是否是单调递增的</strong>，如果不是则提前返回 False 即可。</p>
@@ -1033,7 +1033,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-23T16:35:42+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-23T18:41:47+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年11月23日</p>
