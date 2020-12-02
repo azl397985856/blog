@@ -221,7 +221,7 @@ arr2 中的每个元素都出现在  arr1  中
 
 ### 栈
 
-栈是一种==先进后出==(FILO, First In Last Out)的==数据结构==，
+栈是一种**先进后出**(FILO, First In Last Out)的**数据结构**，
 可以把栈理解为
 
 <center>
