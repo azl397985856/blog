@@ -39,27 +39,13 @@
     
     
     <entry>
-      <title>来和大家聊聊我是如何刷题的（第二弹）</title>
-      <link href="/blog/2020/12/04/shuati-silu2/"/>
-      <url>/blog/2020/12/04/shuati-silu2/</url>
+      <title></title>
+      <link href="/blog/2020/12/03/shuati-silu2/"/>
+      <url>/blog/2020/12/03/shuati-silu2/</url>
       
-        <content type="html"><![CDATA[<p>上一篇的地址在这里，没有看过的同学建议先看第一篇 <a href="https://lucifer.ren/blog/2020/11/29/shuati-silu/">来和大家聊聊我是如何刷题的（第一弹）</a>。</p><p>今天给大家聊聊怎么刷题， 预计分几篇文章来写，今天是第二篇。</p><p>话不多说，直接上干货。</p><a id="more"></a><h2 id="代码书写技巧"><a href="#代码书写技巧" class="headerlink" title="代码书写技巧"></a>代码书写技巧</h2><h3 id="改参数"><a href="#改参数" class="headerlink" title="改参数"></a>改参数</h3><p>一个简单但是有用的技巧是力扣的参数是可以改名字的。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glawz82w0fj310l0a4wgd.jpg" alt></p><p>你可以将名字改成一个短的或者你熟悉的。比如上面这道题，我写的时候就可以：</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMedianSortedArrays</span><span class="params">(self, A: List[int], B: List[int])</span> -&gt; float:</span></span><br><span class="line">        <span class="comment"># can use A and B now</span></span><br></pre></td></tr></table></figure><p>这可以使得代码看起来<strong>简洁</strong>且具有<strong>一致性</strong>。</p><p>经常看我题解的小伙伴应该注意到我的代码比较简洁。一方面是因为我经常用 Python，另一方面就是因为这个技巧。</p><p>这里我顺便吐槽一下力扣。力扣的形参命名相当不规范。比如二维数组有时候是 mat，有时候是 nums，有时候是 matrix，有时候又是 grid 。。。 真心不舒服，不过有了这个技巧，大家就不要依赖官方了，自己统一一下就好。</p><p>就拿我来说，二维数组我就用 mat 或者 matrix，一维数组用 nums 或者 A 或者 A 和 B（两个一维数组的情况）。比如：</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># A 和  B 是两个一维的数组</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(A, B)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> a <span class="keyword">in</span> A:</span><br><span class="line">        <span class="comment"># do something</span></span><br><span class="line">    <span class="keyword">for</span> b <span class="keyword">in</span> B:</span><br><span class="line">        <span class="comment"># do something else</span></span><br></pre></td></tr></table></figure><p>不仅仅是形参的命名要统一，我们的代码也是一样的。对于我来说：</p><ul><li>堆我习惯叫 h</li><li>图我习惯叫 graph</li><li>队列我习惯叫 q</li><li>。。。</li></ul><p>大家没有必要和我一样，但是一定要保持一致性，这样可以显著增加代码可读性，可读性高了，调试工作也会变得轻松。</p><h3 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h3><p>力扣有一些题目会给你两个或者三个一维数组，这两个一维数组的是有关联的。</p><p>比如给你两个一维数组 A 和 B，其中 A[i] 表示第 i 个人的体重，B[i] 表示第 i 个人的身高。也就是说都是表示第 i 个人，但是表示的东西不一样。</p><p>其实就相当于结构体，力扣给你一个数组，其中数组每一项都是结构体是我们日常开发常用的格式。</p><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">  weight: <span class="built_in">number</span>;</span><br><span class="line">  height: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>但是力扣以两个数组的形式给你了，其实这样不难啊，不就是用一个索引记录么？</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i= <span class="number">0</span>;i&lt;A.length;i++) &#123;</span><br><span class="line">    <span class="keyword">int</span> weight = A[i]</span><br><span class="line">    <span class="keyword">int</span> height = B[i]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>但是如果，我需要对重量排序呢？如果你仅仅对 A 排序了，B 也需要进行排序，这个时候就不方便了。</p><p>这里介绍一个我经常使用的技巧 <strong>zip</strong>。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glaxhfvp7fj311o0e3got.jpg" alt></p><p>代码：</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zipped = zip(A, B)</span><br><span class="line"><span class="comment"># 下面我对其进行排序也不会改变相对顺序</span></span><br><span class="line">zipped.sort()</span><br></pre></td></tr></table></figure><p>另外 zip 还有一些其他用处。比如我想要获取当前数组位置的前一项。</p><p>不用 zip 可以这么做：</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(A)):</span><br><span class="line">    pre = A[i - <span class="number">1</span>]</span><br><span class="line">    cur = A[i]</span><br></pre></td></tr></table></figure><p>如果使用 zip 可以这样：</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> pre, cur <span class="keyword">in</span> zip(A, A[<span class="number">1</span>:]):</span><br><span class="line">    <span class="comment"># do something</span></span><br></pre></td></tr></table></figure><blockquote><p>这个技巧用处不大，可以不必掌握，大家知道有这么回事就行</p></blockquote><p>有的人可能想问，我的语言没有 zip 怎么办？ 我的答案是自行实现 zip。 比如 JavaScript 可以这样实现 zip：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> zip = <span class="function">(<span class="params">rows</span>) =&gt;</span> rows[<span class="number">0</span>].map(<span class="function">(<span class="params">_, c</span>) =&gt;</span> rows.map(<span class="function">(<span class="params">row</span>) =&gt;</span> row[c]));</span><br></pre></td></tr></table></figure><p>你把它改造成自己的语言版本即可。</p><h2 id="调试技巧"><a href="#调试技巧" class="headerlink" title="调试技巧"></a>调试技巧</h2><h3 id="批量测试"><a href="#批量测试" class="headerlink" title="批量测试"></a>批量测试</h3><p>力扣的测试用例其实是可以一次写多个的。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glaxys6s2gj30pi0letcl.jpg" alt></p><p>如上图，该题目有两个参数。那两行其实就是<strong>一个完整用例</strong>。 我这里输入了六行，也就是三个用例。这个时候点击执行，就可以一次执行三个用例。</p><blockquote><p>妈妈再也不用担心我提交太频繁啦~</p></blockquote><p>执行成功后，我们可以一次查看所有的差异。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glay1130cnj313j084q3r.jpg" alt></p><h3 id="树的可视化"><a href="#树的可视化" class="headerlink" title="树的可视化"></a>树的可视化</h3><p>力扣支持大家对树进行可视化，只要点击这个<strong>树结构可视化按钮</strong>即可</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glay3e4j34j31450lq0uz.jpg" alt></p><p>如果你写了多个数组，也并不会生成多个树，貌似是以最后一次输入为准。</p><p>力扣暂时没有提供其他数据结构的可视化，比如数组，链表等。这可能对大部分人来说没什么，但是对于我这样经常写题解，画图的人就不一样了。如果可以快速画图，那么对我效率肯定有大幅度的提升。</p><blockquote><p>lucifer 建议大家也养成写题解的好习惯。</p></blockquote><p>因此我打算在我的刷题插件里面加其他数据结构的可视化功能， 已经在规划啦~ 现在草稿了一些东西。</p><p>比如这样的树：</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glay88vsibj30yq0o9mz5.jpg" alt></p><p>和这样的树：</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glayb242idj30n509fmy9.jpg" alt></p><p>现在其实还有些问题，而且我想多加几种数据结构方便写题解，所以就之后再说好了。</p><h2 id="絮叨"><a href="#絮叨" class="headerlink" title="絮叨"></a>絮叨</h2><p>上次给大家说了要总结和记忆模板。还说了给我的插件加一个模板功能， 我果然很可靠！</p><p>自古深情留不住，唯有套路得人心。 我的刷题插件给大家准备了几种常见的模板帮你快速高效解题。 比如下面这个 hard 题目， 就是一个 BFS 模板 + 状态压缩模板，类似的题目数不胜数，基本都是套个模板改几个地方就过了。</p><p>再比如，下面这个 1439 hard 题， 不就一个二分模板（最左满足条件） + 二维网格 DFS 么？</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glawnsz0n9j306o06lgmx.jpg" alt></p><p>给大家提供多种刷题模板，可以直接复制使用。 各个模板都有都有的题目，大家可以直达题目进行”默写“。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glawoq00uwj30pb09ogmo.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glawp0t0vlj30mm0h2ta4.jpg" alt></p><p>插件地址：<a href="https://chrome.google.com/webstore/detail/leetcode-cheatsheet/fniccleejlofifaakbgppmbbcdfjonle?hl=en-US。" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/leetcode-cheatsheet/fniccleejlofifaakbgppmbbcdfjonle?hl=en-US。</a></p><p>另外我的插件后续计划增加更多功能以及上架商店，有消息我会通过公众号和大家同步。</p><h2 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h2><p>下期给大家讲更加干货的技巧。</p><ul><li>一看就会，一写就废， 如何克服？</li><li><strong>如何锁定使用哪种算法</strong>。比如我看到了这道题，我怎么知道该用什么解法呢？二分？动态规划？</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 刷题方法 </category>
-          
-      </categories>
+        <content type="html"><![CDATA[]]></content>
       
       
-        <tags>
-            
-            <tag> LeetCode </tag>
-            
-            <tag> 刷题方法 </tag>
-            
-        </tags>
       
     </entry>
     
@@ -458,9 +444,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -501,9 +487,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -604,9 +590,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -994,15 +980,15 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
-          <category> Medium </category>
-          
           <category> 双指针 </category>
+          
+          <category> Medium </category>
           
       </categories>
       
@@ -1439,11 +1425,11 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> 数学 </tag>
             
             <tag> BFS </tag>
             
@@ -1494,9 +1480,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -1531,9 +1517,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -1566,9 +1552,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -1803,9 +1789,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -2023,13 +2009,13 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
           
-          <category> hashtable </category>
+          <category> 数据结构 </category>
           
           <category> BFS </category>
+          
+          <category> hashtable </category>
           
       </categories>
       
@@ -2365,9 +2351,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 字符串 </category>
           
@@ -2404,9 +2390,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -2443,9 +2429,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -2515,9 +2501,9 @@
           
           <category> 数学 </category>
           
-          <category> 动态规划 </category>
-          
           <category> 概率 </category>
+          
+          <category> 动态规划 </category>
           
           <category> 递归 </category>
           
@@ -2526,11 +2512,11 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> 数学 </tag>
             
             <tag> 概率 </tag>
             
@@ -2788,9 +2774,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> LeetCode </category>
           
@@ -2852,13 +2838,13 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
           
-          <category> 字符串 </category>
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
+          
+          <category> 字符串 </category>
           
           <category> LeetCode </category>
           
@@ -2964,6 +2950,43 @@
     
     
     <entry>
+      <title>我是如何刷 LeetCode 的？</title>
+      <link href="/blog/2019/12/11/how-am-I-conque-leetcode/"/>
+      <url>/blog/2019/12/11/how-am-I-conque-leetcode/</url>
+      
+        <content type="html"><![CDATA[<p>我就是那个 @量子位 答案里面提到的“lucifer 小哥哥”。</p><p>我本人从开始准备算法以来，大概经过了几个月的时间，这期间自己成长了很多，从刷题菜鸡，到现在对刷题套路，题型有了自己的理解，感受还是蛮多的。我本人不是算法高手，算是勤能补拙类型。不过经过几个月的学习和练习，不仅面试变得更加得心应手，而且在工作中写更容易写出干净优雅，性能好的代码。</p><a id="more"></a><p>我将自己这几个月的刷题经历都整理了下来，除了给出思路和关键点，还横向地对知识点进行整理，尽量做到<code>一题多解，多题同解</code>。 现在GitHub仓库有18k+的✨ ， 欢迎大家关注。仓库地址： <a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">azl397985856/leetcode</a></p><p>那么今天我就来回答一下这个问题，谈一下<code>我是怎么刷leetcode的</code>。</p><p>对于我来说，<code>刷题的过程其实就是学习数据结构和算法的过程</code>， 不仅仅是为了刷题而刷题，这样你才能感受到<code>刷题的乐趣</code>。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53igz8vj30dw0780ta.jpg" alt></p><h2 id="第一遍按tag刷，第二遍一题多解，多题同解"><a href="#第一遍按tag刷，第二遍一题多解，多题同解" class="headerlink" title="第一遍按tag刷，第二遍一题多解，多题同解"></a>第一遍按tag刷，第二遍一题多解，多题同解</h2><p>个人建议，第一遍刷的时候可以先快速按照tag过一遍，快速感受一下常见数据结构和算法的套路，这样自己有一个感性的认识。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53je363j30ay0i5mz1.jpg" alt></p><p>第二遍我们就不能像第一遍那样了，这个阶段我们需要多个角度思考问题，尽量做到<code>一题多解，多题同解</code>。我们需要对问题的本质做一些深度的理解，将来碰到类似的问题我们才能够触类旁通。</p><p>但是很多人做了几遍，碰到新题还是没有任何头绪，这是一个常见的问题，这怎么办呢？ 我们继续往下看。</p><h2 id="艾宾浩斯记忆曲线"><a href="#艾宾浩斯记忆曲线" class="headerlink" title="艾宾浩斯记忆曲线"></a>艾宾浩斯记忆曲线</h2><p>总结并记忆是学习以及刷题过程中非常重要的一环，<br>不管哪个阶段，我们都需要做对应的总结，这样将来我们再回过头看的时候，才能够快读拾起来。</p><p>信息输入大脑后，遗忘也就随之开始了。遗忘率随时间的流逝而先快后慢，特别是在刚刚识记的短时间里，遗忘最快，这就是著名的艾宾浩斯遗忘曲线。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53kft2xj306404475i.jpg" alt></p><p>anki就是根据<code>艾宾浩斯记忆曲线</code>开发的一个软件，它是一个使记忆变得容易的学习软件。因为它是一个自定义多功能的记忆方式，可以大大减少你的学习时间，也可以大大提高 你的学习容量。 对于我本人而言，我在anki里面写了很多leetcode题目和套路的Card，然后anki会自动帮我安排复习时间，大大减少我的认知负担，提高了我的复习效率。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53l94m8j3069069t9l.jpg" alt></p><p>这个是我的<a href="https://github.com/azl397985856/leetcode/blob/master/assets/anki/leetcode.apkg" target="_blank" rel="noopener">anki card</a> 大家可以直接导入使用，但是还是建议大家自己制作卡片，毕竟每个人情况不一样，并且制作卡片的过程也是记忆的过程。</p><p>使用方法：</p><p>anki - 文件 - 导入 - 下拉格式选择“打包的 anki集合”，然后选中你下载好的文件，确定即可。</p><p>更多关于anki使用方法的请查看<a href="https://apps.ankiweb.net/" target="_blank" rel="noopener">anki官网</a></p><p>目前已更新卡片一览（仅列举正面）</p><ul><li>二分法解决问题的关键点是什么，相关问题有哪些?</li><li>如何用栈的特点来简化操作， 涉及到的题目有哪些？</li><li>双指针问题的思路以及相关题目有哪些？</li><li>滑动窗口问题的思路以及相关题目有哪些？</li><li>回溯法解题的思路以及相关题目有哪些？</li><li>数论解决问题的关键点是什么，相关问题有哪些?</li><li>位运算解决问题的关键点是什么，相关问题有哪些?</li></ul><h2 id="殊途同归"><a href="#殊途同归" class="headerlink" title="殊途同归"></a>殊途同归</h2><p>大家刷了很多题之后，就会发现来来回回，题目就那么几种类型，因此掌握已有题目类型是多么重要。那样leetcode出题的老师，很多也是在原有的题目基础上做了适当<code>扩展</code>（比如two-sum,two-sum2,three-sum, four-sum等等）或者<code>改造</code>（使得不那么一下子看出问题的本质，比如猴子吃香蕉问题）。</p><p>其中算法，主要是以下几种：</p><ul><li>基础技巧：分治、二分、贪心</li><li>排序算法：快速排序、归并排序、计数排序</li><li>搜索算法：回溯、递归、深度优先遍历，广度优先遍历，二叉搜索树等</li><li>图论：最短路径、最小生成树</li><li>动态规划：背包问题、最长子序列</li></ul><p>数据结构，主要有如下几种：</p><ul><li>数组与链表：单 / 双向链表</li><li>栈与队列</li><li>哈希表</li><li>堆：最大堆 ／ 最小堆</li><li>树与图：最近公共祖先、并查集</li><li>字符串：前缀树（字典树） ／ 后缀树</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53mf21xj30k00jxago.jpg" alt><br>(图片来自leetcode)</p><h2 id="坚持"><a href="#坚持" class="headerlink" title="坚持"></a>坚持</h2><p>做到了以上几点，我们还需要坚持。这个其实是最难的，不管做什么事情，坚持都是最重要也是最难的。</p><p>为了督促自己，同时帮助大家成长，我在群里举办《每日一题》活动，每日一题是在交流群（包括微信和qq）里进行的一种活动，大家一起 解一道题，这样讨论问题更加集中，会得到更多的反馈。而且 这些题目可以被记录下来，日后会进行筛选添加到仓库的题解模块。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53n8tz2j30p80nrtau.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53o630kj315f0i8wn4.jpg" alt></p><p>大家如果发现自己很难坚持下去，也可以加入我的群聊，我们互相监督。 另外我还专门组建了slack群，有兴趣的可以加群后在群里喊即可。</p><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>大家可以关注我的公众号《脑洞前端》，公众号后台回复“大前端”，拉你进《大前端面试宝典 - 图解前端群》。回复“leetcode”，拉你进《leetcode题解交流群》</p><p>最后祝大家刷题愉快，拿到自己心仪的offer。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+          <category> 数据结构 </category>
+          
+          <category> LeetCode </category>
+          
+          <category> 学习方法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> 学习方法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>零基础的前端开发初学者应如何系统地学习？</title>
       <link href="/blog/2019/12/11/how-am-I-learn-fe/"/>
       <url>/blog/2019/12/11/how-am-I-learn-fe/</url>
@@ -2983,43 +3006,6 @@
         <tags>
             
             <tag> 前端 </tag>
-            
-            <tag> 学习方法 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>我是如何刷 LeetCode 的？</title>
-      <link href="/blog/2019/12/11/how-am-I-conque-leetcode/"/>
-      <url>/blog/2019/12/11/how-am-I-conque-leetcode/</url>
-      
-        <content type="html"><![CDATA[<p>我就是那个 @量子位 答案里面提到的“lucifer 小哥哥”。</p><p>我本人从开始准备算法以来，大概经过了几个月的时间，这期间自己成长了很多，从刷题菜鸡，到现在对刷题套路，题型有了自己的理解，感受还是蛮多的。我本人不是算法高手，算是勤能补拙类型。不过经过几个月的学习和练习，不仅面试变得更加得心应手，而且在工作中写更容易写出干净优雅，性能好的代码。</p><a id="more"></a><p>我将自己这几个月的刷题经历都整理了下来，除了给出思路和关键点，还横向地对知识点进行整理，尽量做到<code>一题多解，多题同解</code>。 现在GitHub仓库有18k+的✨ ， 欢迎大家关注。仓库地址： <a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">azl397985856/leetcode</a></p><p>那么今天我就来回答一下这个问题，谈一下<code>我是怎么刷leetcode的</code>。</p><p>对于我来说，<code>刷题的过程其实就是学习数据结构和算法的过程</code>， 不仅仅是为了刷题而刷题，这样你才能感受到<code>刷题的乐趣</code>。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53igz8vj30dw0780ta.jpg" alt></p><h2 id="第一遍按tag刷，第二遍一题多解，多题同解"><a href="#第一遍按tag刷，第二遍一题多解，多题同解" class="headerlink" title="第一遍按tag刷，第二遍一题多解，多题同解"></a>第一遍按tag刷，第二遍一题多解，多题同解</h2><p>个人建议，第一遍刷的时候可以先快速按照tag过一遍，快速感受一下常见数据结构和算法的套路，这样自己有一个感性的认识。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53je363j30ay0i5mz1.jpg" alt></p><p>第二遍我们就不能像第一遍那样了，这个阶段我们需要多个角度思考问题，尽量做到<code>一题多解，多题同解</code>。我们需要对问题的本质做一些深度的理解，将来碰到类似的问题我们才能够触类旁通。</p><p>但是很多人做了几遍，碰到新题还是没有任何头绪，这是一个常见的问题，这怎么办呢？ 我们继续往下看。</p><h2 id="艾宾浩斯记忆曲线"><a href="#艾宾浩斯记忆曲线" class="headerlink" title="艾宾浩斯记忆曲线"></a>艾宾浩斯记忆曲线</h2><p>总结并记忆是学习以及刷题过程中非常重要的一环，<br>不管哪个阶段，我们都需要做对应的总结，这样将来我们再回过头看的时候，才能够快读拾起来。</p><p>信息输入大脑后，遗忘也就随之开始了。遗忘率随时间的流逝而先快后慢，特别是在刚刚识记的短时间里，遗忘最快，这就是著名的艾宾浩斯遗忘曲线。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53kft2xj306404475i.jpg" alt></p><p>anki就是根据<code>艾宾浩斯记忆曲线</code>开发的一个软件，它是一个使记忆变得容易的学习软件。因为它是一个自定义多功能的记忆方式，可以大大减少你的学习时间，也可以大大提高 你的学习容量。 对于我本人而言，我在anki里面写了很多leetcode题目和套路的Card，然后anki会自动帮我安排复习时间，大大减少我的认知负担，提高了我的复习效率。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53l94m8j3069069t9l.jpg" alt></p><p>这个是我的<a href="https://github.com/azl397985856/leetcode/blob/master/assets/anki/leetcode.apkg" target="_blank" rel="noopener">anki card</a> 大家可以直接导入使用，但是还是建议大家自己制作卡片，毕竟每个人情况不一样，并且制作卡片的过程也是记忆的过程。</p><p>使用方法：</p><p>anki - 文件 - 导入 - 下拉格式选择“打包的 anki集合”，然后选中你下载好的文件，确定即可。</p><p>更多关于anki使用方法的请查看<a href="https://apps.ankiweb.net/" target="_blank" rel="noopener">anki官网</a></p><p>目前已更新卡片一览（仅列举正面）</p><ul><li>二分法解决问题的关键点是什么，相关问题有哪些?</li><li>如何用栈的特点来简化操作， 涉及到的题目有哪些？</li><li>双指针问题的思路以及相关题目有哪些？</li><li>滑动窗口问题的思路以及相关题目有哪些？</li><li>回溯法解题的思路以及相关题目有哪些？</li><li>数论解决问题的关键点是什么，相关问题有哪些?</li><li>位运算解决问题的关键点是什么，相关问题有哪些?</li></ul><h2 id="殊途同归"><a href="#殊途同归" class="headerlink" title="殊途同归"></a>殊途同归</h2><p>大家刷了很多题之后，就会发现来来回回，题目就那么几种类型，因此掌握已有题目类型是多么重要。那样leetcode出题的老师，很多也是在原有的题目基础上做了适当<code>扩展</code>（比如two-sum,two-sum2,three-sum, four-sum等等）或者<code>改造</code>（使得不那么一下子看出问题的本质，比如猴子吃香蕉问题）。</p><p>其中算法，主要是以下几种：</p><ul><li>基础技巧：分治、二分、贪心</li><li>排序算法：快速排序、归并排序、计数排序</li><li>搜索算法：回溯、递归、深度优先遍历，广度优先遍历，二叉搜索树等</li><li>图论：最短路径、最小生成树</li><li>动态规划：背包问题、最长子序列</li></ul><p>数据结构，主要有如下几种：</p><ul><li>数组与链表：单 / 双向链表</li><li>栈与队列</li><li>哈希表</li><li>堆：最大堆 ／ 最小堆</li><li>树与图：最近公共祖先、并查集</li><li>字符串：前缀树（字典树） ／ 后缀树</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53mf21xj30k00jxago.jpg" alt><br>(图片来自leetcode)</p><h2 id="坚持"><a href="#坚持" class="headerlink" title="坚持"></a>坚持</h2><p>做到了以上几点，我们还需要坚持。这个其实是最难的，不管做什么事情，坚持都是最重要也是最难的。</p><p>为了督促自己，同时帮助大家成长，我在群里举办《每日一题》活动，每日一题是在交流群（包括微信和qq）里进行的一种活动，大家一起 解一道题，这样讨论问题更加集中，会得到更多的反馈。而且 这些题目可以被记录下来，日后会进行筛选添加到仓库的题解模块。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53n8tz2j30p80nrtau.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53o630kj315f0i8wn4.jpg" alt></p><p>大家如果发现自己很难坚持下去，也可以加入我的群聊，我们互相监督。 另外我还专门组建了slack群，有兴趣的可以加群后在群里喊即可。</p><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>大家可以关注我的公众号《脑洞前端》，公众号后台回复“大前端”，拉你进《大前端面试宝典 - 图解前端群》。回复“leetcode”，拉你进《leetcode题解交流群》</p><p>最后祝大家刷题愉快，拿到自己心仪的offer。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 数据结构 </category>
-          
-          <category> 算法 </category>
-          
-          <category> LeetCode </category>
-          
-          <category> 学习方法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 数据结构 </tag>
-            
-            <tag> 算法 </tag>
-            
-            <tag> LeetCode </tag>
             
             <tag> 学习方法 </tag>
             
@@ -3326,9 +3312,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           

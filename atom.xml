@@ -56,26 +56,16 @@
   </entry>
   
   <entry>
-    <title>来和大家聊聊我是如何刷题的（第二弹）</title>
-    <link href="https://lucifer.ren/blog/2020/12/04/shuati-silu2/"/>
-    <id>https://lucifer.ren/blog/2020/12/04/shuati-silu2/</id>
-    <published>2020-12-03T16:00:00.000Z</published>
-    <updated>2020-12-04T06:39:51.286Z</updated>
+    <title></title>
+    <link href="https://lucifer.ren/blog/2020/12/03/shuati-silu2/"/>
+    <id>https://lucifer.ren/blog/2020/12/03/shuati-silu2/</id>
+    <published>2020-12-03T11:43:46.661Z</published>
+    <updated>2020-12-05T17:22:08.711Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;上一篇的地址在这里，没有看过的同学建议先看第一篇 &lt;a href=&quot;https://lucifer.ren/blog/2020/11/29/shuati-silu/&quot;&gt;来和大家聊聊我是如何刷题的（第一弹）&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;今天给大家聊聊怎么刷题， 预计分几篇文章来写，今天是第二篇。&lt;/p&gt;
-&lt;p&gt;话不多说，直接上干货。&lt;/p&gt;
-    
     </summary>
     
-      <category term="刷题方法" scheme="https://lucifer.ren/blog/categories/%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/"/>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="刷题方法" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
@@ -524,9 +514,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -566,9 +556,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -666,9 +656,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
