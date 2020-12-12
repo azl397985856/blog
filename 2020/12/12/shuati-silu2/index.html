@@ -274,7 +274,7 @@
         
   
     <h1 class="title">
-      <a href="/blog/2020/12/04/shuati-silu2/">
+      <a href="/blog/2020/12/12/shuati-silu2/">
         来和大家聊聊我是如何刷题的（第二弹）
       </a>
     </h1>
@@ -306,7 +306,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-12-04</p>
+    <p>2020-12-12</p>
   </a>
 </div>
 
@@ -356,7 +356,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">3k字</span>
+          <span class="post-count">3.7k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -364,7 +364,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">10分</span>
+          <span class="post-count">13分</span>
         </span>
       </span>
     </div>
@@ -383,20 +383,16 @@
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
         <p>上一篇的地址在这里，没有看过的同学建议先看第一篇 <a href="https://lucifer.ren/blog/2020/11/29/shuati-silu/">来和大家聊聊我是如何刷题的（第一弹）</a>。</p>
-<p>这次继续给大家聊聊怎么刷题， 预计分几篇文章来写，今天是第二篇。这次分享的内容是<strong>代码书写技巧</strong>以及<strong>调试技巧</strong>。</p>
+<p>这次继续给大家聊聊怎么刷题， 预计分几篇文章来写，今天是第二篇，本系列至少会出三篇。这次分享的内容是<strong>代码书写技巧</strong>以及<strong>调试技巧</strong>。</p>
 <blockquote>
 <p>本系列旨在分享一些所有题目都适用的技巧以及一些刷题经验，帮助大家高效刷题。如果想重点突破某一类题目，可以关注我的专题系列。</p>
 </blockquote>
 <p>话不多说，直接上干货。</p>
 <a id="more"></a>
 
-<h2 id="先刷什么？刷多少？"><a href="#先刷什么？刷多少？" class="headerlink" title="先刷什么？刷多少？"></a>先刷什么？刷多少？</h2><p>我被问的比较多的两个问题是：</p>
-<ul>
-<li>我该先刷什么算法？</li>
-<li>每一种算法我该刷多少？</li>
-</ul>
-<p>现在我们就来看下这两个问题。</p>
-<p>这里贴一个 <strong>91 天学算法</strong> 中某一小节的讲义中的一部分内容：</p>
+<h2 id="先刷什么？刷多少？"><a href="#先刷什么？刷多少？" class="headerlink" title="先刷什么？刷多少？"></a>先刷什么？刷多少？</h2><p>正式介绍技巧之前先回答一个问题，这也是我被问的比较多的两个问题是：<strong>我该先刷什么算法？每一种算法我该刷多少？</strong></p>
+<p>现在我们就来看下这个问题。</p>
+<p>先贴一个 <strong>91 天学算法</strong> 中某一小节的讲义中的一部分内容：</p>
 <ul>
 <li>递归（10）</li>
 <li>BFS &amp; DFS（20）</li>
@@ -424,10 +420,13 @@
 <li>网友内幕（主要是面经）</li>
 <li>力扣的探索和标签</li>
 </ol>
-<h2 id="代码书写技巧"><a href="#代码书写技巧" class="headerlink" title="代码书写技巧"></a>代码书写技巧</h2><p>代码书写技巧，这次给大家带来两个技巧：</p>
+<p>知道该刷什么，以及刷多少了，可能你已经迫不及待投入题海了。 不要着急，可以先看下西法有没有写过相关专题，如果写过， 强烈建议你先看下，一定能让你事半功倍。</p>
+<p>我已经开始刷专题了，有没有什么通用的技巧呢？答案是有，而且很多。本文只介绍一部分， 后续我们继续这个话题，给大家带来更多干货技巧。</p>
+<h2 id="代码书写技巧"><a href="#代码书写技巧" class="headerlink" title="代码书写技巧"></a>代码书写技巧</h2><p>代码书写技巧，这次给大家带来三个技巧：</p>
 <ol>
 <li>改参数</li>
 <li>zip 函数的妙用</li>
+<li>关于取模</li>
 </ol>
 <h3 id="改参数"><a href="#改参数" class="headerlink" title="改参数"></a>改参数</h3><p>力扣的参数是可以改名字的，如下图：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glawz82w0fj310l0a4wgd.jpg" alt></p>
@@ -479,7 +478,10 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> zip = <span class="function">(<span class="params">rows</span>) =&gt;</span> rows[<span class="number">0</span>].map(<span class="function">(<span class="params">_, c</span>) =&gt;</span> rows.map(<span class="function">(<span class="params">row</span>) =&gt;</span> row[c]));</span><br></pre></td></tr></table></figure>
 
 <p>你把它改造成自己的语言版本即可。</p>
-<h3 id="取模"><a href="#取模" class="headerlink" title="取模"></a>取模</h3><p>力扣中有很多题目需要你对返回值取模，而且一般都是对 109 + 7 取模。</p>
+<h3 id="关于取模"><a href="#关于取模" class="headerlink" title="关于取模"></a>关于取模</h3><p>力扣中有很多题目需要你对返回值取模，而且一般都是对 109 + 7 取模。</p>
+<blockquote>
+<p>题目答案让取模那肯定是答案太大了，为啥太大了呢？有啥想法没？</p>
+</blockquote>
 <p>比如 <a href="https://leetcode-cn.com/problems/concatenation-of-consecutive-binary-numbers/" target="_blank" rel="noopener">1680. 连接连续二进制数字</a></p>
 <p>题目描述：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">给你一个整数 n ，请你将 1 到 n 的二进制表示连接起来，并返回连接结果对应的 十进制 数字对 109 + 7 取余的结果。</span><br></pre></td></tr></table></figure>
@@ -492,30 +494,23 @@
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">concatenatedBinary</span><span class="params">(self, n: int)</span> -&gt; int:</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        mod = <span class="number">10</span> **<span class="number">9</span> + <span class="number">7</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">            ans = (ans * pow(<span class="number">2</span>, len(bin(i)[<span class="number">2</span>:])) + i)</span><br><span class="line">        <span class="keyword">return</span> ans % mod</span><br></pre></td></tr></table></figure>
 
 <p>如果不提前 mod， python 可能超时，其他语言可能溢出。</p>
-<p>提前取 mod，会把数值限定在 int 能处理的范围，使用机器自身整数运算功能进行快速运算，而如果之后取 mod，由于 python 对大整数支持的特性，会将 ans 转换为大整数再进行运算，计算相对耗时</p>
-<p>其他类似的技巧有：</p>
-<ul>
-<li>判断奇偶</li>
-</ul>
-<p>判断一个数是奇数还是偶数可以通过和 2 取模。 如果返回值是 0 则是偶数，否则是奇数。</p>
-<p>需要注意的是和 2 取模为 1 奇数，但是反之不然。即<strong>和 2 取模不是 1 也可能是奇数，比如负数</strong>，因此还需要多个判断，不如用我上面的方法。</p>
-<ul>
-<li>二分取中间值。比如：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mid = (l + r) // 2</span><br></pre></td></tr></table></figure>
+<p>提前取 mod，会把数值限定在 int 能处理的范围，使用机器自身整数运算功能进行快速运算，而如果之后取 mod，由于 python 对大整数支持的特性，会将 ans 转换为大整数再进行运算，计算相对耗时。</p>
+<p>说到溢出，我想起来一个小技巧，那就是二分取中间值的时候如果书写不当也可能溢出。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如下代码，如果 l 和 r 比较大，则可能发生大数溢出</span></span><br><span class="line">mid = (l + r) // <span class="number">2</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>// 是地板除</p>
+<p>这里的 // 是地板除</p>
 </blockquote>
-<p>上面代码在某些语言可能会大数溢出，一种解决方案是这样写：</p>
+<p>解决的方案也很简单，这样写就行了：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mid = (r - l) // 2 + l</span><br></pre></td></tr></table></figure>
 
-<p>等等。。。</p>
-<p>欢迎大家补充~</p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>尽量不要使用全局变量。</p>
-<p>使用全局变量且没有及时清除，不仅可能有性能问题，更可能会在多个测试用例之间形成干扰，导致出错。</p>
-<p>力扣设计题目通常是会多次调用某一个 api 的。这个时候更是如此，不要使用全局变量。</p>
-<p>有一些朋友向我反馈“为啥本地好好的，放到力扣上提交就不行”，先检查下有没有使用全局变量。</p>
+<p>另外一个和取模有关的小技巧是<strong>判断奇偶</strong>。</p>
+<p>判断一个数是奇数还是偶数可以通过和 2 取模。 如果返回值是 0 则是偶数，否则是奇数。</p>
+<p>需要注意的是和 2 取模为 1 奇数，但是反之不然。即<strong>和 2 取模不是 1 也可能是奇数，比如负数</strong>，因此还需要多个判断，不如用我上面的方法，即<strong>和 2 取模判断是否等于 0</strong>。</p>
+<p>欢迎大家补充其他小技巧~</p>
+<h3 id="其他技巧"><a href="#其他技巧" class="headerlink" title="其他技巧"></a>其他技巧</h3><p>这里有一个要和大家强调的点，很多刚刷题的人都不知道，那就是尽量不要使用全局变量。</p>
+<p>如果使用全局变量且没有及时清除，不仅可能有性能问题，更可能会在<strong>多个测试用例之间形成干扰，导致出错</strong>。而且在力扣设计题目通常是会多次调用某一个 api 的。这个时候更是如此，所以不要使用全局变量。</p>
+<p>有一些朋友向我反馈“为啥本地好好的，放到力扣上提交就不行”，请先检查下有没有使用全局变量。</p>
 <h2 id="调试技巧"><a href="#调试技巧" class="headerlink" title="调试技巧"></a>调试技巧</h2><p>调试技巧，我们这里先讲两个：</p>
 <ol>
 <li>批量测试</li>
@@ -530,6 +525,18 @@
 <p>执行成功后，我们可以一次查看所有的差异。</p>
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glay1130cnj313j084q3r.jpg" alt></p>
 <p>如果你老是考虑不到各种边界，那这个功能简直是福音。 另外如果你打比赛，你可以把题目给的测试用例批量复制到这里一次执行看结果，非常有用。</p>
+<p>为了方便大家复制所有题目内置的测试用例，我的<strong>刷题插件 leetcode-cheatsheet</strong>增加了一个功能<strong>一键复制所有的内置用例</strong>。</p>
+<p><img src="https://imgkr2.cn-bj.ufileos.com/fa5e392f-eee0-4491-a798-e166d8e3855c.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=lN0DNqgrxiq2rPjfNADSXS93aDQ%253D&Expires=1607850606" alt></p>
+<p>正常情况，下点击之后会提示你复制成功，你只需要 ctrl + v 粘贴到<strong>测试用例</strong>的输入框即可。</p>
+<p>但是力扣网站有很多不是很统一的地方，这就需要我不断进行兼容。比如如下兼容代码：</p>
+<p><img src="https://imgkr2.cn-bj.ufileos.com/fd8be741-57c9-4215-94c5-43a3573040e5.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=5WXi6qLmYrbXEoVizboSw%252Bh2D2g%253D&Expires=1607763106" alt></p>
+<p>上面代码指的是力扣测试用例的 html 标签是不定的，并且有时候是”输入：“（注意是中文的：），有时候又是”输入:“（注意是英文的:）。</p>
+<p>因此难免有我无法兼容的情况。因此就会发生类似这样的情况<br><img src="https://imgkr2.cn-bj.ufileos.com/112b82aa-157d-4da4-942d-bb6d932e6475.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=49i2f5mDyXSohJu3YVnWuGCi5FY%253D&Expires=1607856610" alt><br>：</p>
+<p><img src="https://imgkr2.cn-bj.ufileos.com/ecd4bc7c-bddc-49f9-bf94-8e4e23ab4e42.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=Bw09OczdBUTVEV3ZYBKpHd6CHFE%253D&Expires=1607854070" alt></p>
+<p>遇到这样的情况，你可以点击弹出信息的反馈文字，给我反馈。不过据我的测试，大部分情况是没问题的。</p>
+<p>插件目前已经发布到谷歌商店了，通过谷歌商店安装的朋友审核通过后会自动更新。离线安装的朋友需要手动安装，不过我的更新蛮频繁的，强烈建议在线安装。商店地址：<a href="https://chrome.google.com/webstore/detail/leetcode-cheatsheet/fniccleejlofifaakbgppmbbcdfjonle?hl=en-US" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/leetcode-cheatsheet/fniccleejlofifaakbgppmbbcdfjonle?hl=en-US</a></p>
+<p>上线几天已经有 100 多人安装了， 你确定不试试么？</p>
+<p><img src="https://imgkr2.cn-bj.ufileos.com/3fb07eb8-6696-4b3d-82af-dc9a97ef5a32.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=R2AnCPjf1P6My7k%252B5wCnc3cBLzQ%253D&Expires=1607856650" alt></p>
 <h3 id="树的可视化"><a href="#树的可视化" class="headerlink" title="树的可视化"></a>树的可视化</h3><p>力扣支持大家对树进行可视化，只要点击这个<strong>树结构可视化按钮</strong>即可（只有树的题目才有这个按钮）。</p>
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glay3e4j34j31450lq0uz.jpg" alt></p>
 <p>如果你写了多个数组，也并不会生成多个树，貌似是以最后一次输入为准。</p>
@@ -543,19 +550,25 @@
 <p>和这样的树：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glayb242idj30n509fmy9.jpg" alt></p>
 <p>现在其实还有些问题，而且我想<strong>多加几种数据结构</strong>方便写题解，所以就之后再说好了。</p>
-<h2 id="絮叨"><a href="#絮叨" class="headerlink" title="絮叨"></a>絮叨</h2><p>我们的刷题插件正式上架谷歌商店啦，赶紧用起来吧~</p>
-<p>上次给大家说了要总结和记忆模板。还说了给我的插件加一个模板功能， 我果然很可靠！</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glawnsz0n9j306o06lgmx.jpg" alt></p>
-<p>自古深情留不住，唯有套路得人心。 我的刷题插件给大家准备了几种常见的模板帮你快速高效解题。 比如下面这个 hard 题目， 就是一个 BFS 模板 + 状态压缩模板，类似的题目数不胜数，基本都是套个模板改几个地方就过了。</p>
-<p>再比如，下面这个 1439 hard 题， 不就一个二分模板（最左满足条件） + 二维网格 DFS 么？</p>
-<p>给大家提供多种刷题模板，可以直接复制使用。 各个模板都有都有的题目，大家可以直达题目进行”默写“。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glawoq00uwj30pb09ogmo.jpg" alt></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glawp0t0vlj30mm0h2ta4.jpg" alt></p>
-<p>插件地址：<a href="https://chrome.google.com/webstore/detail/leetcode-cheatsheet/fniccleejlofifaakbgppmbbcdfjonle?hl=en-US。" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/leetcode-cheatsheet/fniccleejlofifaakbgppmbbcdfjonle?hl=en-US。</a></p>
-<blockquote>
-<p>不能访问谷歌商店的朋友可以去我的公众号回复插件获取离线版。</p>
-</blockquote>
-<p>另外我的插件后续计划增加更多功能，有消息我会通过公众号和大家同步。</p>
+<h3 id="本地调试技巧"><a href="#本地调试技巧" class="headerlink" title="本地调试技巧"></a>本地调试技巧</h3><p>我们可以通过按照编辑器插件在本地编辑器中写代码，然后通过编辑器插件将其提交到力扣即可。</p>
+<p>这样你在本地的调试插件都可以用于算法调试了。 这里推荐两个可视化调试插件：</p>
+<ul>
+<li><a href="https://github.com/laike9m/Cyberbrain" target="_blank" rel="noopener">Cyberbrain</a></li>
+</ul>
+<p><img src="https://imgkr2.cn-bj.ufileos.com/7298aece-2966-4285-9d85-6d15843642a1.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=D23lggyZn70wF1JF6xkPhHeGFvw%253D&Expires=1607851651" alt></p>
+<ul>
+<li><a href="https://github.com/hediet/vscode-debug-visualizer" target="_blank" rel="noopener">vscode-debug-visualizer</a></li>
+</ul>
+<p><img src="https://imgkr2.cn-bj.ufileos.com/6a5499e7-8615-4d8b-8e14-78a4065b7c8d.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=yfcE41SBLrPAR3piYz%252FeKOUDljU%253D&Expires=1607851751" alt></p>
+<h2 id="推荐一个网站"><a href="#推荐一个网站" class="headerlink" title="推荐一个网站"></a>推荐一个网站</h2><p>OI Wiki 致力于成为一个免费开放且持续更新的 编程竞赛 (competitive programming) 知识整合站点，大家可以在这里获取与竞赛相关的、有趣又实用的知识。我们为大家准备了竞赛中的基础知识、常见题型、解题思路以及常用工具等内容，帮助大家更快速深入地学习编程竞赛中涉及到的知识。</p>
+<p>地址：<a href="https://oi-wiki.org/" target="_blank" rel="noopener">https://oi-wiki.org/</a></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>力扣提交成功之后除了可以看到自己的排名情况（击败百分之多少），还可以查看别人的提交代码。</p>
+<p><img src="https://imgkr2.cn-bj.ufileos.com/cdb95578-10de-41d1-8c5f-92bde37e5d0c.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=pM8aROlTYLGT41JwJGsYmscvof8%253D&Expires=1607851973" alt></p>
+<p><img src="https://imgkr2.cn-bj.ufileos.com/5495c2c7-eef8-4a99-8044-a52a93085d00.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=H%252FpTEUJ9NGdyLOou1fV4UkWCCsY%253D&Expires=1607852044" alt></p>
+<p>这里可以看所有分段的分布情况，也可以直接点击对应的柱子，查看别人的代码怎么写的。比如我这里直接点开了击败 100% 的代码，研究下 ta 是怎么写的。</p>
+<p><img src="https://imgkr2.cn-bj.ufileos.com/652fedd1-6043-4225-8b57-adda62561819.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=MdKwR5K6hLbd6dDhiLHH6xbgjLs%253D&Expires=1607852029" alt></p>
+<p>发现确实代码比我的好，于是我就又”学会“了一招（技能++）。</p>
+<p>以上就是本文的全部内容了。大家对此有何看法，欢迎给我留言，我有时间都会一一查看回答。更多算法套路可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经 38K star 啦。大家也可以关注我的公众号《力扣加加》带你啃下算法这块硬骨头。</p>
 <h2 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h2><p>下期给大家讲<strong>更加干货</strong>的技巧，一定不要错过哦。</p>
 <ul>
 <li>一看就会，一写就废， 如何克服？</li>
@@ -572,10 +585,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-07T20:03:29+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-12T18:53:33+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年12月7日</p>
+    <p>更新于 2020年12月12日</p>
   </a>
 </div>
 
@@ -595,7 +608,7 @@
   <div class="-mob-share-list share-body">
     
       
-        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACI0lEQVR42u3aS46kMBAFwLr/pWu2I7Vg3nPSI2EHqxZN2QSLlPPz+cTX9+JKnvn55M/nr+48fGFgYLyWkWzfAtZW/vtO/WkwMDAOYFxFsGTpq3XyJxPSP94ZAwMD4+IV89dNwm6yLwYGBkYecJMV1nbBwMDAmCSx98e4fM1n02AMDIwTGHnV/f///Sv9DQwMjFcxvuX1LPWxt8LAwNiasbb0fTLZjmLMqRgYGOcw8rbi5FeTT/BZ+9IYGBgvZ7RF+aJMv1ToXxsXw8DA2JuxloK2gxdJ2G0D+gOZNAYGxqsYa0X5ltceAetjIgYGxqaMfFTi/n57EMyDbxS4MTAwDmC0Y2F5WT8f8JqU/DAwMPZmtOMOz6apRUjNy20YGBjbMZKj3trBri3JTZoNGBgYJzDWtsnT3bYJkQ+fYWBgnMaYtxXz1Pd+5bptgIGBcQBj/lr3YbGe+wgOppcnXAwMjO0Y7c/yULjWJJi0VzEwMPZmzF8rT1Pbct5oOAwDA2M7xrMjXPODZvI5inMuBgbG1ow24LaltLU7RWzGwMDYiDEph7VbzkN8nYVjYGC8lvEtr6eanclHSRoPGBgYJzAmwW6tWDZJXOvDIgYGxkaMJMjmDch8nTzpjfJWDAyMAxhtG7K9s3b0rFNZDAwMjMHBsR25aNfBwMDAWCuHPdCYjHfHwMA4gbGWmubjF8l/J0NmGBgYezN+e7RiAstbBRgYGJsy/gC5hp07CQ3+hwAAAABJRU5ErkJggg=='>
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJUlEQVR42u3awa4CIQwF0Pf/P+3bmhjjvWU0GTisjI4wh0VDW/7+4vF4Gs/fvHvmdeRzvnv+goGBgXFbRrJ8++ts5tcNKrYGAwPjAMa7CJaE1zwEJyvmT2JgYGAkr5i/bhJ2k3UxMDAwEkYeFmerYGBgYKwkscmxL5mzPURenItjYGDckJFX3X//+Sv9DQwMjFsxHuWYNThnh8jirTAwMLZmzKaePTkrtxWrYGBgbMpoC/o5LA/T+RYUERoDA2M7RhIQVxqNK09Gm4uBgbE1Iw+dV12qmB0l66IbBgbGRowc0F6SaMPr0pwYGBhHMpLSWHuYm4X+KHBjYGAcxkj+tpLozhqlH77HwMDYmpFfcZgV0doWwvphFAMDYz9GW2jLD3Z5gjoLskstAQwMjFsxZstcdRVjpcSGgYFxDmNWuM+LaO3WDLcPAwNja0Z7yGsnqu99jBqoGBgY5zC+VxTLmwRtEju8P4KBgXFDRnK1Im8l5m2DlRJe0dnAwMDYiNEumVwLyxufs8T1bdENAwNja8bKUS8BJ/h2gzAwMM5htEWx35fhlrJwDAyM2zIe5WiTzGubnVEzAAMDYzvGLNjNXmglcZ2FdQwMjJ0YSZBNUtO2zdDO/CH9xsDAOICRp6ltAzI/hl6QymJgYGCUCXDCzlueUUaOgYGBUbYYL2hMxsU4DAyMExj5lYiV5sFVrQUMDIzTGCtXK2bNxfYV8ytoGBgY2zH+AdRBvCo8GXXeAAAAAElFTkSuQmCC'>
         
           <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png">
         
@@ -605,8 +618,8 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2020/12/04/shuati-silu2/&title=来和大家聊聊我是如何刷题的（第二弹） | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=上一篇的地址在这里，没有看过的同学建议先看第一篇 来和大家聊聊我是如何刷题的（第一弹）。
-这次继续给大家聊聊怎么刷题， 预计分几篇文章来写，今天是第二篇。这次分享的内容是代码书写技巧以及调试技巧。
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2020/12/12/shuati-silu2/&title=来和大家聊聊我是如何刷题的（第二弹） | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=上一篇的地址在这里，没有看过的同学建议先看第一篇 来和大家聊聊我是如何刷题的（第一弹）。
+这次继续给大家聊聊怎么刷题， 预计分几篇文章来写，今天是第二篇，本系列至少会出三篇。这次分享的内容是代码书写技巧以及调试技巧。
 
 本系列旨在分享一些所有题目都适用的技巧以及一些刷题经验，帮助大家高效刷题。如果想重点突破某一类题目，可以关注我的专题系列。
 
@@ -622,8 +635,8 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2020/12/04/shuati-silu2/&title=来和大家聊聊我是如何刷题的（第二弹） | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=上一篇的地址在这里，没有看过的同学建议先看第一篇 来和大家聊聊我是如何刷题的（第一弹）。
-这次继续给大家聊聊怎么刷题， 预计分几篇文章来写，今天是第二篇。这次分享的内容是代码书写技巧以及调试技巧。
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2020/12/12/shuati-silu2/&title=来和大家聊聊我是如何刷题的（第二弹） | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=上一篇的地址在这里，没有看过的同学建议先看第一篇 来和大家聊聊我是如何刷题的（第一弹）。
+这次继续给大家聊聊怎么刷题， 预计分几篇文章来写，今天是第二篇，本系列至少会出三篇。这次分享的内容是代码书写技巧以及调试技巧。
 
 本系列旨在分享一些所有题目都适用的技巧以及一些刷题经验，帮助大家高效刷题。如果想重点突破某一类题目，可以关注我的专题系列。
 
@@ -639,8 +652,8 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2020/12/04/shuati-silu2/&title=来和大家聊聊我是如何刷题的（第二弹） | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=上一篇的地址在这里，没有看过的同学建议先看第一篇 来和大家聊聊我是如何刷题的（第一弹）。
-这次继续给大家聊聊怎么刷题， 预计分几篇文章来写，今天是第二篇。这次分享的内容是代码书写技巧以及调试技巧。
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2020/12/12/shuati-silu2/&title=来和大家聊聊我是如何刷题的（第二弹） | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=上一篇的地址在这里，没有看过的同学建议先看第一篇 来和大家聊聊我是如何刷题的（第一弹）。
+这次继续给大家聊聊怎么刷题， 预计分几篇文章来写，今天是第二篇，本系列至少会出三篇。这次分享的内容是代码书写技巧以及调试技巧。
 
 本系列旨在分享一些所有题目都适用的技巧以及一些刷题经验，帮助大家高效刷题。如果想重点突破某一类题目，可以关注我的专题系列。
 
@@ -668,33 +681,14 @@
       
           <div class="prev-next">
               
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                          <h4>
-                              <a href="/blog/2020/12/04/91-tougao-xiaoyang-01/" rel="prev" title="我是如何把简单题目做成困难的？">
-                                
-                                    我是如何把简单题目做成困难的？
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/算法提高班/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法提高班</a> <a class="tag" href="/blog/tags/91天学算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 91天学算法</a> <a class="tag" href="/blog/tags/力扣加加/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 力扣加加</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
               
                   <section class="next">
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/blog/2020/12/02/91-tougao-tianxing-01/" rel="prev" title="图解数据结构">
+                              <a href="/blog/2020/12/04/91-tougao-xiaoyang-01/" rel="prev" title="我是如何把简单题目做成困难的？">
                                   
-                                      图解数据结构
+                                      我是如何把简单题目做成困难的？
                                   
                               </a>
                           </h4>
@@ -852,7 +846,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先刷什么？刷多少？"><span class="toc-text">先刷什么？刷多少？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码书写技巧"><span class="toc-text">代码书写技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#改参数"><span class="toc-text">改参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zip-函数的妙用"><span class="toc-text">zip 函数的妙用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#取模"><span class="toc-text">取模</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#调试技巧"><span class="toc-text">调试技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#批量测试"><span class="toc-text">批量测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#树的可视化"><span class="toc-text">树的可视化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#絮叨"><span class="toc-text">絮叨</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#预告"><span class="toc-text">预告</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先刷什么？刷多少？"><span class="toc-text">先刷什么？刷多少？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码书写技巧"><span class="toc-text">代码书写技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#改参数"><span class="toc-text">改参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zip-函数的妙用"><span class="toc-text">zip 函数的妙用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于取模"><span class="toc-text">关于取模</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他技巧"><span class="toc-text">其他技巧</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#调试技巧"><span class="toc-text">调试技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#批量测试"><span class="toc-text">批量测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#树的可视化"><span class="toc-text">树的可视化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地调试技巧"><span class="toc-text">本地调试技巧</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#推荐一个网站"><span class="toc-text">推荐一个网站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#预告"><span class="toc-text">预告</span></a></li></ol>
     </div>
   </section>
 
