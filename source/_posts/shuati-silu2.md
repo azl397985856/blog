@@ -2,12 +2,12 @@
 title: 来和大家聊聊我是如何刷题的（第二弹）
 tags: [LeetCode, 刷题方法]
 categories: [刷题方法]
-date: 2020-12-04
+date: 2020-12-12
 ---
 
 上一篇的地址在这里，没有看过的同学建议先看第一篇 [来和大家聊聊我是如何刷题的（第一弹）](https://lucifer.ren/blog/2020/11/29/shuati-silu/)。
 
-这次继续给大家聊聊怎么刷题， 预计分几篇文章来写，今天是第二篇。这次分享的内容是**代码书写技巧**以及**调试技巧**。
+这次继续给大家聊聊怎么刷题， 预计分几篇文章来写，今天是第二篇，本系列至少会出三篇。这次分享的内容是**代码书写技巧**以及**调试技巧**。
 
 > 本系列旨在分享一些所有题目都适用的技巧以及一些刷题经验，帮助大家高效刷题。如果想重点突破某一类题目，可以关注我的专题系列。
 
@@ -17,14 +17,11 @@ date: 2020-12-04
 
 ## 先刷什么？刷多少？
 
-我被问的比较多的两个问题是：
+正式介绍技巧之前先回答一个问题，这也是我被问的比较多的两个问题是：**我该先刷什么算法？每一种算法我该刷多少？**
 
-- 我该先刷什么算法？
-- 每一种算法我该刷多少？
+现在我们就来看下这个问题。
 
-现在我们就来看下这两个问题。
-
-这里贴一个 **91 天学算法** 中某一小节的讲义中的一部分内容：
+先贴一个 **91 天学算法** 中某一小节的讲义中的一部分内容：
 
 - 递归（10）
 - BFS & DFS（20）
@@ -53,12 +50,17 @@ date: 2020-12-04
 5. 网友内幕（主要是面经）
 6. 力扣的探索和标签
 
+知道该刷什么，以及刷多少了，可能你已经迫不及待投入题海了。 不要着急，可以先看下西法有没有写过相关专题，如果写过， 强烈建议你先看下，一定能让你事半功倍。
+
+我已经开始刷专题了，有没有什么通用的技巧呢？答案是有，而且很多。本文只介绍一部分， 后续我们继续这个话题，给大家带来更多干货技巧。
+
 ## 代码书写技巧
 
-代码书写技巧，这次给大家带来两个技巧：
+代码书写技巧，这次给大家带来三个技巧：
 
 1. 改参数
 2. zip 函数的妙用
+3. 关于取模
 
 ### 改参数
 
@@ -174,9 +176,11 @@ const zip = (rows) => rows[0].map((_, c) => rows.map((row) => row[c]));
 
 你把它改造成自己的语言版本即可。
 
-### 取模
+### 关于取模
 
 力扣中有很多题目需要你对返回值取模，而且一般都是对 109 + 7 取模。
+
+> 题目答案让取模那肯定是答案太大了，为啥太大了呢？有啥想法没？
 
 比如 [1680. 连接连续二进制数字](https://leetcode-cn.com/problems/concatenation-of-consecutive-binary-numbers/)
 
@@ -214,43 +218,38 @@ class Solution:
 
 如果不提前 mod， python 可能超时，其他语言可能溢出。
 
-提前取 mod，会把数值限定在 int 能处理的范围，使用机器自身整数运算功能进行快速运算，而如果之后取 mod，由于 python 对大整数支持的特性，会将 ans 转换为大整数再进行运算，计算相对耗时
+提前取 mod，会把数值限定在 int 能处理的范围，使用机器自身整数运算功能进行快速运算，而如果之后取 mod，由于 python 对大整数支持的特性，会将 ans 转换为大整数再进行运算，计算相对耗时。
 
-其他类似的技巧有：
+说到溢出，我想起来一个小技巧，那就是二分取中间值的时候如果书写不当也可能溢出。
 
-- 判断奇偶
-
-判断一个数是奇数还是偶数可以通过和 2 取模。 如果返回值是 0 则是偶数，否则是奇数。
-
-需要注意的是和 2 取模为 1 奇数，但是反之不然。即**和 2 取模不是 1 也可能是奇数，比如负数**，因此还需要多个判断，不如用我上面的方法。
-
-- 二分取中间值。比如：
-
-```
+```py
+# 如下代码，如果 l 和 r 比较大，则可能发生大数溢出
 mid = (l + r) // 2
 ```
 
-> // 是地板除
+> 这里的 // 是地板除
 
-上面代码在某些语言可能会大数溢出，一种解决方案是这样写：
+解决的方案也很简单，这样写就行了：
 
 ```
 mid = (r - l) // 2 + l
 ```
 
-等等。。。
+另外一个和取模有关的小技巧是**判断奇偶**。
 
-欢迎大家补充~
+判断一个数是奇数还是偶数可以通过和 2 取模。 如果返回值是 0 则是偶数，否则是奇数。
 
-### 其他
+需要注意的是和 2 取模为 1 奇数，但是反之不然。即**和 2 取模不是 1 也可能是奇数，比如负数**，因此还需要多个判断，不如用我上面的方法，即**和 2 取模判断是否等于 0**。
 
-尽量不要使用全局变量。
+欢迎大家补充其他小技巧~
 
-使用全局变量且没有及时清除，不仅可能有性能问题，更可能会在多个测试用例之间形成干扰，导致出错。
+### 其他技巧
 
-力扣设计题目通常是会多次调用某一个 api 的。这个时候更是如此，不要使用全局变量。
+这里有一个要和大家强调的点，很多刚刷题的人都不知道，那就是尽量不要使用全局变量。
 
-有一些朋友向我反馈“为啥本地好好的，放到力扣上提交就不行”，先检查下有没有使用全局变量。
+如果使用全局变量且没有及时清除，不仅可能有性能问题，更可能会在**多个测试用例之间形成干扰，导致出错**。而且在力扣设计题目通常是会多次调用某一个 api 的。这个时候更是如此，所以不要使用全局变量。
+
+有一些朋友向我反馈“为啥本地好好的，放到力扣上提交就不行”，请先检查下有没有使用全局变量。
 
 ## 调试技巧
 
@@ -274,6 +273,32 @@ mid = (r - l) // 2 + l
 ![](https://tva1.sinaimg.cn/large/0081Kckwly1glay1130cnj313j084q3r.jpg)
 
 如果你老是考虑不到各种边界，那这个功能简直是福音。 另外如果你打比赛，你可以把题目给的测试用例批量复制到这里一次执行看结果，非常有用。
+
+为了方便大家复制所有题目内置的测试用例，我的**刷题插件 leetcode-cheatsheet**增加了一个功能**一键复制所有的内置用例**。
+
+![](https://imgkr2.cn-bj.ufileos.com/fa5e392f-eee0-4491-a798-e166d8e3855c.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=lN0DNqgrxiq2rPjfNADSXS93aDQ%253D&Expires=1607850606)
+
+正常情况，下点击之后会提示你复制成功，你只需要 ctrl + v 粘贴到**测试用例**的输入框即可。
+
+但是力扣网站有很多不是很统一的地方，这就需要我不断进行兼容。比如如下兼容代码：
+
+![](https://imgkr2.cn-bj.ufileos.com/fd8be741-57c9-4215-94c5-43a3573040e5.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=5WXi6qLmYrbXEoVizboSw%252Bh2D2g%253D&Expires=1607763106)
+
+上面代码指的是力扣测试用例的 html 标签是不定的，并且有时候是”输入：“（注意是中文的：），有时候又是”输入:“（注意是英文的:）。
+
+因此难免有我无法兼容的情况。因此就会发生类似这样的情况
+![](https://imgkr2.cn-bj.ufileos.com/112b82aa-157d-4da4-942d-bb6d932e6475.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=49i2f5mDyXSohJu3YVnWuGCi5FY%253D&Expires=1607856610)
+：
+
+![](https://imgkr2.cn-bj.ufileos.com/ecd4bc7c-bddc-49f9-bf94-8e4e23ab4e42.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=Bw09OczdBUTVEV3ZYBKpHd6CHFE%253D&Expires=1607854070)
+
+遇到这样的情况，你可以点击弹出信息的反馈文字，给我反馈。不过据我的测试，大部分情况是没问题的。
+
+插件目前已经发布到谷歌商店了，通过谷歌商店安装的朋友审核通过后会自动更新。离线安装的朋友需要手动安装，不过我的更新蛮频繁的，强烈建议在线安装。商店地址：https://chrome.google.com/webstore/detail/leetcode-cheatsheet/fniccleejlofifaakbgppmbbcdfjonle?hl=en-US
+
+上线几天已经有 100 多人安装了， 你确定不试试么？
+
+![](https://imgkr2.cn-bj.ufileos.com/3fb07eb8-6696-4b3d-82af-dc9a97ef5a32.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=R2AnCPjf1P6My7k%252B5wCnc3cBLzQ%253D&Expires=1607856650)
 
 ### 树的可视化
 
@@ -299,29 +324,41 @@ mid = (r - l) // 2 + l
 
 现在其实还有些问题，而且我想**多加几种数据结构**方便写题解，所以就之后再说好了。
 
-## 絮叨
+### 本地调试技巧
 
-我们的刷题插件正式上架谷歌商店啦，赶紧用起来吧~
+我们可以通过按照编辑器插件在本地编辑器中写代码，然后通过编辑器插件将其提交到力扣即可。
 
-上次给大家说了要总结和记忆模板。还说了给我的插件加一个模板功能， 我果然很可靠！
+这样你在本地的调试插件都可以用于算法调试了。 这里推荐两个可视化调试插件：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glawnsz0n9j306o06lgmx.jpg)
+- [Cyberbrain](https://github.com/laike9m/Cyberbrain)
 
-自古深情留不住，唯有套路得人心。 我的刷题插件给大家准备了几种常见的模板帮你快速高效解题。 比如下面这个 hard 题目， 就是一个 BFS 模板 + 状态压缩模板，类似的题目数不胜数，基本都是套个模板改几个地方就过了。
+![](https://imgkr2.cn-bj.ufileos.com/7298aece-2966-4285-9d85-6d15843642a1.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=D23lggyZn70wF1JF6xkPhHeGFvw%253D&Expires=1607851651)
 
-再比如，下面这个 1439 hard 题， 不就一个二分模板（最左满足条件） + 二维网格 DFS 么？
+- [vscode-debug-visualizer](https://github.com/hediet/vscode-debug-visualizer)
 
-给大家提供多种刷题模板，可以直接复制使用。 各个模板都有都有的题目，大家可以直达题目进行”默写“。
+![](https://imgkr2.cn-bj.ufileos.com/6a5499e7-8615-4d8b-8e14-78a4065b7c8d.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=yfcE41SBLrPAR3piYz%252FeKOUDljU%253D&Expires=1607851751)
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glawoq00uwj30pb09ogmo.jpg)
+## 推荐一个网站
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glawp0t0vlj30mm0h2ta4.jpg)
+OI Wiki 致力于成为一个免费开放且持续更新的 编程竞赛 (competitive programming) 知识整合站点，大家可以在这里获取与竞赛相关的、有趣又实用的知识。我们为大家准备了竞赛中的基础知识、常见题型、解题思路以及常用工具等内容，帮助大家更快速深入地学习编程竞赛中涉及到的知识。
 
-插件地址：https://chrome.google.com/webstore/detail/leetcode-cheatsheet/fniccleejlofifaakbgppmbbcdfjonle?hl=en-US。
+地址：https://oi-wiki.org/
 
-> 不能访问谷歌商店的朋友可以去我的公众号回复插件获取离线版。
+## 其他
 
-另外我的插件后续计划增加更多功能，有消息我会通过公众号和大家同步。
+力扣提交成功之后除了可以看到自己的排名情况（击败百分之多少），还可以查看别人的提交代码。
+
+![](https://imgkr2.cn-bj.ufileos.com/cdb95578-10de-41d1-8c5f-92bde37e5d0c.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=pM8aROlTYLGT41JwJGsYmscvof8%253D&Expires=1607851973)
+
+![](https://imgkr2.cn-bj.ufileos.com/5495c2c7-eef8-4a99-8044-a52a93085d00.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=H%252FpTEUJ9NGdyLOou1fV4UkWCCsY%253D&Expires=1607852044)
+
+这里可以看所有分段的分布情况，也可以直接点击对应的柱子，查看别人的代码怎么写的。比如我这里直接点开了击败 100% 的代码，研究下 ta 是怎么写的。
+
+![](https://imgkr2.cn-bj.ufileos.com/652fedd1-6043-4225-8b57-adda62561819.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=MdKwR5K6hLbd6dDhiLHH6xbgjLs%253D&Expires=1607852029)
+
+发现确实代码比我的好，于是我就又”学会“了一招（技能++）。
+
+以上就是本文的全部内容了。大家对此有何看法，欢迎给我留言，我有时间都会一一查看回答。更多算法套路可以访问我的 LeetCode 题解仓库：https://github.com/azl397985856/leetcode 。 目前已经 38K star 啦。大家也可以关注我的公众号《力扣加加》带你啃下算法这块硬骨头。
 
 ## 预告
 
