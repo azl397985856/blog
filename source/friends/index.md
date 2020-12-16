@@ -5,6 +5,11 @@ links:
   - group: 前端大佬
     icon: fab fa-js-square
     items:
+      - name: feiker
+        url: https://feiker.xyz
+        avatar: https://cdn.jsdelivr.net/gh/feikerwu/figure-bed@master/assets/20201216181952.png
+        tags:
+          - 啥也不会工程师
       - name: 麋鹿鲁哟
         avatar: https://tva1.sinaimg.cn/large/006tNbRwly1ga7tim49k2j3050050wem.jpg
         url: https://www.cnblogs.com/miluluyo/
