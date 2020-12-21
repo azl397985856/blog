@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-12-16T07:49:09.035Z</updated>
+  <updated>2020-12-21T07:21:46.861Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>来和大家聊聊我是如何刷题的（第三弹）</title>
+    <link href="https://lucifer.ren/blog/2020/12/21/shuati-silu3/"/>
+    <id>https://lucifer.ren/blog/2020/12/21/shuati-silu3/</id>
+    <published>2020-12-20T16:00:00.000Z</published>
+    <updated>2020-12-21T07:21:46.861Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前两篇的地址在这里，没有看过的同学建议先看下。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/11/29/shuati-silu/&quot;&gt;来和大家聊聊我是如何刷题的（第一弹）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/12/12/shuati-silu2/&quot;&gt;来和大家聊聊我是如何刷题的（第二弹）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本章或许是这个系列的最终章。这次给大家聊一点硬核的，聊一些几乎所有算法题都能用得上的超实用思想。&lt;/p&gt;
+&lt;p&gt;上一节给大家抛出了两个问题，分别是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;如何锁定使用哪种算法&lt;/strong&gt;？比如我看到了这道题，我怎么知道该用什么解法呢？二分？动态规划？&lt;/li&gt;
+&lt;li&gt;一看就会，一写就废， 如何克服？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;今天，我就来圆一个当初吹下的牛逼。话不多说，直接上干货。如果你觉得有用，请三连支持我一下，让我能够坚持下去，给大家带来更多的干货。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="刷题方法" scheme="https://lucifer.ren/blog/categories/%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="刷题方法" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>力扣 APP 全新改版，史诗级增强！</title>
@@ -445,9 +478,9 @@
       <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
     
     
-      <category term="前缀和" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
-    
       <category term="滑动窗口" scheme="https://lucifer.ren/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
+    
+      <category term="前缀和" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
@@ -552,9 +585,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -591,9 +624,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -642,35 +675,6 @@
       <category term="效率" scheme="https://lucifer.ren/blog/tags/%E6%95%88%E7%8E%87/"/>
     
       <category term="命令行" scheme="https://lucifer.ren/blog/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>对《丢鸡蛋问题》的一点补充</title>
-    <link href="https://lucifer.ren/blog/2020/08/30/887.super-egg-drop-extension/"/>
-    <id>https://lucifer.ren/blog/2020/08/30/887.super-egg-drop-extension/</id>
-    <published>2020-08-29T16:00:00.000Z</published>
-    <updated>2020-08-30T06:07:32.303Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;​ 去年的一年时间，我在群里每天都会出题给大家做。但是就在 2020-03 开始，力扣也开展了每日一题活动。我突然觉得这个每日一题的必要性变得小了很多，并且逐渐减少了出题频率。但是我还是不愿意放弃大家一起集中进行交流学习的机会。于是我打算新开辟一个专题，这个专题一方面要和力扣官方的每日一题重合度低，另一方面要让大家有参与的热情。&lt;/p&gt;
-&lt;p&gt;于是【异议！】系列应运而生。它是个什么东西呢？我相信大家一定在平时刷算法的过程中，一定遇到过“这解法怎么想到的？”，“这解法不对吧？”的情况，并且可悲的是没有人能够回答你。来这里，「力扣加加」 来回答你。我们会对大家提出的问题进行筛选，将有意义的问题开放出来给大家讨论和学习。&lt;/p&gt;
-&lt;p&gt;本次给大家带来的/是【异议！】系列「第二弹」。&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   

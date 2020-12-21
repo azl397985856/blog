@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>来和大家聊聊我是如何刷题的（第三弹）</title>
+      <link href="/blog/2020/12/21/shuati-silu3/"/>
+      <url>/blog/2020/12/21/shuati-silu3/</url>
+      
+        <content type="html"><![CDATA[<p>前两篇的地址在这里，没有看过的同学建议先看下。</p><ul><li><a href="https://lucifer.ren/blog/2020/11/29/shuati-silu/">来和大家聊聊我是如何刷题的（第一弹）</a></li><li><a href="https://lucifer.ren/blog/2020/12/12/shuati-silu2/">来和大家聊聊我是如何刷题的（第二弹）</a></li></ul><p>本章或许是这个系列的最终章。这次给大家聊一点硬核的，聊一些几乎所有算法题都能用得上的超实用思想。</p><p>上一节给大家抛出了两个问题，分别是：</p><ul><li><strong>如何锁定使用哪种算法</strong>？比如我看到了这道题，我怎么知道该用什么解法呢？二分？动态规划？</li><li>一看就会，一写就废， 如何克服？</li></ul><p>今天，我就来圆一个当初吹下的牛逼。话不多说，直接上干货。如果你觉得有用，请三连支持我一下，让我能够坚持下去，给大家带来更多的干货。</p><a id="more"></a><h2 id="如何锁定使用哪种算法？"><a href="#如何锁定使用哪种算法？" class="headerlink" title="如何锁定使用哪种算法？"></a>如何锁定使用哪种算法？</h2><p>为什么很多人刚看了一眼题目就知道怎么解？</p><ul><li>一种可能是 ta 之前做过同样或者类似的题目，形成了内在的记忆，直接提取了之前的记忆。</li><li>另一种可能是题目给出了明确的提示信息，他们根据这些信息”蒙“的，这种蒙就是<strong>题感</strong>。</li><li>最后一种是刚开始也没思路，尝试暴力解，发现某些步骤可以优化，慢慢剥茧抽丝，推导出最终答案。</li></ul><p>接下来，我们来聊下第二种和第三种。至于第一种则不是一篇文章能解决的，这需要大家多做题，并且做题的时候要多总结多交流。</p><h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><p>关键字可以对解题起到提示作用。这很好理解，假设题目没有限制信息等关键字，那就是耍流氓，毫无算法可言了。 比如”在一个数组中找 target“，这道题就很无聊，正常不会有这种算法题。 可能的出题形式是<strong>加上有序两个字，变成有序数组</strong>。那有序就是关键字了。</p><p>其他的例子有很多，接下来我们来看下常见的关键字以及对应的可能解法有哪些。</p><ul><li><p>如果题目是求极值，计数，很有可能是动态规划，堆等。</p></li><li><p>如果题目是有序的，则可能是双指针。比如二分法。</p></li><li><p>如果题目要求连续，则可能是滑动窗口。</p></li><li><p>如果题目要求所有可能，需要路径信息，则可能是回溯。</p></li></ul><p>如上的这些只是看到关键词你应该第一时间想到的<strong>可能解法</strong>，究竟正确与否，以及复杂度是否达标需要在脑子里二次加工。</p><blockquote><p>关于复杂度是否达标这一点，后面给大家介绍。</p></blockquote><h3 id="限制条件"><a href="#限制条件" class="headerlink" title="限制条件"></a>限制条件</h3><p>很多题目都会给一些数据范围的提示，大家一定要注意看。 比如 <code>1681. 最小不兼容性</code>，题目描述就不看了，我们不打算在这里讲具体怎么解。这道题的函数签名如下：</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minimumIncompatibility</span><span class="params">(self, nums: List[int], k: int)</span> -&gt; int:</span></span><br></pre></td></tr></table></figure><p>这道题的提示是这样的:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 &lt;= k &lt;= nums.length &lt;= 16</span><br><span class="line">nums.length 能被 k 整除。</span><br><span class="line">1 &lt;= nums[i] &lt;= nums.length</span><br></pre></td></tr></table></figure><p>看到了这个你有什么想法么？</p><p>注意到 nums 的长度和值都很小，这道题很可能是暴力回溯 + 状态压缩。关于回溯和状态压缩技巧可以翻翻我的历史文章。</p><p>这里再给大家一个超实用小技巧。</p><ul><li>如果 n 是 10 左右，那么算法通常是 n! 的时间复杂度。</li><li>如果 n 是 20 左右，那么算法通常是 2^n 的时间复杂度</li></ul><p>因此 <code>1681. 最小不兼容性</code> 这道题的复杂度很可能就是指数级别。</p><p>那为什么 10 左右就是 n!，20 是 2^n? 这里给大家介绍一个你可能不知道的技巧。请大家记住一个数字 <strong>1000 万</strong>。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glvhj7a8tlj30ko0fkjse.jpg" alt></p><p>上面之所以是 10 左右， 20 左右就是因为你把 n 带进去差不多都是 <strong>1000 万</strong>。 再比如一道题是 n 是 $10^7$，那很可能是$O(N)$复杂度，因为 $10 ^7$ 就是 <strong>1000 万</strong>。</p><p>再比如，我之前写的一篇文章<a href="https://lucifer.ren/blog/2020/06/20/LIS/" title="穿上衣服我就不认识你了？来聊聊最长上升子序列">《穿上衣服我就不认识你了？来聊聊最长上升子序列》</a>，上面所有的题时间复杂度都是 $N^2$，基本都可以通过所有的测试用例。为什么？因为题目数据范围差不多是 2500，那 2500 的平方是多少？是 600 多万，因此数据范围是 3000 以内， 平方差不多都可解，当然我说的只是大多数情况，并且需要注意<strong>越接近临界值越可能超时</strong>。</p><p>再比如<code>1631. 最小体力消耗路径</code>。题目描述：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">你准备参加一场远足活动。给你一个二维 rows x columns 的地图 heights ，其中 heights[row][col] 表示格子 (row, col) 的高度。一开始你在最左上角的格子 (0, 0) ，且你希望去最右下角的格子 (rows-1, columns-1) （注意下标从 0 开始编号）。你每次可以往 上，下，左，右 四个方向之一移动，你想要找到耗费 体力 最小的一条路径。</span><br><span class="line"></span><br><span class="line">一条路径耗费的 体力值 是路径上相邻格子之间 高度差绝对值 的 最大值 决定的。</span><br><span class="line"></span><br><span class="line">请你返回从左上角走到右下角的最小 体力消耗值 。。</span><br></pre></td></tr></table></figure><p>示例 1：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glui2h3fu6j308z08z0su.jpg" alt></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：heights = [[1,2,2],[3,8,2],[5,3,5]]</span><br><span class="line">输出：2</span><br><span class="line">解释：路径 [1,3,5,3,5] 连续格子的差值绝对值最大为 2 。</span><br><span class="line">这条路径比路径 [1,2,2,2,5] 更优，因为另一条路径差值最大值为 3 。</span><br></pre></td></tr></table></figure><p>这道题的函数签名如下：</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minimumEffortPath</span><span class="params">(self, heights: List[List[int]])</span> -&gt; int:</span></span><br></pre></td></tr></table></figure><p>这道题的提示是这样的:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rows == heights.length</span><br><span class="line">columns == heights[i].length</span><br><span class="line">1 &lt;= rows, columns &lt;= 100</span><br><span class="line">1 &lt;= heights[i][j] &lt;= 10^6</span><br></pre></td></tr></table></figure><p>首先，我们至少需要从左上走到右下，那么时间复杂度就已经是 $O(rows * columns)$ 了。题目说了这两个数字都不大于 100，因此最大就是 $10^4$。而对于路线上的高度差绝对值的数据范围也不超过 $10^6$。</p><p>暴力法就是一个个试， 复杂度是二者直接相乘，也就是 $10^10$，大于前面给大家讲的 $10^7$，因此这个复杂度通常是不能 AC 的。</p><p>而上面说了 $O(rows * columns)$ 是不可能省的，因为你至少要走一次。但如果 $10^6$ 不是线性去试，而是指数的话呢？而指数复杂度首先想到二分。</p><p>此题的伪代码：</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minimumEffortPath</span><span class="params">(self, heights: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(mid, x, y)</span>:</span></span><br><span class="line">            <span class="comment"># dosomething</span></span><br><span class="line">        l, r = <span class="number">0</span>, <span class="number">10</span>**<span class="number">6</span></span><br><span class="line">        <span class="comment"># 最左满足条件的值的二分模板。大家可以去 leetcode-cheatsheet 插件获取更多算法模板</span></span><br><span class="line">        <span class="keyword">while</span> l &lt;= r:</span><br><span class="line">            mid = (l + r) // <span class="number">2</span></span><br><span class="line">            <span class="comment"># 测试有没有一条路径从(0,0)出发到达(rows-1,cols-1)，且路径上的高度绝对值差不大于 mid</span></span><br><span class="line">            <span class="keyword">if</span> test(mid, <span class="number">0</span>, <span class="number">0</span>):</span><br><span class="line">                r = mid - <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                l = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> l</span><br></pre></td></tr></table></figure><p>你说 <strong>1000 万这个数字重要不重要</strong>？1000 万不仅是我的人生目标，更是做题时刻铭记的一个数字！^_^</p><h3 id="暴力优化"><a href="#暴力优化" class="headerlink" title="暴力优化"></a>暴力优化</h3><p>最后给大家介绍的”识别题目可能的解法“的技巧是暴力优化。</p><p>一句话概括就是<strong>先暴力解，然后思考性能瓶颈，再尝试使用数据结构和算法对瓶颈进行优化</strong>。</p><p>比如 <a href="https://leetcode-cn.com/problems/remove-duplicate-letters/solution/yi-zhao-chi-bian-li-kou-si-dao-ti-ma-ma-zai-ye-b-4/" title="316. 去除重复字母" target="_blank" rel="noopener">316. 去除重复字母</a>，我就是先暴力求出来。发现每次都直接判断是否在是否在栈上需要 $O(N)$ 的时间，太慢了。由于我就用了哈希表进行优化。而使用哈希表这点，绝对不是我一开始就想到的，而是先暴力求解，求解的过程发现算法的性能瓶颈才意识到该用哈希表的。关于这道题的详细的解法就不再这里讲了，大家点进去看我的题解就行。或者直接去力扣搜题，排名第一的非官方题解应该就是我。</p><p>总结一下就是，大家一定不要小看暴力法。暴力法解出来剪剪枝说不定就过了。如果不过，思考下瓶颈在哪，用合适的数据结构和算法优化一下说不定也就过了。这可不是随便说说。比如下面要讲的硬币找零问题，就是暴力解发现瓶颈，加个记忆化去除重复子问题就是动态规划了</p><h2 id="一看就会，一写就废，-如何克服？"><a href="#一看就会，一写就废，-如何克服？" class="headerlink" title="一看就会，一写就废， 如何克服？"></a>一看就会，一写就废， 如何克服？</h2><p>针对这个问题，之前我给大家的建议是<strong>多复习</strong>， <strong>多动手写</strong>。</p><p>后来我和几个朋友聊了一下，发现自己有点<strong>幸存者偏差</strong>。我发现很多人<strong>在没有算法思维的情况下就开始学习算法了</strong>，这很不可取。</p><p>不过算法思维这东西你让我在这一篇文章给你整的明明白白的，这也不现实。今天我给大家分享一个我认为最最重要的一个算法思想 - <strong>分治</strong>。</p><h3 id="分治思维"><a href="#分治思维" class="headerlink" title="分治思维"></a>分治思维</h3><p>“一看就会，一写就废， 如何克服？”，有一个可能是你没有分治思维。 我们的大脑天生适合<strong>处理一些简单</strong>的东西，而不适合处理看起来就很复杂的东西。因此面对一个很复杂的东西，第一件事情应该是思考<strong>是否可以将其分解</strong> ，然后逐个击破。</p><p>举个例子给大家，如下是一道力扣的 hard 题 <a href="https://leetcode-cn.com/problems/number-of-2s-in-range-lcci/" title="《2 出现的次数》" target="_blank" rel="noopener">《2 出现的次数》</a>，题目描述如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">编写一个方法，计算从 0 到 n (含 n) 中数字 2 出现的次数。</span><br><span class="line"></span><br><span class="line">示例:</span><br><span class="line"></span><br><span class="line">输入: 25</span><br><span class="line">输出: 9</span><br><span class="line">解释: (2, 12, 20, 21, 22, 23, 24, 25)(注意 22 应该算作两次)</span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">n &lt;= 10^9</span><br></pre></td></tr></table></figure><p>很多人一看到题就蒙了，这要多少种情况啊? 总不可能一个数字一个数字试过去吧？</p><blockquote><p>其实看一眼数据范围中 n 上限是 10^9，大于 1000 万，就知道不能这样暴力。</p></blockquote><p>于是悄悄打开题解，不仅感叹“原来是这样啊！”，“这怎么想到的？这什么脑子啊！”</p><p>来让我告诉你，你缺啥。 你缺的不是一个好使的脑子，而是一个<strong>懂得将复杂问题变成若干个简单问题的意识和能力</strong>。</p><p>以这道题来说， 我可以将其分解为几个子问题。</p><ul><li>从 0 到 n (含 n) 中 <strong>个位</strong> 数字 2 出现的次数</li><li>从 0 到 n (含 n) 中 <strong>十位</strong> 数字 2 出现的次数</li><li>。。。</li></ul><p>最终的答案就是以上几个<strong>子问题的和</strong>。</p><p>经过这样的思路，大家一下子就能打开思路。剩下的任务就简单了。因为每次固定一位之后，就将数字分为了左右两部分，那么该位是 2 的次数就是左右所有可能的笛卡尔积，即 a * b。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gluet2uoy8j30pw0883ys.jpg" alt></p><p>比如 n 是 135。</p><p>百位上不可能是 2，因为 2xx 一定超过 135 了。</p><p>那十位有多少个 2 呢？按照上面的思路：</p><ul><li>左边就是百位，百位可能是 0 或者 1，共 2 种可能。</li><li>右边就是个位，个位可能是 [0 - 9] 共 10 种可能。</li></ul><p>那么十位是 2 的次数就是 2 * 10 = 20。</p><p>那个位有多少个 2 呢？按照上面的思路：</p><ul><li>左边就是十位和百位，其可能是 [0-13]，共 14 种可能。</li><li>右边啥都没有，1 种可能。</li></ul><p>那么个位是 2 的次数就是 14 种。</p><p>因此不超过 135 的数字中 2 的出现次数就是 20 + 14 = 34 种。</p><p>当然，这里面还有一些细节，比如如果某一位比 2 小或者正好是 2 怎么办？我就不在这里讲了。这里直接贴下代码，大家自己继续完成好了。</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numberOf2sInRange</span><span class="params">(self, n: int)</span> -&gt; int:</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        m = <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> m &lt;= n:</span><br><span class="line">            cur = n // m % <span class="number">10</span></span><br><span class="line">            <span class="keyword">if</span> cur &gt; <span class="number">2</span>: ans += (n // m // <span class="number">10</span> + <span class="number">1</span>) * m</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> cur == <span class="number">2</span>: ans += n % m + <span class="number">1</span></span><br><span class="line">                ans += (n // m // <span class="number">10</span>) * m</span><br><span class="line">            m *= <span class="number">10</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure><blockquote><p>把 2 换成其他数字 x，那就可以计算不超过 n 的 x 的出现次数。</p></blockquote><p>举这个例子就想告诉大家为啥一些题目你压根就没有思路的原因：</p><ul><li>要么就是这种题没见过，那没办法，多做题呗。</li><li>要么就是你算法思维还不够。比如我上面讲的分治的算法思维。</li></ul><p>一看就会又说明<code>这种题你是回答过的</code>，因此<strong>一看就会，一写就废，一般都是没有养成良好的算法思维，而分治就是一种非常重要的算法思维</strong>。当算法思维有了，剩下的细节就慢慢练习就好了，这没有捷径。但是算法思维是有捷径的，大家在刷题之前要特别注重算法思维的学习。</p><p>我再举几个例子给大家，帮助大家加深理解。</p><h3 id="三个题目带你理解分治思想"><a href="#三个题目带你理解分治思想" class="headerlink" title="三个题目带你理解分治思想"></a>三个题目带你理解分治思想</h3><ol><li>在一个数组 nums 中找值为 target 的元素，并返回数组下标，题目保证 nums 中有且仅有一个数等于 target。</li><li>给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回  -1。你可以认为每种硬币的数量是无限的。（322. 零钱兑换）</li><li>n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。（51. N 皇后）</li></ol><p>这几道题覆盖了简单中等和困难三种难度。接下来，我们来看下这几个题。</p><h4 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h4><p>对于第一题， 答案无非就是 [0, n - 1]。因此我们可以将问题分解为以下几个子问题：</p><ul><li>是 0 么？no</li><li>是 1 么？no</li><li>是 2 么？no</li><li>。。。</li></ul><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glvhjzwomxj31840rm77h.jpg" alt></p><p>最终的答案就是子问题中回答为 “yes” 的索引。严格意义上来说，这里只有分，没有治，而且这个分和前面的分有微妙的差异。前面的分完之后后面还要用，这个分是直接给扔掉了。类似的有二分法，二分法就是一种只有分没有治的“分治法”。</p><h4 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h4><p>coins 是个变量， amount 也是变量，它们关系感觉好多的样子？我该怎么理清呢？</p><p>我们从特殊入手，比如 coins = [1, 2, 5], amount = 11。为了方便描述，原问题我用 f([1,2,5], 11) 表示 coins 为 [1,2,5]，amount 为 11 的最少需要多少硬币凑齐。</p><p>我也不知道最终的<strong>最少硬币方案</strong>是怎么选的。那我就所有情况都走一遍呗，比较一下哪种方案用硬币最少就用哪个不就行了么？</p><p>最终的算法还真就是基于这个朴实的想法来的。</p><p>选第一枚硬币的时候，一共只有三种情况：选择 1，选择 2，选择 5。</p><ul><li>如果我们先选了 1，那么再凑出 10 就行了。那怎么凑出 10 呢？不就是 f([1, 2, 5], 10) 么？</li><li>如果我们先选了 2，那么再凑出 9 就行了。那怎么凑出 9 呢？不就是 f([1, 2, 5], 9) 么？</li><li>如果我们先选了 5，那么再凑出 6 就行了。那怎么凑出 6 呢？不就是 f([1, 2, 5], 6) 么？</li></ul><p>上面是选取一个硬币的情况，由于没有凑到 amount，我们继续重复，直到凑到 amount。</p><p>于是你可以画出类似如下的逻辑树结构，由于节点太多我没有画全。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glvhlpqmywj319o0ostcg.jpg" alt></p><p>有没有发现你的大脑直接处理大问题没有思路，但将其分解为小问题就简单了许多？<strong>分</strong>完了，我们还要<strong>治</strong>。</p><blockquote><p>这就好像你是主管，向下面布置了作业，布置完了你还要收作业将他们汇总起来搞个 ppt 啥的。</p></blockquote><p>不过这也不难。由于问题是最少硬币，那么治就取最少呗。</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> + min(f([<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>], <span class="number">10</span>),f([<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>], <span class="number">9</span>),f([<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>], <span class="number">6</span>))</span><br></pre></td></tr></table></figure><p>总结一下：</p><p>这道题的分我们可以从几个特例入手就可以打开思维。上面的<strong>分</strong>的手段用伪代码描述就是：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> coin : coins) &#123;</span><br><span class="line">    f(coins, amount - coin)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>分完了就是处理边界和<strong>治</strong>了。</p><p>完整的分治代码就是：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">f</span><span class="params">(coins, amount)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (amount &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// 非法解，用正无穷表示</span></span><br><span class="line">        <span class="keyword">return</span> Float.POSITIVE_INFINITY</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 叶子节点</span></span><br><span class="line">    <span class="keyword">if</span> (amount == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// 找到一个解，是不是最小的”治“阶段处理。</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans = Float.POSITIVE_INFINITY</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> coin : coins) &#123;</span><br><span class="line">        ans = Math.min(ans, <span class="number">1</span> + f(coins, amount - coins))</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>为了突出我的算法主框架，略去了一些细节。 比如原题在无解的时候需要返回 - 1，而我返回的是正无穷。</p></blockquote><p>如果之前做过这道题的朋友应该知道这是一个典型的背包问题。如果现在让我做，我可能也直接自底向上 dp table 解决了（不过 dp table 和记忆化递归没有本质的思维差别）。但是算法是如何想出来的这一点，是如何一步一步优化的，大家一定<strong>钻到底</strong>，这样刷题效率才高。</p><h4 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h4><p>不懂题目意思的可以去看下力扣原题 51. N 皇后。这道题就是典型的回溯题目，什么是回溯？一言以蔽之，那就是一个一个试，不行了就返回上一步继续试。</p><p>这么多格子我该放哪呢？每个格子还有制约关系！好乱，没有思路。</p><p>别急，继续使用分治的思维。这道题是让我们将 N 个皇后放到 N X N 的棋盘上。那不就是：</p><ul><li>第一行的皇后应该放到第几列？</li><li>第二行的皇后应该放到第几列？</li><li>第三行的皇后应该放到第几列？</li><li>。。。</li></ul><blockquote><p>改成”第 x 列的皇后应该放到第几行？”这种子问题划分模式也是可以的。</p></blockquote><p>伪代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">placeRow</span><span class="params">(i)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 决定应该放到第几列</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) &#123;</span><br><span class="line">    placeRow(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>如果上面的子问题都解决了，那整个问题不就解决了么？</p><p>但是上面的子问题，还是无法直接解决。比如“第一行的皇后应该放到第几列？”我也不知道啊。没关系，我们继续对“第一行的皇后应该放到第几列？” 这个问题进行分解。</p><ul><li>第一行的皇后放到第 1 列么？</li><li>第一行的皇后放到第 2 列么？</li><li>第一行的皇后放到第 3 列么？</li><li>。。。</li></ul><p>继续完善上面的 placeRow 代码即可。这里给出伪代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">boolean</span> <span class="title">canPlaceQueue</span><span class="params">(i, j)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 根据目前的棋局（放了是否能不相互攻击），分析 i 和 j 这个位置能否放女王。</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">placeRow</span><span class="params">(i)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (canPlaceQueue(i, j)) &#123;</span><br><span class="line">            <span class="comment">// 将女王放到 (i,j)，更新当前棋局</span></span><br><span class="line">            placeQueue(i, j)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glvhg8w616j315k0s8wit.jpg" alt></p><p>现在的问题就只剩下实现<code>canPlaceQueue(i, j)</code> 和 <code>placeQueue(i, j)</code>了，这两个函数根据题目要求模拟实现即可。</p><p>需要注意的是我们做了一个<code>placeQueue(i, j)</code> 的操作，这<strong>可能</strong>是一个 mutable 的操作。因此如果一条路行不通需要回溯，那么 mutable 的数据需要撤销修改。当然如果你的数据是 immutable 就无所谓了。不过 immutable 则有可能内存移除或者超时的风险。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glvhgnyobcj31uc0si483.jpg" alt></p><p>由于这里只是讲思维的，不是讲题目本身的，因此还是点到为止，后面的算法细节我就不讲了，希望读者能自己将代码完善一下。</p><h4 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h4><p>类似的例子实在太多了，根本举不过来，我随口给大家说几个。</p><ul><li><p>如果让你求一个数组的连续子数组总个数，你会如何求？其中连续指的是数组的索引连续。 比如 [1,3,4]，其连续子数组有：[1], [3], [4], [1,3], [3,4] , [1,3,4]，你需要返回 6。分治就好了，连续子数组个数等于：以索引为 0 结尾的子数组个数 + 以索引为 1 结尾的子数组个数 + … + 以索引为 n - 1 结尾的子数组个数</p></li><li><p><a href="https://leetcode-cn.com/problems/climbing-stairs/" title="70. 爬楼梯" target="_blank" rel="noopener">70. 爬楼梯</a> 让你求爬到最后一级台阶有多少种方法。这太多了，我数不过来。但是我可以将其分解成两个子问题。如果我用 f(n) 表示爬到第 n 级的方法数，那么 f(n) = f(n - 1) + f(n - 2)。但是 n - 1 我也不会啊，没关系，我们继续分解。这和上面的硬币问题有多大差别么？ 对于这道题，分就是拆成两个子问题，治就是求和。</p></li></ul><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glvho4ljj1j30nk0ek0u5.jpg" alt></p><blockquote><p>这就是最简单的无选择的<strong>递推</strong>动态规划</p></blockquote><ul><li><p><a href="https://leetcode-cn.com/problems/min-cost-climbing-stairs/" title="746. 使用最小花费爬楼梯" target="_blank" rel="noopener">746. 使用最小花费爬楼梯</a> 换了个皮又来了？</p></li><li><p><a href="https://leetcode-cn.com/problems/jump-game-vi/" target="_blank" rel="noopener">220 场周赛 - 跳跃游戏 VI</a> 这不还是上面爬楼梯换皮么？这次变成了一次能爬 k 级台阶罢了。</p></li></ul><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glvhobhn2tj31ai0n478f.jpg" alt></p><blockquote><p>这道题数组长度是 $10^5$，如果不做优化复杂度会是 $N^2$，算起来就是 $10^10$ 过不了，大于上面给大家讲的 1000 万。如何优化有点跑题了，就不在这里讲了。</p></blockquote><ul><li><a href="https://leetcode-cn.com/problems/unique-paths/" title="62. 不同路径" target="_blank" rel="noopener">62. 不同路径</a> 穿个二维的衣服就看不出你是爬楼梯了？</li></ul><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glvhord9r6j30lo0es402.jpg" alt></p><p>相关换皮题目太多，大家可以去我的插件里看。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gluqthyftxj30qe0lcwgw.jpg" alt></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本次给大家分享了一个很重要的算法思想<strong>分治</strong>，很多题都可以用到这个思想。能运用分治思想的专题有“动态规划”,”分治“，“回溯” 等，大家在平时做题的时候可以参考我的这种思考方式。</p><p>如果你碰到一个复杂的问题，可以尝试以下几个方法。</p><ul><li>不妨先尝试将其拆解，看能否将其拆解成几个小问题。</li><li>在草稿上画画图，从特殊情况入手，看能否发现什么蛛丝马迹</li><li>暴力模拟。看能否通过剪枝和添加恰当的数据结构来优化算法，使之通过。</li></ul><p>如果你有更好的干货技巧，非常希望你能和我交流，万分期待！</p><p>除了算法思想，我还和大家分享两个超实用的技巧，分别是：</p><ul><li>看关键字。关键字很多时候起到了提示作用，甭管对不对，咱要想到。想到之后迅速脑子中过一下能不能 AC。</li><li>看限制条件。 记住一个数字就行了，1000 万。</li></ul><p>最后和大家说了一个小心得 - ”不要小看暴力法“。暴力法不仅能帮助你打开思路，有时候甚至暴力 + 剪枝（或数据结构优化）就过了。<strong>大力出奇迹，欧耶！(^o^)/</strong></p><p>以上就是本文的全部内容了。大家对此有何看法，欢迎给我留言，我有时间都会一一查看回答。更多算法套路可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经 38K star 啦。大家也可以关注我的公众号《力扣加加》带你啃下算法这块硬骨头。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 刷题方法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> 刷题方法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>力扣 APP 全新改版，史诗级增强！</title>
       <link href="/blog/2020/12/16/leetcode-app-1/"/>
       <url>/blog/2020/12/16/leetcode-app-1/</url>
@@ -409,9 +436,9 @@
       
         <tags>
             
-            <tag> 前缀和 </tag>
-            
             <tag> 滑动窗口 </tag>
+            
+            <tag> 前缀和 </tag>
             
             <tag> LeetCode </tag>
             
@@ -483,9 +510,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -526,9 +553,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -629,9 +656,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -1019,9 +1046,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -1464,11 +1491,11 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> 数学 </tag>
             
             <tag> BFS </tag>
             
@@ -1519,9 +1546,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -1556,9 +1583,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -1591,9 +1618,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -1828,9 +1855,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -2048,9 +2075,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> BFS </category>
           
@@ -2390,9 +2417,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 字符串 </category>
           
@@ -2429,9 +2456,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -2468,13 +2495,13 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
           
-          <category> hashtable </category>
+          <category> 数据结构 </category>
           
           <category> 数学 </category>
+          
+          <category> hashtable </category>
           
           <category> 位运算 </category>
           
@@ -2540,9 +2567,9 @@
           
           <category> 数学 </category>
           
-          <category> 动态规划 </category>
-          
           <category> 概率 </category>
+          
+          <category> 动态规划 </category>
           
           <category> 递归 </category>
           
@@ -2551,17 +2578,17 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
             
-            <tag> 动态规划 </tag>
-            
-            <tag> 数学 </tag>
-            
             <tag> 概率 </tag>
             
             <tag> 递归 </tag>
+            
+            <tag> 动态规划 </tag>
             
         </tags>
       
@@ -2592,9 +2619,9 @@
             
             <tag> 算法 </tag>
             
-            <tag> 状态机 </tag>
-            
             <tag> 动态规划 </tag>
+            
+            <tag> 状态机 </tag>
             
             <tag> 贪心 </tag>
             
@@ -2783,6 +2810,27 @@
     
     
     <entry>
+      <title>累死累活干不过一个写PPT的</title>
+      <link href="/blog/2019/12/11/ppt-data/"/>
+      <url>/blog/2019/12/11/ppt-data/</url>
+      
+        <content type="html"><![CDATA[<p>无论是身处什么行业什么领域，数据分析越来越成为一向必不可少的技能，<br>而运用数据思维进行决策更能产生形成高质量的决策结果。</p><p>随着互联网的不断发展和物联网设备的不断普及，我们日常生活中的各种数据被存储下来，让我们可以通过定量分析数据，利用数据实现更好的决策制定。</p><a id="more"></a><p>现在越来越多的公司开始注重这一块，一方面自建数据体系，一方面去买一些数据。而对于我们个人似乎还没有意识到或者开始挖掘数据对我们的价值。</p><p>笔者最近的工作大都是做一些基础设施搭建和流程优化相关的工作。<br>这部分工作对很多人来说都是“隐形”的，对上层使用者来说很难有很大的感知。<br>对于领导来说，如果你只是闷头去做事情，他们也是很难知道你干的怎么样，如果这之间再加上<br>你没有什么反馈，就会给同事和领导一种“不靠谱”的感觉。</p><p>因此给予反馈和直观展示自己劳动成果的能力就显得非常重要。<br>然而如果你能很好展示自己的劳动成果，那么只需要将这个给老板看就是一种很好很直观的反馈。</p><p>这篇文章，我们来谈一下，如何量化我们的工作，如何将我们的工作成果展示出来。<br>如何让同事，让领导体会到我们工作的成果。我会通过几个例子来帮助大家快速理解，以及掌握这门“技术”<br>。</p><p>《让数据开口说话》是我给这篇文章的标题，让数据开口说话，你就可以少说一点，并且摆数据就是摆事实，<br>数据带来的说服力要比你说的话强很多。</p><h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>我是一个对技术充满兴趣的程序员, 擅长前端工程化，前端性能优化，前端标准化等。</p><p>做过.net， 搞过 Java，现在是一名前端工程师。</p><p>除了我的本职工作外，我会在开源社区进行一些输出和分享，GitHub 共计获得 1.5W star。比较受欢迎的项目有<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">leetcode 题解</a> , <a href="https://github.com/azl397985856/fe-interview" target="_blank" rel="noopener">宇宙最强的前端面试指南</a> 和<br><a href="https://github.com/azl397985856/automate-everything" target="_blank" rel="noopener">我的第一本小书</a></p><h2 id="收集数据"><a href="#收集数据" class="headerlink" title="收集数据"></a>收集数据</h2><p>如果让数据开头说话，那么首先第一步你要有数据。</p><p>因此我们的第一步就是收集数据，那么在这之前你需要知道你需要什么数据。<br>这部分的内容随着每个人任务不同肯定是不一样的。因此有着很大的灵活性，</p><p>有一个指导思想就是对关键指标分解。<br>比如我现在要做打包时间进行优化，那么打包时间由哪些时间决定。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">打包时间 =  阶段1 时间 + 阶段2 时间 + 阶段3 时间</span><br></pre></td></tr></table></figure><p>我们减少打包时间肯定要减少其中一个或多个。</p><p>有时候我们无法找到这种简单的分解，那就教大家另外一个技巧：运用对比。</p><p>一方面可以基于时间进行对比，比如环比增长，同比增长等数据都是这么来的。</p><p>另一方面我们可以基于用户属性进行对比，比如用户年龄，性别，偏好，操作系统类型，<br>地域属性等。</p><p>下面我举几个例子。</p><h3 id="打包优化"><a href="#打包优化" class="headerlink" title="打包优化"></a>打包优化</h3><p>假如你被分配了一个任务。让你对项目的打包过程进行优化。</p><ul><li><p>你需要对打包时间进行优化，减少打包的时间</p></li><li><p>你需要对打包的最终产物进行优化，减少打出的包的包体大小。</p></li><li><p>将打包变得尽可能的简单，也就说尽量减少人为的操作过程。</p></li></ul><p>你接到了这样一个任务，你会如何去做？</p><p>这里我们不考虑具体的具体思路和细节。 假设你的架构思路，方案规划，各种 fallback 已经想好了。<br>我们如何通过上面提到的让数据说话的角度来收集数据呢？ 换句话说，我们需要收集哪些数据？</p><h4 id="打包时间"><a href="#打包时间" class="headerlink" title="打包时间"></a>打包时间</h4><p>对于打包时间的数据，最简单的我们计算一下总体的打包时间。</p><p>最后我们只需要对比优化前后的总体打包时间差异即可。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds546t088j30ec05dq3e.jpg" alt></p><p>这对于老板来说可能已经够了，但是这缺乏一些精确性，我们无法知道通过优化了哪个环节进行<br>减少了打包时间。 因此一种简单的改进是将打包划分为多个阶段，每个阶段分别进行统计计时 ⌛️ 。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds547ajtij30gs07q74w.jpg" alt></p><h4 id="包的大小"><a href="#包的大小" class="headerlink" title="包的大小"></a>包的大小</h4><p>包的大小的数据其实和上面讲的打包时间思路类似。</p><p>我们当然可以只统计总体包大小。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds548de0gj30cy05fmxc.jpg" alt></p><p>但是为了获得更加灵活的定制和更加精确的范围我们可以对包进行一定的划分。<br>这个划分可以是业务纬度，也可以是纯技术纬度。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54a42mjj30f005z3zb.jpg" alt></p><h4 id="打包命令"><a href="#打包命令" class="headerlink" title="打包命令"></a>打包命令</h4><p>这部分比较简单，我们只需要简单地统计手动操作的次数即可。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54azmgwj30f005i3yu.jpg" alt></p><p>通过收集以上的数据，我们就可以用数据来表示我们的成果，让数据说话，关于如何<br>使用这些数据，我们稍后讨论。</p><h3 id="页面加载性能优化"><a href="#页面加载性能优化" class="headerlink" title="页面加载性能优化"></a>页面加载性能优化</h3><p>假如你被分配了一个任务。让你对项目的页面加载速度进行优化。<br>你会怎么做？</p><p>这个任务有点太宽泛了，更多的时候会有一些更精确的指标，<br>比如将网络状态为<code>fast 3G</code>的<code>中端机型</code>的白屏时间降低到<code>3s以内</code>。</p><h4 id="timing"><a href="#timing" class="headerlink" title="timing"></a>timing</h4><p>性能优化的第一步就是测量，没有测量就没有优化。我们不能为了优化而优化， 而是看到了某些点需要优化才去优化的。 而发现这个点一个重要的方式就是要靠测量。</p><p>说到测量，普遍接受的方式是，在浏览器中进行打点，将浏览器打开网页的过程看作是一个旅行。<br>那么我们每到一个地方就拍张带有时间的照片（事件），最后我们对这些照片按照时间进行排列， 然后分析哪部分是我们的瓶颈点等。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54bnum5j30i70avdhp.jpg" alt="performance-api"></p><p>有了这些 timing 我们可以很方便的计算各项性能指标。我们还可以自定义一些我们关心的指标，比如请求时间（成功和失败分开统计），较长 js 操作时间，或者比较重要的功能等。</p><p>总之收集到这些数据之后，我们只需要根据我们的需求去定制一些指标即可。</p><p>这样我们就很容易展示出这样的画面：</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54dcbs2j30eh074gm6.jpg" alt="render-perf"></p><h3 id="人效提升"><a href="#人效提升" class="headerlink" title="人效提升"></a>人效提升</h3><p>假如你是一个项目的管理者，上级分配给你一个任务，要在未来几个季度去做“研发效率提升”，<br>也就是提高“交付速度”。 你会怎么做这件事？</p><h4 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h4><p>这个事情是比较主观的了，因此我们切实需要一些可以量化的东西来辅助我们。</p><p>我们考虑将需求进行拆分，变成一个个任务。一个需求可能有多个任务。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54e97btj309z0960ta.jpg" alt></p><p>我们考虑对每一个任务进行计时，而不是需求，因为需求有太大的差异。<br>我们可以针对任务进行分类，然后我们的目标就可以变成“减少同类任务的交付时长”。</p><p>但是这种粒度似乎还是有点大。我们可以采取标签的形式，对任务进行交叉分类。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54fb9nfj30ay09874x.jpg" alt></p><p>任务纬度可能还是有点太大，我们可以采取更小的粒度划分，比如模块和组件。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54gb6a0j30ly0akabf.jpg" alt></p><p>这样我们的统计纬度就丰富起来了，我们不仅可以总体进行统计分析，我们还可以根据 tag 和 tag 的组合进行汇总。</p><p>比如一个典型的统计结果大概是：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- task1 (tagA)</span><br><span class="line"> - module1 (tagA)</span><br><span class="line">   - component1 (tagB)</span><br><span class="line">   - component2 (tagA)</span><br><span class="line"> - module2 (tagB)</span><br><span class="line"> - module3 (tagB)</span><br><span class="line">- task2 (tagA)</span><br><span class="line">- task3 (tagC)</span><br></pre></td></tr></table></figure><p>比如这里有一种 tag 叫“是否复用了以前的代码”，<br>那么我们就很容易统计出组件复用率，也就很容易很直观地知道前后的差距了。</p><h3 id="用户拉新和留存"><a href="#用户拉新和留存" class="headerlink" title="用户拉新和留存"></a>用户拉新和留存</h3><p>再比如我们需要做“用户拉新和留存”，我们应该怎么做？</p><p>这个留做思考题，大家可以思考一下。</p><p>我这里抛砖引玉一下，比如我们的统计纬度可以是：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- 用户访问时长 (tagA)</span><br><span class="line">- 跳出率 (tagB)</span><br><span class="line">- 新用户 (tagA)</span><br><span class="line">- 流失的老用户 (tagB)</span><br><span class="line">- 地址位置 (tagA)</span><br></pre></td></tr></table></figure><p>假如我的 tag 有两个分别是 用户 id 和时间， 我们就可以方便地统计每个用户的活动数据趋势。</p><h2 id="让数据说话"><a href="#让数据说话" class="headerlink" title="让数据说话"></a>让数据说话</h2><p>有了数据，我们如何通过数据来增强表现力呢？</p><p>一种非常有效的措施是可视化。现在的可视化引擎和工具有很多，功能也非常复杂。</p><p>但是我发现我个人需要的就那么几个，可能大家每个人需要的种类不大一样，<br>但是我相信作为个人，你需要的种类不会很多。因此自己根据自身的实际情况，<br>挑选适合自己的几种类型，做到迎刃有余就足够了。</p><p>对于我而言，我常用的是饼图，用来表示分布关系。 曲线图用来表示趋势。<br>用柱状图表示对比+趋势。用热度图表示离散的数据分布等等。</p><p>我们可以使用一些现有的成熟的产品来帮助我们将刚才我们收集到的数据转化为各种图表，<br>比如 <a href="https://www.canva.com/" target="_blank" rel="noopener">画布</a></p><blockquote><p>这个网站能做的图表种类比较少。</p></blockquote><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54h7bnqj311u0fotbt.jpg" alt></p><p>当然作为一名前端我们也可以自己写代码去更灵活地展示我们的数据，比如<a href="https://d3js.org/" target="_blank" rel="noopener">D3</a><br>或者百度的<a href="https://echarts.baidu.com/" target="_blank" rel="noopener">echarts</a></p><blockquote><p>任何类型的图表都可以做，只有你想不到，没有它做不到。</p></blockquote><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54j1tkej30zf0fx1kx.jpg" alt></p><p>相对折中一点，我们可以选择支持代码定制的一些产品，在特殊情况我们可以自定义。</p><h2 id="累死累活干不过做-PPT-的"><a href="#累死累活干不过做-PPT-的" class="headerlink" title="累死累活干不过做 PPT 的"></a>累死累活干不过做 PPT 的</h2><p>有了这些数据图表，是时候写一份 PPT 来秀一下了。</p><p>一种方式是使用你电脑的办公软件或者一些在线的幻灯片制作工具做，<br>比如<a href="https://slides.com/" target="_blank" rel="noopener">slides</a> 。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54k60j2j313b0iqwip.jpg" alt></p><p>另一种方式通过写代码的方式实现，作为程序员我推荐使用第二种。<br>这里推荐一款<code>nodejs cli 工具</code> <a href="https://github.com/ksky521/nodeppt" target="_blank" rel="noopener">nodeppt</a>,<br>还有另外一个<code>JS 框架</code> <a href="https://github.com/hakimel/reveal.js" target="_blank" rel="noopener">reveal.js</a> 。<br>上面提到的 slides 背后的原理就是它。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54lsifcj312l0ih7wh.jpg" alt></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这篇文章我主要讲述了如何量化我们的工作，并将我们的工作成果展示出来。<br>从而摆脱“干了很多事情，却说不出来，甚至功劳被人无情拿走的尴尬局面”。</p><p>首先我们将了如何收集数据，收集数据的一些技巧，这里通过几个实际工作的例子，分别是“打包优化”，“性能优化”，“人效提升”，<br>“用户留存” ，来帮助大家理解这个<br>过程，掌握这个技巧。</p><p>有了数据之后，我们需要通过一些手段将其数据展示出来，给人直观的感受，最好有视觉冲击感。<br>这里我推荐了几个工具和平台，大家可以根据自己的情况选择。</p><p>最后结合我们实际情况，PPT 是一个很好的展示自己的东西，不管是晋升还是宣传都是很好的方式，<br>这里我也推荐了几个产品，帮助大家更快更好地将图表展示出来。</p><p>让数据开口说话，你就可以少说一点，并且摆数据就是摆事实，<br>数据带来的说服力要比你说的话强很多。</p><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>最近我重新整理了下自己的公众号，并且我还给他换了一个名字《脑洞前端》，它是一个帮助你打开大前端新世界大门的钥匙 🔑，在这里你可以听到新奇的观点，看到一些技术尝新，还会收到系统性总结和思考。</p><p>我会尽量通过图的形式来阐述一些概念和逻辑，帮助大家快速理解，图解前端是我的目标。</p><p>之后我的文章同步到微信公众号 脑洞前端 ，您可以关注获取最新的文章，或者和我进行交流。</p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds4sh51a6j30km0komyv.jpg" width="50%" height="50%" alt="gongzhonghao" align="center"><h2 id="交流群"><a href="#交流群" class="headerlink" title="交流群"></a>交流群</h2><p>现在还是初级阶段，需要大家的意见和反馈，为了减少沟通成本，我组建了交流群。大家可以扫码进入</p><h3 id="QQ-群"><a href="#QQ-群" class="headerlink" title="QQ 群"></a>QQ 群</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54ma44fj306a082q36.jpg" alt="qq-group-chat"></p><h3 id="微信群"><a href="#微信群" class="headerlink" title="微信群"></a>微信群</h3><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5735kizj30e80e80tb.jpg" width="50%" height="50%" alt="JavaScript" align="center"><p>(由于微信的限制，100 个人以上只能邀请加入， 你可以添加我的机器人回复“大前端”拉你进群)</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技能 </tag>
+            
+            <tag> PPT </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>一文搞懂《链表反转》</title>
       <link href="/blog/2019/12/11/reverseList/"/>
       <url>/blog/2019/12/11/reverseList/</url>
@@ -2792,9 +2840,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> LeetCode </category>
           
@@ -2816,27 +2864,6 @@
             <tag> 字节跳动 </tag>
             
             <tag> 链表 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>累死累活干不过一个写PPT的</title>
-      <link href="/blog/2019/12/11/ppt-data/"/>
-      <url>/blog/2019/12/11/ppt-data/</url>
-      
-        <content type="html"><![CDATA[<p>无论是身处什么行业什么领域，数据分析越来越成为一向必不可少的技能，<br>而运用数据思维进行决策更能产生形成高质量的决策结果。</p><p>随着互联网的不断发展和物联网设备的不断普及，我们日常生活中的各种数据被存储下来，让我们可以通过定量分析数据，利用数据实现更好的决策制定。</p><a id="more"></a><p>现在越来越多的公司开始注重这一块，一方面自建数据体系，一方面去买一些数据。而对于我们个人似乎还没有意识到或者开始挖掘数据对我们的价值。</p><p>笔者最近的工作大都是做一些基础设施搭建和流程优化相关的工作。<br>这部分工作对很多人来说都是“隐形”的，对上层使用者来说很难有很大的感知。<br>对于领导来说，如果你只是闷头去做事情，他们也是很难知道你干的怎么样，如果这之间再加上<br>你没有什么反馈，就会给同事和领导一种“不靠谱”的感觉。</p><p>因此给予反馈和直观展示自己劳动成果的能力就显得非常重要。<br>然而如果你能很好展示自己的劳动成果，那么只需要将这个给老板看就是一种很好很直观的反馈。</p><p>这篇文章，我们来谈一下，如何量化我们的工作，如何将我们的工作成果展示出来。<br>如何让同事，让领导体会到我们工作的成果。我会通过几个例子来帮助大家快速理解，以及掌握这门“技术”<br>。</p><p>《让数据开口说话》是我给这篇文章的标题，让数据开口说话，你就可以少说一点，并且摆数据就是摆事实，<br>数据带来的说服力要比你说的话强很多。</p><h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>我是一个对技术充满兴趣的程序员, 擅长前端工程化，前端性能优化，前端标准化等。</p><p>做过.net， 搞过 Java，现在是一名前端工程师。</p><p>除了我的本职工作外，我会在开源社区进行一些输出和分享，GitHub 共计获得 1.5W star。比较受欢迎的项目有<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">leetcode 题解</a> , <a href="https://github.com/azl397985856/fe-interview" target="_blank" rel="noopener">宇宙最强的前端面试指南</a> 和<br><a href="https://github.com/azl397985856/automate-everything" target="_blank" rel="noopener">我的第一本小书</a></p><h2 id="收集数据"><a href="#收集数据" class="headerlink" title="收集数据"></a>收集数据</h2><p>如果让数据开头说话，那么首先第一步你要有数据。</p><p>因此我们的第一步就是收集数据，那么在这之前你需要知道你需要什么数据。<br>这部分的内容随着每个人任务不同肯定是不一样的。因此有着很大的灵活性，</p><p>有一个指导思想就是对关键指标分解。<br>比如我现在要做打包时间进行优化，那么打包时间由哪些时间决定。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">打包时间 =  阶段1 时间 + 阶段2 时间 + 阶段3 时间</span><br></pre></td></tr></table></figure><p>我们减少打包时间肯定要减少其中一个或多个。</p><p>有时候我们无法找到这种简单的分解，那就教大家另外一个技巧：运用对比。</p><p>一方面可以基于时间进行对比，比如环比增长，同比增长等数据都是这么来的。</p><p>另一方面我们可以基于用户属性进行对比，比如用户年龄，性别，偏好，操作系统类型，<br>地域属性等。</p><p>下面我举几个例子。</p><h3 id="打包优化"><a href="#打包优化" class="headerlink" title="打包优化"></a>打包优化</h3><p>假如你被分配了一个任务。让你对项目的打包过程进行优化。</p><ul><li><p>你需要对打包时间进行优化，减少打包的时间</p></li><li><p>你需要对打包的最终产物进行优化，减少打出的包的包体大小。</p></li><li><p>将打包变得尽可能的简单，也就说尽量减少人为的操作过程。</p></li></ul><p>你接到了这样一个任务，你会如何去做？</p><p>这里我们不考虑具体的具体思路和细节。 假设你的架构思路，方案规划，各种 fallback 已经想好了。<br>我们如何通过上面提到的让数据说话的角度来收集数据呢？ 换句话说，我们需要收集哪些数据？</p><h4 id="打包时间"><a href="#打包时间" class="headerlink" title="打包时间"></a>打包时间</h4><p>对于打包时间的数据，最简单的我们计算一下总体的打包时间。</p><p>最后我们只需要对比优化前后的总体打包时间差异即可。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds546t088j30ec05dq3e.jpg" alt></p><p>这对于老板来说可能已经够了，但是这缺乏一些精确性，我们无法知道通过优化了哪个环节进行<br>减少了打包时间。 因此一种简单的改进是将打包划分为多个阶段，每个阶段分别进行统计计时 ⌛️ 。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds547ajtij30gs07q74w.jpg" alt></p><h4 id="包的大小"><a href="#包的大小" class="headerlink" title="包的大小"></a>包的大小</h4><p>包的大小的数据其实和上面讲的打包时间思路类似。</p><p>我们当然可以只统计总体包大小。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds548de0gj30cy05fmxc.jpg" alt></p><p>但是为了获得更加灵活的定制和更加精确的范围我们可以对包进行一定的划分。<br>这个划分可以是业务纬度，也可以是纯技术纬度。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54a42mjj30f005z3zb.jpg" alt></p><h4 id="打包命令"><a href="#打包命令" class="headerlink" title="打包命令"></a>打包命令</h4><p>这部分比较简单，我们只需要简单地统计手动操作的次数即可。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54azmgwj30f005i3yu.jpg" alt></p><p>通过收集以上的数据，我们就可以用数据来表示我们的成果，让数据说话，关于如何<br>使用这些数据，我们稍后讨论。</p><h3 id="页面加载性能优化"><a href="#页面加载性能优化" class="headerlink" title="页面加载性能优化"></a>页面加载性能优化</h3><p>假如你被分配了一个任务。让你对项目的页面加载速度进行优化。<br>你会怎么做？</p><p>这个任务有点太宽泛了，更多的时候会有一些更精确的指标，<br>比如将网络状态为<code>fast 3G</code>的<code>中端机型</code>的白屏时间降低到<code>3s以内</code>。</p><h4 id="timing"><a href="#timing" class="headerlink" title="timing"></a>timing</h4><p>性能优化的第一步就是测量，没有测量就没有优化。我们不能为了优化而优化， 而是看到了某些点需要优化才去优化的。 而发现这个点一个重要的方式就是要靠测量。</p><p>说到测量，普遍接受的方式是，在浏览器中进行打点，将浏览器打开网页的过程看作是一个旅行。<br>那么我们每到一个地方就拍张带有时间的照片（事件），最后我们对这些照片按照时间进行排列， 然后分析哪部分是我们的瓶颈点等。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54bnum5j30i70avdhp.jpg" alt="performance-api"></p><p>有了这些 timing 我们可以很方便的计算各项性能指标。我们还可以自定义一些我们关心的指标，比如请求时间（成功和失败分开统计），较长 js 操作时间，或者比较重要的功能等。</p><p>总之收集到这些数据之后，我们只需要根据我们的需求去定制一些指标即可。</p><p>这样我们就很容易展示出这样的画面：</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54dcbs2j30eh074gm6.jpg" alt="render-perf"></p><h3 id="人效提升"><a href="#人效提升" class="headerlink" title="人效提升"></a>人效提升</h3><p>假如你是一个项目的管理者，上级分配给你一个任务，要在未来几个季度去做“研发效率提升”，<br>也就是提高“交付速度”。 你会怎么做这件事？</p><h4 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h4><p>这个事情是比较主观的了，因此我们切实需要一些可以量化的东西来辅助我们。</p><p>我们考虑将需求进行拆分，变成一个个任务。一个需求可能有多个任务。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54e97btj309z0960ta.jpg" alt></p><p>我们考虑对每一个任务进行计时，而不是需求，因为需求有太大的差异。<br>我们可以针对任务进行分类，然后我们的目标就可以变成“减少同类任务的交付时长”。</p><p>但是这种粒度似乎还是有点大。我们可以采取标签的形式，对任务进行交叉分类。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54fb9nfj30ay09874x.jpg" alt></p><p>任务纬度可能还是有点太大，我们可以采取更小的粒度划分，比如模块和组件。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54gb6a0j30ly0akabf.jpg" alt></p><p>这样我们的统计纬度就丰富起来了，我们不仅可以总体进行统计分析，我们还可以根据 tag 和 tag 的组合进行汇总。</p><p>比如一个典型的统计结果大概是：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- task1 (tagA)</span><br><span class="line"> - module1 (tagA)</span><br><span class="line">   - component1 (tagB)</span><br><span class="line">   - component2 (tagA)</span><br><span class="line"> - module2 (tagB)</span><br><span class="line"> - module3 (tagB)</span><br><span class="line">- task2 (tagA)</span><br><span class="line">- task3 (tagC)</span><br></pre></td></tr></table></figure><p>比如这里有一种 tag 叫“是否复用了以前的代码”，<br>那么我们就很容易统计出组件复用率，也就很容易很直观地知道前后的差距了。</p><h3 id="用户拉新和留存"><a href="#用户拉新和留存" class="headerlink" title="用户拉新和留存"></a>用户拉新和留存</h3><p>再比如我们需要做“用户拉新和留存”，我们应该怎么做？</p><p>这个留做思考题，大家可以思考一下。</p><p>我这里抛砖引玉一下，比如我们的统计纬度可以是：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- 用户访问时长 (tagA)</span><br><span class="line">- 跳出率 (tagB)</span><br><span class="line">- 新用户 (tagA)</span><br><span class="line">- 流失的老用户 (tagB)</span><br><span class="line">- 地址位置 (tagA)</span><br></pre></td></tr></table></figure><p>假如我的 tag 有两个分别是 用户 id 和时间， 我们就可以方便地统计每个用户的活动数据趋势。</p><h2 id="让数据说话"><a href="#让数据说话" class="headerlink" title="让数据说话"></a>让数据说话</h2><p>有了数据，我们如何通过数据来增强表现力呢？</p><p>一种非常有效的措施是可视化。现在的可视化引擎和工具有很多，功能也非常复杂。</p><p>但是我发现我个人需要的就那么几个，可能大家每个人需要的种类不大一样，<br>但是我相信作为个人，你需要的种类不会很多。因此自己根据自身的实际情况，<br>挑选适合自己的几种类型，做到迎刃有余就足够了。</p><p>对于我而言，我常用的是饼图，用来表示分布关系。 曲线图用来表示趋势。<br>用柱状图表示对比+趋势。用热度图表示离散的数据分布等等。</p><p>我们可以使用一些现有的成熟的产品来帮助我们将刚才我们收集到的数据转化为各种图表，<br>比如 <a href="https://www.canva.com/" target="_blank" rel="noopener">画布</a></p><blockquote><p>这个网站能做的图表种类比较少。</p></blockquote><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54h7bnqj311u0fotbt.jpg" alt></p><p>当然作为一名前端我们也可以自己写代码去更灵活地展示我们的数据，比如<a href="https://d3js.org/" target="_blank" rel="noopener">D3</a><br>或者百度的<a href="https://echarts.baidu.com/" target="_blank" rel="noopener">echarts</a></p><blockquote><p>任何类型的图表都可以做，只有你想不到，没有它做不到。</p></blockquote><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54j1tkej30zf0fx1kx.jpg" alt></p><p>相对折中一点，我们可以选择支持代码定制的一些产品，在特殊情况我们可以自定义。</p><h2 id="累死累活干不过做-PPT-的"><a href="#累死累活干不过做-PPT-的" class="headerlink" title="累死累活干不过做 PPT 的"></a>累死累活干不过做 PPT 的</h2><p>有了这些数据图表，是时候写一份 PPT 来秀一下了。</p><p>一种方式是使用你电脑的办公软件或者一些在线的幻灯片制作工具做，<br>比如<a href="https://slides.com/" target="_blank" rel="noopener">slides</a> 。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54k60j2j313b0iqwip.jpg" alt></p><p>另一种方式通过写代码的方式实现，作为程序员我推荐使用第二种。<br>这里推荐一款<code>nodejs cli 工具</code> <a href="https://github.com/ksky521/nodeppt" target="_blank" rel="noopener">nodeppt</a>,<br>还有另外一个<code>JS 框架</code> <a href="https://github.com/hakimel/reveal.js" target="_blank" rel="noopener">reveal.js</a> 。<br>上面提到的 slides 背后的原理就是它。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54lsifcj312l0ih7wh.jpg" alt></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这篇文章我主要讲述了如何量化我们的工作，并将我们的工作成果展示出来。<br>从而摆脱“干了很多事情，却说不出来，甚至功劳被人无情拿走的尴尬局面”。</p><p>首先我们将了如何收集数据，收集数据的一些技巧，这里通过几个实际工作的例子，分别是“打包优化”，“性能优化”，“人效提升”，<br>“用户留存” ，来帮助大家理解这个<br>过程，掌握这个技巧。</p><p>有了数据之后，我们需要通过一些手段将其数据展示出来，给人直观的感受，最好有视觉冲击感。<br>这里我推荐了几个工具和平台，大家可以根据自己的情况选择。</p><p>最后结合我们实际情况，PPT 是一个很好的展示自己的东西，不管是晋升还是宣传都是很好的方式，<br>这里我也推荐了几个产品，帮助大家更快更好地将图表展示出来。</p><p>让数据开口说话，你就可以少说一点，并且摆数据就是摆事实，<br>数据带来的说服力要比你说的话强很多。</p><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>最近我重新整理了下自己的公众号，并且我还给他换了一个名字《脑洞前端》，它是一个帮助你打开大前端新世界大门的钥匙 🔑，在这里你可以听到新奇的观点，看到一些技术尝新，还会收到系统性总结和思考。</p><p>我会尽量通过图的形式来阐述一些概念和逻辑，帮助大家快速理解，图解前端是我的目标。</p><p>之后我的文章同步到微信公众号 脑洞前端 ，您可以关注获取最新的文章，或者和我进行交流。</p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds4sh51a6j30km0komyv.jpg" width="50%" height="50%" alt="gongzhonghao" align="center"><h2 id="交流群"><a href="#交流群" class="headerlink" title="交流群"></a>交流群</h2><p>现在还是初级阶段，需要大家的意见和反馈，为了减少沟通成本，我组建了交流群。大家可以扫码进入</p><h3 id="QQ-群"><a href="#QQ-群" class="headerlink" title="QQ 群"></a>QQ 群</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54ma44fj306a082q36.jpg" alt="qq-group-chat"></p><h3 id="微信群"><a href="#微信群" class="headerlink" title="微信群"></a>微信群</h3><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5735kizj30e80e80tb.jpg" width="50%" height="50%" alt="JavaScript" align="center"><p>(由于微信的限制，100 个人以上只能邀请加入， 你可以添加我的机器人回复“大前端”拉你进群)</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 技能 </tag>
-            
-            <tag> PPT </tag>
             
         </tags>
       
@@ -2877,13 +2904,13 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
           
-          <category> 字符串 </category>
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
+          
+          <category> 字符串 </category>
           
           <category> LeetCode </category>
           
@@ -2911,6 +2938,33 @@
             <tag> 字符串 </tag>
             
             <tag> 编程之美 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>纪念LeetCode项目Star突破2W</title>
+      <link href="/blog/2019/12/11/thanksGaving-2/"/>
+      <url>/blog/2019/12/11/thanksGaving-2/</url>
+      
+        <content type="html"><![CDATA[<p>假期这几天我买了《逆转裁判 123》合集，面对着这香喷喷的冷饭吃了半天。从 GBA 玩到 NDS，从 NDS 玩到 3DS, 现在 NS 虽然没有出新作有点遗憾。不过有了高清重制，也当是个回忆和收藏了 🎉🎉</p><a id="more"></a><p>目前打通了第一第二关，剩下的过一段时间再玩好啦 😁<br><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppozhetbj30u01ppdjp.jpg" alt></p><p>回到正题，就在今天，我的《leetcode 题解》项目成功突破 2w star， 并且现在 Github 搜索关键字”LeetCode”我的项目已经排名第一啦，这是继 1W star 之后的第二个巨大突破，非常感谢大家一路以来的支持和陪伴。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7q10kli5lj310m0fm74y.jpg" alt></p><p>最近在写一本关于LeetCode题解的书，有很多人表示想买，这无形之中给了我很大的压力，名字还没定，暂时给它取一个代号《攻克 LeetCode》。 </p><h2 id="新书《攻克-LeetCode》"><a href="#新书《攻克-LeetCode》" class="headerlink" title="新书《攻克 LeetCode》"></a>新书《攻克 LeetCode》</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppnnvb7yj305i04b744.jpg" alt></p><p>这里是<a href="https://lucifer.ren/blog/2019/10/03/draft/">《攻克 LeetCode》的草稿目录</a>，目前有 20 章的内容，本书要讲的内容就是 LeetCode 上反复出现的算法，经过我进一步提炼，抽取数百道题目在这里进行讲解，帮助大家理清整体思绪，从而高效率地刷题，做到事半功倍。我这里总结了 7 个常见的数据结构和 7 个常见的算法以及 5 个常见的算法思想。</p><p>7 个数据结构分别是： <code>数组，栈，队列，链表，二叉树，散列表，图</code></p><p>7 个算法分别是：<code>二分法，递归，回溯法，排序，双指针，滑动窗口，并查集</code></p><p>5 个算法思想分别是：<code>分治，贪心，深度优先遍历，广度优先遍历，动态规划</code></p><p>只有掌握了这些基础的数据结构和算法，更为复杂的算法才能得心应手，事半功倍。而 LeetCode 的题目虽然不断出新，但是最终用到的算法永远是那几个，很多题目都是穿着新的衣服的老面孔了。大家学好这些基础套路之后会更加明白这个道理。</p><p>后期可能会有大幅度修改，希望大家提出宝贵意见，以特别的方式参与到这本书的编写中来。</p><h2 id="2W-star截图"><a href="#2W-star截图" class="headerlink" title="2W star截图"></a>2W star截图</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7r4ef4fwej30rm0ld75g.jpg" alt></p><h2 id="Star-曲线"><a href="#Star-曲线" class="headerlink" title="Star 曲线"></a>Star 曲线</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pom0rbu6j30p00f1glo.jpg" alt></p><p>(star 增长曲线图)</p><h2 id="知乎引流"><a href="#知乎引流" class="headerlink" title="知乎引流"></a>知乎引流</h2><p><a href="https://github.com/azl397985856/leetcode/blob/master/thanksGiving.md" target="_blank" rel="noopener">上次</a>主要讲了项目从开始建立到拥有 1W star 的经历，本次书接前文，继续讲一下后面的故事。</p><p>上回提到知乎上的“量子位”在帮我做宣传，引入了不小的流量。 我就想为什么不自己去拉流量呢？我自己以作者的角度去回答一些问题岂不是更好，更受欢迎么？于是我就开始在知乎上回答问题，很开心其中一个还获得了专业认可。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7poxozmrmj30jw0gl0tp.jpg" alt></p><p>事实上并没有我想的那么好，我回答了两个 LeetCode 话题的内容，虽然也有几百的点赞和感谢，但是这离我的目标还差很远。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pox4k95zj309q0b1mxa.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7poz07qsrj30jk0h4q3y.jpg" alt></p><p>但是转念一想，我知乎刚起步，也没什么粉丝，并且写答案的时间也就一个月左右，这样想就好多了。 我相信将来会有更多的人看到我的答案，然后加入进来。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pozi8bfrj308907w747.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppnep24xj30to0pwaar.jpg" alt></p><h2 id="建立自己的博客"><a href="#建立自己的博客" class="headerlink" title="建立自己的博客"></a>建立自己的博客</h2><p>现在我发表的文章都是在各大平台。这有一个很大的问题就是各个平台很难满足你的需求，比如按照标签，按照日期进行归档。 甚至很多平台的阅读体验很差，比如没有导航功能，广告太多等。因此我觉得自己搭建一个博客还是很有必要的，这个渠道也为我吸引了少部分的流量，目前添加的主要内容大概有：</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp2i0818j308m07awej.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp2vru72j30800hct8p.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp34fjowj307z08za9y.jpg" alt></p><p>总体上来说效果还是不错的，之后的文章会在博客首发，各个平台也会陆续更新，感兴趣的可以来个 RSS 订阅，订阅方式已经在<a href="https://lucifer.ren/blog/2019/09/30/daily-featured-2019-09/">《每日一荐 - 九月刊》</a>里面介绍了。</p><h2 id="GithubDaily-的-推荐"><a href="#GithubDaily-的-推荐" class="headerlink" title="GithubDaily 的 推荐"></a>GithubDaily 的 推荐</h2><p>GithubDaily 转载了量子位的文章也为我的仓库涨了至少几百的 star，非常感谢。GithubDaily 是一个拥有 3W 多读者的公众号，大家有兴趣的可以关注一波。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp8r6isnj30kl0eq3yo.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp9drlz0j30j90arq31.jpg" alt></p><h2 id="其他自媒体的推荐"><a href="#其他自媒体的推荐" class="headerlink" title="其他自媒体的推荐"></a>其他自媒体的推荐</h2><p>一些其他自媒体也会帮忙推广我的项目</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppmlm7gyj30u00y10v5.jpg" alt></p><h2 id="口耳相传"><a href="#口耳相传" class="headerlink" title="口耳相传"></a>口耳相传</h2><p>我后来才知道竟然有海外华侨和一些华人社区都能看到我了。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppm3upr0j30ky0mmmxv.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppk0hlauj30ss1bmq5d.jpg" alt><br>（一亩三分地是一个集中讨论美国加拿大留学的论坛）</p><p>另外通过朋友之间口耳相传的介绍也变得越来越多。</p><p>非常感谢大家一直以来的陪伴和支持，我们一起努力，加油 💪。</p><p>如果你还没有加入我们，看了这篇文章想加入，那么可以访问我的项目主页 <a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">leetcode 题解</a><br>我在这里等着你。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日记 </category>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日记 </tag>
             
         </tags>
       
@@ -2962,25 +3016,27 @@
     
     
     <entry>
-      <title>纪念LeetCode项目Star突破2W</title>
-      <link href="/blog/2019/12/11/thanksGaving-2/"/>
-      <url>/blog/2019/12/11/thanksGaving-2/</url>
+      <title>零基础的前端开发初学者应如何系统地学习？</title>
+      <link href="/blog/2019/12/11/how-am-I-learn-fe/"/>
+      <url>/blog/2019/12/11/how-am-I-learn-fe/</url>
       
-        <content type="html"><![CDATA[<p>假期这几天我买了《逆转裁判 123》合集，面对着这香喷喷的冷饭吃了半天。从 GBA 玩到 NDS，从 NDS 玩到 3DS, 现在 NS 虽然没有出新作有点遗憾。不过有了高清重制，也当是个回忆和收藏了 🎉🎉</p><a id="more"></a><p>目前打通了第一第二关，剩下的过一段时间再玩好啦 😁<br><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppozhetbj30u01ppdjp.jpg" alt></p><p>回到正题，就在今天，我的《leetcode 题解》项目成功突破 2w star， 并且现在 Github 搜索关键字”LeetCode”我的项目已经排名第一啦，这是继 1W star 之后的第二个巨大突破，非常感谢大家一路以来的支持和陪伴。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7q10kli5lj310m0fm74y.jpg" alt></p><p>最近在写一本关于LeetCode题解的书，有很多人表示想买，这无形之中给了我很大的压力，名字还没定，暂时给它取一个代号《攻克 LeetCode》。 </p><h2 id="新书《攻克-LeetCode》"><a href="#新书《攻克-LeetCode》" class="headerlink" title="新书《攻克 LeetCode》"></a>新书《攻克 LeetCode》</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppnnvb7yj305i04b744.jpg" alt></p><p>这里是<a href="https://lucifer.ren/blog/2019/10/03/draft/">《攻克 LeetCode》的草稿目录</a>，目前有 20 章的内容，本书要讲的内容就是 LeetCode 上反复出现的算法，经过我进一步提炼，抽取数百道题目在这里进行讲解，帮助大家理清整体思绪，从而高效率地刷题，做到事半功倍。我这里总结了 7 个常见的数据结构和 7 个常见的算法以及 5 个常见的算法思想。</p><p>7 个数据结构分别是： <code>数组，栈，队列，链表，二叉树，散列表，图</code></p><p>7 个算法分别是：<code>二分法，递归，回溯法，排序，双指针，滑动窗口，并查集</code></p><p>5 个算法思想分别是：<code>分治，贪心，深度优先遍历，广度优先遍历，动态规划</code></p><p>只有掌握了这些基础的数据结构和算法，更为复杂的算法才能得心应手，事半功倍。而 LeetCode 的题目虽然不断出新，但是最终用到的算法永远是那几个，很多题目都是穿着新的衣服的老面孔了。大家学好这些基础套路之后会更加明白这个道理。</p><p>后期可能会有大幅度修改，希望大家提出宝贵意见，以特别的方式参与到这本书的编写中来。</p><h2 id="2W-star截图"><a href="#2W-star截图" class="headerlink" title="2W star截图"></a>2W star截图</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7r4ef4fwej30rm0ld75g.jpg" alt></p><h2 id="Star-曲线"><a href="#Star-曲线" class="headerlink" title="Star 曲线"></a>Star 曲线</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pom0rbu6j30p00f1glo.jpg" alt></p><p>(star 增长曲线图)</p><h2 id="知乎引流"><a href="#知乎引流" class="headerlink" title="知乎引流"></a>知乎引流</h2><p><a href="https://github.com/azl397985856/leetcode/blob/master/thanksGiving.md" target="_blank" rel="noopener">上次</a>主要讲了项目从开始建立到拥有 1W star 的经历，本次书接前文，继续讲一下后面的故事。</p><p>上回提到知乎上的“量子位”在帮我做宣传，引入了不小的流量。 我就想为什么不自己去拉流量呢？我自己以作者的角度去回答一些问题岂不是更好，更受欢迎么？于是我就开始在知乎上回答问题，很开心其中一个还获得了专业认可。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7poxozmrmj30jw0gl0tp.jpg" alt></p><p>事实上并没有我想的那么好，我回答了两个 LeetCode 话题的内容，虽然也有几百的点赞和感谢，但是这离我的目标还差很远。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pox4k95zj309q0b1mxa.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7poz07qsrj30jk0h4q3y.jpg" alt></p><p>但是转念一想，我知乎刚起步，也没什么粉丝，并且写答案的时间也就一个月左右，这样想就好多了。 我相信将来会有更多的人看到我的答案，然后加入进来。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pozi8bfrj308907w747.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppnep24xj30to0pwaar.jpg" alt></p><h2 id="建立自己的博客"><a href="#建立自己的博客" class="headerlink" title="建立自己的博客"></a>建立自己的博客</h2><p>现在我发表的文章都是在各大平台。这有一个很大的问题就是各个平台很难满足你的需求，比如按照标签，按照日期进行归档。 甚至很多平台的阅读体验很差，比如没有导航功能，广告太多等。因此我觉得自己搭建一个博客还是很有必要的，这个渠道也为我吸引了少部分的流量，目前添加的主要内容大概有：</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp2i0818j308m07awej.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp2vru72j30800hct8p.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp34fjowj307z08za9y.jpg" alt></p><p>总体上来说效果还是不错的，之后的文章会在博客首发，各个平台也会陆续更新，感兴趣的可以来个 RSS 订阅，订阅方式已经在<a href="https://lucifer.ren/blog/2019/09/30/daily-featured-2019-09/">《每日一荐 - 九月刊》</a>里面介绍了。</p><h2 id="GithubDaily-的-推荐"><a href="#GithubDaily-的-推荐" class="headerlink" title="GithubDaily 的 推荐"></a>GithubDaily 的 推荐</h2><p>GithubDaily 转载了量子位的文章也为我的仓库涨了至少几百的 star，非常感谢。GithubDaily 是一个拥有 3W 多读者的公众号，大家有兴趣的可以关注一波。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp8r6isnj30kl0eq3yo.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7pp9drlz0j30j90arq31.jpg" alt></p><h2 id="其他自媒体的推荐"><a href="#其他自媒体的推荐" class="headerlink" title="其他自媒体的推荐"></a>其他自媒体的推荐</h2><p>一些其他自媒体也会帮忙推广我的项目</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppmlm7gyj30u00y10v5.jpg" alt></p><h2 id="口耳相传"><a href="#口耳相传" class="headerlink" title="口耳相传"></a>口耳相传</h2><p>我后来才知道竟然有海外华侨和一些华人社区都能看到我了。</p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppm3upr0j30ky0mmmxv.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppk0hlauj30ss1bmq5d.jpg" alt><br>（一亩三分地是一个集中讨论美国加拿大留学的论坛）</p><p>另外通过朋友之间口耳相传的介绍也变得越来越多。</p><p>非常感谢大家一直以来的陪伴和支持，我们一起努力，加油 💪。</p><p>如果你还没有加入我们，看了这篇文章想加入，那么可以访问我的项目主页 <a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">leetcode 题解</a><br>我在这里等着你。</p>]]></content>
+        <content type="html"><![CDATA[<p>回想四年前我刚入行的时候，那时候很多人对于前端的看法是“切图，画页面，有个编辑器+浏览器就能干，门槛低”，现在已经完全不是那样了，可以说现在的前端这个职业的门槛虽然还是没怎么变，但是整个行业的门槛提升了，换句话说就是整个行业对于前端这个职位要求更高了，对于前端小白的需求量降低，对于高级前端的需求量还在上升，甚至是供小于求的局面。从市场经济学角度上讲你只有进入到高级级别，才能真正吃到行业的红利。  因此想要入行的朋友要先想清楚，不要头脑发热，如果你想清楚了，那么请继续往下看。<br>说实话，现在的前端大环境对初学者来说实在有点不友好，学习资料鱼龙混杂，良莠不齐，有质量很高的学习资料，也有谬论，前后不一，观点错误，或者讲述不清晰的。 更可怕的是质量低下的文章有时候更受欢迎，因此需要大家有很好的甄别能力，但这对于初学者来说实在有些困难，我在这里就来谈一下 <code>初学者如何少走弯路，并且系统性地学习前端</code>。</p><a id="more"></a><h2 id="兴趣是最好的老师"><a href="#兴趣是最好的老师" class="headerlink" title="兴趣是最好的老师"></a>兴趣是最好的老师</h2><p>兴趣不管对于学习什么来说都是最好的老师。当然前端也不例外，如果你对这一门感兴趣，绝对会对你有很大的帮助。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53pi54uj307n0533zi.jpg" alt></p><p>关于如何培养兴趣，我提一点，你可以尝试去做一些小的“发明创造”，从而激发自己内心的“成就感”。这些小发明可以是一些小工具，小页面。你可以从开源社区，比如Github或者一些论坛，甚至自己的生活中收集一些创作素材。对于我来说，我就做过一个“前端开发工作流”的软件，“siri”， “小门神”等，从而带来成就感，提升自己的兴趣。</p><h2 id="权威，权威，还是权威"><a href="#权威，权威，还是权威" class="headerlink" title="权威，权威，还是权威"></a>权威，权威，还是权威</h2><p>其实技术越往上走，越会关注标准，关注协议等更上层和抽象的东西。而制定这些协议和标准的人往往都是世界上的“殿堂级”程序员，因此关注这些东西对于他们来说就是权威，对他们来说就非常很重要，但是这对于初学者来说似乎还比较遥远。那么初学者如何对接“权威”呢？<br>刚才提到了网上的学习资料参差不齐，这其实对于入门学习来说是很不利的，就像童年时期对于整个人生的影响一样，入门阶段对于整个前端开发生涯的影响也是巨大的。关于如何初学者如何对接权威，我这里总结了以下三点：<br>看一些权威的书籍，包括前端基础，软件工程以及算法等。这里不太建议看太老的，毕竟技术的发展是很快的，以前非常经典的书并一定适合看了，尤其是初学者而言。这里前端方面我重点推荐两本书，一本是《你不知道的JS》，一本是《JavaScript语言精粹》。除了前端，你还可以看一些软工类的书，我个人比较喜欢的有《程序员修炼之道》等，算法类的有《图解算法》，《编程之美》等。其他的我就不一一赘述了，想要更多书单的可以私信我。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53qfn9kj305g075q4a.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53rhdv2j307405hdhv.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53sd7z6j305j071abq.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53ssxrrj3069069q3o.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53taxn9j3069069gn7.jpg" alt></p><ul><li>查权威资料。 这里我推荐两个，一个是<a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener">MDN</a>的文章，真的是又全面又专业，绝对是前端开发必备神器，哪里不会点哪里。 另外推荐一个<a href="https://developers.google.com/web/fundamentals/" target="_blank" rel="noopener">Google开发者</a> ， 里面干货很多，绝对权威。<br>这里顺便再安利一个软件，用来查文档什么的，简直如虎添翼，这个软件的名字是Dash，大家可以把自己常用的框架，类库等导进去，想用的时候直接查询即可，比去网上搜更快更高效，这个软件对于定制的支持度也是蛮高的，谁用谁知道。</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53ud6lbj311e0hbac8.jpg" alt><br>（大家可以看到我下载了很多documentation）</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53vpntmj311f0lpgs5.jpg" alt><br>（你可以直达某一个documentation搜索，也可以全局搜索，甚至可以搜goole和stackoverflow，是不是很贴心？）</p><ul><li>关注一些圈内权威人士。 我一般会关注几个圈内比较知名的人的知乎，微博和twitter。这是我关注的<a href="https://github.com/azl397985856?tab=following" target="_blank" rel="noopener">Github的权威人士列表</a>。其实这些都是公开的，你也可以点开我的知乎，微博资料看我或者大佬们关注了谁。</li></ul><h2 id="做一些完整的简单项目"><a href="#做一些完整的简单项目" class="headerlink" title="做一些完整的简单项目"></a>做一些完整的简单项目</h2><p>大家可以尝试做一些简单的项目，不要嫌简单。 在做的过程往往能发现很多问题，如果有问题那这正好是自己提高的机会。 如果你觉得很简单，也没有关系，你可以思考一下，我有没有可能做的更好？我能不能把这些东西封装起来，建立更高一层的抽象（A New Level of Abstraction），做到DRY(Don’t Repeat Yourself)。<br>接下来就是关于怎么找项目。 你可以找个正式工作或者实习来做，也可以自己找一些小项目来练手， 比较常见的练手项目有模仿某个网站，APP或者搭建自己的个人主页，博客系统等。做好了不仅可以当敲门砖，说不定会收益很长时间呢。实在没有什么项目练手，这里再推荐一个网站，你可以再上面打怪升级。<a href="https://user-gold-cdn.xitu.io/2019/9/15/16d34514876b8c4d" target="_blank" rel="noopener">freecodecamp</a><br>现在你已经掌握了前端开发的基本概念和技能，那么如何做到更进一步，持续成长，做到高级呢？我相信这是很多人的疑问，下面我们就来看一下。</p><h2 id="学习路线"><a href="#学习路线" class="headerlink" title="学习路线"></a>学习路线</h2><p>你可能已经听过过大前端这个词，我这里不是劝退你哦。以下内容很高能，不过很多知识点不知道没关系，因为就算是工作了很多年了老手也很难了解其中的大半知识点。<br>我个人为了让自己巩固知识，同时也为了帮助他人，总结了大前端下的30多个主题内容，内容覆盖大前端的方方面面，虽然是从面试角度出发，但是你用来提升自己，查缺补漏也是很有用的。</p><p>多图预警：</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53wloptj304m0gsq3j.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53wyi87j304u0g0q38.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53xg7qnj308807et8u.jpg" alt></p><p>拿《编程题》主题来说，我总结了各大公司常考的几十道题目。<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53ydbowj30d70hs765.jpg" alt></p><p>对于其他主题也是一样，我都会尽可能地深度讲解和剖析，并且从多方面理解，我相信这是在市面上很少见的。</p><p>而且我还画了很多图，来帮助大家理解一些抽象的知识点。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53zeayjj30mx0i4jys.jpg" alt></p><p>项目地址： <a href="https://lucifer.ren/fe-interview/#/">https://lucifer.ren/fe-interview/#/</a>   欢迎围观。</p><h2 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h2><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds540ejvxj309o041weh.jpg" alt></p><p>实话实说，很多优秀的思想，规范，写法我都是从优秀的开源项目中学来的。 我会不定期阅读一些优秀的开源项目源码，也会参与到开源的工作中去，这给我自己带来了很大的提升。 不仅技术得到了提升，团队协作，规范化等方面也有了质的提高，另外还认识了一些优秀的人。四年来，我阅读了很多优秀的源码，也尝试自己去造一些轮子，并开源出去，回馈社区。</p><h2 id="输入-输出"><a href="#输入-输出" class="headerlink" title="输入 + 输出"></a>输入 + 输出</h2><p>前面重点讲述的是输入。 其实学习的过程不仅仅是输入，输出也是很好的学习方法。 输出的形式有很多，比如写博客，讲给别人，开源出去让别人用等。 这其实是很好的学习机会，这种学习方法可以让你的成长速度呈指数型增长，因此千万不要小看它。 我会通过以练代学的方式来学习，比如我学习React，我会迅速看文档，然后写demo，最后我会自己<a href="https://github.com/azl397985856/mono-react" target="_blank" rel="noopener">《从零实现React》</a>来内化它。</p><p>我还会定期做总结，写文章，写开源项目，做分享等，目的一方面是影响他人，另一方面是成长自己。</p><h2 id="持续学习"><a href="#持续学习" class="headerlink" title="持续学习"></a>持续学习</h2><p>选择了技术这条路，就要做好持续学习，每日精进的准备，跟上时代潮流是很有必要的。</p><ul><li>日报周报。 大家可以订阅一些前端方面的日报周报，这方面其实有很多，这里只推荐一个我常看的一个<a href="https://javascriptweekly.com" target="_blank" rel="noopener">JavaScript周刊</a>。我自己也出了一款<a href="https://github.com/azl397985856/daily-featured" target="_blank" rel="noopener">《每日一荐》</a>, 每天推荐一个优秀的开源项目，优秀文章， 周一到周五我们不见不散。</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5425gxxj30r20ghwhz.jpg" alt></p><ul><li>深度参与开源项目。 关于如何参与开源项目其实可以另起一篇文章了，这里不再赘述，感性的话，我会再写一篇文章，大家记得关注我就好。</li><li>定期总结，技术输出。 我的习惯是对于学习的内容定期和不定期地进行总结。 比如最近我在总结的[《leetcode题解》]（现在有18k+ ✨了）(<a href="https://github.com/azl397985856/leetcode)，[《大前端面试宝典》](https://github.com/azl397985856/fe-interview)" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode)，[《大前端面试宝典》](https://github.com/azl397985856/fe-interview)</a></li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5432xphj30k00jxago.jpg" alt></p><blockquote><p>千万不要觉得算法对前端不重要，算法，网络，操作系统属于基础，从事相关工作的都应该认真学习，打好基础才行。</p></blockquote><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>大家可以关注我的公众号《脑洞前端》，公众号后台回复“大前端”，拉你进《大前端面试宝典 - 图解前端群》。回复“leetcode”，拉你进《leetcode题解交流群》</p><p>最后祝大家在前端的路上越走越远。</p>]]></content>
       
       
       <categories>
           
-          <category> 日记 </category>
+          <category> 前端 </category>
           
-          <category> 技术 </category>
+          <category> 学习方法 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 日记 </tag>
+            <tag> 前端 </tag>
+            
+            <tag> 学习方法 </tag>
             
         </tags>
       
@@ -2998,9 +3054,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> LeetCode </category>
           
@@ -3033,35 +3089,6 @@
         <content type="html"><![CDATA[<p>信息输入大脑后，遗忘也就随之开始了。遗忘率随时间的流逝而先快后慢，特别是在刚刚识记的短时间里，遗忘最快，这就是著名的艾宾浩斯遗忘曲线。</p>]]></content>
       
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>零基础的前端开发初学者应如何系统地学习？</title>
-      <link href="/blog/2019/12/11/how-am-I-learn-fe/"/>
-      <url>/blog/2019/12/11/how-am-I-learn-fe/</url>
-      
-        <content type="html"><![CDATA[<p>回想四年前我刚入行的时候，那时候很多人对于前端的看法是“切图，画页面，有个编辑器+浏览器就能干，门槛低”，现在已经完全不是那样了，可以说现在的前端这个职业的门槛虽然还是没怎么变，但是整个行业的门槛提升了，换句话说就是整个行业对于前端这个职位要求更高了，对于前端小白的需求量降低，对于高级前端的需求量还在上升，甚至是供小于求的局面。从市场经济学角度上讲你只有进入到高级级别，才能真正吃到行业的红利。  因此想要入行的朋友要先想清楚，不要头脑发热，如果你想清楚了，那么请继续往下看。<br>说实话，现在的前端大环境对初学者来说实在有点不友好，学习资料鱼龙混杂，良莠不齐，有质量很高的学习资料，也有谬论，前后不一，观点错误，或者讲述不清晰的。 更可怕的是质量低下的文章有时候更受欢迎，因此需要大家有很好的甄别能力，但这对于初学者来说实在有些困难，我在这里就来谈一下 <code>初学者如何少走弯路，并且系统性地学习前端</code>。</p><a id="more"></a><h2 id="兴趣是最好的老师"><a href="#兴趣是最好的老师" class="headerlink" title="兴趣是最好的老师"></a>兴趣是最好的老师</h2><p>兴趣不管对于学习什么来说都是最好的老师。当然前端也不例外，如果你对这一门感兴趣，绝对会对你有很大的帮助。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53pi54uj307n0533zi.jpg" alt></p><p>关于如何培养兴趣，我提一点，你可以尝试去做一些小的“发明创造”，从而激发自己内心的“成就感”。这些小发明可以是一些小工具，小页面。你可以从开源社区，比如Github或者一些论坛，甚至自己的生活中收集一些创作素材。对于我来说，我就做过一个“前端开发工作流”的软件，“siri”， “小门神”等，从而带来成就感，提升自己的兴趣。</p><h2 id="权威，权威，还是权威"><a href="#权威，权威，还是权威" class="headerlink" title="权威，权威，还是权威"></a>权威，权威，还是权威</h2><p>其实技术越往上走，越会关注标准，关注协议等更上层和抽象的东西。而制定这些协议和标准的人往往都是世界上的“殿堂级”程序员，因此关注这些东西对于他们来说就是权威，对他们来说就非常很重要，但是这对于初学者来说似乎还比较遥远。那么初学者如何对接“权威”呢？<br>刚才提到了网上的学习资料参差不齐，这其实对于入门学习来说是很不利的，就像童年时期对于整个人生的影响一样，入门阶段对于整个前端开发生涯的影响也是巨大的。关于如何初学者如何对接权威，我这里总结了以下三点：<br>看一些权威的书籍，包括前端基础，软件工程以及算法等。这里不太建议看太老的，毕竟技术的发展是很快的，以前非常经典的书并一定适合看了，尤其是初学者而言。这里前端方面我重点推荐两本书，一本是《你不知道的JS》，一本是《JavaScript语言精粹》。除了前端，你还可以看一些软工类的书，我个人比较喜欢的有《程序员修炼之道》等，算法类的有《图解算法》，《编程之美》等。其他的我就不一一赘述了，想要更多书单的可以私信我。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53qfn9kj305g075q4a.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53rhdv2j307405hdhv.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53sd7z6j305j071abq.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53ssxrrj3069069q3o.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53taxn9j3069069gn7.jpg" alt></p><ul><li>查权威资料。 这里我推荐两个，一个是<a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener">MDN</a>的文章，真的是又全面又专业，绝对是前端开发必备神器，哪里不会点哪里。 另外推荐一个<a href="https://developers.google.com/web/fundamentals/" target="_blank" rel="noopener">Google开发者</a> ， 里面干货很多，绝对权威。<br>这里顺便再安利一个软件，用来查文档什么的，简直如虎添翼，这个软件的名字是Dash，大家可以把自己常用的框架，类库等导进去，想用的时候直接查询即可，比去网上搜更快更高效，这个软件对于定制的支持度也是蛮高的，谁用谁知道。</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53ud6lbj311e0hbac8.jpg" alt><br>（大家可以看到我下载了很多documentation）</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53vpntmj311f0lpgs5.jpg" alt><br>（你可以直达某一个documentation搜索，也可以全局搜索，甚至可以搜goole和stackoverflow，是不是很贴心？）</p><ul><li>关注一些圈内权威人士。 我一般会关注几个圈内比较知名的人的知乎，微博和twitter。这是我关注的<a href="https://github.com/azl397985856?tab=following" target="_blank" rel="noopener">Github的权威人士列表</a>。其实这些都是公开的，你也可以点开我的知乎，微博资料看我或者大佬们关注了谁。</li></ul><h2 id="做一些完整的简单项目"><a href="#做一些完整的简单项目" class="headerlink" title="做一些完整的简单项目"></a>做一些完整的简单项目</h2><p>大家可以尝试做一些简单的项目，不要嫌简单。 在做的过程往往能发现很多问题，如果有问题那这正好是自己提高的机会。 如果你觉得很简单，也没有关系，你可以思考一下，我有没有可能做的更好？我能不能把这些东西封装起来，建立更高一层的抽象（A New Level of Abstraction），做到DRY(Don’t Repeat Yourself)。<br>接下来就是关于怎么找项目。 你可以找个正式工作或者实习来做，也可以自己找一些小项目来练手， 比较常见的练手项目有模仿某个网站，APP或者搭建自己的个人主页，博客系统等。做好了不仅可以当敲门砖，说不定会收益很长时间呢。实在没有什么项目练手，这里再推荐一个网站，你可以再上面打怪升级。<a href="https://user-gold-cdn.xitu.io/2019/9/15/16d34514876b8c4d" target="_blank" rel="noopener">freecodecamp</a><br>现在你已经掌握了前端开发的基本概念和技能，那么如何做到更进一步，持续成长，做到高级呢？我相信这是很多人的疑问，下面我们就来看一下。</p><h2 id="学习路线"><a href="#学习路线" class="headerlink" title="学习路线"></a>学习路线</h2><p>你可能已经听过过大前端这个词，我这里不是劝退你哦。以下内容很高能，不过很多知识点不知道没关系，因为就算是工作了很多年了老手也很难了解其中的大半知识点。<br>我个人为了让自己巩固知识，同时也为了帮助他人，总结了大前端下的30多个主题内容，内容覆盖大前端的方方面面，虽然是从面试角度出发，但是你用来提升自己，查缺补漏也是很有用的。</p><p>多图预警：</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53wloptj304m0gsq3j.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53wyi87j304u0g0q38.jpg" alt></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53xg7qnj308807et8u.jpg" alt></p><p>拿《编程题》主题来说，我总结了各大公司常考的几十道题目。<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53ydbowj30d70hs765.jpg" alt></p><p>对于其他主题也是一样，我都会尽可能地深度讲解和剖析，并且从多方面理解，我相信这是在市面上很少见的。</p><p>而且我还画了很多图，来帮助大家理解一些抽象的知识点。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds53zeayjj30mx0i4jys.jpg" alt></p><p>项目地址： <a href="https://lucifer.ren/fe-interview/#/">https://lucifer.ren/fe-interview/#/</a>   欢迎围观。</p><h2 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h2><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds540ejvxj309o041weh.jpg" alt></p><p>实话实说，很多优秀的思想，规范，写法我都是从优秀的开源项目中学来的。 我会不定期阅读一些优秀的开源项目源码，也会参与到开源的工作中去，这给我自己带来了很大的提升。 不仅技术得到了提升，团队协作，规范化等方面也有了质的提高，另外还认识了一些优秀的人。四年来，我阅读了很多优秀的源码，也尝试自己去造一些轮子，并开源出去，回馈社区。</p><h2 id="输入-输出"><a href="#输入-输出" class="headerlink" title="输入 + 输出"></a>输入 + 输出</h2><p>前面重点讲述的是输入。 其实学习的过程不仅仅是输入，输出也是很好的学习方法。 输出的形式有很多，比如写博客，讲给别人，开源出去让别人用等。 这其实是很好的学习机会，这种学习方法可以让你的成长速度呈指数型增长，因此千万不要小看它。 我会通过以练代学的方式来学习，比如我学习React，我会迅速看文档，然后写demo，最后我会自己<a href="https://github.com/azl397985856/mono-react" target="_blank" rel="noopener">《从零实现React》</a>来内化它。</p><p>我还会定期做总结，写文章，写开源项目，做分享等，目的一方面是影响他人，另一方面是成长自己。</p><h2 id="持续学习"><a href="#持续学习" class="headerlink" title="持续学习"></a>持续学习</h2><p>选择了技术这条路，就要做好持续学习，每日精进的准备，跟上时代潮流是很有必要的。</p><ul><li>日报周报。 大家可以订阅一些前端方面的日报周报，这方面其实有很多，这里只推荐一个我常看的一个<a href="https://javascriptweekly.com" target="_blank" rel="noopener">JavaScript周刊</a>。我自己也出了一款<a href="https://github.com/azl397985856/daily-featured" target="_blank" rel="noopener">《每日一荐》</a>, 每天推荐一个优秀的开源项目，优秀文章， 周一到周五我们不见不散。</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5425gxxj30r20ghwhz.jpg" alt></p><ul><li>深度参与开源项目。 关于如何参与开源项目其实可以另起一篇文章了，这里不再赘述，感性的话，我会再写一篇文章，大家记得关注我就好。</li><li>定期总结，技术输出。 我的习惯是对于学习的内容定期和不定期地进行总结。 比如最近我在总结的[《leetcode题解》]（现在有18k+ ✨了）(<a href="https://github.com/azl397985856/leetcode)，[《大前端面试宝典》](https://github.com/azl397985856/fe-interview)" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode)，[《大前端面试宝典》](https://github.com/azl397985856/fe-interview)</a></li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5432xphj30k00jxago.jpg" alt></p><blockquote><p>千万不要觉得算法对前端不重要，算法，网络，操作系统属于基础，从事相关工作的都应该认真学习，打好基础才行。</p></blockquote><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>大家可以关注我的公众号《脑洞前端》，公众号后台回复“大前端”，拉你进《大前端面试宝典 - 图解前端群》。回复“leetcode”，拉你进《leetcode题解交流群》</p><p>最后祝大家在前端的路上越走越远。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端 </category>
-          
-          <category> 学习方法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 前端 </tag>
-            
-            <tag> 学习方法 </tag>
-            
-        </tags>
       
     </entry>
     
@@ -3380,15 +3407,15 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
-          <category> LeetCode </category>
-          
           <category> 子序列 </category>
+          
+          <category> LeetCode </category>
           
       </categories>
       
