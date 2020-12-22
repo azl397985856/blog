@@ -367,6 +367,24 @@ class Solution:
         return max(dp)
 ```
 
+- [960. 删列造序 III](https://leetcode-cn.com/problems/delete-columns-to-make-sorted-iii/)
+
+参考代码：
+
+```py
+class Solution:
+    def minDeletionSize(self, A):
+        keep = 1
+        m, n = len(A), len(A[0])
+        dp = [1] * n
+        for j in range(n):
+            for k in range(j + 1, n):
+                if all([A[i][k] >= A[i][j] for i in range(m)]):
+                    dp[k] = max(dp[k], dp[j] + 1)
+                    keep = max(keep, dp[k])
+        return n - keep
+```
+
 > 小任务：请尝试使用贪心在 NlogN 的时间内完成算法。（参考我上面的代码就行）
 
 大家把我讲的思路搞懂，这几个题一写，还怕碰到类似的题不会么？**只有熟练掌握基础的数据结构与算法，才能对复杂问题迎刃有余。** 最长上升子序列就是一个非常经典的基础算法，把它彻底搞懂，再去面对出题人的各种换皮就不怕了。相反，如果你不去思考题目背后的逻辑，就会刷地很痛苦。题目稍微一变化你就不会了，这也是为什么很多人说**刷了很多题，但是碰到新的题目还是不会做**的原因之一。关注公众号力扣加加，努力用清晰直白的语言还原解题思路，并且有大量图解，手把手教你识别套路，高效刷题。
