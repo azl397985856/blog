@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-12-21T07:21:46.861Z</updated>
+  <updated>2020-12-28T10:46:05.176Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>几乎刷完了力扣所有的堆题，我发现了这些东西。。。</title>
+    <link href="https://lucifer.ren/blog/2020/12/26/heap/"/>
+    <id>https://lucifer.ren/blog/2020/12/26/heap/</id>
+    <published>2020-12-25T16:00:00.000Z</published>
+    <updated>2020-12-28T10:46:05.176Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/0081Kckwly1glegve2v47j319g0u041x.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;大家好，我是 lucifer。今天给大家带来的是《堆》专题。先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我会继续完善，将其他专题逐步完善起来。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;大家也可以使用 vscode blink-mind 打开源文件查看，里面有一些笔记可以点开查看。源文件可以去我的公众号《力扣加加》回复脑图获取，以后脑图也会持续更新更多内容。vscode 插件地址：&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本系列包含以下专题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/11/08/linked-list/&quot;&gt;几乎刷完了力扣所有的链表题，我发现了这些东西。。。&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/11/23/tree/&quot;&gt;几乎刷完了力扣所有的树题，我发现了这些东西。。。&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;几乎刷完了力扣所有的堆题，我发现了这些东西。。。（就是本文）&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="堆" scheme="https://lucifer.ren/blog/categories/%E5%A0%86/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="堆" scheme="https://lucifer.ren/blog/tags/%E5%A0%86/"/>
+    
+  </entry>
   
   <entry>
     <title>来和大家聊聊我是如何刷题的（第三弹）</title>
@@ -260,7 +292,7 @@
     <link href="https://lucifer.ren/blog/2020/11/03/monotone-stack/"/>
     <id>https://lucifer.ren/blog/2020/11/03/monotone-stack/</id>
     <published>2020-11-02T16:00:00.000Z</published>
-    <updated>2020-11-14T08:28:07.072Z</updated>
+    <updated>2020-12-26T05:48:23.843Z</updated>
     
     <summary type="html">
     
@@ -478,9 +510,9 @@
       <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
     
     
-      <category term="前缀和" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
-    
       <category term="滑动窗口" scheme="https://lucifer.ren/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
+    
+      <category term="前缀和" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
@@ -585,9 +617,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -624,9 +656,9 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
     
@@ -646,35 +678,6 @@
       <category term="面试" scheme="https://lucifer.ren/blog/tags/%E9%9D%A2%E8%AF%95/"/>
     
       <category term="字节跳动" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用最优雅的方式打开终端</title>
-    <link href="https://lucifer.ren/blog/2020/09/03/iterm-window-hotkey/"/>
-    <id>https://lucifer.ren/blog/2020/09/03/iterm-window-hotkey/</id>
-    <published>2020-09-03T12:15:27.867Z</published>
-    <updated>2020-09-03T12:27:49.078Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;如何快速呼出终端&quot;&gt;&lt;a href=&quot;#如何快速呼出终端&quot; class=&quot;headerlink&quot; title=&quot;如何快速呼出终端&quot;&gt;&lt;/a&gt;如何快速呼出终端&lt;/h2&gt;&lt;p&gt;先看效果：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-9-3/1599135714685-Kapture%202020-09-03%20at%2019.54.50.mp4&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;视频地址&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Gif 太大， 放不了。 放一个 MP4 文件给大家看吧。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;接下来就教你&lt;strong&gt;随时随地，用最优雅的方式&lt;/strong&gt;。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="工具" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="工具" scheme="https://lucifer.ren/blog/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="效率" scheme="https://lucifer.ren/blog/tags/%E6%95%88%E7%8E%87/"/>
-    
-      <category term="命令行" scheme="https://lucifer.ren/blog/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
   </entry>
   
