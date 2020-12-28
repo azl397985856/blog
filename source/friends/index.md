@@ -59,6 +59,11 @@ links:
         border: "none"
         tags:
           - 喜欢刷力扣的前端小白
+      - name: 洋十三
+        url: https://showto.top
+        avatar: cdn.jsdelivr.net/gh/distanting/bogs/icon/logo1.png
+        tags:
+          - 平和而执着，勇敢而无畏
   - group: Java 大佬
     icon: fab fa-java
     items:
@@ -116,7 +121,7 @@ links:
 博客名称：lucifer 的网络博客
 博客网址：https://lucifer.ren/blog/
 博客头像：https://tva1.sinaimg.cn/large/006tNbRwly1ga7ognflh9j30b40b4q3w.jpg
-博客介绍：一个脑洞很大的程序员，Github 30K LeetCode 项目，公众号《脑洞前端》。
+博客介绍：一个脑洞很大的程序员，Github 40K LeetCode https://github.com/azl397985856/leetcode ，公众号《力扣加加》。
 
 ## 加入我
 
