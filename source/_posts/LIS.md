@@ -164,19 +164,15 @@ class Solution:
         if n == 0: return 0
         dp = [1] * n
         ans = 1
-        intervals.sort(key=lambda a: a[1])
+        intervals.sort(key=lambda a: a[0])
 
         for i in range(len(intervals)):
             for j in range(i - 1, -1, -1):
                 if intervals[i][0] >= intervals[j][1]:
                     dp[i] = max(dp[i], dp[j] + 1)
-                    # 由于我事先进行了排序，因此倒着找的时候，找到的第一个一定是最大的数，因此不用往前继续找了。
-                    # 这也是为什么我按照结束时间排序的原因。
-                    break
-            dp[i] = max(dp[i], dp[i - 1])
-            ans = max(ans, dp[i])
-
-        return n - ans
+                    break # 由于是按照开始时间排序的, 因此可以剪枝
+                
+        return n - max(dp)
 ```
 
 **复杂度分析**
@@ -222,17 +218,20 @@ https://leetcode-cn.com/problems/maximum-length-of-pair-chain/
 
 ```py
 class Solution:
-    def findLongestChain(self, pairs: List[List[int]]) -> int:
-        n = len(pairs)
+    def findLongestChain(self, intervals: List[List[int]]) -> int:
+        n = len(intervals)
+        if n == 0: return 0
         dp = [1] * n
         ans = 1
-        pairs.sort(key=lambda a: a[0])
-        for i in range(n):
-            for j in range(i):
-                if pairs[i][0] > pairs[j][1]:
+        intervals.sort(key=lambda a: a[0])
+
+        for i in range(len(intervals)):
+            for j in range(i - 1, -1, -1):
+                if intervals[i][0] > intervals[j][1]:
                     dp[i] = max(dp[i], dp[j] + 1)
-                    ans = max(ans, dp[i])
-        return ans
+                    break # 由于是按照开始时间排序的, 因此可以剪枝
+                
+        return max(dp)
 ```
 
 **复杂度分析**
@@ -278,19 +277,20 @@ Example:
 
 ```py
 class Solution:
-    def findMinArrowShots(self, points: List[List[int]]) -> int:
-        n = len(points)
+    def findMinArrowShots(self, intervals: List[List[int]]) -> int:
+        n = len(intervals)
         if n == 0: return 0
         dp = [1] * n
-        cnt = 1
-        points.sort(key=lambda a:a[1])
+        ans = 1
+        intervals.sort(key=lambda a: a[0])
 
-        for i in range(n):
-            for j in range(0, i):
-                if points[i][0] > points[j][1]:
+        for i in range(len(intervals)):
+            for j in range(i - 1, -1, -1):
+                if intervals[i][0] > intervals[j][1]:
                     dp[i] = max(dp[i], dp[j] + 1)
-                    cnt = max(cnt, dp[i])
-        return cnt
+                    break # 由于是按照开始时间排序的, 因此可以剪枝
+                
+        return max(dp)
 ```
 
 **复杂度分析**
