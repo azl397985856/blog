@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2020-12-28T10:46:05.176Z</updated>
+  <updated>2021-01-20T07:53:11.657Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,86 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>回炉重铸， 91 天见证不一样的自己（第三期）</title>
+    <link href="https://lucifer.ren/blog/2021/01/19/91-algo-3/"/>
+    <id>https://lucifer.ren/blog/2021/01/19/91-algo-3/</id>
+    <published>2021-01-18T16:00:00.000Z</published>
+    <updated>2021-01-20T07:53:11.657Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
+&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg&quot; width=&quot;50%&quot;&gt;
+
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://lucifer.ren/blog/2021/01/13/youtube-extesion/"/>
+    <id>https://lucifer.ren/blog/2021/01/13/youtube-extesion/</id>
+    <published>2021-01-13T03:54:46.710Z</published>
+    <updated>2021-01-13T04:13:57.356Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>蓄水池抽样</title>
+    <link href="https://lucifer.ren/blog/2021/01/12/reservoid-sampling/"/>
+    <id>https://lucifer.ren/blog/2021/01/12/reservoid-sampling/</id>
+    <published>2021-01-11T16:00:00.000Z</published>
+    <updated>2021-01-12T10:39:04.625Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;力扣中关于蓄水池抽样问题官方标签是 2 道，根据我的做题情况来看，可能有三四道。比重算是比较低的，大家可以根据自己的实际情况选择性掌握。&lt;/p&gt;
+&lt;p&gt;蓄水池抽样的算法思维很巧妙，代码简单且容易理解，就算不掌握它，作为了解也是很不错的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="蓄水池抽样" scheme="https://lucifer.ren/blog/categories/%E8%93%84%E6%B0%B4%E6%B1%A0%E6%8A%BD%E6%A0%B7/"/>
+    
+    
+      <category term="概率" scheme="https://lucifer.ren/blog/tags/%E6%A6%82%E7%8E%87/"/>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="蓄水池抽样" scheme="https://lucifer.ren/blog/tags/%E8%93%84%E6%B0%B4%E6%B1%A0%E6%8A%BD%E6%A0%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>几乎刷完了力扣所有的堆题，我发现了这些东西。。。</title>
@@ -230,7 +310,7 @@
     <link href="https://lucifer.ren/blog/2020/11/23/tree/"/>
     <id>https://lucifer.ren/blog/2020/11/23/tree/</id>
     <published>2020-11-22T16:00:00.000Z</published>
-    <updated>2020-12-12T10:32:35.799Z</updated>
+    <updated>2021-01-11T06:21:35.386Z</updated>
     
     <summary type="html">
     
@@ -575,109 +655,6 @@
       <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="TypeScript" scheme="https://lucifer.ren/blog/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://lucifer.ren/blog/2020/09/19/generator&amp;iterator/"/>
-    <id>https://lucifer.ren/blog/2020/09/19/generator&amp;iterator/</id>
-    <published>2020-09-19T06:36:38.225Z</published>
-    <updated>2020-09-19T06:44:59.504Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>字节跳动的算法面试题是什么难度？（第二弹）</title>
-    <link href="https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex-2017/"/>
-    <id>https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex-2017/</id>
-    <published>2020-09-05T16:00:00.000Z</published>
-    <updated>2020-09-14T09:06:58.597Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;由于 lucifer 我是一个小前端， 最近也在准备写一个《前端如何搞定算法面试》的专栏，因此最近没少看各大公司的面试题。都说字节跳动算法题比较难，我就先拿 ta 下手，做了几套 。这次我们就拿一套 &lt;code&gt;字节跳动2017秋招编程题汇总&lt;/code&gt;来看下字节的算法笔试题的难度几何。地址：&lt;a href=&quot;https://www.nowcoder.com/test/6035789/summary&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.nowcoder.com/test/6035789/summary&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="滑动窗口" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
-    
-      <category term="面试" scheme="https://lucifer.ren/blog/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-      <category term="字节跳动" scheme="https://lucifer.ren/blog/categories/%E9%9D%A2%E8%AF%95/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="滑动窗口" scheme="https://lucifer.ren/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
-    
-      <category term="面试" scheme="https://lucifer.ren/blog/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-      <category term="字节跳动" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>字节跳动的算法面试题是什么难度？</title>
-    <link href="https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex/"/>
-    <id>https://lucifer.ren/blog/2020/09/06/byte-dance-algo-ex/</id>
-    <published>2020-09-05T16:00:00.000Z</published>
-    <updated>2020-09-06T13:14:52.739Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;由于 lucifer 我是一个小前端， 最近也在准备写一个《前端如何搞定算法面试》的专栏，因此最近没少看各大公司的面试题。都说字节跳动算法题比较难，我就先拿 ta 下手，做了几套 。这次我们就拿一套 &lt;code&gt;2018 年的前端校招（第四批）&lt;/code&gt;来看下字节的算法笔试题的难度几何。地址：&lt;a href=&quot;https://www.nowcoder.com/test/8536639/summary&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.nowcoder.com/test/8536639/summary&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;实际上，这套字节的前端岗位笔试题和后端以及算法岗位的笔试题也只有一道题目（红包的设计题被换成了另外一个设计题）不一样而已，因此也不需要担心你不是前端，题目类型和难度和你的岗位不匹配。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="滑动窗口" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
-    
-      <category term="面试" scheme="https://lucifer.ren/blog/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-      <category term="字节跳动" scheme="https://lucifer.ren/blog/categories/%E9%9D%A2%E8%AF%95/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="滑动窗口" scheme="https://lucifer.ren/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
-    
-      <category term="面试" scheme="https://lucifer.ren/blog/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-      <category term="字节跳动" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
     
   </entry>
   
