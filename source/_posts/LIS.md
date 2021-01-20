@@ -171,7 +171,7 @@ class Solution:
                 if intervals[i][0] >= intervals[j][1]:
                     dp[i] = max(dp[i], dp[j] + 1)
                     break # 由于是按照开始时间排序的, 因此可以剪枝
-                
+
         return n - max(dp)
 ```
 
@@ -230,7 +230,7 @@ class Solution:
                 if intervals[i][0] > intervals[j][1]:
                     dp[i] = max(dp[i], dp[j] + 1)
                     break # 由于是按照开始时间排序的, 因此可以剪枝
-                
+
         return max(dp)
 ```
 
@@ -289,7 +289,7 @@ class Solution:
                 if intervals[i][0] > intervals[j][1]:
                     dp[i] = max(dp[i], dp[j] + 1)
                     break # 由于是按照开始时间排序的, 因此可以剪枝
-                
+
         return max(dp)
 ```
 
@@ -386,6 +386,53 @@ class Solution:
 ```
 
 > 小任务：请尝试使用贪心在 NlogN 的时间内完成算法。（参考我上面的代码就行）
+
+- [5644. 得到子序列的最少操作次数](https://leetcode-cn.com/problems/minimum-operations-to-make-a-subsequence/)
+
+由于这道题数据范围是 $10^5$，因此只能使用 $NlogN$ 的贪心才行。
+
+> 关于为什么 10 ^ 5 就必须使用 $NlogN$ 甚至更优的算法我在[刷题技巧](https://lucifer.ren/blog/2020/12/21/shuati-silu3/)提过。更多复杂度速查可参考我的刷题插件，公众号《力扣加加》回复插件获取即可。
+
+参考代码：
+
+```py
+class Solution:
+    def minOperations(self, target: List[int], A: List[int]) -> int:
+        def LIS(A):
+            d = []
+            for a in A:
+                i = bisect.bisect_left(d, a)
+                if d and i < len(d):
+                    d[i] = a
+                else:
+                    d.append(a)
+            return len(d)
+        B = []
+        target = { t:i for i, t in enumerate(target)}
+        for a in A:
+            if a in target: B.append(target[a])
+        return len(target) - LIS(B)
+```
+
+- [1626. 无矛盾的最佳球队](https://leetcode-cn.com/problems/best-team-with-no-conflicts/)
+
+不就是先排下序，然后求 scores 的最长上升子序列么？
+
+参考代码：
+
+```py
+class Solution:
+    def bestTeamScore(self, scores: List[int], ages: List[int]) -> int:
+        n = len(scores)
+        persons = list(zip(ages, scores))
+        persons.sort(key=lambda x : (x[0], x[1]))
+        dp = [persons[i][1] for i in range(n)]
+        for i in range(n):
+            for j in range(i):
+                if persons[i][1] >= persons[j][1]:
+                    dp[i] = max(dp[i], dp[j]+persons[i][1])
+        return max(dp)
+```
 
 大家把我讲的思路搞懂，这几个题一写，还怕碰到类似的题不会么？**只有熟练掌握基础的数据结构与算法，才能对复杂问题迎刃有余。** 最长上升子序列就是一个非常经典的基础算法，把它彻底搞懂，再去面对出题人的各种换皮就不怕了。相反，如果你不去思考题目背后的逻辑，就会刷地很痛苦。题目稍微一变化你就不会了，这也是为什么很多人说**刷了很多题，但是碰到新的题目还是不会做**的原因之一。关注公众号力扣加加，努力用清晰直白的语言还原解题思路，并且有大量图解，手把手教你识别套路，高效刷题。
 

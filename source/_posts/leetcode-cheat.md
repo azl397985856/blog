@@ -12,6 +12,52 @@ categories:
 
 ## 这个刷题插件能做什么？
 
+### 数据结构可视化（新功能）
+
+你可以使用 canvas 自由绘制各种数据结构，不管是写题解还是帮助理解题目都很有用。
+
+我们提供了很多内置的模板供你快速上手。
+
+![](https://tva1.sinaimg.cn/large/008eGmZEly1gms0ni6r2pj317c0cw75j.jpg)
+
+如果你对内置的模板不满意，也可以将自己的模板保存以便下次使用。
+
+![](https://tva1.sinaimg.cn/large/008eGmZEly1gmrz98cxflj31bp0u07k9.jpg)
+
+### 学习路线
+
+算法怎么学？推荐按专题来。具体到某一个专题怎么学？这里提供了一个学习路线帮助你。本功能旨在将一个专题中的题目进行分类。专题本质就是对题目的一种划分，学习路线基于专题又进行了一次划分。
+
+![](https://tva1.sinaimg.cn/large/0081Kckwly1glpqbuba55j30w00u0tgr.jpg)
+
+### 复杂度分析
+
+你的代码能会超时么？复杂度分析帮助你。
+
+![](https://tva1.sinaimg.cn/large/0081Kckwly1gm6xl5uih3j30o50nl0u9.jpg)
+
+### 一键复制所有内置测试用例
+
+省去了一个个手动复制的过程，效率翻倍！
+
+![](https://tva1.sinaimg.cn/large/0081Kckwly1glmfz7knmtj32060f0mye.jpg)
+
+### 模板
+
+提供了大量的经过反复验证的模板。模板的作用是在你理解了问题的基础上，快速书写，并减少出错概率，即使出错，也容易 debug。
+
+### 禅定模式
+
+![](https://tva1.sinaimg.cn/large/0081Kckwly1glmg5pa61gj31jk0u0qgg.jpg)
+
+点击之后会变成这样：
+
+![](https://tva1.sinaimg.cn/large/0081Kckwly1glmg6srs4kj31h50u0dml.jpg)
+
+底部控制台会消失，当你鼠标重新移过来或者退出禅定模式就出现了。
+
+### 查看题解
+
 当你在任意非题目详情页或者我还没有收录的题目详情页的时候， 我都会列出当前我总结的所有题解。
 
 ![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghsse7cw2oj313s0u0tbz.jpg)
@@ -33,9 +79,7 @@ categories:
 
 公众号《力扣加加》后台回复刷题插件即可。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg)
-
-## 后台收到的文件该如何安装呢？
+## 如何离线安装
 
 - 将下载的压缩包解压
 - 在 Chrome 浏览器的地址栏输入 chrome://extensions/
@@ -82,8 +126,3 @@ categories:
 关注公众号力扣加加，努力用清晰直白的语言还原解题思路，并且有大量图解，手把手教你识别套路，高效刷题。
 
 ![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg)
-
-## 感谢
-
-- 感谢**张震**的爬虫脚本。
-- 感谢**羽飞** 和 **肠粉**提供的公司信息
