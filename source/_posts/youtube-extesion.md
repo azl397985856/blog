@@ -1,4 +1,12 @@
-# 一个让你的 YouTube 丝滑般柔顺的插件
+---
+title: 一个让你的 YouTube 丝滑般柔顺的插件
+tags: [插件]
+date: 2021-02-20
+categories:
+  - [插件, 浏览器插件]
+---
+
+<!-- more -->
 
 Youtube 和 B 站是很多人浏览视频的两个地方。
 
