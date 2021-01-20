@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-01-20T07:53:11.657Z</updated>
+  <updated>2021-01-20T10:06:38.203Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一个让你的 YouTube 丝滑般柔顺的插件</title>
+    <link href="https://lucifer.ren/blog/2021/02/20/youtube-extesion/"/>
+    <id>https://lucifer.ren/blog/2021/02/20/youtube-extesion/</id>
+    <published>2021-02-19T16:00:00.000Z</published>
+    <updated>2021-01-20T10:06:38.203Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/"/>
+    
+      <category term="浏览器插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/"/>
+    
+    
+      <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>回炉重铸， 91 天见证不一样的自己（第三期）</title>
@@ -46,28 +74,6 @@
       <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
     
       <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://lucifer.ren/blog/2021/01/13/youtube-extesion/"/>
-    <id>https://lucifer.ren/blog/2021/01/13/youtube-extesion/</id>
-    <published>2021-01-13T03:54:46.710Z</published>
-    <updated>2021-01-13T04:13:57.356Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
@@ -590,9 +596,9 @@
       <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
     
     
-      <category term="前缀和" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
-    
       <category term="滑动窗口" scheme="https://lucifer.ren/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
+    
+      <category term="前缀和" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
