@@ -78,6 +78,46 @@
   </entry>
   
   <entry>
+    <title>几乎刷完了力扣所有的堆题，我发现了这些东西。。。（第二弹）</title>
+    <link href="https://lucifer.ren/blog/2021/01/19/heap-2/"/>
+    <id>https://lucifer.ren/blog/2021/01/19/heap-2/</id>
+    <published>2021-01-18T16:00:00.000Z</published>
+    <updated>2021-01-25T11:58:47.786Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;一点题外话&quot;&gt;&lt;a href=&quot;#一点题外话&quot; class=&quot;headerlink&quot; title=&quot;一点题外话&quot;&gt;&lt;/a&gt;一点题外话&lt;/h2&gt;&lt;p&gt;上次在我的公众号给大家做了一个小调查《投出你想要的题解编程语言吧~》。以下是调查的结果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008eGmZEly1gmtc6l6sfij30p20gqjsu.jpg&quot; alt=&quot;投票结果&quot;&gt;&lt;/p&gt;
+&lt;p&gt;而关于其他，则大多数是 Go 语言。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008eGmZEly1gmtc7yeqxyj317y0me0wd.jpg&quot; alt=&quot;投其他的人都写了什么？&quot;&gt;&lt;/p&gt;
+&lt;p&gt;由于 Java 和 Python 所占比例已经超过了 60%，这次我尝试一下 Java 和 Python 双语言来写，感谢 @CaptainZ 提供的 Java 代码。同时为了&lt;strong&gt;不让文章又臭又长，我将 Java 本文所有代码（Java 和 Python）都放到了力扣加加官网上&lt;/strong&gt;，网站地址：&lt;a href=&quot;https://leetcode-solution.cn/solution-code&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode-solution.cn/solution-code&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果不科学上网的话，可能打开会很慢。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;正文&quot;&gt;&lt;a href=&quot;#正文&quot; class=&quot;headerlink&quot; title=&quot;正文&quot;&gt;&lt;/a&gt;正文&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/0081Kckwly1glegve2v47j319g0u041x.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;大家好，我是 lucifer。今天给大家带来的是《堆》专题。先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我会继续完善，将其他专题逐步完善起来。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;大家也可以使用 vscode blink-mind 打开源文件查看，里面有一些笔记可以点开查看。源文件可以去我的公众号《力扣加加》回复脑图获取，以后脑图也会持续更新更多内容。vscode 插件地址：&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本系列包含以下专题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/11/08/linked-list/&quot;&gt;几乎刷完了力扣所有的链表题，我发现了这些东西。。。&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/11/23/tree/&quot;&gt;几乎刷完了力扣所有的树题，我发现了这些东西。。。&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/12/26/heap/&quot;&gt;几乎刷完了力扣所有的堆题，我发现了这些东西。。。（第一弹）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="堆" scheme="https://lucifer.ren/blog/categories/%E5%A0%86/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="堆" scheme="https://lucifer.ren/blog/tags/%E5%A0%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>蓄水池抽样</title>
     <link href="https://lucifer.ren/blog/2021/01/12/reservoid-sampling/"/>
     <id>https://lucifer.ren/blog/2021/01/12/reservoid-sampling/</id>
@@ -611,56 +651,6 @@
       <category term="子数组" scheme="https://lucifer.ren/blog/tags/%E5%AD%90%E6%95%B0%E7%BB%84/"/>
     
       <category term="k 问题" scheme="https://lucifer.ren/blog/tags/k-%E9%97%AE%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TypeScript 练习题</title>
-    <link href="https://lucifer.ren/blog/2020/09/27/ts-exercises/"/>
-    <id>https://lucifer.ren/blog/2020/09/27/ts-exercises/</id>
-    <published>2020-09-26T16:00:00.000Z</published>
-    <updated>2020-10-13T10:08:29.418Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教程。但是目前为止没有一个我特别满意的。原因有：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;它们大多数没有一个清晰的主线，而是按照 API 组织章节的，内容在&lt;strong&gt;逻辑上&lt;/strong&gt;比较零散。&lt;/li&gt;
-&lt;li&gt;大多是“讲是什么，怎么用“，而不是”讲为什么，讲原理“。&lt;/li&gt;
-&lt;li&gt;大多数内容比较枯燥，趣味性比较低。都是干巴巴的文字，没有图片，缺乏能够引起强烈共鸣的例子。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;因此我的想法是做一套不同市面上大多数的 TypeScript 学习教程。以人类认知的角度思考问题，学习 TypeScript，通过通俗易懂的例子和图片来帮助大家建立 TypeScript 世界观。&lt;/p&gt;
-&lt;p&gt;系列安排：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/08/04/ts-internal/&quot;&gt;上帝视角看 TypeScript&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/08/15/ts-type-system/&quot;&gt;TypeScript 类型系统&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/08/21/ts-type/&quot;&gt;types 和 @types 是什么？&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/06/16/ts-generics/&quot;&gt;你不知道的 TypeScript 泛型（万字长文，建议收藏）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/08/24/ts-config/&quot;&gt;TypeScript 配置文件该怎么写？&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;TypeScript 是如何与 React，Vue，Webpack 集成的？&lt;/li&gt;
-&lt;li&gt;TypeScript 练习题（就是本文）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;目录将来可能会有所调整。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;注意，我的系列文章基本不会讲 API，因此需要你有一定的 TypeScript 使用基础，推荐两个学习资料。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://jkchao.github.io/typescript-book-chinese/&quot; title=&quot;深入理解 TypeScript&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;深入理解 TypeScript&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.typescriptlang.org/docs/home&quot; title=&quot;TypeScript 官方文档&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;TypeScript 官方文档&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;结合这两个资料和我的系列教程，掌握 TypeScript 指日可待。&lt;/p&gt;
-&lt;p&gt;接下来，我们通过几个方面来从宏观的角度来看一下 TypeScript。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="TypeScript" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/TypeScript/"/>
-    
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="TypeScript" scheme="https://lucifer.ren/blog/tags/TypeScript/"/>
     
   </entry>
   
