@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-01-20T10:06:38.203Z</updated>
+  <updated>2021-02-20T04:20:40.082Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>如何求二维数组的前缀和？</title>
+    <link href="https://lucifer.ren/blog/2021/02/20/2d-pre/"/>
+    <id>https://lucifer.ren/blog/2021/02/20/2d-pre/</id>
+    <published>2021-02-19T16:00:00.000Z</published>
+    <updated>2021-02-20T04:20:40.082Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="前缀和" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    
+      <category term="二维前缀和" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%BC%80%E5%92%8C/%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    
+    
+      <category term="前缀和" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>一个让你的 YouTube 丝滑般柔顺的插件</title>
     <link href="https://lucifer.ren/blog/2021/02/20/youtube-extesion/"/>
     <id>https://lucifer.ren/blog/2021/02/20/youtube-extesion/</id>
     <published>2021-02-19T16:00:00.000Z</published>
-    <updated>2021-01-20T10:06:38.203Z</updated>
+    <updated>2021-02-18T10:13:45.225Z</updated>
     
     <summary type="html">
     
@@ -610,38 +638,6 @@
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="模拟面试" scheme="https://lucifer.ren/blog/tags/%E6%A8%A1%E6%8B%9F%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>百度的算法面试题 - 祖玛游戏</title>
-    <link href="https://lucifer.ren/blog/2020/10/06/zuma-game/"/>
-    <id>https://lucifer.ren/blog/2020/10/06/zuma-game/</id>
-    <published>2020-10-05T16:00:00.000Z</published>
-    <updated>2020-10-06T03:55:55.427Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这是一道百度的算法面试题， 让我来拷拷你~。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-      <category term="Hard" scheme="https://lucifer.ren/blog/categories/Hard/"/>
-    
-      <category term="回溯" scheme="https://lucifer.ren/blog/categories/%E5%9B%9E%E6%BA%AF/"/>
-    
-      <category term="双指针" scheme="https://lucifer.ren/blog/categories/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
-    
-    
-      <category term="Hard" scheme="https://lucifer.ren/blog/tags/Hard/"/>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="回溯" scheme="https://lucifer.ren/blog/tags/%E5%9B%9E%E6%BA%AF/"/>
-    
-      <category term="双指针" scheme="https://lucifer.ren/blog/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
   </entry>
   
