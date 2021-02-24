@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-02-24T07:38:26.680Z</updated>
+  <updated>2021-02-24T10:07:37.498Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>我是如何用**最大公约数**秒杀算法题的</title>
+    <title>我是如何用「最大公约数」秒杀算法题的</title>
     <link href="https://lucifer.ren/blog/2021/02/24/gcd/"/>
     <id>https://lucifer.ren/blog/2021/02/24/gcd/</id>
     <published>2021-02-23T16:00:00.000Z</published>
-    <updated>2021-02-24T07:38:26.680Z</updated>
+    <updated>2021-02-24T10:07:37.498Z</updated>
     
     <summary type="html">
     
@@ -41,11 +41,11 @@
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E5%AD%A6/%E7%AE%97%E6%B3%95/"/>
     
     
+      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
+    
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="最大公约数" scheme="https://lucifer.ren/blog/tags/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/"/>
     
