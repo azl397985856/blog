@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-02-20T04:20:40.082Z</updated>
+  <updated>2021-02-24T07:38:26.680Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我是如何用**最大公约数**秒杀算法题的</title>
+    <link href="https://lucifer.ren/blog/2021/02/24/gcd/"/>
+    <id>https://lucifer.ren/blog/2021/02/24/gcd/</id>
+    <published>2021-02-23T16:00:00.000Z</published>
+    <updated>2021-02-24T07:38:26.680Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关于最大公约数有专门的研究。 而在 LeetCode 中虽然没有直接让你求解最大公约数的题目。但是却有一些间接需要你求解最大公约数的题目。&lt;/p&gt;
+&lt;p&gt;比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/x-of-a-kind-in-a-deck-of-cards/solution/python3-zui-da-gong-yue-shu-914-qia-pai-fen-zu-by-/&quot; title=&quot;914. 卡牌分组&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;914. 卡牌分组&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/water-and-jug-problem/solution/bfszui-da-gong-yue-shu-by-fe-lucifer/&quot; title=&quot;365. 水壶问题&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;365. 水壶问题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/greatest-common-divisor-of-strings/solution/1071-zi-fu-chuan-de-zui-da-gong-yin-zi-zui-da-gong/&quot; title=&quot;1071. 字符串的最大公因子&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1071. 字符串的最大公因子&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此如何求解最大公约数就显得重要了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数学" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E5%AD%A6/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="最大公约数" scheme="https://lucifer.ren/blog/tags/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>如何求二维数组的前缀和？</title>
@@ -614,30 +649,6 @@
       <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="TypeScript" scheme="https://lucifer.ren/blog/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>西法喊你参加模拟面试~</title>
-    <link href="https://lucifer.ren/blog/2020/10/07/mock-interview/"/>
-    <id>https://lucifer.ren/blog/2020/10/07/mock-interview/</id>
-    <published>2020-10-06T16:00:00.000Z</published>
-    <updated>2020-10-07T11:29:21.429Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;很多粉丝向西法我反应：&lt;code&gt;做了很多题。看到新的题目还是不会， 看了题解之后又觉得自己会，但是自己写又写不出来。&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;这个现象实际上很常见， 破局的最有效方法就是&lt;strong&gt;多做题&lt;/strong&gt;。 是真正地做出来，而不是看了会了，要自己从零 coding。&lt;/p&gt;
-&lt;p&gt;我之前讲过&lt;strong&gt;对于新手的建议是按 tag 刷， 对于老手或者马上要面试的我建议随机刷。&lt;/strong&gt; 今天我在补充一句，那就是不管大家用哪种方式刷，建议大家都通过模拟面试或者竞赛的形式刷。 时间条件允许的可以参加周赛，不允许的则可以模拟面试。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="模拟面试" scheme="https://lucifer.ren/blog/categories/%E6%A8%A1%E6%8B%9F%E9%9D%A2%E8%AF%95/"/>
-    
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="模拟面试" scheme="https://lucifer.ren/blog/tags/%E6%A8%A1%E6%8B%9F%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
