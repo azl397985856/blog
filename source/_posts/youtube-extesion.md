@@ -6,13 +6,13 @@ categories:
   - [插件, 浏览器插件]
 ---
 
-<!-- more -->
-
 Youtube 和 B 站是很多人浏览视频的两个地方。
 
 一开始我还挺喜欢 Youtube 的，不仅是因为可以看到一些其他人看不到的东西，也因为体验比较棒。而现在，我已经彻底失望了。每次看一个十分钟的视频被跳出来四次广告的痛苦你了解么？如果你在看一个需要集中精力思考的视频，那么这种打断真的是非常让人恼怒。如果不是实在无法忍受这种行为，我也不会使用一些广告屏蔽的插件，毕竟看广告其实也是对 up 主的另外一种支持。
 
 另外 YouTube 竟然没有小窗播放。比如我下滑到评论区，视频并不会小窗悬浮播放，差评！
+
+<!-- more -->
 
 废话不多说了。今天给大家推荐的这个插件名字叫 Enhancer for YouTube。安装地址：https://chrome.google.com/webstore/detail/enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle
 
