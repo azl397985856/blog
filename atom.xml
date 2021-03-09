@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-03-04T02:36:19.298Z</updated>
+  <updated>2021-03-09T09:52:52.783Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>几乎刷完了力扣所有的二分题，我发现了这些东西。。。（上）</title>
+    <link href="https://lucifer.ren/blog/2021/03/08/binary-search-1/"/>
+    <id>https://lucifer.ren/blog/2021/03/08/binary-search-1/</id>
+    <published>2021-03-07T16:00:00.000Z</published>
+    <updated>2021-03-09T09:52:52.783Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008eGmZEly1godspy7ue3j31c00pytb0.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;大家好，我是 lucifer。今天给大家带来的是《二分》专题。先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我会继续完善，将其他专题逐步完善起来。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;大家也可以使用 vscode blink-mind 打开源文件查看，里面有一些笔记可以点开查看。源文件可以去我的公众号《力扣加加》回复脑图获取，以后脑图也会持续更新更多内容。vscode 插件地址：&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本系列包含以下专题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/11/08/linked-list/&quot;&gt;几乎刷完了力扣所有的链表题，我发现了这些东西。。。&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/11/23/tree/&quot;&gt;几乎刷完了力扣所有的树题，我发现了这些东西。。。&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/12/26/heap/&quot;&gt;几乎刷完了力扣所有的堆题，我发现了这些东西。。。（上）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2021/01/19/heap-2/&quot;&gt;几乎刷完了力扣所有的堆题，我发现了这些东西。。。（下）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="二分" scheme="https://lucifer.ren/blog/categories/%E4%BA%8C%E5%88%86/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="二分" scheme="https://lucifer.ren/blog/tags/%E4%BA%8C%E5%88%86/"/>
+    
+  </entry>
   
   <entry>
     <title>春招冲冲冲</title>
@@ -116,11 +149,11 @@
       <category term="二分法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%B3%95/"/>
     
     
+      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
+    
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="中位数" scheme="https://lucifer.ren/blog/tags/%E4%B8%AD%E4%BD%8D%E6%95%B0/"/>
     
@@ -153,11 +186,11 @@
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E5%AD%A6/%E7%AE%97%E6%B3%95/"/>
     
     
+      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
+    
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="最大公约数" scheme="https://lucifer.ren/blog/tags/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/"/>
     
@@ -580,37 +613,6 @@
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
       <category term="树" scheme="https://lucifer.ren/blog/tags/%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>几乎刷完了力扣所有的链表题，我发现了这些东西。。。</title>
-    <link href="https://lucifer.ren/blog/2020/11/08/linked-list/"/>
-    <id>https://lucifer.ren/blog/2020/11/08/linked-list/</id>
-    <published>2020-11-07T16:00:00.000Z</published>
-    <updated>2020-11-23T07:35:58.254Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/0081Kckwly1gki5nbjcgqj31be0u0q5w.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我会继续完善，将其他专题逐步完善起来。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;大家也可以使用 vscode blink-mind 打开源文件查看，里面有一些笔记可以点开查看。源文件可以去我的公众号《力扣加加》回复脑图获取，以后脑图也会持续更新更多内容。vscode 插件地址：&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;大家好，我是 lucifer。今天给大家带来的专题是《链表》。很多人觉得链表是一个很难的专题。实际上，只要你掌握了诀窍，它并没那么难。接下来，我们展开说说。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/tag/linked-list/&quot; title=&quot;链表标签&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;链表标签&lt;/a&gt;在 leetcode 一共有 &lt;strong&gt;54 道题&lt;/strong&gt;。 为了准备这个专题，我花了几天时间将 leetcode 几乎所有的链表题目都刷了一遍。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/0081Kckwly1gki5vhm12jj310y0raadh.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;可以看出，除了六个上锁的，其他我都刷了一遍。而实际上，这六个上锁的也没有什么难度，甚至和其他 48 道题差不多。&lt;/p&gt;
-&lt;p&gt;通过集中刷这些题，我发现了一些有趣的信息，今天就分享给大家。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="链表" scheme="https://lucifer.ren/blog/categories/%E9%93%BE%E8%A1%A8/"/>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="链表" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E8%A1%A8/"/>
     
   </entry>
   
