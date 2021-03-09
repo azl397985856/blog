@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Archives: 2020/9 | lucifer的网络博客</title>
+  <title>一文带你 AC 十道题【滑动窗口】 | lucifer的网络博客</title>
   
   <meta name="keywords" content="前端 leetocde 数据结构 算法 lucifer 大前端 性能优化 前端架构 前端工程化">
   
@@ -72,7 +72,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover  half'>
+    <cover class='cover post half'>
       
         
   <h1 class='title'>lucifer</h1>
@@ -260,28 +260,10 @@
   <div id="container" class="l_body">
     <div class='body-wrapper'>
       <div class='l_main'>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
   
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
 
 
   <section class='meta'>
@@ -290,11 +272,13 @@
     <div class="meta" id="header-meta">
       
         
-  <h2 class="title">
-    <a href="/blog/2020/09/30/atMostK/">
-      【西法带你学算法】一次搞定前缀和
-    </a>
-  </h2>
+  
+    <h1 class="title">
+      <a href="/blog/2020/03/16/slide-window/">
+        一文带你 AC 十道题【滑动窗口】
+      </a>
+    </h1>
+  
 
 
       
@@ -322,7 +306,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-09-30</p>
+    <p>2020-03-16</p>
   </a>
 </div>
 
@@ -332,9 +316,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/blog/categories/LeetCode/' rel="nofollow">
+    <a href='/blog/categories/数据结构，字符串/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>算法&nbsp;/&nbsp;LeetCode</p>
+      <p>LeetCode&nbsp;/&nbsp;算法，滑动窗口&nbsp;/&nbsp;数据结构，数组&nbsp;/&nbsp;数据结构，字符串</p>
     </a>
   </div>
 
@@ -343,148 +327,18 @@
         
           
             
-
-          
-        
-          
-            
   
-    <div style="margin-right: 10px;">
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-keyboard"></i>
-          <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">4.9k字</span>
-        </span>
-      </span>
-      &nbsp; | &nbsp;
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-hourglass-half"></i>
-          <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">19分</span>
-        </span>
-      </span>
-    </div>
-  
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>我花了几天时间，从力扣中精选了五道相同思想的题目，来帮助大家解套，如果觉得文章对你有用，记得点赞分享，让我看到你的认可，有动力继续做下去。</p>
-<ul>
-<li><a href="https://leetcode-cn.com/problems/unique-substrings-in-wraparound-string/" title="467. 环绕字符串中唯一的子字符串" target="_blank" rel="noopener">467. 环绕字符串中唯一的子字符串</a>(中等)</li>
-<li><a href="https://leetcode-cn.com/problems/number-of-subarrays-with-bounded-maximum/" title="795. 区间子数组个数" target="_blank" rel="noopener">795. 区间子数组个数</a>(中等)</li>
-<li><a href="https://leetcode-cn.com/problems/fruit-into-baskets/" title="904. 水果成篮" target="_blank" rel="noopener">904. 水果成篮</a>(中等)</li>
-<li><a href="https://leetcode-cn.com/problems/subarrays-with-k-different-integers/" title="992. K 个不同整数的子数组" target="_blank" rel="noopener">992. K 个不同整数的子数组</a>（困难）</li>
-<li><a href="https://leetcode-cn.com/problems/corporate-flight-bookings/" title="1109. 航班预订统计" target="_blank" rel="noopener">1109. 航班预订统计</a>(中等)</li>
-</ul>
-<p>前四道题都是滑动窗口的子类型，我们知道滑动窗口适合在题目要求连续的情况下使用， 而<a href="https://oi-wiki.org/basic/prefix-sum/" title="前缀和" target="_blank" rel="noopener">前缀和</a>也是如此。二者在连续问题中，对于<strong>优化时间复杂度</strong>有着很重要的意义。 因此如果一道题你可以用暴力解决出来，而且题目恰好有连续的限制， 那么滑动窗口和前缀和等技巧就应该被想到。</p>
-<p>除了这几道题， 还有很多题目都是类似的套路， 大家可以在学习过程中进行体会。今天我们就来一起学习一下。</p>
-      
-        <div class="readmore">
-          <a href="/blog/2020/09/30/atMostK/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/tags/前缀和/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 前缀和</a>
-        
-          <a href="/blog/tags/滑动窗口/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 滑动窗口</a>
-        
-          <a href="/blog/tags/LeetCode/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> LeetCode</a>
-        
-          <a href="/blog/tags/经验分享/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 经验分享</a>
-        
-          <a href="/blog/tags/困难/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 困难</a>
-        
-          <a href="/blog/tags/中等/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 中等</a>
-        
-          <a href="/blog/tags/子数组/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 子数组</a>
-        
-          <a href="/blog/tags/k-问题/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> k 问题</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/blog/2020/09/27/ts-exercises/">
-      TypeScript 练习题
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://lucifer.ren/blog" rel="nofollow">
-        
-          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
-        
-        <p>lucifer</p>
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
       </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-09-27</p>
-  </a>
-</div>
-
-          
-        
-          
-            
+    </div>
   
-  <div class='new-meta-item category'>
-    <a href='/blog/categories/前端/TypeScript/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>前端&nbsp;/&nbsp;TypeScript</p>
-    </a>
-  </div>
 
 
           
@@ -502,7 +356,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">4.5k字</span>
+          <span class="post-count">1k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -510,7 +364,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">22分</span>
+          <span class="post-count">3分</span>
         </span>
       </span>
     </div>
@@ -526,342 +380,240 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教程。但是目前为止没有一个我特别满意的。原因有：</p>
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>笔者最早接触滑动窗口是<code>滑动窗口协议</code>，滑动窗口协议（Sliding Window Protocol），属于 TCP 协议的一种应用，用于网络数据传输时的流量控制，以避免拥塞的发生。 发送方和接收方分别有一个窗口大小 w1 和 w2。窗口大小可能会根据网络流量的变化而有所不同，但是在更简单的实现中它们是固定的。窗口大小必须大于零才能进行任何操作。</p>
+<p>我们算法中的滑动窗口也是类似，只不过包括的情况更加广泛。实际上上面的滑动窗口在某一个时刻就是固定窗口大小的滑动窗口，随着网络流量等因素改变窗口大小也会随着改变。接下来我们讲下算法中的滑动窗口。</p>
+<a id="more"></a>
+
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>滑动窗口是一种解决问题的思路和方法，通常用来解决一些连续问题。 比如 LeetCode 的 <a href="https://leetcode-cn.com/problems/minimum-size-subarray-sum/solution/209-chang-du-zui-xiao-de-zi-shu-zu-hua-dong-chua-2/" target="_blank" rel="noopener">209. 长度最小的子数组</a>。更多滑动窗口题目见下方<code>题目列表</code>。</p>
+<h2 id="常见套路"><a href="#常见套路" class="headerlink" title="常见套路"></a>常见套路</h2><p>滑动窗口主要用来处理连续问题。比如题目求解“连续子串 xxxx”，“连续子数组 xxxx”，就应该可以想到滑动窗口。能不能解决另说，但是这种敏感性还是要有的。</p>
+<p>从类型上说主要有：</p>
 <ul>
-<li>它们大多数没有一个清晰的主线，而是按照 API 组织章节的，内容在<strong>逻辑上</strong>比较零散。</li>
-<li>大多是“讲是什么，怎么用“，而不是”讲为什么，讲原理“。</li>
-<li>大多数内容比较枯燥，趣味性比较低。都是干巴巴的文字，没有图片，缺乏能够引起强烈共鸣的例子。</li>
+<li>固定窗口大小</li>
+<li>窗口大小不固定，求解最大的满足条件的窗口</li>
+<li>窗口大小不固定，求解最小的满足条件的窗口（上面的 209 题就属于这种）</li>
 </ul>
-<p>因此我的想法是做一套不同市面上大多数的 TypeScript 学习教程。以人类认知的角度思考问题，学习 TypeScript，通过通俗易懂的例子和图片来帮助大家建立 TypeScript 世界观。</p>
-<p>系列安排：</p>
+<p>后面两种我们统称为<code>可变窗口</code>。当然不管是哪种类型基本的思路都是一样的，不一样的仅仅是代码细节。</p>
+<h3 id="固定窗口大小"><a href="#固定窗口大小" class="headerlink" title="固定窗口大小"></a>固定窗口大小</h3><p>对于固定窗口，我们只需要固定初始化左右指针 l 和 r，分别表示的窗口的左右顶点，并且保证：</p>
+<ol>
+<li>l 初始化为 0</li>
+<li>初始化 r，使得 r - l + 1 等于窗口大小</li>
+<li>同时移动 l 和 r</li>
+<li>判断窗口内的连续元素是否满足题目限定的条件<ul>
+<li>4.1 如果满足，再判断是否需要更新最优解，如果需要则更新最优解</li>
+<li>4.2 如果不满足，则继续。</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcw0pwdhmwj308z0d53yt.jpg" alt></p>
+<h3 id="可变窗口大小"><a href="#可变窗口大小" class="headerlink" title="可变窗口大小"></a>可变窗口大小</h3><p>对于可变窗口，我们同样固定初始化左右指针 l 和 r，分别表示的窗口的左右顶点。后面有所不同，我们需要保证：</p>
+<ol>
+<li>l 和 r 都初始化为 0</li>
+<li>r 指针移动一步</li>
+<li>判断窗口内的连续元素是否满足题目限定的条件<ul>
+<li>4.1 如果满足，再判断是否需要更新最优解，如果需要则更新最优解。并尝试通过移动 l 指针缩小窗口大小。循环执行 4.1</li>
+<li>4.2 如果不满足，则继续。</li>
+</ul>
+</li>
+</ol>
+<p>形象地来看的话，就是 r 指针不停向右移动，l 指针仅仅在窗口满足条件之后才会移动，起到窗口收缩的效果。</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcw0ouuplaj30d90d50t3.jpg" alt></p>
+<h2 id="模板代码"><a href="#模板代码" class="headerlink" title="模板代码"></a>模板代码</h2><p>以下是 209 题目的代码，使用 Python 编写，大家意会即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minSubArrayLen</span><span class="params">(self, s: int, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        l = total = <span class="number">0</span></span><br><span class="line">        ans = len(nums) + <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> r <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            total += nums[r]</span><br><span class="line">            <span class="keyword">while</span> total &gt;= s:</span><br><span class="line">                ans = min(ans, r - l + <span class="number">1</span>)</span><br><span class="line">                total -= nums[l]</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span>  <span class="number">0</span> <span class="keyword">if</span> ans == len(nums) + <span class="number">1</span> <span class="keyword">else</span> ans</span><br></pre></td></tr></table></figure>
+
+<h2 id="题目列表"><a href="#题目列表" class="headerlink" title="题目列表"></a>题目列表</h2><p>以下题目有的信息比较直接，有的题目信息比较隐蔽，需要自己发掘</p>
 <ul>
-<li><a href="https://lucifer.ren/blog/2020/08/04/ts-internal/">上帝视角看 TypeScript</a></li>
-<li><a href="https://lucifer.ren/blog/2020/08/15/ts-type-system/">TypeScript 类型系统</a></li>
-<li><a href="https://lucifer.ren/blog/2020/08/21/ts-type/">types 和 @types 是什么？</a></li>
-<li><a href="https://lucifer.ren/blog/2020/06/16/ts-generics/">你不知道的 TypeScript 泛型（万字长文，建议收藏）</a></li>
-<li><a href="https://lucifer.ren/blog/2020/08/24/ts-config/">TypeScript 配置文件该怎么写？</a></li>
-<li>TypeScript 是如何与 React，Vue，Webpack 集成的？</li>
-<li>TypeScript 练习题（就是本文）</li>
+<li><a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/solution/pythonjavascript-hua-dong-chuang-kou-3-wu-zhong-fu/" target="_blank" rel="noopener">【Python，JavaScript】滑动窗口（3. 无重复字符的最长子串）</a></li>
+<li><a href="https://leetcode-cn.com/problems/minimum-window-substring/solution/python-hua-dong-chuang-kou-76-zui-xiao-fu-gai-zi-c/" target="_blank" rel="noopener">76. 最小覆盖子串</a></li>
+<li><a href="https://leetcode-cn.com/problems/minimum-size-subarray-sum/solution/209-chang-du-zui-xiao-de-zi-shu-zu-hua-dong-chua-2/" target="_blank" rel="noopener">209. 长度最小的子数组</a></li>
+<li><a href="https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/solution/python-hua-dong-chuang-kou-438-zhao-dao-zi-fu-chua/" target="_blank" rel="noopener">【Python】滑动窗口（438. 找到字符串中所有字母异位词）</a></li>
+<li><a href="https://leetcode-cn.com/problems/fruit-into-baskets/solution/904-shui-guo-cheng-lan-python3-by-fe-lucifer/" target="_blank" rel="noopener">【904. 水果成篮】（Python3）</a></li>
+<li><a href="https://leetcode-cn.com/problems/binary-subarrays-with-sum/solution/930-he-xiang-tong-de-er-yuan-zi-shu-zu-javapython-/" target="_blank" rel="noopener">【930. 和相同的二元子数组】（Java，Python）</a></li>
+<li><a href="https://leetcode-cn.com/problems/subarrays-with-k-different-integers/solution/992-k-ge-bu-tong-zheng-shu-de-zi-shu-zu-hua-dong-c/" target="_blank" rel="noopener">【992. K 个不同整数的子数组】滑动窗口（Python）</a></li>
+<li><a href="https://leetcode-cn.com/problems/max-consecutive-ones-iii/solution/1004-zui-da-lian-xu-1de-ge-shu-iii-hua-dong-chuang/" target="_blank" rel="noopener">【1004. 最大连续 1 的个数 III】滑动窗口（Python3）</a></li>
+<li><a href="https://leetcode.com/problems/replace-the-substring-for-balanced-string/discuss/408978/javacpython-sliding-window/367697" target="_blank" rel="noopener">【1234. 替换子串得到平衡字符串】[Java/C++/Python] Sliding Window</a></li>
+<li><a href="https://leetcode-cn.com/problems/count-number-of-nice-subarrays/solution/1248-tong-ji-you-mei-zi-shu-zu-hua-dong-chuang-kou/" target="_blank" rel="noopener">【1248. 统计「优美子数组」】滑动窗口（Python）</a></li>
 </ul>
-<blockquote>
-<p>目录将来可能会有所调整。</p>
-</blockquote>
-<p>注意，我的系列文章基本不会讲 API，因此需要你有一定的 TypeScript 使用基础，推荐两个学习资料。</p>
-<ul>
-<li><a href="https://jkchao.github.io/typescript-book-chinese/" title="深入理解 TypeScript" target="_blank" rel="noopener">深入理解 TypeScript</a></li>
-<li><a href="https://www.typescriptlang.org/docs/home" title="TypeScript 官方文档" target="_blank" rel="noopener">TypeScript 官方文档</a></li>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
+<li><a href="https://leetcode.com/problems/binary-subarrays-with-sum/discuss/186683/" target="_blank" rel="noopener">LeetCode Sliding Window Series Discussion</a></li>
 </ul>
-<p>结合这两个资料和我的系列教程，掌握 TypeScript 指日可待。</p>
-<p>接下来，我们通过几个方面来从宏观的角度来看一下 TypeScript。</p>
-      
-        <div class="readmore">
-          <a href="/blog/2020/09/27/ts-exercises/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/tags/前端/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 前端</a>
-        
-          <a href="/blog/tags/TypeScript/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> TypeScript</a>
-        
+
       </div>
-    
-  </section>
-</article>
-
-          </div>
+      
+        <br>
         
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
       
         
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/blog/2020/09/06/byte-dance-algo-ex-2017/">
-      字节跳动的算法面试题是什么难度？（第二弹）
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://lucifer.ren/blog" rel="nofollow">
-        
-          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
-        
-        <p>lucifer</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T19:02:08+08:00">
   <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-09-06</p>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 2021年3月9日</p>
   </a>
 </div>
 
-          
+        
+      
         
           
-            
   
-  <div class='new-meta-item category'>
-    <a href='/blog/categories/面试/字节跳动/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>算法&nbsp;/&nbsp;数据结构&nbsp;/&nbsp;数组&nbsp;/&nbsp;滑动窗口&nbsp;/&nbsp;面试&nbsp;/&nbsp;字节跳动</p>
-    </a>
-  </div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/滑动窗口/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>滑动窗口</p></a></div>
 
 
-          
+        
+      
         
           
-            
-
-          
-        
-          
-            
-  
-    <div style="margin-right: 10px;">
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-keyboard"></i>
-          <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">5.9k字</span>
-        </span>
-      </span>
-      &nbsp; | &nbsp;
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-hourglass-half"></i>
-          <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">22分</span>
-        </span>
-      </span>
-    </div>
-  
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>由于 lucifer 我是一个小前端， 最近也在准备写一个《前端如何搞定算法面试》的专栏，因此最近没少看各大公司的面试题。都说字节跳动算法题比较难，我就先拿 ta 下手，做了几套 。这次我们就拿一套 <code>字节跳动2017秋招编程题汇总</code>来看下字节的算法笔试题的难度几何。地址：<a href="https://www.nowcoder.com/test/6035789/summary" target="_blank" rel="noopener">https://www.nowcoder.com/test/6035789/summary</a></p>
-<p>​
-      
-        <div class="readmore">
-          <a href="/blog/2020/09/06/byte-dance-algo-ex-2017/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/tags/数据结构/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 数据结构</a>
-        
-          <a href="/blog/tags/算法/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 算法</a>
-        
-          <a href="/blog/tags/滑动窗口/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 滑动窗口</a>
-        
-          <a href="/blog/tags/面试/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 面试</a>
-        
-          <a href="/blog/tags/字节跳动/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 字节跳动</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
       
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJ0lEQVR42u3aS04DMRAFQO5/6bBFgoT32gYpds0qGkYTVxZN/z4+4uvx5fp659kz36/8nc+e33BhYGC8LSP5+vavyZuf/Sj5GzAwMG5jPItgs88J7/Wh87NhYGBgvD5ie9wZDAMDA2MWcNtSM/8WDAwMjJUiNkn72vJ1pQzGwMC4h9GGy//8/CfzDQwMjLdiPMprLzUviX85FQYGxtGMPMC9TunyJ/MljPo8GBgYFzDa5lq78jVbPiuSRQwMjEMZbVM+b8bNGv3DtQwMDIwLGHlITQJiWwDPAnr0G2BgYBzBaF+9K6XLebMSFwMD4yTGrJWfN+tn44RkNRYDA+M2Rp4C5u25lcFkHXwxMDCOZqyE0fXEMQ/u+bgCAwPjPMb60kPbvMtbckUBjIGBcQEj+Zr26Hly2Q4efriDgYFxNKMNrLORZxJk81WPKOxiYGAcx8iLz3YMMFuY2LBmgYGBcSgjD4i7BgZtwI1OgoGBcSgjf11bprYDyJWyFgMD4x5GknclI89ZOG4L16VaHAMD4yBGEnzzMJoXxnVzDQMD4wLGrtWKdvC5a5kDAwPjVMajvNqUblfS+cs/BgwMjKMZfz1WzJt3bTI6HHNiYGC8LaMNsm2C2AbNWfMOAwPjBsZsDDlr/efjhOGyBQYGBkZwJ1qPiEN5NMbAwMDAGK1ZtEurK804DAyMGxi7ViLaVt1sFIqBgXEbYzZijNK1UbnbjgcwMDCOZnwCGaV0clOL96IAAAAASUVORK5CYII='>
         
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png">
+        
+        </a>
       
-        
-  <h2 class="title">
-    <a href="/blog/2020/09/06/byte-dance-algo-ex/">
-      字节跳动的算法面试题是什么难度？
-    </a>
-  </h2>
-
-
+    
       
-      <div class='new-meta-box'>
-        
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-        
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2020/03/16/slide-window/&title=一文带你 AC 十道题【滑动窗口】 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=笔者最早接触滑动窗口是滑动窗口协议，滑动窗口协议（Sliding Window Protocol），属于 TCP 协议的一种应用，用于网络数据传输时的流量控制，以避免拥塞的发生。 发送方和接收方分别有一个窗口大小 w1 和 w2。窗口大小可能会根据网络流量的变化而有所不同，但是在更简单的实现中它们是固定的。窗口大小必须大于零才能进行任何操作。
+我们算法中的滑动窗口也是类似，只不过包括的情况更加广泛。实际上上面的滑动窗口在某一个时刻就是固定窗口大小的滑动窗口，随着网络流量等因素改变窗口大小也会随着改变。接下来我们讲下算法中的滑动窗口。"
           
-            
-  <div class='new-meta-item author'>
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
     
-      <a href="https://lucifer.ren/blog" rel="nofollow">
-        
-          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
-        
-        <p>lucifer</p>
-      </a>
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2020/03/16/slide-window/&title=一文带你 AC 十道题【滑动窗口】 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=笔者最早接触滑动窗口是滑动窗口协议，滑动窗口协议（Sliding Window Protocol），属于 TCP 协议的一种应用，用于网络数据传输时的流量控制，以避免拥塞的发生。 发送方和接收方分别有一个窗口大小 w1 和 w2。窗口大小可能会根据网络流量的变化而有所不同，但是在更简单的实现中它们是固定的。窗口大小必须大于零才能进行任何操作。
+我们算法中的滑动窗口也是类似，只不过包括的情况更加广泛。实际上上面的滑动窗口在某一个时刻就是固定窗口大小的滑动窗口，随着网络流量等因素改变窗口大小也会随着改变。接下来我们讲下算法中的滑动窗口。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2020/03/16/slide-window/&title=一文带你 AC 十道题【滑动窗口】 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=笔者最早接触滑动窗口是滑动窗口协议，滑动窗口协议（Sliding Window Protocol），属于 TCP 协议的一种应用，用于网络数据传输时的流量控制，以避免拥塞的发生。 发送方和接收方分别有一个窗口大小 w1 和 w2。窗口大小可能会根据网络流量的变化而有所不同，但是在更简单的实现中它们是固定的。窗口大小必须大于零才能进行任何操作。
+我们算法中的滑动窗口也是类似，只不过包括的情况更加广泛。实际上上面的滑动窗口在某一个时刻就是固定窗口大小的滑动窗口，随着网络流量等因素改变窗口大小也会随着改变。接下来我们讲下算法中的滑动窗口。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
     
   </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-09-06</p>
-  </a>
 </div>
 
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/categories/面试/字节跳动/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>算法&nbsp;/&nbsp;数据结构&nbsp;/&nbsp;数组&nbsp;/&nbsp;滑动窗口&nbsp;/&nbsp;面试&nbsp;/&nbsp;字节跳动</p>
-    </a>
-  </div>
 
 
-          
         
-          
-            
-
-          
-        
-          
-            
-  
-    <div style="margin-right: 10px;">
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-keyboard"></i>
-          <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">3k字</span>
-        </span>
-      </span>
-      &nbsp; | &nbsp;
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-hourglass-half"></i>
-          <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">11分</span>
-        </span>
-      </span>
-    </div>
-  
-
-          
-        
-      </div>
-      
-        <hr>
       
     </div>
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>由于 lucifer 我是一个小前端， 最近也在准备写一个《前端如何搞定算法面试》的专栏，因此最近没少看各大公司的面试题。都说字节跳动算法题比较难，我就先拿 ta 下手，做了几套 。这次我们就拿一套 <code>2018 年的前端校招（第四批）</code>来看下字节的算法笔试题的难度几何。地址：<a href="https://www.nowcoder.com/test/8536639/summary" target="_blank" rel="noopener">https://www.nowcoder.com/test/8536639/summary</a></p>
-<blockquote>
-<p>实际上，这套字节的前端岗位笔试题和后端以及算法岗位的笔试题也只有一道题目（红包的设计题被换成了另外一个设计题）不一样而已，因此也不需要担心你不是前端，题目类型和难度和你的岗位不匹配。</p>
-</blockquote>
-<p>​
       
-        <div class="readmore">
-          <a href="/blog/2020/09/06/byte-dance-algo-ex/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
       
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/tags/数据结构/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 数据结构</a>
-        
-          <a href="/blog/tags/算法/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 算法</a>
-        
-          <a href="/blog/tags/滑动窗口/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 滑动窗口</a>
-        
-          <a href="/blog/tags/面试/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 面试</a>
-        
-          <a href="/blog/tags/字节跳动/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 字节跳动</a>
-        
-      </div>
-    
-  </section>
-</article>
-
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                          <h4>
+                              <a href="/blog/2020/03/20/thanksGaving-2/" rel="prev" title="纪念LeetCode项目Star突破2W">
+                                
+                                    纪念LeetCode项目Star突破2W
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/日记/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 日记</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/blog/2020/03/04/84.largest-rectangle-in-histogram/" rel="prev" title="【LeetCode 日记】 84. 柱状图中最大的矩形">
+                                  
+                                      【LeetCode 日记】 84. 柱状图中最大的矩形
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/数据结构，算法，LeetCode-日记，Hard/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构，算法，LeetCode 日记，Hard</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
           </div>
-        
       
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-
-  
+    </section>
+  </article>
 
 
-	
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '一文带你 AC 十道题【滑动窗口】',
+      tools: true
+    }
+  </script>
+
+
 </div>
 <aside class='l_side'>
   
@@ -953,102 +705,39 @@
         
           
           
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
             
-              <section class='widget list'>
-  
+              
+  <section class='widget toc-wrapper'>
+    
 <header class='pure'>
-  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;强烈推荐</div>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
   
 </header>
 
-  <div class='content pure'>
-    <ul class="entry">
-      
-        <li><a class="flat-box" title="https://xaoxuu.com/wiki/hexo.sh/" href="https://xaoxuu.com/wiki/hexo.sh/"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;Hexo脚本（Mac）
-          </div>
-          
-        </a></li>
-      
-        <li><a class="flat-box" title="https://xaoxuu.com/wiki/vim-cn.sh/" href="https://xaoxuu.com/wiki/vim-cn.sh/"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;图床脚本（Mac）
-          </div>
-          
-        </a></li>
-      
-        <li><a class="flat-box" title="https://yasuotu.com" href="https://yasuotu.com"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;图片在线压缩
-          </div>
-          
-        </a></li>
-      
-        <li><a class="flat-box" title="https://realfavicongenerator.net" href="https://realfavicongenerator.net"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;生成Favicon
-          </div>
-          
-        </a></li>
-      
-        <li><a class="flat-box" title="https://mxclub.github.io/resume/" href="https://mxclub.github.io/resume/"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;简历主题
-          </div>
-          
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见套路"><span class="toc-text">常见套路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#固定窗口大小"><span class="toc-text">固定窗口大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可变窗口大小"><span class="toc-text">可变窗口大小</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板代码"><span class="toc-text">模板代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题目列表"><span class="toc-text">题目列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#扩展阅读"><span class="toc-text">扩展阅读</span></a></li></ol>
+    </div>
+  </section>
+
 
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
       
@@ -1454,6 +1143,134 @@
           
         
       
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget list'>
+  
+<header class='pure'>
+  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;强烈推荐</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="entry">
+      
+        <li><a class="flat-box" title="https://xaoxuu.com/wiki/hexo.sh/" href="https://xaoxuu.com/wiki/hexo.sh/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;Hexo脚本（Mac）
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://xaoxuu.com/wiki/vim-cn.sh/" href="https://xaoxuu.com/wiki/vim-cn.sh/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;图床脚本（Mac）
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://yasuotu.com" href="https://yasuotu.com"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;图片在线压缩
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://realfavicongenerator.net" href="https://realfavicongenerator.net"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;生成Favicon
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://mxclub.github.io/resume/" href="https://mxclub.github.io/resume/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;简历主题
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
     
 
   
@@ -1557,14 +1374,6 @@
 </script>
 
 
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
-
-
       <script>setLoadingBarProgress(60);</script>
     </div>
     <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
@@ -1649,6 +1458,23 @@
 
 
 
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "aea1377036afe4cd0343",
+      clientSecret: "815c638dea8644b7a4b97905707cf72b45555f6d",
+      repo: "blog",
+      owner: "azl397985856",
+      admin: "azl397985856",
+      
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
 
 
 

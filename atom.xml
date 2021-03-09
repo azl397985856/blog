@@ -51,56 +51,6 @@
   </entry>
   
   <entry>
-    <title>一文带你 AC 十道题【滑动窗口】</title>
-    <link href="https://lucifer.ren/blog/2021/03/09/slide-window/"/>
-    <id>https://lucifer.ren/blog/2021/03/09/slide-window/</id>
-    <published>2021-03-09T10:48:39.806Z</published>
-    <updated>2021-03-09T10:48:39.806Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;笔者最早接触滑动窗口是&lt;code&gt;滑动窗口协议&lt;/code&gt;，滑动窗口协议（Sliding Window Protocol），属于 TCP 协议的一种应用，用于网络数据传输时的流量控制，以避免拥塞的发生。 发送方和接收方分别有一个窗口大小 w1 和 w2。窗口大小可能会根据网络流量的变化而有所不同，但是在更简单的实现中它们是固定的。窗口大小必须大于零才能进行任何操作。&lt;/p&gt;
-&lt;p&gt;我们算法中的滑动窗口也是类似，只不过包括的情况更加广泛。实际上上面的滑动窗口在某一个时刻就是固定窗口大小的滑动窗口，随着网络流量等因素改变窗口大小也会随着改变。接下来我们讲下算法中的滑动窗口。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-      <category term="算法，滑动窗口" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95%EF%BC%8C%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
-    
-      <category term="数据结构，数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="数据结构，字符串" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-    
-      <category term="滑动窗口" scheme="https://lucifer.ren/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【LeetCode 日记】 84. 柱状图中最大的矩形</title>
-    <link href="https://lucifer.ren/blog/2021/03/09/84.largest-rectangle-in-histogram/"/>
-    <id>https://lucifer.ren/blog/2021/03/09/84.largest-rectangle-in-histogram/</id>
-    <published>2021-03-09T10:48:39.762Z</published>
-    <updated>2021-03-09T10:48:39.762Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这是一道 Hard 难度的题目，本题的解法很多，让我们来看一下。&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="数据结构，单调栈" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E5%8D%95%E8%B0%83%E6%A0%88/"/>
-    
-      <category term="Hard" scheme="https://lucifer.ren/blog/categories/Hard/"/>
-    
-    
-      <category term="数据结构，算法，LeetCode 日记，Hard" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E7%AE%97%E6%B3%95%EF%BC%8CLeetCode-%E6%97%A5%E8%AE%B0%EF%BC%8CHard/"/>
-    
-  </entry>
-  
-  <entry>
     <title>几乎刷完了力扣所有的二分题，我发现了这些东西。。。（上）</title>
     <link href="https://lucifer.ren/blog/2021/03/08/binary-search-1/"/>
     <id>https://lucifer.ren/blog/2021/03/08/binary-search-1/</id>
@@ -239,11 +189,11 @@
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E5%AD%A6/%E7%AE%97%E6%B3%95/"/>
     
     
+      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
+    
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="最大公约数" scheme="https://lucifer.ren/blog/tags/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/"/>
     
@@ -611,6 +561,72 @@
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
       <category term="电子书" scheme="https://lucifer.ren/blog/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>来和大家聊聊我是如何刷题的（第二弹）</title>
+    <link href="https://lucifer.ren/blog/2020/12/12/shuati-silu2/"/>
+    <id>https://lucifer.ren/blog/2020/12/12/shuati-silu2/</id>
+    <published>2020-12-11T16:00:00.000Z</published>
+    <updated>2021-03-09T10:48:39.805Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上一篇的地址在这里，没有看过的同学建议先看第一篇 &lt;a href=&quot;https://lucifer.ren/blog/2020/11/29/shuati-silu/&quot;&gt;来和大家聊聊我是如何刷题的（第一弹）&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;这次继续给大家聊聊怎么刷题， 预计分几篇文章来写，今天是第二篇，本系列至少会出三篇。这次分享的内容是&lt;strong&gt;代码书写技巧&lt;/strong&gt;以及&lt;strong&gt;调试技巧&lt;/strong&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本系列旨在分享一些所有题目都适用的技巧以及一些刷题经验，帮助大家高效刷题。如果想重点突破某一类题目，可以关注我的专题系列。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;话不多说，直接上干货。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="刷题方法" scheme="https://lucifer.ren/blog/categories/%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="刷题方法" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我是如何把简单题目做成困难的？</title>
+    <link href="https://lucifer.ren/blog/2020/12/04/91-tougao-xiaoyang-01/"/>
+    <id>https://lucifer.ren/blog/2020/12/04/91-tougao-xiaoyang-01/</id>
+    <published>2020-12-03T16:00:00.000Z</published>
+    <updated>2021-03-09T10:48:39.765Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;作者：小漾&lt;/li&gt;
+&lt;li&gt;来源：&lt;a href=&quot;https://github.com/suukii/91-days-algorithm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/suukii/91-days-algorithm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;大家好，我是 lucifer，众所周知，我是一个小前端 (不是) 。其实，我是 lucifer 的 1379 号迷妹观察员，我是一粒纳米前端。(不要回答，不要回答，不要回答！！！)&lt;/p&gt;
+&lt;p&gt;这是第一次投稿，所以可以废话几句，说一下我为什么做题和写题解。刚开始做算法题的时候，只是纯粹觉得好玩，所以不仅没有刷题计划，写题解也只是随便记下几笔，几个月后自己也看不懂的那种。一次偶然机会发现了 lucifer 的明星题解仓库，是找到了 onepiece 的感觉。受他的启发，我也开始写些尽量能让人看懂的题解，虽然还赶不上 lucifer，但跟自己比总算是有了些进步。&lt;/p&gt;
+&lt;p&gt;身为迷妹观察员，lucifer 的 91 天学算法当然是不能错过的活动，现在活动的第二期正在 🔥 热进行中，有兴趣的同学了解一下呀。言归正传，跟着 91 课程我不再是漫无目的，而是计划清晰，按照课程安排的专题来做题，这样不仅更有利于了解某一类题涉及的相关知识，还能熟悉这类题的套路，再次遇见相似题型也能更快有思路。&lt;/p&gt;
+&lt;p&gt;废话就这么多，以下是正文部分。等等，还有最后一句，上面的”不要回答”是个三体梗，不知道有没有人 GET 到我。&lt;/p&gt;
+&lt;p&gt;今天给大家带来一道力扣简单题，官方题解只给出了一种最优解。本文比较贪心，打算带大家用&lt;strong&gt;四种姿势&lt;/strong&gt;来解决这道题。&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
     
   </entry>
   
