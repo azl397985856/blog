@@ -1,19 +1,21 @@
 ---
 title: 一文搞懂《链表反转》
 tags: [字节跳动, 链表, 数据结构, 算法, LeetCode]
-categories: 
+date: 2020-01-20
+categories:
   - [算法, 链表反转]
   - [数据结构, 链表]
   - [LeetCode]
 author:
- name: snowan
- avatar: https://avatars1.githubusercontent.com/u/6018815?s=40&v=4
- url: https://github.com/snowan
-
+  name: snowan
+  avatar: https://avatars1.githubusercontent.com/u/6018815?s=40&v=4
+  url: https://github.com/snowan
 ---
 
 翻转链表一直都是热门题目，笔者就在某大型互联网公司的面试题中碰到过这种题目，这种题目很常常见，相对应的变形和扩展也很多，今天我们就来攻克它吧。
+
 <!-- more -->
+
 ## 反转链表
 
 反转链表是这个系列中最简单的了，没有别的要求，就是将一个链表从头到尾进行反转，最后返回反转后的链表即可。
@@ -309,7 +311,7 @@ function reverseList(head, tail) {
  * @param {number} k
  * @return {ListNode}
  */
-var reverseKGroup = function(head, k) {
+var reverseKGroup = function (head, k) {
   if (head === null || k === 1) {
     return head;
   }
@@ -343,17 +345,16 @@ var reverseKGroup = function(head, k) {
 
 ### 题目描述
 
-要求从后往前以k个为一组进行翻转。
+要求从后往前以 k 个为一组进行翻转。
 
 例子，1->2->3->4->5->6->7->8, k = 3,
 
-从后往前以k=3为一组，
+从后往前以 k=3 为一组，
 
-6->7->8 为一组翻转为8->7->6，
-3->4->5为一组翻转为5->4->3.
-1->2只有2个nodes少于k=3个，不翻转。
+6->7->8 为一组翻转为 8->7->6，
+3->4->5 为一组翻转为 5->4->3.
+1->2 只有 2 个 nodes 少于 k=3 个，不翻转。
 最后返回： 1->2->5->4->3->8->7->6
-
 
 ### 思路
 
@@ -361,17 +362,18 @@ var reverseKGroup = function(head, k) {
 
 1. 翻转链表
 
-2. 对翻转后的链表进行从前往后以k为一组翻转。
+2. 对翻转后的链表进行从前往后以 k 为一组翻转。
 
-3. 翻转步骤2中得到的链表。
+3. 翻转步骤 2 中得到的链表。
 
 例子：`1->2->3->4->5->6->7->8, k = 3`
 
 1. 翻转链表得到：`8->7->6->5->4->3->2->1`
 
-2. 以k为一组翻转： `6->7->8->3->4->5->2->1`
+2. 以 k 为一组翻转： `6->7->8->3->4->5->2->1`
 
-3. 翻转步骤#2链表： `1->2->5->4->3->8->7->6`
+3. 翻转步骤#2 链表： `1->2->5->4->3->8->7->6`
 
 ## 类似题目
+
 - [Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)

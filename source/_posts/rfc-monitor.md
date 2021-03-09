@@ -1,6 +1,7 @@
 ---
 title: 【RFC】XXX 公司监控体系需求与技术调研
 tags: [RFC, 技术调研, 监控]
+date: 2020-06-20
 ---
 
 线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量，建立完善的监控体系可以很好的解决这个问题。
@@ -110,7 +111,7 @@ npm install fundebug-javascript fundebug-vue --save
 import * as fundebug from "fundebug-javascript";
 import fundebugVue from "fundebug-vue";
 fundebug.init({
-  apikey: "API-KEY"
+  apikey: "API-KEY",
 });
 fundebugVue(fundebug, Vue);
 ```
@@ -177,9 +178,9 @@ monitor.init({
     name: "",
     email: "",
     mobile: "",
-    isVIP: true
+    isVIP: true,
   },
-  appId: "lucifer520"
+  appId: "lucifer520",
 });
 ```
 
@@ -211,9 +212,9 @@ monitor.init({
     name: "",
     email: "",
     mobile: "",
-    isVIP: true
+    isVIP: true,
   },
-  appId: "lucifer520"
+  appId: "lucifer520",
 });
 ```
 

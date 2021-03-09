@@ -268,9 +268,945 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2020/02/22/web-components-enterprize/">
+      使用web-component搭建企业级组件库
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-02-22</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/前端/web-component/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>前端&nbsp;/&nbsp;组件化&nbsp;/&nbsp;web-component</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">1.2k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">4分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>前端目前比较主流的框架有 react，vuejs，angular 等。 我们通常去搭建组件库的时候都是基于某一种框架去搭建，比如 ant-design 是基于 react 搭建的 UI 组件库，而 elementUI 则是基于 vuejs 搭建的组件库。</p>
+<p>虽然目前社区有相关工具，提供框架之间的转化服务，比如讲 vuejs 组件转化为 react 组件。但是毕竟是不同的框架，有不同的标准。因此框架 api 发生变动，那么你就需要重写转化逻辑，显然是不灵活的，因此我们暂不讨论这种情况。作为公司而言，就需要为不同的框架写不同的组件库，尽管逻辑都是一样的。</p>
+<p>另外如果框架升级，比如从 1.x 升级到 2.x，那么对应组件库就需要升级，如果公司的组件库有很多（vuejs，react，angular 等），那么这种升级的概率就会更大。</p>
+      
+        <div class="readmore">
+          <a href="/blog/2020/02/22/web-components-enterprize/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/tags/前端/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 前端</a>
+        
+          <a href="/blog/tags/组件化/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 组件化</a>
+        
+          <a href="/blog/tags/web-component/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> web-component</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2020/02/20/rotate-list/">
+      文科生都能看懂的循环移位算法
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-02-20</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/编程之美/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>数据结构&nbsp;/&nbsp;算法&nbsp;/&nbsp;字符串&nbsp;/&nbsp;数组&nbsp;/&nbsp;LeetCode&nbsp;/&nbsp;循环移位&nbsp;/&nbsp;链表&nbsp;/&nbsp;编程之美</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">2.6k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">10分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>循环移位问题真的是一个特别经典的问题了，今天我们就来攻克它。</p>
+<p>循环移位的表现形式有很多种，就数据结构来说包括<code>数组</code>，<code>字符串</code>，<code>链表</code>等。就算法来说，有<code>包含问题</code>，<code>直接移动问题</code>，还有<code>查找问题</code>等。</p>
+<p>虽然表现形式有很多，但是本质都是一样的，因为从逻辑上来讲其实他们都是线性数据结构，那么让我们来看一下吧。</p>
+      
+        <div class="readmore">
+          <a href="/blog/2020/02/20/rotate-list/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/tags/数据结构/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 数据结构</a>
+        
+          <a href="/blog/tags/算法/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 算法</a>
+        
+          <a href="/blog/tags/数组/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 数组</a>
+        
+          <a href="/blog/tags/链表/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 链表</a>
+        
+          <a href="/blog/tags/循环移位/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 循环移位</a>
+        
+          <a href="/blog/tags/字符串/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 字符串</a>
+        
+          <a href="/blog/tags/编程之美/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 编程之美</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2020/02/20/to-author/">
+      致作者
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-02-20</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/LeetCode/LeetCode题解书/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>LeetCode&nbsp;/&nbsp;LeetCode题解书</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">733字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">2分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>写给我敬爱的作者们，关于“云写书”的初衷，愿景，规划以及具体细节。</p>
+      
+        <div class="readmore">
+          <a href="/blog/2020/02/20/to-author/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/tags/LeetCode/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> LeetCode</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2020/02/20/union-find/">
+      【算法提高班】并查集
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-02-20</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/LeetCode/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>LeetCode</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">664字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">2分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>关于并查集的题目不少，官方给的数据是 30 道（截止 2020-02-20），但是有一些题目虽然官方没有贴<code>并查集</code>标签，但是使用并查集来说确非常简单。这类题目如果掌握模板，那么刷这种题会非常快，并且犯错的概率会大大降低，这就是模板的好处。</p>
+      
+        <div class="readmore">
+          <a href="/blog/2020/02/20/union-find/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/tags/LeetCode/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> LeetCode</a>
+        
+          <a href="/blog/tags/算法系列/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 算法系列</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2020/02/13/LCS/">
+      你的衣服我扒了 - 《最长公共子序列》
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-02-13</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/LeetCode/动态规划/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>LeetCode&nbsp;/&nbsp;动态规划</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">2.2k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">8分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>之前出了一篇<a href="https://lucifer.ren/blog/2020/06/20/LIS/">穿上衣服我就不认识你了？来聊聊最长上升子序列</a>，收到了大家的一致好评。今天给大家带来的依然是换皮题 - 最长公共子序列系列。</p>
+<p>最长公共子序列是一个很经典的算法题。有的会直接让你求最长上升子序列，有的则会换个说法，但最终考察的还是最长公共子序列。那么问题来了，它穿上衣服你还看得出来是么？</p>
+<p>如果你完全看不出来了，说明抽象思维还不到火候。经常看我的题解的同学应该会知道，我经常强调<code>抽象思维</code>。没有抽象思维，所有的题目对你来说都是新题。你无法将之前做题的经验迁移到这道题，那你做的题意义何在？</p>
+<p>虽然抽象思维很难练成，但是幸好算法套路是有限的，经常考察的题型更是有限的。从这些入手，或许可以让你轻松一些。本文就从一个经典到不行的题型《最长公共子序列》，来帮你进一步理解<code>抽象思维</code>。</p>
+<blockquote>
+<p>注意。 本文是帮助你识别套路，从横向上理清解题的思维框架，并没有采用最优解，所有的题目给的解法可能不是最优的，但是都可以通过所有的测试用例。如果你想看最优解，可以直接去讨论区看。或者期待我的<code>深入剖析系列</code>。</p>
+</blockquote>
+      
+        <div class="readmore">
+          <a href="/blog/2020/02/13/LCS/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/tags/动态规划/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 动态规划</a>
+        
+          <a href="/blog/tags/LeetCode/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> LeetCode</a>
+        
+          <a href="/blog/tags/最长公共子序列/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 最长公共子序列</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2020/02/09/1449.form-largest-integer-with-digits-that-add-up-to-target/">
+      【LeetCode日记】 1449. 数位成本和为目标值的最大数字
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-02-09</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/算法/背包问题/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>数据结构&nbsp;/&nbsp;算法&nbsp;/&nbsp;数组&nbsp;/&nbsp;动态规划&nbsp;/&nbsp;背包问题</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">1.8k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">7分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>这是一道难度 Hard 的经典背包问题，属于完全背包问题，来看看背包问题的套路吧～</p>
+<p>​
+      
+        <div class="readmore">
+          <a href="/blog/2020/02/09/1449.form-largest-integer-with-digits-that-add-up-to-target/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/tags/数据结构/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 数据结构</a>
+        
+          <a href="/blog/tags/算法/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 算法</a>
+        
+          <a href="/blog/tags/LeetCode日记/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> LeetCode日记</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2020/02/04/1334.find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/">
+      Floyd-Warshall 解题模板，助你快速AC
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-02-04</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/解题模板/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>数据结构&nbsp;/&nbsp;图&nbsp;/&nbsp;解题模板</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">894字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">3分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>Floyd-Warshall 是解决任意两点间的最短路径的一种算法，LeetCode 有很多题目都用了，掌握这套解题模板帮你快速 AC。</p>
+      
+        <div class="readmore">
+          <a href="/blog/2020/02/04/1334.find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/tags/数据结构/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 数据结构</a>
+        
+          <a href="/blog/tags/算法/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 算法</a>
+        
+          <a href="/blog/tags/解题模板/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 解题模板</a>
+        
+          <a href="/blog/tags/图/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 图</a>
+        
+          <a href="/blog/tags/Floyd-Warshall/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Floyd-Warshall</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -382,6 +1318,138 @@
           <a href="/blog/tags/BigPipe/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> BigPipe</a>
         
           <a href="/blog/tags/微前端/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 微前端</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2020/02/02/how-am-I-conque-leetcode/">
+      我是如何刷 LeetCode 的？
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-02-02</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/学习方法/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>数据结构&nbsp;/&nbsp;算法&nbsp;/&nbsp;LeetCode&nbsp;/&nbsp;学习方法</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">1.5k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">5分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>我就是那个 @量子位 答案里面提到的“lucifer 小哥哥”。</p>
+<p>我本人从开始准备算法以来，大概经过了几个月的时间，这期间自己成长了很多，从刷题菜鸡，到现在对刷题套路，题型有了自己的理解，感受还是蛮多的。我本人不是算法高手，算是勤能补拙类型。不过经过几个月的学习和练习，不仅面试变得更加得心应手，而且在工作中写更容易写出干净优雅，性能好的代码。</p>
+      
+        <div class="readmore">
+          <a href="/blog/2020/02/02/how-am-I-conque-leetcode/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/tags/数据结构/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 数据结构</a>
+        
+          <a href="/blog/tags/算法/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 算法</a>
+        
+          <a href="/blog/tags/LeetCode/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> LeetCode</a>
+        
+          <a href="/blog/tags/学习方法/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 学习方法</a>
         
       </div>
     

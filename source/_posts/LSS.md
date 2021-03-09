@@ -1,7 +1,8 @@
 ---
 title: 一文看懂《最大子序列和问题》
 tags: [LeetCode, 数据结构, 算法, 数组]
-categories: 
+date: 2020-06-20
+categories:
   - [算法, 子序列]
   - [数据结构, 数组]
   - [LeetCode]

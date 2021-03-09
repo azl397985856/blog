@@ -1,6 +1,7 @@
 ---
 title: 你的衣服我扒了 - 《最长公共子序列》
 tags: [LeetCode, 动态规划, 最长公共子序列]
+date: 2020-02-13
 categories: [LeetCode, 动态规划]
 ---
 

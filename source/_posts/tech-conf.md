@@ -1,7 +1,8 @@
 ---
 title: 值得关注的技术类大会
 tags: [技术大会, JSConf, Google IO, D2, QCon]
-categories: 
+date: 2020-08-20
+categories:
   - [技术大会, JSConf]
   - [技术大会, React Conf]
   - [技术大会, Google IO]
@@ -37,8 +38,6 @@ categories:
 
 ![](https://tva1.sinaimg.cn/large/006y8mN6gy1g7d52uctmoj31110hiwhd.jpg)
 [地址](https://www.infoq.com/qcon/)
-
-
 
 ## 更多技术大会
 

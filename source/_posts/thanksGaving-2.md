@@ -1,6 +1,7 @@
 ---
 title: 纪念LeetCode项目Star突破2W
 tags: [日记]
+date: 2020-03-20
 categories:
   - [日记, 技术]
 ---
@@ -12,12 +13,11 @@ categories:
 目前打通了第一第二关，剩下的过一段时间再玩好啦 😁
 ![](https://tva1.sinaimg.cn/large/006y8mN6ly1g7ppozhetbj30u01ppdjp.jpg)
 
-
 回到正题，就在今天，我的《leetcode 题解》项目成功突破 2w star， 并且现在 Github 搜索关键字"LeetCode"我的项目已经排名第一啦，这是继 1W star 之后的第二个巨大突破，非常感谢大家一路以来的支持和陪伴。
 
 ![](https://tva1.sinaimg.cn/large/006y8mN6ly1g7q10kli5lj310m0fm74y.jpg)
 
-最近在写一本关于LeetCode题解的书，有很多人表示想买，这无形之中给了我很大的压力，名字还没定，暂时给它取一个代号《攻克 LeetCode》。 
+最近在写一本关于 LeetCode 题解的书，有很多人表示想买，这无形之中给了我很大的压力，名字还没定，暂时给它取一个代号《攻克 LeetCode》。
 
 ## 新书《攻克 LeetCode》
 
@@ -35,7 +35,7 @@ categories:
 
 后期可能会有大幅度修改，希望大家提出宝贵意见，以特别的方式参与到这本书的编写中来。
 
-## 2W star截图
+## 2W star 截图
 
 ![](https://tva1.sinaimg.cn/large/006y8mN6ly1g7r4ef4fwej30rm0ld75g.jpg)
 

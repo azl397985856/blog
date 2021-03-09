@@ -1,6 +1,7 @@
 ---
 title: 文科生都能看懂的循环移位算法
 tags: [循环移位, 数组, 字符串, 链表, 数据结构, 算法, 编程之美]
+date: 2020-02-20
 categories:
   - [算法, 循环移位]
   - [数据结构, 数组]
@@ -315,7 +316,7 @@ function RIncludes(s1, s2) {
 #### 代码
 
 ```js
-var rotateRight = function(head, k) {
+var rotateRight = function (head, k) {
   if (head === null || head.next === null) return head;
   let p1 = head;
   let n = 1;

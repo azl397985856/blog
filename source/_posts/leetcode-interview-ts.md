@@ -1,5 +1,6 @@
 ---
 title: 想去力扣当前端，TypeScript 需要掌握到什么程度？
+date: 2020-08-13
 tags: [前端, TypeScript]
 categories:
   - [前端]

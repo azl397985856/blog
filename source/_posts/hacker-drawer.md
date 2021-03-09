@@ -1,6 +1,7 @@
 ---
 title: 《黑客与画家》摘抄
 tags: [书摘]
+date: 2020-06-02
 categories:
   - [书摘]
 ---

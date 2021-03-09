@@ -1,7 +1,8 @@
 ---
 title: 每日一荐 2019-11 汇总
 tags: [每日一荐]
-categories: 
+date: 2019-11-04
+categories:
   - [每日一荐, 2019-11]
 ---
 

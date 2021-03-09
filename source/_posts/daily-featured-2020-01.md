@@ -1,6 +1,7 @@
 ---
 title: 每日一荐 2020-01 汇总
 tags: [每日一荐]
+date: 2020-01-02
 categories:
   - [每日一荐, 2020-01]
 ---
@@ -92,7 +93,7 @@ Github 地址： https://github.com/docker-slim/docker-slim
 其中还提到了很多延伸知识，比如事件冒泡更微观角度是什么？事件的 passive：true 做了什么？为什么很多时候我们绘图不流畅以及如何实现平滑绘图？
 
 ```js
-window.addEventListener("pointermove", event => {
+window.addEventListener("pointermove", (event) => {
   const events = event.getCoalescedEvents();
   for (let event of events) {
     const x = event.pageX;
