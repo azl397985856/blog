@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-03-09T10:08:48.212Z</updated>
+  <updated>2021-03-09T10:16:43.459Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,602 +17,615 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>几乎刷完了力扣所有的二分题，我发现了这些东西。。。（上）</title>
-    <link href="https://lucifer.ren/blog/2021/03/08/binary-search-1/"/>
-    <id>https://lucifer.ren/blog/2021/03/08/binary-search-1/</id>
-    <published>2021-03-07T16:00:00.000Z</published>
-    <updated>2021-03-09T10:08:48.212Z</updated>
+    <title>【LeetCode 日记】面试题46. 把数字翻译成字符串</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/%E9%9D%A2%E8%AF%95%E9%A2%9846.%20%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/面试题46. 把数字翻译成字符串/</id>
+    <published>2021-03-09T10:16:43.458Z</published>
+    <updated>2021-03-09T10:16:43.459Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008eGmZEly1godspy7ue3j31c00pytb0.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;大家好，我是 lucifer。今天给大家带来的是《二分》专题。先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我会继续完善，将其他专题逐步完善起来。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;大家也可以使用 vscode blink-mind 打开源文件查看，里面有一些笔记可以点开查看。源文件可以去我的公众号《力扣加加》回复脑图获取，以后脑图也会持续更新更多内容。vscode 插件地址：&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;本系列包含以下专题：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/11/08/linked-list/&quot;&gt;几乎刷完了力扣所有的链表题，我发现了这些东西。。。&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/11/23/tree/&quot;&gt;几乎刷完了力扣所有的树题，我发现了这些东西。。。&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/12/26/heap/&quot;&gt;几乎刷完了力扣所有的堆题，我发现了这些东西。。。（上）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2021/01/19/heap-2/&quot;&gt;几乎刷完了力扣所有的堆题，我发现了这些东西。。。（下）&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+      &lt;p&gt;​
     
     </summary>
     
-      <category term="二分" scheme="https://lucifer.ren/blog/categories/%E4%BA%8C%E5%88%86/"/>
+      <category term="算法，动态规划" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95%EF%BC%8C%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="中等" scheme="https://lucifer.ren/blog/categories/%E4%B8%AD%E7%AD%89/"/>
+    
+    
+      <category term="数据结构，算法，LeetCode 日记，中等" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E7%AE%97%E6%B3%95%EF%BC%8CLeetCode-%E6%97%A5%E8%AE%B0%EF%BC%8C%E4%B8%AD%E7%AD%89/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>构造二叉树系列</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%93%E9%A2%98/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/构造二叉树专题/</id>
+    <published>2021-03-09T10:16:43.456Z</published>
+    <updated>2021-03-09T10:16:43.458Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;构造二叉树是一个常见的二叉树考点，相比于直接考察二叉树的遍历，这种题目的难度会更大。截止到目前(2020-02-08) LeetCode 关于构造二叉树一共有三道题目，分别是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;105. 从前序与中序遍历序列构造二叉树&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;106. 从中序与后序遍历序列构造二叉树&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;889. 根据前序和后序遍历构造二叉树&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;今天就让我们用一个套路一举攻破他们。&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="二叉树" scheme="https://lucifer.ren/blog/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
     
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
-      <category term="二分" scheme="https://lucifer.ren/blog/tags/%E4%BA%8C%E5%88%86/"/>
+      <category term="二叉树" scheme="https://lucifer.ren/blog/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+      <category term="算法系列" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97/"/>
     
   </entry>
   
   <entry>
-    <title>春招冲冲冲</title>
-    <link href="https://lucifer.ren/blog/2021/03/04/school-01/"/>
-    <id>https://lucifer.ren/blog/2021/03/04/school-01/</id>
-    <published>2021-03-03T16:00:00.000Z</published>
-    <updated>2021-03-04T02:36:19.298Z</updated>
+    <title>算法小白如何高效、快速刷 leetcode？</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/%E5%88%B7%E9%A2%98%E6%96%B0%E6%89%8B/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/刷题新手/</id>
+    <published>2021-03-09T10:16:43.455Z</published>
+    <updated>2021-03-09T10:16:43.456Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;春招已经开始了。 你是不是已经开始准备了呢？为了帮助大家获得更好的 offer，lucifer 开辟了&lt;strong&gt;春招冲冲冲&lt;/strong&gt;栏目。&lt;/p&gt;
-&lt;p&gt;今天我们的猎物是&lt;strong&gt;虾皮&lt;/strong&gt;。来看看虾皮的算法题难度几何吧！&lt;/p&gt;
-&lt;p&gt;​
+      &lt;p&gt;我本身刷了大概 600 道左右的题目，总结 200 多篇的题解，另外总结了十多个常见的算法专题，基本已经覆盖了大多数的常见考点和题型，全部放在我的 Github &lt;a href=&quot;https://github.com/azl397985856/leetcode&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/azl397985856/leetcode&lt;/a&gt; 。&lt;/p&gt;
+&lt;p&gt;然而作为一个新手，看着茫茫多的题解和资料难免会陷入一种“不知从何开始”的境地。&lt;strong&gt;不必担心，你不是一个人。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;实际上，我最近一直在思考“初学者如何快速提高自己的算法能力，高效刷题”。因此我也一直在不断定位自己，最终我对自己作出了定位“用清晰直白的语言还原解题全过程，做西湖区最好的算法题解”。&lt;/p&gt;
+&lt;p&gt;然而我意识到，我进去了一个很大的误区。我的想法一直是“努力帮助算法小白提高算法能力，高效刷题”。然而算法小白除了清晰直白的算法题解外，还需要系统的前置知识。因此我的假设“大家都会基础的数据结构和算法”很可能就是不成立的。&lt;/p&gt;
     
     </summary>
     
-      <category term="春招" scheme="https://lucifer.ren/blog/categories/%E6%98%A5%E6%8B%9B/"/>
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="经验分享" scheme="https://lucifer.ren/blog/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"/>
     
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="春招" scheme="https://lucifer.ren/blog/tags/%E6%98%A5%E6%8B%9B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>91 天学算法第三期视频会议总结</title>
-    <link href="https://lucifer.ren/blog/2021/03/01/91meeting-season-3-1/"/>
-    <id>https://lucifer.ren/blog/2021/03/01/91meeting-season-3-1/</id>
-    <published>2021-02-28T16:00:00.000Z</published>
-    <updated>2021-03-02T08:46:18.978Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这是 91 天学算法第三期视频会议的一个文字版总结。想要参加第三期的小伙伴可在公众号后台回复 91 查看参与方式。&lt;/p&gt;
-&lt;p&gt;大家好，我是 lucifer。前几天给 91 的学员开了一场视频会议，关于目前学习的情况，西法给大家的学习建议以及下期的规划做了简单的讨论。&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+      <category term="经验分享" scheme="https://lucifer.ren/blog/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
   <entry>
-    <title>如何自动同步博客到 Github 主页？</title>
-    <link href="https://lucifer.ren/blog/2021/02/27/github-blog-auto/"/>
-    <id>https://lucifer.ren/blog/2021/02/27/github-blog-auto/</id>
-    <published>2021-02-26T16:00:00.000Z</published>
-    <updated>2021-02-27T12:46:00.693Z</updated>
+    <title>一招吃遍力扣四道题，妈妈再也不用担心我被套路啦～</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/%E5%88%A0%E9%99%A4%E9%97%AE%E9%A2%98/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/删除问题/</id>
+    <published>2021-03-09T10:16:43.454Z</published>
+    <updated>2021-03-09T10:16:43.455Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Github 支持通过创建同名仓库的形式自定义主页。比如我的 Github 用户名是 azl397985856，那么新建一个名为 azl397985856 的仓库即可。接下来你可以通过修改此仓库的 README 文件来自定义 Github 主页。也就是说，你想要自定义主页就新建一个同名仓库并修改 README 就行了。&lt;/p&gt;
-&lt;p&gt;修改 README 能玩出什么花样呢？请接着往下看。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Github" scheme="https://lucifer.ren/blog/categories/Github/"/>
-    
-    
-      <category term="Github" scheme="https://lucifer.ren/blog/tags/Github/"/>
-    
-      <category term="持续集成" scheme="https://lucifer.ren/blog/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>阿里面试题：如何寻找「两个数组」的中位数？</title>
-    <link href="https://lucifer.ren/blog/2021/02/25/leetcode-median/"/>
-    <id>https://lucifer.ren/blog/2021/02/25/leetcode-median/</id>
-    <published>2021-02-25T04:03:38.703Z</published>
-    <updated>2021-02-25T04:07:27.314Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;一个数组的中位数很容易求，那两个数组呢？&lt;/p&gt;
-&lt;p&gt;​
+      &lt;p&gt;我花了几天时间，从力扣中精选了四道相同思想的题目，来帮助大家解套，如果觉得文章对你有用，记得点赞分享，让我看到你的认可，有动力继续做下去。&lt;/p&gt;
+&lt;p&gt;这就是接下来要给大家讲的四个题，其中 1081 和 316 题只是换了说法而已。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/remove-duplicate-letters/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;316. 去除重复字母&lt;/a&gt;(困难)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/create-maximum-number/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;321. 拼接最大数&lt;/a&gt;(困难)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/remove-k-digits/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;402. 移掉 K 位数字&lt;/a&gt;(中等)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1081. 不同字符的最小子序列&lt;/a&gt;（中等）&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="二分法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%B3%95/"/>
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
     
     
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="经验分享" scheme="https://lucifer.ren/blog/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"/>
     
-      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
+      <category term="困难" scheme="https://lucifer.ren/blog/tags/%E5%9B%B0%E9%9A%BE/"/>
     
-      <category term="中位数" scheme="https://lucifer.ren/blog/tags/%E4%B8%AD%E4%BD%8D%E6%95%B0/"/>
+      <category term="中等" scheme="https://lucifer.ren/blog/tags/%E4%B8%AD%E7%AD%89/"/>
     
-      <category term="二分法" scheme="https://lucifer.ren/blog/tags/%E4%BA%8C%E5%88%86%E6%B3%95/"/>
+      <category term="删除 k 个字符" scheme="https://lucifer.ren/blog/tags/%E5%88%A0%E9%99%A4-k-%E4%B8%AA%E5%AD%97%E7%AC%A6/"/>
     
   </entry>
   
   <entry>
-    <title>我是如何用「最大公约数」秒杀算法题的</title>
-    <link href="https://lucifer.ren/blog/2021/02/24/gcd/"/>
-    <id>https://lucifer.ren/blog/2021/02/24/gcd/</id>
-    <published>2021-02-23T16:00:00.000Z</published>
-    <updated>2021-02-24T10:07:37.498Z</updated>
+    <title>使用web-component搭建企业级组件库</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/web-components-enterprize/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/web-components-enterprize/</id>
+    <published>2021-03-09T10:16:43.448Z</published>
+    <updated>2021-03-09T10:16:43.448Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;关于最大公约数有专门的研究。 而在 LeetCode 中虽然没有直接让你求解最大公约数的题目。但是却有一些间接需要你求解最大公约数的题目。&lt;/p&gt;
-&lt;p&gt;比如：&lt;/p&gt;
+      &lt;p&gt;前端目前比较主流的框架有react，vuejs，angular等。 我们通常去搭建组件库的时候都是基于某一种框架去搭建，比如ant-design是基于react搭建的UI组件库，而elementUI则是基于vuejs搭建的组件库。&lt;/p&gt;
+&lt;p&gt;虽然目前社区有相关工具，提供框架之间的转化服务，比如讲vuejs组件转化为react组件。但是毕竟是不同的框架，有不同的标准。因此框架api发生变动，那么你就需要重写转化逻辑，显然是不灵活的，因此我们暂不讨论这种情况。作为公司而言，就需要为不同的框架写不同的组件库，尽管逻辑都是一样的。&lt;/p&gt;
+&lt;p&gt;另外如果框架升级，比如从1.x升级到2.x，那么对应组件库就需要升级，如果公司的组件库有很多（vuejs，react，angular等），那么这种升级的概率就会更大。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="组件化" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/%E7%BB%84%E4%BB%B6%E5%8C%96/"/>
+    
+      <category term="web-component" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/web-component/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="组件化" scheme="https://lucifer.ren/blog/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/"/>
+    
+      <category term="web-component" scheme="https://lucifer.ren/blog/tags/web-component/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【算法提高班】并查集</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/union-find/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/union-find/</id>
+    <published>2021-03-09T10:16:43.447Z</published>
+    <updated>2021-03-09T10:16:43.448Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关于并查集的题目不少，官方给的数据是 30 道（截止 2020-02-20），但是有一些题目虽然官方没有贴&lt;code&gt;并查集&lt;/code&gt;标签，但是使用并查集来说确非常简单。这类题目如果掌握模板，那么刷这种题会非常快，并且犯错的概率会大大降低，这就是模板的好处。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="算法系列" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>上帝视角看 TypeScript</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/ts-internal/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/ts-internal/</id>
+    <published>2021-03-09T10:16:43.443Z</published>
+    <updated>2021-03-09T10:16:43.444Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教程。但是目前为止没有一个我特别满意的。原因有：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/x-of-a-kind-in-a-deck-of-cards/solution/python3-zui-da-gong-yue-shu-914-qia-pai-fen-zu-by-/&quot; title=&quot;914. 卡牌分组&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;914. 卡牌分组&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/water-and-jug-problem/solution/bfszui-da-gong-yue-shu-by-fe-lucifer/&quot; title=&quot;365. 水壶问题&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;365. 水壶问题&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/greatest-common-divisor-of-strings/solution/1071-zi-fu-chuan-de-zui-da-gong-yin-zi-zui-da-gong/&quot; title=&quot;1071. 字符串的最大公因子&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1071. 字符串的最大公因子&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;它们大多数没有一个清晰的主线，而是按照 API 组织章节的，内容在&lt;strong&gt;逻辑上&lt;/strong&gt;比较零散。&lt;/li&gt;
+&lt;li&gt;大多是“讲是什么，怎么用“，而不是”讲为什么，讲原理“。&lt;/li&gt;
+&lt;li&gt;大多数内容比较枯燥，趣味性比较低。都是干巴巴的文字，没有图片，缺乏能够引起强烈共鸣的例子。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;因此如何求解最大公约数就显得重要了。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数学" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E5%AD%A6/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="最大公约数" scheme="https://lucifer.ren/blog/tags/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何求二维数组的前缀和？</title>
-    <link href="https://lucifer.ren/blog/2021/02/20/2d-pre/"/>
-    <id>https://lucifer.ren/blog/2021/02/20/2d-pre/</id>
-    <published>2021-02-19T16:00:00.000Z</published>
-    <updated>2021-02-25T04:07:24.798Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;一维前缀和很容易求，那二维前缀和你会吗？&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前缀和" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
-    
-      <category term="二维前缀和" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%BC%80%E5%92%8C/%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/"/>
-    
-    
-      <category term="前缀和" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一个让你的 YouTube 丝滑般柔顺的插件</title>
-    <link href="https://lucifer.ren/blog/2021/02/20/youtube-extesion/"/>
-    <id>https://lucifer.ren/blog/2021/02/20/youtube-extesion/</id>
-    <published>2021-02-19T16:00:00.000Z</published>
-    <updated>2021-02-25T04:06:23.199Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Youtube 和 B 站是很多人浏览视频的两个地方。&lt;/p&gt;
-&lt;p&gt;一开始我还挺喜欢 Youtube 的，不仅是因为可以看到一些其他人看不到的东西，也因为体验比较棒。而现在，我已经彻底失望了。每次看一个十分钟的视频被跳出来四次广告的痛苦你了解么？如果你在看一个需要集中精力思考的视频，那么这种打断真的是非常让人恼怒。如果不是实在无法忍受这种行为，我也不会使用一些广告屏蔽的插件，毕竟看广告其实也是对 up 主的另外一种支持。&lt;/p&gt;
-&lt;p&gt;另外 YouTube 竟然没有小窗播放。比如我下滑到评论区，视频并不会小窗悬浮播放，差评！&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/"/>
-    
-      <category term="浏览器插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/"/>
-    
-    
-      <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何将 github 上的代码一键部署到服务器？</title>
-    <link href="https://lucifer.ren/blog/2021/02/14/deploy-button/"/>
-    <id>https://lucifer.ren/blog/2021/02/14/deploy-button/</id>
-    <published>2021-02-13T16:00:00.000Z</published>
-    <updated>2021-02-18T02:20:57.003Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;在 Github 上看到一些不错的仓库，想要贡献代码怎么办？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在 Github 上看到一些有用的网站，想部署到自己的服务器怎么办？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;。。。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;我想很多人都碰到过这个问题。&lt;/p&gt;
+&lt;p&gt;因此我的想法是做一套不同市面上大多数的 TypeScript 学习教程。以人类认知的角度思考问题，学习 TypeScript，通过通俗易懂的例子和图片来帮助大家建立 TypeScript 世界观。 而本篇文章则是这个系列的开篇。&lt;/p&gt;
+&lt;p&gt;系列安排：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;如果要贡献代码，之前我的做法通常是将代码克隆到本地，然后在本地的编辑器中修改并提交 pr。&lt;/li&gt;
-&lt;li&gt;如果想部署到自己的服务器，之前我的做法通常是克隆到本地，然后本地修改一下部署的配置，最后部署到自己的服务器或者第三方的云服务器（比如 Github Pages）。&lt;/li&gt;
+&lt;li&gt;上帝视角看 TypeScript（就是本文）&lt;/li&gt;
+&lt;li&gt;TypeScript 类型系统&lt;/li&gt;
+&lt;li&gt;什么是 types？什么是 @types？&lt;/li&gt;
+&lt;li&gt;类型推导， 类型断言与类型保护&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/06/16/ts-generics/&quot;&gt;你不知道的 TypeScript 泛型（万字长文，建议收藏）&lt;/a&gt;（已发布）&lt;/li&gt;
+&lt;li&gt;TypeScript 练习题&lt;/li&gt;
+&lt;li&gt;TypeScript 配置文件该怎么写？&lt;/li&gt;
+&lt;li&gt;TypeScript 是如何与 React，Vue，Webpack 集成的？&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;而现在随着云技术的普及，我们&lt;strong&gt;没有必要将代码克隆到本地进行操作，而是直接在云端编辑器中完成修改，开发，并直接部署到云服务器&lt;/strong&gt;。今天就给大家推荐一个工具，一键将代码部署到云服务器。&lt;/p&gt;
-&lt;p&gt;​
+&lt;blockquote&gt;
+&lt;p&gt;目录将来可能会有所调整。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;注意，我的系列文章基本不会讲 API，因此需要你有一定的 TypeScript 使用基础，推荐两个学习资料。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://jkchao.github.io/typescript-book-chinese/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;深入理解 TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.typescriptlang.org/docs/home&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方文档&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;结合这两个资料和我的系列教程，掌握 TypeScript 指日可待。&lt;/p&gt;
+&lt;p&gt;接下来，我们通过几个方面来从宏观的角度来看一下 TypeScript。&lt;/p&gt;
     
     </summary>
     
-      <category term="CD" scheme="https://lucifer.ren/blog/categories/CD/"/>
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="TypeScript" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/TypeScript/"/>
+    
+      <category term="泛型" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/TypeScript/%E6%B3%9B%E5%9E%8B/"/>
     
     
-      <category term="CD" scheme="https://lucifer.ren/blog/tags/CD/"/>
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="GitHub" scheme="https://lucifer.ren/blog/tags/GitHub/"/>
+      <category term="TypeScript" scheme="https://lucifer.ren/blog/tags/TypeScript/"/>
+    
+      <category term="泛型" scheme="https://lucifer.ren/blog/tags/%E6%B3%9B%E5%9E%8B/"/>
     
   </entry>
   
   <entry>
-    <title>回炉重铸， 91 天见证不一样的自己（第三期）</title>
-    <link href="https://lucifer.ren/blog/2021/01/19/91-algo-3/"/>
-    <id>https://lucifer.ren/blog/2021/01/19/91-algo-3/</id>
-    <published>2021-01-18T16:00:00.000Z</published>
-    <updated>2021-03-01T02:32:26.647Z</updated>
+    <title>你不知道的 TypeScript 泛型（万字长文，建议收藏）</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/ts-generics/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/ts-generics/</id>
+    <published>2021-03-09T10:16:43.442Z</published>
+    <updated>2021-03-09T10:16:43.443Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
-&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg&quot; width=&quot;50%&quot;&gt;
+      &lt;p&gt;泛型是 TypeScript（以下简称 TS） 比较高级的功能之一，理解起来也比较困难。泛型应用场景非常广泛，很多地方都能看到它的影子。平时我们阅读开源 TS 项目源码，或者在自己的 TS 项目中使用一些第三方库（比如 React）的时候，经常会看到各种泛型定义。如果你不是特别了解泛型，那么你很可能不仅不会用，不会实现，甚至看不懂这是在干什么。&lt;/p&gt;
+&lt;p&gt;相信大家都经历过，看到过，或者正在写&lt;strong&gt;一些应用，这些应用充斥着各种重复类型定义， any 类型层出不穷，鼠标移到变量上面的提示只有 any，不要说类型操作了，类型能写对都是个问题&lt;/strong&gt;。我也经历过这样的阶段，那个时候我对 TS 还比较陌生。&lt;/p&gt;
+&lt;p&gt;随着在 TS 方面学习的深入，越来越认识到 &lt;strong&gt;真正的 TS 高手都是在玩类型&lt;/strong&gt;，对类型进行各种运算生成新的类型。这也好理解，毕竟 &lt;strong&gt;TS 提供的其实就是类型系统&lt;/strong&gt;。你去看那些 TS 高手的代码，会各种&lt;strong&gt;花式使用泛型&lt;/strong&gt;。 可以说泛型是一道坎，只有真正掌握它，你才知道&lt;strong&gt;原来 TS 还可以这么玩&lt;/strong&gt;。怪不得面试的时候大家都愿意问泛型，尽管面试官很可能也不怎么懂。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;只有理解事物的内在逻辑，才算真正掌握了，不然永远只是皮毛，不得其法&lt;/strong&gt;。 本文就带你走进泛型，带你从另一个角度看看究竟什么是泛型，为什么要有它，它给 TS 带来了什么样的不同。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：不同语言泛型略有不同，知识迁移虽然可以，但是不能生搬硬套，本文所讲的泛型都指的是 TS 下的泛型。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="TypeScript" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/TypeScript/"/>
+    
+      <category term="泛型" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/TypeScript/%E6%B3%9B%E5%9E%8B/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="TypeScript" scheme="https://lucifer.ren/blog/tags/TypeScript/"/>
+    
+      <category term="泛型" scheme="https://lucifer.ren/blog/tags/%E6%B3%9B%E5%9E%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>值得关注的技术类大会</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/tech-conf/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/tech-conf/</id>
+    <published>2021-03-09T10:16:43.437Z</published>
+    <updated>2021-03-09T10:16:43.437Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;作为一个技术人，怎么能不参加和关注几场技术大会呢？让我们来看下那些你不能错过的技术大会吧。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术大会" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/"/>
+    
+      <category term="JSConf" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/JSConf/"/>
+    
+      <category term="React Conf" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/React-Conf/"/>
+    
+      <category term="Google IO" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/Google-IO/"/>
+    
+      <category term="D2" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/D2/"/>
+    
+      <category term="QCon" scheme="https://lucifer.ren/blog/categories/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/QCon/"/>
+    
+    
+      <category term="技术大会" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/"/>
+    
+      <category term="JSConf" scheme="https://lucifer.ren/blog/tags/JSConf/"/>
+    
+      <category term="Google IO" scheme="https://lucifer.ren/blog/tags/Google-IO/"/>
+    
+      <category term="D2" scheme="https://lucifer.ren/blog/tags/D2/"/>
+    
+      <category term="QCon" scheme="https://lucifer.ren/blog/tags/QCon/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>纪念LeetCode项目Star突破2W</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/thanksGaving-2/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/thanksGaving-2/</id>
+    <published>2021-03-09T10:16:43.437Z</published>
+    <updated>2021-03-09T10:16:43.437Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;假期这几天我买了《逆转裁判 123》合集，面对着这香喷喷的冷饭吃了半天。从 GBA 玩到 NDS，从 NDS 玩到 3DS, 现在 NS 虽然没有出新作有点遗憾。不过有了高清重制，也当是个回忆和收藏了 🎉🎉&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://lucifer.ren/blog/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="技术" scheme="https://lucifer.ren/blog/categories/%E6%97%A5%E8%AE%B0/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="日记" scheme="https://lucifer.ren/blog/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>纪念LeetCode项目Star突破3W</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/thanksGiving3/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/thanksGiving3/</id>
+    <published>2021-03-09T10:16:43.437Z</published>
+    <updated>2021-03-09T10:16:43.437Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;差不多一年的时间，项目收获了第 3W 个 Star，平均差不多一天 100 左右的 star，非常感谢大家的关注和支持。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://lucifer.ren/blog/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="技术" scheme="https://lucifer.ren/blog/categories/%E6%97%A5%E8%AE%B0/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="日记" scheme="https://lucifer.ren/blog/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>致作者</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/to-author/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/to-author/</id>
+    <published>2021-03-09T10:16:43.437Z</published>
+    <updated>2021-03-09T10:16:43.438Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;写给我敬爱的作者们，关于“云写书”的初衷，愿景，规划以及具体细节。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="LeetCode题解书" scheme="https://lucifer.ren/blog/categories/LeetCode/LeetCode%E9%A2%98%E8%A7%A3%E4%B9%A6/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一文带你 AC 十道题【滑动窗口】</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/slide-window/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/slide-window/</id>
+    <published>2021-03-09T10:16:43.436Z</published>
+    <updated>2021-03-09T10:16:43.437Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;笔者最早接触滑动窗口是&lt;code&gt;滑动窗口协议&lt;/code&gt;，滑动窗口协议（Sliding Window Protocol），属于 TCP 协议的一种应用，用于网络数据传输时的流量控制，以避免拥塞的发生。 发送方和接收方分别有一个窗口大小 w1 和 w2。窗口大小可能会根据网络流量的变化而有所不同，但是在更简单的实现中它们是固定的。窗口大小必须大于零才能进行任何操作。&lt;/p&gt;
+&lt;p&gt;我们算法中的滑动窗口也是类似，只不过包括的情况更加广泛。实际上上面的滑动窗口在某一个时刻就是固定窗口大小的滑动窗口，随着网络流量等因素改变窗口大小也会随着改变。接下来我们讲下算法中的滑动窗口。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="算法，滑动窗口" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95%EF%BC%8C%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
+    
+      <category term="数据结构，数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="数据结构，字符串" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+    
+      <category term="滑动窗口" scheme="https://lucifer.ren/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一文带你看懂二叉树的序列化</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/serialize/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/serialize/</id>
+    <published>2021-03-09T10:16:43.432Z</published>
+    <updated>2021-03-09T10:16:43.432Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们先来看下什么是序列化，以下定义来自维基百科：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;序列化（serialization）在计算机科学的数据处理中，是指将数据结构或对象状态转换成可取用格式（例如存成文件，存于缓冲，或经由网络中发送），以留待后续在相同或另一台计算机环境中，能恢复原先状态的过程。依照序列化格式重新获取字节的结果时，可以利用它来产生与原始对象相同语义的副本。对于许多对象，像是使用大量引用的复杂对象，这种序列化重建的过程并不容易。面向对象中的对象序列化，并不概括之前原始对象所关系的函数。这种过程也称为对象编组（marshalling）。从一系列字节提取数据结构的反向操作，是反序列化（也称为解编组、deserialization、unmarshalling）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可见，序列化和反序列化在计算机科学中的应用还是非常广泛的。就拿 LeetCode 平台来说，其允许用户输入形如：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[1,2,3,null,null,4,5]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;​
+&lt;p&gt;这样的数据结构来描述一颗树：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gh2dqqnyzwj30ba0baglw.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;([1,2,3,null,null,4,5] 对应的二叉树)&lt;/p&gt;
+&lt;p&gt;其实序列化和反序列化只是一个概念，不是一种具体的算法，而是很多的算法。并且针对不同的数据结构，算法也会不一样。本文主要讲述的是二叉树的序列化和反序列化。看完本文之后，你就可以放心大胆地去 AC 以下两道题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/serialize-and-deserialize-bst/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;449. 序列化和反序列化二叉搜索树(中等)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;297. 二叉树的序列化与反序列化(困难)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
     
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+      <category term="算法，序列化" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95%EF%BC%8C%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    
+      <category term="数据结构，二叉树" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+    
+      <category term="二叉树" scheme="https://lucifer.ren/blog/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+      <category term="序列化" scheme="https://lucifer.ren/blog/tags/%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>文科生都能看懂的循环移位算法</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/rotate-list/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/rotate-list/</id>
+    <published>2021-03-09T10:16:43.431Z</published>
+    <updated>2021-03-09T10:16:43.431Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;循环移位问题真的是一个特别经典的问题了，今天我们就来攻克它。&lt;/p&gt;
+&lt;p&gt;循环移位的表现形式有很多种，就数据结构来说包括&lt;code&gt;数组&lt;/code&gt;，&lt;code&gt;字符串&lt;/code&gt;，&lt;code&gt;链表&lt;/code&gt;等。就算法来说，有&lt;code&gt;包含问题&lt;/code&gt;，&lt;code&gt;直接移动问题&lt;/code&gt;，还有&lt;code&gt;查找问题&lt;/code&gt;等。&lt;/p&gt;
+&lt;p&gt;虽然表现形式有很多，但是本质都是一样的，因为从逻辑上来讲其实他们都是线性数据结构，那么让我们来看一下吧。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="字符串" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="数组" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="循环移位" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D/"/>
+    
+      <category term="链表" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/"/>
+    
+      <category term="编程之美" scheme="https://lucifer.ren/blog/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
     
     
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
+      <category term="数组" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E7%BB%84/"/>
     
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+      <category term="链表" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E8%A1%A8/"/>
     
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+      <category term="循环移位" scheme="https://lucifer.ren/blog/tags/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D/"/>
     
-  </entry>
-  
-  <entry>
-    <title>几乎刷完了力扣所有的堆题，我发现了这些东西。。。（第二弹）</title>
-    <link href="https://lucifer.ren/blog/2021/01/19/heap-2/"/>
-    <id>https://lucifer.ren/blog/2021/01/19/heap-2/</id>
-    <published>2021-01-18T16:00:00.000Z</published>
-    <updated>2021-01-25T11:58:47.786Z</updated>
+      <category term="字符串" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-    <summary type="html">
-    
-      &lt;h2 id=&quot;一点题外话&quot;&gt;&lt;a href=&quot;#一点题外话&quot; class=&quot;headerlink&quot; title=&quot;一点题外话&quot;&gt;&lt;/a&gt;一点题外话&lt;/h2&gt;&lt;p&gt;上次在我的公众号给大家做了一个小调查《投出你想要的题解编程语言吧~》。以下是调查的结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008eGmZEly1gmtc6l6sfij30p20gqjsu.jpg&quot; alt=&quot;投票结果&quot;&gt;&lt;/p&gt;
-&lt;p&gt;而关于其他，则大多数是 Go 语言。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008eGmZEly1gmtc7yeqxyj317y0me0wd.jpg&quot; alt=&quot;投其他的人都写了什么？&quot;&gt;&lt;/p&gt;
-&lt;p&gt;由于 Java 和 Python 所占比例已经超过了 60%，这次我尝试一下 Java 和 Python 双语言来写，感谢 @CaptainZ 提供的 Java 代码。同时为了&lt;strong&gt;不让文章又臭又长，我将 Java 本文所有代码（Java 和 Python）都放到了力扣加加官网上&lt;/strong&gt;，网站地址：&lt;a href=&quot;https://leetcode-solution.cn/solution-code&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode-solution.cn/solution-code&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;如果不科学上网的话，可能打开会很慢。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;正文&quot;&gt;&lt;a href=&quot;#正文&quot; class=&quot;headerlink&quot; title=&quot;正文&quot;&gt;&lt;/a&gt;正文&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/0081Kckwly1glegve2v47j319g0u041x.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;大家好，我是 lucifer。今天给大家带来的是《堆》专题。先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我会继续完善，将其他专题逐步完善起来。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;大家也可以使用 vscode blink-mind 打开源文件查看，里面有一些笔记可以点开查看。源文件可以去我的公众号《力扣加加》回复脑图获取，以后脑图也会持续更新更多内容。vscode 插件地址：&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;本系列包含以下专题：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/11/08/linked-list/&quot;&gt;几乎刷完了力扣所有的链表题，我发现了这些东西。。。&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/11/23/tree/&quot;&gt;几乎刷完了力扣所有的树题，我发现了这些东西。。。&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/12/26/heap/&quot;&gt;几乎刷完了力扣所有的堆题，我发现了这些东西。。。（第一弹）&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="堆" scheme="https://lucifer.ren/blog/categories/%E5%A0%86/"/>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="堆" scheme="https://lucifer.ren/blog/tags/%E5%A0%86/"/>
+      <category term="编程之美" scheme="https://lucifer.ren/blog/tags/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
     
   </entry>
   
   <entry>
-    <title>蓄水池抽样</title>
-    <link href="https://lucifer.ren/blog/2021/01/12/reservoid-sampling/"/>
-    <id>https://lucifer.ren/blog/2021/01/12/reservoid-sampling/</id>
-    <published>2021-01-11T16:00:00.000Z</published>
-    <updated>2021-01-12T10:39:04.625Z</updated>
+    <title>一文搞懂《链表反转》</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/reverseList/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/reverseList/</id>
+    <published>2021-03-09T10:16:43.430Z</published>
+    <updated>2021-03-09T10:16:43.430Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;力扣中关于蓄水池抽样问题官方标签是 2 道，根据我的做题情况来看，可能有三四道。比重算是比较低的，大家可以根据自己的实际情况选择性掌握。&lt;/p&gt;
-&lt;p&gt;蓄水池抽样的算法思维很巧妙，代码简单且容易理解，就算不掌握它，作为了解也是很不错的。&lt;/p&gt;
+      &lt;p&gt;翻转链表一直都是热门题目，笔者就在某大型互联网公司的面试题中碰到过这种题目，这种题目很常常见，相对应的变形和扩展也很多，今天我们就来攻克它吧。&lt;/p&gt;
     
     </summary>
     
-      <category term="蓄水池抽样" scheme="https://lucifer.ren/blog/categories/%E8%93%84%E6%B0%B4%E6%B1%A0%E6%8A%BD%E6%A0%B7/"/>
+      <category term="数据结构" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="概率" scheme="https://lucifer.ren/blog/tags/%E6%A6%82%E7%8E%87/"/>
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
     
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+      <category term="链表反转" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC/"/>
     
-      <category term="蓄水池抽样" scheme="https://lucifer.ren/blog/tags/%E8%93%84%E6%B0%B4%E6%B1%A0%E6%8A%BD%E6%A0%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>几乎刷完了力扣所有的堆题，我发现了这些东西。。。</title>
-    <link href="https://lucifer.ren/blog/2020/12/26/heap/"/>
-    <id>https://lucifer.ren/blog/2020/12/26/heap/</id>
-    <published>2020-12-25T16:00:00.000Z</published>
-    <updated>2020-12-28T10:46:05.176Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/0081Kckwly1glegve2v47j319g0u041x.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;大家好，我是 lucifer。今天给大家带来的是《堆》专题。先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我会继续完善，将其他专题逐步完善起来。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;大家也可以使用 vscode blink-mind 打开源文件查看，里面有一些笔记可以点开查看。源文件可以去我的公众号《力扣加加》回复脑图获取，以后脑图也会持续更新更多内容。vscode 插件地址：&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;本系列包含以下专题：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/11/08/linked-list/&quot;&gt;几乎刷完了力扣所有的链表题，我发现了这些东西。。。&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/11/23/tree/&quot;&gt;几乎刷完了力扣所有的树题，我发现了这些东西。。。&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;几乎刷完了力扣所有的堆题，我发现了这些东西。。。（就是本文）&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="堆" scheme="https://lucifer.ren/blog/categories/%E5%A0%86/"/>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="堆" scheme="https://lucifer.ren/blog/tags/%E5%A0%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>来和大家聊聊我是如何刷题的（第三弹）</title>
-    <link href="https://lucifer.ren/blog/2020/12/21/shuati-silu3/"/>
-    <id>https://lucifer.ren/blog/2020/12/21/shuati-silu3/</id>
-    <published>2020-12-20T16:00:00.000Z</published>
-    <updated>2020-12-21T07:21:46.861Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前两篇的地址在这里，没有看过的同学建议先看下。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/11/29/shuati-silu/&quot;&gt;来和大家聊聊我是如何刷题的（第一弹）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/12/12/shuati-silu2/&quot;&gt;来和大家聊聊我是如何刷题的（第二弹）&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;本章或许是这个系列的最终章。这次给大家聊一点硬核的，聊一些几乎所有算法题都能用得上的超实用思想。&lt;/p&gt;
-&lt;p&gt;上一节给大家抛出了两个问题，分别是：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;如何锁定使用哪种算法&lt;/strong&gt;？比如我看到了这道题，我怎么知道该用什么解法呢？二分？动态规划？&lt;/li&gt;
-&lt;li&gt;一看就会，一写就废， 如何克服？&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;今天，我就来圆一个当初吹下的牛逼。话不多说，直接上干货。如果你觉得有用，请三连支持我一下，让我能够坚持下去，给大家带来更多的干货。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="刷题方法" scheme="https://lucifer.ren/blog/categories/%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/"/>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="刷题方法" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>力扣 APP 全新改版，史诗级增强！</title>
-    <link href="https://lucifer.ren/blog/2020/12/16/leetcode-app-1/"/>
-    <id>https://lucifer.ren/blog/2020/12/16/leetcode-app-1/</id>
-    <published>2020-12-15T16:00:00.000Z</published>
-    <updated>2020-12-16T07:49:09.035Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/0081Kckwly1glomy7awgxj31e00la4qp.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;这次的改版真的是判若两人，PC 端的几乎所有功能都可以在新版 APP 中看到，并且体验更好。 不仅之前令我不爽的地方全部不见了，而且多了一些我想都没想到的好用功能。 比如&lt;strong&gt;摇一摇功能&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;我拿到了体验版第一时间就给大家写了这篇&lt;strong&gt;体验报告&lt;/strong&gt;。下面，西法就带你看看全新版本都有啥。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="软件工具" scheme="https://lucifer.ren/blog/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>来和大家聊聊我是如何刷题的（第二弹）</title>
-    <link href="https://lucifer.ren/blog/2020/12/12/shuati-silu2/"/>
-    <id>https://lucifer.ren/blog/2020/12/12/shuati-silu2/</id>
-    <published>2020-12-11T16:00:00.000Z</published>
-    <updated>2020-12-12T10:53:33.208Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;上一篇的地址在这里，没有看过的同学建议先看第一篇 &lt;a href=&quot;https://lucifer.ren/blog/2020/11/29/shuati-silu/&quot;&gt;来和大家聊聊我是如何刷题的（第一弹）&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;这次继续给大家聊聊怎么刷题， 预计分几篇文章来写，今天是第二篇，本系列至少会出三篇。这次分享的内容是&lt;strong&gt;代码书写技巧&lt;/strong&gt;以及&lt;strong&gt;调试技巧&lt;/strong&gt;。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本系列旨在分享一些所有题目都适用的技巧以及一些刷题经验，帮助大家高效刷题。如果想重点突破某一类题目，可以关注我的专题系列。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;话不多说，直接上干货。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="刷题方法" scheme="https://lucifer.ren/blog/categories/%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/"/>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="刷题方法" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我是如何把简单题目做成困难的？</title>
-    <link href="https://lucifer.ren/blog/2020/12/04/91-tougao-xiaoyang-01/"/>
-    <id>https://lucifer.ren/blog/2020/12/04/91-tougao-xiaoyang-01/</id>
-    <published>2020-12-03T16:00:00.000Z</published>
-    <updated>2020-12-05T10:44:53.641Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;作者：小漾&lt;/li&gt;
-&lt;li&gt;来源：&lt;a href=&quot;https://github.com/suukii/91-days-algorithm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/suukii/91-days-algorithm&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;大家好，我是 lucifer，众所周知，我是一个小前端 (不是) 。其实，我是 lucifer 的 1379 号迷妹观察员，我是一粒纳米前端。(不要回答，不要回答，不要回答！！！)&lt;/p&gt;
-&lt;p&gt;这是第一次投稿，所以可以废话几句，说一下我为什么做题和写题解。刚开始做算法题的时候，只是纯粹觉得好玩，所以不仅没有刷题计划，写题解也只是随便记下几笔，几个月后自己也看不懂的那种。一次偶然机会发现了 lucifer 的明星题解仓库，是找到了 onepiece 的感觉。受他的启发，我也开始写些尽量能让人看懂的题解，虽然还赶不上 lucifer，但跟自己比总算是有了些进步。&lt;/p&gt;
-&lt;p&gt;身为迷妹观察员，lucifer 的 91 天学算法当然是不能错过的活动，现在活动的第二期正在 🔥 热进行中，有兴趣的同学了解一下呀。言归正传，跟着 91 课程我不再是漫无目的，而是计划清晰，按照课程安排的专题来做题，这样不仅更有利于了解某一类题涉及的相关知识，还能熟悉这类题的套路，再次遇见相似题型也能更快有思路。&lt;/p&gt;
-&lt;p&gt;废话就这么多，以下是正文部分。等等，还有最后一句，上面的”不要回答”是个三体梗，不知道有没有人 GET 到我。&lt;/p&gt;
-&lt;p&gt;今天给大家带来一道力扣简单题，官方题解只给出了一种最优解。本文比较贪心，打算带大家用&lt;strong&gt;四种姿势&lt;/strong&gt;来解决这道题。&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+      <category term="链表" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/"/>
     
     
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>图解数据结构</title>
-    <link href="https://lucifer.ren/blog/2020/12/02/91-tougao-tianxing-01/"/>
-    <id>https://lucifer.ren/blog/2020/12/02/91-tougao-tianxing-01/</id>
-    <published>2020-12-01T16:00:00.000Z</published>
-    <updated>2020-12-02T11:16:39.018Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;参加了 lucifer 的 91 天学算法活动，不知不觉中已经一月有余。从盲目地做到有目的、有套路地去做。&lt;/p&gt;
-&lt;p&gt;在 lucifer 的 91 课程中，从基础到进阶到专题，在这个月中，经历了基础篇的洗礼，不管在做题思路，还是做题速度都有了很大的提升，这个课程，没什么好说的，点赞点赞再点赞。也意识到学习好数据结构有多重要，不仅是思维方式的改变，还是在工程上的应用。&lt;/p&gt;
-&lt;p&gt;对一个问题使用画图、举例、分解这 3 种方法将其化繁为简，形成清晰思路再动手写代码，一张好的图能够更好地帮助去理解一个算法。因此本次分享如何使用画图同时结合经典的题目的方法去阐述数据结构。&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>来和大家聊聊我是如何刷题的（第一弹）</title>
-    <link href="https://lucifer.ren/blog/2020/11/29/shuati-silu/"/>
-    <id>https://lucifer.ren/blog/2020/11/29/shuati-silu/</id>
-    <published>2020-11-28T16:00:00.000Z</published>
-    <updated>2020-11-29T12:51:37.067Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天给大家聊聊怎么刷题， 预计分几篇文章来写，今天是第一篇。&lt;/p&gt;
-&lt;p&gt;话不多说，直接上干货。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="刷题方法" scheme="https://lucifer.ren/blog/categories/%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/"/>
-    
-    
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
-      <category term="刷题方法" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/"/>
+      <category term="字节跳动" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    
+      <category term="链表" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E8%A1%A8/"/>
     
   </entry>
   
   <entry>
-    <title>几乎刷完了力扣所有的树题，我发现了这些东西。。。</title>
-    <link href="https://lucifer.ren/blog/2020/11/23/tree/"/>
-    <id>https://lucifer.ren/blog/2020/11/23/tree/</id>
-    <published>2020-11-22T16:00:00.000Z</published>
-    <updated>2021-01-11T06:21:35.386Z</updated>
+    <title>【RFC】XXX 公司监控体系需求与技术调研</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/rfc-monitor/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/rfc-monitor/</id>
+    <published>2021-03-09T10:16:43.430Z</published>
+    <updated>2021-03-09T10:16:43.431Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/0081Kckwly1gkybjfbpubj30uo0u0gqz.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我会继续完善，将其他专题逐步完善起来。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;大家也可以使用 vscode blink-mind 打开源文件查看，里面有一些笔记可以点开查看。源文件可以去我的公众号《力扣加加》回复脑图获取，以后脑图也会持续更新更多内容。vscode 插件地址：&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;本系列包含以下专题：&lt;/p&gt;
+      &lt;p&gt;线上问题回溯困难，无法快速准确重现问题，导致客户满意度下降，影响团队交付效率和质量，建立完善的监控体系可以很好的解决这个问题。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="RFC" scheme="https://lucifer.ren/blog/tags/RFC/"/>
+    
+      <category term="技术调研" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/"/>
+    
+      <category term="监控" scheme="https://lucifer.ren/blog/tags/%E7%9B%91%E6%8E%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>累死累活干不过一个写PPT的</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/ppt-data/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/ppt-data/</id>
+    <published>2021-03-09T10:16:43.428Z</published>
+    <updated>2021-03-09T10:16:43.429Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;无论是身处什么行业什么领域，数据分析越来越成为一向必不可少的技能，&lt;br&gt;而运用数据思维进行决策更能产生形成高质量的决策结果。&lt;/p&gt;
+&lt;p&gt;随着互联网的不断发展和物联网设备的不断普及，我们日常生活中的各种数据被存储下来，让我们可以通过定量分析数据，利用数据实现更好的决策制定。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技能" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E8%83%BD/"/>
+    
+      <category term="PPT" scheme="https://lucifer.ren/blog/tags/PPT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从零打造一个舒服的Mac开发环境 - 装机篇</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/mac-setup-for-fe/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/mac-setup-for-fe/</id>
+    <published>2021-03-09T10:16:43.423Z</published>
+    <updated>2021-03-09T10:16:43.423Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前两天新买的16寸mac pro到手了。 本来想直接将旧电脑的数据做一个迁移，但是有同学反应想看“如何从零打造一个舒适的开发环境”，于是就有了这篇文章。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Mac" scheme="https://lucifer.ren/blog/tags/Mac/"/>
+    
+      <category term="装机" scheme="https://lucifer.ren/blog/tags/%E8%A3%85%E6%9C%BA/"/>
+    
+      <category term="必备软件" scheme="https://lucifer.ren/blog/tags/%E5%BF%85%E5%A4%87%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我的日程安排表系列</title>
+    <link href="https://lucifer.ren/blog/2021/03/09/leetcode-%E6%88%91%E7%9A%84%E6%97%A5%E7%A8%8B%E5%AE%89%E6%8E%92%E8%A1%A8%E7%B3%BB%E5%88%97/"/>
+    <id>https://lucifer.ren/blog/2021/03/09/leetcode-我的日程安排表系列/</id>
+    <published>2021-03-09T10:16:43.421Z</published>
+    <updated>2021-03-09T10:16:43.422Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;《我的日程安排表》截止目前（2020-02-03）在 LeetCode 上一共有三道题，其中两个中等难度，一个困难难度,分别是：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/11/08/linked-list/&quot;&gt;几乎刷完了力扣所有的链表题，我发现了这些东西。。。&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;几乎刷完了力扣所有的树题，我发现了这些东西。。。(就是本文)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/my-calendar-i&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;729. 我的日程安排表 I&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/my-calendar-ii&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;731. 我的日程安排表 II&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/my-calendar-iii&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;732. 我的日程安排表 III&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;另外 LeetCode 上有一个类似的系列《会议室》，截止目前（2020-02-03）有两道题目。其中一个简单一个中等，分别是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/meeting-rooms/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;252. 会议室&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/meeting-rooms-ii/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;253. 会议室 II&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;今天我们就来攻克它们。&lt;/p&gt;
     
     </summary>
     
-      <category term="树" scheme="https://lucifer.ren/blog/categories/%E6%A0%91/"/>
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
     
     
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
-      <category term="树" scheme="https://lucifer.ren/blog/tags/%E6%A0%91/"/>
+      <category term="算法系列" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97/"/>
     
   </entry>
   
