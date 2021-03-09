@@ -2,6 +2,7 @@
 title: 上帝视角看 TypeScript
 tags: [前端, TypeScript, 泛型]
 categories: [前端, TypeScript, 泛型]
+date: 2020-06-20
 ---
 
 TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教程。但是目前为止没有一个我特别满意的。原因有：
