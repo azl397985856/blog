@@ -233,11 +233,11 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> 数学 </tag>
             
             <tag> 最大公约数 </tag>
             
@@ -534,6 +534,35 @@
     
     
     <entry>
+      <title>《西法的刷题秘籍》电子书开放下载啦~</title>
+      <link href="/blog/2020/12/13/leetcode-ebook-1/"/>
+      <url>/blog/2020/12/13/leetcode-ebook-1/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluelm27rj30dw0780sm.jpg" alt="leetcode.jpeg"></p><ul><li><p>2019-07-10 ：<a href="./thanksGiving.md">纪念项目 Star 突破 1W 的一个短文</a>， 记录了项目的”兴起”之路，大家有兴趣可以看一下，如果对这个项目感兴趣，请<strong>点击一下 Star</strong>， 项目会<strong>持续更新</strong>，感谢大家的支持。</p></li><li><p>2019-10-08: <a href="./thanksGiving2.md">纪念 LeetCode 项目 Star 突破 2W</a>，并且 Github 搜索“LeetCode”，排名第一。</p></li><li><p>2020-04-12: <a href="./thanksGiving3.md">项目突破三万 Star</a>。</p></li><li><p>2020-04-14: 官网<code>力扣加加</code>上线啦 💐💐💐💐💐，有专题讲解，每日一题，下载区和视频题解，后续会增加更多内容，还不赶紧收藏起来？地址：<a href="http://leetcode-solution.cn/" target="_blank" rel="noopener">http://leetcode-solution.cn/</a></p></li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluemaoj3j30z90dtmy5.jpg" alt></p><a id="more"></a><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是我将我的所有公开的算法资料整理的一个电子书，全部题目信息中文化，以前会有一些英文描述，感谢 @CYL 的中文整理。</p><p><img src="https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-17/1602928846461-image.png" alt></p><p><img src="https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-17/1602928862442-image.png" alt></p><p>我写这本电子书花费了大量的时间和精力，除了内容上的创作，还要做一些电子书的排版，以让大家获得更好的阅读体验。光数学公式的展示，我就研究了多个插件的要源码，并魔改了一下才使得导出的电子书支持 latex。 不过有些动图，在做成电子书的时候自然就变没了，如果需要看动图的， 可以去我的公众号《力扣加加》或者我的 leetcode 题解仓库看。</p><p>由于是电子书，因此阅读体验可能会更好， 但是相应地就不能获得及时的更新，因此你可以收藏一下我的同步电子书的网站 <a href="https://leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/" target="_blank" rel="noopener">西法的刷题秘籍 - 在线版</a>。后期可能将每日一题， 91 天学算法其他章节的讲义等也整理进来。</p><p>电子书有更新我也会在公众号《力扣加加》进行通知， 感兴趣的同学可以关注一下。</p><p>目前导出了四种格式，可惜的是这几种格式都有自己的不足：</p><ul><li>在线版。 实时更新，想要及时获取最新信息的可以用在线版。</li><li>html。 方便大家在线观看，由于是 html ，实际上大家也可以保存起来<strong>离线</strong>观看。</li><li>pdf。可使用 pdf 阅读器和浏览器（比如谷歌）直接观看，阅读体验一般，生成的目录不能导航。</li><li>mobi。 下载一个 Kindle 客户端就可以看，不需要购买 Kindle。</li><li>epub。 数学公式和主题都比较不错， 但是代码没有高亮。</li></ul><p>大家选择适合自己的格式下载即可。</p><ul><li><a href="https://leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/" target="_blank" rel="noopener">在线版</a></li></ul><p>html, pdf，mobi 和 epub 格式，关注我的公众号《力扣加加》回复<code>电子书</code>即可。</p><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>leetcode 题解，记录自己的 leetcode 解题之路。</p><p>本仓库目前分为<strong>五个</strong>部分：</p><ul><li><p>第一个部分是 leetcode 经典题目的解析，包括思路，关键点和具体的代码实现。</p></li><li><p>第二部分是对于数据结构与算法的总结</p></li><li><p>第三部分是 anki 卡片， 将 leetcode 题目按照一定的方式记录在 anki 中，方便大家记忆。</p></li><li><p>第四部分是每日一题，每日一题是在交流群（包括微信和 qq）里进行的一种活动，大家一起 解一道题，这样讨论问题更加集中，会得到更多的反馈。而且 这些题目可以被记录下来，日后会进行筛选添加到仓库的题解模块。</p></li><li><p>第五部分是计划， 这里会记录将来要加入到以上三个部分内容</p></li></ul><blockquote><p>只有熟练掌握基础的数据结构与算法，才能对复杂问题迎刃有余。</p></blockquote><h2 id="非科学人士看过来"><a href="#非科学人士看过来" class="headerlink" title="非科学人士看过来"></a>非科学人士看过来</h2><p>如果是国内的非科学用户，可以使用 <a href="https://lucifer.ren/leetcode">https://lucifer.ren/leetcode</a> ，整站做了静态化，速度贼快！但是阅读体验可能一般，大家也可以访问<a href="http://leetcode-solution.cn/" target="_blank" rel="noopener">力扣加加</a>（暂时没有静态化）获得更好的阅读体验。</p><p>另外需要科学的，我推荐一个工具， 用户体验真的是好，用起来超简单， 提供一站式工具，包括网络检测工具，浏览器插件等，支持多种客户端（还有我最喜欢的 Switch 加速器），价格也不贵，基础套餐折算到月大约 11.2 块/月。它还支持签到送天数，也就是说你可以每天签到无限续期。地址：<a href="https://glados.space/landing/M9OHH-Q88JQ-DX72D-R04RN" target="_blank" rel="noopener">https://glados.space/landing/M9OHH-Q88JQ-DX72D-R04RN</a></p><h2 id="怎么刷-LeetCode？"><a href="#怎么刷-LeetCode？" class="headerlink" title="怎么刷 LeetCode？"></a>怎么刷 LeetCode？</h2><ul><li><a href="https://www.zhihu.com/question/280279208/answer/824585814" target="_blank" rel="noopener">我是如何刷 LeetCode 的</a></li><li><a href="https://www.zhihu.com/question/321738058/answer/1279464192" target="_blank" rel="noopener">算法小白如何高效、快速刷 leetcode？</a></li></ul><h2 id="刷题插件"><a href="#刷题插件" class="headerlink" title="刷题插件"></a>刷题插件</h2><ul><li><a href="https://lucifer.ren/blog/2020/06/06/algo-chrome-extension/">刷题效率低？或许你就差这么一个插件</a></li><li><a href="https://lucifer.ren/blog/2020/08/16/leetcode-cheat/">力扣刷题插件</a></li></ul><h2 id="91-天学算法"><a href="#91-天学算法" class="headerlink" title="91 天学算法"></a>91 天学算法</h2><ul><li><a href="https://lucifer.ren/blog/2020/05/30/91algo-05-30/">91 天，遇见不一样的自己</a></li></ul><h2 id="食用指南"><a href="#食用指南" class="headerlink" title="食用指南"></a>食用指南</h2><ul><li>我对大部分题目的复杂度都进行了分析，除了个别分析起来复杂的题目，大家一定要对一道题的复杂度了如指掌才可以。<blockquote><p>有些题目我是故意不写的， 比如所有的回溯题目我都没写， 不过它们全部都是指数的复杂度</p></blockquote></li><li>我对题目难度进行了分类的保留，因此你可以根据自己的情况刷。我推荐大家从简单开始，逐步加大难度，直到困难。</li><li>这里有一张互联网公司面试中经常考察的问题类型总结的思维导图，我们可以结合图片中的信息分析一下。</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluennxvrj30k00jx0te.jpg" alt="leetcode-zhihu"></p><p>（图片来自 leetcode)</p><p>其中算法，主要是以下几种：</p><ul><li>基础技巧：分治、二分、贪心</li><li>排序算法：快速排序、归并排序、计数排序</li><li>搜索算法：回溯、递归、深度优先遍历，广度优先遍历，二叉搜索树等</li><li>图论：最短路径、最小生成树</li><li>动态规划：背包问题、最长子序列</li></ul><p>数据结构，主要有如下几种：</p><ul><li>数组与链表：单 / 双向链表</li><li>栈与队列</li><li>哈希表</li><li>堆：最大堆 ／ 最小堆</li><li>树与图：最近公共祖先、并查集</li><li>字符串：前缀树（字典树） ／ 后缀树</li></ul><h2 id="精彩预告"><a href="#精彩预告" class="headerlink" title="精彩预告"></a>精彩预告</h2><p><a href="./problems/42.trapping-rain-water.md">0042.trapping-rain-water</a>:</p><img width="300" src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghlueqdwy3j30bg04hmx3.jpg"><p><a href="./problems/547.friend-circles-en.md">0547.friend-circles</a>:</p><img width="600" src="./assets/problems/547.friend-circle-bfs.png"><p><a href="./problems/90.subsets-ii.md">backtrack problems</a>:</p><img width="600" src="./assets/problems/backtrack.png"><p><a href="./problems/198.house-robber.md">0198.house-robber</a>:</p><img width="600" src="./assets/problems/198.house-robber.png"><p><a href="./problems/454.4-sum-ii.md">0454.4-sum-ii</a>:</p><img width="600" src="./assets/problems/454.4-sum-ii.png"><h3 id="anki-卡片"><a href="#anki-卡片" class="headerlink" title="anki 卡片"></a>anki 卡片</h3><p>Anki 主要分为两个部分：一部分是关键点到题目的映射，另一部分是题目到思路，关键点，代码的映射。</p><p>全部卡片都在 <a href="./assets/anki/leetcode.apkg">anki-card</a></p><p>使用方法：</p><p>anki - 文件 - 导入 - 下拉格式选择“打包的 anki 集合”，然后选中你下载好的文件，确定即可。</p><p>更多关于 anki 使用方法的请查看 <a href="https://apps.ankiweb.net/" target="_blank" rel="noopener">anki 官网</a></p><p>目前已更新卡片一览（仅列举正面）：</p><ul><li>二分法解决问题的关键点是什么，相关问题有哪些？</li><li>如何用栈的特点来简化操作， 涉及到的题目有哪些？</li><li>双指针问题的思路以及相关题目有哪些？</li><li>滑动窗口问题的思路以及相关题目有哪些？</li><li>回溯法解题的思路以及相关题目有哪些？</li><li>数论解决问题的关键点是什么，相关问题有哪些？</li><li>位运算解决问题的关键点是什么，相关问题有哪些？</li></ul><blockquote><p>已加入的题目有：#2 #3 #11</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> 电子书 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>力扣刷题插件</title>
       <link href="/blog/2020/12/13/leetcode-cheat/"/>
       <url>/blog/2020/12/13/leetcode-cheat/</url>
@@ -557,35 +586,6 @@
             <tag> 插件 </tag>
             
             <tag> 刷题 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>《西法的刷题秘籍》电子书开放下载啦~</title>
-      <link href="/blog/2020/12/13/leetcode-ebook-1/"/>
-      <url>/blog/2020/12/13/leetcode-ebook-1/</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluelm27rj30dw0780sm.jpg" alt="leetcode.jpeg"></p><ul><li><p>2019-07-10 ：<a href="./thanksGiving.md">纪念项目 Star 突破 1W 的一个短文</a>， 记录了项目的”兴起”之路，大家有兴趣可以看一下，如果对这个项目感兴趣，请<strong>点击一下 Star</strong>， 项目会<strong>持续更新</strong>，感谢大家的支持。</p></li><li><p>2019-10-08: <a href="./thanksGiving2.md">纪念 LeetCode 项目 Star 突破 2W</a>，并且 Github 搜索“LeetCode”，排名第一。</p></li><li><p>2020-04-12: <a href="./thanksGiving3.md">项目突破三万 Star</a>。</p></li><li><p>2020-04-14: 官网<code>力扣加加</code>上线啦 💐💐💐💐💐，有专题讲解，每日一题，下载区和视频题解，后续会增加更多内容，还不赶紧收藏起来？地址：<a href="http://leetcode-solution.cn/" target="_blank" rel="noopener">http://leetcode-solution.cn/</a></p></li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluemaoj3j30z90dtmy5.jpg" alt></p><a id="more"></a><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是我将我的所有公开的算法资料整理的一个电子书，全部题目信息中文化，以前会有一些英文描述，感谢 @CYL 的中文整理。</p><p><img src="https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-17/1602928846461-image.png" alt></p><p><img src="https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-17/1602928862442-image.png" alt></p><p>我写这本电子书花费了大量的时间和精力，除了内容上的创作，还要做一些电子书的排版，以让大家获得更好的阅读体验。光数学公式的展示，我就研究了多个插件的要源码，并魔改了一下才使得导出的电子书支持 latex。 不过有些动图，在做成电子书的时候自然就变没了，如果需要看动图的， 可以去我的公众号《力扣加加》或者我的 leetcode 题解仓库看。</p><p>由于是电子书，因此阅读体验可能会更好， 但是相应地就不能获得及时的更新，因此你可以收藏一下我的同步电子书的网站 <a href="https://leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/" target="_blank" rel="noopener">西法的刷题秘籍 - 在线版</a>。后期可能将每日一题， 91 天学算法其他章节的讲义等也整理进来。</p><p>电子书有更新我也会在公众号《力扣加加》进行通知， 感兴趣的同学可以关注一下。</p><p>目前导出了四种格式，可惜的是这几种格式都有自己的不足：</p><ul><li>在线版。 实时更新，想要及时获取最新信息的可以用在线版。</li><li>html。 方便大家在线观看，由于是 html ，实际上大家也可以保存起来<strong>离线</strong>观看。</li><li>pdf。可使用 pdf 阅读器和浏览器（比如谷歌）直接观看，阅读体验一般，生成的目录不能导航。</li><li>mobi。 下载一个 Kindle 客户端就可以看，不需要购买 Kindle。</li><li>epub。 数学公式和主题都比较不错， 但是代码没有高亮。</li></ul><p>大家选择适合自己的格式下载即可。</p><ul><li><a href="https://leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/" target="_blank" rel="noopener">在线版</a></li></ul><p>html, pdf，mobi 和 epub 格式，关注我的公众号《力扣加加》回复<code>电子书</code>即可。</p><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>leetcode 题解，记录自己的 leetcode 解题之路。</p><p>本仓库目前分为<strong>五个</strong>部分：</p><ul><li><p>第一个部分是 leetcode 经典题目的解析，包括思路，关键点和具体的代码实现。</p></li><li><p>第二部分是对于数据结构与算法的总结</p></li><li><p>第三部分是 anki 卡片， 将 leetcode 题目按照一定的方式记录在 anki 中，方便大家记忆。</p></li><li><p>第四部分是每日一题，每日一题是在交流群（包括微信和 qq）里进行的一种活动，大家一起 解一道题，这样讨论问题更加集中，会得到更多的反馈。而且 这些题目可以被记录下来，日后会进行筛选添加到仓库的题解模块。</p></li><li><p>第五部分是计划， 这里会记录将来要加入到以上三个部分内容</p></li></ul><blockquote><p>只有熟练掌握基础的数据结构与算法，才能对复杂问题迎刃有余。</p></blockquote><h2 id="非科学人士看过来"><a href="#非科学人士看过来" class="headerlink" title="非科学人士看过来"></a>非科学人士看过来</h2><p>如果是国内的非科学用户，可以使用 <a href="https://lucifer.ren/leetcode">https://lucifer.ren/leetcode</a> ，整站做了静态化，速度贼快！但是阅读体验可能一般，大家也可以访问<a href="http://leetcode-solution.cn/" target="_blank" rel="noopener">力扣加加</a>（暂时没有静态化）获得更好的阅读体验。</p><p>另外需要科学的，我推荐一个工具， 用户体验真的是好，用起来超简单， 提供一站式工具，包括网络检测工具，浏览器插件等，支持多种客户端（还有我最喜欢的 Switch 加速器），价格也不贵，基础套餐折算到月大约 11.2 块/月。它还支持签到送天数，也就是说你可以每天签到无限续期。地址：<a href="https://glados.space/landing/M9OHH-Q88JQ-DX72D-R04RN" target="_blank" rel="noopener">https://glados.space/landing/M9OHH-Q88JQ-DX72D-R04RN</a></p><h2 id="怎么刷-LeetCode？"><a href="#怎么刷-LeetCode？" class="headerlink" title="怎么刷 LeetCode？"></a>怎么刷 LeetCode？</h2><ul><li><a href="https://www.zhihu.com/question/280279208/answer/824585814" target="_blank" rel="noopener">我是如何刷 LeetCode 的</a></li><li><a href="https://www.zhihu.com/question/321738058/answer/1279464192" target="_blank" rel="noopener">算法小白如何高效、快速刷 leetcode？</a></li></ul><h2 id="刷题插件"><a href="#刷题插件" class="headerlink" title="刷题插件"></a>刷题插件</h2><ul><li><a href="https://lucifer.ren/blog/2020/06/06/algo-chrome-extension/">刷题效率低？或许你就差这么一个插件</a></li><li><a href="https://lucifer.ren/blog/2020/08/16/leetcode-cheat/">力扣刷题插件</a></li></ul><h2 id="91-天学算法"><a href="#91-天学算法" class="headerlink" title="91 天学算法"></a>91 天学算法</h2><ul><li><a href="https://lucifer.ren/blog/2020/05/30/91algo-05-30/">91 天，遇见不一样的自己</a></li></ul><h2 id="食用指南"><a href="#食用指南" class="headerlink" title="食用指南"></a>食用指南</h2><ul><li>我对大部分题目的复杂度都进行了分析，除了个别分析起来复杂的题目，大家一定要对一道题的复杂度了如指掌才可以。<blockquote><p>有些题目我是故意不写的， 比如所有的回溯题目我都没写， 不过它们全部都是指数的复杂度</p></blockquote></li><li>我对题目难度进行了分类的保留，因此你可以根据自己的情况刷。我推荐大家从简单开始，逐步加大难度，直到困难。</li><li>这里有一张互联网公司面试中经常考察的问题类型总结的思维导图，我们可以结合图片中的信息分析一下。</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluennxvrj30k00jx0te.jpg" alt="leetcode-zhihu"></p><p>（图片来自 leetcode)</p><p>其中算法，主要是以下几种：</p><ul><li>基础技巧：分治、二分、贪心</li><li>排序算法：快速排序、归并排序、计数排序</li><li>搜索算法：回溯、递归、深度优先遍历，广度优先遍历，二叉搜索树等</li><li>图论：最短路径、最小生成树</li><li>动态规划：背包问题、最长子序列</li></ul><p>数据结构，主要有如下几种：</p><ul><li>数组与链表：单 / 双向链表</li><li>栈与队列</li><li>哈希表</li><li>堆：最大堆 ／ 最小堆</li><li>树与图：最近公共祖先、并查集</li><li>字符串：前缀树（字典树） ／ 后缀树</li></ul><h2 id="精彩预告"><a href="#精彩预告" class="headerlink" title="精彩预告"></a>精彩预告</h2><p><a href="./problems/42.trapping-rain-water.md">0042.trapping-rain-water</a>:</p><img width="300" src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghlueqdwy3j30bg04hmx3.jpg"><p><a href="./problems/547.friend-circles-en.md">0547.friend-circles</a>:</p><img width="600" src="./assets/problems/547.friend-circle-bfs.png"><p><a href="./problems/90.subsets-ii.md">backtrack problems</a>:</p><img width="600" src="./assets/problems/backtrack.png"><p><a href="./problems/198.house-robber.md">0198.house-robber</a>:</p><img width="600" src="./assets/problems/198.house-robber.png"><p><a href="./problems/454.4-sum-ii.md">0454.4-sum-ii</a>:</p><img width="600" src="./assets/problems/454.4-sum-ii.png"><h3 id="anki-卡片"><a href="#anki-卡片" class="headerlink" title="anki 卡片"></a>anki 卡片</h3><p>Anki 主要分为两个部分：一部分是关键点到题目的映射，另一部分是题目到思路，关键点，代码的映射。</p><p>全部卡片都在 <a href="./assets/anki/leetcode.apkg">anki-card</a></p><p>使用方法：</p><p>anki - 文件 - 导入 - 下拉格式选择“打包的 anki 集合”，然后选中你下载好的文件，确定即可。</p><p>更多关于 anki 使用方法的请查看 <a href="https://apps.ankiweb.net/" target="_blank" rel="noopener">anki 官网</a></p><p>目前已更新卡片一览（仅列举正面）：</p><ul><li>二分法解决问题的关键点是什么，相关问题有哪些？</li><li>如何用栈的特点来简化操作， 涉及到的题目有哪些？</li><li>双指针问题的思路以及相关题目有哪些？</li><li>滑动窗口问题的思路以及相关题目有哪些？</li><li>回溯法解题的思路以及相关题目有哪些？</li><li>数论解决问题的关键点是什么，相关问题有哪些？</li><li>位运算解决问题的关键点是什么，相关问题有哪些？</li></ul><blockquote><p>已加入的题目有：#2 #3 #11</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> 算法 </category>
-          
-          <category> LeetCode </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> LeetCode </tag>
-            
-            <tag> 电子书 </tag>
             
         </tags>
       
@@ -1124,9 +1124,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -1167,9 +1167,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -1241,9 +1241,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -1543,11 +1543,11 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> 数学 </tag>
             
             <tag> BFS </tag>
             
@@ -1567,15 +1567,15 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
-          <category> Medium </category>
-          
           <category> 双指针 </category>
+          
+          <category> Medium </category>
           
       </categories>
       
@@ -1637,9 +1637,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -1916,37 +1916,6 @@
     
     
     <entry>
-      <title>力扣加加闪亮登场～</title>
-      <link href="/blog/2020/06/13/leetcode-pp/"/>
-      <url>/blog/2020/06/13/leetcode-pp/</url>
-      
-        <content type="html"><![CDATA[<p>力扣加加，一个努力做西湖区最好的算法题解的团队。</p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg" width="50%"><p>​<a id="more"></a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">脑洞前端：你已经长大了，是时候自己写题解了。</span><br><span class="line">力扣加加：。。。</span><br></pre></td></tr></table></figure><p>独立的原因是让公众号的定位更加清晰，喜欢我的题解的朋友可以关注力扣加加，喜欢我的前端架构剖析，徒手造框架的朋友可以关注脑洞前端。当然如果你同时关注两个，那我会感动到哭。</p><p>虽然是新的公众号，但是我的初心不变，依然是<code>力求用清晰直白的方式还原解题过程，努力做西湖区最好的算法题解</code>。最后感谢大家一路以来的支持，我一定不负众望，越做越好。</p><h2 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h2><p>预计力扣加加会推出<strong>五个</strong>板块。</p><h3 id="91-算法"><a href="#91-算法" class="headerlink" title="91 算法"></a>91 算法</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfctrpi6sfj30xm0b6js7.jpg" alt></p><p>通过在 91 天的集中训练，帮助大家摆脱困境，征服算法。我们会帮助大家规划学习路线，91 天见证不一样的自己。群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。<strong>我会在结束之后将讲义和题解放到公众号号</strong>。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcubuzax3j30h9086gm6.jpg" alt><br>（仓库部分内容）</p><h3 id="算法题解"><a href="#算法题解" class="headerlink" title="算法题解"></a>算法题解</h3><p>就是对力扣中的题目进行讲解，尤其是经典的题目。并且尽量从多个角度思路，帮助大家纵向打开解题思路。目前差不多有几百的题解了。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuje66ltj30wl0migsw.jpg" alt></p><h3 id="专题讲解"><a href="#专题讲解" class="headerlink" title="专题讲解"></a>专题讲解</h3><p>对于共性比较强的，我会抽离成专题形式，帮助大家横向打开解题思路。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcucqfgczj30am0fgabj.jpg" alt><br>（之后会陆续加入更多专题）</p><h3 id="视频题解"><a href="#视频题解" class="headerlink" title="视频题解"></a>视频题解</h3><p>对于一些题目采用视频的方式可能更加直观方便，之后还会考虑直播。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcueie2w0j31bf07nwhl.jpg" alt></p><h3 id="刷题工具"><a href="#刷题工具" class="headerlink" title="刷题工具"></a>刷题工具</h3><p>初步规划了两个小工具，之后出测试版本会第一时间告诉大家，如果你对开发小工具感兴趣，也可以点击公众号的联系我来和我取得联系。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcun5uakzj31j20u0kc3.jpg" alt><br>（力扣加加刷题小助手）</p><h2 id="悬赏令"><a href="#悬赏令" class="headerlink" title="悬赏令"></a>悬赏令</h2><p>大家在日常生活或是在刷题过程中有时一定会产生一些疑问，百度谷歌翻来覆去的找也找不到心中所期待的答案，因此，大家可以通过<strong>力扣加加</strong>来将这些疑问提出来，不定期从大家的问题中挑选出比较经典的几个问题来供大家一起讨论，大致的问题类型如下：</p><ul><li>日常生活中有个问题想用数据结构+算法解决，但苦于思路不清晰</li><li>问题本身比较纠结，网上众说纷纭，找不到明确的答案</li><li>脑洞问题等等</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcwc7ow13j30la0cewgf.jpg" alt><br>（比如这种问题）</p><p>被抽中的问题对应的朋友及问题回答出色的朋友可以获得准备的小礼物哦！</p><p>最后，每周我们会根据公众号后台的阅读量及分享次数最多的小伙伴给予现金奖励奖励哦～。分享最多 <code>1</code> 人 <code>8.88</code> 红包，阅读最多的 <code>1</code> 人 <code>6.66</code> 红包。</p><p>不是第一也没有关系，我们会从分享排名 <code>2-10</code>撒 名的小伙伴中随机抽取<code>2个</code> 8.88 元红包，阅读排名 <code>2-10</code> 名的小伙伴中随机抽取<code>2个</code> 6.88 元红包，</p><blockquote><p>每周日下午，我们会对本周的数据进行统计，并随机抽取幸运的小伙伴，并对中奖结果在力扣加加公众号进行公布，中奖的小伙伴请主动联系我哦。领奖时间截止到每周日的 24:00。</p></blockquote><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><h3 id="公众号"><a href="#公众号" class="headerlink" title="公众号"></a>公众号</h3><p>点关注，不迷路。如果再给 ➕ 个星标就更棒啦！</p><blockquote><p>关注加加，星标加加～</p></blockquote><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" width="100%"><h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><ul><li><a href="http://leetcode-solution.cn/" target="_blank" rel="noopener">力扣加加官网</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 力扣加加 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 数据结构 </tag>
-            
-            <tag> 算法 </tag>
-            
-            <tag> 算法提高班 </tag>
-            
-            <tag> 力扣加加 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>【LeetCode日记】 1162. 地图分析</title>
       <link href="/blog/2020/06/13/leetcode-island/"/>
       <url>/blog/2020/06/13/leetcode-island/</url>
@@ -1956,13 +1925,13 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
           
-          <category> hashtable </category>
+          <category> 数据结构 </category>
           
           <category> BFS </category>
+          
+          <category> hashtable </category>
           
       </categories>
       
@@ -2000,15 +1969,46 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
             
-            <tag> 数学 </tag>
-            
             <tag> 中位数 </tag>
             
             <tag> 二分法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>力扣加加闪亮登场～</title>
+      <link href="/blog/2020/06/13/leetcode-pp/"/>
+      <url>/blog/2020/06/13/leetcode-pp/</url>
+      
+        <content type="html"><![CDATA[<p>力扣加加，一个努力做西湖区最好的算法题解的团队。</p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg" width="50%"><p>​<a id="more"></a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">脑洞前端：你已经长大了，是时候自己写题解了。</span><br><span class="line">力扣加加：。。。</span><br></pre></td></tr></table></figure><p>独立的原因是让公众号的定位更加清晰，喜欢我的题解的朋友可以关注力扣加加，喜欢我的前端架构剖析，徒手造框架的朋友可以关注脑洞前端。当然如果你同时关注两个，那我会感动到哭。</p><p>虽然是新的公众号，但是我的初心不变，依然是<code>力求用清晰直白的方式还原解题过程，努力做西湖区最好的算法题解</code>。最后感谢大家一路以来的支持，我一定不负众望，越做越好。</p><h2 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h2><p>预计力扣加加会推出<strong>五个</strong>板块。</p><h3 id="91-算法"><a href="#91-算法" class="headerlink" title="91 算法"></a>91 算法</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfctrpi6sfj30xm0b6js7.jpg" alt></p><p>通过在 91 天的集中训练，帮助大家摆脱困境，征服算法。我们会帮助大家规划学习路线，91 天见证不一样的自己。群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。<strong>我会在结束之后将讲义和题解放到公众号号</strong>。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcubuzax3j30h9086gm6.jpg" alt><br>（仓库部分内容）</p><h3 id="算法题解"><a href="#算法题解" class="headerlink" title="算法题解"></a>算法题解</h3><p>就是对力扣中的题目进行讲解，尤其是经典的题目。并且尽量从多个角度思路，帮助大家纵向打开解题思路。目前差不多有几百的题解了。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuje66ltj30wl0migsw.jpg" alt></p><h3 id="专题讲解"><a href="#专题讲解" class="headerlink" title="专题讲解"></a>专题讲解</h3><p>对于共性比较强的，我会抽离成专题形式，帮助大家横向打开解题思路。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcucqfgczj30am0fgabj.jpg" alt><br>（之后会陆续加入更多专题）</p><h3 id="视频题解"><a href="#视频题解" class="headerlink" title="视频题解"></a>视频题解</h3><p>对于一些题目采用视频的方式可能更加直观方便，之后还会考虑直播。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcueie2w0j31bf07nwhl.jpg" alt></p><h3 id="刷题工具"><a href="#刷题工具" class="headerlink" title="刷题工具"></a>刷题工具</h3><p>初步规划了两个小工具，之后出测试版本会第一时间告诉大家，如果你对开发小工具感兴趣，也可以点击公众号的联系我来和我取得联系。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcun5uakzj31j20u0kc3.jpg" alt><br>（力扣加加刷题小助手）</p><h2 id="悬赏令"><a href="#悬赏令" class="headerlink" title="悬赏令"></a>悬赏令</h2><p>大家在日常生活或是在刷题过程中有时一定会产生一些疑问，百度谷歌翻来覆去的找也找不到心中所期待的答案，因此，大家可以通过<strong>力扣加加</strong>来将这些疑问提出来，不定期从大家的问题中挑选出比较经典的几个问题来供大家一起讨论，大致的问题类型如下：</p><ul><li>日常生活中有个问题想用数据结构+算法解决，但苦于思路不清晰</li><li>问题本身比较纠结，网上众说纷纭，找不到明确的答案</li><li>脑洞问题等等</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcwc7ow13j30la0cewgf.jpg" alt><br>（比如这种问题）</p><p>被抽中的问题对应的朋友及问题回答出色的朋友可以获得准备的小礼物哦！</p><p>最后，每周我们会根据公众号后台的阅读量及分享次数最多的小伙伴给予现金奖励奖励哦～。分享最多 <code>1</code> 人 <code>8.88</code> 红包，阅读最多的 <code>1</code> 人 <code>6.66</code> 红包。</p><p>不是第一也没有关系，我们会从分享排名 <code>2-10</code>撒 名的小伙伴中随机抽取<code>2个</code> 8.88 元红包，阅读排名 <code>2-10</code> 名的小伙伴中随机抽取<code>2个</code> 6.88 元红包，</p><blockquote><p>每周日下午，我们会对本周的数据进行统计，并随机抽取幸运的小伙伴，并对中奖结果在力扣加加公众号进行公布，中奖的小伙伴请主动联系我哦。领奖时间截止到每周日的 24:00。</p></blockquote><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><h3 id="公众号"><a href="#公众号" class="headerlink" title="公众号"></a>公众号</h3><p>点关注，不迷路。如果再给 ➕ 个星标就更棒啦！</p><blockquote><p>关注加加，星标加加～</p></blockquote><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" width="100%"><h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><ul><li><a href="http://leetcode-solution.cn/" target="_blank" rel="noopener">力扣加加官网</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 力扣加加 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 算法提高班 </tag>
+            
+            <tag> 力扣加加 </tag>
             
         </tags>
       
@@ -2198,9 +2198,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -2235,9 +2235,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -2340,9 +2340,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -2938,13 +2938,13 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
           
-          <category> 字符串 </category>
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
+          
+          <category> 字符串 </category>
           
           <category> LeetCode </category>
           
@@ -3074,9 +3074,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -3169,9 +3169,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> LeetCode </category>
           
@@ -3206,9 +3206,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -3245,13 +3245,13 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
           
-          <category> hashtable </category>
+          <category> 数据结构 </category>
           
           <category> 数学 </category>
+          
+          <category> hashtable </category>
           
           <category> 位运算 </category>
           
@@ -3303,9 +3303,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> LeetCode </category>
           
@@ -3371,9 +3371,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 字符串 </category>
           
@@ -3515,9 +3515,9 @@
           
           <category> 数学 </category>
           
-          <category> 动态规划 </category>
-          
           <category> 概率 </category>
+          
+          <category> 动态规划 </category>
           
           <category> 递归 </category>
           
@@ -3526,11 +3526,11 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> 数学 </tag>
             
             <tag> 概率 </tag>
             

@@ -241,11 +241,11 @@
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E5%AD%A6/%E7%AE%97%E6%B3%95/"/>
     
     
+      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
+    
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="最大公约数" scheme="https://lucifer.ren/blog/tags/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/"/>
     
@@ -556,32 +556,6 @@
   </entry>
   
   <entry>
-    <title>力扣刷题插件</title>
-    <link href="https://lucifer.ren/blog/2020/12/13/leetcode-cheat/"/>
-    <id>https://lucifer.ren/blog/2020/12/13/leetcode-cheat/</id>
-    <published>2020-12-12T16:00:00.000Z</published>
-    <updated>2021-03-09T10:48:39.796Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;之前我做了一个视频， 介绍我的刷题浏览器扩展插件，视频地址：&lt;a href=&quot;https://www.bilibili.com/video/BV1UK4y1x7zj/。&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.bilibili.com/video/BV1UK4y1x7zj/。&lt;/a&gt; 今天我在上次的基础上增加了部分公司的显示以及优化了若干体验功能。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-      <category term="插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/"/>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-      <category term="刷题" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
     <title>《西法的刷题秘籍》电子书开放下载啦~</title>
     <link href="https://lucifer.ren/blog/2020/12/13/leetcode-ebook-1/"/>
     <id>https://lucifer.ren/blog/2020/12/13/leetcode-ebook-1/</id>
@@ -613,6 +587,32 @@
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
       <category term="电子书" scheme="https://lucifer.ren/blog/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>力扣刷题插件</title>
+    <link href="https://lucifer.ren/blog/2020/12/13/leetcode-cheat/"/>
+    <id>https://lucifer.ren/blog/2020/12/13/leetcode-cheat/</id>
+    <published>2020-12-12T16:00:00.000Z</published>
+    <updated>2021-03-09T10:48:39.796Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前我做了一个视频， 介绍我的刷题浏览器扩展插件，视频地址：&lt;a href=&quot;https://www.bilibili.com/video/BV1UK4y1x7zj/。&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.bilibili.com/video/BV1UK4y1x7zj/。&lt;/a&gt; 今天我在上次的基础上增加了部分公司的显示以及优化了若干体验功能。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+      <category term="刷题" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
