@@ -2,6 +2,7 @@
 title: 春招冲冲冲(钉钉+腾讯)
 tags: [数据结构, 算法, 春招]
 date: 2021-03-11
+mathjax: true
 categories:
   - [春招]
 ---
@@ -73,12 +74,12 @@ positive[i]=positive[i−1]+1
 $$
 
 $$
-  negative[i]=\left\{
-  \begin{aligned}
-  negative[i-1] + 1 &  & negative[i-1] > 0 \\
-  0 & & negative[i-1] = 0 \\
-  \end{aligned}
-  \right.
+negative[i]=\left\{
+\begin{aligned}
+negative[i-1] + 1 &  & negative[i-1] > 0 \\
+0 & & negative[i-1] = 0 \\
+\end{aligned}
+\right.
 $$
 
 - nums[i] < 0
@@ -88,12 +89,12 @@ negative[i]=positive[i−1]+1
 $$
 
 $$
-  positive[i]=\left\{
-  \begin{aligned}
-  negative[i-1] + 1 &  & negative[i-1] > 0 \\
-  0 & & negative[i-1] = 0 \\
-  \end{aligned}
-  \right.
+positive[i]=\left\{
+\begin{aligned}
+negative[i-1] + 1 &  & negative[i-1] > 0 \\
+0 & & negative[i-1] = 0 \\
+\end{aligned}
+\right.
 $$
 
 - nums[i] == 0

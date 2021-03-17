@@ -3,9 +3,9 @@
 <%- partial('_partial/head') %>
 <script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
 <script>
+  var btw = new BTWPlugin();
   setTimeout(function(){
-    var btw = new BTWPlugin();
-    btw.init({
+    window.btw.init({
       id: "container",
       blogId: "17446-1571644985832-648",
       name: "力扣加加",
