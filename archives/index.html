@@ -70,9 +70,9 @@
 
 <script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
 <script>
+  var btw = new BTWPlugin();
   setTimeout(function(){
-    var btw = new BTWPlugin();
-    btw.init({
+    window.btw.init({
       id: "container",
       blogId: "17446-1571644985832-648",
       name: "力扣加加",
@@ -1001,11 +1001,11 @@
 	          </div>
 	      
 	          <div class="archive-item archive-post mark">
-	            <a href="/blog/2020/06/20/LIS/">
+	            <a href="/blog/2020/06/20/LSS/">
 	              <time>06-20</time>
 	              <span class="title">
 	                
-	                  穿上衣服我就不认识你了？来聊聊最长上升子序列
+	                  一文看懂《最大子序列和问题》
 	                
 	                
 									
@@ -1015,11 +1015,11 @@
 	          </div>
 	      
 	          <div class="archive-item archive-post mark">
-	            <a href="/blog/2020/06/20/LSS/">
+	            <a href="/blog/2020/06/20/LIS/">
 	              <time>06-20</time>
 	              <span class="title">
 	                
-	                  一文看懂《最大子序列和问题》
+	                  穿上衣服我就不认识你了？来聊聊最长上升子序列
 	                
 	                
 									
@@ -1127,11 +1127,11 @@
 	          </div>
 	      
 	          <div class="archive-item archive-post mark">
-	            <a href="/blog/2020/06/13/leetcode-book.intro/">
+	            <a href="/blog/2020/06/13/leetcode-1186/">
 	              <time>06-13</time>
 	              <span class="title">
 	                
-	                  或许是一本可以彻底改变你刷 LeetCode 效率的题解书
+	                  【LeetCode题解】1186.删除一次得到子数组最大和
 	                
 	                
 									
@@ -1141,11 +1141,11 @@
 	          </div>
 	      
 	          <div class="archive-item archive-post mark">
-	            <a href="/blog/2020/06/13/leetcode-1186/">
+	            <a href="/blog/2020/06/13/leetcode-book.intro/">
 	              <time>06-13</time>
 	              <span class="title">
 	                
-	                  【LeetCode题解】1186.删除一次得到子数组最大和
+	                  或许是一本可以彻底改变你刷 LeetCode 效率的题解书
 	                
 	                
 									
@@ -1169,11 +1169,11 @@
 	          </div>
 	      
 	          <div class="archive-item archive-post mark">
-	            <a href="/blog/2020/06/13/leetcode-pp/">
+	            <a href="/blog/2020/06/13/leetcode-median/">
 	              <time>06-13</time>
 	              <span class="title">
 	                
-	                  力扣加加闪亮登场～
+	                  阿里面试题：如何寻找「两个数组」的中位数？
 	                
 	                
 									
@@ -1183,11 +1183,11 @@
 	          </div>
 	      
 	          <div class="archive-item archive-post mark">
-	            <a href="/blog/2020/06/13/leetcode-median/">
+	            <a href="/blog/2020/06/13/leetcode-pp/">
 	              <time>06-13</time>
 	              <span class="title">
 	                
-	                  阿里面试题：如何寻找「两个数组」的中位数？
+	                  力扣加加闪亮登场～
 	                
 	                
 									
@@ -1561,11 +1561,11 @@
 	          </div>
 	      
 	          <div class="archive-item archive-post mark">
-	            <a href="/blog/2020/03/04/84.largest-rectangle-in-histogram/">
+	            <a href="/blog/2020/03/04/85.maximal-rectangle/">
 	              <time>03-04</time>
 	              <span class="title">
 	                
-	                  【LeetCode 日记】 84. 柱状图中最大的矩形
+	                  【LeetCode 日记】85. 最大矩形
 	                
 	                
 									
@@ -1575,11 +1575,11 @@
 	          </div>
 	      
 	          <div class="archive-item archive-post mark">
-	            <a href="/blog/2020/03/04/85.maximal-rectangle/">
+	            <a href="/blog/2020/03/04/84.largest-rectangle-in-histogram/">
 	              <time>03-04</time>
 	              <span class="title">
 	                
-	                  【LeetCode 日记】85. 最大矩形
+	                  【LeetCode 日记】 84. 柱状图中最大的矩形
 	                
 	                
 									
@@ -2802,6 +2802,44 @@
 
 	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
 	
+
+	
+	    <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 	
 
