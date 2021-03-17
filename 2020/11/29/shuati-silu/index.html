@@ -388,7 +388,6 @@
         <p>今天给大家聊聊怎么刷题， 预计分几篇文章来写，今天是第一篇。</p>
 <p>话不多说，直接上干货。</p>
 <a id="more"></a>
-
 <h2 id="我建议大家-BFS"><a href="#我建议大家-BFS" class="headerlink" title="我建议大家 BFS"></a>我建议大家 BFS</h2><p>我的做法是集中时间只刷某一类的题目。这样对某一类题目就很有心得，做题就有题感，不会<strong>做一道是一道，下次碰到类似的题，甚至原题都不会</strong>。其实很多算法都是息息相关的，等你攻克了足够多的专题之后，算法知识才能融会贯通。</p>
 <p>我建议大家刷题的时候是<strong>广度优先，逐个突破</strong> 碰到不会的适当放弃，而不是深度优先，”死磕某一个知识“。比如大家在刷树的专题， 碰到一个树型 DP 不会， 这个时候应该果断放弃，等大家刷到 DP 的时候再回过头<strong>捡起来</strong>。</p>
 <p>听起来简单，但是我从哪个专题开始， 题目那么多我该刷哪个呢？</p>
@@ -402,14 +401,12 @@
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl6ajh887vj31zc0gmae6.jpg" alt></p>
 <p>代码文字版如下：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLIS</span><span class="params">(self, A: List[int])</span> -&gt; int:</span></span><br><span class="line">        d = []</span><br><span class="line">        <span class="keyword">for</span> a <span class="keyword">in</span> A:</span><br><span class="line">            i = bisect.bisect_left(d, a)</span><br><span class="line">            <span class="keyword">if</span> i &lt; len(d):</span><br><span class="line">                d[i] = a</span><br><span class="line">            <span class="keyword">elif</span> <span class="keyword">not</span> d <span class="keyword">or</span> d[<span class="number">-1</span>] &lt; a:</span><br><span class="line">                d.append(a)</span><br><span class="line">        <span class="keyword">return</span> len(d)</span><br></pre></td></tr></table></figure>
-
 <p>所以我的意思是，大家在适当的时候要不求甚解，不去追求这些东西。等大家把一个套路学的差不多，咱再学下一个。所谓<strong>君子报仇，十年不晚</strong> ^_^</p>
 <p>另外插一句题外话， LIS 真的很有用，大家一定要掌握，掌握了平方的解法再去看看 $NlogN$ 的解法，一些 HARD 题目必须要 $NlogN$ 才能过。</p>
 <p>比如这道题：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl6bekjygsj30oq19kwj0.jpg" alt></p>
 <p>题目后的提示如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3 &lt;= nums.length &lt;= 1000</span><br><span class="line">1 &lt;= nums[i] &lt;= 109</span><br><span class="line">题目保证 nums 删除一些元素后一定能得到山形数组。</span><br></pre></td></tr></table></figure>
-
 <p>看到这些，大概估算我们的时间复杂度 $N^2logN$，基本过是没问题的，果然就过了。</p>
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl6bduc9p3j31xu0p0tfa.jpg" alt></p>
 <p>再次印证了，刷题的多少是次要的，吃透一类题才是王道，这其实就和我的<strong>BFS 刷题大法</strong>相呼应。</p>

@@ -387,21 +387,18 @@
       <div class="article-entry" itemprop="articleBody">
         <p>很多人对于二分法的理解比较片面，之前碰到一个题目，从一个先升序后降序的数列中，比如 1 2 3 7 4 3 2 中运用二分法去查找一个给定的元素，很多人说根本不能二分，因为没有排序。其实 这道题完全可以使用二分查找进行解答， 如果你觉得不可以的话，很可能对二分法理解还比较片面。 这里以另外一个更加有趣（至少我认为）的例子来讲解一下二分法。</p>
 <a id="more"></a>
-
 <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>面试题： 有 1000 个一模一样的瓶子，其中有 1 瓶是毒药，老鼠喝了有毒的会在 24h 之后死亡。求最少需要多少老鼠才能在 24h 里找到有毒的那瓶。</p>
 <h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><p>这道题的解法有很多，今天我们来聊下用二分法来解这道题。 这道题似乎和我们看的的常见的二分法有很大的区别，但是仔细想一下， 二分法本质是将问题的规模缩小到原有的一半，带着这样的思想我们再来看一下。类似的，三分法就是将问题规模缩小为原来的 1/3.</p>
 <p>我们先对 1000 个瓶子进行编号，从 1-1000 这样子。 不过我们不是通过我们大家平时生活中使用的十进制，而是使用再计算机中使用的二进制， 同时让大家感受一下二进制的魅力。</p>
 <p>为了方便讲解，我们假设不是 1000 个瓶子，而是 4 个。</p>
 <p>我们来编一下号：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">00 // #1</span><br><span class="line">01 // #2</span><br><span class="line">10 // #3</span><br><span class="line">11 // #4</span><br></pre></td></tr></table></figure>
-
 <p>我们的目标是找到哪个瓶子有毒，换句话说我们目标是找到有毒瓶子的编号，再换句话说我们的目标是<br>找到有毒瓶子的 3 个 bit 分别是什么，是 0 还是 1.</p>
 <p>比如有毒的是 3 号瓶子，那么我们就是想确认第一个 bit 是 0，第二个 bit 是 1，第三个 bit 是 1，即 011，转化为 10 进制就是 3 号。</p>
 <p>那么如何确定每一个 bit 是什么呢？ 回想一下，我们手上有老鼠，老鼠有两个 state，alive 或者 died，这就是我们拥有的全部。</p>
 <p>接下来我们逐一对瓶子进行分组，分组的依据就是每一个 bit 的值。</p>
 <p>比如:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// 00 01     #g1:1  第一个bit是0</span><br><span class="line">// 10 11     #g1:2  第一个bit是1</span><br><span class="line">// 00 10     #g2:1  第二个bit是0</span><br><span class="line">// 01 11     #g2:2  第二个bit是1</span><br></pre></td></tr></table></figure>
-
 <p>我们来找第一个老鼠#1 来喝 g:1:1, 如果他死了，那么毒就在这一组，也就是说毒的第一个 bit 是 0，否则是 1</p>
 <p>我们来找第二个老鼠#2 来喝 g:2:1, 如果他死了，那么毒就在这一组，也就是说毒的第二个 bit 是 0，否则是 1</p>
 <p>所以我们可以看出, 两只老鼠就搞定了，我们按照这个思路，可以推到出 1000 个瓶子只需要 10 个瓶子, 即 log2 1000， 2 的 10 次方是 1024，因此 10 个老鼠够了，如果 1025 个瓶子的话，就需要 11 个老鼠了。</p>

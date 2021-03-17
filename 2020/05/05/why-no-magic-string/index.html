@@ -387,26 +387,23 @@
       <div class="article-entry" itemprop="articleBody">
         <p>最近参加了几次公司组内的 Code Review， 发现了一些问题。其中一些问题可以通过工具（比如 eslint）解决。 我们就想着通过工具自动化的方式进行解决。 而这些工具中有一些是现成的，比如 魔法数。 大家对魔法数的看法也是莫衷一是。本文通过<code>讲解什么是魔法数，eslint 是怎么检查魔法数的，以及思考为什么eslint 偏爱数字，而不是偏爱字符串来</code> 来深入剖析一下魔法数。</p>
 <a id="more"></a>
-
 <h2 id="计算机科学中的魔法数"><a href="#计算机科学中的魔法数" class="headerlink" title="计算机科学中的魔法数"></a>计算机科学中的魔法数</h2><p>什么是魔法数？ 这里我摘取了维基百科的解释：</p>
 <blockquote>
 <p>程序设计中所谓的魔术数字（magic number）可能有以下含意：</p>
 </blockquote>
 <pre><code>•    缺乏解释或命名的独特数值
 •    用于识别一个文件格式或协议的一段常量或字符串，例如UNIX的特征签名
-•    防止误作他用的一段数值，例如UUID</code></pre><p>实际上魔法数真的是一个很古老的话题了。从我刚从业开始，就不停听到这样的词语。大家都对此深恶痛绝，不想看到别人的魔法数，但是时不时自己也会写一些魔法数。 如果你经常做算法题，肯定对此深有感受。 很多人（或许包括我自己）喜欢通过魔法数来炫技。当然我的心理倒不仅仅是炫技这么简单，也掺杂了诸如“这个很显然易见”，“这个我也不知道怎么起名字”的想法。</p>
+•    防止误作他用的一段数值，例如UUID
+</code></pre><p>实际上魔法数真的是一个很古老的话题了。从我刚从业开始，就不停听到这样的词语。大家都对此深恶痛绝，不想看到别人的魔法数，但是时不时自己也会写一些魔法数。 如果你经常做算法题，肯定对此深有感受。 很多人（或许包括我自己）喜欢通过魔法数来炫技。当然我的心理倒不仅仅是炫技这么简单，也掺杂了诸如“这个很显然易见”，“这个我也不知道怎么起名字”的想法。</p>
 <h2 id="eslint-中的魔法数"><a href="#eslint-中的魔法数" class="headerlink" title="eslint 中的魔法数"></a>eslint 中的魔法数</h2><p>eslint 有一个 rule 是 no-magic-number. 为什么没有类似的比如 no-magic-string?</p>
 <p>我们首先来看下什么是”no-magic-number”。 根据 eslint 官方描述来看，其是通过确保数字被显式赋予一个常量，从而增加代码可读性和可维护性。</p>
 <p>如下代码被认为是不好的：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*eslint no-magic-numbers: “error”*/</span></span><br><span class="line"><span class="keyword">var</span> dutyFreePrice = <span class="number">100</span>,</span><br><span class="line">  finalPrice = dutyFreePrice + dutyFreePrice * <span class="number">0.25</span>;</span><br></pre></td></tr></table></figure>
-
 <p>而这段代码被认为是好的：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*eslint no-magic-numbers: “error”*/</span></span><br><span class="line"><span class="keyword">var</span> TAX = <span class="number">0.25</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> dutyFreePrice = <span class="number">100</span>,</span><br><span class="line">  finalPrice = dutyFreePrice + dutyFreePrice * TAX;</span><br></pre></td></tr></table></figure>
-
 <p>这两段代码有什么不同？为什么下面的代码被认为是好的？</p>
 <h2 id="一窥-eslint-源码"><a href="#一窥-eslint-源码" class="headerlink" title="一窥 eslint 源码"></a>一窥 eslint 源码</h2><p>通过阅读源码，我发现代码有这样一句：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// utils/ast-utils.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isNumericLiteral</span>(<span class="params">node</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    node.type === <span class="string">"Literal"</span> &amp;&amp;</span><br><span class="line">    (<span class="keyword">typeof</span> node.value === <span class="string">"number"</span> || <span class="built_in">Boolean</span>(node.bigint))</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// no-magic-numbers.js</span></span><br><span class="line"><span class="keyword">if</span> (!isNumericLiteral(node)) &#123;</span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>也就是说如果字面量不是数字会被忽略。这和我们的想法<code>这条规则只会检查魔法数字，而不会检查诸如魔法字符串等</code>。</p>
 <p>让我们时光倒流，将代码回退到 eslint 官方首次关于”no-magic-rule”的<a href="https://github.com/eslint/eslint/blob/510013c27eb917cd4c7268d5deb6301243b182cf/lib/rules/no-magic-number.js" target="_blank" rel="noopener">提交</a>。</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gehuq8vlq1j316w0qgn1g.jpg" alt></p>
@@ -419,15 +416,12 @@
 <p>从名字不难发现，其中 AssignmentExpression 和 ObjectExpression 属于表达式。 而 Property 则是对象属性。</p>
 <p>ObjectExpression 的例子：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;&#125;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>思考题：为什么 ObjectExpression 也是不被允许的？<br>AssignmentExpression 的例子：</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = b = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
-
 <p>Property 的例子：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = &#123; number: 1 &#125;</span><br></pre></td></tr></table></figure>
-
 <p>也就是说，如果设置了<code>检查对象</code>，那么上面三种情况都会报错。否则不进行报错处理。</p>
 <h2 id="AST-Explorer"><a href="#AST-Explorer" class="headerlink" title="AST-Explorer"></a>AST-Explorer</h2><p>大家使用<a href="https://astexplorer.net/#/gist/a595f16646dbbb4184afc3880b87aa2c/276fd81226015b7782056947b70c4b9e047113c9" target="_blank" rel="noopener">AST explorer</a> 来可视化 AST。</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gehuqxbzngj31s30u0wod.jpg" alt></p>
@@ -440,34 +434,26 @@
 <p>我的观点是<code>魔法字符串也是不好的，只不过没有不好的那么明显</code>。</p>
 <p>我们来看个例子：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">"lucifer"</span>;</span><br><span class="line">a = <span class="string">"hello, "</span> + name;</span><br><span class="line"><span class="keyword">if</span> (type === <span class="string">"add"</span>) &#123;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (type == <span class="string">"edit"</span>) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>如上代码，就可以被认定为 <code>magic string</code>。但是其在现实代码中是非常普遍的，并且不对我们造成很大的困扰。如果对其改写会是这样的：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">"lucifer"</span>;</span><br><span class="line"><span class="keyword">const</span> PRFIX = <span class="string">"hello, "</span>;</span><br><span class="line"><span class="keyword">const</span> TYPE_ADD = <span class="string">"add"</span>;</span><br><span class="line"><span class="keyword">const</span> TYPE_EDIT = <span class="string">"edit"</span>;</span><br><span class="line">a = prefix + name;</span><br><span class="line"><span class="keyword">if</span> (type === TYPE_ADD) &#123;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (type == TYPE_EDIT) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>再来看看数字：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (type === <span class="number">1</span>) &#123;</span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (total &gt; <span class="number">5</span>) &#123;</span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>如上是我实际工作中见到过的例子，还算有代表性。 上面的代码，如果不通读代码或者事先有一些背景知识，我们根本无从知晓代码的准确含义。</p>
 <p>还有一个地方，是数字不同于字符串的。 那就是数字可能是一个无限小数。计算机无法精确表示。 那么程序就不得不进行合理近似，而如果同一个程序不同地方采用的近似手段不同，那么就会有问题。而不使用魔法数就可以就可以避免这个问题。 举个例子：</p>
 <p>我们需要计算一个圆的面积，可能会这样做：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">area = 3.1415 * R ** 2</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">area = 3.141516 * R ** 2</span><br></pre></td></tr></table></figure>
-
 <p>这样就会有问题了。 而如果我们将 PI 的值抽离到一个变量去维护，任何代码都取这个变量的值就不会有问题。那么有人可能有这样的疑问<code>字符串如果拼写错了，是不是也是一样的么？</code></p>
 <p>比如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// a.js</span><br><span class="line">if (type == &apos;add&apos;) &#123;...&#125;</span><br><span class="line">// b.js</span><br><span class="line">if (type == &apos;addd&apos;) &#123;...&#125;</span><br></pre></td></tr></table></figure>
-
 <p>事实上，这样的事情很有可能发生。 只不过这种问题相比于数字来说更容易被发现而已。</p>
 <p>这么看来魔法数字确实给大家带来了很大的困扰，那么我们是否应该全面杜绝魔法数呢？</p>
 <h2 id="取舍之间"><a href="#取舍之间" class="headerlink" title="取舍之间"></a>取舍之间</h2><p>真的魔法数字(字符串吧)就是不好的么？其实也不见得。</p>
 <p>下面再来看一个我实际工作中碰到的例子：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">MS = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span> (type === <span class="string">"day"</span>) &#123;</span><br><span class="line">  MS = <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (type === <span class="string">"week"</span>) &#123;</span><br><span class="line">  MS = <span class="number">7</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>这种代码我不知道看了多少遍了。 或许这在大家眼中已然成为了一种共识，那么这种所谓的魔法数字代码的不可读问题就不存在了。 我们仍可以轻易知道代码的含义。</p>
 <p>如果将其进行改造：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">MS = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">const</span> HOURS_PER_DAY = <span class="number">24</span>;</span><br><span class="line"><span class="keyword">const</span> MINUTES_PER_HOUR = <span class="number">60</span>;</span><br><span class="line"><span class="keyword">const</span> SECONDs_PER_MINUTE = <span class="number">60</span>;</span><br><span class="line"><span class="keyword">const</span> MS_PER_SECOND = <span class="number">1000</span>;</span><br><span class="line"><span class="keyword">const</span> DAYS_PER_WEEK = <span class="number">7</span>;</span><br><span class="line"><span class="keyword">if</span> (type === <span class="string">"day"</span>) &#123;</span><br><span class="line">  MS = HOURS_PER_DAY * MINUTES_PER_HOUR * SECONDs_PER_MINUTE * MS_PER_SECOND;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (type === <span class="string">"week"</span>) &#123;</span><br><span class="line">  MS =</span><br><span class="line">    DAYS_PER_WEEK *</span><br><span class="line">    HOURS_PER_DAY *</span><br><span class="line">    MINUTES_PER_HOUR *</span><br><span class="line">    SECONDs_PER_MINUTE *</span><br><span class="line">    MS_PER_SECOND;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>上面的代码不见的要比上面的好到哪里。 <code>《程序设计实践》</code>提到了一点“变量命令不是越长越好，越具体越好，而是根据具体的限定范围”。 比如你在 queue 的 class 中定义的 size 字段可以直接叫 size ，而不是 queue_size。</p>
 <p>那么一些社会或者编码常识何尝不是一种限定呢？ 如果是的话， 我们是否可以不用特殊限定，而回归到“魔法数”呢？</p>
 

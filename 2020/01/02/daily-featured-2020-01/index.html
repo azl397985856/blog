@@ -389,7 +389,6 @@
 <p>每天给你推荐一个新奇，好玩，高品质的开源库，好文，观点或言论等。</p>
 <p>项目主页维护当前月份的内容，想看往期内容，可以去<a href="https://github.com/azl397985856/daily-featured" target="_blank" rel="noopener">每日一荐主仓库</a>翻到下方历史汇总部分，然后选择自己感兴趣的月份点进去即可。</p>
 <a id="more"></a>
-
 <h2 id="2020-01"><a href="#2020-01" class="headerlink" title="2020-01"></a>2020-01</h2><h3 id="2020-01-23-资料"><a href="#2020-01-23-资料" class="headerlink" title="2020-01-23[资料]"></a>2020-01-23[资料]</h3><p>尤雨溪在多伦多的演讲《Vue 3.0 设计原则》对于想要学习 Vue3.0 或者想要直接从零开发 Vue3.0 的人来说，绝对是必读的。PPT 内容不多，几分钟就可以读完，不建议看视频，视频大概有 50 多分钟。</p>
 <p>PPT 地址： <a href="https://docs.google.com/presentation/d/1r0HcS4baHy2c106DsZ4jA7Zt0R9u2MnRmmKIvAVuf1o/edit#slide=id.p" target="_blank" rel="noopener">https://docs.google.com/presentation/d/1r0HcS4baHy2c106DsZ4jA7Zt0R9u2MnRmmKIvAVuf1o/edit#slide=id.p</a></p>
 <h3 id="2020-01-22-软件"><a href="#2020-01-22-软件" class="headerlink" title="2020-01-22[软件]"></a>2020-01-22[软件]</h3><p>安卓软件的开屏广告很烦人，严重影响效率。这里推荐一个安卓 APP 可以改善这种情况, 并且不需要 root，只需要开启权限即可。注意它不是万能的，不过实际使用情况来看，还是有用的。</p>
@@ -419,7 +418,6 @@
 <h3 id="2020-01-08-好文"><a href="#2020-01-08-好文" class="headerlink" title="2020-01-08[好文]"></a>2020-01-08[好文]</h3><p>昨天介绍了《当你在浏览器中输入 google.com 并且按下回车之后发生了什么？》，今天推荐一篇《图解浏览器的基本工作原理》。 讲的内容主要是浏览器渲染相关的，让你在更大的视角，更细的粒度了解浏览器原理，最可贵的是文章通俗易懂，图文并茂，对于想了解浏览器原理而又找不到好的入门资料的同学来说很有用。</p>
 <p>其中还提到了很多延伸知识，比如事件冒泡更微观角度是什么？事件的 passive：true 做了什么？为什么很多时候我们绘图不流畅以及如何实现平滑绘图？</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"pointermove"</span>, (event) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> events = event.getCoalescedEvents();</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> event <span class="keyword">of</span> events) &#123;</span><br><span class="line">    <span class="keyword">const</span> x = event.pageX;</span><br><span class="line">    <span class="keyword">const</span> y = event.pageY;</span><br><span class="line">    <span class="comment">// draw a line using x and y coordinates.</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
 <p>(使用 <code>getCoalescedEvents</code> API 来获取组合的事件，从而绘制一条平滑的曲线)</p>
 <p>文章地址： <a href="https://zhuanlan.zhihu.com/p/47407398" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/47407398</a></p>
 <h3 id="2020-01-07-好文"><a href="#2020-01-07-好文" class="headerlink" title="2020-01-07[好文]"></a>2020-01-07[好文]</h3><p>或许目前实际上最全的《当你在浏览器中输入 google.com 并且按下回车之后发生了什么？》。文档内容不仅局限于 DNS，TCP，HTTP，CDN。发送 HTML，解析 DOM 等过程，甚至包括了物理键盘和系统中断的工作原理，系统中断，ARP 等等更为详细的内容。</p>
@@ -439,8 +437,7 @@
 <p>在这里我会尽量通过图的形式来阐述一些概念和逻辑，帮助大家快速理解，图解是我的目标。</p>
 <p>之后我的文章会同步到微信公众号 <code>脑洞前端</code> ，你可以关注获取最新的文章，并和我进行交流。</p>
 <p>另外你可以回复大前端进大前端微信交流群， 回复 leetcode 拉你进 leetcode 微信群，如果想加入 qq 群，请回复 qq。</p>
-<img width="300" src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7he9xdtmyj30by0byaac.jpg">
-
+<p><img width="300" src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7he9xdtmyj30by0byaac.jpg"></p>
 <h2 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h2><ul>
 <li>如果有想法和创意，请提<a href="https://github.com/azl397985856/daily-featured/issues" target="_blank" rel="noopener">issue</a>或者进群提</li>
 <li>如果想贡献代码，请提<a href="https://github.com/azl397985856/daily-featured/pulls" target="_blank" rel="noopener">PR</a></li>

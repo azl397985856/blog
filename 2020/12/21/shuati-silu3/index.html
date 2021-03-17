@@ -398,7 +398,6 @@
 </ul>
 <p>今天，我就来圆一个当初吹下的牛逼。话不多说，直接上干货。如果你觉得有用，请三连支持我一下，让我能够坚持下去，给大家带来更多的干货。</p>
 <a id="more"></a>
-
 <h2 id="如何锁定使用哪种算法？"><a href="#如何锁定使用哪种算法？" class="headerlink" title="如何锁定使用哪种算法？"></a>如何锁定使用哪种算法？</h2><p>为什么很多人刚看了一眼题目就知道怎么解？</p>
 <ul>
 <li>一种可能是 ta 之前做过同样或者类似的题目，形成了内在的记忆，直接提取了之前的记忆。</li>
@@ -424,10 +423,8 @@
 </blockquote>
 <h3 id="限制条件"><a href="#限制条件" class="headerlink" title="限制条件"></a>限制条件</h3><p>很多题目都会给一些数据范围的提示，大家一定要注意看。 比如 <code>1681. 最小不兼容性</code>，题目描述就不看了，我们不打算在这里讲具体怎么解。这道题的函数签名如下：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minimumIncompatibility</span><span class="params">(self, nums: List[int], k: int)</span> -&gt; int:</span></span><br></pre></td></tr></table></figure>
-
 <p>这道题的提示是这样的:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 &lt;= k &lt;= nums.length &lt;= 16</span><br><span class="line">nums.length 能被 k 整除。</span><br><span class="line">1 &lt;= nums[i] &lt;= nums.length</span><br></pre></td></tr></table></figure>
-
 <p>看到了这个你有什么想法么？</p>
 <p>注意到 nums 的长度和值都很小，这道题很可能是暴力回溯 + 状态压缩。关于回溯和状态压缩技巧可以翻翻我的历史文章。</p>
 <p>这里再给大家一个超实用小技巧。</p>
@@ -442,22 +439,17 @@
 <p>再比如，我之前写的一篇文章<a href="https://lucifer.ren/blog/2020/06/20/LIS/" title="穿上衣服我就不认识你了？来聊聊最长上升子序列">《穿上衣服我就不认识你了？来聊聊最长上升子序列》</a>，上面所有的题时间复杂度都是 $N^2$，基本都可以通过所有的测试用例。为什么？因为题目数据范围差不多是 2500，那 2500 的平方是多少？是 600 多万，因此数据范围是 3000 以内， 平方差不多都可解，当然我说的只是大多数情况，并且需要注意<strong>越接近临界值越可能超时</strong>。</p>
 <p>再比如<code>1631. 最小体力消耗路径</code>。题目描述：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">你准备参加一场远足活动。给你一个二维 rows x columns 的地图 heights ，其中 heights[row][col] 表示格子 (row, col) 的高度。一开始你在最左上角的格子 (0, 0) ，且你希望去最右下角的格子 (rows-1, columns-1) （注意下标从 0 开始编号）。你每次可以往 上，下，左，右 四个方向之一移动，你想要找到耗费 体力 最小的一条路径。</span><br><span class="line"></span><br><span class="line">一条路径耗费的 体力值 是路径上相邻格子之间 高度差绝对值 的 最大值 决定的。</span><br><span class="line"></span><br><span class="line">请你返回从左上角走到右下角的最小 体力消耗值 。。</span><br></pre></td></tr></table></figure>
-
 <p>示例 1：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glui2h3fu6j308z08z0su.jpg" alt></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：heights = [[1,2,2],[3,8,2],[5,3,5]]</span><br><span class="line">输出：2</span><br><span class="line">解释：路径 [1,3,5,3,5] 连续格子的差值绝对值最大为 2 。</span><br><span class="line">这条路径比路径 [1,2,2,2,5] 更优，因为另一条路径差值最大值为 3 。</span><br></pre></td></tr></table></figure>
-
 <p>这道题的函数签名如下：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minimumEffortPath</span><span class="params">(self, heights: List[List[int]])</span> -&gt; int:</span></span><br></pre></td></tr></table></figure>
-
 <p>这道题的提示是这样的:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rows == heights.length</span><br><span class="line">columns == heights[i].length</span><br><span class="line">1 &lt;= rows, columns &lt;= 100</span><br><span class="line">1 &lt;= heights[i][j] &lt;= 10^6</span><br></pre></td></tr></table></figure>
-
 <p>首先，我们至少需要从左上走到右下，那么时间复杂度就已经是 $O(rows * columns)$ 了。题目说了这两个数字都不大于 100，因此最大就是 $10^4$。而对于路线上的高度差绝对值的数据范围也不超过 $10^6$。</p>
 <p>暴力法就是一个个试， 复杂度是二者直接相乘，也就是 $10^10$，大于前面给大家讲的 $10^7$，因此这个复杂度通常是不能 AC 的。</p>
 <p>而上面说了 $O(rows * columns)$ 是不可能省的，因为你至少要走一次。但如果 $10^6$ 不是线性去试，而是指数的话呢？而指数复杂度首先想到二分。</p>
 <p>此题的伪代码：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minimumEffortPath</span><span class="params">(self, heights: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(mid, x, y)</span>:</span></span><br><span class="line">            <span class="comment"># dosomething</span></span><br><span class="line">        l, r = <span class="number">0</span>, <span class="number">10</span>**<span class="number">6</span></span><br><span class="line">        <span class="comment"># 最左满足条件的值的二分模板。大家可以去 leetcode-cheatsheet 插件获取更多算法模板</span></span><br><span class="line">        <span class="keyword">while</span> l &lt;= r:</span><br><span class="line">            mid = (l + r) // <span class="number">2</span></span><br><span class="line">            <span class="comment"># 测试有没有一条路径从(0,0)出发到达(rows-1,cols-1)，且路径上的高度绝对值差不大于 mid</span></span><br><span class="line">            <span class="keyword">if</span> test(mid, <span class="number">0</span>, <span class="number">0</span>):</span><br><span class="line">                r = mid - <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                l = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> l</span><br></pre></td></tr></table></figure>
-
 <p>你说 <strong>1000 万这个数字重要不重要</strong>？1000 万不仅是我的人生目标，更是做题时刻铭记的一个数字！^_^</p>
 <h3 id="暴力优化"><a href="#暴力优化" class="headerlink" title="暴力优化"></a>暴力优化</h3><p>最后给大家介绍的”识别题目可能的解法“的技巧是暴力优化。</p>
 <p>一句话概括就是<strong>先暴力解，然后思考性能瓶颈，再尝试使用数据结构和算法对瓶颈进行优化</strong>。</p>
@@ -469,7 +461,6 @@
 <h3 id="分治思维"><a href="#分治思维" class="headerlink" title="分治思维"></a>分治思维</h3><p>“一看就会，一写就废， 如何克服？”，有一个可能是你没有分治思维。 我们的大脑天生适合<strong>处理一些简单</strong>的东西，而不适合处理看起来就很复杂的东西。因此面对一个很复杂的东西，第一件事情应该是思考<strong>是否可以将其分解</strong> ，然后逐个击破。</p>
 <p>举个例子给大家，如下是一道力扣的 hard 题 <a href="https://leetcode-cn.com/problems/number-of-2s-in-range-lcci/" title="《2 出现的次数》" target="_blank" rel="noopener">《2 出现的次数》</a>，题目描述如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">编写一个方法，计算从 0 到 n (含 n) 中数字 2 出现的次数。</span><br><span class="line"></span><br><span class="line">示例:</span><br><span class="line"></span><br><span class="line">输入: 25</span><br><span class="line">输出: 9</span><br><span class="line">解释: (2, 12, 20, 21, 22, 23, 24, 25)(注意 22 应该算作两次)</span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">n &lt;= 10^9</span><br></pre></td></tr></table></figure>
-
 <p>很多人一看到题就蒙了，这要多少种情况啊? 总不可能一个数字一个数字试过去吧？</p>
 <blockquote>
 <p>其实看一眼数据范围中 n 上限是 10^9，大于 1000 万，就知道不能这样暴力。</p>
@@ -502,7 +493,6 @@
 <p>因此不超过 135 的数字中 2 的出现次数就是 20 + 14 = 34 种。</p>
 <p>当然，这里面还有一些细节，比如如果某一位比 2 小或者正好是 2 怎么办？我就不在这里讲了。这里直接贴下代码，大家自己继续完成好了。</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numberOf2sInRange</span><span class="params">(self, n: int)</span> -&gt; int:</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        m = <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> m &lt;= n:</span><br><span class="line">            cur = n // m % <span class="number">10</span></span><br><span class="line">            <span class="keyword">if</span> cur &gt; <span class="number">2</span>: ans += (n // m // <span class="number">10</span> + <span class="number">1</span>) * m</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> cur == <span class="number">2</span>: ans += n % m + <span class="number">1</span></span><br><span class="line">                ans += (n // m // <span class="number">10</span>) * m</span><br><span class="line">            m *= <span class="number">10</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>把 2 换成其他数字 x，那就可以计算不超过 n 的 x 的出现次数。</p>
 </blockquote>
@@ -547,15 +537,12 @@
 </blockquote>
 <p>不过这也不难。由于问题是最少硬币，那么治就取最少呗。</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> + min(f([<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>], <span class="number">10</span>),f([<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>], <span class="number">9</span>),f([<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>], <span class="number">6</span>))</span><br></pre></td></tr></table></figure>
-
 <p>总结一下：</p>
 <p>这道题的分我们可以从几个特例入手就可以打开思维。上面的<strong>分</strong>的手段用伪代码描述就是：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> coin : coins) &#123;</span><br><span class="line">    f(coins, amount - coin)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>分完了就是处理边界和<strong>治</strong>了。</p>
 <p>完整的分治代码就是：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">f</span><span class="params">(coins, amount)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (amount &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// 非法解，用正无穷表示</span></span><br><span class="line">        <span class="keyword">return</span> Float.POSITIVE_INFINITY</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 叶子节点</span></span><br><span class="line">    <span class="keyword">if</span> (amount == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// 找到一个解，是不是最小的”治“阶段处理。</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans = Float.POSITIVE_INFINITY</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> coin : coins) &#123;</span><br><span class="line">        ans = Math.min(ans, <span class="number">1</span> + f(coins, amount - coins))</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>为了突出我的算法主框架，略去了一些细节。 比如原题在无解的时候需要返回 - 1，而我返回的是正无穷。</p>
 </blockquote>
@@ -574,7 +561,6 @@
 </blockquote>
 <p>伪代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">placeRow</span><span class="params">(i)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 决定应该放到第几列</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) &#123;</span><br><span class="line">    placeRow(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>如果上面的子问题都解决了，那整个问题不就解决了么？</p>
 <p>但是上面的子问题，还是无法直接解决。比如“第一行的皇后应该放到第几列？”我也不知道啊。没关系，我们继续对“第一行的皇后应该放到第几列？” 这个问题进行分解。</p>
 <ul>
@@ -585,7 +571,6 @@
 </ul>
 <p>继续完善上面的 placeRow 代码即可。这里给出伪代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">boolean</span> <span class="title">canPlaceQueue</span><span class="params">(i, j)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 根据目前的棋局（放了是否能不相互攻击），分析 i 和 j 这个位置能否放女王。</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">placeRow</span><span class="params">(i)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (canPlaceQueue(i, j)) &#123;</span><br><span class="line">            <span class="comment">// 将女王放到 (i,j)，更新当前棋局</span></span><br><span class="line">            placeQueue(i, j)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glvhg8w616j315k0s8wit.jpg" alt></p>
 <p>现在的问题就只剩下实现<code>canPlaceQueue(i, j)</code> 和 <code>placeQueue(i, j)</code>了，这两个函数根据题目要求模拟实现即可。</p>
 <p>需要注意的是我们做了一个<code>placeQueue(i, j)</code> 的操作，这<strong>可能</strong>是一个 mutable 的操作。因此如果一条路行不通需要回溯，那么 mutable 的数据需要撤销修改。当然如果你的数据是 immutable 就无所谓了。不过 immutable 则有可能内存移除或者超时的风险。</p>

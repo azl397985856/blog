@@ -402,11 +402,9 @@
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>假设球队 1，球队 2，球队 3 此时的胜利次数分别为 a，b，c，球队 1，球队 2，球队 3 总的胜利次数分别为 n1，n2，n3。</p>
 <p>我一开始的想法是只要保证 n1，n2，n3 相等且都小于等于 n / 3 即可。如果题目给了 n1，n2，n3 的值就直接：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(n1 == n2 == n3 == n / 3)</span><br></pre></td></tr></table></figure>
-
 <p>可是不仅 n1，n2，n3 没给， a，b，c 也没有给。</p>
 <p>实际上此时我们的信息仅仅是：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">① a + b + c = k</span><br><span class="line">② a - b = d1 or b - a = d1</span><br><span class="line">③ b - c = d2 or c - b = d2</span><br></pre></td></tr></table></figure>
-
 <p>其中 k 和 d1，d2 是已知的。a ，b，c 是未知的。 也就是说我们需要枚举所有的 a，b，c 可能性，解方程求出合法的 a，b，c，并且 合法的 a，b，c 都小于等于 n / 3 即可。</p>
 <blockquote>
 <p>这个 a,b,c 的求解数学方程就是中学数学难度， 三个等式化简一下即可，具体见下方代码区域。</p>
@@ -417,12 +415,10 @@
 <li>c 只需要再次赢得 n / 3 - c 次</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n1 = a + n / 3 - a = n / 3</span><br><span class="line">n2 = b + (n / 3 - b) = n / 3</span><br><span class="line">n3 = c + (n / 3 - c) = n / 3</span><br></pre></td></tr></table></figure>
-
 <h3 id="代码-Python"><a href="#代码-Python" class="headerlink" title="代码(Python)"></a>代码(Python)</h3><blockquote>
 <p>牛客有点让人不爽， 需要 print 而不是 return</p>
 </blockquote>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">t = int(input())</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(t):</span><br><span class="line">    n, k, d1, d2 = map(int, input().split(<span class="string">" "</span>))</span><br><span class="line">    <span class="keyword">if</span> n % <span class="number">3</span> != <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">'no'</span>)</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    abcs = []</span><br><span class="line">    <span class="keyword">for</span> r1 <span class="keyword">in</span> [<span class="number">-1</span>, <span class="number">1</span>]:</span><br><span class="line">        <span class="keyword">for</span> r2 <span class="keyword">in</span> [<span class="number">-1</span>, <span class="number">1</span>]:</span><br><span class="line">            a = (k + <span class="number">2</span> * r1 * d1 + r2 * d2) / <span class="number">3</span></span><br><span class="line">            b = (k + <span class="number">-1</span> * r1 * d1 + r2 * d2) / <span class="number">3</span></span><br><span class="line">            c = (k + <span class="number">-1</span> * r1 * d1 + <span class="number">-2</span> * r2 * d2) / <span class="number">3</span></span><br><span class="line">            a + r1</span><br><span class="line">            <span class="keyword">if</span>  <span class="number">0</span> &lt;= a &lt;= k <span class="keyword">and</span> <span class="number">0</span> &lt;= b &lt;= k <span class="keyword">and</span> <span class="number">0</span> &lt;= c &lt;= k <span class="keyword">and</span> a.is_integer() <span class="keyword">and</span> b.is_integer() <span class="keyword">and</span> c.is_integer():</span><br><span class="line">                abcs.append([a, b, c])</span><br><span class="line">    flag = <span class="literal">False</span></span><br><span class="line">    <span class="keyword">for</span> abc <span class="keyword">in</span> abcs:</span><br><span class="line">        <span class="keyword">if</span> len(abc) &gt; <span class="number">0</span> <span class="keyword">and</span> max(abc) &lt;= n / <span class="number">3</span>:</span><br><span class="line">            flag = <span class="literal">True</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> flag:</span><br><span class="line">        print(<span class="string">'yes'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'no'</span>)</span><br></pre></td></tr></table></figure>
-
 <p><strong>复杂度分析</strong></p>
 <ul>
 <li>时间复杂度：$O(t)$</li>
@@ -459,7 +455,6 @@
 <p>回归这道题。其实我们只需要稍微抽象一下， 就是一个纯算法题。 抽象的另外一个好处则是将很多不同的题目返璞归真，从而可以在茫茫题海中逃脱。这也是我开启<a href="https://lucifer.ren/blog/2020/08/03/mother-01/">《我是你的妈妈呀》</a> 的原因之一。</p>
 <p>如果我们把 a 看成是 0 ， b 看成是 1。或者将 b 看成 1， a 看成 0。不就抽象成了：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">给定一个由若干 0 和 1 组成的数组 A，我们最多可以将 m 个值从 0 变成 1 。</span><br><span class="line"></span><br><span class="line">返回仅包含 1 的最长（连续）子数组的长度。</span><br></pre></td></tr></table></figure>
-
 <p>这就是 力扣 <a href="https://leetcode-cn.com/problems/max-consecutive-ones-iii/solution/1004-zui-da-lian-xu-1de-ge-shu-iii-hua-dong-chuang/" target="_blank" rel="noopener">1004. 最大连续 1 的个数 III</a> 原题。</p>
 <p>因此实际上我们要求的是上面两种情况:</p>
 <ol>
@@ -502,13 +497,10 @@
 </blockquote>
 <p>我们先来看下抽象之后的<strong>其中一种情况</strong>的代码：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestOnes</span><span class="params">(self, A: List[int], m: int)</span> -&gt; int:</span></span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(A)):</span><br><span class="line">            m -= <span class="number">1</span> - A[j]</span><br><span class="line">            <span class="keyword">if</span> m &lt; <span class="number">0</span>:</span><br><span class="line">                m += <span class="number">1</span> - A[i]</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> j - i + <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
 <p>因此<strong>完整代码</strong>就是：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestOnes</span><span class="params">(self, A: List[int], m: int)</span> -&gt; int:</span></span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(A)):</span><br><span class="line">            m -= <span class="number">1</span> - A[j]</span><br><span class="line">            <span class="keyword">if</span> m &lt; <span class="number">0</span>:</span><br><span class="line">                m += <span class="number">1</span> - A[i]</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> j - i + <span class="number">1</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestAorB</span><span class="params">(self, A:List[int], m: int)</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">return</span> max(self.longestOnes(map(<span class="keyword">lambda</span> x: <span class="number">0</span> <span class="keyword">if</span> x == <span class="string">'a'</span> <span class="keyword">else</span> <span class="number">1</span>, A) ,m), self.longestOnes(map(<span class="keyword">lambda</span> x: <span class="number">1</span> <span class="keyword">if</span> x == <span class="string">'a'</span> <span class="keyword">else</span> <span class="number">0</span>, A),m))</span><br></pre></td></tr></table></figure>
-
 <p>这里的两个 map 会生成两个不同的数组。 我只是为了方便大家理解才新建的两个数组， 实际上根本不需要，具体见后面的代码.</p>
 <h3 id="代码-Python-1"><a href="#代码-Python-1" class="headerlink" title="代码(Python)"></a>代码(Python)</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">0</span></span><br><span class="line">n, m = map(int, input().split(<span class="string">" "</span>))</span><br><span class="line">s = input()</span><br><span class="line">ans = <span class="number">0</span></span><br><span class="line">k = m <span class="comment">#   存一下，后面也要用这个初始值</span></span><br><span class="line"><span class="comment"># 修补 b</span></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">    m -= ord(s[j]) - ord(<span class="string">'a'</span>)</span><br><span class="line">    <span class="keyword">if</span> m &lt; <span class="number">0</span>:</span><br><span class="line">        m += ord(s[i]) - ord(<span class="string">'a'</span>)</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">ans = j - i + <span class="number">1</span></span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="comment"># 修补 a</span></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">    k += ord(s[j]) - ord(<span class="string">'b'</span>)</span><br><span class="line">    <span class="keyword">if</span> k &lt; <span class="number">0</span>:</span><br><span class="line">        k -= ord(s[i]) - ord(<span class="string">'b'</span>)</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">print(max(ans, j - i + <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
-
 <p><strong>复杂度分析</strong></p>
 <ul>
 <li>时间复杂度：$O(N)$</li>
@@ -628,16 +620,16 @@
                       <span class="art-item-left">
                           <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                           <h4>
-                              <a href="/blog/2020/09/27/ts-exercises/" rel="prev" title="TypeScript 练习题">
+                              <a href="/blog/2020/09/06/byte-dance-algo-ex-2017/" rel="prev" title="字节跳动的算法面试题是什么难度？（第二弹）">
                                 
-                                    TypeScript 练习题
+                                    字节跳动的算法面试题是什么难度？（第二弹）
                                 
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/前端/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 前端</a> <a class="tag" href="/blog/tags/TypeScript/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> TypeScript</a>
+                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/滑动窗口/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 滑动窗口</a> <a class="tag" href="/blog/tags/面试/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 面试</a> <a class="tag" href="/blog/tags/字节跳动/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 字节跳动</a>
                               </h6>
                           
                       </span>
@@ -648,16 +640,16 @@
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/blog/2020/09/06/byte-dance-algo-ex-2017/" rel="prev" title="字节跳动的算法面试题是什么难度？（第二弹）">
+                              <a href="/blog/2020/08/30/887.super-egg-drop-extension/" rel="prev" title="对《丢鸡蛋问题》的一点补充">
                                   
-                                      字节跳动的算法面试题是什么难度？（第二弹）
+                                      对《丢鸡蛋问题》的一点补充
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/滑动窗口/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 滑动窗口</a> <a class="tag" href="/blog/tags/面试/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 面试</a> <a class="tag" href="/blog/tags/字节跳动/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 字节跳动</a>
+                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/动态规划/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 动态规划</a>
                               </h6>
                           
                       </span>

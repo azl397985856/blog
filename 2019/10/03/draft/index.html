@@ -387,11 +387,9 @@
       <div class="article-entry" itemprop="articleBody">
         <p>这个我为自己的新书写的一个目录，计划在一星期左右定下来大体目录，然后投入完善，希望大家多提意见，你的意见很可能会影响到这本书的内容，期待你以特别的方式参与进来，此致敬礼。</p>
 <a id="more"></a>
-
 <h2 id="1-准备知识"><a href="#1-准备知识" class="headerlink" title="1. 准备知识"></a>1. 准备知识</h2><h3 id="1-1-学习这本书之前需要什么基础"><a href="#1-1-学习这本书之前需要什么基础" class="headerlink" title="1.1 学习这本书之前需要什么基础"></a>1.1 学习这本书之前需要什么基础</h3><p>很多人觉得算法很难，需要很多公式以及数学知识。 其实并不是这样的，除非你是做算法岗位，否则并不会要求你对数学，几何学，概率学有多深的造诣，其实更看重的是分析问题，解决问题的能力和基础编码能力。</p>
 <p>但是我们不排除 LeetCode 有一些数学题目，我们会在后面的章节中讲到，但是说实话 LeetCode 的数学题目不会涉及很难的数学知识。而且通常我们也可以通过变通的方式解决，比如 LeetCode 有一道水壶倒水的问题，以下是题目描述：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">给你一个装满水的 8 升满壶和两个分别是 5 升、3 升的空壶，请想个优雅的办法，使得其中一个水壶恰好装 4 升水，每一步的操作只能是倒空或倒满。</span><br></pre></td></tr></table></figure>
-
 <p>这道题我们可以用 GCD（最大公约数）解决，如果你不知道这个数学知识点也没问题。 我们可以通过 BFS 来解决，其实学习算法尤其是刷 LeetCode 只需要我们掌握简单的数学知识，高中的数学知识通常来说就足够了。</p>
 <p>另外一个大家需要掌握的数学知识是关于后面要讲的复杂度分析，这里需要一点简单的数学知识，不过不要担心，非常简单，不会有高等数学的内容。</p>
 <p>学习本书最好你对一种编程语言比较熟悉，出于读者的受众群体和代码简洁性，我选取了 Python 作为本书的主要编程语言，如果大家对 Python 不熟悉也没有关系，我会尽量少使用语言特有的语法糖，从而减少大家对于语言层面的认知负担。 另外 Python 被誉为最容易入门的语言之一也是实至名归，大家可以放心。 退一步讲，语言不应该成为我们学习算法的障碍，不是么？那让我们一起进入 LeetCode 的世界吧！</p>
@@ -430,7 +428,7 @@
 <li>第一遍按 tag 刷</li>
 </ol>
 <p>建议第一遍刷的时候可以先快速按照 tag 过一遍，快速感受一下常见数据结构和算法的套路，这样自己有一个感性的认识。</p>
-<ol start="2">
+<ol>
 <li>第二遍一题多解，多题同解</li>
 </ol>
 <p>第二遍我们就不能像第一遍那样了，这个阶段我们需要多个角度思考问题，尽量做到一题多解，多题同解。我们需要对问题的本质做一些深度的理解，将来碰到类似的问题我们才能够触类旁通。</p>
@@ -450,17 +448,14 @@
 <p>大家刷了很多题之后，就会发现来来回回，题目就那么几种类型，因此掌握已有题目类型是多么重要。那样 LeetCode 出题的老师，很多也是在原有的题目基础上做了适当扩展（比如 two-sum,two-sum2,three-sum, four-sum 等等）或者改造（使得不那么一下子看出问题的本质，比如猴子吃香蕉问题）。</p>
 <p>其中算法，主要是以下几种：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">基础技巧：分治、二分、贪心</span><br><span class="line">排序算法：快速排序、归并排序、计数排序</span><br><span class="line">搜索算法：回溯、递归、深度优先遍历，广度优先遍历，二叉搜索树等</span><br><span class="line">图论：最短路径、最小生成树</span><br><span class="line">动态规划：背包问题、最长子序列</span><br></pre></td></tr></table></figure>
-
 <p>数据结构，主要有如下几种：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">数组与链表：单 / 双向链表</span><br><span class="line">栈与队列</span><br><span class="line">哈希表</span><br><span class="line">堆：最大堆 ／ 最小堆</span><br><span class="line">树与图：最近公共祖先、并查集</span><br><span class="line">字符串：前缀树（字典树） ／ 后缀树</span><br></pre></td></tr></table></figure>
-
 <p>做到了以上几点，我们还需要坚持。这个其实是最难的，不管做什么事情，坚持都是最重要也是最难的。</p>
 <p>为了督促自己，同时帮助大家成长，我在群里举办《每日一题》活动，每日一题是在交流群（包括微信和 qq）里进行的一种活动，大家一起 解一道题，这样讨论问题更加集中，会得到更多的反馈。而且 这些题目可以被记录下来，日后会进行筛选添加到仓库的题解模块， 感兴趣的可以到书后的附录部分进群交流。</p>
 <h3 id="1-4-复杂度分析"><a href="#1-4-复杂度分析" class="headerlink" title="1.4 复杂度分析"></a>1.4 复杂度分析</h3><p>想学算法，首先要学的第一件事就是如何判断一个算法的好坏。 好的程序有很多的评判标准，包括但不限于可读性，扩展性性能等。 这里我们来看其中一种 - 性能。 坏的程序可能性能也很好，但是好的程序通常性能都比较好。那么如何分析一个算法的性能好坏呢？这就是我们要讲的复杂度分析，所有的数据结构教程都会把这个放在前面来讲，不仅仅是因为他们是基础，更因为他们真的非常重要。学会了复杂度分析，你才能够对你的算法进行分析，从而帮助你写出复杂度更优的算法。</p>
 <p>那么怎么样才能衡量一个算法代码的执行效率呢？</p>
 <p>如下是一个从 1 加到 n 的一个算法，这个算法用了一层循环来完成，并且借助了一个变量 res 来完成。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum</span><span class="params">(n)</span>:</span></span><br><span class="line">  res = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">    res += i</span><br><span class="line">  <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
-
 <p>我们将这个方法从更微观的角度来进行分析，上述代码会执行 n 次循环体的内容，每一次执行都是常数时间，我们不妨假设执行的时间是 x。我们假设赋值语句<code>res = 0</code>和<code>return res</code>的时间分别为 y 和 z 那么执行的总时间我们约等于 n _ x + y + z, 我们<code>粗略</code>将 x，y 和 z 都看成一样的，我们得出总时间为 (n + 2) _ x 换句话说算法的时间和数据的规模成正比。</p>
 <p>实际上，这更是一种叫做大 O 表示法的基本思想, 它是一种描述算法性能的记法，这种描述和编译系统、机器结构、处理器的快慢等因素无关。 这种描述的参数是 n，表示数据的规模。 这里的 O 表示量级（order），比如说“二分查找是$O(logN)$的”，也就是说它需要“通过 logn 量级的操作去查找一个规模为 n 的数据结构（通常是数组）”。这种渐进地估计对算法的理论分析和大致比较是非常有价值，可以很快地对算法进行一个大致地估算。例如，一个拥有较小常数项的 $O(N^2)$算法在规模 n 较小的情况下可能比一个高常数项的$O(N)$算法运行得更快。但是随着 n 足够大以后，具有较慢上升函数的算法必然工作得更快，因此在采用大 O 标记复杂度的时候，可以忽略系数。</p>
 <p>我们还应该区分算法的最好情况，最坏情况和平均情况，但是这不在本书的讨论范畴，本书的所有复杂度均指的是平均复杂度。</p>
@@ -471,34 +466,29 @@
 </ul>
 <p>一般情况下，只要算法中不存在循环语句、递归语句，即使有成千上万行的代码，其时间复杂度也是 Ο(1)。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cnt = <span class="number">1</span></span><br><span class="line">l = <span class="number">0</span></span><br><span class="line">r = len(list) - <span class="number">1</span></span><br><span class="line"><span class="comment"># 不管这种代码有多少行，都是常数复杂度，即$O(1)$,因此系数是被忽略的。</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>第二类是 n,n^2,n^3 …</li>
 </ul>
 <p>一个简单的方法是<code>关注循环执行次数最多的那一段代码就好了</code>，这段执行次数最多的代码执行次数的 n 的量级，就是整个算法的时间复杂度。即如果是一层 N 的循环，那么时间复杂度就是$O(N)$, 如果嵌套了两层 N 的循环，那么时间复杂度就是$O(N^2)$，依次类推。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, nums: List[int], target: int)</span> -&gt; List[int]:</span></span><br><span class="line">        n = len(nums)</span><br><span class="line">        mapper = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">if</span> (target - nums[i] <span class="keyword">in</span> mapper):</span><br><span class="line">                <span class="keyword">return</span> [mapper[target - nums[i]], i]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                mapper[nums[i]] = i</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> []</span><br></pre></td></tr></table></figure>
-
 <p>如上代码，我们进行了一层的循环，那么时间复杂度就是$O(N^2)$</p>
 <ul>
 <li>第三类是对数阶。 logn nlogn</li>
 </ul>
 <p>这同样是一种非常常见的复杂度，多见于二分查找和一些排序算法。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">numRescueBoats</span><span class="params">(self, people: List[int], limit: int)</span> -&gt; int:</span></span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = len(people) - <span class="number">1</span></span><br><span class="line">        people.sort()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> l &lt; r:</span><br><span class="line">            total = people[l] + people[r]</span><br><span class="line">            <span class="keyword">if</span> total &gt; limit:</span><br><span class="line">                r -= <span class="number">1</span></span><br><span class="line">                res += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r -= <span class="number">1</span></span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">                res += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> (l == r):</span><br><span class="line">            <span class="keyword">return</span> res + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
-
 <p>上面的代码是一个典型的二分查找，其时间复杂度是 logn</p>
 <ul>
 <li>第四类是指数阶 2^n</li>
 </ul>
 <p>指数的增长已经非常恐怖了，一个典型的例子是 fabnicca 数列的递归实现版本。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fibonacci</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n &lt; <span class="number">2</span>:</span><br><span class="line">      <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">return</span> fibonacci(n<span class="number">-1</span>) + fibonacci(n<span class="number">-2</span>)</span><br></pre></td></tr></table></figure>
-
 <p>如果你把上述的计算过程看成树的一个节点，那么整个计算过程就像是一颗很大的树。这棵树有很多的重复计算，大致算下来的话，是 2^n。</p>
 <ul>
 <li>第五类是对数阶 n！</li>
 </ul>
 <p>我们知道 n 个不相同的数字的全排列有 n!个。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">factorrail</span><span class="params">(n)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">return</span> n * factorrail(n - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
 <p>很明显上面的代码就是 n!</p>
 <p>下面给出上面列举的几种常见的时间复杂度的趋势图对比，大家直观感受一下。</p>
 <p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8o458x4cvj311e0u00tk.jpg" alt><br>（各种复杂度的渐进趋势对比）</p>

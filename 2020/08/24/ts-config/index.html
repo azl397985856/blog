@@ -413,19 +413,15 @@
 <p>结合这两个资料和我的系列教程，掌握 TypeScript 指日可待。</p>
 <p>接下来，我们通过几个方面来从宏观的角度来看一下 TypeScript。</p>
 <a id="more"></a>
-
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这篇文章是我的 TypeScript 系列的<strong>第 5 篇</strong>。今天我们就来看下， TypeScript 的配置文件 tsconfig.json 该如何写。</p>
 <p>和 package.json 一样， 它也是一个 JSON 文件。package.json 是包描述文件，对应的 Commonjs 规范，而 <strong>tsconfig.json 是最终被 TypeScript Compiler 解析和使用的一个 JSON 文件</strong>。 TypeScript Compiler 用这个配置文件来决定如何对项目进行编译。</p>
 <p>说到编译，不得不提一个知名选手 - <a href="https://www.babeljs.cn/docs/babel-cli" target="_blank" rel="noopener">babel</a>。 和 TypeScript 类似， 他们都可以将一种语法静态编译成另外一种语法。如果说我想编译一个文件，我只需要告诉 babel 我的文件路径即可。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx babel script.js</span><br></pre></td></tr></table></figure>
-
 <p>有时候我想编译整个文件夹：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx babel src --out-dir lib</span><br></pre></td></tr></table></figure>
-
 <p>babel 也可以指定输出目录，指定需要忽略的文件或目录等等， TypeScript 也是一样！你当然可以像 babel 一样在命令行中全部指定好，也可以将这些配置放到 tsconfig.json 中，以配置文件的形式传递给 TypeScript Compiler 。 这就是 tsconfig.json 文件的初衷，即接受用户输入作为配置项。</p>
 <h2 id="初探-tsconfig"><a href="#初探-tsconfig" class="headerlink" title="初探 tsconfig"></a>初探 tsconfig</h2><p>我们先来看一个简单的 tsconfig 文件。</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="attr">"outDir"</span>: <span class="string">"./built"</span>,</span><br><span class="line">    <span class="attr">"allowJs"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"target"</span>: <span class="string">"es5"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"include"</span>: [<span class="string">"./src/**/*"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>如上配置做了：</p>
 <ul>
 <li>读取所有可识别的 src 目录下的文件（通过 include）。</li>
@@ -438,17 +434,16 @@
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gi0ppn43slj31760fe0vo.jpg" alt></p>
 <p>如图：</p>
 <ul>
-<li>在 _<a href="mailto:uglify-js@3.7.2" target="_blank" rel="noopener">uglify-js@3.7.2</a>@uglify-js 下执行 tsc 则会找到 配置文件 1，在 _<a href="mailto:uglify-js@3.7.2" target="_blank" rel="noopener">uglify-js@3.7.2</a>@uglify-js/bin 下执行 tsc 也会找到 配置文件 1</li>
+<li>在 _uglify-js@3.7.2@uglify-js 下执行 tsc 则会找到 配置文件 1，在 _uglify-js@3.7.2@uglify-js/bin 下执行 tsc 也会找到 配置文件 1</li>
 <li>同理在 lib，node_modules 也会找到 配置文件 1</li>
-<li>在 _<a href="mailto:uglify-js@3.7.2" target="_blank" rel="noopener">uglify-js@3.7.2</a>@uglify-js/bin/lucifer 下执行 tsc 则会找到 配置文件 2</li>
-<li>在 _<a href="mailto:uglify-js@3.7.2" target="_blank" rel="noopener">uglify-js@3.7.2</a>@uglify-js/lib/lucifer 下执行 tsc 则会找到 配置文件 3</li>
+<li>在 _uglify-js@3.7.2@uglify-js/bin/lucifer 下执行 tsc 则会找到 配置文件 2</li>
+<li>在 _uglify-js@3.7.2@uglify-js/lib/lucifer 下执行 tsc 则会找到 配置文件 3</li>
 </ul>
 <p>我在 <a href="https://lucifer.ren/blog/2020/08/04/ts-internal/">上帝视角看 TypeScript</a> 一种讲述了 TypeScript 究竟做了什么，带你从宏观的角度看了一下 TypeScript。 其中提到了 TypeScript 编译器会接受文件或者文件集合作为输入，最终转换为 JavaScript（noEmit 为 false） 和 .d.ts(declarations 为 true)。</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gh5ld0kfitj30ow0csdjs.jpg" alt></p>
 <p>这里其实还少了一个点，那就是除了接受文件或者文件集合作为输入，还会接受 tsconfig.json。tsconfig.json 的内容决定了编译的范围和行为，不同的 配置可能会得到不同的输出，或者得到不同的检查结果。</p>
 <p>当 tsc 找到了一个 tsconfig.json 文件，那么其规定的编译目录则全部会被 typescript 处理，当然也包括其依赖的文件。 如果 tsc 没有找到一个 tsconfig.json 或 tsconfig 没有有效信息，那么 tsc 会使用默认配置。 比如 tsconfig 是一个空的就没有有效信息：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>tsconfig 的全部属性，以及属性的默认值可以在这里找到： <a href="http://json.schemastore.org/tsconfig" target="_blank" rel="noopener">http://json.schemastore.org/tsconfig</a></p>
 </blockquote>
@@ -481,7 +476,6 @@
 <li>extends 就是继承另外一个配置文件，TypeScript 会对其进行合并，多项目公共配置有用。你也可以直接继承社区的“最佳实践”，比如:</li>
 </ul>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"extends"</span>: <span class="string">"@tsconfig/node12/tsconfig.json"</span>,</span><br><span class="line"></span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;&#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">"include"</span>: [<span class="string">"src/**/*"</span>],</span><br><span class="line">  <span class="attr">"exclude"</span>: [<span class="string">"node_modules"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>compileOnSave 则是和编辑器（确切地说是文件系统）联动的配置，即是否在文件保存后进行编译，实际项目不建议使用。</li>
 </ul>
@@ -508,7 +502,6 @@
 <p>首次发布版本：-</p>
 <p>我在 - <a href="https://lucifer.ren/blog/2020/08/15/ts-type-system/">TypeScript 类型系统</a> 中提到了如果不对变量显式声明类型，那么 TypeScript 会对变量进行类型推导，这当然也有推导不出的情况，这个时候该变量的类型就是 any，这个叫做隐式 any。区别于显式 any：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a: <span class="built_in">any</span> = &#123;&#125;;</span><br></pre></td></tr></table></figure>
-
 <p>隐式 any 是 TypeScript 编译器推断的。</p>
 <ul>
 <li>noImplicitThis（推荐打开）</li>
@@ -536,7 +529,6 @@
 </ul>
 <p>这个配置是告诉 TypeScript 如何解析模块路径的。比如：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; helloWorld &#125; <span class="keyword">from</span> <span class="string">"hello/world"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(helloWorld);</span><br></pre></td></tr></table></figure>
-
 <p>这个就会从 baseUrl 下找 hello 目录下的 world 文件。</p>
 <ul>
 <li>paths</li>

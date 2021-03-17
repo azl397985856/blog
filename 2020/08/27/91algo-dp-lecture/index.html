@@ -399,10 +399,8 @@
 <p>一个问题要使用递归来解决必须有递归终止条件（算法的有穷性），也就是顺递归会逐步缩小规模到寻常。</p>
 <p>虽然以下代码也是递归，但由于其无法结束，因此不是一个有效的算法：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(n)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> n + f(n - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
 <p>更多的情况应该是：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(n)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> n == <span class="number">1</span>: <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">return</span> n + f(n - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
 <h3 id="练习递归"><a href="#练习递归" class="headerlink" title="练习递归"></a>练习递归</h3><p>一个简单练习递归的方式是将你写的迭代全部改成递归形式。比如你写了一个程序，功能是“将一个字符串逆序输出”，那么使用迭代将其写出来会非常容易，那么你是否可以使用递归写出来呢？通过这样的练习，可以让你逐步适应使用递归来写程序。</p>
 <p>如果你已经对递归比较熟悉了，那么我们继续往下看。</p>
 <h3 id="递归中的重复计算"><a href="#递归中的重复计算" class="headerlink" title="递归中的重复计算"></a>递归中的重复计算</h3><p>递归中可能存在这么多的重复计算，为了消除这种重复计算，一种简单的方式就是记忆化递归。即一边递归一边使用“记录表”（比如哈希表或者数组）记录我们已经计算过的情况，当下次再次碰到的时候，如果之前已经计算了，那么直接返回即可，这样就避免了重复计算。而<strong>动态规划中 DP 数组其实和这里“记录表”的作用是一样的</strong>。</p>
@@ -429,7 +427,6 @@
 <h3 id="爆栈"><a href="#爆栈" class="headerlink" title="爆栈"></a>爆栈</h3><p>我们结合求和问题来讲解一下，题目是给定一个数组，求出数组中所有项的和，要求使用递归实现。</p>
 <p>代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (nums.length === <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span> (nums.length === <span class="number">1</span>) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> nums[<span class="number">0</span>] + sum(nums.slice(<span class="number">1</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>我们用递归树来直观地看一下。</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluhv7h0tj30n00ex3za.jpg" alt="dynamic-programming-1"></p>
 <p>这种做法本身没有问题，但是每次执行一个函数都有一定的开销，拿 JS 引擎执行 JS 来说，每次函数执行都会进行入栈操作，并进行预处理和执行过程，所以内存会有额外的开销，数据量大的时候很容易造成爆栈。</p>
@@ -441,7 +438,6 @@
 <p>由于上第 n 级台阶一定是从 n - 1 或者 n - 2 来的，因此 上第 n 级台阶的数目就是 <code>上 n - 1 级台阶的数目加上 n - 1 级台阶的数目</code>。</p>
 <p>递归代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">climbStairs</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> climbStairs(n - <span class="number">1</span>) + climbStairs(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>我们继续用一个递归树来直观感受以下：</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluhw6pf2j30mz0b2dgk.jpg" alt="dynamic-programming-2"></p>
 <blockquote>
@@ -451,10 +447,8 @@
 <p>那么动态规划是怎么解决这个问题呢？ 答案也是“查表”，不过区别于递归使用函数调用栈，动态规划通常使用的是 dp 数组，数组的索引通常是问题规模，值通常是递归函数的返回值。<code>递归是从问题的结果倒推，直到问题的规模缩小到寻常。 动态规划是从寻常入手， 逐步扩大规模到最优子结构。</code></p>
 <p>如果上面的爬楼梯问题，使用动态规划，代码是这样的：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">climbStairs</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">const</span> dp = <span class="keyword">new</span> <span class="built_in">Array</span>(n);</span><br><span class="line">  dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">  dp[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">2</span>; i &lt; n; i++) &#123;</span><br><span class="line">    dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dp[dp.length - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>不会也没关系，我们将递归的代码稍微改造一下。其实就是将函数的名字改一下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dp</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> dp(n - <span class="number">1</span>) + dp(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>dp[n] 和 dp(n) 对比看，这样是不是有点理解了呢? 只不过递归用调用栈枚举状态， 而动态规划使用迭代枚举状态。</p>
 </blockquote>
@@ -467,7 +461,6 @@
 <p>对于单个因素的，我们最多只需要一个一维数组即可，对于如背包问题我们需要二维数组等更高纬度。</p>
 <p>爬楼梯我们并没有必要使用一维数组，而是借助两个变量来实现的，空间复杂度是 O(1)。代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">climbStairs</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">let</span> b = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">let</span> temp;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">3</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    temp = a + b;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>之所以能这么做，是因为爬楼梯问题的状态转移方程中<strong>当前状态只和前两个状态有关</strong>，因此只需要存储这两个即可。 动态规划问题有很多这种讨巧的方式，这个技巧叫做滚动数组。</p>
 <p>再次强调一下：</p>
 <ul>
@@ -488,10 +481,8 @@
 </blockquote>
 <p>在上面讲解的爬楼梯问题中，如果我们用 f(n) 表示爬 n 级台阶有多少种方法的话，那么：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f(1) 与 f(2) 就是【边界】</span><br><span class="line">f(n) = f(n-1) + f(n-2) 就是【状态转移公式】</span><br></pre></td></tr></table></figure>
-
 <p>我用动态规划的形式表示一下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dp[0] 与 dp[1] 就是【边界】</span><br><span class="line">dp[n] = dp[n - 1] + dp[n - 2] 就是【状态转移方程】</span><br></pre></td></tr></table></figure>
-
 <p>可以看出两者是多么的相似。</p>
 <p>实际上临界条件相对简单，大家只有多刷几道题，里面就有感觉。困难的是找到状态转移方程和枚举状态。这两个核心点的都建立在<strong>已经抽象好了状态</strong>的基础上。比如爬楼梯的问题，如果我们用 f(n) 表示爬 n 级台阶有多少种方法的话，那么 f(1), f(2), … 就是各个<strong>独立的状态</strong>。</p>
 <p>不过状态的定义都有特点的套路。 比如一个字符串的状态，通常是 dp[i] 表示字符串 s 以 i 结尾的 ….。 比如两个字符串的状态，通常是 dp[i][j] 表示字符串 s1 以 i 结尾，s2 以 j 结尾的 ….。</p>
@@ -520,7 +511,6 @@
 <li><strong>如果你没有使用滚动数组的技巧</strong>，那么遍历顺序取决于状态转移方程。比如:</li>
 </ul>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">  dp[i] = dp[i - <span class="number">1</span>] + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
 <p>那么我们就需要从左到右遍历，原因很简单，因为 dp[i] 依赖于 dp[i - 1]，因此计算 dp[i] 的时候， dp[i - 1] 需要已经计算好了。</p>
 <blockquote>
 <p>二维的也是一样的，大家可以试试。</p>
@@ -529,11 +519,9 @@
 <li><strong>如果你使用了滚动数组的技巧</strong>，则怎么遍历都可以，但是不同的遍历意义通常不不同的。比如我将二维的压缩到了一维：</li>
 </ul>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">  <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">    dp[j] = dp[j - <span class="number">1</span>] + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
 <p>这样是可以的。 dp[j - 1] 实际上指的是压缩前的 dp[i][j - 1]</p>
 <p>而：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">  <span class="comment">#  倒着遍历</span></span><br><span class="line">  <span class="keyword">for</span> j <span class="keyword">in</span> range(n, <span class="number">0</span>, <span class="number">-1</span>):</span><br><span class="line">    dp[j] = dp[j - <span class="number">1</span>] + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
 <p>这样也是可以的。 但是 dp[j - 1] 实际上指的是压缩前的 dp[i - 1][j - 1]。因此实际中采用怎么样的遍历手段取决于题目。我特意写了一个 <a href="https://leetcode-cn.com/problems/form-largest-integer-with-digits-that-add-up-to-target/solution/wan-quan-bei-bao-wen-ti-tao-lu-ti-1449-shu-wei-che/" target="_blank" rel="noopener">【完全背包问题】套路题（1449. 数位成本和为目标值的最大数字</a> 文章，通过一个具体的例子告诉大家不同的遍历有什么实际不同，强烈建议大家看看，并顺手给个三连。</p>
 <ul>
 <li>关于里外循环的问题，其实和上面原理类似。</li>

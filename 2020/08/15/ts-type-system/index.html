@@ -413,7 +413,6 @@
 <p>结合这两个资料和我的系列教程，掌握 TypeScript 指日可待。</p>
 <p>接下来，我们通过几个方面来从宏观的角度来看一下 TypeScript。</p>
 <a id="more"></a>
-
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一节的<a href="https://lucifer.ren/blog/2020/08/04/ts-internal/">上帝视角看 TypeScript</a>，我们从宏观的角度来对 Typescript 进行了一个展望。之所以把那个放到开头讲是让大家有一个大体的认识，不想让大家一叶障目。当你对整个宏观层面有了一定的了解，那么对 Typescript 的理解就不会错太多。相反，一开始就是具体的概念和 API，则很可能会让你丧失都整体的基本判断。</p>
 <p>实际上， Typescript 一直在不断更新迭代。一方面是因为当初许下的诺言”Typescript 是 JavaScript 的超集“（JavaScript 的特性你要同步支持，同时也要处理各种新语法带来的不兼容情况）。不单是 ECMA，社区的其他发展可能也会让 Typescript 很难受。 比如 JSX 的广泛使用就给 Typescript 泛型的使用带来了影响。</p>
 <p>TypeScript 一直处于高速的迭代。除了修复日常的 bug 之外，TypeScript 也在不断发布新的功能，比如最新 <a href="https://devblogs.microsoft.com/typescript/announcing-typescript-4-0-rc/#labeled-tuple-elements" title="4.0.0 beta 版本的**标签元祖**" target="_blank" rel="noopener">4.0.0 beta 版本的<strong>标签元祖</strong></a> 的功能就对智能提示这块很有用。Typescript 在社区发展方面也做的格外好，以至于它的竞争对手 Flow 被 Typescript 完美击败，这在很大程度上就是因为 Typescript 没有烂尾。如今微软在开源方向的发力是越来越显著了，我很期待微软接下来的表现，让我们拭目以待。</p>
@@ -429,38 +428,31 @@
 <p>记住这两句话，我们接下来解释一下这两句话。</p>
 <p>对于 JavaScript 来说，一个变量可以是任意类型。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">a = <span class="string">"lucifer"</span>;</span><br><span class="line">a = &#123;&#125;;</span><br><span class="line">a = [];</span><br></pre></td></tr></table></figure>
-
 <p>上面的值是有类型的。比如 1 是 number 类型，”lucifer” 是字符串类型， {} 是对象类型， [] 是数组类型。而变量 a 是没有固定类型的。</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghsqh8ere4j30qc0iygmv.jpg" alt></p>
 <p>对于 Typescript 来说， 一个变量只能接受和它类型兼容的类型的值。说起来比较拗口， 看个例子就明白了。</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a: <span class="built_in">number</span> = <span class="number">1</span>;</span><br><span class="line">a = <span class="string">"lucifer"</span>; <span class="comment">// error</span></span><br><span class="line"><span class="keyword">var</span> b: <span class="built_in">any</span> = <span class="number">1</span>;</span><br><span class="line">b = <span class="string">"lucifer"</span>; <span class="comment">// ok</span></span><br><span class="line">b = &#123;&#125;; <span class="comment">// ok</span></span><br><span class="line">b = []; <span class="comment">// ok</span></span><br></pre></td></tr></table></figure>
-
 <p>我们不能将 string 类型的值赋值给变量 a， 因为 string 和 number 类型不兼容。而我们可以将 string,Object,Array 类型的值赋值给 b，因此 它们和 any 类型兼容。简单来说就是，一旦一个变量被标注了某种类型，那么其就只能接受这个类型以及它的子类型。</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghsqgexx68j30q80j6ta0.jpg" alt></p>
 <h2 id="类型空间和值空间"><a href="#类型空间和值空间" class="headerlink" title="类型空间和值空间"></a>类型空间和值空间</h2><p>类型和值居住在不同的空间，一个在阳间一个在阴间。他们之间互相不能访问，甚至不知道彼此的存在。类型不能当做值来用，反之亦然。</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghsqpfc7uej307b05baa0.jpg" alt></p>
 <h3 id="类型空间"><a href="#类型空间" class="headerlink" title="类型空间"></a>类型空间</h3><p>如下代码会报类型找不到的错：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> aa: User = &#123; name: <span class="string">"lucifer"</span>, age: <span class="number">17</span> &#125;;</span><br></pre></td></tr></table></figure>
-
 <p>这个比较好理解，我们只需要使用 interface 声明一下 User 就行。</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> User &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> aa: User = &#123; name: <span class="string">"lucifer"</span>, age: <span class="number">17</span> &#125;;</span><br></pre></td></tr></table></figure>
-
 <p>也就是说使用 interface 可以在类型空间声明一个类型，这个是 Typescript 的类型检查的基础之一。</p>
 <p>实际上类型空间内部也会有子空间。我们可以用 namespace（老）和 module（新） 来创建新的子空间。子空间之间不能直接接触，需要依赖导入导出来交互。</p>
 <h3 id="值空间"><a href="#值空间" class="headerlink" title="值空间"></a>值空间</h3><p>比如，我用 Typescript 写出如下的代码：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="built_in">window</span>.lucifer();</span><br></pre></td></tr></table></figure>
-
 <p>Typescript 会报告一个类似<code>Property &#39;lucifer&#39; does not exist on type &#39;Window &amp; typeof globalThis&#39;.</code> 的错误。</p>
 <p>实际上，这种错误并不是类型错误，而是找不到成员变量的错误。我们可以这样解决：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">declare</span> <span class="keyword">var</span> lucifer: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">any</span>;</span><br></pre></td></tr></table></figure>
-
 <p>也就是说使用 declare 可以在值空间声明一个变量。这个是 Typescript 的变量检查的基础，不是本文要讲的主要内容，大家知道就行。</p>
 <p>明白了 JavaScript 和 TypeScript 类型的区别和联系之后，我们就可以来进入我们本文的主题了：<strong>类型系统</strong>。</p>
 <h2 id="类型系统是-TypeScript-最主要的功能"><a href="#类型系统是-TypeScript-最主要的功能" class="headerlink" title="类型系统是 TypeScript 最主要的功能"></a>类型系统是 TypeScript 最主要的功能</h2><p>TypeScript 官方描述中有一句：<strong>TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications</strong>。实际上这也正是 Typescript 的主要功能，即给 JavaScript 添加静态类型检查。要想实现静态类型检查，首先就要有类型系统。总之，我们使用 Typescript 的主要目的仍然是要它的静态类型检查，帮助我们提供代码的扩展性和可维护性。因此 Typescript 需要维护一套完整的类型系统。</p>
 <p><strong>类型系统包括 1. 类型 和 2.对类型的使用和操作</strong>，我们先来看类型。</p>
 <h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><p>TypeScript 支持 JavaScript 中所有的类型，并且还支持一些 JavaScript 中没有的类型（毕竟是超集嘛）。没有的类型可以直接提供，也可以提供自定义能力让用户来自己创造。 那为什么要增加 JavaScript 中没有的类型呢？我举个例子，比如如下给一个变量声明类型为 Object，Array 的代码。</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a: <span class="built_in">Object</span> = &#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> b: <span class="built_in">Array</span> = [];</span><br></pre></td></tr></table></figure>
-
 <p>其中：</p>
 <ul>
 <li><p>第一行代码 Typescript 允许，但是太宽泛了，我们很难得到有用的信息，推荐的做法是使用 interface 来描述，这个后面会讲到。</p>
@@ -478,7 +470,7 @@
 <blockquote>
 <p>注意是变量，不是值。</p>
 </blockquote>
-<ol start="2">
+<ol>
 <li><p>提供常用类型（不必须，但是没有用户体验会极差）并可以扩展出自定义类型（必须）。</p>
 </li>
 <li><p>根据第一步给变量设定的类型进行类型检查，即不允许类型不兼容的赋值， 不允许使用值空间和类型空间不存在的变量和类型等。</p>
@@ -486,7 +478,6 @@
 </ol>
 <p>第一个点是通过类型注解的语法来完成。即类似这样：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a: <span class="built_in">number</span> = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>Typescript 的类型注解是这样， Java 的类型注解是另一个样子，Java 类似 int a = 1。 这个只是语法差异而已，作用是一样的。</p>
 </blockquote>
@@ -501,49 +492,41 @@
 <p>比如定义 String 类型， 以及其原型上的方法和属性。</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghsqk1u3x8j31d60u0q9u.jpg" alt></p>
 <p>length， includes 以及 toString 是 String 的<strong>成员变量</strong>， 生活在值空间， 值空间虽然不能直接和类型空间接触，但是类型空间可以作用在值空间，从而给其添加类型（如上图黄色部分）。</p>
-<ol start="2">
+<ol>
 <li>提供自定义类型的能力</li>
 </ol>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> User &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age: <span class="built_in">number</span>;</span><br><span class="line">  say(name: <span class="built_in">string</span>): <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>这个是我自定义的类型 User，这是 Typescript 必须提供的能力。</p>
-<ol start="3">
+<ol>
 <li>类型兼容体系。</li>
 </ol>
 <p>这个主要是用来判断类型是否正确的，上面我已经提过了，这里就不赘述了。</p>
-<ol start="4">
+<ol>
 <li>类型推导</li>
 </ol>
 <p>有时候你不需要显式说明类型（类型注解），Typescript 也能知道他的类型，这就是类型推导结果。</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
 <p>如上代码，编译器会自动推导出 a 的类型 为 number。还可以有连锁推导，泛型的入参（泛型的入参是类型）推导等。类型推导还有一个特别有用的地方，就是用到类型收敛。</p>
 <p>接下来我们详细了解下类型推导和类型收敛。</p>
 <h2 id="类型推导和类型收敛"><a href="#类型推导和类型收敛" class="headerlink" title="类型推导和类型收敛"></a>类型推导和类型收敛</h2><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
 <p>如上代码。 Typescript 会推导出 a 的类型为 number。</p>
 <p>如果只会你这么写就会报错：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">"1"</span>;</span><br></pre></td></tr></table></figure>
-
 <p>因此 string 类型的值不能赋值给 number 类型的变量。我们可以使用 Typescript 内置的 typeof 关键字来证明一下。</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">type</span> A = <span class="keyword">typeof</span> a;</span><br></pre></td></tr></table></figure>
-
 <p>此时 A 的类型就是 number，证明了变量 a 的类型确实被隐式推导成了 number 类型。</p>
 <p>有意思的是如果 a 使用 const 声明，那么 a 不会被推导为 number，而是推导为类型 1。即<strong>值只能为 1 的类型</strong>，这就是类型收敛。</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">type</span> A = <span class="keyword">typeof</span> a;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>通过 const ，我们将 number 类型收缩到了 <strong>值只能为 1 的类型</strong>。</p>
 </blockquote>
 <p>实际情况的类型推导和类型收敛要远比这个复杂， 但是做的事情都是一致的。</p>
 <p>比如这个：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">a: <span class="built_in">number</span>, b: <span class="built_in">number</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> A = ReturnType&lt;<span class="keyword">typeof</span> test&gt;;</span><br></pre></td></tr></table></figure>
-
 <p>A 就是 number 类型。 也就是 Typescript 知道两个 number 相加结果也是一个 number。因此即使你不显示地注明返回值是 number， Typescript 也能猜到。<strong>这也是为什么 JavaScript 项目不接入 Typescript 也可以获得类型提示的原因之一</strong>。</p>
 <p>除了 const 可以收缩类型， typeof， instanceof 都也可以。 原因很简单，就是<strong>Typescript 在这个时候可以 100% 确定你的类型了</strong>。 我来解释一下：</p>
 <p>比如上面的 const ，由于你是用 const 声明的，因此 100% 不会变，一定永远是 1，因此类型可以收缩为 1。 再比如：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a: <span class="built_in">number</span> | <span class="built_in">string</span> = <span class="number">1</span>;</span><br><span class="line">a = <span class="string">"1"</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> a === <span class="string">"string"</span>) &#123;</span><br><span class="line">  a.includes;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>if 语句内 a 100% 是 string ，不能是 number。因此 if 语句内类型会被收缩为 string。instanceof 也是类似，原理一模一样。大家只要记住<strong>Typescript 如果可以 100% 确定你的类型，并且这个类型要比你定义的或者 Typescript 自动推导的范围更小，那么就会发生类型收缩</strong>就行了。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文主要讲了 Typescript 的类型系统。 Typescript 和 JavaScript 的类型是很不一样的。从表面上来看， TypeScript 的类型是 JavaScript 类型的超集。但是从更深层次上来说，两者的本质是不一样的，一个是值的类型，一个是变量的类型。</p>
 <p>Typescript 空间分为值空间和类型空间。两个空间不互通，因此值不能当成类型，类型不能当成值，并且值和类型不能做运算等。不过 TypeScript 可以将两者结合起来用，这个能力只有 TypeScript 有， 作为 TypeScript 的开发者的你没有这个能力，这个我在第一节也简单介绍了。</p>

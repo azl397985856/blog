@@ -388,7 +388,6 @@
         <p>这篇文章不是讲解数据结构的文章，而是结合现实的场景帮助大家<code>理解和复习</code>数据结构与算法，<br>如果你的数据结构基础很差，建议先去看一些基础教程，再转过来看。</p>
 <p>本篇文章的定位是侧重于前端的，通过学习前端中实际场景的数据结构，从而加深大家对数据结构的理解和认识。</p>
 <a id="more"></a>
-
 <h2 id="线性结构"><a href="#线性结构" class="headerlink" title="线性结构"></a>线性结构</h2><p>数据结构我们可以从逻辑上分为线性结构和非线性结构。线性结构有<br>数组，栈，链表等， 非线性结构有树，图等。</p>
 <blockquote>
 <p>其实我们可以称树为一种半线性结构。</p>
@@ -402,11 +401,9 @@
 <p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaji13k55rj30m80bsq3j.jpg" alt></p>
 <p>那么为什么 hooks 要用数组？ 我们可以换个角度来解释，如果不用数组会怎么样？</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Form</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 1. Use the name state variable</span></span><br><span class="line">  <span class="keyword">const</span> [name, setName] = useState(<span class="string">"Mary"</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 2. Use an effect for persisting the form</span></span><br><span class="line">  useEffect(<span class="function"><span class="keyword">function</span> <span class="title">persistForm</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    localStorage.setItem(<span class="string">"formData"</span>, name);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 3. Use the surname state variable</span></span><br><span class="line">  <span class="keyword">const</span> [surname, setSurname] = useState(<span class="string">"Poppins"</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 4. Use an effect for updating the title</span></span><br><span class="line">  useEffect(<span class="function"><span class="keyword">function</span> <span class="title">updateTitle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.title = name + <span class="string">" "</span> + surname;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>基于数组的方式，Form 的 hooks 就是 [hook1, hook2, hook3, hook4],<br>我们可以得出这样的关系， hook1 就是[name, setName] 这一对，<br>hook2 就是 persistForm 这个。</p>
 <p>如果不用数组实现，比如对象，Form 的 hooks 就是</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">'key1'</span>: hook1,</span><br><span class="line">  <span class="string">'key2'</span>: hook2,</span><br><span class="line">  <span class="string">'key3'</span>: hook3,</span><br><span class="line">  <span class="string">'key4'</span>: hook4,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>那么问题是 key1，key2，key3，key4 怎么取呢？</p>
 <p>关于 React hooks 的本质研究，更多请查看<a href="https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e" target="_blank" rel="noopener">React hooks: not magic, just arrays</a></p>
 <p>React 将<code>如何确保组件内部hooks保存的状态之间的对应关系</code>这个工作交给了<br>开发人员去保证，即你必须保证 HOOKS 的顺序严格一致，具体可以看 React 官网关于 Hooks Rule 部分。</p>
@@ -450,13 +447,10 @@
 <p>栈在很多地方都有着应用，比如大家熟悉的浏览器就有很多栈，其实浏览器的执行栈就是一个基本的栈结构，从数据结构上说，它就是一个栈。<br>这也就解释了，我们用递归的解法和用循环+栈的解法本质上是差不多。</p>
 <p>比如如下 JS 代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> a = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">const</span> b = <span class="number">2</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(a, b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> a = <span class="number">1</span>;</span><br><span class="line">  bar();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
-
 <p>真正执行的时候，内部大概是这样的：</p>
 <p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaji3jo8ozj30v70hi0u8.jpg" alt></p>
 <blockquote>
 <p>我画的图没有画出执行上下文中其他部分（this 和 scope 等）， 这部分是闭包的关键，而我这里不是将闭包的，是为了讲解栈的。</p>
-</blockquote>
-<blockquote>
 <p>社区中有很多“执行上下文中的 scope 指的是执行栈中父级声明的变量”说法，这是完全错误的， JS 是词法作用域，scope 指的是函数定义时候的父级，和执行没关系</p>
 </blockquote>
 <p>栈常见的应用有进制转换，括号匹配，栈混洗，中缀表达式（用的很少），后缀表达式（逆波兰表达式）等。</p>
@@ -481,7 +475,6 @@
 <p>如果我们可以随意中断调用堆栈并手动操作堆栈帧，那不是很好吗？<br>这就是 React Fiber 的目的。 <code>Fiber 是堆栈的重新实现，专门用于 React 组件</code>。 你可以将单个 Fiber 视为一个<code>虚拟堆栈帧</code>。</p>
 <p>react fiber 大概是这样的：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fiber = &#123;</span><br><span class="line">  tag: HOST_COMPONENT,</span><br><span class="line">  type: <span class="string">"div"</span>,</span><br><span class="line">  <span class="keyword">return</span>: parentFiber,</span><br><span class="line">  children: childFiber,</span><br><span class="line">  sibling: childFiber,</span><br><span class="line">  alternate: currentFiber,</span><br><span class="line">  stateNode: <span class="built_in">document</span>.createElement(<span class="string">"div"</span>),</span><br><span class="line">  props: &#123; <span class="attr">children</span>: [], <span class="attr">className</span>: <span class="string">"foo"</span> &#125;,</span><br><span class="line">  partialState: <span class="literal">null</span>,</span><br><span class="line">  effectTag: PLACEMENT,</span><br><span class="line">  effects: []</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <p>从这里可以看出 fiber 本质上是个对象，使用 parent，child，sibling 属性去构建 fiber 树来表示组件的结构树，<br>return, children, sibling 也都是一个 fiber，因此 fiber 看起来就是一个链表。</p>
 <blockquote>
 <p>细心的朋友可能已经发现了， alternate 也是一个 fiber， 那么它是用来做什么的呢？<br>它其实原理有点像 git， 可以用来执行 git revert ,git commit 等操作，这部分挺有意思，我会在我的《从零开发 git》中讲解</p>
@@ -621,7 +614,7 @@
 <li>深度优先遍历：(Depth First Search, DFS)</li>
 </ol>
 <p>深度优先遍历图的方法是，从图中某顶点 v 出发， 不断访问邻居， 邻居的邻居直到访问完毕。</p>
-<ol start="2">
+<ol>
 <li>广度优先搜索：(Breadth First Search, BFS)</li>
 </ol>
 <p>广度优先搜索，可以被形象地描述为 “浅尝辄止”，它也需要一个队列以保持遍历过的顶点顺序，以便按出队的顺序再去访问这些顶点的邻接顶点。</p>

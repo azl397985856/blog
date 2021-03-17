@@ -390,7 +390,6 @@
 <p>实际上，我最近一直在思考“初学者如何快速提高自己的算法能力，高效刷题”。因此我也一直在不断定位自己，最终我对自己作出了定位“用清晰直白的语言还原解题全过程，做西湖区最好的算法题解”。</p>
 <p>然而我意识到，我进去了一个很大的误区。我的想法一直是“努力帮助算法小白提高算法能力，高效刷题”。然而算法小白除了清晰直白的算法题解外，还需要系统的前置知识。因此我的假设“大家都会基础的数据结构和算法”很可能就是不成立的。</p>
 <a id="more"></a>
-
 <h2 id="小白阶段划分"><a href="#小白阶段划分" class="headerlink" title="小白阶段划分"></a>小白阶段划分</h2><p>如果让我对算法小白进行一个阶段划分的话，我会将其分为：</p>
 <h3 id="阶段一-系统学习数据结构和算法知识。"><a href="#阶段一-系统学习数据结构和算法知识。" class="headerlink" title="阶段一 系统学习数据结构和算法知识。"></a>阶段一 系统学习数据结构和算法知识。</h3><p>第一，你不能根本不懂得基础，比如根本不知道什么哈希表，或者只知道其简单的 API。</p>
 <p>第二，你不能从网上不断搜索知识，因为这些知识是零散的，不利于新手形成自己的<strong>算法观</strong>。</p>
@@ -406,17 +405,16 @@
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfpg154rgbj30dc0hrace.jpg" alt></p>
 <p>API 示例：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, capacity: int)</span>:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, key: int)</span> -&gt; int:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">put</span><span class="params">(self, key: int, value: int)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Your LRUCache object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = LRUCache(capacity)</span></span><br><span class="line"><span class="comment"># param_1 = obj.get(key)</span></span><br><span class="line"><span class="comment"># obj.put(key,value)</span></span><br></pre></td></tr></table></figure>
-
 <p>按照上面的过程，我们来<strong>套</strong>一个。</p>
 <ol>
 <li>如何审题</li>
 </ol>
 <p>看完题的话，只要抓住一个核心点即可。对于本题，核心点在于 <strong>删除最久未使用</strong>，<strong>O(1)时间</strong>。</p>
-<ol start="2">
+<ol>
 <li>抽象算法模型</li>
 </ol>
 <p>这个题目是一个设计题。API 帮我们设计好了，只需要填充功能即可，也就是说算法模型不需要我们抽象了。</p>
-<ol start="3">
+<ol>
 <li>根据模型选取合适的数据结构和算法</li>
 </ol>
 <p>我们的算法有两个操作：<strong>get</strong> 和 <strong>put</strong>。既然要支持这两个操作，肯定要有一个地方存数据。那么我们存到哪里呢？数组？链表？哈希表？其中链表又有很多，单向双向，循环不循环。</p>
@@ -450,7 +448,6 @@
 </blockquote>
 <h2 id="题解的水很深"><a href="#题解的水很深" class="headerlink" title="题解的水很深"></a>题解的水很深</h2><p>我看了很多人的题解直接就是两句话，然后跟上代码:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def integerBreak(self, n: int) -&gt; int:</span><br><span class="line">        dp = [1] * (n + 1)</span><br><span class="line">        for i in range(3, n + 1):</span><br><span class="line">            for j in range(1, i):</span><br><span class="line">                dp[i] = max(j * dp[i - j], j * (i - j), dp[i])</span><br><span class="line">        return dp[n]</span><br></pre></td></tr></table></figure>
-
 <p>这种题解说实话，只针对那些”自己会， 然后去题解区看看有没有新的更好的解法的人“。但是大多数看题解的人是那种自己没思路，不会做的人。那么这种题解就没什么用了。</p>
 <p>我认为好的题解应该是新手友好的，并且能够将解题人思路完整展现的题解。比如看到这个题目，我首先想到了什么（对错没有关系），然后头脑中经过怎么样的筛选将算法筛选到具体某一个或某几个。我的最终算法是如何想到的，有没有一些先行知识。</p>
 <p>当然我也承认自己有很多题解也是直接给的答案，这对很多人来说用处不大，甚至有可能有反作用，给他们一种”我已经会了“的假象。实际上他们根本不懂解题人本身原本的想法， 也许是写题解的人觉得”这很自然“，也可能”只是为了秀技“。</p>
@@ -589,16 +586,16 @@
                       <span class="art-item-left">
                           <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                           <h4>
-                              <a href="/blog/2020/06/20/构造二叉树专题/" rel="prev" title="构造二叉树系列">
+                              <a href="/blog/2020/06/20/ts-internal/" rel="prev" title="上帝视角看 TypeScript">
                                 
-                                    构造二叉树系列
+                                    上帝视角看 TypeScript
                                 
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a> <a class="tag" href="/blog/tags/二叉树/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 二叉树</a> <a class="tag" href="/blog/tags/算法系列/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法系列</a>
+                                  <a class="tag" href="/blog/tags/前端/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 前端</a> <a class="tag" href="/blog/tags/TypeScript/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> TypeScript</a> <a class="tag" href="/blog/tags/泛型/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 泛型</a>
                               </h6>
                           
                       </span>
@@ -609,16 +606,16 @@
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/blog/2020/06/13/immutable-js/" rel="prev" title="immutablejs 是如何优化我们的代码的？">
+                              <a href="/blog/2020/06/20/构造二叉树专题/" rel="prev" title="构造二叉树系列">
                                   
-                                      immutablejs 是如何优化我们的代码的？
+                                      构造二叉树系列
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/前端/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 前端</a> <a class="tag" href="/blog/tags/React/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> React</a> <a class="tag" href="/blog/tags/immutablejs/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> immutablejs</a> <a class="tag" href="/blog/tags/immutable/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> immutable</a>
+                                  <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a> <a class="tag" href="/blog/tags/二叉树/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 二叉树</a> <a class="tag" href="/blog/tags/算法系列/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法系列</a>
                               </h6>
                           
                       </span>

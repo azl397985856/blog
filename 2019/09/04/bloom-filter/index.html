@@ -387,7 +387,6 @@
       <div class="article-entry" itemprop="articleBody">
         <p>假设你现在要处理这样一个问题，你有一个网站并且拥有<code>很多</code>访客，每当有用户访问时，你想知道这个 ip 是不是第一次访问你的网站。你会怎么做呢？</p>
 <a id="more"></a>
-
 <h3 id="hashtable-可以么"><a href="#hashtable-可以么" class="headerlink" title="hashtable 可以么"></a>hashtable 可以么</h3><p>一个显而易见的答案是将所有的 ip 用 hashtable 存起来，每次访问都去 hashtable 中取，然后判断即可。但是题目说了网站有<code>很多</code>访客，<br>假如有 10 亿个用户访问过，每个 ip 的长度是 4 byte，那么你一共需要 4 * 1000000000 = 4000000000Bytes = 4G , 如果是判断 URL 黑名单，<br>由于每个 URL 会更长，那么需要的空间可能会远远大于你的期望。</p>
 <h3 id="bit"><a href="#bit" class="headerlink" title="bit"></a>bit</h3><p>另一个稍微难想到的解法是 bit， 我们知道 bit 有 0 和 1 两种状态，那么用来表示存在，不存在再合适不过了。</p>
 <p>加入有 10 亿个 ip，我们就可以用 10 亿个 bit 来存储，那么你一共需要 1 * 1000000000 = (4000000000 / 8) Bytes = 128M, 变为原来的 1/32,<br>如果是存储 URL 这种更长的字符串，效率会更高。</p>
@@ -399,7 +398,7 @@
 <blockquote>
 <p>我们可以通过散列函数来解决</p>
 </blockquote>
-<ol start="2">
+<ol>
 <li>当元素不是整型（比如 URL）的时候，BitSet 就不适用了</li>
 </ol>
 <blockquote>
@@ -414,7 +413,7 @@
 </li>
 </ol>
 <p>比如 Hbase 的每个 Region 中都包含一个 BloomFilter，用于在查询时快速判断某个 key 在该 region 中是否存在。</p>
-<ol start="3">
+<ol>
 <li>钓鱼网站识别</li>
 </ol>
 <p>浏览器有时候会警告用户，访问的网站很可能是钓鱼网站，用的就是这种技术</p>

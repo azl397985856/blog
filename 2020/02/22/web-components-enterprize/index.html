@@ -389,7 +389,6 @@
 <p>虽然目前社区有相关工具，提供框架之间的转化服务，比如讲 vuejs 组件转化为 react 组件。但是毕竟是不同的框架，有不同的标准。因此框架 api 发生变动，那么你就需要重写转化逻辑，显然是不灵活的，因此我们暂不讨论这种情况。作为公司而言，就需要为不同的框架写不同的组件库，尽管逻辑都是一样的。</p>
 <p>另外如果框架升级，比如从 1.x 升级到 2.x，那么对应组件库就需要升级，如果公司的组件库有很多（vuejs，react，angular 等），那么这种升级的概率就会更大。</p>
 <a id="more"></a>
-
 <h2 id="什么是-web-component？"><a href="#什么是-web-component？" class="headerlink" title="什么是 web-component？"></a>什么是 web-component？</h2><p>那么有没有更好的方案，一次编写，到处使用呢？</p>
 <p>答案就是借助 web component。</p>
 <p>Web Components 是一系列加入<code>w3c</code>的 HTML 和 DOM 的特性，使得开发者可以创建可复用的组件。</p>
@@ -405,8 +404,7 @@
 <p>如果我们使用 web components 的 api 开发一个组件，这个组件是脱离框架存在的，也就是说<br>你可以在任何框架中使用它，当然也可以直接在原生 js 中使用。</p>
 <p>我们无须为不同的框架编写不同的组件库。</p>
 <p>使用 web components 编写的组件库的基本使用方法大概是这样的：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"/build/duiba.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">&lt;!-- 运营位组件 --&gt;</span><br><span class="line">&lt;operation-list&gt;<span class="xml"><span class="tag">&lt;/<span class="name">operation-list</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"/build/duiba.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;!-- 运营位组件 --&gt;</span></span><br><span class="line"><span class="regexp">&lt;operation-list&gt;&lt;/</span>operation-list&gt;</span><br></pre></td></tr></table></figure>
 <p>毫不夸张地说， <code>web components</code> 就是未来。</p>
 <p>但是 web components 的 api 还是相对复杂的，因此用原生的 api 开发 web components 还是<br>相对比较复杂的，就好像你直接用原生 canvas api 去开发游戏一样。</p>
 <p>下面我们介绍下用于简化 web components 开发的库。</p>
@@ -421,13 +419,11 @@
 </blockquote>
 <p>那么 powerful features 具体指的是什么？</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Virtual DOM</span><br><span class="line">Async rendering (inspired by React Fiber)</span><br><span class="line">Reactive data-binding</span><br><span class="line">TypeScript</span><br><span class="line">JSX</span><br></pre></td></tr></table></figure>
-
 <p>它也是一个用于生成 web compoennt 的 tool。 不同的是她提供了更多的特性(Reactive data-binding,TypeScript,JSX, virtual dom)以及更强的性能(virtual dom, Async rendering).</p>
 <p>细心的人可能已经发现了，我将 Virtual DOM 既归为特性，又归为性能，没错！ Virtual DOM 提供了一种到真实 dom 的映射，使得开发者不必关心真实 dom，从这个层面讲它是特性。</p>
 <p>从虚拟 dom 之间的 diff，并将 diff info patch 到 real dom（调和）的过程来看，它是性能。</p>
 <p>用 stencil 开发 web components 体验大概是这样的：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, Prop, State &#125; <span class="keyword">from</span> <span class="string">"@stencil/core"</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  tag: <span class="string">"my-component"</span>,</span><br><span class="line">  styleUrl: <span class="string">"my-component.scss"</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> </span>&#123;</span><br><span class="line">  <span class="comment">// Indicate that name should be a property on our new component</span></span><br><span class="line">  @Prop() first: string;</span><br><span class="line"></span><br><span class="line">  @Prop() last: string;</span><br><span class="line"></span><br><span class="line">  @State() isVisible: boolean = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        Hello, my name is &#123;<span class="keyword">this</span>.first&#125; &#123;<span class="keyword">this</span>.last&#125;</span><br><span class="line">      &lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-
 <h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p>这是我基于<a href="https://github.com/ionic-team/stencil" target="_blank" rel="noopener">stenciljs</a> + <a href="https://github.com/storybooks/storybook" target="_blank" rel="noopener">storybook</a>写的一个小例子。大家可以 clone，并运行查看效果。</p>
 <p><a href="https://github.com/azl397985856/duiba-components" target="_blank" rel="noopener">duiba-components</a></p>
 <p>通过这样搭建的企业级组件库，就可以轻松地为不同业务线提供基础组件库，而不必担心使用者（各个业务方）的技术栈。</p>

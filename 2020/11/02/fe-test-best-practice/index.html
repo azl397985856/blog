@@ -388,7 +388,6 @@
         <p>最近公司在推行单元测试，但是一些同事对于单元测试只是了解，甚至不怎么了解。因此推动单元测试的阻碍是有的，这种阻碍除了人的层面，还有基础设施的层面。希望通过本文，一方面加深大家对前端测试最佳实践的认知，另一方面可以作为手册，在日常开发中做参考。本文也会不断更新，期待你的参与。</p>
 <p>如果大家对前端测试不太清楚，可以先看下文末我写的科普短文。如果你已经对前端测试有所了解，并且希望对前端测试有更深入的了解，以及对如何写出更好的单元测试有兴趣的话，那就让我们开始吧。</p>
 <a id="more"></a>
-
 <h2 id="写易于测试的代码（Writing-test-friendly-code）"><a href="#写易于测试的代码（Writing-test-friendly-code）" class="headerlink" title="写易于测试的代码（Writing test-friendly code）"></a>写易于测试的代码（Writing test-friendly code）</h2><p>这是一个非常宽泛的话题，本文试图从几个具体的切入点来阐述这个庞大且模糊的话题。</p>
 <h3 id="纯函数（Pure-Function）"><a href="#纯函数（Pure-Function）" class="headerlink" title="纯函数（Pure Function）"></a>纯函数（Pure Function）</h3><p>关于<a href="https://github.com/azl397985856/functional-programming" title="函数式教程" target="_blank" rel="noopener">纯函数</a>可以参考之前我写的一篇函数式教程中的入门篇。</p>
 <p>简单来说，纯函数就是数学中的函数。有两个好处：</p>
@@ -398,14 +397,11 @@
 </ul>
 <p>我举一个例子，这是一个稍微高级一点的技巧。不过你一旦理解了其意图，就会发现其思想是多么的简单。</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> app = &#123;</span><br><span class="line">    name: <span class="string">`lucifer's site`</span></span><br><span class="line">    start(html) &#123;</span><br><span class="line">        <span class="built_in">document</span>.querySelector(<span class="string">'#app'</span>).innerHTM = html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">app.start(<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>inner<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>);</span><br></pre></td></tr></table></figure>
-
 <p>上面代码如果要测试，首先你要在 node 环境模拟 document。</p>
 <p>如果换一种写法呢？</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> app = &#123;</span><br><span class="line">    name: <span class="string">`lucifer's site`</span></span><br><span class="line">    start(querySelector, html) &#123;</span><br><span class="line">        querySelector(<span class="string">'#app'</span>).innerHTM = html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">app.start(<span class="built_in">document</span>.querySelector, &lt;div&gt;inner&lt;<span class="regexp">/div&gt;);</span></span><br></pre></td></tr></table></figure>
-
 <p>这样模拟 querySelector 就会变得容易起来。eg:</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .test.js</span></span><br><span class="line"><span class="keyword">import</span> app <span class="keyword">from</span> <span class="string">"./app"</span>;</span><br><span class="line">app.start(<span class="function"><span class="params">()</span> =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span>lucifer<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>, &lt;div&gt;inner&lt;<span class="regexp">/div&gt;);</span></span><br></pre></td></tr></table></figure>
-
 <p>如果你熟悉这种看成方法的话，可能知道它的名字<code>控制反转</code>，英文名 IoC。</p>
 <h3 id="单一职责（Single-Responsibility-Principle）"><a href="#单一职责（Single-Responsibility-Principle）" class="headerlink" title="单一职责（Single Responsibility Principle）"></a>单一职责（Single Responsibility Principle）</h3><p>如果一个函数承担了一个以上的职责。那么对我们测试有什么影响呢？</p>
 <p>如果对于一个函数 f,其功能有 A 和 B。</p>
@@ -420,26 +416,21 @@
 </ul>
 <p>eg:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">math</span>(<span class="params">a, b, operator</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (operator === <span class="string">"+"</span>) <span class="keyword">return</span> a + b;</span><br><span class="line">  <span class="keyword">if</span> (operator === <span class="string">"-"</span>) <span class="keyword">return</span> a - b;</span><br><span class="line">  <span class="keyword">if</span> (operator === <span class="string">"*"</span>) <span class="keyword">return</span> a * b;</span><br><span class="line">  <span class="keyword">if</span> (operator === <span class="string">"/"</span>) <span class="keyword">return</span> a / b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>如上代码有四个功能，并且四个功能互相独立。测试用例增长是线性的，也就说将其拆分为四个函数之后，测试用例的数量不变，但是单一函数的圈复杂度降低了，虽然总的软件复杂度并没有降低。</p>
 <p>如果四个功能相互耦合的话，后果会更严重。这种情况，拆分多个功能块已经无法解决问题了。这个时候需要对功能进行再次拆解，直到子功能块相互独立。</p>
 <h2 id="写清晰直白的测试描述（Wrting-Deadly-Simply-Description）"><a href="#写清晰直白的测试描述（Wrting-Deadly-Simply-Description）" class="headerlink" title="写清晰直白的测试描述（Wrting Deadly Simply Description）"></a>写清晰直白的测试描述（Wrting Deadly Simply Description）</h2><p>这里我给一个简单的判断标准。</p>
 <p>当这个测试报错的时候， 其他人能够只看报错信息，就知道出了什么问题。</p>
 <p>比如这样写是好的：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">`math -&gt; add`</span>, () =&gt; &#123;</span><br><span class="line">  it(<span class="string">"3 + 2 should equal to 5"</span>, () =&gt; &#123;</span><br><span class="line">    expect(<span class="number">3</span> + <span class="number">2</span>).to.be.equal(<span class="number">5</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
 <p>而这样是不好的：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">`math -&gt; add`</span>, () =&gt; &#123;</span><br><span class="line">  it(<span class="string">"add two numbers"</span>, () =&gt; &#123;</span><br><span class="line">    expect(<span class="number">3</span> + <span class="number">2</span>).to.be.equal(<span class="number">5</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
 <p>我举的例子大家可能不屑一顾， 但是当你以我的标准去衡量的时候会发现很多用例都不合格。</p>
 <h2 id="逻辑覆盖率（Logic-Coverage）"><a href="#逻辑覆盖率（Logic-Coverage）" class="headerlink" title="逻辑覆盖率（Logic Coverage）"></a>逻辑覆盖率（Logic Coverage）</h2><p>很多人关注的是单元测试的物理覆盖率，比如行覆盖率，文件覆盖率等，而大家往往会忽略逻辑覆盖率。</p>
 <p>eg:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (a, b) =&gt; a / b</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// a.test.js</span></span><br><span class="line"><span class="keyword">import</span> divide <span class="string">'./a.js'</span></span><br><span class="line">describe(<span class="string">`math -&gt; divide`</span>, () =&gt; &#123;</span><br><span class="line">  it(<span class="string">"2 / 2 should be 1"</span>, () =&gt; &#123;</span><br><span class="line">    expect(divide(<span class="number">2</span>, <span class="number">2</span>)).to.be(<span class="number">1</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
 <p>如上物理覆盖率可以达到 100%，但是很明显逻辑覆盖率却不可以。因为它连最简单的被除数不能为 0 都没包括。</p>
 <p>一个更格式的例子，应该是：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (a, b) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (b === <span class="number">0</span> or b === <span class="number">-0</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'dividend should not be zero!'</span>)</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Number</span>(a) !== a || <span class="built_in">Number</span>(b)=== b) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">`divisor and dividend should be number，but got <span class="subst">$&#123;a, b&#125;</span>`</span>)</span><br><span class="line">    <span class="keyword">return</span> a / b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// a.test.js</span></span><br><span class="line"><span class="keyword">import</span> divide <span class="string">'./a.js'</span></span><br><span class="line">describe(<span class="string">`math -&gt; divide`</span>, () =&gt; &#123;</span><br><span class="line">  it(<span class="string">"when dividend it zero, there should throw an corresponding eror"</span>, () =&gt; &#123;</span><br><span class="line">    expect(divide(<span class="number">3</span>, <span class="number">0</span>)).toThrowError(<span class="regexp">/dividend should not be zero/</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  it(<span class="string">"when dividend it zero, there should throw an corresponding eror"</span>, () =&gt; &#123;</span><br><span class="line">    expect(divide(<span class="number">3</span>, <span class="string">'f'</span>)).toThrowError(<span class="regexp">/divisor and dividend should be number/</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  it(<span class="string">"2 / 2 should be 1"</span>, () =&gt; &#123;</span><br><span class="line">    expect(divide(<span class="number">2</span>, <span class="number">2</span>)).to.be(<span class="number">1</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
 <p>逻辑的严密性是双向的，一方面他让你的测试用例更严密，更无懈可击。另一方面你的测试用例越严密， 就越驱使你写出更严密的代码。如上 divide 方法就是我根据测试用例反馈的结果后添加上去的。</p>
 <p>然后我上面的测试逻辑上还是很不严密，比如：</p>
 <ul>
@@ -452,23 +443,18 @@
 <p>比如，断言的时候使用非全等，这也不好的实践。</p>
 <p>再比如，使用<code>toBeNull()</code>断言，而不是:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">expect(<span class="literal">null</span>).toBe(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">expect(<span class="literal">null</span>).toEqual(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">expect(<span class="literal">null</span>).toStrictEqual(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
-
 <p>…</p>
 <p>类似的例子还有很多，总之测试代码也是需要 lint 的 ，并且相比于被测试代码，其应该有额外的特殊规则，来避免测试代码的<strong>腐烂问题</strong>。</p>
 <h2 id="CI"><a href="#CI" class="headerlink" title="CI"></a>CI</h2><h3 id="本地测试（Local-CI）"><a href="#本地测试（Local-CI）" class="headerlink" title="本地测试（Local CI）"></a>本地测试（Local CI）</h3><p>可以仅对修改的文件进行测试，eg:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jest -o</span><br></pre></td></tr></table></figure>
-
 <h3 id="分阶段测试（Tags）"><a href="#分阶段测试（Tags）" class="headerlink" title="分阶段测试（Tags）"></a>分阶段测试（Tags）</h3><p>我们可以按照一定分类标准对测试用例进行分类。</p>
 <p>举个例子，我按照测试是否有 IO 将用例分为 IO 类型和 非 IO 类型。那么我就可以在提交的时候只执行非 IO 类型，这样反馈更快。等到我推送到远程的时候执行一次全量操作。</p>
 <p>eg:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">`"face swiping" -&gt; alipay #io`</span>, () =&gt; &#123;</span><br><span class="line">  it(<span class="string">"it should go to http://www.alipay.com/identify when user choose alipay"</span>, () =&gt; &#123;</span><br><span class="line">    <span class="comment">// simulate click</span></span><br><span class="line">    <span class="comment">// do heavy io</span></span><br><span class="line">    <span class="comment">// expect</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
 <p>我们可以这么做</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jest -t = <span class="string">"#io"</span>;</span><br></pre></td></tr></table></figure>
-
 <p>同样，我可以按照其他纬度对用例进行切分，比如各种业务纬度。这在业务达到一定规模之后，收益非常明显。eg:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jest -t = &quot;[#io|#cold|#biz]&quot;;</span><br></pre></td></tr></table></figure>
-
 <p>如上会仅测试有<code>io</code>,<code>cold</code>,<code>biz</code> 三个标签中的一个或者多个的用例。</p>
 <blockquote>
 <p>文件夹和文件名本身也是一种 tag，合理利用可以减少很多工作。</p>
@@ -490,7 +476,6 @@
 <p>那么，对基于 vue 框架的应用测试主要关注一点，渲染树本身。 其实你用别的框架，或者不用框架也是一样的。</p>
 <p>不同的是，vue 是一种基于数据驱动的框架。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(props) =&gt; view;</span><br></pre></td></tr></table></figure>
-
 <p>因此我们是不是只要测试不同的 props 组合，是否展示我们期望的 view 就可以了？</p>
 <p>是也不是。 我们先假定”是“。那么我们的问题转化为：</p>
 <ul>

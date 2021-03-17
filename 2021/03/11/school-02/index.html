@@ -393,11 +393,11 @@
 <li>比较版本号（力扣题号 165.比较版本号）</li>
 </ol>
 <p>一次遍历即可，唯一需要注意的是补全再比较（逻辑补全即可，并不一定需要物理上真的去补全），时间复杂度 $O(m + n)$，其中 m 和 n 分别为两个版本号的长度</p>
-<ol start="2">
+<ol>
 <li>随机字符串生成（随机生成一个长度为 8 的字符串，要求只能是小写字母和数字，字母和数字可重复，但是生成的随机字符串不能重复）</li>
 </ol>
 <p>随机生成一个长度为 8 的字符并将其存到哈希表中，下次生成后判断是否已经在哈希表中了。如果存在，说明之前生成过了，继续生成。注意这种算法存在一直拒绝的可能，代码会无限循环。</p>
-<ol start="3">
+<ol>
 <li>日志上报（实现效果：没有数据不上报，有数据每 100ms 批量上报一次）</li>
 </ol>
 <p>维护一个窗口，当窗口内有数据才触发请求批量上传，一个窗口的长度为 100m（可能大于） 内的所有请求</p>
@@ -405,30 +405,30 @@
 <li>字符串反转</li>
 </ol>
 <p>头尾双指针，不断交换两个指针的字符即可。</p>
-<ol start="2">
+<ol>
 <li>链表的倒数第 k 个数</li>
 </ol>
 <p>快慢双指针典型题目。</p>
-<ol start="3">
+<ol>
 <li>设计求一个数的 n 次开方</li>
 </ol>
 <p>典型的二分题目，不会的建议看下我的二分讲义。我的刷题仓库或者公众号搜 <strong>二分</strong> 就行。</p>
-<ol start="4">
+<ol>
 <li>LRU 算法</li>
 </ol>
 <p>稍微有点难度了，这个题很常见，难度不小，建议刷。我之前写过题解了，直接甩给大家吧 <a href="https://github.com/azl397985856/leetcode/blob/master/problems/146.lru-cache.md" title="146. LRU 缓存机制" target="_blank" rel="noopener">146. LRU 缓存机制</a></p>
 <blockquote>
 <p>我给了 JS, Go, PHP, Python3 四种语言，有你的菜么？</p>
 </blockquote>
-<ol start="5">
+<ol>
 <li>手撕一下，就是一个小车给定坐标位置，和当前面朝方向（NSWE），再输入前进转向情况和前进步数，输出小车的坐标位置和面朝方向。</li>
 </ol>
 <p>没啥难度，直接模拟。</p>
-<ol start="6">
+<ol>
 <li>链表相加</li>
 </ol>
-<p>链表和数组本质没有不同，只是具体操作不一样。因此掌握链表基本操作就行了。链表基本操作有哪些？需要注意什么？我的<a href="https://mp.weixin.qq.com/s?__biz=MzI4MzUxNjI3OA==&mid=2247485582&idx=1&sn=eff845460e91be97026c937b229c2989&chksm=eb88c497dcff4d81e08ac30951b160f0083bc9fe5a2b64b8e1ea9e0988e14a9df2b56515f508&token=108537235&lang=zh_CN#rd" title="链表专题" target="_blank" rel="noopener">链表专题</a>都给大家总结好了，建议阅读。</p>
-<ol start="7">
+<p>链表和数组本质没有不同，只是具体操作不一样。因此掌握链表基本操作就行了。链表基本操作有哪些？需要注意什么？我的<a href="https://mp.weixin.qq.com/s?__biz=MzI4MzUxNjI3OA==&amp;mid=2247485582&amp;idx=1&amp;sn=eff845460e91be97026c937b229c2989&amp;chksm=eb88c497dcff4d81e08ac30951b160f0083bc9fe5a2b64b8e1ea9e0988e14a9df2b56515f508&amp;token=108537235&amp;lang=zh_CN#rd" title="链表专题" target="_blank" rel="noopener">链表专题</a>都给大家总结好了，建议阅读。</p>
+<ol>
 <li>leetcode 1567 乘积为正数的最长子数组长度。</li>
 </ol>
 <p>题目是：给你一个整数数组 nums ，请你求出乘积为正数的最长子数组的长度。一个数组的子数组是由原数组中零个或者更多个连续数字组成的数组。请你返回乘积为正数的最长子数组长度。</p>
@@ -438,18 +438,28 @@
 <ul>
 <li>nums[i] &gt; 0</li>
 </ul>
-<p>$$<br>positive[i]=positive[i−1]+1<br>$$</p>
-<p>$$<br>  negative[i]=\left{<br>  \begin{aligned}<br>  negative[i-1] + 1 &amp;  &amp; negative[i-1] &gt; 0 \<br>  0 &amp; &amp; negative[i-1] = 0 \<br>  \end{aligned}<br>  \right.<br>$$</p>
-<ul>
+<script type="math/tex; mode=display">
+positive[i]=positive[i−1]+1</script><script type="math/tex; mode=display">
+negative[i]=\left\{
+\begin{aligned}
+negative[i-1] + 1 &  & negative[i-1] > 0 \\
+0 & & negative[i-1] = 0 \\
+\end{aligned}
+\right.</script><ul>
 <li>nums[i] &lt; 0</li>
 </ul>
-<p>$$<br>negative[i]=positive[i−1]+1<br>$$</p>
-<p>$$<br>  positive[i]=\left{<br>  \begin{aligned}<br>  negative[i-1] + 1 &amp;  &amp; negative[i-1] &gt; 0 \<br>  0 &amp; &amp; negative[i-1] = 0 \<br>  \end{aligned}<br>  \right.<br>$$</p>
-<ul>
+<script type="math/tex; mode=display">
+negative[i]=positive[i−1]+1</script><script type="math/tex; mode=display">
+positive[i]=\left\{
+\begin{aligned}
+negative[i-1] + 1 &  & negative[i-1] > 0 \\
+0 & & negative[i-1] = 0 \\
+\end{aligned}
+\right.</script><ul>
 <li>nums[i] == 0</li>
 </ul>
-<p>$$<br>negative[i]=positive[i] = 0<br>$$</p>
-<p>状态定义一般两种套路：</p>
+<script type="math/tex; mode=display">
+negative[i]=positive[i] = 0</script><p>状态定义一般两种套路：</p>
 <ul>
 <li>使用一个二维数组，定义 dp[i][0] 和 定义 dp[i][1]</li>
 <li>使用两个一维数组，定义 dp1[i] 和 dp2[i]</li>
@@ -470,7 +480,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-17T16:15:38+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-17T17:25:45+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2021年3月17日</p>

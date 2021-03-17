@@ -393,7 +393,6 @@
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51k9cocj30lk09x75c.jpg" alt></p>
 <p>根据我的经验，我们写的业务代码通常不到总包体的 5%， 下面是我以前做过的一个实际项目的代码分布。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ du -sh node_modules <span class="comment"># 429M</span></span><br><span class="line">$ du -sh src <span class="comment"># 7.7M</span></span><br></pre></td></tr></table></figure>
-
 <p>大家可以拿自己的实际项目看一下，看是不是这样的。</p>
 <p>其实不难看出业务代码在整个应用的比例是很小的，软件工程有一个至理名言，“软件开发的 90%的工作是由 10%的人完成的”，<br>这句话很对，那么剩下的 10 的工作却由剩下的 90%来完成。</p>
 <p>因此我们感觉算法没用，是因为我们没用深入剩下的“90%”<br>很多场景我们接触不到，并且没有思考过，就很容易“井底之蛙”，到头来就变成“只会用别人造好的轮子组装代码”的“前端打字员”。</p>
@@ -409,7 +408,6 @@
 <p>逻辑上 VDOM 就是用来抽象 DOM 的，底层上 VDOM 普遍实现是基于 hash table 这种数据结构的。</p>
 <p>一个典型的 VDOM 可以是：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  type: <span class="string">'div'</span>,</span><br><span class="line">  props: &#123;</span><br><span class="line">    name: <span class="string">'lucifer'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  children: [&#123;</span><br><span class="line">    type: <span class="string">'span'</span>,</span><br><span class="line">    props: &#123;&#125;,</span><br><span class="line">    children: []</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>不难看出，VDOM 是一种递归的数据结构，因此使用递归的方式来处理是非常直观和容易的。</p>
 <p>我上面提到了 VDOM 是 DOM 的抽象（ye, a new level of abstraction）。<br>根据 VDOM 我们可以创建一个对应的真实 DOM。</p>
 <p>如果我们只是做了这一层抽象的话，我们相当于引入了一种编程模式，即从<br>面向 DOM 编程，切换到面向 VDOM 编程，而现在 VDOM 又是由数据驱动的，因此<br>我们的编程模式切换到了“数据驱动”。</p>
@@ -446,7 +444,6 @@
 <p>剩下的我就不一一说了。其实都是有很多数据结构和算法的影子的。</p>
 <p>OK，说了那么多。 这些都是“大牛”们做的事情，好像和我日常开发没关系啊。<br>我只要用他们做好的东西，调用一下，一样可以完成我的日常工作啊。<br>让我们带着这个问题继续往下看。</p>
 <h2 id="算法在日常开发中的应用都有哪些"><a href="#算法在日常开发中的应用都有哪些" class="headerlink" title="算法在日常开发中的应用都有哪些"></a>算法在日常开发中的应用都有哪些</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">大神： “你可以先这样，再这样，然后就会抽象为纯算法问题了。”</span><br><span class="line"></span><br><span class="line">我： “哇，好厉害。”</span><br></pre></td></tr></table></figure>
-
 <p>其实就是你没有掌握，或者“再思考”，以至于不能融汇贯通。</p>
 <p>比如你可以用 vue 组件写一个递归，实现一些递归的功能，也是可以的，<br>但是大多数人都想不到。</p>
 <p>接下来，我会举几个例子来说明“算法在日常开发中的应用”。<br>注意，以下所有的例子均来自我的实际业务需求。</p>

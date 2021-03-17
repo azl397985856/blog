@@ -387,7 +387,6 @@
       <div class="article-entry" itemprop="articleBody">
         <p>顾名思义， 单调栈是一种栈。因此要学单调栈，首先要彻底搞懂栈。</p>
 <a id="more"></a>
-
 <h2 id="栈是什么？"><a href="#栈是什么？" class="headerlink" title="栈是什么？"></a>栈是什么？</h2><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfbikq9ipmj30cd0a73yp.jpg" alt></p>
 <p>栈是一种受限的数据结构， 体现在只允许新的内容从一个方向插入或删除，这个方向我们叫栈顶，而从其他位置获取内容是不被允许的</p>
 <p>栈最显著的特征就是 LIFO(Last In, First Out - 后进先出)</p>
@@ -456,7 +455,6 @@
 <h3 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h3><p>上面的算法可以用如下的伪代码表示，同时这是一个通用的算法模板，大家遇到单调栈的题目可以直接套。</p>
 <p>建议大家用自己熟悉的编程语言实现一遍，以后改改符号基本就能用。</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">monostoneStack</span><span class="params">(self, arr: List[int])</span> -&gt; List[int]:</span></span><br><span class="line">        stack = []</span><br><span class="line">        ans = 定义一个长度和 arr 一样长的数组，并初始化为 <span class="number">-1</span></span><br><span class="line">        循环 i <span class="keyword">in</span>  arr:</span><br><span class="line">            <span class="keyword">while</span> stack <span class="keyword">and</span> arr[i] &gt; arr[栈顶元素]:</span><br><span class="line">                peek = 弹出栈顶元素</span><br><span class="line">                ans[peek] = i - peek</span><br><span class="line">            stack.append(i)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
-
 <p><strong>复杂度分析</strong></p>
 <ul>
 <li>时间复杂度：由于 arr 的元素最多只会入栈，出栈一次，因此时间复杂度仍然是 $O(N)$，其中 N 为数组长度。</li>
@@ -465,35 +463,31 @@
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>这里提高两种编程语言的单调栈模板供大家参考。</p>
 <p>Python3：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">monostoneStack</span><span class="params">(self, T: List[int])</span> -&gt; List[int]:</span></span><br><span class="line">        stack = []</span><br><span class="line">        ans = [<span class="number">0</span>] * len(T)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(T)):</span><br><span class="line">            <span class="keyword">while</span> stack <span class="keyword">and</span> T[i] &gt; T[stack[<span class="number">-1</span>]]:</span><br><span class="line">                peek = stack.pop(<span class="number">-1</span>)</span><br><span class="line">                ans[peek] = i - peek</span><br><span class="line">            stack.append(i)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
-
 <p>JS:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> monostoneStack = <span class="function"><span class="keyword">function</span> (<span class="params">T</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> stack = [];</span><br><span class="line">  <span class="keyword">let</span> result = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; T.length; i++) &#123;</span><br><span class="line">    result[i] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (stack.length &gt; <span class="number">0</span> &amp;&amp; T[stack[stack.length - <span class="number">1</span>]] &lt; T[i]) &#123;</span><br><span class="line">      <span class="keyword">let</span> peek = stack.pop();</span><br><span class="line">      result[peek] = i - peek;</span><br><span class="line">    &#125;</span><br><span class="line">    stack.push(i);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <h3 id="题目推荐-1"><a href="#题目推荐-1" class="headerlink" title="题目推荐"></a>题目推荐</h3><p>下面几个题帮助你理解单调栈， 并让你明白什么时候可以用单调栈进行算法优化。</p>
 <ul>
-<li><p><a href="https://github.com/azl397985856/leetcode/blob/master/problems/42.trapping-rain-water.md" title="42. 接雨水" target="_blank" rel="noopener">42. 接雨水</a></p>
-</li>
-<li><p><a href="https://github.com/azl397985856/leetcode/blob/master/problems/84.largest-rectangle-in-histogram.md" title="84. 柱状图中最大的矩形" target="_blank" rel="noopener">84. 柱状图中最大的矩形</a></p>
-</li>
+<li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/42.trapping-rain-water.md" title="42. 接雨水" target="_blank" rel="noopener">42. 接雨水</a></li>
+<li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/84.largest-rectangle-in-histogram.md" title="84. 柱状图中最大的矩形" target="_blank" rel="noopener">84. 柱状图中最大的矩形</a></li>
 <li><p><a href="https://github.com/azl397985856/leetcode/blob/master/daily/2019-06-06.md" title="739.每日温度" target="_blank" rel="noopener">739.每日温度</a></p>
 </li>
-<li><ol start="316">
+<li><ol>
 <li>去除重复字母</li>
 </ol>
 </li>
-<li><ol start="402">
+<li><ol>
 <li>移掉 K 位数字</li>
 </ol>
 </li>
-<li><ol start="496">
+<li><ol>
 <li>下一个更大元素 I</li>
 </ol>
 </li>
-<li><ol start="581">
+<li><ol>
 <li>最短无序连续子数组</li>
 </ol>
 </li>
-<li><ol start="901">
+<li><ol>
 <li>股票价格跨度</li>
 </ol>
 </li>

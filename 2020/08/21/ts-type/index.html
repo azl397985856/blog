@@ -387,7 +387,7 @@
       <div class="article-entry" itemprop="articleBody">
         <p>TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教程。但是目前为止没有一个我特别满意的。原因有：</p>
 <ul>
-<li>它们大多数没有一个清晰的主线，而是按照 API 组织章节的，内容在<strong><em>逻辑上</em></strong>比较零散。</li>
+<li>它们大多数没有一个清晰的主线，而是按照 API 组织章节的，内容在<strong>_逻辑上_</strong>比较零散。</li>
 <li>大多是“讲是什么，怎么用“，而不是”讲为什么，讲原理“。</li>
 <li>大多数内容比较枯燥，趣味性比较低。都是干巴巴的文字，没有图片，缺乏能够引起强烈共鸣的例子。</li>
 </ul>
@@ -413,11 +413,10 @@
 <p>结合这两个资料和我的系列教程，掌握 TypeScript 指日可待。</p>
 <p>接下来，我们通过几个方面来从宏观的角度来看一下 TypeScript。</p>
 <a id="more"></a>
-
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
 <li>作者：feiker &amp; Lucifer</li>
 </ul>
-<p>TypeScript 中有几个概念和名字很像，会让初学者傻傻分不清楚。比如配置文件中的 <strong><em>types 和 typeRoots</em></strong>，并且还有一个 @types。接触过 TypeScript 的人一定接触过它们， 这几个有什么区别和联系呢？今天就带你来重新认识下它们。</p>
+<p>TypeScript 中有几个概念和名字很像，会让初学者傻傻分不清楚。比如配置文件中的 <strong>_types 和 typeRoots_</strong>，并且还有一个 @types。接触过 TypeScript 的人一定接触过它们， 这几个有什么区别和联系呢？今天就带你来重新认识下它们。</p>
 <h2 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h2><p>这里我通过一个例子来说明一下什么是 @types，这样大家理解起来更深刻一点。</p>
 <p>当我们用 npm 等包管理工具安装第三方包的时候，有些包并不是 TypeScript 编写的，自然也不会导出 TypeScript 声明文件。这种情况下，如果我们在 TypeScript 项目中引入了这种包，则会编译报错(没有设置 allowJS)。举个例子，当我们通过<code>npm install jquery --save</code> 安装 jquery 包并引用的时候，TypeScript 会报错。</p>
 <blockquote>
@@ -443,7 +442,6 @@
 <h2 id="变量类型定义的查找"><a href="#变量类型定义的查找" class="headerlink" title="变量类型定义的查找"></a>变量类型定义的查找</h2><p>和包查找类似，默认情况下变量类型定义的查找也会去 @types 下去寻找。只不过并不是直接去 @types 找，而是有一定的优先级， 这个过程类似原型链或者作用域链。</p>
 <p>比如如下代码：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user: User = &#123; name: <span class="string">"lucifer"</span> &#125;;</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>Typescript 则会先在本模块查找 User 的定义。</li>
 <li>如果找到，则直接返回。 如果找不到， 则会到全局作用域找，而这个全局默认就是指的就是 @types 下的所有类型定义。（注意目录页是可以配的）</li>
@@ -457,12 +455,10 @@
 <li><code>typeRoots</code>: 用来指定默认的类型声明文件查找路径，默认为<code>node_modules/@types</code>, 指定<code>typeRoots</code>后，TypeScript 编译器会从指定的路径去引入声明文件，而不是<code>node_modules/@types</code>, 比如以下配置会从<code>typings</code>路径下去搜索声明</li>
 </ol>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="attr">"typeRoots"</span>: [<span class="string">"./typings"</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><code>types</code>: TypeScript 编译器会默认引入<code>typeRoot</code>下所有的声明文件，但是有时候我们并<strong><em>不希望全局引入所有定义</em></strong>，而是仅引入部分模块。这种情景下可以通过<code>types</code>指定模块名只引入我们想要的模块，比如以下只会引入 jquery 的声明文件</li>
+<ol>
+<li><code>types</code>: TypeScript 编译器会默认引入<code>typeRoot</code>下所有的声明文件，但是有时候我们并<strong>_不希望全局引入所有定义_</strong>，而是仅引入部分模块。这种情景下可以通过<code>types</code>指定模块名只引入我们想要的模块，比如以下只会引入 jquery 的声明文件</li>
 </ol>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="attr">"types"</span>: [<span class="string">"jquery"</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
 <li>typeRoots 是 tsconfig 中 compilerOptions 的一个配置项，typeRoots 下面的包会被 ts 编译器自动包含进来，typeRoots 默认指向 node_modules/@types。</li>
 <li>@types 是 npm 的 scope 命名空间，和@babel 类似，@types 下的所有包会默认被引入，你可以通过修改 compilerOptions 来修改默认策略。</li>
@@ -524,7 +520,7 @@
           
           href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2020/08/21/ts-type/&title=types 和 @types 是什么？ | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教程。但是目前为止没有一个我特别满意的。原因有：
 
-它们大多数没有一个清晰的主线，而是按照 API 组织章节的，内容在逻辑上比较零散。
+它们大多数没有一个清晰的主线，而是按照 API 组织章节的，内容在_逻辑上_比较零散。
 大多是“讲是什么，怎么用“，而不是”讲为什么，讲原理“。
 大多数内容比较枯燥，趣味性比较低。都是干巴巴的文字，没有图片，缺乏能够引起强烈共鸣的例子。
 
@@ -562,7 +558,7 @@ TypeScript 练习题
           
           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2020/08/21/ts-type/&title=types 和 @types 是什么？ | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教程。但是目前为止没有一个我特别满意的。原因有：
 
-它们大多数没有一个清晰的主线，而是按照 API 组织章节的，内容在逻辑上比较零散。
+它们大多数没有一个清晰的主线，而是按照 API 组织章节的，内容在_逻辑上_比较零散。
 大多是“讲是什么，怎么用“，而不是”讲为什么，讲原理“。
 大多数内容比较枯燥，趣味性比较低。都是干巴巴的文字，没有图片，缺乏能够引起强烈共鸣的例子。
 
@@ -600,7 +596,7 @@ TypeScript 练习题
           
           href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2020/08/21/ts-type/&title=types 和 @types 是什么？ | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教程。但是目前为止没有一个我特别满意的。原因有：
 
-它们大多数没有一个清晰的主线，而是按照 API 组织章节的，内容在逻辑上比较零散。
+它们大多数没有一个清晰的主线，而是按照 API 组织章节的，内容在_逻辑上_比较零散。
 大多是“讲是什么，怎么用“，而不是”讲为什么，讲原理“。
 大多数内容比较枯燥，趣味性比较低。都是干巴巴的文字，没有图片，缺乏能够引起强烈共鸣的例子。
 

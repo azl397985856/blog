@@ -388,23 +388,19 @@
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Github 支持通过创建同名仓库的形式自定义主页。比如我的 Github 用户名是 azl397985856，那么新建一个名为 azl397985856 的仓库即可。接下来你可以通过修改此仓库的 README 文件来自定义 Github 主页。也就是说，你想要自定义主页就新建一个同名仓库并修改 README 就行了。</p>
 <p>修改 README 能玩出什么花样呢？请接着往下看。</p>
 <a id="more"></a>
-
 <h2 id="装修效果"><a href="#装修效果" class="headerlink" title="装修效果"></a>装修效果</h2><p>先上一下我的装修效果：</p>
 <p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1go0wmr2tajj30yn0p447m.jpg" alt></p>
 <h2 id="开始动手"><a href="#开始动手" class="headerlink" title="开始动手"></a>开始动手</h2><h3 id="添加数据统计"><a href="#添加数据统计" class="headerlink" title="添加数据统计"></a>添加数据统计</h3><p>上图的那几个 Github 数据统计以及奖杯使用的是一个外部服务。想要显示哪个就添加相应代码即可：</p>
 <p>数据统计：</p>
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://github-readme-stats.vercel.app/api?username=azl397985856&amp;show_icons=true"</span> <span class="attr">alt</span>=<span class="string">"logo"</span> <span class="attr">height</span>=<span class="string">"160"</span> <span class="attr">align</span>=<span class="string">"right"</span> <span class="attr">style</span>=<span class="string">"margin: 5px; margin-bottom: 20px;"</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>注意将 username 改成自己的用户名哦(下面也是一样，不再赘述)，不然就显示的 lucifer 我的信息啦。</p>
 </blockquote>
 <p>奖杯：</p>
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://github-profile-trophy.vercel.app/?username=azl397985856&amp;theme=flat&amp;column=7"</span> <span class="attr">alt</span>=<span class="string">"logo"</span> <span class="attr">height</span>=<span class="string">"160"</span> <span class="attr">align</span>=<span class="string">"center"</span> <span class="attr">style</span>=<span class="string">"margin: auto; margin-bottom: 20px;"</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
-
 <h3 id="自动更新博客"><a href="#自动更新博客" class="headerlink" title="自动更新博客"></a>自动更新博客</h3><p>如上图我的装修主页，其中博客的文章列表不是写死的，而是每隔一个小时定时读取我的<a href="https://lucifer.ren/blog/" title="lucifer 的网络博客">博客</a> 内容，并提取前 5 篇文章。</p>
 <p>如果你也想要这个功能，就在 README 中添加如下代码即可：</p>
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">## 📕 Latest Blog Posts</span></span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- BLOG-POST-LIST:START --&gt;</span></span></span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- BLOG-POST-LIST:END --&gt;</span></span></span><br></pre></td></tr></table></figure>
-
 <p>之后读取的博客列表会填充在两个注释之间，也就是说你可以<strong>通过改变注释的位置，将其放到页面任意位置</strong>。</p>
 <p>为了实现<strong>每个小时定时更新的功能</strong>，我们可以使用 Github Action 的定时任务来实现。</p>
 <p>具体操作步骤如下：</p>
@@ -412,7 +408,6 @@
 <p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1go0x818quij30nh09mdh2.jpg" alt></p>
 <p>接下来将如下内容复制粘贴进去：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Blog</span> <span class="string">Posts</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="comment"># Run workflow automatically</span></span><br><span class="line">  <span class="attr">schedule:</span></span><br><span class="line">    <span class="comment"># Runs every hour, on the hour</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">"0 * * * *"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">update-readme-with-blog:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Update</span> <span class="string">this</span> <span class="string">repo's</span> <span class="string">README</span> <span class="string">with</span> <span class="string">latest</span> <span class="string">blog</span> <span class="string">posts</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v2</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">gautamkrishnar/blog-post-workflow@master</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="comment"># comma-separated list of RSS feed urls</span></span><br><span class="line">          <span class="attr">feed_list:</span> <span class="string">"https://lucifer.ren/blog/atom.xml"</span></span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>注意：这里的 <code>cron: &quot;0 * * * *&quot;</code> 的意思是每个小时进行一次，并且是每个小时的 0 分。 因为你需要等到下一个整点才能看到效果，有时候 Github 会有延时，晚几分钟也正常，大家不要着急，耐心等待即可。</p>
 </blockquote>

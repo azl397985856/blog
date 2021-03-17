@@ -388,7 +388,6 @@
         <p>我想你很可能听说过<code>事件驱动</code>, 但是事件驱动到底是什么？为什么说浏览器是事件驱动的呢？为什么 NodeJS 也是事件驱动的 ？ 两者是一回事么？</p>
 <p>实际上不管是浏览器还是 Nodejs 都是事件驱动的，都有自己的事件模型。在这里，我们只讲解浏览器端的事件模型，如果对 Nodejs 事件模型感兴趣的，请期待我的 Nodejs 部分的讲解。</p>
 <a id="more"></a>
-
 <h2 id="什么是事件驱动"><a href="#什么是事件驱动" class="headerlink" title="什么是事件驱动"></a>什么是事件驱动</h2><p>事件驱动通俗地来说就是<code>什么都抽象为事件</code>。</p>
 <ul>
 <li>一次点击是一个事件</li>
@@ -405,10 +404,8 @@
 <p>下面我们来看一个最简单的浏览器端的事件：</p>
 <p>html 代码：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>Change color<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>js 代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span><br><span class="line"></span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"button clicked"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <p>代码很简单，我们在 button 上注册了一个事件，这个事件的 handler 是一个我们定义的匿名函数。当用户点击了这个被注册了事件的 button 的时候，这个我们定义好的匿名函数就会被执行。</p>
 <h2 id="如何绑定事件"><a href="#如何绑定事件" class="headerlink" title="如何绑定事件"></a>如何绑定事件</h2><p>我们有三种方法可以绑定事件，分别是<code>行内绑定</code>，<code>直接赋值</code>，用<code>addEventListener</code>。</p>
 <ul>
@@ -419,24 +416,20 @@
 </blockquote>
 <p>html 代码：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"handleClick()"</span>&gt;</span>Press me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>然后在 script 标签内写：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"button clicked"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>直接赋值</li>
 </ul>
 <p>和我上面举的例子一样：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span><br><span class="line"></span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"button clicked"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <p>这种方法有两个缺点</p>
 <ol>
 <li>不能添加多个同类型的 handler</li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">btn.onclick = functionA;</span><br><span class="line">btn.onclick = functionB;</span><br></pre></td></tr></table></figure>
-
 <p>这样只有 functionB 有效，这可以通过<code>addEventListener</code>来解决。</p>
-<ol start="2">
+<ol>
 <li>不能控制在哪个阶段来执行，这个会在后面将事件捕获/冒泡的时候讲到。这个同样可以通过<code>addEventListener</code>来解决。</li>
 </ol>
 <p>因此 addEventListener 横空出世，这个也是目前推荐的写法。</p>
@@ -447,7 +440,6 @@
 <p>addEventListener 可以给 Element，Document，Window，甚至 XMLHttpRequest 等绑定事件，当指定的事件发生的时候，绑定的回调函数就会被以某种机制进行执行，这种机制我们稍后就会讲到。</p>
 <p>语法：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">target.addEventListener(type, listener[, options]);</span><br><span class="line">target.addEventListener(type, listener[, useCapture]);</span><br><span class="line">target.addEventListener(type, listener[, useCapture, wantsUntrusted  ]); <span class="comment">// Gecko/Mozilla only</span></span><br></pre></td></tr></table></figure>
-
 <p>type 是你想要绑定的事件类型，常见的有 click, scroll, touch, mouseover 等，旧版本的第三个参数是 bool，表示是否是捕获阶段，默认是 false，即默认为冒泡阶段。新版本是一个对象，其中有 capture（和上面功能一样），passive 和 once。 once 用来执行是否只执行一次，passive 如果被指定为 true 表示永远不会执行<code>preventDefault()</code>,这在实现丝滑柔顺的滚动的效果中很重要。更多请参考<a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners" target="_blank" rel="noopener">Improving scrolling performance with passive listeners</a></p>
 <h2 id="框架中的事件"><a href="#框架中的事件" class="headerlink" title="框架中的事件"></a>框架中的事件</h2><p>实际上，我们现在大多数情况都是用框架来写代码，因此上面的情况其实在现实中是非常少见的，我们更多看到的是框架封装好的事件，比如 React 的合成事件，感兴趣的可以看下这几篇文章。</p>
 <ul>
@@ -457,7 +449,6 @@
 <p>虽然我们很少时候会接触到原生的事件，但是了解一下事件对象，事件机制，事件代理等还是很有必要的，因为框架的事件系统至少在这方面还是一致的，这些内容我们接下来就会讲到。</p>
 <h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><p>所有的事件处理函数在被浏览器执行的时候都会带上一个事件对象，举个例子：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleClick</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">btn.addEventListener(<span class="string">"click"</span>, handleClick);</span><br></pre></td></tr></table></figure>
-
 <p>这个 e 就是事件对象，即<code>event object</code>。 这个对象有一些很有用的属性和方法，下面举几个常用的属性和方法。</p>
 <ul>
 <li><p>属性</p>
@@ -486,7 +477,6 @@
 <p>从最外层即 HTML 标签开始，检查当前元素有没有绑定对应捕获阶段事件，如果有则执行，没有则继续往里面传播，这个过程递归执行直到触达<code>触发这个事件的元素</code>为止。</p>
 <p>伪代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">capture</span>(<span class="params">e, currentElement</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (currentElement.listners[e.type] !== <span class="keyword">void</span> <span class="number">0</span>) &#123;</span><br><span class="line">    currentElement.listners[e.type].forEach(<span class="function">(<span class="params">fn</span>) =&gt;</span> fn(e));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// pass down</span></span><br><span class="line">  <span class="keyword">if</span> (currentElement !== e.target) &#123;</span><br><span class="line">    <span class="comment">// getActiveChild用于获取当前事件传播链路上的子节点</span></span><br><span class="line">    capture(e, getActiveChild(currentElement, e));</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    bubble(e, currentElement);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这个Event对象由引擎创建</span></span><br><span class="line">capture(<span class="keyword">new</span> Event(), <span class="built_in">document</span>.querySelector(<span class="string">"html"</span>));</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>第二个阶段 - 目标阶段</li>
 </ul>
@@ -497,21 +487,17 @@
 <p>从<code>触发这个事件的元素</code>开始，检查当前元素有没有绑定对应冒泡阶段事件，如果有则执行，没有则继续往里面传播，这个过程递归执行直到触达 HTML 为止。</p>
 <p>伪代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubble</span>(<span class="params">e, currentElement</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (currentElement.listners[e.type] !== <span class="keyword">void</span> <span class="number">0</span>) &#123;</span><br><span class="line">    currentElement.listners[e.type].forEach(<span class="function">(<span class="params">fn</span>) =&gt;</span> fn(e));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// returning</span></span><br><span class="line">  <span class="keyword">if</span> (currentElement !== <span class="built_in">document</span>.querySelector(<span class="string">"html"</span>)) &#123;</span><br><span class="line">    bubble(e, currentElement.parent);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>上述的过程用图来表示为：</p>
 <p><img src="http://ww1.sinaimg.cn/large/e9f490c8ly1g8yif1i5hzj20fs0eewfi.jpg" alt></p>
 <p>如果你不希望事件继续冒泡，可以用之前我提到的<code>stopPropagation</code>。</p>
 <p>伪代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubble</span>(<span class="params">e, currentElement</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> stopped = <span class="literal">false</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">cb</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    stopped = <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (currentElement.listners[e.type] !== <span class="keyword">void</span> <span class="number">0</span>) &#123;</span><br><span class="line">    currentElement.listners[e.type].forEach(<span class="function">(<span class="params">fn</span>) =&gt;</span> &#123;</span><br><span class="line">      fn(&#123;</span><br><span class="line">        ...e,</span><br><span class="line">        stopPropagation: cb,</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="keyword">if</span> (stopped) <span class="keyword">return</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// returning</span></span><br><span class="line">  <span class="keyword">if</span> (currentElement !== <span class="built_in">document</span>.querySelector(<span class="string">"html"</span>)) &#123;</span><br><span class="line">    bubble(e, currentElement.parent);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="事件代理"><a href="#事件代理" class="headerlink" title="事件代理"></a>事件代理</h2><p>利用上面提到的事件冒泡机制，我们可以选择做一些有趣的东西。 举个例子：</p>
 <p>我们有一个如下的列表，我们想在点击对应列表项的时候，输出是点击了哪个元素。</p>
 <p>HTML 代码：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>JS 代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span></span><br><span class="line">  .querySelector(<span class="string">"ul"</span>)</span><br><span class="line">  .addEventListener(<span class="string">"click"</span>, (e) =&gt; <span class="built_in">console</span>.log(e.target.innerHTML));</span><br></pre></td></tr></table></figure>
-
 <p><a href="https://codepen.io/zhipenglu/pen/JjjePQJ?editors=1111" target="_blank" rel="noopener">在线地址</a></p>
 <p>上面说了<code>addEventListener</code>会默认绑定到冒泡阶段，因此事件会从目标阶段开始，向外层冒泡，到我们绑定了事件的 ul 上，ul 中通过事件对象的 target 属性就能获取到是哪一个元素触发的。</p>
 <blockquote>

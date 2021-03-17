@@ -387,10 +387,8 @@
       <div class="article-entry" itemprop="articleBody">
         <p>前一段时间群里有小伙伴问 lucifer 我一个问题：”immutablejs 是什么？有什么用？“。我当时的回答是：<code>immutablejs 就是 tree + sharing，解决了数据可变性带来的问题，并顺便优化了性能</code>。今天给大家来详细解释一下这句话。</p>
 <a id="more"></a>
-
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>我们还是通过一个例子来进行说明。如下是几个普通地不能再普通的赋值语句:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span>;</span><br><span class="line">b = <span class="number">2</span>;</span><br><span class="line">c = <span class="number">3</span>;</span><br><span class="line">d = &#123;</span><br><span class="line">  name: <span class="string">"lucifer"</span>,</span><br><span class="line">  age: <span class="number">17</span>,</span><br><span class="line">  location: <span class="string">"西湖"</span>,</span><br><span class="line">&#125;;</span><br><span class="line">e = [<span class="string">"脑洞前端"</span>, <span class="string">"力扣加加"</span>];</span><br></pre></td></tr></table></figure>
-
 <p>上面代码的内存结构大概是这样的：</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggg7shvbghj31ew0r8dl6.jpg" alt></p>
 <blockquote>
@@ -402,13 +400,11 @@
 </blockquote>
 <p>实际开发我们经常会进行各种赋值操作，比如：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ca = a;</span><br><span class="line"><span class="keyword">const</span> cb = b;</span><br><span class="line"><span class="keyword">const</span> cc = c;</span><br><span class="line"><span class="keyword">const</span> cd = d;</span><br><span class="line"><span class="keyword">const</span> ce = e;</span><br></pre></td></tr></table></figure>
-
 <p>经过上面的操作，此时的内存结构图：</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggg82ifxozj30wo0u0dqd.jpg" alt></p>
 <p>可以看出，ca，cb，cc，cd，ce 的<strong>内存地址都变了，但是值都没变</strong>。原因在于变量名只是内存的别名而已，而赋值操作传递的是 value。</p>
 <p>由于目前 JS 对象操作都是 mutable 的， 因此就有可能会发生这样的 “bug”：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd.name = <span class="string">"azl397985856"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(cd.name); <span class="comment">// azl397985856</span></span><br><span class="line"><span class="built_in">console</span>.log(d.name); <span class="comment">// azl397985856</span></span><br></pre></td></tr></table></figure>
-
 <p>上面的 <code>cd.name</code> <strong>原地修改</strong>了 cd 的 name 值，这会影响所有指向 ta 的引用。</p>
 <p>比如有一个对象被三个指针引用，如果对象被修改了，那么三个指针都会有影响。</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gggfzb948kj31kc0sugpl.jpg" alt></p>
@@ -416,7 +412,6 @@
 <p>于是很多人的做法是 copy（shallow or deep）。这样多个指针的对象都是不同的，可以看成多进程。</p>
 <p>接下来我们进行一次 copy 操作。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sa = a;</span><br><span class="line"><span class="keyword">const</span> sb = b;</span><br><span class="line"><span class="keyword">const</span> sc = c;</span><br><span class="line"><span class="keyword">const</span> sd = &#123; ...d &#125;;</span><br><span class="line"><span class="keyword">const</span> se = [...e];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 有的人还觉得不过瘾</span></span><br><span class="line"><span class="keyword">const</span> sxbk = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(e));</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>旁观者： 为啥你代码那么多 copy 啊？<br>当事人： 我也不知道为啥要 copy 一下，不过这样做使我安心。</p>
 </blockquote>
@@ -445,14 +440,12 @@
 <p>开头我说了，<code>immutablejs 就是 tree + sharing，解决了数据可变带来的问题，并顺便提供了性能</code>。 其中这里的 tree 就是类似 trie 的一棵树。如果对 trie 不熟悉的，可以看下我之前写的一篇<a href="https://github.com/azl397985856/leetcode/blob/master/thinkings/trie.md" title="前缀树专题" target="_blank" rel="noopener">前缀树专题</a>。</p>
 <p>immutablejs 就是通过树实现的<strong>结构共享</strong>。举个例子：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> words = [<span class="string">"lucif"</span>, <span class="string">"luck"</span>];</span><br></pre></td></tr></table></figure>
-
 <p>我根据 words 构建了一个前缀树，节点不存储数据， 数据存储在路径上。其中头节点表示的是对象的引用地址。</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggg9bu2jqzj30u010xaeo.jpg" alt></p>
 <p>这样我们就将两个单词 <code>lucif</code> 和 <code>luck</code>存到了树上：</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggkk83ng24j30gk0hydhj.jpg" alt></p>
 <p>现在我想要将 lucif 改成 lucie，普通的做法是完全 copy 一份，之后修改即可。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">newWords = [...words];</span><br><span class="line">newWords[<span class="number">1</span>] = <span class="string">"lucie"</span>;</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggkkb31zwhj30ge0gxq3z.jpg" alt><br>（注意这里整棵树都是新的，你看根节点的内存地址已经变了）</p>
 <p>而所谓的状态共享是：</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggg9apgdrwj30u00u9wld.jpg" alt><br>（注意这里整棵树除了新增的一个节点， 其他都是旧的，你看根节点的内存地址没有变）</p>
@@ -582,16 +575,16 @@
                       <span class="art-item-left">
                           <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                           <h4>
-                              <a href="/blog/2020/06/20/刷题新手/" rel="prev" title="算法小白如何高效、快速刷 leetcode？">
+                              <a href="/blog/2020/06/20/构造二叉树专题/" rel="prev" title="构造二叉树系列">
                                 
-                                    算法小白如何高效、快速刷 leetcode？
+                                    构造二叉树系列
                                 
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a> <a class="tag" href="/blog/tags/经验分享/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 经验分享</a>
+                                  <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a> <a class="tag" href="/blog/tags/二叉树/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 二叉树</a> <a class="tag" href="/blog/tags/算法系列/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法系列</a>
                               </h6>
                           
                       </span>

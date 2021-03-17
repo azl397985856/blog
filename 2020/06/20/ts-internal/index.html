@@ -414,7 +414,6 @@
 <p>结合这两个资料和我的系列教程，掌握 TypeScript 指日可待。</p>
 <p>接下来，我们通过几个方面来从宏观的角度来看一下 TypeScript。</p>
 <a id="more"></a>
-
 <h2 id="从输入输出上来看"><a href="#从输入输出上来看" class="headerlink" title="从输入输出上来看"></a>从输入输出上来看</h2><p>如果我们把 Typescript 编译器看成一个黑盒的话。其<strong>输入则是使用 TypeScript 语法书写的文本或者文本集合</strong>。</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gh5l5pqyw1j304s04wwea.jpg" alt></p>
 <p>（文本）</p>
@@ -430,7 +429,6 @@
 </ul>
 <p>最简单的就是 变量名:类型 = 值</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a: <span class="built_in">Number</span> = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
 <p>除了这些基本类型，还提供了函数类型，复合类型等。</p>
 <ul>
 <li>提供了类型操作 API。TypeScript 不但提供内置类型，用户也可以利用集合操作和泛型对类型操作从而生成新的类型。</li>
@@ -441,7 +439,7 @@
 </ul>
 <p>比如 String 类型有 toString 方法，但是没有 toFixed 方法，这就是 lib.d.ts 定义的。这样我在 String 类型的变量上使用 toFixed 方法就会报错，达到了“类型检查”的作用。</p>
 <blockquote>
-<p>小提示：lib.d.ts 的内容主要是一些变量声明（如：window、document、math）和一些类似的接口声明（如：Window、Document、Math）。 你可以通过 –noLib 来关闭这一功能</p>
+<p>小提示：lib.d.ts 的内容主要是一些变量声明（如：window、document、math）和一些类似的接口声明（如：Window、Document、Math）。 你可以通过 —noLib 来关闭这一功能</p>
 </blockquote>
 <ul>
 <li>提供了模块系统（module，namespace）。</li>
@@ -681,16 +679,16 @@ TypeScript 是如何与 React，Vue，Webpack 集成的？
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/blog/2020/06/20/构造二叉树专题/" rel="prev" title="构造二叉树系列">
+                              <a href="/blog/2020/06/20/刷题新手/" rel="prev" title="算法小白如何高效、快速刷 leetcode？">
                                   
-                                      构造二叉树系列
+                                      算法小白如何高效、快速刷 leetcode？
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a> <a class="tag" href="/blog/tags/二叉树/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 二叉树</a> <a class="tag" href="/blog/tags/算法系列/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法系列</a>
+                                  <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a> <a class="tag" href="/blog/tags/经验分享/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 经验分享</a>
                               </h6>
                           
                       </span>

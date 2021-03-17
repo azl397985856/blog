@@ -394,7 +394,6 @@
 <p>这一次我们顺着前面的内容，讲一些经典的数据结构与算法，本期我们来讲一下时下比较火热的<code>React fiber</code>。</p>
 <p>这部分内容相对比较硬核和难以消化，否则 React 团队也不会花费两年的时间来搞这一个东西。建议大家多读几遍。</p>
 <a id="more"></a>
-
 <h2 id="fiber-一个用于增量更新的数据结构"><a href="#fiber-一个用于增量更新的数据结构" class="headerlink" title="fiber - 一个用于增量更新的数据结构"></a>fiber - 一个用于增量更新的数据结构</h2><p>前面我的文章提到过 fiber 是一种数据结构，并且是一种链式的数据结构。</p>
 <p>fiber 是为了下一代调和引擎而引入的一种新的数据结构，而下一代调和引擎最核心的部分就是<br>“增量渲染”。为了明白这个“增量渲染”，我们需要打一点小小的基础。</p>
 <h3 id="分片执行"><a href="#分片执行" class="headerlink" title="分片执行"></a>分片执行</h3><p>为了做到上面我提到的“增量渲染”，我们首先要能够停下来。<br>之前 React 的更新 UI 的策略是自顶向下进行渲染，如果没有人工的干涉，React 实际上会更新到<br>所有的子组件，这在大多数情况下没有问题。</p>
@@ -443,7 +442,6 @@
 <h3 id="fiber-和-传统调用栈的区别"><a href="#fiber-和-传统调用栈的区别" class="headerlink" title="fiber 和 传统调用栈的区别"></a>fiber 和 传统调用栈的区别</h3><p>传统的调用栈，我们实际上将生成 view 的工作放到栈里面执行，浏览器的栈有一个特点就是<br>“你给它一个任务，它必须一口气执行完”。</p>
 <p>而 fiber 由于是自己设计的，因此可以没有这个限制。 具体来说，两者的对应关系如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">传统调用栈            fiber</span><br><span class="line"></span><br><span class="line">  子函数          component type</span><br><span class="line"> 函数嵌套              child</span><br><span class="line">  参数                props</span><br><span class="line"> 返回地址             parent</span><br><span class="line">  返回值          DOM elements</span><br></pre></td></tr></table></figure>
-
 <p>用图来表示的话，大概是这样：</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds52aevumj30ds08wwfk.jpg" alt></p>
 <p>其中具体的算法，我预计会在我的<a href="https://github.com/azl397985856/mono-react" target="_blank" rel="noopener">从零开始开发一个 React</a> 中更新。</p>

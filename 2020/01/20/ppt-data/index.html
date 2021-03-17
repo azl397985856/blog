@@ -380,7 +380,6 @@
         <p>无论是身处什么行业什么领域，数据分析越来越成为一向必不可少的技能，<br>而运用数据思维进行决策更能产生形成高质量的决策结果。</p>
 <p>随着互联网的不断发展和物联网设备的不断普及，我们日常生活中的各种数据被存储下来，让我们可以通过定量分析数据，利用数据实现更好的决策制定。</p>
 <a id="more"></a>
-
 <p>现在越来越多的公司开始注重这一块，一方面自建数据体系，一方面去买一些数据。而对于我们个人似乎还没有意识到或者开始挖掘数据对我们的价值。</p>
 <p>笔者最近的工作大都是做一些基础设施搭建和流程优化相关的工作。<br>这部分工作对很多人来说都是“隐形”的，对上层使用者来说很难有很大的感知。<br>对于领导来说，如果你只是闷头去做事情，他们也是很难知道你干的怎么样，如果这之间再加上<br>你没有什么反馈，就会给同事和领导一种“不靠谱”的感觉。</p>
 <p>因此给予反馈和直观展示自己劳动成果的能力就显得非常重要。<br>然而如果你能很好展示自己的劳动成果，那么只需要将这个给老板看就是一种很好很直观的反馈。</p>
@@ -393,7 +392,6 @@
 <p>因此我们的第一步就是收集数据，那么在这之前你需要知道你需要什么数据。<br>这部分的内容随着每个人任务不同肯定是不一样的。因此有着很大的灵活性，</p>
 <p>有一个指导思想就是对关键指标分解。<br>比如我现在要做打包时间进行优化，那么打包时间由哪些时间决定。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">打包时间 =  阶段1 时间 + 阶段2 时间 + 阶段3 时间</span><br></pre></td></tr></table></figure>
-
 <p>我们减少打包时间肯定要减少其中一个或多个。</p>
 <p>有时候我们无法找到这种简单的分解，那就教大家另外一个技巧：运用对比。</p>
 <p>一方面可以基于时间进行对比，比如环比增长，同比增长等数据都是这么来的。</p>
@@ -444,13 +442,11 @@
 <p>这样我们的统计纬度就丰富起来了，我们不仅可以总体进行统计分析，我们还可以根据 tag 和 tag 的组合进行汇总。</p>
 <p>比如一个典型的统计结果大概是：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- task1 (tagA)</span><br><span class="line"> - module1 (tagA)</span><br><span class="line">   - component1 (tagB)</span><br><span class="line">   - component2 (tagA)</span><br><span class="line"> - module2 (tagB)</span><br><span class="line"> - module3 (tagB)</span><br><span class="line">- task2 (tagA)</span><br><span class="line">- task3 (tagC)</span><br></pre></td></tr></table></figure>
-
 <p>比如这里有一种 tag 叫“是否复用了以前的代码”，<br>那么我们就很容易统计出组件复用率，也就很容易很直观地知道前后的差距了。</p>
 <h3 id="用户拉新和留存"><a href="#用户拉新和留存" class="headerlink" title="用户拉新和留存"></a>用户拉新和留存</h3><p>再比如我们需要做“用户拉新和留存”，我们应该怎么做？</p>
 <p>这个留做思考题，大家可以思考一下。</p>
 <p>我这里抛砖引玉一下，比如我们的统计纬度可以是：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- 用户访问时长 (tagA)</span><br><span class="line">- 跳出率 (tagB)</span><br><span class="line">- 新用户 (tagA)</span><br><span class="line">- 流失的老用户 (tagB)</span><br><span class="line">- 地址位置 (tagA)</span><br></pre></td></tr></table></figure>
-
 <p>假如我的 tag 有两个分别是 用户 id 和时间， 我们就可以方便地统计每个用户的活动数据趋势。</p>
 <h2 id="让数据说话"><a href="#让数据说话" class="headerlink" title="让数据说话"></a>让数据说话</h2><p>有了数据，我们如何通过数据来增强表现力呢？</p>
 <p>一种非常有效的措施是可视化。现在的可视化引擎和工具有很多，功能也非常复杂。</p>
@@ -480,12 +476,10 @@
 <h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>最近我重新整理了下自己的公众号，并且我还给他换了一个名字《脑洞前端》，它是一个帮助你打开大前端新世界大门的钥匙 🔑，在这里你可以听到新奇的观点，看到一些技术尝新，还会收到系统性总结和思考。</p>
 <p>我会尽量通过图的形式来阐述一些概念和逻辑，帮助大家快速理解，图解前端是我的目标。</p>
 <p>之后我的文章同步到微信公众号 脑洞前端 ，您可以关注获取最新的文章，或者和我进行交流。</p>
-<img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds4sh51a6j30km0komyv.jpg" width="50%" height="50%" alt="gongzhonghao" align="center">
-
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds4sh51a6j30km0komyv.jpg" width="50%" height="50%" alt="gongzhonghao" align="center"></p>
 <h2 id="交流群"><a href="#交流群" class="headerlink" title="交流群"></a>交流群</h2><p>现在还是初级阶段，需要大家的意见和反馈，为了减少沟通成本，我组建了交流群。大家可以扫码进入</p>
 <h3 id="QQ-群"><a href="#QQ-群" class="headerlink" title="QQ 群"></a>QQ 群</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54ma44fj306a082q36.jpg" alt="qq-group-chat"></p>
-<h3 id="微信群"><a href="#微信群" class="headerlink" title="微信群"></a>微信群</h3><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5735kizj30e80e80tb.jpg" width="50%" height="50%" alt="JavaScript" align="center">
-
+<h3 id="微信群"><a href="#微信群" class="headerlink" title="微信群"></a>微信群</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5735kizj30e80e80tb.jpg" width="50%" height="50%" alt="JavaScript" align="center"></p>
 <p>(由于微信的限制，100 个人以上只能邀请加入， 你可以添加我的机器人回复“大前端”拉你进群)</p>
 
       </div>
