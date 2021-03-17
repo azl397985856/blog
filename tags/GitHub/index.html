@@ -68,6 +68,18 @@
   
 </head>
 
+<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
+<script>
+  const btw = new BTWPlugin();
+  btw.init({
+    id: "container",
+    blogId: "17446-1571644985832-648",
+    name: "力扣加加",
+    qrcode:
+      "https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg",
+    keyword: "more",
+  });
+</script>
 <body>
   
   
@@ -1317,32 +1329,23 @@
 
 
   <script>setLoadingBarProgress(100);</script>
-  <script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
-  <script>
-    const btw = new BTWPlugin();
-    btw.init({
-      id: "container",
-      blogId: "17446-1571644985832-648",
-      name: "力扣加加",
-      qrcode:
-        "https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg",
-      keyword: "more",
-    });
-  </script>
 </body>
 </html>
-LoadingBarProgress(100);</script>
-  <script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
-  <script>
-    const btw = new BTWPlugin();
-    btw.init({
-      id: "container",
-      blogId: "17446-1571644985832-648",
-      name: "力扣加加",
-      qrcode:
-        "https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg",
-      keyword: "more",
-    });
-  </script>
+般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>
