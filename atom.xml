@@ -241,11 +241,11 @@
       <category term="算法" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E5%AD%A6/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="最大公约数" scheme="https://lucifer.ren/blog/tags/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/"/>
     
@@ -270,30 +270,6 @@
     
     
       <category term="前缀和" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一个让你的 YouTube 丝滑般柔顺的插件</title>
-    <link href="https://lucifer.ren/blog/2021/02/20/youtube-extesion/"/>
-    <id>https://lucifer.ren/blog/2021/02/20/youtube-extesion/</id>
-    <published>2021-02-19T16:00:00.000Z</published>
-    <updated>2021-03-09T10:48:39.813Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Youtube 和 B 站是很多人浏览视频的两个地方。&lt;/p&gt;
-&lt;p&gt;一开始我还挺喜欢 Youtube 的，不仅是因为可以看到一些其他人看不到的东西，也因为体验比较棒。而现在，我已经彻底失望了。每次看一个十分钟的视频被跳出来四次广告的痛苦你了解么？如果你在看一个需要集中精力思考的视频，那么这种打断真的是非常让人恼怒。如果不是实在无法忍受这种行为，我也不会使用一些广告屏蔽的插件，毕竟看广告其实也是对 up 主的另外一种支持。&lt;/p&gt;
-&lt;p&gt;另外 YouTube 竟然没有小窗播放。比如我下滑到评论区，视频并不会小窗悬浮播放，差评！&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/"/>
-    
-      <category term="浏览器插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/"/>
-    
-    
-      <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
     
   </entry>
   
@@ -331,6 +307,30 @@
       <category term="中等" scheme="https://lucifer.ren/blog/tags/%E4%B8%AD%E7%AD%89/"/>
     
       <category term="删除 k 个字符" scheme="https://lucifer.ren/blog/tags/%E5%88%A0%E9%99%A4-k-%E4%B8%AA%E5%AD%97%E7%AC%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一个让你的 YouTube 丝滑般柔顺的插件</title>
+    <link href="https://lucifer.ren/blog/2021/02/20/youtube-extesion/"/>
+    <id>https://lucifer.ren/blog/2021/02/20/youtube-extesion/</id>
+    <published>2021-02-19T16:00:00.000Z</published>
+    <updated>2021-03-09T10:48:39.813Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Youtube 和 B 站是很多人浏览视频的两个地方。&lt;/p&gt;
+&lt;p&gt;一开始我还挺喜欢 Youtube 的，不仅是因为可以看到一些其他人看不到的东西，也因为体验比较棒。而现在，我已经彻底失望了。每次看一个十分钟的视频被跳出来四次广告的痛苦你了解么？如果你在看一个需要集中精力思考的视频，那么这种打断真的是非常让人恼怒。如果不是实在无法忍受这种行为，我也不会使用一些广告屏蔽的插件，毕竟看广告其实也是对 up 主的另外一种支持。&lt;/p&gt;
+&lt;p&gt;另外 YouTube 竟然没有小窗播放。比如我下滑到评论区，视频并不会小窗悬浮播放，差评！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/"/>
+    
+      <category term="浏览器插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/"/>
+    
+    
+      <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
     
   </entry>
   
@@ -556,6 +556,32 @@
   </entry>
   
   <entry>
+    <title>力扣刷题插件</title>
+    <link href="https://lucifer.ren/blog/2020/12/13/leetcode-cheat/"/>
+    <id>https://lucifer.ren/blog/2020/12/13/leetcode-cheat/</id>
+    <published>2020-12-12T16:00:00.000Z</published>
+    <updated>2021-03-09T10:48:39.796Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前我做了一个视频， 介绍我的刷题浏览器扩展插件，视频地址：&lt;a href=&quot;https://www.bilibili.com/video/BV1UK4y1x7zj/。&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.bilibili.com/video/BV1UK4y1x7zj/。&lt;/a&gt; 今天我在上次的基础上增加了部分公司的显示以及优化了若干体验功能。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+      <category term="刷题" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>《西法的刷题秘籍》电子书开放下载啦~</title>
     <link href="https://lucifer.ren/blog/2020/12/13/leetcode-ebook-1/"/>
     <id>https://lucifer.ren/blog/2020/12/13/leetcode-ebook-1/</id>
@@ -587,32 +613,6 @@
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
       <category term="电子书" scheme="https://lucifer.ren/blog/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>力扣刷题插件</title>
-    <link href="https://lucifer.ren/blog/2020/12/13/leetcode-cheat/"/>
-    <id>https://lucifer.ren/blog/2020/12/13/leetcode-cheat/</id>
-    <published>2020-12-12T16:00:00.000Z</published>
-    <updated>2021-03-09T10:48:39.796Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;之前我做了一个视频， 介绍我的刷题浏览器扩展插件，视频地址：&lt;a href=&quot;https://www.bilibili.com/video/BV1UK4y1x7zj/。&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.bilibili.com/video/BV1UK4y1x7zj/。&lt;/a&gt; 今天我在上次的基础上增加了部分公司的显示以及优化了若干体验功能。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-      <category term="插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/"/>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-      <category term="刷题" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
