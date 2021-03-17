@@ -68,18 +68,6 @@
   
 </head>
 
-<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
-<script>
-  const btw = new BTWPlugin();
-  btw.init({
-    id: "container",
-    blogId: "17446-1571644985832-648",
-    name: "力扣加加",
-    qrcode:
-      "https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg",
-    keyword: "more",
-  });
-</script>
 <body>
   
   
@@ -1090,7 +1078,11 @@
     <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename"
       >Material X</a
     >
-    作为主题  。
+    作为主题  ， 总访问量为
+    <span id="busuanzi_value_site_pv"
+      ><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i
+    ></span>
+    次  。
   </div>
 
   <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
@@ -1179,8 +1171,35 @@
   </script>
 
 
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
 
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
 
 
 
@@ -1310,5 +1329,17 @@
 
 
   <script>setLoadingBarProgress(100);</script>
+  <script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
+  <script>
+    const btw = new BTWPlugin();
+    btw.init({
+      id: "container",
+      blogId: "17446-1571644985832-648",
+      name: "力扣加加",
+      qrcode:
+        "https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg",
+      keyword: "more",
+    });
+  </script>
 </body>
 </html>
