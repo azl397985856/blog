@@ -18,7 +18,7 @@ word_count: true # 开启字数统计
 ############################### 服务开关 ###############################
 scrollreveal: true
 nodewaves: true
-busuanzi: true
+busuanzi: false
 # fastclick: true
 
 ############################### 默认值 ###############################
