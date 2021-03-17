@@ -233,11 +233,11 @@
       
         <tags>
             
-            <tag> 数学 </tag>
-            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> 数学 </tag>
             
             <tag> 最大公约数 </tag>
             
@@ -1124,9 +1124,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 数组 </category>
           
@@ -1167,9 +1167,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 数组 </category>
           
@@ -1241,9 +1241,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 数组 </category>
           
@@ -1543,11 +1543,11 @@
       
         <tags>
             
-            <tag> 数学 </tag>
-            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> 数学 </tag>
             
             <tag> BFS </tag>
             
@@ -1567,15 +1567,15 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 数组 </category>
           
-          <category> 双指针 </category>
-          
           <category> Medium </category>
+          
+          <category> 双指针 </category>
           
       </categories>
       
@@ -1637,9 +1637,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 数组 </category>
           
@@ -1783,6 +1783,35 @@
     
     
     <entry>
+      <title>算法小白如何高效、快速刷 leetcode？</title>
+      <link href="/blog/2020/06/20/%E5%88%B7%E9%A2%98%E6%96%B0%E6%89%8B/"/>
+      <url>/blog/2020/06/20/%E5%88%B7%E9%A2%98%E6%96%B0%E6%89%8B/</url>
+      
+        <content type="html"><![CDATA[<p>我本身刷了大概 600 道左右的题目，总结 200 多篇的题解，另外总结了十多个常见的算法专题，基本已经覆盖了大多数的常见考点和题型，全部放在我的 Github <a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。</p><p>然而作为一个新手，看着茫茫多的题解和资料难免会陷入一种“不知从何开始”的境地。<strong>不必担心，你不是一个人。</strong></p><p>实际上，我最近一直在思考“初学者如何快速提高自己的算法能力，高效刷题”。因此我也一直在不断定位自己，最终我对自己作出了定位“用清晰直白的语言还原解题全过程，做西湖区最好的算法题解”。</p><p>然而我意识到，我进去了一个很大的误区。我的想法一直是“努力帮助算法小白提高算法能力，高效刷题”。然而算法小白除了清晰直白的算法题解外，还需要系统的前置知识。因此我的假设“大家都会基础的数据结构和算法”很可能就是不成立的。</p><a id="more"></a><h2 id="小白阶段划分"><a href="#小白阶段划分" class="headerlink" title="小白阶段划分"></a>小白阶段划分</h2><p>如果让我对算法小白进行一个阶段划分的话，我会将其分为：</p><h3 id="阶段一-系统学习数据结构和算法知识。"><a href="#阶段一-系统学习数据结构和算法知识。" class="headerlink" title="阶段一 系统学习数据结构和算法知识。"></a>阶段一 系统学习数据结构和算法知识。</h3><p>第一，你不能根本不懂得基础，比如根本不知道什么哈希表，或者只知道其简单的 API。</p><p>第二，你不能从网上不断搜索知识，因为这些知识是零散的，不利于新手形成自己的<strong>算法观</strong>。</p><p>当你成功跨越了上面两个坎，那么恭喜你，你可以进入下一个阶段啦。</p><p>对于这个阶段，想要跨过。需要系统性学习一些基础知识，推荐啃《算法 4》或者直接啃各个大学里面的教材。实在有困难的，可以先啃《算法图解》，《我的第一本算法书》这种入个门，然后再去啃。</p><h3 id="阶段二-针对性刷题。"><a href="#阶段二-针对性刷题。" class="headerlink" title="阶段二 针对性刷题。"></a>阶段二 针对性刷题。</h3><p>比如按照力扣的标签去刷。因此上面的学习阶段并不见得你要学习完所有的基础再去刷，而是学习一个专题就可以针对性地刷。比如我学了二分法，就可以找一个二分法的题目刷一下。</p><p>想要跨越这一个坎，除了多做题之外，还有一个就是多看题解，多写题解。当然要看优秀的题解，这个我会在后面提到。</p><p>如果你跨越完上面两个坎，那么恭喜你， 你已经不是算法小白了（至少对于非算法岗来说）。</p><h2 id="我的算法观"><a href="#我的算法观" class="headerlink" title="我的算法观"></a>我的算法观</h2><p>继续回到刚才的问题“我的定位误区”。正因为很多小白没有跨越阶段一，因此我的所谓的“用清晰直白的语言还原解题全过程，做西湖区最好的算法题解”对他们没有实质帮助。他们迫切需要的是一个<strong>系统地整理算法思想，套路</strong> 的东西。因此我准备搞 <a href="https://lucifer.ren/blog/2020/05/23/91-algo/">91</a>，这个就是后话，不再这里赘述。</p><p>注意，上面我提到了一个名次<strong>算法观</strong>。我并不知道这个词是否真的存在，不过这并不重要。如果不存在我就赋予其含义，如果存在我就来重新定义它。</p><p>算法观指的是你对于算法全面的认识。比如我拿到一个题目，如何审题，如何抽象成算法模型，如何根据模型选取合适的数据结构和算法。这就需要你对各种数据结构与算法的特性，使用场景有着身后的理解。</p><p>我举一个例子，这个例子就是今天（2020-06-12）我的 91 群的每日一题。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfpg154rgbj30dc0hrace.jpg" alt></p><p>API 示例：</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, capacity: int)</span>:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, key: int)</span> -&gt; int:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">put</span><span class="params">(self, key: int, value: int)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Your LRUCache object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = LRUCache(capacity)</span></span><br><span class="line"><span class="comment"># param_1 = obj.get(key)</span></span><br><span class="line"><span class="comment"># obj.put(key,value)</span></span><br></pre></td></tr></table></figure><p>按照上面的过程，我们来<strong>套</strong>一个。</p><ol><li>如何审题</li></ol><p>看完题的话，只要抓住一个核心点即可。对于本题，核心点在于 <strong>删除最久未使用</strong>，<strong>O(1)时间</strong>。</p><ol start="2"><li>抽象算法模型</li></ol><p>这个题目是一个设计题。API 帮我们设计好了，只需要填充功能即可，也就是说算法模型不需要我们抽象了。</p><ol start="3"><li>根据模型选取合适的数据结构和算法</li></ol><p>我们的算法有两个操作：<strong>get</strong> 和 <strong>put</strong>。既然要支持这两个操作，肯定要有一个地方存数据。那么我们存到哪里呢？数组？链表？哈希表？其中链表又有很多，单向双向，循环不循环。</p><p>由于第一步审题过程中，我们获取到 <strong>O(1)时间</strong> 这个关键信息。那么：</p><ul><li>数组无法做到更新，删除 $O(1)$</li><li>链表无法做到查找，更新，删除 $O(1)$。</li></ul><blockquote><p>有的人说链表更新，删除是 $O(1)$，那么我要问你如何找到需要删除的节点呢？遍历找到的话最坏情况下就是 $O(N)$</p></blockquote><ul><li>哈希表是无序的，因此不能实现 <strong>删除最久未使用</strong>。</li></ul><p>似乎单独使用三种的任何一种都是不可以的。那么我们考虑组合多种数据结构。</p><p>我刚才说了链表只所以删除和更新都是 $O(N)$，是因为查找的时间损耗。</p><p>具体来说，我要删除图中值为 3 的节点，需要移动一次。因为我只能从头开始遍历去找。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfpoa6nxlmj30ft03i0sv.jpg" alt><br>（图 1）</p><p>又或者我要更新图中值为 7 的节点，则需要移动两次。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfpobio49mj30eq02q0su.jpg" alt></p><p>（图 2）</p><p>有没有什么办法可以省去这种遍历的时间损耗呢？其实我们的根本目的是<strong>找到目标节点</strong>， 而找到目标节点最暴力的方式是<strong>遍历</strong>。有没有巧妙一点的方法呢？毫无疑问，如果不借助额外的空间，这是不可能的。我们的想法只有<strong>空间换时间</strong>。</p><p>假设有这么一种数据结构，你告诉它你想要查的对象，它能帮你在 $O(1)$ 的时间内找到并返回给你结果。结合这个<strong>神秘数据结构</strong>和链表是不是我们就完成这道题了？这个神秘的数据结构就是哈希表。如果你对哈希表熟悉的话，想到几乎应该是瞬间的事情。如果不熟悉，那么经过排除，也应该可以得出这个结论。相信你随着做题数的增加，这种<strong>算法直觉</strong>会更加敏锐。</p><p>然而上面的空间复杂度是 $O(N)$。如果我的内存有限，不能承受 $O(N)$ 的空间，怎么办呢？相应地，我们可能就需要牺牲时间。那么问题是我们必须要退化到 $O(N)$ 么？显然不是，我们可以搞一些<strong>存档点</strong>。比如：</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfpognuvp6j30vb051q3n.jpg" alt></p><p>这样，我们需要操作 1 前面的，我们就从头开始遍历，如果需要操作 1 后面的，就从 1 开始遍历。时间复杂度最坏的情况可以降低到 $O(N / 2)$。通过进一步增加<strong>存档点</strong>，可以进一步减少时间，但是会增加空间。这是一种<strong>取舍</strong>。类似的取舍在实际工程中很多，这里不展开。 如果你了解过跳表， 实际上，上面的算法就是跳表的基本思想。</p><p>如果对每一道题你都能按照上面的流程走一遍，并且基于增加适当扩展，我相信你的刷题效率会高得可怕。</p><h2 id="每道题都想这么多么？"><a href="#每道题都想这么多么？" class="headerlink" title="每道题都想这么多么？"></a>每道题都想这么多么？</h2><p>强烈建议新手都按照上面的逻辑进行思考，做题，并写题解总结。这样随着做题数的增加，量变引起质变，你会发现上面的几个步骤做下来很可能就是<strong>几秒钟的事情</strong>。如果你擅长图解，或者你经常看别人的图解（比如我的），那么这种图解能够帮你更快地检索大脑中的信息，这个时间会更短。</p><blockquote><p>图解就是大脑检索信息的哈希表？哈哈，Maybe。</p></blockquote><h2 id="题解的水很深"><a href="#题解的水很深" class="headerlink" title="题解的水很深"></a>题解的水很深</h2><p>我看了很多人的题解直接就是两句话，然后跟上代码:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def integerBreak(self, n: int) -&gt; int:</span><br><span class="line">        dp = [1] * (n + 1)</span><br><span class="line">        for i in range(3, n + 1):</span><br><span class="line">            for j in range(1, i):</span><br><span class="line">                dp[i] = max(j * dp[i - j], j * (i - j), dp[i])</span><br><span class="line">        return dp[n]</span><br></pre></td></tr></table></figure><p>这种题解说实话，只针对那些”自己会， 然后去题解区看看有没有新的更好的解法的人“。但是大多数看题解的人是那种自己没思路，不会做的人。那么这种题解就没什么用了。</p><p>我认为好的题解应该是新手友好的，并且能够将解题人思路完整展现的题解。比如看到这个题目，我首先想到了什么（对错没有关系），然后头脑中经过怎么样的筛选将算法筛选到具体某一个或某几个。我的最终算法是如何想到的，有没有一些先行知识。</p><p>当然我也承认自己有很多题解也是直接给的答案，这对很多人来说用处不大，甚至有可能有反作用，给他们一种”我已经会了“的假象。实际上他们根本不懂解题人本身原本的想法， 也许是写题解的人觉得”这很自然“，也可能”只是为了秀技“。</p><h2 id="刷题顺序"><a href="#刷题顺序" class="headerlink" title="刷题顺序"></a>刷题顺序</h2><p>最后给小白一个刷题顺序，帮助大家最大化利用自己的时间。</p><h3 id="基础篇（30-天）"><a href="#基础篇（30-天）" class="headerlink" title="基础篇（30 天）"></a>基础篇（30 天）</h3><p>基础永远是最重要的，先把最最基础的这些搞熟，磨刀不误砍柴工。</p><ul><li>数组，队列，栈</li><li>链表</li><li>树与递归</li><li>哈希表</li><li>双指针</li></ul><h3 id="思想篇（30-天）"><a href="#思想篇（30-天）" class="headerlink" title="思想篇（30 天）"></a>思想篇（30 天）</h3><p>这些思想是投资回报率极高的，强烈推荐每一个小的专题花一定的时间掌握。</p><ul><li>二分</li><li>滑动窗口</li><li>搜索（BFS，DFS，回溯）</li><li>动态规划</li></ul><h3 id="提高篇（31-天）"><a href="#提高篇（31-天）" class="headerlink" title="提高篇（31 天）"></a>提高篇（31 天）</h3><p>这部分收益没那么明显，并且往往需要一定的技术积累。出现的频率相对而言比较低。但是有的题目需要你使用这些技巧。又或者可以使用这些技巧可以实现<strong>降维打击</strong>。</p><ul><li>贪心</li><li>分治</li><li>位运算</li><li>KMP &amp; RK</li><li>并查集</li><li>前缀树</li><li>线段树</li><li>堆</li></ul><h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>目前，我本人也在写一本题解方面的书包括近期组织的 91 算法 ，其目标受众正是“阶段一到阶段二”。为了真正帮助刷题小白成长，我打算画三个月的时间对数据结构和算法进行系统总结，帮助大家跨过阶段一。当然我还会不断更新题解，通过清晰直白的方式来让大家跨越阶段二。</p><p>大家也可以关注我的公众号《力扣加加》获取更多更新鲜的 LeetCode 题解</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+          <category> 经验分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> 经验分享 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>构造二叉树系列</title>
       <link href="/blog/2020/06/20/%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%93%E9%A2%98/"/>
       <url>/blog/2020/06/20/%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%93%E9%A2%98/</url>
@@ -1806,35 +1835,6 @@
             <tag> 二叉树 </tag>
             
             <tag> 算法系列 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>算法小白如何高效、快速刷 leetcode？</title>
-      <link href="/blog/2020/06/20/%E5%88%B7%E9%A2%98%E6%96%B0%E6%89%8B/"/>
-      <url>/blog/2020/06/20/%E5%88%B7%E9%A2%98%E6%96%B0%E6%89%8B/</url>
-      
-        <content type="html"><![CDATA[<p>我本身刷了大概 600 道左右的题目，总结 200 多篇的题解，另外总结了十多个常见的算法专题，基本已经覆盖了大多数的常见考点和题型，全部放在我的 Github <a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。</p><p>然而作为一个新手，看着茫茫多的题解和资料难免会陷入一种“不知从何开始”的境地。<strong>不必担心，你不是一个人。</strong></p><p>实际上，我最近一直在思考“初学者如何快速提高自己的算法能力，高效刷题”。因此我也一直在不断定位自己，最终我对自己作出了定位“用清晰直白的语言还原解题全过程，做西湖区最好的算法题解”。</p><p>然而我意识到，我进去了一个很大的误区。我的想法一直是“努力帮助算法小白提高算法能力，高效刷题”。然而算法小白除了清晰直白的算法题解外，还需要系统的前置知识。因此我的假设“大家都会基础的数据结构和算法”很可能就是不成立的。</p><a id="more"></a><h2 id="小白阶段划分"><a href="#小白阶段划分" class="headerlink" title="小白阶段划分"></a>小白阶段划分</h2><p>如果让我对算法小白进行一个阶段划分的话，我会将其分为：</p><h3 id="阶段一-系统学习数据结构和算法知识。"><a href="#阶段一-系统学习数据结构和算法知识。" class="headerlink" title="阶段一 系统学习数据结构和算法知识。"></a>阶段一 系统学习数据结构和算法知识。</h3><p>第一，你不能根本不懂得基础，比如根本不知道什么哈希表，或者只知道其简单的 API。</p><p>第二，你不能从网上不断搜索知识，因为这些知识是零散的，不利于新手形成自己的<strong>算法观</strong>。</p><p>当你成功跨越了上面两个坎，那么恭喜你，你可以进入下一个阶段啦。</p><p>对于这个阶段，想要跨过。需要系统性学习一些基础知识，推荐啃《算法 4》或者直接啃各个大学里面的教材。实在有困难的，可以先啃《算法图解》，《我的第一本算法书》这种入个门，然后再去啃。</p><h3 id="阶段二-针对性刷题。"><a href="#阶段二-针对性刷题。" class="headerlink" title="阶段二 针对性刷题。"></a>阶段二 针对性刷题。</h3><p>比如按照力扣的标签去刷。因此上面的学习阶段并不见得你要学习完所有的基础再去刷，而是学习一个专题就可以针对性地刷。比如我学了二分法，就可以找一个二分法的题目刷一下。</p><p>想要跨越这一个坎，除了多做题之外，还有一个就是多看题解，多写题解。当然要看优秀的题解，这个我会在后面提到。</p><p>如果你跨越完上面两个坎，那么恭喜你， 你已经不是算法小白了（至少对于非算法岗来说）。</p><h2 id="我的算法观"><a href="#我的算法观" class="headerlink" title="我的算法观"></a>我的算法观</h2><p>继续回到刚才的问题“我的定位误区”。正因为很多小白没有跨越阶段一，因此我的所谓的“用清晰直白的语言还原解题全过程，做西湖区最好的算法题解”对他们没有实质帮助。他们迫切需要的是一个<strong>系统地整理算法思想，套路</strong> 的东西。因此我准备搞 <a href="https://lucifer.ren/blog/2020/05/23/91-algo/">91</a>，这个就是后话，不再这里赘述。</p><p>注意，上面我提到了一个名次<strong>算法观</strong>。我并不知道这个词是否真的存在，不过这并不重要。如果不存在我就赋予其含义，如果存在我就来重新定义它。</p><p>算法观指的是你对于算法全面的认识。比如我拿到一个题目，如何审题，如何抽象成算法模型，如何根据模型选取合适的数据结构和算法。这就需要你对各种数据结构与算法的特性，使用场景有着身后的理解。</p><p>我举一个例子，这个例子就是今天（2020-06-12）我的 91 群的每日一题。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfpg154rgbj30dc0hrace.jpg" alt></p><p>API 示例：</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, capacity: int)</span>:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, key: int)</span> -&gt; int:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">put</span><span class="params">(self, key: int, value: int)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Your LRUCache object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = LRUCache(capacity)</span></span><br><span class="line"><span class="comment"># param_1 = obj.get(key)</span></span><br><span class="line"><span class="comment"># obj.put(key,value)</span></span><br></pre></td></tr></table></figure><p>按照上面的过程，我们来<strong>套</strong>一个。</p><ol><li>如何审题</li></ol><p>看完题的话，只要抓住一个核心点即可。对于本题，核心点在于 <strong>删除最久未使用</strong>，<strong>O(1)时间</strong>。</p><ol start="2"><li>抽象算法模型</li></ol><p>这个题目是一个设计题。API 帮我们设计好了，只需要填充功能即可，也就是说算法模型不需要我们抽象了。</p><ol start="3"><li>根据模型选取合适的数据结构和算法</li></ol><p>我们的算法有两个操作：<strong>get</strong> 和 <strong>put</strong>。既然要支持这两个操作，肯定要有一个地方存数据。那么我们存到哪里呢？数组？链表？哈希表？其中链表又有很多，单向双向，循环不循环。</p><p>由于第一步审题过程中，我们获取到 <strong>O(1)时间</strong> 这个关键信息。那么：</p><ul><li>数组无法做到更新，删除 $O(1)$</li><li>链表无法做到查找，更新，删除 $O(1)$。</li></ul><blockquote><p>有的人说链表更新，删除是 $O(1)$，那么我要问你如何找到需要删除的节点呢？遍历找到的话最坏情况下就是 $O(N)$</p></blockquote><ul><li>哈希表是无序的，因此不能实现 <strong>删除最久未使用</strong>。</li></ul><p>似乎单独使用三种的任何一种都是不可以的。那么我们考虑组合多种数据结构。</p><p>我刚才说了链表只所以删除和更新都是 $O(N)$，是因为查找的时间损耗。</p><p>具体来说，我要删除图中值为 3 的节点，需要移动一次。因为我只能从头开始遍历去找。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfpoa6nxlmj30ft03i0sv.jpg" alt><br>（图 1）</p><p>又或者我要更新图中值为 7 的节点，则需要移动两次。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfpobio49mj30eq02q0su.jpg" alt></p><p>（图 2）</p><p>有没有什么办法可以省去这种遍历的时间损耗呢？其实我们的根本目的是<strong>找到目标节点</strong>， 而找到目标节点最暴力的方式是<strong>遍历</strong>。有没有巧妙一点的方法呢？毫无疑问，如果不借助额外的空间，这是不可能的。我们的想法只有<strong>空间换时间</strong>。</p><p>假设有这么一种数据结构，你告诉它你想要查的对象，它能帮你在 $O(1)$ 的时间内找到并返回给你结果。结合这个<strong>神秘数据结构</strong>和链表是不是我们就完成这道题了？这个神秘的数据结构就是哈希表。如果你对哈希表熟悉的话，想到几乎应该是瞬间的事情。如果不熟悉，那么经过排除，也应该可以得出这个结论。相信你随着做题数的增加，这种<strong>算法直觉</strong>会更加敏锐。</p><p>然而上面的空间复杂度是 $O(N)$。如果我的内存有限，不能承受 $O(N)$ 的空间，怎么办呢？相应地，我们可能就需要牺牲时间。那么问题是我们必须要退化到 $O(N)$ 么？显然不是，我们可以搞一些<strong>存档点</strong>。比如：</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfpognuvp6j30vb051q3n.jpg" alt></p><p>这样，我们需要操作 1 前面的，我们就从头开始遍历，如果需要操作 1 后面的，就从 1 开始遍历。时间复杂度最坏的情况可以降低到 $O(N / 2)$。通过进一步增加<strong>存档点</strong>，可以进一步减少时间，但是会增加空间。这是一种<strong>取舍</strong>。类似的取舍在实际工程中很多，这里不展开。 如果你了解过跳表， 实际上，上面的算法就是跳表的基本思想。</p><p>如果对每一道题你都能按照上面的流程走一遍，并且基于增加适当扩展，我相信你的刷题效率会高得可怕。</p><h2 id="每道题都想这么多么？"><a href="#每道题都想这么多么？" class="headerlink" title="每道题都想这么多么？"></a>每道题都想这么多么？</h2><p>强烈建议新手都按照上面的逻辑进行思考，做题，并写题解总结。这样随着做题数的增加，量变引起质变，你会发现上面的几个步骤做下来很可能就是<strong>几秒钟的事情</strong>。如果你擅长图解，或者你经常看别人的图解（比如我的），那么这种图解能够帮你更快地检索大脑中的信息，这个时间会更短。</p><blockquote><p>图解就是大脑检索信息的哈希表？哈哈，Maybe。</p></blockquote><h2 id="题解的水很深"><a href="#题解的水很深" class="headerlink" title="题解的水很深"></a>题解的水很深</h2><p>我看了很多人的题解直接就是两句话，然后跟上代码:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def integerBreak(self, n: int) -&gt; int:</span><br><span class="line">        dp = [1] * (n + 1)</span><br><span class="line">        for i in range(3, n + 1):</span><br><span class="line">            for j in range(1, i):</span><br><span class="line">                dp[i] = max(j * dp[i - j], j * (i - j), dp[i])</span><br><span class="line">        return dp[n]</span><br></pre></td></tr></table></figure><p>这种题解说实话，只针对那些”自己会， 然后去题解区看看有没有新的更好的解法的人“。但是大多数看题解的人是那种自己没思路，不会做的人。那么这种题解就没什么用了。</p><p>我认为好的题解应该是新手友好的，并且能够将解题人思路完整展现的题解。比如看到这个题目，我首先想到了什么（对错没有关系），然后头脑中经过怎么样的筛选将算法筛选到具体某一个或某几个。我的最终算法是如何想到的，有没有一些先行知识。</p><p>当然我也承认自己有很多题解也是直接给的答案，这对很多人来说用处不大，甚至有可能有反作用，给他们一种”我已经会了“的假象。实际上他们根本不懂解题人本身原本的想法， 也许是写题解的人觉得”这很自然“，也可能”只是为了秀技“。</p><h2 id="刷题顺序"><a href="#刷题顺序" class="headerlink" title="刷题顺序"></a>刷题顺序</h2><p>最后给小白一个刷题顺序，帮助大家最大化利用自己的时间。</p><h3 id="基础篇（30-天）"><a href="#基础篇（30-天）" class="headerlink" title="基础篇（30 天）"></a>基础篇（30 天）</h3><p>基础永远是最重要的，先把最最基础的这些搞熟，磨刀不误砍柴工。</p><ul><li>数组，队列，栈</li><li>链表</li><li>树与递归</li><li>哈希表</li><li>双指针</li></ul><h3 id="思想篇（30-天）"><a href="#思想篇（30-天）" class="headerlink" title="思想篇（30 天）"></a>思想篇（30 天）</h3><p>这些思想是投资回报率极高的，强烈推荐每一个小的专题花一定的时间掌握。</p><ul><li>二分</li><li>滑动窗口</li><li>搜索（BFS，DFS，回溯）</li><li>动态规划</li></ul><h3 id="提高篇（31-天）"><a href="#提高篇（31-天）" class="headerlink" title="提高篇（31 天）"></a>提高篇（31 天）</h3><p>这部分收益没那么明显，并且往往需要一定的技术积累。出现的频率相对而言比较低。但是有的题目需要你使用这些技巧。又或者可以使用这些技巧可以实现<strong>降维打击</strong>。</p><ul><li>贪心</li><li>分治</li><li>位运算</li><li>KMP &amp; RK</li><li>并查集</li><li>前缀树</li><li>线段树</li><li>堆</li></ul><h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>目前，我本人也在写一本题解方面的书包括近期组织的 91 算法 ，其目标受众正是“阶段一到阶段二”。为了真正帮助刷题小白成长，我打算画三个月的时间对数据结构和算法进行系统总结，帮助大家跨过阶段一。当然我还会不断更新题解，通过清晰直白的方式来让大家跨越阶段二。</p><p>大家也可以关注我的公众号《力扣加加》获取更多更新鲜的 LeetCode 题解</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" alt></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> LeetCode </category>
-          
-          <category> 经验分享 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> LeetCode </tag>
-            
-            <tag> 经验分享 </tag>
             
         </tags>
       
@@ -1925,13 +1925,13 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
           
-          <category> BFS </category>
+          <category> 算法 </category>
           
           <category> hashtable </category>
+          
+          <category> BFS </category>
           
       </categories>
       
@@ -2000,11 +2000,11 @@
       
         <tags>
             
-            <tag> 数学 </tag>
-            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> 数学 </tag>
             
             <tag> 中位数 </tag>
             
@@ -2198,9 +2198,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 数组 </category>
           
@@ -2235,9 +2235,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> hashtable </category>
           
@@ -2340,9 +2340,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> hashtable </category>
           
@@ -2938,9 +2938,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 字符串 </category>
           
@@ -3074,9 +3074,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 数组 </category>
           
@@ -3169,9 +3169,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> LeetCode </category>
           
@@ -3206,9 +3206,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> hashtable </category>
           
@@ -3245,9 +3245,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> hashtable </category>
           
@@ -3303,9 +3303,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> LeetCode </category>
           
@@ -3371,9 +3371,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 字符串 </category>
           
@@ -3489,9 +3489,9 @@
             
             <tag> 算法 </tag>
             
-            <tag> 动态规划 </tag>
-            
             <tag> 状态机 </tag>
+            
+            <tag> 动态规划 </tag>
             
             <tag> 贪心 </tag>
             
@@ -3515,9 +3515,9 @@
           
           <category> 数学 </category>
           
-          <category> 概率 </category>
-          
           <category> 动态规划 </category>
+          
+          <category> 概率 </category>
           
           <category> 递归 </category>
           
@@ -3526,17 +3526,17 @@
       
         <tags>
             
-            <tag> 数学 </tag>
-            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
             
+            <tag> 动态规划 </tag>
+            
+            <tag> 数学 </tag>
+            
             <tag> 概率 </tag>
             
             <tag> 递归 </tag>
-            
-            <tag> 动态规划 </tag>
             
         </tags>
       
