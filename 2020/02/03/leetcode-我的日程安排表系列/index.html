@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>构造二叉树系列 | lucifer的网络博客</title>
+  <title>我的日程安排表系列 | lucifer的网络博客</title>
   
   <meta name="keywords" content="前端 leetocde 数据结构 算法 lucifer 大前端 性能优化 前端架构 前端工程化">
   
@@ -288,8 +288,8 @@
         
   
     <h1 class="title">
-      <a href="/blog/2020/06/20/构造二叉树专题/">
-        构造二叉树系列
+      <a href="/blog/2020/02/03/leetcode-我的日程安排表系列/">
+        我的日程安排表系列
       </a>
     </h1>
   
@@ -320,7 +320,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-06-20</p>
+    <p>2020-02-03</p>
   </a>
 </div>
 
@@ -330,9 +330,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/blog/categories/二叉树/' rel="nofollow">
+    <a href='/blog/categories/LeetCode/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>LeetCode&nbsp;/&nbsp;二叉树</p>
+      <p>LeetCode</p>
     </a>
   </div>
 
@@ -359,7 +359,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">2.5k字</span>
+          <span class="post-count">3.9k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -367,7 +367,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">9分</span>
+          <span class="post-count">16分</span>
         </span>
       </span>
     </div>
@@ -385,103 +385,108 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>构造二叉树是一个常见的二叉树考点，相比于直接考察二叉树的遍历，这种题目的难度会更大。截止到目前(2020-02-08) LeetCode 关于构造二叉树一共有三道题目，分别是：</p>
+        <p>《我的日程安排表》截止目前（2020-02-03）在 LeetCode 上一共有三道题，其中两个中等难度，一个困难难度,分别是：</p>
 <ul>
-<li><a href="https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/" target="_blank" rel="noopener">105. 从前序与中序遍历序列构造二叉树</a></li>
-<li><a href="https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/" target="_blank" rel="noopener">106. 从中序与后序遍历序列构造二叉树</a></li>
-<li><a href="https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/" target="_blank" rel="noopener">889. 根据前序和后序遍历构造二叉树</a></li>
+<li><a href="https://leetcode-cn.com/problems/my-calendar-i" target="_blank" rel="noopener">729. 我的日程安排表 I</a></li>
+<li><a href="https://leetcode-cn.com/problems/my-calendar-ii" target="_blank" rel="noopener">731. 我的日程安排表 II</a></li>
+<li><a href="https://leetcode-cn.com/problems/my-calendar-iii" target="_blank" rel="noopener">732. 我的日程安排表 III</a></li>
 </ul>
-<p>今天就让我们用一个套路一举攻破他们。</p>
-<p>​<a id="more"></a></p>
-<h2 id="105-从前序与中序遍历序列构造二叉树"><a href="#105-从前序与中序遍历序列构造二叉树" class="headerlink" title="105. 从前序与中序遍历序列构造二叉树"></a>105. 从前序与中序遍历序列构造二叉树</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">根据一棵树的前序遍历与中序遍历构造二叉树。</span><br><span class="line"></span><br><span class="line">注意:</span><br><span class="line">你可以假设树中没有重复的元素。</span><br><span class="line"></span><br><span class="line">例如，给出</span><br><span class="line"></span><br><span class="line">前序遍历 preorder = [3,9,20,15,7]</span><br><span class="line">中序遍历 inorder = [9,3,15,20,7]</span><br><span class="line">返回如下的二叉树：</span><br><span class="line"></span><br><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line">    /  \</span><br><span class="line">   15   7</span><br></pre></td></tr></table></figure>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>我们以题目给出的测试用例来讲解：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrlcnp9j30vq0dmta4.jpg" alt></p>
-<p>前序遍历是<code>根左右</code>，因此 preorder 第一个元素一定整个树的根。由于题目说明了没有重复元素，因此我们可以通过 val 去 inorder 找到根在 inorder 中的索引 i。<br>而由于中序遍历是<code>左根右</code>，我们容易找到 i 左边的都是左子树，i 右边都是右子树。</p>
-<p>我使用红色表示根，蓝色表示左子树，绿色表示右子树。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrmhksrj30v00cc75b.jpg" alt></p>
-<p>根据此时的信息，我们能构造的树是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrncxehj30y20bigmk.jpg" alt></p>
-<p>我们 preorder 继续向后移动一位，这个时候我们得到了第二个根节点”9“，实际上就是左子树的根节点。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvro8mq1j30us0ckwfm.jpg" alt></p>
-<p>我们 preorder 继续向后移动一位，这个时候我们得到了第二个根节点”20“，实际上就是右子树的根节点。其中右子树由于个数大于 1，我们无法确定，我们继续执行上述逻辑。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvroqtp6j311c0d6402.jpg" alt></p>
-<p>根据此时的信息，我们能构造的树是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrpnj04j30vs0hu402.jpg" alt></p>
-<p>我们不断执行上述逻辑即可。简单起见，递归的时候每次我都开辟了新的数组，这个其实是没有必要的，我们可以通过四个变量来记录 inorder 和 preorder 的起始位置即可。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>代码支持：Python3</p>
+<p>另外 LeetCode 上有一个类似的系列《会议室》，截止目前（2020-02-03）有两道题目。其中一个简单一个中等，分别是：</p>
+<ul>
+<li><a href="https://leetcode-cn.com/problems/meeting-rooms/" target="_blank" rel="noopener">252. 会议室</a></li>
+<li><a href="https://leetcode-cn.com/problems/meeting-rooms-ii/" target="_blank" rel="noopener">253. 会议室 II</a></li>
+</ul>
+<p>今天我们就来攻克它们。</p>
+<a id="more"></a>
+<h1 id="729-我的日程安排表-I"><a href="#729-我的日程安排表-I" class="headerlink" title="729. 我的日程安排表 I"></a>729. 我的日程安排表 I</h1><h2 id="题目地址"><a href="#题目地址" class="headerlink" title="题目地址"></a>题目地址</h2><p><a href="https://leetcode-cn.com/problems/my-calendar-i" target="_blank" rel="noopener">https://leetcode-cn.com/problems/my-calendar-i</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>实现一个 MyCalendar 类来存放你的日程安排。如果要添加的时间内没有其他安排，则可以存储这个新的日程安排。</p>
+<p>MyCalendar 有一个 book(int start, int end)方法。它意味着在 start 到 end 时间内增加一个日程安排，注意，这里的时间是半开区间，即 [start, end), 实数  x 的范围为，  start &lt;= x &lt; end。</p>
+<p>当两个日程安排有一些时间上的交叉时（例如两个日程安排都在同一时间内），就会产生重复预订。</p>
+<p>每次调用 MyCalendar.book 方法时，如果可以将日程安排成功添加到日历中而不会导致重复预订，返回 true。否则，返回 false  并且不要将该日程安排添加到日历中。</p>
+<p>请按照以下步骤调用 MyCalendar 类: MyCalendar cal = new MyCalendar(); MyCalendar.book(start, end)</p>
+<p>示例 1:</p>
+<p>MyCalendar();<br>MyCalendar.book(10, 20); // returns true<br>MyCalendar.book(15, 25); // returns false<br>MyCalendar.book(20, 30); // returns true<br>解释:<br>第一个日程安排可以添加到日历中. 第二个日程安排不能添加到日历中，因为时间 15 已经被第一个日程安排预定了。<br>第三个日程安排可以添加到日历中，因为第一个日程安排并不包含时间 20 。<br>说明:</p>
+<p>每个测试用例，调用  MyCalendar.book  函数最多不超过  100 次。<br>调用函数  MyCalendar.book(start, end)时， start 和  end 的取值范围为  [0, 10^9]。</p>
+<h2 id="暴力法"><a href="#暴力法" class="headerlink" title="暴力法"></a>暴力法</h2><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>首先我们考虑暴力法。每插入一个元素我们都判断其是否和已有的<code>所有</code>课程重叠。</p>
+<p>我们定一个函数<code>intersected(calendar, calendars)</code>，其中 calendar 是即将要插入的课程，calendars 是已经插入的课程。 只要 calendar 和 calendars 中的任何一个课程有交叉，我们就返回 True，否则返回 False。</p>
+<p>对于两个 calendar，我们的判断逻辑都是一样的。假设连个 calendar 分别是<code>[s1, e1]</code>和<code>[s2, e2]</code>。那么如果<code>s1 &gt;= e2 or s2 &lt;= e1</code>, 则两个课程没有交叉，可以预定，否则不可以。如图，1，2，3 可以预定，剩下的不可以。</p>
+<p><img src="http://ww1.sinaimg.cn/large/e9f490c8ly1gbj1o8hvivj20w20ra76f.jpg" alt="image.png"></p>
+<p>代码是这样的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">intersected</span><span class="params">(calendar, calendars)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> [start, end] <span class="keyword">in</span> calendars:</span><br><span class="line">        <span class="keyword">if</span> calendar[<span class="number">0</span>] &gt;= end <span class="keyword">or</span> calendar[<span class="number">1</span>] &lt;= start:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<p>复杂度分析：</p>
+<ul>
+<li><p>时间复杂度：$O(N^2)$。N 指的是日常安排的数量，对于每个新的日常安排，我们检查新的日常安排是否发生冲突来决定是否可以预订新的日常安排。</p>
+</li>
+<li><p>空间复杂度: $O(N)$。</p>
+</li>
+</ul>
+<p>这个代码写出来之后整体代码就呼之欲出了，全部代码见下方代码部分。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>代码支持 Python3:</p>
 <p>Python3 Code:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">buildTree</span><span class="params">(self, preorder: List[int], inorder: List[int])</span> -&gt; TreeNode:</span></span><br><span class="line">        <span class="comment"># 实际上inorder 和 postorder一定是同时为空的，因此你无论判断哪个都行</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> preorder:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        root = TreeNode(preorder[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">        i = inorder.index(root.val)</span><br><span class="line">        root.left = self.buildTree(preorder[<span class="number">1</span>:i + <span class="number">1</span>], inorder[:i])</span><br><span class="line">        root.right = self.buildTree(preorder[i + <span class="number">1</span>:], inorder[i+<span class="number">1</span>:])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> root</span><br></pre></td></tr></table></figure>
-<p><strong>复杂度分析</strong></p>
-<ul>
-<li>时间复杂度：由于每次递归我们的 inorder 和 preorder 的总数都会减 1，因此我们要递归 N 次，故时间复杂度为 $O(N)$，其中 N 为节点个数。</li>
-<li>空间复杂度：我们使用了递归，也就是借助了额外的栈空间来完成， 由于栈的深度为 N，因此总的空间复杂度为 $O(N)$，其中 N 为节点个数。</li>
-</ul>
-<blockquote>
-<p>空间复杂度忽略了开辟数组的内存消耗。</p>
-</blockquote>
-<h2 id="106-从中序与后序遍历序列构造二叉树"><a href="#106-从中序与后序遍历序列构造二叉树" class="headerlink" title="106. 从中序与后序遍历序列构造二叉树"></a>106. 从中序与后序遍历序列构造二叉树</h2><p>如果你会了上面的题目，那么这个题目对你来说也不是难事，我们来看下。</p>
-<h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">根据一棵树的中序遍历与后序遍历构造二叉树。</span><br><span class="line"></span><br><span class="line">注意:</span><br><span class="line">你可以假设树中没有重复的元素。</span><br><span class="line"></span><br><span class="line">例如，给出</span><br><span class="line"></span><br><span class="line">中序遍历 inorder = [9,3,15,20,7]</span><br><span class="line">后序遍历 postorder = [9,15,7,20,3]</span><br><span class="line">返回如下的二叉树：</span><br><span class="line"></span><br><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line">    /  \</span><br><span class="line">   15   7</span><br></pre></td></tr></table></figure>
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>我们以题目给出的测试用例来讲解：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrq61tkj30t60ck0tr.jpg" alt></p>
-<p>后序遍历是<code>左右根</code>，因此 postorder 最后一个元素一定整个树的根。由于题目说明了没有重复元素，因此我们可以通过 val 去 inorder 找到根在 inorder 中的索引 i。<br>而由于中序遍历是<code>左根右</code>，我们容易找到 i 左边的都是左子树，i 右边都是右子树。</p>
-<p>我使用红色表示根，蓝色表示左子树，绿色表示右子树。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrr49krj30x80dggmt.jpg" alt></p>
-<p>根据此时的信息，我们能构造的树是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrncxehj30y20bigmk.jpg" alt></p>
-<p>其中右子树由于个数大于 1，我们无法确定，我们继续执行上述逻辑。我们 postorder 继续向前移动一位，这个时候我们得到了第二个根节点”20“，实际上就是右子树的根节点。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrskkjkj30xg0dst9y.jpg" alt></p>
-<p>根据此时的信息，我们能构造的树是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrpnj04j30vs0hu402.jpg" alt></p>
-<p>我们不断执行上述逻辑即可。简单起见，递归的时候每次我都开辟了新的数组，这个其实是没有必要的，我们可以通过四个变量来记录 inorder 和 postorder 的起始位置即可。</p>
-<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><p>代码支持：Python3</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># @lc app=leetcode.cn id=729 lang=python3</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># [729] 我的日程安排表 I</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># @lc code=start</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCalendar</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.calendars = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">book</span><span class="params">(self, start: int, end: int)</span> -&gt; bool:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">intersected</span><span class="params">(calendar, calendars)</span>:</span></span><br><span class="line">            <span class="keyword">for</span> [start, end] <span class="keyword">in</span> calendars:</span><br><span class="line">                <span class="keyword">if</span> calendar[<span class="number">0</span>] &gt;= end <span class="keyword">or</span> calendar[<span class="number">1</span>] &lt;= start:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> intersected([start, end], self.calendars):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        self.calendars.append([start, end])</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># Your MyCalendar object will be instantiated and called as such:</span></span><br><span class="line">        <span class="comment"># obj = MyCalendar()</span></span><br><span class="line">        <span class="comment"># param_1 = obj.book(start,end)</span></span><br><span class="line">        <span class="comment"># @lc code=end</span></span><br></pre></td></tr></table></figure>
+<p>实际上我们还可以换个角度，上面的思路判断交叉部分我们考虑的是“如何不交叉”，剩下的就是交叉。我们也可以直接考虑交叉。还是上面的例子，如果两个课程交叉，那么一定满足<code>s1 &lt; e2 and e1 &gt; s2</code>。基于此，我们写出下面的代码。</p>
+<p>代码支持 Python3:</p>
 <p>Python3 Code:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">buildTree</span><span class="params">(self, inorder: List[int], postorder: List[int])</span> -&gt; TreeNode:</span></span><br><span class="line">        <span class="comment"># 实际上inorder 和 postorder一定是同时为空的，因此你无论判断哪个都行</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> inorder:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        root = TreeNode(postorder[<span class="number">-1</span>])</span><br><span class="line">        i = inorder.index(root.val)</span><br><span class="line">        root.left = self.buildTree(inorder[:i], postorder[:i])</span><br><span class="line">        root.right = self.buildTree(inorder[i+<span class="number">1</span>:], postorder[i:<span class="number">-1</span>])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> root</span><br></pre></td></tr></table></figure>
-<p><strong>复杂度分析</strong></p>
-<ul>
-<li>时间复杂度：由于每次递归我们的 inorder 和 postorder 的总数都会减 1，因此我们要递归 N 次，故时间复杂度为 $O(N)$，其中 N 为节点个数。</li>
-<li>空间复杂度：我们使用了递归，也就是借助了额外的栈空间来完成， 由于栈的深度为 N，因此总的空间复杂度为 $O(N)$，其中 N 为节点个数。</li>
-</ul>
-<blockquote>
-<p>空间复杂度忽略了开辟数组的内存消耗。</p>
-</blockquote>
-<h2 id="889-根据前序和后序遍历构造二叉树"><a href="#889-根据前序和后序遍历构造二叉树" class="headerlink" title="889. 根据前序和后序遍历构造二叉树"></a>889. 根据前序和后序遍历构造二叉树</h2><h3 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">返回与给定的前序和后序遍历匹配的任何二叉树。</span><br><span class="line"></span><br><span class="line"> pre 和 post 遍历中的值是不同的正整数。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">输入：pre = [1,2,4,5,3,6,7], post = [4,5,2,6,7,3,1]</span><br><span class="line">输出：[1,2,3,4,5,6,7]</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">1 &lt;= pre.length == post.length &lt;= 30</span><br><span class="line">pre[] 和 post[] 都是 1, 2, ..., pre.length 的排列</span><br><span class="line">每个输入保证至少有一个答案。如果有多个答案，可以返回其中一个。</span><br></pre></td></tr></table></figure>
-<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>我们以题目给出的测试用例来讲解：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrlcnp9j30vq0dmta4.jpg" alt></p>
-<p>前序遍历是<code>根左右</code>，因此 preorder 第一个元素一定整个树的根，preorder 第二个元素（如果存在的话）一定是左子树。由于题目说明了没有重复元素，因此我们可以通过 val 去 postorder 找到 pre[1]在 postorder 中的索引 i。<br>而由于后序遍历是<code>左右根</code>，因此我们容易得出。 postorder 中的 0 到 i(包含)是左子树，preorder 的 1 到 i+1（包含）也是左子树。</p>
-<p>其他部分可以参考上面两题。</p>
-<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><p>代码支持：Python3</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># @lc app=leetcode.cn id=729 lang=python3</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># [729] 我的日程安排表 I</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># @lc code=start</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCalendar</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.calendars = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">book</span><span class="params">(self, start: int, end: int)</span> -&gt; bool:</span></span><br><span class="line">        <span class="keyword">for</span> s, e <span class="keyword">in</span> self.calendars:</span><br><span class="line">            <span class="keyword">if</span> start &lt; e <span class="keyword">and</span> end &gt; s:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        self.calendars.append([start, end])</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># Your MyCalendar object will be instantiated and called as such:</span></span><br><span class="line">        <span class="comment"># obj = MyCalendar()</span></span><br><span class="line">        <span class="comment"># param_1 = obj.book(start,end)</span></span><br><span class="line">        <span class="comment"># @lc code=end</span></span><br></pre></td></tr></table></figure>
+<h2 id="二叉查找树法"><a href="#二叉查找树法" class="headerlink" title="二叉查找树法"></a>二叉查找树法</h2><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>和上面思路类似，只不过我们每次都对 calendars 进行排序，那么我们可以通过二分查找日程安排的情况来检查新日常安排是否可以预订。如果每次插入之前都进行一次排序，那么时间复杂度会很高。如图，我们的[s1,e1], [s2,e2], [s3,e3] 是按照时间顺序排好的日程安排。我们现在要插入[s,e],我们使用二分查找，找到要插入的位置，然后和插入位置的课程进行一次比对即可，这部分的时间复杂度是 O(logN)$。</p>
+<p><img src="http://ww1.sinaimg.cn/large/e9f490c8ly1gbj28k6v4gj21100c2754.jpg" alt="image.png"></p>
+<p>我们考虑使用平衡二叉树来维护这种动态的变化，在最差的情况时间复杂度会退化到上述的$O(N^2)$，平均情况是$O(NlogN)$，其中 N 是已预订的日常安排数。</p>
+<p><img src="http://ww1.sinaimg.cn/large/e9f490c8ly1gbj2dirnf0j20xs0fe75j.jpg" alt="image.png"></p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><p>代码支持 Python3:</p>
 <p>Python3 Code:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">constructFromPrePost</span><span class="params">(self, pre: List[int], post: List[int])</span> -&gt; TreeNode:</span></span><br><span class="line">        <span class="comment"># 实际上pre 和 post一定是同时为空的，因此你无论判断哪个都行</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> pre:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        node = TreeNode(pre[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">if</span> len(pre) == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> node</span><br><span class="line">        i = post.index(pre[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">        node.left = self.constructFromPrePost(pre[<span class="number">1</span>:i + <span class="number">2</span>], post[:i + <span class="number">1</span>])</span><br><span class="line">        node.right = self.constructFromPrePost(pre[i + <span class="number">2</span>:], post[i + <span class="number">1</span>:<span class="number">-1</span>])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> node</span><br></pre></td></tr></table></figure>
-<p><strong>复杂度分析</strong></p>
-<ul>
-<li>时间复杂度：由于每次递归我们的 postorder 和 preorder 的总数都会减 1，因此我们要递归 N 次，故时间复杂度为 $O(N)$，其中 N 为节点个数。</li>
-<li>空间复杂度：我们使用了递归，也就是借助了额外的栈空间来完成， 由于栈的深度为 N，因此总的空间复杂度为 $O(N)$，其中 N 为节点个数。</li>
-</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, start, end)</span>:</span></span><br><span class="line">        self.start = start</span><br><span class="line">        self.end = end</span><br><span class="line">        self.left = self.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert</span><span class="params">(self, node)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> node.start &gt;= self.end:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> self.right:</span><br><span class="line">                self.right = node</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="keyword">return</span> self.right.insert(node)</span><br><span class="line">        <span class="keyword">elif</span> node.end &lt;= self.start:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> self.left:</span><br><span class="line">                self.left = node</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="keyword">return</span> self.left.insert(node)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCalendar</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.root = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">book</span><span class="params">(self, start, end)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            self.root = Node(start, end)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> self.root.insert(Node(start, end))</span><br></pre></td></tr></table></figure>
+<h1 id="731-我的日程安排表-II"><a href="#731-我的日程安排表-II" class="headerlink" title="731. 我的日程安排表 II"></a>731. 我的日程安排表 II</h1><h2 id="题目地址-1"><a href="#题目地址-1" class="headerlink" title="题目地址"></a>题目地址</h2><p><a href="https://leetcode-cn.com/problems/my-calendar-ii" target="_blank" rel="noopener">https://leetcode-cn.com/problems/my-calendar-ii</a></p>
+<h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>实现一个 MyCalendar 类来存放你的日程安排。如果要添加的时间内不会导致三重预订时，则可以存储这个新的日程安排。</p>
+<p>MyCalendar 有一个 book(int start, int end)方法。它意味着在 start 到 end 时间内增加一个日程安排，注意，这里的时间是半开区间，即 [start, end), 实数  x 的范围为，  start &lt;= x &lt; end。</p>
+<p>当三个日程安排有一些时间上的交叉时（例如三个日程安排都在同一时间内），就会产生三重预订。</p>
+<p>每次调用 MyCalendar.book 方法时，如果可以将日程安排成功添加到日历中而不会导致三重预订，返回 true。否则，返回 false 并且不要将该日程安排添加到日历中。</p>
+<p>请按照以下步骤调用 MyCalendar 类: MyCalendar cal = new MyCalendar(); MyCalendar.book(start, end)</p>
+<p>示例：</p>
+<p>MyCalendar();<br>MyCalendar.book(10, 20); // returns true<br>MyCalendar.book(50, 60); // returns true<br>MyCalendar.book(10, 40); // returns true<br>MyCalendar.book(5, 15); // returns false<br>MyCalendar.book(5, 10); // returns true<br>MyCalendar.book(25, 55); // returns true<br>解释：<br>前两个日程安排可以添加至日历中。 第三个日程安排会导致双重预订，但可以添加至日历中。<br>第四个日程安排活动（5,15）不能添加至日历中，因为它会导致三重预订。<br>第五个日程安排（5,10）可以添加至日历中，因为它未使用已经双重预订的时间 10。<br>第六个日程安排（25,55）可以添加至日历中，因为时间 [25,40] 将和第三个日程安排双重预订；<br>时间 [40,50] 将单独预订，时间 [50,55）将和第二个日程安排双重预订。</p>
+<p>提示：</p>
+<p>每个测试用例，调用  MyCalendar.book  函数最多不超过  1000 次。<br>调用函数  MyCalendar.book(start, end)时， start 和  end 的取值范围为  [0, 10^9]。</p>
+<h2 id="暴力法-1"><a href="#暴力法-1" class="headerlink" title="暴力法"></a>暴力法</h2><h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>暴力法和上述思路类似。但是我们多维护一个数组 intersectedCalendars 用来存储<strong>二次预定</strong>的日程安排。如果课程第一次冲突，我们将其加入 intersectedCalendars，如果和 intersectedCalendars 也冲突了，说明出现了三次预定，我们直接返回 False。</p>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><p>代码支持 Python3:</p>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCalendarTwo</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.calendars = []</span><br><span class="line">        self.intersectedCalendars = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">book</span><span class="params">(self, start: int, end: int)</span> -&gt; bool:</span></span><br><span class="line">        <span class="keyword">for</span> [s, e] <span class="keyword">in</span> self.intersectedCalendars:</span><br><span class="line">            <span class="keyword">if</span> start &lt; e <span class="keyword">and</span> end &gt; s:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">for</span> [s, e] <span class="keyword">in</span> self.calendars:</span><br><span class="line">            <span class="keyword">if</span> start &lt; e <span class="keyword">and</span> end &gt; s:</span><br><span class="line">                self.intersectedCalendars.append([max(start, s), min(end, e)])</span><br><span class="line">        self.calendars.append([start, end])</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<h2 id="二叉查找树法-1"><a href="#二叉查找树法-1" class="headerlink" title="二叉查找树法"></a>二叉查找树法</h2><p>和上面的题目类似，我们仍然可以使用平衡二叉树来简化查找逻辑。具体可以参考<a href="https://leetcode.com/problems/my-calendar-ii/discuss/158747/Python-O(logN" target="_blank" rel="noopener">这个 discussion</a>&gt;)</p>
+<p>每次插入之前我们都需要进行一次判断，判断是否可以插入。如果不可以插入，直接返回 False，否则我们进行一次插入。 插入的时候，如果和已有的相交了，我们判断是否之前已经相交了一次，如果是返回 False，否则返回 True。关于<strong>如何判断是否和已有的相交</strong>，我们可以在 node 节点增加一个字段的方式来标记，在这里我们使用 single_overlap，True 表示产生了二次预定，False 则表示没有产生过两次及以上的预定。</p>
+<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><p>代码支持 Python3:</p>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, start, end)</span>:</span></span><br><span class="line">        self.start = start</span><br><span class="line">        self.end = end</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br><span class="line">        self.single_overlap = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCalendarTwo</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.root = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">book</span><span class="params">(self, start, end)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.canInsert(start, end, self.root):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">        self.root = self.insert(start, end, self.root)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canInsert</span><span class="params">(self, start, end, root)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> start &gt;= end:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> end &lt;= root.start:</span><br><span class="line">            <span class="keyword">return</span> self.canInsert(start, end, root.left)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">elif</span> start &gt;= root.end:</span><br><span class="line">            <span class="keyword">return</span> self.canInsert(start, end, root.right)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> root.single_overlap:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="keyword">elif</span> start &gt;= root.start <span class="keyword">and</span> end &lt;= root.end:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> self.canInsert(start, root.start, root.left) <span class="keyword">and</span> self.canInsert(root.end, end, root.right)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert</span><span class="params">(self, start, end, root)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            root = Node(start, end)</span><br><span class="line">            <span class="keyword">return</span> root</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> start &gt;= end:</span><br><span class="line">            <span class="keyword">return</span> root</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> start &gt;= root.end:</span><br><span class="line">            root.right = self.insert(start, end, root.right)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">elif</span> end &lt;= root.start:</span><br><span class="line">            root.left = self.insert(start, end, root.left)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            root.single_overlap = <span class="literal">True</span></span><br><span class="line">            a = min(root.start, start)</span><br><span class="line">            b = max(root.start, start)</span><br><span class="line">            c = min(root.end, end)</span><br><span class="line">            d = max(root.end, end)</span><br><span class="line">            root.start, root.end = b, c</span><br><span class="line">            root.left, root.right = self.insert(a, b, root.left), self.insert(c, d, root.right)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line"></span><br><span class="line"><span class="comment"># Your MyCalendarTwo object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = MyCalendarTwo()</span></span><br><span class="line"><span class="comment"># param_1 = obj.book(start,end)</span></span><br></pre></td></tr></table></figure>
+<h1 id="732-我的日程安排表-III"><a href="#732-我的日程安排表-III" class="headerlink" title="732. 我的日程安排表 III"></a>732. 我的日程安排表 III</h1><h2 id="题目地址-2"><a href="#题目地址-2" class="headerlink" title="题目地址"></a>题目地址</h2><p><a href="https://leetcode-cn.com/problems/my-calendar-iii/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/my-calendar-iii/</a></p>
+<h2 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h2><p>实现一个 MyCalendar 类来存放你的日程安排，你可以一直添加新的日程安排。</p>
+<p>MyCalendar 有一个 book(int start, int end)方法。它意味着在 start 到 end 时间内增加一个日程安排，注意，这里的时间是半开区间，即 [start, end), 实数  x 的范围为，  start &lt;= x &lt; end。</p>
+<p>当 K 个日程安排有一些时间上的交叉时（例如 K 个日程安排都在同一时间内），就会产生 K 次预订。</p>
+<p>每次调用 MyCalendar.book 方法时，返回一个整数 K ，表示最大的 K 次预订。</p>
+<p>请按照以下步骤调用 MyCalendar 类: MyCalendar cal = new MyCalendar(); MyCalendar.book(start, end)</p>
+<p>示例 1:</p>
+<p>MyCalendarThree();<br>MyCalendarThree.book(10, 20); // returns 1<br>MyCalendarThree.book(50, 60); // returns 1<br>MyCalendarThree.book(10, 40); // returns 2<br>MyCalendarThree.book(5, 15); // returns 3<br>MyCalendarThree.book(5, 10); // returns 3<br>MyCalendarThree.book(25, 55); // returns 3<br>解释:<br>前两个日程安排可以预订并且不相交，所以最大的 K 次预订是 1。<br>第三个日程安排[10,40]与第一个日程安排相交，最高的 K 次预订为 2。<br>其余的日程安排的最高 K 次预订仅为 3。<br>请注意，最后一次日程安排可能会导致局部最高 K 次预订为 2，但答案仍然是 3，原因是从开始到最后，时间[10,20]，[10,40]和[5,15]仍然会导致 3 次预订。<br>说明:</p>
+<p>每个测试用例，调用  MyCalendar.book  函数最多不超过  400 次。<br>调用函数  MyCalendar.book(start, end)时， start 和  end 的取值范围为  [0, 10^9]。</p>
+<h2 id="二叉查找树法-2"><a href="#二叉查找树法-2" class="headerlink" title="二叉查找树法"></a>二叉查找树法</h2><h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>我们仍然可以使用上述的平衡二叉树的做法。只不过我们需要额外维护一个全局的最大值“k”，表示需要多少个预定。最终我们返回 k。 同时每一个 node 我们都增加一个属性 k，用来表示局部的最大值，对于每次插入，我们将 node 的 k 和全部的 k 进行比较，取出最大值即可。</p>
+<h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><p>代码支持 Python3:</p>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, start, end, ktime=<span class="number">1</span>)</span>:</span></span><br><span class="line">        self.k = ktime</span><br><span class="line">        self.s = start</span><br><span class="line">        self.e = end</span><br><span class="line">        self.right = <span class="literal">None</span></span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCalendarThree</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.root = <span class="literal">None</span></span><br><span class="line">        self.k = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">book</span><span class="params">(self, start, end)</span>:</span></span><br><span class="line">        self.root = self.insert(self.root, start, end, <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> self.k</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert</span><span class="params">(self, root, start, end, k)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> start &gt;= end:</span><br><span class="line">            <span class="keyword">return</span> root</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            self.k = max(self.k, k)</span><br><span class="line">            <span class="keyword">return</span> Node(start, end, k)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> start &gt;= root.e:</span><br><span class="line">                root.right = self.insert(root.right, start, end, k)</span><br><span class="line">                <span class="keyword">return</span> root</span><br><span class="line">            <span class="keyword">elif</span> end &lt;= root.s:</span><br><span class="line">                root.left = self.insert(root.left, start, end, k)</span><br><span class="line">                <span class="keyword">return</span> root</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line"></span><br><span class="line">                a = min(root.s, start)</span><br><span class="line">                b = max(root.s, start)</span><br><span class="line">                c = min(root.e, end)</span><br><span class="line">                d = max(root.e, end)</span><br><span class="line"></span><br><span class="line">                root.left = self.insert(root.left, a, b, a == root.s <span class="keyword">and</span> root.k <span class="keyword">or</span> k)</span><br><span class="line">                root.right = self.insert(root.right, c,d, d == root.e <span class="keyword">and</span> root.k <span class="keyword">or</span> k)</span><br><span class="line">                root.k += k</span><br><span class="line">                root.s = b</span><br><span class="line">                root.e = c</span><br><span class="line">                self.k = max(root.k, self.k)</span><br><span class="line">                <span class="keyword">return</span> root</span><br></pre></td></tr></table></figure>
+<h2 id="Count-Map-法"><a href="#Count-Map-法" class="headerlink" title="Count Map 法"></a>Count Map 法</h2><h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>这个是我在看了 Discussion <a href="https://leetcode.com/problems/my-calendar-iii/discuss/176950/C%2B%2B-Map-Solution-beats-95%2B" target="_blank" rel="noopener">[C++] Map Solution, beats 95%+</a> 之后写的解法，解法非常巧妙。</p>
+<p>我们使用一个 count map 来存储所有的预定，对于每次插入，我们执行<code>count[start] += 1</code>和<code>count[end] -= 1</code>。 count[t] 表示从 t 开始到下一个 t 我们有几个预定。因此我们需要对 count 进行排序才行。 我们维护一个最大值来 cnt 来表示需要的预定数。</p>
+<p>比如预定[1,3]和[5,7]，我们产生一个预定即可：</p>
+<p><img src="http://ww1.sinaimg.cn/large/e9f490c8ly1gbj50c37suj212q0bcq3t.jpg" alt="image.png"></p>
+<p>再比如预定[1,5]和[3,7]，我们需要两个预定：</p>
+<p><img src="http://ww1.sinaimg.cn/large/e9f490c8ly1gbj45oq6fhj213e0ca0tm.jpg" alt="image.png"></p>
+<p>我们可以使用红黑树来简化时间复杂度，如果你使用的是 Java，可以直接使用现成的数据结构 TreeMap。我这里偷懒，每次都排序，时间复杂度会很高，但是可以 AC。</p>
+<p>读到这里，你可能会发现： 这个解法似乎更具有通用型。对于第一题我们可以判断 cnt 是否小于等于 1，对于第二题我们可以判断 cnt 是否小于等于 2。</p>
 <blockquote>
-<p>空间复杂度忽略了开辟数组的内存消耗。</p>
+<p>如果你不借助红黑树等数据结构直接使用 count-map 法，即每次都进行一次排序，第一题和第二题可能会直接超时。</p>
 </blockquote>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>如果你仔细对比一下的话，会发现我们的思路和代码几乎一模一样。注意到每次递归我们的两个数组个数都会减去 1，因此我们递归终止条件不难写出，并且递归问题规模如何缩小也很容易，那就是数组总长度减去 1。</p>
-<p>我们拿最后一个题目来说：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node.left = self.constructFromPrePost(pre[<span class="number">1</span>:i + <span class="number">2</span>], post[:i + <span class="number">1</span>])</span><br><span class="line">node.right = self.constructFromPrePost(pre[i + <span class="number">2</span>:], post[i + <span class="number">1</span>:<span class="number">-1</span>])</span><br></pre></td></tr></table></figure>
-<p>我们发现 pre 被拆分为两份，pre[1:i + 2]和 pre[i + 2:]。很明显总数少了 1，那就是 pre 的第一个元素。 也就是说如果你写出一个，其他一个不用思考也能写出来。</p>
-<p>而对于 post 也一样，post[:i + 1] 和 post[i + 1:-1]，很明显总数少了 1，那就是 post 最后一个元素。</p>
-<p>这个解题模板足够简洁，并且逻辑清晰，大家可以用我的模板试试～</p>
-<p>简单起见，递归的时候每次我都开辟了新的数组，这个其实是没有必要的，我们可以通过四个变量来记录 inorder 和 postorder 的起始位置即可， 具体见下方代码区。</p>
-<p>代码：</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">buildTree</span><span class="params">(self, inorder: List[int], postorder: List[int])</span> -&gt; TreeNode:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(inorder, i_start, i_end, postorder, p_start, p_end)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> i_start &gt; i_end: <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">            <span class="keyword">if</span> i_start == i_end: <span class="keyword">return</span> TreeNode(inorder[i_start])</span><br><span class="line">            node = TreeNode(postorder[p_end])</span><br><span class="line">            i = inorder.index(postorder[p_end])</span><br><span class="line">            node.left = dfs(inorder, i_start, i - <span class="number">1</span>, postorder, p_start, p_start + (i - <span class="number">1</span> - i_start))</span><br><span class="line">            node.right = dfs(inorder, i + <span class="number">1</span>, i_end, postorder, p_start + (i - <span class="number">1</span> - i_start) + <span class="number">1</span>, p_end - <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> node</span><br><span class="line">        <span class="keyword">return</span> dfs(inorder, <span class="number">0</span>, len(inorder) - <span class="number">1</span>, postorder, <span class="number">0</span>, len(postorder) - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<p>updated:(有同学不懂为啥 post_end 是 post_start + i - 1 - in_start，我解释一下)</p>
-<p>我上面提到了 实际上 inorder 的 长度和 postorder 长度是一样的。而：</p>
+<h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><p>代码支持 Python3:</p>
+<p>Python3 Code:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCalendarThree</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.count = dict()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">book</span><span class="params">(self, start: int, end: int)</span> -&gt; int:</span></span><br><span class="line">        self.count[start] = self.count.get(start, <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">        self.count[end] = self.count.get(end, <span class="number">0</span>) - <span class="number">1</span></span><br><span class="line">        cnt = <span class="number">0</span></span><br><span class="line">        cur = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> sorted(self.count):</span><br><span class="line">            cur += self.count[k]</span><br><span class="line">            cnt = max(cnt, cur)</span><br><span class="line">        <span class="keyword">return</span> cnt</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Your MyCalendarThree object will be instantiated and called as such:</span></span><br><span class="line">        <span class="comment"># obj = MyCalendarThree()</span></span><br><span class="line">        <span class="comment"># param_1 = obj.book(start,end)</span></span><br></pre></td></tr></table></figure>
+<h1 id="相关题目"><a href="#相关题目" class="headerlink" title="相关题目"></a>相关题目</h1><p>LeetCode 上有一个类似的系列《会议室》，截止目前（2020-02-03）有两道题目。其中一个简单一个中等，解题思路非常类似，大家用这个解题思路尝试一下，检测一下自己是否已经掌握。两道题分别是：</p>
 <ul>
-<li>inorder 的长度是 i - 1 - in_start</li>
-<li>因此 postorder 的长度也是 i - 1 - in_start</li>
-<li>postorder 的长度 = post_end - post_start</li>
-<li>因此 post_end 就是 post_start + i - 1 - in_start</li>
+<li><a href="https://leetcode-cn.com/problems/meeting-rooms/" target="_blank" rel="noopener">252. 会议室</a></li>
+<li><a href="https://leetcode-cn.com/problems/meeting-rooms-ii/" target="_blank" rel="noopener">253. 会议室 II</a></li>
 </ul>
-<p><strong>复杂度分析</strong></p>
-<ul>
-<li>时间复杂度：由于每次递归我们的 inorder 和 postorder 的总数都会减 1，因此我们要递归 N 次，故时间复杂度为 $O(N)$，其中 N 为节点个数。</li>
-<li>空间复杂度：我们使用了递归，也就是借助了额外的栈空间来完成， 由于栈的深度为 N，因此总的空间复杂度为 $O(N)$，其中 N 为节点个数。</li>
-</ul>
-<h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>更多题解可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经 30K star 啦。</p>
-<p>大家也可以关注我的公众号《力扣加加》获取更多更新鲜的 LeetCode 题解</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" alt></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>我们对 LeetCode 上的专题《我的日程安排》的三道题进行了汇总。对于区间判断是否重叠，我们可以反向判断，也可以正向判断。 暴力的方法是每次对所有的课程进行判断是否重叠，这种解法可以 AC。我们也可以进一步优化，使用二叉查找树来简化时间复杂度。最后我们介绍了一种 Count-Map 方法来通用解决所有的问题，不仅可以完美解决这三道题，还可以扩展到《会议室》系列的两道题。</p>
 
       </div>
       
@@ -493,10 +498,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-29T12:08:28+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2021年3月29日</p>
   </a>
 </div>
 
@@ -505,7 +510,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/LeetCode/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>LeetCode</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/二叉树/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>二叉树</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/算法系列/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>算法系列</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/LeetCode/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>LeetCode</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/算法系列/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>算法系列</p></a></div>
 
 
         
@@ -516,7 +521,7 @@
   <div class="-mob-share-list share-body">
     
       
-        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACs0lEQVR42u3awW7rMAwEwP7/T/ddC7zG3SWlIgXGp8COI40OEkPy4yO+Pr9cX+88f///d19dz28lI64uPDw8vMXUnwdOJvRqcrPvz5YMDw8P73d4yc/lG3SyTLMlzueMh4eH9z68NnZNNvfZMuHh4eH9Fd7zMJuAGw8PD+9v8fJwdnbnmZSnQi7mWvDw8PBiXl5Fep/PV+p7eHh4eOuqer7hbtZ1cwD8MFs8PDy8C7xZinb/dJPMreeJh4eHd5SXbP35xt3Cnn8/P6Je3sHDw8O7wNunXPP7+yaDVaoCDw8P7xAv2bJn052Fy5sC2Ddzw8PDw/sVXt7MVA9WHgx1c9X+rMPDw8Mree2mv3krD6NnyQs8PDy827xNJiNPwu6D77bDCg8PD+8GL08K7NsCkuOhLXQVAToeHh7eId4mfTBLcOTv5kv58g4eHh7eNV4eqhYp1HiB2nRwjsTDw8O7wWsLTpukahtY528ViQw8PDy8Na8tgG1C57ahql2UH5qu8PDw8I7y8hA5b66qEwc3uqfw8PDwLvD2qdu8+WBfqUueRqcfHh4e3oKXbO5tAJ2nD/bheHTu4eHh4V3j5enRfSicj7tqa8DDw8O7wMsnlxf7N6FwngTZtzLg4eHhneK1R0V7hDxPpf3lPKDHw8PDO8vL/+q3QfCsPWt2ONVVOzw8PLyjvLZFIC/wzw6DHPbNiHh4eHjXePnA7fadtx3MksU/LCUeHh7eUd5neZ1amra9YPgUDw8P7wKvLYblidpNcLz5PKz44eHh4ZW8TcPTrAyW3J+VxOrAGg8PD2/BmxWfVn0Km5MqTiXj4eHhvQNvNq39kdPOGQ8PD+99eHnrapu6bRcoSt3i4eHhXeNtJtceJEl5bBbir3IteHh4eN24xR/+PCnQHh7JuMPmADw8PLwzvH8frcU62YLqQgAAAABJRU5ErkJggg=='>
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3awW7jMAwE0Pz/T+8Cew3szJDWNgWeT0HaQnosYAlDvl7x8+ffc/X91U/vf//9eV/r6vPDDx4eHt5o6/sl35ff469KnOwZDw8P7zTv/jDIt35fmnyVK0y+Zzw8PLxv4OUHxqwoeZnw8PDwfgsvuf7mgJz3w+ceHh4e3iKMSMKCTeCbBBAHsxY8PDy8mNc2wL7h88H+Hh4eHt6iq962xPLjpD08hvvEw8PDO8DbN/iTlv8sXMhL8GHneHh4eI/ykvZ8/qJvD5U2Aq5HwfDw8PAO8NqINlmy3VBynLQX9+JEwsPDwxvxNvlnPi6wuTS34TIeHh7eOV4es+aLzS6+s/D3Q4nx8PDw/jtvc9XOx6pmg1nRJR4PDw/vGG+2iVmPqY2MZ9fx5pfw8PDw5rynNn2iWPnAwXDGFg8PD28U3bbRQ/JXw2b/qNzFzvHw8PDWvM0IVLv87EjI/0tRmIuHh4e34OVbTF79s3LM4omiAYaHh4d3gDdrcbXX3KhlFf80KgEeHh7eMd65Fv4+mGhjkWJ0AA8PD2/ES170bTMs39ws/qgPITw8PLwDvPwwmLWjkstxu0oBw8PDw3uUtwka8uepi3VbIDw8PLwTvLa13zb422hjFjd8wOPh4eEd4OXI9vJ9v7nNgEIbZ+Dh4eGd5m2OinY4IF9l0xjDw8PDe5aXvHbzMCKH5W2z9sr+YbIMDw8P7zBvExC0QfBr9BSdPTw8PLw1b9PKSkrQtvyfDY7x8PDwTvD2UcU+bpgdVI8NFuDh4eGNeHm48OxW2td6e4Tg4eHhneZtWmL5WFU7LrCPQvDw8PC+jTdroc3aYLOy4uHh4f0s7/6bWWQwCzLqMAIPDw/vAK8dosrbWsmleVaU6AqOh4eHd4D3VAPsfuFNXDsrKB4eHt4B3l+bjQMn0QDUugAAAABJRU5ErkJggg=='>
         
           <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png">
         
@@ -526,14 +531,18 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2020/06/20/构造二叉树专题/&title=构造二叉树系列 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=构造二叉树是一个常见的二叉树考点，相比于直接考察二叉树的遍历，这种题目的难度会更大。截止到目前(2020-02-08) LeetCode 关于构造二叉树一共有三道题目，分别是：
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2020/02/03/leetcode-我的日程安排表系列/&title=我的日程安排表系列 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=《我的日程安排表》截止目前（2020-02-03）在 LeetCode 上一共有三道题，其中两个中等难度，一个困难难度,分别是：
 
-105. 从前序与中序遍历序列构造二叉树
-106. 从中序与后序遍历序列构造二叉树
-889. 根据前序和后序遍历构造二叉树
+729. 我的日程安排表 I
+731. 我的日程安排表 II
+732. 我的日程安排表 III
 
-今天就让我们用一个套路一举攻破他们。
-​"
+另外 LeetCode 上有一个类似的系列《会议室》，截止目前（2020-02-03）有两道题目。其中一个简单一个中等，分别是：
+
+252. 会议室
+253. 会议室 II
+
+今天我们就来攻克它们。"
           
           >
           
@@ -545,14 +554,18 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2020/06/20/构造二叉树专题/&title=构造二叉树系列 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=构造二叉树是一个常见的二叉树考点，相比于直接考察二叉树的遍历，这种题目的难度会更大。截止到目前(2020-02-08) LeetCode 关于构造二叉树一共有三道题目，分别是：
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2020/02/03/leetcode-我的日程安排表系列/&title=我的日程安排表系列 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=《我的日程安排表》截止目前（2020-02-03）在 LeetCode 上一共有三道题，其中两个中等难度，一个困难难度,分别是：
 
-105. 从前序与中序遍历序列构造二叉树
-106. 从中序与后序遍历序列构造二叉树
-889. 根据前序和后序遍历构造二叉树
+729. 我的日程安排表 I
+731. 我的日程安排表 II
+732. 我的日程安排表 III
 
-今天就让我们用一个套路一举攻破他们。
-​"
+另外 LeetCode 上有一个类似的系列《会议室》，截止目前（2020-02-03）有两道题目。其中一个简单一个中等，分别是：
+
+252. 会议室
+253. 会议室 II
+
+今天我们就来攻克它们。"
           
           >
           
@@ -564,14 +577,18 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2020/06/20/构造二叉树专题/&title=构造二叉树系列 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=构造二叉树是一个常见的二叉树考点，相比于直接考察二叉树的遍历，这种题目的难度会更大。截止到目前(2020-02-08) LeetCode 关于构造二叉树一共有三道题目，分别是：
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2020/02/03/leetcode-我的日程安排表系列/&title=我的日程安排表系列 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=《我的日程安排表》截止目前（2020-02-03）在 LeetCode 上一共有三道题，其中两个中等难度，一个困难难度,分别是：
 
-105. 从前序与中序遍历序列构造二叉树
-106. 从中序与后序遍历序列构造二叉树
-889. 根据前序和后序遍历构造二叉树
+729. 我的日程安排表 I
+731. 我的日程安排表 II
+732. 我的日程安排表 III
 
-今天就让我们用一个套路一举攻破他们。
-​"
+另外 LeetCode 上有一个类似的系列《会议室》，截止目前（2020-02-03）有两道题目。其中一个简单一个中等，分别是：
+
+252. 会议室
+253. 会议室 II
+
+今天我们就来攻克它们。"
           
           >
           
@@ -599,16 +616,16 @@
                       <span class="art-item-left">
                           <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                           <h4>
-                              <a href="/blog/2020/06/20/刷题新手/" rel="prev" title="算法小白如何高效、快速刷 leetcode？">
+                              <a href="/blog/2020/02/04/1334.find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/" rel="prev" title="Floyd-Warshall 解题模板，助你快速AC">
                                 
-                                    算法小白如何高效、快速刷 leetcode？
+                                    Floyd-Warshall 解题模板，助你快速AC
                                 
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a> <a class="tag" href="/blog/tags/经验分享/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 经验分享</a>
+                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/解题模板/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 解题模板</a> <a class="tag" href="/blog/tags/图/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 图</a> <a class="tag" href="/blog/tags/Floyd-Warshall/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Floyd-Warshall</a>
                               </h6>
                           
                       </span>
@@ -619,16 +636,16 @@
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/blog/2020/06/13/immutable-js/" rel="prev" title="immutablejs 是如何优化我们的代码的？">
+                              <a href="/blog/2020/02/02/bigpipe-and-micro-fe/" rel="prev" title="BigPipe和微前端">
                                   
-                                      immutablejs 是如何优化我们的代码的？
+                                      BigPipe和微前端
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/前端/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 前端</a> <a class="tag" href="/blog/tags/React/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> React</a> <a class="tag" href="/blog/tags/immutablejs/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> immutablejs</a> <a class="tag" href="/blog/tags/immutable/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> immutable</a>
+                                  <a class="tag" href="/blog/tags/BigPipe/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> BigPipe</a> <a class="tag" href="/blog/tags/微前端/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 微前端</a>
                               </h6>
                           
                       </span>
@@ -670,7 +687,7 @@
 
   <script>
     window.subData = {
-      title: '构造二叉树系列',
+      title: '我的日程安排表系列',
       tools: true
     }
   </script>
@@ -779,7 +796,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#105-从前序与中序遍历序列构造二叉树"><span class="toc-text">105. 从前序与中序遍历序列构造二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#106-从中序与后序遍历序列构造二叉树"><span class="toc-text">106. 从中序与后序遍历序列构造二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述-1"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路-1"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码-1"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#889-根据前序和后序遍历构造二叉树"><span class="toc-text">889. 根据前序和后序遍历构造二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述-2"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路-2"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码-2"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关注我"><span class="toc-text">关注我</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#729-我的日程安排表-I"><span class="toc-text">729. 我的日程安排表 I</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目地址"><span class="toc-text">题目地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#暴力法"><span class="toc-text">暴力法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉查找树法"><span class="toc-text">二叉查找树法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路-1"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码-1"><span class="toc-text">代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#731-我的日程安排表-II"><span class="toc-text">731. 我的日程安排表 II</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目地址-1"><span class="toc-text">题目地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述-1"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#暴力法-1"><span class="toc-text">暴力法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路-2"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码-2"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉查找树法-1"><span class="toc-text">二叉查找树法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-3"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#732-我的日程安排表-III"><span class="toc-text">732. 我的日程安排表 III</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目地址-2"><span class="toc-text">题目地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述-2"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉查找树法-2"><span class="toc-text">二叉查找树法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路-3"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码-4"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Count-Map-法"><span class="toc-text">Count Map 法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路-4"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码-5"><span class="toc-text">代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#相关题目"><span class="toc-text">相关题目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
     </div>
   </section>
 
