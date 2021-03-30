@@ -153,41 +153,6 @@
     
     
     <entry>
-      <title>91 天学算法第三期视频会议总结</title>
-      <link href="/blog/2021/03/09/91meeting-season-3-1/"/>
-      <url>/blog/2021/03/09/91meeting-season-3-1/</url>
-      
-        <content type="html"><![CDATA[<p>这是 91 天学算法第三期视频会议的一个文字版总结。想要参加第三期的小伙伴可在公众号后台回复 91 查看参与方式。</p><p>大家好，我是 lucifer。前几天给 91 的学员开了一场视频会议，关于目前学习的情况，西法给大家的学习建议以及下期的规划做了简单的讨论。</p><p>​<a id="more"></a></p><h2 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h2><ul><li>2021-02-28 10:00</li></ul><h2 id="参与人员"><a href="#参与人员" class="headerlink" title="参与人员"></a>参与人员</h2><ul><li>91 第三期的部分学员</li></ul><h2 id="在线观看"><a href="#在线观看" class="headerlink" title="在线观看"></a>在线观看</h2><ul><li><a href="https://www.bilibili.com/video/BV1qK4y1J7DD/" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1qK4y1J7DD/</a></li></ul><h2 id="会议主题"><a href="#会议主题" class="headerlink" title="会议主题"></a>会议主题</h2><h3 id="基础篇回顾"><a href="#基础篇回顾" class="headerlink" title="基础篇回顾"></a>基础篇回顾</h3><p>基础篇内容如下：</p><ul><li>【91 算法-基础篇】01.数组，栈，队列</li><li>【91 算法-基础篇】02.链表</li><li>【91 算法-基础篇】03.树</li><li>【91 算法-基础篇】04.哈希表</li><li>【91 算法-基础篇】05.双指针</li><li>【91 算法-基础篇】06.图（加餐）</li><li>【待定】模拟和枚举（加餐）</li></ul><p>除了加餐，其他都会给大家每日一题的练习时间。对于加餐来说，目前还没有完结，等到完结之后会第一时间在群里通知。</p><p>对于基础篇的内容需要大家重点掌握的是<strong>队列和栈</strong>。理由如下：</p><ul><li>数组没啥好讲的，大家用的太多了，唯一需要注意的是各种操作的复杂度。</li><li>链表和树我写的两篇专题已经非常清楚了，几乎涉及了所有考点。大家如果对这两部分内容没信息，建议看看我公众号的<a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI4MzUxNjI3OA==&amp;action=getalbum&amp;album_id=1702469751517528072#wechat_redirect" title="几乎刷完了系列" target="_blank" rel="noopener">几乎刷完了系列</a>。</li><li>哈希表从战略上考察点基本就是<strong>空间换时间</strong>，战术上就是统计频率，计算最近或者最远，分桶等几个操作而已，具体可看讲义。</li><li>双指针我们会在专题篇分两个小专题讲解，分别是 <strong>二分法</strong> 和 <strong>滑动窗口</strong>，因此基础篇没太搞懂也不要紧。</li></ul><h3 id="通过几个题目，讲解更有如何有效率的解题"><a href="#通过几个题目，讲解更有如何有效率的解题" class="headerlink" title="通过几个题目，讲解更有如何有效率的解题"></a>通过几个题目，讲解更有如何有效率的解题</h3><p>以下是视频中提到的题目，每个题目都有一定代表性。</p><ol><li><a href="https://binarysearch.com/problems/Split-List-to-Minimize-Largest-Sum" target="_blank" rel="noopener">https://binarysearch.com/problems/Split-List-to-Minimize-Largest-Sum</a></li></ol><p>第一题主要告诉大家做题的时候一定要<strong>结合讲义</strong>，我们出的题通常都是和讲义中的一个或者多个知识点有关。出题的目的就是强化理解讲义中的内容。因此如果看完题目，你完全不知道讲义中有挂内容，很有可能是你自己对讲义的理解不到位。这个时候需要再次阅读讲义或者求助群友和群主。否则你的进步会很慢，这也是<strong>一些同学向我反馈跟了很久却没有效果的最主要原因</strong>。</p><ol><li><a href="https://binarysearch.com/problems/Kth-Largest-Pair-Product/editorials/3567227" target="_blank" rel="noopener">https://binarysearch.com/problems/Kth-Largest-Pair-Product/editorials/3567227</a></li></ol><p>这道题其实是想告诉大家：</p><p>2.1. 如果一道题没思路。可以通过最最暴力的解法入手，然后找算法瓶颈，根据瓶颈使用适当的数据结构和算法进行优化<br>2.2. 讲义中提到的点，一定要牢记。比如我们讲义中提到了<strong>固定小顶堆求第 k 大的数</strong>，这道题就是求第 k 大的数，你就应该想到。作为新手我对你们的期望是要想到，不管最终能不能用，想到是必须的。</p><ol><li><a href="https://leetcode-cn.com/problems/widest-vertical-area-between-two-points-containing-no-points/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/widest-vertical-area-between-two-points-containing-no-points/</a></li></ol><p>这道题主要告诉大家<strong>题目如果看不懂， 那练习再多都没用</strong>，建议大家通过几个文字很多的题目或者带图的题目练练手，提供阅读理解能力。</p><h3 id="算法面试题（非编程题）epoll"><a href="#算法面试题（非编程题）epoll" class="headerlink" title="算法面试题（非编程题）epoll"></a>算法面试题（非编程题）epoll</h3><p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1go4j91hes0j21g00m4tdq.jpg" alt></p><p>以一个具体的例子： 《epoll 是如何优化我们的程序的？》 为例，讲解算法面试中<strong>问答题</strong>。如果你不想八股文式面试， 那么就需要大家对基本的数据结构与算法有很深的理解。而这恰好是基础篇的内容。</p><h3 id="下期（专题篇）预告"><a href="#下期（专题篇）预告" class="headerlink" title="下期（专题篇）预告"></a>下期（专题篇）预告</h3><p>专题篇目录:</p><ul><li>二分专题</li><li>滑动窗口专题</li><li>位运算专题</li><li>搜索（BFS、DFS、回溯）专题</li><li>背包</li><li>动态规划</li><li>分治</li><li>贪心</li></ul><p>这部分的重点是：<strong>搜索</strong> 和 <strong>动态规划（含背包）</strong>。为什么这两个重要？</p><ul><li>搜索篇重要的原因是其范围太广了，涉及到的知识很多。</li><li>动态规划不仅容易考，而且大家普遍认为比较难。（我承认它要比搜索篇难）</li></ul><p>而：</p><ul><li>二分法，滑动窗口相信你看了我的讲义，不会有太大问题。</li><li>位运算则考察频率不那么高，大家可以将优先级适当放低。</li><li>分治和贪心算法下限很低，基本看了我的讲义跟着做做题入门是可以的。但是要想精通可是相当难的，但是如果你掌握了搜索篇以及动态规划，那么对你掌握这两个专题会有极大的帮助，这也是为啥我特别强调要掌握<strong>搜索篇</strong>和<strong>动态规划</strong>的原因。</li></ul><h3 id="插件有什么用？"><a href="#插件有什么用？" class="headerlink" title="插件有什么用？"></a>插件有什么用？</h3><ul><li>插件源码：<a href="https://github.com/leetcode-pp/leetcode-cheat" target="_blank" rel="noopener">https://github.com/leetcode-pp/leetcode-cheat</a></li><li>插件功能介绍: <a href="https://lucifer.ren/blog/2020/08/16/leetcode-cheat/">https://lucifer.ren/blog/2020/08/16/leetcode-cheat/</a></li><li>插件获取方式：公众号《力扣加加》回复插件。</li></ul><p>很多人不会用我的插件功能，尤其是复制测试用例。他们好奇为啥官方有了运行内置用例功能，我还弄个复制所有测试用例的功能。这是因为官方的是<strong>运行内置用例</strong>，并不会自动复制到自定义用例的输入框中。</p><p>这有什么问题呢？比如我执行了内置的用例报错了，报错的用例是 [1,2,3,4]，而这个用例不在内置用例中。我肯定要调整代码，调整完毕后继续运行。而我这个时候期望的是<strong>运行所有的测试用例</strong> 和 <strong>[1,2,3,4]</strong>这个上次出错的用例。因为我可能为了改这个而导致其他本来可以过的用例现在过不了。</p><p>如果这个时候又挂在 [3,2,1] 这个用例。我肯定希望运行所有内置的用例和 [1,2,3,4] 以及 [3,2,1]。而这是官方的功能不具备的。如果想实现这个效果，你需要先点击<strong>执行内置用例</strong>，再点击执行自定义用例。而我的<strong>复制所有内置用例</strong>可以很好的解决这个问题。</p><h3 id="答疑"><a href="#答疑" class="headerlink" title="答疑"></a>答疑</h3><p>回答了几个比较具有代表性的问题。有一个问题是：我想往 java 后端发展，求推荐学习路线。</p><p>答：关于 java，其实我并不权威，尽管我是 java 入行，但毕竟几年不碰了。但是任何计算机相关岗位的学习我都建议先学基础，比如网络，算法。然后学操作系统和汇编（操作系统和汇编用到了大量数据结构与算法）。接下来可以学习编程语言的语法，语法熟悉就是语言内置的库，然后是三方库，然后是运行时，比如 java 就是 jvm。最后从大的方向将知识串起来。比如你可以从一个经典的问题<strong>浏览器输入 url 发生了什么</strong>入手来验证自己知识的掌握程度。</p><p>其他问题可看视频。</p><p>以上就是本文的全部内容了， 大家对此有何看法，欢迎给我留言，我有时间都会一一查看回答。我是 lucifer，维护西湖区最好的算法题解，Github 超 40K star 。大家也可以关注我的公众号《力扣加加》带你啃下算法这块硬骨头。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" alt="力扣加加公众号二维码"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 力扣加加 </category>
-          
-          <category> 91天学算法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 数据结构 </tag>
-            
-            <tag> 算法 </tag>
-            
-            <tag> 算法提高班 </tag>
-            
-            <tag> 91天学算法 </tag>
-            
-            <tag> 力扣加加 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>几乎刷完了力扣所有的二分题，我发现了这些东西。。。（上）</title>
       <link href="/blog/2021/03/08/binary-search-1/"/>
       <url>/blog/2021/03/08/binary-search-1/</url>
@@ -236,6 +201,41 @@
             <tag> 算法 </tag>
             
             <tag> 春招 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>91 天学算法第三期视频会议总结</title>
+      <link href="/blog/2021/03/01/91meeting-season-3-1/"/>
+      <url>/blog/2021/03/01/91meeting-season-3-1/</url>
+      
+        <content type="html"><![CDATA[<p>这是 91 天学算法第三期视频会议的一个文字版总结。想要参加第三期的小伙伴可在公众号后台回复 91 查看参与方式。</p><p>大家好，我是 lucifer。前几天给 91 的学员开了一场视频会议，关于目前学习的情况，西法给大家的学习建议以及下期的规划做了简单的讨论。</p><p>​<a id="more"></a></p><h2 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h2><ul><li>2021-02-28 10:00</li></ul><h2 id="参与人员"><a href="#参与人员" class="headerlink" title="参与人员"></a>参与人员</h2><ul><li>91 第三期的部分学员</li></ul><h2 id="在线观看"><a href="#在线观看" class="headerlink" title="在线观看"></a>在线观看</h2><ul><li><a href="https://www.bilibili.com/video/BV1qK4y1J7DD/" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1qK4y1J7DD/</a></li></ul><h2 id="会议主题"><a href="#会议主题" class="headerlink" title="会议主题"></a>会议主题</h2><h3 id="基础篇回顾"><a href="#基础篇回顾" class="headerlink" title="基础篇回顾"></a>基础篇回顾</h3><p>基础篇内容如下：</p><ul><li>【91 算法-基础篇】01.数组，栈，队列</li><li>【91 算法-基础篇】02.链表</li><li>【91 算法-基础篇】03.树</li><li>【91 算法-基础篇】04.哈希表</li><li>【91 算法-基础篇】05.双指针</li><li>【91 算法-基础篇】06.图（加餐）</li><li>【待定】模拟和枚举（加餐）</li></ul><p>除了加餐，其他都会给大家每日一题的练习时间。对于加餐来说，目前还没有完结，等到完结之后会第一时间在群里通知。</p><p>对于基础篇的内容需要大家重点掌握的是<strong>队列和栈</strong>。理由如下：</p><ul><li>数组没啥好讲的，大家用的太多了，唯一需要注意的是各种操作的复杂度。</li><li>链表和树我写的两篇专题已经非常清楚了，几乎涉及了所有考点。大家如果对这两部分内容没信息，建议看看我公众号的<a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI4MzUxNjI3OA==&amp;action=getalbum&amp;album_id=1702469751517528072#wechat_redirect" title="几乎刷完了系列" target="_blank" rel="noopener">几乎刷完了系列</a>。</li><li>哈希表从战略上考察点基本就是<strong>空间换时间</strong>，战术上就是统计频率，计算最近或者最远，分桶等几个操作而已，具体可看讲义。</li><li>双指针我们会在专题篇分两个小专题讲解，分别是 <strong>二分法</strong> 和 <strong>滑动窗口</strong>，因此基础篇没太搞懂也不要紧。</li></ul><h3 id="通过几个题目，讲解更有如何有效率的解题"><a href="#通过几个题目，讲解更有如何有效率的解题" class="headerlink" title="通过几个题目，讲解更有如何有效率的解题"></a>通过几个题目，讲解更有如何有效率的解题</h3><p>以下是视频中提到的题目，每个题目都有一定代表性。</p><ol><li><a href="https://binarysearch.com/problems/Split-List-to-Minimize-Largest-Sum" target="_blank" rel="noopener">https://binarysearch.com/problems/Split-List-to-Minimize-Largest-Sum</a></li></ol><p>第一题主要告诉大家做题的时候一定要<strong>结合讲义</strong>，我们出的题通常都是和讲义中的一个或者多个知识点有关。出题的目的就是强化理解讲义中的内容。因此如果看完题目，你完全不知道讲义中有挂内容，很有可能是你自己对讲义的理解不到位。这个时候需要再次阅读讲义或者求助群友和群主。否则你的进步会很慢，这也是<strong>一些同学向我反馈跟了很久却没有效果的最主要原因</strong>。</p><ol><li><a href="https://binarysearch.com/problems/Kth-Largest-Pair-Product/editorials/3567227" target="_blank" rel="noopener">https://binarysearch.com/problems/Kth-Largest-Pair-Product/editorials/3567227</a></li></ol><p>这道题其实是想告诉大家：</p><p>2.1. 如果一道题没思路。可以通过最最暴力的解法入手，然后找算法瓶颈，根据瓶颈使用适当的数据结构和算法进行优化<br>2.2. 讲义中提到的点，一定要牢记。比如我们讲义中提到了<strong>固定小顶堆求第 k 大的数</strong>，这道题就是求第 k 大的数，你就应该想到。作为新手我对你们的期望是要想到，不管最终能不能用，想到是必须的。</p><ol><li><a href="https://leetcode-cn.com/problems/widest-vertical-area-between-two-points-containing-no-points/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/widest-vertical-area-between-two-points-containing-no-points/</a></li></ol><p>这道题主要告诉大家<strong>题目如果看不懂， 那练习再多都没用</strong>，建议大家通过几个文字很多的题目或者带图的题目练练手，提供阅读理解能力。</p><h3 id="算法面试题（非编程题）epoll"><a href="#算法面试题（非编程题）epoll" class="headerlink" title="算法面试题（非编程题）epoll"></a>算法面试题（非编程题）epoll</h3><p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1go4j91hes0j21g00m4tdq.jpg" alt></p><p>以一个具体的例子： 《epoll 是如何优化我们的程序的？》 为例，讲解算法面试中<strong>问答题</strong>。如果你不想八股文式面试， 那么就需要大家对基本的数据结构与算法有很深的理解。而这恰好是基础篇的内容。</p><h3 id="下期（专题篇）预告"><a href="#下期（专题篇）预告" class="headerlink" title="下期（专题篇）预告"></a>下期（专题篇）预告</h3><p>专题篇目录:</p><ul><li>二分专题</li><li>滑动窗口专题</li><li>位运算专题</li><li>搜索（BFS、DFS、回溯）专题</li><li>背包</li><li>动态规划</li><li>分治</li><li>贪心</li></ul><p>这部分的重点是：<strong>搜索</strong> 和 <strong>动态规划（含背包）</strong>。为什么这两个重要？</p><ul><li>搜索篇重要的原因是其范围太广了，涉及到的知识很多。</li><li>动态规划不仅容易考，而且大家普遍认为比较难。（我承认它要比搜索篇难）</li></ul><p>而：</p><ul><li>二分法，滑动窗口相信你看了我的讲义，不会有太大问题。</li><li>位运算则考察频率不那么高，大家可以将优先级适当放低。</li><li>分治和贪心算法下限很低，基本看了我的讲义跟着做做题入门是可以的。但是要想精通可是相当难的，但是如果你掌握了搜索篇以及动态规划，那么对你掌握这两个专题会有极大的帮助，这也是为啥我特别强调要掌握<strong>搜索篇</strong>和<strong>动态规划</strong>的原因。</li></ul><h3 id="插件有什么用？"><a href="#插件有什么用？" class="headerlink" title="插件有什么用？"></a>插件有什么用？</h3><ul><li>插件源码：<a href="https://github.com/leetcode-pp/leetcode-cheat" target="_blank" rel="noopener">https://github.com/leetcode-pp/leetcode-cheat</a></li><li>插件功能介绍: <a href="https://lucifer.ren/blog/2020/08/16/leetcode-cheat/">https://lucifer.ren/blog/2020/08/16/leetcode-cheat/</a></li><li>插件获取方式：公众号《力扣加加》回复插件。</li></ul><p>很多人不会用我的插件功能，尤其是复制测试用例。他们好奇为啥官方有了运行内置用例功能，我还弄个复制所有测试用例的功能。这是因为官方的是<strong>运行内置用例</strong>，并不会自动复制到自定义用例的输入框中。</p><p>这有什么问题呢？比如我执行了内置的用例报错了，报错的用例是 [1,2,3,4]，而这个用例不在内置用例中。我肯定要调整代码，调整完毕后继续运行。而我这个时候期望的是<strong>运行所有的测试用例</strong> 和 <strong>[1,2,3,4]</strong>这个上次出错的用例。因为我可能为了改这个而导致其他本来可以过的用例现在过不了。</p><p>如果这个时候又挂在 [3,2,1] 这个用例。我肯定希望运行所有内置的用例和 [1,2,3,4] 以及 [3,2,1]。而这是官方的功能不具备的。如果想实现这个效果，你需要先点击<strong>执行内置用例</strong>，再点击执行自定义用例。而我的<strong>复制所有内置用例</strong>可以很好的解决这个问题。</p><h3 id="答疑"><a href="#答疑" class="headerlink" title="答疑"></a>答疑</h3><p>回答了几个比较具有代表性的问题。有一个问题是：我想往 java 后端发展，求推荐学习路线。</p><p>答：关于 java，其实我并不权威，尽管我是 java 入行，但毕竟几年不碰了。但是任何计算机相关岗位的学习我都建议先学基础，比如网络，算法。然后学操作系统和汇编（操作系统和汇编用到了大量数据结构与算法）。接下来可以学习编程语言的语法，语法熟悉就是语言内置的库，然后是三方库，然后是运行时，比如 java 就是 jvm。最后从大的方向将知识串起来。比如你可以从一个经典的问题<strong>浏览器输入 url 发生了什么</strong>入手来验证自己知识的掌握程度。</p><p>其他问题可看视频。</p><p>以上就是本文的全部内容了， 大家对此有何看法，欢迎给我留言，我有时间都会一一查看回答。我是 lucifer，维护西湖区最好的算法题解，Github 超 40K star 。大家也可以关注我的公众号《力扣加加》带你啃下算法这块硬骨头。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" alt="力扣加加公众号二维码"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 力扣加加 </category>
+          
+          <category> 91天学算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 算法提高班 </tag>
+            
+            <tag> 91天学算法 </tag>
+            
+            <tag> 力扣加加 </tag>
             
         </tags>
       
