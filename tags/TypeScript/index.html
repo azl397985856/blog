@@ -315,141 +315,6 @@
       
         
   <h2 class="title">
-    <a href="/blog/2021/03/09/ts-generics/">
-      你不知道的 TypeScript 泛型（万字长文，建议收藏）
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://lucifer.ren/blog" rel="nofollow">
-        
-          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
-        
-        <p>lucifer</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2021-03-09</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/categories/前端/TypeScript/泛型/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>前端&nbsp;/&nbsp;TypeScript&nbsp;/&nbsp;泛型</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-  
-    <div style="margin-right: 10px;">
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-keyboard"></i>
-          <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">7.8k字</span>
-        </span>
-      </span>
-      &nbsp; | &nbsp;
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-hourglass-half"></i>
-          <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">29分</span>
-        </span>
-      </span>
-    </div>
-  
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>泛型是 TypeScript（以下简称 TS） 比较高级的功能之一，理解起来也比较困难。泛型应用场景非常广泛，很多地方都能看到它的影子。平时我们阅读开源 TS 项目源码，或者在自己的 TS 项目中使用一些第三方库（比如 React）的时候，经常会看到各种泛型定义。如果你不是特别了解泛型，那么你很可能不仅不会用，不会实现，甚至看不懂这是在干什么。</p>
-<p>相信大家都经历过，看到过，或者正在写<strong>一些应用，这些应用充斥着各种重复类型定义， any 类型层出不穷，鼠标移到变量上面的提示只有 any，不要说类型操作了，类型能写对都是个问题</strong>。我也经历过这样的阶段，那个时候我对 TS 还比较陌生。</p>
-<p>随着在 TS 方面学习的深入，越来越认识到 <strong>真正的 TS 高手都是在玩类型</strong>，对类型进行各种运算生成新的类型。这也好理解，毕竟 <strong>TS 提供的其实就是类型系统</strong>。你去看那些 TS 高手的代码，会各种<strong>花式使用泛型</strong>。 可以说泛型是一道坎，只有真正掌握它，你才知道<strong>原来 TS 还可以这么玩</strong>。怪不得面试的时候大家都愿意问泛型，尽管面试官很可能也不怎么懂。</p>
-<p><strong>只有理解事物的内在逻辑，才算真正掌握了，不然永远只是皮毛，不得其法</strong>。 本文就带你走进泛型，带你从另一个角度看看究竟什么是泛型，为什么要有它，它给 TS 带来了什么样的不同。</p>
-<blockquote>
-<p>注意：不同语言泛型略有不同，知识迁移虽然可以，但是不能生搬硬套，本文所讲的泛型都指的是 TS 下的泛型。</p>
-</blockquote>
-      
-        <div class="readmore">
-          <a href="/blog/2021/03/09/ts-generics/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/tags/前端/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 前端</a>
-        
-          <a href="/blog/tags/TypeScript/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> TypeScript</a>
-        
-          <a href="/blog/tags/泛型/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 泛型</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
     <a href="/blog/2020/10/13/ts-exercises-2/">
       TypeScript 练习题(第二弹)
     </a>
@@ -1468,6 +1333,141 @@
       
         <div class="readmore">
           <a href="/blog/2020/06/20/ts-internal/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/tags/前端/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 前端</a>
+        
+          <a href="/blog/tags/TypeScript/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> TypeScript</a>
+        
+          <a href="/blog/tags/泛型/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 泛型</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2020/06/16/ts-generics/">
+      你不知道的 TypeScript 泛型（万字长文，建议收藏）
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-06-16</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/前端/TypeScript/泛型/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>前端&nbsp;/&nbsp;TypeScript&nbsp;/&nbsp;泛型</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">7.8k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">29分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>泛型是 TypeScript（以下简称 TS） 比较高级的功能之一，理解起来也比较困难。泛型应用场景非常广泛，很多地方都能看到它的影子。平时我们阅读开源 TS 项目源码，或者在自己的 TS 项目中使用一些第三方库（比如 React）的时候，经常会看到各种泛型定义。如果你不是特别了解泛型，那么你很可能不仅不会用，不会实现，甚至看不懂这是在干什么。</p>
+<p>相信大家都经历过，看到过，或者正在写<strong>一些应用，这些应用充斥着各种重复类型定义， any 类型层出不穷，鼠标移到变量上面的提示只有 any，不要说类型操作了，类型能写对都是个问题</strong>。我也经历过这样的阶段，那个时候我对 TS 还比较陌生。</p>
+<p>随着在 TS 方面学习的深入，越来越认识到 <strong>真正的 TS 高手都是在玩类型</strong>，对类型进行各种运算生成新的类型。这也好理解，毕竟 <strong>TS 提供的其实就是类型系统</strong>。你去看那些 TS 高手的代码，会各种<strong>花式使用泛型</strong>。 可以说泛型是一道坎，只有真正掌握它，你才知道<strong>原来 TS 还可以这么玩</strong>。怪不得面试的时候大家都愿意问泛型，尽管面试官很可能也不怎么懂。</p>
+<p><strong>只有理解事物的内在逻辑，才算真正掌握了，不然永远只是皮毛，不得其法</strong>。 本文就带你走进泛型，带你从另一个角度看看究竟什么是泛型，为什么要有它，它给 TS 带来了什么样的不同。</p>
+<blockquote>
+<p>注意：不同语言泛型略有不同，知识迁移虽然可以，但是不能生搬硬套，本文所讲的泛型都指的是 TS 下的泛型。</p>
+</blockquote>
+      
+        <div class="readmore">
+          <a href="/blog/2020/06/16/ts-generics/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
