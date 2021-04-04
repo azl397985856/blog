@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>你不知道的 TypeScript 泛型（万字长文，建议收藏） | lucifer的网络博客</title>
+  
+  <meta name="keywords" content="前端 leetocde 数据结构 算法 lucifer 大前端 性能优化 前端架构 前端工程化">
+  
+  
+  <meta name="description" content="lucifer的个人博客，用来记录LeeCode刷题过程和心得，以及构建大前端知识体系">
+  
+
+  
+  <link rel="alternate" href="/blog/atom.xml" title="lucifer的网络博客">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9.9/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVTTYT432Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FVTTYT432Q');
+    </script>
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?576ec211e11a69128667eb8c11a6cffe";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
+<script>
+  var btw = new BTWPlugin();
+  setTimeout(function(){
+    window.btw.init({
+      id: "container",
+      blogId: "17446-1571644985832-648",
+      name: "力扣加加",
+      qrcode:
+        "https://tva1.sinaimg.cn/large/008eGmZEly1gomv7ug3bnj30760763yz.jpg",
+      keyword: "more",
+    });
+  }, 100)
+</script>
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>lucifer</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/blog/"
+            
+            
+            id="blog">
+            <i class='fas fa-home fa-fw'></i>&nbsp;主页
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="http://leetcode-solution.cn/"
+            
+            
+            id="http:leetcode-solution.cn">
+            <i class='fas fa-laptop-code fa-fw'></i>&nbsp;官网
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/friends/"
+            
+            
+            id="blogfriends">
+            <i class='fas fa-link fa-fw'></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/about/"
+            
+            
+            id="blogabout">
+            <i class='fas fa-id-card-alt fa-fw'></i>&nbsp;联系我
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/blog/' >
+        
+          lucifer的网络博客
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/blog/"
+                  
+                  
+                  id="blog">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;回到主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/categories/"
+                  
+                  
+                  id="blogcategories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/tags/"
+                  
+                  
+                  id="blogtags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/archives/"
+                  
+                  
+                  id="blogarchives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/blog/"
+                
+                
+                id="blog">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/archives/"
+                
+                
+                id="blogarchives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/about/"
+                
+                
+                id="blogabout">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div id="container" class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/blog/2020/06/16/ts-generics/">
+        你不知道的 TypeScript 泛型（万字长文，建议收藏）
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-06-16</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/前端/TypeScript/泛型/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>前端&nbsp;/&nbsp;TypeScript&nbsp;/&nbsp;泛型</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">7.8k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">29分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>泛型是 TypeScript（以下简称 TS） 比较高级的功能之一，理解起来也比较困难。泛型应用场景非常广泛，很多地方都能看到它的影子。平时我们阅读开源 TS 项目源码，或者在自己的 TS 项目中使用一些第三方库（比如 React）的时候，经常会看到各种泛型定义。如果你不是特别了解泛型，那么你很可能不仅不会用，不会实现，甚至看不懂这是在干什么。</p>
+<p>相信大家都经历过，看到过，或者正在写<strong>一些应用，这些应用充斥着各种重复类型定义， any 类型层出不穷，鼠标移到变量上面的提示只有 any，不要说类型操作了，类型能写对都是个问题</strong>。我也经历过这样的阶段，那个时候我对 TS 还比较陌生。</p>
+<p>随着在 TS 方面学习的深入，越来越认识到 <strong>真正的 TS 高手都是在玩类型</strong>，对类型进行各种运算生成新的类型。这也好理解，毕竟 <strong>TS 提供的其实就是类型系统</strong>。你去看那些 TS 高手的代码，会各种<strong>花式使用泛型</strong>。 可以说泛型是一道坎，只有真正掌握它，你才知道<strong>原来 TS 还可以这么玩</strong>。怪不得面试的时候大家都愿意问泛型，尽管面试官很可能也不怎么懂。</p>
+<p><strong>只有理解事物的内在逻辑，才算真正掌握了，不然永远只是皮毛，不得其法</strong>。 本文就带你走进泛型，带你从另一个角度看看究竟什么是泛型，为什么要有它，它给 TS 带来了什么样的不同。</p>
+<blockquote>
+<p>注意：不同语言泛型略有不同，知识迁移虽然可以，但是不能生搬硬套，本文所讲的泛型都指的是 TS 下的泛型。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>我总结了一下，学习 TS 有两个难点。第一个是<code>TS 和 JS 中容易混淆的写法</code>，第二个是<code>TS中特有的一些东西</code>。</p>
+<ul>
+<li>TS 中容易引起大家的混淆的写法</li>
+</ul>
+<p>比如：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfwlko8ermj310x0fx77r.jpg" alt="容易混淆的箭头函数"></p>
+<p>（容易混淆的箭头函数）</p>
+<p>再比如：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfwlnifyi5j311j0ao0vw.jpg" alt></p>
+<p>（容易混淆的 interface 内的小括号）</p>
+<ul>
+<li>TS 中特有的一些东西</li>
+</ul>
+<p>比如 typeof，keyof， infer 以及本文要讲的泛型。</p>
+<p><strong>把这些和 JS 中容易混淆的东西分清楚，然后搞懂 TS 特有的东西，尤其是泛型</strong>（其他基本上相对简单），TS 就入门了。</p>
+<h3 id="泛型初体验"><a href="#泛型初体验" class="headerlink" title="泛型初体验"></a>泛型初体验</h3><p>在强类型语言中，一般而言需要给变量指定类型才能使用该变量。如下代码：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name: <span class="built_in">string</span> = <span class="string">"lucifer"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(name);</span><br></pre></td></tr></table></figure>
+<p>我们需要给 name 声明 string 类型，然后才能在后面使用 name 变量，当我们执行以下操作的时候会报错。</p>
+<ul>
+<li>给 name 赋其他类型的值</li>
+<li>使用其他类型值特有的方法（比如 Number 类型特有的 toFixed）</li>
+<li>将 name 以参数传给不支持 string 的函数。 比如 <code>divide(1, name)</code>,其中 divide 就是功能就是<code>将第一个数（number 类型）除以第二个数（number 类型），并将结果返回</code>。</li>
+</ul>
+<p>TS 除了提供一些基本类型（比如上面的 string）供我们直接使用。还：</p>
+<ul>
+<li>提供了 <code>inteface</code> 和 <code>type</code> 关键字供我们定义自己的类型，之后就能像使用基本类型一样使用自己定义的类型了。</li>
+<li>提供了各种逻辑运算符，比如 &amp;, | 等 ，供我们对类型进行操作，从而生成新的类型。</li>
+<li>提供泛型，允许我们在定义的时候不具体指定类型，而是泛泛地说一种类型，并在函数调用的时候再指定具体的参数类型。</li>
+<li>。。。</li>
+</ul>
+<p>也就是说泛型也是一种类型，只不过不同于 string, number 等具体的类型，它是一种抽象的类型，我们不能直接定义一个变量类型为泛型。</p>
+<p>简单来说，区别于平时我们对<strong>值</strong>进行编程，泛型是对<strong>类型</strong>进行编程。这个听起来比较抽象。之后我们会通过若干实例带你理解这句话，你先留一个印象就好。</p>
+<p>为了明白上面这句话，·首先要区分“值”和“类型”。</p>
+<h3 id="值和类型"><a href="#值和类型" class="headerlink" title="值和类型"></a>值和类型</h3><p>我们平时写代码基本都是<strong>对值编程</strong>。比如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (person.isVIP) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'VIP'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (cnt &gt; <span class="number">5</span>) &#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> personNames = persons.map(<span class="function"><span class="params">p</span> =&gt;</span> p.name)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>可以看出这都是对具体的值进行编程，<strong>这符合我们对现实世界的抽象</strong>。从集合论的角度上来说， 值的集合就是类型，在 TS 中最简单的用法是对值限定类型，从根本上来说是限定值的集合。这个集合可以是一个具体的集合，也可以是多个集合通过集合运算（交叉并）生成的新集合。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfvq6o3iwcj32960su42q.jpg" alt></p>
+<p>（值和类型）</p>
+<p>再来看一个更具体的例子：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">t</span>(<span class="params">name: <span class="built_in">string</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`hello, <span class="subst">$&#123;name&#125;</span>`</span>;</span><br><span class="line">&#125;</span><br><span class="line">t(<span class="string">"lucifer"</span>);</span><br></pre></td></tr></table></figure>
+<p>字符串 “lucifer” 是 string <strong>类型</strong>的一个具体<strong>值</strong>。 在这里 “lucifer” 就是值，而 string 就是类型。</p>
+<p>TS 明白 “lucifer” 是 string 集合中的一个元素，因此上面代码不会有问题，但是如果是这样就会报错：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t(<span class="number">123</span>);</span><br></pre></td></tr></table></figure>
+<p>因为 123 并不是 string 集合中的一个元素。</p>
+<p>对于 t(“lucifer”)而言，TS 判断逻辑的伪代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">v = getValue(); <span class="comment">// will return 'lucifer' by ast</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> v === <span class="string">"string"</span>) &#123;</span><br><span class="line">  <span class="comment">// ok</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="string">"type error"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>由于是静态类型分析工具，因此 TS 并不会执行 JS 代码，但并不是说 TS 内部没有执行逻辑。</p>
+</blockquote>
+<p>简单来总结一下就是： 值的集合就是类型，平时写代码基本都是对值编程，TS 提供了很多<strong>类型</strong>（也可以自定义）以及很多<strong>类型操作</strong>帮助我们<strong>限定值以及对值的操作</strong>。</p>
+<h2 id="什么是泛型"><a href="#什么是泛型" class="headerlink" title="什么是泛型"></a>什么是泛型</h2><p>上面已经铺垫了一番，大家已经知道了值和类型的区别，以及 TS 究竟帮我们做了什么事情。但是直接理解泛型仍然会比较吃力，接下来我会通过若干实例，慢慢带大家走进泛型。</p>
+<p>首先来思考一个问题：<code>为什么要有泛型呢</code>？这个原因实际上有很多，在这里我选择大家普遍认同的一个切入点来解释。如果你明白了这个点，其他点相对而言理解起来会比较轻松。还是通过一个例子来进行说明。</p>
+<h3 id="不容小觑的-id-函数"><a href="#不容小觑的-id-函数" class="headerlink" title="不容小觑的 id 函数"></a>不容小觑的 id 函数</h3><p>假如让你实现一个函数 <code>id</code>，函数的参数可以是任何值，返回值就是将参数原样返回，并且其只能接受一个参数，你会怎么做？</p>
+<p>你会觉得这很简单，顺手就写出这样的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> id = <span class="function">(<span class="params">arg</span>) =&gt;</span> arg;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>有的人可能觉得 id 函数没有什么实际作用。其实不然， id 函数在函数式编程中应用非常广泛。</p>
+</blockquote>
+<p>由于其可以接受任意值，也就是说你的函数的入参和返回值都应该可以是任意类型。 现在让我们给代码增加类型声明：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">type idBoolean = <span class="function">(<span class="params">arg: boolean</span>) =&gt;</span> boolean;</span><br><span class="line">type idNumber = <span class="function">(<span class="params">arg: number</span>) =&gt;</span> number;</span><br><span class="line">type idString = <span class="function">(<span class="params">arg: string</span>) =&gt;</span> string;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>一个笨的方法就像上面那样，也就是说 JS 提供多少种类型，就需要复制多少份代码，然后改下类型签名。这对程序员来说是致命的。这种复制粘贴增加了出错的概率，使得代码难以维护，牵一发而动全身。并且将来 JS 新增新的类型，你仍然需要修改代码，也就是说你的代码<strong>对修改开放</strong>，这样不好。还有一种方式是使用 any 这种“万能语法”。缺点是什么呢？我举个例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">id(<span class="string">"string"</span>).length; <span class="comment">// ok</span></span><br><span class="line">id(<span class="string">"string"</span>).toFixed(<span class="number">2</span>); <span class="comment">// ok</span></span><br><span class="line">id(<span class="literal">null</span>).toString(); <span class="comment">// ok</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>如果你使用 any 的话，怎么写都是 ok 的， 这就丧失了类型检查的效果。实际上我知道我传给你的是 string，返回来的也一定是 string，而 string 上没有 toFixed 方法，因此需要报错才是我想要的。也就是说我真正想要的效果是：<code>当我用到id的时候，你根据我传给你的类型进行推导</code>。比如我传入的是 string，但是使用了 number 上的方法，你就应该报错。</p>
+<p>为了解决上面的这些问题，我们<strong>使用泛型对上面的代码进行重构</strong>。和我们的定义不同，这里用了一个 类型 T，这个 <strong>T 是一个抽象类型，只有在调用的时候才确定它的值</strong>，这就不用我们复制粘贴无数份代码了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">id</span>&lt;<span class="title">T</span>&gt;(<span class="params">arg: T</span>): <span class="title">T</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为什么这样就可以了？ 为什么要用这种写法？这个尖括号什么鬼？万物必有因果，之所以这么设计泛型也是有原因的。那么就让我来给大家解释一下，相信很多人都没有从这个角度思考过这个问题。</p>
+<h3 id="泛型就是对类型编程"><a href="#泛型就是对类型编程" class="headerlink" title="泛型就是对类型编程"></a>泛型就是对类型编程</h3><p>上面提到了一个重要的点 <code>平时我们都是对值进行编程，泛型是对类型进行编程</code>。上面我没有给大家解释这句话。现在铺垫足够了，那就让我们开始吧！</p>
+<p>继续举一个例子：假如我们定义了一个 Person 类，这个 Person 类有三个属性，并且都是必填的。这个 Person 类会被用于用户提交表单的时候限定表单数据。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Sex &#123;</span><br><span class="line">  Man,</span><br><span class="line">  Woman,</span><br><span class="line">  UnKnow,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  sex: Sex;</span><br><span class="line">  age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>突然有一天，公司运营想搞一个促销活动，也需要用到 Person 这个 <code>shape</code>，但是这三个属性都可以选填，同时要求用户必须填写手机号以便标记用户和接受短信。一个很笨的方法是重新写一个新的类：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> MarketPerson &#123;</span><br><span class="line">  name?: <span class="built_in">string</span>;</span><br><span class="line">  sex?: Sex;</span><br><span class="line">  age?: <span class="built_in">number</span>;</span><br><span class="line">  phone: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>还记得我开头讲的重复类型定义么？ 这就是！</p>
+</blockquote>
+<p>这明显不够优雅。如果 Person 字段很多呢?这种重复代码会异常多，不利于维护。 TS 的设计者当然不允许这么丑陋的设计存在。那么是否可以根据已有类型，生成新的类型呢？当然可以！答案就是前面我提到了两种对类型的操作：<strong>一种是集合操作，另一种是今天要讲的泛型。</strong></p>
+<p>先来看下集合操作:</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> MarketPerson = Person &amp; &#123; phone: <span class="built_in">string</span> &#125;;</span><br></pre></td></tr></table></figure>
+<p>这个时候我们虽然添加了一个必填字段 phone，但是没有做到<code>name, sex, age</code> 选填，似乎集合操作做不到这一点呀。我们脑洞一下，假如我们可以<strong>像操作函数那样操作类型</strong>，是不是有可能呢？比如我定义了一个函数 <code>Partial</code>，这个函数的功能入参是一个类型，返回值是新的类型，这个类型里的属性全部变成可选的。</p>
+<p>伪代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Partial</span>(<span class="params">Type</span>) </span>&#123;</span><br><span class="line">    type ans = 空类型</span><br><span class="line">    <span class="keyword">for</span>(k <span class="keyword">in</span> Type) &#123;</span><br><span class="line">        空类型[k]  = makeOptional(Type, k)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">type PartialedPerson = Partial(Person)</span><br></pre></td></tr></table></figure>
+<p>可惜的是上面代码不能运行，也不可能运行。不可能运行的原因有：</p>
+<ul>
+<li>这里使用函数 Partial 操作类型，可以看出上面的函数我是没有添加签名的，我是故意的。如果让你给这个函数添加签名你怎么加？没办法加！</li>
+<li>这里使用 JS 的语法对类型进行操作，这是不恰当的。首先这种操作依赖了 JS 运行时，而 TS 是静态分析工具，不应该依赖 JS 运行时。其次如果要支持这种操作是否意味者 TS 对 JS 妥协，JS 出了新的语法（比如早几年出的 async await），TS 都要支持其对 TS 进行操作。</li>
+</ul>
+<p>因此迫切需要一种不依赖 JS 行为，特别是运行时行为的方式，并且逻辑其实和上面类似的，且不会和现有语法体系冲突的语法。 我们看下 TS 团队是怎么做的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可以看成是上面的函数定义，可以接受任意类型。由于是这里的 “Type” 形参，因此理论上你叫什么名字都是无所谓的，就好像函数定义的形参一样。</span></span><br><span class="line">type Partial&lt;Type&gt; = &#123; <span class="keyword">do</span> something &#125;</span><br><span class="line"><span class="comment">// 可以看成是上面的函数调用，调用的时候传入了具体的类型 Person</span></span><br><span class="line">type PartialedPerson = Partial&lt;Person&gt;</span><br></pre></td></tr></table></figure>
+<p>先不管功能，我们来看下这两种写法有多像：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfxpuyc9hjj30nf05awhq.jpg" alt></p>
+<p>（定义）</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfxpvjwoktj30od04tgnz.jpg" alt></p>
+<p>（运行）</p>
+<p>再来看下上面泛型的功能。上面代码的意思是对 T 进行处理，是返回一个 T 的子集，具体来说就是将 T 的所有属性变成可选。这时 <code>PartialedPerson</code> 就等于 :</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">  name?: <span class="built_in">string</span>;</span><br><span class="line">  sex?: Sex;</span><br><span class="line">  age?: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>功能和上面新建一个新的 interface 一样，但是更优雅。</p>
+</blockquote>
+<p>最后来看下泛型 Partial<type> 的具体实现，可以看出其没有直接使用 JS 的语法，而是自己定义了一套语法，比如这里的 <code>keyof</code>，至此完全应证了我上面的观点。</type></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Partial&lt;T&gt; = &#123; [P <span class="keyword">in</span> keyof T]?: T[P] &#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>刚才说了“由于是形参，因此起什么名字无所谓” 。因此这里就起了 T 而不是 Type，更短了。这也算是一种约定俗称的规范，大家一般习惯叫 T， U 等表示泛型的形参。</p>
+</blockquote>
+<p>我们来看下完整的泛型和函数有多像！</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfwakdx0mcj30z40cywha.jpg" alt></p>
+<p>（定义）</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfwam1jg34j30fx0df75m.jpg" alt></p>
+<p>（使用）</p>
+<ul>
+<li><p>从外表看只不过是 <code>function</code> 变成了 <code>type</code>，<code>()</code> 变成了 <code>&lt;&gt;</code>而已。</p>
+</li>
+<li><p>从语法规则上来看， 函数内部对标的是 ES 标准。而泛型对应的是 TS 实现的一套标准。</p>
+</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfwau8hq65j30yb0ad3zx.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfwce290nzj310t0km410.jpg" alt></p>
+<p>简单来说，将类型看成值，然后对类型进行编程，这就是泛型的基本思想。泛型类似我们平时使用的函数，只不过其是作用在类型上，思想上和我们平时使用的函数并没有什么太多不同，泛型产生的具体类型也支持类型的操作。比如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type ComponentType&lt;P = &#123;&#125;&gt; = ComponentClass&lt;P&gt; | FunctionComponent&lt;P&gt;;</span><br></pre></td></tr></table></figure>
+<p>有了上面的知识，我们通过几个例子来巩固一下。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">id</span>&lt;<span class="title">T</span>, <span class="title">U</span>&gt;(<span class="params">arg1: T, arg2: U</span>): <span class="title">T</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> arg1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面定义了泛型 id，其入参分别是 T 和 U，和函数参数一样，使用逗号分隔。定义了形参就可以在函数体内使用形参了。如上我们在函数的参数列表和返回值中使用了形参 T 和 U。</p>
+<p>返回值也可以是复杂类型：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function ids&lt;T, U&gt;(arg1: T, arg2: U): [T, U] &#123;</span><br><span class="line">  <span class="keyword">return</span> [arg1, arg2];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfz110rqdzj31sm0l278m.jpg" alt></p>
+<p>（泛型的形参）</p>
+<p>和上面类似， 只不过返回值变成了数组而已。</p>
+<p>需要注意的是，思想上我们可以这样去理解。但是具体的实现过程会有一些细微差别，比如：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> P = [<span class="built_in">number</span>, <span class="built_in">string</span>, <span class="built_in">boolean</span>];</span><br><span class="line"><span class="keyword">type</span> Q = <span class="built_in">Date</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> R = [Q, ...P]; <span class="comment">// A rest element type must be an array type.</span></span><br></pre></td></tr></table></figure>
+<p>再比如：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Lucifer = LeetCode;</span><br><span class="line"><span class="keyword">type</span> LeetCode&lt;T = &#123;&#125;&gt; = &#123;</span><br><span class="line">  name: T;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a: LeetCode&lt;<span class="built_in">string</span>&gt;; <span class="comment">//ok</span></span><br><span class="line"><span class="keyword">const</span> a: Lucifer&lt;<span class="built_in">string</span>&gt;; <span class="comment">// Type 'Lucifer' is not generic.</span></span><br></pre></td></tr></table></figure>
+<p>改成这样是 ok 的：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Lucifer&lt;T&gt; = LeetCode&lt;T&gt;;</span><br></pre></td></tr></table></figure>
+<h2 id="泛型为什么使用尖括号"><a href="#泛型为什么使用尖括号" class="headerlink" title="泛型为什么使用尖括号"></a>泛型为什么使用尖括号</h2><p>为什么泛型要用尖括号（&lt;&gt;），而不是别的？ 我猜是因为它和 () 长得最像，且在现在的 JS 中不会有语法歧义。但是，它和 JSX 不兼容！比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function Form() &#123;</span><br><span class="line">  // ...</span><br><span class="line"></span><br><span class="line">  return (</span><br><span class="line">    &lt;Select&lt;string&gt; options=&#123;targets&#125; value=&#123;target&#125; onChange=&#123;setTarget&#125; /&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是因为 TS 发明这个语法的时候，还没想过有 JSX 这种东西。后来 TS 团队在 TypeScript 2.9 版本修复了这个问题。也就是说现在你可以直接在 TS 中使用带有泛型参数的 JSX 啦（比如上面的代码）。</p>
+<h2 id="泛型的种类"><a href="#泛型的种类" class="headerlink" title="泛型的种类"></a>泛型的种类</h2><p>实际上除了上面讲到的函数泛型，还有接口泛型和类泛型。不过语法和含义基本同函数泛型一样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">interface id&lt;T, U&gt; &#123;</span><br><span class="line">  id1: T;</span><br><span class="line">  id2: U;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（接口泛型）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">State</span>&gt; </span>&#123;</span><br><span class="line">   ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>(类泛型)</p>
+<p>总结下就是： 泛型的写法就是在标志符后面添加尖括号（&lt;&gt;），然后在尖括号里写形参，并在 body（函数体， 接口体或类体） 里用这些形参做一些逻辑处理。</p>
+<h2 id="泛型的参数类型-“泛型约束”"><a href="#泛型的参数类型-“泛型约束”" class="headerlink" title="泛型的参数类型 - “泛型约束”"></a>泛型的参数类型 - “泛型约束”</h2><p>正如文章开头那样，我们可以对函数的参数进行限定。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">t</span>(<span class="params">name: string</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`hello, <span class="subst">$&#123;name&#125;</span>`</span>;</span><br><span class="line">&#125;</span><br><span class="line">t(<span class="string">"lucifer"</span>);</span><br></pre></td></tr></table></figure>
+<p>如上代码对函数的形参进行了类型限定，使得函数仅可以接受 string 类型的值。那么泛型如何达到类似的效果呢？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type MyType = <span class="function">(<span class="params">T: constrain</span>) =&gt;</span> &#123; <span class="keyword">do</span> something &#125;;</span><br></pre></td></tr></table></figure>
+<p>还是以 id 函数为例，我们给 id 函数增加功能，使其不仅可以返回参数，还会打印出参数。熟悉函数式编程的人可能知道了，这就是 trace 函数，用于调试程序。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">trace</span>&lt;<span class="title">T</span>&gt;(<span class="params">arg: T</span>): <span class="title">T</span> </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arg);</span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>假如我想打印出参数的 size 属性呢？如果完全不进行约束 TS 是会报错的：</p>
+<blockquote>
+<p>注意：不同 TS 版本可能提示信息不完全一致，我的版本是 3.9.5。下文的所有测试结果均是使用该版本，不再赘述。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">trace</span>&lt;<span class="title">T</span>&gt;(<span class="params">arg: T</span>): <span class="title">T</span> </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arg.size); <span class="comment">// Error: Property 'size doesn't exist on type 'T'</span></span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>报错的原因在于 T 理论上是可以是任何类型的，不同于 any，你不管使用它的什么属性或者方法都会报错（除非这个属性和方法是所有集合共有的）。那么直观的想法是限定传给 trace 函数的<strong>参数类型</strong>应该有 size 类型，这样就不会报错了。如何去表达这个<strong>类型约束</strong>的点呢？实现这个需求的关键在于使用类型约束。 使用 extends 关键字可以做到这一点。简单来说就是你定义一个类型，然后让 T 实现这个接口即可。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">interface Sizeable &#123;</span><br><span class="line">  size: number;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">trace</span>&lt;<span class="title">T</span> <span class="title">extends</span> <span class="title">Sizeable</span>&gt;(<span class="params">arg: T</span>): <span class="title">T</span> </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arg.size);</span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfwflqisraj312a0mijv8.jpg" alt></p>
+<p>这个时候 T 就不再是任意类型，而是被实现接口的 shape，当然你也可以继承多个接口。<strong>类型约束是非常常见的操作，大家一定要掌握。</strong></p>
+<blockquote>
+<p>有的人可能说我直接将 Trace 的参数限定为 Sizeable 类型可以么？如果你这么做，会有类型丢失的风险，详情可以参考这篇文章<a href="https://juliangaramendy.dev/when-ts-generics/" title="A use case for TypeScript Generics" target="_blank" rel="noopener">A use case for TypeScript Generics</a>。</p>
+</blockquote>
+<h2 id="常见的泛型"><a href="#常见的泛型" class="headerlink" title="常见的泛型"></a>常见的泛型</h2><h3 id="集合类"><a href="#集合类" class="headerlink" title="集合类"></a>集合类</h3><p>大家平时写 TS 一定见过类似 <code>Array&lt;String&gt;</code> 这种写法吧？ 这其实是集合类，也是一种泛型。</p>
+<p>本质上数组就是一系列值的集合，这些值可以可以是任意类型，数组只是一个容器而已。然而平时开发的时候通常数组的项目类型都是相同的，如果不加约束的话会有很多问题。 比如我应该是一个字符串数组，然是却不小心用到了 number 的方法，这个时候类型系统应该帮我识别出这种<strong>类型问题</strong>。</p>
+<p>由于数组理论可以存放任意类型，因此需要使用者动态决定你想存储的数据类型，并且这些类型只有在被调用的时候才能去确定。 <code>Array&lt;String&gt;</code> 就是调用，经过这个调用会产生一个具体集合，这个集合只能存放 string 类型的值。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfxqhlaya6j317y0dcgnl.jpg" alt></p>
+<p>不调用直接把 Array 是不被允许的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a: <span class="built_in">Array</span> = [<span class="string">"1"</span>];</span><br></pre></td></tr></table></figure>
+<p>如上代码会被错：<code>Generic type &#39;Array&lt;T&gt;&#39; requires 1 type argument(s).ts</code> 。 有没有觉得和函数调用没传递参数报错很像？像就对了。</p>
+<p>这个时候你再去看 Set<number>， Promise<string>，是不是很快就知道啥意思了？它们本质上都是包装类型，并且支持多种参数类型，因此可以用泛型来约束。</string></number></p>
+<h3 id="React-FC"><a href="#React-FC" class="headerlink" title="React.FC"></a>React.FC</h3><p>大家如果开发过 React 的 TS 应用，一定知道 <code>React.FC</code> 这个类型。我们来看下它是如何<a href="https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts" title="React.FC Type Definition" target="_blank" rel="noopener">定义</a>的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">type FC&lt;P = &#123;&#125;&gt; = FunctionComponent&lt;P&gt;;</span><br><span class="line"></span><br><span class="line">interface FunctionComponent&lt;P = &#123;&#125;&gt; &#123;</span><br><span class="line">  (props: PropsWithChildren&lt;P&gt;, context?: any): ReactElement&lt;any, any&gt; | <span class="literal">null</span>;</span><br><span class="line">  propTypes?: WeakValidationMap&lt;P&gt;;</span><br><span class="line">  contextTypes?: ValidationMap&lt;any&gt;;</span><br><span class="line">  defaultProps?: Partial&lt;P&gt;;</span><br><span class="line">  displayName?: string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看出其大量使用了泛型。你如果不懂泛型怎么看得懂呢？不管它多复杂，我们从头一点点分析就行，记住我刚才讲的类比方法，将泛型类比到函数进行理解。·</p>
+<ul>
+<li>首先定义了一个泛型类型 FC，这个 FC 就是我们平时用的 React.FC。它是通过另外一个泛型 FunctionComponent 产生的。</li>
+</ul>
+<blockquote>
+<p>因此，实际上第一行代码的作用就是起了一个别名</p>
+</blockquote>
+<ul>
+<li>FunctionComponent 实际上是就是一个接口泛型，它定义了五个属性，其中四个是可选的，并且是静态类属性。</li>
+<li>displayName 比较简单，而 propTypes，contextTypes，defaultProps 又是通过其他泛型生成的类型。我们仍然可以采用我的这个分析方法继续分析。由于篇幅原因，这里就不一一分析，读者可以看完我的分析过程之后，自己尝试分析一波。</li>
+<li><code>(props: PropsWithChildren&lt;P&gt;, context?: any): ReactElement&lt;any, any&gt; | null;</code> 的含义是 FunctionComponent 是一个函数，接受两个参数（props 和 context ）返回 ReactElement 或者 null。ReactElement 大家应该比较熟悉了。<code>PropsWithChildren</code> 实际上就是往 props 中插入 children，源码也很简单，代码如下：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type PropsWithChildren&lt;P&gt; = P &amp; &#123; children?: ReactNode &#125;;</span><br></pre></td></tr></table></figure>
+<p>这不就是我们上面讲的<strong>集合操作</strong>和 <strong>可选属性</strong>么？至此，React.FC 的全貌我们已经清楚了。读者可以试着分析别的源码检测下自己的学习效果，比如 <code>React.useState</code> 类型的签名。</p>
+<h2 id="类型推导与默认参数"><a href="#类型推导与默认参数" class="headerlink" title="类型推导与默认参数"></a>类型推导与默认参数</h2><p>类型推导和默认参数是 TS 两个重要功能，其依然可以作用到泛型上，我们来看下。</p>
+<h3 id="类型推导"><a href="#类型推导" class="headerlink" title="类型推导"></a>类型推导</h3><p>我们一般常见的类型推导是这样的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="string">"lucifer"</span>; <span class="comment">// 我们没有给 a 声明类型， a 被推导为 string</span></span><br><span class="line">a.toFixed(); <span class="comment">// Property 'toFixed' does not exist on type 'string'.</span></span><br><span class="line">a.includes(<span class="string">"1"</span>); <span class="comment">// ok</span></span><br></pre></td></tr></table></figure>
+<p>需要注意的是，类型推导是仅仅在初始化的时候进行推导，如下是无法正确推导的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">"lucifer"</span>; <span class="comment">// 我们没有给 a 声明类型， a 被推导为string</span></span><br><span class="line">a.toFixed(); <span class="comment">// Property 'toFixed' does not exist on type 'string'.</span></span><br><span class="line">a.includes(<span class="string">"1"</span>); <span class="comment">// ok</span></span><br><span class="line">a = <span class="number">1</span>;</span><br><span class="line">a.toFixed(); <span class="comment">// 依然报错， a 不会被推导 为 number</span></span><br></pre></td></tr></table></figure>
+<p>而泛型也支持类型推导，以上面的 id 函数为例：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">id</span>&lt;<span class="title">T</span>&gt;(<span class="params">arg: T</span>): <span class="title">T</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br><span class="line">id&lt;<span class="built_in">string</span>&gt;(<span class="string">"lucifer"</span>); <span class="comment">// 这是ok的，也是最完整的写法</span></span><br><span class="line">id(<span class="string">"lucifer"</span>); <span class="comment">// 基于类型推导，我们可以这样简写</span></span><br></pre></td></tr></table></figure>
+<p>这也就是为什么 useState 有如下两种写法的原因。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [name, setName] = useState(<span class="string">"lucifer"</span>);</span><br><span class="line"><span class="keyword">const</span> [name, setName] = useState&lt;<span class="built_in">string</span>&gt;(<span class="string">"lucifer"</span>);</span><br></pre></td></tr></table></figure>
+<p>实际的类型推导要更加复杂和智能。相信随着时间的推进，TS 的类型推导会更加智能。</p>
+<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><p>和<code>类型推导</code>相同的点是，默认参数也可以减少代码量，让你少些代码。前提是你要懂，不然伴随你的永远是大大的问号。其实你完全可以将其类比到函数的默认参数来理解。</p>
+<p>举个例子：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> A&lt;T = <span class="built_in">string</span>&gt; = <span class="built_in">Array</span>&lt;T&gt;;</span><br><span class="line"><span class="keyword">const</span> aa: A = [<span class="number">1</span>]; <span class="comment">// type 'number' is not assignable to type 'string'.</span></span><br><span class="line"><span class="keyword">const</span> bb: A = [<span class="string">"1"</span>]; <span class="comment">// ok</span></span><br><span class="line"><span class="keyword">const</span> cc: A&lt;<span class="built_in">number</span>&gt; = [<span class="number">1</span>]; <span class="comment">// ok</span></span><br></pre></td></tr></table></figure>
+<p>上面的 A 类型默认是 string 类型的数组。你可以不指定，等价于 Array<string>，当然你也可以显式指定数组类型。有一点需要注意：在 JS 中，函数也是值的一种，因此:</string></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fn = <span class="function"><span class="params">()</span> =&gt;</span> <span class="literal">null</span>; <span class="comment">// ok</span></span><br></pre></td></tr></table></figure>
+<p>但是泛型这样是不行的，这是和函数不一样的地方（设计缺陷？Maybe）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type A = <span class="built_in">Array</span>; <span class="comment">// error: Generic type 'Array&lt;T&gt;' requires 1 type argument(s).</span></span><br></pre></td></tr></table></figure>
+<p>其原因在与 Array 的定义是：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Array&lt;T&gt; &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>而如果 Array 的类型也支持默认参数的话，比如：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Array&lt;T = string&gt; &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么 <code>type A = Array;</code> 就是成立的，如果不指定的话，会默认为 string 类型。</p>
+<h2 id="什么时候用泛型"><a href="#什么时候用泛型" class="headerlink" title="什么时候用泛型"></a>什么时候用泛型</h2><p>如果你认真看完本文，相信应该知道什么时候使用泛型了，我这里简单总结一下。</p>
+<p>当你的函数，接口或者类：</p>
+<ul>
+<li>需要作用到很多类型的时候，比如我们介绍的 id 函数的泛型声明。</li>
+<li>需要被用到很多地方的时候，比如我们介绍的 Partial 泛型。</li>
+</ul>
+<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><p>上面说了泛型和普通的函数有着很多相似的地方。普通的函数可以嵌套其他函数，甚至嵌套自己从而形成递归。泛型也是一样！</p>
+<h3 id="泛型支持函数嵌套"><a href="#泛型支持函数嵌套" class="headerlink" title="泛型支持函数嵌套"></a>泛型支持函数嵌套</h3><p>比如：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> CutTail&lt;Tuple <span class="keyword">extends</span> <span class="built_in">any</span>[]&gt; = Reverse&lt;CutHead&lt;Reverse&lt;Tuple&gt;&gt;&gt;;</span><br></pre></td></tr></table></figure>
+<p>如上代码中， Reverse 是将参数列表反转，CutHead 是将数组第一项切掉。因此 CutTail 的意思就是将传递进来的参数列表反转，切掉第一个参数，然后反转回来。换句话说就是切掉参数列表的最后一项。 比如，一个函数是 function fn (a: string, b: number, c: boolean):boolean {}，那么经过操作<code>type cutTailFn = CutTail&lt;typeof fn&gt;</code>，可以返回<code>(a: string, b:number) =&gt; boolean</code>。 具体实现可以参考<a href="https://zhuanlan.zhihu.com/p/147248333" title="Typescript 复杂泛型实践：如何切掉函数参数表的最后一个参数？" target="_blank" rel="noopener">Typescript 复杂泛型实践：如何切掉函数参数表的最后一个参数？</a>。 在这里，你知道泛型支持嵌套就够了。</p>
+<h3 id="泛型支持递归"><a href="#泛型支持递归" class="headerlink" title="泛型支持递归"></a>泛型支持递归</h3><p>泛型甚至可以嵌套自己从而形成递归，比如我们最熟悉的单链表的定义就是递归的。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> ListNode&lt;T&gt; = &#123;</span><br><span class="line">  data: T;</span><br><span class="line">  next: ListNode&lt;T&gt; | <span class="literal">null</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>（单链表）</p>
+<p>再比如 <strong>HTMLElement</strong> 的定义。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">declare</span> <span class="keyword">var</span> HTMLElement: &#123;</span><br><span class="line">    prototype: HTMLElement;</span><br><span class="line">    <span class="keyword">new</span>(): HTMLElement;</span><br><span class="line">&#125;;。</span><br></pre></td></tr></table></figure>
+<p>（<a href="https://github.com/microsoft/TypeScript/blob/master/lib/lib.dom.d.ts" title="HTMLElement Type Definition" target="_blank" rel="noopener">HTMLElement</a>）</p>
+<p>上面是<strong>递归声明</strong>，我们再来看一个更复杂一点的递归形式 - <strong>递归调用</strong>，这个递归调用的功能是：<strong>递归地将类型中所有的属性都变成可选</strong>。类似于深拷贝那样，只不过这不是拷贝操作，而是变成可选，并且是作用在类型，而不是值。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> DeepPartial&lt;T&gt; = T <span class="keyword">extends</span> <span class="built_in">Function</span></span><br><span class="line">  ? T</span><br><span class="line">  : T <span class="keyword">extends</span> object</span><br><span class="line">  ? &#123; [P <span class="keyword">in</span> keyof T]?: DeepPartial&lt;T[P]&gt; &#125;</span><br><span class="line">  : T;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> PartialedWindow = DeepPartial&lt;Window&gt;; <span class="comment">// 现在window 上所有属性都变成了可选啦</span></span><br></pre></td></tr></table></figure>
+<h2 id="TS-泛型工具及实现"><a href="#TS-泛型工具及实现" class="headerlink" title="TS 泛型工具及实现"></a>TS 泛型工具及实现</h2><p>虽然泛型支持函数的嵌套，甚至递归，但是其语法能力肯定和 JS 没法比， 想要实现一个泛型功能真的不是一件容易的事情。这里提供几个例子，看完这几个例子，相信你至少可以达到比葫芦画瓢的水平。这样多看多练，慢慢水平就上来了。</p>
+<p>截止目前（2020-06-21），TS 提供了 <a href="https://www.typescriptlang.org/docs/handbook/utility-types.html#partialt" title="TS 官方的16 种工具类型" target="_blank" rel="noopener">16 种工具类型</a>。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfzuu9kjtnj30g80nqmze.jpg" alt></p>
+<p>（官方提供的工具类型）</p>
+<p>除了官方的工具类型，还有一些社区的工具类型，比如<a href="https://github.com/sindresorhus/type-fest" title="type-fest" target="_blank" rel="noopener">type-fest</a>，你可以直接用或者去看看源码看看高手是怎么玩类型的。</p>
+<p>我挑选几个工具类，给大家讲一下<strong>实现原理</strong>。</p>
+<h3 id="Partial"><a href="#Partial" class="headerlink" title="Partial"></a>Partial</h3><p>功能是将类型的属性<strong>变成可选</strong>。注意这是浅 Partial，DeepPartial 上面我讲过了，只要配合递归调用使用即可。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Partial&lt;T&gt; = &#123; [P <span class="keyword">in</span> keyof T]?: T[P] &#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="Required"><a href="#Required" class="headerlink" title="Required"></a>Required</h3><p>功能和<code>Partial</code> 相反，是将类型的属性<strong>变成必填</strong>， 这里的 <code>-</code>指的是去除。 <code>-?</code> 意思就是去除可选，也就是必填啦。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Required&lt;T&gt; = &#123; [P <span class="keyword">in</span> keyof T]-?: T[P] &#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="Mutable"><a href="#Mutable" class="headerlink" title="Mutable"></a>Mutable</h3><p>功能是将类型的属性<strong>变成可修改</strong>，这里的 <code>-</code>指的是去除。 <code>-readonly</code> 意思就是去除只读，也就是可修改啦。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Mutable&lt;T&gt; = &#123;</span><br><span class="line">  -readonly [P <span class="keyword">in</span> keyof T]: T[P];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="Readonly"><a href="#Readonly" class="headerlink" title="Readonly"></a>Readonly</h3><p>功能和<code>Mutable</code> 相反，功能是将类型的属性<strong>变成只读</strong>， 在属性前面增加 <code>readonly</code> 意思会将其变成只读。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Readonly&lt;T&gt; = &#123; readonly [P <span class="keyword">in</span> keyof T]: T[P] &#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="ReturnType"><a href="#ReturnType" class="headerlink" title="ReturnType"></a>ReturnType</h3><p>功能是用来得到一个函数的返回值类型。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> ReturnType&lt;T <span class="keyword">extends</span> (...args: <span class="built_in">any</span>[]) =&gt; <span class="built_in">any</span>&gt; = T <span class="keyword">extends</span> (</span><br><span class="line">  ...args: <span class="built_in">any</span>[]</span><br><span class="line">) =&gt; infer R</span><br><span class="line">  ? R</span><br><span class="line">  : <span class="built_in">any</span>;</span><br></pre></td></tr></table></figure>
+<p>下面的示例用 ReturnType 获取到 Func 的返回值类型为 string，所以，foo 也就只能被赋值为字符串了。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Func = <span class="function">(<span class="params">value: <span class="built_in">number</span></span>) =&gt;</span> <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> foo: ReturnType&lt;Func&gt; = <span class="string">"1"</span>;</span><br></pre></td></tr></table></figure>
+<p>更多参考<a href="https://github.com/microsoft/TypeScript/blob/master/src/lib/es5.d.ts#L1431" title="TS - es5.d.ts" target="_blank" rel="noopener">TS - es5.d.ts</a> 这些泛型可以极大减少大家的冗余代码，大家可以在自己的项目中自定义一些工具类泛型。</p>
+<h2 id="Bonus-接口智能提示"><a href="#Bonus-接口智能提示" class="headerlink" title="Bonus - 接口智能提示"></a>Bonus - 接口智能提示</h2><p>最后介绍一个实用的小技巧。如下是一个接口的类型定义：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Seal &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  url: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> API &#123;</span><br><span class="line">  <span class="string">"/user"</span>: &#123; name: <span class="built_in">string</span>; age: <span class="built_in">number</span>; phone: <span class="built_in">string</span> &#125;;</span><br><span class="line">  <span class="string">"/seals"</span>: &#123; seal: Seal[] &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> api = &lt;URL <span class="keyword">extends</span> keyof API&gt;(url: URL): <span class="built_in">Promise</span>&lt;API[URL]&gt; =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> fetch(url).then(<span class="function">(<span class="params">res</span>) =&gt;</span> res.json());</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>我们通过泛型以及泛型约束，实现了智能提示的功能。使用效果：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfzwmfvajej30tu04cglu.jpg" alt></p>
+<p>（接口名智能提示）</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfzwn2fovdj313u03egm2.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfzxwbhc6yj314q05oaaq.jpg" alt></p>
+<p>（接口返回智能提示）</p>
+<p>原理很简单，当你仅输入 api 的时候，其会将 API interface 下的所有 key 提示给你，当你输入某一个 key 的时候，其会根据 key 命中 interface 定义的类型，然后给予类型提示。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>学习 Typescript 并不是一件简单的事情，尤其是没有其他语言背景的情况。而 TS 中最为困难的内容之一恐怕就是泛型了。</p>
+<p>泛型和我们平时使用的函数是很像的，如果将两者进行横向对比，会很容易理解，很多函数的都关系可以迁移到泛型，比如函数嵌套，递归，默认参数等等。泛型是对类型进行编程，参数是类型，返回值是一个新的类型。我们甚至可以对泛型的参数进行约束，就类似于函数的类型约束。</p>
+<p>最后通过几个高级的泛型用法以及若干使用的泛型工具类帮助大家理解和消化上面的知识。要知道真正的 TS 高手都是玩类型的，高手才不会满足于类型的交叉并操作。 泛型用的好确实可以极大减少代码量，提高代码维护性。如果用的太深入，也可能会团队成员面面相觑，一脸茫然。因此抽象层次一定要合理，不仅仅是泛型，整个软件工程都是如此。</p>
+<p>大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的前端硬核文章，带你认识你不知道的前端。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfxro1x125j30oz0dw43s.jpg" alt></p>
+
+      </div>
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-31T12:23:20+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 2021年3月31日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/前端/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>前端</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/TypeScript/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>TypeScript</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/泛型/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>泛型</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACOUlEQVR42u3ay6rDMAxF0f7/T+dOCyXuPlJ6wfL2KJQ08cpA6OHXC6/rbb3/8nkPub572ufvDy8ZMmRsy7iW627Td4B0u+t3kftlyJBxDmO9OXK93gR/I/l8MmTIkMHTuzQsrv9LPpMMGTJk1EJnugn+FhkyZMhIC0v+UN5iS9tzD9TiMmTI2JDBu+7/f/2T+YYMGTK2YlzhqqWStQI12JUMGTJGM54aK6ZN//TToJRUhgwZQxm8cOWNs/ROUrJ+SVhlyJAxmsG3krbDOoPP2hhVhgwZUxm1UpMnhTw/5SlmHL9lyJAxgsEfFETuRiK4/hy3XUMZMmQcwEgb9BzMS9BiIS1DhozRDD6SXL+mU7LWxgy38w0ZMmSMY3SOVnAYfwv55YEZrAwZMrZikFIzPc5FgnUn1AaTDRkyZIxgdJI8PmisNeCCIYQMGTKOYfChYzFpKxXJ6JkyZMgYzUi3nqZu/LBFv9svQ4aM2QzyiH5IJW249PMFgViGDBmbM0hrLE0N0zI4PVrxpekmQ4aMAxhkc7Xitj8oDQKuDBkyRjNqAZS3+/lzgpAtQ4aM0YxaApeWqfyeWmEsQ4aMqYwrXLV2WDoAiNNHGTJkjGbwlaaDncK1dlhNhgwZsxkkyNYY/eFl8cyIDBkyhjJqgwEeUjuDAYSUIUOGjFJil6abafx8IODKkCHjAEbnEEZaZ3+pv2XIkHEAgxextQQxHT+sA/cD7TYZMmRsxeic1OAjz3QTfDwgQ4aM0Yw/ojbMUpKVpP0AAAAASUVORK5CYII='>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2020/06/16/ts-generics/&title=你不知道的 TypeScript 泛型（万字长文，建议收藏） | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=泛型是 TypeScript（以下简称 TS） 比较高级的功能之一，理解起来也比较困难。泛型应用场景非常广泛，很多地方都能看到它的影子。平时我们阅读开源 TS 项目源码，或者在自己的 TS 项目中使用一些第三方库（比如 React）的时候，经常会看到各种泛型定义。如果你不是特别了解泛型，那么你很可能不仅不会用，不会实现，甚至看不懂这是在干什么。
+相信大家都经历过，看到过，或者正在写一些应用，这些应用充斥着各种重复类型定义， any 类型层出不穷，鼠标移到变量上面的提示只有 any，不要说类型操作了，类型能写对都是个问题。我也经历过这样的阶段，那个时候我对 TS 还比较陌生。
+随着在 TS 方面学习的深入，越来越认识到 真正的 TS 高手都是在玩类型，对类型进行各种运算生成新的类型。这也好理解，毕竟 TS 提供的其实就是类型系统。你去看那些 TS 高手的代码，会各种花式使用泛型。 可以说泛型是一道坎，只有真正掌握它，你才知道原来 TS 还可以这么玩。怪不得面试的时候大家都愿意问泛型，尽管面试官很可能也不怎么懂。
+只有理解事物的内在逻辑，才算真正掌握了，不然永远只是皮毛，不得其法。 本文就带你走进泛型，带你从另一个角度看看究竟什么是泛型，为什么要有它，它给 TS 带来了什么样的不同。
+
+注意：不同语言泛型略有不同，知识迁移虽然可以，但是不能生搬硬套，本文所讲的泛型都指的是 TS 下的泛型。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2020/06/16/ts-generics/&title=你不知道的 TypeScript 泛型（万字长文，建议收藏） | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=泛型是 TypeScript（以下简称 TS） 比较高级的功能之一，理解起来也比较困难。泛型应用场景非常广泛，很多地方都能看到它的影子。平时我们阅读开源 TS 项目源码，或者在自己的 TS 项目中使用一些第三方库（比如 React）的时候，经常会看到各种泛型定义。如果你不是特别了解泛型，那么你很可能不仅不会用，不会实现，甚至看不懂这是在干什么。
+相信大家都经历过，看到过，或者正在写一些应用，这些应用充斥着各种重复类型定义， any 类型层出不穷，鼠标移到变量上面的提示只有 any，不要说类型操作了，类型能写对都是个问题。我也经历过这样的阶段，那个时候我对 TS 还比较陌生。
+随着在 TS 方面学习的深入，越来越认识到 真正的 TS 高手都是在玩类型，对类型进行各种运算生成新的类型。这也好理解，毕竟 TS 提供的其实就是类型系统。你去看那些 TS 高手的代码，会各种花式使用泛型。 可以说泛型是一道坎，只有真正掌握它，你才知道原来 TS 还可以这么玩。怪不得面试的时候大家都愿意问泛型，尽管面试官很可能也不怎么懂。
+只有理解事物的内在逻辑，才算真正掌握了，不然永远只是皮毛，不得其法。 本文就带你走进泛型，带你从另一个角度看看究竟什么是泛型，为什么要有它，它给 TS 带来了什么样的不同。
+
+注意：不同语言泛型略有不同，知识迁移虽然可以，但是不能生搬硬套，本文所讲的泛型都指的是 TS 下的泛型。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2020/06/16/ts-generics/&title=你不知道的 TypeScript 泛型（万字长文，建议收藏） | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=泛型是 TypeScript（以下简称 TS） 比较高级的功能之一，理解起来也比较困难。泛型应用场景非常广泛，很多地方都能看到它的影子。平时我们阅读开源 TS 项目源码，或者在自己的 TS 项目中使用一些第三方库（比如 React）的时候，经常会看到各种泛型定义。如果你不是特别了解泛型，那么你很可能不仅不会用，不会实现，甚至看不懂这是在干什么。
+相信大家都经历过，看到过，或者正在写一些应用，这些应用充斥着各种重复类型定义， any 类型层出不穷，鼠标移到变量上面的提示只有 any，不要说类型操作了，类型能写对都是个问题。我也经历过这样的阶段，那个时候我对 TS 还比较陌生。
+随着在 TS 方面学习的深入，越来越认识到 真正的 TS 高手都是在玩类型，对类型进行各种运算生成新的类型。这也好理解，毕竟 TS 提供的其实就是类型系统。你去看那些 TS 高手的代码，会各种花式使用泛型。 可以说泛型是一道坎，只有真正掌握它，你才知道原来 TS 还可以这么玩。怪不得面试的时候大家都愿意问泛型，尽管面试官很可能也不怎么懂。
+只有理解事物的内在逻辑，才算真正掌握了，不然永远只是皮毛，不得其法。 本文就带你走进泛型，带你从另一个角度看看究竟什么是泛型，为什么要有它，它给 TS 带来了什么样的不同。
+
+注意：不同语言泛型略有不同，知识迁移虽然可以，但是不能生搬硬套，本文所讲的泛型都指的是 TS 下的泛型。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                          <h4>
+                              <a href="/blog/2020/06/20/刷题新手/" rel="prev" title="算法小白如何高效、快速刷 leetcode？">
+                                
+                                    算法小白如何高效、快速刷 leetcode？
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a> <a class="tag" href="/blog/tags/经验分享/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 经验分享</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/blog/2020/06/13/immutable-js/" rel="prev" title="immutablejs 是如何优化我们的代码的？">
+                                  
+                                      immutablejs 是如何优化我们的代码的？
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/前端/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 前端</a> <a class="tag" href="/blog/tags/React/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> React</a> <a class="tag" href="/blog/tags/immutablejs/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> immutablejs</a> <a class="tag" href="/blog/tags/immutable/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> immutable</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '你不知道的 TypeScript 泛型（万字长文，建议收藏）',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/blog/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://www.zhihu.com/people/lu-xiao-13-70/activities"
+              class="social fab fa-zhihu flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:azl397985856@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/azl397985856"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/playlist?id=978545815&userid=632167080"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#引言"><span class="toc-text">引言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#泛型初体验"><span class="toc-text">泛型初体验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#值和类型"><span class="toc-text">值和类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是泛型"><span class="toc-text">什么是泛型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#不容小觑的-id-函数"><span class="toc-text">不容小觑的 id 函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#泛型就是对类型编程"><span class="toc-text">泛型就是对类型编程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#泛型为什么使用尖括号"><span class="toc-text">泛型为什么使用尖括号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#泛型的种类"><span class="toc-text">泛型的种类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#泛型的参数类型-“泛型约束”"><span class="toc-text">泛型的参数类型 - “泛型约束”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见的泛型"><span class="toc-text">常见的泛型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#集合类"><span class="toc-text">集合类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-FC"><span class="toc-text">React.FC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类型推导与默认参数"><span class="toc-text">类型推导与默认参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类型推导"><span class="toc-text">类型推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#默认参数"><span class="toc-text">默认参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么时候用泛型"><span class="toc-text">什么时候用泛型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进阶"><span class="toc-text">进阶</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#泛型支持函数嵌套"><span class="toc-text">泛型支持函数嵌套</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#泛型支持递归"><span class="toc-text">泛型支持递归</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TS-泛型工具及实现"><span class="toc-text">TS 泛型工具及实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Partial"><span class="toc-text">Partial</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Required"><span class="toc-text">Required</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mutable"><span class="toc-text">Mutable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Readonly"><span class="toc-text">Readonly</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ReturnType"><span class="toc-text">ReturnType</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bonus-接口智能提示"><span class="toc-text">Bonus - 接口智能提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;我的开源项目</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/leetcode" href="https://github.com/azl397985856/leetcode"
+          
+          
+          id="https:github.comazl397985856leetcode">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          LeetCode
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/fe-interview" href="https://github.com/azl397985856/fe-interview"
+          
+          
+          id="https:github.comazl397985856fe-interview">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          大前端
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/daily-featured" href="https://github.com/azl397985856/daily-featured"
+          
+          
+          id="https:github.comazl397985856daily-featured">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          每日一荐
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;全部分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+    href="/blog/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/blog/categories/91天学算法/" href="/blog/categories/91天学算法/"><div class='name'>91天学算法</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/CD/" href="/blog/categories/CD/"><div class='name'>CD</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Easy/" href="/blog/categories/Easy/"><div class='name'>Easy</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Github/" href="/blog/categories/Github/"><div class='name'>Github</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Hard/" href="/blog/categories/Hard/"><div class='name'>Hard</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/LeetCode/" href="/blog/categories/LeetCode/"><div class='name'>LeetCode</div><div class='badge'>(20)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/LeetCode题解书/" href="/blog/categories/LeetCode/LeetCode题解书/"><div class='name'>LeetCode题解书</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/动态规划/" href="/blog/categories/LeetCode/动态规划/"><div class='name'>动态规划</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Medium/" href="/blog/categories/Medium/"><div class='name'>Medium</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/React/" href="/blog/categories/React/"><div class='name'>React</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/TypeScript/" href="/blog/categories/TypeScript/"><div class='name'>TypeScript</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/中等/" href="/blog/categories/中等/"><div class='name'>中等</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书/" href="/blog/categories/书/"><div class='name'>书</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/书/算法/" href="/blog/categories/书/算法/"><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书摘/" href="/blog/categories/书摘/"><div class='name'>书摘</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/二分/" href="/blog/categories/二分/"><div class='name'>二分</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/二叉树/" href="/blog/categories/二叉树/"><div class='name'>二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/刷题方法/" href="/blog/categories/刷题方法/"><div class='name'>刷题方法</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/前端/" href="/blog/categories/前端/"><div class='name'>前端</div><div class='badge'>(23)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/TypeScript/" href="/blog/categories/前端/TypeScript/"><div class='name'>TypeScript</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/TypeScript/泛型/" href="/blog/categories/前端/TypeScript/泛型/"><div class='name'>泛型</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/eslint/" href="/blog/categories/前端/eslint/"><div class='name'>eslint</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/web-component/" href="/blog/categories/前端/web-component/"><div class='name'>web-component</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/webkit/" href="/blog/categories/前端/webkit/"><div class='name'>webkit</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/测试/" href="/blog/categories/前端/测试/"><div class='name'>测试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/浏览器/" href="/blog/categories/前端/浏览器/"><div class='name'>浏览器</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/算法/" href="/blog/categories/前端/算法/"><div class='name'>算法</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/组件化/" href="/blog/categories/前端/组件化/"><div class='name'>组件化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/前缀和/" href="/blog/categories/前缀和/"><div class='name'>前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前缀和/二维前缀和/" href="/blog/categories/前缀和/二维前缀和/"><div class='name'>二维前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/力扣加加/" href="/blog/categories/力扣加加/"><div class='name'>力扣加加</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/双指针/" href="/blog/categories/双指针/"><div class='name'>双指针</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/回溯/" href="/blog/categories/回溯/"><div class='name'>回溯</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/堆/" href="/blog/categories/堆/"><div class='name'>堆</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/好未来/" href="/blog/categories/好未来/"><div class='name'>好未来</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/学习方法/" href="/blog/categories/学习方法/"><div class='name'>学习方法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/工具/" href="/blog/categories/工具/"><div class='name'>工具</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/异议！/" href="/blog/categories/异议！/"><div class='name'>异议！</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/技术大会/" href="/blog/categories/技术大会/"><div class='name'>技术大会</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/D2/" href="/blog/categories/技术大会/D2/"><div class='name'>D2</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/Google-IO/" href="/blog/categories/技术大会/Google-IO/"><div class='name'>Google IO</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/JSConf/" href="/blog/categories/技术大会/JSConf/"><div class='name'>JSConf</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/QCon/" href="/blog/categories/技术大会/QCon/"><div class='name'>QCon</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/React-Conf/" href="/blog/categories/技术大会/React-Conf/"><div class='name'>React Conf</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/插件/" href="/blog/categories/插件/"><div class='name'>插件</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/插件/浏览器插件/" href="/blog/categories/插件/浏览器插件/"><div class='name'>浏览器插件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数学/" href="/blog/categories/数学/"><div class='name'>数学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数学/算法/" href="/blog/categories/数学/算法/"><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构/" href="/blog/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/hashtable/" href="/blog/categories/数据结构/hashtable/"><div class='name'>hashtable</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/二叉搜索树/" href="/blog/categories/数据结构/二叉搜索树/"><div class='name'>二叉搜索树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/图/" href="/blog/categories/数据结构/图/"><div class='name'>图</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/字符串/" href="/blog/categories/数据结构/字符串/"><div class='name'>字符串</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/平衡二叉树/" href="/blog/categories/数据结构/平衡二叉树/"><div class='name'>平衡二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/数组/" href="/blog/categories/数据结构/数组/"><div class='name'>数组</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/算法/" href="/blog/categories/数据结构/算法/"><div class='name'>算法</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/链表/" href="/blog/categories/数据结构/链表/"><div class='name'>链表</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，二叉树/" href="/blog/categories/数据结构，二叉树/"><div class='name'>数据结构，二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，单调栈/" href="/blog/categories/数据结构，单调栈/"><div class='name'>数据结构，单调栈</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，字符串/" href="/blog/categories/数据结构，字符串/"><div class='name'>数据结构，字符串</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，数组/" href="/blog/categories/数据结构，数组/"><div class='name'>数据结构，数组</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/日记/" href="/blog/categories/日记/"><div class='name'>日记</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/日记/技术/" href="/blog/categories/日记/技术/"><div class='name'>技术</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/春招/" href="/blog/categories/春招/"><div class='name'>春招</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/栈/" href="/blog/categories/栈/"><div class='name'>栈</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/树/" href="/blog/categories/树/"><div class='name'>树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/校招/" href="/blog/categories/校招/"><div class='name'>校招</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/模拟面试/" href="/blog/categories/模拟面试/"><div class='name'>模拟面试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/每日一荐/" href="/blog/categories/每日一荐/"><div class='name'>每日一荐</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-09/" href="/blog/categories/每日一荐/2019-09/"><div class='name'>2019-09</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-10/" href="/blog/categories/每日一荐/2019-10/"><div class='name'>2019-10</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-11/" href="/blog/categories/每日一荐/2019-11/"><div class='name'>2019-11</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-12/" href="/blog/categories/每日一荐/2019-12/"><div class='name'>2019-12</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2020-01/" href="/blog/categories/每日一荐/2020-01/"><div class='name'>2020-01</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2020-03/" href="/blog/categories/每日一荐/2020-03/"><div class='name'>2020-03</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/浏览器/" href="/blog/categories/浏览器/"><div class='name'>浏览器</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/浏览器/webkit/" href="/blog/categories/浏览器/webkit/"><div class='name'>webkit</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/浏览器/事件/" href="/blog/categories/浏览器/事件/"><div class='name'>事件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/电影/" href="/blog/categories/电影/"><div class='name'>电影</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/电影/观后感/" href="/blog/categories/电影/观后感/"><div class='name'>观后感</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/百度/" href="/blog/categories/百度/"><div class='name'>百度</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法/" href="/blog/categories/算法/"><div class='name'>算法</div><div class='badge'>(26)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/BFS/" href="/blog/categories/算法/BFS/"><div class='name'>BFS</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/DFS/" href="/blog/categories/算法/DFS/"><div class='name'>DFS</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/二分法/" href="/blog/categories/算法/二分法/"><div class='name'>二分法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/位运算/" href="/blog/categories/算法/位运算/"><div class='name'>位运算</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/前缀和/" href="/blog/categories/算法/前缀和/"><div class='name'>前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/动态规划/" href="/blog/categories/算法/动态规划/"><div class='name'>动态规划</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/双指针/" href="/blog/categories/算法/双指针/"><div class='name'>双指针</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/回文/" href="/blog/categories/算法/回文/"><div class='name'>回文</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/回溯/" href="/blog/categories/算法/回溯/"><div class='name'>回溯</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/子序列/" href="/blog/categories/算法/子序列/"><div class='name'>子序列</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/就地算法/" href="/blog/categories/算法/就地算法/"><div class='name'>就地算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/布隆过滤器/" href="/blog/categories/算法/布隆过滤器/"><div class='name'>布隆过滤器</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/循环移位/" href="/blog/categories/算法/循环移位/"><div class='name'>循环移位</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/数学/" href="/blog/categories/算法/数学/"><div class='name'>数学</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/概率/" href="/blog/categories/算法/概率/"><div class='name'>概率</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/母题/" href="/blog/categories/算法/母题/"><div class='name'>母题</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/滑动窗口/" href="/blog/categories/算法/滑动窗口/"><div class='name'>滑动窗口</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/状态压缩/" href="/blog/categories/算法/状态压缩/"><div class='name'>状态压缩</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/背包问题/" href="/blog/categories/算法/背包问题/"><div class='name'>背包问题</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/递归/" href="/blog/categories/算法/递归/"><div class='name'>递归</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/链表反转/" href="/blog/categories/算法/链表反转/"><div class='name'>链表反转</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，动态规划/" href="/blog/categories/算法，动态规划/"><div class='name'>算法，动态规划</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，序列化/" href="/blog/categories/算法，序列化/"><div class='name'>算法，序列化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，滑动窗口/" href="/blog/categories/算法，滑动窗口/"><div class='name'>算法，滑动窗口</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/经验分享/" href="/blog/categories/经验分享/"><div class='name'>经验分享</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/编程之美/" href="/blog/categories/编程之美/"><div class='name'>编程之美</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/蓄水池抽样/" href="/blog/categories/蓄水池抽样/"><div class='name'>蓄水池抽样</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/虾皮/" href="/blog/categories/虾皮/"><div class='name'>虾皮</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/解题模板/" href="/blog/categories/解题模板/"><div class='name'>解题模板</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/贪婪/" href="/blog/categories/贪婪/"><div class='name'>贪婪</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/软件工具/" href="/blog/categories/软件工具/"><div class='name'>软件工具</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/链表/" href="/blog/categories/链表/"><div class='name'>链表</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/面经/" href="/blog/categories/面经/"><div class='name'>面经</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/面试/" href="/blog/categories/面试/"><div class='name'>面试</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/面试/字节跳动/" href="/blog/categories/面试/字节跳动/"><div class='name'>字节跳动</div><div class='badge'>(2)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+    href="/blog/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/blog/tags/91天学算法/" style="font-size: 20.15px; color: #6f6f6f">91天学算法</a> <a href="/blog/tags/BFS/" style="font-size: 14px; color: #999">BFS</a> <a href="/blog/tags/BigPipe/" style="font-size: 14px; color: #999">BigPipe</a> <a href="/blog/tags/CD/" style="font-size: 14px; color: #999">CD</a> <a href="/blog/tags/Canvas/" style="font-size: 14px; color: #999">Canvas</a> <a href="/blog/tags/Chrome/" style="font-size: 14px; color: #999">Chrome</a> <a href="/blog/tags/D2/" style="font-size: 14px; color: #999">D2</a> <a href="/blog/tags/Easy/" style="font-size: 14px; color: #999">Easy</a> <a href="/blog/tags/Floyd-Warshall/" style="font-size: 14px; color: #999">Floyd-Warshall</a> <a href="/blog/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/blog/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/blog/tags/Google-IO/" style="font-size: 14px; color: #999">Google IO</a> <a href="/blog/tags/Hard/" style="font-size: 14.77px; color: #949494">Hard</a> <a href="/blog/tags/JSConf/" style="font-size: 14px; color: #999">JSConf</a> <a href="/blog/tags/LeetCode/" style="font-size: 22.46px; color: #5f5f5f">LeetCode</a> <a href="/blog/tags/LeetCode日记/" style="font-size: 20.92px; color: #6a6a6a">LeetCode日记</a> <a href="/blog/tags/Mac/" style="font-size: 14px; color: #999">Mac</a> <a href="/blog/tags/Medium/" style="font-size: 14.77px; color: #949494">Medium</a> <a href="/blog/tags/PPT/" style="font-size: 14px; color: #999">PPT</a> <a href="/blog/tags/QCon/" style="font-size: 14px; color: #999">QCon</a> <a href="/blog/tags/RFC/" style="font-size: 14px; color: #999">RFC</a> <a href="/blog/tags/React/" style="font-size: 14px; color: #999">React</a> <a href="/blog/tags/TypeScript/" style="font-size: 19.38px; color: #747474">TypeScript</a> <a href="/blog/tags/eslint/" style="font-size: 14px; color: #999">eslint</a> <a href="/blog/tags/immutable/" style="font-size: 14px; color: #999">immutable</a> <a href="/blog/tags/immutablejs/" style="font-size: 14px; color: #999">immutablejs</a> <a href="/blog/tags/k-问题/" style="font-size: 14px; color: #999">k 问题</a> <a href="/blog/tags/vue/" style="font-size: 14px; color: #999">vue</a> <a href="/blog/tags/web-component/" style="font-size: 14px; color: #999">web-component</a> <a href="/blog/tags/webkit/" style="font-size: 14px; color: #999">webkit</a> <a href="/blog/tags/中位数/" style="font-size: 14px; color: #999">中位数</a> <a href="/blog/tags/中等/" style="font-size: 14.77px; color: #949494">中等</a> <a href="/blog/tags/书/" style="font-size: 14px; color: #999">书</a> <a href="/blog/tags/书摘/" style="font-size: 14px; color: #999">书摘</a> <a href="/blog/tags/事件/" style="font-size: 14px; color: #999">事件</a> <a href="/blog/tags/事件循环/" style="font-size: 14px; color: #999">事件循环</a> <a href="/blog/tags/二分/" style="font-size: 14.77px; color: #949494">二分</a> <a href="/blog/tags/二分法/" style="font-size: 14px; color: #999">二分法</a> <a href="/blog/tags/二叉树/" style="font-size: 15.54px; color: #8f8f8f">二叉树</a> <a href="/blog/tags/位运算/" style="font-size: 14px; color: #999">位运算</a> <a href="/blog/tags/删除-k-个字符/" style="font-size: 14px; color: #999">删除 k 个字符</a> <a href="/blog/tags/刷题/" style="font-size: 14.77px; color: #949494">刷题</a> <a href="/blog/tags/刷题方法/" style="font-size: 15.54px; color: #8f8f8f">刷题方法</a> <a href="/blog/tags/前端/" style="font-size: 21.69px; color: #656565">前端</a> <a href="/blog/tags/前缀和/" style="font-size: 16.31px; color: #898989">前缀和</a> <a href="/blog/tags/前缀表达式/" style="font-size: 14px; color: #999">前缀表达式</a> <a href="/blog/tags/力扣加加/" style="font-size: 20.92px; color: #6a6a6a">力扣加加</a> <a href="/blog/tags/动态规划/" style="font-size: 18.62px; color: #7a7a7a">动态规划</a> <a href="/blog/tags/单元测试/" style="font-size: 14px; color: #999">单元测试</a> <a href="/blog/tags/单调栈/" style="font-size: 14px; color: #999">单调栈</a> <a href="/blog/tags/双指针/" style="font-size: 14px; color: #999">双指针</a> <a href="/blog/tags/命令行/" style="font-size: 14px; color: #999">命令行</a> <a href="/blog/tags/回溯/" style="font-size: 14px; color: #999">回溯</a> <a href="/blog/tags/困难/" style="font-size: 14.77px; color: #949494">困难</a> <a href="/blog/tags/图/" style="font-size: 14px; color: #999">图</a> <a href="/blog/tags/图片处理/" style="font-size: 14px; color: #999">图片处理</a> <a href="/blog/tags/堆/" style="font-size: 14.77px; color: #949494">堆</a> <a href="/blog/tags/好未来/" style="font-size: 14px; color: #999">好未来</a> <a href="/blog/tags/子数组/" style="font-size: 14px; color: #999">子数组</a> <a href="/blog/tags/字符串/" style="font-size: 14px; color: #999">字符串</a> <a href="/blog/tags/字节跳动/" style="font-size: 15.54px; color: #8f8f8f">字节跳动</a> <a href="/blog/tags/学习方法/" style="font-size: 14.77px; color: #949494">学习方法</a> <a href="/blog/tags/工具/" style="font-size: 14px; color: #999">工具</a> <a href="/blog/tags/序列化/" style="font-size: 14px; color: #999">序列化</a> <a href="/blog/tags/异常处理/" style="font-size: 14px; color: #999">异常处理</a> <a href="/blog/tags/异议！/" style="font-size: 14px; color: #999">异议！</a> <a href="/blog/tags/循环移位/" style="font-size: 14px; color: #999">循环移位</a> <a href="/blog/tags/微前端/" style="font-size: 14px; color: #999">微前端</a> <a href="/blog/tags/必备软件/" style="font-size: 14px; color: #999">必备软件</a> <a href="/blog/tags/我的书/" style="font-size: 14px; color: #999">我的书</a> <a href="/blog/tags/扩展程序/" style="font-size: 14px; color: #999">扩展程序</a> <a href="/blog/tags/技术大会/" style="font-size: 14px; color: #999">技术大会</a> <a href="/blog/tags/技术调研/" style="font-size: 14px; color: #999">技术调研</a> <a href="/blog/tags/技能/" style="font-size: 14px; color: #999">技能</a> <a href="/blog/tags/持续集成/" style="font-size: 14px; color: #999">持续集成</a> <a href="/blog/tags/插件/" style="font-size: 15.54px; color: #8f8f8f">插件</a> <a href="/blog/tags/效率/" style="font-size: 14px; color: #999">效率</a> <a href="/blog/tags/数学/" style="font-size: 16.31px; color: #898989">数学</a> <a href="/blog/tags/数据结构/" style="font-size: 23.23px; color: #5a5a5a">数据结构</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，Hard/" style="font-size: 14.77px; color: #949494">数据结构，算法，LeetCode 日记，Hard</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，中等/" style="font-size: 14px; color: #999">数据结构，算法，LeetCode 日记，中等</a> <a href="/blog/tags/数组/" style="font-size: 14.77px; color: #949494">数组</a> <a href="/blog/tags/日记/" style="font-size: 14.77px; color: #949494">日记</a> <a href="/blog/tags/春招/" style="font-size: 15.54px; color: #8f8f8f">春招</a> <a href="/blog/tags/最大公约数/" style="font-size: 14px; color: #999">最大公约数</a> <a href="/blog/tags/最长上升子序列/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/blog/tags/最长公共子序列/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/blog/tags/栈/" style="font-size: 14px; color: #999">栈</a> <a href="/blog/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/blog/tags/校招/" style="font-size: 15.54px; color: #8f8f8f">校招</a> <a href="/blog/tags/概率/" style="font-size: 14.77px; color: #949494">概率</a> <a href="/blog/tags/模拟面试/" style="font-size: 14px; color: #999">模拟面试</a> <a href="/blog/tags/母题/" style="font-size: 14px; color: #999">母题</a> <a href="/blog/tags/每日一荐/" style="font-size: 17.85px; color: #7f7f7f">每日一荐</a> <a href="/blog/tags/泛型/" style="font-size: 14.77px; color: #949494">泛型</a> <a href="/blog/tags/测试/" style="font-size: 14px; color: #999">测试</a> <a href="/blog/tags/浏览器/" style="font-size: 15.54px; color: #8f8f8f">浏览器</a> <a href="/blog/tags/滑动窗口/" style="font-size: 17.08px; color: #848484">滑动窗口</a> <a href="/blog/tags/滤镜/" style="font-size: 14px; color: #999">滤镜</a> <a href="/blog/tags/状态压缩/" style="font-size: 14px; color: #999">状态压缩</a> <a href="/blog/tags/状态机/" style="font-size: 14px; color: #999">状态机</a> <a href="/blog/tags/电子书/" style="font-size: 14px; color: #999">电子书</a> <a href="/blog/tags/电影/" style="font-size: 14.77px; color: #949494">电影</a> <a href="/blog/tags/百度/" style="font-size: 14px; color: #999">百度</a> <a href="/blog/tags/监控/" style="font-size: 14px; color: #999">监控</a> <a href="/blog/tags/算法/" style="font-size: 24px; color: #555">算法</a> <a href="/blog/tags/算法提高班/" style="font-size: 20.92px; color: #6a6a6a">算法提高班</a> <a href="/blog/tags/算法系列/" style="font-size: 16.31px; color: #898989">算法系列</a> <a href="/blog/tags/组件化/" style="font-size: 14px; color: #999">组件化</a> <a href="/blog/tags/经验分享/" style="font-size: 15.54px; color: #8f8f8f">经验分享</a> <a href="/blog/tags/编程之美/" style="font-size: 14px; color: #999">编程之美</a> <a href="/blog/tags/草稿/" style="font-size: 14px; color: #999">草稿</a> <a href="/blog/tags/蓄水池抽样/" style="font-size: 14px; color: #999">蓄水池抽样</a> <a href="/blog/tags/虾皮/" style="font-size: 14px; color: #999">虾皮</a> <a href="/blog/tags/装机/" style="font-size: 14px; color: #999">装机</a> <a href="/blog/tags/解题模板/" style="font-size: 14px; color: #999">解题模板</a> <a href="/blog/tags/贪婪/" style="font-size: 14px; color: #999">贪婪</a> <a href="/blog/tags/贪心/" style="font-size: 14px; color: #999">贪心</a> <a href="/blog/tags/递归/" style="font-size: 14px; color: #999">递归</a> <a href="/blog/tags/链表/" style="font-size: 15.54px; color: #8f8f8f">链表</a> <a href="/blog/tags/陷阱题/" style="font-size: 14px; color: #999">陷阱题</a> <a href="/blog/tags/面经/" style="font-size: 15.54px; color: #8f8f8f">面经</a> <a href="/blog/tags/面试/" style="font-size: 14.77px; color: #949494">面试</a>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget list'>
+  
+<header class='pure'>
+  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;强烈推荐</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="entry">
+      
+        <li><a class="flat-box" title="https://xaoxuu.com/wiki/hexo.sh/" href="https://xaoxuu.com/wiki/hexo.sh/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;Hexo脚本（Mac）
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://xaoxuu.com/wiki/vim-cn.sh/" href="https://xaoxuu.com/wiki/vim-cn.sh/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;图床脚本（Mac）
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://yasuotu.com" href="https://yasuotu.com"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;图片在线压缩
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://realfavicongenerator.net" href="https://realfavicongenerator.net"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;生成Favicon
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://mxclub.github.io/resume/" href="https://mxclub.github.io/resume/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;简历主题
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+   
+  <div class="social-wrapper">
+     
+    <a
+      href="/blog/atom.xml"
+      class="social fas fa-rss flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://www.zhihu.com/people/lu-xiao-13-70/activities"
+      class="social fab fa-zhihu flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="mailto:azl397985856@gmail.com"
+      class="social fas fa-envelope flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://github.com/azl397985856"
+      class="social fab fa-github flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://music.163.com/playlist?id=978545815&amp;userid=632167080"
+      class="social fas fa-headphones-alt flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+     
+  </div>
+  
+  <br />
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename"
+      >Material X</a
+    >
+    作为主题  。
+  </div>
+
+  <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+  <script>
+    var now = new Date();
+    function createtime() {
+      var grt = new Date("08/10/2018 17:38:00"); //在此处修改你的建站时间，格式：月/日/年 时:分:秒
+      now.setTime(now.getTime() + 250);
+      days = (now - grt) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+      hnum = Math.floor(hours);
+      if (String(hnum).length == 1) {
+        hnum = "0" + hnum;
+      }
+      minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+      mnum = Math.floor(minutes);
+      if (String(mnum).length == 1) {
+        mnum = "0" + mnum;
+      }
+      seconds =
+        (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+      snum = Math.round(seconds);
+      if (String(snum).length == 1) {
+        snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML =
+        "本站已安全运行 " + dnum + " 天 ";
+      document.getElementById("times").innerHTML =
+        hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()", 250);
+  </script>
+</footer>
+<script>
+  setLoadingBarProgress(80);
+</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "aea1377036afe4cd0343",
+      clientSecret: "815c638dea8644b7a4b97905707cf72b45555f6d",
+      repo: "blog",
+      owner: "azl397985856",
+      admin: "azl397985856",
+      
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

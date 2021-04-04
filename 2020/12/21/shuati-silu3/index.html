@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>来和大家聊聊我是如何刷题的（第三弹） | lucifer的网络博客</title>
+  
+  <meta name="keywords" content="前端 leetocde 数据结构 算法 lucifer 大前端 性能优化 前端架构 前端工程化">
+  
+  
+  <meta name="description" content="lucifer的个人博客，用来记录LeeCode刷题过程和心得，以及构建大前端知识体系">
+  
+
+  
+  <link rel="alternate" href="/blog/atom.xml" title="lucifer的网络博客">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9.9/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVTTYT432Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FVTTYT432Q');
+    </script>
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?576ec211e11a69128667eb8c11a6cffe";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
+<script>
+  var btw = new BTWPlugin();
+  setTimeout(function(){
+    window.btw.init({
+      id: "container",
+      blogId: "17446-1571644985832-648",
+      name: "力扣加加",
+      qrcode:
+        "https://tva1.sinaimg.cn/large/008eGmZEly1gomv7ug3bnj30760763yz.jpg",
+      keyword: "more",
+    });
+  }, 100)
+</script>
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>lucifer</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/blog/"
+            
+            
+            id="blog">
+            <i class='fas fa-home fa-fw'></i>&nbsp;主页
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="http://leetcode-solution.cn/"
+            
+            
+            id="http:leetcode-solution.cn">
+            <i class='fas fa-laptop-code fa-fw'></i>&nbsp;官网
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/friends/"
+            
+            
+            id="blogfriends">
+            <i class='fas fa-link fa-fw'></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/about/"
+            
+            
+            id="blogabout">
+            <i class='fas fa-id-card-alt fa-fw'></i>&nbsp;联系我
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/blog/' >
+        
+          lucifer的网络博客
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/blog/"
+                  
+                  
+                  id="blog">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;回到主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/categories/"
+                  
+                  
+                  id="blogcategories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/tags/"
+                  
+                  
+                  id="blogtags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/archives/"
+                  
+                  
+                  id="blogarchives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/blog/"
+                
+                
+                id="blog">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/archives/"
+                
+                
+                id="blogarchives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/about/"
+                
+                
+                id="blogabout">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div id="container" class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/blog/2020/12/21/shuati-silu3/">
+        来和大家聊聊我是如何刷题的（第三弹）
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-12-21</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/刷题方法/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>刷题方法</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">5.9k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">21分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>前两篇的地址在这里，没有看过的同学建议先看下。</p>
+<ul>
+<li><a href="https://lucifer.ren/blog/2020/11/29/shuati-silu/">来和大家聊聊我是如何刷题的（第一弹）</a></li>
+<li><a href="https://lucifer.ren/blog/2020/12/12/shuati-silu2/">来和大家聊聊我是如何刷题的（第二弹）</a></li>
+</ul>
+<p>本章或许是这个系列的最终章。这次给大家聊一点硬核的，聊一些几乎所有算法题都能用得上的超实用思想。</p>
+<p>上一节给大家抛出了两个问题，分别是：</p>
+<ul>
+<li><strong>如何锁定使用哪种算法</strong>？比如我看到了这道题，我怎么知道该用什么解法呢？二分？动态规划？</li>
+<li>一看就会，一写就废， 如何克服？</li>
+</ul>
+<p>今天，我就来圆一个当初吹下的牛逼。话不多说，直接上干货。如果你觉得有用，请三连支持我一下，让我能够坚持下去，给大家带来更多的干货。</p>
+<a id="more"></a>
+<h2 id="如何锁定使用哪种算法？"><a href="#如何锁定使用哪种算法？" class="headerlink" title="如何锁定使用哪种算法？"></a>如何锁定使用哪种算法？</h2><p>为什么很多人刚看了一眼题目就知道怎么解？</p>
+<ul>
+<li>一种可能是 ta 之前做过同样或者类似的题目，形成了内在的记忆，直接提取了之前的记忆。</li>
+<li>另一种可能是题目给出了明确的提示信息，他们根据这些信息”蒙“的，这种蒙就是<strong>题感</strong>。</li>
+<li>最后一种是刚开始也没思路，尝试暴力解，发现某些步骤可以优化，慢慢剥茧抽丝，推导出最终答案。</li>
+</ul>
+<p>接下来，我们来聊下第二种和第三种。至于第一种则不是一篇文章能解决的，这需要大家多做题，并且做题的时候要多总结多交流。</p>
+<h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><p>关键字可以对解题起到提示作用。这很好理解，假设题目没有限制信息等关键字，那就是耍流氓，毫无算法可言了。 比如”在一个数组中找 target“，这道题就很无聊，正常不会有这种算法题。 可能的出题形式是<strong>加上有序两个字，变成有序数组</strong>。那有序就是关键字了。</p>
+<p>其他的例子有很多，接下来我们来看下常见的关键字以及对应的可能解法有哪些。</p>
+<ul>
+<li><p>如果题目是求极值，计数，很有可能是动态规划，堆等。</p>
+</li>
+<li><p>如果题目是有序的，则可能是双指针。比如二分法。</p>
+</li>
+<li><p>如果题目要求连续，则可能是滑动窗口。</p>
+</li>
+<li><p>如果题目要求所有可能，需要路径信息，则可能是回溯。</p>
+</li>
+</ul>
+<p>如上的这些只是看到关键词你应该第一时间想到的<strong>可能解法</strong>，究竟正确与否，以及复杂度是否达标需要在脑子里二次加工。</p>
+<blockquote>
+<p>关于复杂度是否达标这一点，后面给大家介绍。</p>
+</blockquote>
+<h3 id="限制条件"><a href="#限制条件" class="headerlink" title="限制条件"></a>限制条件</h3><p>很多题目都会给一些数据范围的提示，大家一定要注意看。 比如 <code>1681. 最小不兼容性</code>，题目描述就不看了，我们不打算在这里讲具体怎么解。这道题的函数签名如下：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minimumIncompatibility</span><span class="params">(self, nums: List[int], k: int)</span> -&gt; int:</span></span><br></pre></td></tr></table></figure>
+<p>这道题的提示是这样的:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 &lt;= k &lt;= nums.length &lt;= 16</span><br><span class="line">nums.length 能被 k 整除。</span><br><span class="line">1 &lt;= nums[i] &lt;= nums.length</span><br></pre></td></tr></table></figure>
+<p>看到了这个你有什么想法么？</p>
+<p>注意到 nums 的长度和值都很小，这道题很可能是暴力回溯 + 状态压缩。关于回溯和状态压缩技巧可以翻翻我的历史文章。</p>
+<p>这里再给大家一个超实用小技巧。</p>
+<ul>
+<li>如果 n 是 10 左右，那么算法通常是 n! 的时间复杂度。</li>
+<li>如果 n 是 20 左右，那么算法通常是 2^n 的时间复杂度</li>
+</ul>
+<p>因此 <code>1681. 最小不兼容性</code> 这道题的复杂度很可能就是指数级别。</p>
+<p>那为什么 10 左右就是 n!，20 是 2^n? 这里给大家介绍一个你可能不知道的技巧。请大家记住一个数字 <strong>1000 万</strong>。</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glvhj7a8tlj30ko0fkjse.jpg" alt></p>
+<p>上面之所以是 10 左右， 20 左右就是因为你把 n 带进去差不多都是 <strong>1000 万</strong>。 再比如一道题是 n 是 $10^7$，那很可能是$O(N)$复杂度，因为 $10 ^7$ 就是 <strong>1000 万</strong>。</p>
+<p>再比如，我之前写的一篇文章<a href="https://lucifer.ren/blog/2020/06/20/LIS/" title="穿上衣服我就不认识你了？来聊聊最长上升子序列">《穿上衣服我就不认识你了？来聊聊最长上升子序列》</a>，上面所有的题时间复杂度都是 $N^2$，基本都可以通过所有的测试用例。为什么？因为题目数据范围差不多是 2500，那 2500 的平方是多少？是 600 多万，因此数据范围是 3000 以内， 平方差不多都可解，当然我说的只是大多数情况，并且需要注意<strong>越接近临界值越可能超时</strong>。</p>
+<p>再比如<code>1631. 最小体力消耗路径</code>。题目描述：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">你准备参加一场远足活动。给你一个二维 rows x columns 的地图 heights ，其中 heights[row][col] 表示格子 (row, col) 的高度。一开始你在最左上角的格子 (0, 0) ，且你希望去最右下角的格子 (rows-1, columns-1) （注意下标从 0 开始编号）。你每次可以往 上，下，左，右 四个方向之一移动，你想要找到耗费 体力 最小的一条路径。</span><br><span class="line"></span><br><span class="line">一条路径耗费的 体力值 是路径上相邻格子之间 高度差绝对值 的 最大值 决定的。</span><br><span class="line"></span><br><span class="line">请你返回从左上角走到右下角的最小 体力消耗值 。。</span><br></pre></td></tr></table></figure>
+<p>示例 1：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glui2h3fu6j308z08z0su.jpg" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：heights = [[1,2,2],[3,8,2],[5,3,5]]</span><br><span class="line">输出：2</span><br><span class="line">解释：路径 [1,3,5,3,5] 连续格子的差值绝对值最大为 2 。</span><br><span class="line">这条路径比路径 [1,2,2,2,5] 更优，因为另一条路径差值最大值为 3 。</span><br></pre></td></tr></table></figure>
+<p>这道题的函数签名如下：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minimumEffortPath</span><span class="params">(self, heights: List[List[int]])</span> -&gt; int:</span></span><br></pre></td></tr></table></figure>
+<p>这道题的提示是这样的:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rows == heights.length</span><br><span class="line">columns == heights[i].length</span><br><span class="line">1 &lt;= rows, columns &lt;= 100</span><br><span class="line">1 &lt;= heights[i][j] &lt;= 10^6</span><br></pre></td></tr></table></figure>
+<p>首先，我们至少需要从左上走到右下，那么时间复杂度就已经是 $O(rows * columns)$ 了。题目说了这两个数字都不大于 100，因此最大就是 $10^4$。而对于路线上的高度差绝对值的数据范围也不超过 $10^6$。</p>
+<p>暴力法就是一个个试， 复杂度是二者直接相乘，也就是 $10^10$，大于前面给大家讲的 $10^7$，因此这个复杂度通常是不能 AC 的。</p>
+<p>而上面说了 $O(rows * columns)$ 是不可能省的，因为你至少要走一次。但如果 $10^6$ 不是线性去试，而是指数的话呢？而指数复杂度首先想到二分。</p>
+<p>此题的伪代码：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minimumEffortPath</span><span class="params">(self, heights: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(mid, x, y)</span>:</span></span><br><span class="line">            <span class="comment"># dosomething</span></span><br><span class="line">        l, r = <span class="number">0</span>, <span class="number">10</span>**<span class="number">6</span></span><br><span class="line">        <span class="comment"># 最左满足条件的值的二分模板。大家可以去 leetcode-cheatsheet 插件获取更多算法模板</span></span><br><span class="line">        <span class="keyword">while</span> l &lt;= r:</span><br><span class="line">            mid = (l + r) // <span class="number">2</span></span><br><span class="line">            <span class="comment"># 测试有没有一条路径从(0,0)出发到达(rows-1,cols-1)，且路径上的高度绝对值差不大于 mid</span></span><br><span class="line">            <span class="keyword">if</span> test(mid, <span class="number">0</span>, <span class="number">0</span>):</span><br><span class="line">                r = mid - <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                l = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> l</span><br></pre></td></tr></table></figure>
+<p>你说 <strong>1000 万这个数字重要不重要</strong>？1000 万不仅是我的人生目标，更是做题时刻铭记的一个数字！^_^</p>
+<h3 id="暴力优化"><a href="#暴力优化" class="headerlink" title="暴力优化"></a>暴力优化</h3><p>最后给大家介绍的”识别题目可能的解法“的技巧是暴力优化。</p>
+<p>一句话概括就是<strong>先暴力解，然后思考性能瓶颈，再尝试使用数据结构和算法对瓶颈进行优化</strong>。</p>
+<p>比如 <a href="https://leetcode-cn.com/problems/remove-duplicate-letters/solution/yi-zhao-chi-bian-li-kou-si-dao-ti-ma-ma-zai-ye-b-4/" title="316. 去除重复字母" target="_blank" rel="noopener">316. 去除重复字母</a>，我就是先暴力求出来。发现每次都直接判断是否在是否在栈上需要 $O(N)$ 的时间，太慢了。由于我就用了哈希表进行优化。而使用哈希表这点，绝对不是我一开始就想到的，而是先暴力求解，求解的过程发现算法的性能瓶颈才意识到该用哈希表的。关于这道题的详细的解法就不再这里讲了，大家点进去看我的题解就行。或者直接去力扣搜题，排名第一的非官方题解应该就是我。</p>
+<p>总结一下就是，大家一定不要小看暴力法。暴力法解出来剪剪枝说不定就过了。如果不过，思考下瓶颈在哪，用合适的数据结构和算法优化一下说不定也就过了。这可不是随便说说。比如下面要讲的硬币找零问题，就是暴力解发现瓶颈，加个记忆化去除重复子问题就是动态规划了</p>
+<h2 id="一看就会，一写就废，-如何克服？"><a href="#一看就会，一写就废，-如何克服？" class="headerlink" title="一看就会，一写就废， 如何克服？"></a>一看就会，一写就废， 如何克服？</h2><p>针对这个问题，之前我给大家的建议是<strong>多复习</strong>， <strong>多动手写</strong>。</p>
+<p>后来我和几个朋友聊了一下，发现自己有点<strong>幸存者偏差</strong>。我发现很多人<strong>在没有算法思维的情况下就开始学习算法了</strong>，这很不可取。</p>
+<p>不过算法思维这东西你让我在这一篇文章给你整的明明白白的，这也不现实。今天我给大家分享一个我认为最最重要的一个算法思想 - <strong>分治</strong>。</p>
+<h3 id="分治思维"><a href="#分治思维" class="headerlink" title="分治思维"></a>分治思维</h3><p>“一看就会，一写就废， 如何克服？”，有一个可能是你没有分治思维。 我们的大脑天生适合<strong>处理一些简单</strong>的东西，而不适合处理看起来就很复杂的东西。因此面对一个很复杂的东西，第一件事情应该是思考<strong>是否可以将其分解</strong> ，然后逐个击破。</p>
+<p>举个例子给大家，如下是一道力扣的 hard 题 <a href="https://leetcode-cn.com/problems/number-of-2s-in-range-lcci/" title="《2 出现的次数》" target="_blank" rel="noopener">《2 出现的次数》</a>，题目描述如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">编写一个方法，计算从 0 到 n (含 n) 中数字 2 出现的次数。</span><br><span class="line"></span><br><span class="line">示例:</span><br><span class="line"></span><br><span class="line">输入: 25</span><br><span class="line">输出: 9</span><br><span class="line">解释: (2, 12, 20, 21, 22, 23, 24, 25)(注意 22 应该算作两次)</span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">n &lt;= 10^9</span><br></pre></td></tr></table></figure>
+<p>很多人一看到题就蒙了，这要多少种情况啊? 总不可能一个数字一个数字试过去吧？</p>
+<blockquote>
+<p>其实看一眼数据范围中 n 上限是 10^9，大于 1000 万，就知道不能这样暴力。</p>
+</blockquote>
+<p>于是悄悄打开题解，不仅感叹“原来是这样啊！”，“这怎么想到的？这什么脑子啊！”</p>
+<p>来让我告诉你，你缺啥。 你缺的不是一个好使的脑子，而是一个<strong>懂得将复杂问题变成若干个简单问题的意识和能力</strong>。</p>
+<p>以这道题来说， 我可以将其分解为几个子问题。</p>
+<ul>
+<li>从 0 到 n (含 n) 中 <strong>个位</strong> 数字 2 出现的次数</li>
+<li>从 0 到 n (含 n) 中 <strong>十位</strong> 数字 2 出现的次数</li>
+<li>。。。</li>
+</ul>
+<p>最终的答案就是以上几个<strong>子问题的和</strong>。</p>
+<p>经过这样的思路，大家一下子就能打开思路。剩下的任务就简单了。因为每次固定一位之后，就将数字分为了左右两部分，那么该位是 2 的次数就是左右所有可能的笛卡尔积，即 a * b。</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gluet2uoy8j30pw0883ys.jpg" alt></p>
+<p>比如 n 是 135。</p>
+<p>百位上不可能是 2，因为 2xx 一定超过 135 了。</p>
+<p>那十位有多少个 2 呢？按照上面的思路：</p>
+<ul>
+<li>左边就是百位，百位可能是 0 或者 1，共 2 种可能。</li>
+<li>右边就是个位，个位可能是 [0 - 9] 共 10 种可能。</li>
+</ul>
+<p>那么十位是 2 的次数就是 2 * 10 = 20。</p>
+<p>那个位有多少个 2 呢？按照上面的思路：</p>
+<ul>
+<li>左边就是十位和百位，其可能是 [0-13]，共 14 种可能。</li>
+<li>右边啥都没有，1 种可能。</li>
+</ul>
+<p>那么个位是 2 的次数就是 14 种。</p>
+<p>因此不超过 135 的数字中 2 的出现次数就是 20 + 14 = 34 种。</p>
+<p>当然，这里面还有一些细节，比如如果某一位比 2 小或者正好是 2 怎么办？我就不在这里讲了。这里直接贴下代码，大家自己继续完成好了。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numberOf2sInRange</span><span class="params">(self, n: int)</span> -&gt; int:</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        m = <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> m &lt;= n:</span><br><span class="line">            cur = n // m % <span class="number">10</span></span><br><span class="line">            <span class="keyword">if</span> cur &gt; <span class="number">2</span>: ans += (n // m // <span class="number">10</span> + <span class="number">1</span>) * m</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> cur == <span class="number">2</span>: ans += n % m + <span class="number">1</span></span><br><span class="line">                ans += (n // m // <span class="number">10</span>) * m</span><br><span class="line">            m *= <span class="number">10</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>把 2 换成其他数字 x，那就可以计算不超过 n 的 x 的出现次数。</p>
+</blockquote>
+<p>举这个例子就想告诉大家为啥一些题目你压根就没有思路的原因：</p>
+<ul>
+<li>要么就是这种题没见过，那没办法，多做题呗。</li>
+<li>要么就是你算法思维还不够。比如我上面讲的分治的算法思维。</li>
+</ul>
+<p>一看就会又说明<code>这种题你是回答过的</code>，因此<strong>一看就会，一写就废，一般都是没有养成良好的算法思维，而分治就是一种非常重要的算法思维</strong>。当算法思维有了，剩下的细节就慢慢练习就好了，这没有捷径。但是算法思维是有捷径的，大家在刷题之前要特别注重算法思维的学习。</p>
+<p>我再举几个例子给大家，帮助大家加深理解。</p>
+<h3 id="三个题目带你理解分治思想"><a href="#三个题目带你理解分治思想" class="headerlink" title="三个题目带你理解分治思想"></a>三个题目带你理解分治思想</h3><ol>
+<li>在一个数组 nums 中找值为 target 的元素，并返回数组下标，题目保证 nums 中有且仅有一个数等于 target。</li>
+<li>给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回  -1。你可以认为每种硬币的数量是无限的。（322. 零钱兑换）</li>
+<li>n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。（51. N 皇后）</li>
+</ol>
+<p>这几道题覆盖了简单中等和困难三种难度。接下来，我们来看下这几个题。</p>
+<h4 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h4><p>对于第一题， 答案无非就是 [0, n - 1]。因此我们可以将问题分解为以下几个子问题：</p>
+<ul>
+<li>是 0 么？no</li>
+<li>是 1 么？no</li>
+<li>是 2 么？no</li>
+<li>。。。</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glvhjzwomxj31840rm77h.jpg" alt></p>
+<p>最终的答案就是子问题中回答为 “yes” 的索引。严格意义上来说，这里只有分，没有治，而且这个分和前面的分有微妙的差异。前面的分完之后后面还要用，这个分是直接给扔掉了。类似的有二分法，二分法就是一种只有分没有治的“分治法”。</p>
+<h4 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h4><p>coins 是个变量， amount 也是变量，它们关系感觉好多的样子？我该怎么理清呢？</p>
+<p>我们从特殊入手，比如 coins = [1, 2, 5], amount = 11。为了方便描述，原问题我用 f([1,2,5], 11) 表示 coins 为 [1,2,5]，amount 为 11 的最少需要多少硬币凑齐。</p>
+<p>我也不知道最终的<strong>最少硬币方案</strong>是怎么选的。那我就所有情况都走一遍呗，比较一下哪种方案用硬币最少就用哪个不就行了么？</p>
+<p>最终的算法还真就是基于这个朴实的想法来的。</p>
+<p>选第一枚硬币的时候，一共只有三种情况：选择 1，选择 2，选择 5。</p>
+<ul>
+<li>如果我们先选了 1，那么再凑出 10 就行了。那怎么凑出 10 呢？不就是 f([1, 2, 5], 10) 么？</li>
+<li>如果我们先选了 2，那么再凑出 9 就行了。那怎么凑出 9 呢？不就是 f([1, 2, 5], 9) 么？</li>
+<li>如果我们先选了 5，那么再凑出 6 就行了。那怎么凑出 6 呢？不就是 f([1, 2, 5], 6) 么？</li>
+</ul>
+<p>上面是选取一个硬币的情况，由于没有凑到 amount，我们继续重复，直到凑到 amount。</p>
+<p>于是你可以画出类似如下的逻辑树结构，由于节点太多我没有画全。</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glvhlpqmywj319o0ostcg.jpg" alt></p>
+<p>有没有发现你的大脑直接处理大问题没有思路，但将其分解为小问题就简单了许多？<strong>分</strong>完了，我们还要<strong>治</strong>。</p>
+<blockquote>
+<p>这就好像你是主管，向下面布置了作业，布置完了你还要收作业将他们汇总起来搞个 ppt 啥的。</p>
+</blockquote>
+<p>不过这也不难。由于问题是最少硬币，那么治就取最少呗。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> + min(f([<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>], <span class="number">10</span>),f([<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>], <span class="number">9</span>),f([<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>], <span class="number">6</span>))</span><br></pre></td></tr></table></figure>
+<p>总结一下：</p>
+<p>这道题的分我们可以从几个特例入手就可以打开思维。上面的<strong>分</strong>的手段用伪代码描述就是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> coin : coins) &#123;</span><br><span class="line">    f(coins, amount - coin)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分完了就是处理边界和<strong>治</strong>了。</p>
+<p>完整的分治代码就是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">f</span><span class="params">(coins, amount)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (amount &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// 非法解，用正无穷表示</span></span><br><span class="line">        <span class="keyword">return</span> Float.POSITIVE_INFINITY</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 叶子节点</span></span><br><span class="line">    <span class="keyword">if</span> (amount == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// 找到一个解，是不是最小的”治“阶段处理。</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans = Float.POSITIVE_INFINITY</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> coin : coins) &#123;</span><br><span class="line">        ans = Math.min(ans, <span class="number">1</span> + f(coins, amount - coins))</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>为了突出我的算法主框架，略去了一些细节。 比如原题在无解的时候需要返回 - 1，而我返回的是正无穷。</p>
+</blockquote>
+<p>如果之前做过这道题的朋友应该知道这是一个典型的背包问题。如果现在让我做，我可能也直接自底向上 dp table 解决了（不过 dp table 和记忆化递归没有本质的思维差别）。但是算法是如何想出来的这一点，是如何一步一步优化的，大家一定<strong>钻到底</strong>，这样刷题效率才高。</p>
+<h4 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h4><p>不懂题目意思的可以去看下力扣原题 51. N 皇后。这道题就是典型的回溯题目，什么是回溯？一言以蔽之，那就是一个一个试，不行了就返回上一步继续试。</p>
+<p>这么多格子我该放哪呢？每个格子还有制约关系！好乱，没有思路。</p>
+<p>别急，继续使用分治的思维。这道题是让我们将 N 个皇后放到 N X N 的棋盘上。那不就是：</p>
+<ul>
+<li>第一行的皇后应该放到第几列？</li>
+<li>第二行的皇后应该放到第几列？</li>
+<li>第三行的皇后应该放到第几列？</li>
+<li>。。。</li>
+</ul>
+<blockquote>
+<p>改成”第 x 列的皇后应该放到第几行？”这种子问题划分模式也是可以的。</p>
+</blockquote>
+<p>伪代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">placeRow</span><span class="params">(i)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 决定应该放到第几列</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) &#123;</span><br><span class="line">    placeRow(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果上面的子问题都解决了，那整个问题不就解决了么？</p>
+<p>但是上面的子问题，还是无法直接解决。比如“第一行的皇后应该放到第几列？”我也不知道啊。没关系，我们继续对“第一行的皇后应该放到第几列？” 这个问题进行分解。</p>
+<ul>
+<li>第一行的皇后放到第 1 列么？</li>
+<li>第一行的皇后放到第 2 列么？</li>
+<li>第一行的皇后放到第 3 列么？</li>
+<li>。。。</li>
+</ul>
+<p>继续完善上面的 placeRow 代码即可。这里给出伪代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">boolean</span> <span class="title">canPlaceQueue</span><span class="params">(i, j)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 根据目前的棋局（放了是否能不相互攻击），分析 i 和 j 这个位置能否放女王。</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">placeRow</span><span class="params">(i)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (canPlaceQueue(i, j)) &#123;</span><br><span class="line">            <span class="comment">// 将女王放到 (i,j)，更新当前棋局</span></span><br><span class="line">            placeQueue(i, j)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glvhg8w616j315k0s8wit.jpg" alt></p>
+<p>现在的问题就只剩下实现<code>canPlaceQueue(i, j)</code> 和 <code>placeQueue(i, j)</code>了，这两个函数根据题目要求模拟实现即可。</p>
+<p>需要注意的是我们做了一个<code>placeQueue(i, j)</code> 的操作，这<strong>可能</strong>是一个 mutable 的操作。因此如果一条路行不通需要回溯，那么 mutable 的数据需要撤销修改。当然如果你的数据是 immutable 就无所谓了。不过 immutable 则有可能内存移除或者超时的风险。</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glvhgnyobcj31uc0si483.jpg" alt></p>
+<p>由于这里只是讲思维的，不是讲题目本身的，因此还是点到为止，后面的算法细节我就不讲了，希望读者能自己将代码完善一下。</p>
+<h4 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h4><p>类似的例子实在太多了，根本举不过来，我随口给大家说几个。</p>
+<ul>
+<li><p>如果让你求一个数组的连续子数组总个数，你会如何求？其中连续指的是数组的索引连续。 比如 [1,3,4]，其连续子数组有：[1], [3], [4], [1,3], [3,4] , [1,3,4]，你需要返回 6。分治就好了，连续子数组个数等于：以索引为 0 结尾的子数组个数 + 以索引为 1 结尾的子数组个数 + … + 以索引为 n - 1 结尾的子数组个数</p>
+</li>
+<li><p><a href="https://leetcode-cn.com/problems/climbing-stairs/" title="70. 爬楼梯" target="_blank" rel="noopener">70. 爬楼梯</a> 让你求爬到最后一级台阶有多少种方法。这太多了，我数不过来。但是我可以将其分解成两个子问题。如果我用 f(n) 表示爬到第 n 级的方法数，那么 f(n) = f(n - 1) + f(n - 2)。但是 n - 1 我也不会啊，没关系，我们继续分解。这和上面的硬币问题有多大差别么？ 对于这道题，分就是拆成两个子问题，治就是求和。</p>
+</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glvho4ljj1j30nk0ek0u5.jpg" alt></p>
+<blockquote>
+<p>这就是最简单的无选择的<strong>递推</strong>动态规划</p>
+</blockquote>
+<ul>
+<li><p><a href="https://leetcode-cn.com/problems/min-cost-climbing-stairs/" title="746. 使用最小花费爬楼梯" target="_blank" rel="noopener">746. 使用最小花费爬楼梯</a> 换了个皮又来了？</p>
+</li>
+<li><p><a href="https://leetcode-cn.com/problems/jump-game-vi/" target="_blank" rel="noopener">220 场周赛 - 跳跃游戏 VI</a> 这不还是上面爬楼梯换皮么？这次变成了一次能爬 k 级台阶罢了。</p>
+</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glvhobhn2tj31ai0n478f.jpg" alt></p>
+<blockquote>
+<p>这道题数组长度是 $10^5$，如果不做优化复杂度会是 $N^2$，算起来就是 $10^10$ 过不了，大于上面给大家讲的 1000 万。如何优化有点跑题了，就不在这里讲了。</p>
+</blockquote>
+<ul>
+<li><a href="https://leetcode-cn.com/problems/unique-paths/" title="62. 不同路径" target="_blank" rel="noopener">62. 不同路径</a> 穿个二维的衣服就看不出你是爬楼梯了？</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glvhord9r6j30lo0es402.jpg" alt></p>
+<p>相关换皮题目太多，大家可以去我的插件里看。</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gluqthyftxj30qe0lcwgw.jpg" alt></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本次给大家分享了一个很重要的算法思想<strong>分治</strong>，很多题都可以用到这个思想。能运用分治思想的专题有“动态规划”,”分治“，“回溯” 等，大家在平时做题的时候可以参考我的这种思考方式。</p>
+<p>如果你碰到一个复杂的问题，可以尝试以下几个方法。</p>
+<ul>
+<li>不妨先尝试将其拆解，看能否将其拆解成几个小问题。</li>
+<li>在草稿上画画图，从特殊情况入手，看能否发现什么蛛丝马迹</li>
+<li>暴力模拟。看能否通过剪枝和添加恰当的数据结构来优化算法，使之通过。</li>
+</ul>
+<p>如果你有更好的干货技巧，非常希望你能和我交流，万分期待！</p>
+<p>除了算法思想，我还和大家分享两个超实用的技巧，分别是：</p>
+<ul>
+<li>看关键字。关键字很多时候起到了提示作用，甭管对不对，咱要想到。想到之后迅速脑子中过一下能不能 AC。</li>
+<li>看限制条件。 记住一个数字就行了，1000 万。</li>
+</ul>
+<p>最后和大家说了一个小心得 - ”不要小看暴力法“。暴力法不仅能帮助你打开思路，有时候甚至暴力 + 剪枝（或数据结构优化）就过了。<strong>大力出奇迹，欧耶！(^o^)/</strong></p>
+<p>以上就是本文的全部内容了。大家对此有何看法，欢迎给我留言，我有时间都会一一查看回答。更多算法套路可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经 38K star 啦。大家也可以关注我的公众号《力扣加加》带你啃下算法这块硬骨头。</p>
+
+      </div>
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 2021年3月9日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/LeetCode/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>LeetCode</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/刷题方法/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>刷题方法</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aS4rDQAxF0ex/087UEEzukyqBUl2PmuC263gg9Hu98HXdrvsvT/d8XvyZT/cvuGTIkLEtg7yeH+jpv/iT0yfIkCHjHMbT4cijeQgmb+R3ypAhQwY5Ij8ECbvkvTJkyJDRCbikxiRvkSFDhoxOEUvSPvLMNIlcXIvLkCFjQ0YaLv/590/mGzJkyNiKcYVXOhKoHTE+lQwZMkYzao9Om26ddltwHhkyZAxl8Ify4/IFr/QTBBFahgwZgxi8ffaf5YnaupgMGTJmM9JhYTqG5GE3DegLjihDhoytGCgeAxJP6UgKGKSJMmTIOIbBg2btzrQC5QmrDBkyzmHw4rMWlH84KJUhQ8ZoBi9Ea+22dITABwlfuoYyZMgYxOiUrOmB0oQvKIBlyJBxAKP2mv4qRqfFJkOGjHMYJAlLx4q1T0MKWl5Iy5AhYx6js9TVKV9r0RI12mTIkDGOsaopRsYJtfAanESGDBlDGZ3hYi1M91t4aDlMhgwZoxm11K0fjmuppwwZMs5hpGUq/50suaa/BH0+GTJkDGKk7a3aemunDdeqwmXIkLEt4wqvNKWrJZrxmqwMGTJGM5bFbHCgWuHaCesyZMiYxOgEWb7m1R8GxF1DGTJkjGOkbTiSCBJ8Z0QqQ4YMGXxhor/mVfs08aRChgwZxzD4CxYMJnEzToYMGScw+EpEWqDydTGOlCFDxmmM2ogRpWulZQvS7CsONWXIkLEf4w2Mo+Tz6Jwm2gAAAABJRU5ErkJggg=='>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2020/12/21/shuati-silu3/&title=来和大家聊聊我是如何刷题的（第三弹） | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=前两篇的地址在这里，没有看过的同学建议先看下。
+
+来和大家聊聊我是如何刷题的（第一弹）
+来和大家聊聊我是如何刷题的（第二弹）
+
+本章或许是这个系列的最终章。这次给大家聊一点硬核的，聊一些几乎所有算法题都能用得上的超实用思想。
+上一节给大家抛出了两个问题，分别是：
+
+如何锁定使用哪种算法？比如我看到了这道题，我怎么知道该用什么解法呢？二分？动态规划？
+一看就会，一写就废， 如何克服？
+
+今天，我就来圆一个当初吹下的牛逼。话不多说，直接上干货。如果你觉得有用，请三连支持我一下，让我能够坚持下去，给大家带来更多的干货。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2020/12/21/shuati-silu3/&title=来和大家聊聊我是如何刷题的（第三弹） | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=前两篇的地址在这里，没有看过的同学建议先看下。
+
+来和大家聊聊我是如何刷题的（第一弹）
+来和大家聊聊我是如何刷题的（第二弹）
+
+本章或许是这个系列的最终章。这次给大家聊一点硬核的，聊一些几乎所有算法题都能用得上的超实用思想。
+上一节给大家抛出了两个问题，分别是：
+
+如何锁定使用哪种算法？比如我看到了这道题，我怎么知道该用什么解法呢？二分？动态规划？
+一看就会，一写就废， 如何克服？
+
+今天，我就来圆一个当初吹下的牛逼。话不多说，直接上干货。如果你觉得有用，请三连支持我一下，让我能够坚持下去，给大家带来更多的干货。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2020/12/21/shuati-silu3/&title=来和大家聊聊我是如何刷题的（第三弹） | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=前两篇的地址在这里，没有看过的同学建议先看下。
+
+来和大家聊聊我是如何刷题的（第一弹）
+来和大家聊聊我是如何刷题的（第二弹）
+
+本章或许是这个系列的最终章。这次给大家聊一点硬核的，聊一些几乎所有算法题都能用得上的超实用思想。
+上一节给大家抛出了两个问题，分别是：
+
+如何锁定使用哪种算法？比如我看到了这道题，我怎么知道该用什么解法呢？二分？动态规划？
+一看就会，一写就废， 如何克服？
+
+今天，我就来圆一个当初吹下的牛逼。话不多说，直接上干货。如果你觉得有用，请三连支持我一下，让我能够坚持下去，给大家带来更多的干货。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                          <h4>
+                              <a href="/blog/2020/12/26/heap/" rel="prev" title="几乎刷完了力扣所有的堆题，我发现了这些东西。。。">
+                                
+                                    几乎刷完了力扣所有的堆题，我发现了这些东西。。。
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a> <a class="tag" href="/blog/tags/堆/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 堆</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/blog/2020/12/16/leetcode-app-1/" rel="prev" title="力扣 APP 全新改版，史诗级增强！">
+                                  
+                                      力扣 APP 全新改版，史诗级增强！
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '来和大家聊聊我是如何刷题的（第三弹）',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/blog/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://www.zhihu.com/people/lu-xiao-13-70/activities"
+              class="social fab fa-zhihu flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:azl397985856@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/azl397985856"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/playlist?id=978545815&userid=632167080"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何锁定使用哪种算法？"><span class="toc-text">如何锁定使用哪种算法？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关键字"><span class="toc-text">关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#限制条件"><span class="toc-text">限制条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#暴力优化"><span class="toc-text">暴力优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一看就会，一写就废，-如何克服？"><span class="toc-text">一看就会，一写就废， 如何克服？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分治思维"><span class="toc-text">分治思维</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三个题目带你理解分治思想"><span class="toc-text">三个题目带你理解分治思想</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#第一题"><span class="toc-text">第一题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第二题"><span class="toc-text">第二题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第三题"><span class="toc-text">第三题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更多"><span class="toc-text">更多</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;我的开源项目</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/leetcode" href="https://github.com/azl397985856/leetcode"
+          
+          
+          id="https:github.comazl397985856leetcode">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          LeetCode
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/fe-interview" href="https://github.com/azl397985856/fe-interview"
+          
+          
+          id="https:github.comazl397985856fe-interview">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          大前端
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/daily-featured" href="https://github.com/azl397985856/daily-featured"
+          
+          
+          id="https:github.comazl397985856daily-featured">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          每日一荐
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;全部分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+    href="/blog/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/blog/categories/91天学算法/" href="/blog/categories/91天学算法/"><div class='name'>91天学算法</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/CD/" href="/blog/categories/CD/"><div class='name'>CD</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Easy/" href="/blog/categories/Easy/"><div class='name'>Easy</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Github/" href="/blog/categories/Github/"><div class='name'>Github</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Hard/" href="/blog/categories/Hard/"><div class='name'>Hard</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/LeetCode/" href="/blog/categories/LeetCode/"><div class='name'>LeetCode</div><div class='badge'>(20)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/LeetCode题解书/" href="/blog/categories/LeetCode/LeetCode题解书/"><div class='name'>LeetCode题解书</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/动态规划/" href="/blog/categories/LeetCode/动态规划/"><div class='name'>动态规划</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Medium/" href="/blog/categories/Medium/"><div class='name'>Medium</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/React/" href="/blog/categories/React/"><div class='name'>React</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/TypeScript/" href="/blog/categories/TypeScript/"><div class='name'>TypeScript</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/中等/" href="/blog/categories/中等/"><div class='name'>中等</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书/" href="/blog/categories/书/"><div class='name'>书</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/书/算法/" href="/blog/categories/书/算法/"><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书摘/" href="/blog/categories/书摘/"><div class='name'>书摘</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/二分/" href="/blog/categories/二分/"><div class='name'>二分</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/二叉树/" href="/blog/categories/二叉树/"><div class='name'>二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/刷题方法/" href="/blog/categories/刷题方法/"><div class='name'>刷题方法</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/前端/" href="/blog/categories/前端/"><div class='name'>前端</div><div class='badge'>(23)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/TypeScript/" href="/blog/categories/前端/TypeScript/"><div class='name'>TypeScript</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/TypeScript/泛型/" href="/blog/categories/前端/TypeScript/泛型/"><div class='name'>泛型</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/eslint/" href="/blog/categories/前端/eslint/"><div class='name'>eslint</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/web-component/" href="/blog/categories/前端/web-component/"><div class='name'>web-component</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/webkit/" href="/blog/categories/前端/webkit/"><div class='name'>webkit</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/测试/" href="/blog/categories/前端/测试/"><div class='name'>测试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/浏览器/" href="/blog/categories/前端/浏览器/"><div class='name'>浏览器</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/算法/" href="/blog/categories/前端/算法/"><div class='name'>算法</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/组件化/" href="/blog/categories/前端/组件化/"><div class='name'>组件化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/前缀和/" href="/blog/categories/前缀和/"><div class='name'>前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前缀和/二维前缀和/" href="/blog/categories/前缀和/二维前缀和/"><div class='name'>二维前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/力扣加加/" href="/blog/categories/力扣加加/"><div class='name'>力扣加加</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/双指针/" href="/blog/categories/双指针/"><div class='name'>双指针</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/回溯/" href="/blog/categories/回溯/"><div class='name'>回溯</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/堆/" href="/blog/categories/堆/"><div class='name'>堆</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/好未来/" href="/blog/categories/好未来/"><div class='name'>好未来</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/学习方法/" href="/blog/categories/学习方法/"><div class='name'>学习方法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/工具/" href="/blog/categories/工具/"><div class='name'>工具</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/异议！/" href="/blog/categories/异议！/"><div class='name'>异议！</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/技术大会/" href="/blog/categories/技术大会/"><div class='name'>技术大会</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/D2/" href="/blog/categories/技术大会/D2/"><div class='name'>D2</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/Google-IO/" href="/blog/categories/技术大会/Google-IO/"><div class='name'>Google IO</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/JSConf/" href="/blog/categories/技术大会/JSConf/"><div class='name'>JSConf</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/QCon/" href="/blog/categories/技术大会/QCon/"><div class='name'>QCon</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/React-Conf/" href="/blog/categories/技术大会/React-Conf/"><div class='name'>React Conf</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/插件/" href="/blog/categories/插件/"><div class='name'>插件</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/插件/浏览器插件/" href="/blog/categories/插件/浏览器插件/"><div class='name'>浏览器插件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数学/" href="/blog/categories/数学/"><div class='name'>数学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数学/算法/" href="/blog/categories/数学/算法/"><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构/" href="/blog/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/hashtable/" href="/blog/categories/数据结构/hashtable/"><div class='name'>hashtable</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/二叉搜索树/" href="/blog/categories/数据结构/二叉搜索树/"><div class='name'>二叉搜索树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/图/" href="/blog/categories/数据结构/图/"><div class='name'>图</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/字符串/" href="/blog/categories/数据结构/字符串/"><div class='name'>字符串</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/平衡二叉树/" href="/blog/categories/数据结构/平衡二叉树/"><div class='name'>平衡二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/数组/" href="/blog/categories/数据结构/数组/"><div class='name'>数组</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/算法/" href="/blog/categories/数据结构/算法/"><div class='name'>算法</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/链表/" href="/blog/categories/数据结构/链表/"><div class='name'>链表</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，二叉树/" href="/blog/categories/数据结构，二叉树/"><div class='name'>数据结构，二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，单调栈/" href="/blog/categories/数据结构，单调栈/"><div class='name'>数据结构，单调栈</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，字符串/" href="/blog/categories/数据结构，字符串/"><div class='name'>数据结构，字符串</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，数组/" href="/blog/categories/数据结构，数组/"><div class='name'>数据结构，数组</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/日记/" href="/blog/categories/日记/"><div class='name'>日记</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/日记/技术/" href="/blog/categories/日记/技术/"><div class='name'>技术</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/春招/" href="/blog/categories/春招/"><div class='name'>春招</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/栈/" href="/blog/categories/栈/"><div class='name'>栈</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/树/" href="/blog/categories/树/"><div class='name'>树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/校招/" href="/blog/categories/校招/"><div class='name'>校招</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/模拟面试/" href="/blog/categories/模拟面试/"><div class='name'>模拟面试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/每日一荐/" href="/blog/categories/每日一荐/"><div class='name'>每日一荐</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-09/" href="/blog/categories/每日一荐/2019-09/"><div class='name'>2019-09</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-10/" href="/blog/categories/每日一荐/2019-10/"><div class='name'>2019-10</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-11/" href="/blog/categories/每日一荐/2019-11/"><div class='name'>2019-11</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-12/" href="/blog/categories/每日一荐/2019-12/"><div class='name'>2019-12</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2020-01/" href="/blog/categories/每日一荐/2020-01/"><div class='name'>2020-01</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2020-03/" href="/blog/categories/每日一荐/2020-03/"><div class='name'>2020-03</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/浏览器/" href="/blog/categories/浏览器/"><div class='name'>浏览器</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/浏览器/webkit/" href="/blog/categories/浏览器/webkit/"><div class='name'>webkit</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/浏览器/事件/" href="/blog/categories/浏览器/事件/"><div class='name'>事件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/电影/" href="/blog/categories/电影/"><div class='name'>电影</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/电影/观后感/" href="/blog/categories/电影/观后感/"><div class='name'>观后感</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/百度/" href="/blog/categories/百度/"><div class='name'>百度</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法/" href="/blog/categories/算法/"><div class='name'>算法</div><div class='badge'>(26)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/BFS/" href="/blog/categories/算法/BFS/"><div class='name'>BFS</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/DFS/" href="/blog/categories/算法/DFS/"><div class='name'>DFS</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/二分法/" href="/blog/categories/算法/二分法/"><div class='name'>二分法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/位运算/" href="/blog/categories/算法/位运算/"><div class='name'>位运算</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/前缀和/" href="/blog/categories/算法/前缀和/"><div class='name'>前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/动态规划/" href="/blog/categories/算法/动态规划/"><div class='name'>动态规划</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/双指针/" href="/blog/categories/算法/双指针/"><div class='name'>双指针</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/回文/" href="/blog/categories/算法/回文/"><div class='name'>回文</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/回溯/" href="/blog/categories/算法/回溯/"><div class='name'>回溯</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/子序列/" href="/blog/categories/算法/子序列/"><div class='name'>子序列</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/就地算法/" href="/blog/categories/算法/就地算法/"><div class='name'>就地算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/布隆过滤器/" href="/blog/categories/算法/布隆过滤器/"><div class='name'>布隆过滤器</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/循环移位/" href="/blog/categories/算法/循环移位/"><div class='name'>循环移位</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/数学/" href="/blog/categories/算法/数学/"><div class='name'>数学</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/概率/" href="/blog/categories/算法/概率/"><div class='name'>概率</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/母题/" href="/blog/categories/算法/母题/"><div class='name'>母题</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/滑动窗口/" href="/blog/categories/算法/滑动窗口/"><div class='name'>滑动窗口</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/状态压缩/" href="/blog/categories/算法/状态压缩/"><div class='name'>状态压缩</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/背包问题/" href="/blog/categories/算法/背包问题/"><div class='name'>背包问题</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/递归/" href="/blog/categories/算法/递归/"><div class='name'>递归</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/链表反转/" href="/blog/categories/算法/链表反转/"><div class='name'>链表反转</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，动态规划/" href="/blog/categories/算法，动态规划/"><div class='name'>算法，动态规划</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，序列化/" href="/blog/categories/算法，序列化/"><div class='name'>算法，序列化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，滑动窗口/" href="/blog/categories/算法，滑动窗口/"><div class='name'>算法，滑动窗口</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/经验分享/" href="/blog/categories/经验分享/"><div class='name'>经验分享</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/编程之美/" href="/blog/categories/编程之美/"><div class='name'>编程之美</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/蓄水池抽样/" href="/blog/categories/蓄水池抽样/"><div class='name'>蓄水池抽样</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/虾皮/" href="/blog/categories/虾皮/"><div class='name'>虾皮</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/解题模板/" href="/blog/categories/解题模板/"><div class='name'>解题模板</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/贪婪/" href="/blog/categories/贪婪/"><div class='name'>贪婪</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/软件工具/" href="/blog/categories/软件工具/"><div class='name'>软件工具</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/链表/" href="/blog/categories/链表/"><div class='name'>链表</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/面经/" href="/blog/categories/面经/"><div class='name'>面经</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/面试/" href="/blog/categories/面试/"><div class='name'>面试</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/面试/字节跳动/" href="/blog/categories/面试/字节跳动/"><div class='name'>字节跳动</div><div class='badge'>(2)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+    href="/blog/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/blog/tags/91天学算法/" style="font-size: 20.15px; color: #6f6f6f">91天学算法</a> <a href="/blog/tags/BFS/" style="font-size: 14px; color: #999">BFS</a> <a href="/blog/tags/BigPipe/" style="font-size: 14px; color: #999">BigPipe</a> <a href="/blog/tags/CD/" style="font-size: 14px; color: #999">CD</a> <a href="/blog/tags/Canvas/" style="font-size: 14px; color: #999">Canvas</a> <a href="/blog/tags/Chrome/" style="font-size: 14px; color: #999">Chrome</a> <a href="/blog/tags/D2/" style="font-size: 14px; color: #999">D2</a> <a href="/blog/tags/Easy/" style="font-size: 14px; color: #999">Easy</a> <a href="/blog/tags/Floyd-Warshall/" style="font-size: 14px; color: #999">Floyd-Warshall</a> <a href="/blog/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/blog/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/blog/tags/Google-IO/" style="font-size: 14px; color: #999">Google IO</a> <a href="/blog/tags/Hard/" style="font-size: 14.77px; color: #949494">Hard</a> <a href="/blog/tags/JSConf/" style="font-size: 14px; color: #999">JSConf</a> <a href="/blog/tags/LeetCode/" style="font-size: 22.46px; color: #5f5f5f">LeetCode</a> <a href="/blog/tags/LeetCode日记/" style="font-size: 20.92px; color: #6a6a6a">LeetCode日记</a> <a href="/blog/tags/Mac/" style="font-size: 14px; color: #999">Mac</a> <a href="/blog/tags/Medium/" style="font-size: 14.77px; color: #949494">Medium</a> <a href="/blog/tags/PPT/" style="font-size: 14px; color: #999">PPT</a> <a href="/blog/tags/QCon/" style="font-size: 14px; color: #999">QCon</a> <a href="/blog/tags/RFC/" style="font-size: 14px; color: #999">RFC</a> <a href="/blog/tags/React/" style="font-size: 14px; color: #999">React</a> <a href="/blog/tags/TypeScript/" style="font-size: 19.38px; color: #747474">TypeScript</a> <a href="/blog/tags/eslint/" style="font-size: 14px; color: #999">eslint</a> <a href="/blog/tags/immutable/" style="font-size: 14px; color: #999">immutable</a> <a href="/blog/tags/immutablejs/" style="font-size: 14px; color: #999">immutablejs</a> <a href="/blog/tags/k-问题/" style="font-size: 14px; color: #999">k 问题</a> <a href="/blog/tags/vue/" style="font-size: 14px; color: #999">vue</a> <a href="/blog/tags/web-component/" style="font-size: 14px; color: #999">web-component</a> <a href="/blog/tags/webkit/" style="font-size: 14px; color: #999">webkit</a> <a href="/blog/tags/中位数/" style="font-size: 14px; color: #999">中位数</a> <a href="/blog/tags/中等/" style="font-size: 14.77px; color: #949494">中等</a> <a href="/blog/tags/书/" style="font-size: 14px; color: #999">书</a> <a href="/blog/tags/书摘/" style="font-size: 14px; color: #999">书摘</a> <a href="/blog/tags/事件/" style="font-size: 14px; color: #999">事件</a> <a href="/blog/tags/事件循环/" style="font-size: 14px; color: #999">事件循环</a> <a href="/blog/tags/二分/" style="font-size: 14.77px; color: #949494">二分</a> <a href="/blog/tags/二分法/" style="font-size: 14px; color: #999">二分法</a> <a href="/blog/tags/二叉树/" style="font-size: 15.54px; color: #8f8f8f">二叉树</a> <a href="/blog/tags/位运算/" style="font-size: 14px; color: #999">位运算</a> <a href="/blog/tags/删除-k-个字符/" style="font-size: 14px; color: #999">删除 k 个字符</a> <a href="/blog/tags/刷题/" style="font-size: 14.77px; color: #949494">刷题</a> <a href="/blog/tags/刷题方法/" style="font-size: 15.54px; color: #8f8f8f">刷题方法</a> <a href="/blog/tags/前端/" style="font-size: 21.69px; color: #656565">前端</a> <a href="/blog/tags/前缀和/" style="font-size: 16.31px; color: #898989">前缀和</a> <a href="/blog/tags/前缀表达式/" style="font-size: 14px; color: #999">前缀表达式</a> <a href="/blog/tags/力扣加加/" style="font-size: 20.92px; color: #6a6a6a">力扣加加</a> <a href="/blog/tags/动态规划/" style="font-size: 18.62px; color: #7a7a7a">动态规划</a> <a href="/blog/tags/单元测试/" style="font-size: 14px; color: #999">单元测试</a> <a href="/blog/tags/单调栈/" style="font-size: 14px; color: #999">单调栈</a> <a href="/blog/tags/双指针/" style="font-size: 14px; color: #999">双指针</a> <a href="/blog/tags/命令行/" style="font-size: 14px; color: #999">命令行</a> <a href="/blog/tags/回溯/" style="font-size: 14px; color: #999">回溯</a> <a href="/blog/tags/困难/" style="font-size: 14.77px; color: #949494">困难</a> <a href="/blog/tags/图/" style="font-size: 14px; color: #999">图</a> <a href="/blog/tags/图片处理/" style="font-size: 14px; color: #999">图片处理</a> <a href="/blog/tags/堆/" style="font-size: 14.77px; color: #949494">堆</a> <a href="/blog/tags/好未来/" style="font-size: 14px; color: #999">好未来</a> <a href="/blog/tags/子数组/" style="font-size: 14px; color: #999">子数组</a> <a href="/blog/tags/字符串/" style="font-size: 14px; color: #999">字符串</a> <a href="/blog/tags/字节跳动/" style="font-size: 15.54px; color: #8f8f8f">字节跳动</a> <a href="/blog/tags/学习方法/" style="font-size: 14.77px; color: #949494">学习方法</a> <a href="/blog/tags/工具/" style="font-size: 14px; color: #999">工具</a> <a href="/blog/tags/序列化/" style="font-size: 14px; color: #999">序列化</a> <a href="/blog/tags/异常处理/" style="font-size: 14px; color: #999">异常处理</a> <a href="/blog/tags/异议！/" style="font-size: 14px; color: #999">异议！</a> <a href="/blog/tags/循环移位/" style="font-size: 14px; color: #999">循环移位</a> <a href="/blog/tags/微前端/" style="font-size: 14px; color: #999">微前端</a> <a href="/blog/tags/必备软件/" style="font-size: 14px; color: #999">必备软件</a> <a href="/blog/tags/我的书/" style="font-size: 14px; color: #999">我的书</a> <a href="/blog/tags/扩展程序/" style="font-size: 14px; color: #999">扩展程序</a> <a href="/blog/tags/技术大会/" style="font-size: 14px; color: #999">技术大会</a> <a href="/blog/tags/技术调研/" style="font-size: 14px; color: #999">技术调研</a> <a href="/blog/tags/技能/" style="font-size: 14px; color: #999">技能</a> <a href="/blog/tags/持续集成/" style="font-size: 14px; color: #999">持续集成</a> <a href="/blog/tags/插件/" style="font-size: 15.54px; color: #8f8f8f">插件</a> <a href="/blog/tags/效率/" style="font-size: 14px; color: #999">效率</a> <a href="/blog/tags/数学/" style="font-size: 16.31px; color: #898989">数学</a> <a href="/blog/tags/数据结构/" style="font-size: 23.23px; color: #5a5a5a">数据结构</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，Hard/" style="font-size: 14.77px; color: #949494">数据结构，算法，LeetCode 日记，Hard</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，中等/" style="font-size: 14px; color: #999">数据结构，算法，LeetCode 日记，中等</a> <a href="/blog/tags/数组/" style="font-size: 14.77px; color: #949494">数组</a> <a href="/blog/tags/日记/" style="font-size: 14.77px; color: #949494">日记</a> <a href="/blog/tags/春招/" style="font-size: 15.54px; color: #8f8f8f">春招</a> <a href="/blog/tags/最大公约数/" style="font-size: 14px; color: #999">最大公约数</a> <a href="/blog/tags/最长上升子序列/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/blog/tags/最长公共子序列/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/blog/tags/栈/" style="font-size: 14px; color: #999">栈</a> <a href="/blog/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/blog/tags/校招/" style="font-size: 15.54px; color: #8f8f8f">校招</a> <a href="/blog/tags/概率/" style="font-size: 14.77px; color: #949494">概率</a> <a href="/blog/tags/模拟面试/" style="font-size: 14px; color: #999">模拟面试</a> <a href="/blog/tags/母题/" style="font-size: 14px; color: #999">母题</a> <a href="/blog/tags/每日一荐/" style="font-size: 17.85px; color: #7f7f7f">每日一荐</a> <a href="/blog/tags/泛型/" style="font-size: 14.77px; color: #949494">泛型</a> <a href="/blog/tags/测试/" style="font-size: 14px; color: #999">测试</a> <a href="/blog/tags/浏览器/" style="font-size: 15.54px; color: #8f8f8f">浏览器</a> <a href="/blog/tags/滑动窗口/" style="font-size: 17.08px; color: #848484">滑动窗口</a> <a href="/blog/tags/滤镜/" style="font-size: 14px; color: #999">滤镜</a> <a href="/blog/tags/状态压缩/" style="font-size: 14px; color: #999">状态压缩</a> <a href="/blog/tags/状态机/" style="font-size: 14px; color: #999">状态机</a> <a href="/blog/tags/电子书/" style="font-size: 14px; color: #999">电子书</a> <a href="/blog/tags/电影/" style="font-size: 14.77px; color: #949494">电影</a> <a href="/blog/tags/百度/" style="font-size: 14px; color: #999">百度</a> <a href="/blog/tags/监控/" style="font-size: 14px; color: #999">监控</a> <a href="/blog/tags/算法/" style="font-size: 24px; color: #555">算法</a> <a href="/blog/tags/算法提高班/" style="font-size: 20.92px; color: #6a6a6a">算法提高班</a> <a href="/blog/tags/算法系列/" style="font-size: 16.31px; color: #898989">算法系列</a> <a href="/blog/tags/组件化/" style="font-size: 14px; color: #999">组件化</a> <a href="/blog/tags/经验分享/" style="font-size: 15.54px; color: #8f8f8f">经验分享</a> <a href="/blog/tags/编程之美/" style="font-size: 14px; color: #999">编程之美</a> <a href="/blog/tags/草稿/" style="font-size: 14px; color: #999">草稿</a> <a href="/blog/tags/蓄水池抽样/" style="font-size: 14px; color: #999">蓄水池抽样</a> <a href="/blog/tags/虾皮/" style="font-size: 14px; color: #999">虾皮</a> <a href="/blog/tags/装机/" style="font-size: 14px; color: #999">装机</a> <a href="/blog/tags/解题模板/" style="font-size: 14px; color: #999">解题模板</a> <a href="/blog/tags/贪婪/" style="font-size: 14px; color: #999">贪婪</a> <a href="/blog/tags/贪心/" style="font-size: 14px; color: #999">贪心</a> <a href="/blog/tags/递归/" style="font-size: 14px; color: #999">递归</a> <a href="/blog/tags/链表/" style="font-size: 15.54px; color: #8f8f8f">链表</a> <a href="/blog/tags/陷阱题/" style="font-size: 14px; color: #999">陷阱题</a> <a href="/blog/tags/面经/" style="font-size: 15.54px; color: #8f8f8f">面经</a> <a href="/blog/tags/面试/" style="font-size: 14.77px; color: #949494">面试</a>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget list'>
+  
+<header class='pure'>
+  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;强烈推荐</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="entry">
+      
+        <li><a class="flat-box" title="https://xaoxuu.com/wiki/hexo.sh/" href="https://xaoxuu.com/wiki/hexo.sh/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;Hexo脚本（Mac）
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://xaoxuu.com/wiki/vim-cn.sh/" href="https://xaoxuu.com/wiki/vim-cn.sh/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;图床脚本（Mac）
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://yasuotu.com" href="https://yasuotu.com"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;图片在线压缩
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://realfavicongenerator.net" href="https://realfavicongenerator.net"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;生成Favicon
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://mxclub.github.io/resume/" href="https://mxclub.github.io/resume/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;简历主题
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+   
+  <div class="social-wrapper">
+     
+    <a
+      href="/blog/atom.xml"
+      class="social fas fa-rss flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://www.zhihu.com/people/lu-xiao-13-70/activities"
+      class="social fab fa-zhihu flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="mailto:azl397985856@gmail.com"
+      class="social fas fa-envelope flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://github.com/azl397985856"
+      class="social fab fa-github flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://music.163.com/playlist?id=978545815&amp;userid=632167080"
+      class="social fas fa-headphones-alt flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+     
+  </div>
+  
+  <br />
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename"
+      >Material X</a
+    >
+    作为主题  。
+  </div>
+
+  <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+  <script>
+    var now = new Date();
+    function createtime() {
+      var grt = new Date("08/10/2018 17:38:00"); //在此处修改你的建站时间，格式：月/日/年 时:分:秒
+      now.setTime(now.getTime() + 250);
+      days = (now - grt) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+      hnum = Math.floor(hours);
+      if (String(hnum).length == 1) {
+        hnum = "0" + hnum;
+      }
+      minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+      mnum = Math.floor(minutes);
+      if (String(mnum).length == 1) {
+        mnum = "0" + mnum;
+      }
+      seconds =
+        (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+      snum = Math.round(seconds);
+      if (String(snum).length == 1) {
+        snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML =
+        "本站已安全运行 " + dnum + " 天 ";
+      document.getElementById("times").innerHTML =
+        hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()", 250);
+  </script>
+</footer>
+<script>
+  setLoadingBarProgress(80);
+</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "aea1377036afe4cd0343",
+      clientSecret: "815c638dea8644b7a4b97905707cf72b45555f6d",
+      repo: "blog",
+      owner: "azl397985856",
+      admin: "azl397985856",
+      
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
