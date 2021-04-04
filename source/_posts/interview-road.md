@@ -72,6 +72,8 @@ categories:
 
 ## 视频解析
 
+bilibili 在线观看：https://www.bilibili.com/video/BV1qV411n7Qc
+
 ## 参考
 
 - [大前端面试宝典](https://lucifer.ren/fe-interview/#/ "大前端面试宝典")
