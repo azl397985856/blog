@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-04-04T04:40:52.438Z</updated>
+  <updated>2021-04-06T03:43:34.159Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://lucifer.ren/blog/2021/04/06/out-of-science/"/>
+    <id>https://lucifer.ren/blog/2021/04/06/out-of-science/</id>
+    <published>2021-04-06T03:43:32.499Z</published>
+    <updated>2021-04-06T03:43:34.159Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>lucifer 的面试之路</title>
@@ -593,28 +615,6 @@
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
       <category term="刷题方法" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>力扣 APP 全新改版，史诗级增强！</title>
-    <link href="https://lucifer.ren/blog/2020/12/16/leetcode-app-1/"/>
-    <id>https://lucifer.ren/blog/2020/12/16/leetcode-app-1/</id>
-    <published>2020-12-15T16:00:00.000Z</published>
-    <updated>2021-03-09T10:48:39.795Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/0081Kckwly1glomy7awgxj31e00la4qp.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;这次的改版真的是判若两人，PC 端的几乎所有功能都可以在新版 APP 中看到，并且体验更好。 不仅之前令我不爽的地方全部不见了，而且多了一些我想都没想到的好用功能。 比如&lt;strong&gt;摇一摇功能&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;我拿到了体验版第一时间就给大家写了这篇&lt;strong&gt;体验报告&lt;/strong&gt;。下面，西法就带你看看全新版本都有啥。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="软件工具" scheme="https://lucifer.ren/blog/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
   </entry>
   

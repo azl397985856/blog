@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>《西法的刷题秘籍》电子书开放下载啦~ | lucifer的网络博客</title>
+  <title>lucifer的网络博客</title>
   
   <meta name="keywords" content="前端 leetocde 数据结构 算法 lucifer 大前端 性能优化 前端架构 前端工程化">
   
@@ -288,8 +288,8 @@
         
   
     <h1 class="title">
-      <a href="/blog/2020/12/13/leetcode-ebook-1/">
-        《西法的刷题秘籍》电子书开放下载啦~
+      <a href="/blog/2021/04/06/out-of-science/">
+        2021-04-06
       </a>
     </h1>
   
@@ -320,7 +320,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-12-13</p>
+    <p>2021-04-06</p>
   </a>
 </div>
 
@@ -328,14 +328,6 @@
         
           
             
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/categories/LeetCode/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>算法&nbsp;/&nbsp;LeetCode</p>
-    </a>
-  </div>
-
 
           
         
@@ -359,7 +351,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">1.8k字</span>
+          <span class="post-count">3.6k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -367,7 +359,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">6分</span>
+          <span class="post-count">15分</span>
         </span>
       </span>
     </div>
@@ -385,123 +377,143 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluelm27rj30dw0780sm.jpg" alt="leetcode.jpeg"></p>
+        <p>为何我刷了很多题，遇到新的题还是唯唯诺诺，无法重拳出击？为何一看就会一些就废？这其中又隐藏着怎样的秘密？究竟是道德的沦丧还是人性的扭曲？欢迎收看本期的 <strong>走出科学</strong> 特别栏目。</p>
+<p>今天给大家带来了<strong>三位重量级选手</strong>，一位体重 98 公斤，一位体重 100 公斤，还有一位体重 98 斤，今天 lucifer 就带大家用同样的招式 KO 他们三位。</p>
+<h1 id="第一位选手-84-柱状图中最大的矩形"><a href="#第一位选手-84-柱状图中最大的矩形" class="headerlink" title="第一位选手 - 84. 柱状图中最大的矩形"></a>第一位选手 - 84. 柱状图中最大的矩形</h1><h2 id="题目地址"><a href="#题目地址" class="headerlink" title="题目地址"></a>题目地址</h2><p><a href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/largest-rectangle-in-histogram/</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。</p>
+<p>求在该柱状图中，能够勾勒出来的矩形的最大面积。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghltx8sr4uj305805odfn.jpg" alt></p>
+<p>以上是柱状图的示例，其中每个柱子的宽度为 1，给定的高度为  [2,1,5,6,2,3]。<br><br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghltx9kgd2j305805oa9z.jpg" alt></p>
+<p>图中阴影部分为所能勾勒出的最大矩形面积，其面积为  10  个单位。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line"></span><br><span class="line">输入：[2,1,5,6,2,3]</span><br><span class="line">输出：10</span><br></pre></td></tr></table></figure>
+<h2 id="公司"><a href="#公司" class="headerlink" title="公司"></a>公司</h2><ul>
+<li>阿里</li>
+<li>腾讯</li>
+<li>百度</li>
+<li>字节</li>
+</ul>
+<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><ul>
+<li>单调栈</li>
+</ul>
+<h2 id="暴力枚举-左右端点法（TLE）"><a href="#暴力枚举-左右端点法（TLE）" class="headerlink" title="暴力枚举 - 左右端点法（TLE）"></a>暴力枚举 - 左右端点法（TLE）</h2><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>我们暴力尝试<code>所有可能的矩形</code>。由于矩阵是二维图形， 我我们可以使用<code>左右两个端点来唯一确认一个矩阵</code>。因此我们使用双层循环枚举所有的可能性即可。 而矩形的面积等于<code>（右端点坐标 - 左端点坐标 + 1) * 最小的高度</code>，最小的高度我们可以在遍历的时候顺便求出。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">largestRectangleArea</span><span class="params">(self, heights: List[int])</span> -&gt; int:</span></span><br><span class="line">        n, ans = len(heights), <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> n != <span class="number">0</span>:</span><br><span class="line">            ans = heights[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            height = heights[i]</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i, n):</span><br><span class="line">                height = min(height, heights[j])</span><br><span class="line">                ans = max(ans, (j - i + <span class="number">1</span>) * height)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<p><strong>复杂度分析</strong></p>
 <ul>
-<li><p>2019-07-10 ：<a href="./thanksGiving.md">纪念项目 Star 突破 1W 的一个短文</a>， 记录了项目的”兴起”之路，大家有兴趣可以看一下，如果对这个项目感兴趣，请<strong>点击一下 Star</strong>， 项目会<strong>持续更新</strong>，感谢大家的支持。</p>
-</li>
-<li><p>2019-10-08: <a href="./thanksGiving2.md">纪念 LeetCode 项目 Star 突破 2W</a>，并且 Github 搜索“LeetCode”，排名第一。</p>
-</li>
-<li><p>2020-04-12: <a href="./thanksGiving3.md">项目突破三万 Star</a>。</p>
-</li>
-<li><p>2020-04-14: 官网<code>力扣加加</code>上线啦 💐💐💐💐💐，有专题讲解，每日一题，下载区和视频题解，后续会增加更多内容，还不赶紧收藏起来？地址：<a href="http://leetcode-solution.cn/" target="_blank" rel="noopener">http://leetcode-solution.cn/</a></p>
-</li>
+<li>时间复杂度：$O(N^2)$</li>
+<li>空间复杂度：$O(1)$</li>
 </ul>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluemaoj3j30z90dtmy5.jpg" alt></p>
-<a id="more"></a>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是我将我的所有公开的算法资料整理的一个电子书，全部题目信息中文化，以前会有一些英文描述，感谢 @CYL 的中文整理。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-17/1602928846461-image.png" alt></p>
-<p><img src="https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-17/1602928862442-image.png" alt></p>
-<p>我写这本电子书花费了大量的时间和精力，除了内容上的创作，还要做一些电子书的排版，以让大家获得更好的阅读体验。光数学公式的展示，我就研究了多个插件的要源码，并魔改了一下才使得导出的电子书支持 latex。 不过有些动图，在做成电子书的时候自然就变没了，如果需要看动图的， 可以去我的公众号《力扣加加》或者我的 leetcode 题解仓库看。</p>
-<p>由于是电子书，因此阅读体验可能会更好， 但是相应地就不能获得及时的更新，因此你可以收藏一下我的同步电子书的网站 <a href="https://leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/" target="_blank" rel="noopener">西法的刷题秘籍 - 在线版</a>。后期可能将每日一题， 91 天学算法其他章节的讲义等也整理进来。</p>
-<p>电子书有更新我也会在公众号《力扣加加》进行通知， 感兴趣的同学可以关注一下。</p>
-<p>目前导出了四种格式，可惜的是这几种格式都有自己的不足：</p>
+<h2 id="暴力枚举-中心扩展法（TLE）"><a href="#暴力枚举-中心扩展法（TLE）" class="headerlink" title="暴力枚举 - 中心扩展法（TLE）"></a>暴力枚举 - 中心扩展法（TLE）</h2><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>我们仍然暴力尝试<code>所有可能的矩形</code>。只不过我们这一次从中心向两边进行扩展。对于每一个 i，我们计算出其左边第一个高度小于它的索引 p，同样地，计算出右边第一个高度小于它的索引 q。那么以 i 为最低点能够构成的面积就是<code>(q - p - 1) * heights[i]</code>。 这种算法毫无疑问也是正确的。 我们证明一下，假设 f(i) 表示求以 i 为最低点的情况下，所能形成的最大矩阵面积。那么原问题转化为<code>max(f(0), f(1), f(2), ..., f(n - 1))</code>。</p>
+<p>具体算法如下：</p>
 <ul>
-<li>在线版。 实时更新，想要及时获取最新信息的可以用在线版。</li>
-<li>html。 方便大家在线观看，由于是 html ，实际上大家也可以保存起来<strong>离线</strong>观看。</li>
-<li>pdf。可使用 pdf 阅读器和浏览器（比如谷歌）直接观看，阅读体验一般，生成的目录不能导航。</li>
-<li>mobi。 下载一个 Kindle 客户端就可以看，不需要购买 Kindle。</li>
-<li>epub。 数学公式和主题都比较不错， 但是代码没有高亮。</li>
+<li>我们使用 l 和 r 数组。l[i] 表示 左边第一个高度小于它的索引，r[i] 表示 右边第一个高度小于它的索引。</li>
+<li>我们从前往后求出 l，再从后往前计算出 r。</li>
+<li>再次遍历求出所有的可能面积，并取出最大的。</li>
 </ul>
-<p>大家选择适合自己的格式下载即可。</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">largestRectangleArea</span><span class="params">(self, heights: List[int])</span> -&gt; int:</span></span><br><span class="line">        n = len(heights)</span><br><span class="line">        l, r, ans = [<span class="number">-1</span>] * n, [n] * n, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</span><br><span class="line">            j = i - <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> j &gt;= <span class="number">0</span> <span class="keyword">and</span> heights[j] &gt;= heights[i]:</span><br><span class="line">                j -= <span class="number">1</span></span><br><span class="line">            l[i] = j</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">2</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            j = i + <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> j &lt; n <span class="keyword">and</span> heights[j] &gt;= heights[i]:</span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">            r[i] = j</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            ans = max(ans, heights[i] * (r[i] - l[i] - <span class="number">1</span>))</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<p><strong>复杂度分析</strong></p>
 <ul>
-<li><a href="https://leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/" target="_blank" rel="noopener">在线版</a></li>
+<li>时间复杂度：$O(N^2)$</li>
+<li>空间复杂度：$O(N)$</li>
 </ul>
-<p>html, pdf，mobi 和 epub 格式，关注我的公众号《力扣加加》回复<code>电子书</code>即可。</p>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>leetcode 题解，记录自己的 leetcode 解题之路。</p>
-<p>本仓库目前分为<strong>五个</strong>部分：</p>
+<h2 id="优化中心扩展法（Accepted）"><a href="#优化中心扩展法（Accepted）" class="headerlink" title="优化中心扩展法（Accepted）"></a>优化中心扩展法（Accepted）</h2><h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>实际上我们内层循环没必要一步一步移动，我们可以直接将<code>j -= 1</code> 改成 <code>j = l[j]</code>, <code>j += 1</code> 改成 <code>j = r[j]</code>。</p>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">largestRectangleArea</span><span class="params">(self, heights: List[int])</span> -&gt; int:</span></span><br><span class="line">        n = len(heights)</span><br><span class="line">        l, r, ans = [<span class="number">-1</span>] * n, [n] * n, <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</span><br><span class="line">            j = i - <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> j &gt;= <span class="number">0</span> <span class="keyword">and</span> heights[j] &gt;= heights[i]:</span><br><span class="line">                j = l[j]</span><br><span class="line">            l[i] = j</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">2</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            j = i + <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> j &lt; n <span class="keyword">and</span> heights[j] &gt;= heights[i]:</span><br><span class="line">                j = r[j]</span><br><span class="line">            r[i] = j</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            ans = max(ans, heights[i] * (r[i] - l[i] - <span class="number">1</span>))</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<p><strong>复杂度分析</strong></p>
 <ul>
-<li><p>第一个部分是 leetcode 经典题目的解析，包括思路，关键点和具体的代码实现。</p>
-</li>
-<li><p>第二部分是对于数据结构与算法的总结</p>
-</li>
-<li><p>第三部分是 anki 卡片， 将 leetcode 题目按照一定的方式记录在 anki 中，方便大家记忆。</p>
-</li>
-<li><p>第四部分是每日一题，每日一题是在交流群（包括微信和 qq）里进行的一种活动，大家一起 解一道题，这样讨论问题更加集中，会得到更多的反馈。而且 这些题目可以被记录下来，日后会进行筛选添加到仓库的题解模块。</p>
-</li>
-<li><p>第五部分是计划， 这里会记录将来要加入到以上三个部分内容</p>
-</li>
+<li>时间复杂度：$O(N)$</li>
+<li>空间复杂度：$O(N)$</li>
 </ul>
-<blockquote>
-<p>只有熟练掌握基础的数据结构与算法，才能对复杂问题迎刃有余。</p>
-</blockquote>
-<h2 id="非科学人士看过来"><a href="#非科学人士看过来" class="headerlink" title="非科学人士看过来"></a>非科学人士看过来</h2><p>如果是国内的非科学用户，可以使用 <a href="https://lucifer.ren/leetcode">https://lucifer.ren/leetcode</a> ，整站做了静态化，速度贼快！但是阅读体验可能一般，大家也可以访问<a href="http://leetcode-solution.cn/" target="_blank" rel="noopener">力扣加加</a>（暂时没有静态化）获得更好的阅读体验。</p>
-<p>另外需要科学的，我推荐一个工具， 用户体验真的是好，用起来超简单， 提供一站式工具，包括网络检测工具，浏览器插件等，支持多种客户端（还有我最喜欢的 Switch 加速器），价格也不贵，基础套餐折算到月大约 11.2 块/月。它还支持签到送天数，也就是说你可以每天签到无限续期。地址：<a href="https://glados.space/landing/M9OHH-Q88JQ-DX72D-R04RN" target="_blank" rel="noopener">https://glados.space/landing/M9OHH-Q88JQ-DX72D-R04RN</a></p>
-<h2 id="怎么刷-LeetCode？"><a href="#怎么刷-LeetCode？" class="headerlink" title="怎么刷 LeetCode？"></a>怎么刷 LeetCode？</h2><ul>
-<li><a href="https://www.zhihu.com/question/280279208/answer/824585814" target="_blank" rel="noopener">我是如何刷 LeetCode 的</a></li>
-<li><a href="https://www.zhihu.com/question/321738058/answer/1279464192" target="_blank" rel="noopener">算法小白如何高效、快速刷 leetcode？</a></li>
-</ul>
-<h2 id="刷题插件"><a href="#刷题插件" class="headerlink" title="刷题插件"></a>刷题插件</h2><ul>
-<li><a href="https://lucifer.ren/blog/2020/06/06/algo-chrome-extension/">刷题效率低？或许你就差这么一个插件</a></li>
-<li><a href="https://lucifer.ren/blog/2020/08/16/leetcode-cheat/">力扣刷题插件</a></li>
-</ul>
-<h2 id="91-天学算法"><a href="#91-天学算法" class="headerlink" title="91 天学算法"></a>91 天学算法</h2><ul>
-<li><a href="https://lucifer.ren/blog/2020/05/30/91algo-05-30/">91 天，遇见不一样的自己</a></li>
-</ul>
-<h2 id="食用指南"><a href="#食用指南" class="headerlink" title="食用指南"></a>食用指南</h2><ul>
-<li>我对大部分题目的复杂度都进行了分析，除了个别分析起来复杂的题目，大家一定要对一道题的复杂度了如指掌才可以。<blockquote>
-<p>有些题目我是故意不写的， 比如所有的回溯题目我都没写， 不过它们全部都是指数的复杂度</p>
-</blockquote>
-</li>
-<li>我对题目难度进行了分类的保留，因此你可以根据自己的情况刷。我推荐大家从简单开始，逐步加大难度，直到困难。</li>
-<li>这里有一张互联网公司面试中经常考察的问题类型总结的思维导图，我们可以结合图片中的信息分析一下。</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluennxvrj30k00jx0te.jpg" alt="leetcode-zhihu"></p>
-<p>（图片来自 leetcode)</p>
-<p>其中算法，主要是以下几种：</p>
+<h2 id="单调栈（Accepted）"><a href="#单调栈（Accepted）" class="headerlink" title="单调栈（Accepted）"></a>单调栈（Accepted）</h2><h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>实际上，读完第二种方法的时候，你应该注意到了。我们的核心是求左边第一个比 i 小的和右边第一个比 i 小的。 如果你熟悉单调栈的话，那么应该会想到这是非常适合使用单调栈来处理的场景。</p>
+<p>从左到右遍历柱子，对于每一个柱子，我们想找到第一个高度小于它的柱子，那么我们就可以使用一个单调递增栈来实现。 如果柱子大于栈顶的柱子，那么说明不是我们要找的柱子，我们把它塞进去继续遍历，如果比栈顶小，那么我们就找到了第一个小于的柱子。 <strong>对于栈顶元素，其右边第一个小于它的就是当前遍历到的柱子，左边第一个小于它的就是栈中下一个要被弹出的元素</strong>，因此以当前栈顶为最小柱子的面积为<strong>当前栈顶的柱子高度 * (当前遍历到的柱子索引 - 1 - (栈中下一个要被弹出的元素索引 + 1) + 1)</strong>，化简一下就是 <strong>当前栈顶的柱子高度 * (当前遍历到的柱子索引 - 栈中下一个要被弹出的元素索引 - 1)</strong>。</p>
+<p>这种方法只需要遍历一次，并用一个栈。由于每一个元素最多进栈出栈一次，因此时间和空间复杂度都是$O(N)$。</p>
+<p>为了统一算法逻辑，减少边界处理，我在 heights 首尾添加了两个哨兵元素，<strong>这样我们可以保证所有的柱子都会出栈</strong>。</p>
+<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><p>代码支持： Python,CPP</p>
+<p>Python Code:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">largestRectangleArea</span><span class="params">(self, heights: List[int])</span> -&gt; int:</span></span><br><span class="line">        n, heights, st, ans = len(heights), [<span class="number">0</span>] + heights + [<span class="number">0</span>], [], <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n + <span class="number">2</span>):</span><br><span class="line">            <span class="keyword">while</span> st <span class="keyword">and</span> heights[st[<span class="number">-1</span>]] &gt; heights[i]:</span><br><span class="line">                ans = max(ans, heights[st.pop(<span class="number">-1</span>)] * (i - st[<span class="number">-1</span>] - <span class="number">1</span>))</span><br><span class="line">            st.append(i)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<p>CPP Code:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">largestRectangleArea</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A)</span> </span>&#123;</span><br><span class="line">        A.push_back(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">int</span> N = A.size(), ans = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">            <span class="keyword">while</span> (s.size() &amp;&amp; A[s.top()] &gt;= A[i]) &#123;</span><br><span class="line">                <span class="keyword">int</span> h = A[s.top()];</span><br><span class="line">                s.pop();</span><br><span class="line">                <span class="keyword">int</span> j = s.size() ? s.top() : <span class="number">-1</span>;</span><br><span class="line">                ans = max(ans, h * (i - j - <span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">            s.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>复杂度分析</strong></p>
 <ul>
-<li>基础技巧：分治、二分、贪心</li>
-<li>排序算法：快速排序、归并排序、计数排序</li>
-<li>搜索算法：回溯、递归、深度优先遍历，广度优先遍历，二叉搜索树等</li>
-<li>图论：最短路径、最小生成树</li>
-<li>动态规划：背包问题、最长子序列</li>
+<li>时间复杂度：$O(N)$</li>
+<li>空间复杂度：$O(N)$</li>
 </ul>
-<p>数据结构，主要有如下几种：</p>
+<p>2020-05-30 更新：</p>
+<p>有的观众反应看不懂为啥需要两个哨兵。 其实末尾的哨兵就是为了将栈清空，防止遍历完成栈中还有没参与运算的数据。</p>
+<p>而前面的哨兵有什么用呢？ 我这里把上面代码进行了拆解：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">largestRectangleArea</span><span class="params">(self, heights: List[int])</span> -&gt; int:</span></span><br><span class="line">        n, heights, st, ans = len(heights),[<span class="number">0</span>] + heights + [<span class="number">0</span>], [], <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n + <span class="number">2</span>):</span><br><span class="line">            <span class="keyword">while</span> st <span class="keyword">and</span> heights[st[<span class="number">-1</span>]] &gt; heights[i]:</span><br><span class="line">                a = heights[st[<span class="number">-1</span>]]</span><br><span class="line">                st.pop()</span><br><span class="line">                <span class="comment"># 如果没有前面的哨兵，这里的 st[-1] 可能会越界。</span></span><br><span class="line">                ans = max(ans, a * (i - <span class="number">1</span> - st[<span class="number">-1</span>]))</span><br><span class="line">            st.append(i)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<h2 id="相关题目"><a href="#相关题目" class="headerlink" title="相关题目"></a>相关题目</h2><ul>
+<li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/42.trapping-rain-water.md" target="_blank" rel="noopener">42.trapping-rain-water</a></li>
+</ul>
+<h1 id="第二位选手-85-最大矩形"><a href="#第二位选手-85-最大矩形" class="headerlink" title="第二位选手 - 85. 最大矩形"></a>第二位选手 - 85. 最大矩形</h1><h2 id="题目地址-1"><a href="#题目地址-1" class="headerlink" title="题目地址"></a>题目地址</h2><p><a href="https://leetcode-cn.com/problems/maximal-rectangle/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/maximal-rectangle/</a></p>
+<h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个仅包含  0 和 1 的二维二进制矩阵，找出只包含 1 的最大矩形，并返回其面积。</p>
+<p>示例：</p>
+<p>输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  [&quot;1&quot;,&quot;0&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;],</span><br><span class="line">  [&quot;1&quot;,&quot;0&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;],</span><br><span class="line">  [&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;],</span><br><span class="line">  [&quot;1&quot;,&quot;0&quot;,&quot;0&quot;,&quot;1&quot;,&quot;0&quot;]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>输出：6</p>
+<h2 id="前置知识-1"><a href="#前置知识-1" class="headerlink" title="前置知识"></a>前置知识</h2><ul>
+<li>单调栈</li>
+</ul>
+<h2 id="公司-1"><a href="#公司-1" class="headerlink" title="公司"></a>公司</h2><ul>
+<li>阿里</li>
+<li>腾讯</li>
+<li>百度</li>
+<li>字节</li>
+</ul>
+<h2 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h2><p>我在 <a href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/84-zhu-zhuang-tu-zhong-zui-da-de-ju-xing-duo-chong/" target="_blank" rel="noopener">【84. 柱状图中最大的矩形】多种方法（Python3）</a> 使用了多种方法来解决。 然而在这道题，我们仍然可以使用完全一样的思路去完成。本题解是基于那道题的题解来进行的。</p>
+<p>拿题目给的例子来说：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  [&quot;1&quot;,&quot;0&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;],</span><br><span class="line">  [&quot;1&quot;,&quot;0&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;],</span><br><span class="line">  [&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;],</span><br><span class="line">  [&quot;1&quot;,&quot;0&quot;,&quot;0&quot;,&quot;1&quot;,&quot;0&quot;]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>我们逐行扫描得到 <code>84. 柱状图中最大的矩形</code> 中的 heights 数组：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghlu7999xyj30t21cgtcn.jpg" alt></p>
+<p>这样我们就可以使用<code>84. 柱状图中最大的矩形</code> 中的解法来进行了，这里我们使用单调栈来解。</p>
+<p>下面的代码直接将 84 题的代码封装成 API 调用了。</p>
+<h2 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h2><p>代码支持：Python</p>
+<p>Python Code:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">largestRectangleArea</span><span class="params">(self, heights: List[int])</span> -&gt; int:</span></span><br><span class="line">        n, heights, st, ans = len(heights), [<span class="number">0</span>] + heights + [<span class="number">0</span>], [], <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n + <span class="number">2</span>):</span><br><span class="line">            <span class="keyword">while</span> st <span class="keyword">and</span> heights[st[<span class="number">-1</span>]] &gt; heights[i]:</span><br><span class="line">                ans = max(ans, heights[st.pop(<span class="number">-1</span>)] * (i - st[<span class="number">-1</span>] - <span class="number">1</span>))</span><br><span class="line">            st.append(i)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maximalRectangle</span><span class="params">(self, matrix: List[List[str]])</span> -&gt; int:</span></span><br><span class="line">        m = len(matrix)</span><br><span class="line">        <span class="keyword">if</span> m == <span class="number">0</span>: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        n = len(matrix[<span class="number">0</span>])</span><br><span class="line">        heights = [<span class="number">0</span>] * n</span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">                <span class="keyword">if</span> matrix[i][j] == <span class="string">"0"</span>:</span><br><span class="line">                    heights[j] = <span class="number">0</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    heights[j] += <span class="number">1</span></span><br><span class="line">            ans = max(ans, self.largestRectangleArea(heights))</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<p><strong>复杂度分析</strong></p>
 <ul>
-<li>数组与链表：单 / 双向链表</li>
-<li>栈与队列</li>
-<li>哈希表</li>
-<li>堆：最大堆 ／ 最小堆</li>
-<li>树与图：最近公共祖先、并查集</li>
-<li>字符串：前缀树（字典树） ／ 后缀树</li>
+<li>时间复杂度：$O(M * N)$</li>
+<li>空间复杂度：$O(N)$</li>
 </ul>
-<h2 id="精彩预告"><a href="#精彩预告" class="headerlink" title="精彩预告"></a>精彩预告</h2><p><a href="./problems/42.trapping-rain-water.md">0042.trapping-rain-water</a>:</p>
-<p><img width="300" src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghlueqdwy3j30bg04hmx3.jpg"></p>
-<p><a href="./problems/547.friend-circles-en.md">0547.friend-circles</a>:</p>
-<p><img width="600" src="./assets/problems/547.friend-circle-bfs.png"></p>
-<p><a href="./problems/90.subsets-ii.md">backtrack problems</a>:</p>
-<p><img width="600" src="./assets/problems/backtrack.png"></p>
-<p><a href="./problems/198.house-robber.md">0198.house-robber</a>:</p>
-<p><img width="600" src="./assets/problems/198.house-robber.png"></p>
-<p><a href="./problems/454.4-sum-ii.md">0454.4-sum-ii</a>:</p>
-<p><img width="600" src="./assets/problems/454.4-sum-ii.png"></p>
-<h3 id="anki-卡片"><a href="#anki-卡片" class="headerlink" title="anki 卡片"></a>anki 卡片</h3><p>Anki 主要分为两个部分：一部分是关键点到题目的映射，另一部分是题目到思路，关键点，代码的映射。</p>
-<p>全部卡片都在 <a href="./assets/anki/leetcode.apkg">anki-card</a></p>
-<p>使用方法：</p>
-<p>anki - 文件 - 导入 - 下拉格式选择“打包的 anki 集合”，然后选中你下载好的文件，确定即可。</p>
-<p>更多关于 anki 使用方法的请查看 <a href="https://apps.ankiweb.net/" target="_blank" rel="noopener">anki 官网</a></p>
-<p>目前已更新卡片一览（仅列举正面）：</p>
+<h1 id="第三位选手-221-最大正方形"><a href="#第三位选手-221-最大正方形" class="headerlink" title="第三位选手 - 221. 最大正方形"></a>第三位选手 - 221. 最大正方形</h1><h2 id="题目地址-2"><a href="#题目地址-2" class="headerlink" title="题目地址"></a>题目地址</h2><p><a href="https://leetcode-cn.com/problems/maximal-square/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/maximal-square/</a></p>
+<h2 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">在一个由 0 和 1 组成的二维矩阵内，找到只包含 1 的最大正方形，并返回其面积。</span><br><span class="line"></span><br><span class="line">示例:</span><br><span class="line"></span><br><span class="line">输入:</span><br><span class="line"></span><br><span class="line">1 0 1 0 0</span><br><span class="line">1 0 1 1 1</span><br><span class="line">1 1 1 1 1</span><br><span class="line">1 0 0 1 0</span><br><span class="line"></span><br><span class="line">输出: 4</span><br></pre></td></tr></table></figure>
+<h2 id="前置知识-2"><a href="#前置知识-2" class="headerlink" title="前置知识"></a>前置知识</h2><ul>
+<li>动态规划</li>
+<li>递归</li>
+</ul>
+<h2 id="公司-2"><a href="#公司-2" class="headerlink" title="公司"></a>公司</h2><ul>
+<li>阿里</li>
+<li>腾讯</li>
+<li>百度</li>
+<li>字节</li>
+</ul>
+<h2 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h2><p>看到题看起来和上面的题目类似，只不过把长方形限定为了正方形嘛。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghludl52xfj30bo09vmxo.jpg" alt="221.maximal-square"></p>
+<p>符合直觉的做法是暴力求解处所有的正方形，逐一计算面积，然后记录最大的。这种时间复杂度很高。</p>
+<p>我们考虑使用动态规划，我们使用 dp[i][j]表示以 matrix[i][j]为右下角的顶点的可以组成的最大正方形的边长。<br>那么我们只需要计算所有的 i，j 组合，然后求出最大值即可。</p>
+<p>我们来看下 dp[i][j] 怎么推导。 首先我们要看 matrix[i][j], 如果 matrix[i][j]等于 0，那么就不用看了，直接等于 0。<br>如果 matrix[i][j]等于 1，那么我们将 matrix[[i][j]分别往上和往左进行延伸，直到碰到一个 0 为止。</p>
+<p>如图 dp[3][3] 的计算。 matrix[3][3]等于 1，我们分别往上和往左进行延伸，直到碰到一个 0 为止，上面长度为 1，左边为 3。<br>dp[2][2]等于 1（之前已经计算好了），那么其实这里的瓶颈在于三者的最小值, 即<code>Min(1, 1, 3)</code>, 也就是<code>1</code>。 那么 dp[3][3] 就等于<br><code>Min(1, 1, 3) + 1</code>。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghludlnra9j30an08xt96.jpg" alt="221.maximal-square"></p>
+<p>dp[i - 1][j - 1]我们直接拿到，关键是<code>往上和往左进行延伸</code>, 最直观的做法是我们内层加一个循环去做就好了。<br>但是我们仔细观察一下，其实我们根本不需要这样算。 我们可以直接用 dp[i - 1][j]和 dp[i][j -1]。<br>具体就是<code>Min(dp[i - 1][j - 1], dp[i][j - 1], dp[i - 1][j]) + 1</code>。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghludm7ilmj30a507sglz.jpg" alt="221.maximal-square"></p>
+<p>事实上，这道题还有空间复杂度 O(N)的解法，其中 N 指的是列数。<br>大家可以去这个<a href="https://leetcode.com/problems/maximal-square/discuss/61803/C%2B%2B-space-optimized-DP" target="_blank" rel="noopener">leetcode 讨论</a>看一下。</p>
+<h2 id="关键点解析"><a href="#关键点解析" class="headerlink" title="关键点解析"></a>关键点解析</h2><ul>
+<li>DP</li>
+<li>递归公式可以利用 dp[i - 1][j]和 dp[i][j -1]的计算结果，而不用重新计算</li>
+<li>空间复杂度可以降低到 O(n), n 为列数</li>
+</ul>
+<h2 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h2><p>代码支持：Python，JavaScript：</p>
+<p>Python Code：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maximalSquare</span><span class="params">(self, matrix: List[List[str]])</span> -&gt; int:</span></span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        m = len(matrix)</span><br><span class="line">        <span class="keyword">if</span> m == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        n = len(matrix[<span class="number">0</span>])</span><br><span class="line">        dp = [[<span class="number">0</span>] * (n + <span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(m + <span class="number">1</span>)]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, m + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">                dp[i][j] = min(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>], dp[i - <span class="number">1</span>][j - <span class="number">1</span>]) + <span class="number">1</span> <span class="keyword">if</span> matrix[i - <span class="number">1</span>][j - <span class="number">1</span>] == <span class="string">"1"</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">                res = max(res, dp[i][j])</span><br><span class="line">        <span class="keyword">return</span> res ** <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>JavaScript Code：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @lc app=leetcode id=221 lang=javascript</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * [221] Maximal Square</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;character[][]&#125;</span> <span class="variable">matrix</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> maximalSquare = <span class="function"><span class="keyword">function</span> (<span class="params">matrix</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (matrix.length === <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">const</span> dp = [];</span><br><span class="line">  <span class="keyword">const</span> rows = matrix.length;</span><br><span class="line">  <span class="keyword">const</span> cols = matrix[<span class="number">0</span>].length;</span><br><span class="line">  <span class="keyword">let</span> max = <span class="built_in">Number</span>.MIN_VALUE;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; rows + <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i === <span class="number">0</span>) &#123;</span><br><span class="line">      dp[i] = <span class="built_in">Array</span>(cols + <span class="number">1</span>).fill(<span class="number">0</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      dp[i] = [<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; rows + <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">1</span>; j &lt; cols + <span class="number">1</span>; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (matrix[i - <span class="number">1</span>][j - <span class="number">1</span>] === <span class="string">"1"</span>) &#123;</span><br><span class="line">        dp[i][j] = <span class="built_in">Math</span>.min(dp[i - <span class="number">1</span>][j - <span class="number">1</span>], dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>]) + <span class="number">1</span>;</span><br><span class="line">        max = <span class="built_in">Math</span>.max(max, dp[i][j]);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        dp[i][j] = <span class="number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> max * max;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>复杂度分析</strong></p>
 <ul>
-<li>二分法解决问题的关键点是什么，相关问题有哪些？</li>
-<li>如何用栈的特点来简化操作， 涉及到的题目有哪些？</li>
-<li>双指针问题的思路以及相关题目有哪些？</li>
-<li>滑动窗口问题的思路以及相关题目有哪些？</li>
-<li>回溯法解题的思路以及相关题目有哪些？</li>
-<li>数论解决问题的关键点是什么，相关问题有哪些？</li>
-<li>位运算解决问题的关键点是什么，相关问题有哪些？</li>
+<li>时间复杂度：$O(M * N)$，其中 M 为行数，N 为列数。</li>
+<li>空间复杂度：$O(M * N)$，其中 M 为行数，N 为列数。</li>
 </ul>
-<blockquote>
-<p>已加入的题目有：#2 #3 #11</p>
-</blockquote>
+<h2 id="如果我还想用上面的方法可以么？"><a href="#如果我还想用上面的方法可以么？" class="headerlink" title="如果我还想用上面的方法可以么？"></a>如果我还想用上面的方法可以么？</h2><p>当然可以！ lucifer 我就专门给大家改写了一下，直接将上面的代码复制过来，改了一行就 AC 了。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">largestRectangleArea</span><span class="params">(self, heights: List[int])</span> -&gt; int:</span></span><br><span class="line">        n, heights, st, ans = len(heights), [<span class="number">0</span>] + heights + [<span class="number">0</span>], [], <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n + <span class="number">2</span>):</span><br><span class="line">            <span class="keyword">while</span> st <span class="keyword">and</span> heights[st[<span class="number">-1</span>]] &gt; heights[i]:</span><br><span class="line">                <span class="comment"># 就只改了下面这一行</span></span><br><span class="line">                ans = max(ans, min(heights[st.pop()], (i - st[<span class="number">-1</span>] - <span class="number">1</span>)) ** <span class="number">2</span>)</span><br><span class="line">            st.append(i)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maximalSquare</span><span class="params">(self, matrix: List[List[str]])</span> -&gt; int:</span></span><br><span class="line">        m = len(matrix)</span><br><span class="line">        <span class="keyword">if</span> m == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        n = len(matrix[<span class="number">0</span>])</span><br><span class="line">        heights = [<span class="number">0</span>] * n</span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">                <span class="keyword">if</span> matrix[i][j] == <span class="string">"0"</span>:</span><br><span class="line">                    heights[j] = <span class="number">0</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    heights[j] += <span class="number">1</span></span><br><span class="line">            ans = max(ans, self.largestRectangleArea(heights))</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>上面三道题我都用的是 <strong>largestRectangleArea</strong> 的核心逻辑，基本上调用下稍微改改就完事了。对于 <strong>largestRectangleArea</strong> 的解法最明显的莫过于平方级别的暴力，可如果你仔细分析就发现我们可以通过<strong>指针不回溯</strong>达到降低复杂度的效果。而这里的指针不回溯可以是单调栈，也可以是我给的双指针数组方法。不管用的哪种，区别的只是战术，战略思想是一样的。大家做题的时候也要注重战略，训练战术。</p>
+<p>你说这招是不是很好使？学习算法不可贪多，不然嚼不烂。当你细细咀嚼后会发现，其实算法的思想和套路还真不多，至少应付大部分的面试和 OJ 题目不成问题。</p>
 
       </div>
       
@@ -513,10 +525,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-06T11:43:34+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2021年4月6日</p>
   </a>
 </div>
 
@@ -524,9 +536,6 @@
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/LeetCode/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>LeetCode</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/电子书/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>电子书</p></a></div>
-
 
         
       
@@ -536,7 +545,7 @@
   <div class="-mob-share-list share-body">
     
       
-        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvElEQVR42u3awWrkQAwE0Pn/n56FPQXCOlVS25OF51MgHk+/DlhKtV6v+Hr/vb7/fH3n9T1fr+S7kicPLzw8PLzR0v915fdcL/F6odfPWa0HDw8P7zZeXgw2pIS6KU54eHh4v42XvNyTRjn/VP7teHh4eP8Lb8Zo2+WPFQY8PDy8S14SRlzfnzytWNbzWQseHh5e9/xhEPCpnx8638PDw8MrT9XbAtBGDEmosVonHh4e3g28pF3O49Qck8fBeWMdZS14eHh4h3h5M5032W2Qsd+mA/8r4OHh4QW89hWfh62zV38+lBB9Fg8PD+8GXvtls7A1PzxrG+go/sDDw8M7yts0sm1ksG/K84175bUODw8Pb8Frh5ny8Hezle1AAx4eHt7dvP2gVf6Kb5fbjhfcMkeGh4eHt2iU22Z3FhPn4wv5d+Hh4eHdwUte9/ujrE3MceBTeHh4eLfxZuNQOXvTfOdPw8PDw7uPVw8wXW7K/nW/GUH44X8FPDw8vEO8dolnm+O8FCWrLWbK8PDw8G7g5a1te1jVsvNwpK5+eHh4eCPebKBqtqxZaWlXFVU8PDw8vAWvDRfyULU9uNoUmLxo4eHh4Z3itWFuOyjQjm21mzUMI/Dw8PBGvLZdTg6f9kVlNqDww98NDw8P7yhvNdh0aJigDW3x8PDwPsVrY4hNecg3Ll9J8Sk8PDy8Q7zrm5LfJrHsO7hmUfIwwMXDw8Nb8GaDU0k2nG9THgHvD9Xw8PDw9rx3eZ0aBdg3zVFZwsPDw7uBN2tY8xf39YLaODgJL/Dw8PCe4SXFYPaa3hxotZsV5dN4eHh4R3mz4662hOyHD/I/Dx4eHt7v4bUjUEljPWugVydjeHh4eI/w2lj2VGHItxUPDw/vSV4bRuznFPKC0SKLUz48PDy8EW92ADZ70W8OtE4VHjw8PLwF7w/vHXOoyfJbLwAAAABJRU5ErkJggg=='>
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3ay4rDQAxE0fz/T3u2gYw7VaV2oKXr1RCcuI8HhF6vl3xdb9f7J+s77+75vP/uKZsvGDBgHMu4ltf6cPqhL+Faw748CwYMGAMYSijMgvLnd5VgrZ8NBgwYMO7uufvEDZ3rZ8GAAQNGxlinaG4hug7QMGDAgOEWsVniqBS6epG8oRaHAQPGgYwsLP7m70fmGzBgwDiKcZmXXr5WhpT2qWDAgNGakTX99SQvK1azIQQMGDC6MrJyMWMrLbPwiTBgwBjDqBSTehNtfXQ3KP8TcGHAgNGaof9c1srPBpnSq4QBA0ZrhptfSeHPXNfIAjQMGDDmMHYtSVQCpfKyvvwmDBgwWjPc8lVPB7Mj6gmoFHxhwIDRgqEH3Gycqa9ilJpxMGDAGMBwQ6c7HsiSSGOZAwYMGK0Zbimr14x6Zuq27TY03WDAgHEUIysp3WGAW6zajTkYMGCMZ7ijR3e0UEk0YcCAMY3hjgeUJYzKt4y0EgYMGK0ZWSGqh+ZshSIra2HAgDGBkQ0D6ssW28I0DBgwBjCUw7mrXZUWnp4+woABYw6j0vR3A2hlmeP2ThgwYDRlXOZVSQTrixrS/wEGDBjtGO5AcX04pbmfFa7Za4IBA0Ynxt5Gvxs0sxUNGDBgzGTUA1/liPUhBAwYMGA8V3AaIVWpyGHAgAHDHDS6CaXemNsWcGHAgHEUQx8GPLEQ5oZXGDBgTGO4CZw7nnRbaXtXNGDAgHE44w+Q7/oIah95MQAAAABJRU5ErkJggg=='>
         
           <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png">
         
@@ -546,18 +555,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2020/12/13/leetcode-ebook-1/&title=《西法的刷题秘籍》电子书开放下载啦~ | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=
-
-2019-07-10 ：纪念项目 Star 突破 1W 的一个短文， 记录了项目的”兴起”之路，大家有兴趣可以看一下，如果对这个项目感兴趣，请点击一下 Star， 项目会持续更新，感谢大家的支持。
-
-2019-10-08: 纪念 LeetCode 项目 Star 突破 2W，并且 Github 搜索“LeetCode”，排名第一。
-
-2020-04-12: 项目突破三万 Star。
-
-2020-04-14: 官网力扣加加上线啦 💐💐💐💐💐，有专题讲解，每日一题，下载区和视频题解，后续会增加更多内容，还不赶紧收藏起来？地址：http://leetcode-solution.cn/
-
-
-"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2021/04/06/out-of-science/&title= | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary="
           
           >
           
@@ -569,18 +567,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2020/12/13/leetcode-ebook-1/&title=《西法的刷题秘籍》电子书开放下载啦~ | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=
-
-2019-07-10 ：纪念项目 Star 突破 1W 的一个短文， 记录了项目的”兴起”之路，大家有兴趣可以看一下，如果对这个项目感兴趣，请点击一下 Star， 项目会持续更新，感谢大家的支持。
-
-2019-10-08: 纪念 LeetCode 项目 Star 突破 2W，并且 Github 搜索“LeetCode”，排名第一。
-
-2020-04-12: 项目突破三万 Star。
-
-2020-04-14: 官网力扣加加上线啦 💐💐💐💐💐，有专题讲解，每日一题，下载区和视频题解，后续会增加更多内容，还不赶紧收藏起来？地址：http://leetcode-solution.cn/
-
-
-"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2021/04/06/out-of-science/&title= | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary="
           
           >
           
@@ -592,18 +579,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2020/12/13/leetcode-ebook-1/&title=《西法的刷题秘籍》电子书开放下载啦~ | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=
-
-2019-07-10 ：纪念项目 Star 突破 1W 的一个短文， 记录了项目的”兴起”之路，大家有兴趣可以看一下，如果对这个项目感兴趣，请点击一下 Star， 项目会持续更新，感谢大家的支持。
-
-2019-10-08: 纪念 LeetCode 项目 Star 突破 2W，并且 Github 搜索“LeetCode”，排名第一。
-
-2020-04-12: 项目突破三万 Star。
-
-2020-04-14: 官网力扣加加上线啦 💐💐💐💐💐，有专题讲解，每日一题，下载区和视频题解，后续会增加更多内容，还不赶紧收藏起来？地址：http://leetcode-solution.cn/
-
-
-"
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2021/04/06/out-of-science/&title= | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary="
           
           >
           
@@ -627,40 +603,21 @@
       
           <div class="prev-next">
               
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                          <h4>
-                              <a href="/blog/2020/12/16/leetcode-app-1/" rel="prev" title="力扣 APP 全新改版，史诗级增强！">
-                                
-                                    力扣 APP 全新改版，史诗级增强！
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
               
                   <section class="next">
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/blog/2020/12/13/leetcode-cheat/" rel="prev" title="力扣刷题插件">
+                              <a href="/blog/2021/04/03/interview-road/" rel="prev" title="lucifer 的面试之路">
                                   
-                                      力扣刷题插件
+                                      lucifer 的面试之路
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a> <a class="tag" href="/blog/tags/插件/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 插件</a> <a class="tag" href="/blog/tags/刷题/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 刷题</a>
+                                  <a class="tag" href="/blog/tags/前端/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 前端</a> <a class="tag" href="/blog/tags/面经/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 面经</a> <a class="tag" href="/blog/tags/校招/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 校招</a> <a class="tag" href="/blog/tags/虾皮/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 虾皮</a>
                               </h6>
                           
                       </span>
@@ -702,7 +659,7 @@
 
   <script>
     window.subData = {
-      title: '《西法的刷题秘籍》电子书开放下载啦~',
+      title: '',
       tools: true
     }
   </script>
@@ -811,7 +768,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非科学人士看过来"><span class="toc-text">非科学人士看过来</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#怎么刷-LeetCode？"><span class="toc-text">怎么刷 LeetCode？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#刷题插件"><span class="toc-text">刷题插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#91-天学算法"><span class="toc-text">91 天学算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#食用指南"><span class="toc-text">食用指南</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#精彩预告"><span class="toc-text">精彩预告</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#anki-卡片"><span class="toc-text">anki 卡片</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一位选手-84-柱状图中最大的矩形"><span class="toc-text">第一位选手 - 84. 柱状图中最大的矩形</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目地址"><span class="toc-text">题目地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#公司"><span class="toc-text">公司</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前置知识"><span class="toc-text">前置知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#暴力枚举-左右端点法（TLE）"><span class="toc-text">暴力枚举 - 左右端点法（TLE）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#暴力枚举-中心扩展法（TLE）"><span class="toc-text">暴力枚举 - 中心扩展法（TLE）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路-1"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码-1"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优化中心扩展法（Accepted）"><span class="toc-text">优化中心扩展法（Accepted）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路-2"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码-2"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单调栈（Accepted）"><span class="toc-text">单调栈（Accepted）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路-3"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码-3"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关题目"><span class="toc-text">相关题目</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二位选手-85-最大矩形"><span class="toc-text">第二位选手 - 85. 最大矩形</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目地址-1"><span class="toc-text">题目地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述-1"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前置知识-1"><span class="toc-text">前置知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#公司-1"><span class="toc-text">公司</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路-4"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-4"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第三位选手-221-最大正方形"><span class="toc-text">第三位选手 - 221. 最大正方形</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目地址-2"><span class="toc-text">题目地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述-2"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前置知识-2"><span class="toc-text">前置知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#公司-2"><span class="toc-text">公司</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路-5"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关键点解析"><span class="toc-text">关键点解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-5"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如果我还想用上面的方法可以么？"><span class="toc-text">如果我还想用上面的方法可以么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol>
     </div>
   </section>
 
