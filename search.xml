@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>几乎刷完了力扣所有的堆题，我发现了这些东西。。。（第二弹）为何我刷了很多，遇到新的题还是唯唯诺诺，无法重拳出击？</title>
+      <title>为何我刷了很多，遇到新的题还是唯唯诺诺，无法重拳出击？</title>
       <link href="/blog/2021/04/06/out-of-science/"/>
       <url>/blog/2021/04/06/out-of-science/</url>
       
@@ -1148,9 +1148,9 @@
       
         <tags>
             
-            <tag> 前缀和 </tag>
-            
             <tag> 滑动窗口 </tag>
+            
+            <tag> 前缀和 </tag>
             
             <tag> LeetCode </tag>
             
@@ -3607,9 +3607,9 @@
             
             <tag> 算法 </tag>
             
-            <tag> 动态规划 </tag>
-            
             <tag> 状态机 </tag>
+            
+            <tag> 动态规划 </tag>
             
             <tag> 贪心 </tag>
             
@@ -3650,11 +3650,11 @@
             
             <tag> 数学 </tag>
             
+            <tag> 动态规划 </tag>
+            
             <tag> 概率 </tag>
             
             <tag> 递归 </tag>
-            
-            <tag> 动态规划 </tag>
             
         </tags>
       
