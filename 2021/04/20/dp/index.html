@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>动态规划到底有多难？ | lucifer的网络博客</title>
+  
+  <meta name="keywords" content="前端 leetocde 数据结构 算法 lucifer 大前端 性能优化 前端架构 前端工程化">
+  
+  
+  <meta name="description" content="lucifer的个人博客，用来记录LeeCode刷题过程和心得，以及构建大前端知识体系">
+  
+
+  
+  <link rel="alternate" href="/blog/atom.xml" title="lucifer的网络博客">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9.9/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVTTYT432Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FVTTYT432Q');
+    </script>
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?576ec211e11a69128667eb8c11a6cffe";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
+<script>
+  var btw = new BTWPlugin();
+  setTimeout(function(){
+    window.btw.init({
+      id: "container",
+      blogId: "17446-1571644985832-648",
+      name: "力扣加加",
+      qrcode:
+        "https://tva1.sinaimg.cn/large/008eGmZEly1gomv7ug3bnj30760763yz.jpg",
+      keyword: "more",
+    });
+  }, 100)
+</script>
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>lucifer</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/blog/"
+            
+            
+            id="blog">
+            <i class='fas fa-home fa-fw'></i>&nbsp;主页
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="http://leetcode-solution.cn/"
+            
+            
+            id="http:leetcode-solution.cn">
+            <i class='fas fa-laptop-code fa-fw'></i>&nbsp;官网
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/friends/"
+            
+            
+            id="blogfriends">
+            <i class='fas fa-link fa-fw'></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/about/"
+            
+            
+            id="blogabout">
+            <i class='fas fa-id-card-alt fa-fw'></i>&nbsp;联系我
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/blog/' >
+        
+          lucifer的网络博客
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/blog/"
+                  
+                  
+                  id="blog">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;回到主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/categories/"
+                  
+                  
+                  id="blogcategories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/tags/"
+                  
+                  
+                  id="blogtags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/archives/"
+                  
+                  
+                  id="blogarchives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/blog/"
+                
+                
+                id="blog">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/archives/"
+                
+                
+                id="blogarchives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/about/"
+                
+                
+                id="blogabout">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div id="container" class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/blog/2021/04/20/dp/">
+        动态规划到底有多难？
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2021-04-20</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/动态规划/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>动态规划</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">11.7k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">43分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>动态规划是一个从其他行业借鉴过来的词语。</p>
+<p>它的大概意思先将一件事情分成<strong>若干阶段</strong>，然后通过阶段之间的<strong>转移</strong>达到目标。由于转移的方向通常是多个，因此这个时候就需要<strong>决策</strong>选择具体哪一个转移方向。</p>
+<p>​<a id="more"></a></p>
+<p>动态规划所要解决的事情通常是完成一个具体的目标，而这个目标往往是最优解。并且：</p>
+<ol>
+<li>阶段之间可以进行转移，这叫做动态。</li>
+<li>达到一个<strong>可行解(目标阶段)</strong> 需要不断地转移，那如何转移才能达到<strong>最优解</strong>？这叫规划。</li>
+</ol>
+<p>每个阶段抽象为状态（用圆圈来表示），状态之间可能会发生转化（用箭头表示）。可以画出类似如下的图：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gpoaanln73j31ak0p0dpd.jpg" alt="状态转移图解"></p>
+<p>那我们应该做出如何的<strong>决策序列</strong>才能使得结果最优？换句话说就是每一个状态应该如何选择到下一个具体状态，并最终到达目标状态。这就是动态规划研究的问题。</p>
+<p>每次决策实际上<strong>不会考虑之后的决策，而只会考虑之前的状态。</strong> 形象点来说，其实是走一步看一步这种短视思维。为什么这种短视可以来求解最优解呢？那是因为：</p>
+<ol>
+<li>我们将<strong>所有可能的转移全部模拟了一遍</strong>，最后挑了一个最优解。</li>
+<li>无后向性（这个我们后面再说，先卖个关子）</li>
+</ol>
+<blockquote>
+<p>而如果你没有模拟所有可能，而直接走了一条最优解，那就是贪心算法了。</p>
+</blockquote>
+<p>没错，动态规划刚开始就是来求最优解的。只不过有的时候顺便可以求总的方案数等其他东西，这其实是<strong>动态规划的副产物</strong>。</p>
+<p>好了，我们把动态规划拆成两部分分别进行解释，或许你大概知道了动态规划是一个什么样的东西。但是这对你做题并没有帮助。那算法上的动态规划究竟是个啥呢？</p>
+<p>在算法上，动态规划和<strong>查表的递归（也称记忆化递归）</strong> 有很多相似的地方。我建议大家先从记忆化递归开始学习。本文也先从记忆化递归开始，逐步讲解到动态规划。</p>
+<h2 id="记忆化递归"><a href="#记忆化递归" class="headerlink" title="记忆化递归"></a>记忆化递归</h2><p>那么什么是递归？什么是查表（记忆化）？让我们慢慢来看。</p>
+<h3 id="什么是递归？"><a href="#什么是递归？" class="headerlink" title="什么是递归？"></a>什么是递归？</h3><p>递归是指在函数中<strong>调用函数自身</strong>的方法。</p>
+<p>有意义的递归通常会把问题分解成<strong>规模缩小的同类子问题</strong>，当子问题缩写到寻常的时候，我们可以直接知道它的解。然后通过建立递归函数之间的联系（转移）即可解决原问题。</p>
+<blockquote>
+<p>是不是和分治有点像? 分治指的是将问题一分为多，然后将多个解合并为一。而这里并不是这个意思。</p>
+</blockquote>
+<p>一个问题要使用递归来解决必须有递归终止条件（算法的有穷性），也就是说递归会逐步缩小规模到寻常。</p>
+<p>虽然以下代码也是递归，但由于其无法结束，因此不是一个有效的算法：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x + f(x - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>上面的代码除非外界干预，否则会永远执行下去，不会停止。</p>
+<p>因此更多的情况应该是：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(n)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> n == <span class="number">1</span>: <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">return</span> n + f(n - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>使用递归通常可以使代码短小，有时候也更可读。算法中使用递归可以<strong>很简单地</strong>完成一些用循环不太容易实现的功能，比如二叉树的左中右序遍历。</p>
+<p>递归在算法中有非常广泛的使用，包括现在日趋流行的函数式编程。</p>
+<blockquote>
+<p>递归在函数式编程中地位很高。 纯粹的函数式编程中没有循环，只有递归。</p>
+</blockquote>
+<p>实际上，除了在编码上通过函数调用自身实现递归。我们也可以定义递归的数据结构。比如大家所熟知的树，链表等都是递归的数据结构。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Node &#123;</span><br><span class="line">	value: any; <span class="comment">// 当前节点的值</span></span><br><span class="line">	children: Array&lt;Node&gt;; <span class="comment">// 指向其儿子</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如上代码就是一个多叉树的定义形式，可以看出 children 就是 Node 的集合类，这就是一种<strong>递归的数据结构</strong>。</p>
+<h3 id="不仅仅是普通的递归函数"><a href="#不仅仅是普通的递归函数" class="headerlink" title="不仅仅是普通的递归函数"></a>不仅仅是普通的递归函数</h3><p>本文中所提到的记忆化递归中的递归函数实际上<strong>指的是特殊的递归函数</strong>，即在普通的递归函数上满足以下几个条件：</p>
+<ol>
+<li>递归函数不依赖外部变量</li>
+<li>递归函数不改变外部变量</li>
+</ol>
+<blockquote>
+<p>满足这两个条件有什么用呢？这是因为我们需要函数给定参数，其返回值也是确定的。这样我们才能记忆化。关于记忆化，我们后面再讲。</p>
+</blockquote>
+<p>如果大家了解函数式编程，实际上这里的递归其实严格来说是<strong>函数式编程中的函数</strong>。如果不了解也没关系，这里的递归函数其实就是<strong>数学中的函数</strong>。</p>
+<p>我们来回顾一下数学中的函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在一个变化过程中，假设有两个变量 x、y，如果对于任意一个 x 都有唯一确定的一个 y 和它对应，那么就称 x 是自变量，y 是 x 的函数。x 的取值范围叫做这个函数的定义域，相应 y 的取值范围叫做函数的值域 。</span><br></pre></td></tr></table></figure>
+<p>而<strong>本文所讲的所有递归都是指的这种数学中的函数。</strong></p>
+<p>比如上面的递归函数：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> x == <span class="number">1</span>: <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">return</span> x + f(x - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>x 就是自变量，x 的所有可能的返回值构成的集合就是定义域。</li>
+<li>f(x) 就是函数。</li>
+<li>f(x) 的所有可能的返回值构成的集合就是值域。</li>
+</ul>
+<p>自变量也可以有多个，对应递归函数的参数可以有多个，比如 f(x1, x2, x3)。</p>
+<p><strong>通过函数来描述问题，并通过函数的调用关系来描述问题间的关系就是记忆化递归的核心内容。</strong></p>
+<p>每一个动态规划问题，实际上都可以抽象为一个数学上的函数。这个函数的自变量集合就是题目的所有取值，值域就是题目要求的答案的所有可能。我们的目标其实就是填充这个函数的内容，使得给定自变量 x，能够唯一映射到一个值 y。（当然自变量可能有多个，对应递归函数参数可能有多个）</p>
+<p>解决动态规划问题可以看成是填充函数这个黑盒，使得定义域中的数并正确地映射到值域。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gplrxy60mpj30pt0daacn.jpg" alt="数学函数vs动态规划"></p>
+<p>递归并不是算法，它是和迭代对应的一种编程方法。只不过，我们通常借助递归去分解问题而已。比如我们定义一个递归函数 f(n)，用 f(n) 来描述问题。就和使用普通动态规划 f[n] 描述问题是一样的，这里的 f 是 dp 数组。</p>
+<h3 id="什么是记忆化？"><a href="#什么是记忆化？" class="headerlink" title="什么是记忆化？"></a>什么是记忆化？</h3><p>为了大家能够更好地对本节内容进行理解，我们通过一个例子来切入：</p>
+<p>一个人爬楼梯，每次只能爬 1 个或 2 个台阶，假设有 n 个台阶，那么这个人有多少种不同的爬楼梯方法？</p>
+<p>思路：</p>
+<p>由于<strong>第 n 级台阶一定是从 n - 1 级台阶或者 n - 2 级台阶来的</strong>，因此到第 n 级台阶的数目就是 <code>到第 n - 1 级台阶的数目加上到第 n - 1 级台阶的数目</code>。</p>
+<p>递归代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">climbStairs</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> climbStairs(n - <span class="number">1</span>) + climbStairs(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们用一个递归树来直观感受以下（每一个圆圈表示一个子问题）：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluhw6pf2j30mz0b2dgk.jpg" alt="重叠子问题"></p>
+<p>红色表示重复的计算。即 Fib(N-2) 和 Fib(N-3) 都被计算了两次，实际上计算一次就够了。比如第一次计算出了 Fib(N-2) 的值，那么下次再次需要计算 Fib(N-2)的时候，可以直接将上次计算的结果返回。之所以可以这么做的原因正是前文提到的<strong>我们的递归函数是数学中的函数，也就是说参数一定，那么返回值也一定不会变</strong>，因此下次如果碰到相同的参数，我们就可以<strong>将上次计算过的值直接返回，而不必重新计算</strong>。这样节省的时间就等价于重叠子问题的个数。</p>
+<p><strong>以这道题来说，本来需要计算 $2^n$ 次，而如果使用了记忆化，只需要计算 n 次，就是这么神奇。</strong></p>
+<p>代码上，我们可以使用一个 hashtable 去缓存中间计算结果，从而省去不必要的计算。</p>
+<p>我们使用记忆化来改造上面的代码：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">memo = &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">climbStairs</span><span class="params">(n)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> n == <span class="number">1</span>:<span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">if</span> n == <span class="number">2</span>: <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">  <span class="keyword">if</span> n <span class="keyword">in</span> memo: <span class="keyword">return</span> memo[n]</span><br><span class="line">  ans = func(n - <span class="number">1</span>) + func(n<span class="number">-2</span>)</span><br><span class="line">  memo[n] = ans</span><br><span class="line">  <span class="keyword">return</span> ans</span><br><span class="line">climbStairs(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<p>这里我使用了一个名为 <strong>memo 的哈希表来存储递归函数的返回值，其中 key 为参数，value 为递归函数的返回值。</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gpmof67uptj307w0fe3zk.jpg" alt="哈希表示意图"></p>
+<blockquote>
+<p>key 的形式为 (x, y)，表示的是一个元祖。通常动态规划的参数有多个，我们就可以使用元祖的方式来记忆化。或者也可采取多维数组的形式。对于上图来说，就可使用二维数组来表示。</p>
+</blockquote>
+<p>大家可以通过删除和添加代码中的 memo 来感受一下<strong>记忆化</strong>的作用。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>使用递归函数的优点是逻辑简单清晰，缺点是过深的调用会导致栈溢出。这里我列举了几道算法题目，这几道算法题目都可以用递归轻松写出来：</p>
+<ul>
+<li><p>递归实现 sum</p>
+</li>
+<li><p>二叉树的遍历</p>
+</li>
+<li><p>走楼梯问题</p>
+</li>
+<li><p>汉诺塔问题</p>
+</li>
+<li><p>杨辉三角</p>
+</li>
+</ul>
+<p>递归中<strong>如果</strong>存在重复计算（我们称重叠子问题，下文会讲到），那就是使用记忆化递归（或动态规划）解题的强有力信号之一。可以看出动态规划的核心就是使用记忆化的手段消除重复子问题的计算，如果这种重复子问题的规模是指数或者更高规模，那么记忆化递归（或动态规划）带来的收益会非常大。</p>
+<p>为了消除这种重复计算，我们可使用查表的方式。即一边递归一边使用“记录表”（比如哈希表或者数组）记录我们已经计算过的情况，当下次再次碰到的时候，如果之前已经计算了，那么直接返回即可，这样就避免了重复计算。下文要讲的<strong>动态规划中 DP 数组其实和这里“记录表”的作用是一样的</strong>。</p>
+<p>如果你刚开始接触递归， 建议大家先去练习一下递归再往后看。一个简单练习递归的方式是将你写的迭代全部改成递归形式。比如你写了一个程序，功能是“将一个字符串逆序输出”，那么使用迭代将其写出来会非常容易，那么你是否可以使用递归写出来呢？通过这样的练习，可以让你逐步适应使用递归来写程序。</p>
+<p>当你已经适应了递归的时候，那就让我们继续学习动态规划吧！</p>
+<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><p>讲了这么多递归和记忆化，终于到了我们的主角登场了。</p>
+<h3 id="动态规划的基本概念"><a href="#动态规划的基本概念" class="headerlink" title="动态规划的基本概念"></a>动态规划的基本概念</h3><p>我们先来学习动态规划最重要的两个概念：最优子结构和无后效性。</p>
+<p>其中：</p>
+<ul>
+<li>无后效性决定了是否可使用动态规划来解决。</li>
+<li>最优子结构决定了具体如何解决。</li>
+</ul>
+<h4 id="最优子结构"><a href="#最优子结构" class="headerlink" title="最优子结构"></a>最优子结构</h4><p>动态规划常常适用于有重叠子问题和最优子结构性质的问题。前面讲了重叠子问题，那么最优子结构是什么？这是我从维基百科找的定义：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果问题的最优解所包含的子问题的解也是最优的，我们就称该问题具有最优子结构性质（即满足最优化原理）。最优子结构性质为动态规划算法解决问题提供了重要线索。</span><br></pre></td></tr></table></figure>
+<p>举个例子：如果考试中的分数定义为 f，那么这个问题就可以被分解为语文，数学，英语等子问题。显然子问题最优的时候，总分这个大的问题的解也是最优的。</p>
+<p>再比如 01 背包问题：定义 f(weights, values, capicity)。如果我们想要求 f([1,2,3], [2,2,4], 10) 的最优解。我们可以将其划分为如下子问题：</p>
+<ul>
+<li><code>将第三件物品装进背包</code>，也就是 f([1,2], [2,2], 10)</li>
+<li>和<code>不将第三件物品装进背包</code>，也就是 f([1,2,3], [2,2,4], 9)</li>
+</ul>
+<blockquote>
+<p>显然这两个问题还是复杂，我们需要进一步拆解。不过，这里不是讲如何拆解的。</p>
+</blockquote>
+<p>原问题 f([1,2,3], [2,2,4], 10) 等于以上两个子问题的最大值。只有两个子问题都是<strong>最优的</strong>时候整体才是最优的，这是因为子问题之间不会相互影响。</p>
+<h4 id="无后效性"><a href="#无后效性" class="headerlink" title="无后效性"></a>无后效性</h4><p>即子问题的解一旦确定，就不再改变，不受在这之后、包含它的更大的问题的求解决策影响。</p>
+<p>继续以上面两个例子来说。</p>
+<ul>
+<li>数学考得高不能影响英语（现实其实可能影响，比如时间一定，投入英语多，其他科目就少了）。</li>
+<li>背包问题中 f([1,2,3], [2,2,4], 10) 选择是否拿第三件物品，不应该影响是否拿前面的物品。比如题目规定了拿了第三件物品之后，第二件物品的价值就会变低或变高）。这种情况就不满足无后向性。</li>
+</ul>
+<h3 id="动态规划三要素"><a href="#动态规划三要素" class="headerlink" title="动态规划三要素"></a>动态规划三要素</h3><h4 id="状态定义"><a href="#状态定义" class="headerlink" title="状态定义"></a>状态定义</h4><p>动态规划的中心点是什么？如果让我说的话，那就是<strong>定义状态</strong>。</p>
+<p>动态规划解题的第一步就是定义状态。定义好了状态，就可以画出递归树，聚焦最优子结构写转移方程就好了，因此我才说状态定义是动态规划的核心，动态规划问题的状态确实不容易看出。</p>
+<p>但是一旦你能把状态定义好了，那就可以顺藤摸瓜画出递归树，画出递归树之后就聚焦最优子结构就行了。但是能够画出递归树的前提是：对问题进行划分，专业点来说就是定义状态。那怎么才能定义出状态呢？</p>
+<p>好在状态的定义都有特点的套路。 比如一个字符串的状态，通常是 dp[i] 表示字符串 s 以 i 结尾的 ….。 比如两个字符串的状态，通常是 dp[i][j] 表示字符串 s1 以 i 结尾，s2 以 j 结尾的 ….。</p>
+<p>也就是说状态的定义通常有不同的套路，大家可以在做题的过程中进行学习和总结。但是这种套路非常多，那怎么搞定呢？</p>
+<p>说实话，只能多练习，在练习的过程中总结套路。具体的套路参考后面的<strong>动态规划的题型</strong> 部分内容。之后大家就可以针对不同的题型，去思考大概的状态定义方向。</p>
+<p><strong>两个例子</strong></p>
+<p>关于状态定义，真的非常重要，以至于我将其列为动态规划的核心。因此我觉得有必要举几个例子来进行说明。我直接从力扣的<a href="https://leetcode-cn.com/tag/dynamic-programming/problemset/" title="动态规划专题" target="_blank" rel="noopener">动态规划专题</a>中抽取前两道给大家讲讲。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gpmtitey5hj315k0lsjxk.jpg" alt="力扣动态规划专题"></p>
+<p>第一道题：《5. 最长回文子串》难度中等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">给你一个字符串 s，找到 s 中最长的回文子串。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例 1：</span><br><span class="line"></span><br><span class="line">输入：s = &quot;babad&quot;</span><br><span class="line">输出：&quot;bab&quot;</span><br><span class="line">解释：&quot;aba&quot; 同样是符合题意的答案。</span><br><span class="line">示例 2：</span><br><span class="line"></span><br><span class="line">输入：s = &quot;cbbd&quot;</span><br><span class="line">输出：&quot;bb&quot;</span><br><span class="line">示例 3：</span><br><span class="line"></span><br><span class="line">输入：s = &quot;a&quot;</span><br><span class="line">输出：&quot;a&quot;</span><br><span class="line">示例 4：</span><br><span class="line"></span><br><span class="line">输入：s = &quot;ac&quot;</span><br><span class="line">输出：&quot;a&quot;</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">1 &lt;= s.length &lt;= 1000</span><br><span class="line">s 仅由数字和英文字母（大写和/或小写）组成</span><br></pre></td></tr></table></figure>
+<p><strong>这道题入参是一个字符串，那我们要将其转化为规模更小的子问题，那无疑就是字符串变得更短的问题，临界条件也应该是空字符串或者一个字符这样。</strong></p>
+<p>因此：</p>
+<ul>
+<li>一种定义状态的方式就是 f(s1)，含义是字符串 s1 的最长回文子串，其中 s1 就是题目中的字符串 s 的子串，那么答案就是 f(s)。</li>
+<li>由于规模更小指的是字符串变得更短，而描述字符串我们也可以用两个变量来描述，这样实际上还省去了开辟字符串的开销。两个变量可以是<strong>起点索引 + 子串长度</strong>，也可以是<strong>终点索引 + 子串长度</strong>，也可以是<strong>起点坐标 + 终点坐标</strong>。随你喜欢，这里我就用<strong>起点坐标 + 终点坐标</strong>。那么状态定义就是 f(start, end)，含义是子串 s[start:end+1]的最长回文子串，那么答案就是 f(0, len(s) - 1)</li>
+</ul>
+<blockquote>
+<p>s[start:end+1] 指的是包含 s[start]，而不包含 s[end+1] 的连续子串。</p>
+</blockquote>
+<p>这无疑是一种定义状态的方式，但是一旦我们这样去定义就会发现：状态转移方程会变得难以确定（实际上很多动态规划都有这个问题，比如最长上升子序列问题）。那究竟如何定义状态呢？我会在稍后的状态转移方程继续完成这道题。我们先来看下一道题。</p>
+<p>第二道题：《10. 正则表达式匹配》难度困难</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 &apos;.&apos; 和 &apos;*&apos; 的正则表达式匹配。</span><br><span class="line"></span><br><span class="line">&apos;.&apos; 匹配任意单个字符</span><br><span class="line">&apos;*&apos; 匹配零个或多个前面的那一个元素</span><br><span class="line">所谓匹配，是要涵盖 整个 字符串 s的，而不是部分字符串。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">示例 1：</span><br><span class="line"></span><br><span class="line">输入：s = &quot;aa&quot; p = &quot;a&quot;</span><br><span class="line">输出：false</span><br><span class="line">解释：&quot;a&quot; 无法匹配 &quot;aa&quot; 整个字符串。</span><br><span class="line">示例 2:</span><br><span class="line"></span><br><span class="line">输入：s = &quot;aa&quot; p = &quot;a*&quot;</span><br><span class="line">输出：true</span><br><span class="line">解释：因为 &apos;*&apos; 代表可以匹配零个或多个前面的那一个元素, 在这里前面的元素就是 &apos;a&apos;。因此，字符串 &quot;aa&quot; 可被视为 &apos;a&apos; 重复了一次。</span><br><span class="line">示例 3：</span><br><span class="line"></span><br><span class="line">输入：s = &quot;ab&quot; p = &quot;.*&quot;</span><br><span class="line">输出：true</span><br><span class="line">解释：&quot;.*&quot; 表示可匹配零个或多个（&apos;*&apos;）任意字符（&apos;.&apos;）。</span><br><span class="line">示例 4：</span><br><span class="line"></span><br><span class="line">输入：s = &quot;aab&quot; p = &quot;c*a*b&quot;</span><br><span class="line">输出：true</span><br><span class="line">解释：因为 &apos;*&apos; 表示零个或多个，这里 &apos;c&apos; 为 0 个, &apos;a&apos; 被重复一次。因此可以匹配字符串 &quot;aab&quot;。</span><br><span class="line">示例 5：</span><br><span class="line"></span><br><span class="line">输入：s = &quot;mississippi&quot; p = &quot;mis*is*p*.&quot;</span><br><span class="line">输出：false</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">0 &lt;= s.length &lt;= 20</span><br><span class="line">0 &lt;= p.length &lt;= 30</span><br><span class="line">s 可能为空，且只包含从 a-z 的小写字母。</span><br><span class="line">p 可能为空，且只包含从 a-z 的小写字母，以及字符 . 和 *。</span><br><span class="line">保证每次出现字符 * 时，前面都匹配到有效的字符</span><br></pre></td></tr></table></figure>
+<p>这道题入参有两个， 一个是 s，一个是 p。沿用上面的思路，我们有两种定义状态的方式。</p>
+<ul>
+<li>一种定义状态的方式就是 f(s1, p1)，含义是 p1 是否可匹配字符串 s1，其中 s1 就是题目中的字符串 s 的子串，p1 就是题目中的字符串 p 的子串,那么答案就是 f(s, p)。</li>
+<li>另一种是 f(s_start, s_end, p_start, p_end)，含义是子串 p1[p_start:p_end+1] 是否可以匹配字符串 s[s_start:s_end+1]，那么答案就是 f(0, len(s) - 1, 0, len(p) - 1)</li>
+</ul>
+<p>而这道题实际上我们也可采用更简单的状态定义方式，不过基本思路都是差不多的。我仍旧卖个关子，后面讲转移方程再揭晓。</p>
+<p>搞定了状态定义，你会发现时间空间复杂度都变得很明显了。这也是为啥我反复强调状态定义是动态规划的核心。</p>
+<p>时间空间复杂度怎么个明显法了呢？</p>
+<p>首先空间复杂度，我刚才说了动态规划其实就是查表的暴力法，因此动态规划的空间复杂度打底就是表的大小。再直白一点就是上面的哈希表 memo 的大小。而 <strong>memo</strong>的大小基本就是状态的个数。状态个数是多少呢? 这不就取决你状态怎么定义了么？比如上面的 f(s1, p1) 。状态的多少是多少呢？很明显就是每个参数的取值范围大小的笛卡尔积。s1 的所有可能取值有 len(s) 种，p1 的所有可能有 len(p)种，那么总的状态大小就是 len(s) * len(p)。那空间复杂度是 $O(m * n)$，其中 m 和 n 分别为 s 和 p 的大小。</p>
+<blockquote>
+<p>我说空间复杂度打底是状态个数， 这里暂时先不考虑状态压缩的情况。</p>
+</blockquote>
+<p>其次是时间复杂度。时间复杂度就比较难说了。但是由于我们<strong>无论如何都要枚举所有状态</strong>，因此<strong>时间复杂度打底就是状态总数</strong>。以上面的状态定义方式，时间复杂度打底就是$O(m * n)$。</p>
+<p>如果你枚举每一个状态都需要和 s 的每一个字符计算一下，那时间复杂度就是 $O(m^2 * n)$。</p>
+<p>以上面的爬楼梯的例子来说，我们定义状态 f(n) 表示到达第 n 级台阶的方法数，那么状态总数就是 n，空间复杂度和时间复杂度打底就是 $n$ 了。（仍然不考虑滚动数组优化）</p>
+<p>再举个例子：<a href="https://github.com/azl397985856/leetcode/blob/master/problems/62.unique-paths.md" target="_blank" rel="noopener">62. 不同路径</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。</span><br><span class="line"></span><br><span class="line">机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。</span><br><span class="line"></span><br><span class="line">问总共有多少条不同的路径？</span><br></pre></td></tr></table></figure>
+<p>这道题是和上面的爬楼梯很像，只不过从一维变成了二维，我把它叫做<strong>二维爬楼梯</strong>，类似的换皮题还很多，大家慢慢体会。</p>
+<p>这道题我定义状态为 f(i, j) 表示机器人到达点 (i,j) 的总的路径数。那么状态总数就是 i 和 j 的取值的笛卡尔积，也就是 m * n 。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gpn6m7knnij30u00v1di1.jpg" alt="二维爬楼梯"></p>
+<p>总的来说，动态规划的空间和时间复杂度<strong>打底就是状态的个数</strong>，而状态的个数通常是参数的笛卡尔积，这是由动态规划的无后向性决定的。</p>
+<p><strong>临界条件是比较最容易的</strong></p>
+<p>当你定义好了状态，剩下就三件事了：</p>
+<ol>
+<li><p>临界条件</p>
+</li>
+<li><p>状态转移方程</p>
+</li>
+<li><p>枚举状态</p>
+</li>
+</ol>
+<p>在上面讲解的爬楼梯问题中，如果我们用 f(n) 表示爬 n 级台阶有多少种方法的话，那么：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f(1) 与 f(2) 就是【边界】</span><br><span class="line">f(n) = f(n-1) + f(n-2) 就是【状态转移公式】</span><br></pre></td></tr></table></figure>
+<p>我用动态规划的形式表示一下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dp[0] 与 dp[1] 就是【边界】</span><br><span class="line">dp[n] = dp[n - 1] + dp[n - 2] 就是【状态转移方程】</span><br></pre></td></tr></table></figure>
+<p>可以看出记忆化递归和动态规划是多么的相似。</p>
+<p>实际上临界条件相对简单，大家只有多刷几道题，里面就有感觉。困难的是找到状态转移方程和枚举状态。这两个核心点的都建立在<strong>已经抽象好了状态</strong>的基础上。比如爬楼梯的问题，如果我们用 f(n) 表示爬 n 级台阶有多少种方法的话，那么 f(1), f(2), … 就是各个<strong>独立的状态</strong>。</p>
+<p>搞定了状态的定义，那么我们来看下状态转移方程。</p>
+<h4 id="状态转移方程"><a href="#状态转移方程" class="headerlink" title="状态转移方程"></a>状态转移方程</h4><p>动态规划中当前阶段的状态往往是上一阶段状态和上一阶段决策的结果。这里有两个关键字，分别是 ：</p>
+<ul>
+<li>上一阶段状态</li>
+<li>上一阶段决策</li>
+</ul>
+<p>也就是说，如果给定了第 k 阶段的状态 s[k] 以及决策 choice(s[k])，则第 k+1 阶段的状态 s[k+1] 也就完全确定，用公式表示就是：s[k] + choice(s[k]) -&gt; s[k+1]， 这就是状态转移方程。需要注意的是 choice 可能有多个，因此每个阶段的状态 s[k+1]也会有多个。</p>
+<p>继续以上面的爬楼梯问题来说，爬楼梯问题由于上第 n 级台阶一定是从 n - 1 或者 n - 2 来的，因此 上第 n 级台阶的数目就是 <code>上 n - 1 级台阶的数目加上 n - 1 级台阶的数目</code>。</p>
+<p>上面的这个理解是核心， 它就是我们的状态转移方程，用代码表示就是 <code>f(n) = f(n - 1) + f(n - 2)</code>。</p>
+<p>实际操作的过程，有可能题目和爬楼梯一样直观，我们不难想到。也可能隐藏很深或者维度过高。 如果你实在想不到，可以尝试画图打开思路，这也是我刚学习动态规划时候的方法。当你做题量上去了，你的题感就会来，那个时候就可以不用画图了。</p>
+<p>比如我们定义了状态方程，据此我们定义初始状态和目标状态。然后聚焦最优子结构，<strong>思考每一个状态究竟如何进行扩展使得离目标状态越来越近</strong>。</p>
+<p>如下图所示：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gpoaanln73j31ak0p0dpd.jpg" alt="状态转移图解"></p>
+<p>理论差不多先这样，接下来来几个实战消化一下。</p>
+<p>ok，接下来是解密环节。上面两道题我们都没有讲转移方程，我们在这里补上。</p>
+<p>第一道题：《5. 最长回文子串》难度中等。上面我们的两种状态定义都不好，而我可以在上面的基础上<strong>稍微变动一点</strong>就可以使得转移方程变得非常好写。这个技巧在很多动态题目都有体现，比如最长上升子序列等，<strong>需要大家掌握</strong>。</p>
+<p>以上面提到的 f(start, end) 来说，含义是子串 s[start:end+1]的最长回文子串。表示方式我们不变，只是将含义变成子串 s[start:end+1]的最长回文子串，<strong>且必须包含 start 和 end</strong>。经过这样的定义，实际上我们也没有必要定义 f(start, end)的返回值是长度了，而仅仅是布尔值就行了。如果返回 true， 则最长回文子串就是 end - start + 1，否则就是 0。</p>
+<p>这样转移方程就可以写为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f(i,j)=f(i+1,j−1) and s[i] == s[j]</span><br></pre></td></tr></table></figure>
+<p>第二道题：《10. 正则表达式匹配》难度困难。</p>
+<p>以我们分析的 f(s_start, s_end, p_start, p_end) 来说，含义是子串 p1[p_start:p_end+1] 是否可以匹配字符串 s[s_start:s_end+1]。</p>
+<p>实际上，我们可以定义更简单的方式，那就是 f(s_end, p_end)，含义是子串 p1[:p_end+1] 是否可以匹配字符串 s[:s_end+1]。也就是说固定起点为索引 0，这同样也是一个<strong>很常见的技巧，请务必掌握。</strong></p>
+<p>这样转移方程就可以写为：</p>
+<ol>
+<li>if p[j] 是小写字母，是否匹配取决于 s[i] 是否等于 p[j]:</li>
+</ol>
+<script type="math/tex; mode=display">
+  f(i,j)=\left\{
+  \begin{aligned}
+  f(i-1, j-1) &  & s[i] == p[j] \\
+  false & & s[i] != p[j] \\
+  \end{aligned}
+  \right.</script><ol>
+<li>if p[j] == ‘.’，一定可匹配:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f(i,j)=f(i-1,j−1)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>if p[j] == ‘*‘，表示 p 可以匹配 s 第 j−1 个字符匹配任意次：</li>
+</ol>
+<script type="math/tex; mode=display">
+  f(i,j)=\left\{
+  \begin{aligned}
+  f(i-1, j) &  & 匹配1次以上 \\
+  f(i, j - 2) & & 匹配0次 \\
+  \end{aligned}
+  \right.</script><p>相信你能分析到这里，写出代码就不是难事了。具体代码可参考我的<a href="https://github.com/azl397985856/leetcode" title="力扣题解仓库" target="_blank" rel="noopener">力扣题解仓库</a>，咱就不在这里讲了。</p>
+<p>注意到了么？所有的状态转移方程我都使用了上述的数学公式来描述。没错，所有的转移方程都可以这样描述。我建议大家<strong>做每一道动态规划题目都写出这样的公式</strong>，起初你可能觉得很烦麻烦。不过相信我，你坚持下去，会发现自己慢慢变强大。就好像我强烈建议你每一道题都分析好复杂度一样。动态规划不仅要搞懂转移方程，还要自己像我那样完整地用数学公式写出来。</p>
+<p>是不是觉得状态转移方程写起来麻烦？这里我给大家介绍一个小技巧，那就是使用 latex，latex 语法可以方便地写出这样的公式。另外西法还贴心地写了<strong>一键生成动态规划转移方程公式</strong>的功能，帮助大家以最快速度生成公诉处。 插件地址：<a href="https://leetcode-pp.github.io/leetcode-cheat/?tab=solution-template" target="_blank" rel="noopener">https://leetcode-pp.github.io/leetcode-cheat/?tab=solution-template</a></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gpoaw5c5l0j314a0dq0ui.jpg" alt="插件用法"></p>
+<p>状态转移方程实在是没有什么灵丹妙药，不同的题目有不同的解法。状态转移方程同时也是解决动态规划问题中最最困难和关键的点，大家一定要多多练习，提高题感。接下来，我们来看下不那么困难，但是新手疑问比较多的问题 - <strong>如何枚举状态</strong>。</p>
+<p>当然状态转移方程可能不止一个， 不同的转移方程对应的效率也可能大相径庭，这个就是比较玄学的话题了，需要大家在做题的过程中领悟。</p>
+<h4 id="如何枚举状态"><a href="#如何枚举状态" class="headerlink" title="如何枚举状态"></a>如何枚举状态</h4><p>前面说了如何枚举状态，才能不重不漏是枚举状态的关键所在。</p>
+<ul>
+<li>如果是一维状态，那么我们使用一层循环可以搞定。</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">  <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gpn6bxt7erj31n00u0jtx.jpg" alt="一维状态"></p>
+<ul>
+<li>如果是两维状态，那么我们使用两层循环可以搞定。</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, m + <span class="number">1</span>):</span><br><span class="line">  <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gpn6ceroi3j31970u0dit.jpg" alt="二维状态"></p>
+<ul>
+<li>。。。</li>
+</ul>
+<p>但是实际操作的过程有很多细节比如:</p>
+<ul>
+<li>一维状态我是先枚举左边的还是右边的？（从左到右遍历还是从右到左遍历）</li>
+<li>二维状态我是先枚举左上边的还是右上的，还是左下的还是右下的？</li>
+<li>里层循环和外层循环的位置关系（可以互换么）</li>
+<li>。。。</li>
+</ul>
+<p>其实这个东西和很多因素有关，很难总结出一个规律，而且我认为也完全没有必要去总结规律。</p>
+<p>不过这里我还是总结了一个关键点，那就是：</p>
+<ul>
+<li><strong>如果你没有使用滚动数组的技巧</strong>，那么遍历顺序取决于状态转移方程。比如:</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">  dp[i] = dp[i - <span class="number">1</span>] + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>那么我们就需要从左到右遍历，原因很简单，因为 dp[i] 依赖于 dp[i - 1]，因此计算 dp[i] 的时候， dp[i - 1] 需要已经计算好了。</p>
+<blockquote>
+<p>二维的也是一样的，大家可以试试。</p>
+</blockquote>
+<ul>
+<li><strong>如果你使用了滚动数组的技巧</strong>，则怎么遍历都可以，但是不同的遍历意义通常不不同的。比如我将二维的压缩到了一维：</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">  <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">    dp[j] = dp[j - <span class="number">1</span>] + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>这样是可以的。 dp[j - 1] 实际上指的是压缩前的 dp[i][j - 1]</p>
+<p>而：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">  <span class="comment">#  倒着遍历</span></span><br><span class="line">  <span class="keyword">for</span> j <span class="keyword">in</span> range(n, <span class="number">0</span>, <span class="number">-1</span>):</span><br><span class="line">    dp[j] = dp[j - <span class="number">1</span>] + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>这样也是可以的。 但是 dp[j - 1] 实际上指的是压缩前的 dp[i - 1][j - 1]。因此实际中采用怎么样的遍历手段取决于题目。我特意写了一个 <a href="https://leetcode-cn.com/problems/form-largest-integer-with-digits-that-add-up-to-target/solution/wan-quan-bei-bao-wen-ti-tao-lu-ti-1449-shu-wei-che/" target="_blank" rel="noopener">【完全背包问题】套路题（1449. 数位成本和为目标值的最大数字</a> 文章，通过一个具体的例子告诉大家不同的遍历有什么实际不同，强烈建议大家看看，并顺手给个三连。</p>
+<ul>
+<li>关于里外循环的问题，其实和上面原理类似。</li>
+</ul>
+<p>这个比较微妙，大家可以参考这篇文章理解一下 <a href="https://github.com/azl397985856/leetcode/blob/master/problems/518.coin-change-2.md" target="_blank" rel="noopener">0518.coin-change-2</a>。</p>
+<h4 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h4><p>关于如何确定临界条件通常是比较简单的，多做几个题就可以快速掌握。</p>
+<p>关于如何确定状态转移方程，这个其实比较困难。 不过所幸的是，这些套路性比较强， 比如一个字符串的状态，通常是 dp[i] 表示字符串 s 以 i 结尾的 ….。 比如两个字符串的状态，通常是 dp[i][j] 表示字符串 s1 以 i 结尾，s2 以 j 结尾的 ….。 这样遇到新的题目可以往上套， 实在套不出那就先老实画图，不断观察，提高题感。</p>
+<p>关于如何枚举状态，如果没有滚动数组， 那么根据转移方程决定如何枚举即可。 如果用了滚动数组，那么要注意压缩后和压缩前的 dp 对应关系即可。</p>
+<h3 id="动态规划-VS-记忆化递归"><a href="#动态规划-VS-记忆化递归" class="headerlink" title="动态规划 VS 记忆化递归"></a>动态规划 VS 记忆化递归</h3><p>上面我们用记忆化递归的问题巧妙地解决了爬楼梯问题。 那么动态规划是怎么解决这个问题呢？</p>
+<p>答案也是“查表”，我们平常写的 dp table 就是表，其实这个 dp table 和上面的 memo 没啥差别。</p>
+<p>而一般我们写的 dp table，<strong>数组的索引通常对应记忆化递归的函数参数，值对应递归函数的返回值。</strong></p>
+<p>看起来两者似乎<strong>没任何思想上的差异，区别的仅仅是写法</strong>？？ 没错。不过这种写法上的差异还会带来一些别的相关差异，这点我们之后再讲。</p>
+<p>如果上面的爬楼梯问题，使用动态规划，代码是怎么样的呢？我们来看下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">climbStairs</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">const</span> dp = <span class="keyword">new</span> <span class="built_in">Array</span>(n);</span><br><span class="line">  dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">  dp[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">2</span>; i &lt; n; i++) &#123;</span><br><span class="line">    dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dp[dp.length - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>大家现在不会也没关系，我们将<strong>前文的递归的代码稍微改造一下</strong>。其实就是将函数的名字改一下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dp</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> dp(n - <span class="number">1</span>) + dp(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>经过这样的变化。我们将 dp[n] 和 dp(n) 对比看，这样是不是有点理解了呢? 其实他们的区别只不过是<strong>递归用调用栈枚举状态， 而动态规划使用迭代枚举状态。</strong></p>
+<blockquote>
+<p>如果需要多个维度枚举，那么记忆化递归内部也可以使用迭代进行枚举，比如最长上升子序列问题。</p>
+</blockquote>
+<p>动态规划的查表过程如果画成图，就是这样的：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluhxylbhj30n40cbaaq.jpg" alt="动态规划查表"></p>
+<blockquote>
+<p>虚线代表的是查表过程</p>
+</blockquote>
+<h3 id="滚动数组优化"><a href="#滚动数组优化" class="headerlink" title="滚动数组优化"></a>滚动数组优化</h3><p>爬楼梯我们并没有必要使用一维数组，而是借助两个变量来实现的，空间复杂度是 O(1)。代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">climbStairs</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">let</span> b = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">let</span> temp;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">3</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    temp = a + b;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>之所以能这么做，是因为爬楼梯问题的状态转移方程中<strong>当前状态只和前两个状态有关</strong>，因此只需要存储这两个即可。 动态规划问题有很多这种讨巧的方式，这个技巧叫做滚动数组。</p>
+<p>这道题目是动态规划中最简单的问题了，因为仅涉及到单个因素的变化，如果涉及到多个因素，就比较复杂了，比如著名的背包问题，挖金矿问题等。</p>
+<p>对于单个因素的，我们最多只需要一个一维数组即可，对于如背包问题我们需要二维数组等更高纬度。</p>
+<p>回答上面的问题：记忆化递归和动态规划除了一个用递归一个用迭代，其他没差别。那两者有啥区别呢？我觉得最大的区别就是记忆化递归无法使用滚动数组优化（不信你用上面的爬楼梯试一下），记忆化调用栈的开销比较大（复杂度不变，你可以认为空间复杂度常数项更大），不过几乎不至于 TLE 或者 MLE。<strong>因此我的建议就是没空间优化需求直接就记忆化，否则用迭代 dp</strong>。</p>
+<p>再次强调一下：</p>
+<ul>
+<li>如果说递归是从问题的结果倒推，直到问题的规模缩小到寻常。 那么动态规划就是从寻常入手， 逐步扩大规模到最优子结构。</li>
+<li>记忆化递归和动态规划没有本质不同。都是枚举状态，并根据状态直接的联系逐步推导求解。</li>
+<li>动态规划性能通常更好。 一方面是递归的栈开销，一方面是滚动数组的技巧。</li>
+</ul>
+<h3 id="动态规划的基本类型"><a href="#动态规划的基本类型" class="headerlink" title="动态规划的基本类型"></a>动态规划的基本类型</h3><ul>
+<li>背包 DP（这个我们专门开了一个专题讲）</li>
+<li>区间 DP</li>
+</ul>
+<p>区间类动态规划是线性动态规划的扩展，它在分阶段地划分问题时，与阶段中元素出现的顺序和由前一阶段的哪些元素合并而来有很大的关系。令状态 $f(i,j)$ 表示将下标位置 $i$ 到 $j$ 的所有元素合并能获得的价值的最大值，那么 $f(i,j)=\max\{f(i,k)+f(k+1,j)+cost\}$，$cost$ 为将这两组元素合并起来的代价。</p>
+<p>区间 DP 的特点：</p>
+<p><strong>合并</strong>：即将两个或多个部分进行整合，当然也可以反过来；</p>
+<p><strong>特征</strong>：能将问题分解为能两两合并的形式；</p>
+<p><strong>求解</strong>：对整个问题设最优值，枚举合并点，将问题分解为左右两个部分，最后合并两个部分的最优值得到原问题的最优值。</p>
+<p>推荐两道题：</p>
+<ul>
+<li><a href="https://leetcode-cn.com/problems/stone-game/" target="_blank" rel="noopener">877. 石子游戏</a></li>
+<li><p><a href="https://leetcode-cn.com/problems/burst-balloons/" target="_blank" rel="noopener">312. 戳气球</a></p>
+</li>
+<li><p>状压 DP</p>
+</li>
+</ul>
+<p>关于状压 DP 可以参考下我之前写过的一篇文章：<a href="https://mp.weixin.qq.com/s?__biz=MzI4MzUxNjI3OA==&amp;mid=2247486874&amp;idx=1&amp;sn=0f27ddd51ad5b92ef0ddcc4fb19a3f5e&amp;chksm=eb88c183dcff4895209c4dc4d005e3bb143cc852805594b407dbf3f4718c60261f09c2849f70&amp;token=1227596150&amp;lang=zh_CN#rd" target="_blank" rel="noopener"> 状压 DP 是什么？这篇题解带你入门 </a></p>
+<ul>
+<li>数位 DP</li>
+</ul>
+<p>数位 DP 通常是这：给定一个闭区间 ，让你求这个区间中满足<strong>某种条件</strong>的数的总数。</p>
+<p>推荐一道题 <a href="https://binarysearch.com/problems/Increasing-Digits" target="_blank" rel="noopener">Increasing-Digits</a></p>
+<ul>
+<li>计数 DP 和 概率 DP</li>
+</ul>
+<p>这两个我就不多说。因为没啥规律。</p>
+<p>之所以列举计数 DP 是因为两个原因：</p>
+<ol>
+<li>让大家知道确实有这个题型。</li>
+<li>计数是动态规划的副产物。</li>
+</ol>
+<p>概率 DP 比较特殊，概率 DP 的状态转移公式一般是说一个状态<strong>有多大的概率从某一个状态转移过来</strong>，更像是期望的计算，因此也叫期望 DP。</p>
+<p>推荐两道题:</p>
+<ul>
+<li><a href="https://leetcode-cn.com/problems/decode-ways/" target="_blank" rel="noopener">91. 解码方法</a></li>
+<li><a href="https://leetcode-cn.com/problems/new-21-game/" target="_blank" rel="noopener">837. 新 21 点</a></li>
+</ul>
+<p>更多题目类型以及推荐题目见刷题插件的学习路线。插件获取方式：公众号力扣加加回复插件。</p>
+<h2 id="什么时候用记忆化递归？"><a href="#什么时候用记忆化递归？" class="headerlink" title="什么时候用记忆化递归？"></a>什么时候用记忆化递归？</h2><ul>
+<li>从数组两端同时进行遍历的时候使用记忆化递归方便，其实也就是区间 DP（range dp）。比如石子游戏，再比如这道题 <a href="https://binarysearch.com/problems/Make-a-Palindrome-by-Inserting-Characters" target="_blank" rel="noopener">https://binarysearch.com/problems/Make-a-Palindrome-by-Inserting-Characters</a></li>
+</ul>
+<p>如果区间 dp 你的遍历方式大概需要这样：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">solve</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        n = len(s)</span><br><span class="line">        dp = [[<span class="number">0</span>] * n <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line">        <span class="comment"># 右边界倒序遍历</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            <span class="comment"># 左边界正序遍历</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i + <span class="number">1</span>, n):</span><br><span class="line">                <span class="comment"># do something</span></span><br><span class="line">        <span class="keyword">return</span>  dp[<span class="number">0</span>][m<span class="number">-1</span>] <span class="comment"># 一般都是使用这个区间作为答案</span></span><br></pre></td></tr></table></figure>
+<p>如果使用记忆化递归则不需考虑遍历方式的问题。</p>
+<p>代码：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">solve</span><span class="params">(self, s)</span>:</span></span><br><span class="line"><span class="meta">        @lru_cache(None)</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(l, r)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> l &gt;= r:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> s[l] == s[r]:</span><br><span class="line">                <span class="keyword">return</span> helper(l + <span class="number">1</span>, r - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> + min(helper(l + <span class="number">1</span>, r), helper(l, r - <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> helper(<span class="number">0</span>, len(s) - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>选择</strong> 比较离散的时候，使用记忆化递归更好。比如马走棋盘。</li>
+</ul>
+<p>那什么时候不用记忆化递归呢？答案是其他情况都不用。因为普通的 dp table 有一个重要的功能，这个功能记忆化递归是无法代替的，那就是<strong>滚动数组优化</strong>。如果你需要对空间进行优化，那一定要用 dp table。</p>
+<h2 id="热身开始"><a href="#热身开始" class="headerlink" title="热身开始"></a>热身开始</h2><p>理论知识已经差不多了，我们拿一道题来试试手。</p>
+<p>我们以一个非常经典的背包问题来练一下手。</p>
+<p>题目：<a href="https://leetcode-cn.com/problems/coin-change/" title="322. 零钱兑换" target="_blank" rel="noopener">322. 零钱兑换</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 -1。</span><br><span class="line"></span><br><span class="line">你可以认为每种硬币的数量是无限的。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例 1：</span><br><span class="line"></span><br><span class="line">输入：coins = [1, 2, 5], amount = 11</span><br><span class="line">输出：3</span><br><span class="line">解释：11 = 5 + 5 + 1</span><br></pre></td></tr></table></figure>
+<p>这道题的参数有两个，一个是 coins，一个是 amount。</p>
+<p>我们可以定义状态为 f(i, j) 表示用 coins 的前 i 项找 j 元需要的最少硬币数。那么答案就是 f(len(coins) - 1, amount)。</p>
+<p>由组合原理，coins 的所有选择状态是 $2^n$。状态总数就是 i 和 j 的取值的笛卡尔积，也就是 2^len(coins) * (amount + 1)。</p>
+<blockquote>
+<p>减 1 是因为存在 0 元的情况。</p>
+</blockquote>
+<p>明确了这些，我们需要考虑的就是状态如何转移，也就是如何从寻常转移到 f(len(coins) - 1, amount)。</p>
+<p>如何确定状态转移方程？我们需要:</p>
+<ul>
+<li>聚焦最优子结构</li>
+<li>做选择，在选择中取最优解（如果是计数 dp 则进行计数）</li>
+</ul>
+<p>对于这道题来说，我们的选择有两种：</p>
+<ul>
+<li>选择 coins[i]</li>
+<li>不选择 coins[i]</li>
+</ul>
+<p>这无疑是完备的。只不过仅仅是对 coins 中的每一项进行<strong>选择与不选择</strong>，这样的状态数就已经是 $2^n$ 了，其中 n 为 coins 长度。</p>
+<p>如果仅仅是这样枚举肯定会超时，因为状态数已经是指数级别了。</p>
+<p>而这道题的核心在于 coins[i] 选择与否其实没有那么重要，<strong>重要的其实是选择的 coins 一共有多少钱</strong>。</p>
+<p>因此我们可以定义 f(i, j) 表示选择了 coins 的前 i 项（怎么选的不关心），且组成 j 元需要的最少硬币数。</p>
+<p>举个例子来说，比如 coins = [1,2,3] 。那么选择 [1,2] 和 选择 [3] 虽然是不一样的状态，但是我们压根不关心。因为这两者没有区别，我们还是谁对结果贡献大就 pick 谁。</p>
+<p>以 coins = [1,2,3], amount = 6 来说，我们可以画出如下的递归树。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goil47ztakj31jk0nm791.jpg" alt></p>
+<p>（图片来自<a href="https://leetcode.com/problems/coin-change/solution/）" target="_blank" rel="noopener">https://leetcode.com/problems/coin-change/solution/）</a></p>
+<p>因此转移方程就是 <code>min(dp[i][j], dp[i-1][j - coins[j]] + 1)</code>，含义就是： min(不选择 coins[j], 选择 coins[j]) 所需最少的硬币数。</p>
+<p>用公式表示就是：</p>
+<script type="math/tex; mode=display">
+  dp[i]=\left\{
+  \begin{aligned}
+ min(dp[i][j], dp[i-1][j - coins[j]] + 1) &  & j >= coins[j] \\
+  amount + 1 & & j < coins[j] \\
+  \end{aligned}
+  \right.</script><blockquote>
+<p>amount 表示无解。因为硬币的面额都是正整数，不可能存在一种需要 amount + 1 枚硬币的方案。</p>
+</blockquote>
+<p><strong>代码</strong></p>
+<p>记忆化递归：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">coinChange</span><span class="params">(self, coins: List[int], amount: int)</span> -&gt; int:</span></span><br><span class="line"><span class="meta">        @lru_cache(None)</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(amount)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> amount &lt; <span class="number">0</span>: <span class="keyword">return</span> float(<span class="string">'inf'</span>)</span><br><span class="line">            <span class="keyword">if</span> amount == <span class="number">0</span>: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            ans = float(<span class="string">'inf'</span>)</span><br><span class="line">            <span class="keyword">for</span> coin <span class="keyword">in</span> coins:</span><br><span class="line">                ans = min(ans, <span class="number">1</span> + dfs(amount - coin))</span><br><span class="line">            <span class="keyword">return</span> ans</span><br><span class="line">        ans = dfs(amount)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span> <span class="keyword">if</span> ans == float(<span class="string">'inf'</span>) <span class="keyword">else</span> ans</span><br></pre></td></tr></table></figure>
+<p>二维 dp:</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">coinChange</span><span class="params">(self, coins: List[int], amount: int)</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> amount &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> - <span class="number">1</span></span><br><span class="line">        dp = [[amount + <span class="number">1</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(coins) + <span class="number">1</span>)]</span><br><span class="line">              <span class="keyword">for</span> _ <span class="keyword">in</span> range(amount + <span class="number">1</span>)]</span><br><span class="line">        <span class="comment"># 初始化第一行为0，其他为最大值（也就是amount + 1）</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(coins) + <span class="number">1</span>):</span><br><span class="line">            dp[<span class="number">0</span>][j] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, amount + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, len(coins) + <span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> i - coins[j - <span class="number">1</span>] &gt;= <span class="number">0</span>:</span><br><span class="line">                    dp[i][j] = min(</span><br><span class="line">                        dp[i][j - <span class="number">1</span>], dp[i - coins[j - <span class="number">1</span>]][j] + <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dp[i][j] = dp[i][j - <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span> <span class="keyword">if</span> dp[<span class="number">-1</span>][<span class="number">-1</span>] == amount + <span class="number">1</span> <span class="keyword">else</span> dp[<span class="number">-1</span>][<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+<p>dp[i][j] 依赖于<code>dp[i][j - 1]</code>和 <code>dp[i - coins[j - 1]][j] + 1)</code> 这是一个优化的信号，我们可以将其优化到一维。</p>
+<p>一维 dp（滚动数组优化）：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">coinChange</span><span class="params">(self, coins: List[int], amount: int)</span> -&gt; int:</span></span><br><span class="line">        dp = [amount + <span class="number">1</span>] * (amount + <span class="number">1</span>)</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(coins)):</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, amount + <span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> i &gt;= coins[j]:</span><br><span class="line">                    dp[i] = min(dp[i], dp[i - coins[j]] + <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span> <span class="keyword">if</span> dp[<span class="number">-1</span>] == amount + <span class="number">1</span> <span class="keyword">else</span> dp[<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="推荐练习题目"><a href="#推荐练习题目" class="headerlink" title="推荐练习题目"></a>推荐练习题目</h2><p>最后推荐几道题目给大家，建议大家分别使用记忆化递归和动态规划来解决。如果使用动态规划，则尽可能使用滚动数组优化空间。</p>
+<ul>
+<li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/91.decode-ways.md" target="_blank" rel="noopener">0091.decode-ways</a></li>
+<li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/139.word-break.md" target="_blank" rel="noopener">0139.word-break</a></li>
+<li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/0198.house-robber.md" target="_blank" rel="noopener">0198.house-robber</a></li>
+<li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/309.best-time-to-buy-and-sell-stock-with-cooldown.md" target="_blank" rel="noopener">0309.best-time-to-buy-and-sell-stock-with-cooldown</a></li>
+<li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/322.coin-change.md" target="_blank" rel="noopener">0322.coin-change</a></li>
+<li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/416.partition-equal-subset-sum.md" target="_blank" rel="noopener">0416.partition-equal-subset-sum</a></li>
+<li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/518.coin-change-2.md" target="_blank" rel="noopener">0518.coin-change-2</a></li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本篇文章总结了算法中比较常用的两个方法 - 递归和动态规划。递归的话可以拿树的题目练手，动态规划的话则将我上面推荐的刷完，再考虑去刷力扣的动态规划标签即可。</p>
+<p>大家前期学习动态规划的时候，可以先尝试使用记忆化递归解决。然后将其改造为动态规划，这样多练习几次就会有感觉。之后大家可以练习一下滚动数组，这个技巧很有用，并且相对来说比较简单。</p>
+<p>动态规划的核心在于定义状态，定义好了状态其他都是水到渠成。</p>
+<p>动态规划的难点在于<strong>枚举所有状态（不重不漏）</strong> 和 <strong>寻找状态转移方程</strong>。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://oi-wiki.org/dp/" target="_blank" rel="noopener">oi-wiki - dp</a> 这个资料推荐大家学习，非常全面。只不过更适合有一定基础的人，大家可以配合本讲义食用哦。</li>
+</ul>
+<p>另外，大家可以去 LeetCode 探索中的 <a href="https://leetcode-cn.com/explore/orignial/card/recursion-i/" target="_blank" rel="noopener">递归 I</a> 中进行互动式学习。</p>
+
+      </div>
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-21T09:56:08+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 2021年4月21日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/算法/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>算法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/动态规划/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>动态规划</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3azY6DMAxF4b7/S3e2labQc21AinNYjShD8rGw/JPXC1/vg+v81/9PHr3z6M7FlwwZMpZlkOVrdz7vH6119AzfmwwZMvZhHEWw82fO39PZNN+bDBkyZBBSLUxzmAwZMmR0Ai4vOEniKEOGDBnnDFLEdpJCErIfqsVlyJCxIIOHy+f/vmW+IUOGjKUY7/CqhdS0VRfvSoYMGaMZ6TLpkDJ9prYfGTJkzGbwJWsHLDqlbwCTIUPGaEZtc7WN8hSz9kFlyJAxlcGPUJCGPtkWD/pxqJUhQ8Y2jHR5fmjjodMiMmTIGMpIS1a+TFrcFktiGTJkjGbwAUBted4N4+9Hw1EZMmQMYqTLpwGRH41NPxMaYcqQIWMQo9/26nyOdGz547SIDBkyxjHSGpAH4svmq2FrT4YMGfMYaWs+HWrWjpHxRt6X1FCGDBlDGbXSsdMm4ykgSkZlyJAxmlH7Zz5z4O25tIWH5hsyZMgYygja8Y1yt//+4sELGTJkLMvgj/KvkgbiWiL4pekmQ4aM0Yx0+XSL6YAhHnPKkCFjY0btcFgaQEnG+mMPMmTIGMqoBbt4xIibd8X6W4YMGaMZ/OoMADiM8NK3yZAhYwajE2TTTddSQNSAkyFDxgYMHvg6+Vg/7UO1uAwZMrZnkNbbHUNQVJHLkCFDBj4YUQu7adJ5QcCVIUPGUgySuqXpXX/weUstLkOGjAUZvHTsHJXgm+BUGTJkbMD4A9Q4S6maQDtRAAAAAElFTkSuQmCC'>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2021/04/20/dp/&title=动态规划到底有多难？ | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=动态规划是一个从其他行业借鉴过来的词语。
+它的大概意思先将一件事情分成若干阶段，然后通过阶段之间的转移达到目标。由于转移的方向通常是多个，因此这个时候就需要决策选择具体哪一个转移方向。
+​"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2021/04/20/dp/&title=动态规划到底有多难？ | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=动态规划是一个从其他行业借鉴过来的词语。
+它的大概意思先将一件事情分成若干阶段，然后通过阶段之间的转移达到目标。由于转移的方向通常是多个，因此这个时候就需要决策选择具体哪一个转移方向。
+​"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2021/04/20/dp/&title=动态规划到底有多难？ | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=动态规划是一个从其他行业借鉴过来的词语。
+它的大概意思先将一件事情分成若干阶段，然后通过阶段之间的转移达到目标。由于转移的方向通常是多个，因此这个时候就需要决策选择具体哪一个转移方向。
+​"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/blog/2021/04/06/out-of-science/" rel="prev" title="为何我刷了很多，遇到新的题还是唯唯诺诺，无法重拳出击？">
+                                  
+                                      为何我刷了很多，遇到新的题还是唯唯诺诺，无法重拳出击？
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/走出科学/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 走出科学</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '动态规划到底有多难？',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/blog/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://www.zhihu.com/people/lu-xiao-13-70/activities"
+              class="social fab fa-zhihu flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:azl397985856@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/azl397985856"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/playlist?id=978545815&userid=632167080"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#记忆化递归"><span class="toc-text">记忆化递归</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是递归？"><span class="toc-text">什么是递归？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不仅仅是普通的递归函数"><span class="toc-text">不仅仅是普通的递归函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是记忆化？"><span class="toc-text">什么是记忆化？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态规划"><span class="toc-text">动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#动态规划的基本概念"><span class="toc-text">动态规划的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#最优子结构"><span class="toc-text">最优子结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#无后效性"><span class="toc-text">无后效性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动态规划三要素"><span class="toc-text">动态规划三要素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#状态定义"><span class="toc-text">状态定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#状态转移方程"><span class="toc-text">状态转移方程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何枚举状态"><span class="toc-text">如何枚举状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#小结-1"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动态规划-VS-记忆化递归"><span class="toc-text">动态规划 VS 记忆化递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#滚动数组优化"><span class="toc-text">滚动数组优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动态规划的基本类型"><span class="toc-text">动态规划的基本类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么时候用记忆化递归？"><span class="toc-text">什么时候用记忆化递归？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#热身开始"><span class="toc-text">热身开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#推荐练习题目"><span class="toc-text">推荐练习题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;我的开源项目</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/leetcode" href="https://github.com/azl397985856/leetcode"
+          
+          
+          id="https:github.comazl397985856leetcode">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          LeetCode
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/fe-interview" href="https://github.com/azl397985856/fe-interview"
+          
+          
+          id="https:github.comazl397985856fe-interview">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          大前端
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/daily-featured" href="https://github.com/azl397985856/daily-featured"
+          
+          
+          id="https:github.comazl397985856daily-featured">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          每日一荐
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;全部分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+    href="/blog/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/blog/categories/91天学算法/" href="/blog/categories/91天学算法/"><div class='name'>91天学算法</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/CD/" href="/blog/categories/CD/"><div class='name'>CD</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Easy/" href="/blog/categories/Easy/"><div class='name'>Easy</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Github/" href="/blog/categories/Github/"><div class='name'>Github</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Hard/" href="/blog/categories/Hard/"><div class='name'>Hard</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/LeetCode/" href="/blog/categories/LeetCode/"><div class='name'>LeetCode</div><div class='badge'>(20)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/LeetCode题解书/" href="/blog/categories/LeetCode/LeetCode题解书/"><div class='name'>LeetCode题解书</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/动态规划/" href="/blog/categories/LeetCode/动态规划/"><div class='name'>动态规划</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Medium/" href="/blog/categories/Medium/"><div class='name'>Medium</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/React/" href="/blog/categories/React/"><div class='name'>React</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/TypeScript/" href="/blog/categories/TypeScript/"><div class='name'>TypeScript</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/中等/" href="/blog/categories/中等/"><div class='name'>中等</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书/" href="/blog/categories/书/"><div class='name'>书</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/书/算法/" href="/blog/categories/书/算法/"><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书摘/" href="/blog/categories/书摘/"><div class='name'>书摘</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/二分/" href="/blog/categories/二分/"><div class='name'>二分</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/二叉树/" href="/blog/categories/二叉树/"><div class='name'>二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/刷题方法/" href="/blog/categories/刷题方法/"><div class='name'>刷题方法</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/前端/" href="/blog/categories/前端/"><div class='name'>前端</div><div class='badge'>(23)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/TypeScript/" href="/blog/categories/前端/TypeScript/"><div class='name'>TypeScript</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/TypeScript/泛型/" href="/blog/categories/前端/TypeScript/泛型/"><div class='name'>泛型</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/eslint/" href="/blog/categories/前端/eslint/"><div class='name'>eslint</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/web-component/" href="/blog/categories/前端/web-component/"><div class='name'>web-component</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/webkit/" href="/blog/categories/前端/webkit/"><div class='name'>webkit</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/测试/" href="/blog/categories/前端/测试/"><div class='name'>测试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/浏览器/" href="/blog/categories/前端/浏览器/"><div class='name'>浏览器</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/算法/" href="/blog/categories/前端/算法/"><div class='name'>算法</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/组件化/" href="/blog/categories/前端/组件化/"><div class='name'>组件化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/前缀和/" href="/blog/categories/前缀和/"><div class='name'>前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前缀和/二维前缀和/" href="/blog/categories/前缀和/二维前缀和/"><div class='name'>二维前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/力扣加加/" href="/blog/categories/力扣加加/"><div class='name'>力扣加加</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/动态规划/" href="/blog/categories/动态规划/"><div class='name'>动态规划</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/双指针/" href="/blog/categories/双指针/"><div class='name'>双指针</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/回溯/" href="/blog/categories/回溯/"><div class='name'>回溯</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/堆/" href="/blog/categories/堆/"><div class='name'>堆</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/好未来/" href="/blog/categories/好未来/"><div class='name'>好未来</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/学习方法/" href="/blog/categories/学习方法/"><div class='name'>学习方法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/工具/" href="/blog/categories/工具/"><div class='name'>工具</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/异议！/" href="/blog/categories/异议！/"><div class='name'>异议！</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/技术大会/" href="/blog/categories/技术大会/"><div class='name'>技术大会</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/D2/" href="/blog/categories/技术大会/D2/"><div class='name'>D2</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/Google-IO/" href="/blog/categories/技术大会/Google-IO/"><div class='name'>Google IO</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/JSConf/" href="/blog/categories/技术大会/JSConf/"><div class='name'>JSConf</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/QCon/" href="/blog/categories/技术大会/QCon/"><div class='name'>QCon</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/React-Conf/" href="/blog/categories/技术大会/React-Conf/"><div class='name'>React Conf</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/插件/" href="/blog/categories/插件/"><div class='name'>插件</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/插件/浏览器插件/" href="/blog/categories/插件/浏览器插件/"><div class='name'>浏览器插件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数学/" href="/blog/categories/数学/"><div class='name'>数学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数学/算法/" href="/blog/categories/数学/算法/"><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构/" href="/blog/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/hashtable/" href="/blog/categories/数据结构/hashtable/"><div class='name'>hashtable</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/二叉搜索树/" href="/blog/categories/数据结构/二叉搜索树/"><div class='name'>二叉搜索树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/图/" href="/blog/categories/数据结构/图/"><div class='name'>图</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/字符串/" href="/blog/categories/数据结构/字符串/"><div class='name'>字符串</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/平衡二叉树/" href="/blog/categories/数据结构/平衡二叉树/"><div class='name'>平衡二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/数组/" href="/blog/categories/数据结构/数组/"><div class='name'>数组</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/算法/" href="/blog/categories/数据结构/算法/"><div class='name'>算法</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/链表/" href="/blog/categories/数据结构/链表/"><div class='name'>链表</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，二叉树/" href="/blog/categories/数据结构，二叉树/"><div class='name'>数据结构，二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，单调栈/" href="/blog/categories/数据结构，单调栈/"><div class='name'>数据结构，单调栈</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，字符串/" href="/blog/categories/数据结构，字符串/"><div class='name'>数据结构，字符串</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，数组/" href="/blog/categories/数据结构，数组/"><div class='name'>数据结构，数组</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/日记/" href="/blog/categories/日记/"><div class='name'>日记</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/日记/技术/" href="/blog/categories/日记/技术/"><div class='name'>技术</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/春招/" href="/blog/categories/春招/"><div class='name'>春招</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/栈/" href="/blog/categories/栈/"><div class='name'>栈</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/树/" href="/blog/categories/树/"><div class='name'>树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/校招/" href="/blog/categories/校招/"><div class='name'>校招</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/模拟面试/" href="/blog/categories/模拟面试/"><div class='name'>模拟面试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/每日一荐/" href="/blog/categories/每日一荐/"><div class='name'>每日一荐</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-09/" href="/blog/categories/每日一荐/2019-09/"><div class='name'>2019-09</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-10/" href="/blog/categories/每日一荐/2019-10/"><div class='name'>2019-10</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-11/" href="/blog/categories/每日一荐/2019-11/"><div class='name'>2019-11</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-12/" href="/blog/categories/每日一荐/2019-12/"><div class='name'>2019-12</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2020-01/" href="/blog/categories/每日一荐/2020-01/"><div class='name'>2020-01</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2020-03/" href="/blog/categories/每日一荐/2020-03/"><div class='name'>2020-03</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/浏览器/" href="/blog/categories/浏览器/"><div class='name'>浏览器</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/浏览器/webkit/" href="/blog/categories/浏览器/webkit/"><div class='name'>webkit</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/浏览器/事件/" href="/blog/categories/浏览器/事件/"><div class='name'>事件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/电影/" href="/blog/categories/电影/"><div class='name'>电影</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/电影/观后感/" href="/blog/categories/电影/观后感/"><div class='name'>观后感</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/百度/" href="/blog/categories/百度/"><div class='name'>百度</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法/" href="/blog/categories/算法/"><div class='name'>算法</div><div class='badge'>(26)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/BFS/" href="/blog/categories/算法/BFS/"><div class='name'>BFS</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/DFS/" href="/blog/categories/算法/DFS/"><div class='name'>DFS</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/二分法/" href="/blog/categories/算法/二分法/"><div class='name'>二分法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/位运算/" href="/blog/categories/算法/位运算/"><div class='name'>位运算</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/前缀和/" href="/blog/categories/算法/前缀和/"><div class='name'>前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/动态规划/" href="/blog/categories/算法/动态规划/"><div class='name'>动态规划</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/双指针/" href="/blog/categories/算法/双指针/"><div class='name'>双指针</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/回文/" href="/blog/categories/算法/回文/"><div class='name'>回文</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/回溯/" href="/blog/categories/算法/回溯/"><div class='name'>回溯</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/子序列/" href="/blog/categories/算法/子序列/"><div class='name'>子序列</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/就地算法/" href="/blog/categories/算法/就地算法/"><div class='name'>就地算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/布隆过滤器/" href="/blog/categories/算法/布隆过滤器/"><div class='name'>布隆过滤器</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/循环移位/" href="/blog/categories/算法/循环移位/"><div class='name'>循环移位</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/数学/" href="/blog/categories/算法/数学/"><div class='name'>数学</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/概率/" href="/blog/categories/算法/概率/"><div class='name'>概率</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/母题/" href="/blog/categories/算法/母题/"><div class='name'>母题</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/滑动窗口/" href="/blog/categories/算法/滑动窗口/"><div class='name'>滑动窗口</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/状态压缩/" href="/blog/categories/算法/状态压缩/"><div class='name'>状态压缩</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/背包问题/" href="/blog/categories/算法/背包问题/"><div class='name'>背包问题</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/递归/" href="/blog/categories/算法/递归/"><div class='name'>递归</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/链表反转/" href="/blog/categories/算法/链表反转/"><div class='name'>链表反转</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，动态规划/" href="/blog/categories/算法，动态规划/"><div class='name'>算法，动态规划</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，序列化/" href="/blog/categories/算法，序列化/"><div class='name'>算法，序列化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，滑动窗口/" href="/blog/categories/算法，滑动窗口/"><div class='name'>算法，滑动窗口</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/经验分享/" href="/blog/categories/经验分享/"><div class='name'>经验分享</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/编程之美/" href="/blog/categories/编程之美/"><div class='name'>编程之美</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/蓄水池抽样/" href="/blog/categories/蓄水池抽样/"><div class='name'>蓄水池抽样</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/虾皮/" href="/blog/categories/虾皮/"><div class='name'>虾皮</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/解题模板/" href="/blog/categories/解题模板/"><div class='name'>解题模板</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/贪婪/" href="/blog/categories/贪婪/"><div class='name'>贪婪</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/走出科学/" href="/blog/categories/走出科学/"><div class='name'>走出科学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/软件工具/" href="/blog/categories/软件工具/"><div class='name'>软件工具</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/链表/" href="/blog/categories/链表/"><div class='name'>链表</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/面经/" href="/blog/categories/面经/"><div class='name'>面经</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/面试/" href="/blog/categories/面试/"><div class='name'>面试</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/面试/字节跳动/" href="/blog/categories/面试/字节跳动/"><div class='name'>字节跳动</div><div class='badge'>(2)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+    href="/blog/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/blog/tags/91天学算法/" style="font-size: 19.83px; color: #717171">91天学算法</a> <a href="/blog/tags/BFS/" style="font-size: 14px; color: #999">BFS</a> <a href="/blog/tags/BigPipe/" style="font-size: 14px; color: #999">BigPipe</a> <a href="/blog/tags/CD/" style="font-size: 14px; color: #999">CD</a> <a href="/blog/tags/Canvas/" style="font-size: 14px; color: #999">Canvas</a> <a href="/blog/tags/Chrome/" style="font-size: 14px; color: #999">Chrome</a> <a href="/blog/tags/D2/" style="font-size: 14px; color: #999">D2</a> <a href="/blog/tags/Easy/" style="font-size: 14px; color: #999">Easy</a> <a href="/blog/tags/Floyd-Warshall/" style="font-size: 14px; color: #999">Floyd-Warshall</a> <a href="/blog/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/blog/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/blog/tags/Google-IO/" style="font-size: 14px; color: #999">Google IO</a> <a href="/blog/tags/Hard/" style="font-size: 14.83px; color: #939393">Hard</a> <a href="/blog/tags/JSConf/" style="font-size: 14px; color: #999">JSConf</a> <a href="/blog/tags/LeetCode/" style="font-size: 22.33px; color: #606060">LeetCode</a> <a href="/blog/tags/LeetCode日记/" style="font-size: 20.67px; color: #6c6c6c">LeetCode日记</a> <a href="/blog/tags/Mac/" style="font-size: 14px; color: #999">Mac</a> <a href="/blog/tags/Medium/" style="font-size: 14.83px; color: #939393">Medium</a> <a href="/blog/tags/PPT/" style="font-size: 14px; color: #999">PPT</a> <a href="/blog/tags/QCon/" style="font-size: 14px; color: #999">QCon</a> <a href="/blog/tags/RFC/" style="font-size: 14px; color: #999">RFC</a> <a href="/blog/tags/React/" style="font-size: 14px; color: #999">React</a> <a href="/blog/tags/TypeScript/" style="font-size: 19px; color: #777">TypeScript</a> <a href="/blog/tags/eslint/" style="font-size: 14px; color: #999">eslint</a> <a href="/blog/tags/immutable/" style="font-size: 14px; color: #999">immutable</a> <a href="/blog/tags/immutablejs/" style="font-size: 14px; color: #999">immutablejs</a> <a href="/blog/tags/k-问题/" style="font-size: 14px; color: #999">k 问题</a> <a href="/blog/tags/vue/" style="font-size: 14px; color: #999">vue</a> <a href="/blog/tags/web-component/" style="font-size: 14px; color: #999">web-component</a> <a href="/blog/tags/webkit/" style="font-size: 14px; color: #999">webkit</a> <a href="/blog/tags/中位数/" style="font-size: 14px; color: #999">中位数</a> <a href="/blog/tags/中等/" style="font-size: 14.83px; color: #939393">中等</a> <a href="/blog/tags/书/" style="font-size: 14px; color: #999">书</a> <a href="/blog/tags/书摘/" style="font-size: 14px; color: #999">书摘</a> <a href="/blog/tags/事件/" style="font-size: 14px; color: #999">事件</a> <a href="/blog/tags/事件循环/" style="font-size: 14px; color: #999">事件循环</a> <a href="/blog/tags/二分/" style="font-size: 14.83px; color: #939393">二分</a> <a href="/blog/tags/二分法/" style="font-size: 14px; color: #999">二分法</a> <a href="/blog/tags/二叉树/" style="font-size: 15.67px; color: #8e8e8e">二叉树</a> <a href="/blog/tags/位运算/" style="font-size: 14px; color: #999">位运算</a> <a href="/blog/tags/删除-k-个字符/" style="font-size: 14px; color: #999">删除 k 个字符</a> <a href="/blog/tags/刷题/" style="font-size: 14.83px; color: #939393">刷题</a> <a href="/blog/tags/刷题方法/" style="font-size: 15.67px; color: #8e8e8e">刷题方法</a> <a href="/blog/tags/前端/" style="font-size: 21.5px; color: #666">前端</a> <a href="/blog/tags/前缀和/" style="font-size: 16.5px; color: #888">前缀和</a> <a href="/blog/tags/前缀表达式/" style="font-size: 14px; color: #999">前缀表达式</a> <a href="/blog/tags/力扣加加/" style="font-size: 20.67px; color: #6c6c6c">力扣加加</a> <a href="/blog/tags/动态规划/" style="font-size: 19px; color: #777">动态规划</a> <a href="/blog/tags/单元测试/" style="font-size: 14px; color: #999">单元测试</a> <a href="/blog/tags/单调栈/" style="font-size: 14px; color: #999">单调栈</a> <a href="/blog/tags/双指针/" style="font-size: 14px; color: #999">双指针</a> <a href="/blog/tags/命令行/" style="font-size: 14px; color: #999">命令行</a> <a href="/blog/tags/回溯/" style="font-size: 14px; color: #999">回溯</a> <a href="/blog/tags/困难/" style="font-size: 14.83px; color: #939393">困难</a> <a href="/blog/tags/图/" style="font-size: 14px; color: #999">图</a> <a href="/blog/tags/图片处理/" style="font-size: 14px; color: #999">图片处理</a> <a href="/blog/tags/堆/" style="font-size: 14.83px; color: #939393">堆</a> <a href="/blog/tags/好未来/" style="font-size: 14px; color: #999">好未来</a> <a href="/blog/tags/子数组/" style="font-size: 14px; color: #999">子数组</a> <a href="/blog/tags/字符串/" style="font-size: 14px; color: #999">字符串</a> <a href="/blog/tags/字节跳动/" style="font-size: 15.67px; color: #8e8e8e">字节跳动</a> <a href="/blog/tags/学习方法/" style="font-size: 14.83px; color: #939393">学习方法</a> <a href="/blog/tags/工具/" style="font-size: 14px; color: #999">工具</a> <a href="/blog/tags/序列化/" style="font-size: 14px; color: #999">序列化</a> <a href="/blog/tags/异常处理/" style="font-size: 14px; color: #999">异常处理</a> <a href="/blog/tags/异议！/" style="font-size: 14px; color: #999">异议！</a> <a href="/blog/tags/循环移位/" style="font-size: 14px; color: #999">循环移位</a> <a href="/blog/tags/微前端/" style="font-size: 14px; color: #999">微前端</a> <a href="/blog/tags/必备软件/" style="font-size: 14px; color: #999">必备软件</a> <a href="/blog/tags/我的书/" style="font-size: 14px; color: #999">我的书</a> <a href="/blog/tags/扩展程序/" style="font-size: 14px; color: #999">扩展程序</a> <a href="/blog/tags/技术大会/" style="font-size: 14px; color: #999">技术大会</a> <a href="/blog/tags/技术调研/" style="font-size: 14px; color: #999">技术调研</a> <a href="/blog/tags/技能/" style="font-size: 14px; color: #999">技能</a> <a href="/blog/tags/持续集成/" style="font-size: 14px; color: #999">持续集成</a> <a href="/blog/tags/插件/" style="font-size: 15.67px; color: #8e8e8e">插件</a> <a href="/blog/tags/效率/" style="font-size: 14px; color: #999">效率</a> <a href="/blog/tags/数学/" style="font-size: 16.5px; color: #888">数学</a> <a href="/blog/tags/数据结构/" style="font-size: 23.17px; color: #5b5b5b">数据结构</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，Hard/" style="font-size: 14.83px; color: #939393">数据结构，算法，LeetCode 日记，Hard</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，中等/" style="font-size: 14px; color: #999">数据结构，算法，LeetCode 日记，中等</a> <a href="/blog/tags/数组/" style="font-size: 14.83px; color: #939393">数组</a> <a href="/blog/tags/日记/" style="font-size: 14.83px; color: #939393">日记</a> <a href="/blog/tags/春招/" style="font-size: 15.67px; color: #8e8e8e">春招</a> <a href="/blog/tags/最大公约数/" style="font-size: 14px; color: #999">最大公约数</a> <a href="/blog/tags/最长上升子序列/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/blog/tags/最长公共子序列/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/blog/tags/栈/" style="font-size: 14px; color: #999">栈</a> <a href="/blog/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/blog/tags/校招/" style="font-size: 15.67px; color: #8e8e8e">校招</a> <a href="/blog/tags/概率/" style="font-size: 14.83px; color: #939393">概率</a> <a href="/blog/tags/模拟面试/" style="font-size: 14px; color: #999">模拟面试</a> <a href="/blog/tags/母题/" style="font-size: 14px; color: #999">母题</a> <a href="/blog/tags/每日一荐/" style="font-size: 18.17px; color: #7d7d7d">每日一荐</a> <a href="/blog/tags/泛型/" style="font-size: 14.83px; color: #939393">泛型</a> <a href="/blog/tags/测试/" style="font-size: 14px; color: #999">测试</a> <a href="/blog/tags/浏览器/" style="font-size: 15.67px; color: #8e8e8e">浏览器</a> <a href="/blog/tags/滑动窗口/" style="font-size: 17.33px; color: #828282">滑动窗口</a> <a href="/blog/tags/滤镜/" style="font-size: 14px; color: #999">滤镜</a> <a href="/blog/tags/状态压缩/" style="font-size: 14px; color: #999">状态压缩</a> <a href="/blog/tags/状态机/" style="font-size: 14px; color: #999">状态机</a> <a href="/blog/tags/电子书/" style="font-size: 14px; color: #999">电子书</a> <a href="/blog/tags/电影/" style="font-size: 14.83px; color: #939393">电影</a> <a href="/blog/tags/百度/" style="font-size: 14px; color: #999">百度</a> <a href="/blog/tags/监控/" style="font-size: 14px; color: #999">监控</a> <a href="/blog/tags/算法/" style="font-size: 24px; color: #555">算法</a> <a href="/blog/tags/算法提高班/" style="font-size: 20.67px; color: #6c6c6c">算法提高班</a> <a href="/blog/tags/算法系列/" style="font-size: 16.5px; color: #888">算法系列</a> <a href="/blog/tags/组件化/" style="font-size: 14px; color: #999">组件化</a> <a href="/blog/tags/经验分享/" style="font-size: 15.67px; color: #8e8e8e">经验分享</a> <a href="/blog/tags/编程之美/" style="font-size: 14px; color: #999">编程之美</a> <a href="/blog/tags/草稿/" style="font-size: 14px; color: #999">草稿</a> <a href="/blog/tags/蓄水池抽样/" style="font-size: 14px; color: #999">蓄水池抽样</a> <a href="/blog/tags/虾皮/" style="font-size: 14px; color: #999">虾皮</a> <a href="/blog/tags/装机/" style="font-size: 14px; color: #999">装机</a> <a href="/blog/tags/解题模板/" style="font-size: 14px; color: #999">解题模板</a> <a href="/blog/tags/贪婪/" style="font-size: 14px; color: #999">贪婪</a> <a href="/blog/tags/贪心/" style="font-size: 14px; color: #999">贪心</a> <a href="/blog/tags/走出科学/" style="font-size: 14px; color: #999">走出科学</a> <a href="/blog/tags/递归/" style="font-size: 14px; color: #999">递归</a> <a href="/blog/tags/链表/" style="font-size: 15.67px; color: #8e8e8e">链表</a> <a href="/blog/tags/陷阱题/" style="font-size: 14px; color: #999">陷阱题</a> <a href="/blog/tags/面经/" style="font-size: 15.67px; color: #8e8e8e">面经</a> <a href="/blog/tags/面试/" style="font-size: 14.83px; color: #939393">面试</a>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget list'>
+  
+<header class='pure'>
+  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;强烈推荐</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="entry">
+      
+        <li><a class="flat-box" title="https://xaoxuu.com/wiki/hexo.sh/" href="https://xaoxuu.com/wiki/hexo.sh/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;Hexo脚本（Mac）
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://xaoxuu.com/wiki/vim-cn.sh/" href="https://xaoxuu.com/wiki/vim-cn.sh/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;图床脚本（Mac）
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://yasuotu.com" href="https://yasuotu.com"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;图片在线压缩
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://realfavicongenerator.net" href="https://realfavicongenerator.net"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;生成Favicon
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://mxclub.github.io/resume/" href="https://mxclub.github.io/resume/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;简历主题
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+   
+  <div class="social-wrapper">
+     
+    <a
+      href="/blog/atom.xml"
+      class="social fas fa-rss flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://www.zhihu.com/people/lu-xiao-13-70/activities"
+      class="social fab fa-zhihu flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="mailto:azl397985856@gmail.com"
+      class="social fas fa-envelope flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://github.com/azl397985856"
+      class="social fab fa-github flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://music.163.com/playlist?id=978545815&amp;userid=632167080"
+      class="social fas fa-headphones-alt flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+     
+  </div>
+  
+  <br />
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename"
+      >Material X</a
+    >
+    作为主题  。
+  </div>
+
+  <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+  <script>
+    var now = new Date();
+    function createtime() {
+      var grt = new Date("08/10/2018 17:38:00"); //在此处修改你的建站时间，格式：月/日/年 时:分:秒
+      now.setTime(now.getTime() + 250);
+      days = (now - grt) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+      hnum = Math.floor(hours);
+      if (String(hnum).length == 1) {
+        hnum = "0" + hnum;
+      }
+      minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+      mnum = Math.floor(minutes);
+      if (String(mnum).length == 1) {
+        mnum = "0" + mnum;
+      }
+      seconds =
+        (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+      snum = Math.round(seconds);
+      if (String(snum).length == 1) {
+        snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML =
+        "本站已安全运行 " + dnum + " 天 ";
+      document.getElementById("times").innerHTML =
+        hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()", 250);
+  </script>
+</footer>
+<script>
+  setLoadingBarProgress(80);
+</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "aea1377036afe4cd0343",
+      clientSecret: "815c638dea8644b7a4b97905707cf72b45555f6d",
+      repo: "blog",
+      owner: "azl397985856",
+      admin: "azl397985856",
+      
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

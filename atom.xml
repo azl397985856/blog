@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-04-06T03:49:07.361Z</updated>
+  <updated>2021-04-21T01:56:08.597Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>动态规划到底有多难？</title>
+    <link href="https://lucifer.ren/blog/2021/04/20/dp/"/>
+    <id>https://lucifer.ren/blog/2021/04/20/dp/</id>
+    <published>2021-04-19T16:00:00.000Z</published>
+    <updated>2021-04-21T01:56:08.597Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;动态规划是一个从其他行业借鉴过来的词语。&lt;/p&gt;
+&lt;p&gt;它的大概意思先将一件事情分成&lt;strong&gt;若干阶段&lt;/strong&gt;，然后通过阶段之间的&lt;strong&gt;转移&lt;/strong&gt;达到目标。由于转移的方向通常是多个，因此这个时候就需要&lt;strong&gt;决策&lt;/strong&gt;选择具体哪一个转移方向。&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="动态规划" scheme="https://lucifer.ren/blog/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
   
   <entry>
     <title>为何我刷了很多，遇到新的题还是唯唯诺诺，无法重拳出击？</title>
@@ -581,39 +605,6 @@
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
       <category term="堆" scheme="https://lucifer.ren/blog/tags/%E5%A0%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>来和大家聊聊我是如何刷题的（第三弹）</title>
-    <link href="https://lucifer.ren/blog/2020/12/21/shuati-silu3/"/>
-    <id>https://lucifer.ren/blog/2020/12/21/shuati-silu3/</id>
-    <published>2020-12-20T16:00:00.000Z</published>
-    <updated>2021-03-09T10:48:39.806Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前两篇的地址在这里，没有看过的同学建议先看下。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/11/29/shuati-silu/&quot;&gt;来和大家聊聊我是如何刷题的（第一弹）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://lucifer.ren/blog/2020/12/12/shuati-silu2/&quot;&gt;来和大家聊聊我是如何刷题的（第二弹）&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;本章或许是这个系列的最终章。这次给大家聊一点硬核的，聊一些几乎所有算法题都能用得上的超实用思想。&lt;/p&gt;
-&lt;p&gt;上一节给大家抛出了两个问题，分别是：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;如何锁定使用哪种算法&lt;/strong&gt;？比如我看到了这道题，我怎么知道该用什么解法呢？二分？动态规划？&lt;/li&gt;
-&lt;li&gt;一看就会，一写就废， 如何克服？&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;今天，我就来圆一个当初吹下的牛逼。话不多说，直接上干货。如果你觉得有用，请三连支持我一下，让我能够坚持下去，给大家带来更多的干货。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="刷题方法" scheme="https://lucifer.ren/blog/categories/%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/"/>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="刷题方法" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
