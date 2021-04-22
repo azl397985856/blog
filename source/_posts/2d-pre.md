@@ -170,32 +170,31 @@ Python3 Code:
 
 ```python
 
+from sortedcontainers import SortedList
+
+
 class Solution:
     def maxSumSubmatrix(self, matrix: List[List[int]], K: int) -> int:
         m, n = len(matrix), len(matrix[0])
+        for i in range(m):
+            for j in range(1, n):
+                matrix[i][j] += matrix[i][j - 1]
         ans = float("-inf")
-        for row in matrix:
-            for i in range(n - 1):
-                row[i + 1] += row[i]
-
         for i in range(n):
             for j in range(i, n):
-                pres = [0]
+                pres = SortedList([0])
                 pre = 0
                 for k in range(m):
-                    pre += matrix[k][j] - (matrix[k][i - 1] if i > 0 else 0)
-                    # 寻找大于等于 pre - k 的最小数，且这个数不能比 pre 大。比如 pre = 10， k = 3，就要找大于等于 7 的最小数，这个数不能大于 10。
+                    pre += matrix[k][j] - (0 if i == 0 else matrix[k][i - 1])
+                    # 寻找小于等于 pre - k 的最大数。
                     # 为了达到这个目的，可以使用 bisect_left 来完成。（使用 bisect_right 不包含等号）
-                    idx = bisect.bisect_left(pres, pre - K)
-                    # 如果 i == len(pre) 表示 pres 中的数都小于 pre - k，也就是说无解
+                    idx = pres.bisect_left(pre - K)
+                    # 如果 i == len(pre) 表示无解
                     if idx < len(pres):
-                        # 由 bisect_left 性质可知 pre - pres[i] >= 0
                         ans = max(ans, pre - pres[idx])
-                    idx = bisect.bisect_left(pres, pre)
-                    pres[idx:idx] = [pre]
-                    # 或者将上面两行代码替换为 bisect.insort(pres, pre)
-        return -1 if ans == float("-inf") else ans
+                    pres.add(pre)
 
+        return ans
 
 ```
 
@@ -203,7 +202,7 @@ class Solution:
 
 令 n 为数组长度。
 
-- 时间复杂度：$O(m * n ^ 2)$
+- 时间复杂度：$O(m*n ^ 2logm)$
 - 空间复杂度：$O(m)$
 
 题目给了一个 follow up：如果行数远大于列数，你将如何解答呢？ 实际上，如果行数远大于列数，由复杂度分析可知空间复杂度会很高。我们可以将行列兑换，这样空间复杂度是 $O(n)$。换句话说，我们**可以通过行列的调换**做到空间复杂度为 $O(min(m, n))$。

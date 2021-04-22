@@ -79,6 +79,11 @@ links:
         backgroundColor: "rgba(51,103,126, .6)" # 卡片背景颜色
         tags:
           - 主攻Java技术栈，喜欢猎奇，欢迎交流。
+      - name: 风在哪个人博客
+        url: wygandwdn.cn
+        avatar: https://gitee.com/blog-map-bed/first-bed/raw/master/img/myavatar.jpg
+        tags:
+          - 如果你不知道失败是什么，那么你永远不会获得成功
   - group: 算法大佬
     icon: fas fa-code
     items:
