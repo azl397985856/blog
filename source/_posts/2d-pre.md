@@ -303,6 +303,40 @@ class Solution:
 
 和上面一样，我们可以将行列对换，这样空间复杂度是 $O(n)$。换句话说，我们**可以通过行列的调换**做到空间复杂度为 $O(min(m, n))$。
 
+## 更多题目
+
+- [面试题 17.24. 最大子矩阵](https://leetcode-cn.com/problems/max-submatrix-lcci/comments/) (用西法的套路一下子就做出来了)
+
+这道题就是二维前缀和 + 一维最大子序和的知识就可以 AC。而这两个西法我都写过文章了，不懂的建议看看。
+
+参考代码：
+
+```py
+class Solution:
+    def getMaxMatrix(self, matrix: List[List[int]]) -> List[int]:
+        max_area = float("-inf")
+        ans = []
+        m, n = len(matrix), len(matrix[0])
+
+        for i in range(m):
+            for j in range(1, n):
+                matrix[i][j] += matrix[i][j - 1]
+
+        for i in range(n):
+            for j in range(i, n):
+                pre = min_pre = min_pre_idx = 0
+                for k in range(m):
+                    if pre < min_pre:
+                        min_pre = pre
+                        min_pre_idx = k
+                    pre += matrix[k][j] - (matrix[k][i - 1] if i > 0 else 0)
+                    if pre - min_pre > max_area:
+                        max_area = pre - min_pre
+                        ans = [min_pre_idx, i, k, j]
+
+        return ans
+```
+
 力扣的小伙伴可以[关注我](https://leetcode-cn.com/u/fe-lucifer/)，这样就会第一时间收到我的动态啦~
 
 以上就是本文的全部内容了。大家对此有何看法，欢迎给我留言，我有时间都会一一查看回答。更多算法套路可以访问我的 LeetCode 题解仓库：https://github.com/azl397985856/leetcode 。 目前已经 40K star 啦。大家也可以关注我的公众号《力扣加加》带你啃下算法这块硬骨头。
