@@ -646,37 +646,6 @@
     
     
     <entry>
-      <title>力扣刷题插件</title>
-      <link href="/blog/2020/12/13/leetcode-cheat/"/>
-      <url>/blog/2020/12/13/leetcode-cheat/</url>
-      
-        <content type="html"><![CDATA[<p>之前我做了一个视频， 介绍我的刷题浏览器扩展插件，视频地址：<a href="https://www.bilibili.com/video/BV1UK4y1x7zj/。" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1UK4y1x7zj/。</a> 今天我在上次的基础上增加了部分公司的显示以及优化了若干体验功能。</p><a id="more"></a><h2 id="这个刷题插件能做什么？"><a href="#这个刷题插件能做什么？" class="headerlink" title="这个刷题插件能做什么？"></a>这个刷题插件能做什么？</h2><h3 id="题解模板（新功能）"><a href="#题解模板（新功能）" class="headerlink" title="题解模板（新功能）"></a>题解模板（新功能）</h3><p>为了方便大家写出格式良好的题解，插件现在内置题解模板功能，目前模板只有一套，这套模板是<strong>我经常使用的题解模板</strong>。</p><p>安装好我们的插件(版本需要 v0.8.0 及以上)后，打开力扣中文版，会发现如下的按钮。</p><p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gn3bp2ag3kj312b0u0gys.jpg" alt></p><p>点击之后会自动引导你到一个新的页面，</p><p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gn3bvpadsbj31g70u0k38.jpg" alt></p><p>该页面的<strong>题解语言</strong>，<strong>题目地址</strong>和<strong>题目名称</strong>信息会自动填充。</p><p>你可以快速完成时间复杂度，空间复杂度的插入，复杂度已经按照性能好坏的顺序给大家排好了，点击即可插入。</p><p>此外我们提供了若干常用的公式供你快速复制使用。除了公式，其他内容都可以在右侧的预览区域查看。</p><p>写完只会可以点击复制，将其复制到其他地方以便持久化存储。由于我们没有做持久化存储，因此<strong>页面刷新内容就会消失哦</strong>。</p><p>最后祝大家写出漂亮的题解！</p><h3 id="数据结构可视化"><a href="#数据结构可视化" class="headerlink" title="数据结构可视化"></a>数据结构可视化</h3><p>你可以使用 canvas 自由绘制各种数据结构，不管是写题解还是帮助理解题目都很有用。</p><p>我们提供了很多内置的模板供你快速上手。</p><p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gms0ni6r2pj317c0cw75j.jpg" alt></p><p>如果你对内置的模板不满意，也可以将自己的模板保存以便下次使用。</p><p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gmrz98cxflj31bp0u07k9.jpg" alt></p><h3 id="学习路线"><a href="#学习路线" class="headerlink" title="学习路线"></a>学习路线</h3><p>算法怎么学？推荐按专题来。具体到某一个专题怎么学？这里提供了一个学习路线帮助你。本功能旨在将一个专题中的题目进行分类。专题本质就是对题目的一种划分，学习路线基于专题又进行了一次划分。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glpqbuba55j30w00u0tgr.jpg" alt></p><h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><p>你的代码能会超时么？复杂度分析帮助你。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm6xl5uih3j30o50nl0u9.jpg" alt></p><h3 id="一键复制所有内置测试用例"><a href="#一键复制所有内置测试用例" class="headerlink" title="一键复制所有内置测试用例"></a>一键复制所有内置测试用例</h3><p>省去了一个个手动复制的过程，效率翻倍！</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glmfz7knmtj32060f0mye.jpg" alt></p><h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><p>提供了大量的经过反复验证的模板。模板的作用是在你理解了问题的基础上，快速书写，并减少出错概率，即使出错，也容易 debug。</p><h3 id="禅定模式"><a href="#禅定模式" class="headerlink" title="禅定模式"></a>禅定模式</h3><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glmg5pa61gj31jk0u0qgg.jpg" alt></p><p>点击之后会变成这样：</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glmg6srs4kj31h50u0dml.jpg" alt></p><p>底部控制台会消失，当你鼠标重新移过来或者退出禅定模式就出现了。</p><h3 id="查看题解"><a href="#查看题解" class="headerlink" title="查看题解"></a>查看题解</h3><p>当你在任意非题目详情页或者我还没有收录的题目详情页的时候， 我都会列出当前我总结的所有题解。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghsse7cw2oj313s0u0tbz.jpg" alt></p><blockquote><p>其实我给比较经典的题目做了题解，因此这个题目数目不是很多，目前是 173 道题。另外有时候我直接写了专题，没有单独给每道题写题解，因此数量上要比 173 多很多。</p></blockquote><p>当你进到一个我写了题解的题目详情页的时候， 你就可以正式使用我的插件了。 它可以：</p><ul><li>给出这道题目的前置知识。换句话说就是<strong>我需要先掌握什么才能做出这道题</strong>。</li><li>这个题目的关键点。</li><li>哪些公司出了这道题。</li><li>我实在不会了，给我看看题解吧。好，满足你。</li><li>题解我就不看了，直接 show me code 吧。好，满足你。</li><li>根据公司，查找题目。面试突击必备</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghssdtat3zj31290u0dii.jpg" alt></p><h2 id="我怎么才能获取呢？"><a href="#我怎么才能获取呢？" class="headerlink" title="我怎么才能获取呢？"></a>我怎么才能获取呢？</h2><p>公众号《力扣加加》后台回复刷题插件即可。</p><h2 id="如何离线安装"><a href="#如何离线安装" class="headerlink" title="如何离线安装"></a>如何离线安装</h2><ul><li>将下载的压缩包解压</li><li>在 Chrome 浏览器的地址栏输入 chrome://extensions/</li><li>点击 load uppack</li></ul><blockquote><p>不知道中文是什么名字，反正就是上面三个按钮最左边的。</p></blockquote><ul><li>选择你解压之后的文件夹</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghsscnetjej30os0cw75e.jpg" alt></p><ul><li>出现下面这个就说明你安装成功了，点一下试试吧。</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghss5p4j9oj30l802g0t3.jpg" alt></p><h2 id="后期的规划是怎么样的？"><a href="#后期的规划是怎么样的？" class="headerlink" title="后期的规划是怎么样的？"></a>后期的规划是怎么样的？</h2><blockquote><p>后期的功能计划先对 91 活动的用户开发。关于 91 活动，大家可以关注我的公众号《力扣加加》了解详情。</p></blockquote><ul><li><p>更多公司信息。 持续完善题目的公司信息，这个过程需要大家的帮助，大家可以把自己面试遇到的问题发给我（附带公司和岗位信息），我可以免费提供咨询服务。</p></li><li><p>岗位信息。</p></li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghss7raskrj31c00u046y.jpg" alt></p><p>这个过程同样需要大家的帮助，大家可以把自己面试遇到的问题发给我（附带公司和岗位信息），我可以免费提供咨询服务。</p><ul><li>可视化调试。 可视化展示你的代码允许情况。</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghssbhbbnvg30dc02w3z4.gif" alt></p><p>（一个双指针题目的可视化调试过程）</p><ul><li>自动制定复习计划。</li><li>AI 智能提示。即新的提示也可以根据题目信息推测可能的解法。</li><li>等等</li></ul><h2 id="关注更新"><a href="#关注更新" class="headerlink" title="关注更新"></a>关注更新</h2><p>大家可以关注我的公众号， 如果插件有更新，会第一时间在公众号同步的哦~</p><p>想看题解可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经 35K star 啦。</p><p>关注公众号力扣加加，努力用清晰直白的语言还原解题思路，并且有大量图解，手把手教你识别套路，高效刷题。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" alt></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> LeetCode </category>
-          
-          <category> 插件 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> LeetCode </tag>
-            
-            <tag> 插件 </tag>
-            
-            <tag> 刷题 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>《西法的刷题秘籍》电子书开放下载啦~</title>
       <link href="/blog/2020/12/13/leetcode-ebook-1/"/>
       <url>/blog/2020/12/13/leetcode-ebook-1/</url>
@@ -1480,6 +1449,37 @@
     
     
     <entry>
+      <title>力扣刷题插件</title>
+      <link href="/blog/2020/08/16/leetcode-cheat/"/>
+      <url>/blog/2020/08/16/leetcode-cheat/</url>
+      
+        <content type="html"><![CDATA[<p>之前我做了一个视频， 介绍我的刷题浏览器扩展插件，视频地址：<a href="https://www.bilibili.com/video/BV1UK4y1x7zj/。" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1UK4y1x7zj/。</a> 今天我在上次的基础上增加了部分公司的显示以及优化了若干体验功能。</p><a id="more"></a><h2 id="这个刷题插件能做什么？"><a href="#这个刷题插件能做什么？" class="headerlink" title="这个刷题插件能做什么？"></a>这个刷题插件能做什么？</h2><h3 id="题解模板（新功能）"><a href="#题解模板（新功能）" class="headerlink" title="题解模板（新功能）"></a>题解模板（新功能）</h3><p>为了方便大家写出格式良好的题解，插件现在内置题解模板功能，目前模板只有一套，这套模板是<strong>我经常使用的题解模板</strong>。</p><p>安装好我们的插件(版本需要 v0.8.0 及以上)后，打开力扣中文版，会发现如下的按钮。</p><p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gn3bp2ag3kj312b0u0gys.jpg" alt></p><p>点击之后会自动引导你到一个新的页面，</p><p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gn3bvpadsbj31g70u0k38.jpg" alt></p><p>该页面的<strong>题解语言</strong>，<strong>题目地址</strong>和<strong>题目名称</strong>信息会自动填充。</p><p>你可以快速完成时间复杂度，空间复杂度的插入，复杂度已经按照性能好坏的顺序给大家排好了，点击即可插入。</p><p>此外我们提供了若干常用的公式供你快速复制使用。除了公式，其他内容都可以在右侧的预览区域查看。</p><p>写完只会可以点击复制，将其复制到其他地方以便持久化存储。由于我们没有做持久化存储，因此<strong>页面刷新内容就会消失哦</strong>。</p><p>最后祝大家写出漂亮的题解！</p><h3 id="数据结构可视化"><a href="#数据结构可视化" class="headerlink" title="数据结构可视化"></a>数据结构可视化</h3><p>你可以使用 canvas 自由绘制各种数据结构，不管是写题解还是帮助理解题目都很有用。</p><p>我们提供了很多内置的模板供你快速上手。</p><p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gms0ni6r2pj317c0cw75j.jpg" alt></p><p>如果你对内置的模板不满意，也可以将自己的模板保存以便下次使用。</p><p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gmrz98cxflj31bp0u07k9.jpg" alt></p><h3 id="学习路线"><a href="#学习路线" class="headerlink" title="学习路线"></a>学习路线</h3><p>算法怎么学？推荐按专题来。具体到某一个专题怎么学？这里提供了一个学习路线帮助你。本功能旨在将一个专题中的题目进行分类。专题本质就是对题目的一种划分，学习路线基于专题又进行了一次划分。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glpqbuba55j30w00u0tgr.jpg" alt></p><h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><p>你的代码能会超时么？复杂度分析帮助你。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm6xl5uih3j30o50nl0u9.jpg" alt></p><h3 id="一键复制所有内置测试用例"><a href="#一键复制所有内置测试用例" class="headerlink" title="一键复制所有内置测试用例"></a>一键复制所有内置测试用例</h3><p>省去了一个个手动复制的过程，效率翻倍！</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glmfz7knmtj32060f0mye.jpg" alt></p><h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><p>提供了大量的经过反复验证的模板。模板的作用是在你理解了问题的基础上，快速书写，并减少出错概率，即使出错，也容易 debug。</p><h3 id="禅定模式"><a href="#禅定模式" class="headerlink" title="禅定模式"></a>禅定模式</h3><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glmg5pa61gj31jk0u0qgg.jpg" alt></p><p>点击之后会变成这样：</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glmg6srs4kj31h50u0dml.jpg" alt></p><p>底部控制台会消失，当你鼠标重新移过来或者退出禅定模式就出现了。</p><h3 id="查看题解"><a href="#查看题解" class="headerlink" title="查看题解"></a>查看题解</h3><p>当你在任意非题目详情页或者我还没有收录的题目详情页的时候， 我都会列出当前我总结的所有题解。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghsse7cw2oj313s0u0tbz.jpg" alt></p><blockquote><p>其实我给比较经典的题目做了题解，因此这个题目数目不是很多，目前是 173 道题。另外有时候我直接写了专题，没有单独给每道题写题解，因此数量上要比 173 多很多。</p></blockquote><p>当你进到一个我写了题解的题目详情页的时候， 你就可以正式使用我的插件了。 它可以：</p><ul><li>给出这道题目的前置知识。换句话说就是<strong>我需要先掌握什么才能做出这道题</strong>。</li><li>这个题目的关键点。</li><li>哪些公司出了这道题。</li><li>我实在不会了，给我看看题解吧。好，满足你。</li><li>题解我就不看了，直接 show me code 吧。好，满足你。</li><li>根据公司，查找题目。面试突击必备</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghssdtat3zj31290u0dii.jpg" alt></p><h2 id="我怎么才能获取呢？"><a href="#我怎么才能获取呢？" class="headerlink" title="我怎么才能获取呢？"></a>我怎么才能获取呢？</h2><p>公众号《力扣加加》后台回复刷题插件即可。</p><h2 id="如何离线安装"><a href="#如何离线安装" class="headerlink" title="如何离线安装"></a>如何离线安装</h2><ul><li>将下载的压缩包解压</li><li>在 Chrome 浏览器的地址栏输入 chrome://extensions/</li><li>点击 load uppack</li></ul><blockquote><p>不知道中文是什么名字，反正就是上面三个按钮最左边的。</p></blockquote><ul><li>选择你解压之后的文件夹</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghsscnetjej30os0cw75e.jpg" alt></p><ul><li>出现下面这个就说明你安装成功了，点一下试试吧。</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghss5p4j9oj30l802g0t3.jpg" alt></p><h2 id="后期的规划是怎么样的？"><a href="#后期的规划是怎么样的？" class="headerlink" title="后期的规划是怎么样的？"></a>后期的规划是怎么样的？</h2><blockquote><p>后期的功能计划先对 91 活动的用户开发。关于 91 活动，大家可以关注我的公众号《力扣加加》了解详情。</p></blockquote><ul><li><p>更多公司信息。 持续完善题目的公司信息，这个过程需要大家的帮助，大家可以把自己面试遇到的问题发给我（附带公司和岗位信息），我可以免费提供咨询服务。</p></li><li><p>岗位信息。</p></li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghss7raskrj31c00u046y.jpg" alt></p><p>这个过程同样需要大家的帮助，大家可以把自己面试遇到的问题发给我（附带公司和岗位信息），我可以免费提供咨询服务。</p><ul><li>可视化调试。 可视化展示你的代码允许情况。</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghssbhbbnvg30dc02w3z4.gif" alt></p><p>（一个双指针题目的可视化调试过程）</p><ul><li>自动制定复习计划。</li><li>AI 智能提示。即新的提示也可以根据题目信息推测可能的解法。</li><li>等等</li></ul><h2 id="关注更新"><a href="#关注更新" class="headerlink" title="关注更新"></a>关注更新</h2><p>大家可以关注我的公众号， 如果插件有更新，会第一时间在公众号同步的哦~</p><p>想看题解可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经 35K star 啦。</p><p>关注公众号力扣加加，努力用清晰直白的语言还原解题思路，并且有大量图解，手把手教你识别套路，高效刷题。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+          <category> 插件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> 插件 </tag>
+            
+            <tag> 刷题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>TypeScript 类型系统</title>
       <link href="/blog/2020/08/15/ts-type-system/"/>
       <url>/blog/2020/08/15/ts-type-system/</url>
@@ -2065,6 +2065,37 @@
     
     
     <entry>
+      <title>力扣加加闪亮登场～</title>
+      <link href="/blog/2020/06/13/leetcode-pp/"/>
+      <url>/blog/2020/06/13/leetcode-pp/</url>
+      
+        <content type="html"><![CDATA[<p>力扣加加，一个努力做西湖区最好的算法题解的团队。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg" width="50%"></p><p>​<a id="more"></a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">脑洞前端：你已经长大了，是时候自己写题解了。</span><br><span class="line">力扣加加：。。。</span><br></pre></td></tr></table></figure><p>独立的原因是让公众号的定位更加清晰，喜欢我的题解的朋友可以关注力扣加加，喜欢我的前端架构剖析，徒手造框架的朋友可以关注脑洞前端。当然如果你同时关注两个，那我会感动到哭。</p><p>虽然是新的公众号，但是我的初心不变，依然是<code>力求用清晰直白的方式还原解题过程，努力做西湖区最好的算法题解</code>。最后感谢大家一路以来的支持，我一定不负众望，越做越好。</p><h2 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h2><p>预计力扣加加会推出<strong>五个</strong>板块。</p><h3 id="91-算法"><a href="#91-算法" class="headerlink" title="91 算法"></a>91 算法</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfctrpi6sfj30xm0b6js7.jpg" alt></p><p>通过在 91 天的集中训练，帮助大家摆脱困境，征服算法。我们会帮助大家规划学习路线，91 天见证不一样的自己。群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。<strong>我会在结束之后将讲义和题解放到公众号号</strong>。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcubuzax3j30h9086gm6.jpg" alt><br>（仓库部分内容）</p><h3 id="算法题解"><a href="#算法题解" class="headerlink" title="算法题解"></a>算法题解</h3><p>就是对力扣中的题目进行讲解，尤其是经典的题目。并且尽量从多个角度思路，帮助大家纵向打开解题思路。目前差不多有几百的题解了。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuje66ltj30wl0migsw.jpg" alt></p><h3 id="专题讲解"><a href="#专题讲解" class="headerlink" title="专题讲解"></a>专题讲解</h3><p>对于共性比较强的，我会抽离成专题形式，帮助大家横向打开解题思路。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcucqfgczj30am0fgabj.jpg" alt><br>（之后会陆续加入更多专题）</p><h3 id="视频题解"><a href="#视频题解" class="headerlink" title="视频题解"></a>视频题解</h3><p>对于一些题目采用视频的方式可能更加直观方便，之后还会考虑直播。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcueie2w0j31bf07nwhl.jpg" alt></p><h3 id="刷题工具"><a href="#刷题工具" class="headerlink" title="刷题工具"></a>刷题工具</h3><p>初步规划了两个小工具，之后出测试版本会第一时间告诉大家，如果你对开发小工具感兴趣，也可以点击公众号的联系我来和我取得联系。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcun5uakzj31j20u0kc3.jpg" alt><br>（力扣加加刷题小助手）</p><h2 id="悬赏令"><a href="#悬赏令" class="headerlink" title="悬赏令"></a>悬赏令</h2><p>大家在日常生活或是在刷题过程中有时一定会产生一些疑问，百度谷歌翻来覆去的找也找不到心中所期待的答案，因此，大家可以通过<strong>力扣加加</strong>来将这些疑问提出来，不定期从大家的问题中挑选出比较经典的几个问题来供大家一起讨论，大致的问题类型如下：</p><ul><li>日常生活中有个问题想用数据结构+算法解决，但苦于思路不清晰</li><li>问题本身比较纠结，网上众说纷纭，找不到明确的答案</li><li>脑洞问题等等</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcwc7ow13j30la0cewgf.jpg" alt><br>（比如这种问题）</p><p>被抽中的问题对应的朋友及问题回答出色的朋友可以获得准备的小礼物哦！</p><p>最后，每周我们会根据公众号后台的阅读量及分享次数最多的小伙伴给予现金奖励奖励哦～。分享最多 <code>1</code> 人 <code>8.88</code> 红包，阅读最多的 <code>1</code> 人 <code>6.66</code> 红包。</p><p>不是第一也没有关系，我们会从分享排名 <code>2-10</code>撒 名的小伙伴中随机抽取<code>2个</code> 8.88 元红包，阅读排名 <code>2-10</code> 名的小伙伴中随机抽取<code>2个</code> 6.88 元红包，</p><blockquote><p>每周日下午，我们会对本周的数据进行统计，并随机抽取幸运的小伙伴，并对中奖结果在力扣加加公众号进行公布，中奖的小伙伴请主动联系我哦。领奖时间截止到每周日的 24:00。</p></blockquote><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><h3 id="公众号"><a href="#公众号" class="headerlink" title="公众号"></a>公众号</h3><p>点关注，不迷路。如果再给 ➕ 个星标就更棒啦！</p><blockquote><p>关注加加，星标加加～</p></blockquote><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" width="100%"></p><h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><ul><li><a href="http://leetcode-solution.cn/" target="_blank" rel="noopener">力扣加加官网</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 力扣加加 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 算法提高班 </tag>
+            
+            <tag> 力扣加加 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>阿里面试题：如何寻找「两个数组」的中位数？</title>
       <link href="/blog/2020/06/13/leetcode-median/"/>
       <url>/blog/2020/06/13/leetcode-median/</url>
@@ -2092,37 +2123,6 @@
             <tag> 中位数 </tag>
             
             <tag> 二分法 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>力扣加加闪亮登场～</title>
-      <link href="/blog/2020/06/13/leetcode-pp/"/>
-      <url>/blog/2020/06/13/leetcode-pp/</url>
-      
-        <content type="html"><![CDATA[<p>力扣加加，一个努力做西湖区最好的算法题解的团队。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg" width="50%"></p><p>​<a id="more"></a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">脑洞前端：你已经长大了，是时候自己写题解了。</span><br><span class="line">力扣加加：。。。</span><br></pre></td></tr></table></figure><p>独立的原因是让公众号的定位更加清晰，喜欢我的题解的朋友可以关注力扣加加，喜欢我的前端架构剖析，徒手造框架的朋友可以关注脑洞前端。当然如果你同时关注两个，那我会感动到哭。</p><p>虽然是新的公众号，但是我的初心不变，依然是<code>力求用清晰直白的方式还原解题过程，努力做西湖区最好的算法题解</code>。最后感谢大家一路以来的支持，我一定不负众望，越做越好。</p><h2 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h2><p>预计力扣加加会推出<strong>五个</strong>板块。</p><h3 id="91-算法"><a href="#91-算法" class="headerlink" title="91 算法"></a>91 算法</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfctrpi6sfj30xm0b6js7.jpg" alt></p><p>通过在 91 天的集中训练，帮助大家摆脱困境，征服算法。我们会帮助大家规划学习路线，91 天见证不一样的自己。群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。<strong>我会在结束之后将讲义和题解放到公众号号</strong>。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcubuzax3j30h9086gm6.jpg" alt><br>（仓库部分内容）</p><h3 id="算法题解"><a href="#算法题解" class="headerlink" title="算法题解"></a>算法题解</h3><p>就是对力扣中的题目进行讲解，尤其是经典的题目。并且尽量从多个角度思路，帮助大家纵向打开解题思路。目前差不多有几百的题解了。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuje66ltj30wl0migsw.jpg" alt></p><h3 id="专题讲解"><a href="#专题讲解" class="headerlink" title="专题讲解"></a>专题讲解</h3><p>对于共性比较强的，我会抽离成专题形式，帮助大家横向打开解题思路。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcucqfgczj30am0fgabj.jpg" alt><br>（之后会陆续加入更多专题）</p><h3 id="视频题解"><a href="#视频题解" class="headerlink" title="视频题解"></a>视频题解</h3><p>对于一些题目采用视频的方式可能更加直观方便，之后还会考虑直播。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcueie2w0j31bf07nwhl.jpg" alt></p><h3 id="刷题工具"><a href="#刷题工具" class="headerlink" title="刷题工具"></a>刷题工具</h3><p>初步规划了两个小工具，之后出测试版本会第一时间告诉大家，如果你对开发小工具感兴趣，也可以点击公众号的联系我来和我取得联系。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcun5uakzj31j20u0kc3.jpg" alt><br>（力扣加加刷题小助手）</p><h2 id="悬赏令"><a href="#悬赏令" class="headerlink" title="悬赏令"></a>悬赏令</h2><p>大家在日常生活或是在刷题过程中有时一定会产生一些疑问，百度谷歌翻来覆去的找也找不到心中所期待的答案，因此，大家可以通过<strong>力扣加加</strong>来将这些疑问提出来，不定期从大家的问题中挑选出比较经典的几个问题来供大家一起讨论，大致的问题类型如下：</p><ul><li>日常生活中有个问题想用数据结构+算法解决，但苦于思路不清晰</li><li>问题本身比较纠结，网上众说纷纭，找不到明确的答案</li><li>脑洞问题等等</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcwc7ow13j30la0cewgf.jpg" alt><br>（比如这种问题）</p><p>被抽中的问题对应的朋友及问题回答出色的朋友可以获得准备的小礼物哦！</p><p>最后，每周我们会根据公众号后台的阅读量及分享次数最多的小伙伴给予现金奖励奖励哦～。分享最多 <code>1</code> 人 <code>8.88</code> 红包，阅读最多的 <code>1</code> 人 <code>6.66</code> 红包。</p><p>不是第一也没有关系，我们会从分享排名 <code>2-10</code>撒 名的小伙伴中随机抽取<code>2个</code> 8.88 元红包，阅读排名 <code>2-10</code> 名的小伙伴中随机抽取<code>2个</code> 6.88 元红包，</p><blockquote><p>每周日下午，我们会对本周的数据进行统计，并随机抽取幸运的小伙伴，并对中奖结果在力扣加加公众号进行公布，中奖的小伙伴请主动联系我哦。领奖时间截止到每周日的 24:00。</p></blockquote><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><h3 id="公众号"><a href="#公众号" class="headerlink" title="公众号"></a>公众号</h3><p>点关注，不迷路。如果再给 ➕ 个星标就更棒啦！</p><blockquote><p>关注加加，星标加加～</p></blockquote><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" width="100%"></p><h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><ul><li><a href="http://leetcode-solution.cn/" target="_blank" rel="noopener">力扣加加官网</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 力扣加加 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 数据结构 </tag>
-            
-            <tag> 算法 </tag>
-            
-            <tag> 算法提高班 </tag>
-            
-            <tag> 力扣加加 </tag>
             
         </tags>
       
