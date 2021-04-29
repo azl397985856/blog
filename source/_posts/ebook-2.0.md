@@ -1,0 +1,89 @@
+---
+title: 他来了，他带着「 西法的刷题秘籍 2.0 」 走来了！
+tags: [书, 算法, 数据结构, LeetCode, 草稿]
+date: 2021-04-28
+categories:
+  - [书, 算法]
+---
+
+嫌文章长的，可以直接拉到底部，底部有 pdf 的获取方式，以下是正文。
+
+<!-- more -->
+
+之前我写的一些专题很大程度上是给自己复习用的。给自己复习用的内容肯定就比较随意一点，除了我能看懂，其他人很难完全 get 到我的点。
+
+后来很多同学对我的仓库表示了认可，不断给我提 issue，pr 代码等等。
+
+![项目已经收获了 40k star 了](https://tva1.sinaimg.cn/large/008eGmZEly1gpqace6s7qj31gi03st96.jpg)
+
+我就在想：这种给自己看的复习材料就能收到这么高的评价，那我从给别人讲懂的角度认真写岂不是更牛？于是我决定将自己仓库的专题装修一遍。把自己能看懂，变成人人都看得懂。
+
+我目前已经完成了大概 20 多个专题，如果全部重新写一遍，这个工程肯定是很大的，**西法前前后后肝了好几个月才写完**。不过慢慢来，先把重要的重新写一遍再说。
+
+目前我已经重写了 7 个专题，分别是：
+
+- 数据结构与算法总览
+
+数据结构有哪些？各自有什么特点？平时我们是如何使用它们的？
+
+![数据结构与算法总览](https://tva1.sinaimg.cn/large/008eGmZEly1gpqarb7rt4j31190j9wiy.jpg)
+
+- 树
+
+树的核心就是遍历，遍历无非就是 BFS 和 DFS。
+
+![树](https://tva1.sinaimg.cn/large/008eGmZEly1gpqat9r3exj30zq0gjjw0.jpg)
+
+- 链表
+
+链表搞清楚指针就够了。
+
+![链表](https://tva1.sinaimg.cn/large/008eGmZEly1gpqav7yqtsj31270ltwik.jpg)
+
+- 二分
+
+二分就是让未知世界无机可乘的算法。最左最右二分解决所有二分问题。
+
+![二分](https://tva1.sinaimg.cn/large/008eGmZEly1gpqaw3slv8j30zs0lkgqp.jpg)
+
+- 堆
+
+动态求极值就用堆。
+
+![堆](https://tva1.sinaimg.cn/large/008eGmZEly1gpqaxa37qaj30xq0pvq8v.jpg)
+
+- 动态规划
+
+所谓动态就是阶段之间可以转移，所谓规划就是考虑如何转移才能利益最大化。动态规划题型有哪些？不同题型都有什么套路？
+
+![动态规划](https://tva1.sinaimg.cn/large/008eGmZEly1gpqbcvvqdlj31120hlgrx.jpg)
+
+- 二叉树遍历
+
+二叉树的各种遍历如何思维统一地解决？递归迭代思维可以统一么？可以！
+
+![二叉树遍历](https://tva1.sinaimg.cn/large/008eGmZEly1gpqaydog7uj30yb0lwgqx.jpg)
+
+每个专题不仅讲是什么，还讲**原理，讲套路，讲模板，讲常见题型和技巧**，并且结合具体的题目让你看我是如何运用这些技巧的，每一个专题都是**精品**。
+
+这已经可以覆盖相当多的题型了！后面我会陆续更新其他专题，努力做**西湖区最好的算法题解**。
+
+仅仅这七个专题就已经 10w + 字了。可见我写的还是蛮详细和认真的。
+
+![电子书预览](https://tva1.sinaimg.cn/large/008eGmZEly1gpqa7ymggnj30zx0u00xk.jpg)
+
+已经有不少小伙伴靠这份《刷题秘籍》成功拿到了 BAT offer。不管是应届生，还是工作几年想跳槽的人，这份刷题笔记都很值得看一波。
+
+我们废话不多说，直接告诉大家怎么获取。
+
+我推荐大家直接使用在线版 + latex Chrome 插件在线观看，不仅阅读体验好，而且可以享受自动更新的服务。在线地址：https://leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/
+
+> latex 插件我用的是 tex-all-the-things。 地址：https://chrome.google.com/webstore/detail/tex-all-the-things/cbimabofgmfdkicghcadidpemeenbffn
+
+如果你喜欢电子书，也没关系。我还贴心地把这份《刷题秘籍》打包成了 PDF，方便大家阅读与学习。现在这本电子书限时免费下载！
+
+![书的总体内容](https://tva1.sinaimg.cn/large/008eGmZEly1gpqab9gvd0j30k4072gmu.jpg)
+
+公众号《力扣加加》回复电子书就可以获取了。注意：后期随时可能收费哦~
+
+另外西法我最近受邀参加《前端早早聊》算法专场，给大家分享我的刷题经验。如果你和我一样，也是一枚前端，并且对算法面试比较畏惧，那么一定要关注我，我的前端算法面试系列文章**绝对是市面上绝无仅有的材料**，不仅内容真实性高，并且内容质量高，一定让你有所收获。更多内容，关注公众号《力扣加加》，让算法飞起来。
