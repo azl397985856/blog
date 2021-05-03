@@ -8,7 +8,7 @@
       <link href="/blog/2021/05/02/91algo-4/"/>
       <url>/blog/2021/05/02/91algo-4/</url>
       
-        <content type="html"><![CDATA[<p>力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg" width="50%"></p><p>最近我认识了一个新朋友 - 鸽子君，给大家介绍一下。</p><p>鸽子君呢？不见了~ 好吧，先不管它了。继续我们的正题~</p><p>前几天我在微信群发了一个投票，让大家投下面两个选项：</p><ol><li>现在开始，等不及了。</li><li>先不急，内部测试一下，等六一再上。</li></ol><p>后来收集到的情况还是选择 1 的比较多。那我就差不多准备开始吧。为了稍微照顾一下选择 2 的同学，我将开始时间适当延后一点点，我们 <strong>05.10</strong> 开始。开始之前大家可以<strong>先熟悉节奏以及学习先导篇</strong>。</p><p>​<a id="more"></a></p><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><p>为了让想学习的人能够真正学习到东西， 我打算新开一个栏目《91 天学算法》，在 91 天内来帮助那些想要学习算法，提升自己算法能力的同学，帮助大家建立完整的算法知识体系。</p><p>群里每天都会有题目，推荐大家讨论当天的题目。我们会帮助大家规划学习路线，群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。91 天见证不一样的自己。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2b2zkclnj30xm0b6aat.jpg" alt="logo"></p><h2 id="活动时间"><a href="#活动时间" class="headerlink" title="活动时间"></a>活动时间</h2><p><code>2021-05-10</code> 至 <code>2021-08-08</code></p><h2 id="你能够得到什么？"><a href="#你能够得到什么？" class="headerlink" title="你能够得到什么？"></a>你能够得到什么？</h2><ol><li>显著提高你的刷题效率，让你少走弯路</li><li>掌握常见面试题的思路和解法</li><li>掌握常见套路，了解常见算法的本质，横向对比各种题目</li><li>纵向剖析一道题，多种方法不同角度解决同一题目</li></ol><h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ul><li>🈲️ 不允许经常闲聊</li><li>🈲️ 不允许发广告，软文（只能发算法相关的技术文章）</li><li>✅ 一周至少<strong>打卡成功</strong>一次，当天的题目必须当天打卡才算<strong>打卡成功</strong>，不是当天打卡算做补卡。</li></ul><blockquote><p>违反上述条件的人员会被强制清退</p></blockquote><h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>本期部分内容独立于 Github 仓库，直接在我们的官网上进行，体验更棒哦~</p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gq3z9wuse4j31hf0u0aec.jpg" alt="部分目录"></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gq3zanwrcfj320m0rmqjg.jpg" alt="基础篇讲义"></p><h3 id="自习篇"><a href="#自习篇" class="headerlink" title="自习篇"></a>自习篇</h3><blockquote><p>活动开始前大家预习</p></blockquote><ul><li>数据结构与算法概述</li><li>如何衡量算法的性能</li><li><a href="https://www.bilibili.com/video/BV17t4y1i71G" title="如何更有效率刷题 1(视频)]" target="_blank" rel="noopener">如何更有效率刷题 1(视频)</a></li><li><a href="https://www.bilibili.com/video/BV1pa4y1s7g2" title="如何更有效率刷题 2(视频)" target="_blank" rel="noopener">如何更有效率刷题 2(视频)</a></li></ul><h3 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h3><ol><li>数组，队列，栈</li><li>链表</li><li>树与递归</li><li>哈希表</li><li>双指针</li><li>图（加餐）</li></ol><h3 id="专题篇"><a href="#专题篇" class="headerlink" title="专题篇"></a>专题篇</h3><ol><li>二分法</li><li>滑动窗口</li><li>位运算</li><li>背包问题</li><li>搜索（BFS，DFS，回溯）</li><li>动态规划</li><li>分治</li><li>贪心</li></ol><h3 id="进阶篇"><a href="#进阶篇" class="headerlink" title="进阶篇"></a>进阶篇</h3><ol><li>堆</li><li>前缀树</li><li>并查集</li><li>跳表</li><li>剪枝技巧</li><li>RK 和 KMP</li><li>高频面试题</li></ol><blockquote><p>由于可能会随着项目进行调整内容，因此章节顺序和内容可能会有变动，但变动不会很大。</p></blockquote><h3 id="往期公开讲义"><a href="#往期公开讲义" class="headerlink" title="往期公开讲义"></a>往期公开讲义</h3><ul><li><a href="https://lucifer.ren/blog/2020/05/26/91algo-basic-05.two-pointer/" title="【91 算法-基础篇】双指针">【91 算法-基础篇】双指针</a></li><li><a href="https://github.com/azl397985856/leetcode/blob/master/thinkings/dynamic-programming.md" title="【91 算法-专题篇】动态规划（部分内容）" target="_blank" rel="noopener">【91 算法-专题篇】动态规划</a></li><li><a href="https://github.com/azl397985856/leetcode/blob/master/91/binary-search.md" title="【91 算法-专题篇】二分法" target="_blank" rel="noopener">【91 算法-专题篇】二分法</a></li></ul><p>四期会对题目和讲义进行再次加工，质量会更高， 敬请期待~</p><h2 id="游戏规则"><a href="#游戏规则" class="headerlink" title="游戏规则"></a>游戏规则</h2><ul><li>每天会根据课程大纲的规划，出一道相关题目。</li><li>大家可以在指定<strong>私有仓库</strong>中打卡（不可以抄作业哦），对于不会做的题目可以在群里提问。</li><li>第二天会对前一天的题目进行讲解。</li></ul><p>本期有共五位讲师，每个专题由一位具体的讲师负责，大家有不会的问题可以进行提问。如果讲师来不及回答，大家可以在仓库中提 issue。</p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gq3z98q7pcj32460oqq7f.jpg" alt="讲师"></p><blockquote><p>关于每一个专题的负责讲义，我们会在 91 官网中的“讲师”模块给出，如上图所示。</p></blockquote><h2 id="奖励"><a href="#奖励" class="headerlink" title="奖励"></a>奖励</h2><ul><li>对于坚持打卡满一个月的同学，可以参加抽奖，奖品包括<code>算法模拟面试</code>，算法相关的图书，科学上网兑换码等</li><li>连续打卡七天可以获得补签卡一张哦</li></ul><h2 id="如何报名"><a href="#如何报名" class="headerlink" title="如何报名"></a>如何报名</h2><p>采用微信群 + 官网 + Github 的方式进行，<code>前 50 个进群的小伙伴免费哦 ~</code>，50 名之后的小伙伴采取阶梯收费的形式。</p><p>具体收费标准：</p><ul><li>前 50 人免费</li><li>51 - 100 收费 10 元</li><li>101 - 500 收费 30 元</li></ul><blockquote><p>直接添加 lucifer 好友(微信号 DevelopeEngineer)发红包或者转账即可</p></blockquote><p>当你满足以下三个条件：</p><ol><li>前 50 名</li><li>分享海报满 3 天</li><li>已经付费</li></ol><p>则可联系 lucifer，并<strong>告知你的 Github 登录名</strong>即可。</p><p>熟悉 91 的小伙伴可能发现相较于前三期涨价了。 其实涨价的目的是提供更好的服务，包括但不限于发放奖品，完善讲义，购买服务器（后期考虑），还望大家理解。如果你经济实在困难可以参加下面的返现活动哦。</p><h2 id="分享返现"><a href="#分享返现" class="headerlink" title="分享返现"></a>分享返现</h2><p>如果你没有抢到前 50 名免费的学习机会也不要气馁。我们贴心地为大家搞了<strong>分享返现活动</strong>，手慢照样可以免费参加哦~</p><p>活动规则：</p><p>发送宣传海报到你的朋友圈不屏蔽好友保留三天，<strong>三天之后</strong>加 lucifer 微信好友（微信号：DevelopeEngineer）进行验证，验证通过<strong>全额</strong>返现。</p><blockquote><p>不到三天就没必要联系我验证了，必须不屏蔽好友满三天才可以验证。</p></blockquote><p>朋友圈文案统一为： <strong>91 天，遇见更好的自己。发送本海报到朋友圈，不屏蔽好友保留三天即可免费学习（文案需保留）。快扫描下方二维码报名吧！</strong></p><p>海报：</p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gq4h9vbsm0j30o8174qrb.jpg" alt="海报"></p><p>朋友圈分享海报示例：</p><p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gmv4gaxao7j30u01u0418.jpg" alt="分享示例"></p><h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><ul><li>Q: 为什么提示“很抱歉，当前页面部分内容需要付费且登录后才能访问~”？</li><li><p>A: 可能是因为你没有付款。如果您确认已经付款或者拥有免费资格，请联系 lucifer 确认。</p></li><li><p>Q：第四期和前三期内容一样吗？</p></li><li><p>A：我们会不断进行迭代，比如第二期我们就制作了<strong>电子书</strong>给大家，方便大家阅读。此外，每一期讲义和题解都会不断更新，当然我们也会根据大家的反馈进行调整。第三题主要完善了二分，位运算和动态规划。</p></li><li><p>Q：零基础人群可以学习吗？</p></li><li><p>A：只要掌握一门编程语言就可以学习。</p></li><li><p>Q：课程是用什么语言教学的？</p></li><li><p>A：Java， Python，JS 都可能，不过算法涉及到的语言都比较基础，即使不了解，也完全可以学习。另外算法重要的是思想， 语言不重要，思路理解了比什么都重要。</p></li><li><p>Q：讲义和题解能够观看多久？</p></li><li><p>A:为了有效督促学习，如果大家被违反规则被清退（具体见上方的规则部分），则不可以继续观看，否则可以长期观看。</p></li><li><p>Q：我该怎么学习？</p></li><li><p>A：每一个小节开始之前都会提前把讲义公布到仓库，大家可以关注一下，提前预习。每天都会有一道题，第二天会公布前一天的题解，所有题解和讲义都在仓库中查看。另外我还介绍了一些学习方法， 具体参考上方的视频。</p></li><li><p>Q：我该怎么打卡？</p></li><li><p>A：打卡只需要在对应讲义新建的 issue 下留言即可，注意格式要求。格式模板在先导篇哦~</p></li><li><p>Q: 只能当天打卡吗？ 如果一周补打卡算吗？</p></li><li><p>A: 是的。必须当天才能打卡，比如第七天的题， 那么只有那一天打卡才算打卡成功。如果你连续打卡七天可以获取一张补签卡，补签卡是虚拟计算用的（不会实际发放），每月结束我们会统计当月满勤的同学，如果你不满勤，但是使用补签卡后满勤也是可以的。也就是说<strong>必须当天打卡，需要补卡的必须有补签卡，补签卡的获得方式是连续打卡七天。</strong></p></li><li><p>Q：微信群的作用是什么？</p></li><li><p>A：重要信息都在群公告和仓库，大家注意这两个信息渠道即可。微信群用来交流一下简单的，容易回答的问题。一些复杂的问题大家可以提 issue。</p></li><li><p>Q：虽然你这么说，但是我还是不想错过微信群的重要信息怎么办？</p></li><li>A：重要信息在仓库和群公告。如果大家还是怕错过重要群信息，可以按如下操作，仅看群主即可。</li></ul><ol><li><p>首先点击微信群右上角的按钮进入群设置，并翻到最下方。</p></li><li><p>点击“查找聊天内容”，然后进入“按群成员查找”。</p></li><li><p>找到需要查找聊天记录的人，比如 lucifer。</p></li></ol><ul><li>Q：Github 收到很多邮件，怎么取消？</li><li><p>A：参考 <a href="https://www.bpteach.com/knowledge-base/1047564/" target="_blank" rel="noopener">https://www.bpteach.com/knowledge-base/1047564/</a></p></li><li><p>Q：仓库在哪里？怎么进？</p></li><li>A：仓库在 91 天学算法官网中的打卡模块中可以看到，官网地址：<a href="https://leetcode-solution.cn/91。如果你提示" target="_blank" rel="noopener">https://leetcode-solution.cn/91。如果你提示</a> 404， 请耐心等待，我会在活动开始前给大家加。如果活动已经开始，请联系 lucifer 处理。</li></ul><h2 id="官方网站"><a href="#官方网站" class="headerlink" title="官方网站"></a>官方网站</h2><p>从这一期起，我们开始制作自己的官方网站：<a href="https://leetcode-solution.cn/91。" target="_blank" rel="noopener">https://leetcode-solution.cn/91。</a></p><p>在这里大家可以做除了打卡（以及看别人打卡）之外的所有事，包括看目录，具体的讲义，日常安排，每天的题目以及官方题解等。</p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gq4ctbwnu9j316c0u0tgy.jpg" alt="官网"></p>]]></content>
+        <content type="html"><![CDATA[<p>力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg" width="50%"></p><p>最近我认识了一个新朋友 - 鸽子君，给大家介绍一下。</p><p>鸽子君呢？不见了~ 好吧，先不管它了。继续我们的正题~</p><p>前几天我在微信群发了一个投票，让大家投下面两个选项：</p><ol><li>现在开始，等不及了。</li><li>先不急，内部测试一下，等六一再上。</li></ol><p>后来收集到的情况还是选择 1 的比较多。那我就差不多准备开始吧。为了稍微照顾一下选择 2 的同学，我将开始时间适当延后一点点，我们 <strong>05.10</strong> 开始。开始之前大家可以<strong>先熟悉节奏以及学习先导篇</strong>。</p><p>​<a id="more"></a></p><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><p>为了让想学习的人能够真正学习到东西， 我打算新开一个栏目《91 天学算法》，在 91 天内来帮助那些想要学习算法，提升自己算法能力的同学，帮助大家建立完整的算法知识体系。</p><p>群里每天都会有题目，推荐大家讨论当天的题目。我们会帮助大家规划学习路线，群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。91 天见证不一样的自己。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2b2zkclnj30xm0b6aat.jpg" alt="logo"></p><h2 id="活动时间"><a href="#活动时间" class="headerlink" title="活动时间"></a>活动时间</h2><p><code>2021-05-10</code> 至 <code>2021-08-08</code></p><h2 id="你能够得到什么？"><a href="#你能够得到什么？" class="headerlink" title="你能够得到什么？"></a>你能够得到什么？</h2><ol><li>显著提高你的刷题效率，让你少走弯路</li><li>掌握常见面试题的思路和解法</li><li>掌握常见套路，了解常见算法的本质，横向对比各种题目</li><li>纵向剖析一道题，多种方法不同角度解决同一题目</li></ol><h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ul><li>🈲️ 不允许经常闲聊</li><li>🈲️ 不允许发广告，软文（只能发算法相关的技术文章）</li><li>✅ 一周至少<strong>打卡成功</strong>一次，当天的题目必须当天打卡才算<strong>打卡成功</strong>，不是当天打卡算做补卡。</li></ul><blockquote><p>违反上述条件的人员会被强制清退</p></blockquote><h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>本期部分内容独立于 Github 仓库，直接在我们的官网上进行，体验更棒哦~</p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gq3z9wuse4j31hf0u0aec.jpg" alt="部分目录"></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gq3zanwrcfj320m0rmqjg.jpg" alt="基础篇讲义"></p><h3 id="自习篇"><a href="#自习篇" class="headerlink" title="自习篇"></a>自习篇</h3><blockquote><p>活动开始前大家预习</p></blockquote><ul><li>数据结构与算法概述</li><li>如何衡量算法的性能</li><li><a href="https://www.bilibili.com/video/BV17t4y1i71G" title="如何更有效率刷题 1(视频)]" target="_blank" rel="noopener">如何更有效率刷题 1(视频)</a></li><li><a href="https://www.bilibili.com/video/BV1pa4y1s7g2" title="如何更有效率刷题 2(视频)" target="_blank" rel="noopener">如何更有效率刷题 2(视频)</a></li></ul><h3 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h3><ol><li>数组，队列，栈</li><li>链表</li><li>树与递归</li><li>哈希表</li><li>双指针</li><li>图（加餐）</li></ol><h3 id="专题篇"><a href="#专题篇" class="headerlink" title="专题篇"></a>专题篇</h3><ol><li>二分法</li><li>滑动窗口</li><li>位运算</li><li>背包问题</li><li>搜索（BFS，DFS，回溯）</li><li>动态规划</li><li>分治</li><li>贪心</li></ol><h3 id="进阶篇"><a href="#进阶篇" class="headerlink" title="进阶篇"></a>进阶篇</h3><ol><li>堆</li><li>前缀树</li><li>并查集</li><li>跳表</li><li>剪枝技巧</li><li>RK 和 KMP</li><li>高频面试题</li></ol><blockquote><p>由于可能会随着项目进行调整内容，因此章节顺序和内容可能会有变动，但变动不会很大。</p></blockquote><h3 id="往期公开讲义"><a href="#往期公开讲义" class="headerlink" title="往期公开讲义"></a>往期公开讲义</h3><ul><li><a href="https://lucifer.ren/blog/2020/05/26/91algo-basic-05.two-pointer/" title="【91 算法-基础篇】双指针">【91 算法-基础篇】双指针</a></li><li><a href="https://github.com/azl397985856/leetcode/blob/master/thinkings/dynamic-programming.md" title="【91 算法-专题篇】动态规划（部分内容）" target="_blank" rel="noopener">【91 算法-专题篇】动态规划</a></li><li><a href="https://github.com/azl397985856/leetcode/blob/master/91/binary-search.md" title="【91 算法-专题篇】二分法" target="_blank" rel="noopener">【91 算法-专题篇】二分法</a></li></ul><p>四期会对题目和讲义进行再次加工，质量会更高， 敬请期待~</p><h2 id="游戏规则"><a href="#游戏规则" class="headerlink" title="游戏规则"></a>游戏规则</h2><ul><li>每天会根据课程大纲的规划，出一道相关题目。</li><li>大家可以在指定<strong>私有仓库</strong>中打卡（不可以抄作业哦），对于不会做的题目可以在群里提问。</li><li>第二天会对前一天的题目进行讲解。</li></ul><p>本期有共五位讲师，每个专题由一位具体的讲师负责，大家有不会的问题可以进行提问。如果讲师来不及回答，大家可以在仓库中提 issue。</p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gq3z98q7pcj32460oqq7f.jpg" alt="讲师"></p><blockquote><p>关于每一个专题的负责讲义，我们会在 91 官网中的“讲师”模块给出，如上图所示。</p></blockquote><h2 id="奖励"><a href="#奖励" class="headerlink" title="奖励"></a>奖励</h2><ul><li>对于坚持打卡满一个月的同学，可以参加抽奖，奖品包括<code>算法模拟面试</code>，算法相关的图书，科学上网兑换码等</li><li>连续打卡七天可以获得补签卡一张哦</li></ul><h2 id="如何报名"><a href="#如何报名" class="headerlink" title="如何报名"></a>如何报名</h2><p>采用微信群 + 官网 + Github 的方式进行，<code>前 50 个进群的小伙伴免费哦 ~</code>，50 名之后的小伙伴采取阶梯收费的形式。</p><p>扫码进群（如果提示不能进入，说明已经超过 100 名了，需要找 lucifer 手动拉）。</p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gq52lrcmrrj30u01r4acx.jpg" alt></p><p>具体收费标准：</p><ul><li>前 50 人免费</li><li>51 - 100 收费 10 元</li><li>101 - 500 收费 30 元</li></ul><blockquote><p>直接添加 lucifer 好友(微信号 DevelopeEngineer)发红包或者转账即可</p></blockquote><p>当你满足以下三个条件：</p><ol><li>前 50 名</li><li>分享海报满 3 天</li><li>已经付费</li></ol><p>则可联系 lucifer，并<strong>告知你的 Github 登录名</strong>即可。</p><p>熟悉 91 的小伙伴可能发现相较于前三期涨价了。 其实涨价的目的是提供更好的服务，包括但不限于发放奖品，完善讲义，购买服务器（后期考虑），还望大家理解。如果你经济实在困难可以参加下面的返现活动哦。</p><h2 id="分享返现"><a href="#分享返现" class="headerlink" title="分享返现"></a>分享返现</h2><p>如果你没有抢到前 50 名免费的学习机会也不要气馁。我们贴心地为大家搞了<strong>分享返现活动</strong>，手慢照样可以免费参加哦~</p><p>活动规则：</p><p>发送宣传海报到你的朋友圈不屏蔽好友保留三天，<strong>三天之后</strong>加 lucifer 微信好友（微信号：DevelopeEngineer）进行验证，验证通过<strong>全额</strong>返现。</p><blockquote><p>不到三天就没必要联系我验证了，必须不屏蔽好友满三天才可以验证。</p></blockquote><p>朋友圈文案统一为： <strong>91 天，遇见更好的自己。发送本海报到朋友圈，不屏蔽好友保留三天即可免费学习（文案需保留）。快扫描下方二维码报名吧！</strong></p><p>海报：</p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gq4h9vbsm0j30o8174qrb.jpg" alt="海报"></p><p>朋友圈分享海报示例：</p><p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gmv4gaxao7j30u01u0418.jpg" alt="分享示例"></p><h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><ul><li>Q: 为什么提示“很抱歉，当前页面部分内容需要付费且登录后才能访问~”？</li><li><p>A: 可能是因为你没有付款。如果您确认已经付款或者拥有免费资格，请联系 lucifer 确认。</p></li><li><p>Q：第四期和前三期内容一样吗？</p></li><li><p>A：我们会不断进行迭代，比如第二期我们就制作了<strong>电子书</strong>给大家，方便大家阅读。此外，每一期讲义和题解都会不断更新，当然我们也会根据大家的反馈进行调整。第三题主要完善了二分，位运算和动态规划。</p></li><li><p>Q：零基础人群可以学习吗？</p></li><li><p>A：只要掌握一门编程语言就可以学习。</p></li><li><p>Q：课程是用什么语言教学的？</p></li><li><p>A：Java， Python，JS 都可能，不过算法涉及到的语言都比较基础，即使不了解，也完全可以学习。另外算法重要的是思想， 语言不重要，思路理解了比什么都重要。</p></li><li><p>Q：讲义和题解能够观看多久？</p></li><li><p>A:为了有效督促学习，如果大家被违反规则被清退（具体见上方的规则部分），则不可以继续观看，否则可以长期观看。</p></li><li><p>Q：我该怎么学习？</p></li><li><p>A：每一个小节开始之前都会提前把讲义公布到仓库，大家可以关注一下，提前预习。每天都会有一道题，第二天会公布前一天的题解，所有题解和讲义都在仓库中查看。另外我还介绍了一些学习方法， 具体参考上方的视频。</p></li><li><p>Q：我该怎么打卡？</p></li><li><p>A：打卡只需要在对应讲义新建的 issue 下留言即可，注意格式要求。格式模板在先导篇哦~</p></li><li><p>Q: 只能当天打卡吗？ 如果一周补打卡算吗？</p></li><li><p>A: 是的。必须当天才能打卡，比如第七天的题， 那么只有那一天打卡才算打卡成功。如果你连续打卡七天可以获取一张补签卡，补签卡是虚拟计算用的（不会实际发放），每月结束我们会统计当月满勤的同学，如果你不满勤，但是使用补签卡后满勤也是可以的。也就是说<strong>必须当天打卡，需要补卡的必须有补签卡，补签卡的获得方式是连续打卡七天。</strong></p></li><li><p>Q：微信群的作用是什么？</p></li><li><p>A：重要信息都在群公告和仓库，大家注意这两个信息渠道即可。微信群用来交流一下简单的，容易回答的问题。一些复杂的问题大家可以提 issue。</p></li><li><p>Q：虽然你这么说，但是我还是不想错过微信群的重要信息怎么办？</p></li><li>A：重要信息在仓库和群公告。如果大家还是怕错过重要群信息，可以按如下操作，仅看群主即可。</li></ul><ol><li><p>首先点击微信群右上角的按钮进入群设置，并翻到最下方。</p></li><li><p>点击“查找聊天内容”，然后进入“按群成员查找”。</p></li><li><p>找到需要查找聊天记录的人，比如 lucifer。</p></li></ol><ul><li>Q：Github 收到很多邮件，怎么取消？</li><li><p>A：参考 <a href="https://www.bpteach.com/knowledge-base/1047564/" target="_blank" rel="noopener">https://www.bpteach.com/knowledge-base/1047564/</a></p></li><li><p>Q：仓库在哪里？怎么进？</p></li><li>A：仓库在 91 天学算法官网中的打卡模块中可以看到，官网地址：<a href="https://leetcode-solution.cn/91。如果你提示" target="_blank" rel="noopener">https://leetcode-solution.cn/91。如果你提示</a> 404， 请耐心等待，我会在活动开始前给大家加。如果活动已经开始，请联系 lucifer 处理。</li></ul><h2 id="官方网站"><a href="#官方网站" class="headerlink" title="官方网站"></a>官方网站</h2><p>从这一期起，我们开始制作自己的官方网站：<a href="https://leetcode-solution.cn/91。" target="_blank" rel="noopener">https://leetcode-solution.cn/91。</a></p><p>在这里大家可以做除了打卡（以及看别人打卡）之外的所有事，包括看目录，具体的讲义，日常安排，每天的题目以及官方题解等。</p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gq4ctbwnu9j316c0u0tgy.jpg" alt="官网"></p>]]></content>
       
       
       <categories>
@@ -415,11 +415,11 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> 数学 </tag>
             
             <tag> 最大公约数 </tag>
             
@@ -1275,9 +1275,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -1318,9 +1318,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -1392,9 +1392,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -1725,11 +1725,11 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> 数学 </tag>
             
             <tag> BFS </tag>
             
@@ -1749,9 +1749,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -1819,9 +1819,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -2109,13 +2109,13 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
           
-          <category> hashtable </category>
+          <category> 数据结构 </category>
           
           <category> BFS </category>
+          
+          <category> hashtable </category>
           
       </categories>
       
@@ -2153,11 +2153,11 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> 数学 </tag>
             
             <tag> 中位数 </tag>
             
@@ -2355,9 +2355,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -2392,9 +2392,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -2497,9 +2497,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -3095,9 +3095,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 字符串 </category>
           
@@ -3231,9 +3231,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -3384,9 +3384,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> LeetCode </category>
           
@@ -3421,9 +3421,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -3460,13 +3460,13 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
           
-          <category> hashtable </category>
+          <category> 数据结构 </category>
           
           <category> 数学 </category>
+          
+          <category> hashtable </category>
           
           <category> 位运算 </category>
           
@@ -3518,9 +3518,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> LeetCode </category>
           
@@ -3586,9 +3586,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 字符串 </category>
           
@@ -3730,9 +3730,9 @@
           
           <category> 数学 </category>
           
-          <category> 动态规划 </category>
-          
           <category> 概率 </category>
+          
+          <category> 动态规划 </category>
           
           <category> 递归 </category>
           
@@ -3741,11 +3741,11 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> 数学 </tag>
             
             <tag> 概率 </tag>
             
