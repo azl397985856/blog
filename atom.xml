@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-04-28T07:02:30.952Z</updated>
+  <updated>2021-05-03T02:49:48.631Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>回炉重铸， 91 天见证不一样的自己（第四期）</title>
+    <link href="https://lucifer.ren/blog/2021/05/02/91algo-4/"/>
+    <id>https://lucifer.ren/blog/2021/05/02/91algo-4/</id>
+    <published>2021-05-01T16:00:00.000Z</published>
+    <updated>2021-05-03T02:49:48.631Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
+&lt;p&gt;最近我认识了一个新朋友 - 鸽子君，给大家介绍一下。&lt;/p&gt;
+&lt;p&gt;鸽子君呢？不见了~ 好吧，先不管它了。继续我们的正题~&lt;/p&gt;
+&lt;p&gt;前几天我在微信群发了一个投票，让大家投下面两个选项：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;现在开始，等不及了。&lt;/li&gt;
+&lt;li&gt;先不急，内部测试一下，等六一再上。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;后来收集到的情况还是选择 1 的比较多。那我就差不多准备开始吧。为了稍微照顾一下选择 2 的同学，我将开始时间适当延后一点点，我们 &lt;strong&gt;05.10&lt;/strong&gt; 开始。开始之前大家可以&lt;strong&gt;先熟悉节奏以及学习先导篇&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>他来了，他带着「 西法的刷题秘籍 2.0 」 走来了！</title>
@@ -413,30 +453,6 @@
   </entry>
   
   <entry>
-    <title>一个让你的 YouTube 丝滑般柔顺的插件</title>
-    <link href="https://lucifer.ren/blog/2021/02/20/youtube-extesion/"/>
-    <id>https://lucifer.ren/blog/2021/02/20/youtube-extesion/</id>
-    <published>2021-02-19T16:00:00.000Z</published>
-    <updated>2021-03-09T10:48:39.813Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Youtube 和 B 站是很多人浏览视频的两个地方。&lt;/p&gt;
-&lt;p&gt;一开始我还挺喜欢 Youtube 的，不仅是因为可以看到一些其他人看不到的东西，也因为体验比较棒。而现在，我已经彻底失望了。每次看一个十分钟的视频被跳出来四次广告的痛苦你了解么？如果你在看一个需要集中精力思考的视频，那么这种打断真的是非常让人恼怒。如果不是实在无法忍受这种行为，我也不会使用一些广告屏蔽的插件，毕竟看广告其实也是对 up 主的另外一种支持。&lt;/p&gt;
-&lt;p&gt;另外 YouTube 竟然没有小窗播放。比如我下滑到评论区，视频并不会小窗悬浮播放，差评！&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/"/>
-    
-      <category term="浏览器插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/"/>
-    
-    
-      <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
     <title>一招吃遍力扣四道题，妈妈再也不用担心我被套路啦～</title>
     <link href="https://lucifer.ren/blog/2021/02/20/%E5%88%A0%E9%99%A4%E9%97%AE%E9%A2%98/"/>
     <id>https://lucifer.ren/blog/2021/02/20/删除问题/</id>
@@ -470,6 +486,30 @@
       <category term="中等" scheme="https://lucifer.ren/blog/tags/%E4%B8%AD%E7%AD%89/"/>
     
       <category term="删除 k 个字符" scheme="https://lucifer.ren/blog/tags/%E5%88%A0%E9%99%A4-k-%E4%B8%AA%E5%AD%97%E7%AC%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一个让你的 YouTube 丝滑般柔顺的插件</title>
+    <link href="https://lucifer.ren/blog/2021/02/20/youtube-extesion/"/>
+    <id>https://lucifer.ren/blog/2021/02/20/youtube-extesion/</id>
+    <published>2021-02-19T16:00:00.000Z</published>
+    <updated>2021-03-09T10:48:39.813Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Youtube 和 B 站是很多人浏览视频的两个地方。&lt;/p&gt;
+&lt;p&gt;一开始我还挺喜欢 Youtube 的，不仅是因为可以看到一些其他人看不到的东西，也因为体验比较棒。而现在，我已经彻底失望了。每次看一个十分钟的视频被跳出来四次广告的痛苦你了解么？如果你在看一个需要集中精力思考的视频，那么这种打断真的是非常让人恼怒。如果不是实在无法忍受这种行为，我也不会使用一些广告屏蔽的插件，毕竟看广告其实也是对 up 主的另外一种支持。&lt;/p&gt;
+&lt;p&gt;另外 YouTube 竟然没有小窗播放。比如我下滑到评论区，视频并不会小窗悬浮播放，差评！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/"/>
+    
+      <category term="浏览器插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/"/>
+    
+    
+      <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
     
   </entry>
   
@@ -578,31 +618,6 @@
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
       <category term="堆" scheme="https://lucifer.ren/blog/tags/%E5%A0%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>蓄水池抽样</title>
-    <link href="https://lucifer.ren/blog/2021/01/12/reservoid-sampling/"/>
-    <id>https://lucifer.ren/blog/2021/01/12/reservoid-sampling/</id>
-    <published>2021-01-11T16:00:00.000Z</published>
-    <updated>2021-03-09T10:48:39.802Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;力扣中关于蓄水池抽样问题官方标签是 2 道，根据我的做题情况来看，可能有三四道。比重算是比较低的，大家可以根据自己的实际情况选择性掌握。&lt;/p&gt;
-&lt;p&gt;蓄水池抽样的算法思维很巧妙，代码简单且容易理解，就算不掌握它，作为了解也是很不错的。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="蓄水池抽样" scheme="https://lucifer.ren/blog/categories/%E8%93%84%E6%B0%B4%E6%B1%A0%E6%8A%BD%E6%A0%B7/"/>
-    
-    
-      <category term="概率" scheme="https://lucifer.ren/blog/tags/%E6%A6%82%E7%8E%87/"/>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="蓄水池抽样" scheme="https://lucifer.ren/blog/tags/%E8%93%84%E6%B0%B4%E6%B1%A0%E6%8A%BD%E6%A0%B7/"/>
     
   </entry>
   
