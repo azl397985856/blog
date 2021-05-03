@@ -130,6 +130,10 @@ categories:
 
 采用微信群 + 官网 + Github 的方式进行，`前 50 个进群的小伙伴免费哦 ~`，50 名之后的小伙伴采取阶梯收费的形式。
 
+扫码进群（如果提示不能进入，说明已经超过 100 名了，需要找 lucifer 手动拉）。
+
+![](https://tva1.sinaimg.cn/large/008i3skNly1gq52lrcmrrj30u01r4acx.jpg)
+
 具体收费标准：
 
 - 前 50 人免费
