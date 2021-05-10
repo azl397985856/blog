@@ -412,9 +412,9 @@
 <p>A:我希望 91 有更多的个人答题跟踪和一起打卡的人的榜单，这样大家可以相互鼓（shi）励（ya）</p>
 <p>Q: 愿意把 91 天分享给你的朋友么？</p>
 <p>A:当然愿意啦！我觉得新手入门的时候最难的就是选择 “学什么” ， 而 91 恰好解决了这个问题。加入了 91 之后，只要根据 91 已经制定好的计划每天努力就可以了。而且问题是循序渐进的，对新手非常友好~ 再加上有这么多同学和超级棒的讲师们一起，我觉得 91 是最棒的刷题计划啦！</p>
-<h2 id="lucifer-总结"><a href="#lucifer-总结" class="headerlink" title="lucifer 总结"></a>lucifer 总结</h2><p>学习东西是需要循序渐进的。在这个循序渐进的路上会一次次地“顿悟”。如果你有一个良好的学习习惯和学习计划，那么我相信你效率一定很高，那么答案你理想的高度也是时间的问题罢了。而如果你缺乏这样的学习习惯，不知道怎么去学习算法，可以试试 91 天学算法哦，活动介绍在文末的链接中，也可以直接在公众号力扣加加中回复 91 获取。</p>
-<h2 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h2><p>这几天西法倒腾了一个小功能 - <code>Code Highlight lines</code>，就是给代码中的某几行代码加高亮。</p>
-<p>之所以搞这个小功能，是因为我最近在给大家贴代码的时候发现大多数代码都没啥意思，核心代码其实就几行。于是想<strong>要是能给某几行代码增加高亮就好了</strong>。可以找了半天没发现什么特别好的解决方案，于是西法就自己实现了一下下（包括解析功能和 UI 美化）。</p>
+<h2 id="lucifer-总结"><a href="#lucifer-总结" class="headerlink" title="lucifer 总结"></a>lucifer 总结</h2><p>学习东西是需要循序渐进的。在这个循序渐进的路上会一次次地“顿悟”。如果你有一个良好的学习习惯和学习计划，那么我相信你效率一定很高，那么达到你理想的高度也只是时间的问题罢了。而如果你缺乏这样的学习习惯，不知道怎么去学习算法，可以试试 91 天学算法哦，活动介绍在文末的链接中，也可以直接在公众号力扣加加中回复 91 获取。</p>
+<h2 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h2><p>这几天西法倒腾了一个小功能 - <code>Code Highlight lines</code>，就是给一段代码中的某几行代码加高亮。</p>
+<p>之所以搞这个小功能，是因为我最近在给大家贴代码的时候发现大多数代码都没啥意思，核心代码其实就几行。于是想<strong>要是能给某几行代码增加高亮就好了</strong>。可是找了半天也没发现什么特别好的解决方案，于是西法就自己实现了一下下（包括解析功能和 UI 美化）。</p>
 <p>使用方法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">```py &#123;5-6,11-12&#125;</span><br><span class="line">class Solution:</span><br><span class="line">    def addToArrayForm(self, A: List[int], K: int) -&gt; List[int]:</span><br><span class="line">        carry = 0</span><br><span class="line">        for i in range(len(A) - 1, -1, -1):</span><br><span class="line">            A[i], carry = (carry + A[i] + K % 10) % 10, (carry + A[i] + K % 10) // 10</span><br><span class="line">            K //= 10</span><br><span class="line">        B = []</span><br><span class="line">        # 如果全部加完还有进位，需要特殊处理。 比如 A = [2], K = 998</span><br><span class="line">        carry = carry + K</span><br><span class="line">        while carry:</span><br><span class="line">            B = [(carry) % 10] + B</span><br><span class="line">            carry //= 10</span><br><span class="line">        return B + A</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
 <p>只需要在语言后面增加你想高亮的行即可。如上代码就是想要高亮<strong>第 5-6 行，以及第 11-12 行</strong>。</p>
@@ -433,7 +433,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-10T17:35:34+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-10T18:46:06+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2021年5月10日</p>

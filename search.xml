@@ -8,7 +8,7 @@
       <link href="/blog/2021/05/10/91-student-1/"/>
       <url>/blog/2021/05/10/91-student-1/</url>
       
-        <content type="html"><![CDATA[<ul><li>时间：2021-05-07</li><li>被采访人：易潇</li></ul><h2 id="活动介绍"><a href="#活动介绍" class="headerlink" title="活动介绍"></a>活动介绍</h2><p>力扣加加，一个努力做西湖区最好的算法题解的团队。<strong>91 天学算法</strong>是力扣加加举办的一个算法训练活动，通过良好的学习计划 和 91 天的集中学习，帮助大家摆脱困境，征服算法。</p><p>现在 《91 天学算法》已经举办了四期了，<a href="https://mp.weixin.qq.com/s?__biz=MzI4MzUxNjI3OA==&amp;mid=2247488668&amp;idx=1&amp;sn=001d53b788fb21280f9e45cadb7b4fae&amp;chksm=eb88d885dcff5193f17725eb4b6b56cbbe406d8426bdc0dd5512253e2a0ef525358f94d4ab5a&amp;token=2115509684&amp;lang=zh_CN#rd" title="91 天学算法第四期" target="_blank" rel="noopener">第四期</a>的活动时间是 <strong>2021-05-10 到 2021-08-08</strong>。</p><p>每一期都有很多优秀学员，我想将这些人的学习经验分享给大家，帮助大家少走弯路。由于我开辟了这个 <strong>91 天学算法优秀学员专访</strong> 活动。</p><p>这次，我们邀请到了远在美国的转码少女 - 易潇，一个元气满满的活力女孩。来看看她是如何学习的吧！</p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gq9qojha3ij30u00u077t.jpg" width="400"></p><p>​<a id="more"></a></p><h2 id="采访"><a href="#采访" class="headerlink" title="采访"></a>采访</h2><p>Q: 你是什么时候开始接触数据结构与算法（以下简称算法）的？</p><p>A: 从很久之前就听说过数据结果与算法，但正式接触是打算转码的时候开始的。</p><p>Q: 你是什么时候接触 91 天学算法（以下简称 91 天）的？从什么途径得知的？</p><p>A: 我是从第二期就开始接触 91 的，大概是关注公众号的时候关注到的。</p><p>Q: 91 天有给你带来了什么样的变化么？</p><p>A: 91 让我从觉得用哈希表 O(N)写 two sum 很惊奇到了现在可以迷迷糊糊的状态下手写完堆（狗头</p><p>最近因为刷了 91，在做几个公司笔试初试(online coding challenge)的时候<strong>感觉很简单</strong>，也对自己的即将到来的面试更加有自信了~</p><p>Q: 学习算法过程中有“顿悟”的时刻么？</p><p>A: 经常顿悟 — <strong>顿悟源自于重复和每次重复带来的更深层次的理解。</strong></p><p>Q: 你比较擅长的算法是什么？可以给大家简单分享一下么？</p><p>A: 比较擅长的算法是看小漾怎么写的，然后默默的取长补短（就是都抄一遍的意思）</p><p>Q: 有没有什么想和刚入坑算法的同学分享的？</p><p>A: 我觉得刚入坑的同学们一定要学会处理自己的 “迷茫” 以及这种情绪带来的 “我不想做，这太难了”。我觉得在学习的过程中，只要能在自己感到迷茫的时候坚持再坚持，总会有那么一个 “顿悟”的时刻，然后就会觉得<strong>自己的坚持是值得的</strong>。<br>我在正式学习编程之前的两三年里，也经常想过转码，但每次都会因为 “选什么语言” 或者 “初始化环境设定” 太难了等这种原因放弃。<strong>现在其实回头看，这些问题其实都很简单。</strong></p><p>Q: 相对而言，你觉得 91 天哪里做的还不够好？应该如何改进？</p><p>A:我希望 91 有更多的个人答题跟踪和一起打卡的人的榜单，这样大家可以相互鼓（shi）励（ya）</p><p>Q: 愿意把 91 天分享给你的朋友么？</p><p>A:当然愿意啦！我觉得新手入门的时候最难的就是选择 “学什么” ， 而 91 恰好解决了这个问题。加入了 91 之后，只要根据 91 已经制定好的计划每天努力就可以了。而且问题是循序渐进的，对新手非常友好~ 再加上有这么多同学和超级棒的讲师们一起，我觉得 91 是最棒的刷题计划啦！</p><h2 id="lucifer-总结"><a href="#lucifer-总结" class="headerlink" title="lucifer 总结"></a>lucifer 总结</h2><p>学习东西是需要循序渐进的。在这个循序渐进的路上会一次次地“顿悟”。如果你有一个良好的学习习惯和学习计划，那么我相信你效率一定很高，那么答案你理想的高度也是时间的问题罢了。而如果你缺乏这样的学习习惯，不知道怎么去学习算法，可以试试 91 天学算法哦，活动介绍在文末的链接中，也可以直接在公众号力扣加加中回复 91 获取。</p><h2 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h2><p>这几天西法倒腾了一个小功能 - <code>Code Highlight lines</code>，就是给代码中的某几行代码加高亮。</p><p>之所以搞这个小功能，是因为我最近在给大家贴代码的时候发现大多数代码都没啥意思，核心代码其实就几行。于是想<strong>要是能给某几行代码增加高亮就好了</strong>。可以找了半天没发现什么特别好的解决方案，于是西法就自己实现了一下下（包括解析功能和 UI 美化）。</p><p>使用方法：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">```py &#123;5-6,11-12&#125;</span><br><span class="line">class Solution:</span><br><span class="line">    def addToArrayForm(self, A: List[int], K: int) -&gt; List[int]:</span><br><span class="line">        carry = 0</span><br><span class="line">        for i in range(len(A) - 1, -1, -1):</span><br><span class="line">            A[i], carry = (carry + A[i] + K % 10) % 10, (carry + A[i] + K % 10) // 10</span><br><span class="line">            K //= 10</span><br><span class="line">        B = []</span><br><span class="line">        # 如果全部加完还有进位，需要特殊处理。 比如 A = [2], K = 998</span><br><span class="line">        carry = carry + K</span><br><span class="line">        while carry:</span><br><span class="line">            B = [(carry) % 10] + B</span><br><span class="line">            carry //= 10</span><br><span class="line">        return B + A</span><br><span class="line">```</span><br></pre></td></tr></table></figure><p>只需要在语言后面增加你想高亮的行即可。如上代码就是想要高亮<strong>第 5-6 行，以及第 11-12 行</strong>。</p><p>使用效果：</p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqdg24rcwpj30tg0ax3za.jpg" alt></p><p>当然也可以直接高亮具体某一行，比如 <strong>py {3}</strong> 就是高亮第三行。</p><p>大家有什么想要的 feature， 也可以给我提，我会尽量满足大家。</p>]]></content>
+        <content type="html"><![CDATA[<ul><li>时间：2021-05-07</li><li>被采访人：易潇</li></ul><h2 id="活动介绍"><a href="#活动介绍" class="headerlink" title="活动介绍"></a>活动介绍</h2><p>力扣加加，一个努力做西湖区最好的算法题解的团队。<strong>91 天学算法</strong>是力扣加加举办的一个算法训练活动，通过良好的学习计划 和 91 天的集中学习，帮助大家摆脱困境，征服算法。</p><p>现在 《91 天学算法》已经举办了四期了，<a href="https://mp.weixin.qq.com/s?__biz=MzI4MzUxNjI3OA==&amp;mid=2247488668&amp;idx=1&amp;sn=001d53b788fb21280f9e45cadb7b4fae&amp;chksm=eb88d885dcff5193f17725eb4b6b56cbbe406d8426bdc0dd5512253e2a0ef525358f94d4ab5a&amp;token=2115509684&amp;lang=zh_CN#rd" title="91 天学算法第四期" target="_blank" rel="noopener">第四期</a>的活动时间是 <strong>2021-05-10 到 2021-08-08</strong>。</p><p>每一期都有很多优秀学员，我想将这些人的学习经验分享给大家，帮助大家少走弯路。由于我开辟了这个 <strong>91 天学算法优秀学员专访</strong> 活动。</p><p>这次，我们邀请到了远在美国的转码少女 - 易潇，一个元气满满的活力女孩。来看看她是如何学习的吧！</p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gq9qojha3ij30u00u077t.jpg" width="400"></p><p>​<a id="more"></a></p><h2 id="采访"><a href="#采访" class="headerlink" title="采访"></a>采访</h2><p>Q: 你是什么时候开始接触数据结构与算法（以下简称算法）的？</p><p>A: 从很久之前就听说过数据结果与算法，但正式接触是打算转码的时候开始的。</p><p>Q: 你是什么时候接触 91 天学算法（以下简称 91 天）的？从什么途径得知的？</p><p>A: 我是从第二期就开始接触 91 的，大概是关注公众号的时候关注到的。</p><p>Q: 91 天有给你带来了什么样的变化么？</p><p>A: 91 让我从觉得用哈希表 O(N)写 two sum 很惊奇到了现在可以迷迷糊糊的状态下手写完堆（狗头</p><p>最近因为刷了 91，在做几个公司笔试初试(online coding challenge)的时候<strong>感觉很简单</strong>，也对自己的即将到来的面试更加有自信了~</p><p>Q: 学习算法过程中有“顿悟”的时刻么？</p><p>A: 经常顿悟 — <strong>顿悟源自于重复和每次重复带来的更深层次的理解。</strong></p><p>Q: 你比较擅长的算法是什么？可以给大家简单分享一下么？</p><p>A: 比较擅长的算法是看小漾怎么写的，然后默默的取长补短（就是都抄一遍的意思）</p><p>Q: 有没有什么想和刚入坑算法的同学分享的？</p><p>A: 我觉得刚入坑的同学们一定要学会处理自己的 “迷茫” 以及这种情绪带来的 “我不想做，这太难了”。我觉得在学习的过程中，只要能在自己感到迷茫的时候坚持再坚持，总会有那么一个 “顿悟”的时刻，然后就会觉得<strong>自己的坚持是值得的</strong>。<br>我在正式学习编程之前的两三年里，也经常想过转码，但每次都会因为 “选什么语言” 或者 “初始化环境设定” 太难了等这种原因放弃。<strong>现在其实回头看，这些问题其实都很简单。</strong></p><p>Q: 相对而言，你觉得 91 天哪里做的还不够好？应该如何改进？</p><p>A:我希望 91 有更多的个人答题跟踪和一起打卡的人的榜单，这样大家可以相互鼓（shi）励（ya）</p><p>Q: 愿意把 91 天分享给你的朋友么？</p><p>A:当然愿意啦！我觉得新手入门的时候最难的就是选择 “学什么” ， 而 91 恰好解决了这个问题。加入了 91 之后，只要根据 91 已经制定好的计划每天努力就可以了。而且问题是循序渐进的，对新手非常友好~ 再加上有这么多同学和超级棒的讲师们一起，我觉得 91 是最棒的刷题计划啦！</p><h2 id="lucifer-总结"><a href="#lucifer-总结" class="headerlink" title="lucifer 总结"></a>lucifer 总结</h2><p>学习东西是需要循序渐进的。在这个循序渐进的路上会一次次地“顿悟”。如果你有一个良好的学习习惯和学习计划，那么我相信你效率一定很高，那么达到你理想的高度也只是时间的问题罢了。而如果你缺乏这样的学习习惯，不知道怎么去学习算法，可以试试 91 天学算法哦，活动介绍在文末的链接中，也可以直接在公众号力扣加加中回复 91 获取。</p><h2 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h2><p>这几天西法倒腾了一个小功能 - <code>Code Highlight lines</code>，就是给一段代码中的某几行代码加高亮。</p><p>之所以搞这个小功能，是因为我最近在给大家贴代码的时候发现大多数代码都没啥意思，核心代码其实就几行。于是想<strong>要是能给某几行代码增加高亮就好了</strong>。可是找了半天也没发现什么特别好的解决方案，于是西法就自己实现了一下下（包括解析功能和 UI 美化）。</p><p>使用方法：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">```py &#123;5-6,11-12&#125;</span><br><span class="line">class Solution:</span><br><span class="line">    def addToArrayForm(self, A: List[int], K: int) -&gt; List[int]:</span><br><span class="line">        carry = 0</span><br><span class="line">        for i in range(len(A) - 1, -1, -1):</span><br><span class="line">            A[i], carry = (carry + A[i] + K % 10) % 10, (carry + A[i] + K % 10) // 10</span><br><span class="line">            K //= 10</span><br><span class="line">        B = []</span><br><span class="line">        # 如果全部加完还有进位，需要特殊处理。 比如 A = [2], K = 998</span><br><span class="line">        carry = carry + K</span><br><span class="line">        while carry:</span><br><span class="line">            B = [(carry) % 10] + B</span><br><span class="line">            carry //= 10</span><br><span class="line">        return B + A</span><br><span class="line">```</span><br></pre></td></tr></table></figure><p>只需要在语言后面增加你想高亮的行即可。如上代码就是想要高亮<strong>第 5-6 行，以及第 11-12 行</strong>。</p><p>使用效果：</p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqdg24rcwpj30tg0ax3za.jpg" alt></p><p>当然也可以直接高亮具体某一行，比如 <strong>py {3}</strong> 就是高亮第三行。</p><p>大家有什么想要的 feature， 也可以给我提，我会尽量满足大家。</p>]]></content>
       
       
       <categories>
@@ -492,6 +492,33 @@
     
     
     <entry>
+      <title>一个让你的 YouTube 丝滑般柔顺的插件</title>
+      <link href="/blog/2021/02/20/youtube-extesion/"/>
+      <url>/blog/2021/02/20/youtube-extesion/</url>
+      
+        <content type="html"><![CDATA[<p>Youtube 和 B 站是很多人浏览视频的两个地方。</p><p>一开始我还挺喜欢 Youtube 的，不仅是因为可以看到一些其他人看不到的东西，也因为体验比较棒。而现在，我已经彻底失望了。每次看一个十分钟的视频被跳出来四次广告的痛苦你了解么？如果你在看一个需要集中精力思考的视频，那么这种打断真的是非常让人恼怒。如果不是实在无法忍受这种行为，我也不会使用一些广告屏蔽的插件，毕竟看广告其实也是对 up 主的另外一种支持。</p><p>另外 YouTube 竟然没有小窗播放。比如我下滑到评论区，视频并不会小窗悬浮播放，差评！</p><a id="more"></a><p>废话不多说了。今天给大家推荐的这个插件名字叫 Enhancer for YouTube。安装地址：<a href="https://chrome.google.com/webstore/detail/enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle</a></p><p>这个插件有 400,000+用户，超过 9000 人做出了评价，评分是五分（满分五分）。</p><p>它提供了很多功能以及众多的配置项，从外观的配置到功能的配置应有尽有。</p><p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gmlxuh92q5j30j70qwwgg.jpg" alt="插件提供的众多配置项"></p><p>还可以配置主题，我把主题换成了暗黑模式。</p><p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gmlxzh0ebij31f50g6typ.jpg" alt="暗黑模式"></p><p>主要功能有：</p><ul><li><p>使用鼠标滚轮控制音量和播放速度</p></li><li><p>视频去广告（自动或手动）</p></li><li><p>频道白名单（不自动去广告）</p></li><li><p>屏蔽注解（自动或手动）</p></li><li><p>自动切换视频清晰度（可以设定为 4K、HD 或任意清晰度）</p></li><li><p>循环播放视频（完整循环或部分循环）</p></li><li><p>使用自定义主题样式</p></li><li><p>自动拉伸播放器</p></li><li><p>查看评论时将播放器固定在右下角</p></li></ul><p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gmly0cmbuqj30yt0fsn41.jpg" alt></p><ul><li><p>执行自定义脚本</p></li><li><p>。。。</p></li></ul><p>更多功能等待大家的探索。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 插件 </category>
+          
+          <category> 浏览器插件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 插件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>一招吃遍力扣四道题，妈妈再也不用担心我被套路啦～</title>
       <link href="/blog/2021/02/20/%E5%88%A0%E9%99%A4%E9%97%AE%E9%A2%98/"/>
       <url>/blog/2021/02/20/%E5%88%A0%E9%99%A4%E9%97%AE%E9%A2%98/</url>
@@ -519,33 +546,6 @@
             <tag> 中等 </tag>
             
             <tag> 删除 k 个字符 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>一个让你的 YouTube 丝滑般柔顺的插件</title>
-      <link href="/blog/2021/02/20/youtube-extesion/"/>
-      <url>/blog/2021/02/20/youtube-extesion/</url>
-      
-        <content type="html"><![CDATA[<p>Youtube 和 B 站是很多人浏览视频的两个地方。</p><p>一开始我还挺喜欢 Youtube 的，不仅是因为可以看到一些其他人看不到的东西，也因为体验比较棒。而现在，我已经彻底失望了。每次看一个十分钟的视频被跳出来四次广告的痛苦你了解么？如果你在看一个需要集中精力思考的视频，那么这种打断真的是非常让人恼怒。如果不是实在无法忍受这种行为，我也不会使用一些广告屏蔽的插件，毕竟看广告其实也是对 up 主的另外一种支持。</p><p>另外 YouTube 竟然没有小窗播放。比如我下滑到评论区，视频并不会小窗悬浮播放，差评！</p><a id="more"></a><p>废话不多说了。今天给大家推荐的这个插件名字叫 Enhancer for YouTube。安装地址：<a href="https://chrome.google.com/webstore/detail/enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle</a></p><p>这个插件有 400,000+用户，超过 9000 人做出了评价，评分是五分（满分五分）。</p><p>它提供了很多功能以及众多的配置项，从外观的配置到功能的配置应有尽有。</p><p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gmlxuh92q5j30j70qwwgg.jpg" alt="插件提供的众多配置项"></p><p>还可以配置主题，我把主题换成了暗黑模式。</p><p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gmlxzh0ebij31f50g6typ.jpg" alt="暗黑模式"></p><p>主要功能有：</p><ul><li><p>使用鼠标滚轮控制音量和播放速度</p></li><li><p>视频去广告（自动或手动）</p></li><li><p>频道白名单（不自动去广告）</p></li><li><p>屏蔽注解（自动或手动）</p></li><li><p>自动切换视频清晰度（可以设定为 4K、HD 或任意清晰度）</p></li><li><p>循环播放视频（完整循环或部分循环）</p></li><li><p>使用自定义主题样式</p></li><li><p>自动拉伸播放器</p></li><li><p>查看评论时将播放器固定在右下角</p></li></ul><p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gmly0cmbuqj30yt0fsn41.jpg" alt></p><ul><li><p>执行自定义脚本</p></li><li><p>。。。</p></li></ul><p>更多功能等待大家的探索。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 插件 </category>
-          
-          <category> 浏览器插件 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 插件 </tag>
             
         </tags>
       
@@ -1790,9 +1790,9 @@
           
           <category> 数组 </category>
           
-          <category> 双指针 </category>
-          
           <category> Medium </category>
+          
+          <category> 双指针 </category>
           
       </categories>
       
