@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title>努力上岸的元气少女</title>
+      <link href="/blog/2021/05/10/91-student-1/"/>
+      <url>/blog/2021/05/10/91-student-1/</url>
+      
+        <content type="html"><![CDATA[<ul><li>时间：2021-05-07</li><li>被采访人：易潇</li></ul><h2 id="活动介绍"><a href="#活动介绍" class="headerlink" title="活动介绍"></a>活动介绍</h2><p>力扣加加，一个努力做西湖区最好的算法题解的团队。<strong>91 天学算法</strong>是力扣加加举办的一个算法训练活动，通过良好的学习计划 和 91 天的集中学习，帮助大家摆脱困境，征服算法。</p><p>现在 《91 天学算法》已经举办了四期了，<a href="https://mp.weixin.qq.com/s?__biz=MzI4MzUxNjI3OA==&amp;mid=2247488668&amp;idx=1&amp;sn=001d53b788fb21280f9e45cadb7b4fae&amp;chksm=eb88d885dcff5193f17725eb4b6b56cbbe406d8426bdc0dd5512253e2a0ef525358f94d4ab5a&amp;token=2115509684&amp;lang=zh_CN#rd" title="91 天学算法第四期" target="_blank" rel="noopener">第四期</a>的活动时间是 <strong>2021-05-10 到 2021-08-08</strong>。</p><p>每一期都有很多优秀学员，我想将这些人的学习经验分享给大家，帮助大家少走弯路。由于我开辟了这个 <strong>91 天学算法优秀学员专访</strong> 活动。</p><p>这次，我们邀请到了远在美国的转码少女 - 易潇，一个元气满满的活力女孩。来看看她是如何学习的吧！</p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gq9qojha3ij30u00u077t.jpg" width="400"></p><p>​<a id="more"></a></p><h2 id="采访"><a href="#采访" class="headerlink" title="采访"></a>采访</h2><p>Q: 你是什么时候开始接触数据结构与算法（以下简称算法）的？</p><p>A: 从很久之前就听说过数据结果与算法，但正式接触是打算转码的时候开始的。</p><p>Q: 你是什么时候接触 91 天学算法（以下简称 91 天）的？从什么途径得知的？</p><p>A: 我是从第二期就开始接触 91 的，大概是关注公众号的时候关注到的。</p><p>Q: 91 天有给你带来了什么样的变化么？</p><p>A: 91 让我从觉得用哈希表 O(N)写 two sum 很惊奇到了现在可以迷迷糊糊的状态下手写完堆（狗头</p><p>最近因为刷了 91，在做几个公司笔试初试(online coding challenge)的时候<strong>感觉很简单</strong>，也对自己的即将到来的面试更加有自信了~</p><p>Q: 学习算法过程中有“顿悟”的时刻么？</p><p>A: 经常顿悟 — <strong>顿悟源自于重复和每次重复带来的更深层次的理解。</strong></p><p>Q: 你比较擅长的算法是什么？可以给大家简单分享一下么？</p><p>A: 比较擅长的算法是看小漾怎么写的，然后默默的取长补短（就是都抄一遍的意思）</p><p>Q: 有没有什么想和刚入坑算法的同学分享的？</p><p>A: 我觉得刚入坑的同学们一定要学会处理自己的 “迷茫” 以及这种情绪带来的 “我不想做，这太难了”。我觉得在学习的过程中，只要能在自己感到迷茫的时候坚持再坚持，总会有那么一个 “顿悟”的时刻，然后就会觉得<strong>自己的坚持是值得的</strong>。<br>我在正式学习编程之前的两三年里，也经常想过转码，但每次都会因为 “选什么语言” 或者 “初始化环境设定” 太难了等这种原因放弃。<strong>现在其实回头看，这些问题其实都很简单。</strong></p><p>Q: 相对而言，你觉得 91 天哪里做的还不够好？应该如何改进？</p><p>A:我希望 91 有更多的个人答题跟踪和一起打卡的人的榜单，这样大家可以相互鼓（shi）励（ya）</p><p>Q: 愿意把 91 天分享给你的朋友么？</p><p>A:当然愿意啦！我觉得新手入门的时候最难的就是选择 “学什么” ， 而 91 恰好解决了这个问题。加入了 91 之后，只要根据 91 已经制定好的计划每天努力就可以了。而且问题是循序渐进的，对新手非常友好~ 再加上有这么多同学和超级棒的讲师们一起，我觉得 91 是最棒的刷题计划啦！</p><h2 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h2><p>这几天西法倒腾了一个小功能 - <code>Code Highlight lines</code>，就是给代码中的某几行代码加高亮。</p><p>之所以搞这个小功能，是因为我最近在给大家贴代码的时候发现大多数代码都没啥意思，核心代码其实就几行。于是想<strong>要是能给某几行代码增加高亮就好了</strong>。可以找了半天没发现什么特别好的解决方案，于是西法就自己实现了一下下（包括解析功能和 UI 美化）。</p><p>使用方法：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">```py &#123;5-6,11-12&#125;</span><br><span class="line">class Solution:</span><br><span class="line">    def addToArrayForm(self, A: List[int], K: int) -&gt; List[int]:</span><br><span class="line">        carry = 0</span><br><span class="line">        for i in range(len(A) - 1, -1, -1):</span><br><span class="line">            A[i], carry = (carry + A[i] + K % 10) % 10, (carry + A[i] + K % 10) // 10</span><br><span class="line">            K //= 10</span><br><span class="line">        B = []</span><br><span class="line">        # 如果全部加完还有进位，需要特殊处理。 比如 A = [2], K = 998</span><br><span class="line">        carry = carry + K</span><br><span class="line">        while carry:</span><br><span class="line">            B = [(carry) % 10] + B</span><br><span class="line">            carry //= 10</span><br><span class="line">        return B + A</span><br><span class="line">```</span><br></pre></td></tr></table></figure><p>只需要在语言后面增加你想高亮的行即可。如上代码就是想要高亮<strong>第 5-6 行，以及第 11-12 行</strong>。</p><p>使用效果：</p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqdg24rcwpj30tg0ax3za.jpg" alt></p><p>当然也可以直接高亮具体某一行，比如 <strong>py {3}</strong> 就是高亮第三行。</p><p>大家有什么想要的 feature， 也可以给我提，我会尽量满足大家。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 力扣加加 </category>
+          
+          <category> 91天学算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 算法提高班 </tag>
+            
+            <tag> 91天学算法 </tag>
+            
+            <tag> 力扣加加 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>回炉重铸， 91 天见证不一样的自己（第四期）</title>
       <link href="/blog/2021/05/02/91algo-4/"/>
       <url>/blog/2021/05/02/91algo-4/</url>
@@ -2100,41 +2135,6 @@
     
     
     <entry>
-      <title>【LeetCode日记】 1162. 地图分析</title>
-      <link href="/blog/2020/06/13/leetcode-island/"/>
-      <url>/blog/2020/06/13/leetcode-island/</url>
-      
-        <content type="html"><![CDATA[<p>LeetCode 上有很多小岛题，虽然官方没有这个标签， 但是在我这里都差不多。不管是思路还是套路都比较类似，大家可以结合起来练习。</p><ul><li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/200.number-of-islands.md" target="_blank" rel="noopener">200.number-of-islands</a></li><li><a href="https://leetcode-cn.com/problems/max-area-of-island/solution/695-dao-yu-de-zui-da-mian-ji-dfspython3-by-fe-luci/" target="_blank" rel="noopener">695.max-area-of-island</a></li></ul><p>​<a id="more"></a></p><p>原题地址：<a href="https://leetcode-cn.com/problems/as-far-from-land-as-possible/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/as-far-from-land-as-possible/</a></p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这里我们继续使用上面两道题的套路，即不用 visited，而是原地修改。由于这道题求解的是最远的距离，而距离我们可以使用 BFS 来做。算法：</p><ul><li>对于每一个海洋，我们都向四周扩展，寻找最近的陆地，每次扩展 steps 加 1。</li><li>如果找到了陆地，我们返回 steps。</li><li>我们的目标就是所有 steps 中的最大值。</li></ul><p>实际上面算法有很多重复计算，如图中间绿色的区域，向外扩展的时候，如果其周边四个海洋的距离已经计算出来了，那么没必要扩展到陆地。实际上只需要扩展到周边的四个海洋格子就好了，其距离陆地的最近距离就是 1 + 周边四个格子中到达陆地的最小距离。</p><p><img src="https://pic.leetcode-cn.com/23e21821e14238829dd7021a620895f40a8e42127cfe372e4791d025bb655afc.jpg" alt></p><p>我们考虑优化。</p><ul><li>将所有陆地加入队列，而不是海洋。</li><li>陆地不断扩展到海洋，每扩展一次就 steps 加 1，直到无法扩展位置。</li><li>最终返回 steps 即可。</li></ul><p>图解：</p><p><img src="https://pic.leetcode-cn.com/8001c1390fb0d1a402eea5010594a303651b4a09ac6ddcd12d72b5b8a9d37295.jpg" alt></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxDistance</span><span class="params">(self, grid: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">        n = len(grid)</span><br><span class="line">        steps = <span class="number">-1</span></span><br><span class="line">        queue = [(i, j) <span class="keyword">for</span> i <span class="keyword">in</span> range(n) <span class="keyword">for</span> j <span class="keyword">in</span> range(n) <span class="keyword">if</span> grid[i][j] == <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> len(queue) == <span class="number">0</span> <span class="keyword">or</span> len(queue) == n ** <span class="number">2</span>: <span class="keyword">return</span> steps</span><br><span class="line">        <span class="keyword">while</span> len(queue) &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(queue)):</span><br><span class="line">                x, y = queue.pop(<span class="number">0</span>)</span><br><span class="line">                <span class="keyword">for</span> xi, yj <span class="keyword">in</span> [(x + <span class="number">1</span>, y), (x - <span class="number">1</span>, y), (x, y + <span class="number">1</span>), (x, y - <span class="number">1</span>)]:</span><br><span class="line">                    <span class="keyword">if</span> xi &gt;= <span class="number">0</span> <span class="keyword">and</span> xi &lt; n <span class="keyword">and</span> yj &gt;= <span class="number">0</span> <span class="keyword">and</span> yj &lt; n <span class="keyword">and</span> grid[xi][yj] == <span class="number">0</span>:</span><br><span class="line">                        queue.append((xi, yj))</span><br><span class="line">                        grid[xi][yj] = <span class="number">-1</span></span><br><span class="line">            steps += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> steps</span><br></pre></td></tr></table></figure><blockquote><p>由于没有 early return，steps 其实会多算一次。 我们可以返回值减去 1，也可以 steps 初始化为-1。这里我选择是 steps 初始化为-1</p></blockquote><p><strong>_复杂度分析_</strong></p><ul><li>时间复杂度：$O(N ^ 2)$</li><li>空间复杂度：$O(N ^ 2)$</li></ul><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>由于数组删除第一个元素（上面代码的 queue.pop(0)）是$O(N)$的时间复杂度，我们可以使用 deque 优化，代码如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">maxDistance</span><span class="params">(self, grid: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">     <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">     N = len(grid)</span><br><span class="line">     steps = <span class="number">-1</span></span><br><span class="line">     q = deque([(i, j) <span class="keyword">for</span> i <span class="keyword">in</span> range(N) <span class="keyword">for</span> j <span class="keyword">in</span> range(N) <span class="keyword">if</span> grid[i][j] == <span class="number">1</span>])</span><br><span class="line">     <span class="keyword">if</span> len(q) == <span class="number">0</span> <span class="keyword">or</span> len(q) == N ** <span class="number">2</span>:</span><br><span class="line">         <span class="keyword">return</span> steps</span><br><span class="line">     move = [(<span class="number">-1</span>, <span class="number">0</span>), (<span class="number">1</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">-1</span>), (<span class="number">0</span>, <span class="number">1</span>)]</span><br><span class="line">     <span class="keyword">while</span> len(q) &gt; <span class="number">0</span>:</span><br><span class="line">         <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(q)):</span><br><span class="line">             x, y = q.popleft()</span><br><span class="line">             <span class="keyword">for</span> dx, dy <span class="keyword">in</span> move:</span><br><span class="line">                 nx, ny = x + dx, y + dy</span><br><span class="line">                 <span class="keyword">if</span> <span class="number">0</span> &lt;= nx &lt; N <span class="keyword">and</span> <span class="number">0</span> &lt;= ny &lt; N <span class="keyword">and</span> grid[nx][ny] == <span class="number">0</span>:</span><br><span class="line">                     q.append((nx, ny))</span><br><span class="line">                     grid[nx][ny] = <span class="number">-1</span></span><br><span class="line">         steps += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">     <span class="keyword">return</span> steps</span><br></pre></td></tr></table></figure><p>更多题解可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经接近 30K star 啦。</p><p>大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的 LeetCode 题解</p><p><img src="https://pic.leetcode-cn.com/89ef69abbf02a2957838499a96ce3fbb26830aae52e3ab90392e328c2670cddc-file_1581478989502" alt></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 数据结构 </category>
-          
-          <category> 算法 </category>
-          
-          <category> hashtable </category>
-          
-          <category> BFS </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 数据结构 </tag>
-            
-            <tag> 算法 </tag>
-            
-            <tag> LeetCode日记 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>阿里面试题：如何寻找「两个数组」的中位数？</title>
       <link href="/blog/2020/06/13/leetcode-median/"/>
       <url>/blog/2020/06/13/leetcode-median/</url>
@@ -2162,6 +2162,41 @@
             <tag> 中位数 </tag>
             
             <tag> 二分法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【LeetCode日记】 1162. 地图分析</title>
+      <link href="/blog/2020/06/13/leetcode-island/"/>
+      <url>/blog/2020/06/13/leetcode-island/</url>
+      
+        <content type="html"><![CDATA[<p>LeetCode 上有很多小岛题，虽然官方没有这个标签， 但是在我这里都差不多。不管是思路还是套路都比较类似，大家可以结合起来练习。</p><ul><li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/200.number-of-islands.md" target="_blank" rel="noopener">200.number-of-islands</a></li><li><a href="https://leetcode-cn.com/problems/max-area-of-island/solution/695-dao-yu-de-zui-da-mian-ji-dfspython3-by-fe-luci/" target="_blank" rel="noopener">695.max-area-of-island</a></li></ul><p>​<a id="more"></a></p><p>原题地址：<a href="https://leetcode-cn.com/problems/as-far-from-land-as-possible/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/as-far-from-land-as-possible/</a></p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这里我们继续使用上面两道题的套路，即不用 visited，而是原地修改。由于这道题求解的是最远的距离，而距离我们可以使用 BFS 来做。算法：</p><ul><li>对于每一个海洋，我们都向四周扩展，寻找最近的陆地，每次扩展 steps 加 1。</li><li>如果找到了陆地，我们返回 steps。</li><li>我们的目标就是所有 steps 中的最大值。</li></ul><p>实际上面算法有很多重复计算，如图中间绿色的区域，向外扩展的时候，如果其周边四个海洋的距离已经计算出来了，那么没必要扩展到陆地。实际上只需要扩展到周边的四个海洋格子就好了，其距离陆地的最近距离就是 1 + 周边四个格子中到达陆地的最小距离。</p><p><img src="https://pic.leetcode-cn.com/23e21821e14238829dd7021a620895f40a8e42127cfe372e4791d025bb655afc.jpg" alt></p><p>我们考虑优化。</p><ul><li>将所有陆地加入队列，而不是海洋。</li><li>陆地不断扩展到海洋，每扩展一次就 steps 加 1，直到无法扩展位置。</li><li>最终返回 steps 即可。</li></ul><p>图解：</p><p><img src="https://pic.leetcode-cn.com/8001c1390fb0d1a402eea5010594a303651b4a09ac6ddcd12d72b5b8a9d37295.jpg" alt></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxDistance</span><span class="params">(self, grid: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">        n = len(grid)</span><br><span class="line">        steps = <span class="number">-1</span></span><br><span class="line">        queue = [(i, j) <span class="keyword">for</span> i <span class="keyword">in</span> range(n) <span class="keyword">for</span> j <span class="keyword">in</span> range(n) <span class="keyword">if</span> grid[i][j] == <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> len(queue) == <span class="number">0</span> <span class="keyword">or</span> len(queue) == n ** <span class="number">2</span>: <span class="keyword">return</span> steps</span><br><span class="line">        <span class="keyword">while</span> len(queue) &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(queue)):</span><br><span class="line">                x, y = queue.pop(<span class="number">0</span>)</span><br><span class="line">                <span class="keyword">for</span> xi, yj <span class="keyword">in</span> [(x + <span class="number">1</span>, y), (x - <span class="number">1</span>, y), (x, y + <span class="number">1</span>), (x, y - <span class="number">1</span>)]:</span><br><span class="line">                    <span class="keyword">if</span> xi &gt;= <span class="number">0</span> <span class="keyword">and</span> xi &lt; n <span class="keyword">and</span> yj &gt;= <span class="number">0</span> <span class="keyword">and</span> yj &lt; n <span class="keyword">and</span> grid[xi][yj] == <span class="number">0</span>:</span><br><span class="line">                        queue.append((xi, yj))</span><br><span class="line">                        grid[xi][yj] = <span class="number">-1</span></span><br><span class="line">            steps += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> steps</span><br></pre></td></tr></table></figure><blockquote><p>由于没有 early return，steps 其实会多算一次。 我们可以返回值减去 1，也可以 steps 初始化为-1。这里我选择是 steps 初始化为-1</p></blockquote><p><strong>_复杂度分析_</strong></p><ul><li>时间复杂度：$O(N ^ 2)$</li><li>空间复杂度：$O(N ^ 2)$</li></ul><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>由于数组删除第一个元素（上面代码的 queue.pop(0)）是$O(N)$的时间复杂度，我们可以使用 deque 优化，代码如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">maxDistance</span><span class="params">(self, grid: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">     <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">     N = len(grid)</span><br><span class="line">     steps = <span class="number">-1</span></span><br><span class="line">     q = deque([(i, j) <span class="keyword">for</span> i <span class="keyword">in</span> range(N) <span class="keyword">for</span> j <span class="keyword">in</span> range(N) <span class="keyword">if</span> grid[i][j] == <span class="number">1</span>])</span><br><span class="line">     <span class="keyword">if</span> len(q) == <span class="number">0</span> <span class="keyword">or</span> len(q) == N ** <span class="number">2</span>:</span><br><span class="line">         <span class="keyword">return</span> steps</span><br><span class="line">     move = [(<span class="number">-1</span>, <span class="number">0</span>), (<span class="number">1</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">-1</span>), (<span class="number">0</span>, <span class="number">1</span>)]</span><br><span class="line">     <span class="keyword">while</span> len(q) &gt; <span class="number">0</span>:</span><br><span class="line">         <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(q)):</span><br><span class="line">             x, y = q.popleft()</span><br><span class="line">             <span class="keyword">for</span> dx, dy <span class="keyword">in</span> move:</span><br><span class="line">                 nx, ny = x + dx, y + dy</span><br><span class="line">                 <span class="keyword">if</span> <span class="number">0</span> &lt;= nx &lt; N <span class="keyword">and</span> <span class="number">0</span> &lt;= ny &lt; N <span class="keyword">and</span> grid[nx][ny] == <span class="number">0</span>:</span><br><span class="line">                     q.append((nx, ny))</span><br><span class="line">                     grid[nx][ny] = <span class="number">-1</span></span><br><span class="line">         steps += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">     <span class="keyword">return</span> steps</span><br></pre></td></tr></table></figure><p>更多题解可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经接近 30K star 啦。</p><p>大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的 LeetCode 题解</p><p><img src="https://pic.leetcode-cn.com/89ef69abbf02a2957838499a96ce3fbb26830aae52e3ab90392e328c2670cddc-file_1581478989502" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构 </category>
+          
+          <category> 算法 </category>
+          
+          <category> hashtable </category>
+          
+          <category> BFS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> LeetCode日记 </tag>
             
         </tags>
       
