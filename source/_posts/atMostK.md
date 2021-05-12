@@ -1,7 +1,7 @@
 ---
 title: 【西法带你学算法】一次搞定前缀和
 tags: [经验分享, LeetCode, 困难, 中等, 子数组, 滑动窗口, k 问题, 前缀和]
-date: 2020-09-30
+date: 2020-09-27
 categories:
   - [LeetCode]
   - [算法]
