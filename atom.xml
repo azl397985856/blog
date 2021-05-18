@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-05-17T06:03:37.181Z</updated>
+  <updated>2021-05-18T03:18:04.076Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,24 +17,53 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://lucifer.ren/blog/2021/05/13/github-reader/"/>
-    <id>https://lucifer.ren/blog/2021/05/13/github-reader/</id>
-    <published>2021-05-13T10:39:26.250Z</published>
-    <updated>2021-05-17T06:03:37.181Z</updated>
+    <title>读者：西法，记忆化递归究竟怎么改成动态规划啊？</title>
+    <link href="https://lucifer.ren/blog/2021/05/18/dp-bottom-up/"/>
+    <id>https://lucifer.ren/blog/2021/05/18/dp-bottom-up/</id>
+    <published>2021-05-17T16:00:00.000Z</published>
+    <updated>2021-05-18T03:18:04.076Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;p&gt;我在&lt;a href=&quot;https://leetcode-solution.cn/solutionDetail?url=https%3A%2F%2Fapi.github.com%2Frepos%2Fazl397985856%2Fleetcode%2Fcontents%2Fthinkings%2Fdynamic-programming.md&amp;amp;type=1&quot; title=&quot;动态规划专题&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;动态规划专题&lt;/a&gt;反复强调了&lt;strong&gt;先学习递归，再学习记忆化，最后再学动态规划&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;其中原因已经讲得很透了，相信大家已经明白了。如果不明白，强烈建议先看看那篇文章。&lt;/p&gt;
+&lt;p&gt;尽管很多看了我文章的小伙伴知道了先去学记忆化递归，但是还是有一些粉丝问我：&lt;strong&gt;“记忆化递归转化为动态规划老是出错，不得要领怎么办？有没有什么要领呀？”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;今天我就来回答一下粉丝的这个问题。&lt;/p&gt;
+&lt;p&gt;实际上我的动态规划那篇文章已经讲了将记忆化递归转化为动态规划的大概的思路，只是可能不是特别细，今天我们就尝试&lt;strong&gt;细化一波&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;我们仍然先以经典的爬楼梯为例，给大家讲一点基础知识。接下来，我会带大家解决一个更加复杂的题目。&lt;/p&gt;
     
     </summary>
     
+      <category term="动态规划" scheme="https://lucifer.ren/blog/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为了提高 Github 的阅读体验，我做了一个 Github 阅读器</title>
+    <link href="https://lucifer.ren/blog/2021/05/16/github-reader/"/>
+    <id>https://lucifer.ren/blog/2021/05/16/github-reader/</id>
+    <published>2021-05-15T16:00:00.000Z</published>
+    <updated>2021-05-18T03:18:19.114Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;这是个什么东西？&quot;&gt;&lt;a href=&quot;#这是个什么东西？&quot; class=&quot;headerlink&quot; title=&quot;这是个什么东西？&quot;&gt;&lt;/a&gt;这是个什么东西？&lt;/h2&gt;&lt;p&gt;虽然自从 Github 嫁给微软之后，做了很多的工作。不管是功能上，还是视觉 UI 上。因此在 Github 上看文档也比以前舒服多了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008i3skNly1gqgzuxdo2cj30w70n0don.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;可我仍然不是很喜欢这样的界面，我想让界面更加好看一点。&lt;/p&gt;
+&lt;p&gt;于是我就做了这么一个工具。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;只需要输入 Github 地址，点击阅读就 OK 了&lt;/strong&gt;。是不是很简单？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Github" scheme="https://lucifer.ren/blog/categories/Github/"/>
+    
+    
+      <category term="Github" scheme="https://lucifer.ren/blog/tags/Github/"/>
     
   </entry>
   
@@ -571,42 +600,6 @@
       <category term="中等" scheme="https://lucifer.ren/blog/tags/%E4%B8%AD%E7%AD%89/"/>
     
       <category term="删除 k 个字符" scheme="https://lucifer.ren/blog/tags/%E5%88%A0%E9%99%A4-k-%E4%B8%AA%E5%AD%97%E7%AC%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何将 github 上的代码一键部署到服务器？</title>
-    <link href="https://lucifer.ren/blog/2021/02/14/deploy-button/"/>
-    <id>https://lucifer.ren/blog/2021/02/14/deploy-button/</id>
-    <published>2021-02-13T16:00:00.000Z</published>
-    <updated>2021-03-09T10:48:39.778Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;在 Github 上看到一些不错的仓库，想要贡献代码怎么办？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在 Github 上看到一些有用的网站，想部署到自己的服务器怎么办？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;。。。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;我想很多人都碰到过这个问题。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;如果要贡献代码，之前我的做法通常是将代码克隆到本地，然后在本地的编辑器中修改并提交 pr。&lt;/li&gt;
-&lt;li&gt;如果想部署到自己的服务器，之前我的做法通常是克隆到本地，然后本地修改一下部署的配置，最后部署到自己的服务器或者第三方的云服务器（比如 Github Pages）。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;而现在随着云技术的普及，我们&lt;strong&gt;没有必要将代码克隆到本地进行操作，而是直接在云端编辑器中完成修改，开发，并直接部署到云服务器&lt;/strong&gt;。今天就给大家推荐一个工具，一键将代码部署到云服务器。&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="CD" scheme="https://lucifer.ren/blog/categories/CD/"/>
-    
-    
-      <category term="CD" scheme="https://lucifer.ren/blog/tags/CD/"/>
-    
-      <category term="GitHub" scheme="https://lucifer.ren/blog/tags/GitHub/"/>
     
   </entry>
   
