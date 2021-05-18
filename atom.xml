@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-05-10T10:46:06.704Z</updated>
+  <updated>2021-05-17T06:03:37.181Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://lucifer.ren/blog/2021/05/13/github-reader/"/>
+    <id>https://lucifer.ren/blog/2021/05/13/github-reader/</id>
+    <published>2021-05-13T10:39:26.250Z</published>
+    <updated>2021-05-17T06:03:37.181Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>努力上岸的元气少女</title>
@@ -130,7 +152,7 @@
     <link href="https://lucifer.ren/blog/2021/04/20/dp/"/>
     <id>https://lucifer.ren/blog/2021/04/20/dp/</id>
     <published>2021-04-19T16:00:00.000Z</published>
-    <updated>2021-04-21T01:56:08.597Z</updated>
+    <updated>2021-05-14T08:13:15.514Z</updated>
     
     <summary type="html">
     
@@ -492,6 +514,30 @@
   </entry>
   
   <entry>
+    <title>一个让你的 YouTube 丝滑般柔顺的插件</title>
+    <link href="https://lucifer.ren/blog/2021/02/20/youtube-extesion/"/>
+    <id>https://lucifer.ren/blog/2021/02/20/youtube-extesion/</id>
+    <published>2021-02-19T16:00:00.000Z</published>
+    <updated>2021-03-09T10:48:39.813Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Youtube 和 B 站是很多人浏览视频的两个地方。&lt;/p&gt;
+&lt;p&gt;一开始我还挺喜欢 Youtube 的，不仅是因为可以看到一些其他人看不到的东西，也因为体验比较棒。而现在，我已经彻底失望了。每次看一个十分钟的视频被跳出来四次广告的痛苦你了解么？如果你在看一个需要集中精力思考的视频，那么这种打断真的是非常让人恼怒。如果不是实在无法忍受这种行为，我也不会使用一些广告屏蔽的插件，毕竟看广告其实也是对 up 主的另外一种支持。&lt;/p&gt;
+&lt;p&gt;另外 YouTube 竟然没有小窗播放。比如我下滑到评论区，视频并不会小窗悬浮播放，差评！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/"/>
+    
+      <category term="浏览器插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/"/>
+    
+    
+      <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>一招吃遍力扣四道题，妈妈再也不用担心我被套路啦～</title>
     <link href="https://lucifer.ren/blog/2021/02/20/%E5%88%A0%E9%99%A4%E9%97%AE%E9%A2%98/"/>
     <id>https://lucifer.ren/blog/2021/02/20/删除问题/</id>
@@ -529,30 +575,6 @@
   </entry>
   
   <entry>
-    <title>一个让你的 YouTube 丝滑般柔顺的插件</title>
-    <link href="https://lucifer.ren/blog/2021/02/20/youtube-extesion/"/>
-    <id>https://lucifer.ren/blog/2021/02/20/youtube-extesion/</id>
-    <published>2021-02-19T16:00:00.000Z</published>
-    <updated>2021-03-09T10:48:39.813Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Youtube 和 B 站是很多人浏览视频的两个地方。&lt;/p&gt;
-&lt;p&gt;一开始我还挺喜欢 Youtube 的，不仅是因为可以看到一些其他人看不到的东西，也因为体验比较棒。而现在，我已经彻底失望了。每次看一个十分钟的视频被跳出来四次广告的痛苦你了解么？如果你在看一个需要集中精力思考的视频，那么这种打断真的是非常让人恼怒。如果不是实在无法忍受这种行为，我也不会使用一些广告屏蔽的插件，毕竟看广告其实也是对 up 主的另外一种支持。&lt;/p&gt;
-&lt;p&gt;另外 YouTube 竟然没有小窗播放。比如我下滑到评论区，视频并不会小窗悬浮播放，差评！&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/"/>
-    
-      <category term="浏览器插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/"/>
-    
-    
-      <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
     <title>如何将 github 上的代码一键部署到服务器？</title>
     <link href="https://lucifer.ren/blog/2021/02/14/deploy-button/"/>
     <id>https://lucifer.ren/blog/2021/02/14/deploy-button/</id>
@@ -585,38 +607,6 @@
       <category term="CD" scheme="https://lucifer.ren/blog/tags/CD/"/>
     
       <category term="GitHub" scheme="https://lucifer.ren/blog/tags/GitHub/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>回炉重铸， 91 天见证不一样的自己（第三期）</title>
-    <link href="https://lucifer.ren/blog/2021/01/19/91-algo-3/"/>
-    <id>https://lucifer.ren/blog/2021/01/19/91-algo-3/</id>
-    <published>2021-01-18T16:00:00.000Z</published>
-    <updated>2021-05-03T03:02:12.341Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
     
   </entry>
   

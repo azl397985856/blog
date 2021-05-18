@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>【LeetCode日记】 1162. 地图分析 | lucifer的网络博客</title>
+  <title>lucifer的网络博客</title>
   
   <meta name="keywords" content="前端 leetocde 数据结构 算法 lucifer 大前端 性能优化 前端架构 前端工程化">
   
@@ -288,8 +288,8 @@
         
   
     <h1 class="title">
-      <a href="/blog/2020/06/13/leetcode-island/">
-        【LeetCode日记】 1162. 地图分析
+      <a href="/blog/2021/05/13/github-reader/">
+        2021-05-13
       </a>
     </h1>
   
@@ -320,7 +320,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-06-13</p>
+    <p>2021-05-13</p>
   </a>
 </div>
 
@@ -328,14 +328,6 @@
         
           
             
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/categories/算法/BFS/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>数据结构&nbsp;/&nbsp;算法&nbsp;/&nbsp;hashtable&nbsp;/&nbsp;BFS</p>
-    </a>
-  </div>
-
 
           
         
@@ -359,7 +351,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">741字</span>
+          <span class="post-count">503字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -367,7 +359,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">3分</span>
+          <span class="post-count">1分</span>
         </span>
       </span>
     </div>
@@ -385,43 +377,44 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>LeetCode 上有很多小岛题，虽然官方没有这个标签， 但是在我这里都差不多。不管是思路还是套路都比较类似，大家可以结合起来练习。</p>
+        <h1 id="为了提高-Github-的阅读体验，我做了一个-Github-阅读器"><a href="#为了提高-Github-的阅读体验，我做了一个-Github-阅读器" class="headerlink" title="为了提高 Github 的阅读体验，我做了一个 Github 阅读器"></a>为了提高 Github 的阅读体验，我做了一个 Github 阅读器</h1><h2 id="这是个什么东西？"><a href="#这是个什么东西？" class="headerlink" title="这是个什么东西？"></a>这是个什么东西？</h2><p>虽然自从 Github 嫁给微软之后，做了很多的工作。不管是功能上，还是视觉 UI 上。因此在 Github 上看文档也比以前舒服多了。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqgzuxdo2cj30w70n0don.jpg" alt></p>
+<p>可我仍然不是很喜欢这样的界面，我想让界面更加好看一点。</p>
+<p>于是我就做了这么一个工具。</p>
+<p><strong>只需要输入 Github 地址，点击阅读就 OK 了</strong>。是不是很简单？</p>
+<p>上面的 mardown 页面转换后的效果：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqgztyj37ij30xj0m2tdo.jpg" alt></p>
+<h2 id="如何体验？"><a href="#如何体验？" class="headerlink" title="如何体验？"></a>如何体验？</h2><p>体验地址：<a href="https://leetcode-solution.cn/github" target="_blank" rel="noopener">https://leetcode-solution.cn/github</a></p>
+<p>界面非常简单。简单来说就是：输入一个 github 的 md 地址，点击阅读就行了。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqldwjvtglj30tl0esmys.jpg" alt="网页截图"></p>
+<p>另外你如果有一个 md 源码，想在线转化也是可以的。比如我用 md 写了下面一段话：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">## 思路</span><br><span class="line"></span><br><span class="line">这个是我的思路。</span><br><span class="line"></span><br><span class="line">上一个图片吧。</span><br><span class="line"></span><br><span class="line">![蓝色表示叶子节点](https://tva1.sinaimg.cn/large/008i3skNly1gqld1353jvj30hm0g3mxr.jpg)</span><br><span class="line"></span><br><span class="line">## 代码</span><br><span class="line"></span><br><span class="line">```py</span><br><span class="line">def f():</span><br><span class="line">  pass</span><br><span class="line">```</span><br><span class="line"></span><br><span class="line">**复杂度分析**</span><br><span class="line"></span><br><span class="line">令 N 为数组长度。</span><br><span class="line"></span><br><span class="line">- 时间复杂度：$O(N+max(0, K-N)^2)$</span><br><span class="line">- 空间复杂度：$O(max(1, K - N))$</span><br></pre></td></tr></table></figure>
+<p>你可以将其复制粘贴到我这里的多行文本框，点击前往阅读即可。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqldxt2de2j30yk0qu0v1.jpg" alt="效果图1"><br><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqldy504ebj30w50a574s.jpg" alt="效果图2"></p>
+<p>如果你愿意的话，也可以将渲染结果复制粘贴到其他地方，比如一些云笔记平台。</p>
+<p>值得注意的是，现在只支持 markdown，如果你输入的地址不是 markdown 是不可以的哦。</p>
+<p>之后计划支持更多网站，不仅仅是 Github。</p>
+<p>现在很多人都把周刊或者一些面试资料以 markdown 的形式放到 github 上， 如果你也经常看在 Github 上看 markdown 不妨尝试一下吧~</p>
+<h2 id="推荐几个资源"><a href="#推荐几个资源" class="headerlink" title="推荐几个资源"></a>推荐几个资源</h2><p>最后推荐几个 Github 上的阅读资源给大家：</p>
 <ul>
-<li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/200.number-of-islands.md" target="_blank" rel="noopener">200.number-of-islands</a></li>
-<li><a href="https://leetcode-cn.com/problems/max-area-of-island/solution/695-dao-yu-de-zui-da-mian-ji-dfspython3-by-fe-luci/" target="_blank" rel="noopener">695.max-area-of-island</a></li>
+<li><a href="https://github.com/ruanyf/weekly" target="_blank" rel="noopener">https://github.com/ruanyf/weekly</a></li>
 </ul>
-<p>​<a id="more"></a></p>
-<p>原题地址：<a href="https://leetcode-cn.com/problems/as-far-from-land-as-possible/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/as-far-from-land-as-possible/</a></p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这里我们继续使用上面两道题的套路，即不用 visited，而是原地修改。由于这道题求解的是最远的距离，而距离我们可以使用 BFS 来做。算法：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqh0168qm5j30wk0jg7aa.jpg" alt></p>
 <ul>
-<li>对于每一个海洋，我们都向四周扩展，寻找最近的陆地，每次扩展 steps 加 1。</li>
-<li>如果找到了陆地，我们返回 steps。</li>
-<li>我们的目标就是所有 steps 中的最大值。</li>
+<li><a href="https://github.com/sorrycc/weekly" target="_blank" rel="noopener">https://github.com/sorrycc/weekly</a></li>
 </ul>
-<p>实际上面算法有很多重复计算，如图中间绿色的区域，向外扩展的时候，如果其周边四个海洋的距离已经计算出来了，那么没必要扩展到陆地。实际上只需要扩展到周边的四个海洋格子就好了，其距离陆地的最近距离就是 1 + 周边四个格子中到达陆地的最小距离。</p>
-<p><img src="https://pic.leetcode-cn.com/23e21821e14238829dd7021a620895f40a8e42127cfe372e4791d025bb655afc.jpg" alt></p>
-<p>我们考虑优化。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqh01xbeztj30wk0mwjuy.jpg" alt></p>
 <ul>
-<li>将所有陆地加入队列，而不是海洋。</li>
-<li>陆地不断扩展到海洋，每扩展一次就 steps 加 1，直到无法扩展位置。</li>
-<li>最终返回 steps 即可。</li>
+<li><a href="https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/ch1.md" target="_blank" rel="noopener">https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/ch1.md</a></li>
 </ul>
-<p>图解：</p>
-<p><img src="https://pic.leetcode-cn.com/8001c1390fb0d1a402eea5010594a303651b4a09ac6ddcd12d72b5b8a9d37295.jpg" alt></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxDistance</span><span class="params">(self, grid: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">        n = len(grid)</span><br><span class="line">        steps = <span class="number">-1</span></span><br><span class="line">        queue = [(i, j) <span class="keyword">for</span> i <span class="keyword">in</span> range(n) <span class="keyword">for</span> j <span class="keyword">in</span> range(n) <span class="keyword">if</span> grid[i][j] == <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> len(queue) == <span class="number">0</span> <span class="keyword">or</span> len(queue) == n ** <span class="number">2</span>: <span class="keyword">return</span> steps</span><br><span class="line">        <span class="keyword">while</span> len(queue) &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(queue)):</span><br><span class="line">                x, y = queue.pop(<span class="number">0</span>)</span><br><span class="line">                <span class="keyword">for</span> xi, yj <span class="keyword">in</span> [(x + <span class="number">1</span>, y), (x - <span class="number">1</span>, y), (x, y + <span class="number">1</span>), (x, y - <span class="number">1</span>)]:</span><br><span class="line">                    <span class="keyword">if</span> xi &gt;= <span class="number">0</span> <span class="keyword">and</span> xi &lt; n <span class="keyword">and</span> yj &gt;= <span class="number">0</span> <span class="keyword">and</span> yj &lt; n <span class="keyword">and</span> grid[xi][yj] == <span class="number">0</span>:</span><br><span class="line">                        queue.append((xi, yj))</span><br><span class="line">                        grid[xi][yj] = <span class="number">-1</span></span><br><span class="line">            steps += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> steps</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqh004xifhj30uz0njdjs.jpg" alt></p>
+<ul>
+<li><a href="https://github.com/azl397985856/fe-interview/blob/master/docs/topics/network/tcp.md" target="_blank" rel="noopener">https://github.com/azl397985856/fe-interview/blob/master/docs/topics/network/tcp.md</a></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqh032fe16j30yg0mmads.jpg" alt></p>
 <blockquote>
-<p>由于没有 early return，steps 其实会多算一次。 我们可以返回值减去 1，也可以 steps 初始化为-1。这里我选择是 steps 初始化为-1</p>
+<p>有没有一个很突兀？</p>
 </blockquote>
-<p><strong>_复杂度分析_</strong></p>
-<ul>
-<li>时间复杂度：$O(N ^ 2)$</li>
-<li>空间复杂度：$O(N ^ 2)$</li>
-</ul>
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>由于数组删除第一个元素（上面代码的 queue.pop(0)）是$O(N)$的时间复杂度，我们可以使用 deque 优化，代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">maxDistance</span><span class="params">(self, grid: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">     <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">     N = len(grid)</span><br><span class="line">     steps = <span class="number">-1</span></span><br><span class="line">     q = deque([(i, j) <span class="keyword">for</span> i <span class="keyword">in</span> range(N) <span class="keyword">for</span> j <span class="keyword">in</span> range(N) <span class="keyword">if</span> grid[i][j] == <span class="number">1</span>])</span><br><span class="line">     <span class="keyword">if</span> len(q) == <span class="number">0</span> <span class="keyword">or</span> len(q) == N ** <span class="number">2</span>:</span><br><span class="line">         <span class="keyword">return</span> steps</span><br><span class="line">     move = [(<span class="number">-1</span>, <span class="number">0</span>), (<span class="number">1</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">-1</span>), (<span class="number">0</span>, <span class="number">1</span>)]</span><br><span class="line">     <span class="keyword">while</span> len(q) &gt; <span class="number">0</span>:</span><br><span class="line">         <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(q)):</span><br><span class="line">             x, y = q.popleft()</span><br><span class="line">             <span class="keyword">for</span> dx, dy <span class="keyword">in</span> move:</span><br><span class="line">                 nx, ny = x + dx, y + dy</span><br><span class="line">                 <span class="keyword">if</span> <span class="number">0</span> &lt;= nx &lt; N <span class="keyword">and</span> <span class="number">0</span> &lt;= ny &lt; N <span class="keyword">and</span> grid[nx][ny] == <span class="number">0</span>:</span><br><span class="line">                     q.append((nx, ny))</span><br><span class="line">                     grid[nx][ny] = <span class="number">-1</span></span><br><span class="line">         steps += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">     <span class="keyword">return</span> steps</span><br></pre></td></tr></table></figure>
-<p>更多题解可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经接近 30K star 啦。</p>
-<p>大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的 LeetCode 题解</p>
-<p><img src="https://pic.leetcode-cn.com/89ef69abbf02a2957838499a96ce3fbb26830aae52e3ab90392e328c2670cddc-file_1581478989502" alt></p>
 
       </div>
       
@@ -433,10 +426,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-17T14:03:37+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2021年5月17日</p>
   </a>
 </div>
 
@@ -444,9 +437,6 @@
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/数据结构/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>数据结构</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/算法/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>算法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/LeetCode日记/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>LeetCode日记</p></a></div>
-
 
         
       
@@ -456,7 +446,7 @@
   <div class="-mob-share-list share-body">
     
       
-        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aQW7DMAwFUd//0i7QVYHC8nwyLmpqtArSRtLbEKTI48Dr/F5Xn3+uq1/9/v/1bscTS4YMGa9lnMu1Pp58f3WtNYbfTYYMGfswyDGfCpTpzusdZMiQIYMkeWsAD8drkgwZMmR0GOt9SBrKz5UhQ8bODBIK0yLzuZJYhgwZuzH6jYHnPv9pf0OGDBn/ktEJl+s0sZPkxbeSIUPGaAZJy9Lns5SaBtkgw5UhQ8ZQBvkZbxJ0MORJ7jLgypAhYyiDXD3YNEwQSWV6cxMZMmQMZfACstYe6DRK486GDBkyhjJIuOykgJ1T4nE0GTJkbMOoDUakCV+tGF5/I0OGjNkM/sTWKUd5MUx+i+4gQ4aMEYxPFZCcx/FBUJYhQ8ZoBnnwqj3ZcwB/1Lv5qwwZMjZg8ON5g5NckQf9m7vJkCFjKKP/vMVblfxyaWtThgwZsxnkip8qUHmiWWxFyJAhYyjjiSZiv8TlbU4ZMmTswKgFXLJq3VRe7ga1uAwZMl7OSEtT3jbgwxa1oQ0ZMmTsyUgPK1bMpdGxm+ArQ4aM0Yz+SER6AIfxhzkZMmTMZpzheiK+8Sbl5T4yZMgYzUiDHT8mLURrjQEZMmTsw6iNO9RyT97CLI5cyJAhYzSDD0DwAMrDcac9IEOGDBlpEEyf+0kDNUgNZciQIQOUoDxwd5oKMmTI2JORjjh0hirSkIqCtQwZMkYzao2B2hU7QxUtgAwZMt7K+AKSd/UbIhO+MwAAAABJRU5ErkJggg=='>
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLUlEQVR42u3aQY7jMAwEwPz/09nrADM2uqlsAEulU5DYDssHQiT1esXr/WP9/v7qyqu7rp6QXL+0MDAwHst4366EkQR6D/v9X3lsGBgY5zCSVJjnvTZNX12fxIaBgYGRBJen0fuEnr8+DAwMjORxn0rTyQvCwMDAyIvYtkGWl6BfrcUxMDAeyJiVpt/5/F/mGxgYGI9ivMuVjC2jbdxno8LAwNia0Zaa7WGLWbE6jAcDA2NTRh5W+/ezgrMdeUZBY2BgPJxxvyFLfs0Pk608uWjzYWBgbMpom/srDf12kDlMtRgYGBsx2hvy1DkbfLbXYGBgnMPI2/F5a2zlGFmdfDEwMA5jtJvIlVZaW+Jexo+BgbE1Y6VltrKhnJWsRbsNAwNjO8YsdbZtsjb0pP33ym/DwMB4LGNlu9Ym1vZFFCUxBgbG1oz7i/JitR0V5Ecu6h0uBgbGdozZKHF2LCzZaOZ3/dE1xMDAOICRDybzQNvnzEaeGBgYezNmSbPd3g37f+0zMTAwDmDkw4Cc1/6a/+9lwsXAwDiA8f2iNEncUSQYGBiHMWajyva4Rj54qE+LYGBgbMR4lytP0DPYrBjGwMDYm5Gv9QNk9WAy+FzDMDAwHstok2zeSlvfAhZDBQwMjAMY68VtG9zsmZdIDAwMjFFbPx8e5M21qGuIgYGBMRpPrrTkkk0nBgbGCYz8cEM7QmhHC/kLwsDAOIexMmJcaZPl28ePDTUxMDCex/gHnERLqW8VBjAAAAAASUVORK5CYII='>
         
           <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png">
         
@@ -466,12 +456,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2020/06/13/leetcode-island/&title=【LeetCode日记】 1162. 地图分析 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=LeetCode 上有很多小岛题，虽然官方没有这个标签， 但是在我这里都差不多。不管是思路还是套路都比较类似，大家可以结合起来练习。
-
-200.number-of-islands
-695.max-area-of-island
-
-​"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2021/05/13/github-reader/&title= | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary="
           
           >
           
@@ -483,12 +468,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2020/06/13/leetcode-island/&title=【LeetCode日记】 1162. 地图分析 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=LeetCode 上有很多小岛题，虽然官方没有这个标签， 但是在我这里都差不多。不管是思路还是套路都比较类似，大家可以结合起来练习。
-
-200.number-of-islands
-695.max-area-of-island
-
-​"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2021/05/13/github-reader/&title= | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary="
           
           >
           
@@ -500,12 +480,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2020/06/13/leetcode-island/&title=【LeetCode日记】 1162. 地图分析 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=LeetCode 上有很多小岛题，虽然官方没有这个标签， 但是在我这里都差不多。不管是思路还是套路都比较类似，大家可以结合起来练习。
-
-200.number-of-islands
-695.max-area-of-island
-
-​"
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2021/05/13/github-reader/&title= | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary="
           
           >
           
@@ -529,40 +504,21 @@
       
           <div class="prev-next">
               
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                          <h4>
-                              <a href="/blog/2020/06/13/leetcode-book.intro/" rel="prev" title="或许是一本可以彻底改变你刷 LeetCode 效率的题解书">
-                                
-                                    或许是一本可以彻底改变你刷 LeetCode 效率的题解书
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a> <a class="tag" href="/blog/tags/我的书/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 我的书</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
               
                   <section class="next">
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/blog/2020/06/13/leetcode-pp/" rel="prev" title="力扣加加闪亮登场～">
+                              <a href="/blog/2021/05/10/91-student-1/" rel="prev" title="努力上岸的元气少女">
                                   
-                                      力扣加加闪亮登场～
+                                      努力上岸的元气少女
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/算法提高班/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法提高班</a> <a class="tag" href="/blog/tags/力扣加加/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 力扣加加</a>
+                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/算法提高班/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法提高班</a> <a class="tag" href="/blog/tags/91天学算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 91天学算法</a> <a class="tag" href="/blog/tags/力扣加加/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 力扣加加</a>
                               </h6>
                           
                       </span>
@@ -604,7 +560,7 @@
 
   <script>
     window.subData = {
-      title: '【LeetCode日记】 1162. 地图分析',
+      title: '',
       tools: true
     }
   </script>
@@ -713,7 +669,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优化"><span class="toc-text">优化</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#为了提高-Github-的阅读体验，我做了一个-Github-阅读器"><span class="toc-text">为了提高 Github 的阅读体验，我做了一个 Github 阅读器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#这是个什么东西？"><span class="toc-text">这是个什么东西？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何体验？"><span class="toc-text">如何体验？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#推荐几个资源"><span class="toc-text">推荐几个资源</span></a></li></ol></li></ol>
     </div>
   </section>
 
