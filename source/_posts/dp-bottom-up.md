@@ -1,4 +1,10 @@
-# 读者：西法，记忆化递归究竟怎么改成动态规划啊？
+---
+title: 读者：西法，记忆化递归究竟怎么改成动态规划啊？
+tags: [算法, 动态规划]
+date: 2021-05-18
+categories:
+  - [动态规划]
+---
 
 我在[动态规划专题](https://leetcode-solution.cn/solutionDetail?url=https%3A%2F%2Fapi.github.com%2Frepos%2Fazl397985856%2Fleetcode%2Fcontents%2Fthinkings%2Fdynamic-programming.md&type=1 "动态规划专题")反复强调了**先学习递归，再学习记忆化，最后再学动态规划**。
 
@@ -11,6 +17,8 @@
 实际上我的动态规划那篇文章已经讲了将记忆化递归转化为动态规划的大概的思路，只是可能不是特别细，今天我们就尝试**细化一波**。
 
 我们仍然先以经典的爬楼梯为例，给大家讲一点基础知识。接下来，我会带大家解决一个更加复杂的题目。
+
+<!-- more -->
 
 ## 爬楼梯
 

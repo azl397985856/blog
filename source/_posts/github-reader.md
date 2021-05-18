@@ -1,4 +1,10 @@
-# 为了提高 Github 的阅读体验，我做了一个 Github 阅读器
+---
+title: 为了提高 Github 的阅读体验，我做了一个 Github 阅读器
+tags: [Github]
+date: 2021-05-16
+categories:
+  - [Github]
+---
 
 ## 这是个什么东西？
 
@@ -11,6 +17,8 @@
 于是我就做了这么一个工具。
 
 **只需要输入 Github 地址，点击阅读就 OK 了**。是不是很简单？
+
+<!-- more -->
 
 上面的 mardown 页面转换后的效果：
 
