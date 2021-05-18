@@ -165,7 +165,7 @@ def climbStairs(n):
   if n == 1:return 1
   if n == 2: return 2
   if n in memo: return memo[n]
-  ans = func(n - 1) + func(n-2)
+  ans = climbStairs(n - 1) + climbStairs(n-2)
   memo[n] = ans
   return ans
 climbStairs(10)
