@@ -7,6 +7,11 @@ categories:
   - [算法]
 ---
 
+本文是前缀和专题第一篇。系列目录如下:
+
+- 一维前缀和（本文）
+- [二维前缀和](https://lucifer.ren/blog/2021/02/20/2d-pre/)
+
 我花了几天时间，从力扣中精选了五道相同思想的题目，来帮助大家解套，如果觉得文章对你有用，记得点赞分享，让我看到你的认可，有动力继续做下去。
 
 - [467. 环绕字符串中唯一的子字符串](https://leetcode-cn.com/problems/unique-substrings-in-wraparound-string/ "467. 环绕字符串中唯一的子字符串")(中等)
