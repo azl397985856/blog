@@ -67,10 +67,10 @@ else:
 因此我们首先需要知道如何计算一个子树的高度。这个可以通过递归的方式轻松地计算出来。计算子树高度的 Python 代码如下：
 
 ```py
-def dfs(node, depth):
+def dfs(node):
     if not node: return 0
-    l = dfs(node.left, depth + 1)
-    r = dfs(node.right, depth + 1)
+    l = dfs(node.left)
+    r = dfs(node.right)
     return max(l, r) + 1
 ```
 
@@ -83,13 +83,13 @@ Python3 Code:
 ```py
 class Solution:
     def isBalanced(self, root: TreeNode) -> bool:
-        def dfs(node, depth):
+        def dfs(node):
             if not node: return 0
-            l = dfs(node.left, depth + 1)
-            r = dfs(node.right, depth + 1)
+            l = dfs(node.left)
+            r = dfs(node.right)
             return max(l, r)  + 1
         if not root: return True
-        if abs(dfs(root.left, 0) -  dfs(root.right, 0)) > 1: return False
+        if abs(dfs(root.left) -  dfs(root.right)) > 1: return False
         return self.isBalanced(root.left) and self.isBalanced(root.right)
 ```
 
@@ -187,22 +187,70 @@ class Solution:
 
 和 108 思路一样。 不同的是数据结构的不同，因此我们需要关注的是链表和数组的操作差异。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ggypywx9eqj31ii0pgdj0.jpg)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghluhp582uj31ii0pgjsw.jpg)
 
 （数组的情况）
 
 我们再来看下链表：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ggyq5115dbj31q30u0afz.jpg)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghluhpjgtqj31q30u0mzv.jpg)
 （链表的情况）
 
 找到中点，只需要使用经典的快慢指针即可。同时为了防止环的出现， 我们需要斩断指向 mid 的 next 指针，因此需要记录一下中点前的一个节点，这只需要用一个变量 pre 记录即可。
 
 ### 代码
 
-代码支持： Python3
+### 代码
 
-Python3 Code:
+代码支持：JS,Java,Python,C++
+
+JS Code
+
+```js
+var sortedListToBST = function (head) {
+  if (!head) return null;
+  return dfs(head, null);
+};
+
+function dfs(head, tail) {
+  if (head == tail) return null;
+  let fast = head;
+  let slow = head;
+  while (fast != tail && fast.next != tail) {
+    fast = fast.next.next;
+    slow = slow.next;
+  }
+  let root = new TreeNode(slow.val);
+  root.left = dfs(head, slow);
+  root.right = dfs(slow.next, tail);
+  return root;
+}
+```
+
+Java Code:
+
+```java
+class Solution {
+  public TreeNode sortedListToBST(ListNode head) {
+      if(head == null) return null;
+      return dfs(head,null);
+  }
+  private TreeNode dfs(ListNode head, ListNode tail){
+      if(head == tail) return null;
+      ListNode fast = head, slow = head;
+      while(fast != tail && fast.next != tail){
+          fast = fast.next.next;
+          slow = slow.next;
+      }
+      TreeNode root = new TreeNode(slow.val);
+      root.left = dfs(head, slow);
+      root.right = dfs(slow.next, tail);
+      return root;
+  }
+}
+```
+
+Python Code:
 
 ```py
 class Solution:
@@ -225,10 +273,64 @@ class Solution:
         return node
 ```
 
+C++ Code:
+
+```cpp
+class Solution {
+public:
+    TreeNode* sortedListToBST(ListNode* head) {
+        if (head == nullptr) return nullptr;
+        return sortedListToBST(head, nullptr);
+    }
+    TreeNode* sortedListToBST(ListNode* head, ListNode* tail) {
+        if (head == tail) return nullptr;
+
+        ListNode* slow = head;
+        ListNode* fast = head;
+
+        while (fast != tail && fast->next != tail) {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+
+        TreeNode* root = new TreeNode(slow->val);
+        root->left = sortedListToBST(head, slow);
+        root->right = sortedListToBST(slow->next, tail);
+        return root;
+    }
+};
+```
+
 **复杂度分析**
 
-- 时间复杂度：由于每个节点最多被访问一次，因此总的时间复杂度为 $O(N)$，其中 $N$ 为链表长度。
-- 空间复杂度：由于使用了递归，这里的空间复杂度的瓶颈在栈空间，因此空间复杂度为 $O(h)$，其中 $h$ 为树的高度。同时由于是平衡二叉树，因此 $h$ 就是 $log N$。
+令 n 为链表长度。
+
+- 时间复杂度：递归树的深度为 $logn$，每一层的基本操作数为 $n$，因此总的时间复杂度为$O(nlogn)$
+- 空间复杂度：空间复杂度为$O(logn)$
+
+有的同学不太会分析递归的时间复杂度和空间复杂度，我们在这里给大家再次介绍一下。
+
+![](https://tva1.sinaimg.cn/large/008i3skNly1gqmduc0j3dj314d0jk7ju.jpg)
+
+首先我们尝试画出如下的递归树。由于递归树的深度为 $logn$ 因此空间复杂度就是 $logn$ \* 递归函数内部的空间复杂度，由于递归函数内空间复杂度为 $O(1)$，因此总的空间复杂度为 $O(logn)$。
+
+时间复杂度稍微困难一点点。之前西法在先导篇给大家说过：**如果有递归那就是：递归树的节点数 \* 递归函数内部的基础操作数**。而这句话的前提是所有递归函数内部的基本操作数是一样的，这样才能直接乘。而这里递归函数的基本操作数不一样。
+
+不过我们发现递归树内部每一层的基本操作数都是固定的， 为啥固定已经在图上给大家算出来了。因此总的空间复杂度其实可以通过**递归深度 \* 每一层基础操作数**计算得出，也就是 $nlogn$。 类似的技巧可以用于归并排序的复杂度分析中。
+
+另外大家也直接可以通过公式推导得出。对于这道题来说，设基本操作数 T(n)，那么就有 T(n) = T(n/2) \* 2 + n/2，推导出来 T(n) 大概是 nlogn。这应该高中的知识。
+具体推导过程如下：
+
+$$
+
+T(n) = T(n/2) _ 2 + n/2 =
+\frac{n}{2} + 2 _ (\frac{n}{2}) ^ 2 + 2 ^ 2 _ (\frac{n}{2}) ^ 3 + ...
+= logn _ \frac{n}{2}
+
+
+$$
+
+类似地，如果递推公式为 T(n) = T(n/2) \* 2 + 1 ，那么 T(n) 大概就是 logn。
 
 ## 1382. 将二叉搜索树变平衡（中等）
 
@@ -247,7 +349,7 @@ class Solution:
 
 ```
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ggxvm577m7j306j07rdfw.jpg)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghluhpzr87j306j07r0sm.jpg)
 
 ```
 
@@ -314,6 +416,6 @@ class Solution:
 
 > 小提示 3： 链表的操作需要特别注意环的存在。
 
-更多题解可以访问我的 LeetCode 题解仓库：https://github.com/azl397985856/leetcode 。 目前已经 30K star 啦。
+更多题解可以访问我的 LeetCode 题解仓库：https://github.com/azl397985856/leetcode 。 目前已经 37K star 啦。
 
 关注公众号力扣加加，努力用清晰直白的语言还原解题思路，并且有大量图解，手把手教你识别套路，高效刷题。
