@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-05-18T03:18:04.076Z</updated>
+  <updated>2021-05-24T11:58:46.851Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>某区块链公司竟然用这道算法题来面试</title>
+    <link href="https://lucifer.ren/blog/2021/05/24/interview-fe-bi/"/>
+    <id>https://lucifer.ren/blog/2021/05/24/interview-fe-bi/</id>
+    <published>2021-05-23T16:00:00.000Z</published>
+    <updated>2021-05-24T11:58:46.851Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近有粉丝和我交流面试遇到的算法题。其中有一道题比较有意思，分享给大家。&lt;/p&gt;
+&lt;p&gt;ta 说自己面试了一家某大型区块链的公司的前端岗位，被问到了一道算法题。这道题也是一个非常常见的题目了，力扣中也有原题 &lt;a href=&quot;https://leetcode-cn.com/problems/balanced-binary-tree/&quot; title=&quot;110. 平衡二叉树&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;110. 平衡二叉树&lt;/a&gt;，难度为简单。&lt;/p&gt;
+&lt;p&gt;不过面试官做了一点点小的扩展，&lt;strong&gt;难度瞬间升级了&lt;/strong&gt;。我们来看下面试官做了什么扩展。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="面经" scheme="https://lucifer.ren/blog/categories/%E9%9D%A2%E7%BB%8F/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="面经" scheme="https://lucifer.ren/blog/tags/%E9%9D%A2%E7%BB%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>读者：西法，记忆化递归究竟怎么改成动态规划啊？</title>
@@ -181,7 +209,7 @@
     <link href="https://lucifer.ren/blog/2021/04/20/dp/"/>
     <id>https://lucifer.ren/blog/2021/04/20/dp/</id>
     <published>2021-04-19T16:00:00.000Z</published>
-    <updated>2021-05-14T08:13:15.514Z</updated>
+    <updated>2021-05-24T05:58:15.883Z</updated>
     
     <summary type="html">
     
@@ -563,43 +591,6 @@
     
     
       <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一招吃遍力扣四道题，妈妈再也不用担心我被套路啦～</title>
-    <link href="https://lucifer.ren/blog/2021/02/20/%E5%88%A0%E9%99%A4%E9%97%AE%E9%A2%98/"/>
-    <id>https://lucifer.ren/blog/2021/02/20/删除问题/</id>
-    <published>2021-02-19T16:00:00.000Z</published>
-    <updated>2021-03-09T10:48:39.814Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我花了几天时间，从力扣中精选了四道相同思想的题目，来帮助大家解套，如果觉得文章对你有用，记得点赞分享，让我看到你的认可，有动力继续做下去。&lt;/p&gt;
-&lt;p&gt;这就是接下来要给大家讲的四个题，其中 1081 和 316 题只是换了说法而已。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/remove-duplicate-letters/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;316. 去除重复字母&lt;/a&gt;(困难)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/create-maximum-number/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;321. 拼接最大数&lt;/a&gt;(困难)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/remove-k-digits/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;402. 移掉 K 位数字&lt;/a&gt;(中等)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1081. 不同字符的最小子序列&lt;/a&gt;（中等）&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="经验分享" scheme="https://lucifer.ren/blog/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"/>
-    
-      <category term="困难" scheme="https://lucifer.ren/blog/tags/%E5%9B%B0%E9%9A%BE/"/>
-    
-      <category term="中等" scheme="https://lucifer.ren/blog/tags/%E4%B8%AD%E7%AD%89/"/>
-    
-      <category term="删除 k 个字符" scheme="https://lucifer.ren/blog/tags/%E5%88%A0%E9%99%A4-k-%E4%B8%AA%E5%AD%97%E7%AC%A6/"/>
     
   </entry>
   
