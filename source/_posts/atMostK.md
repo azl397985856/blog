@@ -171,7 +171,7 @@ function countSubArray(k, nums) {
 - 前缀和与二分。如果 nums 是一个正整数数组，那么其前缀和一定是单调递增的，有时候可以利用这个性质做二分。
 - 求区间内的 1 的个数。比如给你一个数组 nums，让你求任意区间的 1 的个数。那么就可以先预处理，比如将 1 以外的数字预处理为 0，然后做前缀和，最后做差求区间和，这样区间和就是 1 的个数。（比如 [1871. 跳跃游戏 VII](https://github.com/azl397985856/leetcode/blob/master/problems/1871.jump-game-vii.md) 就利用了这个技巧）
 - 区间值计数。上面是对 nums 区间本身进行统计。如果我想求 nums 的**值**（注意是值，不是索引）在 [lower,upper] 之间的数有多少，怎么求呢？我们可以开辟一个与 nums 值域大小等大的数组，并对值进行计数（即统计 nums 的值的出现频率），接下来就和普通前缀和一样了。（比如 [1862. 向下取整数对和](https://leetcode-cn.com/problems/sum-of-floored-pairs/) 就利用了这个技巧）
-- 区间值计数扩展。上面的区间值计数没有对索引进行限制，那如果我加了索引的限制呢？比如我想求索引在 [l,r] 并且值在 [lower,upper]的值的个数如何求？我们可以先做一个二维前缀和 pre[i][j] 表示 前 i 项 j 的出现次数（显然 pre 的规模为数组长度乘以数组值域大小），接下来依次枚举 [lower,upper]的所有数 cur，并利用 pre[r][cur] - pre[l-1][cur]，将结果进行累加即可。（比如[1906. 查询差绝对值的最小值](https://leetcode-cn.com/problems/minimum-absolute-difference-queries/) 就使用了这个技巧）
+- 区间值计数扩展。上面的区间值计数没有对索引进行限制，那如果我加了索引的限制呢？比如我想求索引在 [l,r] 并且值在 [lower,upper]的值的个数如何求？我们可以先做一个二维前缀和 pre[i][j] 表示 前 i 项 j 的出现次数（显然 pre 的规模为数组长度乘以数组值域大小），接下来依次枚举 [lower,upper]的所有数 cur，并利用 pre[r][cur] - pre[l-1][cur]，将结果进行累加即可。（比如[1906. 查询差绝对值的最小值](https://github.com/azl397985856/leetcode/blob/master/problems/1906.minimum-absolute-difference-queries.md) 就使用了这个技巧）
 
 有了上面的铺垫， 我们来看下第一道题。
 
