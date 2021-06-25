@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-06-19T09:11:38.815Z</updated>
+  <updated>2021-06-25T07:48:55.609Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一个可以让你肆意摸鱼的 vscode 插件</title>
+    <link href="https://lucifer.ren/blog/2021/06/23/moyu-1/"/>
+    <id>https://lucifer.ren/blog/2021/06/23/moyu-1/</id>
+    <published>2021-06-22T16:00:00.000Z</published>
+    <updated>2021-06-25T07:48:55.609Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近发现摸鱼插件挺火的，尤其是 vscode，各种插件层出不穷。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>我离职了~</title>
@@ -567,41 +583,6 @@
       <category term="Github" scheme="https://lucifer.ren/blog/tags/Github/"/>
     
       <category term="持续集成" scheme="https://lucifer.ren/blog/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我是如何用「最大公约数」秒杀算法题的</title>
-    <link href="https://lucifer.ren/blog/2021/02/24/gcd/"/>
-    <id>https://lucifer.ren/blog/2021/02/24/gcd/</id>
-    <published>2021-02-23T16:00:00.000Z</published>
-    <updated>2021-03-09T10:48:39.788Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;关于最大公约数有专门的研究。 而在 LeetCode 中虽然没有直接让你求解最大公约数的题目。但是却有一些间接需要你求解最大公约数的题目。&lt;/p&gt;
-&lt;p&gt;比如：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/x-of-a-kind-in-a-deck-of-cards/solution/python3-zui-da-gong-yue-shu-914-qia-pai-fen-zu-by-/&quot; title=&quot;914. 卡牌分组&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;914. 卡牌分组&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/water-and-jug-problem/solution/bfszui-da-gong-yue-shu-by-fe-lucifer/&quot; title=&quot;365. 水壶问题&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;365. 水壶问题&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/greatest-common-divisor-of-strings/solution/1071-zi-fu-chuan-de-zui-da-gong-yin-zi-zui-da-gong/&quot; title=&quot;1071. 字符串的最大公因子&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1071. 字符串的最大公因子&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;因此如何求解最大公约数就显得重要了。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数学" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E6%95%B0%E5%AD%A6/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数学" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="最大公约数" scheme="https://lucifer.ren/blog/tags/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/"/>
     
   </entry>
   
