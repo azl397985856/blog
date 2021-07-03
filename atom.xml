@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-06-25T07:48:55.609Z</updated>
+  <updated>2021-07-03T09:01:16.162Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从零实现 vite（先导篇）</title>
+    <link href="https://lucifer.ren/blog/2021/07/03/mono-vite/"/>
+    <id>https://lucifer.ren/blog/2021/07/03/mono-vite/</id>
+    <published>2021-07-02T16:00:00.000Z</published>
+    <updated>2021-07-03T09:01:16.162Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;来实现一个 vite ？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="vite" scheme="https://lucifer.ren/blog/categories/vite/"/>
+    
+    
+      <category term="vite" scheme="https://lucifer.ren/blog/tags/vite/"/>
+    
+      <category term="模块" scheme="https://lucifer.ren/blog/tags/%E6%A8%A1%E5%9D%97/"/>
+    
+  </entry>
   
   <entry>
     <title>一个可以让你肆意摸鱼的 vscode 插件</title>
@@ -560,29 +582,6 @@
       <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
     
       <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何自动同步博客到 Github 主页？</title>
-    <link href="https://lucifer.ren/blog/2021/02/27/github-blog-auto/"/>
-    <id>https://lucifer.ren/blog/2021/02/27/github-blog-auto/</id>
-    <published>2021-02-26T16:00:00.000Z</published>
-    <updated>2021-03-09T10:48:39.788Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Github 支持通过创建同名仓库的形式自定义主页。比如我的 Github 用户名是 azl397985856，那么新建一个名为 azl397985856 的仓库即可。接下来你可以通过修改此仓库的 README 文件来自定义 Github 主页。也就是说，你想要自定义主页就新建一个同名仓库并修改 README 就行了。&lt;/p&gt;
-&lt;p&gt;修改 README 能玩出什么花样呢？请接着往下看。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Github" scheme="https://lucifer.ren/blog/categories/Github/"/>
-    
-    
-      <category term="Github" scheme="https://lucifer.ren/blog/tags/Github/"/>
-    
-      <category term="持续集成" scheme="https://lucifer.ren/blog/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
     
   </entry>
   
