@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-07-05T15:21:43.106Z</updated>
+  <updated>2021-07-27T03:48:53.920Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【91专访】 微软大佬 cabbage 分享算法面试心得</title>
+    <link href="https://lucifer.ren/blog/2021/07/27/91algo-interview-cabbage/"/>
+    <id>https://lucifer.ren/blog/2021/07/27/91algo-interview-cabbage/</id>
+    <published>2021-07-26T16:00:00.000Z</published>
+    <updated>2021-07-27T03:48:53.920Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;最近得知 cabbage 拿到了&lt;strong&gt;微软的 offer&lt;/strong&gt;，并在准备拿其他&lt;strong&gt;更大&lt;/strong&gt;公司的 offer。就迫不及待地联系了他，希望他本人可以接受采访。于是这篇采访稿就和大家见面了。&lt;/p&gt;
+&lt;p&gt;cabbage 是一个做事情非常认真细致的人，对待工作一丝不苟，基本上事情交给他你就可以放心那种，这样的人谁不喜欢？我本人非常看好他，一定可以进更好的公司。&lt;/p&gt;
+&lt;p&gt;以下 Q 为 lucifer，A 为 cabbage。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008i3skNly1gsvbupuya4j30ej0ctaar.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>将命令行工具转为 Web 页面？</title>
@@ -549,32 +583,6 @@
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
       <category term="二分" scheme="https://lucifer.ren/blog/tags/%E4%BA%8C%E5%88%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>春招冲冲冲</title>
-    <link href="https://lucifer.ren/blog/2021/03/04/school-01/"/>
-    <id>https://lucifer.ren/blog/2021/03/04/school-01/</id>
-    <published>2021-03-03T16:00:00.000Z</published>
-    <updated>2021-03-09T10:48:39.804Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;春招已经开始了。 你是不是已经开始准备了呢？为了帮助大家获得更好的 offer，lucifer 开辟了&lt;strong&gt;春招冲冲冲&lt;/strong&gt;栏目。&lt;/p&gt;
-&lt;p&gt;今天我们的猎物是&lt;strong&gt;虾皮&lt;/strong&gt;。来看看虾皮的算法题难度几何吧！&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="春招" scheme="https://lucifer.ren/blog/categories/%E6%98%A5%E6%8B%9B/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="春招" scheme="https://lucifer.ren/blog/tags/%E6%98%A5%E6%8B%9B/"/>
     
   </entry>
   
