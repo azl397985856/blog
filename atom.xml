@@ -231,11 +231,11 @@
     
       <category term="BFS" scheme="https://lucifer.ren/blog/tags/BFS/"/>
     
-      <category term="回溯" scheme="https://lucifer.ren/blog/tags/%E5%9B%9E%E6%BA%AF/"/>
-    
       <category term="搜索" scheme="https://lucifer.ren/blog/tags/%E6%90%9C%E7%B4%A2/"/>
     
       <category term="DFS" scheme="https://lucifer.ren/blog/tags/DFS/"/>
+    
+      <category term="回溯" scheme="https://lucifer.ren/blog/tags/%E5%9B%9E%E6%BA%AF/"/>
     
   </entry>
   
