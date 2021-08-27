@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-08-20T15:28:11.952Z</updated>
+  <updated>2021-08-22T11:00:29.852Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>回炉重铸， 91 天见证不一样的自己（第五期）</title>
+    <link href="https://lucifer.ren/blog/2021/08/21/91algo-5/"/>
+    <id>https://lucifer.ren/blog/2021/08/21/91algo-5/</id>
+    <published>2021-08-20T16:00:00.000Z</published>
+    <updated>2021-08-22T11:00:29.852Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
+&lt;p&gt;第五期本来想和力扣官方合作一起搞，这样打卡就可以无缝衔接，如果你有力扣会员甚至可以免费参加。可是力扣官方给的感觉是：&lt;code&gt;快了，已经在新建文件夹了&lt;/code&gt;。 就好像我虽然还是 &lt;code&gt;行号 0， 列号 0，字数 0&lt;/code&gt;，但是却和催更的读者说&lt;code&gt;快写好了&lt;/code&gt;一样。&lt;/p&gt;
+&lt;p&gt;因此第五期我们就先开始吧！&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>你不知道的 LeetCode 技巧（第二篇）</title>
@@ -553,32 +587,6 @@
       <category term="校招" scheme="https://lucifer.ren/blog/tags/%E6%A0%A1%E6%8B%9B/"/>
     
       <category term="虾皮" scheme="https://lucifer.ren/blog/tags/%E8%99%BE%E7%9A%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>春招冲冲冲(网易)</title>
-    <link href="https://lucifer.ren/blog/2021/03/28/school-03/"/>
-    <id>https://lucifer.ren/blog/2021/03/28/school-03/</id>
-    <published>2021-03-27T16:00:00.000Z</published>
-    <updated>2021-03-28T05:49:55.013Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;春招已经开始了。 你是不是已经开始准备了呢？为了帮助大家获得更好的 offer，lucifer 开辟了&lt;strong&gt;春招冲冲冲&lt;/strong&gt;栏目。&lt;/p&gt;
-&lt;p&gt;今天我们的猎物是&lt;strong&gt;网易&lt;/strong&gt;。来看看这两家的算法题难度几何吧！&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="春招" scheme="https://lucifer.ren/blog/categories/%E6%98%A5%E6%8B%9B/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="春招" scheme="https://lucifer.ren/blog/tags/%E6%98%A5%E6%8B%9B/"/>
     
   </entry>
   
