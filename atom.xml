@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-09-02T07:09:31.122Z</updated>
+  <updated>2021-09-03T06:12:32.768Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《算法通关之路》出版啦！</title>
+    <link href="https://lucifer.ren/blog/2021/09/04/leetcode-solution-book/"/>
+    <id>https://lucifer.ren/blog/2021/09/04/leetcode-solution-book/</id>
+    <published>2021-09-03T16:00:00.000Z</published>
+    <updated>2021-09-03T06:12:32.768Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;其实很多朋友私底下问我：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;新书什么时候出版？&lt;/li&gt;
+&lt;li&gt;可以预定么？&lt;/li&gt;
+&lt;li&gt;等等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其实我比大家更着急，只不过出版图书真的是一个非常严谨的过程。不比专栏，小册等电子读物可以一边上架一边修改。传统的纸质图书的要求和流程都是严格把控的。因此只能耐心等待和配合出版社。 而现在《算法通关之路》终于要和大家见面了！🌹🌹🌹&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+      <category term="书" scheme="https://lucifer.ren/blog/categories/%E4%B9%A6/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+      <category term="书" scheme="https://lucifer.ren/blog/tags/%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>github 又出新功能，布局云端 vscode？</title>
+    <link href="https://lucifer.ren/blog/2021/09/02/vscode-dev-codespaces/"/>
+    <id>https://lucifer.ren/blog/2021/09/02/vscode-dev-codespaces/</id>
+    <published>2021-09-01T16:00:00.000Z</published>
+    <updated>2021-09-03T06:13:06.379Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;vscode 和 github 是微软的两大开源产品，二者在业界的影响力都是巨大的。&lt;/p&gt;
+&lt;p&gt;近日 Github 新出了一个功能，用户可以通过将 url 中的 &lt;strong&gt;.com 替换为 .dev&lt;/strong&gt; 来直接打开在线版的 vscode 编辑器。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="VSCODE" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/VSCODE/"/>
+    
+    
+      <category term="工具" scheme="https://lucifer.ren/blog/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="VSCODE" scheme="https://lucifer.ren/blog/tags/VSCODE/"/>
+    
+  </entry>
   
   <entry>
     <title>如何搞定不同公司的算法面试？（早早聊分享文字版）</title>
@@ -528,51 +587,6 @@
       <category term="书" scheme="https://lucifer.ren/blog/tags/%E4%B9%A6/"/>
     
       <category term="草稿" scheme="https://lucifer.ren/blog/tags/%E8%8D%89%E7%A8%BF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>动态规划到底有多难？</title>
-    <link href="https://lucifer.ren/blog/2021/04/20/dp/"/>
-    <id>https://lucifer.ren/blog/2021/04/20/dp/</id>
-    <published>2021-04-19T16:00:00.000Z</published>
-    <updated>2021-06-29T05:42:08.962Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;动态规划是一个从其他行业借鉴过来的词语。&lt;/p&gt;
-&lt;p&gt;它的大概意思先将一件事情分成&lt;strong&gt;若干阶段&lt;/strong&gt;，然后通过阶段之间的&lt;strong&gt;转移&lt;/strong&gt;达到目标。由于转移的方向通常是多个，因此这个时候就需要&lt;strong&gt;决策&lt;/strong&gt;选择具体哪一个转移方向。&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="动态规划" scheme="https://lucifer.ren/blog/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>为何我刷了很多，遇到新的题还是唯唯诺诺，无法重拳出击？</title>
-    <link href="https://lucifer.ren/blog/2021/04/06/out-of-science/"/>
-    <id>https://lucifer.ren/blog/2021/04/06/out-of-science/</id>
-    <published>2021-04-05T16:00:00.000Z</published>
-    <updated>2021-04-06T03:49:07.361Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;为何我刷了很多题，遇到新的题还是唯唯诺诺，无法重拳出击？为何一看就会一些就废？这其中又隐藏着怎样的秘密？究竟是道德的沦丧还是人性的扭曲？欢迎收看本期的 &lt;strong&gt;走出科学&lt;/strong&gt; 特别栏目。&lt;/p&gt;
-&lt;p&gt;今天给大家带来了&lt;strong&gt;三位重量级选手&lt;/strong&gt;，一位体重 98 公斤，一位体重 100 公斤，还有一位体重 98 斤，今天 lucifer 就带大家用同样的招式 KO 他们三位。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="走出科学" scheme="https://lucifer.ren/blog/categories/%E8%B5%B0%E5%87%BA%E7%A7%91%E5%AD%A6/"/>
-    
-    
-      <category term="走出科学" scheme="https://lucifer.ren/blog/tags/%E8%B5%B0%E5%87%BA%E7%A7%91%E5%AD%A6/"/>
     
   </entry>
   
