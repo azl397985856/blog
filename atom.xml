@@ -51,11 +51,31 @@
   </entry>
   
   <entry>
+    <title>入职一个月，远程办公感受如何？</title>
+    <link href="https://lucifer.ren/blog/2021/09/04/wfh/"/>
+    <id>https://lucifer.ren/blog/2021/09/04/wfh/</id>
+    <published>2021-09-03T16:00:00.000Z</published>
+    <updated>2021-09-04T08:25:59.793Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上一次给大家讲了我现在已经全职远程办公（简称 wfh），算起来有超过一个月的时间了。很多同学对此比较感兴趣，我们就来聊聊我最近工作如何。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="成长经历" scheme="https://lucifer.ren/blog/categories/%E6%88%90%E9%95%BF%E7%BB%8F%E5%8E%86/"/>
+    
+    
+      <category term="成长经历" scheme="https://lucifer.ren/blog/tags/%E6%88%90%E9%95%BF%E7%BB%8F%E5%8E%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>github 又出新功能，布局云端 vscode？</title>
     <link href="https://lucifer.ren/blog/2021/09/02/vscode-dev-codespaces/"/>
     <id>https://lucifer.ren/blog/2021/09/02/vscode-dev-codespaces/</id>
     <published>2021-09-01T16:00:00.000Z</published>
-    <updated>2021-09-03T06:13:06.379Z</updated>
+    <updated>2021-09-05T10:06:14.260Z</updated>
     
     <summary type="html">
     
@@ -557,36 +577,6 @@
       <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
     
       <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>他来了，他带着「 西法的刷题秘籍 2.0 」 走来了！</title>
-    <link href="https://lucifer.ren/blog/2021/04/28/ebook-2.0/"/>
-    <id>https://lucifer.ren/blog/2021/04/28/ebook-2.0/</id>
-    <published>2021-04-27T16:00:00.000Z</published>
-    <updated>2021-04-28T07:02:30.952Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;嫌文章长的，可以直接拉到底部，底部有 pdf 的获取方式，以下是正文。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="书" scheme="https://lucifer.ren/blog/categories/%E4%B9%A6/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E4%B9%A6/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="书" scheme="https://lucifer.ren/blog/tags/%E4%B9%A6/"/>
-    
-      <category term="草稿" scheme="https://lucifer.ren/blog/tags/%E8%8D%89%E7%A8%BF/"/>
     
   </entry>
   
