@@ -24,6 +24,8 @@ https://github.dev/azl397985856/leetcode
 
 > url 长度还是相同的，甚至还有一点整齐美
 
+还有一种更简单的方法：只要你在任何 GitHub Repo 页面上**按下 .键** 会自动跳转到 github.dev 的网站。
+
 笔者特意对 github1s 和 github.dev 进行了对比，结果如下图：
 
 ![](https://tva1.sinaimg.cn/large/008i3skNly1gu2kwlixmjj61lv0u0dnl02.jpg)
