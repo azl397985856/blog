@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-09-16T04:25:58.550Z</updated>
+  <updated>2021-09-23T17:39:01.108Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>五天100+题，怒进谷歌！</title>
+    <link href="https://lucifer.ren/blog/2021/09/24/91algo-interview-kongshi/"/>
+    <id>https://lucifer.ren/blog/2021/09/24/91algo-interview-kongshi/</id>
+    <published>2021-09-23T16:00:00.000Z</published>
+    <updated>2021-09-23T17:39:01.108Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;空识拿到了&lt;strong&gt;Google 的 offer&lt;/strong&gt;，和狗头做起了同事。&lt;/p&gt;
+&lt;p&gt;他一个礼拜刷了 100 多道题，然后面试 Google 终于通过了。这个经历还是蛮具有代表性的，分享给正在准备面试的你。&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>力扣刷题的正确姿势是什么？</title>
@@ -525,45 +557,6 @@
     
     
       <category term="Github" scheme="https://lucifer.ren/blog/tags/Github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>努力上岸的元气少女</title>
-    <link href="https://lucifer.ren/blog/2021/05/10/91-student-1/"/>
-    <id>https://lucifer.ren/blog/2021/05/10/91-student-1/</id>
-    <published>2021-05-09T16:00:00.000Z</published>
-    <updated>2021-05-10T10:46:06.704Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;时间：2021-05-07&lt;/li&gt;
-&lt;li&gt;被采访人：易潇&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;活动介绍&quot;&gt;&lt;a href=&quot;#活动介绍&quot; class=&quot;headerlink&quot; title=&quot;活动介绍&quot;&gt;&lt;/a&gt;活动介绍&lt;/h2&gt;&lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。&lt;strong&gt;91 天学算法&lt;/strong&gt;是力扣加加举办的一个算法训练活动，通过良好的学习计划 和 91 天的集中学习，帮助大家摆脱困境，征服算法。&lt;/p&gt;
-&lt;p&gt;现在 《91 天学算法》已经举办了四期了，&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzI4MzUxNjI3OA==&amp;amp;mid=2247488668&amp;amp;idx=1&amp;amp;sn=001d53b788fb21280f9e45cadb7b4fae&amp;amp;chksm=eb88d885dcff5193f17725eb4b6b56cbbe406d8426bdc0dd5512253e2a0ef525358f94d4ab5a&amp;amp;token=2115509684&amp;amp;lang=zh_CN#rd&quot; title=&quot;91 天学算法第四期&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;第四期&lt;/a&gt;的活动时间是 &lt;strong&gt;2021-05-10 到 2021-08-08&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;每一期都有很多优秀学员，我想将这些人的学习经验分享给大家，帮助大家少走弯路。由于我开辟了这个 &lt;strong&gt;91 天学算法优秀学员专访&lt;/strong&gt; 活动。&lt;/p&gt;
-&lt;p&gt;这次，我们邀请到了远在美国的转码少女 - 易潇，一个元气满满的活力女孩。来看看她是如何学习的吧！&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008i3skNly1gq9qojha3ij30u00u077t.jpg&quot; width=&quot;400&quot;&gt;&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
     
   </entry>
   
