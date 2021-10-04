@@ -90,9 +90,9 @@
             
             <tag> LeetCode </tag>
             
-            <tag> 刷题技巧 </tag>
-            
             <tag> 工具 </tag>
+            
+            <tag> 刷题技巧 </tag>
             
         </tags>
       
@@ -1789,9 +1789,9 @@
       
       <categories>
           
-          <category> Hard </category>
-          
           <category> LeetCode </category>
+          
+          <category> Hard </category>
           
           <category> 回溯 </category>
           
@@ -1862,9 +1862,9 @@
       
         <tags>
             
-            <tag> 滑动窗口 </tag>
-            
             <tag> 前缀和 </tag>
+            
+            <tag> 滑动窗口 </tag>
             
             <tag> LeetCode </tag>
             
@@ -4387,9 +4387,9 @@
             
             <tag> 算法 </tag>
             
-            <tag> 状态机 </tag>
-            
             <tag> 动态规划 </tag>
+            
+            <tag> 状态机 </tag>
             
             <tag> 贪心 </tag>
             
@@ -4430,11 +4430,11 @@
             
             <tag> 数学 </tag>
             
-            <tag> 动态规划 </tag>
-            
             <tag> 概率 </tag>
             
             <tag> 递归 </tag>
+            
+            <tag> 动态规划 </tag>
             
         </tags>
       
