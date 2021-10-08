@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-09-26T14:31:58.806Z</updated>
+  <updated>2021-10-07T12:19:51.703Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>写注释就能自动出代码？copilot 尝鲜</title>
+    <link href="https://lucifer.ren/blog/2021/10/05/copilot/"/>
+    <id>https://lucifer.ren/blog/2021/10/05/copilot/</id>
+    <published>2021-10-04T16:00:00.000Z</published>
+    <updated>2021-10-07T12:19:51.703Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;copilot 是一个基于 AI 的编程辅助工具。目前已经集成在了 vscode 中，后续可能集成到更多平台和工具，目前还是测试阶段。官网地址：&lt;a href=&quot;https://copilot.github.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://copilot.github.com/&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="VSCODE" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/VSCODE/"/>
+    
+    
+      <category term="AI" scheme="https://lucifer.ren/blog/tags/AI/"/>
+    
+      <category term="VSCODE" scheme="https://lucifer.ren/blog/tags/VSCODE/"/>
+    
+  </entry>
   
   <entry>
     <title>有了这个可视化插件，刷题调试更轻松</title>
@@ -175,9 +199,9 @@
       <category term="VSCODE" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/VSCODE/"/>
     
     
-      <category term="工具" scheme="https://lucifer.ren/blog/tags/%E5%B7%A5%E5%85%B7/"/>
-    
       <category term="VSCODE" scheme="https://lucifer.ren/blog/tags/VSCODE/"/>
+    
+      <category term="工具" scheme="https://lucifer.ren/blog/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
@@ -348,9 +372,9 @@
       <category term="VSCODE" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/VSCODE/"/>
     
     
-      <category term="工具" scheme="https://lucifer.ren/blog/tags/%E5%B7%A5%E5%85%B7/"/>
-    
       <category term="VSCODE" scheme="https://lucifer.ren/blog/tags/VSCODE/"/>
+    
+      <category term="工具" scheme="https://lucifer.ren/blog/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
@@ -500,11 +524,11 @@
     
       <category term="BFS" scheme="https://lucifer.ren/blog/tags/BFS/"/>
     
+      <category term="回溯" scheme="https://lucifer.ren/blog/tags/%E5%9B%9E%E6%BA%AF/"/>
+    
       <category term="搜索" scheme="https://lucifer.ren/blog/tags/%E6%90%9C%E7%B4%A2/"/>
     
       <category term="DFS" scheme="https://lucifer.ren/blog/tags/DFS/"/>
-    
-      <category term="回溯" scheme="https://lucifer.ren/blog/tags/%E5%9B%9E%E6%BA%AF/"/>
     
   </entry>
   
@@ -533,33 +557,6 @@
       <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="面经" scheme="https://lucifer.ren/blog/tags/%E9%9D%A2%E7%BB%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>读者：西法，记忆化递归究竟怎么改成动态规划啊？</title>
-    <link href="https://lucifer.ren/blog/2021/05/18/dp-bottom-up/"/>
-    <id>https://lucifer.ren/blog/2021/05/18/dp-bottom-up/</id>
-    <published>2021-05-17T16:00:00.000Z</published>
-    <updated>2021-05-18T03:18:04.076Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我在&lt;a href=&quot;https://leetcode-solution.cn/solutionDetail?url=https%3A%2F%2Fapi.github.com%2Frepos%2Fazl397985856%2Fleetcode%2Fcontents%2Fthinkings%2Fdynamic-programming.md&amp;amp;type=1&quot; title=&quot;动态规划专题&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;动态规划专题&lt;/a&gt;反复强调了&lt;strong&gt;先学习递归，再学习记忆化，最后再学动态规划&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;其中原因已经讲得很透了，相信大家已经明白了。如果不明白，强烈建议先看看那篇文章。&lt;/p&gt;
-&lt;p&gt;尽管很多看了我文章的小伙伴知道了先去学记忆化递归，但是还是有一些粉丝问我：&lt;strong&gt;“记忆化递归转化为动态规划老是出错，不得要领怎么办？有没有什么要领呀？”&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;今天我就来回答一下粉丝的这个问题。&lt;/p&gt;
-&lt;p&gt;实际上我的动态规划那篇文章已经讲了将记忆化递归转化为动态规划的大概的思路，只是可能不是特别细，今天我们就尝试&lt;strong&gt;细化一波&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;我们仍然先以经典的爬楼梯为例，给大家讲一点基础知识。接下来，我会带大家解决一个更加复杂的题目。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="动态规划" scheme="https://lucifer.ren/blog/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
