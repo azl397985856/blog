@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-10-07T12:19:51.703Z</updated>
+  <updated>2021-10-11T15:12:04.207Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用什么语言刷题最有排面？</title>
+    <link href="https://lucifer.ren/blog/2021/10/10/programming-idioms/"/>
+    <id>https://lucifer.ren/blog/2021/10/10/programming-idioms/</id>
+    <published>2021-10-09T16:00:00.000Z</published>
+    <updated>2021-10-11T15:12:04.207Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;很多读者向西法反应：“能不能在专题和题解里面增加 xx 语言”。&lt;/p&gt;
+&lt;p&gt;我的回答一直都是：&lt;strong&gt;我会尽量添加多种编程语言，但也请你不要依赖于某种具体的编程语言来学算法&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;熟悉我的朋友都知道，我刚开始的时候，我使用 JS 比较多，之后使用 Python 比较多，现在也在陆续更新题解的 C++ 语言，之后会考虑其他的语言。接下来的话应该是优先考虑 Java，让大家学习曲线更平滑。&lt;/p&gt;
+&lt;p&gt;但是另一方面我也强烈建议大家不要依赖于某一种具体地编程语言。我当然知道学习和切换编程语言需要时间，也体会到使用自己熟悉的编程语言效率更高。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="刷题技巧" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
   
   <entry>
     <title>写注释就能自动出代码？copilot 尝鲜</title>
@@ -500,7 +521,7 @@
     <link href="https://lucifer.ren/blog/2021/06/02/search/"/>
     <id>https://lucifer.ren/blog/2021/06/02/search/</id>
     <published>2021-06-01T16:00:00.000Z</published>
-    <updated>2021-06-17T09:19:06.632Z</updated>
+    <updated>2021-10-10T16:10:08.640Z</updated>
     
     <summary type="html">
     
@@ -529,34 +550,6 @@
       <category term="搜索" scheme="https://lucifer.ren/blog/tags/%E6%90%9C%E7%B4%A2/"/>
     
       <category term="DFS" scheme="https://lucifer.ren/blog/tags/DFS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>某区块链公司竟然用这道算法题来面试</title>
-    <link href="https://lucifer.ren/blog/2021/05/24/interview-fe-bi/"/>
-    <id>https://lucifer.ren/blog/2021/05/24/interview-fe-bi/</id>
-    <published>2021-05-23T16:00:00.000Z</published>
-    <updated>2021-05-24T11:58:46.851Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近有粉丝和我交流面试遇到的算法题。其中有一道题比较有意思，分享给大家。&lt;/p&gt;
-&lt;p&gt;ta 说自己面试了一家某大型区块链的公司的前端岗位，被问到了一道算法题。这道题也是一个非常常见的题目了，力扣中也有原题 &lt;a href=&quot;https://leetcode-cn.com/problems/balanced-binary-tree/&quot; title=&quot;110. 平衡二叉树&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;110. 平衡二叉树&lt;/a&gt;，难度为简单。&lt;/p&gt;
-&lt;p&gt;不过面试官做了一点点小的扩展，&lt;strong&gt;难度瞬间升级了&lt;/strong&gt;。我们来看下面试官做了什么扩展。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="面经" scheme="https://lucifer.ren/blog/categories/%E9%9D%A2%E7%BB%8F/"/>
-    
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="面经" scheme="https://lucifer.ren/blog/tags/%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   
