@@ -455,7 +455,7 @@
 <h3 id="什么是记忆化？"><a href="#什么是记忆化？" class="headerlink" title="什么是记忆化？"></a>什么是记忆化？</h3><p>为了大家能够更好地对本节内容进行理解，我们通过一个例子来切入：</p>
 <p>一个人爬楼梯，每次只能爬 1 个或 2 个台阶，假设有 n 个台阶，那么这个人有多少种不同的爬楼梯方法？</p>
 <p>思路：</p>
-<p>由于<strong>第 n 级台阶一定是从 n - 1 级台阶或者 n - 2 级台阶来的</strong>，因此到第 n 级台阶的数目就是 <code>到第 n - 1 级台阶的数目加上到第 n - 1 级台阶的数目</code>。</p>
+<p>由于<strong>第 n 级台阶一定是从 n - 1 级台阶或者 n - 2 级台阶来的</strong>，因此到第 n 级台阶的数目就是 <code>到第 n - 1 级台阶的数目加上到第 n - 2 级台阶的数目</code>。</p>
 <p>递归代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">climbStairs</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> climbStairs(n - <span class="number">1</span>) + climbStairs(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们用一个递归树来直观感受以下（每一个圆圈表示一个子问题）：</p>
@@ -827,10 +827,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-29T13:42:08+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-10-15T14:48:45+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年6月29日</p>
+    <p>更新于 2021年10月15日</p>
   </a>
 </div>
 
