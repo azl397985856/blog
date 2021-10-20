@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-10-11T15:12:04.207Z</updated>
+  <updated>2021-10-16T06:39:38.453Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>聊聊刷题中的**顿悟**时刻</title>
+    <link href="https://lucifer.ren/blog/2021/10/16/algo-fakers/"/>
+    <id>https://lucifer.ren/blog/2021/10/16/algo-fakers/</id>
+    <published>2021-10-15T16:00:00.000Z</published>
+    <updated>2021-10-16T06:39:38.453Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;和几位一直坚持刷题好朋友讨论了一下刷题的&lt;strong&gt;顿悟&lt;/strong&gt;时刻，他们几位大都取得了不错的 offer，比如 Google 微软，Amazon，BAT 等。&lt;/p&gt;
+&lt;p&gt;通过和他们的沟通，我发现了大家&lt;strong&gt;顿悟&lt;/strong&gt;时刻都是类似的。那具体他们有哪些相似点呢？我们一起来看下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="刷题技巧" scheme="https://lucifer.ren/blog/categories/%E5%88%B7%E9%A2%98%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="刷题技巧" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
   
   <entry>
     <title>用什么语言刷题最有排面？</title>
@@ -513,43 +534,6 @@
       <category term="技能" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E8%83%BD/"/>
     
       <category term="PPT" scheme="https://lucifer.ren/blog/tags/PPT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>手把手教你刷搜索</title>
-    <link href="https://lucifer.ren/blog/2021/06/02/search/"/>
-    <id>https://lucifer.ren/blog/2021/06/02/search/</id>
-    <published>2021-06-01T16:00:00.000Z</published>
-    <updated>2021-10-10T16:10:08.640Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;大话搜索&quot;&gt;&lt;a href=&quot;#大话搜索&quot; class=&quot;headerlink&quot; title=&quot;大话搜索&quot;&gt;&lt;/a&gt;大话搜索&lt;/h2&gt;&lt;p&gt;搜索一般指在有限的状态空间中进行枚举，通过穷尽所有的可能来找到符合条件的解或者解的个数。根据搜索方式的不同，搜索算法可以分为 DFS，BFS，A*算法等。这里只介绍 DFS 和 BFS，以及发生在 DFS 上一种技巧-回溯。&lt;/p&gt;
-&lt;p&gt;搜索问题覆盖面非常广泛，并且在算法题中也占据了很高的比例。我甚至还在公开演讲中提到了 &lt;strong&gt;前端算法面试中搜索类占据了很大的比重，尤其是国内公司&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;搜索专题中的子专题有很多，而大家所熟知的 BFS，DFS 只是其中特别基础的内容。除此之外，还有状态记录与维护，剪枝，联通分量，拓扑排序等等。这些内容，我会在这里一一给大家介绍。&lt;/p&gt;
-&lt;p&gt;另外即使仅仅考虑 DFS 和 BFS 两种基本算法，里面能玩的花样也非常多。比如 BFS 的双向搜索，比如 DFS 的前中后序，迭代加深等等。&lt;/p&gt;
-&lt;p&gt;关于搜索，其实在二叉树部分已经做了介绍了。而这里的搜索，其实就是进一步的泛化。数据结构不再局限于前面提到的数组，链表或者树。而扩展到了诸如二维数组，多叉树，图等。不过核心仍然是一样的，只不过数据结构发生了变化而已。&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="搜索" scheme="https://lucifer.ren/blog/categories/%E6%90%9C%E7%B4%A2/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="BFS" scheme="https://lucifer.ren/blog/tags/BFS/"/>
-    
-      <category term="搜索" scheme="https://lucifer.ren/blog/tags/%E6%90%9C%E7%B4%A2/"/>
-    
-      <category term="DFS" scheme="https://lucifer.ren/blog/tags/DFS/"/>
-    
-      <category term="回溯" scheme="https://lucifer.ren/blog/tags/%E5%9B%9E%E6%BA%AF/"/>
     
   </entry>
   
