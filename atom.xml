@@ -223,30 +223,6 @@
   </entry>
   
   <entry>
-    <title>如何搞定不同公司的算法面试？（早早聊分享文字版）</title>
-    <link href="https://lucifer.ren/blog/2021/09/02/zaozaoliao/"/>
-    <id>https://lucifer.ren/blog/2021/09/02/zaozaoliao/</id>
-    <published>2021-09-01T16:00:00.000Z</published>
-    <updated>2021-09-02T07:09:31.122Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前几天西法参加了《前端早早聊》第 24 界的分享。我的分享主题是《如何搞定不同公司的算法面试？》 这是这次分享的文字版，供大家查看。如果大家需要分享的原版 ppt，也可以到我的公众号《脑洞前端》中回复&lt;strong&gt;早早聊&lt;/strong&gt;获取。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="面试" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%89%8D%E7%AB%AF/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-      <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
     <title>github 又出新功能，布局云端 vscode？</title>
     <link href="https://lucifer.ren/blog/2021/09/02/vscode-dev-codespaces/"/>
     <id>https://lucifer.ren/blog/2021/09/02/vscode-dev-codespaces/</id>
@@ -268,6 +244,30 @@
       <category term="VSCODE" scheme="https://lucifer.ren/blog/tags/VSCODE/"/>
     
       <category term="工具" scheme="https://lucifer.ren/blog/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何搞定不同公司的算法面试？（早早聊分享文字版）</title>
+    <link href="https://lucifer.ren/blog/2021/09/02/zaozaoliao/"/>
+    <id>https://lucifer.ren/blog/2021/09/02/zaozaoliao/</id>
+    <published>2021-09-01T16:00:00.000Z</published>
+    <updated>2021-09-02T07:09:31.122Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前几天西法参加了《前端早早聊》第 24 界的分享。我的分享主题是《如何搞定不同公司的算法面试？》 这是这次分享的文字版，供大家查看。如果大家需要分享的原版 ppt，也可以到我的公众号《脑洞前端》中回复&lt;strong&gt;早早聊&lt;/strong&gt;获取。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="面试" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%89%8D%E7%AB%AF/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
     
   </entry>
   
