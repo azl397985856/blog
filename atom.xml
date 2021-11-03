@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-10-16T06:39:38.453Z</updated>
+  <updated>2021-11-03T15:31:21.567Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《算法通关之路》邀请你来试读</title>
+    <link href="https://lucifer.ren/blog/2021/10/24/new-book/"/>
+    <id>https://lucifer.ren/blog/2021/10/24/new-book/</id>
+    <published>2021-10-23T16:00:00.000Z</published>
+    <updated>2021-11-03T15:31:21.567Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;新书出版已经有一段时间了，也陆续收到了一些读者的反馈。今天咱就回答一些读者常见的问题以及《算法通关之路》一些内容剧透。&lt;/p&gt;
+&lt;p&gt;其实出版后已经有不少读者看完了并且给了非常优质的读后感。下面我挑选几个章节的优质留言给大家。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="《算法通关之路》" scheme="https://lucifer.ren/blog/categories/%E3%80%8A%E7%AE%97%E6%B3%95%E9%80%9A%E5%85%B3%E4%B9%8B%E8%B7%AF%E3%80%8B/"/>
+    
+    
+      <category term="《算法通关之路》" scheme="https://lucifer.ren/blog/tags/%E3%80%8A%E7%AE%97%E6%B3%95%E9%80%9A%E5%85%B3%E4%B9%8B%E8%B7%AF%E3%80%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>聊聊刷题中的**顿悟**时刻</title>
@@ -514,26 +535,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>我离职了~</title>
-    <link href="https://lucifer.ren/blog/2021/06/18/quit-esign/"/>
-    <id>https://lucifer.ren/blog/2021/06/18/quit-esign/</id>
-    <published>2021-06-17T16:00:00.000Z</published>
-    <updated>2021-06-19T09:11:38.815Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008i3skNly1grlduklbasj30xc0l3abq.jpg&quot; alt&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="技能" scheme="https://lucifer.ren/blog/tags/%E6%8A%80%E8%83%BD/"/>
-    
-      <category term="PPT" scheme="https://lucifer.ren/blog/tags/PPT/"/>
     
   </entry>
   
