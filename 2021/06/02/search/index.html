@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>手把手教你刷搜索 | lucifer的网络博客</title>
+  
+  <meta name="keywords" content="前端 leetocde 数据结构 算法 lucifer 大前端 性能优化 前端架构 前端工程化">
+  
+  
+  <meta name="description" content="lucifer的个人博客，用来记录LeeCode刷题过程和心得，以及构建大前端知识体系">
+  
+
+  
+  <link rel="alternate" href="/blog/atom.xml" title="lucifer的网络博客">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9.9/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVTTYT432Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FVTTYT432Q');
+    </script>
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?576ec211e11a69128667eb8c11a6cffe";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
+<script>
+  var btw = new BTWPlugin();
+  setTimeout(function(){
+    window.btw.init({
+      id: "container",
+      blogId: "17446-1571644985832-648",
+      name: "力扣加加",
+      qrcode:
+        "https://tva1.sinaimg.cn/large/008eGmZEly1gomv7ug3bnj30760763yz.jpg",
+      keyword: "more",
+    });
+  }, 100)
+</script>
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>lucifer</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/blog/"
+            
+            
+            id="blog">
+            <i class='fas fa-home fa-fw'></i>&nbsp;主页
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="http://leetcode-solution.cn/"
+            
+            
+            id="http:leetcode-solution.cn">
+            <i class='fas fa-laptop-code fa-fw'></i>&nbsp;官网
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/friends/"
+            
+            
+            id="blogfriends">
+            <i class='fas fa-link fa-fw'></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/about/"
+            
+            
+            id="blogabout">
+            <i class='fas fa-id-card-alt fa-fw'></i>&nbsp;联系我
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/blog/' >
+        
+          lucifer的网络博客
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/blog/"
+                  
+                  
+                  id="blog">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;回到主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/categories/"
+                  
+                  
+                  id="blogcategories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/tags/"
+                  
+                  
+                  id="blogtags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/archives/"
+                  
+                  
+                  id="blogarchives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/blog/"
+                
+                
+                id="blog">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/archives/"
+                
+                
+                id="blogarchives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/about/"
+                
+                
+                id="blogabout">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div id="container" class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/blog/2021/06/02/search/">
+        手把手教你刷搜索
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2021-06-02</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/搜索/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>算法&nbsp;/&nbsp;搜索</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">8.9k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">33分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <h2 id="大话搜索"><a href="#大话搜索" class="headerlink" title="大话搜索"></a>大话搜索</h2><p>搜索一般指在有限的状态空间中进行枚举，通过穷尽所有的可能来找到符合条件的解或者解的个数。根据搜索方式的不同，搜索算法可以分为 DFS，BFS，A*算法等。这里只介绍 DFS 和 BFS，以及发生在 DFS 上一种技巧-回溯。</p>
+<p>搜索问题覆盖面非常广泛，并且在算法题中也占据了很高的比例。我甚至还在公开演讲中提到了 <strong>前端算法面试中搜索类占据了很大的比重，尤其是国内公司</strong>。</p>
+<p>搜索专题中的子专题有很多，而大家所熟知的 BFS，DFS 只是其中特别基础的内容。除此之外，还有状态记录与维护，剪枝，联通分量，拓扑排序等等。这些内容，我会在这里一一给大家介绍。</p>
+<p>另外即使仅仅考虑 DFS 和 BFS 两种基本算法，里面能玩的花样也非常多。比如 BFS 的双向搜索，比如 DFS 的前中后序，迭代加深等等。</p>
+<p>关于搜索，其实在二叉树部分已经做了介绍了。而这里的搜索，其实就是进一步的泛化。数据结构不再局限于前面提到的数组，链表或者树。而扩展到了诸如二维数组，多叉树，图等。不过核心仍然是一样的，只不过数据结构发生了变化而已。</p>
+<p>​<a id="more"></a></p>
+<h2 id="搜索的核心是什么？"><a href="#搜索的核心是什么？" class="headerlink" title="搜索的核心是什么？"></a>搜索的核心是什么？</h2><p>实际上搜索题目<strong>本质就是将题目中的状态映射为图中的点，将状态间的联系映射为图中的边。根据题目信息构建状态空间，然后对状态空间进行遍历，遍历过程需要记录和维护状态，并通过剪枝和数据结构等提高搜索效率。</strong></p>
+<p>状态空间的数据结构不同会导致算法不同。比如对数组进行搜索，和对树，图进行搜索就不太一样。</p>
+<p>再次强调一下，我这里讲的数组，树和图是<strong>状态空间</strong>的逻辑结构，而不是题目给的数据结构。比如题目给了一个数组，让你求数组的搜索子集。虽然题目给的线性的数据结构数组，然而实际上我们是对树这种非线性数据结构进行搜索。这是因为这道题对应的<strong>状态空间是非线性的</strong>。</p>
+<p>对于搜索问题，我们核心关注的信息有哪些？又该如何计算呢？这也是搜索篇核心关注的。而市面上很多资料讲述的不是很详细。搜索的核心需要关注的指标有很多，比如树的深度，图的 DFS 序，图中两点间的距离等等。<strong>这些指标都是完成高级算法必不可少的，而这些指标可以通过一些经典算法来实现</strong>。这也是为什么我一直强调<strong>一定要先学习好基础的数据结构与算法</strong>的原因。</p>
+<p>不过要讲这些讲述完整并非容易，以至于如果完整写完可能需要花很多的时间，因此一直没有动手去写。</p>
+<p>另外由于其他数据结构都可以看做是图的特例。因此研究透图的基本思想，就很容易将其扩展到其他数据结构上，比如树。因此我打算围绕图进行讲解，并逐步具象化到其他特殊的数据结构，比如树。</p>
+<h2 id="状态空间"><a href="#状态空间" class="headerlink" title="状态空间"></a>状态空间</h2><p>结论先行：<strong>状态空间其实就是一个图结构，图中的节点表示状态，图中的边表示状态之前的联系，这种联系就是题目给出的各种关系</strong>。</p>
+<p>搜索题目的状态空间通常是非线性的。比如上面提到的例子：求一个数组的子集。这里的状态空间实际上就是数组的各种组合。</p>
+<p>对于这道题来说，其状态空间的一种可行的划分方式为：</p>
+<ul>
+<li>长度为 1 的子集</li>
+<li>长度为 2 的子集</li>
+<li>。。。</li>
+<li>长度为 n 的子集（其中 n 为数组长度）</li>
+</ul>
+<p>而如何确定上面所有的子集呢。</p>
+<p>一种可行的方案是可以采取类似分治的方式逐一确定。</p>
+<p>比如我们可以：</p>
+<ul>
+<li>先确定某一种子集的第一个数是什么</li>
+<li>再确定第二个数是什么</li>
+<li>。。。</li>
+</ul>
+<p>如何确定第一个数，第二个数。。。呢？</p>
+<p><strong>暴力枚举所有可能就可以了。</strong></p>
+<blockquote>
+<p>这就是搜索问题的核心，其他都是辅助，所以这句话请务必记住。</p>
+</blockquote>
+<p>所谓的暴力枚举所有可能在这里就是尝试数组中所有可能的数字。</p>
+<ul>
+<li>比如第一个数是什么？很明显可能是数组中任意一项。ok，我们就枚举 n 种情况。</li>
+<li>第二个数呢？很明显可以是除了上面已经被选择的数之外的任意一个数。ok，我们就枚举 n - 1 种情况。</li>
+</ul>
+<p>据此，你可以画出如下的决策树。</p>
+<p>（下图描述的是对一个长度为 3 的数组进行决策的部分过程，树节点中的数字表示索引。即确定第一个数有三个选择，确定第二个数会根据上次的选择变为剩下的两个选择）</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqwu244duoj30n40iaabd.jpg" alt></p>
+<p>决策过程动图演示：</p>
+<p><img src="https://pic.stackoverflow.wiki/uploadImages/115/238/39/106/2021/05/27/18/33/b97ee92b-a516-48e1-83d9-b29c1eaf2eff.svg" alt="搜索-决策树.svg"></p>
+<p><strong>一些搜索算法就是基于这个朴素的思想，本质就是模拟这个决策树</strong>。这里面其实也有很多有趣的细节，后面我们会对其进行更加详细的讲解。而现在大家只需要对<strong>解空间是什么以及如何对解空间进行遍历有一点概念就行了。</strong> 后面我会继续对这个概念进行加深。</p>
+<p>这里大家只要记住<strong>状态空间就是图，构建状态空间就是构建图。如何构建呢？当然是根据题目描述了</strong> 。</p>
+<h2 id="DFS-和-BFS"><a href="#DFS-和-BFS" class="headerlink" title="DFS 和 BFS"></a>DFS 和 BFS</h2><p>DFS 和 BFS 是搜索的核心，贯穿搜索篇的始终，因此有必要先对其进行讲解。</p>
+<h3 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h3><p>DFS 的概念来自于图论，但是搜索中 DFS 和图论中 DFS 还是有一些区别，搜索中 DFS 一般指的是通过递归函数实现暴力枚举。</p>
+<blockquote>
+<p>如果不使用递归，也可以使用栈来实现。不过本质上是类似的。</p>
+</blockquote>
+<p>首先将题目的<strong>状态空间映射到一张图，状态就是图中的节点，状态之间的联系就是图中的边</strong>，那么 DFS 就是在这种图上进行<strong>深度优先</strong>的遍历。而 BFS 也是类似，只不过遍历的策略变为了<strong>广度优先</strong>，一层层铺开而已。所以<strong>BFS 和 DFS 只是遍历这个状态图的两种方式罢了，如何构建状态图才是关键</strong>。</p>
+<p>本质上，对上面的图进行遍历的话会生成一颗<strong>搜索树</strong>。为了<strong>避免重复访问，我们需要记录已经访问过的节点</strong>。这些是<strong>所有的搜索算法共有的</strong>，后面不再赘述。</p>
+<p>如果你是在树上进行遍历，是不会有环的，也自然不需要为了<strong>避免环的产生记录已经访问的节点</strong>，这是因为树本质上是一个简单无环图。</p>
+<h4 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h4><ol>
+<li>首先将根节点放入<strong>stack</strong>中。</li>
+<li>从<em>stack</em>中取出第一个节点，并检验它是否为目标。如果找到目标，则结束搜寻并回传结果。否则将它某一个尚未检验过的直接子节点加入<strong>stack</strong>中。</li>
+<li>重复步骤 2。</li>
+<li>如果不存在未检测过的直接子节点。将上一级节点加入<strong>stack</strong>中。<br>重复步骤 2。</li>
+<li>重复步骤 4。</li>
+<li>若<strong>stack</strong>为空，表示整张图都检查过了——亦即图中没有欲搜寻的目标。结束搜寻并回传“找不到目标”。</li>
+</ol>
+<blockquote>
+<p>这里的 stack 可以理解为自实现的栈，也可以理解为调用栈</p>
+</blockquote>
+<h4 id="算法模板"><a href="#算法模板" class="headerlink" title="算法模板"></a>算法模板</h4><p>下面我们借助递归来完成 DFS。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> visited = &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dfs</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (满足特定条件）&#123;</span><br><span class="line">		<span class="comment">// 返回结果 or 退出搜索空间</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	visited[i] = <span class="literal">true</span> <span class="comment">// 将当前状态标为已搜索</span></span><br><span class="line">	<span class="keyword">for</span> (根据i能到达的下个状态j) &#123;</span><br><span class="line">		<span class="keyword">if</span> (!visited[j]) &#123; <span class="comment">// 如果状态j没有被搜索过</span></span><br><span class="line">			dfs(j)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="常用技巧"><a href="#常用技巧" class="headerlink" title="常用技巧"></a>常用技巧</h4><h5 id="前序遍历与后序遍历"><a href="#前序遍历与后序遍历" class="headerlink" title="前序遍历与后序遍历"></a>前序遍历与后序遍历</h5><p>DFS 常见的形式有<strong>前序和后序</strong>。二者的使用场景也是截然不同的。</p>
+<p>上面讲述了搜索本质就是在状态空间进行遍历，空间中的状态可以抽象为图中的点。那么如果搜索过程中，当前点的结果需要依赖其他节点（大多数情况都会有依赖），那么遍历顺序就变得重要。</p>
+<p>比如当前节点需要依赖其子节点的计算信息，那么使用后序遍历自底向上递推就显得必要了。而如果当前节点需要依赖其父节点的信息，那么使用先序遍历进行自顶向下的递归就不难想到。</p>
+<p>比如下文要讲的计算树的深度。由于树的深度的递归公式为： $f(x) = f(y) + 1$。其中 f(x) 表示节点 x 的深度，并且 x 是 y 的子节点。很明显这个递推公式的 base case 就是根节点深度为一，通过这个 base case 我们可以递推求出树中任意节点的深度。显然，使用先序遍历自顶向下的方式统计是简单而又直接的。</p>
+<p>再比如下文要讲的计算树的子节点个数。由于树的子节点递归公式为： $f(x) = sum_{i=0}^{n}{f(a_i)}$ 其中 x 为树中的某一个节点，$a_i$ 为树中节点的子节点。而 base case 则是没有任何子节点(也就是叶子节点)，此时 $f(x) = 1$。 因此我们可以利用后序遍历自底向上来完成子节点个数的统计。</p>
+<p>关于从递推关系分析使用何种遍历方法， 我在《91 天学算法》中的基础篇中的《模拟，枚举与递推》子专题中对此进行了详细的描述。91 学员可以直接进行查看。关于树的各种遍历方法，我在<a href="https://leetcode-solution.cn/solutionDetail?url=https%3A%2F%2Fapi.github.com%2Frepos%2Fazl397985856%2Fleetcode%2Fcontents%2Fthinkings%2Ftree.md&amp;type=1" target="_blank" rel="noopener">树专题</a>中进行了详细的介绍。</p>
+<h5 id="迭代加深"><a href="#迭代加深" class="headerlink" title="迭代加深"></a>迭代加深</h5><p>迭代加深本质上是一种可行性的剪枝。关于剪枝，我会在后面的《回溯与剪枝》部分做更多的介绍。</p>
+<p>所谓迭代加深指的是<strong>在递归树比较深的时候，通过设定递归深度阈值，超过阈值就退出的方式主动减少递归深度的优化手段。</strong>这种算法成立的前提是<strong>题目中告诉我们答案不超过 xxx</strong>，这样我们可以将 xxx 作为递归深度阈值，这样不仅不会错过正确解，还能在极端情况下有效减少不必须的运算。</p>
+<p>具体地，我们可以使用自顶向下的方式记录递归树的层次，和上面介绍如何计算树深度的方法是一样的。接下来在主逻辑前增加<strong>当前层次是否超过阈值</strong>的判断即可。</p>
+<p>主代码：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MAX_LEVEL = <span class="number">20</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(root, level)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> level &gt; MAX_LEVEL: <span class="keyword">return</span></span><br><span class="line">    <span class="comment"># 主逻辑</span></span><br><span class="line">dfs(root, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>这种技巧在实际使用中并不常见，不过在某些时候能发挥意想不到的作用。</p>
+<h5 id="双向搜索"><a href="#双向搜索" class="headerlink" title="双向搜索"></a>双向搜索</h5><p>有时候问题规模很大，直接搜索会超时。此时可以考虑从起点搜索到问题规模的一半。然后将此过程中产生的状态存起来。接下来目标转化为在存储的中间状态中寻找满足条件的状态。进而达到降低时间复杂度的效果。</p>
+<p>上面的说法可能不太容易理解。 接下来通过一个例子帮助大家理解。</p>
+<h6 id="题目地址"><a href="#题目地址" class="headerlink" title="题目地址"></a>题目地址</h6><p><a href="https://leetcode-cn.com/problems/closest-subsequence-sum/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/closest-subsequence-sum/</a></p>
+<h6 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">给你一个整数数组 nums 和一个目标值 goal 。</span><br><span class="line"></span><br><span class="line">你需要从 nums 中选出一个子序列，使子序列元素总和最接近 goal 。也就是说，如果子序列元素和为 sum ，你需要 最小化绝对差 abs(sum - goal) 。</span><br><span class="line"></span><br><span class="line">返回 abs(sum - goal) 可能的 最小值 。</span><br><span class="line"></span><br><span class="line">注意，数组的子序列是通过移除原始数组中的某些元素（可能全部或无）而形成的数组。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例 1：</span><br><span class="line"></span><br><span class="line">输入：nums = [5,-7,3,5], goal = 6</span><br><span class="line">输出：0</span><br><span class="line">解释：选择整个数组作为选出的子序列，元素和为 6 。</span><br><span class="line">子序列和与目标值相等，所以绝对差为 0 。</span><br><span class="line">示例 2：</span><br><span class="line"></span><br><span class="line">输入：nums = [7,-9,15,-2], goal = -5</span><br><span class="line">输出：1</span><br><span class="line">解释：选出子序列 [7,-9,-2] ，元素和为 -4 。</span><br><span class="line">绝对差为 abs(-4 - (-5)) = abs(1) = 1 ，是可能的最小值。</span><br><span class="line">示例 3：</span><br><span class="line"></span><br><span class="line">输入：nums = [1,2,3], goal = -7</span><br><span class="line">输出：7</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">1 &lt;= nums.length &lt;= 40</span><br><span class="line">-10^7 &lt;= nums[i] &lt;= 10^7</span><br><span class="line">-10^9 &lt;= goal &lt;= 10^9</span><br></pre></td></tr></table></figure>
+<h6 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h6><p>从数据范围可以看出，这道题大概率是一个 $O(2^m)$ 时间复杂度的解法，其中 m 是 nums.length 的一半。</p>
+<p>为什么？首先如果题目数组长度限制为小于等于 20，那么大概率是一个 $O(2^n)$ 的解法。</p>
+<blockquote>
+<p>如果这个也不知道，建议看一下这篇文章 <a href="https://lucifer.ren/blog/2020/12/21/shuati-silu3/">https://lucifer.ren/blog/2020/12/21/shuati-silu3/</a> 另外我的刷题插件 leetcode-cheatsheet 也给出了时间复杂度速查表供大家参考。</p>
+</blockquote>
+<p>将 40 砍半恰好就可以 AC 了。实际上，40 这个数字就是一个强有力的信号。</p>
+<p>回到题目中。我们可以用一个二进制位表示原数组 nums 的一个子集，这样用一个长度为 $2^n$ 的数组就可以描述 nums 的所有子集了，这就是状态压缩。一般题目数据范围是 &lt;= 20 都应该想到。</p>
+<blockquote>
+<p>这里 40 折半就是 20 了。</p>
+<p>如果不熟悉状态压缩，可以看下我的这篇文章 <a href="https://mp.weixin.qq.com/s?__biz=MzI4MzUxNjI3OA==&amp;mid=2247486874&amp;idx=1&amp;sn=0f27ddd51ad5b92ef0ddcc4fb19a3f5e&amp;chksm=eb88c183dcff4895209c4dc4d005e3bb143cc852805594b407dbf3f4718c60261f09c2849f70&amp;token=1227596150&amp;lang=zh_CN#rd" target="_blank" rel="noopener">状压 DP 是什么？这篇题解带你入门</a></p>
+</blockquote>
+<p>接下来，我们使用动态规划求出所有的子集和。</p>
+<p>令 dp[i] 表示选择情况如 i 所示的和。什么是<strong>选择情况如 i 所示呢？</strong></p>
+<p>比如我要求 nums 的子集和。那么 nums 的子集有 $2^n$ 个，即 nums 中每一个数都有<strong>选择和不选择两者情况</strong>。因此一共就有$2^n$种。如果用一个数字的二进制来表示这种选择情况，其中 0 表示选择 1 表示不选择，那么一个位数足够的数（二进制位数需要大于 n）可以用来表示<strong>一种</strong>可能的选择情况。</p>
+<p>我们可以枚举数组的每一项，对于每一项我们都考虑将其加入到选择中。那么转移方程为 ： <code>dp[(1 &lt;&lt; i) + j] = dp[j] + A[i]</code>，其中 j 为 i 的子集， i 和 j 的二进制表示的是 nums 的选择情况。</p>
+<p>动态规划求子集和代码如下：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">combine_sum</span><span class="params">(A)</span>:</span></span><br><span class="line">    n = len(A)</span><br><span class="line">    dp = [<span class="number">0</span>] * (<span class="number">1</span> &lt;&lt; n)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span> &lt;&lt; i):</span><br><span class="line">            dp[(<span class="number">1</span> &lt;&lt; i) + j] = dp[j] + A[i] <span class="comment"># 加 i 加入选择</span></span><br><span class="line">    <span class="keyword">return</span> dp</span><br></pre></td></tr></table></figure>
+<p>接下来，我们将 nums 平分为两部分，分别计算子集和：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n = len(nums)</span><br><span class="line">c1 = combine_sum(nums[: n // <span class="number">2</span>])</span><br><span class="line">c2 = combine_sum(nums[n // <span class="number">2</span> :])</span><br></pre></td></tr></table></figure>
+<p>其中 c1 就是前半部分数组的子集和，c2 就是后半部分的子集和。</p>
+<p>接下来问题转化为：<code>在两个数组 c1 和 c2中找两个数，其和最接近 goal</code>。而这是一个非常经典的双指针问题，逻辑类似两数和。</p>
+<p>只不过两数和是一个数组挑两个数，这里是两个数组分别挑一个数罢了。</p>
+<p>这里其实只需要一个指针指向一个数组的头，另外一个指向另外一个数组的尾即可。</p>
+<p>代码不难写出：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">combine_closest</span><span class="params">(c1, c2)</span>:</span></span><br><span class="line">    <span class="comment"># 先排序以便使用双指针</span></span><br><span class="line">    c1.sort()</span><br><span class="line">    c2.sort()</span><br><span class="line">    ans = float(<span class="string">"inf"</span>)</span><br><span class="line">    i, j = <span class="number">0</span>, len(c2) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; len(c1) <span class="keyword">and</span> j &gt;= <span class="number">0</span>:</span><br><span class="line">        _sum = c1[i] + c2[j]</span><br><span class="line">        ans = min(ans, abs(_sum - goal))</span><br><span class="line">        <span class="keyword">if</span> _sum &gt; goal:</span><br><span class="line">            j -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> _sum &lt; goal:</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<p>上面这个代码不懂的多看看两数和。</p>
+<h6 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h6><p>代码支持：Python3</p>
+<p>Python3 Code:</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minAbsDifference</span><span class="params">(self, nums: List[int], goal: int)</span> -&gt; int:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">combine_sum</span><span class="params">(A)</span>:</span></span><br><span class="line">            n = len(A)</span><br><span class="line">            dp = [<span class="number">0</span>] * (<span class="number">1</span> &lt;&lt; n)</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span> &lt;&lt; i):</span><br><span class="line">                    dp[(<span class="number">1</span> &lt;&lt; i) + j] = dp[j] + A[i]</span><br><span class="line">            <span class="keyword">return</span> dp</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">combine_closest</span><span class="params">(c1, c2)</span>:</span></span><br><span class="line">            c1.sort()</span><br><span class="line">            c2.sort()</span><br><span class="line">            ans = float(<span class="string">"inf"</span>)</span><br><span class="line">            i, j = <span class="number">0</span>, len(c2) - <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> i &lt; len(c1) <span class="keyword">and</span> j &gt;= <span class="number">0</span>:</span><br><span class="line">                _sum = c1[i] + c2[j]</span><br><span class="line">                ans = min(ans, abs(_sum - goal))</span><br><span class="line">                <span class="keyword">if</span> _sum &gt; goal:</span><br><span class="line">                    j -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">elif</span> _sum &lt; goal:</span><br><span class="line">                    i += <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">return</span> ans</span><br><span class="line"></span><br><span class="line">        n = len(nums)</span><br><span class="line">        <span class="keyword">return</span> combine_closest(combine_sum(nums[: n // <span class="number">2</span>]), combine_sum(nums[n // <span class="number">2</span> :]))</span><br></pre></td></tr></table></figure>
+<p><strong>复杂度分析</strong></p>
+<p>令 n 为数组长度, m 为 $\frac{n}{2}$。</p>
+<ul>
+<li>时间复杂度：$O(m*2^m)$</li>
+<li>空间复杂度：$O(2^m)$</li>
+</ul>
+<p>相关题目推荐：</p>
+<ul>
+<li><a href="https://leetcode-cn.com/problems/3sum-closest/" target="_blank" rel="noopener">16. 最接近的三数之和</a></li>
+<li><a href="https://leetcode-cn.com/problems/last-stone-weight-ii/" target="_blank" rel="noopener">1049. 最后一块石头的重量 II</a></li>
+<li><a href="https://leetcode-cn.com/problems/closest-dessert-cost/" target="_blank" rel="noopener">1774. 最接近目标价格的甜点成本</a></li>
+</ul>
+<p>这道题和双向搜索有什么关系呢？</p>
+<p>回一下开头我的话：<code>有时候问题规模很大，直接搜索会超时。此时可以考虑从起点搜索到问题规模的一半。然后将此过程中产生的状态存起来。接下来目标转化为在存储的中间状态中寻找满足条件的状态。进而达到降低时间复杂度的效果。</code></p>
+<p>对应这道题，我们如果直接暴力搜索。那就是枚举所有子集和，然后找到和 goal 最接近的，思路简单直接。可是这样会超时，那么就搜索到一半， 然后将状态存起来（对应这道题就是存到了 dp 数组）。接下来问题转化为两个 dp 数组的运算。<strong>该算法，本质上是将位于指数位的常数项挪动到了系数位</strong>。这是一种常见的双向搜索，我姑且称为 DFS 的双向搜索。目的是为了和后面的 BFS 双向搜索进行区分。</p>
+<h3 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h3><p>BFS 也是图论中算法的一种。不同于 DFS， BFS 采用横向搜索的方式，从初始状态一层层展开直到目标状态，在数据结构上通常采用队列结构。</p>
+<p>具体地，我们不断从队头取出状态，然后<strong>将此状态对应的决策产生的所有新的状态推入队尾</strong>，重复以上过程直至队列为空即可。</p>
+<p>注意这里有两个关键点：</p>
+<ol>
+<li>将此状态对应的决策。 实际上这句话指的就是状态空间中的图的边，而不管是 DFS 和 BFS 边都是确定的。也就是说不管是 DFS 还是 BFS 这个决策都是一样的。不同的是什么？不同的是进行决策的方向不同。</li>
+<li>所有新的状态推入队尾。上面说 BFS 和 DFS 是进行决策的方向不同。这就可以通过这个动作体现出来。由于直接将所有<strong>状态空间中的当前点的邻边</strong>放到队尾。由队列的先进先出的特性，当前点的邻边访问完成之前是不会继续向外扩展的。这一点大家可以和 DFS 进行对比。</li>
+</ol>
+<p>最简单的 BFS 每次扩展新的状态就增加一步，通过这样一步步逼近答案。其实也就等价于在一个权值为 1 的图上进行 BFS。由于队列的<strong>单调性和二值性</strong>，当第一次取出目标状态时就是最少的步数。基于这个特性，BFS 适合求解一些<strong>最少操作</strong>的题目。</p>
+<blockquote>
+<p>关于单调性和二值性，我会在后面的 BFS 和 DFS 的对比那块进行讲解。</p>
+</blockquote>
+<p>前面 DFS 部分提到了<strong>不管是什么搜索都需要记录和维护状态，其中一个就是节点访问状态以防止环的产生</strong>。而 BFS 中我们常常用来求点的最短距离。值得注意的是，有时候我们会使用一个哈希表 dist 来记录从源点到图中其他点的距离。这个 dist 也可以充当<strong>防止环产生的功能</strong>，这是因为第一次到达一个点后<strong>再次到达此点的距离一定比第一次到达大</strong>，利用这点就可知道是否是第一次访问了。</p>
+<h4 id="算法流程-1"><a href="#算法流程-1" class="headerlink" title="算法流程"></a>算法流程</h4><ol>
+<li>首先将根节点放入队列中。</li>
+<li>从队列中取出第一个节点，并检验它是否为目标。<ul>
+<li>如果找到目标，则结束搜索并回传结果。</li>
+<li>否则将它所有尚未检验过的直接子节点加入队列中。</li>
+</ul>
+</li>
+<li>若队列为空，表示整张图都检查过了——亦即图中没有欲搜索的目标。结束搜索并回传“找不到目标”。</li>
+<li>重复步骤 2。</li>
+</ol>
+<h4 id="算法模板-1"><a href="#算法模板-1" class="headerlink" title="算法模板"></a>算法模板</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> visited = &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bfs</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> q = <span class="keyword">new</span> Queue()</span><br><span class="line">	q.push(初始状态)</span><br><span class="line">	<span class="keyword">while</span>(q.length) &#123;</span><br><span class="line">		<span class="keyword">let</span> i = q.pop()</span><br><span class="line">		<span class="keyword">if</span> (visited[i]) <span class="keyword">continue</span></span><br><span class="line">		<span class="keyword">for</span> (i的可抵达状态j) &#123;</span><br><span class="line">			<span class="keyword">if</span> (j 合法) &#123;</span><br><span class="line">				q.push(j)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 找到所有合法解</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="常用技巧-1"><a href="#常用技巧-1" class="headerlink" title="常用技巧"></a>常用技巧</h4><h5 id="双向搜索-1"><a href="#双向搜索-1" class="headerlink" title="双向搜索"></a>双向搜索</h5><h6 id="题目地址-126-单词接龙-II"><a href="#题目地址-126-单词接龙-II" class="headerlink" title="题目地址(126. 单词接龙 II)"></a>题目地址(126. 单词接龙 II)</h6><p><a href="https://leetcode-cn.com/problems/word-ladder-ii/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/word-ladder-ii/</a></p>
+<h6 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">按字典 wordList 完成从单词 beginWord 到单词 endWord 转化，一个表示此过程的 转换序列 是形式上像 beginWord -&gt; s1 -&gt; s2 -&gt; ... -&gt; sk 这样的单词序列，并满足：</span><br><span class="line"></span><br><span class="line">每对相邻的单词之间仅有单个字母不同。</span><br><span class="line">转换过程中的每个单词 si（1 &lt;= i &lt;= k）必须是字典 wordList 中的单词。注意，beginWord 不必是字典 wordList 中的单词。</span><br><span class="line">sk == endWord</span><br><span class="line"></span><br><span class="line">给你两个单词 beginWord 和 endWord ，以及一个字典 wordList 。请你找出并返回所有从 beginWord 到 endWord 的 最短转换序列 ，如果不存在这样的转换序列，返回一个空列表。每个序列都应该以单词列表 [beginWord, s1, s2, ..., sk] 的形式返回。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例 1：</span><br><span class="line"></span><br><span class="line">输入：beginWord = &quot;hit&quot;, endWord = &quot;cog&quot;, wordList = [&quot;hot&quot;,&quot;dot&quot;,&quot;dog&quot;,&quot;lot&quot;,&quot;log&quot;,&quot;cog&quot;]</span><br><span class="line">输出：[[&quot;hit&quot;,&quot;hot&quot;,&quot;dot&quot;,&quot;dog&quot;,&quot;cog&quot;],[&quot;hit&quot;,&quot;hot&quot;,&quot;lot&quot;,&quot;log&quot;,&quot;cog&quot;]]</span><br><span class="line">解释：存在 2 种最短的转换序列：</span><br><span class="line">&quot;hit&quot; -&gt; &quot;hot&quot; -&gt; &quot;dot&quot; -&gt; &quot;dog&quot; -&gt; &quot;cog&quot;</span><br><span class="line">&quot;hit&quot; -&gt; &quot;hot&quot; -&gt; &quot;lot&quot; -&gt; &quot;log&quot; -&gt; &quot;cog&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">示例 2：</span><br><span class="line"></span><br><span class="line">输入：beginWord = &quot;hit&quot;, endWord = &quot;cog&quot;, wordList = [&quot;hot&quot;,&quot;dot&quot;,&quot;dog&quot;,&quot;lot&quot;,&quot;log&quot;]</span><br><span class="line">输出：[]</span><br><span class="line">解释：endWord &quot;cog&quot; 不在字典 wordList 中，所以不存在符合要求的转换序列。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">1 &lt;= beginWord.length &lt;= 7</span><br><span class="line">endWord.length == beginWord.length</span><br><span class="line">1 &lt;= wordList.length &lt;= 5000</span><br><span class="line">wordList[i].length == beginWord.length</span><br><span class="line">beginWord、endWord 和 wordList[i] 由小写英文字母组成</span><br><span class="line">beginWord != endWord</span><br><span class="line">wordList 中的所有单词 互不相同</span><br></pre></td></tr></table></figure>
+<h6 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h6><p>这道题就是我们日常玩的<strong>成语接龙游戏</strong>。即让你从 beginWord 开始， 接龙的 endWord。让你找到<strong>最短</strong>的接龙方式，如果有多个，则<strong>全部返回</strong>。</p>
+<p>不同于成语接龙的字首接字尾。这种接龙需要的是<strong>下一个单词和上一个单词</strong>仅有一个单词不同。</p>
+<p>我们可以对问题进行抽象：<strong>即构建一个大小为 n 的图，图中的每一个点表示一个单词，我们的目标是找到一条从节点 beginWord 到节点 endWord 的一条最短路径。</strong></p>
+<p>这是一个不折不扣的图上 BFS 的题目。套用上面的解题模板可以轻松解决。唯一需要注意的是<strong>如何构建图</strong>。更进一步说就是<strong>如何构建边</strong>。</p>
+<p>由题目信息的转换规则：<strong>每对相邻的单词之间仅有单个字母不同</strong>。不难知道，如果两个单词的仅有单个字母不同 ，就<strong>说明两者之间有一条边。</strong></p>
+<p>明白了这一点，我们就可以构建邻接矩阵了。</p>
+<p>核心代码：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">neighbors = collections.defaultdict(list)</span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> wordList:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(word)):</span><br><span class="line">        neighbors[word[:i] + <span class="string">"*"</span> + word[i + <span class="number">1</span> :]].append(word)</span><br></pre></td></tr></table></figure>
+<p>构建好了图。 BFS 剩下要做的就是明确起点和终点就好了。对于这道题来说，起点是 beginWord，终点是 endWord。</p>
+<p>那我们就可以将 beginWord 入队。不断在图上做 BFS，直到第一次遇到 endWord 就好了。</p>
+<p>套用上面的 BFS 模板，不难写出如下代码:</p>
+<blockquote>
+<p>这里我用了 cost 而不是 visitd，目的是为了让大家见识多种写法。下面的优化解法会使用 visited 来记录。</p>
+</blockquote>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findLadders</span><span class="params">(self, beginWord: str, endWord: str, wordList: List[str])</span> -&gt; List[List[str]]:</span></span><br><span class="line">        cost = collections.defaultdict(<span class="keyword">lambda</span>: float(<span class="string">"inf"</span>))</span><br><span class="line">        cost[beginWord] = <span class="number">0</span></span><br><span class="line">        neighbors = collections.defaultdict(list)</span><br><span class="line">        ans = []</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> wordList:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(len(word)):</span><br><span class="line">                neighbors[word[:i] + <span class="string">"*"</span> + word[i + <span class="number">1</span> :]].append(word)</span><br><span class="line">        q = collections.deque([[beginWord]])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> q:</span><br><span class="line">            path = q.popleft()</span><br><span class="line">            cur = path[<span class="number">-1</span>]</span><br><span class="line">            <span class="keyword">if</span> cur == endWord:</span><br><span class="line">                ans.append(path.copy())</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> range(len(cur)):</span><br><span class="line">                    <span class="keyword">for</span> neighbor <span class="keyword">in</span> neighbors[cur[:i] + <span class="string">"*"</span> + cur[i + <span class="number">1</span> :]]:</span><br><span class="line">                        <span class="keyword">if</span> cost[cur] + <span class="number">1</span> &lt;= cost[neighbor]:</span><br><span class="line">                            q.append(path + [neighbor])</span><br><span class="line">                            cost[neighbor] = cost[cur] + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<p>当终点可以逆向搜索的时候，我们也可以尝试双向 BFS。更本质一点就是：<strong>如果你构建的状态空间的边是双向的，那么就可以使用双向 BFS。</strong></p>
+<p>和 DFS 的双向搜索思想是类似的。我们只需要使用两个队列分别存储中起点和终点进行扩展的节点（我称其为起点集与终点集）即可。当起点和终点在某一时刻交汇了，说明找到了一个从起点到终点的路径，其路径长度就是两个队列扩展的路径长度和。</p>
+<p>以上就是双向搜索的大体思路。用图来表示就是这样的：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr1qya05soj30kp0n8q4u.jpg" alt></p>
+<p>如上图，我们从起点和重点（A 和 Z）分别开始搜索，如果起点的扩展状态和终点的扩展状态重叠（本质上就是队列中的元素重叠了），那么我们就知道了一个从节点到终点的最短路径。</p>
+<p>动图演示：</p>
+<p><img src="https://pic.stackoverflow.wiki/uploadImages/115/238/39/106/2021/05/31/17/41/ab3959a8-ebc2-4772-9f04-390f5cac675b.svg" alt="双向搜索.svg"></p>
+<p>看到这里有必要暂停一下插几句话。</p>
+<hr>
+<p>为什么双向搜索就快了？什么情况都会更快么？那为什么不都用双向搜索？有哪些使用条件？</p>
+<p>我们一个个回答。</p>
+<ul>
+<li>为什么双向搜索更快了？通过上面的图我们发现通常刚开始的时候边比较少，队列中的数据也比较少。而随着搜索的进行，<strong>搜索树越来越大， 队列中的节点随之增多</strong>。和上面双向搜索类似，这种增长速度很多情况下是指数级别的，而双向搜索<strong>可以将指数的常系数移动到多项式系数</strong>。如果不使用双向搜索那么搜索树大概是这样的：</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr1r2x6ijij30hz0nvmyz.jpg" alt></p>
+<p>可以看出搜索树大了很多，以至于很多点我都画不下，只好用 ”。。。“ 来表示。</p>
+<ul>
+<li>什么情况下更快？相比于单向搜索，双向搜索通常更快。当然也有例外，举个极端的例子，假如从起点到终点只要一条路径，那么无论使用单向搜索还是双向搜索结果都是一样。</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr1qrck4fqj30g808edgf.jpg" alt></p>
+<p>如图使用单向搜索还是双向搜索都是一样的。</p>
+<ul>
+<li>为什么不都用双向搜索？实际上做题中，我建议大家尽量使用单向搜索，因为写起来更节点，并且大多数都可以通过所有的测试用例。除非你预估到可能会超时或者提交后发现超时的时候再尝试使用双向搜索。</li>
+<li>有哪些使用条件？正如前面所说：”终点可以逆向搜索的时候，可以尝试双向 BFS。更本质一点就是：<strong>如果你构建的状态空间的边是双向的，那么就可以使用双向 BFS。</strong>“</li>
+</ul>
+<hr>
+<p>让我们继续回到这道题。为了能够判断两者是否交汇，我们可以使用两个 hashSet 分别存储起点集合终点集。当一个节点既出现起点集又出现在终点集，那就说明出现了交汇。</p>
+<p>为了节省代码量以及空间消耗，我没有使用上面的队列，而是直接使用了哈希表来代替队列。这种做法可行的关键仍然是上面提到的<strong>队列的二值性和单调性</strong>。</p>
+<p>由于<strong>新一轮的出队列前</strong>，队列中的权值都是相同的。因此从左到右遍历或者从右到左遍历，甚至是任意顺序遍历都是无所谓的。（很多题都无所谓）因此使用哈希表而不是队列也是可以的。这点需要引起大家的注意。希望大家对 BFS 的本质有更深的理解。</p>
+<p>那我们是不是不需要队列，就用哈希表，哈希集合啥的存就行了？非也！我会在双端队列部分为大家揭晓。</p>
+<p>这道题的具体算法：</p>
+<ul>
+<li>定义两个队列：q1 和 q2 ，分别从起点和终点进行搜索。</li>
+<li>构建邻接矩阵</li>
+<li>每次都尝试从 q1 和 q2 中的较小的进行扩展。这样可以达到剪枝的效果。</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr1q5h0haxj30ig08ygmg.jpg" alt></p>
+<ul>
+<li>如果 q1 和 q2 交汇了，则将两者的路径拼接起来即可。</li>
+</ul>
+<h6 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h6><ul>
+<li>语言支持：Python3</li>
+</ul>
+<p>Python3 Code:</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">findLadders</span><span class="params">(self, beginWord: str, endWord: str, wordList: list)</span> -&gt; list:</span></span><br><span class="line">       <span class="comment">#  剪枝 1</span></span><br><span class="line">       <span class="keyword">if</span> endWord <span class="keyword">not</span> <span class="keyword">in</span> wordList: <span class="keyword">return</span> []</span><br><span class="line">       ans = []</span><br><span class="line">       visited = set()</span><br><span class="line">       q1, q2 = &#123;beginWord: [[beginWord]]&#125;, &#123;endWord: [[endWord]]&#125;</span><br><span class="line">       steps = <span class="number">0</span></span><br><span class="line">       <span class="comment"># 预处理，空间换时间</span></span><br><span class="line">       neighbors = collections.defaultdict(list)</span><br><span class="line">       <span class="keyword">for</span> word <span class="keyword">in</span> wordList:</span><br><span class="line">           <span class="keyword">for</span> i <span class="keyword">in</span> range(len(word)):</span><br><span class="line">               neighbors[word[:i] + <span class="string">"*"</span> + word[i + <span class="number">1</span> :]].append(word)</span><br><span class="line">       <span class="keyword">while</span> q1:</span><br><span class="line">           <span class="comment"># 剪枝 2</span></span><br><span class="line">           <span class="keyword">if</span> len(q1) &gt; len(q2):</span><br><span class="line">               q1, q2 = q2, q1</span><br><span class="line">           nxt = collections.defaultdict(list)</span><br><span class="line">           <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(q1)):</span><br><span class="line">               word, paths = q1.popitem()</span><br><span class="line">               visited.add(word)</span><br><span class="line">               <span class="keyword">for</span> i <span class="keyword">in</span> range(len(word)):</span><br><span class="line">                   <span class="keyword">for</span> neighbor <span class="keyword">in</span> neighbors[word[:i] + <span class="string">"*"</span> + word[i + <span class="number">1</span> :]]:</span><br><span class="line">                       <span class="keyword">if</span> neighbor <span class="keyword">in</span> q2:</span><br><span class="line">                           <span class="comment"># 从 beginWord 扩展过来的</span></span><br><span class="line">                           <span class="keyword">if</span> paths[<span class="number">0</span>][<span class="number">0</span>] == beginWord:</span><br><span class="line">                               ans += [path1 + path2[::<span class="number">-1</span>] <span class="keyword">for</span> path1 <span class="keyword">in</span> paths <span class="keyword">for</span> path2 <span class="keyword">in</span> q2[neighbor]]</span><br><span class="line">                           <span class="comment"># 从 endWord 扩展过来的</span></span><br><span class="line">                           <span class="keyword">else</span>:</span><br><span class="line">                               ans += [path2 + path1[::<span class="number">-1</span>] <span class="keyword">for</span> path1 <span class="keyword">in</span> paths <span class="keyword">for</span> path2 <span class="keyword">in</span> q2[neighbor]]</span><br><span class="line">                       <span class="keyword">if</span> neighbor <span class="keyword">in</span> wordList <span class="keyword">and</span> neighbor <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">                           nxt[neighbor] += [path + [neighbor] <span class="keyword">for</span> path <span class="keyword">in</span> paths]</span><br><span class="line">           steps += <span class="number">1</span></span><br><span class="line">           <span class="comment"># 剪枝 3</span></span><br><span class="line">           <span class="keyword">if</span> ans <span class="keyword">and</span> steps + <span class="number">2</span> &gt; len(ans[<span class="number">0</span>]):</span><br><span class="line">               <span class="keyword">break</span></span><br><span class="line">           q1 = nxt</span><br><span class="line">       <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p>我想通过这道题给大家传递的知识点很多。分别是：</p>
+<ul>
+<li>队列不一定非得是常规的队列，也可以是哈希表等。不过某些情况必须是双端队列，这个等会讲双端队列给大家讲。</li>
+<li>双向 BFS 是只适合双向图。也就是说从终点也往前推。</li>
+<li>双向 BFS 从较少状态的一端进行扩展可以起到剪枝的效果</li>
+<li>visitd 和 dist/cost 都可以起到记录点访问情况以防止环的产生的作用。不过 dist 的作用更多，相应空间占用也更大。</li>
+</ul>
+<h5 id="双端队列"><a href="#双端队列" class="headerlink" title="双端队列"></a>双端队列</h5><p>上面提到了 BFS 本质上可以看做是在一个边权值为 1 的图上进行遍历。实际上，我们可以进行一个简单的扩展。如果图中边权值不全是 1，而是 0 和 1 呢？这样其实我们用到双端队列。</p>
+<p>双端队列可以在头部和尾部同时进行插入和删除，而普通的队列仅允许在头部删除，在尾部插入。</p>
+<p>使用双端队列，当每次取出一个状态的时候。如果我们可以<strong>无代价</strong>的进行转移，那么就可以将其直接放在队头，否则放在队尾。由<strong>前面讲的队列的单调性和二值性</strong>不难得出算法的正确性。而如果状态转移是有代价的，那么就将其放到队尾即可。这也是很多语言提供的内置数据结构是双端队列，而不是队列的原因之一。</p>
+<p>如下图：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr1pyirzhvj30jo096t9o.jpg" alt></p>
+<p>上面的队列是普通的队列。 而下面的双端队列，可以看出我们在队头插队了一个 B。</p>
+<p>动图演示：</p>
+<p><img src="https://pic.stackoverflow.wiki/uploadImages/115/238/39/106/2021/05/31/17/07/5d905ba0-c4c4-4bb4-91e9-d2ccb79d435b.svg" alt="双端队列.svg"></p>
+<blockquote>
+<p>思考：如果图对应的权值不出 0 和 1，而是任意正整数呢？</p>
+</blockquote>
+<p>前面我们提到了<strong>是不是不需要队列，就用哈希表，哈希集合啥的存就行了？</strong> 这里为大家揭秘。不可以的。因为哈希表无法处理这里的权值为 0 的情况。</p>
+<h3 id="DFS-和-BFS-的对比"><a href="#DFS-和-BFS-的对比" class="headerlink" title="DFS 和 BFS 的对比"></a>DFS 和 BFS 的对比</h3><p>BFS 和 DFS 分别处理什么样的问题？两者究竟有什么样的区别？这些都值得我们认真研究。</p>
+<p>简单来说，不管是 DFS 还是 BFS 都是对<strong>题目对应的状态空间进行搜索</strong>。</p>
+<p>具体来说，二者区别在于：</p>
+<ul>
+<li>DFS 在分叉点会任选一条深入进入，遇到终点则返回，再次返回到分叉口后尝试下一个选择。基于此，我们可以在路径上记录一些数据。<strong>由此也可以衍生出很多有趣的东西。</strong></li>
+</ul>
+<p>如下图，我们遍历到 A，有三个选择。此时我们可以任意选择一条，比如选择了 B，程序会继续往下进行选择分支 2，3 。。。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqrjwjmdegj30yy0u0n29.jpg" alt></p>
+<p>如下动图演示了一个典型的 DFS 流程。后面的章节，我们会给大家带来更复杂的图上 DFS。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghlui7vcmwg30dw0dw3yl.gif" alt="binary-tree-traversal-dfs"></p>
+<ul>
+<li>BFS 在分叉点会选择搜索的路径各尝试一次。使用队列来存储待处理的元素时，队列中<strong>最多</strong>只会有两层的元素，且满足单调性，即相同层的元素在一起。<strong>基于这个特点有很多有趣的优化。</strong></li>
+</ul>
+<p>如下图，广度优先遍历会将搜索的选择全部选择一遍会才会进入到下一层。和上面一样，我给大家标注了程序执行的一种可能的顺序。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqrjziifatj31er0u0dqj.jpg" alt></p>
+<p>可以发现，和我上面说的一样。右侧的队列始终最多有两层的节点，并且相同层的总在一起，换句话说队列的元素在层上<strong>满足单调性</strong>。</p>
+<p>如下动图演示了一个典型的 BFS 流程。后面的章节，我们会给大家带来更复杂的图上 BFS。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluic79lag30dw0dw3yl.gif" alt="binary-tree-traversal-bfs"></p>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>以上就是《搜索篇（上）》的所有内容了。总结一下搜索篇的解题思路：</p>
+<ul>
+<li>根据题目信息构建状态空间（图）。</li>
+<li>对图进行遍历（BFS 或者 DFS）</li>
+<li>记录和维护状态。（比如 visited 维护访问情况， 队列和栈维护状态的决策方向等等）</li>
+</ul>
+<p>我们花了大量的篇幅对 BFS 和 DFS 进行了详细的讲解，包括两个的对比。</p>
+<p>核心点需要大家注意：</p>
+<ul>
+<li>DFS 通常都是有递推关系的，而递归关系就是图的边。根据递归关系大家可以选择使用前序遍历或者后序遍历。</li>
+<li>BFS 由于其单调性，因此适合求解最短距离问题。</li>
+<li>。。。</li>
+</ul>
+<p>双向搜索的本质是将复杂度的常数项从一个影响较大的位置（比如指数位）移到了影响较小的位置（比如系数位）。</p>
+<p>搜索篇知识点比较密集，希望大家多多总结复习。</p>
+<p>下一节，我们介绍：</p>
+<ul>
+<li>回溯与剪枝。</li>
+<li>常用的指标与统计方法。具体包括：<ol>
+<li>树的深度与子树大小</li>
+<li>图的 DFS 序</li>
+<li>图的拓扑序</li>
+<li>图的联通分量</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>下节内容会首发在《91 天学算法》。想参加的可以戳这里了解详情：<a href="https://lucifer.ren/blog/2021/05/02/91algo-4/">https://lucifer.ren/blog/2021/05/02/91algo-4/</a></p>
+</blockquote>
+
+      </div>
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-10-11T00:10:08+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 2021年10月11日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/数据结构/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>数据结构</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/算法/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>算法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/BFS/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>BFS</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/搜索/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>搜索</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/DFS/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>DFS</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/回溯/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>回溯</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACN0lEQVR42u3awY6DMAxF0f7/TzPSrCq1pPfZdDQ4NytUQcJh4dpxHg88jt/xfP38y+vvZ/ec3b+e+bIhQ4aM2zKO5XhlrJ8l99dgHz6QDBkyNmDUguzZDMVXOXkWfQ4ZMmTICF+UB9D1WjJkyJDRCbiklE0TPhkyZMhYM8jUPATz3wnj4lpchgwZN2TUGgN/c/31/oYMGTL+PeMIR39Lbj3nURoyZMiYzagleWT59cwkEeQpqQwZMnZg1FqPPLzWcjx+REOGDBmzGZ1lailgmm4iqgwZMkYzeJpYO2xRSwrT9FGGDBmzGbz4JNv3KYAE1uIxCxkyZGzD4Ae/agGUrIKuZciQMZrBi0MSXtN2Jg/lHC9DhowdGGk6yFPANLDyrE+GDBm7MXjrsbOtxteN9w5lyJAxlFErNfnBiPSgRpqSypAhYzajdgyrBiDPpsH3za6hDBkyhjI6gTIuMsNyF/0ByJAhYzNGmrqRlI43RHkSKUOGjH0Y/e3+qw5npJ8g6GzIkCHj5oxrwysH8zDdWl6GDBmDGHw6Hnb55lonrL/JcGXIkDGOQbbG+HmNNLCmIT5IEGXIkDGIcYSDb/rHlXTnoJgMGTJGM2ob/bUGwFW1pwwZMvZk8CC7PpZRawaQpiZKLmXIkLEBIy1c+4ljGvuLnVgZMmRsxiDpYNoM4K3QD+8sQ4YMGaVXX79irdz90MKUIUPGaEbaDEjDa23rPyhuZciQMZrRKSBrxW2/g1HEyJAh436MH0KkiYelTNb+AAAAAElFTkSuQmCC'>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2021/06/02/search/&title=手把手教你刷搜索 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=大话搜索搜索一般指在有限的状态空间中进行枚举，通过穷尽所有的可能来找到符合条件的解或者解的个数。根据搜索方式的不同，搜索算法可以分为 DFS，BFS，A*算法等。这里只介绍 DFS 和 BFS，以及发生在 DFS 上一种技巧-回溯。
+搜索问题覆盖面非常广泛，并且在算法题中也占据了很高的比例。我甚至还在公开演讲中提到了 前端算法面试中搜索类占据了很大的比重，尤其是国内公司。
+搜索专题中的子专题有很多，而大家所熟知的 BFS，DFS 只是其中特别基础的内容。除此之外，还有状态记录与维护，剪枝，联通分量，拓扑排序等等。这些内容，我会在这里一一给大家介绍。
+另外即使仅仅考虑 DFS 和 BFS 两种基本算法，里面能玩的花样也非常多。比如 BFS 的双向搜索，比如 DFS 的前中后序，迭代加深等等。
+关于搜索，其实在二叉树部分已经做了介绍了。而这里的搜索，其实就是进一步的泛化。数据结构不再局限于前面提到的数组，链表或者树。而扩展到了诸如二维数组，多叉树，图等。不过核心仍然是一样的，只不过数据结构发生了变化而已。
+​"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2021/06/02/search/&title=手把手教你刷搜索 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=大话搜索搜索一般指在有限的状态空间中进行枚举，通过穷尽所有的可能来找到符合条件的解或者解的个数。根据搜索方式的不同，搜索算法可以分为 DFS，BFS，A*算法等。这里只介绍 DFS 和 BFS，以及发生在 DFS 上一种技巧-回溯。
+搜索问题覆盖面非常广泛，并且在算法题中也占据了很高的比例。我甚至还在公开演讲中提到了 前端算法面试中搜索类占据了很大的比重，尤其是国内公司。
+搜索专题中的子专题有很多，而大家所熟知的 BFS，DFS 只是其中特别基础的内容。除此之外，还有状态记录与维护，剪枝，联通分量，拓扑排序等等。这些内容，我会在这里一一给大家介绍。
+另外即使仅仅考虑 DFS 和 BFS 两种基本算法，里面能玩的花样也非常多。比如 BFS 的双向搜索，比如 DFS 的前中后序，迭代加深等等。
+关于搜索，其实在二叉树部分已经做了介绍了。而这里的搜索，其实就是进一步的泛化。数据结构不再局限于前面提到的数组，链表或者树。而扩展到了诸如二维数组，多叉树，图等。不过核心仍然是一样的，只不过数据结构发生了变化而已。
+​"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2021/06/02/search/&title=手把手教你刷搜索 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=大话搜索搜索一般指在有限的状态空间中进行枚举，通过穷尽所有的可能来找到符合条件的解或者解的个数。根据搜索方式的不同，搜索算法可以分为 DFS，BFS，A*算法等。这里只介绍 DFS 和 BFS，以及发生在 DFS 上一种技巧-回溯。
+搜索问题覆盖面非常广泛，并且在算法题中也占据了很高的比例。我甚至还在公开演讲中提到了 前端算法面试中搜索类占据了很大的比重，尤其是国内公司。
+搜索专题中的子专题有很多，而大家所熟知的 BFS，DFS 只是其中特别基础的内容。除此之外，还有状态记录与维护，剪枝，联通分量，拓扑排序等等。这些内容，我会在这里一一给大家介绍。
+另外即使仅仅考虑 DFS 和 BFS 两种基本算法，里面能玩的花样也非常多。比如 BFS 的双向搜索，比如 DFS 的前中后序，迭代加深等等。
+关于搜索，其实在二叉树部分已经做了介绍了。而这里的搜索，其实就是进一步的泛化。数据结构不再局限于前面提到的数组，链表或者树。而扩展到了诸如二维数组，多叉树，图等。不过核心仍然是一样的，只不过数据结构发生了变化而已。
+​"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                          <h4>
+                              <a href="/blog/2021/06/18/quit-esign/" rel="prev" title="我离职了~">
+                                
+                                    我离职了~
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/技能/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 技能</a> <a class="tag" href="/blog/tags/PPT/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> PPT</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/blog/2021/05/24/interview-fe-bi/" rel="prev" title="某区块链公司竟然用这道算法题来面试">
+                                  
+                                      某区块链公司竟然用这道算法题来面试
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/前端/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 前端</a> <a class="tag" href="/blog/tags/面经/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 面经</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+
+  <script>
+    window.subData = {
+      title: '手把手教你刷搜索',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/blog/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://www.zhihu.com/people/lu-xiao-13-70/activities"
+              class="social fab fa-zhihu flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:azl397985856@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/azl397985856"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/playlist?id=978545815&userid=632167080"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#大话搜索"><span class="toc-text">大话搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搜索的核心是什么？"><span class="toc-text">搜索的核心是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#状态空间"><span class="toc-text">状态空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DFS-和-BFS"><span class="toc-text">DFS 和 BFS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DFS"><span class="toc-text">DFS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#算法流程"><span class="toc-text">算法流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#算法模板"><span class="toc-text">算法模板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用技巧"><span class="toc-text">常用技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#前序遍历与后序遍历"><span class="toc-text">前序遍历与后序遍历</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#迭代加深"><span class="toc-text">迭代加深</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#双向搜索"><span class="toc-text">双向搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#题目地址"><span class="toc-text">题目地址</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#题目描述"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BFS"><span class="toc-text">BFS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#算法流程-1"><span class="toc-text">算法流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#算法模板-1"><span class="toc-text">算法模板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用技巧-1"><span class="toc-text">常用技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#双向搜索-1"><span class="toc-text">双向搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#题目地址-126-单词接龙-II"><span class="toc-text">题目地址(126. 单词接龙 II)</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#题目描述-1"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#思路-1"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#代码-1"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#双端队列"><span class="toc-text">双端队列</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DFS-和-BFS-的对比"><span class="toc-text">DFS 和 BFS 的对比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结-1"><span class="toc-text">总结</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;我的开源项目</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/leetcode" href="https://github.com/azl397985856/leetcode"
+          
+          
+          id="https:github.comazl397985856leetcode">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          Github 45k 算法刷题仓库
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/fe-interview" href="https://github.com/azl397985856/fe-interview"
+          
+          
+          id="https:github.comazl397985856fe-interview">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          大前端
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/daily-featured" href="https://github.com/azl397985856/daily-featured"
+          
+          
+          id="https:github.comazl397985856daily-featured">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          每日一荐
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;全部分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+    href="/blog/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/blog/categories/91天学算法/" href="/blog/categories/91天学算法/"><div class='name'>91天学算法</div><div class='badge'>(16)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/CD/" href="/blog/categories/CD/"><div class='name'>CD</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Easy/" href="/blog/categories/Easy/"><div class='name'>Easy</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Github/" href="/blog/categories/Github/"><div class='name'>Github</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Hard/" href="/blog/categories/Hard/"><div class='name'>Hard</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/LeetCode/" href="/blog/categories/LeetCode/"><div class='name'>LeetCode</div><div class='badge'>(22)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/LeetCode题解书/" href="/blog/categories/LeetCode/LeetCode题解书/"><div class='name'>LeetCode题解书</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/刷题技巧/" href="/blog/categories/LeetCode/刷题技巧/"><div class='name'>刷题技巧</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/动态规划/" href="/blog/categories/LeetCode/动态规划/"><div class='name'>动态规划</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Medium/" href="/blog/categories/Medium/"><div class='name'>Medium</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/React/" href="/blog/categories/React/"><div class='name'>React</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/TypeScript/" href="/blog/categories/TypeScript/"><div class='name'>TypeScript</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/vite/" href="/blog/categories/vite/"><div class='name'>vite</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/中等/" href="/blog/categories/中等/"><div class='name'>中等</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书/" href="/blog/categories/书/"><div class='name'>书</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/书/算法/" href="/blog/categories/书/算法/"><div class='name'>算法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书摘/" href="/blog/categories/书摘/"><div class='name'>书摘</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/二分/" href="/blog/categories/二分/"><div class='name'>二分</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/二叉树/" href="/blog/categories/二叉树/"><div class='name'>二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/刷题技巧/" href="/blog/categories/刷题技巧/"><div class='name'>刷题技巧</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/刷题方法/" href="/blog/categories/刷题方法/"><div class='name'>刷题方法</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/前端/" href="/blog/categories/前端/"><div class='name'>前端</div><div class='badge'>(24)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/TypeScript/" href="/blog/categories/前端/TypeScript/"><div class='name'>TypeScript</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/TypeScript/泛型/" href="/blog/categories/前端/TypeScript/泛型/"><div class='name'>泛型</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/eslint/" href="/blog/categories/前端/eslint/"><div class='name'>eslint</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/web-component/" href="/blog/categories/前端/web-component/"><div class='name'>web-component</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/webkit/" href="/blog/categories/前端/webkit/"><div class='name'>webkit</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/测试/" href="/blog/categories/前端/测试/"><div class='name'>测试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/浏览器/" href="/blog/categories/前端/浏览器/"><div class='name'>浏览器</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/算法/" href="/blog/categories/前端/算法/"><div class='name'>算法</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/组件化/" href="/blog/categories/前端/组件化/"><div class='name'>组件化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/前缀和/" href="/blog/categories/前缀和/"><div class='name'>前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前缀和/二维前缀和/" href="/blog/categories/前缀和/二维前缀和/"><div class='name'>二维前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/力扣加加/" href="/blog/categories/力扣加加/"><div class='name'>力扣加加</div><div class='badge'>(18)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/动态规划/" href="/blog/categories/动态规划/"><div class='name'>动态规划</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/双指针/" href="/blog/categories/双指针/"><div class='name'>双指针</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/命令行/" href="/blog/categories/命令行/"><div class='name'>命令行</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/回溯/" href="/blog/categories/回溯/"><div class='name'>回溯</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/堆/" href="/blog/categories/堆/"><div class='name'>堆</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/好未来/" href="/blog/categories/好未来/"><div class='name'>好未来</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/学习方法/" href="/blog/categories/学习方法/"><div class='name'>学习方法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/工具/" href="/blog/categories/工具/"><div class='name'>工具</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/工具/VSCODE/" href="/blog/categories/工具/VSCODE/"><div class='name'>VSCODE</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/异议！/" href="/blog/categories/异议！/"><div class='name'>异议！</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/成长经历/" href="/blog/categories/成长经历/"><div class='name'>成长经历</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/技术大会/" href="/blog/categories/技术大会/"><div class='name'>技术大会</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/D2/" href="/blog/categories/技术大会/D2/"><div class='name'>D2</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/Google-IO/" href="/blog/categories/技术大会/Google-IO/"><div class='name'>Google IO</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/JSConf/" href="/blog/categories/技术大会/JSConf/"><div class='name'>JSConf</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/QCon/" href="/blog/categories/技术大会/QCon/"><div class='name'>QCon</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/React-Conf/" href="/blog/categories/技术大会/React-Conf/"><div class='name'>React Conf</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/插件/" href="/blog/categories/插件/"><div class='name'>插件</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/插件/浏览器插件/" href="/blog/categories/插件/浏览器插件/"><div class='name'>浏览器插件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/插件/算法/" href="/blog/categories/插件/算法/"><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/搜索/" href="/blog/categories/搜索/"><div class='name'>搜索</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数学/" href="/blog/categories/数学/"><div class='name'>数学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数学/算法/" href="/blog/categories/数学/算法/"><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构/" href="/blog/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/hashtable/" href="/blog/categories/数据结构/hashtable/"><div class='name'>hashtable</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/二叉搜索树/" href="/blog/categories/数据结构/二叉搜索树/"><div class='name'>二叉搜索树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/图/" href="/blog/categories/数据结构/图/"><div class='name'>图</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/字符串/" href="/blog/categories/数据结构/字符串/"><div class='name'>字符串</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/平衡二叉树/" href="/blog/categories/数据结构/平衡二叉树/"><div class='name'>平衡二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/数组/" href="/blog/categories/数据结构/数组/"><div class='name'>数组</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/算法/" href="/blog/categories/数据结构/算法/"><div class='name'>算法</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/链表/" href="/blog/categories/数据结构/链表/"><div class='name'>链表</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，二叉树/" href="/blog/categories/数据结构，二叉树/"><div class='name'>数据结构，二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，单调栈/" href="/blog/categories/数据结构，单调栈/"><div class='name'>数据结构，单调栈</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，字符串/" href="/blog/categories/数据结构，字符串/"><div class='name'>数据结构，字符串</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，数组/" href="/blog/categories/数据结构，数组/"><div class='name'>数据结构，数组</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/日记/" href="/blog/categories/日记/"><div class='name'>日记</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/日记/技术/" href="/blog/categories/日记/技术/"><div class='name'>技术</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/春招/" href="/blog/categories/春招/"><div class='name'>春招</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/栈/" href="/blog/categories/栈/"><div class='name'>栈</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/树/" href="/blog/categories/树/"><div class='name'>树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/校招/" href="/blog/categories/校招/"><div class='name'>校招</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/模拟面试/" href="/blog/categories/模拟面试/"><div class='name'>模拟面试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/每日一荐/" href="/blog/categories/每日一荐/"><div class='name'>每日一荐</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-09/" href="/blog/categories/每日一荐/2019-09/"><div class='name'>2019-09</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-10/" href="/blog/categories/每日一荐/2019-10/"><div class='name'>2019-10</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-11/" href="/blog/categories/每日一荐/2019-11/"><div class='name'>2019-11</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-12/" href="/blog/categories/每日一荐/2019-12/"><div class='name'>2019-12</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2020-01/" href="/blog/categories/每日一荐/2020-01/"><div class='name'>2020-01</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2020-03/" href="/blog/categories/每日一荐/2020-03/"><div class='name'>2020-03</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/浏览器/" href="/blog/categories/浏览器/"><div class='name'>浏览器</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/浏览器/webkit/" href="/blog/categories/浏览器/webkit/"><div class='name'>webkit</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/浏览器/事件/" href="/blog/categories/浏览器/事件/"><div class='name'>事件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/电影/" href="/blog/categories/电影/"><div class='name'>电影</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/电影/观后感/" href="/blog/categories/电影/观后感/"><div class='name'>观后感</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/百度/" href="/blog/categories/百度/"><div class='name'>百度</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法/" href="/blog/categories/算法/"><div class='name'>算法</div><div class='badge'>(29)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/BFS/" href="/blog/categories/算法/BFS/"><div class='name'>BFS</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/DFS/" href="/blog/categories/算法/DFS/"><div class='name'>DFS</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/二分法/" href="/blog/categories/算法/二分法/"><div class='name'>二分法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/位运算/" href="/blog/categories/算法/位运算/"><div class='name'>位运算</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/前端/" href="/blog/categories/算法/前端/"><div class='name'>前端</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/前端/面试/" href="/blog/categories/算法/前端/面试/"><div class='name'>面试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/前缀和/" href="/blog/categories/算法/前缀和/"><div class='name'>前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/动态规划/" href="/blog/categories/算法/动态规划/"><div class='name'>动态规划</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/双指针/" href="/blog/categories/算法/双指针/"><div class='name'>双指针</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/回文/" href="/blog/categories/算法/回文/"><div class='name'>回文</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/回溯/" href="/blog/categories/算法/回溯/"><div class='name'>回溯</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/子序列/" href="/blog/categories/算法/子序列/"><div class='name'>子序列</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/就地算法/" href="/blog/categories/算法/就地算法/"><div class='name'>就地算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/布隆过滤器/" href="/blog/categories/算法/布隆过滤器/"><div class='name'>布隆过滤器</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/循环移位/" href="/blog/categories/算法/循环移位/"><div class='name'>循环移位</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/数学/" href="/blog/categories/算法/数学/"><div class='name'>数学</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/概率/" href="/blog/categories/算法/概率/"><div class='name'>概率</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/母题/" href="/blog/categories/算法/母题/"><div class='name'>母题</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/滑动窗口/" href="/blog/categories/算法/滑动窗口/"><div class='name'>滑动窗口</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/状态压缩/" href="/blog/categories/算法/状态压缩/"><div class='name'>状态压缩</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/背包问题/" href="/blog/categories/算法/背包问题/"><div class='name'>背包问题</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/递归/" href="/blog/categories/算法/递归/"><div class='name'>递归</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/链表反转/" href="/blog/categories/算法/链表反转/"><div class='name'>链表反转</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，动态规划/" href="/blog/categories/算法，动态规划/"><div class='name'>算法，动态规划</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，序列化/" href="/blog/categories/算法，序列化/"><div class='name'>算法，序列化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，滑动窗口/" href="/blog/categories/算法，滑动窗口/"><div class='name'>算法，滑动窗口</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/经验分享/" href="/blog/categories/经验分享/"><div class='name'>经验分享</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/编程之美/" href="/blog/categories/编程之美/"><div class='name'>编程之美</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/蓄水池抽样/" href="/blog/categories/蓄水池抽样/"><div class='name'>蓄水池抽样</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/虾皮/" href="/blog/categories/虾皮/"><div class='name'>虾皮</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/解题模板/" href="/blog/categories/解题模板/"><div class='name'>解题模板</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/谷歌/" href="/blog/categories/谷歌/"><div class='name'>谷歌</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/贪婪/" href="/blog/categories/贪婪/"><div class='name'>贪婪</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/走出科学/" href="/blog/categories/走出科学/"><div class='name'>走出科学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/软件工具/" href="/blog/categories/软件工具/"><div class='name'>软件工具</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/链表/" href="/blog/categories/链表/"><div class='name'>链表</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/面经/" href="/blog/categories/面经/"><div class='name'>面经</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/面试/" href="/blog/categories/面试/"><div class='name'>面试</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/面试/字节跳动/" href="/blog/categories/面试/字节跳动/"><div class='name'>字节跳动</div><div class='badge'>(2)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+    href="/blog/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/blog/tags/91天学算法/" style="font-size: 20px; color: #707070">91天学算法</a> <a href="/blog/tags/AI/" style="font-size: 14px; color: #999">AI</a> <a href="/blog/tags/BFS/" style="font-size: 14.67px; color: #949494">BFS</a> <a href="/blog/tags/BigPipe/" style="font-size: 14px; color: #999">BigPipe</a> <a href="/blog/tags/CD/" style="font-size: 14px; color: #999">CD</a> <a href="/blog/tags/Canvas/" style="font-size: 14px; color: #999">Canvas</a> <a href="/blog/tags/Chrome/" style="font-size: 14px; color: #999">Chrome</a> <a href="/blog/tags/D2/" style="font-size: 14px; color: #999">D2</a> <a href="/blog/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/blog/tags/Easy/" style="font-size: 14px; color: #999">Easy</a> <a href="/blog/tags/Floyd-Warshall/" style="font-size: 14px; color: #999">Floyd-Warshall</a> <a href="/blog/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/blog/tags/Github/" style="font-size: 14.67px; color: #949494">Github</a> <a href="/blog/tags/Google-IO/" style="font-size: 14px; color: #999">Google IO</a> <a href="/blog/tags/Hard/" style="font-size: 14.67px; color: #949494">Hard</a> <a href="/blog/tags/JSConf/" style="font-size: 14px; color: #999">JSConf</a> <a href="/blog/tags/LeetCode/" style="font-size: 22.67px; color: #5e5e5e">LeetCode</a> <a href="/blog/tags/LeetCode日记/" style="font-size: 19.33px; color: #757575">LeetCode日记</a> <a href="/blog/tags/Mac/" style="font-size: 14px; color: #999">Mac</a> <a href="/blog/tags/Medium/" style="font-size: 14.67px; color: #949494">Medium</a> <a href="/blog/tags/PPT/" style="font-size: 14.67px; color: #949494">PPT</a> <a href="/blog/tags/QCon/" style="font-size: 14px; color: #999">QCon</a> <a href="/blog/tags/RFC/" style="font-size: 14px; color: #999">RFC</a> <a href="/blog/tags/React/" style="font-size: 14px; color: #999">React</a> <a href="/blog/tags/TypeScript/" style="font-size: 18px; color: #7e7e7e">TypeScript</a> <a href="/blog/tags/VSCODE/" style="font-size: 15.33px; color: #909090">VSCODE</a> <a href="/blog/tags/eslint/" style="font-size: 14px; color: #999">eslint</a> <a href="/blog/tags/immutable/" style="font-size: 14px; color: #999">immutable</a> <a href="/blog/tags/immutablejs/" style="font-size: 14px; color: #999">immutablejs</a> <a href="/blog/tags/k-问题/" style="font-size: 14px; color: #999">k 问题</a> <a href="/blog/tags/vite/" style="font-size: 14px; color: #999">vite</a> <a href="/blog/tags/vue/" style="font-size: 14px; color: #999">vue</a> <a href="/blog/tags/web-component/" style="font-size: 14px; color: #999">web-component</a> <a href="/blog/tags/webkit/" style="font-size: 14px; color: #999">webkit</a> <a href="/blog/tags/中位数/" style="font-size: 14px; color: #999">中位数</a> <a href="/blog/tags/中等/" style="font-size: 14.67px; color: #949494">中等</a> <a href="/blog/tags/书/" style="font-size: 15.33px; color: #909090">书</a> <a href="/blog/tags/书摘/" style="font-size: 14px; color: #999">书摘</a> <a href="/blog/tags/事件/" style="font-size: 14px; color: #999">事件</a> <a href="/blog/tags/事件循环/" style="font-size: 14px; color: #999">事件循环</a> <a href="/blog/tags/二分/" style="font-size: 14.67px; color: #949494">二分</a> <a href="/blog/tags/二分法/" style="font-size: 14px; color: #999">二分法</a> <a href="/blog/tags/二叉树/" style="font-size: 15.33px; color: #909090">二叉树</a> <a href="/blog/tags/位运算/" style="font-size: 14px; color: #999">位运算</a> <a href="/blog/tags/删除-k-个字符/" style="font-size: 14px; color: #999">删除 k 个字符</a> <a href="/blog/tags/刷题/" style="font-size: 14.67px; color: #949494">刷题</a> <a href="/blog/tags/刷题技巧/" style="font-size: 16.67px; color: #878787">刷题技巧</a> <a href="/blog/tags/刷题方法/" style="font-size: 15.33px; color: #909090">刷题方法</a> <a href="/blog/tags/前端/" style="font-size: 22px; color: #636363">前端</a> <a href="/blog/tags/前缀和/" style="font-size: 16px; color: #8b8b8b">前缀和</a> <a href="/blog/tags/前缀表达式/" style="font-size: 14px; color: #999">前缀表达式</a> <a href="/blog/tags/力扣加加/" style="font-size: 21.33px; color: #676767">力扣加加</a> <a href="/blog/tags/动态规划/" style="font-size: 18.67px; color: #797979">动态规划</a> <a href="/blog/tags/单元测试/" style="font-size: 14px; color: #999">单元测试</a> <a href="/blog/tags/单调栈/" style="font-size: 14px; color: #999">单调栈</a> <a href="/blog/tags/双指针/" style="font-size: 14px; color: #999">双指针</a> <a href="/blog/tags/命令行/" style="font-size: 14.67px; color: #949494">命令行</a> <a href="/blog/tags/回溯/" style="font-size: 14.67px; color: #949494">回溯</a> <a href="/blog/tags/困难/" style="font-size: 14.67px; color: #949494">困难</a> <a href="/blog/tags/图/" style="font-size: 14px; color: #999">图</a> <a href="/blog/tags/图片处理/" style="font-size: 14px; color: #999">图片处理</a> <a href="/blog/tags/堆/" style="font-size: 14.67px; color: #949494">堆</a> <a href="/blog/tags/好未来/" style="font-size: 14px; color: #999">好未来</a> <a href="/blog/tags/子数组/" style="font-size: 14px; color: #999">子数组</a> <a href="/blog/tags/字符串/" style="font-size: 14px; color: #999">字符串</a> <a href="/blog/tags/字节跳动/" style="font-size: 15.33px; color: #909090">字节跳动</a> <a href="/blog/tags/学习方法/" style="font-size: 14.67px; color: #949494">学习方法</a> <a href="/blog/tags/工具/" style="font-size: 16px; color: #8b8b8b">工具</a> <a href="/blog/tags/序列化/" style="font-size: 14px; color: #999">序列化</a> <a href="/blog/tags/异常处理/" style="font-size: 14px; color: #999">异常处理</a> <a href="/blog/tags/异议！/" style="font-size: 14px; color: #999">异议！</a> <a href="/blog/tags/循环移位/" style="font-size: 14px; color: #999">循环移位</a> <a href="/blog/tags/微前端/" style="font-size: 14px; color: #999">微前端</a> <a href="/blog/tags/必备软件/" style="font-size: 14px; color: #999">必备软件</a> <a href="/blog/tags/成长经历/" style="font-size: 14px; color: #999">成长经历</a> <a href="/blog/tags/我的书/" style="font-size: 14px; color: #999">我的书</a> <a href="/blog/tags/扩展程序/" style="font-size: 14px; color: #999">扩展程序</a> <a href="/blog/tags/技术大会/" style="font-size: 14px; color: #999">技术大会</a> <a href="/blog/tags/技术调研/" style="font-size: 14px; color: #999">技术调研</a> <a href="/blog/tags/技能/" style="font-size: 14.67px; color: #949494">技能</a> <a href="/blog/tags/持续集成/" style="font-size: 14px; color: #999">持续集成</a> <a href="/blog/tags/插件/" style="font-size: 16.67px; color: #878787">插件</a> <a href="/blog/tags/搜索/" style="font-size: 14px; color: #999">搜索</a> <a href="/blog/tags/效率/" style="font-size: 14px; color: #999">效率</a> <a href="/blog/tags/数学/" style="font-size: 16px; color: #8b8b8b">数学</a> <a href="/blog/tags/数据结构/" style="font-size: 23.33px; color: #5a5a5a">数据结构</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，Hard/" style="font-size: 14.67px; color: #949494">数据结构，算法，LeetCode 日记，Hard</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，中等/" style="font-size: 14px; color: #999">数据结构，算法，LeetCode 日记，中等</a> <a href="/blog/tags/数组/" style="font-size: 14.67px; color: #949494">数组</a> <a href="/blog/tags/日记/" style="font-size: 14.67px; color: #949494">日记</a> <a href="/blog/tags/春招/" style="font-size: 15.33px; color: #909090">春招</a> <a href="/blog/tags/最大公约数/" style="font-size: 14px; color: #999">最大公约数</a> <a href="/blog/tags/最长上升子序列/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/blog/tags/最长公共子序列/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/blog/tags/栈/" style="font-size: 14px; color: #999">栈</a> <a href="/blog/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/blog/tags/校招/" style="font-size: 15.33px; color: #909090">校招</a> <a href="/blog/tags/概率/" style="font-size: 14.67px; color: #949494">概率</a> <a href="/blog/tags/模块/" style="font-size: 14px; color: #999">模块</a> <a href="/blog/tags/模拟面试/" style="font-size: 14px; color: #999">模拟面试</a> <a href="/blog/tags/母题/" style="font-size: 14px; color: #999">母题</a> <a href="/blog/tags/每日一荐/" style="font-size: 17.33px; color: #828282">每日一荐</a> <a href="/blog/tags/泛型/" style="font-size: 14.67px; color: #949494">泛型</a> <a href="/blog/tags/测试/" style="font-size: 14px; color: #999">测试</a> <a href="/blog/tags/浏览器/" style="font-size: 15.33px; color: #909090">浏览器</a> <a href="/blog/tags/滑动窗口/" style="font-size: 16.67px; color: #878787">滑动窗口</a> <a href="/blog/tags/滤镜/" style="font-size: 14px; color: #999">滤镜</a> <a href="/blog/tags/状态压缩/" style="font-size: 14px; color: #999">状态压缩</a> <a href="/blog/tags/状态机/" style="font-size: 14px; color: #999">状态机</a> <a href="/blog/tags/电子书/" style="font-size: 14px; color: #999">电子书</a> <a href="/blog/tags/电影/" style="font-size: 14.67px; color: #949494">电影</a> <a href="/blog/tags/百度/" style="font-size: 14px; color: #999">百度</a> <a href="/blog/tags/监控/" style="font-size: 14px; color: #999">监控</a> <a href="/blog/tags/算法/" style="font-size: 24px; color: #555">算法</a> <a href="/blog/tags/算法提高班/" style="font-size: 20.67px; color: #6c6c6c">算法提高班</a> <a href="/blog/tags/算法系列/" style="font-size: 16px; color: #8b8b8b">算法系列</a> <a href="/blog/tags/组件化/" style="font-size: 14px; color: #999">组件化</a> <a href="/blog/tags/经验分享/" style="font-size: 15.33px; color: #909090">经验分享</a> <a href="/blog/tags/编程之美/" style="font-size: 14px; color: #999">编程之美</a> <a href="/blog/tags/草稿/" style="font-size: 14.67px; color: #949494">草稿</a> <a href="/blog/tags/蓄水池抽样/" style="font-size: 14px; color: #999">蓄水池抽样</a> <a href="/blog/tags/虾皮/" style="font-size: 14px; color: #999">虾皮</a> <a href="/blog/tags/装机/" style="font-size: 14px; color: #999">装机</a> <a href="/blog/tags/解题模板/" style="font-size: 14px; color: #999">解题模板</a> <a href="/blog/tags/谷歌/" style="font-size: 14px; color: #999">谷歌</a> <a href="/blog/tags/贪婪/" style="font-size: 14px; color: #999">贪婪</a> <a href="/blog/tags/贪心/" style="font-size: 14px; color: #999">贪心</a> <a href="/blog/tags/走出科学/" style="font-size: 14px; color: #999">走出科学</a> <a href="/blog/tags/递归/" style="font-size: 14px; color: #999">递归</a> <a href="/blog/tags/链表/" style="font-size: 15.33px; color: #909090">链表</a> <a href="/blog/tags/陷阱题/" style="font-size: 14px; color: #999">陷阱题</a> <a href="/blog/tags/面经/" style="font-size: 16px; color: #8b8b8b">面经</a> <a href="/blog/tags/面试/" style="font-size: 14.67px; color: #949494">面试</a>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget list'>
+  
+<header class='pure'>
+  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;强烈推荐</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="entry">
+      
+        <li><a class="flat-box" title="https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=0iygwnzh" href="https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=0iygwnzh"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;【阿里云】轻量应用服务器2核2G 低至60元/年起
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://leetcode-solution.cn/book-intro" href="https://leetcode-solution.cn/book-intro"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;《算法通关之路》
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://yasuotu.com" href="https://yasuotu.com"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;图片在线压缩
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/fe-lucifer/fanqiang" href="https://github.com/fe-lucifer/fanqiang"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;科学上网
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://mxclub.github.io/resume/" href="https://mxclub.github.io/resume/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;简历主题
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+   
+  <div class="social-wrapper">
+     
+    <a
+      href="/blog/atom.xml"
+      class="social fas fa-rss flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://www.zhihu.com/people/lu-xiao-13-70/activities"
+      class="social fab fa-zhihu flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="mailto:azl397985856@gmail.com"
+      class="social fas fa-envelope flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://github.com/azl397985856"
+      class="social fab fa-github flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://music.163.com/playlist?id=978545815&amp;userid=632167080"
+      class="social fas fa-headphones-alt flat-btn"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+     
+  </div>
+  
+  <br />
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename"
+      >Material X</a
+    >
+    作为主题  。
+  </div>
+
+  <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+  <script>
+    var now = new Date();
+    function createtime() {
+      var grt = new Date("08/10/2018 17:38:00"); //在此处修改你的建站时间，格式：月/日/年 时:分:秒
+      now.setTime(now.getTime() + 250);
+      days = (now - grt) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+      hnum = Math.floor(hours);
+      if (String(hnum).length == 1) {
+        hnum = "0" + hnum;
+      }
+      minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+      mnum = Math.floor(minutes);
+      if (String(mnum).length == 1) {
+        mnum = "0" + mnum;
+      }
+      seconds =
+        (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+      snum = Math.round(seconds);
+      if (String(snum).length == 1) {
+        snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML =
+        "本站已安全运行 " + dnum + " 天 ";
+      document.getElementById("times").innerHTML =
+        hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()", 250);
+  </script>
+</footer>
+<script>
+  setLoadingBarProgress(80);
+</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "aea1377036afe4cd0343",
+      clientSecret: "815c638dea8644b7a4b97905707cf72b45555f6d",
+      repo: "blog",
+      owner: "azl397985856",
+      admin: "azl397985856",
+      
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
