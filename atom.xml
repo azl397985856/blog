@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-11-09T11:34:05.447Z</updated>
+  <updated>2021-11-10T13:31:23.368Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Chrome 新功能 - 录制小视频</title>
+    <link href="https://lucifer.ren/blog/2021/11/10/chrome-recorder/"/>
+    <id>https://lucifer.ren/blog/2021/11/10/chrome-recorder/</id>
+    <published>2021-11-09T16:00:00.000Z</published>
+    <updated>2021-11-10T13:31:23.368Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Chrome 97 推出了一个预览功能 - Recorder。它允许你录制 Web 页面的操作并支持&lt;strong&gt;回放，编辑，测量性能&lt;/strong&gt; 等诸多功能。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="Chrome" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/Chrome/"/>
+    
+    
+      <category term="Chrome" scheme="https://lucifer.ren/blog/tags/Chrome/"/>
+    
+  </entry>
   
   <entry>
     <title>面试中图论都考什么？这篇文章告诉你！</title>
@@ -524,28 +546,6 @@
     
     
       <category term="命令行" scheme="https://lucifer.ren/blog/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从零实现 vite（先导篇）</title>
-    <link href="https://lucifer.ren/blog/2021/07/03/mono-vite/"/>
-    <id>https://lucifer.ren/blog/2021/07/03/mono-vite/</id>
-    <published>2021-07-02T16:00:00.000Z</published>
-    <updated>2021-07-03T09:01:16.162Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;来实现一个 vite ？&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="vite" scheme="https://lucifer.ren/blog/categories/vite/"/>
-    
-    
-      <category term="vite" scheme="https://lucifer.ren/blog/tags/vite/"/>
-    
-      <category term="模块" scheme="https://lucifer.ren/blog/tags/%E6%A8%A1%E5%9D%97/"/>
     
   </entry>
   
