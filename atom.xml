@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-11-10T13:31:23.368Z</updated>
+  <updated>2021-11-17T13:43:17.289Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何准备算法竞赛？</title>
+    <link href="https://lucifer.ren/blog/2021/11/17/cses/"/>
+    <id>https://lucifer.ren/blog/2021/11/17/cses/</id>
+    <published>2021-11-16T16:00:00.000Z</published>
+    <updated>2021-11-17T13:43:17.289Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果你想参加算法竞赛的建议越早越好。大一或者更早就需要准备起来了。如果你已经快毕业了，那就没有必要准备了，当做兴趣参加一些力扣的比赛也是不错的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法比赛" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95%E6%AF%94%E8%B5%9B/"/>
+    
+    
+      <category term="算法比赛" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%AF%94%E8%B5%9B/"/>
+    
+  </entry>
   
   <entry>
     <title>Chrome 新功能 - 录制小视频</title>
@@ -521,31 +541,6 @@
       <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
     
       <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>将命令行工具转为 Web 页面？</title>
-    <link href="https://lucifer.ren/blog/2021/07/05/ttw/"/>
-    <id>https://lucifer.ren/blog/2021/07/05/ttw/</id>
-    <published>2021-07-04T16:00:00.000Z</published>
-    <updated>2021-07-05T15:21:43.106Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;这是个什么东西&quot;&gt;&lt;a href=&quot;#这是个什么东西&quot; class=&quot;headerlink&quot; title=&quot;这是个什么东西&quot;&gt;&lt;/a&gt;这是个什么东西&lt;/h2&gt;&lt;p&gt;作为程序员不可避免的会与命令行打交道。我们会用很多的命令行工具，甚至自己开发一些命令行工具。那么如何将一个命令行工具转成 web 页面，变成一个&lt;strong&gt;云端应用&lt;/strong&gt;，方便地与队友共享呢？&lt;/p&gt;
-&lt;p&gt;比如我做了一个可以将命令行转为 web 页面的工具叫 ttw(terminal to web)，此时我想将 vi 变成一个 web 页面。&lt;/p&gt;
-&lt;p&gt;首先，可以执行如下命令：&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ttw  vi&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;然后就返回一个 web 页面地址，比如是 &lt;a href=&quot;https://lucifer.ren/ttw/dsuh8643&amp;amp;8934&quot;&gt;https://lucifer.ren/ttw/dsuh8643&amp;amp;8934&lt;/a&gt; 打开后会发现就是 vim 的页面，然后你可以像本地命令行一样去进行操作，并得到实时的返回效果。&lt;/p&gt;
-&lt;p&gt;至此，我们就完成了将命令行工具转化为 web 页面的功能。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="命令行" scheme="https://lucifer.ren/blog/categories/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    
-    
-      <category term="命令行" scheme="https://lucifer.ren/blog/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
   </entry>
   
