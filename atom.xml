@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-11-17T13:43:17.289Z</updated>
+  <updated>2021-11-20T06:29:25.275Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://lucifer.ren/blog/2021/11/20/qiuzhao2021/"/>
+    <id>https://lucifer.ren/blog/2021/11/20/qiuzhao2021/</id>
+    <published>2021-11-20T04:55:50.093Z</published>
+    <updated>2021-11-20T06:29:25.275Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>或许是一本可以彻底改变你刷 LeetCode 效率的题解书</title>
+    <link href="https://lucifer.ren/blog/2021/11/20/leetcode-book.intro/"/>
+    <id>https://lucifer.ren/blog/2021/11/20/leetcode-book.intro/</id>
+    <published>2021-11-19T16:00:00.000Z</published>
+    <updated>2021-11-20T06:37:46.604Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;经过了半年时间打磨，投入诸多人力，这本 LeetCode 题解书终于要和大家见面了。&lt;br&gt;💐💐💐💐💐。 购书链接：&lt;a href=&quot;https://u.jd.com/3CvyoMT&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://u.jd.com/3CvyoMT&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008i3skNly1gvochqlvr8j60dw0famxv02.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://read.amazon.cn/kp/card?asin=B09DG5TRRM&amp;amp;preview=inline&amp;amp;linkCode=kpe&amp;amp;ref_=cm_sw_r_kb_dp_NVSYBDYA0SVC39PGA35S&amp;amp;hideShare=true&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;在线试读&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="算法通关之路" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E9%80%9A%E5%85%B3%E4%B9%8B%E8%B7%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>如何准备算法竞赛？</title>
@@ -481,66 +525,6 @@
       <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
     
       <category term="谷歌" scheme="https://lucifer.ren/blog/tags/%E8%B0%B7%E6%AD%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>史诗级更新，VSCODE 可无缝调试浏览器了！</title>
-    <link href="https://lucifer.ren/blog/2021/07/28/vscode-brower-debug/"/>
-    <id>https://lucifer.ren/blog/2021/07/28/vscode-brower-debug/</id>
-    <published>2021-07-27T16:00:00.000Z</published>
-    <updated>2021-07-27T06:44:07.744Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;2021-07-16 微软发布了一篇博客专门介绍了这个功能，VSCODE 牛逼！&lt;/p&gt;
-&lt;p&gt;在此之前，你想要在 vscode 内调试 chrome 或者 edge 需要借助于 Chrome Debugger 或者 the Microsoft Edge Debugger extension 这两款 vscode 扩展。&lt;/p&gt;
-&lt;p&gt;并且更重要的是，其仅能提供最基本的控制台功能，其他的诸如 network，element 是无法查看的，我们仍然需要到浏览器中查看。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="工具" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="VSCODE" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/VSCODE/"/>
-    
-    
-      <category term="VSCODE" scheme="https://lucifer.ren/blog/tags/VSCODE/"/>
-    
-      <category term="工具" scheme="https://lucifer.ren/blog/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【91专访】 微软大佬 cabbage 分享算法面试心得</title>
-    <link href="https://lucifer.ren/blog/2021/07/27/91algo-interview-cabbage/"/>
-    <id>https://lucifer.ren/blog/2021/07/27/91algo-interview-cabbage/</id>
-    <published>2021-07-26T16:00:00.000Z</published>
-    <updated>2021-07-27T04:07:31.382Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;最近得知 cabbage 拿到了&lt;strong&gt;微软的 offer&lt;/strong&gt;，并在准备拿其他&lt;strong&gt;更大&lt;/strong&gt;公司的 offer。就迫不及待地联系了他，希望他本人可以接受采访。于是这篇采访稿就和大家见面了。&lt;/p&gt;
-&lt;p&gt;cabbage 是一个做事情非常认真细致的人，对待工作一丝不苟，基本上事情交给他你就可以放心那种，这样的人谁不喜欢？我本人非常看好他，一定可以进更好的公司。&lt;/p&gt;
-&lt;p&gt;以下 Q 为 lucifer，A 为 cabbage。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008i3skNly1gsvbupuya4j30ej0ctaar.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
     
   </entry>
   
