@@ -2967,6 +2967,37 @@
     
     
     <entry>
+      <title>力扣加加闪亮登场～</title>
+      <link href="/blog/2020/06/13/leetcode-pp/"/>
+      <url>/blog/2020/06/13/leetcode-pp/</url>
+      
+        <content type="html"><![CDATA[<p>力扣加加，一个努力做西湖区最好的算法题解的团队。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg" width="50%"></p><p>​<a id="more"></a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">脑洞前端：你已经长大了，是时候自己写题解了。</span><br><span class="line">力扣加加：。。。</span><br></pre></td></tr></table></figure><p>独立的原因是让公众号的定位更加清晰，喜欢我的题解的朋友可以关注力扣加加，喜欢我的前端架构剖析，徒手造框架的朋友可以关注脑洞前端。当然如果你同时关注两个，那我会感动到哭。</p><p>虽然是新的公众号，但是我的初心不变，依然是<code>力求用清晰直白的方式还原解题过程，努力做西湖区最好的算法题解</code>。最后感谢大家一路以来的支持，我一定不负众望，越做越好。</p><h2 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h2><p>预计力扣加加会推出<strong>五个</strong>板块。</p><h3 id="91-算法"><a href="#91-算法" class="headerlink" title="91 算法"></a>91 算法</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfctrpi6sfj30xm0b6js7.jpg" alt></p><p>通过在 91 天的集中训练，帮助大家摆脱困境，征服算法。我们会帮助大家规划学习路线，91 天见证不一样的自己。群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。<strong>我会在结束之后将讲义和题解放到公众号号</strong>。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcubuzax3j30h9086gm6.jpg" alt><br>（仓库部分内容）</p><h3 id="算法题解"><a href="#算法题解" class="headerlink" title="算法题解"></a>算法题解</h3><p>就是对力扣中的题目进行讲解，尤其是经典的题目。并且尽量从多个角度思路，帮助大家纵向打开解题思路。目前差不多有几百的题解了。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuje66ltj30wl0migsw.jpg" alt></p><h3 id="专题讲解"><a href="#专题讲解" class="headerlink" title="专题讲解"></a>专题讲解</h3><p>对于共性比较强的，我会抽离成专题形式，帮助大家横向打开解题思路。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcucqfgczj30am0fgabj.jpg" alt><br>（之后会陆续加入更多专题）</p><h3 id="视频题解"><a href="#视频题解" class="headerlink" title="视频题解"></a>视频题解</h3><p>对于一些题目采用视频的方式可能更加直观方便，之后还会考虑直播。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcueie2w0j31bf07nwhl.jpg" alt></p><h3 id="刷题工具"><a href="#刷题工具" class="headerlink" title="刷题工具"></a>刷题工具</h3><p>初步规划了两个小工具，之后出测试版本会第一时间告诉大家，如果你对开发小工具感兴趣，也可以点击公众号的联系我来和我取得联系。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcun5uakzj31j20u0kc3.jpg" alt><br>（力扣加加刷题小助手）</p><h2 id="悬赏令"><a href="#悬赏令" class="headerlink" title="悬赏令"></a>悬赏令</h2><p>大家在日常生活或是在刷题过程中有时一定会产生一些疑问，百度谷歌翻来覆去的找也找不到心中所期待的答案，因此，大家可以通过<strong>力扣加加</strong>来将这些疑问提出来，不定期从大家的问题中挑选出比较经典的几个问题来供大家一起讨论，大致的问题类型如下：</p><ul><li>日常生活中有个问题想用数据结构+算法解决，但苦于思路不清晰</li><li>问题本身比较纠结，网上众说纷纭，找不到明确的答案</li><li>脑洞问题等等</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcwc7ow13j30la0cewgf.jpg" alt><br>（比如这种问题）</p><p>被抽中的问题对应的朋友及问题回答出色的朋友可以获得准备的小礼物哦！</p><p>最后，每周我们会根据公众号后台的阅读量及分享次数最多的小伙伴给予现金奖励奖励哦～。分享最多 <code>1</code> 人 <code>8.88</code> 红包，阅读最多的 <code>1</code> 人 <code>6.66</code> 红包。</p><p>不是第一也没有关系，我们会从分享排名 <code>2-10</code>撒 名的小伙伴中随机抽取<code>2个</code> 8.88 元红包，阅读排名 <code>2-10</code> 名的小伙伴中随机抽取<code>2个</code> 6.88 元红包，</p><blockquote><p>每周日下午，我们会对本周的数据进行统计，并随机抽取幸运的小伙伴，并对中奖结果在力扣加加公众号进行公布，中奖的小伙伴请主动联系我哦。领奖时间截止到每周日的 24:00。</p></blockquote><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><h3 id="公众号"><a href="#公众号" class="headerlink" title="公众号"></a>公众号</h3><p>点关注，不迷路。如果再给 ➕ 个星标就更棒啦！</p><blockquote><p>关注加加，星标加加～</p></blockquote><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" width="100%"></p><h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><ul><li><a href="http://leetcode-solution.cn/" target="_blank" rel="noopener">力扣加加官网</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 力扣加加 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 算法提高班 </tag>
+            
+            <tag> 力扣加加 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>阿里面试题：如何寻找「两个数组」的中位数？</title>
       <link href="/blog/2020/06/13/leetcode-median/"/>
       <url>/blog/2020/06/13/leetcode-median/</url>
@@ -2994,37 +3025,6 @@
             <tag> 中位数 </tag>
             
             <tag> 二分法 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>力扣加加闪亮登场～</title>
-      <link href="/blog/2020/06/13/leetcode-pp/"/>
-      <url>/blog/2020/06/13/leetcode-pp/</url>
-      
-        <content type="html"><![CDATA[<p>力扣加加，一个努力做西湖区最好的算法题解的团队。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg" width="50%"></p><p>​<a id="more"></a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">脑洞前端：你已经长大了，是时候自己写题解了。</span><br><span class="line">力扣加加：。。。</span><br></pre></td></tr></table></figure><p>独立的原因是让公众号的定位更加清晰，喜欢我的题解的朋友可以关注力扣加加，喜欢我的前端架构剖析，徒手造框架的朋友可以关注脑洞前端。当然如果你同时关注两个，那我会感动到哭。</p><p>虽然是新的公众号，但是我的初心不变，依然是<code>力求用清晰直白的方式还原解题过程，努力做西湖区最好的算法题解</code>。最后感谢大家一路以来的支持，我一定不负众望，越做越好。</p><h2 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h2><p>预计力扣加加会推出<strong>五个</strong>板块。</p><h3 id="91-算法"><a href="#91-算法" class="headerlink" title="91 算法"></a>91 算法</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfctrpi6sfj30xm0b6js7.jpg" alt></p><p>通过在 91 天的集中训练，帮助大家摆脱困境，征服算法。我们会帮助大家规划学习路线，91 天见证不一样的自己。群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。<strong>我会在结束之后将讲义和题解放到公众号号</strong>。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcubuzax3j30h9086gm6.jpg" alt><br>（仓库部分内容）</p><h3 id="算法题解"><a href="#算法题解" class="headerlink" title="算法题解"></a>算法题解</h3><p>就是对力扣中的题目进行讲解，尤其是经典的题目。并且尽量从多个角度思路，帮助大家纵向打开解题思路。目前差不多有几百的题解了。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuje66ltj30wl0migsw.jpg" alt></p><h3 id="专题讲解"><a href="#专题讲解" class="headerlink" title="专题讲解"></a>专题讲解</h3><p>对于共性比较强的，我会抽离成专题形式，帮助大家横向打开解题思路。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcucqfgczj30am0fgabj.jpg" alt><br>（之后会陆续加入更多专题）</p><h3 id="视频题解"><a href="#视频题解" class="headerlink" title="视频题解"></a>视频题解</h3><p>对于一些题目采用视频的方式可能更加直观方便，之后还会考虑直播。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcueie2w0j31bf07nwhl.jpg" alt></p><h3 id="刷题工具"><a href="#刷题工具" class="headerlink" title="刷题工具"></a>刷题工具</h3><p>初步规划了两个小工具，之后出测试版本会第一时间告诉大家，如果你对开发小工具感兴趣，也可以点击公众号的联系我来和我取得联系。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcun5uakzj31j20u0kc3.jpg" alt><br>（力扣加加刷题小助手）</p><h2 id="悬赏令"><a href="#悬赏令" class="headerlink" title="悬赏令"></a>悬赏令</h2><p>大家在日常生活或是在刷题过程中有时一定会产生一些疑问，百度谷歌翻来覆去的找也找不到心中所期待的答案，因此，大家可以通过<strong>力扣加加</strong>来将这些疑问提出来，不定期从大家的问题中挑选出比较经典的几个问题来供大家一起讨论，大致的问题类型如下：</p><ul><li>日常生活中有个问题想用数据结构+算法解决，但苦于思路不清晰</li><li>问题本身比较纠结，网上众说纷纭，找不到明确的答案</li><li>脑洞问题等等</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcwc7ow13j30la0cewgf.jpg" alt><br>（比如这种问题）</p><p>被抽中的问题对应的朋友及问题回答出色的朋友可以获得准备的小礼物哦！</p><p>最后，每周我们会根据公众号后台的阅读量及分享次数最多的小伙伴给予现金奖励奖励哦～。分享最多 <code>1</code> 人 <code>8.88</code> 红包，阅读最多的 <code>1</code> 人 <code>6.66</code> 红包。</p><p>不是第一也没有关系，我们会从分享排名 <code>2-10</code>撒 名的小伙伴中随机抽取<code>2个</code> 8.88 元红包，阅读排名 <code>2-10</code> 名的小伙伴中随机抽取<code>2个</code> 6.88 元红包，</p><blockquote><p>每周日下午，我们会对本周的数据进行统计，并随机抽取幸运的小伙伴，并对中奖结果在力扣加加公众号进行公布，中奖的小伙伴请主动联系我哦。领奖时间截止到每周日的 24:00。</p></blockquote><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><h3 id="公众号"><a href="#公众号" class="headerlink" title="公众号"></a>公众号</h3><p>点关注，不迷路。如果再给 ➕ 个星标就更棒啦！</p><blockquote><p>关注加加，星标加加～</p></blockquote><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" width="100%"></p><h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><ul><li><a href="http://leetcode-solution.cn/" target="_blank" rel="noopener">力扣加加官网</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 力扣加加 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 数据结构 </tag>
-            
-            <tag> 算法 </tag>
-            
-            <tag> 算法提高班 </tag>
-            
-            <tag> 力扣加加 </tag>
             
         </tags>
       
@@ -3966,9 +3966,9 @@
           
           <category> 算法 </category>
           
-          <category> 字符串 </category>
-          
           <category> 数组 </category>
+          
+          <category> 字符串 </category>
           
           <category> LeetCode </category>
           
