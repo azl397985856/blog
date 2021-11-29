@@ -1,22 +1,27 @@
 ---
 title: 或许是一本可以彻底改变你刷 LeetCode 效率的题解书
-date: 2020-06-13
-tags: [LeetCode, 我的书]
+date: 2021-11-20
+tags: [LeetCode, 算法通关之路]
 ---
 
-经过了半年时间打磨，投入诸多人力，这本 LeetCode 题解书终于快要和大家见面了。目前已经完成了大部分章节的编写工作，预计经过一段时间的打磨就会和大家见面啦 💐💐💐💐💐。
+经过了半年时间打磨，投入诸多人力，这本 LeetCode 题解书终于要和大家见面了。
+💐💐💐💐💐。 购书链接：https://u.jd.com/3CvyoMT
+
+
+![](https://tva1.sinaimg.cn/large/008i3skNly1gvochqlvr8j60dw0famxv02.jpg)
+     
+[在线试读](https://read.amazon.cn/kp/card?asin=B09DG5TRRM&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_NVSYBDYA0SVC39PGA35S&hideShare=true)
+
 
 <!-- more -->
 
 # 背景
 
-自 [LeetCode 题解](https://github.com/azl397985856/leetcode) （现在已经接近 30k star 了）项目被大家开始关注，就有不少出版社开始联系我写书。刚开始后的时候，我并没有这个打算，觉得写这个相对于博客形式的题解要耗费时间，且并不一定效果比博客形式的效果好。后来当我向大家提及“出版社找我写书”这件事情的时候，很多人表示“想要买书，于是我就开始打算写这样一本书。但是一个完全没有写书经验的人，独立完成一本书工作量还是蛮大的，因此我打算寻求其他志同道合人士的帮助。
+自 [LeetCode 题解](https://github.com/azl397985856/leetcode) （现在已经接近 45k star 了）项目被大家开始关注，就有不少出版社开始联系我写书。刚开始后的时候，我并没有这个打算，觉得写这个相对于博客形式的题解要耗费时间，且并不一定效果比博客形式的效果好。后来当我向大家提及“出版社找我写书”这件事情的时候，很多人表示“想要买书，于是我就开始打算写这样一本书。但是一个完全没有写书经验的人，独立完成一本书工作量还是蛮大的，因此我打算寻求其他志同道合人士的帮助。
 
 # 团队介绍
 
 团队成员大都来自 985， 211 学校计算机系，大家经常参加算法竞赛，也坚持参加 LeetCode 周赛。在这个过程中，我们积累了很多经验，希望将这些经验分享给大家，以减少大家在刷题过程中的阻碍，让大家更有效率的刷题。 本书尤其适合那些刚刚开始刷题的人，如果你刚开始刷题，或者刷了很多题面对新题还是无法很好的解决，那么这本书肯定很适合你。最后欢迎大家加入我们的读者群和作者进行交流。
-
-> 读者群会在新书出版之后的第一时间开放。
 
 - [作者 - xing](https://leetcode-cn.com/u/hlxing/)
 - [作者 - lucifer](https://leetcode-cn.com/u/fe-lucifer/)
@@ -256,12 +261,12 @@ class Skiplist:
 
 # 配套网站
 
-等新书发布之后，我们会在官网开辟一个区域，大家可以直接访问查看本书配套的配套代码，包括 JavaScript，Java，Python 和 C++。 也欢迎大家留言给我们自己想要支持的语言，我们会郑重考虑大家的意见。
+官网开辟了一个区域，大家可以直接访问查看本书配套的配套代码，包括 JavaScript，Java，Python 和 C++。 也欢迎大家留言给我们自己想要支持的语言，我们会郑重考虑大家的意见。
 
 效果大概是这样的：
 
 ![](https://tva1.sinaimg.cn/large/00831rSTly1gdl80ojj2rj31tw0u00x1.jpg)
 
-# 预定
+购书链接：https://u.jd.com/rKdWLvP
 
-如果你也想要第一时间获取到我们的题解新书，那么请发送邮件到 azl397985856@gmail.com，标题著明“书籍《LeetCode 题解》预定”字样。
+![](https://tva1.sinaimg.cn/large/008i3skNly1gughg8kx8sj60dw0fagma02.jpg)
