@@ -5,13 +5,13 @@ tags: [LeetCode, 算法通关之路]
 ---
 
 经过了半年时间打磨，投入诸多人力，这本 LeetCode 题解书终于要和大家见面了。
-💐💐💐💐💐。 购书链接：https://u.jd.com/3CvyoMT
+💐💐💐💐💐。
 
+实体版购书链接：https://union-click.jd.com/jdc?e=&p=JF8BANYJK1olXQcDUV9VDUMeBF8IGloXVAIGU1pdCUIVCl9MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFksWAm0BH18SWQYDXVxUFxJSXzI4UixRNl1GVjc-ci1CQA5RUl5sHVhZAlJROEonA24JG1MQWgMEUW5tCEwnQgEMGV4WVTYDZF5aCkMWA2kBH1sUVQ8yU15UOBBCbWgIHghBDgVQAw4JXx4nM18LK2slXTYBZBwzDUIWBWpdSVNFVFJQUQ1fDkMWAToKG1xCX1QEB1sJW0wnAW4JH1Il
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gvochqlvr8j60dw0famxv02.jpg)
-     
+电子版购书链接：https://union-click.jd.com/jdc?e=&p=JF8BAL0JK1olXDYAVVhfD04UAl9MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFkkWBW0PHlgUQl9HCANtcS0SdTFvWVt1X3BkVV4Kc0JxYRtPe1cZbQcyVF9cCEMSBGoOHmslXQEyHzBcOEonA2gKE1oVWwEKXV5cAXsQA2Y4QA57WgYHBwoOCxlAUztfTmslbQUyZG5dOEgnQQFaSQ5FWQYFB1cODhgSVDpaS1hFDwQLUlwJAU5DAWcJHWsXXAcGXW4
+
 [在线试读](https://read.amazon.cn/kp/card?asin=B09DG5TRRM&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_NVSYBDYA0SVC39PGA35S&hideShare=true)
-
 
 <!-- more -->
 
@@ -267,6 +267,6 @@ class Skiplist:
 
 ![](https://tva1.sinaimg.cn/large/00831rSTly1gdl80ojj2rj31tw0u00x1.jpg)
 
-购书链接：https://u.jd.com/rKdWLvP
+[实体版购书链接](https://union-click.jd.com/jdc?e=&p=JF8BANYJK1olXQcDUV9VDUMeBF8IGloXVAIGU1pdCUIVCl9MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFksWAm0BH18SWQYDXVxUFxJSXzI4UixRNl1GVjc-ci1CQA5RUl5sHVhZAlJROEonA24JG1MQWgMEUW5tCEwnQgEMGV4WVTYDZF5aCkMWA2kBH1sUVQ8yU15UOBBCbWgIHghBDgVQAw4JXx4nM18LK2slXTYBZBwzDUIWBWpdSVNFVFJQUQ1fDkMWAToKG1xCX1QEB1sJW0wnAW4JH1Il)
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gughg8kx8sj60dw0fagma02.jpg)
+[电子版购书链接](https://union-click.jd.com/jdc?e=&p=JF8BAL0JK1olXDYAVVhfD04UAl9MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFkkWBW0PHlgUQl9HCANtcS0SdTFvWVt1X3BkVV4Kc0JxYRtPe1cZbQcyVF9cCEMSBGoOHmslXQEyHzBcOEonA2gKE1oVWwEKXV5cAXsQA2Y4QA57WgYHBwoOCxlAUztfTmslbQUyZG5dOEgnQQFaSQ5FWQYFB1cODhgSVDpaS1hFDwQLUlwJAU5DAWcJHWsXXAcGXW4)

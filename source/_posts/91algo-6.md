@@ -12,7 +12,6 @@ categories:
 
 <img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg" width="50%">
 
-
 ​<!-- more -->
 
 ## 初衷
@@ -171,11 +170,11 @@ categories:
 
 ![](https://tva1.sinaimg.cn/large/008i3skNly1gwzo22rwrsj30hw0o8dha.jpg)
 
-购书链接：https://u.jd.com/3CvyoMT
+[实体版购书链接](https://union-click.jd.com/jdc?e=&p=JF8BANYJK1olXQcDUV9VDUMeBF8IGloXVAIGU1pdCUIVCl9MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFksWAm0BH18SWQYDXVxUFxJSXzI4UixRNl1GVjc-ci1CQA5RUl5sHVhZAlJROEonA24JG1MQWgMEUW5tCEwnQgEMGV4WVTYDZF5aCkMWA2kBH1sUVQ8yU15UOBBCbWgIHghBDgVQAw4JXx4nM18LK2slXTYBZBwzDUIWBWpdSVNFVFJQUQ1fDkMWAToKG1xCX1QEB1sJW0wnAW4JH1Il)
 
+[电子版购书链接](https://union-click.jd.com/jdc?e=&p=JF8BAL0JK1olXDYAVVhfD04UAl9MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFkkWBW0PHlgUQl9HCANtcS0SdTFvWVt1X3BkVV4Kc0JxYRtPe1cZbQcyVF9cCEMSBGoOHmslXQEyHzBcOEonA2gKE1oVWwEKXV5cAXsQA2Y4QA57WgYHBwoOCxlAUztfTmslbQUyZG5dOEgnQQFaSQ5FWQYFB1cODhgSVDpaS1hFDwQLUlwJAU5DAWcJHWsXXAcGXW4)
 
-在线试读：https://read.amazon.cn/kp/card?asin=B09DG5TRRM&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_NVSYBDYA0SVC39PGA35S&hideShare=true
-
+[在线试读](https://read.amazon.cn/kp/card?asin=B09DG5TRRM&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_NVSYBDYA0SVC39PGA35S&hideShare=true)
 
 ## FAQ
 
@@ -222,4 +221,3 @@ categories:
 
 - Q：Github 收到很多邮件，怎么取消？
 - A：参考 https://www.bpteach.com/knowledge-base/1047564/
-
