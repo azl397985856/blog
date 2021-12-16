@@ -435,6 +435,30 @@ class Solution:
         return max(dp)
 ```
 
+再比如 [这道题](https://binarysearch.com/problems/Circular-Longest-Increasing-Subsequence) 无非就是加了一个条件，我们可以结合循环移位的技巧来做。
+
+> 关于循环移位算法西法在之前的文章 [文科生都能看懂的循环移位算法](https://lucifer.ren/blog/2020/02/20/rotate-list/) 也做了详细讲解，不再赘述。
+
+参考代码：
+
+```py
+class Solution:
+    def solve(self, nums):
+        n = len(nums)
+        ans = 1
+        def LIS(A):
+            d = []
+            for a in A:
+                i = bisect.bisect_left(d,a)
+                if i == len(d): d.append(a)
+                else: d[i] = a
+            return len(d)
+        nums += nums
+        for i in range(n):
+            ans = max(ans , LIS(nums[i:i+n]))
+        return ans
+```
+
 大家把我讲的思路搞懂，这几个题一写，还怕碰到类似的题不会么？**只有熟练掌握基础的数据结构与算法，才能对复杂问题迎刃有余。** 最长上升子序列就是一个非常经典的基础算法，把它彻底搞懂，再去面对出题人的各种换皮就不怕了。相反，如果你不去思考题目背后的逻辑，就会刷地很痛苦。题目稍微一变化你就不会了，这也是为什么很多人说**刷了很多题，但是碰到新的题目还是不会做**的原因之一。关注公众号力扣加加，努力用清晰直白的语言还原解题思路，并且有大量图解，手把手教你识别套路，高效刷题。
 
 更多题解可以访问我的 LeetCode 题解仓库：https://github.com/azl397985856/leetcode 。 目前已经 38K star 啦。
