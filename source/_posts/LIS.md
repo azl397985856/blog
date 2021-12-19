@@ -320,6 +320,42 @@ class Solution:
         return len(d)
 ```
 
+如果求最长不递减子序列呢？
+
+我们只需要将最左插入改为最右插入即可。代码：
+
+```py
+class Solution:
+    def lengthOfLIS(self, A: List[int]) -> int:
+        d = []
+        for a in A:
+            # 这里改为最右
+            i = bisect.bisect(d, a)
+            if i < len(d):
+                d[i] = a
+            # 这里改为小于等号
+            elif not d or d[-1] <= a:
+                d.append(a)
+        return len(d)
+```
+
+最左插入和最右插入分不清的可以看看我的二分专题。
+
+也可以这么写，更简单一点：
+
+```py
+def LIS(A):
+    d = []
+    for a in A:
+        # 如果求要严格递增就改为最左插入 bisect_left 即可
+        i = bisect.bisect(d, a)
+        if i == len(d):
+            d.append(a)
+        elif d[i] != a:
+            d[i] = a
+    return len(d)
+```
+
 ## More
 
 其他的我就不一一说了。
