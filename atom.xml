@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-12-15T06:48:07.566Z</updated>
+  <updated>2021-12-22T05:23:06.978Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>刷题插件可以隐藏测试用例啦</title>
+    <link href="https://lucifer.ren/blog/2021/12/22/leetcode-cheat-hide-cases/"/>
+    <id>https://lucifer.ren/blog/2021/12/22/leetcode-cheat-hide-cases/</id>
+    <published>2021-12-21T16:00:00.000Z</published>
+    <updated>2021-12-22T05:23:06.978Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;一切都来源于一个-issue&quot;&gt;&lt;a href=&quot;#一切都来源于一个-issue&quot; class=&quot;headerlink&quot; title=&quot;一切都来源于一个 issue&quot;&gt;&lt;/a&gt;一切都来源于一个 issue&lt;/h2&gt;&lt;p&gt;今日有粉丝提意想增加隐藏测试用例的功能。issue 地址：&lt;a href=&quot;https://github.com/azl397985856/blog/issues/91&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/azl397985856/blog/issues/91&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://files.mdnice.com/user/2016/d673b560-4865-40f7-8ff8-c803807502cb.png&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;当天我就完成了这个功能的开发，并上架商店进行审核了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://files.mdnice.com/user/2016/8b683fe7-12c9-4986-8db9-d94ea8b508ee.png&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
+    
+      <category term="插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/"/>
+    
+    
+      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
+    
+      <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+      <category term="刷题" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>区间算法题用线段树可以秒解？</title>
@@ -487,40 +516,6 @@
     
     
       <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>回炉重铸， 91 天见证不一样的自己（第五期）</title>
-    <link href="https://lucifer.ren/blog/2021/08/21/91algo-5/"/>
-    <id>https://lucifer.ren/blog/2021/08/21/91algo-5/</id>
-    <published>2021-08-20T16:00:00.000Z</published>
-    <updated>2021-12-02T09:27:53.571Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
-&lt;p&gt;第五期本来想和力扣官方合作一起搞，这样打卡就可以无缝衔接，如果你有力扣会员甚至可以免费参加。可是力扣官方给的感觉是：&lt;code&gt;快了，已经在新建文件夹了&lt;/code&gt;。 就好像我虽然还是 &lt;code&gt;行号 0， 列号 0，字数 0&lt;/code&gt;，但是却和催更的读者说&lt;code&gt;快写好了&lt;/code&gt;一样。&lt;/p&gt;
-&lt;p&gt;因此第五期我们就先开始吧！&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
     
   </entry>
   
