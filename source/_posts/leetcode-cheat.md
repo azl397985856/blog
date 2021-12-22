@@ -98,6 +98,12 @@ categories:
 
 ![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghssdtat3zj31290u0dii.jpg)
 
+### 其他功能
+
+- [刷题插件可以隐藏测试用例啦](https://lucifer.ren/blog/2021/12/22/leetcode-cheat-hide-cases/)
+- [有了这个可视化插件，刷题调试更轻松](https://lucifer.ren/blog/2021/09/26/algo-vis/)
+- [力扣刷题插件近期更新盘点](https://lucifer.ren/blog/2021/03/16/leetcode-cheat-update-1/)
+
 ## 我怎么才能获取呢？
 
 公众号《力扣加加》后台回复刷题插件即可。
