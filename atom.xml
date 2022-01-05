@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2021-12-22T05:23:06.978Z</updated>
+  <updated>2022-01-02T08:57:30.246Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>技术面试原来不止考技术？</title>
+    <link href="https://lucifer.ren/blog/2022/01/04/non-tech-skill/"/>
+    <id>https://lucifer.ren/blog/2022/01/04/non-tech-skill/</id>
+    <published>2022-01-03T16:00:00.000Z</published>
+    <updated>2022-01-02T08:57:30.246Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大家好呀，狗头又出现啦~&lt;/p&gt;
+&lt;p&gt;我在 21 年的时候无相关背景转码上岸狗家，并且接到了一些中小厂的 offer。在我准备面试和面试的过程中，我总结了一些非技术相关的技巧和心得。这些技巧和心得在技术面试中往往能起到锦上添花的作用。这篇文章讨论的所有技巧都跟代码能力和工程能力无关~&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="面试" scheme="https://lucifer.ren/blog/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试" scheme="https://lucifer.ren/blog/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>刷题插件可以隐藏测试用例啦</title>
@@ -492,30 +513,6 @@
       <category term="VSCODE" scheme="https://lucifer.ren/blog/tags/VSCODE/"/>
     
       <category term="工具" scheme="https://lucifer.ren/blog/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何搞定不同公司的算法面试？（早早聊分享文字版）</title>
-    <link href="https://lucifer.ren/blog/2021/09/02/zaozaoliao/"/>
-    <id>https://lucifer.ren/blog/2021/09/02/zaozaoliao/</id>
-    <published>2021-09-01T16:00:00.000Z</published>
-    <updated>2021-09-02T07:09:31.122Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前几天西法参加了《前端早早聊》第 24 界的分享。我的分享主题是《如何搞定不同公司的算法面试？》 这是这次分享的文字版，供大家查看。如果大家需要分享的原版 ppt，也可以到我的公众号《脑洞前端》中回复&lt;strong&gt;早早聊&lt;/strong&gt;获取。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="面试" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/%E5%89%8D%E7%AB%AF/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-      <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
     
   </entry>
   
