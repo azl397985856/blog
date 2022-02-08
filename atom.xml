@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2022-01-28T06:17:57.245Z</updated>
+  <updated>2022-02-06T09:09:07.449Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>跨域了？ 装个插件就够了！</title>
+    <link href="https://lucifer.ren/blog/2022/02/06/cors-extension/"/>
+    <id>https://lucifer.ren/blog/2022/02/06/cors-extension/</id>
+    <published>2022-02-05T16:00:00.000Z</published>
+    <updated>2022-02-06T09:09:07.449Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;浏览器为了安全引入了同源策略，这直接导致默认情况下前后端域名如果不同，那么则功能会受限。 随着前后端分离的发展，前端和后端职责的分离，前端会有专门的&lt;code&gt;本地开发服务器(local dev server)&lt;/code&gt;用于本地开发。这个时候和后端接口联调时就很可能会遇到跨域安全问题。&lt;/p&gt;
+&lt;p&gt;这本身是浏览器的一种安全策略，但是却对前端开发造成了影响。如何解决呢？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>听说逆向思维能够降低时间复杂度？</title>
@@ -502,26 +523,6 @@
       <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
     
       <category term="书" scheme="https://lucifer.ren/blog/tags/%E4%B9%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>入职一个月，远程办公感受如何？</title>
-    <link href="https://lucifer.ren/blog/2021/09/04/wfh/"/>
-    <id>https://lucifer.ren/blog/2021/09/04/wfh/</id>
-    <published>2021-09-03T16:00:00.000Z</published>
-    <updated>2021-09-04T08:25:59.793Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;上一次给大家讲了我现在已经全职远程办公（简称 wfh），算起来有超过一个月的时间了。很多同学对此比较感兴趣，我们就来聊聊我最近工作如何。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="成长经历" scheme="https://lucifer.ren/blog/categories/%E6%88%90%E9%95%BF%E7%BB%8F%E5%8E%86/"/>
-    
-    
-      <category term="成长经历" scheme="https://lucifer.ren/blog/tags/%E6%88%90%E9%95%BF%E7%BB%8F%E5%8E%86/"/>
     
   </entry>
   
