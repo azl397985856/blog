@@ -190,6 +190,10 @@ function RShift(list, k) {
 
 这种做法时间复杂度是 O(N)空间复杂度 O(1)，终于满足了我们的要求。
 
+其他类似题目推荐：
+
+- [Sentence Reversal](https://binarysearch.com/problems/Sentence-Reversal)
+
 ## 字符串循环移位
 
 字符串和数组真的是一模一样，因为字符串也可以看成是字符序列，因此字符串就是数组。本质上来说，它和数组循环移位题目没有任何区别， 现在让我们来通过一道题来感受下。
