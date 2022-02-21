@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2022-02-06T09:09:07.449Z</updated>
+  <updated>2022-02-20T09:58:59.435Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>远程办公有多爽？</title>
+    <link href="https://lucifer.ren/blog/2022/02/20/wfh2/"/>
+    <id>https://lucifer.ren/blog/2022/02/20/wfh2/</id>
+    <published>2022-02-19T16:00:00.000Z</published>
+    <updated>2022-02-20T09:58:59.435Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大家好，我是 lucifer！&lt;/p&gt;
+&lt;p&gt;上一次和大家聊我的工作，算起来有超过半年的时间了。很多同学对远程办公比较感兴趣，我们就继续聊聊这个话题。&lt;/p&gt;
+&lt;p&gt;如果用一句话来概括文章内容的话，那就是：&lt;strong&gt;工作有趣，待遇满意，时间充足&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;以下是详细内容：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="成长经历" scheme="https://lucifer.ren/blog/categories/%E6%88%90%E9%95%BF%E7%BB%8F%E5%8E%86/"/>
+    
+    
+      <category term="成长经历" scheme="https://lucifer.ren/blog/tags/%E6%88%90%E9%95%BF%E7%BB%8F%E5%8E%86/"/>
+    
+  </entry>
   
   <entry>
     <title>跨域了？ 装个插件就够了！</title>
@@ -489,40 +512,6 @@
       <category term="刷题技巧" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98%E6%8A%80%E5%B7%A7/"/>
     
       <category term="工具" scheme="https://lucifer.ren/blog/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《算法通关之路》出版啦！</title>
-    <link href="https://lucifer.ren/blog/2021/09/04/leetcode-solution-book/"/>
-    <id>https://lucifer.ren/blog/2021/09/04/leetcode-solution-book/</id>
-    <published>2021-09-03T16:00:00.000Z</published>
-    <updated>2021-09-03T06:12:32.768Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;其实很多朋友私底下问我：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;新书什么时候出版？&lt;/li&gt;
-&lt;li&gt;可以预定么？&lt;/li&gt;
-&lt;li&gt;等等&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;其实我比大家更着急，只不过出版图书真的是一个非常严谨的过程。不比专栏，小册等电子读物可以一边上架一边修改。传统的纸质图书的要求和流程都是严格把控的。因此只能耐心等待和配合出版社。 而现在《算法通关之路》终于要和大家见面了！🌹🌹🌹&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="书" scheme="https://lucifer.ren/blog/categories/%E4%B9%A6/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="书" scheme="https://lucifer.ren/blog/tags/%E4%B9%A6/"/>
     
   </entry>
   
