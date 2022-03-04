@@ -359,7 +359,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">2.2k字</span>
+          <span class="post-count">2.4k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -445,6 +445,9 @@
 <li><strong>如果</strong>继续压入 6，则不满足单调递减栈的特性， 我们故技重施，不断 pop，直到满足单调递减为止。此时的栈为：[1,2,6]</li>
 </ol>
 <p>注意这里的栈仍然是非空的，如果有的题目需要用到所有数组的信息，那么很有可能因没有考虑边界而不能通过所有的测试用例。 这里介绍一个技巧 - <strong>哨兵法</strong>，这个技巧经常用在单调栈的算法中。</p>
+<blockquote>
+<p>我们可以在数组前后分别添加一个无限大的数（或者无限小的数）来充当哨兵，起到简化逻辑的作用</p>
+</blockquote>
 <p>对于上面的例子，我可以在原数组 [1,3,4,5,2,9,6] 的右侧添加一个小于数组中最小值的项即可，比如 -1。此时的数组是 [1,3,4,5,2,9,6,-1]。这种技巧可以简化代码逻辑，大家尽量掌握。</p>
 <p>上面的例子如果你明白了，就不难理解为啥单调栈适合求解<strong>下一个大于 xxx</strong>或者<strong>下一个小于 xxx</strong>这种题目了。比如上面的例子，我们就可以很容易地求出<strong>在其之后第一个小于其本身的位置</strong>。比如 3 的索引是 1，小于 3 的第一个索引是 4，2 的索引 4，小于 2 的第一个索引是 0，但是其在 2 的索引 4 之后，因此不符合条件，也就是不存在<strong>在 2 之后第一个小于 2 本身的位置</strong>。</p>
 <p>上面的例子，我们在第 6 步开始 pop，第一个被 pop 出来的是 5，因此 5 之后的第一个小于 5 的索引就是 4。同理被 pop 出来的 3，4，5 也都是 4。</p>
@@ -465,7 +468,10 @@
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">monostoneStack</span><span class="params">(self, T: List[int])</span> -&gt; List[int]:</span></span><br><span class="line">        stack = []</span><br><span class="line">        ans = [<span class="number">0</span>] * len(T)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(T)):</span><br><span class="line">            <span class="keyword">while</span> stack <span class="keyword">and</span> T[i] &gt; T[stack[<span class="number">-1</span>]]:</span><br><span class="line">                peek = stack.pop(<span class="number">-1</span>)</span><br><span class="line">                ans[peek] = i - peek</span><br><span class="line">            stack.append(i)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
 <p>JS:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> monostoneStack = <span class="function"><span class="keyword">function</span> (<span class="params">T</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> stack = [];</span><br><span class="line">  <span class="keyword">let</span> result = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; T.length; i++) &#123;</span><br><span class="line">    result[i] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (stack.length &gt; <span class="number">0</span> &amp;&amp; T[stack[stack.length - <span class="number">1</span>]] &lt; T[i]) &#123;</span><br><span class="line">      <span class="keyword">let</span> peek = stack.pop();</span><br><span class="line">      result[peek] = i - peek;</span><br><span class="line">    &#125;</span><br><span class="line">    stack.push(i);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="题目推荐-1"><a href="#题目推荐-1" class="headerlink" title="题目推荐"></a>题目推荐</h3><p>下面几个题帮助你理解单调栈， 并让你明白什么时候可以用单调栈进行算法优化。</p>
+<h2 id="单调栈的特性"><a href="#单调栈的特性" class="headerlink" title="单调栈的特性"></a>单调栈的特性</h2><p>由于单调栈的特性可知， 单调栈适合求解下一个更大的或者下一个更小的数。而实际上，也适合求<strong>上一个</strong>更大的或者更小的。</p>
+<p>因为上一个其实就是 pop 出来后，栈顶的数。下一个其实就是导致你被 pop 出来的那个数。</p>
+<p>知道了这一点，大家可以使用 <a href="https://leetcode-cn.com/problems/sum-of-subarray-ranges/" target="_blank" rel="noopener">2104. 子数组范围和</a> 练习一下。</p>
+<h2 id="题目推荐-1"><a href="#题目推荐-1" class="headerlink" title="题目推荐"></a>题目推荐</h2><p>下面几个题帮助你理解单调栈， 并让你明白什么时候可以用单调栈进行算法优化。</p>
 <ul>
 <li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/42.trapping-rain-water.md" title="42. 接雨水" target="_blank" rel="noopener">42. 接雨水</a></li>
 <li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/84.largest-rectangle-in-histogram.md" title="84. 柱状图中最大的矩形" target="_blank" rel="noopener">84. 柱状图中最大的矩形</a></li>
@@ -506,10 +512,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-09-15T12:12:12+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-03-04T11:23:09+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年9月15日</p>
+    <p>更新于 2022年3月4日</p>
   </a>
 </div>
 
@@ -771,7 +777,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#栈是什么？"><span class="toc-text">栈是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的常用操作"><span class="toc-text">栈的常用操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的常用操作时间复杂度"><span class="toc-text">栈的常用操作时间复杂度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用"><span class="toc-text">应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题目推荐"><span class="toc-text">题目推荐</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单调栈又是什么？"><span class="toc-text">单调栈又是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#适用场景"><span class="toc-text">适用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#伪代码"><span class="toc-text">伪代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题目推荐-1"><span class="toc-text">题目推荐</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#栈是什么？"><span class="toc-text">栈是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的常用操作"><span class="toc-text">栈的常用操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的常用操作时间复杂度"><span class="toc-text">栈的常用操作时间复杂度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用"><span class="toc-text">应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题目推荐"><span class="toc-text">题目推荐</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单调栈又是什么？"><span class="toc-text">单调栈又是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#适用场景"><span class="toc-text">适用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#伪代码"><span class="toc-text">伪代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单调栈的特性"><span class="toc-text">单调栈的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题目推荐-1"><span class="toc-text">题目推荐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
     </div>
   </section>
 
