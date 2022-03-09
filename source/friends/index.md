@@ -84,6 +84,10 @@ links:
         avatar: https://gitee.com/blog-map-bed/first-bed/raw/master/img/myavatar.jpg
         tags:
           - 如果你不知道失败是什么，那么你永远不会获得成功
+      - name: 村雨遥
+        url: https://cunyu1943.site
+        avatar: https://s2.loli.net/2021/12/26/7EUhN3zCL6deXrp.jpg
+        tags: 行万里路，方知天地之辽阔。
   - group: 算法大佬
     icon: fas fa-code
     items:
