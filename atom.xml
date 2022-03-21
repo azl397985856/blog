@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2022-03-19T11:02:53.561Z</updated>
+  <updated>2022-03-21T05:37:58.398Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,24 +17,28 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://lucifer.ren/blog/2022/03/17/interviewer/"/>
-    <id>https://lucifer.ren/blog/2022/03/17/interviewer/</id>
-    <published>2022-03-17T13:27:25.210Z</published>
-    <updated>2022-03-19T11:02:53.561Z</updated>
+    <title>程序员如何准备面试中的算法</title>
+    <link href="https://lucifer.ren/blog/2022/03/21/interviewer/"/>
+    <id>https://lucifer.ren/blog/2022/03/21/interviewer/</id>
+    <published>2022-03-20T16:00:00.000Z</published>
+    <updated>2022-03-21T05:37:58.398Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;p&gt;春招季来临，大家陆续已经开始准备面试斩获心仪 offer。&lt;/p&gt;
+&lt;p&gt;这次 lucifer 就从面试官角度给大家分享一些面试技巧，让大家面试时少走弯路。这次分&lt;br&gt;享侧重&lt;strong&gt;算法面试&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;我负责公司的面试已经有 5 年以上了，基本都是初面和二面，因此技术面试的层面比较深&lt;br&gt;，更多的是了解候选人的技术能力是否达标。在这几年时间，我前前后后也面试了很多的候&lt;br&gt;选人。这些人中有的技术能力不行，但也有些人很可惜，技术能力是可以的，但是却没能通&lt;br&gt;过我的面试，为什么呢？&lt;/p&gt;
     
     </summary>
     
+      <category term="面试" scheme="https://lucifer.ren/blog/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="校招" scheme="https://lucifer.ren/blog/categories/%E6%A0%A1%E6%8B%9B/"/>
+    
+    
+      <category term="面试" scheme="https://lucifer.ren/blog/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="校招" scheme="https://lucifer.ren/blog/tags/%E6%A0%A1%E6%8B%9B/"/>
     
   </entry>
   
