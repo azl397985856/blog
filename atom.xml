@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2022-03-12T07:32:19.496Z</updated>
+  <updated>2022-03-19T11:02:53.561Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://lucifer.ren/blog/2022/03/17/interviewer/"/>
+    <id>https://lucifer.ren/blog/2022/03/17/interviewer/</id>
+    <published>2022-03-17T13:27:25.210Z</published>
+    <updated>2022-03-19T11:02:53.561Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>回炉重铸， 91 天见证不一样的自己（第七期）</title>
@@ -484,33 +506,6 @@
       <category term="AI" scheme="https://lucifer.ren/blog/tags/AI/"/>
     
       <category term="VSCODE" scheme="https://lucifer.ren/blog/tags/VSCODE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>有了这个可视化插件，刷题调试更轻松</title>
-    <link href="https://lucifer.ren/blog/2021/09/26/algo-vis/"/>
-    <id>https://lucifer.ren/blog/2021/09/26/algo-vis/</id>
-    <published>2021-09-25T16:00:00.000Z</published>
-    <updated>2021-09-26T14:31:58.806Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;如何有效学习算法&quot;&gt;&lt;a href=&quot;#如何有效学习算法&quot; class=&quot;headerlink&quot; title=&quot;如何有效学习算法&quot;&gt;&lt;/a&gt;如何有效学习算法&lt;/h2&gt;&lt;p&gt;学习算法的基本思路就是：&lt;strong&gt;先学习算法思想，然后通过做题消化思想，并在做题过程中慢慢学习，掌握一些小技巧&lt;/strong&gt;。这其中算法思想就是&lt;strong&gt;道&lt;/strong&gt;，而经典题目以及做题技巧就是&lt;strong&gt;术&lt;/strong&gt;。做题是通过术来完善道。&lt;/p&gt;
-&lt;p&gt;但是很多人都反应&lt;strong&gt;看讲义和做题之间断层严重&lt;/strong&gt;，也就是一看就会，一些就废。这怎么办呢？&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="插件" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E6%8F%92%E4%BB%B6/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="插件" scheme="https://lucifer.ren/blog/tags/%E6%8F%92%E4%BB%B6/"/>
     
   </entry>
   
