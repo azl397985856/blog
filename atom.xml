@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2022-03-21T05:37:58.398Z</updated>
+  <updated>2022-04-06T11:25:57.308Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git 中的算法第二弹-最近公共祖先</title>
+    <link href="https://lucifer.ren/blog/2022/04/06/git-merge-base/"/>
+    <id>https://lucifer.ren/blog/2022/04/06/git-merge-base/</id>
+    <published>2022-04-05T16:00:00.000Z</published>
+    <updated>2022-04-06T11:25:57.308Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大家好，我是 lucifer。今天给大家分享 Git 中的算法。&lt;/p&gt;
+&lt;p&gt;这是本系列的第二篇 - 《Git 中的最近公共祖先》，第一篇在&lt;br&gt;&lt;a href=&quot;https://lucifer.ren/blog/2021/02/11/git-bisect-bug/&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="最近公共祖先" scheme="https://lucifer.ren/blog/tags/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
+    
+  </entry>
   
   <entry>
     <title>程序员如何准备面试中的算法</title>
@@ -47,11 +68,11 @@
     <link href="https://lucifer.ren/blog/2022/03/12/91algo-7/"/>
     <id>https://lucifer.ren/blog/2022/03/12/91algo-7/</id>
     <published>2022-03-11T16:00:00.000Z</published>
-    <updated>2022-03-12T07:32:19.496Z</updated>
+    <updated>2022-04-06T11:26:34.653Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
+      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学&lt;br&gt;算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
 &lt;p&gt;​
     
@@ -79,7 +100,7 @@
     <link href="https://lucifer.ren/blog/2022/03/04/zhandui/"/>
     <id>https://lucifer.ren/blog/2022/03/04/zhandui/</id>
     <published>2022-03-03T16:00:00.000Z</published>
-    <updated>2022-03-04T10:54:46.044Z</updated>
+    <updated>2022-04-06T11:26:25.393Z</updated>
     
     <summary type="html">
     
@@ -483,27 +504,6 @@
     </summary>
     
       <category term="刷题技巧" scheme="https://lucifer.ren/blog/categories/%E5%88%B7%E9%A2%98%E6%8A%80%E5%B7%A7/"/>
-    
-    
-      <category term="刷题技巧" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98%E6%8A%80%E5%B7%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用什么语言刷题最有排面？</title>
-    <link href="https://lucifer.ren/blog/2021/10/10/programming-idioms/"/>
-    <id>https://lucifer.ren/blog/2021/10/10/programming-idioms/</id>
-    <published>2021-10-09T16:00:00.000Z</published>
-    <updated>2021-10-11T15:12:04.207Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;很多读者向西法反应：“能不能在专题和题解里面增加 xx 语言”。&lt;/p&gt;
-&lt;p&gt;我的回答一直都是：&lt;strong&gt;我会尽量添加多种编程语言，但也请你不要依赖于某种具体的编程语言来学算法&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;熟悉我的朋友都知道，我刚开始的时候，我使用 JS 比较多，之后使用 Python 比较多，现在也在陆续更新题解的 C++ 语言，之后会考虑其他的语言。接下来的话应该是优先考虑 Java，让大家学习曲线更平滑。&lt;/p&gt;
-&lt;p&gt;但是另一方面我也强烈建议大家不要依赖于某一种具体地编程语言。我当然知道学习和切换编程语言需要时间，也体会到使用自己熟悉的编程语言效率更高。&lt;/p&gt;
-    
-    </summary>
     
     
       <category term="刷题技巧" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98%E6%8A%80%E5%B7%A7/"/>
