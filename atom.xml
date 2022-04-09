@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2022-04-06T11:25:57.308Z</updated>
+  <updated>2022-04-09T14:07:02.277Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -21,19 +21,17 @@
     <link href="https://lucifer.ren/blog/2022/04/06/git-merge-base/"/>
     <id>https://lucifer.ren/blog/2022/04/06/git-merge-base/</id>
     <published>2022-04-05T16:00:00.000Z</published>
-    <updated>2022-04-06T11:25:57.308Z</updated>
+    <updated>2022-04-09T14:07:02.277Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;大家好，我是 lucifer。今天给大家分享 Git 中的算法。&lt;/p&gt;
-&lt;p&gt;这是本系列的第二篇 - 《Git 中的最近公共祖先》，第一篇在&lt;br&gt;&lt;a href=&quot;https://lucifer.ren/blog/2021/02/11/git-bisect-bug/&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这是本系列的第二篇 - 《Git 中的最近公共祖先》，第一篇在 &lt;a href=&quot;https://lucifer.ren/blog/2021/02/11/git-bisect-bug/&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
     
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="最近公共祖先" scheme="https://lucifer.ren/blog/tags/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
+      <category term="算法，最近公共祖先" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%EF%BC%8C%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
     
   </entry>
   
