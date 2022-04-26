@@ -128,7 +128,7 @@ sidebar:
     icon: fas fa-map-signs
     title: 我的开源项目
     rows:
-      - name: Github 45k 算法刷题仓库
+      - name: 算法刷题
         icon: fab fa-github
         url: https://github.com/azl397985856/leetcode
       - name: 大前端
@@ -162,6 +162,8 @@ sidebar:
     icon: fas fa-thumbs-up
     title: 强烈推荐
     rows:
+      - name: 西法的 2022 书单推荐
+        url: https://lucifer.ren/blog/2022/04/26/books-2022/
       - name: 【阿里云】轻量应用服务器2核2G 低至60元/年起
         url: https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=0iygwnzh
       - name: 《算法通关之路》
