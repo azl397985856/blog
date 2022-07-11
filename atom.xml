@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2022-05-23T13:16:41.676Z</updated>
+  <updated>2022-07-09T16:03:32.702Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>回炉重铸， 91 天见证不一样的自己（第八期）</title>
+    <link href="https://lucifer.ren/blog/2022/07/09/91algo-8/"/>
+    <id>https://lucifer.ren/blog/2022/07/09/91algo-8/</id>
+    <published>2022-07-08T16:00:00.000Z</published>
+    <updated>2022-07-09T16:03:32.702Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>恭喜又一个小姐姐进了谷歌</title>
@@ -171,11 +203,11 @@
     <link href="https://lucifer.ren/blog/2022/03/12/91algo-7/"/>
     <id>https://lucifer.ren/blog/2022/03/12/91algo-7/</id>
     <published>2022-03-11T16:00:00.000Z</published>
-    <updated>2022-04-06T11:26:34.653Z</updated>
+    <updated>2022-07-09T15:35:03.659Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学&lt;br&gt;算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
+      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
 &lt;p&gt;​
     
@@ -519,28 +551,6 @@
     
     
       <category term="算法比赛" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%AF%94%E8%B5%9B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chrome 新功能 - 录制小视频</title>
-    <link href="https://lucifer.ren/blog/2021/11/10/chrome-recorder/"/>
-    <id>https://lucifer.ren/blog/2021/11/10/chrome-recorder/</id>
-    <published>2021-11-09T16:00:00.000Z</published>
-    <updated>2021-11-10T13:31:23.368Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Chrome 97 推出了一个预览功能 - Recorder。它允许你录制 Web 页面的操作并支持&lt;strong&gt;回放，编辑，测量性能&lt;/strong&gt; 等诸多功能。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="工具" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="Chrome" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/Chrome/"/>
-    
-    
-      <category term="Chrome" scheme="https://lucifer.ren/blog/tags/Chrome/"/>
     
   </entry>
   
