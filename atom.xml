@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2022-07-09T16:03:32.702Z</updated>
+  <updated>2022-10-14T06:30:38.572Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,11 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>回炉重铸， 91 天见证不一样的自己（第九期）</title>
+    <link href="https://lucifer.ren/blog/2022/10/15/91algo-9/"/>
+    <id>https://lucifer.ren/blog/2022/10/15/91algo-9/</id>
+    <published>2022-10-14T16:00:00.000Z</published>
+    <updated>2022-10-14T06:30:38.572Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>回炉重铸， 91 天见证不一样的自己（第八期）</title>
     <link href="https://lucifer.ren/blog/2022/07/09/91algo-8/"/>
     <id>https://lucifer.ren/blog/2022/07/09/91algo-8/</id>
     <published>2022-07-08T16:00:00.000Z</published>
-    <updated>2022-07-09T16:03:32.702Z</updated>
+    <updated>2022-10-14T05:02:47.805Z</updated>
     
     <summary type="html">
     
@@ -531,26 +563,6 @@
       <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
     
       <category term="算法通关之路" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E9%80%9A%E5%85%B3%E4%B9%8B%E8%B7%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何准备算法竞赛？</title>
-    <link href="https://lucifer.ren/blog/2021/11/17/cses/"/>
-    <id>https://lucifer.ren/blog/2021/11/17/cses/</id>
-    <published>2021-11-16T16:00:00.000Z</published>
-    <updated>2021-11-17T13:43:17.289Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如果你想参加算法竞赛的建议越早越好。大一或者更早就需要准备起来了。如果你已经快毕业了，那就没有必要准备了，当做兴趣参加一些力扣的比赛也是不错的。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="算法比赛" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95%E6%AF%94%E8%B5%9B/"/>
-    
-    
-      <category term="算法比赛" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%AF%94%E8%B5%9B/"/>
     
   </entry>
   
