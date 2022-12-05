@@ -367,7 +367,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">14分</span>
+          <span class="post-count">15分</span>
         </span>
       </span>
     </div>
@@ -437,7 +437,7 @@
 <li>而当遍历完成，如果 k 仍然大于 0。不妨假设最终还剩下 x 个需要丢弃，那么我们需要选择删除末尾 x 个元素。</li>
 </ul>
 <p>上面的思路可行，但是稍显复杂。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfk7m9z3elj30zk0i01kx.jpg" alt><br>（图 5）</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfk7m9z3elj30zk0i01kx.jpg" alt> （图 5）</p>
 <p>我们需要把思路逆转过来。刚才我的关注点一直是<strong>丢弃</strong>，题目要求我们丢弃 k 个。反过来说，不就是让我们保留 $n - k$ 个元素么？其中 n 为数字长度。 那么我们只需要按照上面的方法遍历完成之后，再截取前<strong>n - k</strong>个元素即可。</p>
 <p>按照上面的思路，我们来选择数据结构。由于我们需要<strong>保留</strong>和<strong>丢弃相邻</strong>的元素，因此使用栈这种在一端进行添加和删除的数据结构是再合适不过了，我们来看下代码实现。</p>
 <h3 id="代码（Python）"><a href="#代码（Python）" class="headerlink" title="代码（Python）"></a>代码（Python）</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeKdigits</span><span class="params">(self, num, k)</span>:</span></span><br><span class="line">        stack = []</span><br><span class="line">        remain = len(num) - k</span><br><span class="line">        <span class="keyword">for</span> digit <span class="keyword">in</span> num:</span><br><span class="line">            <span class="keyword">while</span> k <span class="keyword">and</span> stack <span class="keyword">and</span> stack[<span class="number">-1</span>] &gt; digit:</span><br><span class="line">                stack.pop()</span><br><span class="line">                k -= <span class="number">1</span></span><br><span class="line">            stack.append(digit)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>.join(stack[:remain]).lstrip(<span class="string">'0'</span>) <span class="keyword">or</span> <span class="string">'0'</span></span><br></pre></td></tr></table></figure>
@@ -500,7 +500,7 @@
 <p>以题目的 <code>nums1 = [3, 4, 6, 5] nums2 = [9, 1, 2, 5, 8, 3] k = 5</code> 为例。 假如我们从 num1 中取出 1 个数字，那么就要从 nums2 中取出 4 个数字。</p>
 <p>运用第一题的方法，我们计算出应该取 nums1 的 [6]，并取 nums2 的 [9,5,8,3]。 如何将 [6] 和 [9,5,8,3]，使得数字尽可能大，并且保持相对位置不变呢？</p>
 <p>实际上这个过程有点类似<code>归并排序</code>中的<strong>治</strong>，而上面我们分别计算 num1 和 num2 的最大数的过程类似<code>归并排序</code>中的<strong>分</strong>。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfruuvyrn5j31mk0i8414.jpg" alt><br>（图 6）</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfruuvyrn5j31mk0i8414.jpg" alt> （图 6）</p>
 <p>代码：</p>
 <blockquote>
 <p>我们将从 num1 中挑选的 k1 个数组成的数组称之为 A，将从 num2 中挑选的 k2 个数组成的数组称之为 B，</p>
@@ -510,7 +510,7 @@
 <p>比如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A = [1,2]</span><br><span class="line">B = [2]</span><br><span class="line">A &lt; B # True</span><br><span class="line"></span><br><span class="line">A = [1,2]</span><br><span class="line">B = [1,2,3]</span><br><span class="line">A &lt; B # False</span><br></pre></td></tr></table></figure>
 <p>以合并 [6] 和 [9,5,8,3] 为例，图解过程如下：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfruxjfwlhj31cu0u07c0.jpg" alt><br>（图 7）</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfruxjfwlhj31cu0u07c0.jpg" alt> （图 7）</p>
 <p>具体算法：</p>
 <ul>
 <li>从 nums1 中 取 $min(i, len(nums1))$ 个数形成新的数组 A（取的逻辑同第一题），其中 i 等于 0,1,2, … k。</li>
@@ -533,6 +533,7 @@
 </ul>
 <p>最后推荐类似的题目供大家练习：</p>
 <ul>
+<li><a href="https://leetcode.cn/problems/find-the-most-competitive-subsequence/" target="_blank" rel="noopener">1673. 找出最具竞争力的子序列</a></li>
 <li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/2030.smallest-k-length-subsequence-with-occurrences-of-a-letter.md" target="_blank" rel="noopener">2030. 含特定字母的最小子序列</a></li>
 </ul>
 <p>更多题解可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经 30K star 啦。</p>
@@ -549,10 +550,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-10-04T15:45:09+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-12-05T21:19:56+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年10月4日</p>
+    <p>更新于 2022年12月5日</p>
   </a>
 </div>
 
