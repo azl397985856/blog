@@ -2546,9 +2546,9 @@
       
         <tags>
             
-            <tag> 前缀和 </tag>
-            
             <tag> 滑动窗口 </tag>
+            
+            <tag> 前缀和 </tag>
             
             <tag> LeetCode </tag>
             
@@ -3151,9 +3151,9 @@
           
           <category> 数组 </category>
           
-          <category> 双指针 </category>
-          
           <category> Medium </category>
+          
+          <category> 双指针 </category>
           
       </categories>
       
@@ -5076,9 +5076,9 @@
           
           <category> 数学 </category>
           
-          <category> 概率 </category>
-          
           <category> 动态规划 </category>
+          
+          <category> 概率 </category>
           
           <category> 递归 </category>
           
