@@ -400,7 +400,7 @@
 <p>除了我的本职工作外，我会在开源社区进行一些输出和分享，GitHub 共计获得 1.5W star。比较受欢迎的项目有<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">leetcode 题解</a> , <a href="https://github.com/azl397985856/fe-interview" target="_blank" rel="noopener">宇宙最强的前端面试指南</a> 和<br><a href="https://github.com/azl397985856/automate-everything" target="_blank" rel="noopener">我的第一本小书</a></p>
 <h2 id="浏览器的进程模型"><a href="#浏览器的进程模型" class="headerlink" title="浏览器的进程模型"></a>浏览器的进程模型</h2><p>我们首先来看下浏览器的进程模型，我们以 chrome 为例。</p>
 <p>Chrome 采用多进程架构，其顶层存在一个 Browser process 用以协调浏览器的其它进程。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5220bt0j30k00bjdgl.jpg" alt><br>(图来自 <a href="https://zhuanlan.zhihu.com/p/47407398" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/47407398</a>)</p>
+<p><img src="https://p.ipic.vip/05lp3u.jpg" alt><br>(图来自 <a href="https://zhuanlan.zhihu.com/p/47407398" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/47407398</a>)</p>
 <p>这也是为什么 chrome 明明只打开了一个 tab，却出现了 4 个进程的原因。</p>
 <p>这部分不是我们本节的主要内容，大家了解这么多就够了，接下来我们看下今天的主角 - 渲染进程。</p>
 <h2 id="浏览器的渲染进程"><a href="#浏览器的渲染进程" class="headerlink" title="浏览器的渲染进程"></a>浏览器的渲染进程</h2><p>渲染进程几乎负责 Tab 内的所有事情，渲染进程的核心目的在于转换 HTML CSS JS 为用户可交互的 web 页面。</p>
@@ -417,7 +417,7 @@
 <p>可以看出主线程非常繁忙，需要做很多事情。 主线程很容易成为应用的性能瓶颈。</p>
 <p>当然除了主线程， 我们的其他进程和线程也可能成为我们的性能瓶颈，比如网络进程，解决网络进程瓶颈的方法有很多，可以使用浏览器本身缓存，也可以使用 ServiceWorker，还可以通过资源本身的优化等。这个不是我们本篇文章的讨论重点，这里只是让你有一个新的视角而已，因此不赘述。</p>
 <h3 id="工作线程-Worker-thread"><a href="#工作线程-Worker-thread" class="headerlink" title="工作线程 Worker thread"></a>工作线程 Worker thread</h3><p>工作线程能够分担主线程的计算压力，进而主线程可以获得更多的空闲时间，从而更快地响应用户行为。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds522xxxtj31400u0gnl.jpg" alt></p>
+<p><img src="https://p.ipic.vip/bs9ynv.jpg" alt></p>
 <p>工作线程主要有 Web Woker 和 Service Worker 两种。</p>
 <h4 id="Web-Worker"><a href="#Web-Worker" class="headerlink" title="Web Worker"></a>Web Worker</h4><p>以下摘自<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API/Using_web_workers" target="_blank" rel="noopener">MDN</a></p>
 <blockquote>
@@ -430,7 +430,7 @@
 <h2 id="重新思考我们的前端应用"><a href="#重新思考我们的前端应用" class="headerlink" title="重新思考我们的前端应用"></a>重新思考我们的前端应用</h2><p>工作线程尤其是 Web Worker 的出现一部分原因就是为了分担主线程的压力。</p>
 <p>整个过程就像主线程发布命令，然后工作线程执行，执行完毕将执行结果通过消息的形式传递给主线程。</p>
 <p>我们以包工头包工程，然后将工作交给各个单位去做的角度来看的话，大概是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds523elypj30mt0cgq57.jpg" alt></p>
+<p><img src="https://p.ipic.vip/4ley0m.jpg" alt></p>
 <p>实际上工作工作进程，尤其是 WebWorker 已经出现很长时间了。但是很多时候我们并没有充分使用，甚至连使用都没使用。</p>
 <p>下面以 Web Worker 为例， 我们来深度挖掘一下工作线程的潜力。</p>
 <p>前面的文章，我们谈了很多前端领域的算法，有框架层面的也有应用层面的。</p>
@@ -440,7 +440,7 @@
 </blockquote>
 <p>我们有没有可能将这部分内容抽离出主线程，交给工作进程，就像上面的图展示的那样呢？<br>我觉得可以， 另外我前面系列文章提到的所有东西，都可以放到工作线程中执行。<br>比如状态机，时光机，自动完成，差异比对算法等等。</p>
 <p>如果将这些抽离出我们主线程的话，我们的应用大概会是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds524dw4nj30hb0d940f.jpg" alt></p>
+<p><img src="https://p.ipic.vip/f8gi12.jpg" alt></p>
 <p>这样做主线程只负责 UI 展示，以及事件分发处理等工作，这样就大大减轻了主线程的负担，我们就可以更快速地响应用户了。<br>然后在计算结果完成之后，我们只需要通知主线程，主线程做出响应即可。<br>可以看出，在项目复杂到一定程度，这种优化带来的效果是非常大的。</p>
 <p>我们来开一下脑洞， 假如流行的前端框架比如 React 内置了这种线程分离的功能，<br>即将调和算法交给 WebWorker 来处理，会给前端带来怎么样的变化？</p>
 <p>假如我们可以涉及一个算法，智能地根据当前系统的硬件条件和网络状态，<br>自动判断应该将哪部分交给工作线程，哪部分代码交给主线程，会是怎么样的场景？</p>
@@ -450,11 +450,11 @@
 <h3 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h3><p>上述描述的场景非常美好，但是同样地也会有一些挑战。</p>
 <p>第一个挑战就是操作繁琐，比如 webworker 只支持单独文件引入，再比如不支持函数序列化,以及反复序列化带来的性能问题， 还有和 webworker 通信是异步的等等。</p>
 <p>但是这些问题都有很成熟的解决方案，比如对于操作比较繁琐这个问题我们就可以通过使用一些封装好 web worker 操作的库。<a href="https://github.com/GoogleChromeLabs/comlink" target="_blank" rel="noopener">comlink</a> 就是一个非常不错的 web worker 的封装工具库。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds525clcbj31kw0ntjt5.jpg" alt></p>
+<p><img src="https://p.ipic.vip/kr7az0.jpg" alt></p>
 <p>对于不支持单文件引入，我们其实可以用<code>Blob</code>, <code>createObjectURL</code>的方式模拟，<br>当然社区中其实也有了成熟的解决方案，如果你使用 webpack 构建的话，有一个<code>worker-loader</code>可以直接用。</p>
 <p>对于函数序列化这个问题，我们无法传递函数给工作线程，其实上面提到的<br>Comlink， 就很好地解决了这个问题，即使用 Comlink 提供的<code>proxy</code>,<br>你可以将一个代理传递到工作线程。</p>
 <p>对于反复序列化带来的性能问题，我们其实可以使用一种叫<code>对象转移（Transferable Objects）</code>的技术，幸运的是这个特性的浏览器兼容性也不错。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds526p8ufj312h0a2dhn.jpg" alt></p>
+<p><img src="https://p.ipic.vip/75eyo6.jpg" alt></p>
 <p>对于异步的问题，我们可以采取一定的取舍。 即我们<br>本地每次保存一份最近一份的结果拷贝，我们只需要每次返回这个拷贝，<br>然后在 webworker 计算结果返回的时候更新拷贝即可。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这篇文章的主要目的是让大家以新的视角来思考当前的前端应用，我们站在进程和线程的角度来看现在的前端应用，或许会有更多的不一样的理解和思考。</p>
 <p>本文先是讲了浏览器的进程模型，然后讲了浏览器的渲染进程中的<br>线程模型。 我们知道了渲染进程主要有四个线程组成，<br>分别是主线程 Main thread ， 工作线程 Worker thread，光栅线程 Raster thread<br>和排版线程 Compositor thread。</p>
@@ -476,10 +476,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

@@ -391,8 +391,8 @@
 <h1 id="第一位选手-84-柱状图中最大的矩形"><a href="#第一位选手-84-柱状图中最大的矩形" class="headerlink" title="第一位选手 - 84. 柱状图中最大的矩形"></a>第一位选手 - 84. 柱状图中最大的矩形</h1><h2 id="题目地址"><a href="#题目地址" class="headerlink" title="题目地址"></a>题目地址</h2><p><a href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/largest-rectangle-in-histogram/</a></p>
 <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。</p>
 <p>求在该柱状图中，能够勾勒出来的矩形的最大面积。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghltx8sr4uj305805odfn.jpg" alt></p>
-<p>以上是柱状图的示例，其中每个柱子的宽度为 1，给定的高度为  [2,1,5,6,2,3]。<br><br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghltx9kgd2j305805oa9z.jpg" alt></p>
+<p><img src="https://p.ipic.vip/4k98so.jpg" alt></p>
+<p>以上是柱状图的示例，其中每个柱子的宽度为 1，给定的高度为  [2,1,5,6,2,3]。<br><br><img src="https://p.ipic.vip/6w1hej.jpg" alt></p>
 <p>图中阴影部分为所能勾勒出的最大矩形面积，其面积为  10  个单位。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line"></span><br><span class="line">输入：[2,1,5,6,2,3]</span><br><span class="line">输出：10</span><br></pre></td></tr></table></figure>
 <h2 id="公司"><a href="#公司" class="headerlink" title="公司"></a>公司</h2><ul>
@@ -471,7 +471,7 @@
 <p>拿题目给的例子来说：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  [&quot;1&quot;,&quot;0&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;],</span><br><span class="line">  [&quot;1&quot;,&quot;0&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;],</span><br><span class="line">  [&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;],</span><br><span class="line">  [&quot;1&quot;,&quot;0&quot;,&quot;0&quot;,&quot;1&quot;,&quot;0&quot;]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <p>我们逐行扫描得到 <code>84. 柱状图中最大的矩形</code> 中的 heights 数组：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghlu7999xyj30t21cgtcn.jpg" alt></p>
+<p><img src="https://p.ipic.vip/qegre3.jpg" alt></p>
 <p>这样我们就可以使用<code>84. 柱状图中最大的矩形</code> 中的解法来进行了，这里我们使用单调栈来解。</p>
 <p>下面的代码直接将 84 题的代码封装成 API 调用了。</p>
 <h2 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h2><p>代码支持：Python</p>
@@ -495,14 +495,14 @@
 <li>字节</li>
 </ul>
 <h2 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h2><p>看到题看起来和上面的题目类似，只不过把长方形限定为了正方形嘛。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghludl52xfj30bo09vmxo.jpg" alt="221.maximal-square"></p>
+<p><img src="https://p.ipic.vip/6s3wfa.jpg" alt="221.maximal-square"></p>
 <p>符合直觉的做法是暴力求解处所有的正方形，逐一计算面积，然后记录最大的。这种时间复杂度很高。</p>
 <p>我们考虑使用动态规划，我们使用 dp[i][j]表示以 matrix[i][j]为右下角的顶点的可以组成的最大正方形的边长。<br>那么我们只需要计算所有的 i，j 组合，然后求出最大值即可。</p>
 <p>我们来看下 dp[i][j] 怎么推导。 首先我们要看 matrix[i][j], 如果 matrix[i][j]等于 0，那么就不用看了，直接等于 0。<br>如果 matrix[i][j]等于 1，那么我们将 matrix[[i][j]分别往上和往左进行延伸，直到碰到一个 0 为止。</p>
 <p>如图 dp[3][3] 的计算。 matrix[3][3]等于 1，我们分别往上和往左进行延伸，直到碰到一个 0 为止，上面长度为 1，左边为 3。<br>dp[2][2]等于 1（之前已经计算好了），那么其实这里的瓶颈在于三者的最小值, 即<code>Min(1, 1, 3)</code>, 也就是<code>1</code>。 那么 dp[3][3] 就等于<br><code>Min(1, 1, 3) + 1</code>。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghludlnra9j30an08xt96.jpg" alt="221.maximal-square"></p>
+<p><img src="https://p.ipic.vip/grsowk.jpg" alt="221.maximal-square"></p>
 <p>dp[i - 1][j - 1]我们直接拿到，关键是<code>往上和往左进行延伸</code>, 最直观的做法是我们内层加一个循环去做就好了。<br>但是我们仔细观察一下，其实我们根本不需要这样算。 我们可以直接用 dp[i - 1][j]和 dp[i][j -1]。<br>具体就是<code>Min(dp[i - 1][j - 1], dp[i][j - 1], dp[i - 1][j]) + 1</code>。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghludm7ilmj30a507sglz.jpg" alt="221.maximal-square"></p>
+<p><img src="https://p.ipic.vip/pv47tt.jpg" alt="221.maximal-square"></p>
 <p>事实上，这道题还有空间复杂度 O(N)的解法，其中 N 指的是列数。<br>大家可以去这个<a href="https://leetcode.com/problems/maximal-square/discuss/61803/C%2B%2B-space-optimized-DP" target="_blank" rel="noopener">leetcode 讨论</a>看一下。</p>
 <h2 id="关键点解析"><a href="#关键点解析" class="headerlink" title="关键点解析"></a>关键点解析</h2><ul>
 <li>DP</li>
@@ -534,10 +534,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-06T11:49:07+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年4月6日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

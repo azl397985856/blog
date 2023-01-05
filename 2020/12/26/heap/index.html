@@ -385,7 +385,7 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glegve2v47j319g0u041x.jpg" alt></p>
+        <p><img src="https://p.ipic.vip/a9eo4b.jpg" alt></p>
 <p>大家好，我是 lucifer。今天给大家带来的是《堆》专题。先上下本文的提纲，这个是我用 mindmap 画的一个脑图，之后我会继续完善，将其他专题逐步完善起来。</p>
 <blockquote>
 <p>大家也可以使用 vscode blink-mind 打开源文件查看，里面有一些笔记可以点开查看。源文件可以去我的公众号《力扣加加》回复脑图获取，以后脑图也会持续更新更多内容。vscode 插件地址：<a href="https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind" target="_blank" rel="noopener">https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind</a></p>
@@ -398,7 +398,7 @@
 </ul>
 <a id="more"></a>
 <h2 id="一点絮叨"><a href="#一点絮叨" class="headerlink" title="一点絮叨"></a>一点絮叨</h2><p><a href="https://leetcode-cn.com/tag/tree/" title="堆标签" target="_blank" rel="noopener">堆标签</a>在 leetcode 一共有 <strong>42 道题</strong>。 为了准备这个专题，我将 leetcode 几乎所有的堆题目都刷了一遍。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gldit71vq1j314a0kajtk.jpg" alt></p>
+<p><img src="https://p.ipic.vip/p323sw.jpg" alt></p>
 <p>可以看出，除了 3 个上锁的，其他我都刷了一遍。通过集中刷这些题，我发现了一些有趣的信息，今天就分享给大家。</p>
 <p>需要注意的是，本文不对堆和优先队列进行区分。因此本文提到的堆和优先队列大家可以认为是同一个东西。如果大家对两者的学术区别感兴趣，可以去查阅相关资料。</p>
 <blockquote>
@@ -422,7 +422,7 @@
 </ul>
 <p>我该如何设计我的系统才能满足需求，并获得较好的扩展性？</p>
 <h4 id="初步的解决方案"><a href="#初步的解决方案" class="headerlink" title="初步的解决方案"></a>初步的解决方案</h4><p>如果不同的客户使用不同的窗口。那么我们可以设计三个队列，分别存放正在排队的三种人。这种设计满足了题目要求，也足够简单。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glld41811yj30x20h4jsp.jpg" alt></p>
+<p><img src="https://p.ipic.vip/joce19.jpg" alt></p>
 <p>如果我们<strong>只有一个窗口</strong>，所有的病人需要使用同一个队列，并且同样的客户类型按照上面讲的<strong>先到先服务原则</strong>，但是不同客户类型之间可能会插队。</p>
 <p>简单起见，我引入了<strong>虚拟时间</strong>这个概念。具体来说：</p>
 <ul>
@@ -432,7 +432,7 @@
 </ul>
 <p>这样，我们只需要按照上面的”虚拟到达时间“进行<strong>先到先服务</strong>即可。</p>
 <p>因此我们就可以继续使用刚才的三个队列的方式，只不过队列存储的不是真实时间，而是虚拟时间。每次开始叫号的时候，我们使用虚拟时间比较，虚拟时间较小的先服务即可。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glldcdznpsj313w0k60w2.jpg" alt></p>
+<p><img src="https://p.ipic.vip/qm3qg1.jpg" alt></p>
 <blockquote>
 <p>不难看出，队列内部的时间都是有序。</p>
 </blockquote>
@@ -444,14 +444,14 @@
 </ul>
 <p>这样就有了”插队“的情况了。该怎么办呢？一个简单的做法是，将其插入到正确位置，并<strong>重新调整后面所有人的排队位置</strong>。</p>
 <p>如下图是插入一个 1:30 开始排队的普通客户的情况。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glldpnev60j311r0u0wis.jpg" alt><br>（查找插入位置）</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glldqz1z6bj31220l8adl.jpg" alt><br>（将其插入）</p>
+<p><img src="https://p.ipic.vip/qo31yk.jpg" alt><br>（查找插入位置）</p>
+<p><img src="https://p.ipic.vip/m9gkad.jpg" alt><br>（将其插入）</p>
 <p>如果队列使用数组实现， 上面插队过程的时间复杂度为 $O(N)$，其中 $N$ 为被插队的队伍长度。如果队伍很长，那么调整的次数明显增加。</p>
 <p>不过我们发现，本质上我们就是在维护一个<strong>有序列表</strong>，而使用数组方式去维护有序列表的好处是可以随机访问，但是很明显这个需求并不需要这个特性。如果使用链表去实现，那么时间复杂度理论上是 $O(1)$，但是如何定位到需要插入的位置呢？朴素的思维是遍历查找，但是这样的时间复杂度又退化到了 $O(N)$。有没有时间复杂度更好的做法呢？答案就是本文的主角<strong>优先队列</strong>。</p>
 <p>上面说了链表的实现核心在于查找也需要 $O(N)$，我们可以优化这个过程吗？实际上这就是优先级队列的链表实现，由于是有序的，我们可以用跳表加速查找，时间复杂度可以优化到 $O(logN)$。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glle4lyjv9j30ui0bm0tz.jpg" alt></p>
+<p><img src="https://p.ipic.vip/0n0u2y.jpg" alt></p>
 <p>其实算法界有很多类似的问题。比如建立数据库索引的算法，如果给某一个有序的列添加索引，不能每次插入一条数据都去调整所有的数据吧（上面的数组实现）？因此我们可以用平衡树来实现，这样每次插入可以最多调整 $(O(logN))$。优先队列的另外一种实现 - 二叉堆就是这个思想，时间复杂度也可以优化到 $O(logN)$</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glle5g74zaj30i60gwwfb.jpg" alt></p>
+<p><img src="https://p.ipic.vip/a4gbef.jpg" alt></p>
 <p>本文只讲解常见的二叉堆实现，对于跳表和红黑树不再这里讲。 关于优先队列的二叉堆实现，我们会在后面给大家详细介绍。这里大家只有明白优先队列解决的问题是什么就可以了。</p>
 <h4 id="使用堆解决问题"><a href="#使用堆解决问题" class="headerlink" title="使用堆解决问题"></a>使用堆解决问题</h4><p>堆的两个核心 API 是 push 和 pop。</p>
 <p>大家先不考虑它怎么实现的，你可以暂时把 ta 想象成一个黑盒，提供了两个 api：</p>
@@ -555,10 +555,10 @@
 <p>跳表虽然在面试中出现的频率不大，但是在工业中，跳表会经常被用到。力扣中关于跳表的题目只有一个。但是跳表的设计思路值得我们去学习和思考。 其中有很多算法和数据结构技巧值得我们学习。比如空间换时间的思想，比如效率的取舍问题等。</p>
 <p>上面提到了应付插队问题是设计<strong>堆</strong>应该考虑的首要问题。堆的跳表实现是如何解决这个问题的呢？</p>
 <p>我们知道，不借助额外空间的情况下，在链表中查找一个值，需要按照顺序一个个查找，时间复杂度为 $O(N)$，其中 N 为链表长度。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gg6ynn9eknj31ts05wgn5.jpg" alt></p>
+<p><img src="https://p.ipic.vip/hspxky.jpg" alt></p>
 <p>（单链表）</p>
 <p>当链表长度很大的时候， 这种时间是很难接受的。 一种常见的的优化方式是<strong>建立哈希表，将所有节点都放到哈希表中，以空间换时间的方式减少时间复杂度</strong>，这种做法时间复杂度为 $O(1)$，但是空间复杂度为 $O(N)$。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gg6ysd1g34j317o0lun0d.jpg" alt></p>
+<p><img src="https://p.ipic.vip/3kzdse.jpg" alt></p>
 <p>（单链表 + 哈希表）</p>
 <p>为了防止链表中出现重复节点带来的问题，我们需要序列化节点，再建立哈希表，这种空间占用会更高，虽然只是系数级别的增加，但是这种开销也是不小的 。更重要的是，哈希表不能解决查找极值的问题，其仅适合根据 key 来获取内容。</p>
 <p>为了解决上面的问题，跳表应运而生。</p>
@@ -566,7 +566,7 @@
 <blockquote>
 <p>注意这个算法要求链表是有序的。</p>
 </blockquote>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gg6yzbgxdcj32340kun2t.jpg" alt></p>
+<p><img src="https://p.ipic.vip/8u4kjz.jpg" alt></p>
 <p>（建立一级索引）</p>
 <p>我们可以：</p>
 <ul>
@@ -574,7 +574,7 @@
 <li>通过 down 指针回到原始链表，通过原始链表的 next 指针我们找到了 10。</li>
 </ul>
 <p>这个例子看不出性能提升。但是如果元素继续增大， 继续增加索引的层数，建立二级，三级。。。索引，使得链表能够实现二分查找，从而获得更好的效率。但是相应地，我们需要付出额外空间的代价。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gg6z4oovv2j31u90u0n50.jpg" alt></p>
+<p><img src="https://p.ipic.vip/kq36yv.jpg" alt></p>
 <p>（增加索引层数）</p>
 <p>理解了上面的点，你可以形象地将跳表想象为玩游戏的<strong>存档</strong>。</p>
 <p>一个游戏有 10 关。如果我想要玩第 5 关的某一个地方，那么我可以直接从第五关开始，这样要比从第一关开始快。我们甚至可以在每一关同时设置很多的存档。这样我如果想玩第 5 关的某一个地方，也可以不用从第 5 关的开头开始，而是直接选择<strong>离你想玩的地方更近的存档</strong>，这就相当于跳表的二级索引。</p>
@@ -591,21 +591,21 @@
 <p>实现之后的使用效果大概是这样的：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">h = min_heap()</span><br><span class="line">h.build_heap([<span class="number">5</span>, <span class="number">6</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">h.heappush(<span class="number">1</span>)</span><br><span class="line">h.heappop() <span class="comment"># 1</span></span><br><span class="line">h.heappop() <span class="comment"># 2</span></span><br><span class="line">h.heappush(<span class="number">1</span>)</span><br><span class="line">h.heappop() <span class="comment"># 1</span></span><br><span class="line">h.heappop() <span class="comment"># 3</span></span><br></pre></td></tr></table></figure>
 <h4 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h4><p>本质上来说，二叉堆就是一颗特殊的完全二叉树。它的特殊性只体现在一点，那就是<strong>父节点的权值不大于儿子的权值（小顶堆）</strong>。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm15lpppkej30ka0kajsm.jpg" alt><br>（一个小顶堆）</p>
+<p><img src="https://p.ipic.vip/1rtemq.jpg" alt><br>（一个小顶堆）</p>
 <p>上面这句话需要大家记住，一切的一切都源于上面这句话。</p>
 <p>由于<strong>父节点的权值不大于儿子的权值（小顶堆）</strong>，那么很自然能推导出树的根节点就是最小值。这就起到了堆的<strong>取极值</strong>的作用了。</p>
 <p>那动态性呢？二叉堆是怎么做到的呢？</p>
 <h5 id="出堆"><a href="#出堆" class="headerlink" title="出堆"></a>出堆</h5><p>假如，我将树的根节点出堆，那么根节点不就空缺了么？我应该将第二小的顶替上去。怎么顶替上去呢？一切的一切还是那句话<strong>父节点的权值不大于儿子的权值（小顶堆）</strong>。</p>
 <p>如果仅仅是删除，那么一个堆就会变成两个堆了，问题变复杂了。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm15mal0rzj30j40dct9g.jpg" alt><br>（上图出堆之后会生成两个新的堆）</p>
+<p><img src="https://p.ipic.vip/scchg1.jpg" alt><br>（上图出堆之后会生成两个新的堆）</p>
 <p>一个常见的操作是，把根结点和最后一个结点交换。但是新的根结点可能不满足 <strong>父节点的权值不大于儿子的权值（小顶堆）</strong>。</p>
 <p>如下图，我们将根节点的 2 和尾部的数字进行交换后，这个时候是不满足堆性质的。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm15r11v3yj30k60hg75g.jpg" alt></p>
+<p><img src="https://p.ipic.vip/1f6kgj.jpg" alt></p>
 <p>这个时候，其实只需要将新的根节点下沉到正确位置即可。这里的<strong>正确位置</strong>，指的还是那句话<strong>父节点的权值不大于儿子的权值（小顶堆）</strong>。如果不满足这一点，我们就继续下沉，直到满足。</p>
 <p>我们知道根节点往下下沉的过程，其实有两个方向可供选择，是下沉到左子节点？还是下沉到右子节点？以小顶堆来说，答案应该是下沉到较小的子节点处，否则会错失正确答案。以上面的堆为例，如果下沉到右子节点 4，那么就无法得到正确的堆顶 3。因此我们需要下沉到左子节点。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm15sz0fj6j30i80kaac3.jpg" alt></p>
+<p><img src="https://p.ipic.vip/1fha4b.jpg" alt></p>
 <p>下沉到如图位置，还是不满足 <strong>父节点的权值不大于儿子的权值（小顶堆）</strong>，于是我们继续执行同样的操作。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm15uqs8c9j30ke0g4q4x.jpg" alt></p>
+<p><img src="https://p.ipic.vip/dzqpe5.jpg" alt></p>
 <p>有的同学可能有疑问。弹出根节点前堆满足堆的性质，但是弹出之后经过你上面讲的下沉操作，一定还满足么？</p>
 <p>答案是肯定的。这个也不难理解。由于最后的叶子节点被提到了根节点，它其实最终在哪是不确定的，但是经过上面的操作，我们可以看出：</p>
 <ul>
@@ -618,14 +618,14 @@
 <blockquote>
 <p>之所以这么做的其中一个原因是时间复杂度更低，因为我们是用数组进行模拟的，而在数组尾部添加元素的时间复杂度为 $O(1)$。</p>
 </blockquote>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm18fd0uytj30mo0j6tab.jpg" alt></p>
+<p><img src="https://p.ipic.vip/si3788.jpg" alt></p>
 <p>这次我们发现，不满足堆的节点目前是刚刚被插入节点的尾部节点，因此不能进行下沉操作了。这一次我们需要执行<strong>上浮操作</strong>。</p>
 <blockquote>
 <p>叶子节点是只能上浮的（根节点只能下沉，其他节点既可以下沉，又可以上浮）</p>
 </blockquote>
 <p>和上面基本类似，如果不满足堆的性质，我们将其和父节点交换（上浮），继续这个过程，直到满足堆的性质。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm18h61qyvj30ss0g840w.jpg" alt><br>(第一次上浮，仍然不满足堆特性，继续上浮)</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm18iyp68qj30ne0hi400.jpg" alt><br>（满足了堆特性，上浮过程完毕）</p>
+<p><img src="https://p.ipic.vip/t24pxp.jpg" alt><br>(第一次上浮，仍然不满足堆特性，继续上浮)</p>
+<p><img src="https://p.ipic.vip/aedmmf.jpg" alt><br>（满足了堆特性，上浮过程完毕）</p>
 <p>经过这样的操作，其还是一个满足堆性质的堆。证明过程和上面类似，不再赘述。</p>
 <p>需要注意的是，由于上浮<strong>只需要拿当前节点和父节点进行比对就可以了，</strong> 由于省去了判断左右子节点哪个更小的过程，因此更加简单。</p>
 <h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><p>对于完全二叉树来说使用数组实现非常方便。因为：</p>
@@ -635,9 +635,9 @@
 </ul>
 <p>当然这要求你的<strong>数组从 1 开始存储数据</strong>。如果不是，上面的公式其实微调一下也可以达到同样的效果。不过这是一种业界习惯，我们还是和业界保持一致比较好。从 1 开始存储的另外一个好处是，我们可以将索引为 0 的位置空出来存储诸如<strong>堆大小</strong>的信息，这是一些大学教材里的做法，大家作为了解即可。</p>
 <p>如图所示是一个完全二叉树和树的数组表示法。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm1833aeutj30dt0f3q3v.jpg" alt><br>（注意数组索引的对应关系）</p>
+<p><img src="https://p.ipic.vip/psvt6e.jpg" alt><br>（注意数组索引的对应关系）</p>
 <p>形象点来看，我们可以可以画出如下的对应关系图：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm185zwz93j30fu0nj0ud.jpg" alt></p>
+<p><img src="https://p.ipic.vip/t17ivz.jpg" alt></p>
 <p>这样一来，是不是和上面的树差不多一致了？有没有容易理解一点呢？</p>
 <p>上面已经讲了上浮和下沉的过程。刚才也讲了父子节点坐标的关系。那么代码就呼之欲出了。我们来下最核心的<strong>上浮</strong>和<strong>下沉</strong>的代码实现吧。</p>
 <p>伪代码：</p>
@@ -667,7 +667,7 @@
 </ol>
 <p>这两个主题是专门教你怎么解题的。掌握了它，力扣中的大多数堆的题目都不在话下（当然我指的仅仅是题目中涉及到堆的部分）。</p>
 <p>大家对此有何看法，欢迎给我留言，我有时间都会一一查看回答。更多算法套路可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。目前已经 37K star 啦。大家也可以关注我的公众号《力扣加加》带你啃下算法这块硬骨头。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" alt="二维码"></p>
+<p><img src="https://p.ipic.vip/gixqxp.jpg" alt="二维码"></p>
 
       </div>
       
@@ -679,10 +679,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-06T09:52:53+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年7月6日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

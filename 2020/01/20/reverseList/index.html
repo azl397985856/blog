@@ -393,7 +393,7 @@
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>链表的翻转过程，初始化一个为 null 的 previous node（prev），然后遍历链表的同时，当前 node （curr）的下一个（next）指向前一个 node（prev）， 在改变当前 node 的指向之前，用一个临时变量记录当前 node 的下一个 node（curr.next). 即</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ListNode temp = curr.next;</span><br><span class="line">curr.next = prev;</span><br><span class="line">prev = curr;</span><br><span class="line">curr = temp;</span><br></pre></td></tr></table></figure>
 <p>举例如图：翻转整个链表 1-&gt;2-&gt;3-&gt;4-&gt;null -&gt; 4-&gt;3-&gt;2-&gt;1-&gt;null</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54nob8uj31400u00tx.jpg" alt></p>
+<p><img src="https://p.ipic.vip/d3iwgw.jpg" alt></p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>我们直接来看下代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * function ListNode(val) &#123;</span></span><br><span class="line"><span class="comment"> *     this.val = val;</span></span><br><span class="line"><span class="comment"> *     this.next = null;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;ListNode&#125;</span> <span class="variable">head</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;ListNode&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseList</span>(<span class="params">head</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!head || !head.next) <span class="keyword">return</span> head;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> cur = head;</span><br><span class="line">  <span class="keyword">let</span> pre = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">while</span> (cur) &#123;</span><br><span class="line">    <span class="keyword">const</span> next = cur.next;</span><br><span class="line">    cur.next = pre;</span><br><span class="line">    pre = cur;</span><br><span class="line">    cur = next;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里不再赘述，如果不理解，想看更多更详细内容，请参考我的<a href="https://github.com/azl397985856/leetcode/blob/master/problems/206.reverse-linked-list.md" target="_blank" rel="noopener">LeetCode 题解 - 206.reverse-linked-list</a></p>
@@ -421,9 +421,9 @@
 </li>
 </ol>
 <p>如图所示 步骤 4 和 5： 翻转区间链表区间<code>（start， end）</code></p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54ol1rcj30zd0qxmxy.jpg" alt="reverse linked list range in (start, end)"></p>
+<p><img src="https://p.ipic.vip/1entxw.jpg" alt="reverse linked list range in (start, end)"></p>
 <p>举例如图，<code>head=[1,2,3,4,5,6,7,8], k = 3</code></p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54qkdnkj312u0u0n2u.jpg" alt="reverse k nodes in linked list"></p>
+<p><img src="https://p.ipic.vip/gbfnkm.jpg" alt="reverse k nodes in linked list"></p>
 <blockquote>
 <p><strong>NOTE</strong>: 一般情况下对链表的操作，都有可能会引入一个新的<code>dummy node</code>，因为<code>head</code>有可能会改变。这里<code>head 从1-&gt;3</code>,<br><code>dummy (List(0))</code>保持不变。</p>
 </blockquote>
@@ -472,10 +472,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

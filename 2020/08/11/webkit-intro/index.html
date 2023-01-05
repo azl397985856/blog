@@ -392,7 +392,7 @@
 <p>这个很常见的题目，涉及的知识非常广泛。大家可先从浏览器监听用户输入开始，浏览器解析 url 的部分，分析出应用层协议 是 HTTPS 还是 HTTP 来决定是否经过会话层 TLS 套接字，然后到 DNS 解析获取 IP，建立 TCP 套接字池 以及 TCP 三次握手，数据封装切片的过程，浏览器发送请求获取对应数据，如何解析 HTML，四次挥手等等等等。 这个回答理论上可以非常详细，远比我提到的多得多。</p>
 <p>本文试图从浏览器获取资源开始探究 Webkit。如浏览器如何获取资源，获取资源时 Webkit 调用了哪些资源加载器（不同的资源使用不同的加载器），Webkit 如何解析 HTML 等入手。想要从前端工程师的角度弄明白这些问题，可以先暂时抛开 C++源码，从浏览器架构出发，做到大致了解。之后学有余力的同学再去深入研究各个底层细节。</p>
 <p>本文的路线循序渐进，从 Chromium 浏览器架构出发，到 Webkit 资源下载时对应的浏览器获取对应资源如 HTML、CSS 等，再到 HTML 的解析，再到 JS 阻塞 DOM 解析而产生的 Webkit 优化 引出浏览器多线程架构，继而出于安全性和稳定性的考虑引出浏览器多进程架构。</p>
-<h2 id="一-Chromium-浏览器架构"><a href="#一-Chromium-浏览器架构" class="headerlink" title="一. Chromium 浏览器架构"></a>一. Chromium 浏览器架构</h2><p><img src="http://m.qpic.cn/psc?/V50vddMl0YvJ9c0IGUY913J7mG1rVs8G/bqQfVz5yrrGYSXMvKr.cqTMrUK10g4vRaHHV49*HvW0FoJTS4c2bz3tSzUqnlZb.vVmuaQiNqi3bk24Ey1ONmRFcv3mSLTbCQZ07nedhD9M!/b&amp;bo=qAMaBAAAAAADB5c!&amp;rf=viewer_4" alt="Chromium浏览器架构"></p>
+<h2 id="一-Chromium-浏览器架构"><a href="#一-Chromium-浏览器架构" class="headerlink" title="一. Chromium 浏览器架构"></a>一. Chromium 浏览器架构</h2><p><img src="https://p.ipic.vip/e71bqx.png" alt="Chromium浏览器架构"></p>
 <p>（Chromium 浏览器架构）</p>
 <p>我们通常说的浏览器内核，指的是渲染引擎。</p>
 <p>WebCore 基本是共享的，只是在不同浏览器中使用 Webkit 的实现方式不同。它包含解析 HTML 生成 DOM、解析 CSS、渲染布局、资源加载器等等，用于加载和渲染网页。</p>
@@ -409,7 +409,7 @@
 <h2 id="三-浏览器架构"><a href="#三-浏览器架构" class="headerlink" title="三.浏览器架构"></a>三.浏览器架构</h2><p>浏览器是多进程多线程架构。</p>
 <p>对于浏览器来讲，从网络获取资源是非常耗时的。从资源是否阻塞渲染的角度，对浏览器而言资源仅分为两类：<strong>阻塞渲染</strong>如 JS 和 <strong>不阻塞渲染</strong>如图片。</p>
 <p>我们都知道 JS 阻塞 DOM 解析，反之亦然。然而对于阻塞，Webkit 不会傻傻等着浪费时间，它在内部做了优化：启动另一个线程，去遍历后续的 HTML 文档，收集需要的资源 URL，并发下载资源。最常见的比如<code>&lt;script async&gt;</code>和<code>&lt;script defer&gt;</code>，其 JS 资源下载和 DOM 解析是并行的，JS 下载并不会阻塞 DOM 解析。这就是浏览器的多线程架构。</p>
-<p><img src="http://a1.qpic.cn/psc?/V50vddMl0YvJ9c0IGUY913J7mG1rVs8G/bqQfVz5yrrGYSXMvKr.cqQYq655fTdqtV.7hiPLQGNK3lEmq2f9GXjc.RrNkpc2KrnPa34sYOqInvolRFQDCNcqbuGHTk4D5eqi6VWgzlNs!/c&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=EwMgAwAAAAADFwE!&amp;tl=1&amp;vuin=741183972&amp;tm=1597122000&amp;sce=60-2-2&amp;rf=0-0" alt="JS async defer"></p>
+<p><img src="https://p.ipic.vip/0yg399.png" alt="JS async defer"></p>
 <p>总结一下，多线程的好处就是，高响应度，UI 线程不会被耗时操作阻塞而完全阻塞浏览器进程。</p>
 <p>关于多线程，有 GUI 渲染线程，负责解析 HTML、CSS、渲染和布局等等，调用 WebCore 的功能。JS 引擎线程，负责解析 JS 脚本，调用 JSCore 或 V8。我们都知道 JS 阻塞 DOM 解析，这是因为 Webkit 设计上 GUI 渲染线程和 JS 引擎线程的执行是互斥的。如果二者不互斥，假设 JS 引擎线程清空了 DOM 树，在 JS 引擎线程清空的过程中 GUI 渲染线程仍继续渲染页面，这就造成了资源的浪费。更严重的，还可能发生各种多线程问题，比如脏数据等。</p>
 <p>另外我们常说的 JS 操作 DOM 消耗性能，其实有一部分指的就是 JS 引擎线程和 GUI 渲染线程之间的通信，线程之间比较消耗性能。</p>
@@ -447,9 +447,9 @@
 <p>我们仅仅在围绕 Chromium 浏览器来说上述进程，因为在移动端，毕竟手机厂商很多，各大厂商对浏览器进程的支持也不一样。这其实也是我们最常见的 H5 兼容性问题，比如 IOS <code>margin-bottom</code> 失效等等。再比如 H5 使用 video 标签做直播，也在不同手机之间会存在问题。有的手机直播页面跳出主进程再回来，就会黑屏。</p>
 <p>以 Chromium 的 Android 版为例子，不存在 GPU 进程，GPU 进程变成了 Browser 进程的线程。同时，Renderer 进程演变为服务进程，同时被限制了最大数量。</p>
 <p>为了方便起见，我们以 PC 端谷歌浏览器为例子，打开任务管理器，查看当前浏览器中打开的网页及其进程。</p>
-<p><img src="http://a1.qpic.cn/psc?/V50vddMl0YvJ9c0IGUY913J7mG1rVs8G/bqQfVz5yrrGYSXMvKr.cqbiyEougc0AL0QEl3PZdg8VoMc3IvtAbJcZAPdlr61RytWnxdKgGug9CJ1x5zgjBdRtUb1h3Ve5FOlicgiswBqg!/c&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=rQU4BAAAAAADN4Y!&amp;tl=1&amp;vuin=741183972&amp;tm=1597118400&amp;sce=60-2-2&amp;rf=0-0" alt="打开浏览器任务管理器"></p>
+<p><img src="https://p.ipic.vip/euzjlm.png" alt="打开浏览器任务管理器"></p>
 <p>当前我打开了 14 个网页，不太好容易观察，但可以从下图中看到，只有一个 Browser 进程，即第 1 行。但是打开的网页对应的 Renderer 进程，并不一定是一个网页对应一个 Renderer 进程，这跟 Renderer 进程配置有关系。比如你看第 6、7 行是每个标签页创建独立 Renderer 进程，但是蓝色光标所在的第 8、9、10 行是共用一个 Renderer 进程，这属于为每个页面创建一个 Renderer 进程。因为第 9、10 行打开的页面是从第 8 行点击链接打开的。第 2 行的 GPU 进程也清晰可见，以及第 3、4、5 行的插件进程。</p>
-<p><img src="http://a1.qpic.cn/psc?/V50vddMl0YvJ9c0IGUY913J7mG1rVs8G/bqQfVz5yrrGYSXMvKr.cqUONLiXR1HrQh.acB9iAV0PCQsnilSowX4VUd2fTJ1890e2KO4dg5OnmEryV3jxZP7N3ZkaTys7CU0rlYm3mHq8!/c&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=zAMYAwAAAAADJ9Y!&amp;tl=1&amp;vuin=741183972&amp;tm=1597118400&amp;sce=60-2-2&amp;rf=0-0" alt="浏览器进程"></p>
+<p><img src="https://p.ipic.vip/hkkrov.png" alt="浏览器进程"></p>
 <p>关于，Renderer 进程和打开的网页并不一定是一一对应的关系，下面我们详细说一下 Renderer 进程。当前只有四种多进程策略：</p>
 <ol>
 <li><p>Process-per-site-instance: 为每个页面单独创建一个进程，从某个网站打开的一系列网站都属于同一个进程。这是浏览器的默认项。上图中的蓝色光标就是这种情况。</p>
@@ -478,10 +478,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

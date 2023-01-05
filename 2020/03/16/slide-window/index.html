@@ -408,7 +408,7 @@
 </ul>
 </li>
 </ol>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcw0pwdhmwj308z0d53yt.jpg" alt></p>
+<p><img src="https://p.ipic.vip/o3yltr.jpg" alt></p>
 <h3 id="可变窗口大小"><a href="#可变窗口大小" class="headerlink" title="可变窗口大小"></a>可变窗口大小</h3><p>对于可变窗口，我们同样固定初始化左右指针 l 和 r，分别表示的窗口的左右顶点。后面有所不同，我们需要保证：</p>
 <ol>
 <li>l 和 r 都初始化为 0</li>
@@ -420,7 +420,7 @@
 </li>
 </ol>
 <p>形象地来看的话，就是 r 指针不停向右移动，l 指针仅仅在窗口满足条件之后才会移动，起到窗口收缩的效果。</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcw0ouuplaj30d90d50t3.jpg" alt></p>
+<p><img src="https://p.ipic.vip/kuqd66.jpg" alt></p>
 <h2 id="模板代码"><a href="#模板代码" class="headerlink" title="模板代码"></a>模板代码</h2><p>以下是 209 题目的代码，使用 Python 编写，大家意会即可。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minSubArrayLen</span><span class="params">(self, s: int, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        l = total = <span class="number">0</span></span><br><span class="line">        ans = len(nums) + <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> r <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            total += nums[r]</span><br><span class="line">            <span class="keyword">while</span> total &gt;= s:</span><br><span class="line">                ans = min(ans, r - l + <span class="number">1</span>)</span><br><span class="line">                total -= nums[l]</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span>  <span class="number">0</span> <span class="keyword">if</span> ans == len(nums) + <span class="number">1</span> <span class="keyword">else</span> ans</span><br></pre></td></tr></table></figure>
 <h2 id="题目列表"><a href="#题目列表" class="headerlink" title="题目列表"></a>题目列表</h2><p>以下题目有的信息比较直接，有的题目信息比较隐蔽，需要自己发掘</p>
@@ -450,10 +450,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T19:02:08+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 
@@ -558,9 +558,9 @@
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/blog/2020/03/04/85.maximal-rectangle/" rel="prev" title="【LeetCode 日记】85. 最大矩形">
+                              <a href="/blog/2020/03/04/84.largest-rectangle-in-histogram/" rel="prev" title="【LeetCode 日记】 84. 柱状图中最大的矩形">
                                   
-                                      【LeetCode 日记】85. 最大矩形
+                                      【LeetCode 日记】 84. 柱状图中最大的矩形
                                   
                               </a>
                           </h4>

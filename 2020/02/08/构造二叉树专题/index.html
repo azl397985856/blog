@@ -394,18 +394,18 @@
 <p>今天就让我们用一个套路一举攻破他们。</p>
 <p>​<a id="more"></a></p>
 <h2 id="105-从前序与中序遍历序列构造二叉树"><a href="#105-从前序与中序遍历序列构造二叉树" class="headerlink" title="105. 从前序与中序遍历序列构造二叉树"></a>105. 从前序与中序遍历序列构造二叉树</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">根据一棵树的前序遍历与中序遍历构造二叉树。</span><br><span class="line"></span><br><span class="line">注意:</span><br><span class="line">你可以假设树中没有重复的元素。</span><br><span class="line"></span><br><span class="line">例如，给出</span><br><span class="line"></span><br><span class="line">前序遍历 preorder = [3,9,20,15,7]</span><br><span class="line">中序遍历 inorder = [9,3,15,20,7]</span><br><span class="line">返回如下的二叉树：</span><br><span class="line"></span><br><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line">    /  \</span><br><span class="line">   15   7</span><br></pre></td></tr></table></figure>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>我们以题目给出的测试用例来讲解：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrlcnp9j30vq0dmta4.jpg" alt></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>我们以题目给出的测试用例来讲解：<br><img src="https://p.ipic.vip/570il9.jpg" alt></p>
 <p>前序遍历是<code>根左右</code>，因此 preorder 第一个元素一定整个树的根。由于题目说明了没有重复元素，因此我们可以通过 val 去 inorder 找到根在 inorder 中的索引 i。<br>而由于中序遍历是<code>左根右</code>，我们容易找到 i 左边的都是左子树，i 右边都是右子树。</p>
 <p>我使用红色表示根，蓝色表示左子树，绿色表示右子树。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrmhksrj30v00cc75b.jpg" alt></p>
+<p><img src="https://p.ipic.vip/zv0xk4.jpg" alt></p>
 <p>根据此时的信息，我们能构造的树是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrncxehj30y20bigmk.jpg" alt></p>
+<p><img src="https://p.ipic.vip/clm2w2.jpg" alt></p>
 <p>我们 preorder 继续向后移动一位，这个时候我们得到了第二个根节点”9“，实际上就是左子树的根节点。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvro8mq1j30us0ckwfm.jpg" alt></p>
+<p><img src="https://p.ipic.vip/f96i9i.jpg" alt></p>
 <p>我们 preorder 继续向后移动一位，这个时候我们得到了第二个根节点”20“，实际上就是右子树的根节点。其中右子树由于个数大于 1，我们无法确定，我们继续执行上述逻辑。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvroqtp6j311c0d6402.jpg" alt></p>
+<p><img src="https://p.ipic.vip/y076fp.jpg" alt></p>
 <p>根据此时的信息，我们能构造的树是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrpnj04j30vs0hu402.jpg" alt></p>
+<p><img src="https://p.ipic.vip/7295hq.jpg" alt></p>
 <p>我们不断执行上述逻辑即可。简单起见，递归的时候每次我都开辟了新的数组，这个其实是没有必要的，我们可以通过四个变量来记录 inorder 和 preorder 的起始位置即可。</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>代码支持：Python3</p>
 <p>Python3 Code:</p>
@@ -420,16 +420,16 @@
 </blockquote>
 <h2 id="106-从中序与后序遍历序列构造二叉树"><a href="#106-从中序与后序遍历序列构造二叉树" class="headerlink" title="106. 从中序与后序遍历序列构造二叉树"></a>106. 从中序与后序遍历序列构造二叉树</h2><p>如果你会了上面的题目，那么这个题目对你来说也不是难事，我们来看下。</p>
 <h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">根据一棵树的中序遍历与后序遍历构造二叉树。</span><br><span class="line"></span><br><span class="line">注意:</span><br><span class="line">你可以假设树中没有重复的元素。</span><br><span class="line"></span><br><span class="line">例如，给出</span><br><span class="line"></span><br><span class="line">中序遍历 inorder = [9,3,15,20,7]</span><br><span class="line">后序遍历 postorder = [9,15,7,20,3]</span><br><span class="line">返回如下的二叉树：</span><br><span class="line"></span><br><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line">    /  \</span><br><span class="line">   15   7</span><br></pre></td></tr></table></figure>
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>我们以题目给出的测试用例来讲解：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrq61tkj30t60ck0tr.jpg" alt></p>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>我们以题目给出的测试用例来讲解：<br><img src="https://p.ipic.vip/mvpr6n.jpg" alt></p>
 <p>后序遍历是<code>左右根</code>，因此 postorder 最后一个元素一定整个树的根。由于题目说明了没有重复元素，因此我们可以通过 val 去 inorder 找到根在 inorder 中的索引 i。<br>而由于中序遍历是<code>左根右</code>，我们容易找到 i 左边的都是左子树，i 右边都是右子树。</p>
 <p>我使用红色表示根，蓝色表示左子树，绿色表示右子树。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrr49krj30x80dggmt.jpg" alt></p>
+<p><img src="https://p.ipic.vip/b7bbk0.jpg" alt></p>
 <p>根据此时的信息，我们能构造的树是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrncxehj30y20bigmk.jpg" alt></p>
+<p><img src="https://p.ipic.vip/clm2w2.jpg" alt></p>
 <p>其中右子树由于个数大于 1，我们无法确定，我们继续执行上述逻辑。我们 postorder 继续向前移动一位，这个时候我们得到了第二个根节点”20“，实际上就是右子树的根节点。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrskkjkj30xg0dst9y.jpg" alt></p>
+<p><img src="https://p.ipic.vip/nk0i3d.jpg" alt></p>
 <p>根据此时的信息，我们能构造的树是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrpnj04j30vs0hu402.jpg" alt></p>
+<p><img src="https://p.ipic.vip/7295hq.jpg" alt></p>
 <p>我们不断执行上述逻辑即可。简单起见，递归的时候每次我都开辟了新的数组，这个其实是没有必要的，我们可以通过四个变量来记录 inorder 和 postorder 的起始位置即可。</p>
 <h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><p>代码支持：Python3</p>
 <p>Python3 Code:</p>
@@ -443,7 +443,7 @@
 <p>空间复杂度忽略了开辟数组的内存消耗。</p>
 </blockquote>
 <h2 id="889-根据前序和后序遍历构造二叉树"><a href="#889-根据前序和后序遍历构造二叉树" class="headerlink" title="889. 根据前序和后序遍历构造二叉树"></a>889. 根据前序和后序遍历构造二叉树</h2><h3 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">返回与给定的前序和后序遍历匹配的任何二叉树。</span><br><span class="line"></span><br><span class="line"> pre 和 post 遍历中的值是不同的正整数。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">输入：pre = [1,2,4,5,3,6,7], post = [4,5,2,6,7,3,1]</span><br><span class="line">输出：[1,2,3,4,5,6,7]</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">1 &lt;= pre.length == post.length &lt;= 30</span><br><span class="line">pre[] 和 post[] 都是 1, 2, ..., pre.length 的排列</span><br><span class="line">每个输入保证至少有一个答案。如果有多个答案，可以返回其中一个。</span><br></pre></td></tr></table></figure>
-<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>我们以题目给出的测试用例来讲解：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gkpvrlcnp9j30vq0dmta4.jpg" alt></p>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>我们以题目给出的测试用例来讲解：<br><img src="https://p.ipic.vip/570il9.jpg" alt></p>
 <p>前序遍历是<code>根左右</code>，因此 preorder 第一个元素一定整个树的根，preorder 第二个元素（如果存在的话）一定是左子树。由于题目说明了没有重复元素，因此我们可以通过 val 去 postorder 找到 pre[1]在 postorder 中的索引 i。<br>而由于后序遍历是<code>左右根</code>，因此我们容易得出。 postorder 中的 0 到 i(包含)是左子树，preorder 的 1 到 i+1（包含）也是左子树。</p>
 <p>其他部分可以参考上面两题。</p>
 <h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><p>代码支持：Python3</p>
@@ -481,7 +481,7 @@
 </ul>
 <h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>更多题解可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经 30K star 啦。</p>
 <p>大家也可以关注我的公众号《力扣加加》获取更多更新鲜的 LeetCode 题解</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" alt></p>
+<p><img src="https://p.ipic.vip/61pvqd.jpg" alt></p>
 
       </div>
       
@@ -493,10 +493,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-29T12:11:00+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:50+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月29日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

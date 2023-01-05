@@ -393,13 +393,13 @@
 <li>。</li>
 </ul>
 <p>而上一次提交的引用导致了 git 提交是一个链表结构。而 git 支持创建分支，并基于分支进行开发，因此 git 提交本质上是有向无环图结构。</p>
-<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h0xrlaek8tj20p80b8aab.jpg" alt></p>
+<p><img src="https://p.ipic.vip/eabmgz.jpg" alt></p>
 <p>如上图，我们基于提交 2 创建了新分支 dev，dev 上开发后我们可以将其合并到主分支 master。</p>
 <p>而当我们执行合并操作的时候，git 会先使用 merge-base 算法计算最近公共祖先。</p>
 <p>如果最近公共祖先是被 merge 的 commit， 则可执行 fast-forward。如下图，我们将 dev 合并到 master 就可以 fast-forward，就好像没有创建过 dev 分支一样。</p>
-<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h0xrn9k030j20o80dyglt.jpg" alt></p>
+<p><img src="https://p.ipic.vip/qrfsmu.jpg" alt></p>
 <p>最后举一个更复杂的例子。如下图，我们在提交 3 上执行 git merge HEAD 提交 6。会发生什么？</p>
-<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h0xro7jws7j212m0j6t9g.jpg" alt></p>
+<p><img src="https://p.ipic.vip/btro3z.jpg" alt></p>
 <p>答案是会找到提交 2。那怎么找到 2 呢？</p>
 <p>如果从提交 6 出发不断找父节点，找到 1，并将其放到哈希表中。接下来再从提交 3 出发同样不断找父节点，如果父节点在哈希表中存在，那么我们就找到了公共祖先，由于是找到的第一个公共祖先，因此其是最近公共祖先，直接返回即可。</p>
 <p>力扣中刚好有一个题目，我们来看下。</p>
@@ -429,7 +429,7 @@
 <p>有没有优化的可能？</p>
 <p>当然可以。而且优化的角度有很多。</p>
 <p>这不，这位同学就想到了预处理。</p>
-<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h0zwch3o87j21fa0lqq6q.jpg" alt></p>
+<p><img src="https://p.ipic.vip/xorok9.jpg" alt></p>
 <p><a href="https://github.com/ingydotnet/git-subrepo/issues/140" title="git merge 算法优化 issue" target="_blank" rel="noopener">链接在这里</a>。即第一次维护好了节点信息，将其存到文件里，那么以后执行 merge-base，就不需要对已经处理过的节点进行遍历了。<strong>理论上，不管 merge-base 多少次，我们都仅遍历一次节点</strong>。</p>
 <p>真的这么理想么？</p>
 <p>很可惜不是的。比如我执行了 rebase ，reset 等操作改变了节点怎么处理？这里的细节很多，我就不在这里展开了。感兴趣的可以加入我的力扣群讨论。</p>
@@ -438,7 +438,7 @@
 <p>这个算法也有优化空间，而优化后又需要考虑各种边界条件，即缓存失效问题。</p>
 <p>以上就是本文的全部内容了。大家对此有何看法，欢迎给我留言，我有时间都会一一查看回答。更多算法套路可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经 40K star 啦。大家也可以关注我的公众号《力扣加加》带你啃下算法这块硬骨头。</p>
 <p>关注公众号力扣加加，努力用清晰直白的语言还原解题思路，并且有大量图解，手把手教你识别套路，高效刷题。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" alt></p>
+<p><img src="https://p.ipic.vip/sm09g1.jpg" alt></p>
 
       </div>
       
@@ -450,10 +450,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-04-09T22:07:02+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2022年4月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

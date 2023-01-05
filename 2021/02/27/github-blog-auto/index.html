@@ -389,7 +389,7 @@
 <p>修改 README 能玩出什么花样呢？请接着往下看。</p>
 <a id="more"></a>
 <h2 id="装修效果"><a href="#装修效果" class="headerlink" title="装修效果"></a>装修效果</h2><p>先上一下我的装修效果：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1go0wmr2tajj30yn0p447m.jpg" alt></p>
+<p><img src="https://p.ipic.vip/ptw2jn.jpg" alt></p>
 <h2 id="开始动手"><a href="#开始动手" class="headerlink" title="开始动手"></a>开始动手</h2><h3 id="添加数据统计"><a href="#添加数据统计" class="headerlink" title="添加数据统计"></a>添加数据统计</h3><p>上图的那几个 Github 数据统计以及奖杯使用的是一个外部服务。想要显示哪个就添加相应代码即可：</p>
 <p>数据统计：</p>
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://github-readme-stats.vercel.app/api?username=azl397985856&amp;show_icons=true"</span> <span class="attr">alt</span>=<span class="string">"logo"</span> <span class="attr">height</span>=<span class="string">"160"</span> <span class="attr">align</span>=<span class="string">"right"</span> <span class="attr">style</span>=<span class="string">"margin: 5px; margin-bottom: 20px;"</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
@@ -404,8 +404,8 @@
 <p>之后读取的博客列表会填充在两个注释之间，也就是说你可以<strong>通过改变注释的位置，将其放到页面任意位置</strong>。</p>
 <p>为了实现<strong>每个小时定时更新的功能</strong>，我们可以使用 Github Action 的定时任务来实现。</p>
 <p>具体操作步骤如下：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1go0x6m5ha2j30yb06zt9o.jpg" alt></p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1go0x818quij30nh09mdh2.jpg" alt></p>
+<p><img src="https://p.ipic.vip/j50f5n.jpg" alt></p>
+<p><img src="https://p.ipic.vip/kg7z6v.jpg" alt></p>
 <p>接下来将如下内容复制粘贴进去：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Blog</span> <span class="string">Posts</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="comment"># Run workflow automatically</span></span><br><span class="line">  <span class="attr">schedule:</span></span><br><span class="line">    <span class="comment"># Runs every hour, on the hour</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">"0 * * * *"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">update-readme-with-blog:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Update</span> <span class="string">this</span> <span class="string">repo's</span> <span class="string">README</span> <span class="string">with</span> <span class="string">latest</span> <span class="string">blog</span> <span class="string">posts</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v2</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">gautamkrishnar/blog-post-workflow@master</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="comment"># comma-separated list of RSS feed urls</span></span><br><span class="line">          <span class="attr">feed_list:</span> <span class="string">"https://lucifer.ren/blog/atom.xml"</span></span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -413,7 +413,7 @@
 </blockquote>
 <p>请将 feed_list 替换为你自己的 RSS 订阅地址。如果有多个订阅地址，则用英文半角逗号分割。</p>
 <p>如果你的博客没有 RSS 或者你不知道自己的 RSS 地址就无法使用了哦。我的博客是用 hexo 生成的，因此添加 RSS 就很容易了，如果你的博客是挂到第三方的，也会提供 RSS 地址。比如 CSDN 就提供了 RSS 地址：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1go0xhrc16dj311i06240f.jpg" alt></p>
+<p><img src="https://p.ipic.vip/9qlv47.jpg" alt></p>
 <p>由于大家的博客可能都不相同，因此具体大家可以自行搜索。</p>
 <h2 id="完整源代码"><a href="#完整源代码" class="headerlink" title="完整源代码"></a>完整源代码</h2><p>本文所有的代码都可以在如下的代码仓库中找到。</p>
 <p>仓库地址：<a href="https://github.com/azl397985856/azl397985856" target="_blank" rel="noopener">https://github.com/azl397985856/azl397985856</a></p>
@@ -429,10 +429,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

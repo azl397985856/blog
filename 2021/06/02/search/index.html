@@ -426,9 +426,9 @@
 </ul>
 <p>据此，你可以画出如下的决策树。</p>
 <p>（下图描述的是对一个长度为 3 的数组进行决策的部分过程，树节点中的数字表示索引。即确定第一个数有三个选择，确定第二个数会根据上次的选择变为剩下的两个选择）</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqwu244duoj30n40iaabd.jpg" alt></p>
+<p><img src="https://p.ipic.vip/0xjiik.jpg" alt></p>
 <p>决策过程动图演示：</p>
-<p><img src="https://pic.stackoverflow.wiki/uploadImages/115/238/39/106/2021/05/27/18/33/b97ee92b-a516-48e1-83d9-b29c1eaf2eff.svg" alt="搜索-决策树.svg"></p>
+<p><img src="https://p.ipic.vip/4637ny.jpg" alt="搜索-决策树.svg"></p>
 <p><strong>一些搜索算法就是基于这个朴素的思想，本质就是模拟这个决策树</strong>。这里面其实也有很多有趣的细节，后面我们会对其进行更加详细的讲解。而现在大家只需要对<strong>解空间是什么以及如何对解空间进行遍历有一点概念就行了。</strong> 后面我会继续对这个概念进行加深。</p>
 <p>这里大家只要记住<strong>状态空间就是图，构建状态空间就是构建图。如何构建呢？当然是根据题目描述了</strong> 。</p>
 <h2 id="DFS-和-BFS"><a href="#DFS-和-BFS" class="headerlink" title="DFS 和 BFS"></a>DFS 和 BFS</h2><p>DFS 和 BFS 是搜索的核心，贯穿搜索篇的始终，因此有必要先对其进行讲解。</p>
@@ -555,10 +555,10 @@
 <p>当终点可以逆向搜索的时候，我们也可以尝试双向 BFS。更本质一点就是：<strong>如果你构建的状态空间的边是双向的，那么就可以使用双向 BFS。</strong></p>
 <p>和 DFS 的双向搜索思想是类似的。我们只需要使用两个队列分别存储中起点和终点进行扩展的节点（我称其为起点集与终点集）即可。当起点和终点在某一时刻交汇了，说明找到了一个从起点到终点的路径，其路径长度就是两个队列扩展的路径长度和。</p>
 <p>以上就是双向搜索的大体思路。用图来表示就是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr1qya05soj30kp0n8q4u.jpg" alt></p>
+<p><img src="https://p.ipic.vip/s6nhlt.jpg" alt></p>
 <p>如上图，我们从起点和重点（A 和 Z）分别开始搜索，如果起点的扩展状态和终点的扩展状态重叠（本质上就是队列中的元素重叠了），那么我们就知道了一个从节点到终点的最短路径。</p>
 <p>动图演示：</p>
-<p><img src="https://pic.stackoverflow.wiki/uploadImages/115/238/39/106/2021/05/31/17/41/ab3959a8-ebc2-4772-9f04-390f5cac675b.svg" alt="双向搜索.svg"></p>
+<p><img src="https://p.ipic.vip/3p3isx.jpg" alt="双向搜索.svg"></p>
 <p>看到这里有必要暂停一下插几句话。</p>
 <hr>
 <p>为什么双向搜索就快了？什么情况都会更快么？那为什么不都用双向搜索？有哪些使用条件？</p>
@@ -566,12 +566,12 @@
 <ul>
 <li>为什么双向搜索更快了？通过上面的图我们发现通常刚开始的时候边比较少，队列中的数据也比较少。而随着搜索的进行，<strong>搜索树越来越大， 队列中的节点随之增多</strong>。和上面双向搜索类似，这种增长速度很多情况下是指数级别的，而双向搜索<strong>可以将指数的常系数移动到多项式系数</strong>。如果不使用双向搜索那么搜索树大概是这样的：</li>
 </ul>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr1r2x6ijij30hz0nvmyz.jpg" alt></p>
+<p><img src="https://p.ipic.vip/b9c3d2.jpg" alt></p>
 <p>可以看出搜索树大了很多，以至于很多点我都画不下，只好用 ”。。。“ 来表示。</p>
 <ul>
 <li>什么情况下更快？相比于单向搜索，双向搜索通常更快。当然也有例外，举个极端的例子，假如从起点到终点只要一条路径，那么无论使用单向搜索还是双向搜索结果都是一样。</li>
 </ul>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr1qrck4fqj30g808edgf.jpg" alt></p>
+<p><img src="https://p.ipic.vip/uq0b02.jpg" alt></p>
 <p>如图使用单向搜索还是双向搜索都是一样的。</p>
 <ul>
 <li>为什么不都用双向搜索？实际上做题中，我建议大家尽量使用单向搜索，因为写起来更节点，并且大多数都可以通过所有的测试用例。除非你预估到可能会超时或者提交后发现超时的时候再尝试使用双向搜索。</li>
@@ -588,7 +588,7 @@
 <li>构建邻接矩阵</li>
 <li>每次都尝试从 q1 和 q2 中的较小的进行扩展。这样可以达到剪枝的效果。</li>
 </ul>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr1q5h0haxj30ig08ygmg.jpg" alt></p>
+<p><img src="https://p.ipic.vip/iizb6e.jpg" alt></p>
 <ul>
 <li>如果 q1 和 q2 交汇了，则将两者的路径拼接起来即可。</li>
 </ul>
@@ -608,10 +608,10 @@
 <p>双端队列可以在头部和尾部同时进行插入和删除，而普通的队列仅允许在头部删除，在尾部插入。</p>
 <p>使用双端队列，当每次取出一个状态的时候。如果我们可以<strong>无代价</strong>的进行转移，那么就可以将其直接放在队头，否则放在队尾。由<strong>前面讲的队列的单调性和二值性</strong>不难得出算法的正确性。而如果状态转移是有代价的，那么就将其放到队尾即可。这也是很多语言提供的内置数据结构是双端队列，而不是队列的原因之一。</p>
 <p>如下图：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr1pyirzhvj30jo096t9o.jpg" alt></p>
+<p><img src="https://p.ipic.vip/tolekl.jpg" alt></p>
 <p>上面的队列是普通的队列。 而下面的双端队列，可以看出我们在队头插队了一个 B。</p>
 <p>动图演示：</p>
-<p><img src="https://pic.stackoverflow.wiki/uploadImages/115/238/39/106/2021/05/31/17/07/5d905ba0-c4c4-4bb4-91e9-d2ccb79d435b.svg" alt="双端队列.svg"></p>
+<p><img src="https://p.ipic.vip/lx9cuw.jpg" alt="双端队列.svg"></p>
 <blockquote>
 <p>思考：如果图对应的权值不出 0 和 1，而是任意正整数呢？</p>
 </blockquote>
@@ -623,17 +623,17 @@
 <li>DFS 在分叉点会任选一条深入进入，遇到终点则返回，再次返回到分叉口后尝试下一个选择。基于此，我们可以在路径上记录一些数据。<strong>由此也可以衍生出很多有趣的东西。</strong></li>
 </ul>
 <p>如下图，我们遍历到 A，有三个选择。此时我们可以任意选择一条，比如选择了 B，程序会继续往下进行选择分支 2，3 。。。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqrjwjmdegj30yy0u0n29.jpg" alt></p>
+<p><img src="https://p.ipic.vip/vyo7m3.jpg" alt></p>
 <p>如下动图演示了一个典型的 DFS 流程。后面的章节，我们会给大家带来更复杂的图上 DFS。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghlui7vcmwg30dw0dw3yl.gif" alt="binary-tree-traversal-dfs"></p>
+<p><img src="https://p.ipic.vip/nxxol3.gif" alt="binary-tree-traversal-dfs"></p>
 <ul>
 <li>BFS 在分叉点会选择搜索的路径各尝试一次。使用队列来存储待处理的元素时，队列中<strong>最多</strong>只会有两层的元素，且满足单调性，即相同层的元素在一起。<strong>基于这个特点有很多有趣的优化。</strong></li>
 </ul>
 <p>如下图，广度优先遍历会将搜索的选择全部选择一遍会才会进入到下一层。和上面一样，我给大家标注了程序执行的一种可能的顺序。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqrjziifatj31er0u0dqj.jpg" alt></p>
+<p><img src="https://p.ipic.vip/et091o.jpg" alt></p>
 <p>可以发现，和我上面说的一样。右侧的队列始终最多有两层的节点，并且相同层的总在一起，换句话说队列的元素在层上<strong>满足单调性</strong>。</p>
 <p>如下动图演示了一个典型的 BFS 流程。后面的章节，我们会给大家带来更复杂的图上 BFS。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluic79lag30dw0dw3yl.gif" alt="binary-tree-traversal-bfs"></p>
+<p><img src="https://p.ipic.vip/3nesi8.gif" alt="binary-tree-traversal-bfs"></p>
 <h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>以上就是《搜索篇（上）》的所有内容了。总结一下搜索篇的解题思路：</p>
 <ul>
 <li>根据题目信息构建状态空间（图）。</li>
@@ -674,10 +674,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-10-11T00:10:08+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年10月11日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

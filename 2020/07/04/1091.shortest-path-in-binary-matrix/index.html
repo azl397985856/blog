@@ -389,19 +389,19 @@
 <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">在一个 N × N 的方形网格中，每个单元格有两种状态：空（0）或者阻塞（1）。</span><br><span class="line"></span><br><span class="line">一条从左上角到右下角、长度为 k 的畅通路径，由满足下述条件的单元格 C_1, C_2, ..., C_k 组成：</span><br><span class="line"></span><br><span class="line">相邻单元格 C*i 和 C*&#123;i+1&#125; 在八个方向之一上连通（此时，C*i 和 C*&#123;i+1&#125; 不同且共享边或角）</span><br><span class="line">C_1 位于 (0, 0)（即，值为 grid[0][0]）</span><br><span class="line">C_k 位于 (N-1, N-1)（即，值为 grid[N-1][n-1]）</span><br><span class="line">如果 C_i 位于 (r, c)，则 grid[r][c] 为空（即，grid[r][c] == 0）</span><br><span class="line">返回这条从左上角到右下角的最短畅通路径的长度。如果不存在这样的路径，返回 -1 。</span><br></pre></td></tr></table></figure>
 <p>示例 1：</p>
 <p>输入：[[0,1],[1,0]]</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfdxfinc0vj30k90kfdge.jpg" alt></p>
+<p><img src="https://p.ipic.vip/lwtxeb.jpg" alt></p>
 <p>输出：2</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfdxfxn4lij30k90kf0td.jpg" alt></p>
+<p><img src="https://p.ipic.vip/h5yplh.jpg" alt></p>
 <p>示例 2：</p>
 <p>输入：[[0,0,0],[1,1,0],[1,1,0]]</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfdxg2495gj30k90kfaat.jpg" alt></p>
+<p><img src="https://p.ipic.vip/bf5erm.jpg" alt></p>
 <p>输出：4</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfdxg8aihtj30k90kft9k.jpg" alt></p>
+<p><img src="https://p.ipic.vip/7clbmq.jpg" alt></p>
 <p>提示：</p>
 <p>1 &lt;= grid.length == grid[0].length &lt;= 100<br>grid[i][j] 为 0 或 1</p>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这道题乍一看很像之前写过的一些“机器人”。但是不同的地方在于机器人只能“向下移动和向右移动”，因此机器人那个题目就很适合用动态规划来做。为什么呢？</p>
 <p>因为这道题可以移动的范围是八个方向，题目给的示例不是很好，我这里给大家画了一个示例。我相信你一看就明白了。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfe09lk8j2j30d30awwin.jpg" alt><br>（图 1）</p>
+<p><img src="https://p.ipic.vip/p8f7gi.jpg" alt><br>（图 1）</p>
 <p>如图，我们发现每一个点的状态其实依赖了周围八个方向。如果我们使用动态规划来求解的时候，我们如何遍历（枚举所有子问题）呢？ 由于每一个 cell 依赖了周围八个 cell，那么我应该先更新谁呢？这个问题就会比较复杂。</p>
 <p>具体来说， 当我需要计算 dp[1][2]的值的时候，实际上我需要先计算<code>dp[0][2]</code>，<code>dp[1][1]</code>，<code>dp[2][2]</code> … 等八个值，这样才能确定 dp[1][2]的值。而计算 dp[0][2] 又是八个值，dp[1][1]等也是同理。 这样就会很复杂。</p>
 <p>而如果你做题比较多的话，分析到这里会发现，应该会想到 BFS。 即使你做题不多，那么根据题目给出的关键字<strong>最短</strong>畅通路径，也应该想到 BFS 才对。</p>
@@ -429,7 +429,7 @@
 <ul>
 <li>空间复杂度的$O(N)$ 是怎么来的？ 我这里给大家画了一个图， 相信大家一下子就懂来。其中不同的颜色表示不同的层次，从红色开始表示第一层，然后往外扩张。可以看出队列最长的情况下和$N$同阶，因此空间复杂度为$O(N)$。</li>
 </ul>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfdz2wpkvij30fj0au78o.jpg" alt></p>
+<p><img src="https://p.ipic.vip/lpe30b.jpg" alt></p>
 <h2 id="相关题目"><a href="#相关题目" class="headerlink" title="相关题目"></a>相关题目</h2><ul>
 <li><a href="https://github.com/azl397985856/leetcode/blob/master/problems/200.number-of-islands.md" title="200. 岛屿数量" target="_blank" rel="noopener">200. 岛屿数量</a></li>
 <li><a href="https://leetcode-cn.com/problems/max-area-of-island/solution/695-dao-yu-de-zui-da-mian-ji-dfspython3-by-fe-luci/" title="695. 岛屿的最大面积" target="_blank" rel="noopener">695. 岛屿的最大面积</a></li>
@@ -438,7 +438,7 @@
 </ul>
 <p>更多题解可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经 30K star 啦。</p>
 <p>大家也可以关注我的公众号《力扣加加 sa》获取更多更新鲜的 LeetCode 题解</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" alt></p>
+<p><img src="https://p.ipic.vip/kahgfg.jpg" alt></p>
 
       </div>
       
@@ -450,10 +450,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

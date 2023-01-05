@@ -403,7 +403,7 @@
 <li>只在一个方向找到的话，直接计算字符距离。</li>
 <li>两个方向都找到的话，取两个距离的最小值。</li>
 </ul>
-<p><img src="https://pic.leetcode-cn.com/1606962060-CnDiHj-file_1606962060610" alt></p>
+<p><img src="https://p.ipic.vip/6vnh43.png" alt></p>
 <h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><p>我们需要对每一个元素都进行一次扩展操作，因此时间复杂度就是 $N$ * 向两边扩展的总时间复杂度。</p>
 <p>而最坏的情况是目标字符 C 在字符串 S 的左右两个端点位置，这个时候时间复杂度是 $O(N)$，因此总的时间复杂度就是 $O(N^2)$</p>
 <ul>
@@ -451,7 +451,7 @@
 <p>Python Code:</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">shortestToChar</span><span class="params">(self, S: str, C: str)</span> -&gt; List[int]:</span></span><br><span class="line">        pre = -len(S)</span><br><span class="line">        ans = []</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(S)):</span><br><span class="line">            <span class="keyword">if</span> S[i] == C: pre = i</span><br><span class="line">            ans.append(i - pre)</span><br><span class="line">        pre = len(S) * <span class="number">2</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(S) - <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> S[i] == C: pre = i</span><br><span class="line">            ans[i] = min(ans[i], pre - i)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
 <h2 id="解法-4：窗口"><a href="#解法-4：窗口" class="headerlink" title="解法 4：窗口"></a>解法 4：窗口</h2><h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>把 <code>C</code> 看成分界线，将 <code>S</code> 划分成一个个窗口。然后对每个窗口进行遍历，分别计算每个字符到窗口边界的距离最小值，并在遍历的过程中更新窗口信息即可。</p>
-<p><img src="https://pic.leetcode-cn.com/1606962060-WhqxbZ-file_1606962060746" alt></p>
+<p><img src="https://p.ipic.vip/bhgpd4.png" alt></p>
 <h3 id="复杂度分析-3"><a href="#复杂度分析-3" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><p>由于更新窗口里的“搜索”下一个窗口的操作<strong>总共</strong>只需要 $N$ 次，因此时间复杂度仍然是 $N$，而不是 $N^2$。</p>
 <ul>
 <li>时间复杂度：$O(N)$，N 是 S 的长度。</li>
@@ -476,10 +476,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

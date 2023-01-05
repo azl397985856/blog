@@ -419,7 +419,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">```py &#123;5-6,11-12&#125;</span><br><span class="line">class Solution:</span><br><span class="line">    def addToArrayForm(self, A: List[int], K: int) -&gt; List[int]:</span><br><span class="line">        carry = 0</span><br><span class="line">        for i in range(len(A) - 1, -1, -1):</span><br><span class="line">            A[i], carry = (carry + A[i] + K % 10) % 10, (carry + A[i] + K % 10) // 10</span><br><span class="line">            K //= 10</span><br><span class="line">        B = []</span><br><span class="line">        # 如果全部加完还有进位，需要特殊处理。 比如 A = [2], K = 998</span><br><span class="line">        carry = carry + K</span><br><span class="line">        while carry:</span><br><span class="line">            B = [(carry) % 10] + B</span><br><span class="line">            carry //= 10</span><br><span class="line">        return B + A</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
 <p>只需要在语言后面增加你想高亮的行即可。如上代码就是想要高亮<strong>第 5-6 行，以及第 11-12 行</strong>。</p>
 <p>使用效果：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqdg24rcwpj30tg0ax3za.jpg" alt></p>
+<p><img src="https://p.ipic.vip/fsyvu0.jpg" alt></p>
 <p>当然也可以直接高亮具体某一行，比如 <strong>py {3}</strong> 就是高亮第三行。</p>
 <p>大家有什么想要的 feature， 也可以给我提，我会尽量满足大家。</p>
 
@@ -433,10 +433,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-10T18:46:06+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:50+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年5月10日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

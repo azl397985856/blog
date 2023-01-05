@@ -425,10 +425,10 @@
 </ul>
 <h2 id="109-有序链表转换二叉搜索树（中等）"><a href="#109-有序链表转换二叉搜索树（中等）" class="headerlink" title="109. 有序链表转换二叉搜索树（中等）"></a>109. 有序链表转换二叉搜索树（中等）</h2><h3 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">`给定一个单链表，其中的元素按升序排序，将其转换为高度平衡的二叉搜索树。</span><br><span class="line"></span><br><span class="line">本题中，一个高度平衡二叉树是指一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1。</span><br><span class="line"></span><br><span class="line">示例:</span><br><span class="line"></span><br><span class="line">给定的有序链表： [-10, -3, 0, 5, 9],</span><br><span class="line"></span><br><span class="line">一个可能的答案是：[0, -3, 9, -10, null, 5], 它可以表示下面这个高度平衡二叉搜索树：</span><br><span class="line"></span><br><span class="line">      0</span><br><span class="line">     / \</span><br><span class="line">   -3   9</span><br><span class="line">   /   /</span><br><span class="line"> -10  5</span><br></pre></td></tr></table></figure>
 <h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>和 108 思路一样。 不同的是数据结构的不同，因此我们需要关注的是链表和数组的操作差异。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluhp582uj31ii0pgjsw.jpg" alt></p>
+<p><img src="https://p.ipic.vip/ii167w.jpg" alt></p>
 <p>（数组的情况）</p>
 <p>我们再来看下链表：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluhpjgtqj31q30u0mzv.jpg" alt><br>（链表的情况）</p>
+<p><img src="https://p.ipic.vip/oxansc.jpg" alt><br>（链表的情况）</p>
 <p>找到中点，只需要使用经典的快慢指针即可。同时为了防止环的出现， 我们需要斩断指向 mid 的 next 指针，因此需要记录一下中点前的一个节点，这只需要用一个变量 pre 记录即可。</p>
 <h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><p>代码支持：JS,Java,Python,C++</p>
 <p>JS Code</p>
@@ -446,7 +446,7 @@
 <li>空间复杂度：空间复杂度为$O(logn)$</li>
 </ul>
 <p>有的同学不太会分析递归的时间复杂度和空间复杂度，我们在这里给大家再次介绍一下。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqmduc0j3dj314d0jk7ju.jpg" alt></p>
+<p><img src="https://p.ipic.vip/geq4zd.jpg" alt></p>
 <p>首先我们尝试画出如下的递归树。由于递归树的深度为 $logn$ 因此空间复杂度就是 $logn$ * 递归函数内部的空间复杂度，由于递归函数内空间复杂度为 $O(1)$，因此总的空间复杂度为 $O(logn)$。</p>
 <p>时间复杂度稍微困难一点点。之前西法在先导篇给大家说过：<strong>如果有递归那就是：递归树的节点数 * 递归函数内部的基础操作数</strong>。而这句话的前提是所有递归函数内部的基本操作数是一样的，这样才能直接乘。而这里递归函数的基本操作数不一样。</p>
 <p>不过我们发现递归树内部每一层的基本操作数都是固定的， 为啥固定已经在图上给大家算出来了。因此总的空间复杂度其实可以通过<strong>递归深度 * 每一层基础操作数</strong>计算得出，也就是 $nlogn$。 类似的技巧可以用于归并排序的复杂度分析中。</p>
@@ -457,7 +457,7 @@ T(n) = T(n/2) _ 2 + n/2 =
 \frac{n}{2} + 2 _ (\frac{n}{2}) ^ 2 + 2 ^ 2 _ (\frac{n}{2}) ^ 3 + ...
 = logn _ \frac{n}{2}</script><p>类似地，如果递推公式为 T(n) = T(n/2) * 2 + 1 ，那么 T(n) 大概就是 logn。</p>
 <h2 id="1382-将二叉搜索树变平衡（中等）"><a href="#1382-将二叉搜索树变平衡（中等）" class="headerlink" title="1382. 将二叉搜索树变平衡（中等）"></a>1382. 将二叉搜索树变平衡（中等）</h2><h3 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">给你一棵二叉搜索树，请你返回一棵 平衡后 的二叉搜索树，新生成的树应该与原来的树有着相同的节点值。</span><br><span class="line"></span><br><span class="line">如果一棵二叉搜索树中，每个节点的两棵子树高度差不超过 1 ，我们就称这棵二叉搜索树是 平衡的 。</span><br><span class="line"></span><br><span class="line">如果有多种构造方法，请你返回任意一种。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例：</span><br></pre></td></tr></table></figure>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluhpzr87j306j07r0sm.jpg" alt></p>
+<p><img src="https://p.ipic.vip/l1bcyu.jpg" alt></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">输入：root = [1,null,2,null,3,null,4,null,null]</span><br><span class="line">输出：[2,1,3,null,null,null,4]</span><br><span class="line">解释：这不是唯一的正确答案，[3,1,4,null,2,null,null] 也是一个可行的构造方案。</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">树节点的数目在 1 到 10^4 之间。</span><br><span class="line">树节点的值互不相同，且在 1 到 10^5 之间。</span><br></pre></td></tr></table></figure>
 <h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>由于<code>二叉搜索树的中序遍历是一个有序数组</code>，因此问题很容易就转化为 <code>108. 将有序数组转换为二叉搜索树（简单）</code>。</p>
 <h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><p>代码支持： Python3</p>
@@ -491,10 +491,10 @@ T(n) = T(n/2) _ 2 + n/2 =
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-24T13:38:56+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年5月24日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

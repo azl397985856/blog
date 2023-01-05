@@ -386,7 +386,7 @@
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
         <p>2018 年底的时候，力扣发布了岗位招聘，其中就有前端，仓库地址：<a href="https://github.com/LeetCode-OpenSource/hire" target="_blank" rel="noopener">https://github.com/LeetCode-OpenSource/hire</a> 。与大多数 JD 不同， 其提供了 5 道题， 并注明了<code>完成一个或多个面试题，获取免第一轮面试的面试机会。完成的题目越多，质量越高，在面试中的加分更多。完成后的代码可以任意形式发送给 jobs@lingkou.com。以上几个问题完成一个或多个都有可能获得面试机会，具体情况取决于提交给我们的代码。</code></p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggfv55mufyj30u00wh0z0.jpg" alt></p>
+<p><img src="https://p.ipic.vip/6iy3gu.jpg" alt></p>
 <p>（力扣中国前端工程师 JD）</p>
 <p>今天我们就来看下第二题：<code>编写复杂的 TypeScript 类型</code>。通过这道题来看下， TypeScript 究竟要到什么水平才能进力扣当前端？</p>
 <blockquote>
@@ -415,7 +415,7 @@
 <p>以上是官方题目描述，下面我的补充</p>
 </blockquote>
 <p>上文提到的<code>index.ts</code> 比 题目描述多了两个语句，它们分别是：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggfvu17znfj30u80eiad2.jpg" alt></p>
+<p><img src="https://p.ipic.vip/yynhwz.jpg" alt></p>
 <p>（题目额外信息）</p>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>首先来解读下题目。 题目要求我们补充类型 <code>Connect</code> 的定义， 也就是将 any 替换为不报错的其他代码。</p>
 <p>回顾一下题目信息：</p>
@@ -441,7 +441,7 @@
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Todo &#123;</span><br><span class="line">  title: <span class="built_in">string</span>;</span><br><span class="line">  description: <span class="built_in">string</span>;</span><br><span class="line">  addTodo(): <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> AddTodo = PickFunc&lt;Todo&gt;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> todo: AddTodo = &#123;</span><br><span class="line">  addTodo() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"关注脑洞前端~"</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> ADDTodoKey = PickFuncKeys&lt;Todo&gt;; <span class="comment">// 'addTodo'</span></span><br></pre></td></tr></table></figure>
 <p>可以看出，PickFunc 只提取了函数属性，忽略了非函数属性。</p>
 <h3 id="如何转换函数类型签名"><a href="#如何转换函数类型签名" class="headerlink" title="如何转换函数类型签名"></a>如何转换函数类型签名</h3><p>我们再来回顾一下题目要求：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggfy6bz4prj31mo0b8goj.jpg" alt></p>
+<p><img src="https://p.ipic.vip/ja2his.jpg" alt></p>
 <p>也就是我们需要知道<strong>怎么才能提取 Promise 和 Action 泛型中的值</strong>。</p>
 <p>实际上这两个几乎一样，会了一个，另外一个也就会了。我们先来看下 <code>Promise</code>。</p>
 <p>从：</p>
@@ -475,7 +475,7 @@
 <p>这个题目不算难，最多只是中等。但是你可能也看出来了，其不仅仅是考一个语法和 API 而已，而是考综合实力。这点在其他四道题体现地尤为明显。这种考察方式能真正考察一个人的综合实力，背题是背不来的。我个人在面试别人的时候也非常喜欢问这种问题。</p>
 <p>只有<strong>掌握基础 + 解决问题的思维方法</strong>，面对复杂问题才能从容不迫，手到擒来。</p>
 <p>大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的前端硬核文章，带你认识你不知道的前端。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfxro1x125j30oz0dw43s.jpg" alt></p>
+<p><img src="https://p.ipic.vip/h8v47n.jpg" alt></p>
 <p>知乎专栏【 <a href="https://www.zhihu.com/people/lu-xiao-13-70" title=" Lucifer - 知乎" target="_blank" rel="noopener">Lucifer - 知乎</a>】</p>
 <p>点关注，不迷路！</p>
 
@@ -489,10 +489,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

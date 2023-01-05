@@ -414,8 +414,8 @@
 <p>接下来，我们通过几个方面来从宏观的角度来看一下 TypeScript。</p>
 <a id="more"></a>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文涉及的题目一共十五道，全部都可以在 <a href="https://typescript-exercises.github.io/" title="typescript-exercises" target="_blank" rel="noopener">typescript-exercises</a> 上在线提交。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gj1sl6j7pij31560p4ad7.jpg" alt></p>
-<p>可以和标准答案进行对比。<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gj1slk6r7bj31g30o9djp.jpg" alt></p>
+<p><img src="https://p.ipic.vip/hqs29h.jpg" alt></p>
+<p>可以和标准答案进行对比。<br><img src="https://p.ipic.vip/wmlmas.jpg" alt></p>
 <p>并且由于使用了浏览器缓存， 因此无需登录的情况下也可以保证关掉页面，你的答题进度也会保留。</p>
 <blockquote>
 <p>想重置进度，清空缓存，无痕模式或者换浏览器都可以。</p>
@@ -438,7 +438,7 @@
 <li>联合类型</li>
 </ul>
 <h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>我们直接从报错入手。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gj1xl8b8exj30ph0bhgmp.jpg" alt></p>
+<p><img src="https://p.ipic.vip/x2rofw.jpg" alt></p>
 <p>不难发现 persons 数组既有 User 又有 Admin。 因此 person 的函数签名应该是两者的联合类型。而题目又让我们补充 Person，于是代码将 Person 定义为 Admin 和 User 的联合类型就不难想到。</p>
 <h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><p>核心代码：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">type</span> Person = User | Admin;</span><br></pre></td></tr></table></figure>
@@ -474,7 +474,7 @@
 <li>is 操作符</li>
 </ul>
 <h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>我们仍然从报错入手。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gj1zgdvcxxj30n608cta2.jpg" alt></p>
+<p><img src="https://p.ipic.vip/22zc5x.jpg" alt></p>
 <p>实际上还是 person 的类型问题， 没有被收缩到正确的类型。看题目的代码，期望效果应该是<code>如果进入 isAdmin 内部，那么 person 就是 Admin 类型，同理进入 isUser 内部，那么 person 就是 User 类型。</code></p>
 <p>继续看下 isAdmin 和 isUser 的实现：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">isAdmin</span>(<span class="params">person: Person</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> person.type === <span class="string">"admin"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">isUser</span>(<span class="params">person: Person</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> person.type === <span class="string">"user"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -494,7 +494,7 @@
 <li>Partial 泛型</li>
 </ul>
 <h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>老规矩， 从报错入手。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gj1zotdia3j30q105xwf5.jpg" alt></p>
+<p><img src="https://p.ipic.vip/kmrses.jpg" alt></p>
 <p>大概意思是 { age: 23 } 不完整，缺失了部分 key。而题目实际上的想法应该是想根据部分内容对人员进行检错。比如可以根据 age 查， 也可以根据 name 查，也可以同时根据 age 和 name 查等，这和我们平时的搜索逻辑是一致的。</p>
 <p>直接用 Partial 泛型即可解决， 不懂的可以看下我的文章<a href="https://lucifer.ren/blog/2020/06/16/ts-generics/">你不知道的 TypeScript 泛型（万字长文，建议收藏）</a>。</p>
 <h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">filterUsers</span>(<span class="params">persons: Person[], criteria: Partial&lt;User&gt;</span>): <span class="title">User</span>[] </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -507,7 +507,7 @@
 <li>函数重载</li>
 </ul>
 <h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><p>题目描述也懒得看了， 直接看报错。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gj1zvhq5vpj30xq0am40w.jpg" alt></p>
+<p><img src="https://p.ipic.vip/28ab03.jpg" alt></p>
 <p>报错信息提示我们没有找到合适的函数重载。 因此我的思路就是补上合适的重载即可。关于函数重载，我的系列教程不涉及，大家可以看下官网资料。</p>
 <p>重载之后，不同的情况调用返回值就可以对应不同的类型。本题中就是：</p>
 <ul>
@@ -523,7 +523,7 @@
 <li>泛型</li>
 </ul>
 <h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><p>题目废话很多， 直接忽略看报错。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gj201q6ov0j30i104i74m.jpg" alt></p>
+<p><img src="https://p.ipic.vip/z57yz2.jpg" alt></p>
 <p>这个其实我在 <a href="https://lucifer.ren/blog/2020/06/16/ts-generics/">你不知道的 TypeScript 泛型（万字长文，建议收藏）</a> 里也讲过了，直接看代码。</p>
 <h3 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">swap</span>&lt;<span class="title">U</span>, <span class="title">T</span>&gt;(<span class="params">v1: T, v2: U</span>): [<span class="title">U</span>, <span class="title">T</span>] </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [v2, v1];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="第八题"><a href="#第八题" class="headerlink" title="第八题"></a>第八题</h2><h3 id="题目描述-7"><a href="#题目描述-7" class="headerlink" title="题目描述"></a>题目描述</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Intro:</span><br><span class="line"></span><br><span class="line">    Project grew and we ended up in a situation with</span><br><span class="line">    some users starting to have more influence.</span><br><span class="line">    Therefore, we decided to create a new person type</span><br><span class="line">    called PowerUser which is supposed to combine</span><br><span class="line">    everything User and Admin have.</span><br><span class="line"></span><br><span class="line">Exercise:</span><br><span class="line"></span><br><span class="line">    Define type PowerUser which should have all fields</span><br><span class="line">    from both User and Admin (except for type),</span><br><span class="line">    and also have type &apos;powerUser&apos; without duplicating</span><br><span class="line">    all the fields in the code.</span><br></pre></td></tr></table></figure>
@@ -553,7 +553,7 @@
 </ul>
 <p>最后祝愿大家告别 anyscript，成为 TypeScript 魔法师。</p>
 <h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的前端硬核文章，带你认识你不知道的前端。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfxro1x125j30oz0dw43s.jpg" alt></p>
+<p><img src="https://p.ipic.vip/o9ch31.jpg" alt></p>
 <p>公众号【 <a href="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" target="_blank" rel="noopener">力扣加加</a>】<br>知乎专栏【 <a href="https://www.zhihu.com/people/lu-xiao-13-70" target="_blank" rel="noopener">Lucifer - 知乎</a>】</p>
 <p>点关注，不迷路！</p>
 
@@ -567,10 +567,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

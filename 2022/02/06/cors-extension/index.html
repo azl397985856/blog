@@ -392,11 +392,11 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Access-Control-Allow-Origin: https://foo.example</span><br><span class="line">Access-Control-Allow-Methods: POST, GET, OPTIONS</span><br><span class="line">Access-Control-Allow-Headers: X-PINGOTHER, Content-Type</span><br><span class="line">Access-Control-Max-Age: 86400</span><br></pre></td></tr></table></figure>
 <p>后来我使用了更方便的工具： 浏览器扩展。之后跨域问题便可以一去不复返。</p>
 <p>刚开始的时候用的是一个专门给请求加跨域头的插件 <code>Allow CORS: Access-Control-Allow-Origin</code> ，地址：<a href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf/related?hl=en-US。" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf/related?hl=en-US。</a></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gz3wawv2cpj30sk0d874x.jpg" alt></p>
+<p><img src="https://p.ipic.vip/nk8dv0.jpg" alt></p>
 <p>这个插件使用起来非常简单，只需要点击切换 on 和 off 的状态即可。 on 的时候会自动给请求头增加跨域功能，off 则相当于禁用了插件。</p>
 <p>后来我发现这个插件有些头不会加上，比如 access-control-expose-headers 。</p>
 <p>因此一个<strong>通用的给请求增加头信息</strong>的插件就有必要了。于是我选择了 <code>requestly</code></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gysjmuktv3j32do0u0q6n.jpg" alt></p>
+<p><img src="https://p.ipic.vip/knkupg.jpg" alt></p>
 <p>美中不足是每个规则只能免费改<strong>一个</strong>头。不过好消息是你可以新建多个规则，每个规则改一个头就可以白嫖了。</p>
 <p>地址：<a href="https://app.requestly.io" target="_blank" rel="noopener">https://app.requestly.io</a></p>
 <p>requestly 不仅仅可以增加跨域请求头，理论上可以对请求和响应做任意的修改。因此用来做 mock，统一加参数等等都是可以的。</p>
@@ -412,10 +412,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-02-06T17:09:07+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2022年2月6日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

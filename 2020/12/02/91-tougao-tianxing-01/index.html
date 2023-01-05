@@ -359,7 +359,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">5.9k字</span>
+          <span class="post-count">5.8k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -408,54 +408,54 @@
 <p>分析：</p>
 <p>重复意味至少出现两次，那么找重复就变成了统计数字出现的频率了。那如何统计数字频率呢？（不使用哈希表），我们可以开辟一个长度为 n 的数组 count_nums，并且初始化为 0，遍历数组 nums，使用 nums[i]为 count_nums 赋值.</p>
 <p>图解：</p>
-<p><img src="https://img-blog.csdnimg.cn/20201201232240858.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><img src="https://p.ipic.vip/1w30u8.png" alt="image"></p>
 <p>(注意：数组下标从 0 开始)</p>
 <h4 id="剑指-offer21-调整数组顺序使奇数位于偶数前面"><a href="#剑指-offer21-调整数组顺序使奇数位于偶数前面" class="headerlink" title="剑指 offer21. 调整数组顺序使奇数位于偶数前面"></a>剑指 offer21. 调整数组顺序使奇数位于偶数前面</h4><p>题目描述：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有奇数位于数组的前半部分，所有偶数位于数组的后半部分。</span><br></pre></td></tr></table></figure>
 <p>分析：</p>
 <p>根据题目要求，需要我们调整数组中奇偶数的顺序，那这样的话，我们可以从数组的两端同时开始遍历，右边遇到奇数的时候停下，左边遇到偶数的时候停下，然后进行交换。</p>
-<p><img src="https://img-blog.csdnimg.cn/20201201232501232.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><img src="https://p.ipic.vip/iyrmq4.png" alt="image"></p>
 <h4 id="1122-数组的相对排序"><a href="#1122-数组的相对排序" class="headerlink" title="1122.数组的相对排序"></a>1122.数组的相对排序</h4><p>题目描述：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">给你两个数组，arr1 和  arr2，</span><br><span class="line">arr2  中的元素各不相同</span><br><span class="line">arr2 中的每个元素都出现在  arr1  中</span><br><span class="line">对 arr1  中的元素进行排序，使 arr1 中项的相对顺序和  arr2  中的相对顺序相同。未在  arr2  中出现过的元素需要按照升序放在  arr1  的末尾。</span><br><span class="line"></span><br><span class="line">示例</span><br><span class="line"></span><br><span class="line">输入：arr1 = [2,3,1,3,2,4,6,7,9,2], arr2 = [2,1,4,3,9,6]</span><br><span class="line"></span><br><span class="line">输出：[2,2,2,1,4,3,3,9,6,7]</span><br></pre></td></tr></table></figure>
 <p>分析：</p>
 <p>观察输出，发现数字，因为 arr1 总是根据 arr2 中元素的相对大小来排序，所以只相当于在 arr2 中进行填充，每个地方该填充多少呢？这个时候就需要去统计 arr1 中每个数字出现的频率。</p>
-<p><img src="https://img-blog.csdnimg.cn/20201201232334489.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><img src="https://p.ipic.vip/hy9n0n.png" alt="image"></p>
 <h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>在数组中，因为数组是一个有序的结构，这里的有序是指在位置上的有序，所以大多数只需要考虑顺序或者相对顺序即可。</p>
 <h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p>链表是一种线性数据结构，其中的每个元素实际上是一个单独的对象，每一个节点里存到下一个节点的指针（Pointer）。<br>就像我们玩的寻宝游戏一样，当我们找到一个宝箱的时候，里面还存在寻找下一个宝箱的藏宝图，依次类推，每一个宝箱都是如此，一直到找到最终宝藏。</p>
-<p><img src="https://img-blog.csdnimg.cn/20201201232747122.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><img src="https://p.ipic.vip/7f1ug5.png" alt="image"></p>
 <p>通过单链表，可以衍生出循环链表，双向链表等。</p>
 <p>我们来看下链表中比较经典的几个题目。</p>
 <h4 id="面试题-02-02-返回倒数第-k-个节点"><a href="#面试题-02-02-返回倒数第-k-个节点" class="headerlink" title="面试题 02.02. 返回倒数第 k 个节点"></a>面试题 02.02. 返回倒数第 k 个节点</h4><p>题目描述：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">实现一种算法，找出单向链表中倒数第 k 个节点。返回该节点的值。</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">输入： 1-&gt;2-&gt;3-&gt;4-&gt;5 和 k = 2</span><br><span class="line">输出： 4</span><br></pre></td></tr></table></figure>
 <p>分析：</p>
 <p>想要找到倒数第 k 个节点，如果此时在数组中，那我们只需要用最后一个数组的索引减去 k 就能找到这个值，但是链表是不能直接通过索引得到的。如果此时，我们知道最后一个节点的位置，然后往前找 k 个不就找到我们需要的节点了吗？等价于我们要找的节点和最后一个节点相隔 k 个位置。所以当有一个指针 front 出发 k 步后，我们再出发，等 front 到达终点时，我们刚好到达倒数第 k 个节点。</p>
-<p><img src="https://img-blog.csdnimg.cn/20201201232859265.PNG" alt="image"></p>
+<p><img src="https://p.ipic.vip/dshbe0.png" alt="image"></p>
 <p>我们把这种解法叫做双指针，或者快慢指针，或者前后指针，这种方法可以用于寻找链表中间节点，判断是链表中是否存在环（循环链表）并寻找环入口。</p>
 <h4 id="61-旋转链表"><a href="#61-旋转链表" class="headerlink" title="61. 旋转链表"></a>61. 旋转链表</h4><p>题目描述：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">给定一个链表，旋转链表，将链表每个节点向右移动 k 个位置，其中 k 是非负数。</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL, k = 2</span><br><span class="line"></span><br><span class="line">输出: 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL</span><br></pre></td></tr></table></figure>
 <p>分析：</p>
 <p>每个数字向后移动 k 位，那么最后 k 位就需要移动到前面，和找倒数第 k 位数字很相似，k 位后面的都移到开头。唯一需要注意的地方就是，k 的值可能大于链表长度的 2 倍及以上，所以需要算出链表的长度，以保证尽快找到倒数 k 的位置。</p>
-<h5 id="解法-1"><a href="#解法-1" class="headerlink" title="解法 1"></a>解法 1</h5><p>找到位置后，直接断开<br><img src="https://img-blog.csdnimg.cn/20201201232919376.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h5 id="解法-2"><a href="#解法-2" class="headerlink" title="解法 2"></a>解法 2</h5><p>制作循环链表，然后再找倒数第 k 个数，然后断开循环链表<br><img src="https://img-blog.csdnimg.cn/20201201232932995.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h5 id="解法-1"><a href="#解法-1" class="headerlink" title="解法 1"></a>解法 1</h5><p>找到位置后，直接断开<br><img src="https://p.ipic.vip/o7u7pd.png" alt="image"></p>
+<h5 id="解法-2"><a href="#解法-2" class="headerlink" title="解法 2"></a>解法 2</h5><p>制作循环链表，然后再找倒数第 k 个数，然后断开循环链表<br><img src="https://p.ipic.vip/6023ec.png" alt="image"></p>
 <h4 id="24-两两交换链表中的节点"><a href="#24-两两交换链表中的节点" class="headerlink" title="24. 两两交换链表中的节点"></a>24. 两两交换链表中的节点</h4><p>题目描述：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">输入：head = [1,2,3,4]</span><br><span class="line"></span><br><span class="line">输出：[2,1,4,3]</span><br></pre></td></tr></table></figure>
 <p>分析：</p>
 <p>原理很简单，两个指针，分别指向相邻的两个节点，然后再添加一个临时指针做换交换的中介<strong>添加 dummy 节点</strong>，不用考虑头节点的情况，更加方便。直接上图：</p>
-<p><img src="https://img-blog.csdnimg.cn/20201201233004452.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><img src="https://p.ipic.vip/gduib4.png" alt="image"></p>
 <p>除了同时操作一个链表之外，有的题目也会给出两个或者更多的链表，如两数相加，如 leetcode 中 2.两数相加、21.合并两个有序链表、160.相交链表</p>
 <h4 id="21-相交节点"><a href="#21-相交节点" class="headerlink" title="21.相交节点"></a>21.相交节点</h4><p>题目描述：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">编写一个程序，找到两个单链表相交的起始节点。</span><br></pre></td></tr></table></figure>
 <p>如下面的两个链表</p>
-<p><img src="https://img-blog.csdnimg.cn/20201201232945566.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><img src="https://p.ipic.vip/cho9gr.png" alt="image"></p>
 <p>分析：</p>
 <p>我们知道，对于任意两个数 ab，一定有 a+b-c=b+a-c，</p>
-<p><img src="https://img-blog.csdnimg.cn/20201201233017228.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><img src="https://p.ipic.vip/bbpp5l.png" alt="image"></p>
 <p>基于 a+b-c=b+a-c，我们可以设置两个指针，分别指向 A 和 B，以相同的步长同时移动，并在第一次到达尾节点的时候，指向另一个链表，如果存在相交节点，也就是说 c &gt; 0，那么两个指针一定会相遇，相遇处也就是相交节点。而当不存在时，即 c=0，那么两个指针最终都会指向空节点。</p>
 <h4 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h4><p>链表中的操作无非就是两种，插入，删除。解题方法无非就是添加 dummy 节点(解决头节点的判断问题)、快慢指针(快慢不一定是单次步长一样，应该理解为平均步长，即使用了相同的时间，走的路程的长度来定义快慢)。</p>
 <h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>栈是一种<strong>先进后出</strong>(FILO, First In Last Out)的<strong>数据结构</strong>，<br>可以把栈理解为</p>
 <center>
 
-![image](https://img-blog.csdnimg.cn/20201201233338327.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/sdiphq.png)
 
 </center>
 
@@ -468,7 +468,7 @@
 <li>一个有效的括号为，右边必须和左边对应，且存在至少一对有效括号的索引为[i, i+1]。 那么，我们只要是括号左边部分，就入栈，右边部分，就和栈顶元素比较。</li>
 </ul>
 <p>图解：</p>
-<p><img src="https://img-blog.csdnimg.cn/20201201233351644.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><img src="https://p.ipic.vip/yi26gv.png" alt="image"></p>
 <h4 id="150-逆波兰表达式求值"><a href="#150-逆波兰表达式求值" class="headerlink" title="150.逆波兰表达式求值"></a>150.逆波兰表达式求值</h4><p>题目描述：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">根据 逆波兰表示法，求表达式的值。</span><br><span class="line">有效的运算符包括 +, -, \*, / 。每个运算对象可以是整数，也可以是另一个逆波兰表达式。</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line">[&quot;10&quot;, &quot;6&quot;, &quot;9&quot;, &quot;3&quot;, &quot;+&quot;, &quot;-11&quot;, &quot;*&quot;, &quot;/&quot;, &quot;*&quot;, &quot;17&quot;, &quot;+&quot;]</span><br></pre></td></tr></table></figure>
 <p>分析：</p>
@@ -476,30 +476,30 @@
 <li>根据运算法则，我们可以知道，一个运算有 num1，operation，num2 三部分组成。在一个逆波兰表达式中，运算符前面两个 num 就是这个运算的组成。</li>
 <li>我们要做事情就是，找到一个运算符的时候，同时找到他前面的两个数，而栈的现金先去特性满足这个需求，使用栈来解决。</li>
 </ul>
-<p><img src="https://img-blog.csdnimg.cn/20201201233404731.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><img src="https://p.ipic.vip/zxh5zn.png" alt="image"></p>
 <h4 id="227-基本计算器-II"><a href="#227-基本计算器-II" class="headerlink" title="227.基本计算器 II"></a>227.基本计算器 II</h4><p>题目描述：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">实现一个基本的计算器来计算一个简单的字符串表达式的值。字符串表达式仅包含非负整数，+， - ，\*，/ 四种运算符和空格 。 整数除法仅保留整数部分。</span><br><span class="line"></span><br><span class="line">示例：3+5\*2/2-3</span><br></pre></td></tr></table></figure>
 <p>分析：</p>
 <ul>
 <li>与逆波兰表达式不同的地方是，这里运算符两边是操作数。但是，这又有什么问题呢？万变不离核心，我们只需要在找到运算符的同时，得到运算符两边的操作数。问题来了，还需要考虑运算符的优先级，想到的一个方法就是，只进行乘除法运算，最后进行加法运算，不进行减法运算（减去一个数 ⟺ 加上这个数的负数）</li>
 </ul>
-<p><img src="https://img-blog.csdnimg.cn/20201201233435628.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><img src="https://p.ipic.vip/5fbuy0.png" alt="image"></p>
 <ul>
 <li>如果能够把这个字符串表达式相似地转换位逆波兰表达式，那就能直接套用逆波兰表达式的代码了，回顾一下，逆波兰表达式是，每次有操作符的时候，就从栈顶出来两个元素。可以通过使用两个栈来实现，一个栈用来存储操作数，一个栈用来存储操作符。如果比栈顶的操作符符优先级低或者相同，那么就从操作符栈取出栈顶运算符号</li>
 </ul>
-<p><img src="https://img-blog.csdnimg.cn/20201201233423603.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><img src="https://p.ipic.vip/et63ww.png" alt="image"></p>
 <h4 id="496-下一个更大元素-I"><a href="#496-下一个更大元素-I" class="headerlink" title="496.下一个更大元素 I"></a>496.下一个更大元素 I</h4><p>题目描述：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">给定两个 没有重复元素的数组  nums1 和  nums2 ，其中 nums1  是  nums2  的子集。找到  nums1  中每个元素在  nums2  中的下一个比其大的值。nums1  中数字  x  的下一个更大元素是指  x  在  nums2  中对应位置的右边的第一个比  x  大的元素。如果不存在，对应位置输出 -1。</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">输入: nums1 = [4,1,2], nums2 = [1,3,4,2].</span><br><span class="line"></span><br><span class="line">输出: [-1,3,-1]</span><br></pre></td></tr></table></figure>
 <p>分析：</p>
 <p>题目要求我们找出 nums1 中每个元素在 nums2 中的下一个比这个元素大的值，又提到 nums1 是 nums2 的一个子集，我们不妨找出 nums2 中每个元素的下一个比他大的值，然后映射到 nums1 中。</p>
-<p>那如何找出 nums2 中每个元素的下一个比他大的值呢？对于当前元素，若下一个元素比他大，则找到了，否则的话，就把这个元素添加到栈中，一直到找到一个元素比栈顶元素大，这时候把栈里面所有小于这个元素的元素都出栈，听起来很绕，无妨，看图——&gt;<br><img src="https://img-blog.csdnimg.cn/20201201233452768.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p>那如何找出 nums2 中每个元素的下一个比他大的值呢？对于当前元素，若下一个元素比他大，则找到了，否则的话，就把这个元素添加到栈中，一直到找到一个元素比栈顶元素大，这时候把栈里面所有小于这个元素的元素都出栈，听起来很绕，无妨，看图——&gt;<br><img src="https://p.ipic.vip/ujr030.png" alt="image"></p>
 <p>最后栈中依然有数据存在，这是为什么呢？因为这些元素后面找不到比他更大的值了。观察示例数据，4 后面没有比他更大的值了，5 和 1 也是。我们还能观察到栈中元素是从大到小的，可以称这个栈为==单调递减栈==(如 1019.寻找链表中的下一个更大节点，503.下一个更大元素 II、402.移掉 k 位数字，39.每日温度，在 1673.找出最具有竞争力的子序列中，其实只需要构建一个单调递增栈，然后截取前 k 个。)。</p>
 <p>回到题目，需要找到 nums1 中元素在 nums2 中的下一个比其大的值，只需要在刚才保存的信息中进行查找，找不到的则不存在，可以使用哈比表保存每个数对应的下一个较大值。</p>
 <h4 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h4><p>栈由于其随时可以出栈和进栈，产生非常多的组合，带来了非常多的变化，所以读懂题目非常重要，然后选择方法，正所谓题目是有限的，方法是有限的。所以紧跟 lucifer 大佬学习套路，是一条值得坚持的道路，毕竟自古深情留不住，唯有套路得人心，这里推荐 lucifer 大佬的<a href="https://lucifer.ren/blog/2020/11/03/monotone-stack/" title="单调栈模板带你秒杀八道题">《单调栈模板带你秒杀八道题》</a>，带你乱杀。</p>
 <h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p>树虽相比于链表来说，至少有两个节点（n 个节点就叫 n 叉树），但是树是一个抽象的概念，可以理解为一个不停做选择的过程，给定一个起始条件，会产生多种结果，而这些结果又成为新的条件，以此类推，直到不再有新的条件。在树种，起始条件就是根节点，不再产生新的条件的就是叶子节点。在树种，使用较多的是二叉树。一颗二叉树不管有多大，我们都可以把他拆分为五种形式,</p>
-<p><img src="https://img-blog.csdnimg.cn/20201201233934190.PNG" alt="image"></p>
+<p><img src="https://p.ipic.vip/lb5567.png" alt="image"></p>
 <p>不管是在树上进行什么操作，都需要进行遍历，遍历的方式有两种：广度优先遍历（BFS）和深度优先遍历（DFS）。<br>简单来说，广度就是先找到有多少种可能，然后找出这些可能有多少种可能；而深度就是每次只根据一个条件来找，直到最终没有条件。<br>话不多说，上图。</p>
-<p><img src="https://img-blog.csdnimg.cn/20201201233945949.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><img src="https://p.ipic.vip/ftde4i.png" alt="image"></p>
 <p>如果是试错的话，广度是一次把所有的结果都试一试，深度则是一条路走到黑。</p>
 <p>这里直接借用 lucifer 大佬的广度、深度优先遍历模板（套路）</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dfs</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line"> <span class="keyword">if</span> (满足特定条件）&#123;</span><br><span class="line">  <span class="comment">// 返回结果 or 退出搜索空间</span></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">const</span> child <span class="keyword">of</span> root.children) &#123;</span><br><span class="line">        dfs(child)</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -512,34 +512,34 @@
 <p>输入: [1,2,3,null,5,null,4]</p>
 <p>输出: [1, 3, 4]</p>
 <p>解释:</p>
-<p><img src="https://img-blog.csdnimg.cn/20201201234026960.PNG" alt="image"></p>
+<p><img src="https://p.ipic.vip/9rmdfh.png" alt="image"></p>
 <p>分析：</p>
 <p>此题即可以使用广度优先，也可以深度优先。<br>使用广度优先，只需要将每一层的节点用一个数组保存下来，然后输出最后一个<br>使用深度优先，这里我使用的是根右左的方式，这样能保证在每进入到一个新的层时，第一个访问到的就是最右边的元素。</p>
 <p>上图：</p>
-<p><img src="https://img-blog.csdnimg.cn/20201201234011642.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><img src="https://p.ipic.vip/f0tt1t.png" alt="image"></p>
 <h4 id="112-路径总和"><a href="#112-路径总和" class="headerlink" title="112. 路径总和"></a>112. 路径总和</h4><p>题目描述：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，这条路径上所有节点值相加等于目标和。</span><br><span class="line">说明: 叶子节点是指没有子节点的节点。</span><br></pre></td></tr></table></figure>
-<p>示例：<br><img src="https://img-blog.csdnimg.cn/20201201233957252.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p>示例：<br><img src="https://p.ipic.vip/m126kp.png" alt="image"></p>
 <p>分析：</p>
 <p>求一条路径（根节点到叶子节点），这不就一条路走到底吗，没什么好犹豫的，选择深度优先遍历。因为需要获得路径上的和，我们需要把每个节点的值（状态）传递给下一个节点。</p>
-<p><img src="https://img-blog.csdnimg.cn/20201201234053661.PNG" alt="image"></p>
+<p><img src="https://p.ipic.vip/m9lgku.png" alt="image"></p>
 <p>在 113. 路径总和 II 中，和本题类似，只需要把节点加入到数组中传递给下一个节点；在 129. 求根到叶子节点数字之和，需要把当前值*10 传递给下一个节点。</p>
 <h4 id="662-二叉树最大宽度"><a href="#662-二叉树最大宽度" class="headerlink" title="662. 二叉树最大宽度"></a>662. 二叉树最大宽度</h4><p>题目描述：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">给定一个二叉树，编写一个函数来获取这个树的最大宽度。树的宽度是所有层中的最大宽度。这个二叉树与满二叉树（full binary tree）结构相同，但一些节点为空。</span><br><span class="line">每一层的宽度被定义为两个端点（该层最左和最右的非空节点，两端点间的 null 节点也计入长度）之间的长度。</span><br></pre></td></tr></table></figure>
 <p>示例：</p>
-<p><img src="https://img-blog.csdnimg.cn/20201201234040793.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><img src="https://p.ipic.vip/svsw2r.png" alt="image"></p>
 <p>分析：</p>
 <p>最大宽度，不就是找出哪一层最长吗？广度优先搜索会更加方便，需要注意的是，非两端节点的 null 节点也要算到长度中，所以现在每一层存储的不仅仅是有值节点。</p>
 <p>上图</p>
-<p><img src="https://img-blog.csdnimg.cn/20201201234121332.PNG" alt="image"></p>
+<p><img src="https://p.ipic.vip/3ee002.png" alt="image"></p>
 <h4 id="513-找树左下角的值"><a href="#513-找树左下角的值" class="headerlink" title="513. 找树左下角的值"></a>513. 找树左下角的值</h4><p>题目描述：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">给定一个二叉树，在树的最后一行找到最左边的值。</span><br></pre></td></tr></table></figure>
 <p>示例：</p>
 <center>
 
-<p><img src="https://img-blog.csdnimg.cn/2020120123411135.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><img src="https://p.ipic.vip/h87seq.png" alt="image"></p>
 <p>&lt;/center&gt;<br>分析：<br>两个关键信息，一个最后一行，一个最左边。好像广度，深度都可以找到，在这里以深度进行说明，最后一行就是depth最大的，所以在深度遍历的时候，每次给一层传递depth信息。</p>
-<p><img src="https://img-blog.csdnimg.cn/202012012341321.PNG" alt="image"></p>
+<p><img src="https://p.ipic.vip/gd7n97.png" alt="image"></p>
 <p>与此题类似的还有 111. 二叉树的最小深度，104.二叉树的最大深度</p>
 <p>感觉，就这？好像也没什么难的啊，学完 lucifer 的课程，我就是这么膨胀。</p>
 <h4 id="小结-3"><a href="#小结-3" class="headerlink" title="小结"></a>小结</h4><p>无非就是，深度遍历时，是否传递信息给下一层，给下一层传递什么信息；广度遍历时，是否保存每一层，是否保存空节点。</p>
@@ -566,10 +566,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

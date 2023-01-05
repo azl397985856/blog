@@ -416,9 +416,9 @@
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一节的<a href="https://lucifer.ren/blog/2020/08/04/ts-internal/">上帝视角看 TypeScript</a>，我们从宏观的角度来对 Typescript 进行了一个展望。之所以把那个放到开头讲是让大家有一个大体的认识，不想让大家一叶障目。当你对整个宏观层面有了一定的了解，那么对 Typescript 的理解就不会错太多。相反，一开始就是具体的概念和 API，则很可能会让你丧失都整体的基本判断。</p>
 <p>实际上， Typescript 一直在不断更新迭代。一方面是因为当初许下的诺言”Typescript 是 JavaScript 的超集“（JavaScript 的特性你要同步支持，同时也要处理各种新语法带来的不兼容情况）。不单是 ECMA，社区的其他发展可能也会让 Typescript 很难受。 比如 JSX 的广泛使用就给 Typescript 泛型的使用带来了影响。</p>
 <p>TypeScript 一直处于高速的迭代。除了修复日常的 bug 之外，TypeScript 也在不断发布新的功能，比如最新 <a href="https://devblogs.microsoft.com/typescript/announcing-typescript-4-0-rc/#labeled-tuple-elements" title="4.0.0 beta 版本的**标签元祖**" target="_blank" rel="noopener">4.0.0 beta 版本的<strong>标签元祖</strong></a> 的功能就对智能提示这块很有用。Typescript 在社区发展方面也做的格外好，以至于它的竞争对手 Flow 被 Typescript 完美击败，这在很大程度上就是因为 Typescript 没有烂尾。如今微软在开源方向的发力是越来越显著了，我很期待微软接下来的表现，让我们拭目以待。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghsqcjsrx9j30xc0b4js3.jpg" alt></p>
+<p><img src="https://p.ipic.vip/n8dsbe.jpg" alt></p>
 <h2 id="变量类型和值类型"><a href="#变量类型和值类型" class="headerlink" title="变量类型和值类型"></a>变量类型和值类型</h2><p>有的同学可能有疑问， JavaScript 不是也有类型么？ 它和 Typescript 的类型是一回事么？JavaScript 不是动态语言么，那么经过 Typescript 的限定会不会丧失动态语言的动态性呢？我们继续往下看。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghsqeaxx8jj30pq09qdga.jpg" alt></p>
+<p><img src="https://p.ipic.vip/8mtf4m.jpg" alt></p>
 <ul>
 <li><p>JavaScript 中的类型其实是值的类型。实际上不仅仅是 JavaScript，任何动态类型语言都是如此，这也是动态类型语言的本质。</p>
 </li>
@@ -429,13 +429,13 @@
 <p>对于 JavaScript 来说，一个变量可以是任意类型。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">a = <span class="string">"lucifer"</span>;</span><br><span class="line">a = &#123;&#125;;</span><br><span class="line">a = [];</span><br></pre></td></tr></table></figure>
 <p>上面的值是有类型的。比如 1 是 number 类型，”lucifer” 是字符串类型， {} 是对象类型， [] 是数组类型。而变量 a 是没有固定类型的。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghsqh8ere4j30qc0iygmv.jpg" alt></p>
+<p><img src="https://p.ipic.vip/02601o.jpg" alt></p>
 <p>对于 Typescript 来说， 一个变量只能接受和它类型兼容的类型的值。说起来比较拗口， 看个例子就明白了。</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a: <span class="built_in">number</span> = <span class="number">1</span>;</span><br><span class="line">a = <span class="string">"lucifer"</span>; <span class="comment">// error</span></span><br><span class="line"><span class="keyword">var</span> b: <span class="built_in">any</span> = <span class="number">1</span>;</span><br><span class="line">b = <span class="string">"lucifer"</span>; <span class="comment">// ok</span></span><br><span class="line">b = &#123;&#125;; <span class="comment">// ok</span></span><br><span class="line">b = []; <span class="comment">// ok</span></span><br></pre></td></tr></table></figure>
 <p>我们不能将 string 类型的值赋值给变量 a， 因为 string 和 number 类型不兼容。而我们可以将 string,Object,Array 类型的值赋值给 b，因此 它们和 any 类型兼容。简单来说就是，一旦一个变量被标注了某种类型，那么其就只能接受这个类型以及它的子类型。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghsqgexx68j30q80j6ta0.jpg" alt></p>
+<p><img src="https://p.ipic.vip/ebbymh.jpg" alt></p>
 <h2 id="类型空间和值空间"><a href="#类型空间和值空间" class="headerlink" title="类型空间和值空间"></a>类型空间和值空间</h2><p>类型和值居住在不同的空间，一个在阳间一个在阴间。他们之间互相不能访问，甚至不知道彼此的存在。类型不能当做值来用，反之亦然。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghsqpfc7uej307b05baa0.jpg" alt></p>
+<p><img src="https://p.ipic.vip/kmqvxy.jpg" alt></p>
 <h3 id="类型空间"><a href="#类型空间" class="headerlink" title="类型空间"></a>类型空间</h3><p>如下代码会报类型找不到的错：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> aa: User = &#123; name: <span class="string">"lucifer"</span>, age: <span class="number">17</span> &#125;;</span><br></pre></td></tr></table></figure>
 <p>这个比较好理解，我们只需要使用 interface 声明一下 User 就行。</p>
@@ -482,7 +482,7 @@
 <p>Typescript 的类型注解是这样， Java 的类型注解是另一个样子，Java 类似 int a = 1。 这个只是语法差异而已，作用是一样的。</p>
 </blockquote>
 <p>第二个问题， Typescript 提供了诸如 lib.d.ts 等类型库文件。随着 ES 的不断更新， JavaScript 类型和全局变量会逐渐变多。Typescript 也是采用这种 lib 的方式来解决的。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghmyjgyd7qj307o0lxgmq.jpg" alt></p>
+<p><img src="https://p.ipic.vip/a317td.jpg" alt></p>
 <p>（TypeScript 提供的部分 lib）</p>
 <p>第三个问题，Typescript 主要是通过 interface，type，函数类型等打通<strong>类型空间</strong>，通过 declare 等打通<strong>值空间</strong>，并结合 binder 来进行类型诊断。关于 checker ，binder 是如何运作的，可以参考我第一篇的介绍。</p>
 <p>接下来，我们介绍类型系统的功能，即它能为我们带来什么。如果上面的内容你已经懂了，那么接下来的内容会让你感到”你也不过如此嘛“。</p>
@@ -490,7 +490,7 @@
 <li>定义类型以及其上的属性和方法。</li>
 </ol>
 <p>比如定义 String 类型， 以及其原型上的方法和属性。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghsqk1u3x8j31d60u0q9u.jpg" alt></p>
+<p><img src="https://p.ipic.vip/f0tenl.jpg" alt></p>
 <p>length， includes 以及 toString 是 String 的<strong>成员变量</strong>， 生活在值空间， 值空间虽然不能直接和类型空间接触，但是类型空间可以作用在值空间，从而给其添加类型（如上图黄色部分）。</p>
 <ol>
 <li>提供自定义类型的能力</li>
@@ -535,7 +535,7 @@
 <p>我们每个项目的需要是不一样的， 简单的基本类型肯定无法满足多样的项目需求，因此我们必须支持自定义类型，比如 interface， type 以及复杂一点的泛型。当然泛型很大程度上是为了减少样板代码而生的，和 interface ， type 这种刚需不太一样。</p>
 <p>有了各种各样的类型以及类型上的成员变量，以及成员变量的类型，再就加上类型的兼容关系，我们就可以做类型检查了，这就是 TypeScript 类型检查的基础。TypeScript 内部需要维护这样的一个关系，并对变量进行类型绑定，从而给开发者提供<strong>类型分析</strong>服务。</p>
 <h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的前端硬核文章，带你认识你不知道的前端。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfxro1x125j30oz0dw43s.jpg" alt></p>
+<p><img src="https://p.ipic.vip/cvjm5f.jpg" alt></p>
 <p>公众号【 <a href="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" target="_blank" rel="noopener">力扣加加</a>】<br>知乎专栏【 <a href="https://www.zhihu.com/people/lu-xiao-13-70" target="_blank" rel="noopener">Lucifer - 知乎</a>】</p>
 <p>点关注，不迷路！</p>
 
@@ -549,10 +549,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

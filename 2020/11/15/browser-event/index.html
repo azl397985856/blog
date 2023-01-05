@@ -400,7 +400,7 @@
 <p>浏览器依靠事件来驱动 APP 运行下去，如果没有了事件驱动，那么 APP 会直接从头到尾运行完，然后结束，事件驱动是浏览器的基石。</p>
 <p>本篇文章不讲解事件循环的内容，事件循环部分会在本章的其他章节讲解，敬请期待。</p>
 <h2 id="一个简单的例子"><a href="#一个简单的例子" class="headerlink" title="一个简单的例子"></a>一个简单的例子</h2><p>其实现实中的红绿灯就是一种事件，它告诉我们现在是红灯状态，绿灯状态，还是黄灯状态。 我们需要根据这个事件自己去完成一些操作，比如红灯和黄灯我们需要等待，绿灯我们可以过马路。</p>
-<p><img src="http://ww1.sinaimg.cn/large/e9f490c8ly1g8yigxmdlwj204k048t8t.jpg" alt="WeChatf64afbca051509ddcf379077490e9a2e.png"></p>
+<p><img src="https://p.ipic.vip/b6oc9z.jpg" alt="WeChatf64afbca051509ddcf379077490e9a2e.png"></p>
 <p>下面我们来看一个最简单的浏览器端的事件：</p>
 <p>html 代码：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>Change color<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -488,7 +488,7 @@
 <p>伪代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubble</span>(<span class="params">e, currentElement</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (currentElement.listners[e.type] !== <span class="keyword">void</span> <span class="number">0</span>) &#123;</span><br><span class="line">    currentElement.listners[e.type].forEach(<span class="function">(<span class="params">fn</span>) =&gt;</span> fn(e));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// returning</span></span><br><span class="line">  <span class="keyword">if</span> (currentElement !== <span class="built_in">document</span>.querySelector(<span class="string">"html"</span>)) &#123;</span><br><span class="line">    bubble(e, currentElement.parent);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上述的过程用图来表示为：</p>
-<p><img src="http://ww1.sinaimg.cn/large/e9f490c8ly1g8yif1i5hzj20fs0eewfi.jpg" alt></p>
+<p><img src="https://p.ipic.vip/bofb4t.jpg" alt></p>
 <p>如果你不希望事件继续冒泡，可以用之前我提到的<code>stopPropagation</code>。</p>
 <p>伪代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubble</span>(<span class="params">e, currentElement</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> stopped = <span class="literal">false</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">cb</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    stopped = <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (currentElement.listners[e.type] !== <span class="keyword">void</span> <span class="number">0</span>) &#123;</span><br><span class="line">    currentElement.listners[e.type].forEach(<span class="function">(<span class="params">fn</span>) =&gt;</span> &#123;</span><br><span class="line">      fn(&#123;</span><br><span class="line">        ...e,</span><br><span class="line">        stopPropagation: cb,</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="keyword">if</span> (stopped) <span class="keyword">return</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// returning</span></span><br><span class="line">  <span class="keyword">if</span> (currentElement !== <span class="built_in">document</span>.querySelector(<span class="string">"html"</span>)) &#123;</span><br><span class="line">    bubble(e, currentElement.parent);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -523,10 +523,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

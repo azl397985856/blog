@@ -447,14 +447,14 @@
 <li>dp[k - 1][m - 1] &gt;= x - 1</li>
 <li>dp[k][m - 1] &gt;= N - x</li>
 </ol>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gi8srcdy0ej30uq0pqwgy.jpg" alt></p>
+<p><img src="https://p.ipic.vip/g5kyzt.jpg" alt></p>
 <p>这样能保证 100% 可以检测出来目标楼层 F。实际上不管鸡蛋碎不碎，可以检测的楼层都是 <strong>max(dp[k - 1][m - 1], x -1) + max(dp[k][m - 1], N -x) + 1</strong>，由于 dp[k - 1][m - 1] &gt;= x - 1，dp[k][m - 1] &gt;= N - x，因此可以检测的楼层就是 dp[k - 1][m - 1] + dp[k][m - 1] + 1。</p>
 <p>这个我可能需要解释一下。 由于<strong>选择 x 开始扔之前已经确定了上面的两个不等式是成立的了</strong>，因此如果鸡蛋没碎，我们需要继续往上检测，下面是不需要检测的，虽然下面是 x - 1，但是为了保证万一碎的情况也有解，所以有 dp[k - 1][m - 1] &gt;= x - 1，因此实际上可以确定的最大楼层是 dp[k][m - 1] + max(dp[k - 1][m - 1], x -1) + 1，也就是 dp[k][m - 1] + dp[k - 1][m - 1] + 1。鸡蛋如果碎的情况也是一样的分析逻辑。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gi8ssdjteoj30rg0tktby.jpg" alt></p>
+<p><img src="https://p.ipic.vip/g8s77i.jpg" alt></p>
 <p>大家对这道题还有任何问题，都可以留言告诉我！</p>
 <p>更多题解可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经 35K star 啦。</p>
 <p>关注公众号力扣加加，努力用清晰直白的语言还原解题思路，并且有大量图解，手把手教你识别套路，高效刷题。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" alt></p>
+<p><img src="https://p.ipic.vip/sj5pm1.jpg" alt></p>
 
       </div>
       
@@ -466,10 +466,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

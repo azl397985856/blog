@@ -418,7 +418,7 @@
 <p>TensorFlow™ 是一个采用数据流图（data flow graphs），用于数值计算的开源软件库。节点（Nodes）在图中表示数学操作，图中的线（edges）则表示在节点间相互联系的多维数据数组，即张量（tensor）。</p>
 <p>上面提到的各个环节都或多或少会用到算法。首先网络部分就涉及到很多算法，<br>比如有限状态机，滑动窗口，各种压缩算法，保障我们信息不泄漏的各种加密算法等等，简直不要太多。<br>虽然这些网络部分很多都是现成的，但是也不排除有一些需要我们自己根据当前实际场景自己去搭建一套的可能。<br>这在大公司之中是非常常见的。</p>
 <p>我们再来看下执行我们代码的引擎，以 V8 为例，其本身涉及的算法不算在内。<br>但是当我们基于 V8 去做一些事情，我们就需要了解一些编译相关的原理。<br>这里我举个例子，下图是支付宝的小程序架构。 如果我们不懂一些算法的话，<br>是很难像支付宝一样结合自己的业务去做一些突破的。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51u5ayhj315i0cm0vu.jpg" alt="支付宝小程序架构"><br>(图片来自 <a href="https://www.infoq.cn/article/ullETz7q_Ue4dUptKgKC" target="_blank" rel="noopener">https://www.infoq.cn/article/ullETz7q_Ue4dUptKgKC</a>)</p>
+<p><img src="https://p.ipic.vip/v4zt9s.jpg" alt="支付宝小程序架构"><br>(图片来自 <a href="https://www.infoq.cn/article/ullETz7q_Ue4dUptKgKC" target="_blank" rel="noopener">https://www.infoq.cn/article/ullETz7q_Ue4dUptKgKC</a>)</p>
 <p>另外一些高层的架构中也会有很多算法方面的东西，比如我需要在前端做增量更新的功能。<br>增量更新在APP中早已不是新鲜的东西了，但是真正做JS等静态资源的实时增量更新还比较少，<br>这里面会涉及非常复杂的交互和算法。</p>
 <p>上面提到的更多的是高层面上，事实上即使是业务层面也有很多值得挖掘的算法模型。<br>我们需要从复杂的业务中提炼出算法模型，才能得到实际应用。可惜的是很多时候我们缺乏这种抽象能力和意志。</p>
 <p>除了上一节我讲述的常见场景之外，我还会在下一节介绍几个实际业务场景，从而加深大家的理解。<br>希望大家看了之后，能够在自己的实际业务中有所帮助。</p>
@@ -429,14 +429,14 @@
 <h3 id="权限系统"><a href="#权限系统" class="headerlink" title="权限系统"></a>权限系统</h3><p>假如你现在开发一款类似石墨文档的多人在线协作编辑文档系统。</p>
 <p>这里面有一个小功能是权限系统。 用户可以在我们的系统中创建文件夹和文件，<br>并且管理角色，不同的角色可以分配不同的文件权限。 比如查看，下载，编辑，审批等。</p>
 <p>我们既可以给文件夹分配权限，又可以给文件分配权限，如果对应文件该角色没有权限，<br>我们需要递归往上搜索，看有没有相应权限，如果有，则这个角色有文件的该操作权限。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51uym8gj30kn0eedhp.jpg" alt></p>
+<p><img src="https://p.ipic.vip/stye40.jpg" alt></p>
 <p>如图，fileA 的权限就需要从 fileA 开始看有没有对应权限，如果有，则返回有权限。<br>如果没有，则查找 app 文件夹的权限，重复这个过程，直到根节点。</p>
 <p>如果你是这个系统的前端负责人，你会如何设计这个系统呢？</p>
 <p>其实做这个功能的方案有很多，我这里参考了 linux 的设计。<br>我们使用一个二进制来标示一个权限有还是没有。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51vgy83j30f70d7wfv.jpg" alt></p>
+<p><img src="https://p.ipic.vip/k2f55u.jpg" alt></p>
 <p>这样的话，一方面我们只需要 4 个 bit 就可以存储权限信息，存储已经是极限了。<br>另一方面我们通过位运算即可算出有没有权限，二进制运算在计算性能上也是极限了。</p>
 <p>另外代码写起来，也会非常简洁，感兴趣的可以自己试试。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51xb3fij30hi0d1abh.jpg" alt></p>
+<p><img src="https://p.ipic.vip/f6rmyh.jpg" alt></p>
 <blockquote>
 <p>扩展： 假如文件权限不是只有两种可能，比如有三个取值怎么办？</p>
 </blockquote>
@@ -446,9 +446,9 @@
 <p>其中正则中使用的是一种特殊的 FSM， 叫 DFA（Deterministic Finite Automaton）， 通过分裂树形式来运行。</p>
 <h4 id="为什么要使用状态机"><a href="#为什么要使用状态机" class="headerlink" title="为什么要使用状态机"></a>为什么要使用状态机</h4><p>第一个原因，也是大家感触最深的一个原因就是通过状态机去控制系统内部的状态以及状态流转，逻辑会<br>比较清晰，尤其在逻辑比较复杂的时候，这种作用越发明显。</p>
 <p>第二个原因是通过状态机，我们可以实现数据以及系统的可视化。刚才我提到了正则表达式用到了状态机，<br>那么正则是否可以可视化呢？ 答案是肯定的，这里我介绍一个可视化正则表达式的一个网站。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51yqptbj313h05wgmb.jpg" alt></p>
+<p><img src="https://p.ipic.vip/2nd2mi.jpg" alt></p>
 <p>实际业务中如果使用状态机来设计系统也可以进行可视化。类似这样子：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds51z6k2gj31390h9tah.jpg" alt></p>
+<p><img src="https://p.ipic.vip/dqhq09.jpg" alt></p>
 <p>(图来自 <a href="https://statecharts.github.io/xstate-viz/" target="_blank" rel="noopener">https://statecharts.github.io/xstate-viz/</a>)</p>
 <p>可以看出，逻辑流转非常清晰，我们甚至可以基于此进行调试。<br>当然，将它作为文档的一部分也是极好的，关于状态机的实际意义还有很多，我们接下来举几个例子说明。</p>
 <h4 id="状态机的实际应用场景"><a href="#状态机的实际应用场景" class="headerlink" title="状态机的实际应用场景"></a>状态机的实际应用场景</h4><h5 id="匹配三的倍数"><a href="#匹配三的倍数" class="headerlink" title="匹配三的倍数"></a>匹配三的倍数</h5><p>实现一个功能，判断一个数字是否是三的倍数。 数字可以非常大，以至于超过 Number 的表示范围，<br>因此我们需要用 string 来存储。</p>
@@ -462,7 +462,7 @@
 <li>如果这个字符是 2,5 或者 8，那么我们的余数还是 2</li>
 </ul>
 <p>用图大概是这个样子：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5204zw8j30eq0bfwfw.jpg" alt></p>
+<p><img src="https://p.ipic.vip/hb7kgw.jpg" alt></p>
 <p>如果用代码大概是这样的：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFSM</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    initial: <span class="number">0</span>,</span><br><span class="line">    states: &#123;</span><br><span class="line">      <span class="number">0</span>: &#123;</span><br><span class="line">        on: &#123;</span><br><span class="line">          read(ch) &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">              <span class="number">0</span>: <span class="number">0</span>,</span><br><span class="line">              <span class="number">3</span>: <span class="number">0</span>,</span><br><span class="line">              <span class="number">9</span>: <span class="number">0</span>,</span><br><span class="line">              <span class="number">1</span>: <span class="number">1</span>,</span><br><span class="line">              <span class="number">4</span>: <span class="number">1</span>,</span><br><span class="line">              <span class="number">7</span>: <span class="number">1</span>,</span><br><span class="line">              <span class="number">2</span>: <span class="number">2</span>,</span><br><span class="line">              <span class="number">5</span>: <span class="number">2</span>,</span><br><span class="line">              <span class="number">8</span>: <span class="number">2</span></span><br><span class="line">            &#125;[ch];</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="number">1</span>: &#123;</span><br><span class="line">        on: &#123;</span><br><span class="line">          read(ch) &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">              <span class="number">0</span>: <span class="number">1</span>,</span><br><span class="line">              <span class="number">3</span>: <span class="number">1</span>,</span><br><span class="line">              <span class="number">9</span>: <span class="number">1</span>,</span><br><span class="line">              <span class="number">1</span>: <span class="number">2</span>,</span><br><span class="line">              <span class="number">4</span>: <span class="number">2</span>,</span><br><span class="line">              <span class="number">7</span>: <span class="number">2</span>,</span><br><span class="line">              <span class="number">2</span>: <span class="number">0</span>,</span><br><span class="line">              <span class="number">5</span>: <span class="number">0</span>,</span><br><span class="line">              <span class="number">8</span>: <span class="number">0</span></span><br><span class="line">            &#125;[ch];</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="number">2</span>: &#123;</span><br><span class="line">        on: &#123;</span><br><span class="line">          read(ch) &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">              <span class="number">0</span>: <span class="number">2</span>,</span><br><span class="line">              <span class="number">3</span>: <span class="number">2</span>,</span><br><span class="line">              <span class="number">9</span>: <span class="number">2</span>,</span><br><span class="line">              <span class="number">1</span>: <span class="number">0</span>,</span><br><span class="line">              <span class="number">4</span>: <span class="number">0</span>,</span><br><span class="line">              <span class="number">7</span>: <span class="number">0</span>,</span><br><span class="line">              <span class="number">2</span>: <span class="number">1</span>,</span><br><span class="line">              <span class="number">5</span>: <span class="number">1</span>,</span><br><span class="line">              <span class="number">8</span>: <span class="number">1</span></span><br><span class="line">            &#125;[ch];</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fsm = createFSM();</span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"281902812894839483047309573843389230298329038293829329"</span>;</span><br><span class="line"><span class="keyword">let</span> cur = fsm.initial;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (![<span class="string">"0"</span>, <span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>, <span class="string">"4"</span>, <span class="string">"5"</span>, <span class="string">"6"</span>, <span class="string">"7"</span>, <span class="string">"8"</span>, <span class="string">"9"</span>].includes(str[i])) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"非法数字"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  cur = fsm.states[cur].on.read(str[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (cur === <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"可以被3整除"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"不可以被3整除"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>其实代码还可以简化，读者可以下去尝试一下。</p>
@@ -483,9 +483,9 @@
 <p>这其实是一个简化版本的真实项目。 如果要你设计这样的一个系统，你会如何设计？</p>
 <p>相信你肯定能想出很多种方法来完成这样的需求，接下来我会用 FSM 来实现。</p>
 <p>我们很容易画出整理的流程图：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds520kx1pj30lr06p0tw.jpg" alt></p>
+<p><img src="https://p.ipic.vip/nvk4rx.jpg" alt></p>
 <p>对于答题部分则稍微有一点麻烦，但是如果你用状态机的思维去思考就很容易,<br>我们不难画出这样的图：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds52123yij30m008vdht.jpg" alt></p>
+<p><img src="https://p.ipic.vip/btcj8n.jpg" alt></p>
 <p>JS 中有很多 FSM 的框架， 大家都可以直接拿过来使用。 笔者之前所在的项目<br>也用到了这样的技术，但是笔者是自己手写的简化版本 FSM，基本思想是一致的。</p>
 <h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><p>事实上，还有很多例子可以举。</p>
 <p>假设我们后端服务器是一主一备，我们将所有的数据都同时存储在两个服务器上。<br>假如某一天，有一份数据丢失了，我们如何快速找到有问题的服务器。</p>
@@ -503,10 +503,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

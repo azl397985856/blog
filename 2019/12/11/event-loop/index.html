@@ -395,19 +395,19 @@
 <p>首先，浏览器想要执行 JS 脚本，需要一个“东西”，将 JS 脚本（本质上是一个纯文本），变成一段机器可以理解并执行的计算机指令。这个“东西”就是 JS 引擎，它实际上会将 JS 脚本进行编译和执行，整个过程非常复杂，这里不再过多介绍，感兴趣可以期待下我的 V8 章节，如无特殊说明，以下都拿 V8 来举例子。</p>
 <p>有两个非常核心的构成，<code>执行栈</code>和<code>堆</code>。执行栈中存放正在执行的代码，堆中存放变量的值，通常是不规则的。</p>
 <p>当 V8 执行到<code>a()</code>这一行代码的时候，a 会被压入栈顶。</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ltfr1pfij307j06gt8h.jpg" alt></p>
+<p><img src="https://p.ipic.vip/820jqx.jpg" alt></p>
 <p>在 a 的内部，我们碰到了<code>b()</code>，这个时候 b 被压入栈顶。</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lth4pggfj307906rwe9.jpg" alt></p>
+<p><img src="https://p.ipic.vip/22i029.jpg" alt></p>
 <p>在 b 的内部，我们又碰到了<code>c()</code>，这个时候 c 被压入栈顶。</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ltert9f5j307i06p0si.jpg" alt></p>
+<p><img src="https://p.ipic.vip/ers145.jpg" alt></p>
 <p>c 执行完毕之后，会从栈顶移除。</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lth4pggfj307906rwe9.jpg" alt></p>
+<p><img src="https://p.ipic.vip/22i029.jpg" alt></p>
 <p>函数返回到 b，b 也执行完了，b 也从栈顶移除。</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ltfr1pfij307j06gt8h.jpg" alt></p>
+<p><img src="https://p.ipic.vip/820jqx.jpg" alt></p>
 <p>同样 a 也会被移除。</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ltkvl983j3079068q2p.jpg" alt></p>
+<p><img src="https://p.ipic.vip/0hk2wd.jpg" alt></p>
 <p>整个过程用动画来表示就是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lx8oasxag30gn09y0wq.gif" alt><br>(<a href="http://latentflip.com/loupe/?code=ZnVuY3Rpb24gYygpIHt9CmZ1bmN0aW9uIGIoKSB7CgljKCk7Cn0KZnVuY3Rpb24gYSgpIHsKCWIoKTsKfQphKCk7!!!" target="_blank" rel="noopener">在线观看</a>)</p>
+<p><img src="https://p.ipic.vip/romqox.gif" alt><br>(<a href="http://latentflip.com/loupe/?code=ZnVuY3Rpb24gYygpIHt9CmZ1bmN0aW9uIGIoKSB7CgljKCk7Cn0KZnVuY3Rpb24gYSgpIHsKCWIoKTsKfQphKCk7!!!" target="_blank" rel="noopener">在线观看</a>)</p>
 <p>这个时候我们还没有涉及到<code>堆内存</code>和<code>执行上下文栈</code>，一切还比较简单，这些内容我们放到后面来讲。</p>
 <h3 id="DOM-和-WEB-API"><a href="#DOM-和-WEB-API" class="headerlink" title="DOM 和 WEB API"></a>DOM 和 WEB API</h3><p>现在我们有了可以执行 JS 的引擎，但是我们的目标是<code>构建用户界面</code>，而传统的前端用户界面是基于 DOM 构建的，因此我们需要引入 DOM。DOM 是<code>文档对象模型</code>，其提供了一系列 JS 可以直接调用的接口，理论上其可以提供其他语言的接口，而不仅仅是 JS。 而且除了 DOM 接口可以给 JS 调用，浏览器还提供了一些 WEB API。 DOM 也好，WEB API 也好，本质上和 JS 没有什么关系，完全不一回事。JS 对应的 ECMA 规范，V8 用来实现 ECMA 规范，其他的它不管。 这也是 JS 引擎和 JS 执行环境的区别，V8 是 JS 引擎，用来执行 JS 代码，浏览器和 Node 是 JS 执行环境，其提供一些 JS 可以调用的 API 即<code>JS bindings</code>。</p>
 <p>由于浏览器的存在，现在 JS 可以操作 DOM 和 WEB API 了，看起来是可以构建用户界面啦。 有一点需要提前讲清楚，V8 只有栈和堆，其他诸如事件循环，DOM，WEB API 它一概不知。原因前面其实已经讲过了，因为 V8 只负责 JS 代码的编译执行，你给 V8 一段 JS 代码，它就从头到尾一口气执行下去，中间不会停止。</p>
@@ -428,7 +428,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fetchMyArcticlesSync().then(doSomethingB); <span class="comment">// 3s</span></span><br></pre></td></tr></table></figure>
 <p>线程三：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fetchMyFriendsSync().then(doSomethingC); <span class="comment">// 2s</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://ww1.sinaimg.cn/large/e9f490c8ly1g9lzjslxcaj20lr08nmy3.jpg" alt="1575538849801.jpg"></p>
+<p><img src="https://p.ipic.vip/ujasyp.jpg" alt="1575538849801.jpg"></p>
 <p>由于三块代码同时执行，因此总的时间最理想的情况下取决与最慢的时间，也就是 3s，这一点和使用异步的方式是一样的（当然前提是请求之间无依赖）。为什么要说最理想呢？由于三个线程都可以对 DOM 和堆内存进行访问，因此很有可能会冲突，冲突的原因和我上面提到的 JS 线程和渲染线程的冲突的原因没有什么本质不同。因此最理想情况没有任何冲突的话是 3s，但是如果有冲突，我们就需要借助于诸如<code>锁</code>来解决，这样时间就有可能高于 3s 了。 相应地编程模型也会更复杂，处理过锁的程序员应该会感同身受。</p>
 <h4 id="单线程-异步"><a href="#单线程-异步" class="headerlink" title="单线程 + 异步"></a>单线程 + 异步</h4><p>如果还是使用单线程，改成异步是不是会好点？问题的是关键是如何实现异步呢？这就是我们要讲的主题 - <code>事件循环</code>。</p>
 <h2 id="事件循环究竟是怎么实现异步的？"><a href="#事件循环究竟是怎么实现异步的？" class="headerlink" title="事件循环究竟是怎么实现异步的？"></a>事件循环究竟是怎么实现异步的？</h2><p>我们知道浏览器中 JS 线程只有一个，如果没有事件循环，就会造成一个问题。 即如果 JS 发起了一个异步 IO 请求，在等待结果返回的这个时间段，后面的代码都会被阻塞。 我们知道 JS 主线程和渲染进程是相互阻塞的，因此这就会造成浏览器假死。 如何解决这个问题？ 一个有效的办法就是我们这节要讲的<code>事件循环</code>。</p>
@@ -459,7 +459,7 @@
 <p>以如下代码为例：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  c();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  setTimeout(b, <span class="number">2000</span>);</span><br><span class="line">&#125;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure>
 <p>执行过程是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lxcn39hhg30go080dj1.gif" alt><br>(<a href="http://latentflip.com/loupe/?code=ZnVuY3Rpb24gYygpIHt9CmZ1bmN0aW9uIGIoKSB7CgljKCk7Cn0KZnVuY3Rpb24gYSgpIHsKCXNldFRpbWVvdXQoYiwgMjAwMCkKfQphKCk7!!!" target="_blank" rel="noopener">在线观看</a>)</p>
+<p><img src="https://p.ipic.vip/p5lxfj.gif" alt><br>(<a href="http://latentflip.com/loupe/?code=ZnVuY3Rpb24gYygpIHt9CmZ1bmN0aW9uIGIoKSB7CgljKCk7Cn0KZnVuY3Rpb24gYSgpIHsKCXNldFRpbWVvdXQoYiwgMjAwMCkKfQphKCk7!!!" target="_blank" rel="noopener">在线观看</a>)</p>
 <p>因此事件循环之所以可以实现异步，是因为碰到异步执行的代码“比如 fetch，setTimeout”，浏览器会将用户注册的回调函数存起来，然后继续执行后面的代码。等到未来某一个时刻，“异步任务”完成了，会触发一个事件，浏览器会将“任务的详细信息”作为参数传递给之前用户绑定的回调函数。具体来说，就是将用户绑定的回调函数推入浏览器的执行栈。</p>
 <p>但并不是说随便推入的，只有浏览器将当然要执行的 JS 脚本“一口气”执行完，要”换气“的时候才会去检查有没有要被处理的“消息”。<br>如果于则将对应消息绑定的回调函数推入栈。当然如果没有绑定事件，这个事件消息实际上会被丢弃，不被处理。比如用户触发了一个 click 事件，但是用户没有绑定 click 事件的监听函数，那么实际上这个事件会被丢弃掉。</p>
 <p>我们来看一下加入用户交互之后是什么样的，拿点击事件来说：</p>
@@ -468,7 +468,7 @@
 <p>伪代码:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (queue.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    queue.processNextMessage();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>动画演示：</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lxzvlth0g30go07yhc7.gif" alt><br>(<a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D" target="_blank" rel="noopener">在线观看</a>)</p>
+<p><img src="https://p.ipic.vip/fy5ifj.gif" alt><br>(<a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D" target="_blank" rel="noopener">在线观看</a>)</p>
 <h3 id="加入宏任务-amp-微任务"><a href="#加入宏任务-amp-微任务" class="headerlink" title="加入宏任务&amp;微任务"></a>加入宏任务&amp;微任务</h3><p>我们来看一个更复制的例子感受一下。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.resolve()</span><br><span class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">4</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
 <p>上面的代码会输出：1、5、3、4、2。 如果你想要非常严谨的解释可以参考 whatwg 对其进行的描述 -<a href="https://html.spec.whatwg.org/multipage/webappapis.html#event-loop-processing-model" target="_blank" rel="noopener">event-loop-processing-model</a>。</p>
@@ -481,7 +481,7 @@
 <p>其中：</p>
 <p>宏任务主要包含：setTimeout、setInterval、setImmediate、I/O、UI 交互事件</p>
 <p>微任务主要包含：Promise、process.nextTick、MutaionObserver 等</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9hfldyzj2j30g909xt8z.jpg" alt></p>
+<p><img src="https://p.ipic.vip/vupgds.jpg" alt></p>
 <p>有了这个知识，我们不难得出上面代码的输出结果。</p>
 <p>由此我们可以看出，<code>宏任务&amp;微任务</code>只是实现异步过程中，我们对于信号的处理顺序不同而已。如果我们不加区分，全部放到一个队列，就不会有<code>宏任务&amp;微任务</code>。这种人为划分优先级的过程，在某些时候非常有用。</p>
 <h3 id="加入执行上下文栈"><a href="#加入执行上下文栈" class="headerlink" title="加入执行上下文栈"></a>加入执行上下文栈</h3><p>说到执行上下文，就不得不提到<code>浏览器执行JS函数其实是分两个过程的</code>。一个是创建阶段<code>Creation Phase</code>,一个是执行阶段<code>Execution Phase</code>。</p>
@@ -491,7 +491,7 @@
 <p>遇到上面的代码。 首先会将 a 的压入执行栈，我们开始进行创建阶段<code>Creation Phase</code>， 将 a 的执行上下文压入栈。然后初始化 a 的执行上下文，分别是 VO，ScopeChain（VO chain）和 This。 从这里我们也可以看出，this 其实是动态决定的。VO 指的是<code>variables, functions 和 arguments</code>。 并且执行上下文栈也会同步随着执行栈的销毁而销毁。</p>
 <p>伪代码表示：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> EC = &#123;</span><br><span class="line">  scopeChain: &#123;&#125;,</span><br><span class="line">  variableObject: &#123;&#125;,</span><br><span class="line">  <span class="keyword">this</span>: &#123;&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lyjjb6ecj30mh0c0aa2.jpg" alt></p>
+<p><img src="https://p.ipic.vip/d6z9cb.jpg" alt></p>
 <p>我们来重点看一下 ScopeChain(VO chain)。如上图的执行上下文大概长这个样子，伪代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">global.VO = &#123;</span><br><span class="line">    a: pointer to a(),</span><br><span class="line">    scopeChain: [global.VO]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a.VO = &#123;</span><br><span class="line">    b: pointer to b(),</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;</span><br><span class="line">		<span class="number">0</span>: <span class="number">1</span></span><br><span class="line">	&#125;,</span><br><span class="line">    scopeChain: [a.VO, global.VO]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">b.VO = &#123;</span><br><span class="line">	c: pointer to c(),</span><br><span class="line">	<span class="built_in">arguments</span>: &#123;</span><br><span class="line">		<span class="number">0</span>: <span class="number">1</span></span><br><span class="line">	&#125;,</span><br><span class="line">	scopeChain: [b.VO, a.VO, global.VO]</span><br><span class="line">&#125;</span><br><span class="line">c.VO = &#123;</span><br><span class="line">	<span class="built_in">arguments</span>: &#123;</span><br><span class="line">		<span class="number">0</span>: <span class="number">1</span></span><br><span class="line">	&#125;,</span><br><span class="line">	n: <span class="number">3</span></span><br><span class="line">	scopeChain: [c.VO, b.VO, a.VO, global.VO]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>引擎查找变量的时候，会先从 VOC 开始找，找不到会继续去 VOB…，直到 GlobalVO，如果 GlobalVO 也找不到会返回<code>Referrence Error</code>，整个过程类似原型链的查找。</p>
@@ -504,7 +504,7 @@
 <p>也就是说其再也无法获取到 a 和 b 中的 VO 了。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过这篇文章，希望你对单线程，多线程，异步，事件循环，事件驱动等知识点有了更深的理解和感悟。除了这些大的层面，我们还从执行栈，执行上下文栈角度讲解了我们代码是如何被浏览器运行的，我们顺便还解释了作用域和闭包产生的本质原因。</p>
 <p>最后我总结了一个浏览器运行代码的整体原理图，希望对你有帮助：</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9lzm6dww0j30kw0pjt8s.jpg" alt></p>
+<p><img src="https://p.ipic.vip/gepbz4.jpg" alt></p>
 <p>下一节<code>浏览器的事件循环和NodeJS的事件循环有什么不同</code>, 敬请期待～</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://blog.logrocket.com/a-complete-guide-to-the-node-js-event-loop/" target="_blank" rel="noopener">Node.js event loop - logrocket</a></li>
@@ -523,10 +523,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-16T17:15:40+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月16日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

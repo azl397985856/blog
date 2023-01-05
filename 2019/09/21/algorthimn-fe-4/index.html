@@ -408,10 +408,10 @@
 <p>实现这两点靠的正是我们今天的主角 fiber，稍后我们再讲。</p>
 </blockquote>
 <p>比如之前 React 执行了一个 100ms 的更新过程，对于新的调和算法，<br>会将这个过程划分为多个过程，当然每一份时间很可能是不同的。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds527o2fmj30in07iaar.jpg" alt></p>
+<p><img src="https://p.ipic.vip/nd4s6o.jpg" alt></p>
 <p>由于总时间不会减少，我们设置还增加了调度（上面我提到的两条）的代码，<br>因此单纯从总时间上，甚至是一种倒退。但是为什么用户会感觉到更快了呢？<br>这就是下面我们要讲的调度器。</p>
 <h3 id="三大核心组件-Scheduler，-Reconciliation，-Renderer"><a href="#三大核心组件-Scheduler，-Reconciliation，-Renderer" class="headerlink" title="三大核心组件 - Scheduler， Reconciliation， Renderer"></a>三大核心组件 - Scheduler， Reconciliation， Renderer</h3><p>事实上， React 核心的算法包含了三个核心部分，分别是<code>Scheduler，</code>， <code>Reconciliation</code>，<code>Renderer</code>。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5284v44j30kn08rabb.jpg" alt></p>
+<p><img src="https://p.ipic.vip/6uotv9.jpg" alt></p>
 <ul>
 <li>scheduler 用于决定何时去执行。</li>
 </ul>
@@ -425,7 +425,7 @@
 <li>Reconciliation 决定哪部分需要更新，以及如何“相对最小化”完成更新过程。<br>这部分算法主要上衣基于<code>VDOM</code>这种数据结构来完成的。</li>
 </ul>
 <p>这部分的算法实际上就是一个“阉割版的最小编辑树算法”。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds528kezaj30ke09s75f.jpg" alt></p>
+<p><img src="https://p.ipic.vip/39zpxp.jpg" alt></p>
 <ul>
 <li>renderer 使用 Reconciliation 的计算结果，然后将这部分差异，最小化更新到视图。可以是 DOM，也可以是<br>native， 理论上可以是任何一种渲染容器。</li>
 </ul>
@@ -436,14 +436,14 @@
 <h3 id="v-f-d"><a href="#v-f-d" class="headerlink" title="v = f(d)"></a>v = f(d)</h3><p>这是我从 React 官方介绍 fiber 的一个地方抄来的公式。</p>
 <p>它想表达的是 react 是一个视图管理框架，并且是数据驱动的，唯一的数据会驱动产生唯一的视图。</p>
 <p>我们可以把每一个组件都看成一个 view，然而我们的工作就是计算所有的组件的最新的 view。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds529530zj30h103y0t2.jpg" alt></p>
+<p><img src="https://p.ipic.vip/sfs7iv.jpg" alt></p>
 <p>那么 fiber 是如何完成“增量更新”呢？ 秘诀就是它相当于“重新实现了浏览器调用栈”。</p>
 <p>我们来看一下，fiber 是如何实现传统调用栈的功能的。</p>
 <h3 id="fiber-和-传统调用栈的区别"><a href="#fiber-和-传统调用栈的区别" class="headerlink" title="fiber 和 传统调用栈的区别"></a>fiber 和 传统调用栈的区别</h3><p>传统的调用栈，我们实际上将生成 view 的工作放到栈里面执行，浏览器的栈有一个特点就是<br>“你给它一个任务，它必须一口气执行完”。</p>
 <p>而 fiber 由于是自己设计的，因此可以没有这个限制。 具体来说，两者的对应关系如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">传统调用栈            fiber</span><br><span class="line"></span><br><span class="line">  子函数          component type</span><br><span class="line"> 函数嵌套              child</span><br><span class="line">  参数                props</span><br><span class="line"> 返回地址             parent</span><br><span class="line">  返回值          DOM elements</span><br></pre></td></tr></table></figure>
 <p>用图来表示的话，大概是这样：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds52aevumj30ds08wwfk.jpg" alt></p>
+<p><img src="https://p.ipic.vip/geg9kk.jpg" alt></p>
 <p>其中具体的算法，我预计会在我的<a href="https://github.com/azl397985856/mono-react" target="_blank" rel="noopener">从零开始开发一个 React</a> 中更新。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本篇文章介绍了fiber，fiber其实是一种用于增量更新的数据结构。<br>是为了下一代调和引擎而引入的一种新的数据结构，而下一代调和引擎最核心的部分就是<br>“增量渲染”。</p>
 <p>我们介绍了几个基本概念和组件，包括分片执行， react三大核心组件 - Scheduler， Reconciliation， Renderer。</p>
@@ -459,10 +459,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

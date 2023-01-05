@@ -388,14 +388,14 @@
         <p>来实现一个 vite ？</p>
 <a id="more"></a>
 <h2 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h2><p>假设我们有如下两个 JS 文件。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gs3u43i4j0j31750u0771.jpg" alt></p>
+<p><img src="https://p.ipic.vip/xk5ju1.jpg" alt></p>
 <p>即两个 esm 的模块， 并且 main.mjs 依赖 utils.mjs。</p>
 <p>如上代码可以被支持 ESM 的浏览器所识别，但并不意味着其可以直接被运行。 比如我的代码依赖了 npm 包和一些相对路径，这些浏览器是无法识别的。</p>
 <p>而 vite 则解决了这个问题。由于 vite 本质还是依赖了浏览器的特性，因此可以直接利用浏览器的诸如缓存的特点来提高性能。</p>
 <p>除此之外， 每次修改文件，比如修改上面的 main.mjs 或者 utils.mjs 中的任意一个文件并不会导致“打包”全部文件。这是因为 vite 根本没有打包过程， 而是直接将修改过的文件热更新到浏览器的内存中。</p>
 <p>比如，我修改了 main.js，那么就直接发送一个 http 去请求最新的 main.mjs 文件，而 utils.mjs 则可以继续使用浏览器缓存中的内容即可。</p>
 <p>我画了一个简单的原理图给大家参考一下。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gs3ueacuygj31of0u0afq.jpg" alt></p>
+<p><img src="https://p.ipic.vip/eg6j0r.jpg" alt></p>
 <p>模块之间的关系如上图所示。并且这个时序指的是<strong>更新一个文件之后的更新流程</strong>。</p>
 <p>我将其分成了若干模块，它们分别是：</p>
 <ul>
@@ -410,9 +410,9 @@
 <blockquote>
 <p>回调函数通过 module.hot.accept 注册，具体参考 hmr 相关文档。</p>
 </blockquote>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gs3uouzbrcj311w0o2gns.jpg" alt></p>
+<p><img src="https://p.ipic.vip/j1w5pf.jpg" alt></p>
 <p>一个更复杂的例子：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gs3v01nwd4j30zw0rm40c.jpg" alt></p>
+<p><img src="https://p.ipic.vip/0myahp.jpg" alt></p>
 <p>之后我会根据这个原理图带大家一步步实现一个 mono-vite（等西法有时间的）。</p>
 
       </div>
@@ -425,10 +425,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-03T17:01:16+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年7月3日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

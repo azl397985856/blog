@@ -390,12 +390,12 @@
 <p>带着上面的需求，我们来看下市面上已有的经典方案， 在这里挑选几个具有代表性的。</p>
 <h2 id="市面上已有的方案对比"><a href="#市面上已有的方案对比" class="headerlink" title="市面上已有的方案对比"></a>市面上已有的方案对比</h2><h3 id="LogRocket"><a href="#LogRocket" class="headerlink" title="LogRocket"></a>LogRocket</h3><p>一句话概括： 用看录像的方式重现问题。</p>
 <p>官网地址： <a href="https://logrocket.com/" target="_blank" rel="noopener">https://logrocket.com/</a></p>
-<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8nsefw6j31ji0braaj.jpg" alt></p>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8mp9lp5j31bc0qr410.jpg" alt></p>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8myz28pj31su0u0ta3.jpg" alt></p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p><img src="https://p.ipic.vip/z4mi5e.jpg" alt></p>
+<p><img src="https://p.ipic.vip/oullen.jpg" alt></p>
+<p><img src="https://p.ipic.vip/13izvg.jpg" alt></p>
 <p>更多功能： <a href="https://docs.logrocket.com/docs" target="_blank" rel="noopener">https://docs.logrocket.com/docs</a></p>
-<h4 id="接入方式"><a href="#接入方式" class="headerlink" title="接入方式"></a>接入方式</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8kqmquvj313k0opwfb.jpg" alt></p>
-<h4 id="价格"><a href="#价格" class="headerlink" title="价格"></a>价格</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8lgqwlgj30rg0n3wf0.jpg" alt></p>
+<h4 id="接入方式"><a href="#接入方式" class="headerlink" title="接入方式"></a>接入方式</h4><p><img src="https://p.ipic.vip/fbdslw.jpg" alt></p>
+<h4 id="价格"><a href="#价格" class="headerlink" title="价格"></a>价格</h4><p><img src="https://p.ipic.vip/shtqgx.jpg" alt></p>
 <h3 id="Sentry"><a href="#Sentry" class="headerlink" title="Sentry"></a>Sentry</h3><p>一句话概括： 开源，强大的监控平台。</p>
 <p>官网地址： <a href="https://sentry.io/" target="_blank" rel="noopener">https://sentry.io/</a></p>
 <h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p>功能较多，提供了较多的概念和功能，比如 Context，ENvironments，Breadcrumbs 等。另外其和 CI，CD 集成地也非常好。 详细内容： <a href="https://docs.sentry.io/workflow/releases/?platform=node" target="_blank" rel="noopener">https://docs.sentry.io/workflow/releases/?platform=node</a></p>
@@ -409,7 +409,7 @@
 <li>Configure it</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Sentry = <span class="built_in">require</span>(<span class="string">"@sentry/node"</span>);</span><br><span class="line">Sentry.init(&#123; <span class="attr">dsn</span>: <span class="string">"https://&lt;key&gt;@sentry.io/&lt;project&gt;"</span> &#125;);</span><br></pre></td></tr></table></figure>
-<h4 id="价格-1"><a href="#价格-1" class="headerlink" title="价格"></a>价格</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w8qipkskj30x10jt758.jpg" alt></p>
+<h4 id="价格-1"><a href="#价格-1" class="headerlink" title="价格"></a>价格</h4><p><img src="https://p.ipic.vip/duxks9.jpg" alt></p>
 <h3 id="FunDebug"><a href="#FunDebug" class="headerlink" title="FunDebug"></a>FunDebug</h3><p>一句话概括：国内知名度较高的监控工具，国内业务这块很有竞争力。</p>
 <p><a href="https://www.fundebug.com/" target="_blank" rel="noopener">https://www.fundebug.com/</a></p>
 <h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h4><p>支持小程序，小游戏。多种现成的报警方式，支持 WebHook，智能报警（同样的代码产生的同一个错误，在不同浏览器上的报错信息是各不相同的），内置团队协作工具。</p>
@@ -424,7 +424,7 @@
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install fundebug-javascript fundebug-vue --save</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> fundebug <span class="keyword">from</span> <span class="string">"fundebug-javascript"</span>;</span><br><span class="line"><span class="keyword">import</span> fundebugVue <span class="keyword">from</span> <span class="string">"fundebug-vue"</span>;</span><br><span class="line">fundebug.init(&#123;</span><br><span class="line">  apikey: <span class="string">"API-KEY"</span>,</span><br><span class="line">&#125;);</span><br><span class="line">fundebugVue(fundebug, Vue);</span><br></pre></td></tr></table></figure>
-<h4 id="价格-2"><a href="#价格-2" class="headerlink" title="价格"></a>价格</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8w9mhtq44j30x60mb3z3.jpg" alt></p>
+<h4 id="价格-2"><a href="#价格-2" class="headerlink" title="价格"></a>价格</h4><p><img src="https://p.ipic.vip/e2ygo7.jpg" alt></p>
 <h2 id="其他后期可能功能点"><a href="#其他后期可能功能点" class="headerlink" title="其他后期可能功能点"></a>其他后期可能功能点</h2><ol>
 <li><p>性能监控</p>
 </li>
@@ -463,7 +463,7 @@
 <p>Wechat：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> monitor <span class="keyword">from</span> <span class="string">"@lucifer/connectors/wechat"</span>;</span><br><span class="line">monitor.init(&#123;</span><br><span class="line">  user: &#123;</span><br><span class="line">    name: <span class="string">""</span>,</span><br><span class="line">    email: <span class="string">""</span>,</span><br><span class="line">    mobile: <span class="string">""</span>,</span><br><span class="line">    isVIP: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  appId: <span class="string">"lucifer520"</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h4 id="定义内部接口"><a href="#定义内部接口" class="headerlink" title="定义内部接口"></a>定义内部接口</h4><p>架构图：</p>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8xj6xnibej30xd0hzgo5.jpg" alt></p>
+<p><img src="https://p.ipic.vip/4ughtr.jpg" alt></p>
 <p>接口系统交互图会在详细设计中给出，这里只给出大致范围：</p>
 <ul>
 <li>logs 服务器和告警平台的交互接口</li>
@@ -493,10 +493,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

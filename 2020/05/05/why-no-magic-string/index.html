@@ -406,7 +406,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// utils/ast-utils.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isNumericLiteral</span>(<span class="params">node</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    node.type === <span class="string">"Literal"</span> &amp;&amp;</span><br><span class="line">    (<span class="keyword">typeof</span> node.value === <span class="string">"number"</span> || <span class="built_in">Boolean</span>(node.bigint))</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// no-magic-numbers.js</span></span><br><span class="line"><span class="keyword">if</span> (!isNumericLiteral(node)) &#123;</span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>也就是说如果字面量不是数字会被忽略。这和我们的想法<code>这条规则只会检查魔法数字，而不会检查诸如魔法字符串等</code>。</p>
 <p>让我们时光倒流，将代码回退到 eslint 官方首次关于”no-magic-rule”的<a href="https://github.com/eslint/eslint/blob/510013c27eb917cd4c7268d5deb6301243b182cf/lib/rules/no-magic-number.js" target="_blank" rel="noopener">提交</a>。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gehuq8vlq1j316w0qgn1g.jpg" alt></p>
+<p><img src="https://p.ipic.vip/n6pgqi.jpg" alt></p>
 <p>代码大概意思是：</p>
 <ol>
 <li>如果是变量声明语句，就去检查是否强制使用 const。 如果是则观察语句是否为 const 声明。</li>
@@ -424,11 +424,11 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = &#123; number: 1 &#125;</span><br></pre></td></tr></table></figure>
 <p>也就是说，如果设置了<code>检查对象</code>，那么上面三种情况都会报错。否则不进行报错处理。</p>
 <h2 id="AST-Explorer"><a href="#AST-Explorer" class="headerlink" title="AST-Explorer"></a>AST-Explorer</h2><p>大家使用<a href="https://astexplorer.net/#/gist/a595f16646dbbb4184afc3880b87aa2c/276fd81226015b7782056947b70c4b9e047113c9" target="_blank" rel="noopener">AST explorer</a> 来可视化 AST。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gehuqxbzngj31s30u0wod.jpg" alt></p>
+<p><img src="https://p.ipic.vip/srxts2.jpg" alt></p>
 <p>由于 eslint 使用的 ast 转化工具是 espree， 推荐大家使用 espree。 如果大家写 babel 插件的话，相应的引擎最好修改一下。</p>
 <p>值得注意的是，上面我们用的 parent 是不会在 ast-explorer 进行显示的。原因在于其不是 ast 结构的一部分，而如果要做到，也非常容易。 前提是你懂得递归，尤其是树的递归。 如果你还不太懂树的递归， 可以关注我的 B 站<a href="https://space.bilibili.com/519510412" target="_blank" rel="noopener">LeetCode 加加的个人空间 - 哔哩哔哩 ( ゜- ゜)つロ 乾杯~ Bilibili</a></p>
 <p>通过观察 eslint/espree 的源码也可以发现，其过程是多么的自然和简单。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gehusdyyxzj312i0ocjvf.jpg" alt></p>
+<p><img src="https://p.ipic.vip/6d5sdv.jpg" alt></p>
 <h2 id="Magic-String"><a href="#Magic-String" class="headerlink" title="Magic String"></a>Magic String</h2><p>实际上一个第三方的 tslint 仓库的一个<a href="https://github.com/palantir/tslint/issues/2928" target="_blank" rel="noopener">issue</a> 明确指出了想要增加”no<br>-magic-string” 的想法，只不过被仓库成员给否掉了，原因是其不够通用，除非能证明大家都需要这样一个规则。</p>
 <p>那么问题是“为什么 no-magic-string 没有 no-magic-number 通用呢”？<a href="https://github.com/azl397985856/fe-interview/issues/122#issuecomment-623997774" target="_blank" rel="noopener">【每日一题】- 2020-05-05 - no-magic-string · Issue #122 · azl397985856/fe-interview · GitHub</a> 有一个回答，小漾给出了很好的回答。但是还没有解决疑问“为什么没有 no-magic-string”这样的规则呢？</p>
 <p>我的观点是<code>魔法字符串也是不好的，只不过没有不好的那么明显</code>。</p>
@@ -467,10 +467,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

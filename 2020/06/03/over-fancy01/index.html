@@ -394,9 +394,9 @@
 <p>其实这是一道前几天的力扣官方每日一题，我们先来看一下题目描述：</p>
 <p>给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。</p>
 <p>求在该柱状图中，能够勾勒出来的矩形的最大面积。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfewdafiexj305805odft.jpg" alt></p>
+<p><img src="https://p.ipic.vip/gf8btg.jpg" alt></p>
 <p>以上是柱状图的示例，其中每个柱子的宽度为 1，给定的高度为  [2,1,5,6,2,3]。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfewdi9rmlj305805o0sv.jpg" alt></p>
+<p><img src="https://p.ipic.vip/rkqzx1.jpg" alt></p>
 <p>图中阴影部分为所能勾勒出的最大矩形面积，其面积为  10  个单位。</p>
 <p>示例:</p>
 <p>输入: [2,1,5,6,2,3]</p>
@@ -419,7 +419,7 @@
 <p>代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">largestRectangleArea</span><span class="params">(self, heights: List[int])</span> -&gt; int:</span></span><br><span class="line">        n = len(heights)</span><br><span class="line">        l, r, ans = [<span class="number">-1</span>] * n, [n] * n, <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</span><br><span class="line">            j = i - <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> j &gt;= <span class="number">0</span> <span class="keyword">and</span> heights[j] &gt;= heights[i]:</span><br><span class="line">                j = l[j]</span><br><span class="line">            l[i] = j</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">2</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            j = i + <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> j &lt; n <span class="keyword">and</span> heights[j] &gt;= heights[i]:</span><br><span class="line">                j = r[j]</span><br><span class="line">            r[i] = j</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            ans = max(ans, heights[i] * (r[i] - l[i] - <span class="number">1</span>))</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
 <p>这位读者看到这里产生了一个疑问，这个疑问就是我开篇所讲的。我们来看下他是怎么说的。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfexzj6zm3j31ae0b8q4w.jpg" alt></p>
+<p><img src="https://p.ipic.vip/4uah8u.jpg" alt></p>
 <p>这位读者提到<strong>交替的这种情况时间复杂度会退化到$O(N^2)$</strong>，那么实际情况真的是这样么？</p>
 <h2 id="悬赏"><a href="#悬赏" class="headerlink" title="悬赏"></a>悬赏</h2><p>大家对上面的优化后的算法复杂度是怎么看的？请留言告诉我！ 需要注意的是：</p>
 <ol>
@@ -429,7 +429,7 @@
 </ol>
 <p>参与方式：<code>复制链接，并在浏览器打开，然后在里面评论即可</code>。链接地址：<a href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/84-zhu-zhuang-tu-zhong-zui-da-de-ju-xing-duo-chong/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/84-zhu-zhuang-tu-zhong-zui-da-de-ju-xing-duo-chong/</a></p>
 <p>大家也可以关注我的公众号《力扣加加》获取更多更新鲜的 LeetCode 题解。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" alt></p>
+<p><img src="https://p.ipic.vip/5nu05l.jpg" alt></p>
 
       </div>
       
@@ -441,10 +441,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

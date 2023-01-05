@@ -398,7 +398,7 @@
 <p>美团和华为都考了这个题。</p>
 </blockquote>
 <p>题目的意思是让我们从给定数组中挑选若干数字，这些数字满足： <code>如果 i &lt; j 则 nums[i] &lt; nums[j]</code>。问：一次可以挑选最多满足条件的数字是多少个。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfyyu7187bj31ku0igq6f.jpg" alt></p>
+<p><img src="https://p.ipic.vip/t99965.jpg" alt></p>
 <p>这种子序列求极值的题目，应该要考虑到贪心或者动态规划。这道题贪心是不可以的，我们考虑动态规划。</p>
 <p>按照动态规划定义状态的套路，我们有<strong>两种常见</strong>的定义状态的方式：</p>
 <ul>
@@ -407,14 +407,14 @@
 </ul>
 <p>容易看出第二种定义方式由于无需比较不同的 dp[i] 就可以获得答案，因此更加方便。但是想了下，状态转移方程会很不好写，因为 dp[i] 的末尾数字（最大的）可能是 任意 j &lt; i 的位置。</p>
 <p>第一种定义方式虽然需要比较不同的 dp[i] 从而获得结果，但是我们可以在循环的时候顺便得出，对复杂度不会有影响，只是代码多了一点而已。因此我们<strong>选择第一种建模方式</strong>。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfyyz18gu6j31t40dy77l.jpg" alt></p>
+<p><img src="https://p.ipic.vip/9y1rtu.jpg" alt></p>
 <p>由于 dp[j] 中一定会包括 j，且以 j 结尾， 那么 nums[j] 一定是其所形成的序列中最大的元素，那么如果位于其后（意味着 i &gt; j）的 nums[i] &gt; nums[j]，那么 nums[i] 一定能够融入 dp[j] 从而形成更大的序列，这个序列的长度是 dp[j] + 1。因此状态转移方程就有了：<code>dp[i] = dp[j] + 1 (其中 i &gt; j, nums[i] &gt; nums[j])</code></p>
 <p>以 <code>[10, 9, 2, 5, 3, 7, 101, 18]</code> 为例，当我们计算到 dp[5]的时候，我们需要往回和 0，1，2，3，4 进行比较。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfzzp18iyej311i0o8dk8.jpg" alt></p>
+<p><img src="https://p.ipic.vip/1szj3m.jpg" alt></p>
 <p>具体的比较内容是：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfzzqeaen1j30um0fwwhd.jpg" alt></p>
+<p><img src="https://p.ipic.vip/7ovvgy.jpg" alt></p>
 <p>最后从三个中选一个最大的 + 1 赋给 dp[5]即可。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfzzt54n5wj30ys05g74x.jpg" alt></p>
+<p><img src="https://p.ipic.vip/7eklre.jpg" alt></p>
 <p><strong>记住这个状态转移方程，后面我们还会频繁用到。</strong></p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLIS</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        n = len(nums)</span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span>: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        dp = [<span class="number">1</span>] * n</span><br><span class="line">        ans = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i):</span><br><span class="line">                <span class="keyword">if</span> nums[i] &gt; nums[j]:</span><br><span class="line">                    dp[i] = max(dp[i], dp[j] + <span class="number">1</span>)</span><br><span class="line">                    ans = max(ans, dp[i])</span><br><span class="line">        <span class="keyword">return</span>  ans</span><br></pre></td></tr></table></figure>
 <p><strong>复杂度分析</strong></p>
@@ -427,7 +427,7 @@
 <h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>我们先来看下最终<strong>剩下</strong>的区间。由于剩下的区间都是不重叠的，因此剩下的<strong>相邻区间的后一个区间的开始时间一定是不小于前一个区间的结束时间的</strong>。 比如我们剩下的区间是<code>[ [1,2], [2,3], [3,4] ]</code>。就是第一个区间的 2 小于等于 第二个区间的 2，第二个区间的 3 小于等于第三个区间的 3。</p>
 <p>不难发现如果我们将<code>前面区间的结束</code>和<code>后面区间的开始</code>结合起来看，其就是一个<strong>非严格递增序列</strong>。而我们的目标就是删除若干区间，从而<strong>剩下最长的非严格递增子序列</strong>。这不就是上面的题么？只不过上面是严格递增，这不重要，就是改个符号的事情。 上面的题你可以看成是删除了若干数字，然后剩下<strong>剩下最长的严格递增子序列</strong>。 <strong>这就是抽象的力量，这就是套路。</strong></p>
 <p>如果对区间按照起点或者终点进行排序，那么就转化为上面的最长递增子序列问题了。和上面问题不同的是，由于是一个区间。因此实际上，我们是需要拿<strong>后面的开始时间</strong>和<strong>前面的结束时间</strong>进行比较。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfyzp8n59cj31000a2jse.jpg" alt></p>
+<p><img src="https://p.ipic.vip/iqqlmu.jpg" alt></p>
 <p>而由于：</p>
 <ul>
 <li>题目求的是需要移除的区间，因此最后 return 的时候需要做一个转化。</li>
@@ -470,7 +470,7 @@
 <li>空间复杂度：$O(N)$</li>
 </ul>
 <h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>大家想看效率高的，其实也不难。 LIS 也可以用 <strong>贪心 + 二分</strong> 达到不错的效率。代码如下：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl6ajh887vj31zc0gmae6.jpg" alt></p>
+<p><img src="https://p.ipic.vip/wdofle.jpg" alt></p>
 <p>代码文字版如下：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLIS</span><span class="params">(self, A: List[int])</span> -&gt; int:</span></span><br><span class="line">        d = []</span><br><span class="line">        <span class="keyword">for</span> a <span class="keyword">in</span> A:</span><br><span class="line">            i = bisect.bisect_left(d, a)</span><br><span class="line">            <span class="keyword">if</span> i &lt; len(d):</span><br><span class="line">                d[i] = a</span><br><span class="line">            <span class="keyword">elif</span> <span class="keyword">not</span> d <span class="keyword">or</span> d[<span class="number">-1</span>] &lt; a:</span><br><span class="line">                d.append(a)</span><br><span class="line">        <span class="keyword">return</span> len(d)</span><br></pre></td></tr></table></figure>
 <p>如果求最长不递减子序列呢？</p>
@@ -524,7 +524,7 @@
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">solve</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        n = len(nums)</span><br><span class="line">        ans = <span class="number">1</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">LIS</span><span class="params">(A)</span>:</span></span><br><span class="line">            d = []</span><br><span class="line">            <span class="keyword">for</span> a <span class="keyword">in</span> A:</span><br><span class="line">                i = bisect.bisect_left(d,a)</span><br><span class="line">                <span class="keyword">if</span> i == len(d): d.append(a)</span><br><span class="line">                <span class="keyword">else</span>: d[i] = a</span><br><span class="line">            <span class="keyword">return</span> len(d)</span><br><span class="line">        nums += nums</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            ans = max(ans , LIS(nums[i:i+n]))</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
 <p>大家把我讲的思路搞懂，这几个题一写，还怕碰到类似的题不会么？<strong>只有熟练掌握基础的数据结构与算法，才能对复杂问题迎刃有余。</strong> 最长上升子序列就是一个非常经典的基础算法，把它彻底搞懂，再去面对出题人的各种换皮就不怕了。相反，如果你不去思考题目背后的逻辑，就会刷地很痛苦。题目稍微一变化你就不会了，这也是为什么很多人说<strong>刷了很多题，但是碰到新的题目还是不会做</strong>的原因之一。关注公众号力扣加加，努力用清晰直白的语言还原解题思路，并且有大量图解，手把手教你识别套路，高效刷题。</p>
 <p>更多题解可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经 38K star 啦。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" alt></p>
+<p><img src="https://p.ipic.vip/pwnbdg.jpg" alt></p>
 
       </div>
       
@@ -536,10 +536,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-12-19T15:18:46+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年12月19日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 
@@ -636,16 +636,16 @@
                       <span class="art-item-left">
                           <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                           <h4>
-                              <a href="/blog/2020/06/20/611.triangle/" rel="prev" title="【LeetCode日记】 611. 有效三角形的个数">
+                              <a href="/blog/2020/06/20/LSS/" rel="prev" title="一文看懂《最大子序列和问题》">
                                 
-                                    【LeetCode日记】 611. 有效三角形的个数
+                                    一文看懂《最大子序列和问题》
                                 
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/LeetCode日记/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode日记</a> <a class="tag" href="/blog/tags/Medium/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Medium</a>
+                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a> <a class="tag" href="/blog/tags/数组/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数组</a>
                               </h6>
                           
                       </span>
@@ -656,16 +656,16 @@
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/blog/2020/06/20/LSS/" rel="prev" title="一文看懂《最大子序列和问题》">
+                              <a href="/blog/2020/06/20/interview-log-haoweilai/" rel="prev" title="好未来-北京-视频面试">
                                   
-                                      一文看懂《最大子序列和问题》
+                                      好未来-北京-视频面试
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/LeetCode/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LeetCode</a> <a class="tag" href="/blog/tags/数组/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数组</a>
+                                  <a class="tag" href="/blog/tags/前端/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 前端</a> <a class="tag" href="/blog/tags/面经/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 面经</a> <a class="tag" href="/blog/tags/校招/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 校招</a> <a class="tag" href="/blog/tags/好未来/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 好未来</a>
                               </h6>
                           
                       </span>

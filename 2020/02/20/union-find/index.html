@@ -402,12 +402,12 @@
 <ul>
 <li><code>union</code>: 将两个人所在的两个部门合并成一个部门（如果两个人是相同部门，实际山不需要合并）</li>
 </ul>
-<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc32a7x6y1j30zk0k0dki.jpg" alt><br>（图来自 labuladong）</p>
+<p><img src="https://p.ipic.vip/n13gk4.jpg" alt><br>（图来自 labuladong）</p>
 <ul>
 <li><code>find</code>: 查找某个人的部门 leader</li>
 <li><code>connnected</code>: 判断两个人是否是一个部门的</li>
 </ul>
-<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc32atzy3tj30zk0k0tde.jpg" alt><br>（图来自 labuladong）</p>
+<p><img src="https://p.ipic.vip/vxsx0k.jpg" alt><br>（图来自 labuladong）</p>
 <h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>这是一个我经常使用的模板，我会根据具体题目做细小的变化，但是大体是不变的。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UF</span>:</span></span><br><span class="line">    parent = &#123;&#125;</span><br><span class="line">    cnt = <span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, M)</span>:</span></span><br><span class="line">        <span class="comment"># 初始化 parent 和 cnt</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">find</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        <span class="keyword">while</span> x != self.parent[x]:</span><br><span class="line">            x = self.parent[x]</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">union</span><span class="params">(self, p, q)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.connected(p, q): <span class="keyword">return</span></span><br><span class="line">        self.parent[self.find(p)] = self.find(q)</span><br><span class="line">        self.cnt -= <span class="number">1</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">connected</span><span class="params">(self, p, q)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.find(p) == self.find(q)</span><br></pre></td></tr></table></figure>
 <p>如果你想要更好的性能，这个模板更适合你，相应地代码稍微有一点复杂。</p>
@@ -424,10 +424,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

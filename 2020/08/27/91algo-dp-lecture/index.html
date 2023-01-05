@@ -428,7 +428,7 @@
 <p>代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (nums.length === <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span> (nums.length === <span class="number">1</span>) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> nums[<span class="number">0</span>] + sum(nums.slice(<span class="number">1</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们用递归树来直观地看一下。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluhv7h0tj30n00ex3za.jpg" alt="dynamic-programming-1"></p>
+<p><img src="https://p.ipic.vip/c83ouw.jpg" alt="dynamic-programming-1"></p>
 <p>这种做法本身没有问题，但是每次执行一个函数都有一定的开销，拿 JS 引擎执行 JS 来说，每次函数执行都会进行入栈操作，并进行预处理和执行过程，所以内存会有额外的开销，数据量大的时候很容易造成爆栈。</p>
 <blockquote>
 <p>浏览器中的 JS 引擎对于代码执行栈的长度是有限制的，超过会爆栈，抛出异常。</p>
@@ -439,7 +439,7 @@
 <p>递归代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">climbStairs</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> climbStairs(n - <span class="number">1</span>) + climbStairs(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们继续用一个递归树来直观感受以下：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluhw6pf2j30mz0b2dgk.jpg" alt="dynamic-programming-2"></p>
+<p><img src="https://p.ipic.vip/u2z5u9.jpg" alt="dynamic-programming-2"></p>
 <blockquote>
 <p>红色表示重复的计算</p>
 </blockquote>
@@ -453,7 +453,7 @@
 <p>dp[n] 和 dp(n) 对比看，这样是不是有点理解了呢? 只不过递归用调用栈枚举状态， 而动态规划使用迭代枚举状态。</p>
 </blockquote>
 <p>动态规划的查表过程如果画成图，就是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluhxylbhj30n40cbaaq.jpg" alt="dynamic-programming-3"></p>
+<p><img src="https://p.ipic.vip/08oinx.jpg" alt="dynamic-programming-3"></p>
 <blockquote>
 <p>虚线代表的是查表过程</p>
 </blockquote>
@@ -565,10 +565,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

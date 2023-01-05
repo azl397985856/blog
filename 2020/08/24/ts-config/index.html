@@ -431,7 +431,7 @@
 </ul>
 <p>实际项目有比这个更复杂。 接下来， 我们来进一步解读。 不过在讲配置项之前，我们先来看下 tsconfig.json 是如何被解析的。</p>
 <h2 id="tsconfig-是如何被解析的？"><a href="#tsconfig-是如何被解析的？" class="headerlink" title="tsconfig 是如何被解析的？"></a>tsconfig 是如何被解析的？</h2><p><strong>如果一个目录下存在一个 tsconfig.json 文件，那么意味着这个目录是 TypeScript 项目的根目录。</strong> 如果你使用 tsc 编译你的项目，并且没有显式地指定配置文件的路径，那么 tsc 则会逐级向上搜索父目录寻找 tsconfig.json ，这个过程类似 node 的模块查找机制。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gi0ppn43slj31760fe0vo.jpg" alt></p>
+<p><img src="https://p.ipic.vip/r036fa.jpg" alt></p>
 <p>如图：</p>
 <ul>
 <li>在 _uglify-js@3.7.2@uglify-js 下执行 tsc 则会找到 配置文件 1，在 _uglify-js@3.7.2@uglify-js/bin 下执行 tsc 也会找到 配置文件 1</li>
@@ -440,7 +440,7 @@
 <li>在 _uglify-js@3.7.2@uglify-js/lib/lucifer 下执行 tsc 则会找到 配置文件 3</li>
 </ul>
 <p>我在 <a href="https://lucifer.ren/blog/2020/08/04/ts-internal/">上帝视角看 TypeScript</a> 一种讲述了 TypeScript 究竟做了什么，带你从宏观的角度看了一下 TypeScript。 其中提到了 TypeScript 编译器会接受文件或者文件集合作为输入，最终转换为 JavaScript（noEmit 为 false） 和 .d.ts(declarations 为 true)。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gh5ld0kfitj30ow0csdjs.jpg" alt></p>
+<p><img src="https://p.ipic.vip/t9en33.jpg" alt></p>
 <p>这里其实还少了一个点，那就是除了接受文件或者文件集合作为输入，还会接受 tsconfig.json。tsconfig.json 的内容决定了编译的范围和行为，不同的 配置可能会得到不同的输出，或者得到不同的检查结果。</p>
 <p>当 tsc 找到了一个 tsconfig.json 文件，那么其规定的编译目录则全部会被 typescript 处理，当然也包括其依赖的文件。 如果 tsc 没有找到一个 tsconfig.json 或 tsconfig 没有有效信息，那么 tsc 会使用默认配置。 比如 tsconfig 是一个空的就没有有效信息：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
@@ -582,7 +582,7 @@
 <p>默认：-</p>
 <p>首次发布版本：2.0</p>
 <p>lib 我在 <a href="https://lucifer.ren/blog/2020/08/15/ts-type-system/">TypeScript 类型系统</a> 中讲过。 Typescript 提供了诸如 lib.d.ts 等类型库文件。随着 ES 的不断更新， JavaScript 类型和全局变量会逐渐变多。Typescript 也是采用这种 lib 的方式来解决的。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghmyjgyd7qj307o0lxgmq.jpg" alt></p>
+<p><img src="https://p.ipic.vip/riad03.jpg" alt></p>
 <p>（TypeScript 提供的部分 lib）</p>
 <h4 id="输出相关"><a href="#输出相关" class="headerlink" title="输出相关"></a>输出相关</h4><p>outDir 和 outFile 这两个配置则是告诉 TypeScript 将文件生成到哪里。</p>
 <ul>
@@ -622,7 +622,7 @@
 <li><a href="https://www.typescriptlang.org/tsconfig#jsx" target="_blank" rel="noopener">typescriptlang’s tsconfig</a></li>
 </ul>
 <h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的前端硬核文章，带你认识你不知道的前端。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfxro1x125j30oz0dw43s.jpg" alt></p>
+<p><img src="https://p.ipic.vip/1hzdh2.jpg" alt></p>
 <p>公众号【 <a href="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" target="_blank" rel="noopener">力扣加加</a>】<br>知乎专栏【 <a href="https://www.zhihu.com/people/lu-xiao-13-70" target="_blank" rel="noopener">Lucifer - 知乎</a>】</p>
 <p>点关注，不迷路！</p>
 
@@ -636,10 +636,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

@@ -394,7 +394,7 @@
 <h2 id="前缀表达式"><a href="#前缀表达式" class="headerlink" title="前缀表达式"></a>前缀表达式</h2><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>比较常见的是前缀和，这个概念其实很容易理解，即一个数组中，第 n 位存储的是数组前 n 个数字的和。</p>
 <p>对 [1,2,3,4,5,6] 来说，其前缀和可以是 pre=[1,3,6,10,15,21]。我们可以使用公式 pre[𝑖]=pre[𝑖−1]+nums[𝑖]得到每一位前缀和的值，从而通过前缀和进行相应的计算和解题。其实前缀和的概念很简单，但困难的是如何在题目中使用前缀和以及如何使用前缀和的关系来进行解题。</p>
 <p>这道题是前缀对前缀异或，我们利用了异或的性质 <code>x ^ y ^ x = y</code>。</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaqll5r048j30fm0bfglz.jpg" alt></p>
+<p><img src="https://p.ipic.vip/q7jcm5.jpg" alt></p>
 <h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><p>代码支持 Python3，Java，C++：</p>
 <p>Python Code：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># @lc app=leetcode.cn id=1218 lang=python3</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># [1218] 最长定差子序列</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># @lc code=start</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">xorQueries</span><span class="params">(self, arr: List[int], queries: List[List[int]])</span> -&gt; List[int]:</span></span><br><span class="line">		pre = [<span class="number">0</span>]</span><br><span class="line">        res = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(arr)):</span><br><span class="line">            pre.append(pre[i] ^ arr[i])</span><br><span class="line">        <span class="keyword">for</span> (L, R) <span class="keyword">in</span> queries:</span><br><span class="line">            res.append(pre[L] ^ pre[R + <span class="number">1</span>])</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="comment"># @lc code=end</span></span><br></pre></td></tr></table></figure>
@@ -409,7 +409,7 @@
 <h2 id="相关题目"><a href="#相关题目" class="headerlink" title="相关题目"></a>相关题目</h2><ul>
 <li><a href="https://leetcode-cn.com/problems/range-sum-query-immutable/description/" target="_blank" rel="noopener">303. 区域和检索 - 数组不可变</a></li>
 </ul>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1gaql7eqyg6j30u00ft0vx.jpg" alt></p>
+<p><img src="https://p.ipic.vip/nu55nd.jpg" alt></p>
 <ul>
 <li><a href="https://lucifer.ren/blog/2019/12/11/leetcode-1186/">1186.删除一次得到子数组最大和</a></li>
 </ul>
@@ -424,10 +424,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

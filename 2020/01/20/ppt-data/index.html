@@ -410,35 +410,35 @@
 <p>这里我们不考虑具体的具体思路和细节。 假设你的架构思路，方案规划，各种 fallback 已经想好了。<br>我们如何通过上面提到的让数据说话的角度来收集数据呢？ 换句话说，我们需要收集哪些数据？</p>
 <h4 id="打包时间"><a href="#打包时间" class="headerlink" title="打包时间"></a>打包时间</h4><p>对于打包时间的数据，最简单的我们计算一下总体的打包时间。</p>
 <p>最后我们只需要对比优化前后的总体打包时间差异即可。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds546t088j30ec05dq3e.jpg" alt></p>
+<p><img src="https://p.ipic.vip/xuajfw.jpg" alt></p>
 <p>这对于老板来说可能已经够了，但是这缺乏一些精确性，我们无法知道通过优化了哪个环节进行<br>减少了打包时间。 因此一种简单的改进是将打包划分为多个阶段，每个阶段分别进行统计计时 ⌛️ 。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds547ajtij30gs07q74w.jpg" alt></p>
+<p><img src="https://p.ipic.vip/t3juh3.jpg" alt></p>
 <h4 id="包的大小"><a href="#包的大小" class="headerlink" title="包的大小"></a>包的大小</h4><p>包的大小的数据其实和上面讲的打包时间思路类似。</p>
 <p>我们当然可以只统计总体包大小。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds548de0gj30cy05fmxc.jpg" alt></p>
+<p><img src="https://p.ipic.vip/gumj0r.jpg" alt></p>
 <p>但是为了获得更加灵活的定制和更加精确的范围我们可以对包进行一定的划分。<br>这个划分可以是业务纬度，也可以是纯技术纬度。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54a42mjj30f005z3zb.jpg" alt></p>
+<p><img src="https://p.ipic.vip/gc2urn.jpg" alt></p>
 <h4 id="打包命令"><a href="#打包命令" class="headerlink" title="打包命令"></a>打包命令</h4><p>这部分比较简单，我们只需要简单地统计手动操作的次数即可。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54azmgwj30f005i3yu.jpg" alt></p>
+<p><img src="https://p.ipic.vip/0aehzi.jpg" alt></p>
 <p>通过收集以上的数据，我们就可以用数据来表示我们的成果，让数据说话，关于如何<br>使用这些数据，我们稍后讨论。</p>
 <h3 id="页面加载性能优化"><a href="#页面加载性能优化" class="headerlink" title="页面加载性能优化"></a>页面加载性能优化</h3><p>假如你被分配了一个任务。让你对项目的页面加载速度进行优化。<br>你会怎么做？</p>
 <p>这个任务有点太宽泛了，更多的时候会有一些更精确的指标，<br>比如将网络状态为<code>fast 3G</code>的<code>中端机型</code>的白屏时间降低到<code>3s以内</code>。</p>
 <h4 id="timing"><a href="#timing" class="headerlink" title="timing"></a>timing</h4><p>性能优化的第一步就是测量，没有测量就没有优化。我们不能为了优化而优化， 而是看到了某些点需要优化才去优化的。 而发现这个点一个重要的方式就是要靠测量。</p>
 <p>说到测量，普遍接受的方式是，在浏览器中进行打点，将浏览器打开网页的过程看作是一个旅行。<br>那么我们每到一个地方就拍张带有时间的照片（事件），最后我们对这些照片按照时间进行排列， 然后分析哪部分是我们的瓶颈点等。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54bnum5j30i70avdhp.jpg" alt="performance-api"></p>
+<p><img src="https://p.ipic.vip/sy4zoh.jpg" alt="performance-api"></p>
 <p>有了这些 timing 我们可以很方便的计算各项性能指标。我们还可以自定义一些我们关心的指标，比如请求时间（成功和失败分开统计），较长 js 操作时间，或者比较重要的功能等。</p>
 <p>总之收集到这些数据之后，我们只需要根据我们的需求去定制一些指标即可。</p>
 <p>这样我们就很容易展示出这样的画面：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54dcbs2j30eh074gm6.jpg" alt="render-perf"></p>
+<p><img src="https://p.ipic.vip/q7xfig.jpg" alt="render-perf"></p>
 <h3 id="人效提升"><a href="#人效提升" class="headerlink" title="人效提升"></a>人效提升</h3><p>假如你是一个项目的管理者，上级分配给你一个任务，要在未来几个季度去做“研发效率提升”，<br>也就是提高“交付速度”。 你会怎么做这件事？</p>
 <h4 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h4><p>这个事情是比较主观的了，因此我们切实需要一些可以量化的东西来辅助我们。</p>
 <p>我们考虑将需求进行拆分，变成一个个任务。一个需求可能有多个任务。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54e97btj309z0960ta.jpg" alt></p>
+<p><img src="https://p.ipic.vip/rg7mx9.jpg" alt></p>
 <p>我们考虑对每一个任务进行计时，而不是需求，因为需求有太大的差异。<br>我们可以针对任务进行分类，然后我们的目标就可以变成“减少同类任务的交付时长”。</p>
 <p>但是这种粒度似乎还是有点大。我们可以采取标签的形式，对任务进行交叉分类。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54fb9nfj30ay09874x.jpg" alt></p>
+<p><img src="https://p.ipic.vip/gkll86.jpg" alt></p>
 <p>任务纬度可能还是有点太大，我们可以采取更小的粒度划分，比如模块和组件。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54gb6a0j30ly0akabf.jpg" alt></p>
+<p><img src="https://p.ipic.vip/qk0dpw.jpg" alt></p>
 <p>这样我们的统计纬度就丰富起来了，我们不仅可以总体进行统计分析，我们还可以根据 tag 和 tag 的组合进行汇总。</p>
 <p>比如一个典型的统计结果大概是：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- task1 (tagA)</span><br><span class="line"> - module1 (tagA)</span><br><span class="line">   - component1 (tagB)</span><br><span class="line">   - component2 (tagA)</span><br><span class="line"> - module2 (tagB)</span><br><span class="line"> - module3 (tagB)</span><br><span class="line">- task2 (tagA)</span><br><span class="line">- task3 (tagC)</span><br></pre></td></tr></table></figure>
@@ -456,18 +456,18 @@
 <blockquote>
 <p>这个网站能做的图表种类比较少。</p>
 </blockquote>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54h7bnqj311u0fotbt.jpg" alt></p>
+<p><img src="https://p.ipic.vip/nj2w37.jpg" alt></p>
 <p>当然作为一名前端我们也可以自己写代码去更灵活地展示我们的数据，比如<a href="https://d3js.org/" target="_blank" rel="noopener">D3</a><br>或者百度的<a href="https://echarts.baidu.com/" target="_blank" rel="noopener">echarts</a></p>
 <blockquote>
 <p>任何类型的图表都可以做，只有你想不到，没有它做不到。</p>
 </blockquote>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54j1tkej30zf0fx1kx.jpg" alt></p>
+<p><img src="https://p.ipic.vip/kf13nv.jpg" alt></p>
 <p>相对折中一点，我们可以选择支持代码定制的一些产品，在特殊情况我们可以自定义。</p>
 <h2 id="累死累活干不过做-PPT-的"><a href="#累死累活干不过做-PPT-的" class="headerlink" title="累死累活干不过做 PPT 的"></a>累死累活干不过做 PPT 的</h2><p>有了这些数据图表，是时候写一份 PPT 来秀一下了。</p>
 <p>一种方式是使用你电脑的办公软件或者一些在线的幻灯片制作工具做，<br>比如<a href="https://slides.com/" target="_blank" rel="noopener">slides</a> 。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54k60j2j313b0iqwip.jpg" alt></p>
+<p><img src="https://p.ipic.vip/ejk9cz.jpg" alt></p>
 <p>另一种方式通过写代码的方式实现，作为程序员我推荐使用第二种。<br>这里推荐一款<code>nodejs cli 工具</code> <a href="https://github.com/ksky521/nodeppt" target="_blank" rel="noopener">nodeppt</a>,<br>还有另外一个<code>JS 框架</code> <a href="https://github.com/hakimel/reveal.js" target="_blank" rel="noopener">reveal.js</a> 。<br>上面提到的 slides 背后的原理就是它。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54lsifcj312l0ih7wh.jpg" alt></p>
+<p><img src="https://p.ipic.vip/cx6clv.jpg" alt></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这篇文章我主要讲述了如何量化我们的工作，并将我们的工作成果展示出来。<br>从而摆脱“干了很多事情，却说不出来，甚至功劳被人无情拿走的尴尬局面”。</p>
 <p>首先我们将了如何收集数据，收集数据的一些技巧，这里通过几个实际工作的例子，分别是“打包优化”，“性能优化”，“人效提升”，<br>“用户留存” ，来帮助大家理解这个<br>过程，掌握这个技巧。</p>
 <p>有了数据之后，我们需要通过一些手段将其数据展示出来，给人直观的感受，最好有视觉冲击感。<br>这里我推荐了几个工具和平台，大家可以根据自己的情况选择。</p>
@@ -478,7 +478,7 @@
 <p>之后我的文章同步到微信公众号 脑洞前端 ，您可以关注获取最新的文章，或者和我进行交流。</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds4sh51a6j30km0komyv.jpg" width="50%" height="50%" alt="gongzhonghao" align="center"></p>
 <h2 id="交流群"><a href="#交流群" class="headerlink" title="交流群"></a>交流群</h2><p>现在还是初级阶段，需要大家的意见和反馈，为了减少沟通成本，我组建了交流群。大家可以扫码进入</p>
-<h3 id="QQ-群"><a href="#QQ-群" class="headerlink" title="QQ 群"></a>QQ 群</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds54ma44fj306a082q36.jpg" alt="qq-group-chat"></p>
+<h3 id="QQ-群"><a href="#QQ-群" class="headerlink" title="QQ 群"></a>QQ 群</h3><p><img src="https://p.ipic.vip/fa8iav.jpg" alt="qq-group-chat"></p>
 <h3 id="微信群"><a href="#微信群" class="headerlink" title="微信群"></a>微信群</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds5735kizj30e80e80tb.jpg" width="50%" height="50%" alt="JavaScript" align="center"></p>
 <p>(由于微信的限制，100 个人以上只能邀请加入， 你可以添加我的机器人回复“大前端”拉你进群)</p>
 
@@ -492,10 +492,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

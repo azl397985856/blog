@@ -422,7 +422,7 @@
 </li>
 </ul>
 <p>而神奇的跳表能够在 $O(logN)$ 时间内完成增加、删除、搜索操作。<br>下面我们分别分析增加、删除和搜索这 3 个三个基本操作。</p>
-<h4 id="跳表的查找"><a href="#跳表的查找" class="headerlink" title="跳表的查找"></a>跳表的查找</h4><p>现在我们通过一个简单的例子来描述跳表是如何实现的。假设我们有一个有序链表如下图：<br><img src="https://tva1.sinaimg.cn/large/00831rSTly1gdl834i5t2j33340ecdil.jpg" alt><br>原始方法中，查找的时间复杂度为 $O(N)$。那么如何来提高链表的查询效率呢？<br>如下图所示，我们可以从原始链表中每两个元素抽出来一个元素，加上一级索引，并且一级索引指向原始链表：<br><img src="https://tva1.sinaimg.cn/large/00831rSTly1gdl81x0d7vj33340rbwjx.jpg" alt><br>如果我们想要查找 9 ，在原始链表中查找路径是 <code>1-&gt;3-&gt;4-&gt;7-&gt;9</code>, 而在添加了一级索引的查找路径是 <code>1-&gt;4-&gt;9</code>，很明显，查找效率提升了。<br>按照这样的思路，我们在第 1 级索引上再加第 2 级索引，再加第 3 级索引，以此类推，这样在数据量非常大的时候，使得我们查找数据的时间复杂度为 $O(logN)$。这就是跳表的思想，也就是我们通常所说的“空间换时间”。</p>
+<h4 id="跳表的查找"><a href="#跳表的查找" class="headerlink" title="跳表的查找"></a>跳表的查找</h4><p>现在我们通过一个简单的例子来描述跳表是如何实现的。假设我们有一个有序链表如下图：<br><img src="https://p.ipic.vip/x47hy5.jpg" alt><br>原始方法中，查找的时间复杂度为 $O(N)$。那么如何来提高链表的查询效率呢？<br>如下图所示，我们可以从原始链表中每两个元素抽出来一个元素，加上一级索引，并且一级索引指向原始链表：<br><img src="https://p.ipic.vip/rrg4kx.jpg" alt><br>如果我们想要查找 9 ，在原始链表中查找路径是 <code>1-&gt;3-&gt;4-&gt;7-&gt;9</code>, 而在添加了一级索引的查找路径是 <code>1-&gt;4-&gt;9</code>，很明显，查找效率提升了。<br>按照这样的思路，我们在第 1 级索引上再加第 2 级索引，再加第 3 级索引，以此类推，这样在数据量非常大的时候，使得我们查找数据的时间复杂度为 $O(logN)$。这就是跳表的思想，也就是我们通常所说的“空间换时间”。</p>
 <h4 id="跳表的插入"><a href="#跳表的插入" class="headerlink" title="跳表的插入"></a>跳表的插入</h4><p>跳表插入数据看起来很简单，我们需要保持数据有序，因此，第一步我们需要像查找元素一样，找到新元素应该插入的位置，然后再插入。</p>
 <p>但是这样会存在一个问题，如果我们一直往原始链表中插入数据，但是不更新索引，那么会导致两个索引结点之间的数据非常多，在极端情况下，跳表会退化成单链表，从而导致查找效率由 $O(logN)$ 退化为 $O(N)$。因此，我们需要在插入数据的同时，增加相应的索引或者重建索引。</p>
 <ol>
@@ -446,7 +446,7 @@
 <h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><h4 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h4><p>跳表通过建立索引提高查找的效率，是典型的“空间换时间”的思想，那么空间复杂度到底是多少呢？<br>我们假设原始链表有 $N$ 个元素，一级索引有 $\frac{N}{2}$，二级索引有 $\frac{N}{4}$，k 级索引有 $\frac{N}{2^k}$ 个元素，而最高级索引一般有 $2$ 个元素。所以，索引结点的总和是 $\frac{N}{2} + \frac{N}{2^2} + \frac{N}{2^3}+…+ 2 \approx N-2$ ，因此可以得出空间复杂度是 $O(N)$, $N$ 是原始链表的长度。</p>
 <p>上面的假设前提是每两个结点抽出一个结点到上层索引。那么如果我们每三个结点抽出一个结点到上层索引，那么索引总和就是 $\frac{N}{3} + \frac{N}{3^2} + \frac{N}{3^3} + 9 + 3 + 1 \approx \frac{N}{2}$, 额外空间减少了一半。因此我们可以通过减少索引的数量来减少空间复杂度，但是相应的会带来查找效率一定的下降。而具体这个阈值该如何选择，则要看具体的应用场景。</p>
 <p>另外需要注意的是，在实际的应用当中，索引结点往往不需要存储完整的对象，只需要存储对象的 key 和对应的指针即可。因此当对象比索引结点占用空间大很多时，索引结点所占的额外空间（相对原始数据来讲）又可以忽略不计了。</p>
-<h4 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><h5 id="查找的时间复杂度"><a href="#查找的时间复杂度" class="headerlink" title="查找的时间复杂度"></a>查找的时间复杂度</h5><p>来看看时间复杂度 $O(logN)$ 是如何推导出来的，首先我们看下图：<br><img src="https://tva1.sinaimg.cn/large/00831rSTly1gdl82ermgfj31rr0rs77h.jpg" alt></p>
+<h4 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><h5 id="查找的时间复杂度"><a href="#查找的时间复杂度" class="headerlink" title="查找的时间复杂度"></a>查找的时间复杂度</h5><p>来看看时间复杂度 $O(logN)$ 是如何推导出来的，首先我们看下图：<br><img src="https://p.ipic.vip/fhgi1j.jpg" alt></p>
 <p>如上图所示，此处我们假设每两个结点会抽出一个结点来作为上一级索引的结点。也就是说，原始链表有 $N$ 个元素，一级索引有 $\frac{N}{2}$，二级索引有 $\frac{N}{4}$，k 级索引有 $\frac{N}{2^k}$ 个元素，而最高级索引一般有 $2$ 个元素。 也就是说：最高级索引 $x$ 满足 $2 = N/2^x$, 由此公式可以得出 $x = \log_2(N)-1$ , 加上原始数据这一层， 跳表的总高度为 $h = \log_2(N)$。<br>那么，我们在查找过程中每一层索引最多遍历几个元素呢？从图中我们可以看出来每一层最多需要遍历 3 个结点。<br>因此，由公式 <code>时间复杂度 = 索引高度*每层索引遍历元素个数</code>， 可以得出跳表中查找一个元素的时间复杂度为 $O(3 \times \log(N))$，省略常数即为 $O(\log(N))$。</p>
 <h5 id="插入的时间复杂度"><a href="#插入的时间复杂度" class="headerlink" title="插入的时间复杂度"></a>插入的时间复杂度</h5><p>跳表的插入分为两部分操作：</p>
 <ol>
@@ -463,7 +463,7 @@
 </ol>
 <h1 id="配套网站"><a href="#配套网站" class="headerlink" title="配套网站"></a>配套网站</h1><p>官网开辟了一个区域，大家可以直接访问查看本书配套的配套代码，包括 JavaScript，Java，Python 和 C++。 也欢迎大家留言给我们自己想要支持的语言，我们会郑重考虑大家的意见。</p>
 <p>效果大概是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gdl80ojj2rj31tw0u00x1.jpg" alt></p>
+<p><img src="https://p.ipic.vip/jy85b0.jpg" alt></p>
 <p><a href="https://union-click.jd.com/jdc?e=&amp;p=JF8BANYJK1olXQcDUV9VDUMeBF8IGloXVAIGU1pdCUIVCl9MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFksWAm0BH18SWQYDXVxUFxJSXzI4UixRNl1GVjc-ci1CQA5RUl5sHVhZAlJROEonA24JG1MQWgMEUW5tCEwnQgEMGV4WVTYDZF5aCkMWA2kBH1sUVQ8yU15UOBBCbWgIHghBDgVQAw4JXx4nM18LK2slXTYBZBwzDUIWBWpdSVNFVFJQUQ1fDkMWAToKG1xCX1QEB1sJW0wnAW4JH1Il" target="_blank" rel="noopener">实体版购书链接</a></p>
 <p><a href="https://union-click.jd.com/jdc?e=&amp;p=JF8BAL0JK1olXDYAVVhfD04UAl9MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFkkWBW0PHlgUQl9HCANtcS0SdTFvWVt1X3BkVV4Kc0JxYRtPe1cZbQcyVF9cCEMSBGoOHmslXQEyHzBcOEonA2gKE1oVWwEKXV5cAXsQA2Y4QA57WgYHBwoOCxlAUztfTmslbQUyZG5dOEgnQQFaSQ5FWQYFB1cODhgSVDpaS1hFDwQLUlwJAU5DAWcJHWsXXAcGXW4" target="_blank" rel="noopener">电子版购书链接</a></p>
 
@@ -477,10 +477,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-12-11T15:00:05+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年12月11日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

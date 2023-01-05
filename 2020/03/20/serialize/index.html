@@ -392,7 +392,7 @@
 <p>可见，序列化和反序列化在计算机科学中的应用还是非常广泛的。就拿 LeetCode 平台来说，其允许用户输入形如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1,2,3,null,null,4,5]</span><br></pre></td></tr></table></figure>
 <p>这样的数据结构来描述一颗树：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gh2dqqnyzwj30ba0baglw.jpg" alt></p>
+<p><img src="https://p.ipic.vip/vfdiwu.jpg" alt></p>
 <p>([1,2,3,null,null,4,5] 对应的二叉树)</p>
 <p>其实序列化和反序列化只是一个概念，不是一种具体的算法，而是很多的算法。并且针对不同的数据结构，算法也会不一样。本文主要讲述的是二叉树的序列化和反序列化。看完本文之后，你就可以放心大胆地去 AC 以下两道题：</p>
 <ul>
@@ -418,7 +418,7 @@
 <blockquote>
 <p>选择这种记法，而不是 DFS 的记法的原因是看起来比较直观。并不代表我们这里是要讲 BFS 的序列化和反序列化。</p>
 </blockquote>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gh2h5bhjryj30b40am74k.jpg" alt></p>
+<p><img src="https://p.ipic.vip/5byasd.jpg" alt></p>
 <p>序列化的代码非常简单， 我们只需要在普通的遍历基础上，增加对空节点的输出即可（普通的遍历是不处理空节点的）。</p>
 <p>比如我们都树进行一次前序遍历的同时增加空节点的处理。选择前序遍历的原因是容易知道根节点的位置，并且代码好写，不信你可以试试。</p>
 <p>因此序列化就仅仅是普通的 DFS 而已，直接给大家看看代码。</p>
@@ -428,7 +428,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Codec</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">serialize_dfs</span><span class="params">(TreeNode root, String str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            str += <span class="string">"None,"</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            str += str.valueOf(root.val) + <span class="string">","</span>;</span><br><span class="line">            str = serialize_dfs(root.left, str);</span><br><span class="line">            str = serialize_dfs(root.right, str);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">serialize</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> serialize_dfs(root, <span class="string">""</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>[1,2,3,null,null,4,5]</code> 会被处理为<code>1,2,#,#,3,4,#,#,5,#,#</code></p>
 <p>我们先看一个短视频：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gh2z5y87n0g30bo05vx6u.gif" alt></p>
+<p><img src="https://p.ipic.vip/b7f2t6.gif" alt></p>
 <p>（动画来自力扣）</p>
 <h3 id="反序列化"><a href="#反序列化" class="headerlink" title="反序列化"></a>反序列化</h3><p>反序列化的第一步就是将其展开。以上面的例子来说，则会变成数组：<code>[1,2,#,#,3,4,#,#,5,#,#]</code>，然后我们同样执行一次前序遍历，每次处理一个元素，重建即可。由于我们采用的前序遍历，因此第一个是根元素，下一个是其左子节点，下下一个是其右子节点。</p>
 <p>Python 代码：</p>
@@ -446,9 +446,9 @@
 <p>Python 代码：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Codec</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">serialize</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        ans = <span class="string">''</span></span><br><span class="line">        queue = [root]</span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            node = queue.pop(<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">if</span> node:</span><br><span class="line">                ans += str(node.val) + <span class="string">','</span></span><br><span class="line">                queue.append(node.left)</span><br><span class="line">                queue.append(node.right)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ans += <span class="string">'#,'</span></span><br><span class="line">        <span class="keyword">return</span> ans[:<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
 <h3 id="反序列化-1"><a href="#反序列化-1" class="headerlink" title="反序列化"></a>反序列化</h3><p>如图有这样一棵树：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gh2x3gj9n0j30j00gewfx.jpg" alt></p>
+<p><img src="https://p.ipic.vip/rttyr2.jpg" alt></p>
 <p>那么其层次遍历为 [1,2,3,#,#, 4, 5]。我们根据此层次遍历的结果来看下如何还原二叉树，如下是我画的一个示意图：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gh2x55lh7qj31780t0gq8.jpg" alt></p>
+<p><img src="https://p.ipic.vip/hv6ogr.jpg" alt></p>
 <p>容易看出：</p>
 <ul>
 <li>level x 的节点一定指向 level x + 1 的节点，如何找到 level + 1 呢？ 这很容易通过层次遍历来做到。</li>
@@ -466,7 +466,7 @@
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>除了这种方法还有很多方案， 比如括号表示法。 关于这个可以参考力扣<a href="https://leetcode-cn.com/problems/construct-string-from-binary-tree/" target="_blank" rel="noopener">606. 根据二叉树创建字符串</a>，这里就不再赘述了。</p>
 <p>本文从 BFS 和 DFS 角度来思考如何序列化和反序列化一棵树。 如果用 BFS 来序列化，那么相应地也需要 BFS 来反序列化。如果用 DFS 来序列化，那么就需要用 DFS 来反序列化。</p>
 <p>我们从马后炮的角度来说，实际上对于序列化来说，BFS 和 DFS 都比较常规。对于反序列化，大家可以像我这样举个例子，画一个图。可以先在纸上，电脑上，如果你熟悉了之后，也可以画在脑子里。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gh30bapydej30rq0tcad5.jpg" alt></p>
+<p><img src="https://p.ipic.vip/ts0hsw.jpg" alt></p>
 <p>（Like This）</p>
 <p>更多题解可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经 30K star 啦。</p>
 <p>关注公众号力扣加加，努力用清晰直白的语言还原解题思路，并且有大量图解，手把手教你识别套路，高效刷题。</p>
@@ -481,10 +481,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-24T17:27:51+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年5月24日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

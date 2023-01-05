@@ -402,18 +402,18 @@
 <p>​<a id="more"></a></p>
 <h2 id="什么是一键部署？"><a href="#什么是一键部署？" class="headerlink" title="什么是一键部署？"></a>什么是一键部署？</h2><p>今天给大家介绍的就是一键部署。那什么是一键部署呢？顾名思义，就是有一个按钮，点击一下就能完成部署工作。</p>
 <p>如下是一个拥有一键部署按钮的项目：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gnmaoyktqej311r0u0jxo.jpg" alt></p>
+<p><img src="https://p.ipic.vip/ghc951.jpg" alt></p>
 <p>点击之后进入如下页面，你可以对一些默认配置进行修改（也可以直接使用默认配置）:</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gnmapsm8k8j30u00vftdf.jpg" alt></p>
+<p><img src="https://p.ipic.vip/kfngw4.jpg" alt></p>
 <p>修改后点击<strong>Deploy app</strong> 即可。部署成功之后就可以通过类似如下的地址访问啦~</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gnmaqkh8hfj31810u0ag0.jpg" alt></p>
+<p><img src="https://p.ipic.vip/0rmam1.jpg" alt></p>
 <blockquote>
 <p>图中演示地址是：<a href="https://leetcode-cheat.herokuapp.com/" target="_blank" rel="noopener">https://leetcode-cheat.herokuapp.com/</a></p>
 </blockquote>
 <p>大家可以直接进我的仓库 <a href="https://github.com/leetcode-pp/leetcode-cheat，点击部署按钮试试哦。" target="_blank" rel="noopener">https://github.com/leetcode-pp/leetcode-cheat，点击部署按钮试试哦。</a></p>
 <h2 id="它是如何实现的呢？"><a href="#它是如何实现的呢？" class="headerlink" title="它是如何实现的呢？"></a>它是如何实现的呢？</h2><p>我是一个喜欢探究事物原理的人，当然对它们的原理了如指掌才行。其实它的原理很容易，我们从头开始说。</p>
 <h3 id="1-如何在-Github-中显示发布按钮。"><a href="#1-如何在-Github-中显示发布按钮。" class="headerlink" title="1. 如何在 Github 中显示发布按钮。"></a>1. 如何在 Github 中显示发布按钮。</h3><p>上面的部署按钮就是如下的一个 Markdown 内容渲染的:</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">![Deploy</span>](<span class="link">https://www.herokucdn.com/deploy/button.svg</span>)](<span class="link">https://heroku.com/deploy</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">![Deploy</span>](<span class="link">https://p.ipic.vip/hefqvb.jpg</span>)](<span class="link">https://p.ipic.vip/v0aqts.jpg</span>)</span><br></pre></td></tr></table></figure>
 <p>上面内容会被渲染成如下的 DOM：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://heroku.com/deploy"</span> <span class="attr">rel</span>=<span class="string">"nofollow"</span></span></span><br><span class="line"><span class="tag">  &gt;</span><span class="tag">&lt;<span class="name">img</span></span></span><br><span class="line"><span class="tag">    <span class="attr">src</span>=<span class="string">"https://camo.githubusercontent.com/6979881d5a96b7b18a057083bb8aeb87ba35fc279452e29034c1e1c49ade0636/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e737667"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">alt</span>=<span class="string">"Deploy"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">data-canonical-src</span>=<span class="string">"https://www.herokucdn.com/deploy/button.svg"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">style</span>=<span class="string">"max-width:100%;"</span></span></span><br><span class="line"><span class="tag">/&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>也就是说其实就是一个被 a 标签包裹的 svg 图片，点击之后会完成 url 跳转。</p>
@@ -428,7 +428,7 @@
 <p>比如我看到别人的博客很漂亮。如果 ta 提供了一键部署，那么就可以直接部署到自己的云服务器，生成自己的 url。关联自己的 git 之后，推送还能自动部署（CD）。而且这一切都可以是免费的，至少我现在用的是免费的。 而如果 ta 没有提供一键部署，就需要你自己手动完成了。如果你对这些熟悉还好，无非就是多花点时间。而如果你是技术小白，我可能仅仅是想部署一下，用自己的域名访问之类，没有一键部署就很不友好啦。</p>
 <h2 id="相关技术"><a href="#相关技术" class="headerlink" title="相关技术"></a>相关技术</h2><p>gitpod 是我一直在用的一个工具，它可以帮助我直接在云端编辑一些内容。或者有一些环境问题，需要虚拟主机的，也可以用它来解决。 它不仅仅提供了在线 IDE 的所有功能，还集成了 CI 和 CD，用起来也是非常方便。</p>
 <p>同样地，你也可以在你的仓库中增加<strong>在 Gitpod</strong> 一键打开的功能。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gnmbmu2ijhj319m0ioq5x.jpg" alt></p>
+<p><img src="https://p.ipic.vip/ulvmbh.jpg" alt></p>
 <h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><p>一些开源项目你不知道怎么贡献。其实可以另辟蹊径，比如给他们贡献一个 logo，再比如贡献<strong>一键部署</strong>功能。这或许是你迈向开源事业的第一步。</p>
 <h2 id="更多资料"><a href="#更多资料" class="headerlink" title="更多资料"></a>更多资料</h2><ul>
 <li><a href="https://devcenter.heroku.com/articles/heroku-button" title="heroku-button" target="_blank" rel="noopener">heroku-button</a></li>
@@ -445,10 +445,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:49+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 

@@ -389,12 +389,12 @@
 <h2 id="题目地址-101-对称二叉树"><a href="#题目地址-101-对称二叉树" class="headerlink" title="题目地址(101. 对称二叉树)"></a>题目地址(101. 对称二叉树)</h2><p><a href="https://leetcode-cn.com/problems/symmetric-tree/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/symmetric-tree/</a></p>
 <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">给定一个二叉树，检查它是否是镜像对称的。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">例如，二叉树 [1,2,2,3,4,4,3] 是对称的。</span><br><span class="line"></span><br><span class="line">    1</span><br><span class="line">   / \</span><br><span class="line">  2   2</span><br><span class="line"> / \ / \</span><br><span class="line">3  4 4  3</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:</span><br><span class="line"></span><br><span class="line">    1</span><br><span class="line">   / \</span><br><span class="line">  2   2</span><br><span class="line">   \   \</span><br><span class="line">   3    3</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">进阶：</span><br><span class="line"></span><br><span class="line">你可以运用递归和迭代两种方法解决这个问题吗？</span><br></pre></td></tr></table></figure>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>看到这题的时候，我的第一直觉是 DFS。然后我就想:<code>如果左子树是镜像，并且右子树也是镜像，是不是就说明整体是镜像？</code>。经过几秒的思考， 这显然是不对的，不符合题意。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfbmeoo45bj31200iuabh.jpg" alt></p>
+<p><img src="https://p.ipic.vip/03ijfe.jpg" alt></p>
 <p>很明显其中左子树中的节点会和右子树中的节点进行比较，我把比较的元素进行了颜色区分，方便大家看。</p>
 <p>这里我的想法是：<code>遍历每一个节点的时候，我都可以通过某种方法知道它对应的对称节点是谁。这样的话我直接比较两者是否一致就行了。</code></p>
 <p>最初我的想法是两次遍历，第一次遍历的同时将遍历结果存储到哈希表中，然后第二次遍历去哈希表取。</p>
 <p>这种方法可行，但是需要 N 的空间（N 为节点总数）。我想到如果两者可以同时进行遍历，是不是就省去了哈希表的开销。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfbso8u6myj31a30u0tf5.jpg" alt></p>
+<p><img src="https://p.ipic.vip/ljsfjn.jpg" alt></p>
 <p>如果不明白的话，我举个简单例子：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">给定一个数组，检查它是否是镜像对称的。例如，数组 [1,2,2,3,2,2,1] 是对称的。</span><br></pre></td></tr></table></figure>
 <p>如果用哈希表的话大概是：</p>
@@ -412,7 +412,7 @@
 </ul>
 <p>更多题解可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经 30K star 啦。</p>
 <p>大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的 LeetCode 题解</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfaq00p8stj30x20iw7b0.jpg" alt></p>
+<p><img src="https://p.ipic.vip/lwyljw.jpg" alt></p>
 
       </div>
       
@@ -424,10 +424,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-09T18:48:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:50+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2021年3月9日</p>
+    <p>更新于 2023年1月5日</p>
   </a>
 </div>
 
