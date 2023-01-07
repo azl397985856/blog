@@ -67,11 +67,11 @@ LeetCode 按难易程度分成了三个级别，分别是 Easy、Medium 和 Hard
 
 你可以对题目进行筛选和排序。
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8ueyinaxij30oy0c6wet.jpg)
+![](https://p.ipic.vip/hv2boo.jpg)
 
 如果我们只想要找某一类型的题，可以通过 Tags 或 Company 来筛选。
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8uez7f9tsj30aj0pggm3.jpg)
+![](https://p.ipic.vip/9sg89l.jpg)
 
 另外我们在做某一题时，觉得还想再做一个类似的，可以点击题目描述下方 Show Similar Problems 或 Tags 来找到相似的问题。
 
@@ -83,7 +83,7 @@ LeetCode 按难易程度分成了三个级别，分别是 Easy、Medium 和 Hard
 
 每道题旁边的 My Submissions 可以找到自己的对于该题的提交情况，这里可以看到自己过去所有的提交，点 Accepted 或 Wrong Answer 就可以查看自己过去提交的代码情况，包括代码是什么，跑的时间以及时间分布图等。
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8uf5vjtkuj30yj0hfjrm.jpg)
+![](https://p.ipic.vip/esv7xh.jpg)
 
 以上就是 LeetCode 的主要功能，希望通过这一节内容能让你对 LeetCode 网站有所了解，从而更快地进行刷题。
 
@@ -259,7 +259,7 @@ def factorrail(n):
 
 下面给出上面列举的几种常见的时间复杂度的趋势图对比，大家直观感受一下。
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8o458x4cvj311e0u00tk.jpg)
+![](https://p.ipic.vip/kretsg.jpg)
 （各种复杂度的渐进趋势对比）
 
 从算法可以分析出时间复杂度，相反题目的时间复杂度要求，我们甚至可以猜测出可能用到的算法，比如算法要求 logn，那么就有可能是二分法。

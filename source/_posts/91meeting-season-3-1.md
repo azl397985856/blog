@@ -69,7 +69,7 @@ categories:
 
 ### 算法面试题（非编程题）epoll
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1go4j91hes0j21g00m4tdq.jpg)
+![](https://p.ipic.vip/b8at1z.jpg)
 
 以一个具体的例子： 《epoll 是如何优化我们的程序的？》 为例，讲解算法面试中**问答题**。如果你不想八股文式面试， 那么就需要大家对基本的数据结构与算法有很深的理解。而这恰好是基础篇的内容。
 
@@ -119,4 +119,4 @@ categories:
 
 以上就是本文的全部内容了， 大家对此有何看法，欢迎给我留言，我有时间都会一一查看回答。我是 lucifer，维护西湖区最好的算法题解，Github 超 40K star 。大家也可以关注我的公众号《力扣加加》带你啃下算法这块硬骨头。
 
-![力扣加加公众号二维码](https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg)
+![力扣加加公众号二维码](https://p.ipic.vip/06i8hz.jpg)

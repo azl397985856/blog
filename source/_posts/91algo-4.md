@@ -30,7 +30,7 @@ categories:
 
 群里每天都会有题目，推荐大家讨论当天的题目。我们会帮助大家规划学习路线，群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。91 天见证不一样的自己。
 
-![logo](https://tva1.sinaimg.cn/large/007S8ZIlly1gf2b2zkclnj30xm0b6aat.jpg)
+![logo](https://p.ipic.vip/wcctn0.jpg)
 
 ## 活动时间
 
@@ -55,9 +55,9 @@ categories:
 
 本期部分内容独立于 Github 仓库，直接在我们的官网上进行，体验更棒哦~
 
-![部分目录](https://tva1.sinaimg.cn/large/008i3skNly1gq3z9wuse4j31hf0u0aec.jpg)
+![部分目录](https://p.ipic.vip/hjg5dd.jpg)
 
-![基础篇讲义](https://tva1.sinaimg.cn/large/008i3skNly1gq3zanwrcfj320m0rmqjg.jpg)
+![基础篇讲义](https://p.ipic.vip/5f5q04.jpg)
 
 ### 自习篇
 
@@ -116,7 +116,7 @@ categories:
 
 本期有共五位讲师，每个专题由一位具体的讲师负责，大家有不会的问题可以进行提问。如果讲师来不及回答，大家可以在仓库中提 issue。
 
-![讲师](https://tva1.sinaimg.cn/large/008i3skNly1gq3z98q7pcj32460oqq7f.jpg)
+![讲师](https://p.ipic.vip/to1kto.jpg)
 
 > 关于每一个专题的负责讲义，我们会在 91 官网中的“讲师”模块给出，如上图所示。
 
@@ -131,7 +131,7 @@ categories:
 
 扫码进群（如果提示不能进入，说明已经超过 100 名了，需要找 lucifer 手动拉）。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gq52lrcmrrj30u01r4acx.jpg)
+![](https://p.ipic.vip/vb6w61.jpg)
 
 具体收费标准：
 
@@ -165,11 +165,11 @@ categories:
 
 海报：
 
-![海报](https://tva1.sinaimg.cn/large/008i3skNly1gq4h9vbsm0j30o8174qrb.jpg)
+![海报](https://p.ipic.vip/694mxp.jpg)
 
 朋友圈分享海报示例：
 
-![分享示例](https://tva1.sinaimg.cn/large/008eGmZEly1gmv4gaxao7j30u01u0418.jpg)
+![分享示例](https://p.ipic.vip/gowoku.jpg)
 
 ## FAQ
 

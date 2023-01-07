@@ -60,7 +60,7 @@ nums2 = [3, 4]
 
 如下图：
 
-![中位数概念](https://tva1.sinaimg.cn/large/007S8ZIlly1ghltyup7ixj310w0eote4.jpg)
+![中位数概念](https://p.ipic.vip/ylg5x5.jpg)
 
 知道了概念，我们先来看下如何使用暴力法来解决。
 
@@ -80,7 +80,7 @@ nums2 = [3, 4]
 > 整个过程类似归并排序的合并过程
 
 Merge 的过程如下图。
-![暴力法图解](https://tva1.sinaimg.cn/large/007S8ZIlly1ghltywjka3j30sm13w4ba.jpg)
+![暴力法图解](https://p.ipic.vip/5ir1qf.jpg)
 
 时间复杂度和空间复杂度都是`O(m+n)`, 不符合题中给出`O(log(m+n))`时间复杂度的要求。
 
@@ -207,15 +207,15 @@ else:
 比如对数组 A 的做 partition 的位置是区间`[0,m]`
 
 如图：
-![详细算法图解](https://tva1.sinaimg.cn/large/007S8ZIlly1ghltyypek2j30o6166qmc.jpg)
+![详细算法图解](https://p.ipic.vip/402kot.jpg)
 
 下图给出几种不同情况的例子（注意但左边或者右边没有元素的时候，左边用`INF_MIN`，右边用`INF_MAX`表示左右的元素：
 
-![实例解析](https://tva1.sinaimg.cn/large/007S8ZIlly1ghltyzwjqej31bo0rq1it.jpg)
+![实例解析](https://p.ipic.vip/u89c7i.jpg)
 
 下图给出具体做的 partition 解题的例子步骤，
 
-![更详细的实例解析](https://tva1.sinaimg.cn/large/007S8ZIlly1ghltz2832yj30u011g7ru.jpg)
+![更详细的实例解析](https://p.ipic.vip/tf80vm.jpg)
 
 这个算法关键在于：
 
@@ -389,4 +389,4 @@ class Solution:
 大家对此有何看法，欢迎给我留言，我有时间都会一一查看回答。更多算法套路可以访问我的 LeetCode 题解仓库：https://github.com/azl397985856/leetcode 。 目前已经 40K star 啦。
 大家也可以关注我的公众号《力扣加加》带你啃下算法这块硬骨头。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg)
+![](https://p.ipic.vip/3my6nw.jpg)

@@ -27,7 +27,7 @@ categories:
 
 ## 一. Chromium 浏览器架构
 
-![Chromium浏览器架构](http://m.qpic.cn/psc?/V50vddMl0YvJ9c0IGUY913J7mG1rVs8G/bqQfVz5yrrGYSXMvKr.cqTMrUK10g4vRaHHV49*HvW0FoJTS4c2bz3tSzUqnlZb.vVmuaQiNqi3bk24Ey1ONmRFcv3mSLTbCQZ07nedhD9M!/b&bo=qAMaBAAAAAADB5c!&rf=viewer_4)
+![Chromium浏览器架构](https://p.ipic.vip/e71bqx.png)
 
 （Chromium 浏览器架构）
 
@@ -65,7 +65,7 @@ HTTP 是超文本传输协议，超文本的含义即包含了文本、图片、
 
 我们都知道 JS 阻塞 DOM 解析，反之亦然。然而对于阻塞，Webkit 不会傻傻等着浪费时间，它在内部做了优化：启动另一个线程，去遍历后续的 HTML 文档，收集需要的资源 URL，并发下载资源。最常见的比如`<script async>`和`<script defer>`，其 JS 资源下载和 DOM 解析是并行的，JS 下载并不会阻塞 DOM 解析。这就是浏览器的多线程架构。
 
-![JS async defer](http://a1.qpic.cn/psc?/V50vddMl0YvJ9c0IGUY913J7mG1rVs8G/bqQfVz5yrrGYSXMvKr.cqQYq655fTdqtV.7hiPLQGNK3lEmq2f9GXjc.RrNkpc2KrnPa34sYOqInvolRFQDCNcqbuGHTk4D5eqi6VWgzlNs!/c&ek=1&kp=1&pt=0&bo=EwMgAwAAAAADFwE!&tl=1&vuin=741183972&tm=1597122000&sce=60-2-2&rf=0-0)
+![JS async defer](https://p.ipic.vip/0yg399.png)
 
 总结一下，多线程的好处就是，高响应度，UI 线程不会被耗时操作阻塞而完全阻塞浏览器进程。
 
@@ -123,11 +123,11 @@ RenderLayer 在浏览器控制台中 Layers 功能卡中可以看到当前网页
 
 为了方便起见，我们以 PC 端谷歌浏览器为例子，打开任务管理器，查看当前浏览器中打开的网页及其进程。
 
-![打开浏览器任务管理器](http://a1.qpic.cn/psc?/V50vddMl0YvJ9c0IGUY913J7mG1rVs8G/bqQfVz5yrrGYSXMvKr.cqbiyEougc0AL0QEl3PZdg8VoMc3IvtAbJcZAPdlr61RytWnxdKgGug9CJ1x5zgjBdRtUb1h3Ve5FOlicgiswBqg!/c&ek=1&kp=1&pt=0&bo=rQU4BAAAAAADN4Y!&tl=1&vuin=741183972&tm=1597118400&sce=60-2-2&rf=0-0)
+![打开浏览器任务管理器](https://p.ipic.vip/euzjlm.png)
 
 当前我打开了 14 个网页，不太好容易观察，但可以从下图中看到，只有一个 Browser 进程，即第 1 行。但是打开的网页对应的 Renderer 进程，并不一定是一个网页对应一个 Renderer 进程，这跟 Renderer 进程配置有关系。比如你看第 6、7 行是每个标签页创建独立 Renderer 进程，但是蓝色光标所在的第 8、9、10 行是共用一个 Renderer 进程，这属于为每个页面创建一个 Renderer 进程。因为第 9、10 行打开的页面是从第 8 行点击链接打开的。第 2 行的 GPU 进程也清晰可见，以及第 3、4、5 行的插件进程。
 
-![浏览器进程](http://a1.qpic.cn/psc?/V50vddMl0YvJ9c0IGUY913J7mG1rVs8G/bqQfVz5yrrGYSXMvKr.cqUONLiXR1HrQh.acB9iAV0PCQsnilSowX4VUd2fTJ1890e2KO4dg5OnmEryV3jxZP7N3ZkaTys7CU0rlYm3mHq8!/c&ek=1&kp=1&pt=0&bo=zAMYAwAAAAADJ9Y!&tl=1&vuin=741183972&tm=1597118400&sce=60-2-2&rf=0-0)
+![浏览器进程](https://p.ipic.vip/hkkrov.png)
 
 关于，Renderer 进程和打开的网页并不一定是一一对应的关系，下面我们详细说一下 Renderer 进程。当前只有四种多进程策略：
 

@@ -26,11 +26,11 @@ categories:
 
 求在该柱状图中，能够勾勒出来的矩形的最大面积。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfewdafiexj305805odft.jpg)
+![](https://p.ipic.vip/gf8btg.jpg)
 
 以上是柱状图的示例，其中每个柱子的宽度为 1，给定的高度为  [2,1,5,6,2,3]。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfewdi9rmlj305805o0sv.jpg)
+![](https://p.ipic.vip/rkqzx1.jpg)
 
 图中阴影部分为所能勾勒出的最大矩形面积，其面积为  10  个单位。
 
@@ -110,7 +110,7 @@ class Solution:
 
 这位读者看到这里产生了一个疑问，这个疑问就是我开篇所讲的。我们来看下他是怎么说的。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfexzj6zm3j31ae0b8q4w.jpg)
+![](https://p.ipic.vip/4uah8u.jpg)
 
 这位读者提到**交替的这种情况时间复杂度会退化到$O(N^2)$**，那么实际情况真的是这样么？
 
@@ -126,4 +126,4 @@ class Solution:
 
 大家也可以关注我的公众号《力扣加加》获取更多更新鲜的 LeetCode 题解。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg)
+![](https://p.ipic.vip/5nu05l.jpg)

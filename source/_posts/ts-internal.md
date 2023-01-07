@@ -49,19 +49,19 @@ TypeScript 的学习资料非常多，其中也不乏很多优秀的文章和教
 如果我们把 Typescript 编译器看成一个黑盒的话。其**输入则是使用 TypeScript 语法书
 写的文本或者文本集合**。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gh5l5pqyw1j304s04wwea.jpg)
+![](https://p.ipic.vip/ahgwrh.jpg)
 
 （文本）
 
 如果几个文本有引用关系，比如 a.ts 依赖 foo.ts 和 bar.ts，其就是一个文本集合。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gh5l7apwnnj30ho09f74h.jpg)
+![](https://p.ipic.vip/tai6gq.jpg)
 
 （文本集合）
 
 **输出是编译之后的 JS 文件 和 .d.ts 的声明文件**。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gh5ld0kfitj30ow0csdjs.jpg)
+![](https://p.ipic.vip/97ddug.jpg)
 
 其中 JS 是将来需要运行的文件，而 .d.ts 声明文件则是 ts 文件中的类型声明，**这个
 类型声明就是你在 ts 文件中声明的类型和 TypeScript 类型推导系统推导的类型**。当然
@@ -84,7 +84,7 @@ const a: Number = 1;
 - 提供了类型操作 API。TypeScript 不但提供内置类型，用户也可以利用集合操作和泛型
   对类型操作从而生成新的类型。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gh5lzqpqirj30d104ogml.jpg)
+![](https://p.ipic.vip/x43s5y.jpg)
 
 - 对每一种类型的属性和方法都进行了定义。
 
@@ -106,16 +106,16 @@ const a: Number = 1;
 上面已经讨论了 TypeScript 编译器的输入和输出。那黑盒内部是怎么工作呢？这里我简单
 介绍一下：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gh5nm8tmokj30dl02zq2s.jpg)
+![](https://p.ipic.vip/9x9vq4.jpg)
 
 - TypeScript 文本首先会被解析为 **token 流**。这个过程比较简单，就是单纯地按照分
   隔符去分割文本即可。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gh5npflqbbj30eh0490sw.jpg)
+![](https://p.ipic.vip/urctkm.jpg)
 
 - 接着 token 流会被转换为 AST，也就是**抽象语法树**。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gh5nqa41bpj309106lt8z.jpg)
+![](https://p.ipic.vip/405rit.jpg)
 
 - binder 则根据 AST 信息生成 **Symbol**（TypeScript 中的一个数据结构）。拿上面的
   图来说，就是 number 节点。
@@ -126,7 +126,7 @@ const a: Number = 1;
 
 完整图：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gh5nfcui6sj30xz0gendl.jpg)
+![](https://p.ipic.vip/rytfqu.jpg)
 
 ## 总结
 
@@ -167,7 +167,7 @@ number，string，Array 等。但是这并不能满足我们的所有需求，�
 大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的前端硬核文章，带你认识你不知
 道的前端。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfxro1x125j30oz0dw43s.jpg)
+![](https://p.ipic.vip/kcm4v3.jpg)
 
 公众号【
 [力扣加加](https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg)】

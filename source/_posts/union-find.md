@@ -32,13 +32,13 @@ Union-Find 算法解决的是图的动态连通性问题，这个算法本身不
 
 - `union`: 将两个人所在的两个部门合并成一个部门（如果两个人是相同部门，实际山不需要合并）
 
-![](https://tva1.sinaimg.cn/large/0082zybply1gc32a7x6y1j30zk0k0dki.jpg)
+![](https://p.ipic.vip/n13gk4.jpg)
 （图来自 labuladong）
 
 - `find`: 查找某个人的部门 leader
 - `connnected`: 判断两个人是否是一个部门的
 
-![](https://tva1.sinaimg.cn/large/0082zybply1gc32atzy3tj30zk0k0tde.jpg)
+![](https://p.ipic.vip/vxsx0k.jpg)
 （图来自 labuladong）
 
 ## 模板

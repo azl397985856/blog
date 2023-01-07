@@ -174,9 +174,9 @@ assert solve([]) == False
 
 最后给大家整理一个流程图，方便大家记忆，大家可以把图存起来备用。
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1h0eh658ci3j21620jimze.jpg)
+![](https://p.ipic.vip/zq2rlp.jpg)
 
 最后希望大家可以在春招季斩获自己信息的 offer。也欢迎大家进我的春招群。加我微信，
 回复春招即可进群。
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1h0egygkh9aj20e80e8aae.jpg)
+![](https://p.ipic.vip/5x96tp.jpg)

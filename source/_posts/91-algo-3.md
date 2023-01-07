@@ -19,7 +19,7 @@ categories:
 
 群里每天都会有题目，推荐大家讨论当天的题目。我们会帮助大家规划学习路线，91 天见证不一样的自己。群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gf2b2zkclnj30xm0b6aat.jpg)
+![](https://p.ipic.vip/tkmpsu.jpg)
 
 刚好碰上寒假，大家难道不想在寒假中给自己充下电么？
 
@@ -44,7 +44,7 @@ categories:
 
 ## 课程大纲
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1giq98aux20j30ju0qt781.jpg)
+![](https://p.ipic.vip/bek3di.jpg)
 
 往期公开讲义：
 
@@ -132,11 +132,11 @@ categories:
 
 海报：
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gmv3y6bkxtj30u01hc7wh.jpg)
+![](https://p.ipic.vip/4u0jcv.jpg)
 
 朋友圈分享海报示例：
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gmv4gaxao7j30u01u0418.jpg)
+![](https://p.ipic.vip/6n5z87.jpg)
 
 ## FAQ
 

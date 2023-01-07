@@ -92,10 +92,10 @@ skiplist.search(1);   // 返回 false，1 已被擦除
 #### 跳表的查找
 
 现在我们通过一个简单的例子来描述跳表是如何实现的。假设我们有一个有序链表如下图：
-![](https://tva1.sinaimg.cn/large/00831rSTly1gdl834i5t2j33340ecdil.jpg)
+![](https://p.ipic.vip/x47hy5.jpg)
 原始方法中，查找的时间复杂度为 $O(N)$。那么如何来提高链表的查询效率呢？
 如下图所示，我们可以从原始链表中每两个元素抽出来一个元素，加上一级索引，并且一级索引指向原始链表：
-![](https://tva1.sinaimg.cn/large/00831rSTly1gdl81x0d7vj33340rbwjx.jpg)
+![](https://p.ipic.vip/rrg4kx.jpg)
 如果我们想要查找 9 ，在原始链表中查找路径是 `1->3->4->7->9`, 而在添加了一级索引的查找路径是 `1->4->9`，很明显，查找效率提升了。
 按照这样的思路，我们在第 1 级索引上再加第 2 级索引，再加第 3 级索引，以此类推，这样在数据量非常大的时候，使得我们查找数据的时间复杂度为 $O(logN)$。这就是跳表的思想，也就是我们通常所说的“空间换时间”。
 
@@ -232,7 +232,7 @@ class Skiplist:
 ##### 查找的时间复杂度
 
 来看看时间复杂度 $O(logN)$ 是如何推导出来的，首先我们看下图：
-![](https://tva1.sinaimg.cn/large/00831rSTly1gdl82ermgfj31rr0rs77h.jpg)
+![](https://p.ipic.vip/fhgi1j.jpg)
 
 如上图所示，此处我们假设每两个结点会抽出一个结点来作为上一级索引的结点。也就是说，原始链表有 $N$ 个元素，一级索引有 $\frac{N}{2}$，二级索引有 $\frac{N}{4}$，k 级索引有 $\frac{N}{2^k}$ 个元素，而最高级索引一般有 $2$ 个元素。 也就是说：最高级索引 $x$ 满足 $2 = N/2^x$, 由此公式可以得出 $x = \log_2(N)-1$ , 加上原始数据这一层， 跳表的总高度为 $h = \log_2(N)$。
 那么，我们在查找过程中每一层索引最多遍历几个元素呢？从图中我们可以看出来每一层最多需要遍历 3 个结点。
@@ -265,7 +265,7 @@ class Skiplist:
 
 效果大概是这样的：
 
-![](https://tva1.sinaimg.cn/large/00831rSTly1gdl80ojj2rj31tw0u00x1.jpg)
+![](https://p.ipic.vip/jy85b0.jpg)
 
 [实体版购书链接](https://union-click.jd.com/jdc?e=&p=JF8BANYJK1olXQcDUV9VDUMeBF8IGloXVAIGU1pdCUIVCl9MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFksWAm0BH18SWQYDXVxUFxJSXzI4UixRNl1GVjc-ci1CQA5RUl5sHVhZAlJROEonA24JG1MQWgMEUW5tCEwnQgEMGV4WVTYDZF5aCkMWA2kBH1sUVQ8yU15UOBBCbWgIHghBDgVQAw4JXx4nM18LK2slXTYBZBwzDUIWBWpdSVNFVFJQUQ1fDkMWAToKG1xCX1QEB1sJW0wnAW4JH1Il)
 

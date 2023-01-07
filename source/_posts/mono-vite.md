@@ -14,7 +14,7 @@ categories:
 
 假设我们有如下两个 JS 文件。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gs3u43i4j0j31750u0771.jpg)
+![](https://p.ipic.vip/xk5ju1.jpg)
 
 即两个 esm 的模块， 并且 main.mjs 依赖 utils.mjs。
 
@@ -28,7 +28,7 @@ categories:
 
 我画了一个简单的原理图给大家参考一下。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gs3ueacuygj31of0u0afq.jpg)
+![](https://p.ipic.vip/eg6j0r.jpg)
 
 模块之间的关系如上图所示。并且这个时序指的是**更新一个文件之后的更新流程**。
 
@@ -48,10 +48,10 @@ categories:
 
 > 回调函数通过 module.hot.accept 注册，具体参考 hmr 相关文档。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gs3uouzbrcj311w0o2gns.jpg)
+![](https://p.ipic.vip/j1w5pf.jpg)
 
 一个更复杂的例子：
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gs3v01nwd4j30zw0rm40c.jpg)
+![](https://p.ipic.vip/0myahp.jpg)
 
 之后我会根据这个原理图带大家一步步实现一个 mono-vite（等西法有时间的）。

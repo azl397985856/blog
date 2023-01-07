@@ -26,7 +26,7 @@ LeetCode 上有很多小岛题，虽然官方没有这个标签， 但是在我�
 
 实际上面算法有很多重复计算，如图中间绿色的区域，向外扩展的时候，如果其周边四个海洋的距离已经计算出来了，那么没必要扩展到陆地。实际上只需要扩展到周边的四个海洋格子就好了，其距离陆地的最近距离就是 1 + 周边四个格子中到达陆地的最小距离。
 
-![](https://pic.leetcode-cn.com/23e21821e14238829dd7021a620895f40a8e42127cfe372e4791d025bb655afc.jpg)
+![](https://p.ipic.vip/tod9l3.jpg)
 
 我们考虑优化。
 
@@ -36,7 +36,7 @@ LeetCode 上有很多小岛题，虽然官方没有这个标签， 但是在我�
 
 图解：
 
-![](https://pic.leetcode-cn.com/8001c1390fb0d1a402eea5010594a303651b4a09ac6ddcd12d72b5b8a9d37295.jpg)
+![](https://p.ipic.vip/e2psd1.jpg)
 
 ## 代码
 
@@ -96,4 +96,4 @@ class Solution:
 
 大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的 LeetCode 题解
 
-![](https://pic.leetcode-cn.com/89ef69abbf02a2957838499a96ce3fbb26830aae52e3ab90392e328c2670cddc-file_1581478989502)
+![](https://p.ipic.vip/kqnvg9.jpg)

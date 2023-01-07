@@ -239,7 +239,7 @@ DFS 找出所有的满足和为 target 的，遍历过程维护层数较低的�
 
 更多回溯题目，可以访问上方链接查看（可以使用一套模板搞定）：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghlu49wysqj30f60c4my0.jpg)
+![](https://p.ipic.vip/bynmsk.jpg)
 
 #### 代码
 
@@ -281,11 +281,11 @@ class Solution:
 
 以题目中的例 1 为例：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghlu4dsqzhj30u00x2n0u.jpg)
+![](https://p.ipic.vip/l4xuvu.jpg)
 
 以题目中的例 2 为例：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghlu4l71rzj30u00xvwia.jpg)
+![](https://p.ipic.vip/g95p15.jpg)
 
 #### 代码
 
@@ -367,7 +367,7 @@ class Solution:
 
 我在[数据结构与算法在前端领域的应用 - 第二篇](https://lucifer.ren/blog/2019/09/19/algorthimn-fe-2/) 中讲到了有限状态机。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghlu4nj6u8j30eq0bfdgl.jpg)
+![](https://p.ipic.vip/qnk47n.jpg)
 
 状态机表示若干个状态以及在这些状态之间的转移和动作等行为的数学模型。通俗的描述状态机就是定义了一套状态変更的流程：状态机包含一个状态集合，定义当状态机处于某一个状态的时候它所能接收的事件以及可执行的行为，执行完成后，状态机所处的状态。
 

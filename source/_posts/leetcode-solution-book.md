@@ -21,13 +21,13 @@ categories:
 
 以下是部分给我发邮件预定的同学：
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gu39armuayj60u01fr10k02.jpg)
+![](https://p.ipic.vip/2zlauu.jpg)
 
 虽然内容早就已经定得差不多了，但是中间的过程异常曲折，总之就是各种事情，不过好在现在已经出版了。**感谢大家的鼓励和支持，不然我恐怕很难坚持下来**
 
 来秀一张新书的封面给大家看看。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gu39d1zb7qj622g0u013a02.jpg)
+![](https://p.ipic.vip/cjjs3u.jpg)
 
 那这本书里面都讲了什么干货呢？这里西法给大家做一个简单的介绍。详细目录大家可以扫描文章末尾的二维码查看。
 
@@ -58,14 +58,14 @@ categories:
 - Q1：这本书是什么编程语言？
 - A1： Python。不过我提供了配套网站。全部代码都提供了 **Java，CPP，Python** 三种代码，因此如果你不熟悉 Python，而只需要 Java 或者 CPP 也完全没有问题。另外部分题目还提供了 JS Code，后面我们也可能会根据读者的反馈增加其他语言。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gu3ej991zjj61de0u00uu02.jpg)
+![](https://p.ipic.vip/ecaln7.jpg)
 
 本书配套网站地址：https://leetcode-solution.cn/book
 
 - Q2：书的内容是 Github 仓库和公众号的内容么？
 - A2：很多读者都是从我的 Github 过来的， Github 也提供了电子书版本。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gu3eklyj87j60zx0u0jux02.jpg)
+![](https://p.ipic.vip/ilyr5u.jpg)
 
 Github 地址：https://github.com/azl397985856/leetcode
 
@@ -89,7 +89,7 @@ Github 地址：https://github.com/azl397985856/leetcode
 
 想入手的朋友现在入手非常划算，扫描下方二维码（或者使用这个链接 https://u.jd.com/gKbUGbR）就可以购买了。
 
-![京东二维码](https://tva1.sinaimg.cn/large/008i3skNly1gu2biqscqwj60dw0i2dgv02.jpg)
+![京东二维码](https://p.ipic.vip/vi6mjh.jpg)
 
 ### 免费送书
 

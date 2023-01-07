@@ -40,7 +40,7 @@ date: 2022-02-11
 - 验证问题是否存在。如果不存在，我们不能确定就是这个提交的问题，不妨先标记当前提
   交 c 为 good。如果存在，不妨标记当前提交 c 为 bad。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gz9fdnmda0j30dp02wdfp.jpg)
+![](https://p.ipic.vip/29pb0b.jpg)
 
 - 经过上面的标记，我们就可以找到最早呈现 bad 的那次提交，并且最关键的是复杂度为
   logn，其中 n 为我们需要验证的提交的总次数。显然，这个工作量比逐个检查 commit

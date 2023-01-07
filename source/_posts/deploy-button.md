@@ -27,15 +27,15 @@ categories:
 
 如下是一个拥有一键部署按钮的项目：
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gnmaoyktqej311r0u0jxo.jpg)
+![](https://p.ipic.vip/ghc951.jpg)
 
 点击之后进入如下页面，你可以对一些默认配置进行修改（也可以直接使用默认配置）:
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gnmapsm8k8j30u00vftdf.jpg)
+![](https://p.ipic.vip/kfngw4.jpg)
 
 修改后点击**Deploy app** 即可。部署成功之后就可以通过类似如下的地址访问啦~
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gnmaqkh8hfj31810u0ag0.jpg)
+![](https://p.ipic.vip/0rmam1.jpg)
 
 > 图中演示地址是：https://leetcode-cheat.herokuapp.com/
 
@@ -50,7 +50,7 @@ categories:
 上面的部署按钮就是如下的一个 Markdown 内容渲染的:
 
 ```md
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://p.ipic.vip/hefqvb.jpg)](https://p.ipic.vip/v0aqts.jpg)
 ```
 
 上面内容会被渲染成如下的 DOM：
@@ -118,7 +118,7 @@ gitpod 是我一直在用的一个工具，它可以帮助我直接在云端编�
 
 同样地，你也可以在你的仓库中增加**在 Gitpod** 一键打开的功能。
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gnmbmu2ijhj319m0ioq5x.jpg)
+![](https://p.ipic.vip/ulvmbh.jpg)
 
 ## 小技巧
 

@@ -20,11 +20,11 @@ Youtube 和 B 站是很多人浏览视频的两个地方。
 
 它提供了很多功能以及众多的配置项，从外观的配置到功能的配置应有尽有。
 
-![插件提供的众多配置项](https://tva1.sinaimg.cn/large/008eGmZEly1gmlxuh92q5j30j70qwwgg.jpg)
+![插件提供的众多配置项](https://p.ipic.vip/rr3sad.jpg)
 
 还可以配置主题，我把主题换成了暗黑模式。
 
-![暗黑模式](https://tva1.sinaimg.cn/large/008eGmZEly1gmlxzh0ebij31f50g6typ.jpg)
+![暗黑模式](https://p.ipic.vip/etjknw.jpg)
 
 主要功能有：
 
@@ -46,7 +46,7 @@ Youtube 和 B 站是很多人浏览视频的两个地方。
 
 - 查看评论时将播放器固定在右下角
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gmly0cmbuqj30yt0fsn41.jpg)
+![](https://p.ipic.vip/6dy4qm.gif)
 
 - 执行自定义脚本
 

@@ -23,13 +23,13 @@ categories:
 
 在谷歌面试的时候，我大概刷了 550 道题左右：其中大概 150 道简单，310 道中等，90 道困难。其中有中国站一些剑指和面试经典的重复题。对于前 200 和一些高频题，我刷了两遍以上或者更多。
 
-![LC743图论的模板题](https://tva1.sinaimg.cn/large/008i3skNly1gswmf9j6l3j313j0tygq9.jpg)
+![LC743图论的模板题](https://p.ipic.vip/3kyzdl.jpg)
 
 如上图是我刷图论的模板题。左侧是我的提交记录，右侧是我的代码。
 
 我在四月份之前断断续续的大概刷过 60 道题左右，然后在四月份的时候我新开了一个进程并且开始好好刷题。完成最后一个面试是 7 月 20 日。
 
-![刷题进度图](https://tva1.sinaimg.cn/large/008i3skNly1gswmft68u6j30iy04tmxe.jpg)
+![刷题进度图](https://p.ipic.vip/6c2rc7.jpg)
 
 ## 刷题心得
 
@@ -62,7 +62,7 @@ Todo List 就是这样一个工具。我刷题的时候使用的是**ipad + good
 
 一般来说，除了学习某个专题，我的一天还会有一些其他事情，比如打卡 91 算法每日一题，打卡力扣每日一题，看邮件，投递申请等等。大部分时候，我起床之后坐在电脑前，都本能的觉得“太难了”，以至于“我不想干”。每当我有这种感觉的时候，我就在所有的待办事项中选一个我觉得最容易完成的项目并且开始做。换句话说 --- 别想那么多，兄弟，冲就完了！（好吧我是个 fps 游戏玩家）。我一般会选择先做 91 每日一题，因为它不会太难，而且打卡了之后会被其他刷题小伙伴看到，这让我有种觉得自己很棒棒的感觉。只要开始建立 **“克服困难” -> “执行任务” -> “完成之后感觉自己很棒棒”** 的行为模式之后，一切都会变得简单起来。
 
-![刷题日程图 by ElenaLin的青青的电子手账模板](https://tva1.sinaimg.cn/large/008i3skNly1gswmh82u9nj317o0u0ti8.jpg)
+![刷题日程图 by ElenaLin的青青的电子手账模板](https://p.ipic.vip/3mb8ay.jpg)
 
 > ElenaLin 的电子手账使用教程可参考这个视频 https://www.bilibili.com/video/BV1Ai4y1w7ZM
 
@@ -110,7 +110,7 @@ Todo List 就是这样一个工具。我刷题的时候使用的是**ipad + good
 
 我现在的竞赛分大概是 1780。曾经我也很焦虑的问 Lucifer 竞赛/面试一紧张没思路怎么办。Lucifer 的回复很简单也很有效：“先打 20 场再说”。
 
-![聊天截图](https://tva1.sinaimg.cn/large/008i3skNly1gswmhk3k74j30u01szgpl.jpg)
+![聊天截图](https://p.ipic.vip/eeng9r.jpg)
 
 ### Just do it
 

@@ -17,15 +17,15 @@ date: 2021-08-17
 
 如下是中文题目描述：
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gtjprjclaaj60zc0u0q6502.jpg)
+![](https://p.ipic.vip/6cx4ei.jpg)
 
 接下来，可以点击下面的图标切换语言。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gtjps7s86lj60zr0u00w302.jpg)
+![](https://p.ipic.vip/cpkojk.jpg)
 
 这只是切换单个题目的语言，如果你想切换整个网站的语言，可以点击力扣中国顶部右侧的这个按钮。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gtjpv4p0jmj60nk02yq3102.jpg)
+![](https://p.ipic.vip/hsec0d.jpg)
 
 ## tip2 - 快捷键
 
@@ -38,7 +38,7 @@ date: 2021-08-17
 
 目前力扣编辑器提供八个快捷键绑定，更多快捷键可以参考力扣的提示。如下所示：
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gtjpzvqyquj618b0u0gob02.jpg)
+![](https://p.ipic.vip/abo3m7.jpg)
 
 另外如果你是 windows 那么上述快捷键肯定不生效，那么你可以按照如上方式查看文档了解具体的快捷键绑定。
 
@@ -51,7 +51,7 @@ date: 2021-08-17
 
 大家可以做题时点击这个给自己限定时间。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gtjq3lsfdtj61yq0fa0w902.jpg)
+![](https://p.ipic.vip/2rzkyx.jpg)
 
 值得注意的是，默认限制时间是 30 分钟。**建议大家逐步缩短时间，做到 15 分钟以内**，有条件的话挑战一下**五分钟**。
 
@@ -59,19 +59,19 @@ date: 2021-08-17
 
 如果你是面试官，也可直接使用力扣来出题。力扣中的很多功能都可以使用。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gtjq61uhr8j61v80bgabx02.jpg)
+![](https://p.ipic.vip/0szyur.jpg)
 
 你可以自由添加力扣原题，当然也可以自己出题。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gtjq9xj5ixj61980amt9s02.jpg)
+![](https://p.ipic.vip/ipgdyy.jpg)
 
 更有意思的的是，竟然可以出前端题 😹。其实前端题就是一个类似于 stackblitz 的东西。不得不说，如果你是前端面试官，这个在线面试功能可以说很全面了。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gtjqc7fyffj61790u0tb002.jpg)
+![](https://p.ipic.vip/1tugjm.jpg)
 
 另外也支持文字聊天，语音，视频，在线评价等常见的面试功能。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gtjq8wblncj61mt0u0tbc02.jpg)
+![](https://p.ipic.vip/qj58xp.jpg)
 
 简单适用了一下，一个月可以免费创建 10 次面试，每次面试不能超过三个小时，总体来说还蛮方便的。
 
@@ -83,19 +83,19 @@ date: 2021-08-17
 
 - 一键写题解
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gtjqi5izipj612b0u0whr02.jpg)
+![](https://p.ipic.vip/ye4drh.jpg)
 
 - 一键复制所有内置测试用例
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gtjqk23jfgj62060f0t9902.jpg)
+![](https://p.ipic.vip/yetp3v.jpg)
 
 - 数据结构可视化
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gtjqik7w08j61bp0u0jtv02.jpg)
+![](https://p.ipic.vip/yhejoi.jpg)
 
 - 复杂度对照表， 直接根据数据规模反猜答案的算法复杂度
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gtjqiqwxqzj60o50nlt9f02.jpg)
+![](https://p.ipic.vip/krfgl4.jpg)
 
 功能太多了，不一一介绍了。
 

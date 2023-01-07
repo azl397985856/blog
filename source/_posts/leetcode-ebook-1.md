@@ -7,7 +7,7 @@ categories:
   - [算法]
 ---
 
-![leetcode.jpeg](https://tva1.sinaimg.cn/large/007S8ZIlly1ghluelm27rj30dw0780sm.jpg)
+![leetcode.jpeg](https://p.ipic.vip/2gspqi.jpg)
 
 - 2019-07-10 ：[纪念项目 Star 突破 1W 的一个短文](./thanksGiving.md)， 记录了项目的"兴起"之路，大家有兴趣可以看一下，如果对这个项目感兴趣，请**点击一下 Star**， 项目会**持续更新**，感谢大家的支持。
 
@@ -17,7 +17,7 @@ categories:
 
 - 2020-04-14: 官网`力扣加加`上线啦 💐💐💐💐💐，有专题讲解，每日一题，下载区和视频题解，后续会增加更多内容，还不赶紧收藏起来？地址：http://leetcode-solution.cn/
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghluemaoj3j30z90dtmy5.jpg)
+![](https://p.ipic.vip/vsc2eh.jpg)
 
 <!-- more -->
 
@@ -25,9 +25,9 @@ categories:
 
 这是我将我的所有公开的算法资料整理的一个电子书，全部题目信息中文化，以前会有一些英文描述，感谢 @CYL 的中文整理。
 
-![](https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-17/1602928846461-image.png)
+![](https://p.ipic.vip/jdg4fd.png)
 
-![](https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-17/1602928862442-image.png)
+![](https://p.ipic.vip/wr5hpk.png)
 
 我写这本电子书花费了大量的时间和精力，除了内容上的创作，还要做一些电子书的排版，以让大家获得更好的阅读体验。光数学公式的展示，我就研究了多个插件的要源码，并魔改了一下才使得导出的电子书支持 latex。 不过有些动图，在做成电子书的时候自然就变没了，如果需要看动图的， 可以去我的公众号《力扣加加》或者我的 leetcode 题解仓库看。
 
@@ -94,7 +94,7 @@ leetcode 题解，记录自己的 leetcode 解题之路。
 - 我对题目难度进行了分类的保留，因此你可以根据自己的情况刷。我推荐大家从简单开始，逐步加大难度，直到困难。
 - 这里有一张互联网公司面试中经常考察的问题类型总结的思维导图，我们可以结合图片中的信息分析一下。
 
-![leetcode-zhihu](https://tva1.sinaimg.cn/large/007S8ZIlly1ghluennxvrj30k00jx0te.jpg)
+![leetcode-zhihu](https://p.ipic.vip/gqiaf9.jpg)
 
 （图片来自 leetcode)
 

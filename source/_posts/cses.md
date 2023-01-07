@@ -48,18 +48,18 @@ OI wiki 是一个内容比较全，深度也覆盖比赛的网站。里面的内
 
 比如图论的 OI-wiki 目录是这样的：
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gwih454l08j311w0u0tch.jpg)
+![](https://p.ipic.vip/es8dnn.jpg)
 
 CP-Wiki 是个人的 Competitive Programming 学习资料总结。里面不仅有各个知识点的总结。
 
 > 知识总结是大纲性质的，比较简略，适合拿来查缺补漏。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gwih5kayf4j31920u043u.jpg)
+![](https://p.ipic.vip/l68460.jpg)
 
 
 而且还有各个比赛的题解，强烈建议学习竞赛的你收藏。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gwih4u0jy1j31790u0gqd.jpg)
+![](https://p.ipic.vip/qvk0x5.jpg)
 
 ## 学习图书
 
@@ -69,7 +69,7 @@ CP-Wiki 是个人的 Competitive Programming 学习资料总结。里面不仅�
 
 李煜东曾为NOI系列竞赛、NOI导刊培训基地以及全国各地多所学校的选手授课，并在网络上组织模拟赛数十场，经验丰富、讲解透彻、广受好评。多次协助石家庄市第二中学的信息学竞赛集训工作，参与北京大学“数据结构与算法”、“算法设计与分析”的课程教学、考试命题工作。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gwigfluqdnj316o0h0mz6.jpg)
+![](https://p.ipic.vip/9d83fa.jpg)
 
 豆瓣评分 9.1 ，群众的眼睛还是雪亮的！
 
@@ -168,7 +168,7 @@ CP-Wiki 是个人的 Competitive Programming 学习资料总结。里面不仅�
 
 BTW，前面提到的题库网站 CSES 也推荐了这本书哦。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gwih29uzjxj30960dvwey.jpg)
+![](https://p.ipic.vip/kvp8la.jpg)
 
 ## 总结
 

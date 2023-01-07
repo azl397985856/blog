@@ -70,7 +70,7 @@ if (!isNumericLiteral(node)) {
 
 让我们时光倒流，将代码回退到 eslint 官方首次关于”no-magic-rule”的[提交](https://github.com/eslint/eslint/blob/510013c27eb917cd4c7268d5deb6301243b182cf/lib/rules/no-magic-number.js)。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gehuq8vlq1j316w0qgn1g.jpg)
+![](https://p.ipic.vip/n6pgqi.jpg)
 
 代码大概意思是：
 
@@ -108,7 +108,7 @@ a = { number: 1 }
 
 大家使用[AST explorer](https://astexplorer.net/#/gist/a595f16646dbbb4184afc3880b87aa2c/276fd81226015b7782056947b70c4b9e047113c9) 来可视化 AST。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gehuqxbzngj31s30u0wod.jpg)
+![](https://p.ipic.vip/srxts2.jpg)
 
 由于 eslint 使用的 ast 转化工具是 espree， 推荐大家使用 espree。 如果大家写 babel 插件的话，相应的引擎最好修改一下。
 
@@ -116,7 +116,7 @@ a = { number: 1 }
 
 通过观察 eslint/espree 的源码也可以发现，其过程是多么的自然和简单。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gehusdyyxzj312i0ocjvf.jpg)
+![](https://p.ipic.vip/6d5sdv.jpg)
 
 ## Magic String
 

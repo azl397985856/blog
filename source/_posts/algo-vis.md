@@ -44,19 +44,19 @@ categories:
 
 3. 点击下方的**可视化调试**
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1guu41u2tkxj60u00ulq6502.jpg)
+![](https://p.ipic.vip/of13ko.jpg)
 
 4. 按提示修改代码后点击**Visualize Execution**按钮
 
 > 如果无法修改代码，可以先点击 edit code
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1guu44s9p4nj60xm0u0tdb02.jpg)
+![](https://p.ipic.vip/7hhf9m.jpg)
 
 这里我就想吐槽一下 leetcode 了。干嘛每一道题函数名字都不一样，真没这个必要。比如都叫 solve 不好么？希望力扣可以考虑一下这个建议。
 
 5. 通过控制区域控制代码执行，右侧会自动同步的可视化地显示变量信息
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1guu47xrrgtj62ca0u079z02.jpg)
+![](https://p.ipic.vip/wy4jun.jpg)
 
 最后友情提示一下。可视化调试推荐在看资料（比如 91 天学算法的讲义）的时候把其中的例题用可视化的方式调试一遍，填平**思路到代码**的鸿沟。 之后大家做题不要依赖调试功能，而是先在**大脑中调试一下**，然后用工具验证。也就是说这个工具，我仅推荐你在两种情况下使用：
 

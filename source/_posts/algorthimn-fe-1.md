@@ -9,7 +9,7 @@ categories:
 这是一个我在公司内部做的一个《数据结构与算法在前端领域的应用》主题演讲的一个前菜。
 希望通过这个分享让大家认识到其实前端领域也有很多算法的，从而加深前端同学对算法的认识。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51jlf4ij30kv11375x.jpg)
+![](https://p.ipic.vip/bpdyfk.jpg)
 
 <!-- more -->
 ## 为什么大家觉得算法没用
@@ -21,7 +21,7 @@ categories:
 我也来借用一下这个创意。
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51k9cocj30lk09x75c.jpg)
+![](https://p.ipic.vip/cwvth1.jpg)
 
 根据我的经验，我们写的业务代码通常不到总包体的 5%， 下面是我以前做过的一个实际项目的代码分布。
 
@@ -48,7 +48,7 @@ categories:
 > 图中黄色的代表我自己实现过。
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51kp9q4j30ic0cxwfd.jpg)
+![](https://p.ipic.vip/rmpa9c.jpg)
 
 这些都是前端开发过程的一些东西， 他们多多少少涉及到了数据结构和算法的知识
 
@@ -189,12 +189,12 @@ OK，说了那么多。 这些都是“大牛”们做的事情，好像和我�
 某一天，可(gai)爱(si)的产品提了一个需求，”我们的系统需要支持用户撤销和重做最近十次的操作。“
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51lnlu0j306v06nglv.jpg)
+![](https://p.ipic.vip/iwn8fi.jpg)
 
 让我们来回忆一下纯函数。
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51mlsw9j30hn0argma.jpg)
+![](https://p.ipic.vip/kyfify.jpg)
 
 纯函数有一个特性是给定输入，输出总是一样的。
 
@@ -204,7 +204,7 @@ OK，说了那么多。 这些都是“大牛”们做的事情，好像和我�
 我们对问题进行一些简化，假设我们的应用是纯粹的数据驱动，也就是说满足`纯`的特性。
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51n37b0j30fu0903yy.jpg)
+![](https://p.ipic.vip/z3qneh.jpg)
 
 我们继续引入第二个知识点 - `reducer`.
 
@@ -219,12 +219,12 @@ action1, action2, action3。
 我们用一个图来表示就是这样的：
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51o27clj30mi06n3z4.jpg)
+![](https://p.ipic.vip/thoxzz.jpg)
 
 运用简单的数据知识，我们不难推导出如下关系：
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51ov68aj30l806ngm6.jpg)
+![](https://p.ipic.vip/lle39j.jpg)
 
 > 如果对这部分知识点还比较迷茫，可以看下我之前的一篇文章，[从零实现一个 Redux](https://juejin.im/post/5a9e6a61f265da239866c7a3)
 
@@ -240,7 +240,7 @@ action1, action2, action3。
 实际场景中性能上我们很难接受。
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51pe9v8j30fz06hwes.jpg)
+![](https://p.ipic.vip/lqllj4.jpg)
 
 第二种方案，有了上面的铺垫，我们发现， 事实上我们没必要存储所有的store。
 因为store可以被计算出来。因此我们只要存储action即可。 
@@ -248,7 +248,7 @@ action1, action2, action3。
 然后将store2覆盖到当前的store即可。
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51pvzp9j30g8073jrr.jpg)
+![](https://p.ipic.vip/2aii8c.jpg)
 
 这种做法，只需要存储一个store1， 以及若干个action。 action相对于store来说要小很多。
 这是这种做法相比与上一种的优势。同时由于每次都需要从头（store1）开始计算，
@@ -263,7 +263,7 @@ action1, action2, action3。
 销毁然后创建一个新的，而是重用可以重用的部分。
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51qsh7fj30kp0ajab6.jpg)
+![](https://p.ipic.vip/o4mu9a.jpg)
 
 如图我要修改 `store.user.age`。我们只需要将root和user的引用进行修改，同时替换age节点即可。
 
@@ -282,7 +282,7 @@ value会上次服务端的返回值。
 注： 我们的key中的前缀是有规律的，即有很多重复的数据在。 返回值也有可能是有很多重复的。
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51rq707j309h087js1.jpg)
+![](https://p.ipic.vip/56xx9n.jpg)
 
 这是一个典型的数据压缩算法。数据压缩算法有很多，我这里就不介绍了，大家可以自行了解一下。
 
@@ -298,11 +298,11 @@ value会上次服务端的返回值。
 现在需要你完成这个功能，你会怎么做？
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51s6v4vj309w030aa3.jpg)
+![](https://p.ipic.vip/bjo71s.jpg)
 
 我们可以用前缀树，很高效的完成这个工作。
 
-![prefix-tree](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51sr2ivj30mz0gq406.jpg)
+![prefix-tree](https://p.ipic.vip/k3iyfo.jpg)
 
 对这部分原理感兴趣的可以看下我的[这个题解](https://github.com/azl397985856/leetcode/blob/master/problems/208.implement-trie-prefix-tree.md)
 
@@ -314,7 +314,7 @@ value会上次服务端的返回值。
 对于相似度超过一定阀值的数据，我们认为它是同一个数据。
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51tk5bxj30it07s403.jpg)
+![](https://p.ipic.vip/uwrk0y.jpg)
 
 关于相似度检测，我们其实可以借助“最小编辑距离”算法。
 对于两个字符串a和b，如果a和b的编辑距离越小，我们认为越相似，

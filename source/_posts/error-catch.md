@@ -33,7 +33,7 @@ function t() {
 t();
 ```
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfsy45k62og30760h20ug.gif)
+![](https://p.ipic.vip/v5umel.gif)
 
 （动画演示）
 
@@ -104,7 +104,7 @@ function t() {
 t();
 ```
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfsy7388tng30760h2gn6.gif)
+![](https://p.ipic.vip/nnkbqz.gif)
 
 （动画演示）
 
@@ -264,7 +264,7 @@ if err != nil {
 
 > 实际上并不是所有的语言都会进行 stack unwinding，这个我们会在接下来的《运行时异常可以恢复么？》部分讲解。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfsax74xjdj30ya0s040p.jpg)
+![](https://p.ipic.vip/jrzgje.jpg)
 
 伪代码来描述一下：
 
@@ -304,7 +304,7 @@ a();
 
 我们将上面的代码放到 chrome 中执行， 会在控制台显示如下输出：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfs9viibxvj30gq08qjsf.jpg)
+![](https://p.ipic.vip/b1y4o7.jpg)
 
 我们可以清楚地看出函数的调用关系。即错误是在 c 中发生的，而 c 是 b 调用的，b 是 a 调用的。这个函数调用栈是为了方便开发者定位问题而存在的。
 
@@ -335,7 +335,7 @@ a();
 
 我们将上面的代码放到 chrome 中执行， 会在控制台显示如下输出：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfsa1idhyij30fw04at96.jpg)
+![](https://p.ipic.vip/0a1tlh.jpg)
 
 可以看出，此时已经没有**uncaught Error**啦，仅仅在控制台显示了**标准输出**，而**非错误输出**（因为我用的是 console.log，而不是 console.error）。然而更重要是的是，如果我们没有 catch，那么后面的同步代码将不会执行。
 
@@ -386,7 +386,7 @@ a();
 - 如果请假大于 1 天，但是小于等于三天，则需要 CTO 同意。
 - 如果请假天数大于三天，则需要老板同意。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfsbg56kx0j31tk0bc40k.jpg)
+![](https://p.ipic.vip/0bf4cu.jpg)
 
 这就是一个典型的责任链模式。谁有责任干什么事情是确定的，不要做自己能力范围之外的事情。比如主管不要去同意大于 1 天的审批。
 
@@ -572,7 +572,7 @@ t();
 
 而如果我们使用 babel 转义下，会发现 try catch 不见了，变成了 switch case 语句。这就是 try catch “可以捕获异步异常”的原因，仅此而已，没有更多。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfsyweyu9tj30l90fajtj.jpg)
+![](https://p.ipic.vip/ijm32y.jpg)
 （babel 转义结果）
 
 我使用的 babel 转义环境都记录在[这里](https://babeljs.io/repl#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=usage&spec=true&loose=true&code_lz=E4UwViDGAuCSB2ACAvIgFAWwM4EoUD4AoRReEAd0QAVgB7DASyxDTQH0AaRYPZfRAN7ESiZtAAqDDCFoBXaK178hIkcDQBGHAG5hJAL5dsO4fpMBDLAE94kRADNZt6A1pIFeFYmjArgvYjm5OYM0NzgUHDwaAAMJgaIkObQkAAW6CDAPP6qkG5YtAA2IAB0hbQA5mgAREkpqQzwFYFImXTA1Vxt8Yj6hH2EHtpAA&debug=false&forceAllTransforms=true&shippedProposals=true&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=false&presets=env%2Ces2015%2Ces2016%2Ces2017%2Creact%2Cstage-0%2Cstage-1%2Cstage-2%2Cstage-3%2Ces2015-loose%2Ctypescript%2Cflow%2Cenv&prettier=false&targets=Electron-1.8%252CNode-10.13&version=7.10.2&externalPlugins=%40babel%2Fplugin-transform-arrow-functions%407.8.3 "babel 转义环境")，大家可以直接点开链接查看.
@@ -627,13 +627,13 @@ maybeResolveOrNot = (ms) =>
 
 上面的代码有一半的可能报错。那么在 elm 中就不允许这样的情况发生。所有的可能发生异常的代码都会被强制包装一层容器，这个容器在这里是 Maybe。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gft3bwkkufj30hh082aac.jpg)
+![](https://p.ipic.vip/aumeqk.jpg)
 
 在其他函数式编程语言名字可能有所不同，但是意义相同。实际上，不仅仅是异常，正常的数据也会被包装到容器中，你需要通过容器的接口来获取数据。如果难以理解的话，你可以将其简单理解为 Promsie（但并不完全等价）。
 
 Maybe 可能返回正常的数据 data，也可能会生成一个错误 error。某一个时刻只能是其中一个，并且只有运行的时候，我们才真正知道它是什么。从这一点来看，有点像薛定谔的猫。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gft3dcn99mj30yn0jkgno.jpg)
+![](https://p.ipic.vip/syxl7w.jpg)
 
 不过 Maybe 已经完全考虑到异常的存在，一切都在它的掌握之中。所有的异常都能够在编译时推导出来。当然要想推导出这些东西，你需要对整个编程模型做一定的封装会抽象，比如 DOM 就不能直接用了，而是需要一个中间层。
 
@@ -679,7 +679,7 @@ t();
 
 这个例子过于简单， 只能帮助我们理解什么是运行时异常恢复，但是不足以让我们看出这有什么用？
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gft490joaij30er0c4q3p.jpg)
+![](https://p.ipic.vip/2moi80.jpg)
 
 我们来看一个更加复杂的例子，我们这里直接使用上面实现过的函数`divide`。
 
@@ -706,7 +706,7 @@ function t() {
 
 如果我们的代码在进入 catch 之后还能够继续返回出错位置继续执行就好了。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gftakhm2tqj31m20qcwmv.jpg)
+![](https://p.ipic.vip/r81gjn.jpg)
 
 如何实现异常中断的恢复呢？我刚刚说了：据我所知，目前没有任何一个引擎能够做到**异常恢复**。那么我就来**发明一个新的语法**解决这个问题。
 
@@ -771,13 +771,13 @@ try {
 
 可以看出，不管是 C 和 D，还是 API 中没有列举的各种可能异常，我们的做法都是直接抛出。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gft4ymgbxij30uv0hiwgo.jpg)
+![](https://p.ipic.vip/16fxgj.jpg)
 
 ### 作为生产者
 
 如果你作为生产者，你要做的就是提供上面提到的详细的 API，告诉消费者你的可能错误有哪些。这样消费者就可以在 catch 中进行相应判断，处理异常情况。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gft2iv4af5j30cz08zt9f.jpg)
+![](https://p.ipic.vip/od8me1.jpg)
 
 你可以提供类似上图的错误表，让大家可以很快知道可能存在的**可预知**异常有哪些。不得不吐槽一句，在这一方面很多框架，库做的都很差。希望大家可以重视起来，努力维护良好的前端开发大环境。
 

@@ -86,7 +86,7 @@ function isBalance(root) {
 
 这样的数据结构来描述一颗树：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gh2dqqnyzwj30ba0baglw.jpg)
+![](https://p.ipic.vip/eggcjv.jpg)
 
 ([1,2,3,null,null,4,5] 对应的二叉树)
 
@@ -165,7 +165,7 @@ class Solution:
 
 > 选择这种记法，而不是 DFS 的记法的原因是看起来比较直观。并不代表我们这里是要讲 BFS 的序列化和反序列化。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gh2h5bhjryj30b40am74k.jpg)
+![](https://p.ipic.vip/j5cqkr.jpg)
 
 序列化的代码非常简单， 我们只需要在普通的遍历基础上，增加对空节点的输出即可（普通的遍历是不处理空节点的）。
 
@@ -215,7 +215,7 @@ public class Codec {
 
 我们先看一个短视频：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gh2z5y87n0g30bo05vx6u.gif)
+![](https://p.ipic.vip/9r0x98.gif)
 
 （动画来自力扣）
 
@@ -305,15 +305,15 @@ class Codec:
 
 如图有这样一棵树：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gh2x3gj9n0j30j00gewfx.jpg)
+![](https://p.ipic.vip/81dz0e.jpg)
 
 那么其层次遍历为 [1,2,3,#,#, 4, 5]。我们根据此层次遍历的结果来看下如何还原二叉树，如下是我画的一个示意图：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gh2x55lh7qj31780t0gq8.jpg)
+![](https://p.ipic.vip/xip3pp.jpg)
 
 动画演示：
 
-![树的层次遍历.svg](https://pic.stackoverflow.wiki/uploadImages/115/238/39/106/2021/05/24/18/37/4a21f28b-d3fe-488f-9bf5-7e8c1182809e.svg)
+![树的层次遍历.svg](https://p.ipic.vip/crlds7.jpg)
 
 容易看出：
 

@@ -83,12 +83,12 @@ date: 2020-01-20
 
 最后我们只需要对比优化前后的总体打包时间差异即可。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds546t088j30ec05dq3e.jpg)
+![](https://p.ipic.vip/xuajfw.jpg)
 
 这对于老板来说可能已经够了，但是这缺乏一些精确性，我们无法知道通过优化了哪个环节进行
 减少了打包时间。 因此一种简单的改进是将打包划分为多个阶段，每个阶段分别进行统计计时 ⌛️ 。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds547ajtij30gs07q74w.jpg)
+![](https://p.ipic.vip/t3juh3.jpg)
 
 #### 包的大小
 
@@ -96,18 +96,18 @@ date: 2020-01-20
 
 我们当然可以只统计总体包大小。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds548de0gj30cy05fmxc.jpg)
+![](https://p.ipic.vip/gumj0r.jpg)
 
 但是为了获得更加灵活的定制和更加精确的范围我们可以对包进行一定的划分。
 这个划分可以是业务纬度，也可以是纯技术纬度。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54a42mjj30f005z3zb.jpg)
+![](https://p.ipic.vip/gc2urn.jpg)
 
 #### 打包命令
 
 这部分比较简单，我们只需要简单地统计手动操作的次数即可。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54azmgwj30f005i3yu.jpg)
+![](https://p.ipic.vip/0aehzi.jpg)
 
 通过收集以上的数据，我们就可以用数据来表示我们的成果，让数据说话，关于如何
 使用这些数据，我们稍后讨论。
@@ -127,7 +127,7 @@ date: 2020-01-20
 说到测量，普遍接受的方式是，在浏览器中进行打点，将浏览器打开网页的过程看作是一个旅行。
 那么我们每到一个地方就拍张带有时间的照片（事件），最后我们对这些照片按照时间进行排列， 然后分析哪部分是我们的瓶颈点等。
 
-![performance-api](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54bnum5j30i70avdhp.jpg)
+![performance-api](https://p.ipic.vip/sy4zoh.jpg)
 
 有了这些 timing 我们可以很方便的计算各项性能指标。我们还可以自定义一些我们关心的指标，比如请求时间（成功和失败分开统计），较长 js 操作时间，或者比较重要的功能等。
 
@@ -135,7 +135,7 @@ date: 2020-01-20
 
 这样我们就很容易展示出这样的画面：
 
-![render-perf](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54dcbs2j30eh074gm6.jpg)
+![render-perf](https://p.ipic.vip/q7xfig.jpg)
 
 ### 人效提升
 
@@ -148,18 +148,18 @@ date: 2020-01-20
 
 我们考虑将需求进行拆分，变成一个个任务。一个需求可能有多个任务。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54e97btj309z0960ta.jpg)
+![](https://p.ipic.vip/rg7mx9.jpg)
 
 我们考虑对每一个任务进行计时，而不是需求，因为需求有太大的差异。
 我们可以针对任务进行分类，然后我们的目标就可以变成“减少同类任务的交付时长”。
 
 但是这种粒度似乎还是有点大。我们可以采取标签的形式，对任务进行交叉分类。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54fb9nfj30ay09874x.jpg)
+![](https://p.ipic.vip/gkll86.jpg)
 
 任务纬度可能还是有点太大，我们可以采取更小的粒度划分，比如模块和组件。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54gb6a0j30ly0akabf.jpg)
+![](https://p.ipic.vip/qk0dpw.jpg)
 
 这样我们的统计纬度就丰富起来了，我们不仅可以总体进行统计分析，我们还可以根据 tag 和 tag 的组合进行汇总。
 
@@ -215,14 +215,14 @@ date: 2020-01-20
 
 > 这个网站能做的图表种类比较少。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54h7bnqj311u0fotbt.jpg)
+![](https://p.ipic.vip/nj2w37.jpg)
 
 当然作为一名前端我们也可以自己写代码去更灵活地展示我们的数据，比如[D3](https://d3js.org/)
 或者百度的[echarts](https://echarts.baidu.com/)
 
 > 任何类型的图表都可以做，只有你想不到，没有它做不到。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54j1tkej30zf0fx1kx.jpg)
+![](https://p.ipic.vip/kf13nv.jpg)
 
 相对折中一点，我们可以选择支持代码定制的一些产品，在特殊情况我们可以自定义。
 
@@ -233,14 +233,14 @@ date: 2020-01-20
 一种方式是使用你电脑的办公软件或者一些在线的幻灯片制作工具做，
 比如[slides](https://slides.com/) 。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54k60j2j313b0iqwip.jpg)
+![](https://p.ipic.vip/ejk9cz.jpg)
 
 另一种方式通过写代码的方式实现，作为程序员我推荐使用第二种。
 这里推荐一款`nodejs cli 工具` [nodeppt](https://github.com/ksky521/nodeppt),
 还有另外一个`JS 框架` [reveal.js](https://github.com/hakimel/reveal.js) 。
 上面提到的 slides 背后的原理就是它。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54lsifcj312l0ih7wh.jpg)
+![](https://p.ipic.vip/cx6clv.jpg)
 
 ## 总结
 
@@ -276,7 +276,7 @@ date: 2020-01-20
 
 ### QQ 群
 
-![qq-group-chat](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54ma44fj306a082q36.jpg)
+![qq-group-chat](https://p.ipic.vip/fa8iav.jpg)
 
 ### 微信群
 

@@ -39,31 +39,31 @@ a();
 
 当 V8 执行到`a()`这一行代码的时候，a 会被压入栈顶。
 
-![](https://tva1.sinaimg.cn/large/006tNbRwgy1g9ltfr1pfij307j06gt8h.jpg)
+![](https://p.ipic.vip/820jqx.jpg)
 
 在 a 的内部，我们碰到了`b()`，这个时候 b 被压入栈顶。
 
-![](https://tva1.sinaimg.cn/large/006tNbRwgy1g9lth4pggfj307906rwe9.jpg)
+![](https://p.ipic.vip/22i029.jpg)
 
 在 b 的内部，我们又碰到了`c()`，这个时候 c 被压入栈顶。
 
-![](https://tva1.sinaimg.cn/large/006tNbRwgy1g9ltert9f5j307i06p0si.jpg)
+![](https://p.ipic.vip/ers145.jpg)
 
 c 执行完毕之后，会从栈顶移除。
 
-![](https://tva1.sinaimg.cn/large/006tNbRwgy1g9lth4pggfj307906rwe9.jpg)
+![](https://p.ipic.vip/22i029.jpg)
 
 函数返回到 b，b 也执行完了，b 也从栈顶移除。
 
-![](https://tva1.sinaimg.cn/large/006tNbRwgy1g9ltfr1pfij307j06gt8h.jpg)
+![](https://p.ipic.vip/820jqx.jpg)
 
 同样 a 也会被移除。
 
-![](https://tva1.sinaimg.cn/large/006tNbRwgy1g9ltkvl983j3079068q2p.jpg)
+![](https://p.ipic.vip/0hk2wd.jpg)
 
 整个过程用动画来表示就是这样的：
 
-![](https://tva1.sinaimg.cn/large/006tNbRwgy1g9lx8oasxag30gn09y0wq.gif)
+![](https://p.ipic.vip/romqox.gif)
 ([在线观看](http://latentflip.com/loupe/?code=ZnVuY3Rpb24gYygpIHt9CmZ1bmN0aW9uIGIoKSB7CgljKCk7Cn0KZnVuY3Rpb24gYSgpIHsKCWIoKTsKfQphKCk7!!!))
 
 这个时候我们还没有涉及到`堆内存`和`执行上下文栈`，一切还比较简单，这些内容我们放到后面来讲。
@@ -119,7 +119,7 @@ fetchMyArcticlesSync().then(doSomethingB); // 3s
 fetchMyFriendsSync().then(doSomethingC); // 2s
 ```
 
-![1575538849801.jpg](http://ww1.sinaimg.cn/large/e9f490c8ly1g9lzjslxcaj20lr08nmy3.jpg)
+![1575538849801.jpg](https://p.ipic.vip/ujasyp.jpg)
 
 由于三块代码同时执行，因此总的时间最理想的情况下取决与最慢的时间，也就是 3s，这一点和使用异步的方式是一样的（当然前提是请求之间无依赖）。为什么要说最理想呢？由于三个线程都可以对 DOM 和堆内存进行访问，因此很有可能会冲突，冲突的原因和我上面提到的 JS 线程和渲染线程的冲突的原因没有什么本质不同。因此最理想情况没有任何冲突的话是 3s，但是如果有冲突，我们就需要借助于诸如`锁`来解决，这样时间就有可能高于 3s 了。 相应地编程模型也会更复杂，处理过锁的程序员应该会感同身受。
 
@@ -166,7 +166,7 @@ a();
 
 执行过程是这样的：
 
-![](https://tva1.sinaimg.cn/large/006tNbRwgy1g9lxcn39hhg30go080dj1.gif)
+![](https://p.ipic.vip/p5lxfj.gif)
 ([在线观看](http://latentflip.com/loupe/?code=ZnVuY3Rpb24gYygpIHt9CmZ1bmN0aW9uIGIoKSB7CgljKCk7Cn0KZnVuY3Rpb24gYSgpIHsKCXNldFRpbWVvdXQoYiwgMjAwMCkKfQphKCk7!!!))
 
 因此事件循环之所以可以实现异步，是因为碰到异步执行的代码“比如 fetch，setTimeout”，浏览器会将用户注册的回调函数存起来，然后继续执行后面的代码。等到未来某一个时刻，“异步任务”完成了，会触发一个事件，浏览器会将“任务的详细信息”作为参数传递给之前用户绑定的回调函数。具体来说，就是将用户绑定的回调函数推入浏览器的执行栈。
@@ -206,7 +206,7 @@ while (true) {
 
 动画演示：
 
-![](https://tva1.sinaimg.cn/large/006tNbRwgy1g9lxzvlth0g30go07yhc7.gif)
+![](https://p.ipic.vip/fy5ifj.gif)
 ([在线观看](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D))
 
 ### 加入宏任务&微任务
@@ -245,7 +245,7 @@ console.log(5);
 
 微任务主要包含：Promise、process.nextTick、MutaionObserver 等
 
-![](https://tva1.sinaimg.cn/large/006tNbRwgy1g9hfldyzj2j30g909xt8z.jpg)
+![](https://p.ipic.vip/vupgds.jpg)
 
 有了这个知识，我们不难得出上面代码的输出结果。
 
@@ -285,7 +285,7 @@ const EC = {
 };
 ```
 
-![](https://tva1.sinaimg.cn/large/006tNbRwgy1g9lyjjb6ecj30mh0c0aa2.jpg)
+![](https://p.ipic.vip/d6z9cb.jpg)
 
 我们来重点看一下 ScopeChain(VO chain)。如上图的执行上下文大概长这个样子，伪代码：
 
@@ -362,7 +362,7 @@ c.VO = {
 
 最后我总结了一个浏览器运行代码的整体原理图，希望对你有帮助：
 
-![](https://tva1.sinaimg.cn/large/006tNbRwgy1g9lzm6dww0j30kw0pjt8s.jpg)
+![](https://p.ipic.vip/gepbz4.jpg)
 
 下一节`浏览器的事件循环和NodeJS的事件循环有什么不同`, 敬请期待～
 

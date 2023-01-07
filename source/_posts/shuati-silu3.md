@@ -78,7 +78,7 @@ nums.length 能被 k 整除。
 
 那为什么 10 左右就是 n!，20 是 2^n? 这里给大家介绍一个你可能不知道的技巧。请大家记住一个数字 **1000 万**。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glvhj7a8tlj30ko0fkjse.jpg)
+![](https://p.ipic.vip/8n731u.jpg)
 
 上面之所以是 10 左右， 20 左右就是因为你把 n 带进去差不多都是 **1000 万**。 再比如一道题是 n 是 $10^7$，那很可能是$O(N)$复杂度，因为 $10 ^7$ 就是 **1000 万**。
 
@@ -95,7 +95,7 @@ nums.length 能被 k 整除。
 ```
 
 示例 1：
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glui2h3fu6j308z08z0su.jpg)
+![](https://p.ipic.vip/pxxkdc.jpg)
 
 ```
 输入：heights = [[1,2,2],[3,8,2],[5,3,5]]
@@ -202,7 +202,7 @@ n <= 10^9
 
 经过这样的思路，大家一下子就能打开思路。剩下的任务就简单了。因为每次固定一位之后，就将数字分为了左右两部分，那么该位是 2 的次数就是左右所有可能的笛卡尔积，即 a \* b。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gluet2uoy8j30pw0883ys.jpg)
+![](https://p.ipic.vip/znr66t.jpg)
 
 比如 n 是 135。
 
@@ -269,7 +269,7 @@ class Solution:
 - 是 2 么？no
 - 。。。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glvhjzwomxj31840rm77h.jpg)
+![](https://p.ipic.vip/u16vl3.jpg)
 
 最终的答案就是子问题中回答为 “yes” 的索引。严格意义上来说，这里只有分，没有治，而且这个分和前面的分有微妙的差异。前面的分完之后后面还要用，这个分是直接给扔掉了。类似的有二分法，二分法就是一种只有分没有治的“分治法”。
 
@@ -293,7 +293,7 @@ coins 是个变量， amount 也是变量，它们关系感觉好多的样子？
 
 于是你可以画出类似如下的逻辑树结构，由于节点太多我没有画全。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glvhlpqmywj319o0ostcg.jpg)
+![](https://p.ipic.vip/2fmlrp.jpg)
 
 有没有发现你的大脑直接处理大问题没有思路，但将其分解为小问题就简单了许多？**分**完了，我们还要**治**。
 
@@ -395,13 +395,13 @@ public int placeRow(i) {
 }
 ```
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glvhg8w616j315k0s8wit.jpg)
+![](https://p.ipic.vip/sjbguy.jpg)
 
 现在的问题就只剩下实现`canPlaceQueue(i, j)` 和 `placeQueue(i, j)`了，这两个函数根据题目要求模拟实现即可。
 
 需要注意的是我们做了一个`placeQueue(i, j)` 的操作，这**可能**是一个 mutable 的操作。因此如果一条路行不通需要回溯，那么 mutable 的数据需要撤销修改。当然如果你的数据是 immutable 就无所谓了。不过 immutable 则有可能内存移除或者超时的风险。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glvhgnyobcj31uc0si483.jpg)
+![](https://p.ipic.vip/9b72fh.jpg)
 
 由于这里只是讲思维的，不是讲题目本身的，因此还是点到为止，后面的算法细节我就不讲了，希望读者能自己将代码完善一下。
 
@@ -413,7 +413,7 @@ public int placeRow(i) {
 
 - [70. 爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/ "70. 爬楼梯") 让你求爬到最后一级台阶有多少种方法。这太多了，我数不过来。但是我可以将其分解成两个子问题。如果我用 f(n) 表示爬到第 n 级的方法数，那么 f(n) = f(n - 1) + f(n - 2)。但是 n - 1 我也不会啊，没关系，我们继续分解。这和上面的硬币问题有多大差别么？ 对于这道题，分就是拆成两个子问题，治就是求和。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glvho4ljj1j30nk0ek0u5.jpg)
+![](https://p.ipic.vip/oshbfs.jpg)
 
 > 这就是最简单的无选择的**递推**动态规划
 
@@ -421,17 +421,17 @@ public int placeRow(i) {
 
 - [220 场周赛 - 跳跃游戏 VI](https://leetcode-cn.com/problems/jump-game-vi/) 这不还是上面爬楼梯换皮么？这次变成了一次能爬 k 级台阶罢了。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glvhobhn2tj31ai0n478f.jpg)
+![](https://p.ipic.vip/j1kviq.jpg)
 
 > 这道题数组长度是 $10^5$，如果不做优化复杂度会是 $N^2$，算起来就是 $10^10$ 过不了，大于上面给大家讲的 1000 万。如何优化有点跑题了，就不在这里讲了。
 
 - [62. 不同路径](https://leetcode-cn.com/problems/unique-paths/ "62. 不同路径") 穿个二维的衣服就看不出你是爬楼梯了？
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glvhord9r6j30lo0es402.jpg)
+![](https://p.ipic.vip/1n1v7a.jpg)
 
 相关换皮题目太多，大家可以去我的插件里看。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gluqthyftxj30qe0lcwgw.jpg)
+![](https://p.ipic.vip/0h9vlt.jpg)
 
 ## 总结
 

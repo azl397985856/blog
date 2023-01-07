@@ -95,7 +95,7 @@ class Solution:
 
 使用效果：
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gqdg24rcwpj30tg0ax3za.jpg)
+![](https://p.ipic.vip/fsyvu0.jpg)
 
 当然也可以直接高亮具体某一行，比如 **py {3}** 就是高亮第三行。
 

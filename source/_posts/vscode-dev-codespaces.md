@@ -28,7 +28,7 @@ https://github.dev/azl397985856/leetcode
 
 笔者特意对 github1s 和 github.dev 进行了对比，结果如下图：
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gu2kwlixmjj61lv0u0dnl02.jpg)
+![](https://p.ipic.vip/uqz7bx.jpg)
 
 可以发现二者不管是 UI 还是功能都是非常类似的。大的不同点就是 github.dev 集成了 codespaces，这也是微软的下一个主战场。不难想象，将来不仅是云端 vscode 还是本地的 vscode 都会向 codespaces 发力。
 
@@ -42,7 +42,7 @@ codespace 定位更高端，比如可以像 github actions 那样定制镜像，
 
 如下是 codespaces 的架构图：
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gu2l2gywgmj61400rsgnk02.jpg)
+![](https://p.ipic.vip/jp7lt6.jpg)
 
 可以看出其主要由两部分组成：一部分是编辑器，另外一部分是云端的虚拟机，而几乎所有的功能都可以在云端完成，比如 AI 提供的自动补全，**根据注释写代码**等功能。更多关于 codespaces 的介绍参考：https://docs.github.com/en/codespaces/overview#joining-the-beta
 

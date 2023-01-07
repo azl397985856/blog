@@ -37,7 +37,7 @@ categories:
 
 Chrome 采用多进程架构，其顶层存在一个 Browser process 用以协调浏览器的其它进程。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds5220bt0j30k00bjdgl.jpg)
+![](https://p.ipic.vip/05lp3u.jpg)
 (图来自 https://zhuanlan.zhihu.com/p/47407398)
 
 这也是为什么 chrome 明明只打开了一个 tab，却出现了 4 个进程的原因。
@@ -71,7 +71,7 @@ Chrome 采用多进程架构，其顶层存在一个 Browser process 用以协�
 
 工作线程能够分担主线程的计算压力，进而主线程可以获得更多的空闲时间，从而更快地响应用户行为。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds522xxxtj31400u0gnl.jpg)
+![](https://p.ipic.vip/bs9ynv.jpg)
 
 工作线程主要有 Web Woker 和 Service Worker 两种。
 
@@ -102,7 +102,7 @@ Chrome 采用多进程架构，其顶层存在一个 Browser process 用以协�
 
 我们以包工头包工程，然后将工作交给各个单位去做的角度来看的话，大概是这样的：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds523elypj30mt0cgq57.jpg)
+![](https://p.ipic.vip/4ley0m.jpg)
 
 实际上工作工作进程，尤其是 WebWorker 已经出现很长时间了。但是很多时候我们并没有充分使用，甚至连使用都没使用。
 
@@ -121,7 +121,7 @@ Chrome 采用多进程架构，其顶层存在一个 Browser process 用以协�
 
 如果将这些抽离出我们主线程的话，我们的应用大概会是这样的：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds524dw4nj30hb0d940f.jpg)
+![](https://p.ipic.vip/f8gi12.jpg)
 
 这样做主线程只负责 UI 展示，以及事件分发处理等工作，这样就大大减轻了主线程的负担，我们就可以更快速地响应用户了。
 然后在计算结果完成之后，我们只需要通知主线程，主线程做出响应即可。
@@ -143,7 +143,7 @@ Chrome 采用多进程架构，其顶层存在一个 Browser process 用以协�
 
 但是这些问题都有很成熟的解决方案，比如对于操作比较繁琐这个问题我们就可以通过使用一些封装好 web worker 操作的库。[comlink](https://github.com/GoogleChromeLabs/comlink) 就是一个非常不错的 web worker 的封装工具库。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds525clcbj31kw0ntjt5.jpg)
+![](https://p.ipic.vip/kr7az0.jpg)
 
 对于不支持单文件引入，我们其实可以用`Blob`, `createObjectURL`的方式模拟，
 当然社区中其实也有了成熟的解决方案，如果你使用 webpack 构建的话，有一个`worker-loader`可以直接用。
@@ -154,7 +154,7 @@ Comlink， 就很好地解决了这个问题，即使用 Comlink 提供的`proxy
 
 对于反复序列化带来的性能问题，我们其实可以使用一种叫`对象转移（Transferable Objects）`的技术，幸运的是这个特性的浏览器兼容性也不错。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds526p8ufj312h0a2dhn.jpg)
+![](https://p.ipic.vip/75eyo6.jpg)
 
 对于异步的问题，我们可以采取一定的取舍。 即我们
 本地每次保存一份最近一份的结果拷贝，我们只需要每次返回这个拷贝，

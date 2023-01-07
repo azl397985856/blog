@@ -48,7 +48,7 @@ curr = temp;
 
 举例如图：翻转整个链表 1->2->3->4->null -> 4->3->2->1->null
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54nob8uj31400u00tx.jpg)
+![](https://p.ipic.vip/d3iwgw.jpg)
 
 ### 代码
 
@@ -167,11 +167,11 @@ first.next = cur;
 
 如图所示 步骤 4 和 5： 翻转区间链表区间`（start， end）`
 
-![reverse linked list range in (start, end)](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54ol1rcj30zd0qxmxy.jpg)
+![reverse linked list range in (start, end)](https://p.ipic.vip/1entxw.jpg)
 
 举例如图，`head=[1,2,3,4,5,6,7,8], k = 3`
 
-![reverse k nodes in linked list](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54qkdnkj312u0u0n2u.jpg)
+![reverse k nodes in linked list](https://p.ipic.vip/gbfnkm.jpg)
 
 > **NOTE**: 一般情况下对链表的操作，都有可能会引入一个新的`dummy node`，因为`head`有可能会改变。这里`head 从1->3`,
 > `dummy (List(0))`保持不变。

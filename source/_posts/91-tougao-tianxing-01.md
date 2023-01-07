@@ -56,7 +56,7 @@ categories:
 
 图解：
 
-![image](https://img-blog.csdnimg.cn/20201201232240858.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/1w30u8.png)
 
 (注意：数组下标从 0 开始)
 
@@ -74,7 +74,7 @@ categories:
 
 根据题目要求，需要我们调整数组中奇偶数的顺序，那这样的话，我们可以从数组的两端同时开始遍历，右边遇到奇数的时候停下，左边遇到偶数的时候停下，然后进行交换。
 
-![image](https://img-blog.csdnimg.cn/20201201232501232.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/iyrmq4.png)
 
 #### 1122.数组的相对排序
 
@@ -99,7 +99,7 @@ arr2 中的每个元素都出现在  arr1  中
 
 观察输出，发现数字，因为 arr1 总是根据 arr2 中元素的相对大小来排序，所以只相当于在 arr2 中进行填充，每个地方该填充多少呢？这个时候就需要去统计 arr1 中每个数字出现的频率。
 
-![image](https://img-blog.csdnimg.cn/20201201232334489.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/hy9n0n.png)
 
 #### 小结
 
@@ -110,7 +110,7 @@ arr2 中的每个元素都出现在  arr1  中
 链表是一种线性数据结构，其中的每个元素实际上是一个单独的对象，每一个节点里存到下一个节点的指针（Pointer）。
 就像我们玩的寻宝游戏一样，当我们找到一个宝箱的时候，里面还存在寻找下一个宝箱的藏宝图，依次类推，每一个宝箱都是如此，一直到找到最终宝藏。
 
-![image](https://img-blog.csdnimg.cn/20201201232747122.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/7f1ug5.png)
 
 通过单链表，可以衍生出循环链表，双向链表等。
 
@@ -135,7 +135,7 @@ arr2 中的每个元素都出现在  arr1  中
 
 想要找到倒数第 k 个节点，如果此时在数组中，那我们只需要用最后一个数组的索引减去 k 就能找到这个值，但是链表是不能直接通过索引得到的。如果此时，我们知道最后一个节点的位置，然后往前找 k 个不就找到我们需要的节点了吗？等价于我们要找的节点和最后一个节点相隔 k 个位置。所以当有一个指针 front 出发 k 步后，我们再出发，等 front 到达终点时，我们刚好到达倒数第 k 个节点。
 
-![image](https://img-blog.csdnimg.cn/20201201232859265.PNG)
+![image](https://p.ipic.vip/dshbe0.png)
 
 我们把这种解法叫做双指针，或者快慢指针，或者前后指针，这种方法可以用于寻找链表中间节点，判断是链表中是否存在环（循环链表）并寻找环入口。
 
@@ -162,12 +162,12 @@ arr2 中的每个元素都出现在  arr1  中
 ##### 解法 1
 
 找到位置后，直接断开
-![image](https://img-blog.csdnimg.cn/20201201232919376.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/o7u7pd.png)
 
 ##### 解法 2
 
 制作循环链表，然后再找倒数第 k 个数，然后断开循环链表
-![image](https://img-blog.csdnimg.cn/20201201232932995.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/6023ec.png)
 
 #### 24. 两两交换链表中的节点
 
@@ -189,7 +189,7 @@ arr2 中的每个元素都出现在  arr1  中
 
 原理很简单，两个指针，分别指向相邻的两个节点，然后再添加一个临时指针做换交换的中介**添加 dummy 节点**，不用考虑头节点的情况，更加方便。直接上图：
 
-![image](https://img-blog.csdnimg.cn/20201201233004452.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/gduib4.png)
 
 除了同时操作一个链表之外，有的题目也会给出两个或者更多的链表，如两数相加，如 leetcode 中 2.两数相加、21.合并两个有序链表、160.相交链表
 
@@ -205,13 +205,13 @@ arr2 中的每个元素都出现在  arr1  中
 
 如下面的两个链表
 
-![image](https://img-blog.csdnimg.cn/20201201232945566.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/cho9gr.png)
 
 分析：
 
 我们知道，对于任意两个数 ab，一定有 a+b-c=b+a-c，
 
-![image](https://img-blog.csdnimg.cn/20201201233017228.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/bbpp5l.png)
 
 基于 a+b-c=b+a-c，我们可以设置两个指针，分别指向 A 和 B，以相同的步长同时移动，并在第一次到达尾节点的时候，指向另一个链表，如果存在相交节点，也就是说 c > 0，那么两个指针一定会相遇，相遇处也就是相交节点。而当不存在时，即 c=0，那么两个指针最终都会指向空节点。
 
@@ -226,7 +226,7 @@ arr2 中的每个元素都出现在  arr1  中
 
 <center>
 
-![image](https://img-blog.csdnimg.cn/20201201233338327.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/sdiphq.png)
 
 </center>
 
@@ -257,7 +257,7 @@ arr2 中的每个元素都出现在  arr1  中
 
 图解：
 
-![image](https://img-blog.csdnimg.cn/20201201233351644.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/yi26gv.png)
 
 #### 150.逆波兰表达式求值
 
@@ -278,7 +278,7 @@ arr2 中的每个元素都出现在  arr1  中
 - 根据运算法则，我们可以知道，一个运算有 num1，operation，num2 三部分组成。在一个逆波兰表达式中，运算符前面两个 num 就是这个运算的组成。
 - 我们要做事情就是，找到一个运算符的时候，同时找到他前面的两个数，而栈的现金先去特性满足这个需求，使用栈来解决。
 
-![image](https://img-blog.csdnimg.cn/20201201233404731.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/zxh5zn.png)
 
 #### 227.基本计算器 II
 
@@ -296,11 +296,11 @@ arr2 中的每个元素都出现在  arr1  中
 
 - 与逆波兰表达式不同的地方是，这里运算符两边是操作数。但是，这又有什么问题呢？万变不离核心，我们只需要在找到运算符的同时，得到运算符两边的操作数。问题来了，还需要考虑运算符的优先级，想到的一个方法就是，只进行乘除法运算，最后进行加法运算，不进行减法运算（减去一个数 ⟺ 加上这个数的负数）
 
-![image](https://img-blog.csdnimg.cn/20201201233435628.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/5fbuy0.png)
 
 - 如果能够把这个字符串表达式相似地转换位逆波兰表达式，那就能直接套用逆波兰表达式的代码了，回顾一下，逆波兰表达式是，每次有操作符的时候，就从栈顶出来两个元素。可以通过使用两个栈来实现，一个栈用来存储操作数，一个栈用来存储操作符。如果比栈顶的操作符符优先级低或者相同，那么就从操作符栈取出栈顶运算符号
 
-![image](https://img-blog.csdnimg.cn/20201201233423603.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/et63ww.png)
 
 #### 496.下一个更大元素 I
 
@@ -323,7 +323,7 @@ arr2 中的每个元素都出现在  arr1  中
 题目要求我们找出 nums1 中每个元素在 nums2 中的下一个比这个元素大的值，又提到 nums1 是 nums2 的一个子集，我们不妨找出 nums2 中每个元素的下一个比他大的值，然后映射到 nums1 中。
 
 那如何找出 nums2 中每个元素的下一个比他大的值呢？对于当前元素，若下一个元素比他大，则找到了，否则的话，就把这个元素添加到栈中，一直到找到一个元素比栈顶元素大，这时候把栈里面所有小于这个元素的元素都出栈，听起来很绕，无妨，看图---->
-![image](https://img-blog.csdnimg.cn/20201201233452768.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/ujr030.png)
 
 最后栈中依然有数据存在，这是为什么呢？因为这些元素后面找不到比他更大的值了。观察示例数据，4 后面没有比他更大的值了，5 和 1 也是。我们还能观察到栈中元素是从大到小的，可以称这个栈为==单调递减栈==(如 1019.寻找链表中的下一个更大节点，503.下一个更大元素 II、402.移掉 k 位数字，39.每日温度，在 1673.找出最具有竞争力的子序列中，其实只需要构建一个单调递增栈，然后截取前 k 个。)。
 
@@ -337,13 +337,13 @@ arr2 中的每个元素都出现在  arr1  中
 
 树虽相比于链表来说，至少有两个节点（n 个节点就叫 n 叉树），但是树是一个抽象的概念，可以理解为一个不停做选择的过程，给定一个起始条件，会产生多种结果，而这些结果又成为新的条件，以此类推，直到不再有新的条件。在树种，起始条件就是根节点，不再产生新的条件的就是叶子节点。在树种，使用较多的是二叉树。一颗二叉树不管有多大，我们都可以把他拆分为五种形式,
 
-![image](https://img-blog.csdnimg.cn/20201201233934190.PNG)
+![image](https://p.ipic.vip/lb5567.png)
 
 不管是在树上进行什么操作，都需要进行遍历，遍历的方式有两种：广度优先遍历（BFS）和深度优先遍历（DFS）。
 简单来说，广度就是先找到有多少种可能，然后找出这些可能有多少种可能；而深度就是每次只根据一个条件来找，直到最终没有条件。
 话不多说，上图。
 
-![image](https://img-blog.csdnimg.cn/20201201233945949.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/ftde4i.png)
 
 如果是试错的话，广度是一次把所有的结果都试一试，深度则是一条路走到黑。
 
@@ -407,7 +407,7 @@ function dfs(root) {
 
 解释:
 
-![image](https://img-blog.csdnimg.cn/20201201234026960.PNG)
+![image](https://p.ipic.vip/9rmdfh.png)
 
 分析：
 
@@ -417,7 +417,7 @@ function dfs(root) {
 
 上图：
 
-![image](https://img-blog.csdnimg.cn/20201201234011642.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/f0tt1t.png)
 
 #### 112. 路径总和
 
@@ -429,13 +429,13 @@ function dfs(root) {
 ```
 
 示例：
-![image](https://img-blog.csdnimg.cn/20201201233957252.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/m126kp.png)
 
 分析：
 
 求一条路径（根节点到叶子节点），这不就一条路走到底吗，没什么好犹豫的，选择深度优先遍历。因为需要获得路径上的和，我们需要把每个节点的值（状态）传递给下一个节点。
 
-![image](https://img-blog.csdnimg.cn/20201201234053661.PNG)
+![image](https://p.ipic.vip/m9lgku.png)
 
 在 113. 路径总和 II 中，和本题类似，只需要把节点加入到数组中传递给下一个节点；在 129. 求根到叶子节点数字之和，需要把当前值\*10 传递给下一个节点。
 
@@ -450,7 +450,7 @@ function dfs(root) {
 
 示例：
 
-![image](https://img-blog.csdnimg.cn/20201201234040793.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/svsw2r.png)
 
 分析：
 
@@ -458,7 +458,7 @@ function dfs(root) {
 
 上图
 
-![image](https://img-blog.csdnimg.cn/20201201234121332.PNG)
+![image](https://p.ipic.vip/3ee002.png)
 
 #### 513. 找树左下角的值
 
@@ -472,13 +472,13 @@ function dfs(root) {
 
 <center>
 
-![image](https://img-blog.csdnimg.cn/2020120123411135.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMTI0MjQx,size_16,color_FFFFFF,t_70)
+![image](https://p.ipic.vip/h87seq.png)
 
 </center>
 分析：
 两个关键信息，一个最后一行，一个最左边。好像广度，深度都可以找到，在这里以深度进行说明，最后一行就是depth最大的，所以在深度遍历的时候，每次给一层传递depth信息。
 
-![image](https://img-blog.csdnimg.cn/202012012341321.PNG)
+![image](https://p.ipic.vip/gd7n97.png)
 
 与此题类似的还有 111. 二叉树的最小深度，104.二叉树的最大深度
 

@@ -11,25 +11,25 @@ date: 2021-06-23
 
 - [看股票](https://github.com/giscafer/leek-fund "看股票")
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gruk8mx11rj31c00u0qlr.jpg)
+![](https://p.ipic.vip/40g921.jpg)
 
 - [玩游戏](https://github.com/gamedilong/anes-repository "玩游戏")
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1grsanvqzt1j309i0lsq38.jpg)
+![](https://p.ipic.vip/jwq1cn.jpg)
 
 - [看小说](https://marketplace.visualstudio.com/items?itemName=renkun.reader "看小说")
 
 - [二次元](https://github.com/deepred5/daily-anime "二次元")
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1grsaqrs2nrj30k00fogq3.jpg)
+![](https://p.ipic.vip/q2b18x.jpg)
 
 - [逛知乎](https://github.com/niudai/VSCode-Zhihu "逛知乎")
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1grsaoqs2zhj30xz09y0w2.jpg)
+![](https://p.ipic.vip/64dwb7.jpg)
 
 - [刷 Leetcode](https://github.com/LeetCode-OpenSource/vscode-leetcode "刷 Leetcode")
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1grsarv5bboj30jb0bugnb.jpg)
+![](https://p.ipic.vip/cbasd9.jpg)
 
 等等。。。
 
@@ -55,7 +55,7 @@ date: 2021-06-23
 
 选中代码后，右击菜单中选中 Code Rewriting 即可，也可以右键暂停或继续。如下图：
 
-![Code Swimming](https://tva1.sinaimg.cn/large/008i3skNly1grsah4lscsj30f1061gm3.jpg)
+![Code Swimming](https://p.ipic.vip/0opp33.jpg)
 
 如果想要快捷键暂停代码重写，可以直接使用以下按键暂停：
 

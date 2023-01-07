@@ -25,7 +25,7 @@ Access-Control-Max-Age: 86400
 
 刚开始的时候用的是一个专门给请求加跨域头的插件 `Allow CORS: Access-Control-Allow-Origin` ，地址：https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf/related?hl=en-US。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gz3wawv2cpj30sk0d874x.jpg)
+![](https://p.ipic.vip/nk8dv0.jpg)
 
 这个插件使用起来非常简单，只需要点击切换 on 和 off 的状态即可。 on 的时候会自动给请求头增加跨域功能，off 则相当于禁用了插件。
 
@@ -33,7 +33,7 @@ Access-Control-Max-Age: 86400
 
 因此一个**通用的给请求增加头信息**的插件就有必要了。于是我选择了 `requestly`
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gysjmuktv3j32do0u0q6n.jpg)
+![](https://p.ipic.vip/knkupg.jpg)
 
 美中不足是每个规则只能免费改**一个**头。不过好消息是你可以新建多个规则，每个规则改一个头就可以白嫖了。
 

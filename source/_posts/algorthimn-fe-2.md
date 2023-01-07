@@ -79,7 +79,7 @@ TensorFlow™ 是一个采用数据流图（data flow graphs），用于数值�
 这里我举个例子，下图是支付宝的小程序架构。 如果我们不懂一些算法的话，
 是很难像支付宝一样结合自己的业务去做一些突破的。
 
-![支付宝小程序架构](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51u5ayhj315i0cm0vu.jpg)
+![支付宝小程序架构](https://p.ipic.vip/v4zt9s.jpg)
 (图片来自 https://www.infoq.cn/article/ullETz7q_Ue4dUptKgKC)
 
 
@@ -115,7 +115,7 @@ TensorFlow™ 是一个采用数据流图（data flow graphs），用于数值�
 我们需要递归往上搜索，看有没有相应权限，如果有，则这个角色有文件的该操作权限。
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51uym8gj30kn0eedhp.jpg)
+![](https://p.ipic.vip/stye40.jpg)
 
 如图，fileA 的权限就需要从 fileA 开始看有没有对应权限，如果有，则返回有权限。
 如果没有，则查找 app 文件夹的权限，重复这个过程，直到根节点。
@@ -127,7 +127,7 @@ TensorFlow™ 是一个采用数据流图（data flow graphs），用于数值�
 我们使用一个二进制来标示一个权限有还是没有。
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51vgy83j30f70d7wfv.jpg)
+![](https://p.ipic.vip/k2f55u.jpg)
 
 这样的话，一方面我们只需要 4 个 bit 就可以存储权限信息，存储已经是极限了。
 另一方面我们通过位运算即可算出有没有权限，二进制运算在计算性能上也是极限了。
@@ -135,7 +135,7 @@ TensorFlow™ 是一个采用数据流图（data flow graphs），用于数值�
 另外代码写起来，也会非常简洁，感兴趣的可以自己试试。
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51xb3fij30hi0d1abh.jpg)
+![](https://p.ipic.vip/f6rmyh.jpg)
 
 > 扩展： 假如文件权限不是只有两种可能，比如有三个取值怎么办？
 
@@ -162,12 +162,12 @@ FSM 应用非常广泛， 比如正则表达式的引擎，编译器的词法和
 那么正则是否可以可视化呢？ 答案是肯定的，这里我介绍一个可视化正则表达式的一个网站。
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51yqptbj313h05wgmb.jpg)
+![](https://p.ipic.vip/2nd2mi.jpg)
 
 实际业务中如果使用状态机来设计系统也可以进行可视化。类似这样子：
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51z6k2gj31390h9tah.jpg)
+![](https://p.ipic.vip/dqhq09.jpg)
 
 (图来自 https://statecharts.github.io/xstate-viz/)
 
@@ -198,7 +198,7 @@ FSM 应用非常广泛， 比如正则表达式的引擎，编译器的词法和
 用图大概是这个样子：
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds5204zw8j30eq0bfwfw.jpg)
+![](https://p.ipic.vip/hb7kgw.jpg)
 
 如果用代码大概是这样的：
 
@@ -306,13 +306,13 @@ if (cur === 0) {
 我们很容易画出整理的流程图：
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds520kx1pj30lr06p0tw.jpg)
+![](https://p.ipic.vip/nvk4rx.jpg)
 
 对于答题部分则稍微有一点麻烦，但是如果你用状态机的思维去思考就很容易,
 我们不难画出这样的图：
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds52123yij30m008vdht.jpg)
+![](https://p.ipic.vip/btcj8n.jpg)
 
 JS 中有很多 FSM 的框架， 大家都可以直接拿过来使用。 笔者之前所在的项目
 也用到了这样的技术，但是笔者是自己手写的简化版本 FSM，基本思想是一致的。

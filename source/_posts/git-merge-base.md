@@ -39,7 +39,7 @@ git merge-base A B 可以查找 A 提交和 B 提交的最近公共祖先提交�
 
 而上一次提交的引用导致了 git 提交是一个链表结构。而 git 支持创建分支，并基于分支进行开发，因此 git 提交本质上是有向无环图结构。
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1h0xrlaek8tj20p80b8aab.jpg)
+![](https://p.ipic.vip/eabmgz.jpg)
 
 如上图，我们基于提交 2 创建了新分支 dev，dev 上开发后我们可以将其合并到主分支 master。
 
@@ -47,11 +47,11 @@ git merge-base A B 可以查找 A 提交和 B 提交的最近公共祖先提交�
 
 如果最近公共祖先是被 merge 的 commit， 则可执行 fast-forward。如下图，我们将 dev 合并到 master 就可以 fast-forward，就好像没有创建过 dev 分支一样。
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1h0xrn9k030j20o80dyglt.jpg)
+![](https://p.ipic.vip/qrfsmu.jpg)
 
 最后举一个更复杂的例子。如下图，我们在提交 3 上执行 git merge HEAD 提交 6。会发生什么？
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1h0xro7jws7j212m0j6t9g.jpg)
+![](https://p.ipic.vip/btro3z.jpg)
 
 答案是会找到提交 2。那怎么找到 2 呢？
 
@@ -178,7 +178,7 @@ class Solution {
 
 这不，这位同学就想到了预处理。
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1h0zwch3o87j21fa0lqq6q.jpg)
+![](https://p.ipic.vip/xorok9.jpg)
 
 [链接在这里](https://github.com/ingydotnet/git-subrepo/issues/140 "git merge 算法优化 issue")。即第一次维护好了节点信息，将其存到文件里，那么以后执行 merge-base，就不需要对已经处理过的节点进行遍历了。**理论上，不管 merge-base 多少次，我们都仅遍历一次节点**。
 
@@ -198,4 +198,4 @@ git merge-base 本质上就是一个寻找最近公共祖先的算法。
 
 关注公众号力扣加加，努力用清晰直白的语言还原解题思路，并且有大量图解，手把手教你识别套路，高效刷题。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg)
+![](https://p.ipic.vip/sm09g1.jpg)

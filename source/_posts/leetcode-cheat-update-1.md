@@ -15,7 +15,7 @@ categories:
 
 插件增加了**手撕算法**系列。那么作为第一篇手撕算法上线的就是我们的**排序算法**。
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1golszukhhcj20wa0q8gov.jpg)
+![](https://p.ipic.vip/i7kdi7.jpg)
 
 排序算法目前我提供了五种排序算法，它们分别是：
 
@@ -35,13 +35,13 @@ categories:
 
 刷题插件更新新功能啦。本期新增“力扣官方题解”主题。效果图：
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1golt0rqrq4j21280mnmzv.jpg)
+![](https://p.ipic.vip/h1hu30.jpg)
 
 ## 学习路线增加二分
 
 二分的两种类型，以及四种技巧都包含在内了哦~
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1golt2o2lj0j20rc0oodjx.jpg)
+![](https://p.ipic.vip/3u4f7t.jpg)
 
 动态规划接下来会进一步完善，比如增加区间二分等。
 

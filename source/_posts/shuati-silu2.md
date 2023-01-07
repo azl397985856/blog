@@ -66,7 +66,7 @@ date: 2020-12-12
 
 力扣的参数是可以改名字的，如下图：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glawz82w0fj310l0a4wgd.jpg)
+![](https://p.ipic.vip/q0qlfw.gif)
 
 你可以将名字改成一个短的或者你熟悉的。比如上面这道题，我写的时候就可以：
 
@@ -143,7 +143,7 @@ for(int i= 0;i<A.length;i++) {
 
 如下是我在力扣 1383 题中使用 zip 技巧的例子：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glaxhfvp7fj311o0e3got.jpg)
+![](https://p.ipic.vip/1szgwa.jpg)
 
 另外 zip 还有一些其他用处。比如我想要获取当前数组位置的前一项。
 
@@ -262,7 +262,7 @@ mid = (r - l) // 2 + l
 
 力扣的测试用例其实是可以一次写多个的。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glaxys6s2gj30pi0letcl.jpg)
+![](https://p.ipic.vip/iajyl0.jpg)
 
 如上图，该题目有两个参数。那两行其实就是**一个完整用例**。 我这里输入了六行，也就是三个用例。这个时候点击执行，就可以一次执行三个用例。
 
@@ -270,27 +270,27 @@ mid = (r - l) // 2 + l
 
 执行成功后，我们可以一次查看所有的差异。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glay1130cnj313j084q3r.jpg)
+![](https://p.ipic.vip/lvqm16.jpg)
 
 如果你老是考虑不到各种边界，那这个功能简直是福音。 另外如果你打比赛，你可以把题目给的测试用例批量复制到这里一次执行看结果，非常有用。
 
 为了方便大家复制所有题目内置的测试用例，我的**刷题插件 leetcode-cheatsheet**增加了一个功能**一键复制所有的内置用例**。
 
-![](https://imgkr2.cn-bj.ufileos.com/fa5e392f-eee0-4491-a798-e166d8e3855c.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=lN0DNqgrxiq2rPjfNADSXS93aDQ%253D&Expires=1607850606)
+![](https://p.ipic.vip/yldq81.jpg)
 
 正常情况，下点击之后会提示你复制成功，你只需要 ctrl + v 粘贴到**测试用例**的输入框即可。
 
 但是力扣网站有很多不是很统一的地方，这就需要我不断进行兼容。比如如下兼容代码：
 
-![](https://imgkr2.cn-bj.ufileos.com/fd8be741-57c9-4215-94c5-43a3573040e5.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=5WXi6qLmYrbXEoVizboSw%252Bh2D2g%253D&Expires=1607763106)
+![](https://p.ipic.vip/610csj.jpg)
 
 上面代码指的是力扣测试用例的 html 标签是不定的，并且有时候是”输入：“（注意是中文的：），有时候又是”输入:“（注意是英文的:）。
 
 因此难免有我无法兼容的情况。因此就会发生类似这样的情况
-![](https://imgkr2.cn-bj.ufileos.com/112b82aa-157d-4da4-942d-bb6d932e6475.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=49i2f5mDyXSohJu3YVnWuGCi5FY%253D&Expires=1607856610)
+![](https://p.ipic.vip/bhiohu.jpg)
 ：
 
-![](https://imgkr2.cn-bj.ufileos.com/ecd4bc7c-bddc-49f9-bf94-8e4e23ab4e42.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=Bw09OczdBUTVEV3ZYBKpHd6CHFE%253D&Expires=1607854070)
+![](https://p.ipic.vip/175xop.jpg)
 
 遇到这样的情况，你可以点击弹出信息的反馈文字，给我反馈。不过据我的测试，大部分情况是没问题的。
 
@@ -298,13 +298,13 @@ mid = (r - l) // 2 + l
 
 上线几天已经有 100 多人安装了， 你确定不试试么？
 
-![](https://imgkr2.cn-bj.ufileos.com/3fb07eb8-6696-4b3d-82af-dc9a97ef5a32.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=R2AnCPjf1P6My7k%252B5wCnc3cBLzQ%253D&Expires=1607856650)
+![](https://p.ipic.vip/8hpb5x.jpg)
 
 ### 树的可视化
 
 力扣支持大家对树进行可视化，只要点击这个**树结构可视化按钮**即可（只有树的题目才有这个按钮）。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glay3e4j34j31450lq0uz.jpg)
+![](https://p.ipic.vip/jltffi.jpg)
 
 如果你写了多个数组，也并不会生成多个树，貌似是以最后一次输入为准。
 
@@ -316,11 +316,11 @@ mid = (r - l) // 2 + l
 
 比如这样的树：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glay88vsibj30yq0o9mz5.jpg)
+![](https://p.ipic.vip/qb2b67.jpg)
 
 和这样的树：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glayb242idj30n509fmy9.jpg)
+![](https://p.ipic.vip/wp6s0h.jpg)
 
 现在其实还有些问题，而且我想**多加几种数据结构**方便写题解，所以就之后再说好了。
 
@@ -332,11 +332,11 @@ mid = (r - l) // 2 + l
 
 - [Cyberbrain](https://github.com/laike9m/Cyberbrain)
 
-![](https://imgkr2.cn-bj.ufileos.com/7298aece-2966-4285-9d85-6d15843642a1.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=D23lggyZn70wF1JF6xkPhHeGFvw%253D&Expires=1607851651)
+![](https://p.ipic.vip/jng6bl.jpg)
 
 - [vscode-debug-visualizer](https://github.com/hediet/vscode-debug-visualizer)
 
-![](https://imgkr2.cn-bj.ufileos.com/6a5499e7-8615-4d8b-8e14-78a4065b7c8d.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=yfcE41SBLrPAR3piYz%252FeKOUDljU%253D&Expires=1607851751)
+![](https://p.ipic.vip/0d8kel.jpg)
 
 ## 推荐一个网站
 
@@ -348,13 +348,13 @@ OI Wiki 致力于成为一个免费开放且持续更新的 编程竞赛 (compet
 
 力扣提交成功之后除了可以看到自己的排名情况（击败百分之多少），还可以查看别人的提交代码。
 
-![](https://imgkr2.cn-bj.ufileos.com/cdb95578-10de-41d1-8c5f-92bde37e5d0c.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=pM8aROlTYLGT41JwJGsYmscvof8%253D&Expires=1607851973)
+![](https://p.ipic.vip/h9gouc.jpg)
 
-![](https://imgkr2.cn-bj.ufileos.com/5495c2c7-eef8-4a99-8044-a52a93085d00.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=H%252FpTEUJ9NGdyLOou1fV4UkWCCsY%253D&Expires=1607852044)
+![](https://p.ipic.vip/7b3wyt.jpg)
 
 这里可以看所有分段的分布情况，也可以直接点击对应的柱子，查看别人的代码怎么写的。比如我这里直接点开了击败 100% 的代码，研究下 ta 是怎么写的。
 
-![](https://imgkr2.cn-bj.ufileos.com/652fedd1-6043-4225-8b57-adda62561819.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=MdKwR5K6hLbd6dDhiLHH6xbgjLs%253D&Expires=1607852029)
+![](https://p.ipic.vip/ol4eb1.jpg)
 
 发现确实代码比我的好，于是我就又”学会“了一招（技能++）。
 

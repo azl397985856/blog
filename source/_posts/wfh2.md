@@ -20,7 +20,7 @@ categories:
 
 具体内容涉及公司机密，不方便透露。但是可以说的是，目前负责的内容是一些前端基础设施的建设，具体内容涉及到**工程化，编译，跨端等**。并且负责的内容和之前工作有一定差异，因此也学到了不少东西。
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1gzk0neone2j20go07rmxl.jpg)
+![](https://p.ipic.vip/scklno.jpg)
 
 ”拥有高绩效远程团队的公司会投资于员工完成工作所需的技术“，往往远程办公的技术团队的技术能力更强！
 
@@ -32,7 +32,7 @@ categories:
 
 不方便透露具体数字。但是可以向大家说：我现在的**工资福利待遇是原来的不止两倍**。
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1gzk0o0bk30j20be07i74r.jpg)
+![](https://p.ipic.vip/md6d52.jpg)
 
 和国内大公司（比如头条，阿里等）对比的话，普遍也比他们要高一点。
 
@@ -46,7 +46,7 @@ categories:
 
 因此我时不时可以和朋友出去 high 一下，逛街打游戏的时间也比以前多。
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1gzk0olpfkjj20hs0at0te.jpg)
+![](https://p.ipic.vip/i9ct8o.jpg)
 
 这已经感觉自己相当自由了，而且我的年假还有 10 多天。如果把这年假用到旅游的话，去趟国外都没问题。**一年一次长途旅行根本不是梦。**
 
@@ -56,7 +56,7 @@ categories:
 
 1. 工作会摸鱼么？
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1gzk0p3q5doj20go0b4wen.jpg)
+![](https://p.ipic.vip/u89bah.jpg)
 
 答案是不会刻意摸鱼。
 
@@ -64,7 +64,7 @@ categories:
 
 2. 会不会 007 待命？
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1gzk0pmql14j20rs0r9whl.jpg)
+![](https://p.ipic.vip/hkqto8.jpg)
 
 我没有 007 待命。个人认为 007 待命和是否远程办公无关，而是和公司有关。如果一个公司的文化就是这样，那么无论是否远程，都需要随时 oncall，不需要我举例子了吧？
 
@@ -74,7 +74,7 @@ categories:
 
 4. 那你英语肯定很好吧?
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1gzk0qcffuoj20zk0p00wr.jpg)
+![](https://p.ipic.vip/agjxp6.jpg)
 
 我英语不好，尤其是口语。 实际工作中，面对英语的情况大多数是文字以及例会。而例会虽然是口语英语，但是需要你说话的情况比较少。你想啊，一大堆人开会，一个人发言的时间会有多少? 因此口语在我们这里问题不大。
 
@@ -92,11 +92,11 @@ categories:
 
 系统设计的话可以参考这个 [system-design-primer](https://github.com/donnemartin/system-design-primer) 仓库.这个仓库从大的方向讲述了系统设计中的常见场景，比如如何设计高可用系统。这个仓库 star 非常多，从侧面反应项目质量还行，掘金官方也参与了仓库的翻译工作，大概看了下，翻译质量不错。
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1gzk0vhouk5j20u014in0m.jpg)
+![](https://p.ipic.vip/qzq8u6.jpg)
 
 算法的话可以参考下这个 [leetcode](https://github.com/azl397985856/leetcode)，里面有几十个算法专题以及几百道经典算法面试题的解析，通俗易懂。掌握了里面所有内容后面试绝大多数公司至少算法这块是没问题的。
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1gzk0v70va4j21h50u0jx6.jpg)
+![](https://p.ipic.vip/n9mk18.jpg)
 
 ## 内推
 
@@ -104,6 +104,6 @@ categories:
 
 目前的岗位仅支持 base 到国外，相应待遇会直接对标国外的薪资标准，不打算出国的同学就不用考虑了。不过这里还有一些别的远程办公公司可以给大家内推，比如微软， Gitlab
 
-![微信号](http://ww1.sinaimg.cn/large/e9f490c8ly1gu4o31x1uej20e80e8dg3.jpg)
+![微信号](https://p.ipic.vip/e97on7.jpg)
 
 加好友请注明：内推

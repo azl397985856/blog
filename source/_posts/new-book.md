@@ -44,7 +44,7 @@ categories:
 
 我做了一个”脑图“给大家快速预览书的主要内容。**如果大家实在不知道阅读顺序，推荐用这个脑图中的顺序从上到下看。**
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gvjurc1by8j60u012iaef02.jpg)
+![](https://p.ipic.vip/8ztqum.jpg)
 
 ## 2. 我已经看了你的 Github 了，还需要这本书么？
 
@@ -56,7 +56,7 @@ categories:
 
 比如书中二分章节中《153. 寻找旋转排序数组中的最小值》，这道题是一个很简单的二分。但是在证明复杂度的时候就使用了两种方法来证明。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gvjv0hplrxj60wv0u0ad302.jpg)
+![](https://p.ipic.vip/r0ytas.jpg)
 
 这种严谨的态度贯穿整本书。通常来说，复杂的时间复杂度我也会给出分析，而不是直接贴出一个答案给大家。虽然不一定会像这个二分一样给出多种证明方式，但是也力求完整和准确。
 

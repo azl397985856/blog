@@ -66,7 +66,7 @@ TODO
 
 另外需要提供三种语言(分别是 JS，Java 和 Python)的代码到我新建的一个[仓库](https://github.com/leetcode-book/leetcode-solutions/tree/master/ch01)中，专门给这本书放源码，按照语言和章节划分一下。
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g88ad0upwwj30ta08pwfv.jpg)
+![](https://p.ipic.vip/n8km1c.jpg)
 
 作者们别忘记让我拉你进组织，我们的组织是`https://github.com/leetcode-book`
 

@@ -5,7 +5,7 @@ categories: [软件工具]
 date: 2020-12-16
 ---
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glomy7awgxj31e00la4qp.jpg)
+![](https://p.ipic.vip/bg0w5y.jpg)
 
 这次的改版真的是判若两人，PC 端的几乎所有功能都可以在新版 APP 中看到，并且体验更好。 不仅之前令我不爽的地方全部不见了，而且多了一些我想都没想到的好用功能。 比如**摇一摇功能**。
 
@@ -21,7 +21,7 @@ date: 2020-12-16
 
 除了每日一题， 新榜的 APP 还把其他题库一起装进来了。比如大家熟悉的《剑指 Offer》 和 《程序员面试金典》。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gloefprq2cj30u01u0adq.jpg)
+![](https://p.ipic.vip/40htrm.jpg)
 
 ## 代码展示
 
@@ -29,10 +29,10 @@ date: 2020-12-16
 
 后面力扣对代码进行了优化， 使得代码不换行，而是通过左右滑动的方式查看，相比之前体验好了很多。而现在新版 APP 对代码的展示又进行了优化，真的是丝滑般柔顺了，大家看下对比效果。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gloeel4twij30u01u0n1g.jpg)
+![](https://p.ipic.vip/3spnqb.jpg)
 （旧版效果）
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gloeebvb5rj30u01u00x4.jpg)
+![](https://p.ipic.vip/xlwemf.jpg)
 （新版效果）
 
 这对比应该很明显了。手动点赞 o(￣ ▽ ￣)ｄ
@@ -45,7 +45,7 @@ date: 2020-12-16
 
 > 小提示：力扣的小伙伴的点下我头像的关注按钮，这样就会第一时间收到我的动态啦~
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gloeg9wbaxj30u01u0q80.jpg)
+![](https://p.ipic.vip/0cpblo.gif)
 
 除此之外，通知功能也对齐 PC 端，对消息内容进行了分组展示。
 
@@ -53,11 +53,11 @@ date: 2020-12-16
 
 ### 摇一摇切换中英文描述，摇一摇随机一题
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gloehfxvqmj30u01u0776.jpg)
+![](https://p.ipic.vip/9epyvx.jpg)
 
 ### 学习分析
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gloejc9tqzj30u01u0n0e.jpg)
+![](https://p.ipic.vip/r77vh6.jpg)
 
 ## 下载
 

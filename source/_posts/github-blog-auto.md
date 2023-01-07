@@ -17,7 +17,7 @@ Github 支持通过创建同名仓库的形式自定义主页。比如我的 Git
 
 先上一下我的装修效果：
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1go0wmr2tajj30yn0p447m.jpg)
+![](https://p.ipic.vip/ptw2jn.jpg)
 
 ## 开始动手
 
@@ -58,9 +58,9 @@ Github 支持通过创建同名仓库的形式自定义主页。比如我的 Git
 
 具体操作步骤如下：
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1go0x6m5ha2j30yb06zt9o.jpg)
+![](https://p.ipic.vip/j50f5n.jpg)
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1go0x818quij30nh09mdh2.jpg)
+![](https://p.ipic.vip/kg7z6v.jpg)
 
 接下来将如下内容复制粘贴进去：
 
@@ -91,7 +91,7 @@ jobs:
 
 如果你的博客没有 RSS 或者你不知道自己的 RSS 地址就无法使用了哦。我的博客是用 hexo 生成的，因此添加 RSS 就很容易了，如果你的博客是挂到第三方的，也会提供 RSS 地址。比如 CSDN 就提供了 RSS 地址：
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1go0xhrc16dj311i06240f.jpg)
+![](https://p.ipic.vip/9qlv47.jpg)
 
 由于大家的博客可能都不相同，因此具体大家可以自行搜索。
 

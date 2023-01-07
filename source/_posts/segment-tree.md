@@ -31,7 +31,7 @@ categories:
 
 虽然是一棵二叉树，但是线段树我们通常使用数组来模拟树结构，而不是传统的定义 TreeNode 。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gwzq8d1e8qj30i60gwgm2.jpg)
+![](https://p.ipic.vip/h5o7zh.jpg)
 
 一方面是因为实现起来容易，另外一方面是因为线段树其实是一颗完全二叉树，因此使用数组直接模拟会很高效。这里的原因我已经在之前写的堆专题中的二叉堆实现的时候中讲过了，大家可以在我的公众号《力扣加加》回复**堆**获取。
 
@@ -62,11 +62,11 @@ categories:
 
 接下来，将 A 的区间分为左右两部分，同理 B 也分为左右两部分。不断执行此过程直到无法继续分。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gwynkz76w2j30u00yd760.jpg)
+![](https://p.ipic.vip/mziwur.jpg)
 
 总结一下就是将区间不断一分为二，并将区间信息分别存储到左右节点。如果是求和，那么区间信息就是区间的和。这个时候的线段树大概是这样的：
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gwynoe1xm5j30u00vvgnl.jpg)
+![](https://p.ipic.vip/7uqev8.jpg)
 
 > 蓝色字体表示的区间和。
 
@@ -132,7 +132,7 @@ def build(self, tree_index:int, l:int, r:int):
 - 部分落在 [l,r] 内。比如 [1,3] 部分落在 [2,4]。这个时候我们继续递归，直到完整地落在区间内（上面的那种情况），这个时候我们直接将 tree 中左节点对于的区间和取出来备用
 - 将前面所有取出来备用的值加起来就是答案
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gwzqk26di6j318m0lqwfa.jpg)
+![](https://p.ipic.vip/zcryzm.jpg)
 
 右节点的处理也是一样的，不再赘述。
 

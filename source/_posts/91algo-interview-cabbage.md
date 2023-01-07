@@ -15,7 +15,7 @@ cabbage 是一个做事情非常认真细致的人，对待工作一丝不苟，
 
 以下 Q 为 lucifer，A 为 cabbage。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gsvbupuya4j30ej0ctaar.jpg)
+![](https://p.ipic.vip/qsrmyf.jpg)
 
 ​<!-- more -->
 

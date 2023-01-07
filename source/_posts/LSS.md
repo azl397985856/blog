@@ -127,7 +127,7 @@ class Solution:
 
 举例说明，如下图：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds543yp2cj31400u0myf.jpg)
+![](https://p.ipic.vip/zxttfx.jpg)
 (by [snowan](https://github.com/snowan))
 
 这种做法的时间复杂度为 O(N\*logN), 空间复杂度为 O(1)。
@@ -246,7 +246,7 @@ class Solution:
 
 举例说明，如下图：
 
-![53.maximum-sum-subarray-dp.png](https://tva1.sinaimg.cn/large/007S8ZIlly1gds544xidoj30pj0h2wew.jpg)
+![53.maximum-sum-subarray-dp.png](https://p.ipic.vip/w8yxqs.jpg)
 (by [snowan](https://github.com/snowan))
 
 这种算法的时间复杂度 O(N), 空间复杂度为 O(1)

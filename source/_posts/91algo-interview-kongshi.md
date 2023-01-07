@@ -17,7 +17,7 @@ categories:
 
 以下 Q 为 lucifer，A 为 空识。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gur2g62fi6j60it0kawgl02.jpg)
+![](https://p.ipic.vip/wqslsx.jpg)
 
 ## 采访
 

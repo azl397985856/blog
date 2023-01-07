@@ -18,7 +18,7 @@ Chrome 97 推出了一个预览功能 - Recorder。它允许你录制 Web 页面
 
 > 如果没有找到，可以尝试 cmd + shift + p 调出命令面板搜索 Recorder。当然如果该功能未发布是搜不到的
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gwacz4fu4rj318g0r0dj6.jpg)
+![](https://p.ipic.vip/zq3owv.jpg)
 
 ## 它有什么用？
 
@@ -29,11 +29,11 @@ Chrome 97 推出了一个预览功能 - Recorder。它允许你录制 Web 页面
 - 测试同学录制一段“视频”， 然后发送给开发，开发根据这段视频定位问题。
 - 测试某一个业务流程在各种不同的网络和硬件环境下的表现，甚至你可以看其在不同平台的表现（比如 PC，手机，平板等）。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gwad3bf8vkj318g0tcadz.jpg)
+![](https://p.ipic.vip/0f4ksb.jpg)
 
 - 自动化测试。你可以录制一段视频，然后通过修改其中部分参数的形式来自动化生成很多测试用例。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gwad32b9a1j31080u0mzw.jpg)
+![](https://p.ipic.vip/rp4gf8.jpg)
 
 - 。。。
 

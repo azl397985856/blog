@@ -31,7 +31,7 @@ categories:
 
 其实现实中的红绿灯就是一种事件，它告诉我们现在是红灯状态，绿灯状态，还是黄灯状态。 我们需要根据这个事件自己去完成一些操作，比如红灯和黄灯我们需要等待，绿灯我们可以过马路。
 
-![WeChatf64afbca051509ddcf379077490e9a2e.png](http://ww1.sinaimg.cn/large/e9f490c8ly1g8yigxmdlwj204k048t8t.jpg)
+![WeChatf64afbca051509ddcf379077490e9a2e.png](https://p.ipic.vip/b6oc9z.jpg)
 
 下面我们来看一个最简单的浏览器端的事件：
 
@@ -215,7 +215,7 @@ function bubble(e, currentElement) {
 
 上述的过程用图来表示为：
 
-![](http://ww1.sinaimg.cn/large/e9f490c8ly1g8yif1i5hzj20fs0eewfi.jpg)
+![](https://p.ipic.vip/bofb4t.jpg)
 
 如果你不希望事件继续冒泡，可以用之前我提到的`stopPropagation`。
 

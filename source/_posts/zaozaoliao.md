@@ -37,7 +37,7 @@ categories:
 - T3：其他中大型公司，比如滴滴，有赞等
 - T4：小微公司（这类不在我们的论述范围，因此它们几乎没有算法题）
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gpgyj8tiwrj315e0symyx.jpg)
+![](https://p.ipic.vip/6j10z2.jpg)
 
 右边是一个金字塔图，表示的意思是 T4 公司是最多的，其次是 T3,T2,T1。
 
@@ -56,7 +56,7 @@ categories:
 1. 各种数据结构的特性与基本操作。比如数组，队列，栈，链表，树，图等。对于前端，尤其需要掌握的栈和树。这是因为前端使用到栈和树的地方实在太多了。比如 DOM 树（虚拟 DOM 树），树形选择器，浏览器执行栈，浏览器历史记录栈等等。另外题目上围绕栈和树的题目也相当多，从最简单直接的树形数据结构转化复杂一点的数据结构解析，基本就是栈+DFS 都可以搞定，而做 DFS 的时候通常都围绕树型结构进行递归求解的。所以这两个数据结构对前端非常重要。**面试频率非常高，这里我敲一下重点，希望大家认真对待这部分。**
 2. 复杂度分析。复杂度分析是学习数据结构与算法的基础，也是核心。我建议大家一定要先学会分析算法的复杂度再去学习具体算法。这部分内容包括时间复杂度和空间复杂度分析，其中每一种复杂度都有最好，最坏以及均摊复杂度。而一般我们使用最坏复杂度比较多，而我写的新书《lucifer 的算法之路》中的全部复杂度也全部都是最坏复杂度，而且这部分内容是在全书的最开始，可见其重要性。另外分析复杂度除了分析迭代，也要会分析递归，递归栈的空间开销经常被大家所忽略，这点值得引起大家的注意。
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gpgyjjhpjzj31ls0g00v4.jpg)
+![](https://p.ipic.vip/qafd32.jpg)
 
 OK，以上是第一个考点：《数据结构与算法基础知识》，接下来我们来看第二个考点。
 
@@ -72,7 +72,7 @@ OK，以上是第一个考点：《数据结构与算法基础知识》，接下
 - 分治
 - 贪心
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gpgyjorpf7j319w0h6q4x.jpg)
+![](https://p.ipic.vip/962yo1.jpg)
 
 以上内容覆盖了前端算法面试的 90% 考点。一些比较“冷门”的知识比如二分图，跳表，蓄水池抽样算法等考察频率很低，我就没有列出来。
 
@@ -183,7 +183,7 @@ t3 公司流程就和 t1 ，t2 有很大差别了。它们有时候根本就没�
 
 最后我给一个汇总性的对比表格方便大家查看。
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gpfuxxhyndj31ki0pgjwp.jpg)
+![](https://p.ipic.vip/qr7kj2.jpg)
 
 大家可以通过这个表感受不同类型公司算法面试的区别。
 
@@ -311,7 +311,7 @@ num 不会包含任何前导零。
 
 以题目中的 `num = 1432219， k = 3` 为例，我们需要返回一个长度为 4 的字符串，问题在于： 我们怎么才能求出这四个位置依次是什么呢？
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfr0o3bz8aj30ya0he75v.jpg)
+![](https://p.ipic.vip/jojvab.jpg)
 
 （图 1）
 
@@ -335,19 +335,19 @@ num 不会包含任何前导零。
 
 以题目中的 `num = 1432219， k = 3` 为例的图解过程如下：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfr3me4mltj30u00xjgp5.jpg)
+![](https://p.ipic.vip/kdlzzx.jpg)
 
 （图 2）
 
 由于没有左侧相邻元素，因此**没办法丢弃**。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfr3p4idahj30sk116dj7.jpg)
+![](https://p.ipic.vip/ay9y3k.jpg)
 
 （图 3）
 
 由于 4 比左侧相邻的 1 大。如果选择丢弃左侧的 1，那么会使得剩下的数字更大（开头的数从 1 变成了 4）。因此我们仍然选择**不丢弃**。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfr3rtp1b1j30tk12etcr.jpg)
+![](https://p.ipic.vip/1q44k4.jpg)
 
 （图 4）
 
@@ -368,7 +368,7 @@ num 不会包含任何前导零。
 
 上面的思路可行，但是稍显复杂。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfk7m9z3elj30zk0i01kx.jpg)
+![](https://p.ipic.vip/skqppr.jpg)
 （图 5）
 
 我们需要把思路逆转过来。刚才我的关注点一直是**丢弃**，题目要求我们丢弃 k 个。反过来说，不就是让我们保留 $n - k$ 个元素么？其中 n 为数字长度。 那么我们只需要按照上面的方法遍历完成之后，再截取前**n - k**个元素即可。
@@ -460,7 +460,7 @@ var removeKdigits = function (num, k) {
 
 前面提到了要及时复习。而 anki 就是一个帮助你管理复习计划的软件。它是一个能够根据遗忘周期来自动制定复习计划的软件。我在**前期**学习算法的时候制作了一部分的复习卡片，它们帮助了我度过了学习算法最艰难的入门期。
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gpfy77m8pbj31e80u0nk3.jpg)
+![](https://p.ipic.vip/6zaecn.jpg)
 
 等到你刷了足够数量的题目了，就不需要它们了。但是在前期，它确实可以有效地帮助到你。
 
@@ -468,7 +468,7 @@ var removeKdigits = function (num, k) {
 
 最后提一下我自己制作的一个刷题插件，现在有几千个人在用了。通过它可以帮助你更有效率刷题和写题解。
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gpfy8zlo96j32qw0pcn20.jpg)
+![](https://p.ipic.vip/41xchx.jpg)
 
 - 他提供了学习路线可以帮助你理清不同专题的基本题型和套路。
 - 他提供了代码模板可以帮助你快速写出 bug free 的代码。
@@ -489,10 +489,10 @@ var removeKdigits = function (num, k) {
 
 另外我的 《91 天学算法》第四期已经快要开始了，现在还没有开始报名哦，活动介绍：https://leetcode-solution.cn/91。开始报名时间大概是 2021.5.1 - 2021.6.1 之间。具体时间请关注我的公众号《力扣加加》，第一时间获取最新消息。
 
-![91 天学算法目录](https://tva1.sinaimg.cn/large/008i3skNly1gpzksbhycij31070qddih.jpg)
+![91 天学算法目录](https://p.ipic.vip/7yc6nf.jpg)
 
-![91 天学算法先导篇讲义](https://tva1.sinaimg.cn/large/008i3skNly1gpzkswmp2ej316d0dqn07.jpg)
+![91 天学算法先导篇讲义](https://p.ipic.vip/00rdnl.jpg)
 
-![91 天学算法基础篇讲义](https://tva1.sinaimg.cn/large/008i3skNly1gpzkssjiz0j31440luagi.jpg)
+![91 天学算法基础篇讲义](https://p.ipic.vip/t09qww.jpg)
 
 以上就是本次分享的全部内容了，大家有什么问题的话都可以提，我会尽量回答。

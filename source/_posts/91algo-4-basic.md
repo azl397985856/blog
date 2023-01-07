@@ -38,13 +38,13 @@ categories:
 
 基础篇我给大家画了重点，并用了一句简单的话进行了描述，希望能帮助大家更好地记住它们。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gre8t4ws2wj60w80u01ky02.jpg)
+![](https://p.ipic.vip/46uprt.jpg)
 
 知识点是有很多联系的。我希望大家学习知识的时候自己去整理一下知识网络，这样不仅理解起来更加顺畅，而且更不容易忘记。
 
 比如针对基础篇的**数组，链表和树**，我就可以总结出如下知识图。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gre8evrvskj30nq0nfapi.jpg)
+![](https://p.ipic.vip/c3qixy.jpg)
 
 可踹看出知识之间其实是有关联的，都不是孤立存在的。**掌握好知识的内在联系是学习任何知识的捷径**。
 

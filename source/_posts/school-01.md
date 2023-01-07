@@ -27,7 +27,7 @@ categories:
 
 另外我组建了春招群，大家面试遇到不会的题都可以问哦。
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1go70efdjonj20u01mjgom.jpg)
+![](https://p.ipic.vip/2iva32.jpg)
 
 如果显示满了或者过期可在公众号后台回复春招获取小秘书的微信，通过之后再次回复**春招**入群。
 

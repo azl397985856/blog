@@ -95,7 +95,7 @@ function sum(nums) {
 
 我们用递归树来直观地看一下。
 
-![dynamic-programming-1](https://tva1.sinaimg.cn/large/007S8ZIlly1ghluhv7h0tj30n00ex3za.jpg)
+![dynamic-programming-1](https://p.ipic.vip/c83ouw.jpg)
 
 这种做法本身没有问题，但是每次执行一个函数都有一定的开销，拿 JS 引擎执行 JS 来说，每次函数执行都会进行入栈操作，并进行预处理和执行过程，所以内存会有额外的开销，数据量大的时候很容易造成爆栈。
 
@@ -121,7 +121,7 @@ function climbStairs(n) {
 
 我们继续用一个递归树来直观感受以下：
 
-![dynamic-programming-2](https://tva1.sinaimg.cn/large/007S8ZIlly1ghluhw6pf2j30mz0b2dgk.jpg)
+![dynamic-programming-2](https://p.ipic.vip/u2z5u9.jpg)
 
 > 红色表示重复的计算
 
@@ -159,7 +159,7 @@ function dp(n) {
 
 动态规划的查表过程如果画成图，就是这样的：
 
-![dynamic-programming-3](https://tva1.sinaimg.cn/large/007S8ZIlly1ghluhxylbhj30n40cbaaq.jpg)
+![dynamic-programming-3](https://p.ipic.vip/08oinx.jpg)
 
 > 虚线代表的是查表过程
 

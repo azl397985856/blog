@@ -50,7 +50,7 @@ LeetCode 和 编程之美等都有这道题目，题目难度为 Easy。[LeeCode
 
 ```
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54rgugtj30o8048mxf.jpg)
+![](https://p.ipic.vip/mniw6z.jpg)
 
 ### 不符合题意的解法
 
@@ -101,7 +101,7 @@ function RShift(list, k) {
 
 我们来试一下常数空间复杂度的解法，这种做法思路很简单，我们只需要每次移动一位，移动 k 次即可，移动一次的时间复杂度是 1，k 次共用一个变量即可，因此总的空间复杂度可以降低到 1。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54ruiucj30pw0bemyf.jpg)
+![](https://p.ipic.vip/r0f9dr.jpg)
 
 我们来看下代码，这次我们把上面提到的 k 为负数的情况考虑进去。
 
@@ -131,7 +131,7 @@ function RShift(list, k) {
 
 我们再来看一种空间换时间的做法，这种做法的思路是拼接一个完全一样的数组到当前数组的尾部，然后问题就转化为`截取数组使之满足右移的效果`，这样的时间复杂度 O(N),空间复杂度是 O(N).
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54sbcbnj30jm0403yb.jpg)
+![](https://p.ipic.vip/k9p2kn.jpg)
 
 我们看下代码：
 
@@ -153,7 +153,7 @@ function RShift(list, k) {
 - 然后把[n - k, n - 1]翻转
 - 最后把[0, n - 1]翻转
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54tbiz3j30dd072wec.jpg)
+![](https://p.ipic.vip/wn50t8.jpg)
 
 ```js
 function reverse(list, start, end) {
@@ -313,7 +313,7 @@ function RIncludes(s1, s2) {
 
 如图所示：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds54v6q7cj30ce04nt8j.jpg)
+![](https://p.ipic.vip/f067xf.jpg)
 
 代码也很简单，我们来看下。
 

@@ -4,7 +4,7 @@ tags: [技能, PPT]
 date: 2021-06-18
 ---
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1grlduklbasj30xc0l3abq.jpg)
+![](https://p.ipic.vip/d9shrt.jpg)
 
 <!-- more -->
 
@@ -14,15 +14,15 @@ date: 2021-06-18
 
 再见啦~
 
-![办公桌1](https://tva1.sinaimg.cn/large/008i3skNly1grbz4uoyrgj30ha09u75m.jpg)
+![办公桌1](https://p.ipic.vip/j51tdv.jpg)
 
-![办公桌2](https://tva1.sinaimg.cn/large/008i3skNly1grbz53g6jqj30lm18g77l.jpg)
+![办公桌2](https://p.ipic.vip/ltqurb.jpg)
 
 前几天在公众号看了一篇文章 [一群北京高薪 90 后决定集体裸辞：花光积蓄同住 1000㎡、不买菜不吃外卖，变穷也开心！](https://mp.weixin.qq.com/s?__biz=MzAwNjE2NzMyNg==&mid=2650984881&idx=1&sn=0ae79e7fceaa5e2178093312cd1d5095)，特别有感触，这不就是理想的生活该有的样子么 ?很羡慕他们的生活态度和方式。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1grlcef6oamj30u00k0tdu.jpg)
+![](https://p.ipic.vip/mxmi00.jpg)
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1grlcf6n0fmj30u00k0n2e.jpg)
+![](https://p.ipic.vip/d7hcm4.jpg)
 
 不过也仅仅是羡慕一下子罢了。真正做到这种程度需要天时地利人和。
 
@@ -36,9 +36,9 @@ WFH 有很多好处，比如没有通勤成本，办公地点自由（我甚至�
 
 当然也有一个明显的坏处，那就是交际圈可能会因此**雪上加霜**。
 
-![惨兮兮](https://tva1.sinaimg.cn/large/008i3skNly1grnobyf1lfj613p0s3ac802.jpg)
+![惨兮兮](https://p.ipic.vip/3e86xu.jpg)
 
-![我的两个公众号也是你的了](https://tva1.sinaimg.cn/large/008i3skNly1grnoca41cnj30u01u0dhi.jpg)
+![我的两个公众号也是你的了](https://p.ipic.vip/kvjll9.jpg)
 
 霜也只能霜了，咱也没办法不是？
 
@@ -94,6 +94,6 @@ ok，先就讲这么多吧！改天再唠吧。
 
 接下来一段时间可能就用这个小桌子办公了。回头如果搬家的话换个大桌子。
 
-![家里的办公桌](https://tva1.sinaimg.cn/large/008i3skNly1grgmpxaqh7j31400u0kjn.jpg)
+![家里的办公桌](https://p.ipic.vip/js65s2.jpg)
 
 我们下一站再见！

@@ -10,7 +10,7 @@ categories:
 
 1. 你不知道的 JavaScript
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1h1n1qlhinhj20u00w4dkt.jpg)
+![](https://p.ipic.vip/pnxlbx.jpg)
 
 - [淘宝地址](https://s.click.taobao.com/AmrJYYu)
 
@@ -18,7 +18,7 @@ categories:
 
 2. 算法图解
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1h1n1wadmctj20ku13wtbh.jpg)
+![](https://p.ipic.vip/sk5box.jpg)
 
 - [淘宝地址](https://s.click.taobao.com/5acRLYu)
 
@@ -26,7 +26,7 @@ categories:
 
 3. 算法第四版
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1h1n1xjiibhj20ly0rzgog.jpg)
+![](https://p.ipic.vip/9wq8e2.jpg)
 
 - [淘宝地址](https://s.click.taobao.com/pmHJYYu)
 
@@ -40,11 +40,11 @@ categories:
 
 第一本是大名鼎鼎的乔治.伽莫夫 的《从一到无穷大》，李永乐也非常推荐这本书，还针对这本书录制了[视频](https://www.bilibili.com/cheese/play/ep1659 "李永乐《从一到无穷大》 视频")，视频在 B 站上付费订阅的。
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1h1n1yxg1cvj21wh0u0jxx.jpg)
+![](https://p.ipic.vip/t10gkv.jpg)
 
 这本书里面的内容非常有趣，直接就点燃了我的学习欲望。比如文中提到**所有的偶数和所有的整数是一样多的**，还给出了证明方法。你可能会想这怎么可能呢？ 然后就忍不住读下去。文中还穿插一些小故事，读起来没那么类，属于科普向的图书，没有很硬核的感觉。但是当你读完这本书的时候，会发现自己知识增加了。😄
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1h1n21424kjj20u60u00y6.jpg)
+![](https://p.ipic.vip/d2932x.jpg)
 
 - [淘宝地址](https://s.click.taobao.com/uHgRLYu)
 
@@ -56,7 +56,7 @@ categories:
 
 如果你肯耐心看下去，可能就会发现其中的乐趣所在。等我看完了再给大家谈谈读后感。
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1h1n238k89cj20ku0z079c.jpg)
+![](https://p.ipic.vip/ebboll.jpg)
 
 - [淘宝地址](https://s.click.taobao.com/FXNIYYu)
 
@@ -106,7 +106,7 @@ categories:
 
 这本书也是一样，让你在轻松愉快中笑一笑还把知识还顺便给学了，这上哪讲理去？
 
-![](https://tva1.sinaimg.cn/large/e6c9d24ely1h1n26odgddj20ku0tutc9.jpg)
+![](https://p.ipic.vip/lu1o8o.jpg)
 
 - [淘宝地址](https://s.click.taobao.com/WQ7IYYu)
 

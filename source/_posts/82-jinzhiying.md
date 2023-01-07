@@ -12,7 +12,7 @@ categories:
 
 ## 评分
 
-![](https://tva1.sinaimg.cn/large/00831rSTly1gdjxj3ncwrj30le09lwjt.jpg)
+![](https://p.ipic.vip/lvqwu9.jpg)
 
 ## 观后感
 

@@ -21,7 +21,7 @@ date: 2020-11-29
 
 下面是我的 [91 天刷题活动](https://lucifer.ren/blog/2020/10/19/91-algo-2/ "91 天刷题活动")的目录：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gl6ao1gkvvj30ju0qttbi.jpg)
+![](https://p.ipic.vip/dxzobf.jpg)
 
 可以看出，我们的章节安排就是一个专题一个专题， 从简单到困难。大家也可以参考这个模式。如果你实在不知道。
 
@@ -33,7 +33,7 @@ BFS 就是在必要的时候不求甚解。比如，我在 [穿上衣服我就�
 
 大家想看效率高的，其实也不难。 LIS 也可以用 **贪心 + 二分** 达到不错的效率。代码如下：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gl6ajh887vj31zc0gmae6.jpg)
+![](https://p.ipic.vip/ccl35c.jpg)
 
 代码文字版如下：
 
@@ -56,7 +56,7 @@ class Solution:
 
 比如这道题：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gl6bekjygsj30oq19kwj0.jpg)
+![](https://p.ipic.vip/g06k4c.jpg)
 
 题目后的提示如下：
 
@@ -68,7 +68,7 @@ class Solution:
 
 看到这些，大概估算我们的时间复杂度 $N^2logN$，基本过是没问题的，果然就过了。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gl6bduc9p3j31xu0p0tfa.jpg)
+![](https://p.ipic.vip/vi8tkc.jpg)
 
 再次印证了，刷题的多少是次要的，吃透一类题才是王道，这其实就和我的**BFS 刷题大法**相呼应。
 
@@ -113,7 +113,7 @@ class Solution:
 
 一个小建议是你选择的语言要是题解比较热门的。那什么语言是热门的？其实很容易。力扣题解区，语言排名高的基本就是了，如下图：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gl6ayc10cxj30qo0i6dic.jpg)
+![](https://p.ipic.vip/uxlb90.jpg)
 
 掌握语言不仅能帮助你在效率中运用自如，并且还容易看懂别人的题解。除此之外还有一个用，那就是**回头复习的时候用**。拿我来说， 我会不固定回去刷以前做过的题，但是一道题做过了就没新鲜感了，这个时候我就换个语言继续刷，又是一番滋味。
 

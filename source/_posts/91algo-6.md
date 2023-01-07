@@ -19,7 +19,7 @@ categories:
 
 群里每天都会有题目，推荐大家讨论当天的题目。我们会帮助大家规划学习路线，群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。91 天见证不一样的自己。
 
-![logo](https://tva1.sinaimg.cn/large/007S8ZIlly1gf2b2zkclnj30xm0b6aat.jpg)
+![logo](https://p.ipic.vip/6ofz9k.jpg)
 
 ## 和上一期有什么不同？
 
@@ -33,7 +33,7 @@ categories:
 
 3. 丰富多语言，给大家更流畅的阅读体验。大部分题解都提供了多种语言，包括 Python，Java，CPP 和 JS。
 
-![效果图](https://tva1.sinaimg.cn/large/008i3skNly1gtopel0e18j60w20u0tah02.jpg)
+![效果图](https://p.ipic.vip/iz360a.jpg)
 
 每天找到当天打卡的题目后，就可以看到下方有一个评论区，大家将自己的答案贴到这里就好了。
 
@@ -60,13 +60,13 @@ categories:
 
 本期理论上**全部内容**可直接在我们的官网上进行，体验更棒哦~
 
-![时间安排](https://tva1.sinaimg.cn/large/008i3skNly1gwznj3e4ozj30u01ajgnk.jpg)
+![时间安排](https://p.ipic.vip/mbich9.jpg)
 
-![基础篇讲义](https://tva1.sinaimg.cn/large/008i3skNly1gwznjmhxjgj31bt0u0adw.jpg)
+![基础篇讲义](https://p.ipic.vip/ns909p.jpg)
 
-![专题篇讲义](https://tva1.sinaimg.cn/large/008i3skNly1gwznvkij1xj31ht0u0jvy.jpg)
+![专题篇讲义](https://p.ipic.vip/l8aayx.jpg)
 
-![进阶篇讲义](https://tva1.sinaimg.cn/large/008i3skNly1gwznkl64jej31ah0u077s.jpg)
+![进阶篇讲义](https://p.ipic.vip/aqfruo.jpg)
 
 ### 先导篇（自习）
 
@@ -128,7 +128,7 @@ categories:
 
 本期有共五位讲师，每个专题由一位具体的讲师负责，大家有不会的问题可以进行提问。如果讲师来不及回答，大家可以在仓库中提 issue。
 
-![讲师](https://tva1.sinaimg.cn/large/008i3skNly1gq3z98q7pcj32460oqq7f.jpg)
+![讲师](https://p.ipic.vip/zibcwa.jpg)
 
 > 关于每一个专题的负责讲义，我们会在 91 官网中的“讲师”模块给出，如上图所示。
 
@@ -143,7 +143,7 @@ categories:
 
 前 100 扫码进群。如果提示不能进入，说明已经超过 100 名了，需要找 lucifer 手动拉。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gwzo3pboltj30u01pzjuf.jpg)
+![](https://p.ipic.vip/auw8vm.jpg)
 
 具体收费标准：
 
@@ -167,7 +167,7 @@ categories:
 
 如果你购买了《算法通关之路》，可以**凭借好评截图**找我（我的微信号 DevelopeEngineer）免费报名参与**一期**哦。注意一本书只能参与一次哦~
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gwzo22rwrsj30hw0o8dha.jpg)
+![](https://p.ipic.vip/mr54ww.jpg)
 
 [实体版购书链接](https://union-click.jd.com/jdc?e=&p=JF8BANYJK1olXQcDUV9VDUMeBF8IGloXVAIGU1pdCUIVCl9MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFksWAm0BH18SWQYDXVxUFxJSXzI4UixRNl1GVjc-ci1CQA5RUl5sHVhZAlJROEonA24JG1MQWgMEUW5tCEwnQgEMGV4WVTYDZF5aCkMWA2kBH1sUVQ8yU15UOBBCbWgIHghBDgVQAw4JXx4nM18LK2slXTYBZBwzDUIWBWpdSVNFVFJQUQ1fDkMWAToKG1xCX1QEB1sJW0wnAW4JH1Il)
 

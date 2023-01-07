@@ -32,13 +32,13 @@ date: 2021-10-10
 
 以 C++ 的 reverse 为例:
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gv9ez855smj31lo0din01.jpg)
+![](https://p.ipic.vip/f294f7.jpg)
 
 你可以点击上面的编程语言查看其他语言的 reverse 是如何实现的，目前该网站已经提供了 277 个语言特性，这个工具网站对那些刚开始学习新语言的人非常有用。
 
 我们甚至可以直接开启对比模式，以 Python 和 C++ 对比为例：
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gv9f2k5i2uj60y50u0wiy02.jpg)
+![](https://p.ipic.vip/uvu538.jpg)
 
 地址：https://programming-idioms.org/idiom/19/reverse-a-list
 
@@ -58,6 +58,6 @@ date: 2021-10-10
 
 一个小建议是你选择的语言要是题解比较热门的。那什么语言是热门的？其实很容易。力扣题解区，语言排名高的基本就是了，如下图：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gl6ayc10cxj30qo0i6dic.jpg)
+![](https://p.ipic.vip/4tsciz.jpg)
 
 掌握语言不仅能帮助你在效率中运用自如，并且还容易看懂别人的题解。除此之外还有一个用，那就是**回头复习的时候用**。拿我来说， 我会不固定回去刷以前做过的题，但是一道题做过了就没新鲜感了，这个时候我就换个语言继续刷，又是一番滋味。

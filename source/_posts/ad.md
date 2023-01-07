@@ -14,7 +14,7 @@ categories:
 
 ## 程序员必会的数据结构与算法
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51dcng8j30u01spjwj.jpg)
+![](https://p.ipic.vip/4lpm5y.jpg)
 
 ## 订阅量 TOP1
 
@@ -24,7 +24,7 @@ categories:
 
 本书作者王争，前 Google 工程师，从事 Google 翻译相关的开发工作，深入研究算法数十年。现任某金融公司资深系统架构师，核心业务接口平台负责人，负责公司核心业务的架构设计、开发，以及可用性、高性能等相关技术问题的解决。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51emu5oj30yi0emgmm.jpg)
+![](https://p.ipic.vip/7v7z62.jpg)
 
 ## 你能获得什么？
 
@@ -44,10 +44,10 @@ categories:
 
 ## 课程目录
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51g47doj30ku2swqad.jpg)
+![](https://p.ipic.vip/qplgx3.jpg)
 
 ## 订阅福利
 
 扫描下方二维码订阅即可，新人立减 30 元，另外我本人提供返现 11 元（到手 88 元），直接加我微信`DevelopeEngineer`即可。另外再送你 199 元限时学习礼包，你可以先领券再购买，领券地址：http://gk.link/a/108qc
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds51hy79vj30u01hdgq9.jpg)
+![](https://p.ipic.vip/lnasf7.jpg)

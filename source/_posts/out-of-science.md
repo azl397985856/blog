@@ -23,11 +23,11 @@ https://leetcode-cn.com/problems/largest-rectangle-in-histogram/
 
 求在该柱状图中，能够勾勒出来的矩形的最大面积。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghltx8sr4uj305805odfn.jpg)
+![](https://p.ipic.vip/4k98so.jpg)
 
 以上是柱状图的示例，其中每个柱子的宽度为 1，给定的高度为  [2,1,5,6,2,3]。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghltx9kgd2j305805oa9z.jpg)
+![](https://p.ipic.vip/6w1hej.jpg)
 
 图中阴影部分为所能勾勒出的最大矩形面积，其面积为  10  个单位。
 
@@ -286,7 +286,7 @@ https://leetcode-cn.com/problems/maximal-rectangle/
 
 我们逐行扫描得到 `84. 柱状图中最大的矩形` 中的 heights 数组：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghlu7999xyj30t21cgtcn.jpg)
+![](https://p.ipic.vip/qegre3.jpg)
 
 这样我们就可以使用`84. 柱状图中最大的矩形` 中的解法来进行了，这里我们使用单调栈来解。
 
@@ -370,7 +370,7 @@ https://leetcode-cn.com/problems/maximal-square/
 
 看到题看起来和上面的题目类似，只不过把长方形限定为了正方形嘛。
 
-![221.maximal-square](https://tva1.sinaimg.cn/large/007S8ZIlly1ghludl52xfj30bo09vmxo.jpg)
+![221.maximal-square](https://p.ipic.vip/6s3wfa.jpg)
 
 符合直觉的做法是暴力求解处所有的正方形，逐一计算面积，然后记录最大的。这种时间复杂度很高。
 
@@ -384,13 +384,13 @@ https://leetcode-cn.com/problems/maximal-square/
 dp[2][2]等于 1（之前已经计算好了），那么其实这里的瓶颈在于三者的最小值, 即`Min(1, 1, 3)`, 也就是`1`。 那么 dp[3][3] 就等于
 `Min(1, 1, 3) + 1`。
 
-![221.maximal-square](https://tva1.sinaimg.cn/large/007S8ZIlly1ghludlnra9j30an08xt96.jpg)
+![221.maximal-square](https://p.ipic.vip/grsowk.jpg)
 
 dp[i - 1][j - 1]我们直接拿到，关键是`往上和往左进行延伸`, 最直观的做法是我们内层加一个循环去做就好了。
 但是我们仔细观察一下，其实我们根本不需要这样算。 我们可以直接用 dp[i - 1][j]和 dp[i][j -1]。
 具体就是`Min(dp[i - 1][j - 1], dp[i][j - 1], dp[i - 1][j]) + 1`。
 
-![221.maximal-square](https://tva1.sinaimg.cn/large/007S8ZIlly1ghludm7ilmj30a507sglz.jpg)
+![221.maximal-square](https://p.ipic.vip/pv47tt.jpg)
 
 事实上，这道题还有空间复杂度 O(N)的解法，其中 N 指的是列数。
 大家可以去这个[leetcode 讨论](https://leetcode.com/problems/maximal-square/discuss/61803/C%2B%2B-space-optimized-DP)看一下。

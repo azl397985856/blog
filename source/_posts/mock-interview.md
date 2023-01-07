@@ -18,19 +18,19 @@ categories:
 
 今天做了力扣几套模拟面试的题目，入口在力扣主页上方的面试导航。如果没有 plus 会员的话，可以随机模拟面试，题目随机抽取。如果你有会员则可以选择特定公司的真题进行模拟。由于有时间限制， 如果你在准备面试的话， **提前一个月每天做一套题，锻炼自己的解题能力。**
 
-![](https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-7/1602069105422-image.png)
+![](https://p.ipic.vip/muu9pl.png)
 
 如果你没有 plus ，还想白嫖真题模拟面试也不是不可以。 你可以找个**知道哪些题是哪个公司的人**，然后自定义模拟面试。
 
 **知道哪些题是哪个公司的人**，网上有一些好心人贡献，将某一个公司的题目做成一个集合供大家免费查看。我的力扣刷题插件也做了一部分， 目前还不完全，不嫌弃的也可以用我的刷题插件看。
 
-![](https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-7/1602068752670-image.png)
+![](https://p.ipic.vip/yaacgf.png)
 
 插件获取方式： 关注公众号`力扣加加`，回复`插件`即可。
 
 另外国际版的力扣有一个讨论专区，里面的题目质量和可信度都很高。
-![](https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-7/1602068616740-image.png)
-![](https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-7/1602068793587-image.png)
+![](https://p.ipic.vip/nn6uy9.png)
+![](https://p.ipic.vip/6x32xf.png)
 
 地址：https://leetcode.com/discuss/interview-question?currentPage=1&orderBy=hot&query=
 
@@ -38,7 +38,7 @@ categories:
 
 模拟面试中， 大家也可以练习一些**可耻但是管用**的小技巧。 比如打表：
 
-![](https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-7/1602068231326-image.png)
+![](https://p.ipic.vip/2vyn1o.png)
 
 > 如上是一个经典的打表解法，如果没有人工判卷，算是一个可耻但有用的技巧。
 

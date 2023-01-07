@@ -10,9 +10,9 @@ date: 2020-06-20
 
 ## 开箱
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g994m51omoj30u01ppn1d.jpg)
+![](https://p.ipic.vip/iba5d1.jpg)
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g994ny143uj30p40nctad.jpg)
+![](https://p.ipic.vip/0ppr67.jpg)
 
 ## 配置和价格
 
