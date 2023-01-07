@@ -10,7 +10,7 @@ date: 2020-04-12
 
 用户可以手动上传印章，并且支持给印章设置不同的显示效果，这里的效果具体指的是“线条的清晰程度”，如下图所示：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gdqrt9ppu9j30j606pjsb.jpg)
+![](https://p.ipic.vip/c246jq.jpg)
 
 这里我们使用 Canvas 来实现。如果你对 Canvas 不熟悉，建议看下之前我写的一篇文章[100 \* 100 Canvas 占用内存多大](https://cloud.tencent.com/developer/article/1494747)，花上几分钟看完，基本上够看懂这篇文章了。
 
@@ -43,13 +43,13 @@ img.onload = () => {
 
 效果是这样的：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gdqtk2atryj308c08cq36.jpg)
+![](https://p.ipic.vip/0tohtm.jpg)
 
 ## 操作像素
 
 熟悉 Canvas 的应该知道上面的 this.imgData 实际上就是[ImageData](https://developer.mozilla.org/zh-CN/docs/Web/API/ImageData)类的实例，其中 imgData.data 是一个 Uint8ClampedArray， 其描述了一个一维数组，包含以 RGBA 顺序的数据，数据使用 0 至 255（包含）的整数表示。 简单来说，就是`图片像素信息，每四位表示一个像素单元`。其中每四位的信息分别是 RGBA。即第一个 Bit 标记 R，第二个 Bit 表示 G，第三个 Bit 表示 B，第四个 Bit 表示 A，第五个 Bit 又是 R...，依次类推。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gdqtrxj0qej314u0l8di6.jpg)
+![](https://p.ipic.vip/pleai1.jpg)
 
 接下来，我们就要操作 imgData，来实现滤镜的效果。简单起见，我这里对超过 200 的值进行了一次`提高亮度`的操作。实际上这个值是 200，还是别的数字，需要我们化身"调参工程师"，不断实验才行。 并且粗暴地对 RGB 执行同样的逻辑是不合理的。更为合理的做法是对 RGB 的阀值分别进行度量，由于比较麻烦，我这里没有实现。但是如果你对效果要求比较高，那么最好可以分开度量。
 
@@ -73,11 +73,11 @@ for (let i = 0; i < data.length; i += 4) {
 
 如上，我们对图片的像素进行了处理，以达到我们的目的，这样从用户感官上来看，显示效果发生了变化，大概效果如图：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gdqu1r1ne5j308c08cdgc.jpg)
+![](https://p.ipic.vip/dmihq9.jpg)
 
 （清晰版）
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gdqu205wxqj30eg0c6423.jpg)
+![](https://p.ipic.vip/tal3ui.jpg)
 
 （模糊版）
 
@@ -89,11 +89,11 @@ for (let i = 0; i < data.length; i += 4) {
 
 以下效果均以下图为原图制作：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gdqrxh4p80j308c08cgm3.jpg)
+![](https://p.ipic.vip/uxxgga.jpg)
 
 ## 如何实现黑白效果
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gdqu8hsknzj30rc0j0agz.jpg)
+![](https://p.ipic.vip/ugkrg0.jpg)
 
 ```js
 for (let i = 0; i < data.length; i += 4) {
@@ -105,7 +105,7 @@ for (let i = 0; i < data.length; i += 4) {
 
 ## 如何实现反色效果
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gdqu901k5oj30r00j6wsd.jpg)
+![](https://p.ipic.vip/wqv4in.jpg)
 
 ```js
 for (let i = 0; i < data.length; i += 4) {
@@ -117,7 +117,7 @@ for (let i = 0; i < data.length; i += 4) {
 
 ## 如何给图片增加噪音
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gdqu9vz19jj30qs0j4tlh.jpg)
+![](https://p.ipic.vip/zxan9d.jpg)
 
 ```js
 const random = ((Math.random() * 70) >>> 0) - 35;
@@ -130,9 +130,9 @@ for (let i = 0; i < data.length; i += 4) {
 
 ## 如何提高图片亮度
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gdqualj8clj30gg0iw7ab.jpg)
+![](https://p.ipic.vip/cjk1pu.jpg)
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gdquwwljf6j30h00iwk2l.jpg)
+![](https://p.ipic.vip/wq5ubk.jpg)
 
 ```js
 const brightness = +e.target.value;

@@ -50,15 +50,10 @@ lucifer 的群大概是我唯一一个每时每刻都能得到响应的群吧。
 - Q4: 三次握手，四次挥手
 - A4: 过程，字段，为何两次不行，各自作用。SYN 半连接攻击。
 - Q5: 谈一下 HTTP
-- A5:
-  详细说 HTTP 1.0 1.1 2 3
-  细说文本格式和二进制格式（这个很感谢 feiker 大表哥在群里说了下），以及 HPACK，应用层和传输层的队头阻塞，多路复用和多路分解
-  瞎扯了一下 302 303 307 在 RFC 规范中的发展历史，其实是跟浏览器大战年代相关的。
+- A5: 详细说 HTTP 1.0 1.1 2 3 细说文本格式和二进制格式（这个很感谢 feiker 大表哥在群里说了下），以及 HPACK，应用层和传输层的队头阻塞，多路复用和多路分解瞎扯了一下 302 303 307 在 RFC 规范中的发展历史，其实是跟浏览器大战年代相关的。
 
 - Q6: 浏览器缓存
-- A6:
-  四级：Service Work, Memory Cache, Disk Cache, Push Cache
-  HTTP 控制的缓存位于 Disk Cache，即强缓存和协商缓存。二者中间的启发式缓存。
+- A6: 四级：Service Work, Memory Cache, Disk Cache, Push Cache HTTP 控制的缓存位于 Disk Cache，即强缓存和协商缓存。二者中间的启发式缓存。
 
 - Q7: CDN
 - A7: content dispatch newwork。 《计网 自顶向下》
@@ -185,7 +180,6 @@ PS: 面试白菜起步。SP 面是四面。
 
 ![](https://p.ipic.vip/2qax9o.jpg)
 
-公众号【 [力扣加加](https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg)】
-知乎专栏【 [Lucifer - 知乎](https://www.zhihu.com/people/lu-xiao-13-70)】
+公众号【 [力扣加加](https://p.ipic.vip/n8gbxo.jpg)】知乎专栏【 [Lucifer - 知乎](https://www.zhihu.com/people/lu-xiao-13-70)】
 
 点关注，不迷路！

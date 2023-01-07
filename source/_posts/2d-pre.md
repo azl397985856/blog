@@ -42,11 +42,11 @@ categories:
 
 比如我们想求如图中灰色部分的和。
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gntugwtc0hj30jg0k0jsz.jpg)
+![](https://p.ipic.vip/qwo9w5.jpg)
 
 一种方式就是用下图中两个绿色部分的矩阵加起来（之所以用绿色部分相加是因为这两部分已经通过上面预处理计算好了，可以在 $O(1)$ 的时间得到），这样我们就会多加一块区域，这块区域就是如图黄色部分，我们再减去黄色部分就好了，最后再加上当前位置本身就行了。
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gntujoo11wj30ja0iw40f.jpg)
+![](https://p.ipic.vip/ikb2wf.jpg)
 
 比如我们想要求 $sum_{i,j}$，则可以通过 $sum_{i - 1,j} + sum_{i,j - 1} - sum_{i - 1,j - 1} + a_{i,j}$ 的方式来实现。这样我就可以通过 $O(m * n)$ 的预处理计算二维前缀和矩阵（m 和 n 分别为矩阵的长和宽），再通过 $O(1)$ 的时间计算出**任意小矩阵的和**。其底层原理就是上面提到的容斥原理，大家可以通过画图的方式来感受一下。
 

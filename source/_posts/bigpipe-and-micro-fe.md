@@ -95,7 +95,7 @@ app.listen(3000);
 
 这里有一篇文档，区别与别的微前端文章的点在于其更加靠近规范层面，而不是结合自己的业务场景做的探索。这篇文章来自于阿里团队。
 
-![](https://tva1.sinaimg.cn/large/006tNbRwgy1g9kuat53elj30u00lgdhe.jpg)
+![](https://p.ipic.vip/62w8uc.jpg)
 
 文章地址： https://mp.weixin.qq.com/s/rYNsKPhw2zR84-4K62gliw
 

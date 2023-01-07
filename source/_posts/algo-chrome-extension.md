@@ -8,7 +8,7 @@ categories:
 
 这两天我写了一个浏览器插件，这个插件的定位就是帮助大家提高刷题效率。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfiqhxykhtj32m10u0qdc.jpg)
+![](https://p.ipic.vip/vv2rag.jpg)
 
 ## 获取方式
 
@@ -22,19 +22,19 @@ categories:
 
 - 前置知识。 如果你想刷这道题，你需要掌握的知识是什么？如果没掌握这个前置知识，你是刷不出来的。提醒你去复习什么东西。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfiqnya27qj30n00iodgg.jpg)
+![](https://p.ipic.vip/c88pnu.jpg)
 
 - 关键点。有了前置知识，并不代表你就能想到，并不代表你就能做出来。有一些关键点你是要想到，不然要么就是做不出来，要么就是解法效率很低。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfiqook3yjj30n00iojs0.jpg)
+![](https://p.ipic.vip/1q71uv.jpg)
 
 - 题解。 这里精选一些好的题解，帮助大家少走弯路。目前只放了我的题解，后续可能会陆续增加其他优秀题解。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfiqovm8ocj30n00ioq3k.jpg)
+![](https://p.ipic.vip/gepito.jpg)
 
 - 代码。 大家可以直接复制进行调试。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfiqp35h71j30n00ioq3s.jpg)
+![](https://p.ipic.vip/2wgvc6.jpg)
 
 计划中的功能：
 
@@ -53,7 +53,7 @@ categories:
 
 PS: 对于收录的题，展示效果类似上面的截图。对于未收录的题，展示效果如下图
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfiqrr2v4gj30n00io3zj.jpg)
+![](https://p.ipic.vip/4hy3xq.jpg)
 
 ## 视频
 
@@ -63,4 +63,4 @@ PS: 对于收录的题，展示效果类似上面的截图。对于未收录的�
 
 - 关注公众号《力扣加加》，点击更多 - 联系我，添加我为好友，备注插件开发。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg)
+![](https://p.ipic.vip/4wrvs5.jpg)

@@ -30,7 +30,7 @@ copilot 是如何一步步引导你完成完整功能的呢？我们来看下。
 
 第一步：
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1guzsi9e2oxj60oe04wwej02.jpg)
+![](https://p.ipic.vip/4gv5xp.jpg)
 
 注意：注释下面的代码颜色是浅色的，是 copilot 提示出来的。下同，不再解释。
 
@@ -38,11 +38,11 @@ copilot 是如何一步步引导你完成完整功能的呢？我们来看下。
 
 第二步：
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1guzsj49jjaj60ym0bqwfg02.jpg)
+![](https://p.ipic.vip/yjaigd.jpg)
 
 再次按下 tab 键，整体的代码就生成了。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1guzsjfft9ij60y20bwjsy02.jpg)
+![](https://p.ipic.vip/s1k8cb.jpg)
 
 类似的例子还有很多，等待大家来探索。
 
@@ -61,7 +61,7 @@ fetch('https://www.leetcode-solution.cn', {
 
 它就提示我：
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1guzsnk6vygj60r804kaaa02.jpg)
+![](https://p.ipic.vip/8luyee.jpg)
 
 接下来按照它的提示，只按 tab 不写代码的情况就可以写出如下代码。
 
