@@ -415,7 +415,7 @@
 <a id="more"></a>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文涉及的题目一共十六道，全部都可以在 <a href="https://typescript-exercises.github.io/" title="typescript-exercises" target="_blank" rel="noopener">typescript-exercises</a> 上在线提交。</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gj1sl6j7pij31560p4ad7.jpg" alt></p>
-<p>可以和标准答案进行对比。<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gj1slk6r7bj31g30o9djp.jpg" alt></p>
+<p>可以和标准答案进行对比。 <img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gj1slk6r7bj31g30o9djp.jpg" alt></p>
 <p>并且由于使用了浏览器缓存， 因此无需登录的情况下也可以保证关掉页面，你的答题进度也会保留。</p>
 <blockquote>
 <p>想重置进度，清空缓存，无痕模式或者换浏览器都可以。</p>
@@ -443,7 +443,7 @@
 <p>从本质上来说， 就是从后端取的数据有两种大的可能， 一种是错误， 一种是成功。两者在同一接口同一时刻只会出现一个，且必须出现一个。</p>
 <p>而成功的情况又会随着接口不同从而可能产生不同的类型。</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gjoppxyseyj30js0f4t9m.jpg" alt></p>
-<p>这是明显的使用 <strong>或逻辑关系</strong> 和<strong>泛型进行类型定义</strong>的强烈信号。<br>我们可以使用泛型做如下改造：</p>
+<p>这是明显的使用 <strong>或逻辑关系</strong> 和<strong>泛型进行类型定义</strong>的强烈信号。我们可以使用泛型做如下改造：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">type</span> ApiResponse&lt;T&gt; =</span><br><span class="line">  | &#123;</span><br><span class="line">      status: <span class="string">"success"</span>;</span><br><span class="line">      data: T;</span><br><span class="line">    &#125;</span><br><span class="line">  | &#123;</span><br><span class="line">      status: <span class="string">"error"</span>;</span><br><span class="line">      error: <span class="built_in">string</span>;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
 <p>那么上面的 UsersApiResponse 就可以变成：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> UsersApiResponse = ApiResponse&lt;User[]&gt;;</span><br></pre></td></tr></table></figure>
@@ -575,7 +575,7 @@
 <p>最后祝愿大家告别 anyscript，成为 TypeScript 魔法师。</p>
 <h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><p>大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的前端硬核文章，带你认识你不知道的前端。</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfxro1x125j30oz0dw43s.jpg" alt></p>
-<p>公众号【 <a href="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" target="_blank" rel="noopener">力扣加加</a>】<br>知乎专栏【 <a href="https://www.zhihu.com/people/lu-xiao-13-70" target="_blank" rel="noopener">Lucifer - 知乎</a>】</p>
+<p>公众号【 <a href="https://p.ipic.vip/n8gbxo.jpg" target="_blank" rel="noopener">力扣加加</a>】知乎专栏【 <a href="https://www.zhihu.com/people/lu-xiao-13-70" target="_blank" rel="noopener">Lucifer - 知乎</a>】</p>
 <p>点关注，不迷路！</p>
 
       </div>
@@ -588,10 +588,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:50+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-07T20:29:11+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2023年1月5日</p>
+    <p>更新于 2023年1月7日</p>
   </a>
 </div>
 

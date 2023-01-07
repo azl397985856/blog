@@ -398,9 +398,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1  3  6 10</span><br><span class="line">6 14 24 36</span><br></pre></td></tr></table></figure>
 <p>那么如何用<strong>代码</strong>计算二维数组的前缀和呢？简单的二维前缀和的求解方法是基于<strong>容斥原理</strong>的。</p>
 <p>比如我们想求如图中灰色部分的和。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gntugwtc0hj30jg0k0jsz.jpg" alt></p>
+<p><img src="https://p.ipic.vip/qwo9w5.jpg" alt></p>
 <p>一种方式就是用下图中两个绿色部分的矩阵加起来（之所以用绿色部分相加是因为这两部分已经通过上面预处理计算好了，可以在 $O(1)$ 的时间得到），这样我们就会多加一块区域，这块区域就是如图黄色部分，我们再减去黄色部分就好了，最后再加上当前位置本身就行了。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gntujoo11wj30ja0iw40f.jpg" alt></p>
+<p><img src="https://p.ipic.vip/ikb2wf.jpg" alt></p>
 <p>比如我们想要求 $sum_{i,j}$，则可以通过 $sum_{i - 1,j} + sum_{i,j - 1} - sum_{i - 1,j - 1} + a_{i,j}$ 的方式来实现。这样我就可以通过 $O(m <em> n)$ 的预处理计算二维前缀和矩阵（m 和 n 分别为矩阵的长和宽），再通过 $O(1)$ 的时间计算出<em>*任意小矩阵的和</em></em>。其底层原理就是上面提到的容斥原理，大家可以通过画图的方式来感受一下。</p>
 <h2 id="如何将二维前缀和转化为一维前缀和"><a href="#如何将二维前缀和转化为一维前缀和" class="headerlink" title="如何将二维前缀和转化为一维前缀和"></a>如何将二维前缀和转化为一维前缀和</h2><p>然而实际上，我们也可不构建一个前缀和数组，而是直接原地修改。</p>
 <blockquote>
@@ -493,10 +493,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:50+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-07T20:17:01+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2023年1月5日</p>
+    <p>更新于 2023年1月7日</p>
   </a>
 </div>
 

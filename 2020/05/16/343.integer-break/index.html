@@ -408,7 +408,7 @@
 <p>实际上这道题可以用纯数学角度来解，但是我相信大多数人并不想看。即使你看了，大多人的感受也是“好 nb，然而并没有什么用”。</p>
 </blockquote>
 <p>这道题抽象一下就是：</p>
-<p>令：<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1geu3kolxoyj305o03cwef.jpg" alt><br>（图 1）<br>求：<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1geu3jy6mxkj305o0360sp.jpg" alt><br>（图 2）</p>
+<p>令：<br><img src="https://p.ipic.vip/ym02sg.jpg" alt><br>（图 1）<br>求：<br><img src="https://p.ipic.vip/9cf79c.jpg" alt><br>（图 2）</p>
 <h2 id="第一直觉"><a href="#第一直觉" class="headerlink" title="第一直觉"></a>第一直觉</h2><p>经过上面的抽象，我的第一直觉这可能是一个数学题，我回想了下数学知识，然后用数学法 AC 了。 数学就是这么简单平凡且枯燥。</p>
 <p>然而如果没有数学的加持的情况下，我继续思考怎么做。我想是否可以枚举所有的情况（如图 1），然后对其求最大值（如图 2）。</p>
 <p>问题转化为如何枚举所有的情况。经过了几秒钟的思考，我发现这是一个很明显的递归问题。 具体思考过程如下：</p>
@@ -417,11 +417,11 @@
 <li>那么 f(n) 等价于 max(1 * fn(n - 1), 2 * f(n - 2), …, (n - 1) * f(1))。</li>
 </ul>
 <p>用数学公式表示就是：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1geu3swzc9ej30co03yaa4.jpg" alt><br>（图 3）</p>
+<p><img src="https://p.ipic.vip/9xbpm6.jpg" alt><br>（图 3）</p>
 <p>截止目前，是一点点数学 + 一点点递归，我们继续往下看。现在问题是不是就很简单啦？直接翻译图三为代码即可，我们来看下这个时候的代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">integerBreak</span><span class="params">(self, n: int)</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">2</span>: <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</span><br><span class="line">            res = max(res, max(i * self.integerBreak(n - i),i * (n - i)))</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
 <p>毫无疑问，超时了。原因很简单，就是算法中包含了太多的重复计算。如果经常看我的题解的话，这句话应该不陌生。我随便截一个我之前讲过这个知识点的图。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1geu3zfz89jj313p0u0wnj.jpg" alt><br>(图 4)</p>
+<p><img src="https://p.ipic.vip/qpbbsb.jpg" alt><br>(图 4)</p>
 <blockquote>
 <p>原文链接：<a href="https://github.com/azl397985856/leetcode/blob/master/thinkings/dynamic-programming.md" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode/blob/master/thinkings/dynamic-programming.md</a></p>
 </blockquote>
@@ -434,7 +434,7 @@
 <p>为了简单起见（偷懒起见），我直接用了 lru_cache 注解， 上面的代码是可以 AC 的。</p>
 <h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><p>看到这里的同学应该发现了，这个套路是不是很熟悉？下一步就是将其改造成动态规划了。</p>
 <p>如图 4，我们的思考方式是从顶向下，这符合人们思考问题的方式。将其改造成如下图的自底向上方式就是动态规划。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1geu4a1grbvj31eq0r0wj8.jpg" alt><br>(图 5)</p>
+<p><img src="https://p.ipic.vip/pm64ul.jpg" alt><br>(图 5)</p>
 <p>现在再来看下文章开头的代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">integerBreak</span><span class="params">(self, n: int)</span> -&gt; int:</span></span><br><span class="line">        dp = [<span class="number">1</span>] * (n + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>, n + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, i):</span><br><span class="line">                dp[i] = max(j * dp[i - j], j * (i - j), dp[i])</span><br><span class="line">        <span class="keyword">return</span> dp[n]</span><br></pre></td></tr></table></figure>
 <p>dp table 存储的是图 3 中 f(n)的值。一个自然的想法是令 dp[i] 等价于 f(i)。而由于上面分析了原问题等价于 f(n)，那么很自然的原问题也等价于 dp[n]。</p>
@@ -466,10 +466,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:50+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-07T20:20:39+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2023年1月5日</p>
+    <p>更新于 2023年1月7日</p>
   </a>
 </div>
 

@@ -388,7 +388,7 @@
         <p>由于 lucifer 我是一个小前端， 最近也在准备写一个《前端如何搞定算法面试》的专栏，因此最近没少看各大公司的面试题。都说字节跳动算法题比较难，我就先拿 ta 下手，做了几套 。这次我们就拿一套 <code>字节跳动2017秋招编程题汇总</code>来看下字节的算法笔试题的难度几何。地址：<a href="https://www.nowcoder.com/test/6035789/summary" target="_blank" rel="noopener">https://www.nowcoder.com/test/6035789/summary</a></p>
 <p>​<a id="more"></a></p>
 <p>这套题一共 11 道题， 三道编程题， 八道问答题。本次给大家带来的就是这三道编程题。更多精彩内容，请期待我的搞定算法面试专栏。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gip1ab1tb9j311b0u0jzi.jpg" alt></p>
+<p><img src="https://p.ipic.vip/ynlzek.jpg" alt></p>
 <p>其中有一道题《异或》我没有通过所有的测试用例， 小伙伴可以找找茬，第一个找到并在公众号力扣加加留言的小伙伴奖励现金红包 10 元。</p>
 <h2 id="1-头条校招"><a href="#1-头条校招" class="headerlink" title="1. 头条校招"></a>1. 头条校招</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">头条的 2017 校招开始了！为了这次校招，我们组织了一个规模宏大的出题团队，每个出题人都出了一些有趣的题目，而我们现在想把这些题目组合成若干场考试出来，在选题之前，我们对题目进行了盲审，并定出了每道题的难度系统。一场考试包含 3 道开放性题目，假设他们的难度从小到大分别为 a,b,c，我们希望这 3 道题能满足下列条件：</span><br><span class="line">a&lt;=b&lt;=c</span><br><span class="line">b-a&lt;=10</span><br><span class="line">c-b&lt;=10</span><br><span class="line">所有出题人一共出了 n 道开放性题目。现在我们想把这 n 道题分布到若干场考试中（1 场或多场，每道题都必须使用且只能用一次），然而由于上述条件的限制，可能有一些考试没法凑够 3 道题，因此出题人就需要多出一些适当难度的题目来让每场考试都达到要求，然而我们出题已经出得很累了，你能计算出我们最少还需要再出几道题吗？</span><br><span class="line"></span><br><span class="line">输入描述:</span><br><span class="line">输入的第一行包含一个整数 n，表示目前已经出好的题目数量。</span><br><span class="line"></span><br><span class="line">第二行给出每道题目的难度系数 d1,d2,...,dn。</span><br><span class="line"></span><br><span class="line">数据范围</span><br><span class="line"></span><br><span class="line">对于 30%的数据，1 ≤ n,di ≤ 5;</span><br><span class="line"></span><br><span class="line">对于 100%的数据，1 ≤ n ≤ 10^5,1 ≤ di ≤ 100。</span><br><span class="line"></span><br><span class="line">在样例中，一种可行的方案是添加 2 个难度分别为 20 和 50 的题目，这样可以组合成两场考试：（20 20 23）和（35,40,50）。</span><br><span class="line"></span><br><span class="line">输出描述:</span><br><span class="line">输出只包括一行，即所求的答案。</span><br><span class="line">示例 1</span><br><span class="line">输入</span><br><span class="line">4</span><br><span class="line">20 35 23 40</span><br><span class="line">输出</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这道题看起来很复杂， 你需要考虑很多的情况。，属于那种没有技术含量，但是考验编程能力的题目，需要思维足够严密。这种<strong>模拟的题目</strong>，就是题目让我干什么我干什么。 类似之前写的囚徒房间问题，约瑟夫环也是模拟，只不过模拟之后需要你剪枝优化。</p>
@@ -415,13 +415,13 @@
 <p>这就是所有的情况了。</p>
 <p>有的同学比较好奇，我是怎么思考的。 我是怎么<strong>保障不重不漏</strong>的。</p>
 <p>实际上，这道题就是一个决策树， 我画个决策树出来你就明白了。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gip1se8id8j31p60u0n6z.jpg" alt></p>
+<p><img src="https://p.ipic.vip/herbek.jpg" alt></p>
 <blockquote>
 <p>图中红色边框表示自身可以组成套题的一部分， 我也用文字进行了说明。#2 代表第二题， #3 代表第三题。</p>
 </blockquote>
 <p>从图中可以看出， 我已经考虑了所有情况。如果你能够像我一样画出这个决策图，我想你也不会漏的。当然我的解法并不一定是最优的，不过确实是一个非常好用，具有普适性的思维框架。</p>
 <p>需要特别注意的是，由于需要凑整， 因此你需要使得题目的总数是 3 的倍数向上取整。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gip1x5c97lj30cs0eoq3c.jpg" alt></p>
+<p><img src="https://p.ipic.vip/4vsxps.jpg" alt></p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">n = int(input())</span><br><span class="line">nums = list(map(int, input().split()))</span><br><span class="line">cnt = <span class="number">0</span></span><br><span class="line">cur = <span class="number">1</span></span><br><span class="line">nums.sort()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</span><br><span class="line">    <span class="keyword">if</span> cur == <span class="number">3</span>:</span><br><span class="line">        cur = <span class="number">1</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    diff = nums[i] - nums[i - <span class="number">1</span>]</span><br><span class="line">    <span class="keyword">if</span> diff &lt;= <span class="number">10</span>:</span><br><span class="line">        cur += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> <span class="number">10</span> &lt; diff &lt;= <span class="number">20</span>:</span><br><span class="line">        <span class="keyword">if</span> cur == <span class="number">1</span>:</span><br><span class="line">            cur = <span class="number">3</span></span><br><span class="line">        <span class="keyword">if</span> cur == <span class="number">2</span>:</span><br><span class="line">            cur = <span class="number">1</span></span><br><span class="line">        cnt += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> diff &gt; <span class="number">20</span>:</span><br><span class="line">        <span class="keyword">if</span> cur == <span class="number">1</span>:</span><br><span class="line">            cnt += <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> cur == <span class="number">2</span>:</span><br><span class="line">            cnt += <span class="number">1</span></span><br><span class="line">        cur = <span class="number">1</span></span><br><span class="line">print(cnt + <span class="number">3</span> - cur)</span><br></pre></td></tr></table></figure>
 <p><strong>复杂度分析</strong></p>
 <ul>
@@ -450,7 +450,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">123</span><br><span class="line">456</span><br><span class="line">1234</span><br></pre></td></tr></table></figure>
 <p>这三个数比较大小， 为了方便我们先补 0 ，使得大家的位数保持一致。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0123</span><br><span class="line">0456</span><br><span class="line">1234</span><br></pre></td></tr></table></figure>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gip1zqrphpj30ae0cswex.jpg" alt></p>
+<p><img src="https://p.ipic.vip/nl1aq8.jpg" alt></p>
 <p>先比较第一位，1 比较 0 大， 因此 1234 最大。再比较第二位， 4 比 1 大， 因此 456 大于 123，后面位不需要比较了。这其实就是剪枝的思想。</p>
 <p>有了这两个前提，我们来试下暴力法解决这道题。</p>
 <h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>暴力法就是枚举 $N^2 / 2$ 中组合， 让其两两按位异或，将得到的结果和 m 进行比较， 如果比 m 大， 则计数器 + 1， 最后返回计数器的值即可。</p>
@@ -488,7 +488,7 @@
 <p>因此一种想法就是建立一个前缀树， <strong>树的根就是最高的位</strong>。 由于题目要求异或， 我们知道异或是二进制的位运算， 因此这棵树要存二进制才比较好。</p>
 <p>反手看了一眼数据范围：m, n&lt;=10^5 。 10^5 = 2 ^ x，我们的目标是求出 满足条件的 x 的 ceil（向上取整），因此 x 应该是 17。</p>
 <p>树的每一个节点存储的是：<strong>n 个数中，从根节点到当前节点形成的前缀有多少个是一样的</strong>，即多少个数的前缀是一样的。这样可以剪枝，提前退出的时候，就直接取出来用了。比如异或的结果是 1， m 当前二进制位是 0 ，那么这个前缀有 10 个，我都不需要比较了， 计数器直接 + 10 。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gip21tqf5gj31vl0u0n61.jpg" alt></p>
+<p><img src="https://p.ipic.vip/58mgyt.jpg" alt></p>
 <blockquote>
 <p>我用 17 直接复杂度过高，目前仅仅通过了 70 % - 80 % 测试用例， 希望大家可以帮我找找毛病，我猜测是语言的锅。</p>
 </blockquote>
@@ -518,7 +518,7 @@
 <p>一种简单的优化方法是将排序换成堆，利用堆的特性求第 k 大的数， 这样时间复杂度可以减低到 $mlogN$。</p>
 <p>我们继续优化。实际上，你如果把字典序的排序结构画出来， 可以发现他本质就是一个十叉树，并且是一个完全十叉树。</p>
 <p>接下来，我带你继续分析。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gipczpnhjij32440u0h2w.jpg" alt></p>
+<p><img src="https://p.ipic.vip/slcf2w.jpg" alt></p>
 <p>如图， 红色表示根节点。节点表示一个十进制数， <strong>树的路径存储真正的数字</strong>，比如图上的 100，109 等。 这不就是上面讲的前缀树么？</p>
 <p>如图黄色部分， 表示字典序的顺序，注意箭头的方向。因此本质上，<strong>求字典序第 m 个数， 就是求这棵树的前序遍历的第 m 个节点。</strong></p>
 <p>因此一种优化思路就是构建一颗这样的树，然后去遍历。 构建的复杂度是 $O(N)$，遍历的复杂度是 $O(M)$。因此这种算法的复杂度可以达到 $O(max(m, n))$ ，由于 n &gt;= m，因此就是 $O(N)$。</p>
@@ -574,9 +574,9 @@
 </ul>
 <p>全部加起来即可。</p>
 <p>它的孩子节点个数是 <code>20 - 10 = 10</code> 。 也就是它的<strong>右边的兄弟节点的第一个子节点</strong> 减去 它的<strong>第一个子节点</strong>。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gipel153igj31u40r8qd0.jpg" alt></p>
+<p><img src="https://p.ipic.vip/4bte1c.jpg" alt></p>
 <p>由于是完全十叉树，而不是满十叉树 。因此你需要考虑边界情况，比如题目的 n 是 15。 那么 1 的子节点个数就不是 20 - 10 = 10 了， 而是 15 - 10 + 1 = 16。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gipemlbs0cj31ty0mm79i.jpg" alt></p>
+<p><img src="https://p.ipic.vip/c3do8x.jpg" alt></p>
 <p>其他也是类似的过程， 我们只要：</p>
 <ul>
 <li>Go deeper and do the same thing</li>
@@ -598,7 +598,7 @@
 <h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p>最近的力扣的周赛 <a href="https://leetcode-cn.com/problems/count-pairs-with-xor-in-a-range/" title="1803. 统计异或值在范围内的数对有多少" target="_blank" rel="noopener">1803. 统计异或值在范围内的数对有多少</a>竟然也和这篇文章中的第二道题撞了。lucifer 我直接将第二道题的代码稍微改下就 AC 了。 这道题涉及了二进制前缀和的考点，看来大家还是比较喜欢考察的。一般二进制前缀树的题目难度基本都是困难。</p>
 <p>更多题解可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经 36K+ star 啦。</p>
 <p>关注公众号力扣加加，努力用清晰直白的语言还原解题思路，并且有大量图解，手把手教你识别套路，高效刷题。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" alt></p>
+<p><img src="https://p.ipic.vip/qhfxo7.jpg" alt></p>
 
       </div>
       
@@ -610,10 +610,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:50+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-07T20:20:39+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2023年1月5日</p>
+    <p>更新于 2023年1月7日</p>
   </a>
 </div>
 
@@ -698,16 +698,16 @@
                       <span class="art-item-left">
                           <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                           <h4>
-                              <a href="/blog/2020/09/06/byte-dance-algo-ex/" rel="prev" title="字节跳动的算法面试题是什么难度？">
+                              <a href="/blog/2020/09/27/ts-exercises/" rel="prev" title="TypeScript 练习题">
                                 
-                                    字节跳动的算法面试题是什么难度？
+                                    TypeScript 练习题
                                 
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/滑动窗口/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 滑动窗口</a> <a class="tag" href="/blog/tags/面试/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 面试</a> <a class="tag" href="/blog/tags/字节跳动/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 字节跳动</a>
+                                  <a class="tag" href="/blog/tags/前端/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 前端</a> <a class="tag" href="/blog/tags/TypeScript/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> TypeScript</a>
                               </h6>
                           
                       </span>
@@ -718,16 +718,16 @@
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/blog/2020/08/30/887.super-egg-drop-extension/" rel="prev" title="对《丢鸡蛋问题》的一点补充">
+                              <a href="/blog/2020/09/06/byte-dance-algo-ex/" rel="prev" title="字节跳动的算法面试题是什么难度？">
                                   
-                                      对《丢鸡蛋问题》的一点补充
+                                      字节跳动的算法面试题是什么难度？
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/动态规划/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 动态规划</a>
+                                  <a class="tag" href="/blog/tags/数据结构/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a> <a class="tag" href="/blog/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a> <a class="tag" href="/blog/tags/滑动窗口/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 滑动窗口</a> <a class="tag" href="/blog/tags/面试/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 面试</a> <a class="tag" href="/blog/tags/字节跳动/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 字节跳动</a>
                               </h6>
                           
                       </span>

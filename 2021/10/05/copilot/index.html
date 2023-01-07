@@ -394,20 +394,20 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根据 Github 用户名获取用户信息</span></span><br></pre></td></tr></table></figure>
 <p>copilot 是如何一步步引导你完成完整功能的呢？我们来看下。</p>
 <p>第一步：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1guzsi9e2oxj60oe04wwej02.jpg" alt></p>
+<p><img src="https://p.ipic.vip/4gv5xp.jpg" alt></p>
 <p>注意：注释下面的代码颜色是浅色的，是 copilot 提示出来的。下同，不再解释。</p>
 <p>按下 tab 键就会浅色的代码就会被填充，并提示接下来的代码。</p>
 <p>第二步：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1guzsj49jjaj60ym0bqwfg02.jpg" alt></p>
+<p><img src="https://p.ipic.vip/yjaigd.jpg" alt></p>
 <p>再次按下 tab 键，整体的代码就生成了。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1guzsjfft9ij60y20bwjsy02.jpg" alt></p>
+<p><img src="https://p.ipic.vip/s1k8cb.jpg" alt></p>
 <p>类似的例子还有很多，等待大家来探索。</p>
 <h2 id="代码补全"><a href="#代码补全" class="headerlink" title="代码补全"></a>代码补全</h2><p>IDE 的一个很重要的功能就是代码补全。 copilot 增强了 IDE 的补全功能。</p>
 <p>copilot 可以根据你的代码仓库以及世界上公开的代码仓库提示你可能的输入，从而减少你敲击键盘的次数，在更短的时间写出更多的代码，获取更多的摸鱼时间。</p>
 <p>举个例子，仍然以 JS 为例。我想发送一个 fetch 请求。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fetch(<span class="string">'https://www.leetcode-solution.cn'</span>, &#123;</span><br></pre></td></tr></table></figure>
 <p>它就提示我：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1guzsnk6vygj60r804kaaa02.jpg" alt></p>
+<p><img src="https://p.ipic.vip/8luyee.jpg" alt></p>
 <p>接下来按照它的提示，只按 tab 不写代码的情况就可以写出如下代码。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">"https://leetcode-solution.cn"</span>, &#123;</span><br><span class="line">  method: <span class="string">"POST"</span>,</span><br><span class="line">  headers: &#123;</span><br><span class="line">    <span class="string">"Content-Type"</span>: <span class="string">"application/json"</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  body: <span class="built_in">JSON</span>.stringify(&#123;</span><br><span class="line">    question_id: <span class="string">"1"</span>,</span><br><span class="line">    lang: <span class="string">"javascript"</span>,</span><br><span class="line">    code: <span class="string">"console.log(1)"</span>,</span><br><span class="line">  &#125;),</span><br><span class="line">&#125;).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(res);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>对我的仓库功能来说， 上面代码有一小部分是有问题的。 不过我只需要稍微改改就行了。效率提升还是不错的。</p>
@@ -426,10 +426,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:50+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-07T20:20:39+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2023年1月5日</p>
+    <p>更新于 2023年1月7日</p>
   </a>
 </div>
 

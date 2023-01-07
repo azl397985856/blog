@@ -431,14 +431,14 @@
 </blockquote>
 <h2 id="1143-最长公共子序列"><a href="#1143-最长公共子序列" class="headerlink" title="1143.最长公共子序列"></a>1143.最长公共子序列</h2><h3 id="题目地址-1"><a href="#题目地址-1" class="headerlink" title="题目地址"></a>题目地址</h3><p><a href="https://leetcode-cn.com/problems/longest-common-subsequence" target="_blank" rel="noopener">https://leetcode-cn.com/problems/longest-common-subsequence</a></p>
 <h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定两个字符串  text1 和  text2，返回这两个字符串的最长公共子序列的长度。</p>
-<p>一个字符串的   子序列   是指这样一个新的字符串：它是由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。<br>例如，”ace” 是 “abcde” 的子序列，但 “aec” 不是 “abcde” 的子序列。两个字符串的「公共子序列」是这两个字符串所共同拥有的子序列。</p>
+<p>一个字符串的   子序列   是指这样一个新的字符串：它是由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。例如，”ace” 是 “abcde” 的子序列，但 “aec” 不是 “abcde” 的子序列。两个字符串的「公共子序列」是这两个字符串所共同拥有的子序列。</p>
 <p>若这两个字符串没有公共子序列，则返回 0。</p>
 <p>示例 1:</p>
-<p>输入：text1 = “abcde”, text2 = “ace”<br>输出：3<br>解释：最长公共子序列是 “ace”，它的长度为 3。<br>示例 2:</p>
-<p>输入：text1 = “abc”, text2 = “abc”<br>输出：3<br>解释：最长公共子序列是 “abc”，它的长度为 3。<br>示例 3:</p>
-<p>输入：text1 = “abc”, text2 = “def”<br>输出：0<br>解释：两个字符串没有公共子序列，返回 0。</p>
+<p>输入：text1 = “abcde”, text2 = “ace” 输出：3<br>解释：最长公共子序列是 “ace”，它的长度为 3。示例 2:</p>
+<p>输入：text1 = “abc”, text2 = “abc” 输出：3 解释：最长公共子序列是 “abc”，它的长度为 3。示例 3:</p>
+<p>输入：text1 = “abc”, text2 = “def” 输出：0 解释：两个字符串没有公共子序列，返回 0。</p>
 <p>提示:</p>
-<p>1 &lt;= text1.length &lt;= 1000<br>1 &lt;= text2.length &lt;= 1000<br>输入的字符串只含有小写英文字符。</p>
+<p>1 &lt;= text1.length &lt;= 1000 1 &lt;= text2.length &lt;= 1000 输入的字符串只含有小写英文字符。</p>
 <h3 id="前置知识-1"><a href="#前置知识-1" class="headerlink" title="前置知识"></a>前置知识</h3><ul>
 <li>数组</li>
 <li>动态规划</li>
@@ -465,11 +465,11 @@
 <p>以这种方法绘制线条，并返回我们可以绘制的最大连线数。</p>
 <p>示例 1：</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggbkku13xuj315x0u0abp.jpg" alt></p>
-<p>输入：A = [1,4,2], B = [1,2,4]<br>输出：2<br>解释：<br>我们可以画出两条不交叉的线，如上图所示。<br>我们无法画出第三条不相交的直线，因为从 A[1]=4 到 B[2]=4 的直线将与从 A[2]=2 到 B[1]=2 的直线相交。<br>示例 2：</p>
-<p>输入：A = [2,5,1,2,5], B = [10,5,2,1,5,2]<br>输出：3<br>示例 3：</p>
-<p>输入：A = [1,3,7,1,7,5], B = [1,9,2,5,1]<br>输出：2</p>
+<p>输入：A = [1,4,2], B = [1,2,4] 输出：2 解释：我们可以画出两条不交叉的线，如上图所示。我们无法画出第三条不相交的直线，因为从 A[1]=4 到 B[2]=4 的直线将与从 A[2]=2 到 B[1]=2 的直线相交。示例 2：</p>
+<p>输入：A = [2,5,1,2,5], B = [10,5,2,1,5,2] 输出：3 示例 3：</p>
+<p>输入：A = [1,3,7,1,7,5], B = [1,9,2,5,1] 输出：2</p>
 <p>提示：</p>
-<p>1 &lt;= A.length &lt;= 500<br>1 &lt;= B.length &lt;= 500<br>1 &lt;= A[i], B[i] &lt;= 2000</p>
+<p>1 &lt;= A.length &lt;= 500 1 &lt;= B.length &lt;= 500 1 &lt;= A[i], B[i] &lt;= 2000</p>
 <h3 id="前置知识-2"><a href="#前置知识-2" class="headerlink" title="前置知识"></a>前置知识</h3><ul>
 <li>数组</li>
 <li>动态规划</li>
@@ -492,7 +492,7 @@
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>第一道是“子串”题型，第二和第三则是“子序列”。不管是“子串”还是“子序列”，状态定义都是一样的，不同的只是一点小细节。</p>
 <p><strong>只有熟练掌握基础的数据结构与算法，才能对复杂问题迎刃有余。</strong> 基础算法，把它彻底搞懂，再去面对出题人的各种换皮就不怕了。相反，如果你不去思考题目背后的逻辑，就会刷地很痛苦。题目稍微一变化你就不会了，这也是为什么很多人说<strong>刷了很多题，但是碰到新的题目还是不会做</strong>的原因之一。关注公众号力扣加加，努力用清晰直白的语言还原解题思路，并且有大量图解，手把手教你识别套路，高效刷题。</p>
 <p>更多题解可以访问我的 LeetCode 题解仓库：<a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> 。 目前已经 30K star 啦。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfcuzagjalj30p00dwabs.jpg" alt></p>
+<p><img src="https://p.ipic.vip/n8gbxo.jpg" alt></p>
 
       </div>
       
@@ -504,10 +504,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:50+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-07T20:29:00+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2023年1月5日</p>
+    <p>更新于 2023年1月7日</p>
   </a>
 </div>
 
