@@ -1,279 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <title>动态规划到底有多难？ | lucifer的网络博客</title>
-  
-  <meta name="keywords" content="前端 leetocde 数据结构 算法 lucifer 大前端 性能优化 前端架构 前端工程化">
-  
-  
-  <meta name="description" content="lucifer的个人博客，用来记录LeeCode刷题过程和心得，以及构建大前端知识体系">
-  
-
-  
-  <link rel="alternate" href="/blog/atom.xml" title="lucifer的网络博客">
-  
-
-  <meta name="HandheldFriendly" content="True">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
-  
-
-  <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
-  
-
-  
-  <link rel="shortcut icon" type="image/x-icon" href="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
-  
-
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9.9/css/style.css">
-  
-
-  <script>
-    function setLoadingBarProgress(num) {
-      document.getElementById('loading-bar').style.width=num+"%";
-    }
-  </script>
-
-  
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVTTYT432Q"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-FVTTYT432Q');
-    </script>
-  
-  
-    <!-- ba -->
-    <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?576ec211e11a69128667eb8c11a6cffe";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-    </script>
-  
-</head>
-
-<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
-<script>
-  var btw = new BTWPlugin();
-  setTimeout(function(){
-    window.btw.init({
-      id: "container",
-      blogId: "17446-1571644985832-648",
-      name: "力扣加加",
-      qrcode:
-        "https://tva1.sinaimg.cn/large/008eGmZEly1gomv7ug3bnj30760763yz.jpg",
-      keyword: "more",
-    });
-  }, 100)
-</script>
-<body>
-  
-  
-  <div class="cover-wrapper">
-    <cover class='cover post half'>
-      
-        
-  <h1 class='title'>lucifer</h1>
-
-
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class='menu navgation'>
-  <ul class='h-list'>
-    
-      
-        <li>
-          <a class="nav home" href="/blog/"
-            
-            
-            id="blog">
-            <i class='fas fa-home fa-fw'></i>&nbsp;主页
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="http://leetcode-solution.cn/"
-            
-            
-            id="http:leetcode-solution.cn">
-            <i class='fas fa-laptop-code fa-fw'></i>&nbsp;官网
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/friends/"
-            
-            
-            id="blogfriends">
-            <i class='fas fa-link fa-fw'></i>&nbsp;友链
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/about/"
-            
-            
-            id="blogabout">
-            <i class='fas fa-id-card-alt fa-fw'></i>&nbsp;联系我
-          </a>
-        </li>
-      
-    
-  </ul>
-</div>
-
-      
-    </cover>
-    <header class="l_header pure">
-  <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="pure"></div>
-  </div>
-
-	<div class='wrapper'>
-		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href='/blog/' >
-        
-          lucifer的网络博客
-        
-      </a>
-			<div class='menu navgation'>
-				<ul class='h-list'>
-          
-  					
-  						<li>
-								<a class="nav flat-box" href="/blog/"
-                  
-                  
-                  id="blog">
-									<i class='fas fa-grin fa-fw'></i>&nbsp;回到主页
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/categories/"
-                  
-                  
-                  id="blogcategories">
-									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/tags/"
-                  
-                  
-                  id="blogtags">
-									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/archives/"
-                  
-                  
-                  id="blogarchives">
-									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
-								</a>
-							</li>
-      			
-      		
-				</ul>
-			</div>
-
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="搜索" />
-						<i class="icon fas fa-search fa-fw"></i>
-					</form>
-				</div>
-			
-			<ul class='switcher h-list'>
-				
-					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
-				
-				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
-			</ul>
-		</div>
-
-		<div class='nav-sub container container--flex'>
-			<a class="logo flat-box"></a>
-			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
-        
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
-        
-			</ul>
-		</div>
-	</div>
-</header>
-	<aside class="menu-phone">
-    <header>
-		<nav class="menu navgation">
-      <ul>
-        
-          
-            <li>
-							<a class="nav flat-box" href="/blog/"
-                
-                
-                id="blog">
-								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/archives/"
-                
-                
-                id="blogarchives">
-								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/about/"
-                
-                
-                id="blogabout">
-								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
-							</a>
-            </li>
-          
-       
-      </ul>
-		</nav>
-    </header>
-	</aside>
-<script>setLoadingBarProgress(40);</script>
-
-  </div>
-
-
-  <div id="container" class="l_body">
-    <div class='body-wrapper'>
-      <div class='l_main'>
+<div class='l_main'>
   
 
   <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
@@ -394,7 +119,7 @@
 <li>达到一个<strong>可行解(目标阶段)</strong> 需要不断地转移，那如何转移才能达到<strong>最优解</strong>？这叫规划。</li>
 </ol>
 <p>每个阶段抽象为状态（用圆圈来表示），状态之间可能会发生转化（用箭头表示）。可以画出类似如下的图：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gpoaanln73j31ak0p0dpd.jpg" alt="状态转移图解"></p>
+<p><img src="https://p.ipic.vip/adrbn0.jpg" alt="状态转移图解"></p>
 <p>那我们应该做出如何的<strong>决策序列</strong>才能使得结果最优？换句话说就是每一个状态应该如何选择到下一个具体状态，并最终到达目标状态。这就是动态规划研究的问题。</p>
 <p>每次决策实际上<strong>不会考虑之后的决策，而只会考虑之前的状态。</strong> 形象点来说，其实是走一步看一步这种短视思维。为什么这种短视可以来求解最优解呢？那是因为：</p>
 <ol>
@@ -450,7 +175,7 @@
 <p><strong>通过函数来描述问题，并通过函数的调用关系来描述问题间的关系就是记忆化递归的核心内容。</strong></p>
 <p>每一个动态规划问题，实际上都可以抽象为一个数学上的函数。这个函数的自变量集合就是题目的所有取值，值域就是题目要求的答案的所有可能。我们的目标其实就是填充这个函数的内容，使得给定自变量 x，能够唯一映射到一个值 y。（当然自变量可能有多个，对应递归函数参数可能有多个）</p>
 <p>解决动态规划问题可以看成是填充函数这个黑盒，使得定义域中的数并正确地映射到值域。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gplrxy60mpj30pt0daacn.jpg" alt="数学函数vs动态规划"></p>
+<p><img src="https://p.ipic.vip/rfhx68.jpg" alt="数学函数vs动态规划"></p>
 <p>递归并不是算法，它是和迭代对应的一种编程方法。只不过，我们通常借助递归去分解问题而已。比如我们定义一个递归函数 f(n)，用 f(n) 来描述问题。就和使用普通动态规划 f[n] 描述问题是一样的，这里的 f 是 dp 数组。</p>
 <h3 id="什么是记忆化？"><a href="#什么是记忆化？" class="headerlink" title="什么是记忆化？"></a>什么是记忆化？</h3><p>为了大家能够更好地对本节内容进行理解，我们通过一个例子来切入：</p>
 <p>一个人爬楼梯，每次只能爬 1 个或 2 个台阶，假设有 n 个台阶，那么这个人有多少种不同的爬楼梯方法？</p>
@@ -459,14 +184,14 @@
 <p>递归代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">climbStairs</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> climbStairs(n - <span class="number">1</span>) + climbStairs(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们用一个递归树来直观感受以下（每一个圆圈表示一个子问题）：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluhw6pf2j30mz0b2dgk.jpg" alt="重叠子问题"></p>
+<p><img src="https://p.ipic.vip/gq5u6q.jpg" alt="重叠子问题"></p>
 <p>红色表示重复的计算。即 Fib(N-2) 和 Fib(N-3) 都被计算了两次，实际上计算一次就够了。比如第一次计算出了 Fib(N-2) 的值，那么下次再次需要计算 Fib(N-2)的时候，可以直接将上次计算的结果返回。之所以可以这么做的原因正是前文提到的<strong>我们的递归函数是数学中的函数，也就是说参数一定，那么返回值也一定不会变</strong>，因此下次如果碰到相同的参数，我们就可以<strong>将上次计算过的值直接返回，而不必重新计算</strong>。这样节省的时间就等价于重叠子问题的个数。</p>
 <p><strong>以这道题来说，本来需要计算 $2^n$ 次，而如果使用了记忆化，只需要计算 n 次，就是这么神奇。</strong></p>
 <p>代码上，我们可以使用一个 hashtable 去缓存中间计算结果，从而省去不必要的计算。</p>
 <p>我们使用记忆化来改造上面的代码：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">memo = &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">climbStairs</span><span class="params">(n)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> n == <span class="number">1</span>:<span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">if</span> n == <span class="number">2</span>: <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">  <span class="keyword">if</span> n <span class="keyword">in</span> memo: <span class="keyword">return</span> memo[n]</span><br><span class="line">  ans = climbStairs(n - <span class="number">1</span>) + climbStairs(n<span class="number">-2</span>)</span><br><span class="line">  memo[n] = ans</span><br><span class="line">  <span class="keyword">return</span> ans</span><br><span class="line">climbStairs(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
 <p>这里我使用了一个名为 <strong>memo 的哈希表来存储递归函数的返回值，其中 key 为参数，value 为递归函数的返回值。</strong></p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gpmof67uptj307w0fe3zk.jpg" alt="哈希表示意图"></p>
+<p><img src="https://p.ipic.vip/zzrclk.jpg" alt="哈希表示意图"></p>
 <blockquote>
 <p>key 的形式为 (x, y)，表示的是一个元祖。通常动态规划的参数有多个，我们就可以使用元祖的方式来记忆化。或者也可采取多维数组的形式。对于上图来说，就可使用二维数组来表示。</p>
 </blockquote>
@@ -521,7 +246,7 @@
 <p>说实话，只能多练习，在练习的过程中总结套路。具体的套路参考后面的<strong>动态规划的题型</strong> 部分内容。之后大家就可以针对不同的题型，去思考大概的状态定义方向。</p>
 <p><strong>两个例子</strong></p>
 <p>关于状态定义，真的非常重要，以至于我将其列为动态规划的核心。因此我觉得有必要举几个例子来进行说明。我直接从力扣的<a href="https://leetcode-cn.com/tag/dynamic-programming/problemset/" title="动态规划专题" target="_blank" rel="noopener">动态规划专题</a>中抽取前两道给大家讲讲。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gpmtitey5hj315k0lsjxk.jpg" alt="力扣动态规划专题"></p>
+<p><img src="https://p.ipic.vip/b2doed.jpg" alt="力扣动态规划专题"></p>
 <p>第一道题：《5. 最长回文子串》难度中等</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">给你一个字符串 s，找到 s 中最长的回文子串。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例 1：</span><br><span class="line"></span><br><span class="line">输入：s = &quot;babad&quot;</span><br><span class="line">输出：&quot;bab&quot;</span><br><span class="line">解释：&quot;aba&quot; 同样是符合题意的答案。</span><br><span class="line">示例 2：</span><br><span class="line"></span><br><span class="line">输入：s = &quot;cbbd&quot;</span><br><span class="line">输出：&quot;bb&quot;</span><br><span class="line">示例 3：</span><br><span class="line"></span><br><span class="line">输入：s = &quot;a&quot;</span><br><span class="line">输出：&quot;a&quot;</span><br><span class="line">示例 4：</span><br><span class="line"></span><br><span class="line">输入：s = &quot;ac&quot;</span><br><span class="line">输出：&quot;a&quot;</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">1 &lt;= s.length &lt;= 1000</span><br><span class="line">s 仅由数字和英文字母（大写和/或小写）组成</span><br></pre></td></tr></table></figure>
 <p><strong>这道题入参是一个字符串，那我们要将其转化为规模更小的子问题，那无疑就是字符串变得更短的问题，临界条件也应该是空字符串或者一个字符这样。</strong></p>
@@ -555,7 +280,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。</span><br><span class="line"></span><br><span class="line">机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。</span><br><span class="line"></span><br><span class="line">问总共有多少条不同的路径？</span><br></pre></td></tr></table></figure>
 <p>这道题是和上面的爬楼梯很像，只不过从一维变成了二维，我把它叫做<strong>二维爬楼梯</strong>，类似的换皮题还很多，大家慢慢体会。</p>
 <p>这道题我定义状态为 f(i, j) 表示机器人到达点 (i,j) 的总的路径数。那么状态总数就是 i 和 j 的取值的笛卡尔积，也就是 m * n 。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gpn6m7knnij30u00v1di1.jpg" alt="二维爬楼梯"></p>
+<p><img src="https://p.ipic.vip/42sszs.jpg" alt="二维爬楼梯"></p>
 <p>总的来说，动态规划的空间和时间复杂度<strong>打底就是状态的个数</strong>，而状态的个数通常是参数的笛卡尔积，这是由动态规划的无后向性决定的。</p>
 <p><strong>临界条件是比较最容易的</strong></p>
 <p>当你定义好了状态，剩下就三件事了：</p>
@@ -585,7 +310,7 @@
 <p>实际操作的过程，有可能题目和爬楼梯一样直观，我们不难想到。也可能隐藏很深或者维度过高。 如果你实在想不到，可以尝试画图打开思路，这也是我刚学习动态规划时候的方法。当你做题量上去了，你的题感就会来，那个时候就可以不用画图了。</p>
 <p>比如我们定义了状态方程，据此我们定义初始状态和目标状态。然后聚焦最优子结构，<strong>思考每一个状态究竟如何进行扩展使得离目标状态越来越近</strong>。</p>
 <p>如下图所示：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gpoaanln73j31ak0p0dpd.jpg" alt="状态转移图解"></p>
+<p><img src="https://p.ipic.vip/adrbn0.jpg" alt="状态转移图解"></p>
 <p>理论差不多先这样，接下来来几个实战消化一下。</p>
 <p>ok，接下来是解密环节。上面两道题我们都没有讲转移方程，我们在这里补上。</p>
 <p>第一道题：《5. 最长回文子串》难度中等。上面我们的两种状态定义都不好，而我可以在上面的基础上<strong>稍微变动一点</strong>就可以使得转移方程变得非常好写。这个技巧在很多动态题目都有体现，比如最长上升子序列等，<strong>需要大家掌握</strong>。</p>
@@ -621,7 +346,7 @@
   \right.</script><p>相信你能分析到这里，写出代码就不是难事了。具体代码可参考我的<a href="https://github.com/azl397985856/leetcode" title="力扣题解仓库" target="_blank" rel="noopener">力扣题解仓库</a>，咱就不在这里讲了。</p>
 <p>注意到了么？所有的状态转移方程我都使用了上述的数学公式来描述。没错，所有的转移方程都可以这样描述。我建议大家<strong>做每一道动态规划题目都写出这样的公式</strong>，起初你可能觉得很烦麻烦。不过相信我，你坚持下去，会发现自己慢慢变强大。就好像我强烈建议你每一道题都分析好复杂度一样。动态规划不仅要搞懂转移方程，还要自己像我那样完整地用数学公式写出来。</p>
 <p>是不是觉得状态转移方程写起来麻烦？这里我给大家介绍一个小技巧，那就是使用 latex，latex 语法可以方便地写出这样的公式。另外西法还贴心地写了<strong>一键生成动态规划转移方程公式</strong>的功能，帮助大家以最快速度生成公诉处。 插件地址：<a href="https://leetcode-pp.github.io/leetcode-cheat/?tab=solution-template" target="_blank" rel="noopener">https://leetcode-pp.github.io/leetcode-cheat/?tab=solution-template</a></p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gpoaw5c5l0j314a0dq0ui.jpg" alt="插件用法"></p>
+<p><img src="https://p.ipic.vip/cusjtf.jpg" alt="插件用法"></p>
 <p>状态转移方程实在是没有什么灵丹妙药，不同的题目有不同的解法。状态转移方程同时也是解决动态规划问题中最最困难和关键的点，大家一定要多多练习，提高题感。接下来，我们来看下不那么困难，但是新手疑问比较多的问题 - <strong>如何枚举状态</strong>。</p>
 <p>当然状态转移方程可能不止一个， 不同的转移方程对应的效率也可能大相径庭，这个就是比较玄学的话题了，需要大家在做题的过程中领悟。</p>
 <h4 id="如何枚举状态"><a href="#如何枚举状态" class="headerlink" title="如何枚举状态"></a>如何枚举状态</h4><p>前面说了如何枚举状态，才能不重不漏是枚举状态的关键所在。</p>
@@ -629,12 +354,12 @@
 <li>如果是一维状态，那么我们使用一层循环可以搞定。</li>
 </ul>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">  <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gpn6bxt7erj31n00u0jtx.jpg" alt="一维状态"></p>
+<p><img src="https://p.ipic.vip/1kxfd6.jpg" alt="一维状态"></p>
 <ul>
 <li>如果是两维状态，那么我们使用两层循环可以搞定。</li>
 </ul>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, m + <span class="number">1</span>):</span><br><span class="line">  <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gpn6ceroi3j31970u0dit.jpg" alt="二维状态"></p>
+<p><img src="https://p.ipic.vip/e659fa.jpg" alt="二维状态"></p>
 <ul>
 <li>。。。</li>
 </ul>
@@ -683,7 +408,7 @@
 <p>如果需要多个维度枚举，那么记忆化递归内部也可以使用迭代进行枚举，比如最长上升子序列问题。</p>
 </blockquote>
 <p>动态规划的查表过程如果画成图，就是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluhxylbhj30n40cbaaq.jpg" alt="动态规划查表"></p>
+<p><img src="https://p.ipic.vip/uz7w9f.jpg" alt="动态规划查表"></p>
 <blockquote>
 <p>虚线代表的是查表过程</p>
 </blockquote>
@@ -777,7 +502,7 @@
 <p>因此我们可以定义 f(i, j) 表示选择了 coins 的前 i 项（怎么选的不关心），且组成 j 元需要的最少硬币数。</p>
 <p>举个例子来说，比如 coins = [1,2,3] 。那么选择 [1,2] 和 选择 [3] 虽然是不一样的状态，但是我们压根不关心。因为这两者没有区别，我们还是谁对结果贡献大就 pick 谁。</p>
 <p>以 coins = [1,2,3], amount = 6 来说，我们可以画出如下的递归树。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goil47ztakj31jk0nm791.jpg" alt></p>
+<p><img src="https://p.ipic.vip/1jk8g7.jpg" alt></p>
 <p>（图片来自<a href="https://leetcode.com/problems/coin-change/solution/）" target="_blank" rel="noopener">https://leetcode.com/problems/coin-change/solution/）</a></p>
 <p>因此转移方程就是 <code>min(dp[i][j], dp[i-1][j - coins[j]] + 1)</code>，含义就是： min(不选择 coins[j], 选择 coins[j]) 所需最少的硬币数。</p>
 <p>用公式表示就是：</p>
@@ -827,10 +552,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-05T20:24:50+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-07T21:54:06+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2023年1月5日</p>
+    <p>更新于 2023年1月7日</p>
   </a>
 </div>
 
@@ -1803,228 +1528,3 @@
   setLoadingBarProgress(80);
 </script>
 
-
-      <script>setLoadingBarProgress(60);</script>
-    </div>
-    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-
-  <script>
-    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-    var ALGOLIA_API_KEY = "";
-    var ALGOLIA_APP_ID = "";
-    var ALGOLIA_INDEX_NAME = "";
-    var AZURE_SERVICE_NAME = "";
-    var AZURE_INDEX_NAME = "";
-    var AZURE_QUERY_KEY = "";
-    var BAIDU_API_ID = "";
-    var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/blog/"||"/";
-    if(!ROOT.endsWith('/'))ROOT += '/';
-  </script>
-
-<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      const $reveal = $('.reveal');
-      if ($reveal.length === 0) return;
-      const sr = ScrollReveal({ distance: 0 });
-      sr.reveal('.reveal');
-    });
-  </script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      Waves.attach('.flat-btn', ['waves-button']);
-      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
-      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
-      Waves.attach('.flat-box', ['waves-block']);
-      Waves.attach('.float-box', ['waves-block', 'waves-float']);
-      Waves.attach('.waves-image');
-      Waves.init();
-    });
-  </script>
-
-
-
-
-
-  
-  
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        if ('.cover') {
-          $('.cover').backstretch(
-          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        } else {
-          $.backstretch(
-          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        }
-      });
-    </script>
-  
-
-
-
-
-
-
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-  <script type="text/javascript">
-    var gitalk = new Gitalk({
-      clientID: "aea1377036afe4cd0343",
-      clientSecret: "815c638dea8644b7a4b97905707cf72b45555f6d",
-      repo: "blog",
-      owner: "azl397985856",
-      admin: "azl397985856",
-      
-        id: location.pathname,      // Ensure uniqueness and length less than 50
-      
-      distractionFreeMode: false  // Facebook-like distraction free mode
-    });
-    gitalk.render('gitalk-container');
-  </script>
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/app.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/search.js"></script>
-
-
-
-
-<!-- 复制 -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-  let COPY_SUCCESS = "复制成功";
-  let COPY_FAILURE = "复制失败";
-  /*页面载入完成后，创建复制按钮*/
-  !function (e, t, a) {
-    /* code */
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
-        }
-      });
-
-      clipboard.on('success', function(e) {
-        //您可以加入成功提示
-        console.info('Action:', e.action);
-        console.info('Text:', e.text);
-        console.info('Trigger:', e.trigger);
-        success_prompt(COPY_SUCCESS);
-        e.clearSelection();
-      });
-      clipboard.on('error', function(e) {
-        //您可以加入失败提示
-        console.error('Action:', e.action);
-        console.error('Trigger:', e.trigger);
-        fail_prompt(COPY_FAILURE);
-      });
-    }
-    initCopyCode();
-
-  }(window, document);
-
-  /**
-   * 弹出式提示框，默认1.5秒自动消失
-   * @param message 提示信息
-   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
-   * @param time 消失时间
-   */
-  var prompt = function (message, style, time)
-  {
-      style = (style === undefined) ? 'alert-success' : style;
-      time = (time === undefined) ? 1500 : time*1000;
-      $('<div>')
-          .appendTo('body')
-          .addClass('alert ' + style)
-          .html(message)
-          .show()
-          .delay(time)
-          .fadeOut();
-  };
-
-  // 成功提示
-  var success_prompt = function(message, time)
-  {
-      prompt(message, 'alert-success', time);
-  };
-
-  // 失败提示
-  var fail_prompt = function(message, time)
-  {
-      prompt(message, 'alert-danger', time);
-  };
-
-  // 提醒
-  var warning_prompt = function(message, time)
-  {
-      prompt(message, 'alert-warning', time);
-  };
-
-  // 信息提示
-  var info_prompt = function(message, time)
-  {
-      prompt(message, 'alert-info', time);
-  };
-
-</script>
-
-
-<!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script>
-  let LAZY_LOAD_IMAGE = "";
-  $(".article-entry").find("fancybox").find("img").each(function () {
-      var element = document.createElement("a");
-      $(element).attr("data-fancybox", "gallery");
-      $(element).attr("href", $(this).attr("src"));
-      /* 图片采用懒加载处理时,
-       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-       * 那么此处将原本的属性名src替换为对应属性名data-original,
-       * 修改如下
-       */
-       if (LAZY_LOAD_IMAGE) {
-         $(element).attr("href", $(this).attr("data-original"));
-       }
-      $(this).wrap(element);
-  });
-</script>
-
-
-
-
-
-  <script>setLoadingBarProgress(100);</script>
-</body>
-</html>
