@@ -85,7 +85,7 @@ babel 也可以指定输出目录，指定需要忽略的文件或目录等等�
 
 **如果一个目录下存在一个 tsconfig.json 文件，那么意味着这个目录是 TypeScript 项目的根目录。** 如果你使用 tsc 编译你的项目，并且没有显式地指定配置文件的路径，那么 tsc 则会逐级向上搜索父目录寻找 tsconfig.json ，这个过程类似 node 的模块查找机制。
 
-![](https://p.ipic.vip/r036fa.jpg)
+![](https://p.ipic.vip/3gpegm.jpg)
 
 如图：
 
@@ -96,7 +96,7 @@ babel 也可以指定输出目录，指定需要忽略的文件或目录等等�
 
 我在 [上帝视角看 TypeScript](https://lucifer.ren/blog/2020/08/04/ts-internal/) 一种讲述了 TypeScript 究竟做了什么，带你从宏观的角度看了一下 TypeScript。 其中提到了 TypeScript 编译器会接受文件或者文件集合作为输入，最终转换为 JavaScript（noEmit 为 false） 和 .d.ts(declarations 为 true)。
 
-![](https://p.ipic.vip/t9en33.jpg)
+![](https://p.ipic.vip/zetux1.jpg)
 
 这里其实还少了一个点，那就是除了接受文件或者文件集合作为输入，还会接受 tsconfig.json。tsconfig.json 的内容决定了编译的范围和行为，不同的 配置可能会得到不同的输出，或者得到不同的检查结果。
 
@@ -300,7 +300,7 @@ types 和 typeRoots 我在 - [types 和 @types 是什么？](https://lucifer.ren
 
 lib 我在 [TypeScript 类型系统](https://lucifer.ren/blog/2020/08/15/ts-type-system/) 中讲过。 Typescript 提供了诸如 lib.d.ts 等类型库文件。随着 ES 的不断更新， JavaScript 类型和全局变量会逐渐变多。Typescript 也是采用这种 lib 的方式来解决的。
 
-![](https://p.ipic.vip/riad03.jpg)
+![](https://p.ipic.vip/e2stzb.jpg)
 
 （TypeScript 提供的部分 lib）
 
@@ -354,7 +354,7 @@ module 是 CommonJS 和 ES6 module 不能知道 outFile，只有是 None, System
 
 大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的前端硬核文章，带你认识你不知道的前端。
 
-![](https://p.ipic.vip/1hzdh2.jpg)
+![](https://p.ipic.vip/06tye5.jpg)
 
 公众号【 [力扣加加](https://p.ipic.vip/n8gbxo.jpg)】知乎专栏【 [Lucifer - 知乎](https://www.zhihu.com/people/lu-xiao-13-70)】
 

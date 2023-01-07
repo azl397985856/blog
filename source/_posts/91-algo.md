@@ -9,7 +9,7 @@ categories:
 
 力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。
 
-<img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf2atkdikgj30u70u0tct.jpg" width="50%">
+<img src="https://p.ipic.vip/befr2w.jpeg" width="50%">
 
 ​<!-- more -->
 
@@ -19,7 +19,7 @@ categories:
 
 群里每天都会有题目，推荐大家讨论当天的题目。我们会帮助大家规划学习路线，91 天见证不一样的自己。群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gf2b2zkclnj30xm0b6aat.jpg)
+![](https://p.ipic.vip/a8irl9.jpg)
 
 ## 活动时间
 

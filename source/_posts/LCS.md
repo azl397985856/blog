@@ -182,7 +182,7 @@ https://leetcode-cn.com/problems/uncrossed-lines/description/
 
 示例 1：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ggbkku13xuj315x0u0abp.jpg)
+![](https://p.ipic.vip/760fd9.jpg)
 
 输入：A = [1,4,2], B = [1,2,4] 输出：2 解释：我们可以画出两条不交叉的线，如上图所示。我们无法画出第三条不相交的直线，因为从 A[1]=4 到 B[2]=4 的直线将与从 A[2]=2 到 B[1]=2 的直线相交。示例 2：
 

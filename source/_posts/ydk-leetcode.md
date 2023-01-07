@@ -154,6 +154,6 @@ LeetCode 对 JS 的支持主要有：
 
 贴一下西法已经实现的数据结构。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gt69et5delj31560lw40v.jpg)
+![](https://p.ipic.vip/q87my3.jpg)
 
 求个一键三连支持一下，点赞多的话西法立马就安排下一篇。下一次给大家分享几个 **你不知道的 LeetCode 通用小技巧**。

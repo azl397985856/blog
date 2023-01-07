@@ -93,7 +93,7 @@ function climbStairs(n) {
 
 如果你模拟上面 dp 函数的执行过程会发现: `if n == 1 return 1` 和 `if n == 2 return 2`，对应递归树的叶子节点，这两行代码**深入到叶子节点才会执行**。接下来再根据子 dp 函数的返回值合并结果，是一个典型的**后序遍历**。
 
-![蓝色表示叶子节点](https://tva1.sinaimg.cn/large/008i3skNly1gqld1353jvj30hm0g3mxr.jpg)
+![蓝色表示叶子节点](https://p.ipic.vip/vtb77d.jpg)
 
 如果改造成迭代，如何做呢？一个朴素的想法就是从叶子节点开始模拟递归栈返回的过程，没错**动态规划本质就是如此**。从叶子节点开始，到根节点结束，**这也是为什么记忆化递归通常被称为自顶向下，而动态规划被称为自底向上的原因**。这里的底和顶可以看做是递归树的叶子和根。
 
@@ -197,7 +197,7 @@ function climbStairs(n) {
 示例 1：
 ```
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gqi2dk1f5yj30gt087jrs.jpg)
+![](https://p.ipic.vip/90cwq8.jpg)
 
 ```
 输入：obstacles = [0,1,2,3,0]
@@ -207,7 +207,7 @@ function climbStairs(n) {
 示例 2：
 ```
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gqi2dt9cpyj30ks085jru.jpg)
+![](https://p.ipic.vip/fl8130.jpg)
 
 ```
 输入：obstacles = [0,1,1,3,3,0]
@@ -216,7 +216,7 @@ function climbStairs(n) {
 示例 3：
 ```
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gqi2e6c4ngj30ks085aai.jpg)
+![](https://p.ipic.vip/52dpn2.jpg)
 
 ```
 输入：obstacles = [0,2,1,0,3,0]
@@ -422,7 +422,7 @@ dp[pos][line] = min(dp[pos][line], 1 + dp[pos][nxt])
 
 比如这道题的 f(0,2) 的递归树大概是这样的，其中虚线标识可能无法到达。
 
-![递归树](https://tva1.sinaimg.cn/large/008i3skNly1gqlod7bgxpj31340koq5i.jpg)
+![递归树](https://p.ipic.vip/ky226n.jpg)
 
 当从 f(0, 2) 递归到 f(0, 1) 或者 f(0, 3) 的的时候，都是没计算好的，因此都无所谓，代码会**继续往叶子节点方向扩展，到达叶子节点返回后，所有的子节点肯定都已经计算好了，接下来的过程和普通的迭代就很像了**。
 

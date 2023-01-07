@@ -11,11 +11,11 @@ categories:
 
 今日有粉丝提意想增加隐藏测试用例的功能。issue 地址：https://github.com/azl397985856/blog/issues/91
 
-![](https://files.mdnice.com/user/2016/d673b560-4865-40f7-8ff8-c803807502cb.png)
+![](https://p.ipic.vip/y8jq2i.png)
 
 当天我就完成了这个功能的开发，并上架商店进行审核了。
 
-![](https://files.mdnice.com/user/2016/8b683fe7-12c9-4986-8db9-d94ea8b508ee.png)
+![](https://p.ipic.vip/yet0h0.png)
 
 <!-- more -->
 
@@ -31,11 +31,11 @@ categories:
 
 于是我开发了这个提交错误后默认隐藏出错细节的功能。
 
-![](https://files.mdnice.com/user/2016/1d424bb3-2607-4905-8540-8bc634f2263c.png)
+![](https://p.ipic.vip/1a4tsy.png)
 
 只有你点击显示的时候才可以看到详细信息。避免你自己不想看，却被弹到脸上的尴尬。
 
-![](https://files.mdnice.com/user/2016/ed1da6c6-5c67-41ce-8bfc-3439269e3eee.png)
+![](https://p.ipic.vip/0lemwr.png)
 
 > 值得注意的是这个功能目前默认开启，无法关闭。
 
@@ -49,4 +49,4 @@ categories:
 
 为了测试这个功能，我可以故意做错了很多题，满屏的红色好扎心。
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gxmjb5dyymj30qo12o78p.jpg)
+![](https://p.ipic.vip/5i7kbc.jpg)

@@ -15,7 +15,7 @@ sidebar: false
 
 我的前端干货，比如性能优化，工程化，架构思想以及前端领域的算法都会在公众号《脑洞前端》同步。
 
-<img width="300" src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds4sh51a6j30km0komyv.jpg">
+<img width="300" src="https://p.ipic.vip/bp35i7.jpg">
 
 刷题困难？关注公众号《力扣加加》就够了。
 

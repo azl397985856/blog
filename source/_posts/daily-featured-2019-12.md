@@ -6,7 +6,7 @@ categories:
   - [每日一荐, 2019-12]
 ---
 
-![](https://p.ipic.vip/58igrl.jpg)
+![](https://p.ipic.vip/20655f.jpg)
 
 每天给你推荐一个新奇，好玩，高品质的开源库，好文，观点或言论等。
 
@@ -22,9 +22,9 @@ categories:
 
 一般公司的卫生间贴的都是公司信息或心灵鸡汤，但是谷歌卫生间贴的是`如何找到代码 Bug`，不得不感叹“这实在是太硬核了”！
 
-![](https://p.ipic.vip/f1xrmq.jpg)
+![](https://p.ipic.vip/fnrn2u.jpg)
 
-![](https://p.ipic.vip/n0vack.jpg)
+![](https://p.ipic.vip/ysd6fu.jpg)
 
 ### 2019-12-24[技巧]
 
@@ -34,7 +34,7 @@ categories:
 
 图版本：
 
-![](https://p.ipic.vip/axqz8w.jpg)
+![](https://p.ipic.vip/6ja9yh.jpg)
 
 文字版本：
 
@@ -72,11 +72,11 @@ Matches patterns in input text.Supports simple patterns and regular expressions.
 
 仓库大纲：
 
-![](https://p.ipic.vip/cnffha.jpg)
+![](https://p.ipic.vip/2jnu6y.jpg)
 
 仓库截图：
 
-![](https://p.ipic.vip/xfidtz.jpg)
+![](https://p.ipic.vip/fn1t2y.jpg)
 
 仓库地址：https://github.com/azl397985856/To-Be-Productive
 
@@ -98,7 +98,7 @@ Facebook 发布 Hermes， 一个新的专门用于 React Native 的 JS 引擎。
 
 哈弗大学 CS50 系列，内容持续更新，现在最新的是 2019 年。 你可以跟着教程来重新学习 CS 基础。
 
-![](https://p.ipic.vip/bcipmx.jpg)
+![](https://p.ipic.vip/g5fg57.jpg)
 
 地址：https://cs50.harvard.edu/college/
 
@@ -106,9 +106,9 @@ Facebook 发布 Hermes， 一个新的专门用于 React Native 的 JS 引擎。
 
 Learn Git Branching 是一个交互式学习 Git 的网站。沙盒里你能执行相应的命令，还能看到每个命令的执行情况； 通过一系列刺激的关卡挑战，逐步深入的学习 Git 的强大功能，在这个过程中你可能还会发现一些有意思的事情。
 
-![](https://p.ipic.vip/onc128.jpg)
+![](https://p.ipic.vip/6wg0ei.jpg)
 
-![](https://p.ipic.vip/c4182o.jpg)
+![](https://p.ipic.vip/uit1wf.jpg)
 
 地址： https://learngitbranching.js.org/
 
@@ -116,13 +116,13 @@ Learn Git Branching 是一个交互式学习 Git 的网站。沙盒里你能执�
 
 最新版本的 Chrome 和 Firefo 浏览器取消 EV 证书的显示。
 
-![](https://p.ipic.vip/5kaazd.jpg)
+![](https://p.ipic.vip/b4l3v7.jpg)
 
-![](https://p.ipic.vip/her2tx.jpg)
+![](https://p.ipic.vip/fxw3aj.jpg)
 
 只有用户点击了锁 🔒，才会显示出 EV 证书的信息。
 
-![](https://p.ipic.vip/c29apx.jpg)
+![](https://p.ipic.vip/ylgkao.jpg)
 
 为什么会这样？想要知道答案的可以点击原文阅读。
 
@@ -138,7 +138,7 @@ loki Github 地址： https://github.com/oblador/loki
 
 Angular 的 Commit Message Conventions 是一套很流行的 Commit Message 规约。简单方便，一目了然，更重要的是这种约定化如果形成一种默契，不管对于之后查看，还是生成各种外部资料（比如 CHNAGELOG）都是非常方便的。
 
-![](https://p.ipic.vip/yyp8iz.jpg)
+![](https://p.ipic.vip/z56ahc.jpg)
 
 详细信息： https://gist.github.com/stephenparish/9941e89d80e2bc58a153
 
@@ -148,7 +148,7 @@ Angular 的 Commit Message Conventions 是一套很流行的 Commit Message 规�
 
 文章标题 《花椒前端基于 WebAssembly 的 H.265 播放器研发》，本文从背景介绍，技术调研，实际方案到最后的实践效果，完整地讲述了通过 `wasm` 将 H.265 应用到不支持其的浏览器的过程。干货满满，其架构图画的也是我比较喜欢的风格。
 
-![](https://p.ipic.vip/nw1ejm.jpg)
+![](https://p.ipic.vip/wn1ep3.jpg)
 
 文章地址： https://zhuanlan.zhihu.com/p/73772711
 
@@ -164,7 +164,7 @@ alias unproxy='unset all_proxy'
 其中`socks5://127.0.0.1:1086`是我的本机的正向代理地址。
 
 如下是使用效果：
-![](https://p.ipic.vip/3ipz0u.jpg)
+![](https://p.ipic.vip/p6ybvr.jpg)
 
 如图显示我们代理成功了，而且我们可以方便的在不想要代理的时候去掉代理。
 
@@ -185,7 +185,7 @@ CPU：top、vmstat、pidstat、sar、perf、jstack、jstat；
 应用：profiler、dump 分析。
 排查 Java 应用的线上异常或者分析应用代码瓶颈，可以使用阿里开源的 Arthas ，nodejs 应用可以使用 alinode
 
-![](https://p.ipic.vip/r9fh6a.jpg)
+![](https://p.ipic.vip/6ua1i7.jpg)
 
 ### 2019-12-05[好文]
 
@@ -204,7 +204,7 @@ CPU：top、vmstat、pidstat、sar、perf、jstack、jstat；
 
 今天推荐的这个文档，区别与别的微前端文章的点在于其更加靠近规范层面，而不是结合自己的业务场景做的探索。这篇文章来自于阿里团队。
 
-![](https://p.ipic.vip/s7eqsb.jpg)
+![](https://p.ipic.vip/v4sw5g.jpg)
 
 文章地址： https://mp.weixin.qq.com/s/rYNsKPhw2zR84-4K62gliw
 
@@ -214,7 +214,7 @@ CPU：top、vmstat、pidstat、sar、perf、jstack、jstat；
 
 安全也非常简单，只需要 `npm install -g`(前提是你必须安装 node)， 如果你不想安装也没有关系，它还提供了[web 版](https://tldr.ostera.io/)。另外你也可以参考这里[定制你的主题](https://github.com/tldr-pages/tldr-node-client#configuration)
 
-![](https://p.ipic.vip/tz0xmp.jpg)
+![](https://p.ipic.vip/0yrxfz.jpg)
 
 仓库地址： https://github.com/tldr-pages/tldr
 
@@ -222,17 +222,17 @@ CPU：top、vmstat、pidstat、sar、perf、jstack、jstat；
 
 今天给大家介绍的是`Google高级搜索技巧`。我们经常使用搜索引擎搜索一些东西，不管是遇到问题想寻求解决方案也好，想学习一些新东西也好，掌握一定的搜索技巧是可以让你搜索的过程事半功倍，尤其是常用的技巧一定要记住。
 
-![](https://p.ipic.vip/0p64b6.jpg)
+![](https://p.ipic.vip/07lu7z.jpg)
 
 ### 2019-12-02[软件]
 
 我们公司在使用的一个完全开源的堡垒机，是符合 4A 的专业运维审计系统。
 
-![](https://p.ipic.vip/jwmb5k.jpg)
+![](https://p.ipic.vip/9j8bgr.jpg)
 
-![](https://p.ipic.vip/te5xtd.jpg)
+![](https://p.ipic.vip/gi5ghb.jpg)
 
-![](https://p.ipic.vip/h3mxds.jpg)
+![](https://p.ipic.vip/t8ui32.jpg)
 
 地址： https://github.com/jumpserver/jumpserver
 

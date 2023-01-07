@@ -20,7 +20,7 @@ categories:
 
 现在有 $10^5$ 个用户，编号为 1-$10^5$，现在已知有 m 对关系，每一对关系给你两个数 x 和 y ，代表编号为 x 的用户和编号为 y 的用户是在一个圈子中，例如： A 和 B 在一个圈子中， B 和 C 在一个圈子中，那么 A , B , C 就在一个圈子中。现在想知道最多的一个圈子内有多少个用户。
 
-![](https://p.ipic.vip/batroa.jpg)
+![](https://p.ipic.vip/1k6kyp.jpg)
 
 ### 思路
 
@@ -34,7 +34,7 @@ categories:
 字符串中任意个连续的字符组成的子序列称为该字符串的子串。
 字母序表示英文单词在字典中的先后顺序，即先比较第一个字母，若第一个字母相同，则比较第二个字母的字典序，依次类推，则可比较出该字符串的字典序大小。
 
-![](https://p.ipic.vip/g2edtj.jpg)
+![](https://p.ipic.vip/qdpoxm.jpg)
 
 ### 思路
 
@@ -46,7 +46,7 @@ categories:
 
 ### 题目描述
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gx4j2o9ju5j31je0tqq7k.jpg)
+![](https://p.ipic.vip/mg8q7x.jpg)
 
 ### 思路
 
@@ -56,7 +56,7 @@ categories:
 
 91 天学算法群里的数学大佬 @空识 给了一个计算方法，大家可以参考一下。
 
-![](https://p.ipic.vip/8zq2do.jpg)
+![](https://p.ipic.vip/7ykfng.jpg)
 
 ## 第四题
 
@@ -69,7 +69,7 @@ categories:
 
 注意本题有多组输入。
 
-![](https://p.ipic.vip/6pcqsv.jpg)
+![](https://p.ipic.vip/7cpdwa.jpg)
 
 ### 思路
 
@@ -89,7 +89,7 @@ categories:
 5、请不要手动修改 html 和 css
 6、不要使用第三方插件
 
-![](https://p.ipic.vip/gi4z6o.jpg)
+![](https://p.ipic.vip/vxsjsa.jpg)
 
 题目预设代码：
 

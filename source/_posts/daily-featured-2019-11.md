@@ -6,7 +6,7 @@ categories:
   - [每日一荐, 2019-11]
 ---
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8d0sktqrwj30hs07maae.jpg)
+![](https://p.ipic.vip/0bhil1.jpg)
 
 每天给你推荐一个新奇，好玩，高品质的开源库，好文，观点或言论等。
 
@@ -30,7 +30,7 @@ categories:
 
 > 我自己制作的工作流不在这里展示和推荐
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g9dintchy7j30950ay74e.jpg)
+![](https://p.ipic.vip/zacrzi.jpg)
 
 下载地址：
 
@@ -54,9 +54,9 @@ categories:
 
 mac 端不能右键新建文件，这在某些时候不是很方便。 没有这个软件的时候，我是在编辑器中新建或者是使用 touch 命令。 使用了这个`New File Menu`软件之后多了一种更方便的选择，你可以直接右键新建，Just Like Windows Users。
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g9b8meuak2j30gu04yaa8.jpg)
+![](https://p.ipic.vip/3d0ls6.jpg)
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g9b8k1tqqdj30od0f7n3b.jpg)
+![](https://p.ipic.vip/wpd9jl.jpg)
 
 地址： https://apps.apple.com/cn/app/new-file-menu/id1064959555?l=en&mt=12
 
@@ -64,9 +64,9 @@ mac 端不能右键新建文件，这在某些时候不是很方便。 没有这
 
 一个网站，可以分析的 Github 仓库，采用手绘风格，对于厌倦了标准图形的我来说简直是耳目一新的感觉。
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g9aj5o2tu5j30qv0pmgmq.jpg)
+![](https://p.ipic.vip/0irntv.jpg)
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g9aj7mseg4j30qr0cyjrn.jpg)
+![](https://p.ipic.vip/oyag9x.jpg)
 
 项目地址： https://repo-analytics.github.io/
 
@@ -79,17 +79,17 @@ Chrome 开发者工具有非常好用但是却鲜为人知的功能。今天给�
 - `Ctrl+Shift+P` for windows `CMD+Shift+P` for mac
 - 输入 coverage， 选择如图的选项，并确定。
 
-![](https://tva1.sinaimg.cn/large/006y8mN6gy1g9a2gz99paj30f504hglj.jpg)
+![](https://p.ipic.vip/o07sk2.jpg)
 
 然后你就能看到检测结果了：
 
-![](https://tva1.sinaimg.cn/large/006y8mN6gy1g9a2h750eij30fk0563yl.jpg)
+![](https://p.ipic.vip/mextfg.jpg)
 
 ### 2019-11-22[工具]
 
 Github Large File Storage （简称 git-lfs）, 可以用来存储大文件，比如上 GB 的大文件，相比于传统的 Github 存储，这种方式空间更大，速度更快，并且工作流程和传统 Git flow 并无二致。
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g95pqj3vo9j30rs0gowec.jpg)
+![](https://p.ipic.vip/syth0y.jpg)
 
 地址：https://git-lfs.github.com/
 
@@ -121,16 +121,13 @@ Github Large File Storage （简称 git-lfs）, 可以用来存储大文件，�
 - 会话多选删除
 - 自动登录开关
 - 通知中心快捷回复
-- 聊天窗口表情包复制 & 存储
-  ...
+- 聊天窗口表情包复制 & 存储 ...
 
 我用的比较多的功能恐怕就是双开和防撤回了。
 
-- 消息防撤回
-  ![消息防撤回.gif](http://upload-images.jianshu.io/upload_images/965383-30cbea645661e627.gif?imageMogr2/auto-orient/strip)
+- 消息防撤回 ![消息防撤回.gif](https://p.ipic.vip/fzfvl1.gif)
 
-- 微信多开
-  ![微信多开.gif](http://upload-images.jianshu.io/upload_images/965383-51d8eae02d48fda9.gif?imageMogr2/auto-orient/strip)
+- 微信多开 ![微信多开.gif](https://p.ipic.vip/v3a5v6.gif)
 
 仓库地址：https://github.com/TKkk-iOSer/WeChatPlugin-MacOS/tree/master
 
@@ -138,9 +135,9 @@ Github Large File Storage （简称 git-lfs）, 可以用来存储大文件，�
 
 JS 依赖检测工具，可以用来生成图片，可视化程度很高，还可以做成自动化，集成到 CI CD ，支持 CommonJS，AMD 和 ES Module。
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g92f3pun36j30h90awt8w.jpg)
+![](https://p.ipic.vip/dkac79.jpg)
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g92f3yps0zj30a905g745.jpg)
+![](https://p.ipic.vip/iyeuu1.jpg)
 
 项目地址： https://github.com/pahen/madge
 
@@ -148,7 +145,7 @@ JS 依赖检测工具，可以用来生成图片，可视化程度很高，还�
 
 今天给大家推荐一个在线 nokia 短信图片生成器，可以自己输入短语，一键生成。
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g91bohz6xyj30hc0j9di2.jpg)
+![](https://p.ipic.vip/71i4yx.jpg)
 
 网站地址： https://zzkia.noddl.me:8020/
 
@@ -164,7 +161,7 @@ JS 依赖检测工具，可以用来生成图片，可视化程度很高，还�
 
 很多时候我们会看到一些英文的简写。比如邮件，IM 等，这些简称能够帮我们提高沟通效率，如果你不知道一些常见的简写，沟通的时候就难免有障碍，以下是一些常见的简写，欢迎补充。
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8wp5bq01zj30hs18xn0d.jpg)
+![](https://p.ipic.vip/ecvpie.jpg)
 
 ### 2019-11-13[技巧]
 
@@ -172,7 +169,7 @@ JS 依赖检测工具，可以用来生成图片，可视化程度很高，还�
 
 - 第一个要介绍的是`history`, history is an alias for fc -l 1,你可以通过这个命令来查看最近你使用的命令。 然后你可以用!n(n 指的是 history 命令返回的命令编号)再次执行。其中有许多缩写，最有用的就是 !\$， 用于指代上次键入的参数，!! 可以指代上次键入的命令。
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8vi04t5qnj307j02baa0.jpg)
+![](https://p.ipic.vip/bvje6u.jpg)
 
 - 第二个要介绍的是历史搜索`ctrl + r`, 然后输入你想搜索的关键字即可
 
@@ -190,7 +187,7 @@ dig 命令是常用的域名查询工具，可以用来测试域名系统工作�
 
 这个工具在很多情况下非常有用，尤其是对于喜欢命令行的你来说。
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8ugp99e01j30hj0d8mxo.jpg)
+![](https://p.ipic.vip/9ctk98.jpg)
 
 其实 dig 是`usr/bin`下的一个可执行文件，更多用法请`man dig`查看。
 
@@ -211,10 +208,7 @@ dig 命令是常用的域名查询工具，可以用来测试域名系统工作�
 
 前几天读了一篇文章《Scaling webapps for newbs & non-techies》，文章从最简单的单体应用，逐步讲到大型应用架构，不仅讲的通俗易懂，并且图画的也非常好，是我喜欢的风格。 很期待他的第二篇《the cloud for newbs and non-techies》。
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8pr18vd6ij30jg0bu74f.jpg)
-（A single server + database）
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8pr1kkny7j30jg0al74f.jpg)
-（Adding a Reverse Proxy）
+![](https://p.ipic.vip/bo8oak.jpg) （A single server + database） ![](https://p.ipic.vip/skgxii.jpg) （Adding a Reverse Proxy）
 
 文章地址： https://arcentry.com/blog/scaling-webapps-for-newbs-and-non-techies/
 
@@ -232,7 +226,7 @@ dig 命令是常用的域名查询工具，可以用来测试域名系统工作�
 
 像 PS 和 Sketch 一样，figma 也是一个设计工具，和其他相比团队显得更简单，这点有点像蓝湖。做设计的同学要了解起来了。
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8nh14xlj6j30tn0fbdhb.jpg)
+![](https://p.ipic.vip/aqkcbg.jpg)
 
 地址： https://www.figma.com/
 
@@ -240,11 +234,11 @@ dig 命令是常用的域名查询工具，可以用来测试域名系统工作�
 
 VSCode 和 MDN 进行了官方联动，[详情](https://code.visualstudio.com/updates/v1_38#_mdn-reference-for-html-and-css).
 
-![](https://tva1.sinaimg.cn/large/006y8mN6gy1g8mx8cmd5vj30lh0eo0vr.jpg)
+![](https://p.ipic.vip/bbmf34.jpg)
 
 再也不用跳出 IDE 用 Dash 查了。 用 Alfred + Dash 虽然方便，但是不免有一种`应用跳出`的感觉。现在就很方便了，如果之后有更多的联动支持，相信体验会越来越好。
 
-![](https://tva1.sinaimg.cn/large/006y8mN6gy1g8mxbj2wh4j30fn0dfaah.jpg)
+![](https://p.ipic.vip/oorcmm.jpg)
 
 ### 2019-11-04[好文]
 
@@ -264,21 +258,21 @@ VSCode 和 MDN 进行了官方联动，[详情](https://code.visualstudio.com/up
 
 1. 下载对应客户端
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8icx1bv11j30980bcgls.jpg)
+![](https://p.ipic.vip/p3x3km.jpg)
 
 2. 点击复制订阅地址
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8icwarcwmj30a70a0wef.jpg)
+![](https://p.ipic.vip/ayrm1o.jpg)
 
 3. 将地址粘贴到客户端
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8icygoun8j30ec058aag.jpg)
+![](https://p.ipic.vip/62tnmn.jpg)
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8icz2pwwuj30d704vjr9.jpg)
+![](https://p.ipic.vip/1vw6yk.jpg)
 
 提示： 你也可以像我一样测速，然后根据速度选择节点。
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8iczzsgq4j308s05ot8s.jpg)
+![](https://p.ipic.vip/rdouol.jpg)
 
 ## 关注我
 

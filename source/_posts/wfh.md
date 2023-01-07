@@ -35,7 +35,7 @@ categories:
 
 简单来说这一段时间的 wfh 给我的最大感受就是**自由**。我可以自由安排自己的工作时间。不仅仅是我，我的同事都是这样的一个状态。
 
-![远程办公](http://ww1.sinaimg.cn/large/e9f490c8ly1gu4njns4d5j21hc0u0qbi.jpg)
+![远程办公](https://p.ipic.vip/zgark0.jpg)
 
 以我为例，我就可以经常在“大家的工作时间”做一些和工作无关的事情（摸鱼？）。比如健身环大冒险，看看电影，逗逗宠物等等。
 
@@ -61,6 +61,6 @@ categories:
 
 你如果也想要这样的远程办公（wfh），工作和生活平衡（work life balance） 的工作，可以找我**内推**，大家加我的微信就好（可以提供免费面试咨询哦）
 
-![微信号](http://ww1.sinaimg.cn/large/e9f490c8ly1gu4o31x1uej20e80e8dg3.jpg)
+![微信号](https://p.ipic.vip/4zl50n.jpg)
 
 加好友请注明：内推

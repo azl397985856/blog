@@ -19,11 +19,11 @@ categories:
 
 安装好我们的插件(版本需要 v0.8.0 及以上)后，打开力扣中文版，会发现如下的按钮。
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gn3bp2ag3kj312b0u0gys.jpg)
+![](https://p.ipic.vip/rwfvxq.jpg)
 
 点击之后会自动引导你到一个新的页面，
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gn3bvpadsbj31g70u0k38.jpg)
+![](https://p.ipic.vip/g77j70.jpg)
 
 该页面的**题解语言**，**题目地址**和**题目名称**信息会自动填充。
 
@@ -41,29 +41,29 @@ categories:
 
 我们提供了很多内置的模板供你快速上手。
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gms0ni6r2pj317c0cw75j.jpg)
+![](https://p.ipic.vip/91m1j7.jpg)
 
 如果你对内置的模板不满意，也可以将自己的模板保存以便下次使用。
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gmrz98cxflj31bp0u07k9.jpg)
+![](https://p.ipic.vip/6qnod2.jpg)
 
 ### 学习路线
 
 算法怎么学？推荐按专题来。具体到某一个专题怎么学？这里提供了一个学习路线帮助你。本功能旨在将一个专题中的题目进行分类。专题本质就是对题目的一种划分，学习路线基于专题又进行了一次划分。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glpqbuba55j30w00u0tgr.jpg)
+![](https://p.ipic.vip/zygaa8.jpg)
 
 ### 复杂度分析
 
 你的代码能会超时么？复杂度分析帮助你。
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gm6xl5uih3j30o50nl0u9.jpg)
+![](https://p.ipic.vip/fw65tr.jpg)
 
 ### 一键复制所有内置测试用例
 
 省去了一个个手动复制的过程，效率翻倍！
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glmfz7knmtj32060f0mye.jpg)
+![](https://p.ipic.vip/gr7ja9.jpg)
 
 ### 模板
 
@@ -71,11 +71,11 @@ categories:
 
 ### 禅定模式
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glmg5pa61gj31jk0u0qgg.jpg)
+![](https://p.ipic.vip/f4ati8.jpg)
 
 点击之后会变成这样：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1glmg6srs4kj31h50u0dml.jpg)
+![](https://p.ipic.vip/815jn0.jpg)
 
 底部控制台会消失，当你鼠标重新移过来或者退出禅定模式就出现了。
 
@@ -83,7 +83,7 @@ categories:
 
 当你在任意非题目详情页或者我还没有收录的题目详情页的时候， 我都会列出当前我总结的所有题解。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghsse7cw2oj313s0u0tbz.jpg)
+![](https://p.ipic.vip/mkdwrv.jpg)
 
 > 其实我给比较经典的题目做了题解，因此这个题目数目不是很多，目前是 173 道题。另外有时候我直接写了专题，没有单独给每道题写题解，因此数量上要比 173 多很多。
 
@@ -96,7 +96,7 @@ categories:
 - 题解我就不看了，直接 show me code 吧。好，满足你。
 - 根据公司，查找题目。面试突击必备
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghssdtat3zj31290u0dii.jpg)
+![](https://p.ipic.vip/r3cqap.jpg)
 
 ### 其他功能
 
@@ -118,11 +118,11 @@ categories:
 
 - 选择你解压之后的文件夹
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghsscnetjej30os0cw75e.jpg)
+![](https://p.ipic.vip/tdizuk.jpg)
 
 - 出现下面这个就说明你安装成功了，点一下试试吧。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghss5p4j9oj30l802g0t3.jpg)
+![](https://p.ipic.vip/l7z3i1.jpg)
 
 ## 后期的规划是怎么样的？
 
@@ -132,13 +132,13 @@ categories:
 
 - 岗位信息。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghss7raskrj31c00u046y.jpg)
+![](https://p.ipic.vip/xiso32.jpg)
 
 这个过程同样需要大家的帮助，大家可以把自己面试遇到的问题发给我（附带公司和岗位信息），我可以免费提供咨询服务。
 
 - 可视化调试。 可视化展示你的代码允许情况。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghssbhbbnvg30dc02w3z4.gif)
+![](https://p.ipic.vip/cu7vit.gif)
 
 （一个双指针题目的可视化调试过程）
 

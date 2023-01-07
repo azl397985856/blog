@@ -8,7 +8,7 @@ categories:
 
 记得我初中的时候，学校发的一个小册子的名字就是母题啥的。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghbhlyhaadj308c08c3yv.jpg)
+![](https://p.ipic.vip/3y6ijp.jpg)
 
 大概意思是市面上的题（尤其是中考题）都是这些母题生的，都是它们的儿子。
 
@@ -394,7 +394,7 @@ mergeKLists 执行了 logk 次，每次都执行一次 mergeTwoLists，mergeTwoL
 
 最后送大家一张全家福：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghbq8s05y0j31620u0gs0.jpg)
+![](https://p.ipic.vip/8i5jg9.jpg)
 
 ## 子题
 

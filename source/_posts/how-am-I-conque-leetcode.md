@@ -21,13 +21,13 @@ categories:
 
 对于我来说，`刷题的过程其实就是学习数据结构和算法的过程`， 不仅仅是为了刷题而刷题，这样你才能感受到`刷题的乐趣`。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53igz8vj30dw0780ta.jpg)
+![](https://p.ipic.vip/1k41ro.jpg)
 
 ## 第一遍按 tag 刷，第二遍一题多解，多题同解
 
 个人建议，第一遍刷的时候可以先快速按照 tag 过一遍，快速感受一下常见数据结构和算法的套路，这样自己有一个感性的认识。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53je363j30ay0i5mz1.jpg)
+![](https://p.ipic.vip/1h2741.jpg)
 
 第二遍我们就不能像第一遍那样了，这个阶段我们需要多个角度思考问题，尽量做到`一题多解，多题同解`。我们需要对问题的本质做一些深度的理解，将来碰到类似的问题我们才能够触类旁通。
 
@@ -40,11 +40,11 @@ categories:
 
 信息输入大脑后，遗忘也就随之开始了。遗忘率随时间的流逝而先快后慢，特别是在刚刚识记的短时间里，遗忘最快，这就是著名的艾宾浩斯遗忘曲线。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53kft2xj306404475i.jpg)
+![](https://p.ipic.vip/3ti46x.jpg)
 
 anki 就是根据`艾宾浩斯记忆曲线`开发的一个软件，它是一个使记忆变得容易的学习软件。因为它是一个自定义多功能的记忆方式，可以大大减少你的学习时间，也可以大大提高 你的学习容量。 对于我本人而言，我在 anki 里面写了很多 leetcode 题目和套路的 Card，然后 anki 会自动帮我安排复习时间，大大减少我的认知负担，提高了我的复习效率。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53l94m8j3069069t9l.jpg)
+![](https://p.ipic.vip/k0oljx.jpg)
 
 这个是我的[anki card](https://github.com/azl397985856/leetcode/blob/master/assets/anki/leetcode.apkg) 大家可以直接导入使用，但是还是建议大家自己制作卡片，毕竟每个人情况不一样，并且制作卡片的过程也是记忆的过程。
 
@@ -85,7 +85,7 @@ anki - 文件 - 导入 - 下拉格式选择“打包的 anki 集合”，然后�
 - 树与图：最近公共祖先、并查集
 - 字符串：前缀树（字典树） ／ 后缀树
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53mf21xj30k00jxago.jpg)
+![](https://p.ipic.vip/xctbq9.jpg)
 (图片来自 leetcode)
 
 ## 坚持
@@ -94,9 +94,9 @@ anki - 文件 - 导入 - 下拉格式选择“打包的 anki 集合”，然后�
 
 为了督促自己，同时帮助大家成长，我在群里举办《每日一题》活动，每日一题是在交流群（包括微信和 qq）里进行的一种活动，大家一起 解一道题，这样讨论问题更加集中，会得到更多的反馈。而且 这些题目可以被记录下来，日后会进行筛选添加到仓库的题解模块。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53n8tz2j30p80nrtau.jpg)
+![](https://p.ipic.vip/yd6e9g.jpg)
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gds53o630kj315f0i8wn4.jpg)
+![](https://p.ipic.vip/y5ijzy.jpg)
 
 大家如果发现自己很难坚持下去，也可以加入我的群聊，我们互相监督。 另外我还专门组建了 slack 群，有兴趣的可以加群后在群里喊即可。
 

@@ -29,7 +29,7 @@ e = ["脑洞前端", "力扣加加"];
 
 上面代码的内存结构大概是这样的：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ggg7shvbghj31ew0r8dl6.jpg)
+![](https://p.ipic.vip/czq731.jpg)
 
 > lucifer 小提示：可以看出，变量名（ a，b，c，d，e ）只是内存地址的别名而已
 
@@ -49,7 +49,7 @@ const ce = e;
 
 经过上面的操作，此时的内存结构图：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ggg82ifxozj30wo0u0dqd.jpg)
+![](https://p.ipic.vip/b0rb3w.jpg)
 
 可以看出，ca，cb，cc，cd，ce 的**内存地址都变了，但是值都没变**。原因在于变量名只是内存的别名而已，而赋值操作传递的是 value。
 
@@ -65,7 +65,7 @@ console.log(d.name); // azl397985856
 
 比如有一个对象被三个指针引用，如果对象被修改了，那么三个指针都会有影响。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gggfzb948kj31kc0sugpl.jpg)
+![](https://p.ipic.vip/5vrdz0.jpg)
 
 你可以把指针看成线程，对象看成进程资源，资源会被线程共享。 多指针就是多线程，当多个线程同时对一个对象进行读写操作就可能会有问题。
 
@@ -89,7 +89,7 @@ const sxbk = JSON.parse(JSON.stringify(e));
 
 此时引用类型的 value 全部发生了变化，此时内存图是这样的：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ggkjw9miepj30rb0gwq56.jpg)
+![](https://p.ipic.vip/bhq1ls.jpg)
 
 上面的 ”bug“ 成功解决。
 
@@ -97,7 +97,7 @@ const sxbk = JSON.parse(JSON.stringify(e));
 
 完整内存图：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ggkjxw3xufj31c00mmwjs.jpg)
+![](https://p.ipic.vip/sbrwo5.jpg)
 
 （看不清可以尝试放大）
 
@@ -132,11 +132,11 @@ const words = ["lucif", "luck"];
 
 我根据 words 构建了一个前缀树，节点不存储数据， 数据存储在路径上。其中头节点表示的是对象的引用地址。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ggg9bu2jqzj30u010xaeo.jpg)
+![](https://p.ipic.vip/xosj7u.jpg)
 
 这样我们就将两个单词 `lucif` 和 `luck`存到了树上：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ggkk83ng24j30gk0hydhj.jpg)
+![](https://p.ipic.vip/fz1fu8.jpg)
 
 现在我想要将 lucif 改成 lucie，普通的做法是完全 copy 一份，之后修改即可。
 
@@ -145,12 +145,12 @@ newWords = [...words];
 newWords[1] = "lucie";
 ```
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ggkkb31zwhj30ge0gxq3z.jpg)
+![](https://p.ipic.vip/y2nj8x.jpg)
 （注意这里整棵树都是新的，你看根节点的内存地址已经变了）
 
 而所谓的状态共享是：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ggg9apgdrwj30u00u9wld.jpg)
+![](https://p.ipic.vip/fjlend.jpg)
 （注意这里整棵树除了新增的一个节点， 其他都是旧的，你看根节点的内存地址没有变）
 
 可以看出，我们**只是增加了一个节点，并改变了一个指针而已，其他都没有变化，这就是所谓的结构共享。**
@@ -161,11 +161,11 @@ newWords[1] = "lucie";
 
 因此我们需要沿着路径回溯到根节点，并修改沿路的所有节点（绿色部分）。在这个例子，我们仅仅少修改两个节点。但是随着树的节点增加，公共前缀也会随着增加，那时性能提升会很明显。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ggg9eb655jj30u0132jw8.jpg)
+![](https://p.ipic.vip/jalrk3.jpg)
 
 整个过程类似下面的动图所示：
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gggg8nnbucg30h10fz7co.gif)
+![](https://p.ipic.vip/rie4c0.gif)
 
 > 这个过程非常类似线段树的更新区间信息的过程
 
@@ -175,11 +175,11 @@ newWords[1] = "lucie";
 
 树很矮的情况，树的子节点数目会增加，因此每次回溯需要修改的指针增加。如图是有四个子节点的情况，相比于上面的两个子节点，需要多创建两个指针。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ggg9y2qspej30zj0u0age.jpg)
+![](https://p.ipic.vip/vbxnpp.jpg)
 
 想象一种极端的情况，树只有一层。还是将 lucif 改成 lucie。我们此时只能重新建立一个全新的 lucie 节点，无法利用已有节点，此时和 deep copy 相比没有一点优化。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ggkkpimukwj30ar07hwen.jpg)
+![](https://p.ipic.vip/2p6anm.jpg)
 
 因此合理选择树的叉数是一个难点，绝对不是简单的二叉树就行了。这个选择往往需要做很多实验才能得出一个相对合理的值。
 
@@ -193,7 +193,7 @@ React 和 Vue 最大的区别之一就是 React 更加 "immutable"。React 更�
 
 > SCU 是 shouldComponentUpdate 的缩写。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ggggqsqkdxj315j0u0wpr.jpg)
+![](https://p.ipic.vip/5q82gy.jpg)
 
 通过我的几年使用经验来看，使用类似 immutablejs 的库，会使得性能有不稳定的提升。并且由于多了一个库，调试成本或多或少有所增加，并且有一定的理解和上手成本。因此我的建议是`技术咱先学着，如果项目确实需要使用，团队成员技术也可以 Cover的话，再接入也不迟，不可过早优化`。
 
@@ -209,7 +209,7 @@ React 和 Vue 最大的区别之一就是 React 更加 "immutable"。React 更�
 
 大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的前端硬核文章，带你认识你不知道的前端。
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfxro1x125j30oz0dw43s.jpg)
+![](https://p.ipic.vip/a5ac3g.jpg)
 
 知乎专栏【 [Lucifer - 知乎](https://www.zhihu.com/people/lu-xiao-13-70 "Lucifer - 知乎")】
 

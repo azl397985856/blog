@@ -20,10 +20,10 @@ date: 2021-07-28
 
 效果截图：
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gsvftr837qj30sg0cejsu.jpg)
+![](https://p.ipic.vip/p7zyms.jpg)
 （edge devtools）
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gsvfupkll2j30sg07omxi.jpg)
+![](https://p.ipic.vip/v6lffn.jpg)
 （debug console）
 
 ## 如何使用

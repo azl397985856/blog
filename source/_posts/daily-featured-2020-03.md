@@ -6,7 +6,7 @@ categories:
   - [每日一荐, 2020-03]
 ---
 
-![](https://p.ipic.vip/74s0jt.jpg)
+![](https://p.ipic.vip/3jcc4i.jpg)
 
 每天给你推荐一个新奇，好玩，高品质的开源库，好文，观点或言论等。
 
@@ -26,7 +26,7 @@ gRPC 使用 protobuf 进行数据封装(序列化和反序列化)，同时使用
 
 《吊打面试官》系列 Node.js 全栈秒杀系统。这篇文章非常详细地讲述了如何使用 nodejs 构建一个秒杀系统，文中提到的知识点，我也经常在面试中向候选人提问。
 
-![](https://p.ipic.vip/5aoo9e.jpg)
+![](https://p.ipic.vip/bjcl01.jpg)
 
 https://mp.weixin.qq.com/s/LoRr76smB-M8sNp-85wdqg
 
@@ -43,7 +43,7 @@ https://mp.weixin.qq.com/s/LoRr76smB-M8sNp-85wdqg
 
 更重要的是其源码写的很赞，模块划分，代码解耦，以及单元测试都非常值得学习， 感兴趣的可以研究一下。
 
-![](https://p.ipic.vip/oxquof.jpg)
+![](https://p.ipic.vip/tkxl89.jpg)
 
 https://github.com/elninotech/uppload
 
@@ -51,7 +51,7 @@ https://github.com/elninotech/uppload
 
 一个外国游客来中国广州游玩，定了一家酒店，但是通过 Google 地图去找，离目的地相差几英里，原因在于 Google 使用的地图坐标系统是 WGS-84 ，而国内的比如 Baidu 地图可以很好的显示，因为其用的是 GCJ-02。一句话总结来说：
 
-![](https://p.ipic.vip/d8td6r.jpg)
+![](https://p.ipic.vip/yxbnu8.jpg)
 
 原文地址：https://abstractkitchen.com/blog/a-short-guide-to-chinese-coordinate-system/
 
@@ -69,7 +69,7 @@ https://github.com/elninotech/uppload
 
 如果你是学生党或者学术党，需要经常查找文献，那么一个文献管理工具就显得很有必要。这里推荐一个工具：Zotero。
 
-![](https://p.ipic.vip/v895be.jpg)
+![](https://p.ipic.vip/4o2tbe.jpg)
 
 地址： https://www.zotero.org/
 
@@ -83,7 +83,7 @@ Elasticsearch 已经火了很多年了，现在依然可以见到他们活跃的
 
 这是一个在线服务，用来生成几何占位符，类似于 Github 的默认头像。
 
-![](https://p.ipic.vip/ypmmxq.jpg)
+![](https://p.ipic.vip/e0l5k4.jpg)
 （Github 的默认头像）
 
 使用方式也很简单，并支持多种参数：
@@ -138,7 +138,7 @@ Elasticsearch 已经火了很多年了，现在依然可以见到他们活跃的
 
 一个可以制作类似“Github Project”效果的库。
 
-![](https://p.ipic.vip/hekd6o.jpg)
+![](https://p.ipic.vip/stn618.jpg)
 
 地址： https://github.com/lourenci/react-kanban
 
@@ -166,9 +166,9 @@ Base64 编/解码器有不同实现，有的不相互兼容，如果使用了不
 
 原文标题《使用 TypeScript 开发 Web 应用的最佳实践》。文中基本将 TS 在日常开发中的姿势都提到了，并且总结了很多坑点，并且给出了自己的探索和思考。
 
-![](https://p.ipic.vip/3xlu3b.jpg)
+![](https://p.ipic.vip/uikr7p.jpg)
 
-![](https://p.ipic.vip/5jjdxp.jpg)
+![](https://p.ipic.vip/7pnhn9.jpg)
 
 文章地址：https://yrq110.me/post/front-end/best-practice-of-typescript-in-webapp-developing/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io
 

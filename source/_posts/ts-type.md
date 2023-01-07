@@ -132,7 +132,7 @@ tsconfig.json 中有两个配置和类型引入有关。
 
 大家也可以关注我的公众号《脑洞前端》获取更多更新鲜的前端硬核文章，带你认识你不知道的前端。
 
-![](https://p.ipic.vip/lajff6.jpg)
+![](https://p.ipic.vip/83ijab.jpg)
 
 公众号【 [力扣加加](https://p.ipic.vip/n8gbxo.jpg)】知乎专栏【 [Lucifer - 知乎](https://www.zhihu.com/people/lu-xiao-13-70)】
 
