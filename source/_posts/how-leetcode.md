@@ -1,7 +1,7 @@
 ---
 title: 力扣刷题的正确姿势是什么？
 tags: [刷题技巧, 工具, LeetCode]
-date: 2021-09-16
+date: 2023-01-02
 categories:
   - [LeetCode]
   - [刷题技巧]
@@ -35,11 +35,11 @@ categories:
 
 你可以对题目进行筛选和排序。
 
-![](https://p.ipic.vip/zh5dc8.jpg)
+![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8ueyinaxij30oy0c6wet.jpg)
 
 如果我们只想要找某一类型的题或者某个公司的题库，可以通过 Tags 或 Company 来筛选。
 
-![](https://p.ipic.vip/gpi50j.jpg)
+![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8uez7f9tsj30aj0pggm3.jpg)
 
 另外我们在做某一题时，觉得还想再做一个类似的，可以点击题目描述下方 Show Similar Problems 或 Tags 来找到相似的问题。
 
@@ -53,7 +53,7 @@ categories:
 
 每道题旁边的 My Submissions 可以找到自己的对于该题的提交情况，这里可以看到自己过去所有的提交，点 Accepted 或 Wrong Answer 就可以查看自己过去提交的代码情况，包括代码是什么，运行时间以及全部用户提交的时间分布图等。
 
-![](https://p.ipic.vip/pv7a6v.jpg)
+![](https://tva1.sinaimg.cn/large/006y8mN6ly1g8uf5vjtkuj30yj0hfjrm.jpg)
 
 以上就是 力扣（LeetCode ）的主要功能，希望通过这一节内容能让你对 力扣（LeetCode ）网站有所了解，从而更快地进行刷题。
 
@@ -61,9 +61,23 @@ categories:
 
 所谓“工欲善其事必先利其器”，接下来给大家带来一些提高刷题效率的小工具。
 
+### Leetcode Problem Rating
+
+经常有同学反映力扣难度设置的不合理。 比如：“为什么我觉得这个中等题目比某个困难还要难啊？”。
+
+这其实很正常，尤其是在力扣上。因此我也不建议大家完全按照难度去刷题， 而是结合通过率等其他指标去刷。
+
+而今天介绍的这个网站能够将力扣中的题目通过各个维度算出一个**更接近题目实际难度的隐藏分**。这个分数和你的竞赛分数是一致的。大家可以根据你的竞赛分去刷题。
+
+比如你的竞赛分是 1800， 那么你就可以直接搜索 1800 - 1900 的题目进行练习，效率高很多。
+
+![](https://tva1.sinaimg.cn/large/008vxvgGly1h8ni9nscv4j32bq0u0dkr.jpg)
+
+网站地址：https://zerotrac.github.io/leetcode_problem_rating/#/
+
 ### 力扣代码调试器
 
-![](https://p.ipic.vip/qotnk1.jpg)
+![](https://tva1.sinaimg.cn/large/0081Kckwly1gjzett7uy7j31dl0u0tbx.jpg)
 
 力扣代码调试器是一款简单易用的代码调试工具，它能够随时检查代码的运行情况以及选择性地运行代码，以便您排错、调试。
 
@@ -78,7 +92,7 @@ categories:
 
 ### 力扣（LeetCode ）For VSCODE
 
-![](https://p.ipic.vip/eezga4.jpg)
+![](https://tva1.sinaimg.cn/large/0081Kckwly1gk1yd8ehgej30mo0mcwhp.jpg)
 
 这个是一个可以让你在 VSCODE 编辑器中选题，写代码，测试，提交的力扣题目的插件。主要特点是可以利用自己编辑器的一切优势，包括但不限于编辑器主题，代码智能提示， 代码片段，调试工具。也就是说，上面提到的力扣代码调试器的大多数功能，你都可以通过 VSCODE 以及其扩展插件实现。
 
@@ -88,7 +102,7 @@ categories:
 
 ### LeetCode-Cheat
 
-![](https://p.ipic.vip/h9jteb.jpg)
+![](https://tva1.sinaimg.cn/large/0081Kckwly1gk1ydptxaoj31290u0mz1.jpg)
 
 #### 题解模板
 
@@ -96,11 +110,11 @@ categories:
 
 安装好我们的插件(版本需要 v0.8.0 及以上)后，打开力扣中文版，会发现如下的按钮。
 
-![](https://p.ipic.vip/e4njn8.jpg)
+![](https://tva1.sinaimg.cn/large/008eGmZEly1gn3bp2ag3kj312b0u0gys.jpg)
 
 点击之后会自动引导你到一个新的页面，
 
-![](https://p.ipic.vip/rhjr6s.jpg)
+![](https://tva1.sinaimg.cn/large/008eGmZEly1gn3bvpadsbj31g70u0k38.jpg)
 
 该页面的**题解语言**，**题目地址**和**题目名称**信息会自动填充。
 
@@ -118,29 +132,29 @@ categories:
 
 我们提供了很多内置的模板供你快速上手。
 
-![](https://p.ipic.vip/dlsjit.jpg)
+![](https://tva1.sinaimg.cn/large/008eGmZEly1gms0ni6r2pj317c0cw75j.jpg)
 
 如果你对内置的模板不满意，也可以将自己的模板保存以便下次使用。
 
-![](https://p.ipic.vip/czhpbc.jpg)
+![](https://tva1.sinaimg.cn/large/008eGmZEly1gmrz98cxflj31bp0u07k9.jpg)
 
 #### 学习路线
 
 算法怎么学？推荐按专题来。具体到某一个专题怎么学？这里提供了一个学习路线帮助你。本功能旨在将一个专题中的题目进行分类。专题本质就是对题目的一种划分，学习路线基于专题又进行了一次划分。
 
-![](https://p.ipic.vip/lvyjqx.jpg)
+![](https://tva1.sinaimg.cn/large/0081Kckwly1glpqbuba55j30w00u0tgr.jpg)
 
 #### 复杂度分析
 
 你的代码能会超时么？复杂度分析帮助你。
 
-![](https://p.ipic.vip/ja49bx.jpg)
+![](https://tva1.sinaimg.cn/large/0081Kckwly1gm6xl5uih3j30o50nl0u9.jpg)
 
 #### 一键复制所有内置测试用例
 
 省去了一个个手动复制的过程，效率翻倍！
 
-![](https://p.ipic.vip/hi2gxj.jpg)
+![](https://tva1.sinaimg.cn/large/0081Kckwly1glmfz7knmtj32060f0mye.jpg)
 
 #### 代码模板
 
@@ -148,11 +162,11 @@ categories:
 
 #### 禅定模式
 
-![](https://p.ipic.vip/x0qvca.jpg)
+![](https://tva1.sinaimg.cn/large/0081Kckwly1glmg5pa61gj31jk0u0qgg.jpg)
 
 点击之后会变成这样：
 
-![](https://p.ipic.vip/pmycm5.jpg)
+![](https://tva1.sinaimg.cn/large/0081Kckwly1glmg6srs4kj31h50u0dml.jpg)
 
 底部控制台会消失，当你鼠标重新移过来或者退出禅定模式就出现了。
 
@@ -160,7 +174,7 @@ categories:
 
 当你在任意非题目详情页或者我还没有收录的题目详情页的时候， 我都会列出当前我总结的所有题解。
 
-![](https://p.ipic.vip/kq3q1q.jpg)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghsse7cw2oj313s0u0tbz.jpg)
 
 > 其实我给比较经典的题目做了题解，因此这个题目数目不是很多，目前是 173 道题。另外有时候我直接写了专题，没有单独给每道题写题解，因此数量上要比 173 多很多。
 
@@ -173,7 +187,7 @@ categories:
 - 题解我就不看了，直接 show me code 吧。好，满足你。
 - 根据公司，查找题目。面试突击必备
 
-![](https://p.ipic.vip/h12bco.jpg)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghssdtat3zj31290u0dii.jpg)
 
 后期规划：
 
@@ -188,17 +202,17 @@ categories:
 
 ### LeetBoard
 
-![](https://p.ipic.vip/3avw7g.jpg)
+![](https://tva1.sinaimg.cn/large/0081Kckwly1gk1yhk4i3lj31n40u0k3v.jpg)
 
 这是一个帮助你写写画画的一个浏览器扩展工具。很多时候，我们需要在纸上演算一下，验证自己的思路，这个时候就可以用这个工具。
 
 这个工具提供了多种常见数据结构的可视化，方便大家快速书写。目前支持的数据格式有：数组，链表，二叉树。
 
-![](https://p.ipic.vip/hm5tff.jpg)
+![](https://tva1.sinaimg.cn/large/0081Kckwly1gk1yl1yzunj30oc0timzc.jpg)
 
 ### debug-visualizer
 
-![](https://p.ipic.vip/k7z5vx.jpg)
+![](https://tva1.sinaimg.cn/large/0081Kckwly1gk1yey7s23j31ci0pa7de.jpg)
 
 这是一个支持可视化调试的 VSCODE 插件。相比于平时我们 debug ，它能帮助我们可视化内存中的数据结构。比如数组，树，图等都可以胜任。由于其不是为力扣量身制作的，实际上它还有很多其他的用处， 比如可视化图表，比如折线图。其功能非常强大， 你甚至可以基于它定制一套自己专属的数据结构。
 
