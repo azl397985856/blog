@@ -1,7 +1,7 @@
 ---
 title: 记一次从 webpack 4 升级 webpack 5 + swc 的经历
 tags: [webpack, swc]
-date: 2022-03-21
+date: 2023-03-27
 ---
 
 最近将项目的 webpack 4 升级到了 webpack 5，用了一两天的时间，遇到了一些网上找不到资料的问题， 于是决定将过程记录一下。
