@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2023-02-07T04:16:16.372Z</updated>
+  <updated>2023-03-28T02:57:55.525Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记一次从 webpack 4 升级 webpack 5 + swc 的经历</title>
+    <link href="https://lucifer.ren/blog/2023/03/27/migrate-to-webpack5_swc/"/>
+    <id>https://lucifer.ren/blog/2023/03/27/migrate-to-webpack5_swc/</id>
+    <published>2023-03-26T16:00:00.000Z</published>
+    <updated>2023-03-28T02:57:55.525Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近将项目的 webpack 4 升级到了 webpack 5，用了一两天的时间，遇到了一些网上找不到资料的问题， 于是决定将过程记录一下。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="webpack" scheme="https://lucifer.ren/blog/tags/webpack/"/>
+    
+      <category term="swc" scheme="https://lucifer.ren/blog/tags/swc/"/>
+    
+  </entry>
   
   <entry>
     <title>回炉重铸， 91 天见证不一样的自己（第X期）</title>
@@ -366,26 +386,6 @@
       <category term="面试" scheme="https://lucifer.ren/blog/tags/%E9%9D%A2%E8%AF%95/"/>
     
       <category term="校招" scheme="https://lucifer.ren/blog/tags/%E6%A0%A1%E6%8B%9B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记一次从 webpack 4 升级 webpack 5 + swc 的经历</title>
-    <link href="https://lucifer.ren/blog/2022/03/21/migrate-to-webpack5_swc/"/>
-    <id>https://lucifer.ren/blog/2022/03/21/migrate-to-webpack5_swc/</id>
-    <published>2022-03-20T16:00:00.000Z</published>
-    <updated>2023-03-27T15:01:27.465Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近将项目的 webpack 4 升级到了 webpack 5，用了一两天的时间，遇到了一些网上找不到资料的问题， 于是决定将过程记录一下。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="webpack" scheme="https://lucifer.ren/blog/tags/webpack/"/>
-    
-      <category term="swc" scheme="https://lucifer.ren/blog/tags/swc/"/>
     
   </entry>
   
