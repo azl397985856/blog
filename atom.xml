@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2023-03-28T02:57:55.525Z</updated>
+  <updated>2023-06-03T11:32:52.975Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>回炉重铸， 91 天见证不一样的自己（第 11 期）</title>
+    <link href="https://lucifer.ren/blog/2023/06/04/91algo-11/"/>
+    <id>https://lucifer.ren/blog/2023/06/04/91algo-11/</id>
+    <published>2023-06-03T16:00:00.000Z</published>
+    <updated>2023-06-03T11:32:52.975Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;第十一期，感谢大家一路的陪伴，我们会不辜负大家的信任，努力做的更好！&lt;/p&gt;
+&lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/befr2w.jpeg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>记一次从 webpack 4 升级 webpack 5 + swc 的经历</title>
@@ -41,7 +74,7 @@
     <link href="https://lucifer.ren/blog/2023/02/01/91algo-10/"/>
     <id>https://lucifer.ren/blog/2023/02/01/91algo-10/</id>
     <published>2023-01-31T16:00:00.000Z</published>
-    <updated>2023-02-07T04:16:16.372Z</updated>
+    <updated>2023-06-03T11:19:57.208Z</updated>
     
     <summary type="html">
     
@@ -543,27 +576,6 @@
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="逆向思维" scheme="https://lucifer.ren/blog/tags/%E9%80%86%E5%90%91%E6%80%9D%E7%BB%B4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>技术面试原来不止考技术？</title>
-    <link href="https://lucifer.ren/blog/2022/01/04/non-tech-skill/"/>
-    <id>https://lucifer.ren/blog/2022/01/04/non-tech-skill/</id>
-    <published>2022-01-03T16:00:00.000Z</published>
-    <updated>2023-01-07T12:34:34.366Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;大家好呀，狗头又出现啦~&lt;/p&gt;
-&lt;p&gt;我在 21 年的时候无相关背景转码上岸狗家，并且接到了一些中小厂的 offer。在我准备面试和面试的过程中，我总结了一些非技术相关的技巧和心得。这些技巧和心得在技术面试中往往能起到锦上添花的作用。这篇文章讨论的所有技巧都跟代码能力和工程能力无关~&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="面试" scheme="https://lucifer.ren/blog/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-      <category term="面试" scheme="https://lucifer.ren/blog/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
