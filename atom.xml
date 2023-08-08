@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2023-06-03T11:32:52.975Z</updated>
+  <updated>2023-08-08T09:51:56.146Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何移除项目中未使用的 CSS</title>
+    <link href="https://lucifer.ren/blog/2023/08/08/remove-useless-css/"/>
+    <id>https://lucifer.ren/blog/2023/08/08/remove-useless-css/</id>
+    <published>2023-08-07T16:00:00.000Z</published>
+    <updated>2023-08-08T09:51:56.146Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用 chrome 的 devtool 可以查看项目中未被使用的 JS 和 CSS。具体可以参考下 chrome 官方的博客: &lt;a href=&quot;https://developer.chrome.com/docs/devtools/coverage/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Coverage: Find unused JavaScript and CSS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;有没有方法可以自己检测呢？甚至是做成工具集成到 CI/CD 甚至 code review 中呢？&lt;/p&gt;
+&lt;p&gt;看完本文，你能学到如何自己手撸一个这样的工具。同时也会推荐社区里经过验证的好用的同类型库。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Chrome" scheme="https://lucifer.ren/blog/tags/Chrome/"/>
+    
+      <category term="CSS" scheme="https://lucifer.ren/blog/tags/CSS/"/>
+    
+      <category term="AST" scheme="https://lucifer.ren/blog/tags/AST/"/>
+    
+  </entry>
   
   <entry>
     <title>回炉重铸， 91 天见证不一样的自己（第 11 期）</title>
@@ -542,40 +566,6 @@
     
     
       <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>听说逆向思维能够降低时间复杂度？</title>
-    <link href="https://lucifer.ren/blog/2022/01/27/backward/"/>
-    <id>https://lucifer.ren/blog/2022/01/27/backward/</id>
-    <published>2022-01-26T16:00:00.000Z</published>
-    <updated>2023-01-05T12:24:49.606Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;以终为始在日常生活中指的是&lt;strong&gt;先确定目标，再做好计划&lt;/strong&gt;。之前读管理学的书的时候，学到了这个概念。&lt;/p&gt;
-&lt;p&gt;而在算法中，以终为始指的是&lt;strong&gt;从结果反向推，直到问题的初始状态&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;那么什么时候适合反向思考呢？简单的原则就是：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;正向思考的情况比较多&lt;/li&gt;
-&lt;li&gt;代码比较难写或者算法复杂度过高&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;这个时候我们可以考虑反向操作。&lt;/p&gt;
-&lt;p&gt;我的习惯是如果直接求解很难，我会优先考虑使用能力检测二分，如果不行我则会考虑反向思考。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;关于能力检测二分，可以在我的公众号中找到，大家可以在《力扣加加》回复二分获取。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;今天西法通过三道题来给大家聊聊到底怎么在写算法题的时候运用&lt;strong&gt;以终为始&lt;/strong&gt;思想。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="逆向思维" scheme="https://lucifer.ren/blog/tags/%E9%80%86%E5%90%91%E6%80%9D%E7%BB%B4/"/>
     
   </entry>
   
