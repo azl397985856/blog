@@ -2051,11 +2051,11 @@
       
         <tags>
             
-            <tag> 数学 </tag>
-            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> 数学 </tag>
             
             <tag> 最大公约数 </tag>
             
@@ -2813,9 +2813,9 @@
       
         <tags>
             
-            <tag> 前缀和 </tag>
-            
             <tag> 滑动窗口 </tag>
+            
+            <tag> 前缀和 </tag>
             
             <tag> LeetCode </tag>
             
@@ -2874,9 +2874,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 数组 </category>
           
@@ -2917,9 +2917,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 数组 </category>
           
@@ -2991,9 +2991,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 数组 </category>
           
@@ -3357,11 +3357,11 @@
       
         <tags>
             
-            <tag> 数学 </tag>
-            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> 数学 </tag>
             
             <tag> BFS </tag>
             
@@ -3412,9 +3412,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 数组 </category>
           
@@ -3482,9 +3482,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 数组 </category>
           
@@ -3718,13 +3718,13 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
           
-          <category> BFS </category>
+          <category> 算法 </category>
           
           <category> hashtable </category>
+          
+          <category> BFS </category>
           
       </categories>
       
@@ -3762,11 +3762,11 @@
       
         <tags>
             
-            <tag> 数学 </tag>
-            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> 数学 </tag>
             
             <tag> 中位数 </tag>
             
@@ -3999,9 +3999,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 数组 </category>
           
@@ -4036,9 +4036,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> hashtable </category>
           
@@ -4141,9 +4141,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> hashtable </category>
           
@@ -4739,13 +4739,13 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
           
-          <category> 数组 </category>
+          <category> 算法 </category>
           
           <category> 字符串 </category>
+          
+          <category> 数组 </category>
           
           <category> LeetCode </category>
           
@@ -4844,9 +4844,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 数组 </category>
           
@@ -4997,9 +4997,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> LeetCode </category>
           
@@ -5034,9 +5034,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> hashtable </category>
           
@@ -5073,13 +5073,13 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
           
-          <category> 数学 </category>
+          <category> 算法 </category>
           
           <category> hashtable </category>
+          
+          <category> 数学 </category>
           
           <category> 位运算 </category>
           
@@ -5131,9 +5131,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> LeetCode </category>
           
@@ -5199,9 +5199,9 @@
       
       <categories>
           
-          <category> 算法 </category>
-          
           <category> 数据结构 </category>
+          
+          <category> 算法 </category>
           
           <category> 字符串 </category>
           
@@ -5343,9 +5343,9 @@
           
           <category> 数学 </category>
           
-          <category> 概率 </category>
-          
           <category> 动态规划 </category>
+          
+          <category> 概率 </category>
           
           <category> 递归 </category>
           
@@ -5354,11 +5354,11 @@
       
         <tags>
             
-            <tag> 数学 </tag>
-            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> 数学 </tag>
             
             <tag> 概率 </tag>
             
