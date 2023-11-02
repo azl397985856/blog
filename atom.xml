@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2023-08-28T06:31:48.203Z</updated>
+  <updated>2023-11-02T05:17:46.586Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,11 +17,44 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>回炉重铸， 91 天见证不一样的自己（第 12 期）</title>
+    <link href="https://lucifer.ren/blog/2023/11/02/91algo-12/"/>
+    <id>https://lucifer.ren/blog/2023/11/02/91algo-12/</id>
+    <published>2023-11-01T16:00:00.000Z</published>
+    <updated>2023-11-02T05:17:46.586Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;第十二期，感谢大家一路的陪伴，我们会不辜负大家的信任，努力做的更好！&lt;/p&gt;
+&lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/befr2w.jpeg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>如何自己实现一个自动化框架？</title>
     <link href="https://lucifer.ren/blog/2023/08/27/how-to-make-automator/"/>
     <id>https://lucifer.ren/blog/2023/08/27/how-to-make-automator/</id>
     <published>2023-08-26T16:00:00.000Z</published>
-    <updated>2023-08-28T06:31:48.203Z</updated>
+    <updated>2023-08-29T03:56:58.860Z</updated>
     
     <summary type="html">
     
@@ -74,7 +107,7 @@
     <link href="https://lucifer.ren/blog/2023/06/04/91algo-11/"/>
     <id>https://lucifer.ren/blog/2023/06/04/91algo-11/</id>
     <published>2023-06-03T16:00:00.000Z</published>
-    <updated>2023-06-03T11:32:52.975Z</updated>
+    <updated>2023-11-02T05:17:52.233Z</updated>
     
     <summary type="html">
     
@@ -553,27 +586,6 @@
     
     
       <category term="成长经历" scheme="https://lucifer.ren/blog/tags/%E6%88%90%E9%95%BF%E7%BB%8F%E5%8E%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git 中的二分</title>
-    <link href="https://lucifer.ren/blog/2022/02/11/git-bisect-bug/"/>
-    <id>https://lucifer.ren/blog/2022/02/11/git-bisect-bug/</id>
-    <published>2022-02-10T16:00:00.000Z</published>
-    <updated>2023-01-05T12:24:49.982Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;大家好，我是 lucifer。今天给大家分享 Git 中的算法。&lt;/p&gt;
-&lt;p&gt;这是本系列的第一篇 - 《Git 中的二分》&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="二分" scheme="https://lucifer.ren/blog/tags/%E4%BA%8C%E5%88%86/"/>
     
   </entry>
   
