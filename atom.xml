@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2023-11-02T05:39:32.733Z</updated>
+  <updated>2024-01-28T08:36:22.853Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于 Error Boundaries， 你需要知道的一切</title>
+    <link href="https://lucifer.ren/blog/2024/01/28/error-boundaries/"/>
+    <id>https://lucifer.ren/blog/2024/01/28/error-boundaries/</id>
+    <published>2024-01-27T16:00:00.000Z</published>
+    <updated>2024-01-28T08:36:22.853Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在我们的应用中，难免会遇到一些异常情况，比如网络请求失败，或者是用户输入了一些非法的数据等等。这些异常情况如果没有得到处理，就会导致应用崩溃，从而影响用户体验。而 Error Boundaries 就是用可以处理这些异常情况中的一部分。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="异常处理" scheme="https://lucifer.ren/blog/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>回炉重铸， 91 天见证不一样的自己（第 12 期）</title>
@@ -563,29 +585,6 @@
       <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
     
       <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>远程办公有多爽？</title>
-    <link href="https://lucifer.ren/blog/2022/02/20/wfh2/"/>
-    <id>https://lucifer.ren/blog/2022/02/20/wfh2/</id>
-    <published>2022-02-19T16:00:00.000Z</published>
-    <updated>2023-01-05T12:24:49.579Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;大家好，我是 lucifer！&lt;/p&gt;
-&lt;p&gt;上一次和大家聊我的工作，算起来有超过半年的时间了。很多同学对远程办公比较感兴趣，我们就继续聊聊这个话题。&lt;/p&gt;
-&lt;p&gt;如果用一句话来概括文章内容的话，那就是：&lt;strong&gt;工作有趣，待遇满意，时间充足&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;以下是详细内容：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="成长经历" scheme="https://lucifer.ren/blog/categories/%E6%88%90%E9%95%BF%E7%BB%8F%E5%8E%86/"/>
-    
-    
-      <category term="成长经历" scheme="https://lucifer.ren/blog/tags/%E6%88%90%E9%95%BF%E7%BB%8F%E5%8E%86/"/>
     
   </entry>
   

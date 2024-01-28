@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>关于 Error Boundaries， 你需要知道的一切</title>
+      <link href="/blog/2024/01/28/error-boundaries/"/>
+      <url>/blog/2024/01/28/error-boundaries/</url>
+      
+        <content type="html"><![CDATA[<p>在我们的应用中，难免会遇到一些异常情况，比如网络请求失败，或者是用户输入了一些非法的数据等等。这些异常情况如果没有得到处理，就会导致应用崩溃，从而影响用户体验。而 Error Boundaries 就是用可以处理这些异常情况中的一部分。</p><a id="more"></a><h2 id="什么是-Error-Boundaries"><a href="#什么是-Error-Boundaries" class="headerlink" title="什么是 Error Boundaries"></a>什么是 Error Boundaries</h2><p>Error Boundaries 是 React 16 引入的一个新特性，用于捕获子组件树在渲染过程中抛出的异常，从而避免整个组件树的崩溃。</p><p>使用方法很简单，只需要定义一个组件，实现 <code>componentDidCatch</code> 和 <code>render</code> 方法即可。</p><p>一般而言，我们会在 getDerivedStateFromError 中将状态设置为 true， 然后 render 中根据这个设置的状态来渲染不同内容。如下代码所示：</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ErrorBoundary</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123; <span class="attr">hasError</span>: <span class="literal">false</span> &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> getDerivedStateFromError(error) &#123;</span><br><span class="line">    <span class="comment">// Update state so the next render will show the fallback UI.</span></span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="attr">hasError</span>: <span class="literal">true</span> &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidCatch(error, info) &#123;</span><br><span class="line">    <span class="comment">// Example "componentStack":</span></span><br><span class="line">    <span class="comment">//   in ComponentThatThrows (created by App)</span></span><br><span class="line">    <span class="comment">//   in ErrorBoundary (created by App)</span></span><br><span class="line">    <span class="comment">//   in div (created by App)</span></span><br><span class="line">    <span class="comment">//   in App</span></span><br><span class="line">    logErrorToMyService(error, info.componentStack);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.state.hasError) &#123;</span><br><span class="line">      <span class="comment">// You can render any custom fallback UI</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.props.fallback;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.props.children;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="Error-Boundaries-的好处与限制"><a href="#Error-Boundaries-的好处与限制" class="headerlink" title="Error Boundaries 的好处与限制"></a>Error Boundaries 的好处与限制</h2><p>Error Boundaries 的好处是显而易见的，它可以避免一个组件错误导致整个页面无法正常渲染的问题。</p><p>尽管 Error Boundaries 可以捕获子组件树中的异常，从而避免一个组件错误导致整个页面无法正常渲染的问题。但是它也有一些限制：</p><ol><li>只能捕获子组件树中的异常，不能捕获自身组件树中的异常。</li><li>不能捕获事件处理器中的异常。</li><li>不能捕获异步渲染中的异常。</li><li>不能捕获服务端渲染中的异常。</li><li>不能捕获自身组件的构造函数中的异常。</li></ol><p>对于这些问题，我们必须结合其他的异常处理机制来解决，本文不再赘述。</p><h2 id="Error-Boundaries-的底层实现原理"><a href="#Error-Boundaries-的底层实现原理" class="headerlink" title="Error Boundaries 的底层实现原理"></a>Error Boundaries 的底层实现原理</h2><p>Error Boundaries 的底层实现原理是什么呢？</p><p>遇到错误的时候，React 首先做的是捕获到这个错误，接下来将这个错误交给 componentDidCatch 来处理。类似我们在 JavaScript 中使用 try/catch 来捕获异常，然后在 catch 中处理异常。</p><p>我们可以通过源码来一探究竟。</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleError</span>(<span class="params">root, errorInfo</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Call componentDidCatch or handleError on the boundaries below us</span></span><br><span class="line">  <span class="keyword">let</span> boundary = root;</span><br><span class="line">  <span class="keyword">while</span> (boundary) &#123;</span><br><span class="line">    <span class="keyword">const</span> inst = getInst(boundary);</span><br><span class="line">    <span class="keyword">if</span> (inst !== <span class="literal">null</span> &amp;&amp; <span class="keyword">typeof</span> inst.componentDidCatch === <span class="string">'function'</span>) &#123;</span><br><span class="line">      invokeGuardedCallbackAndCatchFirstError(</span><br><span class="line">        <span class="string">'componentDidCatch'</span>,</span><br><span class="line">        inst,</span><br><span class="line">        errorInfo</span><br><span class="line">      );</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> boundary.tag !== <span class="string">'number'</span>) &#123;</span><br><span class="line">      <span class="comment">// Host components don't have lifecycle methods</span></span><br><span class="line">      <span class="comment">// so we don't need to try to invoke them</span></span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    boundary = boundary.return;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>可以看到，当一个组件抛出异常时，接下来 React 会从当前组件开始，向上遍历整个组件树，直到找到一个 Error Boundaries 组件，然后调用它的 componentDidCatch 方法。</p><h2 id="Error-Boundaries-的异常恢复"><a href="#Error-Boundaries-的异常恢复" class="headerlink" title="Error Boundaries 的异常恢复"></a>Error Boundaries 的异常恢复</h2><p>我们期望在用户遇到错误的时候， 可以通过一定的方式来恢复应用的正常运行。比如，我们可以在 componentDidCatch 中调用 setState 来更新组件的状态，从而重新渲染组件。</p><p>由于 Error Boundaries 本质上是一个普通高阶 React 组件，因此我们可以通过重新给 children 设置 key 来触发组件的重新渲染。类似这样：</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ErrorBoundary</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123; <span class="attr">error</span>: <span class="literal">null</span>, <span class="attr">errorInfo</span>: <span class="literal">null</span> &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidCatch(error, errorInfo) &#123;</span><br><span class="line">    <span class="comment">// Catch errors in any components below and re-render with error message</span></span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      error: error,</span><br><span class="line">      errorInfo: errorInfo</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// You can also log error messages to an error reporting service here</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  retry() &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      error: <span class="literal">null</span>,</span><br><span class="line">      errorInfo: <span class="literal">null</span>,</span><br><span class="line">      key: <span class="built_in">Math</span>.random()</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.state.errorInfo) &#123;</span><br><span class="line">      <span class="comment">// Error path</span></span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">          &lt;h2 onClick=&#123;<span class="keyword">this</span>.retry&#125;&gt;Something went wrong. Click to recover&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">          &lt;details style=&#123;&#123; whiteSpace: 'pre-wrap' &#125;&#125;&gt;</span></span><br><span class="line"><span class="regexp">            &#123;this.state.error &amp;&amp; this.state.error.toString()&#125;</span></span><br><span class="line"><span class="regexp">            &lt;br /</span>&gt;</span><br><span class="line">            &#123;<span class="keyword">this</span>.state.errorInfo.componentStack&#125;</span><br><span class="line">          &lt;<span class="regexp">/details&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Normally, just render children</span></span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">React.Fragment</span> <span class="attr">key</span>=<span class="string">&#123;this.state.key&#125;</span>&gt;</span>&#123;this.props.children&#125;<span class="tag">&lt;/<span class="name">React.Fragment</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>组件的数据来源主要有 state 和 props。 另外我们也会用一些 store 中的数据，甚至有的人使用全局变量。</p><p>对于 state 和 props，甚至是 store，我们都可以很容易地使用上次没有报错的数据来重新渲染组件。不过对于全局变量，我们就无能为力了。因此我们尽量不要在组件中使用全局变量。这也是我们使用数据管理框架的原因。因为这样可以使得数据是可预见的。</p><h2 id="Error-Boundaries-的上报"><a href="#Error-Boundaries-的上报" class="headerlink" title="Error Boundaries 的上报"></a>Error Boundaries 的上报</h2><p>当我们遇到错误的时候，我们可以将错误信息上报到服务器，这样我们就可以知道用户遇到了什么问题，从而可以及时修复。</p><p>除了业务数据外，我们还可以将：</p><ol><li>组件树的结构上报到服务器，这样我们就可以知道用户遇到问题的时候，页面的结构是怎样的，从而可以更好地定位问题。</li><li>组件的状态和属性传到后端，包括 hooks 数据等。</li><li>页面上可以展示出一个 hash，然后将 hash 上报到后端。 当用户反馈问题到我们的时候，我们可以通过这个 hash 来找到这个问题，并定位问题原因。</li></ol><h2 id="如何处理错误边界"><a href="#如何处理错误边界" class="headerlink" title="如何处理错误边界"></a>如何处理错误边界</h2><p>我们可以将 Error Boundaries 用于整个应用，也可以将 Error Boundaries 用于某个组件。如何决定呢？</p><p>一个原则是将相同业务功能的放到一起，用一个 Error Boundaries 来处理。这样一个功能挂了，相关功能也应该不可用。而不相关功能则期望是不受影响。这需要大家根据自己的业务来决定。</p><h2 id="如何测试我们的应用的-Error-Boundaries-是否合理？"><a href="#如何测试我们的应用的-Error-Boundaries-是否合理？" class="headerlink" title="如何测试我们的应用的 Error Boundaries 是否合理？"></a>如何测试我们的应用的 Error Boundaries 是否合理？</h2><p>我建议手动将每一个组件都抛出异常，然后看看 Error Boundaries：</p><ol><li>是否可以捕获到异常</li><li>是否可以恢复应用的正常运行</li><li>一个组件挂了后是否符合上一节我们提到的原则</li></ol><p>如果觉得效率低，也可以写一个脚本来自动化测试。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文介绍了 Error Boundaries 的基本用法，以及它的好处与限制。同时我们也介绍了 Error Boundaries 的底层实现原理，以及如何在遇到错误的时候，恢复应用的正常运行。最后我们还介绍了如何将错误信息上报到服务器。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 异常处理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>回炉重铸， 91 天见证不一样的自己（第 12 期）</title>
       <link href="/blog/2023/11/02/91algo-12/"/>
       <url>/blog/2023/11/02/91algo-12/</url>
@@ -2051,11 +2078,11 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> 数学 </tag>
             
             <tag> 最大公约数 </tag>
             
@@ -2874,9 +2901,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -2917,9 +2944,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -2991,9 +3018,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -3357,11 +3384,11 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> 数学 </tag>
             
             <tag> BFS </tag>
             
@@ -3412,9 +3439,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -3482,9 +3509,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -3718,13 +3745,13 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
           
-          <category> hashtable </category>
+          <category> 数据结构 </category>
           
           <category> BFS </category>
+          
+          <category> hashtable </category>
           
       </categories>
       
@@ -3762,11 +3789,11 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> 数学 </tag>
             
             <tag> 中位数 </tag>
             
@@ -3999,9 +4026,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -4036,9 +4063,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -4141,9 +4168,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -4739,13 +4766,13 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
           
-          <category> 字符串 </category>
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
+          
+          <category> 字符串 </category>
           
           <category> LeetCode </category>
           
@@ -4844,9 +4871,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 数组 </category>
           
@@ -4997,9 +5024,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> LeetCode </category>
           
@@ -5034,9 +5061,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> hashtable </category>
           
@@ -5073,13 +5100,13 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
           
-          <category> hashtable </category>
+          <category> 数据结构 </category>
           
           <category> 数学 </category>
+          
+          <category> hashtable </category>
           
           <category> 位运算 </category>
           
@@ -5131,9 +5158,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> LeetCode </category>
           
@@ -5199,9 +5226,9 @@
       
       <categories>
           
-          <category> 数据结构 </category>
-          
           <category> 算法 </category>
+          
+          <category> 数据结构 </category>
           
           <category> 字符串 </category>
           
@@ -5343,9 +5370,9 @@
           
           <category> 数学 </category>
           
-          <category> 动态规划 </category>
-          
           <category> 概率 </category>
+          
+          <category> 动态规划 </category>
           
           <category> 递归 </category>
           
@@ -5354,11 +5381,11 @@
       
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> 数学 </tag>
             
             <tag> 概率 </tag>
             
