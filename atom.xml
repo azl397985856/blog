@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2024-03-10T13:06:01.037Z</updated>
+  <updated>2024-03-10T13:11:10.453Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How To Make Monney</title>
+    <link href="https://lucifer.ren/blog/2024/03/10/make-money/"/>
+    <id>https://lucifer.ren/blog/2024/03/10/make-money/</id>
+    <published>2024-03-09T16:00:00.000Z</published>
+    <updated>2024-03-10T13:11:10.453Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有哪些赚钱的方法？具体如何操作？它们的赚钱逻辑是什么？什么情况下会亏钱？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="理财" scheme="https://lucifer.ren/blog/categories/%E7%90%86%E8%B4%A2/"/>
+    
+    
+      <category term="理财" scheme="https://lucifer.ren/blog/tags/%E7%90%86%E8%B4%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>kuma - css-in-js 的未来？</title>
@@ -37,28 +57,6 @@
       <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="css-in-js" scheme="https://lucifer.ren/blog/tags/css-in-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://lucifer.ren/blog/2024/02/15/make-money/"/>
-    <id>https://lucifer.ren/blog/2024/02/15/make-money/</id>
-    <published>2024-02-15T04:00:38.279Z</published>
-    <updated>2024-03-10T06:28:39.107Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
