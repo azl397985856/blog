@@ -1,4 +1,14 @@
-# How To Make Monney
+---
+title: How To Make Monney
+tags: [理财]
+date: 2024-03-10
+categories:
+  - [理财]
+---
+
+有哪些赚钱的方法？具体如何操作？它们的赚钱逻辑是什么？什么情况下会亏钱？
+
+<!-- more -->
 
 ## 1. 了解你赚的是什么钱
 
