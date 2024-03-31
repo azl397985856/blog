@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2024-03-28T07:59:11.283Z</updated>
+  <updated>2024-03-29T14:36:10.053Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lucifer.ren/blog/2024/03/28/91algo-13/"/>
     <id>https://lucifer.ren/blog/2024/03/28/91algo-13/</id>
     <published>2024-03-27T16:00:00.000Z</published>
-    <updated>2024-03-28T07:59:11.283Z</updated>
+    <updated>2024-03-29T14:36:10.053Z</updated>
     
     <summary type="html">
     
@@ -233,6 +233,36 @@
       <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
     
       <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用 Rust 开发前端基建工具</title>
+    <link href="https://lucifer.ren/blog/2023/05/01/rust-node-binding/"/>
+    <id>https://lucifer.ren/blog/2023/05/01/rust-node-binding/</id>
+    <published>2023-04-30T16:00:00.000Z</published>
+    <updated>2024-03-31T11:25:30.030Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Rust 在最近几年在前端基建这一块有很大的发展。比如用于 lint 的 oxlint， 用于构建的 rspack 等等。这些工具都是用 Rust 写的，然后通过 Node.js 的 binding 连接到前端项目中。&lt;/p&gt;
+&lt;p&gt;很多前端小伙伴看这些项目的源码的时候也会一头雾水，不知道怎么编译，怎么运行。这里我就以 rolldown 为例简单介绍一下如何用 Rust 开发前端基建工具。&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="rust" scheme="https://lucifer.ren/blog/categories/rust/"/>
+    
+      <category term="node binding" scheme="https://lucifer.ren/blog/categories/rust/node-binding/"/>
+    
+      <category term="node-gyp" scheme="https://lucifer.ren/blog/categories/rust/node-binding/node-gyp/"/>
+    
+    
+      <category term="rust" scheme="https://lucifer.ren/blog/tags/rust/"/>
+    
+      <category term="node binding" scheme="https://lucifer.ren/blog/tags/node-binding/"/>
+    
+      <category term="node-gyp" scheme="https://lucifer.ren/blog/tags/node-gyp/"/>
     
   </entry>
   
@@ -561,25 +591,6 @@
     
     
       <category term="书单" scheme="https://lucifer.ren/blog/tags/%E4%B9%A6%E5%8D%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git 中的算法第二弹-最近公共祖先</title>
-    <link href="https://lucifer.ren/blog/2022/04/06/git-merge-base/"/>
-    <id>https://lucifer.ren/blog/2022/04/06/git-merge-base/</id>
-    <published>2022-04-05T16:00:00.000Z</published>
-    <updated>2023-01-05T12:24:49.757Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;大家好，我是 lucifer。今天给大家分享 Git 中的算法。&lt;/p&gt;
-&lt;p&gt;这是本系列的第二篇 - 《Git 中的最近公共祖先》，第一篇在 &lt;a href=&quot;https://lucifer.ren/blog/2021/02/11/git-bisect-bug/&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="算法，最近公共祖先" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%EF%BC%8C%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
     
   </entry>
   
