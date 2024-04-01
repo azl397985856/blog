@@ -1,7 +1,7 @@
 ---
 title: 用 Rust 开发前端基建工具
 tags: [rust, node binding, node-gyp]
-date: 2023-04-31
+date: 2024-04-01
 categories:
   - [rust, node binding, node-gyp]
 ---
