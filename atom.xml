@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2024-04-01T02:46:24.491Z</updated>
+  <updated>2024-06-22T08:23:24.316Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>树状数组，线段树，傻傻分不清楚？</title>
+    <link href="https://lucifer.ren/blog/2024/06/22/binary-index-tree/"/>
+    <id>https://lucifer.ren/blog/2024/06/22/binary-index-tree/</id>
+    <published>2024-06-21T16:00:00.000Z</published>
+    <updated>2024-06-22T08:23:24.316Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前面我们讲了线段树以及线段树是如何高效解决某些区间问题的。不少人也听说过树状数组，据说树状数组也可以解决一些区间问题。那么树状数组和线段树有什么区别呢？它们又有什么联系呢？本文将带你一探究竟。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="树状数组" scheme="https://lucifer.ren/blog/categories/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="树状数组" scheme="https://lucifer.ren/blog/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="线段树" scheme="https://lucifer.ren/blog/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+    
+  </entry>
   
   <entry>
     <title>用 Rust 开发前端基建工具</title>
@@ -540,57 +566,6 @@
     
     
       <category term="每日一荐" scheme="https://lucifer.ren/blog/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>西法的 2022 书单推荐</title>
-    <link href="https://lucifer.ren/blog/2022/04/26/books-2022/"/>
-    <id>https://lucifer.ren/blog/2022/04/26/books-2022/</id>
-    <published>2022-04-25T16:00:00.000Z</published>
-    <updated>2023-01-05T12:24:49.733Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;去年推荐了基本技术书单，推荐的主要图书有：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;你不知道的 JavaScript&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/pnxlbx.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://s.click.taobao.com/AmrJYYu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;淘宝地址&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://union-click.jd.com/jdc?e=618%7Cpc%7C&amp;amp;p=JF8BANEJK1olXDYCVlxYDUIfBl9MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFksVAWoNElMQQl9HCANtbwBqahtxRQR2Nnh_VQ0qdjRWextUe1cZbQcyVF9cCEMSBGoOHmslXQEyAjBdCUoWAm4NH1wSbQcyVFlZCUMTAm4JGF4RXjYFVFdtUx55BG8NSA9GXlRVBAoKXXsnM2w4HFscSQBwFQxJDjknM284GGtXMwJQVFkKCRgWUGhbGl4TXw5RA18OW08UBm4JE1MWVFNWZFxcCU8eMw&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;京东地址&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;算法图解&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/sk5box.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://s.click.taobao.com/5acRLYu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;淘宝地址&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://union-click.jd.com/jdc?e=618%7Cpc%7C&amp;amp;p=JF8BANwJK1olXQUBV1tfCk4UBF8LHFIQWAAEVlhaAHtTXDdWRGtMGENDFlVDFhNSVzMXQA4KD1heSl1aAU4SBWkKHVwdQl9HCANtTz1UQiZ4GwxwFUZqVT4teg5vAjYPXVcZbQcyVF9cCEMSBGoOHmslXQEyFTBbD0kUB2o4GmsVWgIDXFpcC0IXAGYLK1wVVDZZATBaCE5EVzwLSQxFCVFXZG5tC3sQA2YcHSlUDxIEJm5tCHsUMy1mHwgcDwUBBl9dWEhABmgMHAhAXgBWUwkOAEgXUWddGlIlXwcDUFdt&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;京东地址&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;算法第四版&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/9wq8e2.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://s.click.taobao.com/pmHJYYu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;淘宝地址&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://union-click.jd.com/jdc?e=618%7Cpc%7C&amp;amp;p=JF8BANsJK1olVQEGV11fAEsfM2gAGlgRXwIBVFtdOA9IWzFXKwJQGEdAX0BDUA5DX3BTTkRHA1ocU1ZcC08VB2wIHlsKBENeCW4EbxlDeTcJTDlQHWFGJ1kCV0tHRhpeF1clXDYCVV9dAE4QBmkNK2sVWjZDOllYC0MVBV8JK1sSWQcKUF9fDE0TBmc4HFscbV1XOlldDRhDUGxaTAtBClMyZG5eOEwXCnsOaRpHSQBwZG5dOEgnQQEKTggRDlICVglaX0sSAGxcS14QWVYEVwoKDxhDBjoNE2sXXAcGXW4&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;京东地址&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;读者反响还不错，这次推荐了一些更专业的书单。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="书单" scheme="https://lucifer.ren/blog/categories/%E4%B9%A6%E5%8D%95/"/>
-    
-    
-      <category term="书单" scheme="https://lucifer.ren/blog/tags/%E4%B9%A6%E5%8D%95/"/>
     
   </entry>
   
