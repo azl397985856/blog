@@ -442,7 +442,7 @@
 <blockquote>
 <p>关于发布 npm 包，我的猜测是 napi 自动发布的。</p>
 </blockquote>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>目前 rust 来写前端基建工具已经是一个比较成熟的方案了。比如 (unplugin-parcel-macros)[<a href="https://github.com/devongovett/unplugin-parcel-macros/blob/main/src/lib.rs" target="_blank" rel="noopener">https://github.com/devongovett/unplugin-parcel-macros/blob/main/src/lib.rs</a>] 也是用 rust 实现的的构建插件，同样是基于 napi 构建，支持 webpack ，vite， rollup 等。功能是将一些构建的时候运行代码，然后将运行结果插入到代码中，从而节省运行时的性能。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>目前 rust 来写前端基建工具已经是一个比较成熟的方案了。比如 <a href="https://github.com/devongovett/unplugin-parcel-macros/blob/main/src/lib.rs" target="_blank" rel="noopener">unplugin-parcel-macros</a> 也是用 rust 实现的的构建插件，同样是基于 napi 构建，支持 webpack ，vite， rollup 等。功能是将一些构建的时候运行代码，然后将运行结果插入到代码中，从而节省运行时的性能。</p>
 <p>通过这篇文章，我们了解了 rolldown 是如何用 Rust 编写的前端基建工具，以及如何通过 napi 构建 node binding，以及如何在 JS 中使用 node binding。</p>
 <p>具体来说，如果你想用 rust 开发前端基建工具，一般可以采用如下的步骤：</p>
 <ol>
@@ -468,10 +468,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2024-04-01T10:46:24+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2024-07-13T15:28:03+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2024年4月1日</p>
+    <p>更新于 2024年7月13日</p>
   </a>
 </div>
 
