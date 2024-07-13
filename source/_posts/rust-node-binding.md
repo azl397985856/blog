@@ -472,7 +472,7 @@ module.exports.Bundler = nativeBinding.Bundler
 
 ## 总结
 
-目前 rust 来写前端基建工具已经是一个比较成熟的方案了。比如 (unplugin-parcel-macros)[https://github.com/devongovett/unplugin-parcel-macros/blob/main/src/lib.rs] 也是用 rust 实现的的构建插件，同样是基于 napi 构建，支持 webpack ，vite， rollup 等。功能是将一些构建的时候运行代码，然后将运行结果插入到代码中，从而节省运行时的性能。
+目前 rust 来写前端基建工具已经是一个比较成熟的方案了。比如 [unplugin-parcel-macros](https://github.com/devongovett/unplugin-parcel-macros/blob/main/src/lib.rs) 也是用 rust 实现的的构建插件，同样是基于 napi 构建，支持 webpack ，vite， rollup 等。功能是将一些构建的时候运行代码，然后将运行结果插入到代码中，从而节省运行时的性能。
 
 通过这篇文章，我们了解了 rolldown 是如何用 Rust 编写的前端基建工具，以及如何通过 napi 构建 node binding，以及如何在 JS 中使用 node binding。
 
