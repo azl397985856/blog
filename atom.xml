@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2024-06-23T04:55:24.990Z</updated>
+  <updated>2024-07-13T06:09:47.064Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何自己搭建一个 GPT 代码生成器？</title>
+    <link href="https://lucifer.ren/blog/2024/07/13/gpt-code/"/>
+    <id>https://lucifer.ren/blog/2024/07/13/gpt-code/</id>
+    <published>2024-07-12T16:00:00.000Z</published>
+    <updated>2024-07-13T06:09:47.064Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;自从 chatpgt 发布以来，有很多人都在使用它来生成代码，然后包装成一个产品给大家使用。有的甚至是付费的，用它来赚钱。&lt;/p&gt;
+&lt;p&gt;使用方式基本上都是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;你输入一个问题，然后它会给你生成一个代码片段。这个代码片段可能是一个函数，也可能是一个类，也可能是一个模块，甚至直接是一个代码库。&lt;/li&gt;
+&lt;li&gt;你可以选择使用这个代码片段，也可以继续输入问题，让它生成更多的代码片段。或者对答案进行改进&lt;/li&gt;
+&lt;li&gt;如果你对答案满意，你可以将答案复制到你的项目中，或者导出代码。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/vydqqw.png&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/gufjyx.png&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;这样的一款产品是怎么做出来的？代码复杂吗？我可以自己做一个吗？自己做的话，需要多少时间，多少钱？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ai" scheme="https://lucifer.ren/blog/categories/ai/"/>
+    
+    
+      <category term="ai" scheme="https://lucifer.ren/blog/tags/ai/"/>
+    
+      <category term="chatgpt" scheme="https://lucifer.ren/blog/tags/chatgpt/"/>
+    
+      <category term="代码生成器" scheme="https://lucifer.ren/blog/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>树状数组，线段树，傻傻分不清楚？</title>
@@ -538,34 +571,6 @@
       <category term="谷歌" scheme="https://lucifer.ren/blog/tags/%E8%B0%B7%E6%AD%8C/"/>
     
       <category term="面试" scheme="https://lucifer.ren/blog/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>快来 **伯克利大学** 学计算机</title>
-    <link href="https://lucifer.ren/blog/2022/05/15/daily-featured-2022-04/"/>
-    <id>https://lucifer.ren/blog/2022/05/15/daily-featured-2022-04/</id>
-    <published>2022-05-14T16:00:00.000Z</published>
-    <updated>2023-01-07T14:01:24.672Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="每日一荐" scheme="https://lucifer.ren/blog/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/"/>
-    
-      <category term="2022-04" scheme="https://lucifer.ren/blog/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/2022-04/"/>
-    
-    
-      <category term="每日一荐" scheme="https://lucifer.ren/blog/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%8D%90/"/>
     
   </entry>
   
