@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2024-07-13T07:28:52.145Z</updated>
+  <updated>2024-08-04T13:21:29.518Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>回炉重铸， 91 天见证不一样的自己（第 14 期）</title>
+    <link href="https://lucifer.ren/blog/2024/08/04/91algo-14/"/>
+    <id>https://lucifer.ren/blog/2024/08/04/91algo-14/</id>
+    <published>2024-08-03T16:00:00.000Z</published>
+    <updated>2024-08-04T13:21:29.518Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;第十四期，感谢大家一路的陪伴，我们会不辜负大家的信任，努力做的更好！&lt;/p&gt;
+&lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/befr2w.jpeg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>如何自己搭建一个 GPT 代码生成器？</title>
@@ -545,32 +578,6 @@
       <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
     
       <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>恭喜又一个小姐姐进了谷歌</title>
-    <link href="https://lucifer.ren/blog/2022/05/21/google-interview-tao/"/>
-    <id>https://lucifer.ren/blog/2022/05/21/google-interview-tao/</id>
-    <published>2022-05-20T16:00:00.000Z</published>
-    <updated>2023-01-07T13:53:04.630Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这是 JinTao（aka TJ） 的一篇分享自己如何面试准备进谷歌的经历分享，经历还是蛮曲折的，想去大公司的话非常具体参考价值。&lt;/p&gt;
-&lt;p&gt;TJ 是我的一个老朋友了，《91 天学算法》也跟了好几期，如果你也参加过《91 天学算法》，那么很有可能知道她。我俩私底下交流也蛮多的，得知她最近刚刚进了谷歌，就邀请她来写一下自己的面试准备经历。&lt;/p&gt;
-&lt;p&gt;本文中的 &lt;code&gt;lucifer:&lt;/code&gt; 是我自己添加的内容，不是作者写的，大多是补充一些资料以便让大家进一步学习。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="谷歌" scheme="https://lucifer.ren/blog/categories/%E8%B0%B7%E6%AD%8C/"/>
-    
-      <category term="面试" scheme="https://lucifer.ren/blog/categories/%E8%B0%B7%E6%AD%8C/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-      <category term="谷歌" scheme="https://lucifer.ren/blog/tags/%E8%B0%B7%E6%AD%8C/"/>
-    
-      <category term="面试" scheme="https://lucifer.ren/blog/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
