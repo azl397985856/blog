@@ -490,4 +490,25 @@ module.exports.Bundler = nativeBinding.Bundler
 2. 通过 node-gyp 构建 node binding。
 3. 在 JS 中使用 node binding。
 
+你也可以直接使用一些基于 napi-rs 的工具，这样就可以节省一些时间，比如 [neon-rs](https://neon-rs.dev/docs/hello-world/) 。
+
+如下脚本就可以快速创建一个脚手架项目。
+
+```bash
+npm init neon cpu-count
+cd cpu-count
+npm install
+```
+
+修改代码，写一些 rust 代码实现功能，然后执行 `npm run build` 就可以构建 node binding 了。
+
+```bash
+cargo clean
+npm run build -- --release
+node
+> const cpuCount = require('.')
+> cpuCount.get()
+4
+```
+
 
