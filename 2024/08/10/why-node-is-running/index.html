@@ -388,7 +388,7 @@
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
         <p>有时候我们打开进程管理器，发现 node 进程一直在运行，但是我们并不知道它在做什么。</p>
-<p>如果通过不停打日志的方式来找出原因，会非常耗时，而且不一定能找到问题所在。因为一个异步操作可能是由于另外一个异步操作触发的，这样就会导致我们很难找到根本原因，或者说定位过程会非常艰难。 ` 那么有没有一种更有效率的方法可以帮助我们找出为什么 node 进程一直在运行呢？</p>
+<p>如果通过不停打日志的方式来找出原因，会非常耗时，而且不一定能找到问题所在。因为一个异步操作可能是由于另外一个异步操作触发的，这样就会导致我们很难找到根本原因，或者说定位过程会非常艰难。 那么有没有一种更有效率的方法可以帮助我们找出为什么 node 进程一直在运行呢？</p>
 <a id="more"></a>
 <h2 id="什么是-async-hooks"><a href="#什么是-async-hooks" class="headerlink" title="什么是 async_hooks"></a>什么是 async_hooks</h2><p>要回答这个问题，首先我们需要了解 Node.js 的  <code>async_hooks</code>  内置模块。这个模块提供了一组 API，可以用来跟踪异步操作。</p>
 <p>例如，我们可以使用  <code>async_hooks</code>  来跟踪异步操作的创建和销毁，以及它们之间的关系。这样，我们就可以知道哪些异步操作还在运行，哪些已经结束了。</p>
@@ -398,7 +398,7 @@
 <h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>有了前面的铺垫，我们就可以来解决这个问题了。</p>
 <p>以下是一个简化的示例，展示了如何使用  <code>async_hooks</code>  来跟踪异步操作：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> async_hooks = <span class="built_in">require</span>(<span class="string">"async_hooks"</span>);</span><br><span class="line"><span class="keyword">const</span> stackTraces = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line"><span class="keyword">const</span> hook = async_hooks.createHook(&#123;</span><br><span class="line">  init(asyncId, type, triggerAsyncId, resource) &#123;</span><br><span class="line">    <span class="comment">// 在新的异步操作被创建时，记录堆栈跟踪</span></span><br><span class="line">    stackTraces.set(asyncId, <span class="keyword">new</span> <span class="built_in">Error</span>().stack);</span><br><span class="line">  &#125;,</span><br><span class="line">  destroy(asyncId) &#123;</span><br><span class="line">    <span class="comment">// 在异步操作被关闭时，删除记录</span></span><br><span class="line">    stackTraces.delete(asyncId);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line">hook.enable();</span><br><span class="line"><span class="comment">// 一段时间后...</span></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 打印所有仍然活跃的异步操作的堆栈跟踪</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> stackTrace <span class="keyword">of</span> stackTraces.values()) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(stackTrace);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
-<p>这个一段时间可以变为手动控制，比如等我们发送一个用户信号 <code>SIGUSR1</code> 的时候，我们就可以打印出所有的异步操作的堆栈跟踪。</p>
+<p>这个 <code>setTimeout</code> 可以变为手动控制，比如等我们发送一个用户信号 <code>SIGUSR1</code> 的时候，我们就可以打印出所有的异步操作的堆栈跟踪。</p>
 <h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>社区中已经有一些现成的实现了，比如  <a href="https://github.com/mafintosh/why-is-node-running" target="_blank" rel="noopener">why-is-node-running</a>。它的实现和我们上面的一样， 很简单就可以实现这样的功能。之所以能够做到这一点，是因为 Node.js 提供了  <code>async_hooks</code>  这个内置模块。也就是说我们只要站到巨人的肩膀上，就可以很容易地实现这样的功能。这提示我们对框架和库提供的底层基本原理有一定的了解，这样我们就可以更好地利用它们，提高我们的工作效率。很多复杂的库都是基于简单的原理实现的，只要我们掌握了这些原理，就可以很容易地理解它们的工作原理，从而更好地使用它们。只不过由于越来越流行，而不得不增加了很多的功能，修复了很多 bug，这样就会导致我们很难理解它们的工作原理，这就需要我们花费更多的时间去学习它们。</p>
 <p>留给大家一个思考题。如果不使用 node 内置的  <code>async_hooks</code>  模块，我们还可以通过什么方式来实现这样的功能呢？这种方法和  <code>async_hooks</code>  相比，有什么优缺点呢？欢迎大家留言讨论。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过这篇文章，我们了解了 Node.js 的  <code>async_hooks</code>  内置模块，以及如何使用它来跟踪异步操作。我们还展示了如何使用  <code>async_hooks</code>  来找出为什么 Node.js 进程一直在运行。最后，我们讨论了如何站在巨人的肩膀上，更好地利用框架和库提供的底层基本原理，从而提高我们的工作效率。</p>
@@ -413,7 +413,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2024-08-10T17:42:19+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2024-08-10T17:59:50+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2024年8月10日</p>
@@ -447,7 +447,7 @@
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
           href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2024/08/10/why-node-is-running/&title=为什么我的 node 进程一直在运行？ | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=有时候我们打开进程管理器，发现 node 进程一直在运行，但是我们并不知道它在做什么。
-如果通过不停打日志的方式来找出原因，会非常耗时，而且不一定能找到问题所在。因为一个异步操作可能是由于另外一个异步操作触发的，这样就会导致我们很难找到根本原因，或者说定位过程会非常艰难。 ` 那么有没有一种更有效率的方法可以帮助我们找出为什么 node 进程一直在运行呢？"
+如果通过不停打日志的方式来找出原因，会非常耗时，而且不一定能找到问题所在。因为一个异步操作可能是由于另外一个异步操作触发的，这样就会导致我们很难找到根本原因，或者说定位过程会非常艰难。 那么有没有一种更有效率的方法可以帮助我们找出为什么 node 进程一直在运行呢？"
           
           >
           
@@ -460,7 +460,7 @@
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2024/08/10/why-node-is-running/&title=为什么我的 node 进程一直在运行？ | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=有时候我们打开进程管理器，发现 node 进程一直在运行，但是我们并不知道它在做什么。
-如果通过不停打日志的方式来找出原因，会非常耗时，而且不一定能找到问题所在。因为一个异步操作可能是由于另外一个异步操作触发的，这样就会导致我们很难找到根本原因，或者说定位过程会非常艰难。 ` 那么有没有一种更有效率的方法可以帮助我们找出为什么 node 进程一直在运行呢？"
+如果通过不停打日志的方式来找出原因，会非常耗时，而且不一定能找到问题所在。因为一个异步操作可能是由于另外一个异步操作触发的，这样就会导致我们很难找到根本原因，或者说定位过程会非常艰难。 那么有没有一种更有效率的方法可以帮助我们找出为什么 node 进程一直在运行呢？"
           
           >
           
@@ -473,7 +473,7 @@
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
           href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2024/08/10/why-node-is-running/&title=为什么我的 node 进程一直在运行？ | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=有时候我们打开进程管理器，发现 node 进程一直在运行，但是我们并不知道它在做什么。
-如果通过不停打日志的方式来找出原因，会非常耗时，而且不一定能找到问题所在。因为一个异步操作可能是由于另外一个异步操作触发的，这样就会导致我们很难找到根本原因，或者说定位过程会非常艰难。 ` 那么有没有一种更有效率的方法可以帮助我们找出为什么 node 进程一直在运行呢？"
+如果通过不停打日志的方式来找出原因，会非常耗时，而且不一定能找到问题所在。因为一个异步操作可能是由于另外一个异步操作触发的，这样就会导致我们很难找到根本原因，或者说定位过程会非常艰难。 那么有没有一种更有效率的方法可以帮助我们找出为什么 node 进程一直在运行呢？"
           
           >
           
