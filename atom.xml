@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2024-08-04T15:35:15.707Z</updated>
+  <updated>2024-08-10T09:42:19.216Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>为什么我的 node 进程一直在运行？</title>
+    <link href="https://lucifer.ren/blog/2024/08/10/why-node-is-running/"/>
+    <id>https://lucifer.ren/blog/2024/08/10/why-node-is-running/</id>
+    <published>2024-08-09T16:00:00.000Z</published>
+    <updated>2024-08-10T09:42:19.216Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有时候我们打开进程管理器，发现 node 进程一直在运行，但是我们并不知道它在做什么。&lt;/p&gt;
+&lt;p&gt;如果通过不停打日志的方式来找出原因，会非常耗时，而且不一定能找到问题所在。因为一个异步操作可能是由于另外一个异步操作触发的，这样就会导致我们很难找到根本原因，或者说定位过程会非常艰难。 ` 那么有没有一种更有效率的方法可以帮助我们找出为什么 node 进程一直在运行呢？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="node" scheme="https://lucifer.ren/blog/tags/node/"/>
+    
+  </entry>
   
   <entry>
     <title>回炉重铸， 91 天见证不一样的自己（第 14 期）</title>
@@ -113,7 +136,7 @@
     <link href="https://lucifer.ren/blog/2024/04/01/rust-node-binding/"/>
     <id>https://lucifer.ren/blog/2024/04/01/rust-node-binding/</id>
     <published>2024-03-31T16:00:00.000Z</published>
-    <updated>2024-08-09T08:40:18.926Z</updated>
+    <updated>2024-08-10T05:42:00.023Z</updated>
     
     <summary type="html">
     
@@ -523,38 +546,6 @@
     <id>https://lucifer.ren/blog/2022/10/15/91algo-9/</id>
     <published>2022-10-14T16:00:00.000Z</published>
     <updated>2023-02-07T04:15:30.347Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/befr2w.jpeg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>回炉重铸， 91 天见证不一样的自己（第八期）</title>
-    <link href="https://lucifer.ren/blog/2022/07/09/91algo-8/"/>
-    <id>https://lucifer.ren/blog/2022/07/09/91algo-8/</id>
-    <published>2022-07-08T16:00:00.000Z</published>
-    <updated>2023-02-07T04:15:30.348Z</updated>
     
     <summary type="html">
     
