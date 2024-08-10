@@ -361,7 +361,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">2.8k字</span>
+          <span class="post-count">2.9k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -457,6 +457,11 @@
 <li>通过 node-gyp 构建 node binding。</li>
 <li>在 JS 中使用 node binding。</li>
 </ol>
+<p>你也可以直接使用一些基于 napi-rs 的工具，这样就可以节省一些时间，比如 <a href="https://neon-rs.dev/docs/hello-world/" target="_blank" rel="noopener">neon-rs</a> 。</p>
+<p>如下脚本就可以快速创建一个脚手架项目。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm init neon cpu-count</span><br><span class="line"><span class="built_in">cd</span> cpu-count</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>修改代码，写一些 rust 代码实现功能，然后执行 <code>npm run build</code> 就可以构建 node binding 了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cargo clean</span><br><span class="line">npm run build -- --release</span><br><span class="line">node</span><br><span class="line">&gt; const cpuCount = require(<span class="string">'.'</span>)</span><br><span class="line">&gt; cpuCount.get()</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
 
       </div>
       
@@ -468,10 +473,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2024-07-13T15:28:03+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2024-08-09T16:40:18+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2024年7月13日</p>
+    <p>更新于 2024年8月9日</p>
   </a>
 </div>
 
