@@ -24,6 +24,8 @@ web3 是一个非常流行的概念，它的基础是区块链技术。区块链
 
 我们可以实现一个简单的区块链类来模拟区块链的基本功能。
 
+从数据结构上来说，区块链本质上是一个链表结构，每个区块包含一个索引、时间戳、数据、前一个区块的哈希值和当前区块的哈希值。区块链中的第一个区块叫做创世区块，它的前一个区块的哈希值是 0。
+
 首先我们先定义几个类，分别是 `Block` 类和 `Blockchain` 类。其中 `Block` 类表示区块，`Blockchain` 类表示区块链。 `Blockchain` 会引用 `Block` 类。
 
 - Block 类：包含索引、时间戳、数据、前一个区块的哈希值和当前区块的哈希值。
@@ -125,6 +127,8 @@ def mine_pending_transactions(self, mining_reward_address):
     self.pending_transactions = []
 ```
 
+以下为完整代码：
+
 ```py
 import hashlib
 import time
@@ -213,7 +217,9 @@ print(f"Balance of Bob: {blockchain.get_balance('Bob')}")
 
 决定谁可以挖矿成功的算法有很多种，比如工作量证明（Proof of Work）、权益证明（Proof of Stake）等等。其中工作量证明是最常见的一种算法，比特币就是使用工作量证明算法来决定谁可以挖矿成功。
 
-这里我们实现一下工作量证明算法（POW）。工作量证明算法的核心思想是找到一个符合条件的哈希值，这个哈希值的前几位是 0。这个条件是可以调整的，比如前两位是 0，前三位是 0 等等。位数越多，实现起来越困难。我们可以将这个位数称为难度（Difficulty）。
+这里我们实现一下工作量证明算法（POW）。工作量证明算法的核心思想是找到一个符合条件的哈希值，这个哈希值的前几位是 0。这个条件是可以调整的，比如前两位是 0，前三位是 0 等等。位数越多，实现起来越困难。我们可以将这个位数称为难度（Difficulty）。如果被哈希的字符串是固定的，那么哈希值一定也是固定的，因此被哈希的字符串不能是固定的，通常的做法是包含一个随机数 nonce，这个随机数就是我们需要不断尝试的值。
+
+也就是说没有这个约束，我们很快就能计算出哈希，但是有了这个约束，我们就需要不断尝试，直到找到符合条件的哈希值。
 
 为了实现这个目的，我们需要：
 
@@ -281,6 +287,7 @@ class Blockchain:
         reward_tx = Transaction(None, mining_reward_address, self.mining_reward)
         self.pending_transactions.append(reward_tx)
         new_block = Block(len(self.chain), time.time(), self.pending_transactions, self.get_latest_block().hash)
+        # 注意这里调用的是 proof_of_work 方法
         new_block.hash = new_block.proof_of_work(self.difficulty)
         self.chain.append(new_block)
         self.pending_transactions = []
@@ -332,6 +339,15 @@ print(f"Balance of Bob: {blockchain.get_balance('Bob')}")
 
 智能合约的本体就是代码，本质类似于状态机。
 
+智能合约还有一个很重要的概念是 ABI。ABI（Application Binary Interface，应用二进制接口）是智能合约与外部应用程序之间的接口定义。它描述了智能合约的函数和事件，使得外部应用程序可以与智能合约进行交互。
+
+
+智能合约代码是用 Solidity 等编程语言编写的，定义了合约的逻辑和功能。合约代码通常需要编译，在编译后会生成字节码（bytecode），部署到区块链上。
+
+ABI 是合约编译后生成的 JSON 文件，描述了合约的接口。它不包含合约的逻辑实现，只包含函数和事件的定义。外部应用程序使用 ABI 来与部署在区块链上的合约进行交互。
+
+也就是说 ABI 决定了如何调用合约，而合约代码决定了合约的逻辑。
+
 为了在区块链中添加智能合约功能，我们需要进行以下步骤：
 
 1. 定义智能合约类：创建一个 SmartContract 类，用于定义智能合约的基本结构和功能。
@@ -363,7 +379,9 @@ def call_contract(self, contract_address, sender, receiver, amount):
         self.create_transaction(tx)
 ```
 
-合约也有地址，合约的地址是合约代码的哈希值，这也说明了合约的本体就是代码本身。
+合约有地址属性，合约的地址是合约代码的哈希值，这也说明了合约的本体就是代码本身。通常要调用合约就是指定合约地址，然后调用合约的方法，外加一些参数。本质上和调用函数是一样的。
+
+完整代码：
 
 ```py
 import hashlib
@@ -492,11 +510,206 @@ print(f"Balance of Alice: {blockchain.get_balance('Alice')}")
 print(f"Balance of Bob: {blockchain.get_balance('Bob')}")
 ```
 
+
+
+## 验证交易
+
+交易不全是有效的，我们需要验证交易的有效性。比如余额不足、交易重复，签名等等。
+
+
+为了实现验证交易的功能，我们需要以下步骤：
+
+1. 定义交易验证规则：确保交易的发送者有足够的余额，交易的格式正确等。
+
+```py
+def validate_transaction(self, transaction):
+    if transaction.sender is None:  # Mining reward transaction
+        return True
+    sender_balance = self.get_balance(transaction.sender)
+    if sender_balance >= transaction.amount:
+        return True
+    return False
+```
+
+交易上也改下，校验签名等信息：
+
+```py
+class Transaction:
+    def __init__(self, sender, receiver, amount, signature=None, contract=None):
+        self.sender = sender
+        self.receiver = receiver
+        self.amount = amount
+        self.signature = signature
+        self.contract = contract
+
+    def to_dict(self):
+        return {
+            'sender': self.sender,
+            'receiver': self.receiver,
+            'amount': self.amount,
+            'contract': self.contract
+        }
+
+    def sign_transaction(self, private_key):
+        sk = SigningKey.from_string(bytes.fromhex(private_key), curve=SECP256k1)
+        message = str(self.to_dict()).encode('utf-8')
+        self.signature = sk.sign(message).hex()
+
+    def is_valid(self):
+        if self.sender is None:  # Mining reward transaction
+            return True
+        if not self.signature:
+            return False
+        vk = VerifyingKey.from_string(bytes.fromhex(self.sender), curve=SECP256k1)
+        message = str(self.to_dict()).encode('utf-8')
+        try:
+            return vk.verify(bytes.fromhex(self.signature), message)
+        except:
+            return False
+```
+2. 实现交易验证方法：在区块链类中添加一个方法来验证交易。
+3. 在添加交易时进行验证：在创建交易时调用验证方法。
+
+```py
+import hashlib
+import time
+import requests
+from flask import Flask, jsonify, request
+from ecdsa import SigningKey, VerifyingKey, SECP256k1
+
+class Transaction:
+    def __init__(self, sender, receiver, amount, signature=None, contract=None):
+        self.sender = sender
+        self.receiver = receiver
+        self.amount = amount
+        self.signature = signature
+        self.contract = contract
+
+    def to_dict(self):
+        return {
+            'sender': self.sender,
+            'receiver': self.receiver,
+            'amount': self.amount,
+            'contract': self.contract
+        }
+
+    def sign_transaction(self, private_key):
+        sk = SigningKey.from_string(bytes.fromhex(private_key), curve=SECP256k1)
+        message = str(self.to_dict()).encode('utf-8')
+        self.signature = sk.sign(message).hex()
+
+    def is_valid(self):
+        if self.sender is None:  # Mining reward transaction
+            return True
+        if not self.signature:
+            return False
+        vk = VerifyingKey.from_string(bytes.fromhex(self.sender), curve=SECP256k1)
+        message = str(self.to_dict()).encode('utf-8')
+        try:
+            return vk.verify(bytes.fromhex(self.signature), message)
+        except:
+            return False
+
+class Block:
+    def __init__(self, index, timestamp, transactions, previous_hash):
+        self.index = index
+        self.timestamp = timestamp
+        self.transactions = transactions
+        self.previous_hash = previous_hash
+        self.nonce = 0
+        self.hash = self.calculate_hash()
+
+    def calculate_hash(self):
+        sha = hashlib.sha256()
+        transactions_str = "".join([f"{tx.sender}{tx.receiver}{tx.amount}{tx.contract}" for tx in self.transactions])
+        sha.update(f"{self.index}{self.timestamp}{transactions_str}{self.previous_hash}{self.nonce}".encode('utf-8'))
+        return sha.hexdigest()
+
+    def proof_of_work(self, difficulty):
+        self.nonce = 0
+        computed_hash = self.calculate_hash()
+        while not computed_hash.startswith('0' * difficulty):
+            self.nonce += 1
+            computed_hash = self.calculate_hash()
+        return computed_hash
+
+class Blockchain:
+    def __init__(self):
+        self.chain = [self.create_genesis_block()]
+        self.pending_transactions = []
+        self.mining_reward = 100
+        self.difficulty = 4
+        self.contracts = {}
+        self.nodes = set()
+
+    def create_genesis_block(self):
+        return Block(0, time.time(), [], "0")
+
+    def get_latest_block(self):
+        return self.chain[-1]
+
+    def mine_pending_transactions(self, mining_reward_address):
+        reward_tx = Transaction(None, mining_reward_address, self.mining_reward)
+        self.pending_transactions.append(reward_tx)
+        new_block = Block(len(self.chain), time.time(), self.pending_transactions, self.get_latest_block().hash)
+        new_block.hash = new_block.proof_of_work(self.difficulty)
+        self.chain.append(new_block)
+        self.pending_transactions = []
+        self.broadcast_block(new_block)
+
+    def create_transaction(self, transaction):
+        if self.validate_transaction(transaction):
+            self.pending_transactions.append(transaction)
+            self.broadcast_transaction(transaction)
+        else:
+            raise ValueError("Invalid transaction")
+
+    def validate_transaction(self, transaction):
+        if transaction.sender is None:  # Mining reward transaction
+            return True
+        sender_balance = self.get_balance(transaction.sender)
+        if sender_balance >= transaction.amount and transaction.is_valid():
+            return True
+        return False
+
+    def deploy_contract(self, contract_code):
+        contract = SmartContract(contract_code)
+        contract_address = hashlib.sha256(contract_code.encode('utf-8')).hexdigest()
+        self.contracts[contract_address] = contract
+        return contract_address
+
+    def call_contract(self, contract_address, sender, receiver, amount):
+        contract = self.contracts.get(contract_address)
+        if contract:
+            contract.execute(sender, receiver, amount)
+            tx = Transaction(sender, receiver, amount, contract_address)
+            self.create_transaction(tx)
+
+    def get_balance(self, address):
+        balance = 0
+        for block in self.chain:
+            for tx in block.transactions:
+                if tx.sender == address:
+                    balance -= tx.amount
+                if tx.receiver == address:
+                    balance += tx.amount
+        return balance
+
+
+class Node:
+    def __init__(self, address):
+        self.address = address
+        self.blockchain = Blockchain()
+
+```
+
 ## 如果两个矿工同时挖到了区块怎么办？
 
 这涉及到一个共识算法，比如比特币使用的共识算法是最长链原则。
 
 在区块链中，如果两个矿工同时挖到了区块，那么就会出现分叉的情况。这个时候需要选择一个分支作为主链，另一个分支作为孤块。选择主链的原则是选择最长的链作为主链。
+
+至今我们的区块链都是单节点的，接下来我们要实现多节点的区块链来解决这个问题。
 
 首先我们需要实现多节点、节点广播和节点同步的功能。为此我需要：
 
@@ -574,163 +787,6 @@ if __name__ == '__main__':
     app.run(port=5000)
 ```
 
-```py
-import hashlib
-import time
-import requests
-from flask import Flask, jsonify, request
-
-class Transaction:
-    def __init__(self, sender, receiver, amount, contract=None):
-        self.sender = sender
-        self.receiver = receiver
-        self.amount = amount
-        self.contract = contract
-
-class SmartContract:
-    def __init__(self, code):
-        self.code = code
-        self.state = {}
-
-    def execute(self, sender, receiver, amount):
-        exec(self.code, {'sender': sender, 'receiver': receiver, 'amount': amount, 'state': self.state})
-
-class Block:
-    def __init__(self, index, timestamp, transactions, previous_hash):
-        self.index = index
-        self.timestamp = timestamp
-        self.transactions = transactions
-        self.previous_hash = previous_hash
-        self.nonce = 0
-        self.hash = self.calculate_hash()
-
-    def calculate_hash(self):
-        sha = hashlib.sha256()
-        transactions_str = "".join([f"{tx.sender}{tx.receiver}{tx.amount}{tx.contract}" for tx in self.transactions])
-        sha.update(f"{self.index}{self.timestamp}{transactions_str}{self.previous_hash}{self.nonce}".encode('utf-8'))
-        return sha.hexdigest()
-
-    def proof_of_work(self, difficulty):
-        self.nonce = 0
-        computed_hash = self.calculate_hash()
-        while not computed_hash.startswith('0' * difficulty):
-            self.nonce += 1
-            computed_hash = self.calculate_hash()
-        return computed_hash
-
-class Blockchain:
-    def __init__(self):
-        self.chain = [self.create_genesis_block()]
-        self.pending_transactions = []
-        self.mining_reward = 100
-        self.difficulty = 4
-        self.contracts = {}
-        self.nodes = set()
-
-    def create_genesis_block(self):
-        return Block(0, time.time(), [], "0")
-
-    def get_latest_block(self):
-        return self.chain[-1]
-
-    def mine_pending_transactions(self, mining_reward_address):
-        reward_tx = Transaction(None, mining_reward_address, self.mining_reward)
-        self.pending_transactions.append(reward_tx)
-        new_block = Block(len(self.chain), time.time(), self.pending_transactions, self.get_latest_block().hash)
-        new_block.hash = new_block.proof_of_work(self.difficulty)
-        self.chain.append(new_block)
-        self.pending_transactions = []
-        self.broadcast_block(new_block)
-
-    def create_transaction(self, transaction):
-        self.pending_transactions.append(transaction)
-
-    def deploy_contract(self, contract_code):
-        contract = SmartContract(contract_code)
-        contract_address = hashlib.sha256(contract_code.encode('utf-8')).hexdigest()
-        self.contracts[contract_address] = contract
-        return contract_address
-
-    def call_contract(self, contract_address, sender, receiver, amount):
-        contract = self.contracts.get(contract_address)
-        if contract:
-            contract.execute(sender, receiver, amount)
-            tx = Transaction(sender, receiver, amount, contract_address)
-            self.create_transaction(tx)
-
-    def get_balance(self, address):
-        balance = 0
-        for block in self.chain:
-            for tx in block.transactions:
-                if tx.sender == address:
-                    balance -= tx.amount
-                if tx.receiver == address:
-                    balance += tx.amount
-        return balance
-
-    def add_node(self, address):
-        self.nodes.add(address)
-
-    def broadcast_block(self, block):
-        for node in self.nodes:
-            requests.post(f"{node}/add_block", json=block.__dict__)
-
-    def sync_chain(self):
-        longest_chain = None
-        max_length = len(self.chain)
-        for node in self.nodes:
-            response = requests.get(f"{node}/chain")
-            length = response.json()['length']
-            chain = response.json()['chain']
-            if length > max_length:
-                max_length = length
-                longest_chain = chain
-        if longest_chain:
-            self.chain = [Block(**block) for block in longest_chain]
-
-class Node:
-    def __init__(self, address):
-        self.address = address
-        self.blockchain = Blockchain()
-
-    def connect_to_node(self, node_address):
-        self.blockchain.add_node(node_address)
-
-    def broadcast_transaction(self, transaction):
-        for node in self.blockchain.nodes:
-            requests.post(f"{node}/add_transaction", json=transaction.__dict__)
-
-app = Flask(__name__)
-node = Node("http://localhost:5000")
-
-@app.route('/chain', methods=['GET'])
-def get_chain():
-    chain_data = [block.__dict__ for block in node.blockchain.chain]
-    return jsonify(length=len(chain_data), chain=chain_data)
-
-@app.route('/add_block', methods=['POST'])
-def add_block():
-    block_data = request.get_json()
-    block = Block(**block_data)
-    node.blockchain.chain.append(block)
-    return "Block added", 201
-
-@app.route('/add_transaction', methods=['POST'])
-def add_transaction():
-    tx_data = request.get_json()
-    transaction = Transaction(**tx_data)
-    node.blockchain.create_transaction(transaction)
-    return "Transaction added", 201
-
-@app.route('/mine', methods=['GET'])
-def mine():
-    node.blockchain.mine_pending_transactions(node.address)
-    return "Mining complete", 200
-
-if __name__ == '__main__':
-    app.run(port=5000)
-```
-
 接下来，我们实现最长链原则，当两个矿工同时挖到了区块时，我们选择最长的链作为主链。
 
 为了实现这个功能，我们先介绍下分叉如何实现。
@@ -749,232 +805,6 @@ Flask 路由：
 
 - /fork 路由用于创建分叉链。
 - /switch_fork 路由用于切换到指定的分叉链。
-
-```py
-import hashlib
-import time
-import requests
-from flask import Flask, jsonify, request
-from ecdsa import SigningKey, VerifyingKey, SECP256k1
-
-class Transaction:
-    def __init__(self, sender, receiver, amount, signature=None, contract=None):
-        self.sender = sender
-        self.receiver = receiver
-        self.amount = amount
-        self.signature = signature
-        self.contract = contract
-
-    def to_dict(self):
-        return {
-            'sender': self.sender,
-            'receiver': self.receiver,
-            'amount': self.amount,
-            'contract': self.contract
-        }
-
-    def sign_transaction(self, private_key):
-        sk = SigningKey.from_string(bytes.fromhex(private_key), curve=SECP256k1)
-        message = str(self.to_dict()).encode('utf-8')
-        self.signature = sk.sign(message).hex()
-
-    def is_valid(self):
-        if self.sender is None:  # Mining reward transaction
-            return True
-        if not self.signature:
-            return False
-        vk = VerifyingKey.from_string(bytes.fromhex(self.sender), curve=SECP256k1)
-        message = str(self.to_dict()).encode('utf-8')
-        try:
-            return vk.verify(bytes.fromhex(self.signature), message)
-        except:
-            return False
-
-class Block:
-    def __init__(self, index, timestamp, transactions, previous_hash):
-        self.index = index
-        self.timestamp = timestamp
-        self.transactions = transactions
-        self.previous_hash = previous_hash
-        self.nonce = 0
-        self.hash = self.calculate_hash()
-
-    def calculate_hash(self):
-        sha = hashlib.sha256()
-        transactions_str = "".join([f"{tx.sender}{tx.receiver}{tx.amount}{tx.contract}" for tx in self.transactions])
-        sha.update(f"{self.index}{self.timestamp}{transactions_str}{self.previous_hash}{self.nonce}".encode('utf-8'))
-        return sha.hexdigest()
-
-    def proof_of_work(self, difficulty):
-        self.nonce = 0
-        computed_hash = self.calculate_hash()
-        while not computed_hash.startswith('0' * difficulty):
-            self.nonce += 1
-            computed_hash = self.calculate_hash()
-        return computed_hash
-
-class Blockchain:
-    def __init__(self):
-        self.chain = [self.create_genesis_block()]
-        self.pending_transactions = []
-        self.mining_reward = 100
-        self.difficulty = 4
-        self.contracts = {}
-        self.nodes = set()
-        self.forks = []
-
-    def create_genesis_block(self):
-        return Block(0, time.time(), [], "0")
-
-    def get_latest_block(self):
-        return self.chain[-1]
-
-    def mine_pending_transactions(self, mining_reward_address):
-        reward_tx = Transaction(None, mining_reward_address, self.mining_reward)
-        self.pending_transactions.append(reward_tx)
-        new_block = Block(len(self.chain), time.time(), self.pending_transactions, self.get_latest_block().hash)
-        new_block.hash = new_block.proof_of_work(self.difficulty)
-        self.chain.append(new_block)
-        self.pending_transactions = []
-        self.broadcast_block(new_block)
-
-    def create_transaction(self, transaction):
-        if self.validate_transaction(transaction):
-            self.pending_transactions.append(transaction)
-            self.broadcast_transaction(transaction)
-        else:
-            raise ValueError("Invalid transaction")
-
-    def validate_transaction(self, transaction):
-        if transaction.sender is None:  # Mining reward transaction
-            return True
-        sender_balance = self.get_balance(transaction.sender)
-        if sender_balance >= transaction.amount and transaction.is_valid():
-            return True
-        return False
-
-    def deploy_contract(self, contract_code):
-        contract = SmartContract(contract_code)
-        contract_address = hashlib.sha256(contract_code.encode('utf-8')).hexdigest()
-        self.contracts[contract_address] = contract
-        return contract_address
-
-    def call_contract(self, contract_address, sender, receiver, amount):
-        contract = self.contracts.get(contract_address)
-        if contract:
-            contract.execute(sender, receiver, amount)
-            tx = Transaction(sender, receiver, amount, contract_address)
-            self.create_transaction(tx)
-
-    def get_balance(self, address):
-        balance = 0
-        for block in self.chain:
-            for tx in block.transactions:
-                if tx.sender == address:
-                    balance -= tx.amount
-                if tx.receiver == address:
-                    balance += tx.amount
-        return balance
-
-    def add_node(self, address):
-        self.nodes.add(address)
-
-    def broadcast_block(self, block):
-        for node in self.nodes:
-            requests.post(f"{node}/add_block", json=block.__dict__)
-
-    def broadcast_transaction(self, transaction):
-        for node in self.nodes:
-            requests.post(f"{node}/add_transaction", json=transaction.__dict__)
-
-    def sync_chain(self):
-        longest_chain = None
-        max_length = len(self.chain)
-        for node in self.nodes:
-            response = requests.get(f"{node}/chain")
-            length = response.json()['length']
-            chain = response.json()['chain']
-            if length > max_length:
-                max_length = length
-                longest_chain = chain
-        if longest_chain:
-            self.chain = [Block(**block) for block in longest_chain]
-
-    def fork_chain(self, fork_point):
-        if fork_point < 0 or fork_point >= len(self.chain):
-            raise ValueError("Invalid fork point")
-        forked_chain = self.chain[:fork_point + 1]
-        self.forks.append(forked_chain)
-        return forked_chain
-
-    def switch_to_fork(self, fork_index):
-        if fork_index < 0 or fork_index >= len(self.forks):
-            raise ValueError("Invalid fork index")
-        self.chain = self.forks[fork_index]
-
-class Node:
-    def __init__(self, address):
-        self.address = address
-        self.blockchain = Blockchain()
-
-    def connect_to_node(self, node_address):
-        self.blockchain.add_node(node_address)
-
-    def broadcast_transaction(self, transaction):
-        for node in self.blockchain.nodes:
-            requests.post(f"{node}/add_transaction", json=transaction.__dict__)
-
-app = Flask(__name__)
-node = Node("http://localhost:5000")
-
-@app.route('/chain', methods=['GET'])
-def get_chain():
-    chain_data = [block.__dict__ for block in node.blockchain.chain]
-    return jsonify(length=len(chain_data), chain=chain_data)
-
-@app.route('/add_block', methods=['POST'])
-def add_block():
-    block_data = request.get_json()
-    block = Block(**block_data)
-    node.blockchain.chain.append(block)
-    return "Block added", 201
-
-@app.route('/add_transaction', methods=['POST'])
-def add_transaction():
-    tx_data = request.get_json()
-    transaction = Transaction(**tx_data)
-    try:
-        node.blockchain.create_transaction(transaction)
-        return "Transaction added", 201
-    except ValueError as e:
-        return str(e), 400
-
-@app.route('/mine', methods=['GET'])
-def mine():
-    node.blockchain.mine_pending_transactions(node.address)
-    return "Mining complete", 200
-
-@app.route('/fork', methods=['POST'])
-def fork():
-    fork_point = request.json.get('fork_point')
-    try:
-        forked_chain = node.blockchain.fork_chain(fork_point)
-        return jsonify([block.__dict__ for block in forked_chain]), 201
-    except ValueError as e:
-        return str(e), 400
-
-@app.route('/switch_fork', methods=['POST'])
-def switch_fork():
-    fork_index = request.json.get('fork_index')
-    try:
-        node.blockchain.switch_to_fork(fork_index)
-        return "Switched to fork", 200
-    except ValueError as e:
-        return str(e), 400
-
-if __name__ == '__main__':
-    app.run(port=5000)
-```
 
 最后我们来加入最长链原则。
 
@@ -1232,227 +1062,6 @@ if __name__ == '__main__':
     app.run(port=5000)
 ```
 
-
-## 验证交易
-
-交易不全是有效的，我们需要验证交易的有效性。比如余额不足、交易重复，签名等等。
-
-
-为了实现验证交易的功能，我们需要以下步骤：
-
-1. 定义交易验证规则：确保交易的发送者有足够的余额，交易的格式正确等。
-
-```py
-def validate_transaction(self, transaction):
-    if transaction.sender is None:  # Mining reward transaction
-        return True
-    sender_balance = self.get_balance(transaction.sender)
-    if sender_balance >= transaction.amount:
-        return True
-    return False
-```
-
-交易上也改下，校验签名等信息：
-
-```py
-class Transaction:
-    def __init__(self, sender, receiver, amount, signature=None, contract=None):
-        self.sender = sender
-        self.receiver = receiver
-        self.amount = amount
-        self.signature = signature
-        self.contract = contract
-
-    def to_dict(self):
-        return {
-            'sender': self.sender,
-            'receiver': self.receiver,
-            'amount': self.amount,
-            'contract': self.contract
-        }
-
-    def sign_transaction(self, private_key):
-        sk = SigningKey.from_string(bytes.fromhex(private_key), curve=SECP256k1)
-        message = str(self.to_dict()).encode('utf-8')
-        self.signature = sk.sign(message).hex()
-
-    def is_valid(self):
-        if self.sender is None:  # Mining reward transaction
-            return True
-        if not self.signature:
-            return False
-        vk = VerifyingKey.from_string(bytes.fromhex(self.sender), curve=SECP256k1)
-        message = str(self.to_dict()).encode('utf-8')
-        try:
-            return vk.verify(bytes.fromhex(self.signature), message)
-        except:
-            return False
-```
-2. 实现交易验证方法：在区块链类中添加一个方法来验证交易。
-3. 在添加交易时进行验证：在创建交易时调用验证方法。
-
-```py
-import hashlib
-import time
-import requests
-from flask import Flask, jsonify, request
-from ecdsa import SigningKey, VerifyingKey, SECP256k1
-
-class Transaction:
-    def __init__(self, sender, receiver, amount, signature=None, contract=None):
-        self.sender = sender
-        self.receiver = receiver
-        self.amount = amount
-        self.signature = signature
-        self.contract = contract
-
-    def to_dict(self):
-        return {
-            'sender': self.sender,
-            'receiver': self.receiver,
-            'amount': self.amount,
-            'contract': self.contract
-        }
-
-    def sign_transaction(self, private_key):
-        sk = SigningKey.from_string(bytes.fromhex(private_key), curve=SECP256k1)
-        message = str(self.to_dict()).encode('utf-8')
-        self.signature = sk.sign(message).hex()
-
-    def is_valid(self):
-        if self.sender is None:  # Mining reward transaction
-            return True
-        if not self.signature:
-            return False
-        vk = VerifyingKey.from_string(bytes.fromhex(self.sender), curve=SECP256k1)
-        message = str(self.to_dict()).encode('utf-8')
-        try:
-            return vk.verify(bytes.fromhex(self.signature), message)
-        except:
-            return False
-
-class Block:
-    def __init__(self, index, timestamp, transactions, previous_hash):
-        self.index = index
-        self.timestamp = timestamp
-        self.transactions = transactions
-        self.previous_hash = previous_hash
-        self.nonce = 0
-        self.hash = self.calculate_hash()
-
-    def calculate_hash(self):
-        sha = hashlib.sha256()
-        transactions_str = "".join([f"{tx.sender}{tx.receiver}{tx.amount}{tx.contract}" for tx in self.transactions])
-        sha.update(f"{self.index}{self.timestamp}{transactions_str}{self.previous_hash}{self.nonce}".encode('utf-8'))
-        return sha.hexdigest()
-
-    def proof_of_work(self, difficulty):
-        self.nonce = 0
-        computed_hash = self.calculate_hash()
-        while not computed_hash.startswith('0' * difficulty):
-            self.nonce += 1
-            computed_hash = self.calculate_hash()
-        return computed_hash
-
-class Blockchain:
-    def __init__(self):
-        self.chain = [self.create_genesis_block()]
-        self.pending_transactions = []
-        self.mining_reward = 100
-        self.difficulty = 4
-        self.contracts = {}
-        self.nodes = set()
-
-    def create_genesis_block(self):
-        return Block(0, time.time(), [], "0")
-
-    def get_latest_block(self):
-        return self.chain[-1]
-
-    def mine_pending_transactions(self, mining_reward_address):
-        reward_tx = Transaction(None, mining_reward_address, self.mining_reward)
-        self.pending_transactions.append(reward_tx)
-        new_block = Block(len(self.chain), time.time(), self.pending_transactions, self.get_latest_block().hash)
-        new_block.hash = new_block.proof_of_work(self.difficulty)
-        self.chain.append(new_block)
-        self.pending_transactions = []
-        self.broadcast_block(new_block)
-
-    def create_transaction(self, transaction):
-        if self.validate_transaction(transaction):
-            self.pending_transactions.append(transaction)
-            self.broadcast_transaction(transaction)
-        else:
-            raise ValueError("Invalid transaction")
-
-    def validate_transaction(self, transaction):
-        if transaction.sender is None:  # Mining reward transaction
-            return True
-        sender_balance = self.get_balance(transaction.sender)
-        if sender_balance >= transaction.amount and transaction.is_valid():
-            return True
-        return False
-
-    def deploy_contract(self, contract_code):
-        contract = SmartContract(contract_code)
-        contract_address = hashlib.sha256(contract_code.encode('utf-8')).hexdigest()
-        self.contracts[contract_address] = contract
-        return contract_address
-
-    def call_contract(self, contract_address, sender, receiver, amount):
-        contract = self.contracts.get(contract_address)
-        if contract:
-            contract.execute(sender, receiver, amount)
-            tx = Transaction(sender, receiver, amount, contract_address)
-            self.create_transaction(tx)
-
-    def get_balance(self, address):
-        balance = 0
-        for block in self.chain:
-            for tx in block.transactions:
-                if tx.sender == address:
-                    balance -= tx.amount
-                if tx.receiver == address:
-                    balance += tx.amount
-        return balance
-
-    def add_node(self, address):
-        self.nodes.add(address)
-
-    def broadcast_block(self, block):
-        for node in self.nodes:
-            requests.post(f"{node}/add_block", json=block.__dict__)
-
-    def broadcast_transaction(self, transaction):
-        for node in self.nodes:
-            requests.post(f"{node}/add_transaction", json=transaction.__dict__)
-
-    def sync_chain(self):
-        longest_chain = None
-        max_length = len(self.chain)
-        for node in self.nodes:
-            response = requests.get(f"{node}/chain")
-            length = response.json()['length']
-            chain = response.json()['chain']
-            if length > max_length:
-                max_length = length
-                longest_chain = chain
-        if longest_chain:
-            self.chain = [Block(**block) for block in longest_chain]
-
-class Node:
-    def __init__(self, address):
-        self.address = address
-        self.blockchain = Blockchain()
-
-    def connect_to_node(self, node_address):
-        self.blockchain.add_node(node_address)
-
-    def broadcast_transaction(self, transaction):
-        for node in self.blockchain.nodes:
-            requests.post(f"{node}/add_transaction", json=transaction.__dict__)
-
-```
 
 ## 总结
 
