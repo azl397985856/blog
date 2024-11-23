@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2024-11-01T16:41:37.664Z</updated>
+  <updated>2024-11-22T16:38:41.032Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从零开始构建区块链</title>
+    <link href="https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/"/>
+    <id>https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/</id>
+    <published>2024-11-21T16:00:00.000Z</published>
+    <updated>2024-11-22T16:38:41.032Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;web3 是一个非常流行的概念，它的基础是区块链技术。区块链技术是一种分布式账本技术，它的特点是去中心化、不可篡改、安全可靠。区块链技术的应用场景非常广泛，比如数字货币、智能合约、供应链金融等等。&lt;/p&gt;
+&lt;p&gt;网上关于区块链的资料非常多，但是从零开始构建的资料却很少。熟悉我的朋友应该知道，我经常从零实现一些东西帮助我理解，比如从零实现 git，从零实现 webpack 打包器，从零实现一个框架等等。&lt;/p&gt;
+&lt;p&gt;本文就是一篇从零开始构建区块链的文章，希望能帮助你快速入门区块链技术。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+  </entry>
   
   <entry>
     <title>数字型递推</title>
@@ -535,31 +559,6 @@
       <category term="刷题技巧" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98%E6%8A%80%E5%B7%A7/"/>
     
       <category term="工具" scheme="https://lucifer.ren/blog/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>入职 Google 一年多的感触（你们的大狗头来啦~）</title>
-    <link href="https://lucifer.ren/blog/2023/01/01/goutou-2/"/>
-    <id>https://lucifer.ren/blog/2023/01/01/goutou-2/</id>
-    <published>2022-12-31T16:00:00.000Z</published>
-    <updated>2023-01-19T07:15:53.935Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这篇文章是 91 天学算法最具人气奖获奖选手狗头的投稿，原文可以在&lt;a href=&quot;https://github.com/lilyzhaoyilu/LeetCode-Notes/blob/master/articles/%E6%B2%9F%E9%80%9A%E5%B1%85%E7%84%B6%E4%B9%9F%E6%98%AF%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%A6%81%E6%B1%82%EF%80%BF.md&quot; title=&quot;原文地址&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;这里&lt;/a&gt;访问到。&lt;/p&gt;
-&lt;p&gt;以下为原文内容。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="谷歌" scheme="https://lucifer.ren/blog/categories/%E8%B0%B7%E6%AD%8C/"/>
-    
-      <category term="软实力" scheme="https://lucifer.ren/blog/categories/%E8%B0%B7%E6%AD%8C/%E8%BD%AF%E5%AE%9E%E5%8A%9B/"/>
-    
-    
-      <category term="谷歌" scheme="https://lucifer.ren/blog/tags/%E8%B0%B7%E6%AD%8C/"/>
-    
-      <category term="沟通" scheme="https://lucifer.ren/blog/tags/%E6%B2%9F%E9%80%9A/"/>
     
   </entry>
   
