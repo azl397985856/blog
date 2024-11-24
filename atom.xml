@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2024-11-23T05:32:20.785Z</updated>
+  <updated>2024-11-23T05:49:50.696Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>回炉重铸， 91 天见证不一样的自己（第 15 期）</title>
+    <link href="https://lucifer.ren/blog/2024/11/23/91algo-15/"/>
+    <id>https://lucifer.ren/blog/2024/11/23/91algo-15/</id>
+    <published>2024-11-22T16:00:00.000Z</published>
+    <updated>2024-11-23T05:49:50.696Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;第 15 期，感谢大家一路的陪伴，我们会不辜负大家的信任，努力做的更好！&lt;/p&gt;
+&lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/befr2w.jpeg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>从零开始构建区块链</title>
@@ -91,7 +124,7 @@
     <link href="https://lucifer.ren/blog/2024/08/04/91algo-14/"/>
     <id>https://lucifer.ren/blog/2024/08/04/91algo-14/</id>
     <published>2024-08-03T16:00:00.000Z</published>
-    <updated>2024-08-04T15:35:15.707Z</updated>
+    <updated>2024-11-23T05:33:47.060Z</updated>
     
     <summary type="html">
     
@@ -532,33 +565,6 @@
       <category term="年终总结" scheme="https://lucifer.ren/blog/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
     
       <category term="2022" scheme="https://lucifer.ren/blog/tags/2022/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>力扣刷题的正确姿势是什么？</title>
-    <link href="https://lucifer.ren/blog/2023/01/02/how-leetcode/"/>
-    <id>https://lucifer.ren/blog/2023/01/02/how-leetcode/</id>
-    <published>2023-01-01T16:00:00.000Z</published>
-    <updated>2023-01-19T07:16:07.810Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文原本是打算加到我的新书《算法通关之路》的附录部分。不过由于力扣官方不过审，因此只好作罢。将这部分内容发到这里给大家参考。&lt;/p&gt;
-&lt;p&gt;《算法通关之路》介绍以及购买可访问：&lt;a href=&quot;https://leetcode-solution.cn/book-intro&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode-solution.cn/book-intro&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/categories/LeetCode/"/>
-    
-      <category term="刷题技巧" scheme="https://lucifer.ren/blog/categories/%E5%88%B7%E9%A2%98%E6%8A%80%E5%B7%A7/"/>
-    
-    
-      <category term="LeetCode" scheme="https://lucifer.ren/blog/tags/LeetCode/"/>
-    
-      <category term="刷题技巧" scheme="https://lucifer.ren/blog/tags/%E5%88%B7%E9%A2%98%E6%8A%80%E5%B7%A7/"/>
-    
-      <category term="工具" scheme="https://lucifer.ren/blog/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
