@@ -16,9 +16,13 @@ web3 是一个非常流行的概念，它的基础是区块链技术。区块链
 
 ## 前言
 
-由于本文不是科普文章，而是直接带你实现，从而加深理解，因此建议你对区块链技术有一定的了解。如果你对区块链技术还不了解，可以先看一些区块链的基础知识，比如区块链的概念、区块链的特点、区块链的应用等等。比如 [learn_blockchain](https://github.com/chaseSpace/learn_blockchain) 就是一个还不错的入门资料集合页。
+由于本文不是科普文章，而是直接带你实现，从而加深理解，因此建议你对区块链技术有一定的了解。如果你对区块链技术还不了解，可以先看一些区块链的基础知识，比如区块链的概念、区块链的特点、区块链的应用等等。比如 [learn_blockchain](https://github.com/chaseSpace/learn_blockchain "learn_blockchain") 就是一个还不错的入门资料集合页。
 
 本文使用 Python 语言来实现区块链，Python 是一种非常流行的编程语言，它的语法简单，非常适合初学者。如果你对 Python 不熟悉也没关系，相信我他真的很容易懂。如果你实在不懂，也可以让 chatgpt 给你解释甚至直接翻译为其他语言。
+
+## 学习建议
+
+为了方便大家直接运行，我提供了相对完整的代码示例。强烈大家边看看在本地跟着一起写，一起运行查看效果，只有动手才可能真正理解其核心。并且尽可能地根据我的思路和代码默写，而不是抄写一遍。
 
 ## 基础
 
@@ -72,7 +76,6 @@ for block in blockchain.chain:
     print(f"Timestamp: {block.timestamp}")
     print(f"Data: {block.data}")
     print(f"Previous Hash: {block.previous_hash}")
-    print(f"Ha
 ```
 
 ## 交易与挖矿
@@ -116,11 +119,15 @@ class Block:
 
 3. 修改区块链类：添加挖矿和创建交易的方法。
 
+由于挖矿就是没有发送者的交易，因此创建一个没有 sender 的交易，并将其加入到区块的交易列表中即可。
+
+简单起见，我们一个区块只包含一个交易。因此我们在挖矿后，直接创建一个新的区块，并将交易添加到区块中。
+
 ```py
 def mine_pending_transactions(self, mining_reward_address):
     # 可以看到 sender 是 None，receiver 是矿工地址，amount 是挖矿奖励
-    reward_tx = Transaction(None, mining_reward_address, self.mining_reward)
-    self.pending_transactions.append(reward_tx)
+    reward_tx = Transaction(None, mining_reward_address, self.mining_reward) # 创建一个没有 sender 的交易
+    self.pending_transactions.append(reward_tx) # 将其加入到区块的交易列表中
     new_block = Block(len(self.chain), time.time(), self.pending_transactions, self.get_latest_block().hash)
     new_block.hash = new_block.calculate_hash()
     self.chain.append(new_block)
@@ -217,9 +224,9 @@ print(f"Balance of Bob: {blockchain.get_balance('Bob')}")
 
 决定谁可以挖矿成功的算法有很多种，比如工作量证明（Proof of Work）、权益证明（Proof of Stake）等等。其中工作量证明是最常见的一种算法，比特币就是使用工作量证明算法来决定谁可以挖矿成功。
 
-这里我们实现一下工作量证明算法（POW）。工作量证明算法的核心思想是找到一个符合条件的哈希值，这个哈希值的前几位是 0。这个条件是可以调整的，比如前两位是 0，前三位是 0 等等。位数越多，实现起来越困难。我们可以将这个位数称为难度（Difficulty）。如果被哈希的字符串是固定的，那么哈希值一定也是固定的，因此被哈希的字符串不能是固定的，通常的做法是包含一个随机数 nonce，这个随机数就是我们需要不断尝试的值。
+这里我们实现一下工作量证明算法（POW）。工作量证明算法的核心思想是找到一个符合条件的哈希值，这个哈希值的前几位是 0。这个条件是可以调整的，比如前两位是 0，前三位是 0 等等。位数越多，实现起来越困难。我们可以将这个位数称为难度（Difficulty）。如果被哈希的字符串是固定的，那么哈希值一定也是固定的，因此被哈希的字符串不能是固定的（否则可能无法找到符合条件的哈希值），通常的做法是包含一个随机数 nonce，这个随机数就是我们需要不断尝试的值。
 
-也就是说没有这个约束，我们很快就能计算出哈希，但是有了这个约束，我们就需要不断尝试，直到找到符合条件的哈希值。
+也就是说没有这个约束，我们很快就能计算出哈希，这个哈希有可能也不满足 difficult 条件，但是有了这个约束，我们就需要不断尝试，直到找到符合条件的哈希值。
 
 为了实现这个目的，我们需要：
 
