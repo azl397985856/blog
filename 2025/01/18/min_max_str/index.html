@@ -382,15 +382,15 @@
         <p>今天来给大家介绍一种冷门但有用的算法知识——字符串的最小(大)表示法。尽管它是一种冷门算法，但是它确是一种母题。也就是说很多题目根据它换个皮就变成了一道新的题目。因此掌握它就可以掌握一整类题目。</p>
 <a id="more"></a>
 <h2 id="什么是字符串的最小-大-表示法"><a href="#什么是字符串的最小-大-表示法" class="headerlink" title="什么是字符串的最小(大)表示法"></a>什么是字符串的最小(大)表示法</h2><p>首先我们来认识一下什么是最小表示法和最大表示法。由于字符串的最小表示法和最大表示法是类似的，因此本文仅以最小表示法为例进行介绍。</p>
-<p>对于一个字符串 s ，求 s 的循环的同构字符串 s’ 中字典序最小的一个。</p>
+<p>用一句话来进行描述：“字符串的最小表示法就是对一个字符串 s ，求 s 的循环的同构字符串 s’ 中字典序最小的一个。”</p>
 <p>比如：s = bacd，则循环的同构字符串 s’ 可以是 acdb,cdba,dbac，其中最小表示的 s’ 是acdb。即该字符串的循环同构字符串中字典序最小的一个是 acdb，也就是 s 的最小表示法就是 acdb。</p>
 <h2 id="算法概述"><a href="#算法概述" class="headerlink" title="算法概述"></a>算法概述</h2><p>我们使用两个指针： i 和 j，其中 i 指向截止到目前最小表示的位置（<strong>备胎</strong>），j 指向下一个<strong>待比较指针</strong>。 对于 i 和 j，我们逐个比较其字符的字典序大小，并根据字典序大小来移动指针。下面是具体步骤：</p>
 <ol>
 <li>初始化 i = 0,j = 1</li>
 <li>若s[i] &gt; s[j], 则当前 i 指向的位置一定不是最小表示的起点位置，修改 i 的值，i = i + 1，j = j’，其中 j’ 是 上一次 i 和 j 指向相同字符的位置（步骤四的情况）。</li>
 <li>若s[i] &lt; s[j], 则当前 j 指向的位置一定不是最小表示的起点位置，修改 j 的值，j = j + 1，i = i’，其中 i’ 是 上一次 i 和 j 指向相同字符的位置（步骤四的情况）。</li>
-<li>若s[i] = s[j], 无法确定以 i 开头的和以 j 开头的哪个更小。因此我们继续比较，同时更新指针 i = i + 1, j = j + 1</li>
-<li>不断指向步骤 2 到 4，直到 i 或者 j 指向字符串末尾。最后返回 i 所指向的位置，即为最小表示法的起始位置。</li>
+<li>若s[i] = s[j], 无法确定以 i 开头的和以 j 开头的哪个更小。因此我们继续比较，更新指针 i = i + 1, j = j + 1并继续判断，直到 s[i] != s[j]，这时转到步骤2 或者步骤 3（当然也可以退出算法）。</li>
+<li>不断执行步骤 2 到 4，直到 i 或者 j 指向字符串末尾。最后返回 i 所指向的位置，即为最小表示法的起始位置。</li>
 </ol>
 <p>由于 i 和 j 在步骤2 和步骤 3 可能会回退其中 i 或者 j。 因此代码实现时，我们可以用第三个变量 k 来记录当前比较后已经相等的字符数量。这样不更新就是回退，更新 i = i + k + 1 就是更新 i 的位置，更新 j = j + k + 1 就是更新 j 的位置。具体见下方代码。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">k, i, j = <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> k &lt; n <span class="keyword">and</span> i &lt; n <span class="keyword">and</span> j &lt; n:</span><br><span class="line">    <span class="keyword">if</span> s[(i + k) % n] == s[j + k]) % n]:</span><br><span class="line">        k += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> s[(i + k) % n] &gt; s[(j + k) % n]:</span><br><span class="line">            i = i + k + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            j = j + k + <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> i &gt;= j:</span><br><span class="line">            j = i + <span class="number">1</span></span><br><span class="line">        k = <span class="number">0</span></span><br><span class="line">print(i)</span><br></pre></td></tr></table></figure>
@@ -427,7 +427,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2025-01-19T15:04:13+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2025-01-19T20:21:15+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2025年1月19日</p>
