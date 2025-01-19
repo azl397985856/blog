@@ -2,13 +2,13 @@
 info:
   name: Material X
   docs: https://xaoxuu.com/wiki/material-x/
-  # cdn: # 把对应的那一行注释掉就使用本地的文件
-  #   css:
-  #     style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9.9/css/style.css
-  #   js:
-  #     app: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/app.js
-  #     search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/search.js
-  #     volantis: https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0.5/js/volantis.min.js
+  cdn: # 把对应的那一行注释掉就使用本地的文件
+    css:
+      style: https://lucifer.ren/blog/style.css
+    js:
+      app: https://lucifer.ren/blog/js/app.js
+      search: https://lucifer.ren/blog/js/search.js
+      volantis: https://lucifer.ren/blog/js/volantis.js
 
 ############################### 主题风格 ###############################
 # style: material    # material: 导航栏和标题栏背景是主题色
