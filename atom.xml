@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2025-01-20T13:33:09.900Z</updated>
+  <updated>2025-02-18T13:13:59.769Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Web3 的入口 - 区块链钱包</title>
+    <link href="https://lucifer.ren/blog/2025/02/16/web3-wallet/"/>
+    <id>https://lucifer.ren/blog/2025/02/16/web3-wallet/</id>
+    <published>2025-02-15T16:00:00.000Z</published>
+    <updated>2025-02-18T13:13:59.769Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;web3 是一个非常流行的概念，它的基础是区块链技术。区块链技术是一种分布式账本技术，它的特点是去中心化、不可篡改、安全可靠。区块链技术的应用场景非常广泛，比如数字货币、智能合约、供应链金融等等。&lt;/p&gt;
+&lt;p&gt;网上关于区块链的资料非常多，但是从零开始构建的资料却很少。熟悉我的朋友应该知道，我经常从零实现一些东西帮助我理解，比如从零实现 git，从零实现 webpack 打包器，从零实现一个框架等等。&lt;/p&gt;
+&lt;p&gt;本文就是继上一篇 &lt;a href=&quot;https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/&quot; title=&quot;《从零开始构建区块链》&quot;&gt;《从零开始构建区块链》&lt;/a&gt; 的文章，讲述区块链钱包是什么，有什么作用，以及其实现原理，希望能帮助你快速入门区块链技术。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="钱包" scheme="https://lucifer.ren/blog/tags/%E9%92%B1%E5%8C%85/"/>
+    
+  </entry>
   
   <entry>
     <title>冷门但有用的算法知识 -  字符串的最小(大)表示法</title>
@@ -520,39 +546,6 @@
       <category term="webpack" scheme="https://lucifer.ren/blog/tags/webpack/"/>
     
       <category term="swc" scheme="https://lucifer.ren/blog/tags/swc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>回炉重铸， 91 天见证不一样的自己（第X期）</title>
-    <link href="https://lucifer.ren/blog/2023/02/01/91algo-10/"/>
-    <id>https://lucifer.ren/blog/2023/02/01/91algo-10/</id>
-    <published>2023-01-31T16:00:00.000Z</published>
-    <updated>2023-06-03T11:19:57.208Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;X 是罗马数字中的 X， 也就是数字 10，这里是第十期，一个对我很有意义的节点。&lt;/p&gt;
-&lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/befr2w.jpeg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
     
   </entry>
   
