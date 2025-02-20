@@ -416,10 +416,10 @@
 <p>大家可以使用这个<a href="https://bip39.best/" title="bip39 网站" target="_blank" rel="noopener">bip39 网站</a>来基于 BIP39 规范生成助记词或私钥进行相互转化。</p>
 <p>本质上，助记词充当您所有私钥的主密钥，种子助记词可以控制许多个账户，而每个私钥只能控制一个账户。作为普通用户，保存好助记词就好了。</p>
 <h2 id="Dapp"><a href="#Dapp" class="headerlink" title="Dapp"></a>Dapp</h2><p>我们保存好了助记词，准备开始与区块链进行交互了。</p>
-<p>作为普通用户，不可能直接编写运行代码来交。虽然你可以这么做，但是更普遍的做法是使用 Dapp 或者 Web3 App 来与区块链进行交互。</p>
+<p>作为普通用户，不可能直接编写运行代码来交互。虽然你可以这么做，但是更普遍的做法是使用 Dapp 或者 Web3 App 来与区块链进行交互。</p>
 <p>Dapp 就是一个运行在浏览器中的应用，它可以帮助你与区块链进行交互。与传统的 web2 网站最大的不同是：</p>
 <ol>
-<li>它不需要注册登录。因为传统 web2 的用户信息是存到各个公司的后台数据库中，彼此不互通。因此你在网站 A 注册了，网站 B 就无法使用你的账户。因此你不得不在每个网站注册一个账号。而区块链的数据是公开的，任何人都可以访问。Dapp 可以直接从区块链中读取数据，而不需要注册。用户只需要“登录”即可</li>
+<li>它不需要注册登录。因为传统 web2 的用户信息是存到各个公司的后台数据库中，彼此不互通。因此你在网站 A 注册了，网站 B 就无法使用你的账户。你不得不在每个网站注册一个账号。而区块链的数据是公开的，任何人都可以访问。Dapp 可以直接从区块链中读取数据，而不需要每个网站注册一次，用户只需要“登录”即可</li>
 <li>用户的“交易，资产”等数据也是存在区块链中的。Dapp 可以直接读取区块链数据，这样多个 Dapp 的数据就可以互通（假设不同 Dapp 使用的是同一条链）</li>
 </ol>
 <p>一个简单的 Dapp 的代码，帮助大家理解 Dapp 是如何与区块链交互的。复杂的 Dapp 可能需要编写很多代码，但是基本的原理是一样的。</p>
@@ -430,10 +430,10 @@
 <p>这段代码首先检查用户是否安装了 MetaMask 或其他支持以太坊的浏览器扩展。如果已安装并授权，它将获取用户的账户信息。当用户点击“发起转账”按钮时，代码会调用 transfer 函数，获取用户输入的接收地址和转账金额，然后发送以太坊转账交易。转账金额从以太转换为 wei，因为以太坊的最小单位是 wei。</p>
 <p>请注意，这只是一个简单的示例，实际应用中需要处理更多的错误情况和安全问题。确保在生产环境中使用最新的安全实践和库版本。</p>
 <h2 id="钱包的核心"><a href="#钱包的核心" class="headerlink" title="钱包的核心"></a>钱包的核心</h2><h3 id="秘钥保存"><a href="#秘钥保存" class="headerlink" title="秘钥保存"></a>秘钥保存</h3><p>上面提到用户只需要“登录”即可。这个登录在 web3 叫<strong>Connect Wallet（连接钱包）</strong>。</p>
-<p>最简单的，用户点击 Dapp 上的“连接钱包”按钮，然后出来一个输入框让用户输入助记词，Dapp 拿到助记词推出地址，然后就可以展示给用户地址，然后拿地址去区块链中拿交易，资产等数据展现给用户就好了。</p>
+<p>最简单的，用户点击 Dapp 上的“连接钱包”按钮，然后出来一个输入框让用户输入助记词，Dapp 拿到助记词推出地址，然后就可以展示给用户地址，接下来拿地址去区块链中获取交易历史，资产等数据展现给用户就好了。</p>
 <p>这么做的最大问题就是安全性。用户的助记词直接泄漏给了 Dapp，如果这个 Dapp 就是不法分子呢？如果这个 Dapp 被黑客攻击呢？</p>
 <p>这个时候钱包就起到作用了，钱包最重要的事情之一就是<strong>安全保存用户的私钥，不让黑客攻击，也不要泄漏给第三方（比如 Dapp）</strong>。</p>
-<p>这个实现其实不难。比如 Dapp 需要用户的地址，钱包就暴露一个 <code>get_address()</code> 方法 让 dapp 获取。钱包接受到请求后，就用助记词生成私钥，推导出地址，然后返回给 Dapp。Dapp 再拿到地址去区块链中拿交易，资产等数据展现给用户就好了。</p>
+<p>这个实现其实不难。比如 Dapp 需要用户的地址，钱包就暴露一个 <code>get_address()</code> 方法 让 dapp 获取。钱包接受到请求后，就用助记词生成私钥，推导出地址，然后返回给 Dapp。Dapp 再拿到地址去区块链中获取交易历史，资产等数据展现给用户就好了。</p>
 <p>再比如 Dapp 需要签署一个交易以转账，钱包暴露一个 <code>sign_transaction(sender, receiver, amount)</code> 方法让 dapp 调用。钱包接受到请求后，就用私钥对交易数据进行签名，然后返回给 Dapp。Dapp 再把签名和交易数据一起发送到区块链网络中。</p>
 <p>代码：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Wallet</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, private_key=None)</span>:</span></span><br><span class="line">        self.private_key = private_key</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_address</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.private_key:</span><br><span class="line">            <span class="keyword">raise</span> Exception(<span class="string">'No private key'</span>)</span><br><span class="line">            sk = SigningKey.from_string(bytes.fromhex(self.private_key), curve=SECP256k1)</span><br><span class="line">        <span class="keyword">return</span> sk.verifying_key.to_string().hex()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sign_transaction</span><span class="params">(self, sender, receiver, amount)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.private_key:</span><br><span class="line">            <span class="keyword">raise</span> Exception(<span class="string">'No private key'</span>)</span><br><span class="line">        sk = SigningKey.from_string(bytes.fromhex(self.private_key), curve=SECP256k1)</span><br><span class="line">        transaction = &#123;</span><br><span class="line">           <span class="string">'sender'</span>: sender,</span><br><span class="line">           <span class="string">'receiver'</span>: receiver,</span><br><span class="line">            <span class="string">'amount'</span>: amount</span><br><span class="line">        &#125;</span><br><span class="line">        message = str(transaction).encode(<span class="string">'utf-8'</span>)</span><br><span class="line">        signature = sk.sign(message).hex()</span><br><span class="line">        <span class="keyword">return</span> signature</span><br><span class="line"><span class="comment"># 1. 钱包测初始化</span></span><br><span class="line">wallet = Wallet(private_key=<span class="string">'your private key'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. Dapp 调用 get_address 方法获取地址</span></span><br><span class="line">address = wallet.get_address()</span><br><span class="line">print(address)</span><br><span class="line"><span class="comment"># 3. Dapp 调用 sign_transaction 方法签名交易</span></span><br><span class="line">signature = wallet.sign_transaction(<span class="string">'sender'</span>, <span class="string">'receiver'</span>, <span class="number">100</span>)</span><br><span class="line">print(signature)</span><br></pre></td></tr></table></figure>
@@ -474,7 +474,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2025-02-18T21:36:38+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2025-02-18T21:40:51+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2025年2月18日</p>
