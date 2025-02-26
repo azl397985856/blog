@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2025-02-18T13:40:51.323Z</updated>
+  <updated>2025-02-23T14:44:43.889Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,98 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我是一个区块链黑客（第一篇）</title>
+    <link href="https://lucifer.ren/blog/2025/03/01/web3-hacker-1/"/>
+    <id>https://lucifer.ren/blog/2025/03/01/web3-hacker-1/</id>
+    <published>2025-02-28T16:00:00.000Z</published>
+    <updated>2025-02-23T14:44:43.889Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;近期 Bybit的多签冷钱包被黑，损失约14.6亿美元，导致用户资产被盗，这事闹得沸沸扬扬，这次的事件给 web3 社区带来了很多的思考。今天我们就来聊一聊 web3 黑客攻击的一些常见手段。我会以教育和安全意识提升为目的，从理论和技术的角度探讨区块链黑客可能用来窃取用户资产的常见方法，并提供相应的代码示例。这些方法基于公开已知的攻击方式，主要用于展示漏洞如何被利用，以及如何防范。我不会提供任何实际可直接用于非法行为的代码，而是专注于技术原理的讲解。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="黑客" scheme="https://lucifer.ren/blog/tags/%E9%BB%91%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从零实现区块链 - 侧链与L2</title>
+    <link href="https://lucifer.ren/blog/2025/03/01/web3-l2-from-zero/"/>
+    <id>https://lucifer.ren/blog/2025/03/01/web3-l2-from-zero/</id>
+    <published>2025-02-28T16:00:00.000Z</published>
+    <updated>2025-02-23T14:34:24.876Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;web3 是一个非常流行的概念，它的基础是区块链技术。区块链技术是一种分布式账本技术，它的特点是去中心化、不可篡改、安全可靠。区块链技术的应用场景非常广泛，比如数字货币、智能合约、供应链金融等等。&lt;/p&gt;
+&lt;p&gt;网上关于区块链的资料非常多，但是从零开始构建的资料却很少。熟悉我的朋友应该知道，我经常从零实现一些东西帮助我理解，比如从零实现 git，从零实现 webpack 打包器，从零实现一个框架等等。&lt;/p&gt;
+&lt;p&gt;本文就是继上一篇 &lt;a href=&quot;https://lucifer.ren/blog/2025/02/16/web3-wallet/&quot; title=&quot;《从零开始构建区块链》&quot;&gt;《Web3 的入口 - 区块链钱包》&lt;/a&gt; 的文章，讲述侧链与 L2 的设计理念、技术原理和实现细节。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="侧链" scheme="https://lucifer.ren/blog/tags/%E4%BE%A7%E9%93%BE/"/>
+    
+      <category term="L2" scheme="https://lucifer.ren/blog/tags/L2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>传 DeepSeek 或于五月份前发布 R2 模型</title>
+    <link href="https://lucifer.ren/blog/2025/02/26/lc-1472/"/>
+    <id>https://lucifer.ren/blog/2025/02/26/lc-1472/</id>
+    <published>2025-02-25T16:00:00.000Z</published>
+    <updated>2025-02-26T14:19:14.545Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;据知情人透露，DeepSeek 原计划在五月初发布 R2，现在希望尽早发布，但没有提供具体细节。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://lucifer.ren/blog/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="题解" scheme="https://lucifer.ren/blog/tags/%E9%A2%98%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>外卖骑手抵触社保，只想到手更高</title>
+    <link href="https://lucifer.ren/blog/2025/02/22/lc-3428/"/>
+    <id>https://lucifer.ren/blog/2025/02/22/lc-3428/</id>
+    <published>2025-02-21T16:00:00.000Z</published>
+    <updated>2025-02-23T14:34:49.402Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前两天跟大家聊了京东给外卖骑手缴纳五险一金的事情。文章发出去后，有人留言说：“道理我都懂，但骑手们还是觉得交了社保，&lt;strong&gt;到手钱少了&lt;/strong&gt;啊！”这话戳中了本质——大家不是反对社保本身，而是希望“到手更高”。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://lucifer.ren/blog/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="题解" scheme="https://lucifer.ren/blog/tags/%E9%A2%98%E8%A7%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>Web3 的入口 - 区块链钱包</title>
@@ -440,112 +532,6 @@
       <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
     
       <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何自己实现一个自动化框架？</title>
-    <link href="https://lucifer.ren/blog/2023/08/27/how-to-make-automator/"/>
-    <id>https://lucifer.ren/blog/2023/08/27/how-to-make-automator/</id>
-    <published>2023-08-26T16:00:00.000Z</published>
-    <updated>2023-08-29T03:56:58.860Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;大家眼里的自动化框架一般都和测试进行绑定，这也可以理解， 毕竟自动化的目的就在于模拟用户行为，确认是否正常工作，代替传统的手工测试。&lt;/p&gt;
-&lt;p&gt;但实际上自动化和测试是两个问题，我们完全可以单独实现。&lt;/p&gt;
-&lt;p&gt;比如我可以将自动化框架 A 和 测试框架 B 结合起来使用。也可以将自动化框架 A 和 测试框架 C 一起使用。二者本应该是独立的。&lt;/p&gt;
-&lt;p&gt;因此本文将只聚焦自动化部分。如果需要扩展自动化测试功能，那么只需要集成一个测试框架进行简单接入就好了，不算复杂。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="自动化" scheme="https://lucifer.ren/blog/categories/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
-    
-      <category term="devtool" scheme="https://lucifer.ren/blog/categories/devtool/"/>
-    
-    
-      <category term="前端，自动化，automator" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF%EF%BC%8C%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%8Cautomator/"/>
-    
-      <category term="chrome" scheme="https://lucifer.ren/blog/tags/chrome/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何移除项目中未使用的 CSS</title>
-    <link href="https://lucifer.ren/blog/2023/08/08/remove-useless-css/"/>
-    <id>https://lucifer.ren/blog/2023/08/08/remove-useless-css/</id>
-    <published>2023-08-07T16:00:00.000Z</published>
-    <updated>2023-08-08T09:51:56.146Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;使用 chrome 的 devtool 可以查看项目中未被使用的 JS 和 CSS。具体可以参考下 chrome 官方的博客: &lt;a href=&quot;https://developer.chrome.com/docs/devtools/coverage/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Coverage: Find unused JavaScript and CSS&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;有没有方法可以自己检测呢？甚至是做成工具集成到 CI/CD 甚至 code review 中呢？&lt;/p&gt;
-&lt;p&gt;看完本文，你能学到如何自己手撸一个这样的工具。同时也会推荐社区里经过验证的好用的同类型库。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Chrome" scheme="https://lucifer.ren/blog/tags/Chrome/"/>
-    
-      <category term="CSS" scheme="https://lucifer.ren/blog/tags/CSS/"/>
-    
-      <category term="AST" scheme="https://lucifer.ren/blog/tags/AST/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>回炉重铸， 91 天见证不一样的自己（第 11 期）</title>
-    <link href="https://lucifer.ren/blog/2023/06/04/91algo-11/"/>
-    <id>https://lucifer.ren/blog/2023/06/04/91algo-11/</id>
-    <published>2023-06-03T16:00:00.000Z</published>
-    <updated>2023-11-02T05:17:52.233Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;第十一期，感谢大家一路的陪伴，我们会不辜负大家的信任，努力做的更好！&lt;/p&gt;
-&lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/befr2w.jpeg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记一次从 webpack 4 升级 webpack 5 + swc 的经历</title>
-    <link href="https://lucifer.ren/blog/2023/03/27/migrate-to-webpack5_swc/"/>
-    <id>https://lucifer.ren/blog/2023/03/27/migrate-to-webpack5_swc/</id>
-    <published>2023-03-26T16:00:00.000Z</published>
-    <updated>2023-03-28T02:57:55.525Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近将项目的 webpack 4 升级到了 webpack 5，用了一两天的时间，遇到了一些网上找不到资料的问题， 于是决定将过程记录一下。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="webpack" scheme="https://lucifer.ren/blog/tags/webpack/"/>
-    
-      <category term="swc" scheme="https://lucifer.ren/blog/tags/swc/"/>
     
   </entry>
   
