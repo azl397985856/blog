@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2025-02-27T05:19:32.509Z</updated>
+  <updated>2025-03-06T06:46:35.726Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,17 +17,17 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>我是一个区块链黑客（第一篇）</title>
-    <link href="https://lucifer.ren/blog/2025/03/01/web3-hacker-1/"/>
-    <id>https://lucifer.ren/blog/2025/03/01/web3-hacker-1/</id>
-    <published>2025-02-28T16:00:00.000Z</published>
-    <updated>2025-02-27T05:19:32.509Z</updated>
+    <title>更加安全的区块链钱包：MPC 钱包</title>
+    <link href="https://lucifer.ren/blog/2025/03/05/web3-mpc/"/>
+    <id>https://lucifer.ren/blog/2025/03/05/web3-mpc/</id>
+    <published>2025-03-04T16:00:00.000Z</published>
+    <updated>2025-03-06T06:46:35.726Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;近期 Bybit的多签冷钱包被黑，损失约14.6亿美元，导致用户资产被盗，这事闹得沸沸扬扬，这次的事件给 web3 社区带来了很多的思考。经调查，Safe 官方声明指出，北韩骇客组织 Lazarus Group 透过入侵一名 Safe 开发者的设备，将恶意程式码注入前端网站「app.safe.global」，成功绕过多重签名验证，并伪装成正常交易提交批准。Verichains 调查报告显示，该恶意程式码具有针对性，只有在特定条件下 (如操作 Bybit 帐户时) 才会触发，以避免影响普通用户，达到掩人耳目的效果。Safe 团队强调，经外部安全研究人员一致确认，&lt;strong&gt;Safe 的智能合约本身并无漏洞，问题完全出在开发者设备遭入侵。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;这事情挺离谱的，为啥一个开发者就可以不经过 review 直接将明显有问题的代码发布到线上，多签具体是如何绕过的等等。退一步来说，我们就算姑且认可这个结论。但是本次攻击暴露了多签钱包的技术性弱点、以及供应链攻击的致命风险，更让 Safe 作为业界主流安全解决方案的可靠性遭受质疑。此事件揭示了供应链攻击对加密货币生态的威胁，即便智能合约安全，前端与批准环节仍是弱点（这我在之前的区块链钱包中有提到过）。&lt;/p&gt;
-&lt;p&gt;今天我们就来聊一聊 web3 黑客攻击的一些常见手段。我会以教育和安全意识提升为目的，从理论和技术的角度探讨区块链黑客可能用来窃取用户资产的常见方法，并提供相应的代码示例。这些方法基于公开已知的攻击方式，主要用于展示漏洞如何被利用，以及如何防范。我不会提供任何实际可直接用于非法行为的代码，而是专注于技术原理的讲解。&lt;/p&gt;
+      &lt;p&gt;web3 是一个非常流行的概念，它的基础是区块链技术。区块链技术是一种分布式账本技术，它的特点是去中心化、不可篡改、安全可靠。区块链技术的应用场景非常广泛，比如数字货币、智能合约、供应链金融等等。&lt;/p&gt;
+&lt;p&gt;网上关于区块链的资料非常多，但是从零开始构建的资料却很少。熟悉我的朋友应该知道，我经常从零实现一些东西帮助我理解，比如从零实现 git，从零实现 webpack 打包器，从零实现一个框架等等。&lt;/p&gt;
+&lt;p&gt;本文就是继上一篇 &lt;a href=&quot;https://lucifer.ren/blog/2025/02/16/web3-wallet/&quot; title=&quot;《Web3 的入口 - 区块链钱包》&quot;&gt;《Web3 的入口 - 区块链钱包》&lt;/a&gt; 的文章，讲述 MPC 钱包是什么，原理是什么，以及多签钱包是什么，它们都是如何增强区块链钱包的安全性的。&lt;/p&gt;
     
     </summary>
     
@@ -38,7 +38,17 @@
     
       <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
     
-      <category term="黑客" scheme="https://lucifer.ren/blog/tags/%E9%BB%91%E5%AE%A2/"/>
+      <category term="钱包" scheme="https://lucifer.ren/blog/tags/%E9%92%B1%E5%8C%85/"/>
+    
+      <category term="MPC 钱包" scheme="https://lucifer.ren/blog/tags/MPC-%E9%92%B1%E5%8C%85/"/>
+    
+      <category term="Web3 钱包" scheme="https://lucifer.ren/blog/tags/Web3-%E9%92%B1%E5%8C%85/"/>
+    
+      <category term="数字钱包" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%97%E9%92%B1%E5%8C%85/"/>
+    
+      <category term="多签钱包" scheme="https://lucifer.ren/blog/tags/%E5%A4%9A%E7%AD%BE%E9%92%B1%E5%8C%85/"/>
+    
+      <category term="冷钱包" scheme="https://lucifer.ren/blog/tags/%E5%86%B7%E9%92%B1%E5%8C%85/"/>
     
   </entry>
   
@@ -67,6 +77,32 @@
       <category term="侧链" scheme="https://lucifer.ren/blog/tags/%E4%BE%A7%E9%93%BE/"/>
     
       <category term="L2" scheme="https://lucifer.ren/blog/tags/L2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我是一个区块链黑客（第一篇）</title>
+    <link href="https://lucifer.ren/blog/2025/03/01/web3-hacker-1/"/>
+    <id>https://lucifer.ren/blog/2025/03/01/web3-hacker-1/</id>
+    <published>2025-02-28T16:00:00.000Z</published>
+    <updated>2025-02-27T05:19:32.509Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;近期 Bybit的多签冷钱包被黑，损失约14.6亿美元，导致用户资产被盗，这事闹得沸沸扬扬，这次的事件给 web3 社区带来了很多的思考。经调查，Safe 官方声明指出，北韩骇客组织 Lazarus Group 透过入侵一名 Safe 开发者的设备，将恶意程式码注入前端网站「app.safe.global」，成功绕过多重签名验证，并伪装成正常交易提交批准。Verichains 调查报告显示，该恶意程式码具有针对性，只有在特定条件下 (如操作 Bybit 帐户时) 才会触发，以避免影响普通用户，达到掩人耳目的效果。Safe 团队强调，经外部安全研究人员一致确认，&lt;strong&gt;Safe 的智能合约本身并无漏洞，问题完全出在开发者设备遭入侵。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这事情挺离谱的，为啥一个开发者就可以不经过 review 直接将明显有问题的代码发布到线上，多签具体是如何绕过的等等。退一步来说，我们就算姑且认可这个结论。但是本次攻击暴露了多签钱包的技术性弱点、以及供应链攻击的致命风险，更让 Safe 作为业界主流安全解决方案的可靠性遭受质疑。此事件揭示了供应链攻击对加密货币生态的威胁，即便智能合约安全，前端与批准环节仍是弱点（这我在之前的区块链钱包中有提到过）。&lt;/p&gt;
+&lt;p&gt;今天我们就来聊一聊 web3 黑客攻击的一些常见手段。我会以教育和安全意识提升为目的，从理论和技术的角度探讨区块链黑客可能用来窃取用户资产的常见方法，并提供相应的代码示例。这些方法基于公开已知的攻击方式，主要用于展示漏洞如何被利用，以及如何防范。我不会提供任何实际可直接用于非法行为的代码，而是专注于技术原理的讲解。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="黑客" scheme="https://lucifer.ren/blog/tags/%E9%BB%91%E5%AE%A2/"/>
     
   </entry>
   
@@ -115,7 +151,7 @@
     <link href="https://lucifer.ren/blog/2025/02/16/web3-wallet/"/>
     <id>https://lucifer.ren/blog/2025/02/16/web3-wallet/</id>
     <published>2025-02-15T16:00:00.000Z</published>
-    <updated>2025-02-18T13:40:51.323Z</updated>
+    <updated>2025-03-05T10:37:18.813Z</updated>
     
     <summary type="html">
     
@@ -483,57 +519,32 @@
   </entry>
   
   <entry>
-    <title>关于 Error Boundaries， 你需要知道的一切</title>
-    <link href="https://lucifer.ren/blog/2024/01/28/error-boundaries/"/>
-    <id>https://lucifer.ren/blog/2024/01/28/error-boundaries/</id>
-    <published>2024-01-27T16:00:00.000Z</published>
-    <updated>2024-01-28T08:36:22.853Z</updated>
+    <title>全网最易懂的“乘法逆元”</title>
+    <link href="https://lucifer.ren/blog/2024/03/03/modular-multiplicative-inverse/"/>
+    <id>https://lucifer.ren/blog/2024/03/03/modular-multiplicative-inverse/</id>
+    <published>2024-03-02T16:00:00.000Z</published>
+    <updated>2025-03-05T08:13:30.948Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;在我们的应用中，难免会遇到一些异常情况，比如网络请求失败，或者是用户输入了一些非法的数据等等。这些异常情况如果没有得到处理，就会导致应用崩溃，从而影响用户体验。而 Error Boundaries 就是用可以处理这些异常情况中的一部分。&lt;/p&gt;
+      
+      
+        
+        
+          
+        
+      
     
     </summary>
     
-      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="异常处理" scheme="https://lucifer.ren/blog/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>回炉重铸， 91 天见证不一样的自己（第 12 期）</title>
-    <link href="https://lucifer.ren/blog/2023/11/02/91algo-12/"/>
-    <id>https://lucifer.ren/blog/2023/11/02/91algo-12/</id>
-    <published>2023-11-01T16:00:00.000Z</published>
-    <updated>2024-03-28T07:55:31.450Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;第十二期，感谢大家一路的陪伴，我们会不辜负大家的信任，努力做的更好！&lt;/p&gt;
-&lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/befr2w.jpeg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
+      <category term="乘法逆元" scheme="https://lucifer.ren/blog/tags/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/"/>
     
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+      <category term="模运算" scheme="https://lucifer.ren/blog/tags/%E6%A8%A1%E8%BF%90%E7%AE%97/"/>
     
   </entry>
   
