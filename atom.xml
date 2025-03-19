@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2025-03-06T06:46:35.726Z</updated>
+  <updated>2025-03-19T14:43:02.849Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,75 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Warp vs. iTerm2：终端世界的叛逆者与老将</title>
+    <link href="https://lucifer.ren/blog/2025/03/19/warp/"/>
+    <id>https://lucifer.ren/blog/2025/03/19/warp/</id>
+    <published>2025-03-18T16:00:00.000Z</published>
+    <updated>2025-03-19T14:43:02.849Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;作为一个开发者，终端是你最亲密的伙伴。它可能是你调试代码的战场，也可能是你部署项目的指挥部。但让我们面对现实：大多数人用的终端，要么是 macOS 自带的 Terminal，要么是久负盛名的 iTerm2。这些工具很可靠，但它们也像老派的骑士——忠诚，却不够灵动。然后，Warp 来了，像个不按套路出牌的叛逆者，直接挑战终端的传统定义。&lt;/p&gt;
+&lt;p&gt;Warp 和 iTerm2，一个是新世代的先锋，一个是久经考验的经典。它们有何不同？Warp 又在哪些地方彻底碾压了 iTerm2？让我们一探究竟。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="终端" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/%E7%BB%88%E7%AB%AF/"/>
+    
+    
+      <category term="工具" scheme="https://lucifer.ren/blog/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="Warp" scheme="https://lucifer.ren/blog/tags/Warp/"/>
+    
+      <category term="iTerm2" scheme="https://lucifer.ren/blog/tags/iTerm2/"/>
+    
+      <category term="终端" scheme="https://lucifer.ren/blog/tags/%E7%BB%88%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>亚信科技这波操作真是把“画饼艺术”玩到极致了！</title>
+    <link href="https://lucifer.ren/blog/2025/03/17/lc-1963/"/>
+    <id>https://lucifer.ren/blog/2025/03/17/lc-1963/</id>
+    <published>2025-03-16T16:00:00.000Z</published>
+    <updated>2025-03-17T04:42:19.008Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近，亚信科技的操作真是让人瞠目结舌，全员取消年终奖的消息传得沸沸扬扬。年初取消1000元补贴、强制降薪的风波还未平息，如今又直接祭出“年终奖归零”的大招，打工人直呼：“这分明是职场PUA！”从补贴取消到裁员分期，再到年终奖清零，亚信科技这一系列操作，把“画饼艺术”演绎到了极致。员工们听着“同甘共苦”的口号，却在现实中被压得喘不过气。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://lucifer.ren/blog/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="题解" scheme="https://lucifer.ren/blog/tags/%E9%A2%98%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>华为这波太猛了，多人被开除</title>
+    <link href="https://lucifer.ren/blog/2025/03/12/lc-3434/"/>
+    <id>https://lucifer.ren/blog/2025/03/12/lc-3434/</id>
+    <published>2025-03-11T16:00:00.000Z</published>
+    <updated>2025-03-12T05:34:56.647Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近华为内部掀起了一场堪称“史诗级”的反腐风暴，目标直指招聘环节的黑产链。消息一出，圈内炸了锅——原来上班还能“付费入场”？这波操作不仅暴露了内部管理的漏洞，还把一条完整的腐败产业链扒得底朝天。金额巨大，成都基地中层被带走，150 人单日清退，零补偿+“诚信污点”追责，华为这次出手，比字节的清理还狠三分。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://lucifer.ren/blog/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="题解" scheme="https://lucifer.ren/blog/tags/%E9%A2%98%E8%A7%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>更加安全的区块链钱包：MPC 钱包</title>
@@ -53,6 +122,32 @@
   </entry>
   
   <entry>
+    <title>我是一个区块链黑客（第一篇）</title>
+    <link href="https://lucifer.ren/blog/2025/03/01/web3-hacker-1/"/>
+    <id>https://lucifer.ren/blog/2025/03/01/web3-hacker-1/</id>
+    <published>2025-02-28T16:00:00.000Z</published>
+    <updated>2025-02-27T05:19:32.509Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;近期 Bybit的多签冷钱包被黑，损失约14.6亿美元，导致用户资产被盗，这事闹得沸沸扬扬，这次的事件给 web3 社区带来了很多的思考。经调查，Safe 官方声明指出，北韩骇客组织 Lazarus Group 透过入侵一名 Safe 开发者的设备，将恶意程式码注入前端网站「app.safe.global」，成功绕过多重签名验证，并伪装成正常交易提交批准。Verichains 调查报告显示，该恶意程式码具有针对性，只有在特定条件下 (如操作 Bybit 帐户时) 才会触发，以避免影响普通用户，达到掩人耳目的效果。Safe 团队强调，经外部安全研究人员一致确认，&lt;strong&gt;Safe 的智能合约本身并无漏洞，问题完全出在开发者设备遭入侵。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这事情挺离谱的，为啥一个开发者就可以不经过 review 直接将明显有问题的代码发布到线上，多签具体是如何绕过的等等。退一步来说，我们就算姑且认可这个结论。但是本次攻击暴露了多签钱包的技术性弱点、以及供应链攻击的致命风险，更让 Safe 作为业界主流安全解决方案的可靠性遭受质疑。此事件揭示了供应链攻击对加密货币生态的威胁，即便智能合约安全，前端与批准环节仍是弱点（这我在之前的区块链钱包中有提到过）。&lt;/p&gt;
+&lt;p&gt;今天我们就来聊一聊 web3 黑客攻击的一些常见手段。我会以教育和安全意识提升为目的，从理论和技术的角度探讨区块链黑客可能用来窃取用户资产的常见方法，并提供相应的代码示例。这些方法基于公开已知的攻击方式，主要用于展示漏洞如何被利用，以及如何防范。我不会提供任何实际可直接用于非法行为的代码，而是专注于技术原理的讲解。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="黑客" scheme="https://lucifer.ren/blog/tags/%E9%BB%91%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>从零实现区块链 - 侧链与L2</title>
     <link href="https://lucifer.ren/blog/2025/03/01/web3-l2-from-zero/"/>
     <id>https://lucifer.ren/blog/2025/03/01/web3-l2-from-zero/</id>
@@ -77,32 +172,6 @@
       <category term="侧链" scheme="https://lucifer.ren/blog/tags/%E4%BE%A7%E9%93%BE/"/>
     
       <category term="L2" scheme="https://lucifer.ren/blog/tags/L2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我是一个区块链黑客（第一篇）</title>
-    <link href="https://lucifer.ren/blog/2025/03/01/web3-hacker-1/"/>
-    <id>https://lucifer.ren/blog/2025/03/01/web3-hacker-1/</id>
-    <published>2025-02-28T16:00:00.000Z</published>
-    <updated>2025-02-27T05:19:32.509Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;近期 Bybit的多签冷钱包被黑，损失约14.6亿美元，导致用户资产被盗，这事闹得沸沸扬扬，这次的事件给 web3 社区带来了很多的思考。经调查，Safe 官方声明指出，北韩骇客组织 Lazarus Group 透过入侵一名 Safe 开发者的设备，将恶意程式码注入前端网站「app.safe.global」，成功绕过多重签名验证，并伪装成正常交易提交批准。Verichains 调查报告显示，该恶意程式码具有针对性，只有在特定条件下 (如操作 Bybit 帐户时) 才会触发，以避免影响普通用户，达到掩人耳目的效果。Safe 团队强调，经外部安全研究人员一致确认，&lt;strong&gt;Safe 的智能合约本身并无漏洞，问题完全出在开发者设备遭入侵。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;这事情挺离谱的，为啥一个开发者就可以不经过 review 直接将明显有问题的代码发布到线上，多签具体是如何绕过的等等。退一步来说，我们就算姑且认可这个结论。但是本次攻击暴露了多签钱包的技术性弱点、以及供应链攻击的致命风险，更让 Safe 作为业界主流安全解决方案的可靠性遭受质疑。此事件揭示了供应链攻击对加密货币生态的威胁，即便智能合约安全，前端与批准环节仍是弱点（这我在之前的区块链钱包中有提到过）。&lt;/p&gt;
-&lt;p&gt;今天我们就来聊一聊 web3 黑客攻击的一些常见手段。我会以教育和安全意识提升为目的，从理论和技术的角度探讨区块链黑客可能用来窃取用户资产的常见方法，并提供相应的代码示例。这些方法基于公开已知的攻击方式，主要用于展示漏洞如何被利用，以及如何防范。我不会提供任何实际可直接用于非法行为的代码，而是专注于技术原理的讲解。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-      <category term="黑客" scheme="https://lucifer.ren/blog/tags/%E9%BB%91%E5%AE%A2/"/>
     
   </entry>
   
@@ -469,82 +538,6 @@
       <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
     
       <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>How To Make Monney</title>
-    <link href="https://lucifer.ren/blog/2024/03/10/make-money/"/>
-    <id>https://lucifer.ren/blog/2024/03/10/make-money/</id>
-    <published>2024-03-09T16:00:00.000Z</published>
-    <updated>2024-10-27T15:36:18.739Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;理财是一个很复杂的话题。关于理财，一直有很有多问题。&lt;/p&gt;
-&lt;p&gt;世界上有哪些赚钱的方法？具体如何操作？它们的赚钱逻辑是什么？什么情况下会亏钱？到底能挣多少？有没有跑路的风险？等等。&lt;/p&gt;
-&lt;p&gt;这篇文章尝试管中窥豹，主要是帮助自己加深对理财的理解。如果这也可以帮助到其他人，那就再好不好了。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="理财" scheme="https://lucifer.ren/blog/categories/%E7%90%86%E8%B4%A2/"/>
-    
-    
-      <category term="理财" scheme="https://lucifer.ren/blog/tags/%E7%90%86%E8%B4%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>kuma - css-in-js 的未来？</title>
-    <link href="https://lucifer.ren/blog/2024/03/07/kuma/"/>
-    <id>https://lucifer.ren/blog/2024/03/07/kuma/</id>
-    <published>2024-03-06T16:00:00.000Z</published>
-    <updated>2024-03-10T13:06:01.037Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;kuma 是一个炙手可热的 css-in-js 的解决方案，有人甚至说他是 css-in-js 的未来，这篇文章我们来探讨一下 css-in-js 与 kuma。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="css-in-js" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/css-in-js/"/>
-    
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="css-in-js" scheme="https://lucifer.ren/blog/tags/css-in-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>全网最易懂的“乘法逆元”</title>
-    <link href="https://lucifer.ren/blog/2024/03/03/modular-multiplicative-inverse/"/>
-    <id>https://lucifer.ren/blog/2024/03/03/modular-multiplicative-inverse/</id>
-    <published>2024-03-02T16:00:00.000Z</published>
-    <updated>2025-03-05T08:13:30.948Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="乘法逆元" scheme="https://lucifer.ren/blog/tags/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/"/>
-    
-      <category term="模运算" scheme="https://lucifer.ren/blog/tags/%E6%A8%A1%E8%BF%90%E7%AE%97/"/>
     
   </entry>
   
