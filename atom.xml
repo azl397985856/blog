@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2025-03-22T03:55:04.327Z</updated>
+  <updated>2025-04-11T03:11:58.257Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,120 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>字节期权回购又双叒涨了？这波员工赢麻了！</title>
+    <link href="https://lucifer.ren/blog/2025/04/11/lc-3468/"/>
+    <id>https://lucifer.ren/blog/2025/04/11/lc-3468/</id>
+    <published>2025-04-10T16:00:00.000Z</published>
+    <updated>2025-04-11T03:11:58.257Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近字节跳动又放大招，员工们怕是已经在偷偷乐开了花！据内部消息，字节刚刚启动了新一轮期权回购，价格直接炸裂：在职员工每股税前180.7美元（约合人民币1308元），离职员工也有153.6美元（约合人民币1088元）。这价格比半年前的回购价硬生生涨了近6%！要知道，去年同期才160美元，这一年时间，期权价格跟坐火箭似的，员工手里的“纸面财富”又增值了一波，属实赢麻了！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://lucifer.ren/blog/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="题解" scheme="https://lucifer.ren/blog/tags/%E9%A2%98%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Web3 中的授权与撤销授权</title>
+    <link href="https://lucifer.ren/blog/2025/04/02/web3-approve/"/>
+    <id>https://lucifer.ren/blog/2025/04/02/web3-approve/</id>
+    <published>2025-04-01T16:00:00.000Z</published>
+    <updated>2025-04-06T12:21:52.566Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;web3 是一个非常流行的概念，它的基础是区块链技术。区块链技术是一种分布式账本技术，它的特点是去中心化、不可篡改、安全可靠。区块链技术的应用场景非常广泛，比如数字货币、智能合约、供应链金融等等。&lt;/p&gt;
+&lt;p&gt;网上关于区块链的资料非常多，但是从零开始构建的资料却很少。熟悉我的朋友应该知道，我经常从零实现一些东西帮助我理解，比如从零实现 git，从零实现 webpack 打包器，从零实现一个框架等等。&lt;/p&gt;
+&lt;p&gt;本文就是继上一篇 &lt;a href=&quot;https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/&quot; title=&quot;《从零开始构建区块链》&quot;&gt;《从零开始构建区块链》&lt;/a&gt; 的文章，讲述&lt;strong&gt;什么是 Web3 中的授权与撤销授权&lt;/strong&gt;，以及如何用 Python3 模拟其过程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="approve" scheme="https://lucifer.ren/blog/tags/approve/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>传 PayPal 中国裁员，伤害团队解散？</title>
+    <link href="https://lucifer.ren/blog/2025/03/31/lc-3504/"/>
+    <id>https://lucifer.ren/blog/2025/03/31/lc-3504/</id>
+    <published>2025-03-30T16:00:00.000Z</published>
+    <updated>2025-03-31T11:06:25.631Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;近日，网络上关于 PayPal 中国裁员的消息引发了广泛关注。一则来自网友的爆料称，受特朗普政府最新数据安全法案的影响，PayPal 中国部分团队因涉及美国敏感个人数据和政府数据的处理，可能面临重大调整，甚至波及整个中国业务的稳定性。这一消息迅速在社交媒体上发酵，不少人对 PayPal 在华团队的未来表示担忧。那么，这次裁员究竟是怎么回事？让我们一起来梳理一下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://lucifer.ren/blog/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="题解" scheme="https://lucifer.ren/blog/tags/%E9%A2%98%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Web3 金融的基石 - Swap 和 Staking</title>
+    <link href="https://lucifer.ren/blog/2025/03/28/web3-swap-staking/"/>
+    <id>https://lucifer.ren/blog/2025/03/28/web3-swap-staking/</id>
+    <published>2025-03-27T16:00:00.000Z</published>
+    <updated>2025-04-05T08:30:21.192Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;web3 是一个非常流行的概念，它的基础是区块链技术。区块链技术是一种分布式账本技术，它的特点是去中心化、不可篡改、安全可靠。区块链技术的应用场景非常广泛，比如数字货币、智能合约、供应链金融等等。&lt;/p&gt;
+&lt;p&gt;网上关于区块链的资料非常多，但是从零开始构建的资料却很少。熟悉我的朋友应该知道，我经常从零实现一些东西帮助我理解，比如从零实现 git，从零实现 webpack 打包器，从零实现一个框架等等。&lt;/p&gt;
+&lt;p&gt;本文就是继上一篇 &lt;a href=&quot;https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/&quot; title=&quot;《从零开始构建区块链》&quot;&gt;《从零开始构建区块链》&lt;/a&gt; 的文章，讲述&lt;strong&gt;什么是 swap，什么是滑点，什么是 staking，背后原理又是怎么样的？&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="swap" scheme="https://lucifer.ren/blog/tags/swap/"/>
+    
+      <category term="staking" scheme="https://lucifer.ren/blog/tags/staking/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>让魔兽再次伟大</title>
+    <link href="https://lucifer.ren/blog/2025/03/20/war3-website/"/>
+    <id>https://lucifer.ren/blog/2025/03/20/war3-website/</id>
+    <published>2025-03-19T16:00:00.000Z</published>
+    <updated>2025-04-09T15:39:13.695Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;All you need to know about Warcraft III ladder&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="魔兽争霸3" scheme="https://lucifer.ren/blog/categories/%E9%AD%94%E5%85%BD%E4%BA%89%E9%9C%B83/"/>
+    
+    
+      <category term="魔兽争霸3" scheme="https://lucifer.ren/blog/tags/%E9%AD%94%E5%85%BD%E4%BA%89%E9%9C%B83/"/>
+    
+  </entry>
   
   <entry>
     <title>AI + terminal 等于 Warp？</title>
@@ -122,32 +236,6 @@
   </entry>
   
   <entry>
-    <title>我是一个区块链黑客（第一篇）</title>
-    <link href="https://lucifer.ren/blog/2025/03/01/web3-hacker-1/"/>
-    <id>https://lucifer.ren/blog/2025/03/01/web3-hacker-1/</id>
-    <published>2025-02-28T16:00:00.000Z</published>
-    <updated>2025-02-27T05:19:32.509Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;近期 Bybit的多签冷钱包被黑，损失约14.6亿美元，导致用户资产被盗，这事闹得沸沸扬扬，这次的事件给 web3 社区带来了很多的思考。经调查，Safe 官方声明指出，北韩骇客组织 Lazarus Group 透过入侵一名 Safe 开发者的设备，将恶意程式码注入前端网站「app.safe.global」，成功绕过多重签名验证，并伪装成正常交易提交批准。Verichains 调查报告显示，该恶意程式码具有针对性，只有在特定条件下 (如操作 Bybit 帐户时) 才会触发，以避免影响普通用户，达到掩人耳目的效果。Safe 团队强调，经外部安全研究人员一致确认，&lt;strong&gt;Safe 的智能合约本身并无漏洞，问题完全出在开发者设备遭入侵。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;这事情挺离谱的，为啥一个开发者就可以不经过 review 直接将明显有问题的代码发布到线上，多签具体是如何绕过的等等。退一步来说，我们就算姑且认可这个结论。但是本次攻击暴露了多签钱包的技术性弱点、以及供应链攻击的致命风险，更让 Safe 作为业界主流安全解决方案的可靠性遭受质疑。此事件揭示了供应链攻击对加密货币生态的威胁，即便智能合约安全，前端与批准环节仍是弱点（这我在之前的区块链钱包中有提到过）。&lt;/p&gt;
-&lt;p&gt;今天我们就来聊一聊 web3 黑客攻击的一些常见手段。我会以教育和安全意识提升为目的，从理论和技术的角度探讨区块链黑客可能用来窃取用户资产的常见方法，并提供相应的代码示例。这些方法基于公开已知的攻击方式，主要用于展示漏洞如何被利用，以及如何防范。我不会提供任何实际可直接用于非法行为的代码，而是专注于技术原理的讲解。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-      <category term="黑客" scheme="https://lucifer.ren/blog/tags/%E9%BB%91%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
     <title>从零实现区块链 - 侧链与L2</title>
     <link href="https://lucifer.ren/blog/2025/03/01/web3-l2-from-zero/"/>
     <id>https://lucifer.ren/blog/2025/03/01/web3-l2-from-zero/</id>
@@ -172,6 +260,32 @@
       <category term="侧链" scheme="https://lucifer.ren/blog/tags/%E4%BE%A7%E9%93%BE/"/>
     
       <category term="L2" scheme="https://lucifer.ren/blog/tags/L2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我是一个区块链黑客（第一篇）</title>
+    <link href="https://lucifer.ren/blog/2025/03/01/web3-hacker-1/"/>
+    <id>https://lucifer.ren/blog/2025/03/01/web3-hacker-1/</id>
+    <published>2025-02-28T16:00:00.000Z</published>
+    <updated>2025-02-27T05:19:32.509Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;近期 Bybit的多签冷钱包被黑，损失约14.6亿美元，导致用户资产被盗，这事闹得沸沸扬扬，这次的事件给 web3 社区带来了很多的思考。经调查，Safe 官方声明指出，北韩骇客组织 Lazarus Group 透过入侵一名 Safe 开发者的设备，将恶意程式码注入前端网站「app.safe.global」，成功绕过多重签名验证，并伪装成正常交易提交批准。Verichains 调查报告显示，该恶意程式码具有针对性，只有在特定条件下 (如操作 Bybit 帐户时) 才会触发，以避免影响普通用户，达到掩人耳目的效果。Safe 团队强调，经外部安全研究人员一致确认，&lt;strong&gt;Safe 的智能合约本身并无漏洞，问题完全出在开发者设备遭入侵。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这事情挺离谱的，为啥一个开发者就可以不经过 review 直接将明显有问题的代码发布到线上，多签具体是如何绕过的等等。退一步来说，我们就算姑且认可这个结论。但是本次攻击暴露了多签钱包的技术性弱点、以及供应链攻击的致命风险，更让 Safe 作为业界主流安全解决方案的可靠性遭受质疑。此事件揭示了供应链攻击对加密货币生态的威胁，即便智能合约安全，前端与批准环节仍是弱点（这我在之前的区块链钱包中有提到过）。&lt;/p&gt;
+&lt;p&gt;今天我们就来聊一聊 web3 黑客攻击的一些常见手段。我会以教育和安全意识提升为目的，从理论和技术的角度探讨区块链黑客可能用来窃取用户资产的常见方法，并提供相应的代码示例。这些方法基于公开已知的攻击方式，主要用于展示漏洞如何被利用，以及如何防范。我不会提供任何实际可直接用于非法行为的代码，而是专注于技术原理的讲解。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="黑客" scheme="https://lucifer.ren/blog/tags/%E9%BB%91%E5%AE%A2/"/>
     
   </entry>
   
@@ -383,161 +497,6 @@
       <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="node" scheme="https://lucifer.ren/blog/tags/node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>回炉重铸， 91 天见证不一样的自己（第 14 期）</title>
-    <link href="https://lucifer.ren/blog/2024/08/04/91algo-14/"/>
-    <id>https://lucifer.ren/blog/2024/08/04/91algo-14/</id>
-    <published>2024-08-03T16:00:00.000Z</published>
-    <updated>2024-11-23T05:33:47.060Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;第十四期，感谢大家一路的陪伴，我们会不辜负大家的信任，努力做的更好！&lt;/p&gt;
-&lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/befr2w.jpeg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何自己搭建一个 GPT 代码生成器？</title>
-    <link href="https://lucifer.ren/blog/2024/07/13/gpt-code/"/>
-    <id>https://lucifer.ren/blog/2024/07/13/gpt-code/</id>
-    <published>2024-07-12T16:00:00.000Z</published>
-    <updated>2024-07-13T07:28:52.145Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;自从 chatpgt 发布以来，有很多人都在使用它来生成代码，然后包装成一个产品给大家使用。有的甚至是付费的，用它来赚钱。&lt;/p&gt;
-&lt;p&gt;使用方式基本上都是：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;你输入一个问题，然后它会给你生成一个代码片段。这个代码片段可能是一个函数，也可能是一个类，也可能是一个模块，甚至直接是一个代码库。&lt;/li&gt;
-&lt;li&gt;你可以选择使用这个代码片段，也可以继续输入问题，让它生成更多的代码片段。或者对答案进行改进&lt;/li&gt;
-&lt;li&gt;如果你对答案满意，你可以将答案复制到你的项目中，或者导出代码。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/vydqqw.png&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/gufjyx.png&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;这样的一款产品是怎么做出来的？代码复杂吗？我可以自己做一个吗？自己做的话，需要多少时间，多少钱？&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="ai" scheme="https://lucifer.ren/blog/categories/ai/"/>
-    
-    
-      <category term="ai" scheme="https://lucifer.ren/blog/tags/ai/"/>
-    
-      <category term="chatgpt" scheme="https://lucifer.ren/blog/tags/chatgpt/"/>
-    
-      <category term="代码生成器" scheme="https://lucifer.ren/blog/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>树状数组，线段树，傻傻分不清楚？</title>
-    <link href="https://lucifer.ren/blog/2024/06/22/binary-index-tree/"/>
-    <id>https://lucifer.ren/blog/2024/06/22/binary-index-tree/</id>
-    <published>2024-06-21T16:00:00.000Z</published>
-    <updated>2024-06-23T04:55:24.990Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前面我们讲了线段树以及线段树是如何高效解决某些区间问题的。不少人也听说过树状数组，据说树状数组也可以解决一些区间问题。那么树状数组和线段树有什么区别呢？它们又有什么联系呢？本文将带你一探究竟。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="树状数组" scheme="https://lucifer.ren/blog/categories/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="树状数组" scheme="https://lucifer.ren/blog/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="线段树" scheme="https://lucifer.ren/blog/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用 Rust 开发前端基建工具</title>
-    <link href="https://lucifer.ren/blog/2024/04/01/rust-node-binding/"/>
-    <id>https://lucifer.ren/blog/2024/04/01/rust-node-binding/</id>
-    <published>2024-03-31T16:00:00.000Z</published>
-    <updated>2024-08-10T05:42:00.023Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Rust 在最近几年在前端基建这一块有很大的发展。比如用于 lint 的 oxlint， 用于构建的 rspack 等等。这些工具都是用 Rust 写的，然后通过 Node.js 的 binding 连接到前端项目中。&lt;/p&gt;
-&lt;p&gt;很多前端小伙伴看这些项目的源码的时候也会一头雾水，不知道怎么编译，怎么运行。这里我就以 rolldown 为例简单介绍一下如何用 Rust 开发前端基建工具。&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="rust" scheme="https://lucifer.ren/blog/categories/rust/"/>
-    
-      <category term="node binding" scheme="https://lucifer.ren/blog/categories/rust/node-binding/"/>
-    
-      <category term="node-gyp" scheme="https://lucifer.ren/blog/categories/rust/node-binding/node-gyp/"/>
-    
-    
-      <category term="rust" scheme="https://lucifer.ren/blog/tags/rust/"/>
-    
-      <category term="node binding" scheme="https://lucifer.ren/blog/tags/node-binding/"/>
-    
-      <category term="node-gyp" scheme="https://lucifer.ren/blog/tags/node-gyp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>回炉重铸， 91 天见证不一样的自己（第 13 期）</title>
-    <link href="https://lucifer.ren/blog/2024/03/28/91algo-13/"/>
-    <id>https://lucifer.ren/blog/2024/03/28/91algo-13/</id>
-    <published>2024-03-27T16:00:00.000Z</published>
-    <updated>2024-08-04T13:28:12.520Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;第十三期，感谢大家一路的陪伴，我们会不辜负大家的信任，努力做的更好！&lt;/p&gt;
-&lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/befr2w.jpeg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
     
   </entry>
   
