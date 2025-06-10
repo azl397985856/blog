@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2025-04-11T03:11:58.257Z</updated>
+  <updated>2025-06-10T13:02:50.457Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>看懂 Web3 的 K 线</title>
+    <link href="https://lucifer.ren/blog/2025/06/10/web3-k-line/"/>
+    <id>https://lucifer.ren/blog/2025/06/10/web3-k-line/</id>
+    <published>2025-06-09T16:00:00.000Z</published>
+    <updated>2025-06-10T13:02:50.457Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;web3 是一个非常流行的概念，它的基础是区块链技术。区块链技术是一种分布式账本技术，它的特点是去中心化、不可篡改、安全可靠。区块链技术的应用场景非常广泛，比如数字货币、智能合约、供应链金融等等。&lt;/p&gt;
+&lt;p&gt;网上关于区块链的资料非常多，但是从零开始构建的资料却很少。熟悉我的朋友应该知道，我经常从零实现一些东西帮助我理解，比如从零实现 git，从零实现 webpack 打包器，从零实现一个框架等等。&lt;/p&gt;
+&lt;p&gt;本文就是继上一篇 &lt;a href=&quot;https://lucifer.ren/blog/2025/02/16/web3-wallet/&quot; title=&quot;《Web3 的入口 - 区块链钱包》&quot;&gt;《Web3 的入口 - 区块链钱包》&lt;/a&gt; 的文章，讲述 K 线图（也称蜡烛图）是什么。并以给定的价格序列 &lt;code&gt;[1, 10, 20, 8, 3, 2]&lt;/code&gt; 为例，详细讲解 K 线的构成、自定义绘制方法，以及技术指标（移动平均线、布林带、MACD、RSI）的计算与应用，结合背驰分析、趋势判断和支撑/阻力位识别，带你全面理解如何在 Web3 市场中“看懂 K 线”。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="k 线" scheme="https://lucifer.ren/blog/tags/k-%E7%BA%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一个简单的 web3 应用</title>
+    <link href="https://lucifer.ren/blog/2025/05/11/web-demo/"/>
+    <id>https://lucifer.ren/blog/2025/05/11/web-demo/</id>
+    <published>2025-05-10T16:00:00.000Z</published>
+    <updated>2025-05-11T13:15:46.792Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在传统的 Web2 开发中，开发者通常会选择 MySQL、MongoDB 或 Firebase 这样的数据库来存储用户数据。而随着区块链技术和 Web3 的兴起，我们可以直接将区块链作为数据库来使用，省去中心化服务器的麻烦，同时赋予用户数据主权。这篇文章将带你探索如何用 Web3 实现一个去中心化的数据存储方案，并通过 Python3 代码模拟关键流程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="approve" scheme="https://lucifer.ren/blog/tags/approve/"/>
+    
+  </entry>
   
   <entry>
     <title>字节期权回购又双叒涨了？这波员工赢麻了！</title>
@@ -236,6 +286,32 @@
   </entry>
   
   <entry>
+    <title>我是一个区块链黑客（第一篇）</title>
+    <link href="https://lucifer.ren/blog/2025/03/01/web3-hacker-1/"/>
+    <id>https://lucifer.ren/blog/2025/03/01/web3-hacker-1/</id>
+    <published>2025-02-28T16:00:00.000Z</published>
+    <updated>2025-02-27T05:19:32.509Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;近期 Bybit的多签冷钱包被黑，损失约14.6亿美元，导致用户资产被盗，这事闹得沸沸扬扬，这次的事件给 web3 社区带来了很多的思考。经调查，Safe 官方声明指出，北韩骇客组织 Lazarus Group 透过入侵一名 Safe 开发者的设备，将恶意程式码注入前端网站「app.safe.global」，成功绕过多重签名验证，并伪装成正常交易提交批准。Verichains 调查报告显示，该恶意程式码具有针对性，只有在特定条件下 (如操作 Bybit 帐户时) 才会触发，以避免影响普通用户，达到掩人耳目的效果。Safe 团队强调，经外部安全研究人员一致确认，&lt;strong&gt;Safe 的智能合约本身并无漏洞，问题完全出在开发者设备遭入侵。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这事情挺离谱的，为啥一个开发者就可以不经过 review 直接将明显有问题的代码发布到线上，多签具体是如何绕过的等等。退一步来说，我们就算姑且认可这个结论。但是本次攻击暴露了多签钱包的技术性弱点、以及供应链攻击的致命风险，更让 Safe 作为业界主流安全解决方案的可靠性遭受质疑。此事件揭示了供应链攻击对加密货币生态的威胁，即便智能合约安全，前端与批准环节仍是弱点（这我在之前的区块链钱包中有提到过）。&lt;/p&gt;
+&lt;p&gt;今天我们就来聊一聊 web3 黑客攻击的一些常见手段。我会以教育和安全意识提升为目的，从理论和技术的角度探讨区块链黑客可能用来窃取用户资产的常见方法，并提供相应的代码示例。这些方法基于公开已知的攻击方式，主要用于展示漏洞如何被利用，以及如何防范。我不会提供任何实际可直接用于非法行为的代码，而是专注于技术原理的讲解。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="黑客" scheme="https://lucifer.ren/blog/tags/%E9%BB%91%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>从零实现区块链 - 侧链与L2</title>
     <link href="https://lucifer.ren/blog/2025/03/01/web3-l2-from-zero/"/>
     <id>https://lucifer.ren/blog/2025/03/01/web3-l2-from-zero/</id>
@@ -260,32 +336,6 @@
       <category term="侧链" scheme="https://lucifer.ren/blog/tags/%E4%BE%A7%E9%93%BE/"/>
     
       <category term="L2" scheme="https://lucifer.ren/blog/tags/L2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我是一个区块链黑客（第一篇）</title>
-    <link href="https://lucifer.ren/blog/2025/03/01/web3-hacker-1/"/>
-    <id>https://lucifer.ren/blog/2025/03/01/web3-hacker-1/</id>
-    <published>2025-02-28T16:00:00.000Z</published>
-    <updated>2025-02-27T05:19:32.509Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;近期 Bybit的多签冷钱包被黑，损失约14.6亿美元，导致用户资产被盗，这事闹得沸沸扬扬，这次的事件给 web3 社区带来了很多的思考。经调查，Safe 官方声明指出，北韩骇客组织 Lazarus Group 透过入侵一名 Safe 开发者的设备，将恶意程式码注入前端网站「app.safe.global」，成功绕过多重签名验证，并伪装成正常交易提交批准。Verichains 调查报告显示，该恶意程式码具有针对性，只有在特定条件下 (如操作 Bybit 帐户时) 才会触发，以避免影响普通用户，达到掩人耳目的效果。Safe 团队强调，经外部安全研究人员一致确认，&lt;strong&gt;Safe 的智能合约本身并无漏洞，问题完全出在开发者设备遭入侵。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;这事情挺离谱的，为啥一个开发者就可以不经过 review 直接将明显有问题的代码发布到线上，多签具体是如何绕过的等等。退一步来说，我们就算姑且认可这个结论。但是本次攻击暴露了多签钱包的技术性弱点、以及供应链攻击的致命风险，更让 Safe 作为业界主流安全解决方案的可靠性遭受质疑。此事件揭示了供应链攻击对加密货币生态的威胁，即便智能合约安全，前端与批准环节仍是弱点（这我在之前的区块链钱包中有提到过）。&lt;/p&gt;
-&lt;p&gt;今天我们就来聊一聊 web3 黑客攻击的一些常见手段。我会以教育和安全意识提升为目的，从理论和技术的角度探讨区块链黑客可能用来窃取用户资产的常见方法，并提供相应的代码示例。这些方法基于公开已知的攻击方式，主要用于展示漏洞如何被利用，以及如何防范。我不会提供任何实际可直接用于非法行为的代码，而是专注于技术原理的讲解。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-      <category term="黑客" scheme="https://lucifer.ren/blog/tags/%E9%BB%91%E5%AE%A2/"/>
     
   </entry>
   
@@ -451,52 +501,6 @@
       <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
       <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数字型递推</title>
-    <link href="https://lucifer.ren/blog/2024/11/01/num-dp/"/>
-    <id>https://lucifer.ren/blog/2024/11/01/num-dp/</id>
-    <published>2024-10-31T16:00:00.000Z</published>
-    <updated>2024-11-01T16:41:37.664Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;不知道大家有没有注意到有一种算法题目，题目的参数就是几个整数，然后让你求总的方案数。&lt;/p&gt;
-&lt;p&gt;实际上仅仅是求总的方案数这一点，我的第一反应就是递推，然后就尝试找递推公式。如果再加上题目的参数是几个整数，那么这个题目大概率就是递推了，我把这种题目叫做&lt;strong&gt;数字型递推。&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="递推" scheme="https://lucifer.ren/blog/categories/%E9%80%92%E6%8E%A8/"/>
-    
-      <category term="动态规划" scheme="https://lucifer.ren/blog/categories/%E9%80%92%E6%8E%A8/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-    
-      <category term="动态规划" scheme="https://lucifer.ren/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>为什么我的 node 进程一直在运行？</title>
-    <link href="https://lucifer.ren/blog/2024/08/10/why-node-is-running/"/>
-    <id>https://lucifer.ren/blog/2024/08/10/why-node-is-running/</id>
-    <published>2024-08-09T16:00:00.000Z</published>
-    <updated>2024-08-10T09:59:50.986Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;有时候我们打开进程管理器，发现 node 进程一直在运行，但是我们并不知道它在做什么。&lt;/p&gt;
-&lt;p&gt;如果通过不停打日志的方式来找出原因，会非常耗时，而且不一定能找到问题所在。因为一个异步操作可能是由于另外一个异步操作触发的，这样就会导致我们很难找到根本原因，或者说定位过程会非常艰难。 那么有没有一种更有效率的方法可以帮助我们找出为什么 node 进程一直在运行呢？&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="前端" scheme="https://lucifer.ren/blog/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="node" scheme="https://lucifer.ren/blog/tags/node/"/>
     
   </entry>
   
