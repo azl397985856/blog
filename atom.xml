@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2025-06-15T08:23:31.515Z</updated>
+  <updated>2025-06-27T12:01:54.277Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>回炉重铸， 91 天见证不一样的自己（第 16 期）</title>
+    <link href="https://lucifer.ren/blog/2025/06/27/91algo-16/"/>
+    <id>https://lucifer.ren/blog/2025/06/27/91algo-16/</id>
+    <published>2025-06-26T16:00:00.000Z</published>
+    <updated>2025-06-27T12:01:54.277Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;第 16 期，感谢大家一路的陪伴，我们会不辜负大家的信任，努力做的更好！&lt;/p&gt;
+&lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/befr2w.jpeg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
+&lt;p&gt;​
+    
+    </summary>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
+    
+      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>缠论</title>
+    <link href="https://lucifer.ren/blog/2025/06/20/zen-k-line/"/>
+    <id>https://lucifer.ren/blog/2025/06/20/zen-k-line/</id>
+    <published>2025-06-19T16:00:00.000Z</published>
+    <updated>2025-06-21T13:46:22.565Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;缠论是一门研究交易的理论。&lt;/p&gt;
+&lt;p&gt;研究交易核心解决的就是一个问题：买点和卖点在哪里。缠论里有三个买卖点，这正是缠论的重点。&lt;/p&gt;
+&lt;p&gt;学习缠论需要掌握两个思想：组合，递归。下面我们结合具体的内容来讲解。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="缠论" scheme="https://lucifer.ren/blog/categories/%E7%BC%A0%E8%AE%BA/"/>
+    
+      <category term="交易" scheme="https://lucifer.ren/blog/categories/%E7%BC%A0%E8%AE%BA/%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="理财" scheme="https://lucifer.ren/blog/categories/%E7%BC%A0%E8%AE%BA/%E4%BA%A4%E6%98%93/%E7%90%86%E8%B4%A2/"/>
+    
+    
+      <category term="缠论" scheme="https://lucifer.ren/blog/tags/%E7%BC%A0%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>看懂 Web3 的 K 线</title>
@@ -444,63 +503,6 @@
     
     
       <category term="游戏" scheme="https://lucifer.ren/blog/tags/%E6%B8%B8%E6%88%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>回炉重铸， 91 天见证不一样的自己（第 15 期）</title>
-    <link href="https://lucifer.ren/blog/2024/11/23/91algo-15/"/>
-    <id>https://lucifer.ren/blog/2024/11/23/91algo-15/</id>
-    <published>2024-11-22T16:00:00.000Z</published>
-    <updated>2024-11-23T05:49:50.696Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;第 15 期，感谢大家一路的陪伴，我们会不辜负大家的信任，努力做的更好！&lt;/p&gt;
-&lt;p&gt;力扣加加，一个努力做西湖区最好的算法题解的团队。就在今天它给大家带来了《91 天学算法》，帮助大家摆脱困境，征服算法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/befr2w.jpeg&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
-&lt;p&gt;​
-    
-    </summary>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/categories/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/categories/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数据结构" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法提高班" scheme="https://lucifer.ren/blog/tags/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E7%8F%AD/"/>
-    
-      <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从零开始构建区块链</title>
-    <link href="https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/"/>
-    <id>https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/</id>
-    <published>2024-11-21T16:00:00.000Z</published>
-    <updated>2025-01-17T13:37:28.874Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;web3 是一个非常流行的概念，它的基础是区块链技术。区块链技术是一种分布式账本技术，它的特点是去中心化、不可篡改、安全可靠。区块链技术的应用场景非常广泛，比如数字货币、智能合约、供应链金融等等。&lt;/p&gt;
-&lt;p&gt;网上关于区块链的资料非常多，但是从零开始构建的资料却很少。熟悉我的朋友应该知道，我经常从零实现一些东西帮助我理解，比如从零实现 git，从零实现 webpack 打包器，从零实现一个框架等等。&lt;/p&gt;
-&lt;p&gt;本文就是一篇从零开始构建区块链的文章，希望能帮助你快速入门区块链技术。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
     
   </entry>
   
