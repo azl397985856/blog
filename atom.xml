@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2025-06-27T14:17:09.345Z</updated>
+  <updated>2025-07-06T13:43:47.508Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Web3 的 Anti MEV：深入剖析“夹”与反制之道</title>
+    <link href="https://lucifer.ren/blog/2025/07/06/web3-mev/"/>
+    <id>https://lucifer.ren/blog/2025/07/06/web3-mev/</id>
+    <published>2025-07-05T16:00:00.000Z</published>
+    <updated>2025-07-06T13:43:47.508Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;“我被夹了！”——如果你在区块链或 DeFi 社区混迹，可能会听到这样的抱怨。那么，什么是“夹”？简单来说，“夹”是一种特定的 &lt;strong&gt;矿工可提取价值（Miner Extractable Value，MEV）&lt;/strong&gt; 行为，攻击者通过观察交易池（mempool）中的交易，插入自己的高 Gas 费用交易，抢在用户交易之前（抢跑，Front-running）和之后（反向抢跑，Back-running）执行，从而攫取利润。这种行为不仅让用户损失金钱，还破坏了区块链的公平性。为了对抗“夹”，&lt;strong&gt;Anti MEV&lt;/strong&gt; 机制应运而生。本文将聚焦“夹”这一 MEV 形式，深入分析其原理、实现方式，以及如何通过 Python3 代码模拟“夹”和防范措施。我们的目标是让你彻底理解“夹”的运作机制——虽然我们不鼓励“夹”别人，但正如兵法所言，知己知彼，方能百战不殆。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="DEX" scheme="https://lucifer.ren/blog/tags/DEX/"/>
+    
+      <category term="MEV" scheme="https://lucifer.ren/blog/tags/MEV/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《小菜的交易系统》-一个完整的简易的交易系统</title>
+    <link href="https://lucifer.ren/blog/2025/07/01/trading-system-demo/"/>
+    <id>https://lucifer.ren/blog/2025/07/01/trading-system-demo/</id>
+    <published>2025-06-30T16:00:00.000Z</published>
+    <updated>2025-07-06T13:56:09.795Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;交易如烹饪，食材简单但搭配得当，味道才能惊艳。小菜的交易系统，旨在用最直白的逻辑，帮你抓住市场中的机会，同时把风险锁在可控范围。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在金融市场的混沌中，交易系统是你的航海图。无论你是初入市场的小白，还是摸爬滚打的老手，都需要一个清晰、简洁、可执行的交易系统。&lt;/p&gt;
+&lt;p&gt;今天的主人公是小菜，我们来聊聊“小菜的交易系统”。我们知道一个完整的交易系统需要包含：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;趋势判断：是否可以考虑进行入场交易。不是所有的行情我们都需要参与的，我们只赚自己认知以内的（看得懂的）行情。&lt;/li&gt;
+&lt;li&gt;入场点位：什么时候应该买入。&lt;/li&gt;
+&lt;li&gt;仓位管理：买多少。&lt;/li&gt;
+&lt;li&gt;止盈止损设置：什么时候应该卖出。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;小菜的交易系统自然也不例外，接下来我们详细介绍一下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="交易" scheme="https://lucifer.ren/blog/categories/%E4%BA%A4%E6%98%93/"/>
+    
+    
+      <category term="交易系统" scheme="https://lucifer.ren/blog/tags/%E4%BA%A4%E6%98%93%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="交易" scheme="https://lucifer.ren/blog/tags/%E4%BA%A4%E6%98%93/"/>
+    
+  </entry>
   
   <entry>
     <title>回炉重铸， 91 天见证不一样的自己（第 16 期）</title>
@@ -461,48 +520,6 @@
       <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
     
       <category term="钱包" scheme="https://lucifer.ren/blog/tags/%E9%92%B1%E5%8C%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>冷门但有用的算法知识 -  字符串的最小(大)表示法</title>
-    <link href="https://lucifer.ren/blog/2025/01/18/min_max_str/"/>
-    <id>https://lucifer.ren/blog/2025/01/18/min_max_str/</id>
-    <published>2025-01-17T16:00:00.000Z</published>
-    <updated>2025-01-20T13:33:09.900Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天来给大家介绍一种冷门但有用的算法知识——字符串的最小(大)表示法。尽管它是一种冷门算法，但是它确是一种母题。也就是说很多题目根据它换个皮就变成了一道新的题目。因此掌握它就可以掌握一整类题目。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="字符串" scheme="https://lucifer.ren/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-      <category term="最小表示法" scheme="https://lucifer.ren/blog/tags/%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/"/>
-    
-      <category term="最大表示法" scheme="https://lucifer.ren/blog/tags/%E6%9C%80%E5%A4%A7%E8%A1%A8%E7%A4%BA%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《幽灵诡计》 剧情分析</title>
-    <link href="https://lucifer.ren/blog/2024/12/06/ghost-trick/"/>
-    <id>https://lucifer.ren/blog/2024/12/06/ghost-trick/</id>
-    <published>2024-12-05T16:00:00.000Z</published>
-    <updated>2024-12-07T04:44:58.534Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://www.nintendo.com/us/store/products/ghost-trick-phantom-detective-switch/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;《幽灵诡计》&lt;/a&gt;是《逆转裁判》系列的企划、编剧和导演 - 巧舟的作品。我个人很喜欢逆转系列，不管是逆转裁判，逆转检视，还是大逆转裁判，都很有意思。《幽灵诡计》也是一款很有意思的游戏，剧情也很精彩。&lt;/p&gt;
-&lt;p&gt;本文从游戏设定，人物，时间线，剧情等方面进行分析。如果有什么理解不对或者不到位的地方，欢迎指出。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://p.ipic.vip/l47aq7.png&quot; alt&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="游戏" scheme="https://lucifer.ren/blog/tags/%E6%B8%B8%E6%88%8F/"/>
     
   </entry>
   
