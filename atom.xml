@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2025-08-10T10:32:34.278Z</updated>
+  <updated>2025-08-14T08:14:07.528Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>探索 DeFi 借贷与收益率交易的无限潜力</title>
+    <link href="https://lucifer.ren/blog/2025/08/14/web3-defi/"/>
+    <id>https://lucifer.ren/blog/2025/08/14/web3-defi/</id>
+    <published>2025-08-13T16:00:00.000Z</published>
+    <updated>2025-08-14T08:14:07.528Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 Web3 的世界里，DeFi（去中心化金融）协议正如雨后春笋般涌现，其中 AAVE/pendle 作为借贷领域的佼佼者，帮助无数用户实现了资产的增值和流动性管理。想象一下，你手里的 ETH 或 USDC 不再只是躺在钱包里睡觉，而是能通过 AAVE/pendle 赚取稳定的利息，甚至通过杠杆放大收益。本文将带你深入了解 defi protocol 的核心机制，我们是如何赚钱的以及具体实操。&lt;/p&gt;
+&lt;p&gt;这篇文章的灵感来源于我对 DeFi 协议的探索，这次我们转向实际赚钱工具。学习建议：先理解基本概念，然后通过代码模拟过程，加深印象。&lt;/p&gt;
+&lt;p&gt;AAVE 的官网是 &lt;a href=&quot;https://app.aave.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://app.aave.com/&lt;/a&gt;，pendle 的官网是 &lt;a href=&quot;https://www.pendle.finance/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.pendle.finance/&lt;/a&gt;， 建议你打开它跟随操作。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="defi" scheme="https://lucifer.ren/blog/tags/defi/"/>
+    
+      <category term="borrow" scheme="https://lucifer.ren/blog/tags/borrow/"/>
+    
+      <category term="lending" scheme="https://lucifer.ren/blog/tags/lending/"/>
+    
+      <category term="aave" scheme="https://lucifer.ren/blog/tags/aave/"/>
+    
+      <category term="pendle" scheme="https://lucifer.ren/blog/tags/pendle/"/>
+    
+  </entry>
   
   <entry>
     <title>Uniswap V4：更灵活、更高效的去中心化交易所</title>
@@ -474,34 +508,6 @@
       <category term="多签钱包" scheme="https://lucifer.ren/blog/tags/%E5%A4%9A%E7%AD%BE%E9%92%B1%E5%8C%85/"/>
     
       <category term="冷钱包" scheme="https://lucifer.ren/blog/tags/%E5%86%B7%E9%92%B1%E5%8C%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从零实现区块链 - 侧链与L2</title>
-    <link href="https://lucifer.ren/blog/2025/03/01/web3-l2-from-zero/"/>
-    <id>https://lucifer.ren/blog/2025/03/01/web3-l2-from-zero/</id>
-    <published>2025-02-28T16:00:00.000Z</published>
-    <updated>2025-02-23T14:34:24.876Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;web3 是一个非常流行的概念，它的基础是区块链技术。区块链技术是一种分布式账本技术，它的特点是去中心化、不可篡改、安全可靠。区块链技术的应用场景非常广泛，比如数字货币、智能合约、供应链金融等等。&lt;/p&gt;
-&lt;p&gt;网上关于区块链的资料非常多，但是从零开始构建的资料却很少。熟悉我的朋友应该知道，我经常从零实现一些东西帮助我理解，比如从零实现 git，从零实现 webpack 打包器，从零实现一个框架等等。&lt;/p&gt;
-&lt;p&gt;本文就是继上一篇 &lt;a href=&quot;https://lucifer.ren/blog/2025/02/16/web3-wallet/&quot; title=&quot;《从零开始构建区块链》&quot;&gt;《Web3 的入口 - 区块链钱包》&lt;/a&gt; 的文章，讲述侧链与 L2 的设计理念、技术原理和实现细节。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-      <category term="侧链" scheme="https://lucifer.ren/blog/tags/%E4%BE%A7%E9%93%BE/"/>
-    
-      <category term="L2" scheme="https://lucifer.ren/blog/tags/L2/"/>
     
   </entry>
   
