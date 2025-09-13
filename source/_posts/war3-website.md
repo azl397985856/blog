@@ -135,6 +135,11 @@ All you need to know about Warcraft III ladder
 1. 门口黄色的点，两个水人那组（BR 造到门口黄点）
 2. 绿点海龟，练完差不多 2.1 级。
 
+#### ORC
+
+1. 门口绿点，豺狼人（剩一个小豺狼人不打）1.4 级。
+2. 绿点海龟，练完刚好 2 级。
+
 ### TideHunter3 v1.2
 
 #### NE
