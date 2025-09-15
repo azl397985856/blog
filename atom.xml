@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2025-09-13T13:10:01.423Z</updated>
+  <updated>2025-09-14T07:07:24.773Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>自己动手制作 Web3 代币估值表</title>
+    <link href="https://lucifer.ren/blog/2025/09/16/web3-value-center/"/>
+    <id>https://lucifer.ren/blog/2025/09/16/web3-value-center/</id>
+    <published>2025-09-15T16:00:00.000Z</published>
+    <updated>2025-09-14T07:07:24.773Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Web3 的投资世界充满机会，但如何判断一个代币是“物美价廉”还是“虚高泡沫”？传统的股票估值用 PE、PB 等指标，结合历史百分位判断高低。Web3 代币也有类似逻辑，但指标更贴合区块链特性：链上数据如总锁定价值（TVL）、费用收入和活跃用户（DAU）增长率，能揭示代币的内在价值。参考传统金融平台（如&lt;a href=&quot;https://danjuanfunds.com/djmodule/value-center&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;蛋卷基金&lt;/a&gt;的价值中心），我们可以用这些指标，结合历史百分位，构建一个直观的 Web3 代币估值表，判断单个代币（如 UNI 或 ETH）的低估、中估或高估。&lt;/p&gt;
+&lt;p&gt;估值表会不会很难做？是也不是。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不难，因为自己定义一个极简的估值很简单。本文就教你如果做一个自己的估值表，让你理解其背后究竟做了什么事情。&lt;/li&gt;
+&lt;li&gt;难。因为做一个能客观真实反应估值的表非常难，因为这需要加入很多变量，调整很多算法，这个不在本文讨论范围，大家感兴趣的话可以给我留言，人数多的话我会单独写一篇文章。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本文将聚焦&lt;strong&gt;单个代币的估值&lt;/strong&gt;，提出一个自定义的&lt;strong&gt;复合算法&lt;/strong&gt;，整合三个指标：MC/TVL Ratio（市值/TVL）、Fee Yield（费用收益率）和 DAU Growth（活跃用户增长率），生成一个 0-1 的估值分数，清晰定义“低估”（&lt;0.3）、“中估”（0.3-0.7）、“高估”（&gt;0.7）。我会用文字拆解原理，再用 Python 3 代码模拟实现（以 UNI 为例），从数据采集到可视化，全程透明。代码可直接跑，稍改就能用真实 API 判断任何代币。想保护你的 Web3 资产？先看看 MPC 钱包的冷知识：&lt;a href=&quot;https://lucifer.ren/blog/2025/03/05/web3-mpc/&quot;&gt;更加安全的区块链钱包：MPC 钱包&lt;/a&gt;。开始吧！&lt;/0.3）、“中估”（0.3-0.7）、“高估”（&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="代币经济学" scheme="https://lucifer.ren/blog/tags/%E4%BB%A3%E5%B8%81%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>当 RWA 遇上幸福小区玉米</title>
     <link href="https://lucifer.ren/blog/2025/09/14/web3-corn-rwa/"/>
     <id>https://lucifer.ren/blog/2025/09/14/web3-corn-rwa/</id>
     <published>2025-09-13T16:00:00.000Z</published>
-    <updated>2025-09-13T13:10:01.423Z</updated>
+    <updated>2025-09-14T09:03:29.158Z</updated>
     
     <summary type="html">
     
@@ -494,42 +524,6 @@
     
     
       <category term="题解" scheme="https://lucifer.ren/blog/tags/%E9%A2%98%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>更加安全的区块链钱包：MPC 钱包</title>
-    <link href="https://lucifer.ren/blog/2025/03/05/web3-mpc/"/>
-    <id>https://lucifer.ren/blog/2025/03/05/web3-mpc/</id>
-    <published>2025-03-04T16:00:00.000Z</published>
-    <updated>2025-03-06T06:46:35.726Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;web3 是一个非常流行的概念，它的基础是区块链技术。区块链技术是一种分布式账本技术，它的特点是去中心化、不可篡改、安全可靠。区块链技术的应用场景非常广泛，比如数字货币、智能合约、供应链金融等等。&lt;/p&gt;
-&lt;p&gt;网上关于区块链的资料非常多，但是从零开始构建的资料却很少。熟悉我的朋友应该知道，我经常从零实现一些东西帮助我理解，比如从零实现 git，从零实现 webpack 打包器，从零实现一个框架等等。&lt;/p&gt;
-&lt;p&gt;本文就是继上一篇 &lt;a href=&quot;https://lucifer.ren/blog/2025/02/16/web3-wallet/&quot; title=&quot;《Web3 的入口 - 区块链钱包》&quot;&gt;《Web3 的入口 - 区块链钱包》&lt;/a&gt; 的文章，讲述 MPC 钱包是什么，原理是什么，以及多签钱包是什么，它们都是如何增强区块链钱包的安全性的。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-      <category term="钱包" scheme="https://lucifer.ren/blog/tags/%E9%92%B1%E5%8C%85/"/>
-    
-      <category term="MPC 钱包" scheme="https://lucifer.ren/blog/tags/MPC-%E9%92%B1%E5%8C%85/"/>
-    
-      <category term="Web3 钱包" scheme="https://lucifer.ren/blog/tags/Web3-%E9%92%B1%E5%8C%85/"/>
-    
-      <category term="数字钱包" scheme="https://lucifer.ren/blog/tags/%E6%95%B0%E5%AD%97%E9%92%B1%E5%8C%85/"/>
-    
-      <category term="多签钱包" scheme="https://lucifer.ren/blog/tags/%E5%A4%9A%E7%AD%BE%E9%92%B1%E5%8C%85/"/>
-    
-      <category term="冷钱包" scheme="https://lucifer.ren/blog/tags/%E5%86%B7%E9%92%B1%E5%8C%85/"/>
     
   </entry>
   
