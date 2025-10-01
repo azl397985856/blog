@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2025-09-14T07:07:24.773Z</updated>
+  <updated>2025-10-01T08:29:07.995Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Freqtrade 量化风暴：Python 铸就的加密交易自动化帝国</title>
+    <link href="https://lucifer.ren/blog/2025/10/01/web3-freqtrade/"/>
+    <id>https://lucifer.ren/blog/2025/10/01/web3-freqtrade/</id>
+    <published>2025-09-30T16:00:00.000Z</published>
+    <updated>2025-10-01T08:29:07.995Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大家好，我是 Lucifer，又来聊聊 Web3 的那些有趣事儿了。今天咱们来聊聊 Freqtrade。&lt;/p&gt;
+&lt;p&gt;你们有没有过那种深夜盯着K线图，脑子里全是“要是机器帮我下单就好了”的冲动？在加密货币的世界里，市场像过山车一样刺激，但手动交易往往让你错过黄金窗口，或者被情绪拖进深渊。量化交易，就是用算法和数据来驯服这头野兽。今天，我们来聊聊 Freqtrade 这个开源神器——一个纯 Python 驱动的加密交易机器人。它不是什么高大上的黑箱工具，而是让你从零起步，快速构建自动化交易系统的利器。基于 GitHub 上这个热门项目（&lt;a href=&quot;https://github.com/freqtrade/freqtrade&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;freqtrade&lt;/a&gt;），我们一步步拆解它，从安装到策略定制，再到实战回测和报警接入。相信我，跟着读完，你就能在本地跑起自己的量化小帝国了。走起！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="量化交易" scheme="https://lucifer.ren/blog/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DePIN 觉醒：Web3 如何让你的闲置硬件变黄金</title>
+    <link href="https://lucifer.ren/blog/2025/09/20/web3-depin/"/>
+    <id>https://lucifer.ren/blog/2025/09/20/web3-depin/</id>
+    <published>2025-09-19T16:00:00.000Z</published>
+    <updated>2025-10-01T08:28:41.027Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大家好，我是 Lucifer，又来聊聊 Web3 的那些有趣事儿了。今天咱们来聊聊 DePIN，全称 Decentralized Physical Infrastructure Networks，去中心化物理基础设施网络。听起来有点抽象？别急，相信我，它真的超级接地气。想象一下，你家里的闲置硬盘、路由器，甚至是手机的计算力，都能变成赚钱的“矿机”，而这一切都靠区块链来协调和激励。这不只是科幻，它已经在重塑我们对基础设施的认知，让 Web3 从虚拟世界真正走进物理现实。&lt;/p&gt;
+&lt;p&gt;如果你是 Web3 新手，我建议你边读边动手——文章里我会用 Python 代码模拟一些核心过程，只有亲手跑一遍，你才能真正感受到 DePIN 的魅力。准备好了吗？咱们一步步来。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="depin" scheme="https://lucifer.ren/blog/tags/depin/"/>
+    
+  </entry>
   
   <entry>
     <title>自己动手制作 Web3 代币估值表</title>
@@ -484,46 +534,6 @@
       <category term="iTerm2" scheme="https://lucifer.ren/blog/tags/iTerm2/"/>
     
       <category term="终端" scheme="https://lucifer.ren/blog/tags/%E7%BB%88%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>亚信科技这波操作真是把“画饼艺术”玩到极致了！</title>
-    <link href="https://lucifer.ren/blog/2025/03/17/lc-1963/"/>
-    <id>https://lucifer.ren/blog/2025/03/17/lc-1963/</id>
-    <published>2025-03-16T16:00:00.000Z</published>
-    <updated>2025-03-17T04:42:19.008Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近，亚信科技的操作真是让人瞠目结舌，全员取消年终奖的消息传得沸沸扬扬。年初取消1000元补贴、强制降薪的风波还未平息，如今又直接祭出“年终奖归零”的大招，打工人直呼：“这分明是职场PUA！”从补贴取消到裁员分期，再到年终奖清零，亚信科技这一系列操作，把“画饼艺术”演绎到了极致。员工们听着“同甘共苦”的口号，却在现实中被压得喘不过气。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://lucifer.ren/blog/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="题解" scheme="https://lucifer.ren/blog/tags/%E9%A2%98%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>华为这波太猛了，多人被开除</title>
-    <link href="https://lucifer.ren/blog/2025/03/12/lc-3434/"/>
-    <id>https://lucifer.ren/blog/2025/03/12/lc-3434/</id>
-    <published>2025-03-11T16:00:00.000Z</published>
-    <updated>2025-03-12T05:34:56.647Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近华为内部掀起了一场堪称“史诗级”的反腐风暴，目标直指招聘环节的黑产链。消息一出，圈内炸了锅——原来上班还能“付费入场”？这波操作不仅暴露了内部管理的漏洞，还把一条完整的腐败产业链扒得底朝天。金额巨大，成都基地中层被带走，150 人单日清退，零补偿+“诚信污点”追责，华为这次出手，比字节的清理还狠三分。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://lucifer.ren/blog/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="题解" scheme="https://lucifer.ren/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
