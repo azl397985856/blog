@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2025-10-01T08:29:07.995Z</updated>
+  <updated>2025-11-30T08:56:22.638Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从零构建一个真正工作的简单搜索引擎</title>
+    <link href="https://lucifer.ren/blog/2025/11/30/build-search-engine-by-your-own/"/>
+    <id>https://lucifer.ren/blog/2025/11/30/build-search-engine-by-your-own/</id>
+    <published>2025-11-29T16:00:00.000Z</published>
+    <updated>2025-11-30T08:56:22.638Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大家好，我是 Lucifer。今天我们来聊聊如何用 Python 构建一个简单的搜索引擎。为什么写这篇？因为教程要么是黑箱框架（Elasticsearch 配置一堆），要么是浅尝辄止（就字符串匹配）。我希望带你从零起步，实现一个&lt;strong&gt;真正能工作的版本&lt;/strong&gt;：它能用倒排索引存储文档、多种方式切分文本（tokenization）、计算权重，并根据相关度排序返回结果。&lt;/p&gt;
+&lt;p&gt;这篇文章聚焦核心：倒排索引 + tokenization + 权重系统。我们用 Python 的 dict 模拟一切，不需外部库，只用内置字符串处理和 math。&lt;strong&gt;边看边敲代码&lt;/strong&gt;，预计阅读+实践：20 分钟。Python 3 环境准备好？走起！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="搜索" scheme="https://lucifer.ren/blog/categories/%E6%90%9C%E7%B4%A2/"/>
+    
+    
+      <category term="搜索引擎" scheme="https://lucifer.ren/blog/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    
+      <category term="倒排索引" scheme="https://lucifer.ren/blog/tags/%E5%80%92%E6%8E%92%E7%B4%A2%E5%BC%95/"/>
+    
+      <category term="从零实现" scheme="https://lucifer.ren/blog/tags/%E4%BB%8E%E9%9B%B6%E5%AE%9E%E7%8E%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何阅读财报：从入门到进阶指南</title>
+    <link href="https://lucifer.ren/blog/2025/11/03/how-to-read-financial-report/"/>
+    <id>https://lucifer.ren/blog/2025/11/03/how-to-read-financial-report/</id>
+    <published>2025-11-02T16:00:00.000Z</published>
+    <updated>2025-11-30T08:56:36.914Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;财报（财务报表）是企业经营状况的“体检报告”，包括资产负债表、利润表、现金流量表、所有者权益变动表和附注。它帮助投资者、管理者和分析师评估企业的财务健康、盈利能力和风险。阅读财报不是死记硬背，而是通过逻辑分析找出问题。以下我将一步步解释如何阅读、哪些信息重要/不重要，以及造假风险。内容基于权威财务分析框架，适合投资小白和专业人士。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="财报" scheme="https://lucifer.ren/blog/categories/%E8%B4%A2%E6%8A%A5/"/>
+    
+    
+      <category term="财报" scheme="https://lucifer.ren/blog/tags/%E8%B4%A2%E6%8A%A5/"/>
+    
+      <category term="投资" scheme="https://lucifer.ren/blog/tags/%E6%8A%95%E8%B5%84/"/>
+    
+      <category term="金融" scheme="https://lucifer.ren/blog/tags/%E9%87%91%E8%9E%8D/"/>
+    
+  </entry>
   
   <entry>
     <title>Freqtrade 量化风暴：Python 铸就的加密交易自动化帝国</title>
@@ -485,55 +534,6 @@
       <category term="swap" scheme="https://lucifer.ren/blog/tags/swap/"/>
     
       <category term="staking" scheme="https://lucifer.ren/blog/tags/staking/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>让魔兽再次伟大</title>
-    <link href="https://lucifer.ren/blog/2025/03/20/war3-website/"/>
-    <id>https://lucifer.ren/blog/2025/03/20/war3-website/</id>
-    <published>2025-03-19T16:00:00.000Z</published>
-    <updated>2025-08-31T07:11:35.342Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;All you need to know about Warcraft III ladder&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="魔兽争霸3" scheme="https://lucifer.ren/blog/categories/%E9%AD%94%E5%85%BD%E4%BA%89%E9%9C%B83/"/>
-    
-    
-      <category term="魔兽争霸3" scheme="https://lucifer.ren/blog/tags/%E9%AD%94%E5%85%BD%E4%BA%89%E9%9C%B83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AI + terminal 等于 Warp？</title>
-    <link href="https://lucifer.ren/blog/2025/03/19/warp/"/>
-    <id>https://lucifer.ren/blog/2025/03/19/warp/</id>
-    <published>2025-03-18T16:00:00.000Z</published>
-    <updated>2025-03-22T03:55:04.327Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;作为一个开发者，终端是你最亲密的伙伴。它可能是你调试代码的战场，也可能是你部署项目的指挥部。但让我们面对现实：大多数人用的终端，要么是 macOS 自带的 Terminal，要么是久负盛名的 iTerm2。这些工具很可靠，但它们也像老派的骑士——忠诚，却不够灵动。然后，Warp 来了，像个不按套路出牌的叛逆者，直接挑战终端的传统定义。&lt;/p&gt;
-&lt;p&gt;Warp 和 iTerm2，一个是新世代的先锋，一个是久经考验的经典。它们有何不同？Warp 又在哪些地方彻底碾压了 iTerm2？让我们一探究竟。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="工具" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="终端" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/%E7%BB%88%E7%AB%AF/"/>
-    
-    
-      <category term="工具" scheme="https://lucifer.ren/blog/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="Warp" scheme="https://lucifer.ren/blog/tags/Warp/"/>
-    
-      <category term="iTerm2" scheme="https://lucifer.ren/blog/tags/iTerm2/"/>
-    
-      <category term="终端" scheme="https://lucifer.ren/blog/tags/%E7%BB%88%E7%AB%AF/"/>
     
   </entry>
   
