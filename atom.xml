@@ -66,6 +66,26 @@
   </entry>
   
   <entry>
+    <title>限制即提示：算法解题的隐秘指引</title>
+    <link href="https://lucifer.ren/blog/2025/11/22/lc-3755/"/>
+    <id>https://lucifer.ren/blog/2025/11/22/lc-3755/</id>
+    <published>2025-11-21T16:00:00.000Z</published>
+    <updated>2025-12-07T11:01:29.571Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在算法题目的世界里，限制条件（Constraints）往往被视为障碍，但实际上，它们是解题过程中的宝贵提示。这些限制不仅定义了问题的边界，还暗示了高效算法的方向，帮助我们避开低效路径。例如，一个“有序数组”的限制往往提示二分搜索的可能性；“无环图”限制建议树遍历如 DFS；“值域有限”限制指向计数排序或桶排序，而不是通用排序。又如，在“两数之和”中，n=10^4 提示哈希 O(n)而非 O(n^2)；在“最大子数组和”中，连续+n=10^5 提示 Kadane DP。本文以 LeetCode 3755「最大平衡异或子数组的长度」为例，剖析如何将限制转化为解题利器。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://lucifer.ren/blog/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="题解" scheme="https://lucifer.ren/blog/tags/%E9%A2%98%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
     <title>如何阅读财报：从入门到进阶指南</title>
     <link href="https://lucifer.ren/blog/2025/11/03/how-to-read-financial-report/"/>
     <id>https://lucifer.ren/blog/2025/11/03/how-to-read-financial-report/</id>
@@ -510,26 +530,6 @@
       <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
     
       <category term="approve" scheme="https://lucifer.ren/blog/tags/approve/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>传 PayPal 中国裁员，伤害团队解散？</title>
-    <link href="https://lucifer.ren/blog/2025/03/31/lc-3504/"/>
-    <id>https://lucifer.ren/blog/2025/03/31/lc-3504/</id>
-    <published>2025-03-30T16:00:00.000Z</published>
-    <updated>2025-03-31T11:06:25.631Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;近日，网络上关于 PayPal 中国裁员的消息引发了广泛关注。一则来自网友的爆料称，受特朗普政府最新数据安全法案的影响，PayPal 中国部分团队因涉及美国敏感个人数据和政府数据的处理，可能面临重大调整，甚至波及整个中国业务的稳定性。这一消息迅速在社交媒体上发酵，不少人对 PayPal 在华团队的未来表示担忧。那么，这次裁员究竟是怎么回事？让我们一起来梳理一下。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://lucifer.ren/blog/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="题解" scheme="https://lucifer.ren/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
