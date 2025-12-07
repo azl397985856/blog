@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2025-11-30T08:56:22.638Z</updated>
+  <updated>2025-12-07T05:32:37.143Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ACP：AI 代理协作协议在 Web3 空投自动化中的应用</title>
+    <link href="https://lucifer.ren/blog/2025/12/07/web3-acp/"/>
+    <id>https://lucifer.ren/blog/2025/12/07/web3-acp/</id>
+    <published>2025-12-06T16:00:00.000Z</published>
+    <updated>2025-12-07T05:32:37.143Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 AI 与 Web3 的交汇处，代理系统正重塑自动化任务的执行方式。传统的空投“撸毛”过程依赖手动监控和脚本执行，效率低下且易受检测。本文探讨 Agent Communication Protocol (ACP)，一种新兴协议如何通过标准化代理间通信，实现高效、隐私保护的自动化协作。我们将从 AI 协议基础入手，逐步剖析 ACP 的原理、实现细节，并提供可运行的代码示例。内容基于当前（2025 年 12 月）开源社区进展，旨在为开发者提供实用指导。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="acp" scheme="https://lucifer.ren/blog/tags/acp/"/>
+    
+  </entry>
   
   <entry>
     <title>从零构建一个真正工作的简单搜索引擎</title>
@@ -506,34 +530,6 @@
     
     
       <category term="题解" scheme="https://lucifer.ren/blog/tags/%E9%A2%98%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Web3 金融的基石 - Swap 和 Staking</title>
-    <link href="https://lucifer.ren/blog/2025/03/28/web3-swap-staking/"/>
-    <id>https://lucifer.ren/blog/2025/03/28/web3-swap-staking/</id>
-    <published>2025-03-27T16:00:00.000Z</published>
-    <updated>2025-04-05T08:30:21.192Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;web3 是一个非常流行的概念，它的基础是区块链技术。区块链技术是一种分布式账本技术，它的特点是去中心化、不可篡改、安全可靠。区块链技术的应用场景非常广泛，比如数字货币、智能合约、供应链金融等等。&lt;/p&gt;
-&lt;p&gt;网上关于区块链的资料非常多，但是从零开始构建的资料却很少。熟悉我的朋友应该知道，我经常从零实现一些东西帮助我理解，比如从零实现 git，从零实现 webpack 打包器，从零实现一个框架等等。&lt;/p&gt;
-&lt;p&gt;本文就是继上一篇 &lt;a href=&quot;https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/&quot; title=&quot;《从零开始构建区块链》&quot;&gt;《从零开始构建区块链》&lt;/a&gt; 的文章，讲述&lt;strong&gt;什么是 swap，什么是滑点，什么是 staking，背后原理又是怎么样的？&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-      <category term="swap" scheme="https://lucifer.ren/blog/tags/swap/"/>
-    
-      <category term="staking" scheme="https://lucifer.ren/blog/tags/staking/"/>
     
   </entry>
   
