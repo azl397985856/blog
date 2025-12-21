@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2025-12-07T05:32:37.143Z</updated>
+  <updated>2025-12-21T05:54:23.050Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我们是如何让 JSON.stringify 的速度提升两倍以上的</title>
+    <link href="https://lucifer.ren/blog/2025/12/21/v8-json-stringify/"/>
+    <id>https://lucifer.ren/blog/2025/12/21/v8-json-stringify/</id>
+    <published>2025-12-20T16:00:00.000Z</published>
+    <updated>2025-12-21T05:54:23.050Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大家好，我是 lucifer~&lt;/p&gt;
+&lt;p&gt;今天咱们来聊聊一个前端开发中常见的“幕后英雄”——&lt;code&gt;JSON.stringify&lt;/code&gt;。你知道吗？这个函数在 V8 引擎（Chrome 和 Node.js 的 JavaScript 引擎）里最近被优化得飞起，速度直接翻倍以上！咱们会用通俗的话解释概念，加点背景知识和生活比喻，还会配上代码示例帮你理解。如果你边看边敲代码，效果会更好哦——记住，实践出真知！&lt;/p&gt;
+&lt;p&gt;为什么选这个话题？因为 &lt;code&gt;JSON.stringify&lt;/code&gt; 几乎无处不在：发网络请求、存 localStorage、日志记录……它慢一点，整个网页就卡一点。优化它，就等于给你的 app 装了个涡轮增压器。咱们先从基础聊起，然后深入优化细节，最后看看实际效果。走起！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="v8" scheme="https://lucifer.ren/blog/categories/v8/"/>
+    
+    
+      <category term="v8" scheme="https://lucifer.ren/blog/tags/v8/"/>
+    
+      <category term="javascript" scheme="https://lucifer.ren/blog/tags/javascript/"/>
+    
+      <category term="json" scheme="https://lucifer.ren/blog/tags/json/"/>
+    
+      <category term="stringify" scheme="https://lucifer.ren/blog/tags/stringify/"/>
+    
+      <category term="性能优化" scheme="https://lucifer.ren/blog/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>ACP：AI 代理协作协议在 Web3 空投自动化中的应用</title>
@@ -504,32 +536,6 @@
     
     
       <category term="题解" scheme="https://lucifer.ren/blog/tags/%E9%A2%98%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Web3 中的授权与撤销授权</title>
-    <link href="https://lucifer.ren/blog/2025/04/02/web3-approve/"/>
-    <id>https://lucifer.ren/blog/2025/04/02/web3-approve/</id>
-    <published>2025-04-01T16:00:00.000Z</published>
-    <updated>2025-04-06T12:21:52.566Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;web3 是一个非常流行的概念，它的基础是区块链技术。区块链技术是一种分布式账本技术，它的特点是去中心化、不可篡改、安全可靠。区块链技术的应用场景非常广泛，比如数字货币、智能合约、供应链金融等等。&lt;/p&gt;
-&lt;p&gt;网上关于区块链的资料非常多，但是从零开始构建的资料却很少。熟悉我的朋友应该知道，我经常从零实现一些东西帮助我理解，比如从零实现 git，从零实现 webpack 打包器，从零实现一个框架等等。&lt;/p&gt;
-&lt;p&gt;本文就是继上一篇 &lt;a href=&quot;https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/&quot; title=&quot;《从零开始构建区块链》&quot;&gt;《从零开始构建区块链》&lt;/a&gt; 的文章，讲述&lt;strong&gt;什么是 Web3 中的授权与撤销授权&lt;/strong&gt;，以及如何用 Python3 模拟其过程。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-      <category term="approve" scheme="https://lucifer.ren/blog/tags/approve/"/>
     
   </entry>
   
