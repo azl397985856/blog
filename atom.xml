@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2025-12-21T05:54:23.050Z</updated>
+  <updated>2025-12-24T14:35:25.856Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>苹果AI转型：Siri升级与生态潜力</title>
+    <link href="https://lucifer.ren/blog/2025/12/24/ai-apple/"/>
+    <id>https://lucifer.ren/blog/2025/12/24/ai-apple/</id>
+    <published>2025-12-23T16:00:00.000Z</published>
+    <updated>2025-12-24T14:35:25.856Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大家好，我是Lucifer。作为一名长期关注AI领域的从业者，我注意到苹果近期在AI方面的组织调整颇具意义。如果你对AI如何逐步融入日常生活和工作感兴趣，或是好奇苹果在这一领域的战略布局，这篇文章或许能提供一些insights。我会尽量用平实的语言阐述，避免过多技术 jargon，从苹果的最新动态谈起。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="ai" scheme="https://lucifer.ren/blog/categories/ai/"/>
+    
+    
+      <category term="ai" scheme="https://lucifer.ren/blog/tags/ai/"/>
+    
+      <category term="apple" scheme="https://lucifer.ren/blog/tags/apple/"/>
+    
+  </entry>
   
   <entry>
     <title>我们是如何让 JSON.stringify 的速度提升两倍以上的</title>
@@ -516,26 +538,6 @@
       <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
     
       <category term="approve" scheme="https://lucifer.ren/blog/tags/approve/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>字节期权回购又双叒涨了？这波员工赢麻了！</title>
-    <link href="https://lucifer.ren/blog/2025/04/11/lc-3468/"/>
-    <id>https://lucifer.ren/blog/2025/04/11/lc-3468/</id>
-    <published>2025-04-10T16:00:00.000Z</published>
-    <updated>2025-04-11T03:11:58.257Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近字节跳动又放大招，员工们怕是已经在偷偷乐开了花！据内部消息，字节刚刚启动了新一轮期权回购，价格直接炸裂：在职员工每股税前180.7美元（约合人民币1308元），离职员工也有153.6美元（约合人民币1088元）。这价格比半年前的回购价硬生生涨了近6%！要知道，去年同期才160美元，这一年时间，期权价格跟坐火箭似的，员工手里的“纸面财富”又增值了一波，属实赢麻了！&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://lucifer.ren/blog/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="题解" scheme="https://lucifer.ren/blog/tags/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
