@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2025-12-24T14:35:25.856Z</updated>
+  <updated>2026-01-02T13:54:59.777Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>当下流动性池分析</title>
+    <link href="https://lucifer.ren/blog/2025/12/31/web3-lp-2025/"/>
+    <id>https://lucifer.ren/blog/2025/12/31/web3-lp-2025/</id>
+    <published>2025-12-30T16:00:00.000Z</published>
+    <updated>2026-01-02T13:54:59.777Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在去中心化金融（DeFi）生态中，流动性池是自动做市商（AMM）机制的核心组成部分。它允许用户通过提供资产来赚取费用，同时为交易者提供即时交换服务，而无需依赖传统的订单簿。流动性池的设计直接影响交易滑点、资金效率和流动性提供者（LP）的风险回报比。随着 DeFi 的演进，不同协议不断优化池子模型，以应对永久性损失（Impermanent Loss, IL）、滑点和多资产支持等问题。本文将分析当下几个主流流动性池协议，包括 Uniswap V3、Balancer、Curve 和 Bancor V3。我们将通过通俗的解释、类比和 Python 代码模拟来剖析其原理，帮助读者理解这些机制如何在实际中运作。所有模拟均基于简化假设，旨在说明核心概念，而非精确预测。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="swap" scheme="https://lucifer.ren/blog/tags/swap/"/>
+    
+      <category term="uniswap" scheme="https://lucifer.ren/blog/tags/uniswap/"/>
+    
+      <category term="v4" scheme="https://lucifer.ren/blog/tags/v4/"/>
+    
+      <category term="balancer" scheme="https://lucifer.ren/blog/tags/balancer/"/>
+    
+      <category term="curve" scheme="https://lucifer.ren/blog/tags/curve/"/>
+    
+      <category term="bancor" scheme="https://lucifer.ren/blog/tags/bancor/"/>
+    
+      <category term="流动性池" scheme="https://lucifer.ren/blog/tags/%E6%B5%81%E5%8A%A8%E6%80%A7%E6%B1%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>苹果AI转型：Siri升级与生态潜力</title>
@@ -514,30 +550,6 @@
       <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
     
       <category term="k 线" scheme="https://lucifer.ren/blog/tags/k-%E7%BA%BF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一个简单的 web3 应用</title>
-    <link href="https://lucifer.ren/blog/2025/05/11/web-demo/"/>
-    <id>https://lucifer.ren/blog/2025/05/11/web-demo/</id>
-    <published>2025-05-10T16:00:00.000Z</published>
-    <updated>2025-05-11T13:15:46.792Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在传统的 Web2 开发中，开发者通常会选择 MySQL、MongoDB 或 Firebase 这样的数据库来存储用户数据。而随着区块链技术和 Web3 的兴起，我们可以直接将区块链作为数据库来使用，省去中心化服务器的麻烦，同时赋予用户数据主权。这篇文章将带你探索如何用 Web3 实现一个去中心化的数据存储方案，并通过 Python3 代码模拟关键流程。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-      <category term="approve" scheme="https://lucifer.ren/blog/tags/approve/"/>
     
   </entry>
   
