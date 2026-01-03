@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2026-01-02T13:54:59.777Z</updated>
+  <updated>2026-01-03T04:38:02.750Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NotebookLM：AI 驱动的知识炼金术，瞬间转化复杂信息为易懂洞见</title>
+    <link href="https://lucifer.ren/blog/2026/01/01/ai-notebooklm/"/>
+    <id>https://lucifer.ren/blog/2026/01/01/ai-notebooklm/</id>
+    <published>2025-12-31T16:00:00.000Z</published>
+    <updated>2026-01-03T04:38:02.750Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在信息爆炸的时代，我们常常面对海量内容，却苦于时间有限、理解力不足。想象一下，你遇到一篇技术深度文章，充满了专业术语和复杂逻辑，本来需要花几个小时研读，现在只需几分钟就能掌握核心，甚至转化成生动视频。这听起来像科幻？不，这就是 Google 的 NotebookLM —— 一个 AI 驱动的研究和笔记工具。它利用 Google Gemini 等先进模型，帮助用户上传来源、自动分析、生成总结，并通过互动对话或多媒体输出，让知识获取变得如探囊取物般简单。&lt;/p&gt;
+&lt;p&gt;NotebookLM 并非简单的总结器，而是你的“思考伙伴”。它于 2023 年推出，由 Google Labs 开发，旨在帮助研究者、学生和专业人士处理文档、网页等材料。到 2026 年初，它已演变为支持协作编辑、闪卡生成和测验功能的综合平台。根据 Google 官方支持页面，它能上传 PDF、网站、Google Docs 等多种格式，并通过 AI 提炼关键信息，避免用户手动整理的繁琐。作为一个免费工具（部分高级功能需 Google 账户），它强调隐私：所有处理均在本地或云端安全进行，不用于训练模型。&lt;/p&gt;
+&lt;p&gt;本文将基于实际使用体验，逐步拆解 NotebookLM 的工作原理和优势。我们不会深挖底层 AI 算法（那属于 Google 的黑箱），而是聚焦实用场景，用类比和例子说明如何让它成为你的知识加速器。让我们从一个简单链接入手，看看它如何变魔术。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ai" scheme="https://lucifer.ren/blog/categories/ai/"/>
+    
+    
+      <category term="ai" scheme="https://lucifer.ren/blog/tags/ai/"/>
+    
+      <category term="notebooklm" scheme="https://lucifer.ren/blog/tags/notebooklm/"/>
+    
+      <category term="google" scheme="https://lucifer.ren/blog/tags/google/"/>
+    
+      <category term="gemini" scheme="https://lucifer.ren/blog/tags/gemini/"/>
+    
+      <category term="knowledge-management" scheme="https://lucifer.ren/blog/tags/knowledge-management/"/>
+    
+  </entry>
   
   <entry>
     <title>当下流动性池分析</title>
@@ -524,32 +554,6 @@
     
     
       <category term="缠论" scheme="https://lucifer.ren/blog/tags/%E7%BC%A0%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>看懂 Web3 的 K 线</title>
-    <link href="https://lucifer.ren/blog/2025/06/10/web3-k-line/"/>
-    <id>https://lucifer.ren/blog/2025/06/10/web3-k-line/</id>
-    <published>2025-06-09T16:00:00.000Z</published>
-    <updated>2025-06-15T08:23:31.515Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;web3 是一个非常流行的概念，它的基础是区块链技术。区块链技术是一种分布式账本技术，它的特点是去中心化、不可篡改、安全可靠。区块链技术的应用场景非常广泛，比如数字货币、智能合约、供应链金融等等。&lt;/p&gt;
-&lt;p&gt;网上关于区块链的资料非常多，但是从零开始构建的资料却很少。熟悉我的朋友应该知道，我经常从零实现一些东西帮助我理解，比如从零实现 git，从零实现 webpack 打包器，从零实现一个框架等等。&lt;/p&gt;
-&lt;p&gt;本文就是继上一篇 &lt;a href=&quot;https://lucifer.ren/blog/2025/02/16/web3-wallet/&quot; title=&quot;《Web3 的入口 - 区块链钱包》&quot;&gt;《Web3 的入口 - 区块链钱包》&lt;/a&gt; 的文章，讲述 K 线图（也称蜡烛图）是什么。并以给定的价格序列 &lt;code&gt;[1, 10, 20, 8, 3, 2]&lt;/code&gt; 为例，详细讲解 K 线的构成、自定义绘制方法，以及技术指标（移动平均线、布林带、MACD、RSI）的计算与应用，结合背驰分析、趋势判断和支撑/阻力位识别，带你全面理解如何在 Web3 市场中“看懂 K 线”。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-      <category term="k 线" scheme="https://lucifer.ren/blog/tags/k-%E7%BA%BF/"/>
     
   </entry>
   
