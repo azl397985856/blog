@@ -10,6 +10,24 @@ categories:
 
 <!-- more -->
 
+Context 就像大脑一样，我们想让 claude code 给我们解决问题，就需要给这个大脑灌输我们的信息，这就好像我们像其他人请教问题， 需要明确的背景和细节。而这个大脑也不是无限大的， 因此我们也不能无脑把所有有用没用的都丢给他。更何况， 大脑负载太高，大模型还会**失了智**（关于这个我们后面讲）。
+
+## 背景
+
+claude code 底层是 LLM 的 agent，它会将用户的请求代理给 LLM，然后 LLM 需要什么东西再交给 agent 来处理，如此反复。最后 agent 再将 LLM 的处理结果返回给用户。
+
+也就是说它只是一个中介，一个为了让你更快更好得使用 LLM 的一个工具。
+
+agent 可以帮我们解决很多问题。包括但不限于：
+
+- LLM 是无状态的，无法获取到你的代码库，最近发生的新闻等内容。 而 agent 可以将这些信息告诉 LLM。
+- LLM 只是大脑，无法直接读取文件，上网，执行 bash 等操作，而 agent 可以帮助它完成这些任务。
+- 。。。
+
+举了例子。 比如你问 claude code：“请修复 /Users/use/Desktop/project/main.py 里的语法错误”。 claude code 会读取你的 claude.md（假设里面有你的代码库信息）以及 LLM 可以使用哪些工具（bash，read，write，web fetch 等等），然后将这些信息和你的请求一起发送给 LLM， LLM 根据这些信息生成修复建议，然后 claude code 将建议写回到 main.py 里。真实情况会更复杂，比如 claude code 会分析需不需要使用 skill，如果需要则提取 skill 内容一起发给 LLM 等等。
+
+以上介绍的所有的 agent 发送给 LLM 的内容都是 Context，包括你自己输入的，你预先设置的规则，agent 自动推断需要添加的内容等等。有了这些铺垫，我们来进入文章的正文部分。
+
 ## 理解Context：AI代理的基石
 
 在Claude Code乃至所有AI代理系统中，Context（上下文）是决定输出质量的核心要素。它不仅仅局限于Claude Code，而是任何AI代理的基石——从聊天机器人到复杂决策系统，都依赖Context来“记忆”和解读用户意图。没有优质Context，AI的响应可能脱离轨道，生成无关或低效的结果。
