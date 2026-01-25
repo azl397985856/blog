@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2026-01-03T04:54:57.562Z</updated>
+  <updated>2026-01-25T07:30:16.206Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Claude Code 高级指南：驾驭上下文的艺术</title>
+    <link href="https://lucifer.ren/blog/2026/01/25/ai-claude-code-advanced-skills/"/>
+    <id>https://lucifer.ren/blog/2026/01/25/ai-claude-code-advanced-skills/</id>
+    <published>2026-01-24T16:00:00.000Z</published>
+    <updated>2026-01-25T07:30:16.206Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在AI辅助编程的时代浪潮中，Claude Code作为Anthropic的旗舰工具，已然成为开发者提升效率的核心引擎。它不只是代码生成器，更是连接创意与实现的桥梁。本文将从基础概念层层展开，深入探讨高级优化策略，帮助你全面掌握这一工具。无论你是编程新手还是资深专家，都能从中汲取实用洞见。我们将结合真实场景和示例，确保内容易于理解且可直接应用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ai" scheme="https://lucifer.ren/blog/categories/ai/"/>
+    
+    
+      <category term="ai" scheme="https://lucifer.ren/blog/tags/ai/"/>
+    
+      <category term="claude" scheme="https://lucifer.ren/blog/tags/claude/"/>
+    
+  </entry>
   
   <entry>
     <title>NotebookLM：AI 驱动的知识炼金术，瞬间转化复杂信息为易懂洞见</title>
@@ -528,32 +550,6 @@
       <category term="91天学算法" scheme="https://lucifer.ren/blog/tags/91%E5%A4%A9%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
     
       <category term="力扣加加" scheme="https://lucifer.ren/blog/tags/%E5%8A%9B%E6%89%A3%E5%8A%A0%E5%8A%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>缠论</title>
-    <link href="https://lucifer.ren/blog/2025/06/20/zen-k-line/"/>
-    <id>https://lucifer.ren/blog/2025/06/20/zen-k-line/</id>
-    <published>2025-06-19T16:00:00.000Z</published>
-    <updated>2025-06-21T13:46:22.565Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;缠论是一门研究交易的理论。&lt;/p&gt;
-&lt;p&gt;研究交易核心解决的就是一个问题：买点和卖点在哪里。缠论里有三个买卖点，这正是缠论的重点。&lt;/p&gt;
-&lt;p&gt;学习缠论需要掌握两个思想：组合，递归。下面我们结合具体的内容来讲解。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="缠论" scheme="https://lucifer.ren/blog/categories/%E7%BC%A0%E8%AE%BA/"/>
-    
-      <category term="交易" scheme="https://lucifer.ren/blog/categories/%E7%BC%A0%E8%AE%BA/%E4%BA%A4%E6%98%93/"/>
-    
-      <category term="理财" scheme="https://lucifer.ren/blog/categories/%E7%BC%A0%E8%AE%BA/%E4%BA%A4%E6%98%93/%E7%90%86%E8%B4%A2/"/>
-    
-    
-      <category term="缠论" scheme="https://lucifer.ren/blog/tags/%E7%BC%A0%E8%AE%BA/"/>
     
   </entry>
   
