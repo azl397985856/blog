@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Tag: DEX | lucifer的网络博客</title>
+  <title>Tag: dex | lucifer的网络博客</title>
   
   <meta name="keywords" content="前端 leetocde 数据结构 算法 lucifer 大前端 性能优化 前端架构 前端工程化">
   
@@ -303,8 +303,8 @@
       
         
   <h2 class="title">
-    <a href="/blog/2025/07/06/web3-mev/">
-      Web3 的 Anti MEV：深入剖析“夹”与反制之道
+    <a href="/blog/2025/08/04/web3-detective-1/">
+      Web3 科学家之如何查看鲸鱼挂单数据
     </a>
   </h2>
 
@@ -334,7 +334,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2025-07-06</p>
+    <p>2025-08-04</p>
   </a>
 </div>
 
@@ -366,7 +366,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">3.9k字</span>
+          <span class="post-count">2.7k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -374,7 +374,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">16分</span>
+          <span class="post-count">10分</span>
         </span>
       </span>
     </div>
@@ -392,10 +392,10 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>“我被夹了！”——如果你在区块链或 DeFi 社区混迹，可能会听到这样的抱怨。那么，什么是“夹”？简单来说，“夹”是一种特定的 <strong>矿工可提取价值（Miner Extractable Value，MEV）</strong> 行为，攻击者通过观察交易池（mempool）中的交易，插入自己的高 Gas 费用交易，抢在用户交易之前（抢跑，Front-running）和之后（反向抢跑，Back-running）执行，从而攫取利润。这种行为不仅让用户损失金钱，还破坏了区块链的公平性。为了对抗“夹”，<strong>Anti MEV</strong> 机制应运而生。本文将聚焦“夹”这一 MEV 形式，深入分析其原理、实现方式，以及如何通过 Python3 代码模拟“夹”和防范措施。我们的目标是让你彻底理解“夹”的运作机制——虽然我们不鼓励“夹”别人，但正如兵法所言，知己知彼，方能百战不殆。</p>
+      <p>在 Web3 的去中心化金融（DeFi）世界中，“鲸鱼”（即大庄家）凭借巨额资金的交易行为，常常能掀起市场波澜。他们的挂单——无论是已成交的订单还是尚未执行的限价订单——都可能隐藏着市场意图的线索。得益于区块链的透明性，我们可以通过链上数据和专业工具，窥探这些鲸鱼的动向。本文将以循序渐进的方式，带你从零开始探索如何在 Web3 环境中查看鲸鱼的挂单数据，重点使用 Python3 代码展示实现原理，并结合以太坊和 Solana 生态的实际案例，力求清晰、实用。</p>
       
         <div class="readmore">
-          <a href="/blog/2025/07/06/web3-mev/" class="flat-box">
+          <a href="/blog/2025/08/04/web3-detective-1/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -409,9 +409,7 @@
         
           <a href="/blog/tags/web3/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> web3</a>
         
-          <a href="/blog/tags/DEX/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> DEX</a>
-        
-          <a href="/blog/tags/MEV/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> MEV</a>
+          <a href="/blog/tags/dex/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> dex</a>
         
       </div>
     
@@ -1418,6 +1416,26 @@
       $(element).attr("href", $(this).attr("src"));
       /* 图片采用懒加载处理时,
        * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+    <script>
+      setLoadingBarProgress(100);
+    </script>
+  </body>
+</html>
+�性名来存放图片的真实地址，比如 data-original,
        * 那么此处将原本的属性名src替换为对应属性名data-original,
        * 修改如下
        */
