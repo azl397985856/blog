@@ -361,7 +361,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">3.9k字</span>
+          <span class="post-count">4.2k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -369,7 +369,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">13分</span>
+          <span class="post-count">14分</span>
         </span>
       </span>
     </div>
@@ -457,6 +457,8 @@
 <p>为了不突破Context使用率阈值，建议在Plan完成后，将计划持久化到硬盘（如保存为文本文件）。然后，在Implement阶段，直接引用这个文件作为Context基础。这能显著减少每次交互的负载，确保窗口高效利用。</p>
 <h3 id="跨模型协作：Plan后Review"><a href="#跨模型协作：Plan后Review" class="headerlink" title="跨模型协作：Plan后Review"></a>跨模型协作：Plan后Review</h3><p>基于分阶段方法，你可以用轻量模型（如Haiku）快速完成初始Plan，然后切换到精细化模型（如Claude Opus）进行Review。这如同团队分工：前者提供草稿，后者精炼细节。优势在于节省资源，同时提升最终质量。</p>
 <p>例如，先用Haiku列出算法步骤，再用Opus检查潜在漏洞和优化点。</p>
+<h3 id="使用-subagents：分工协作的利器"><a href="#使用-subagents：分工协作的利器" class="headerlink" title="使用 subagents：分工协作的利器"></a>使用 subagents：分工协作的利器</h3><p>Claude Code支持subagents，可以帮助你将任务分解成多个子任务，并将结果集成。实际上，claude code 中是有一些开箱即用的 sub agents 的，可能你并没有注意。 比如读取仓库代码的 Explore sub agent，专门用来指定计划的 plan agent 等等。这些 agent 会 claude code 干活的时候分配任务给他们， 然后他们干完活再通过摘要的形式返回给主窗口。有时候你会看到“press Ctrl+B run this in the background” 之类的提示，这很可能就是 sub agent 正在运行。</p>
+<p>最最关键的是：每个 subagent 都是独立的上下文，也就是说它的存在不会使得主 context 过大。缺点也是一样，由于他不会包含主 context 的所有信息，因此有些内容可能就需要重新获取一遍（费 token，但是不费主 context 占用量）。因此在合适的时候使用 subagent 对于节省主 context 占用是非常有用的，不过如果使用不当，不仅没有效果，反而可能使得你的 token 暴涨。更多 sub agents 介绍以及使用技巧，请参考 <a href="https://code.claude.com/docs/zh-TW/sub-agents" target="_blank" rel="noopener">claude code sub agents 官方文档</a></p>
 <h3 id="其他高级技巧"><a href="#其他高级技巧" class="headerlink" title="其他高级技巧"></a>其他高级技巧</h3><p>借鉴开发者社区（如Reddit和Anthropic论坛）的热门分享，这里列出几项高赞技巧：</p>
 <ul>
 <li>最小化Context：仅提供必需元素，避免冗余。实践：用文件上传替代长文本输入。</li>
@@ -478,10 +480,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-01-25T16:41:00+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-03-11T10:58:59+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2026年1月25日</p>
+    <p>更新于 2026年3月11日</p>
   </a>
 </div>
 
@@ -724,7 +726,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#理解Context：AI代理的基石"><span class="toc-text">理解Context：AI代理的基石</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Context的优先级管理"><span class="toc-text">Context的优先级管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不同Claude模型的Context处理能力对比"><span class="toc-text">不同Claude模型的Context处理能力对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优化Context的实用技巧"><span class="toc-text">优化Context的实用技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#管理Context使用量：效率的守护者"><span class="toc-text">管理Context使用量：效率的守护者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#核心技巧：任务分阶段拆解"><span class="toc-text">核心技巧：任务分阶段拆解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跨模型协作：Plan后Review"><span class="toc-text">跨模型协作：Plan后Review</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他高级技巧"><span class="toc-text">其他高级技巧</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结：Context优化的完整路径"><span class="toc-text">总结：Context优化的完整路径</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#理解Context：AI代理的基石"><span class="toc-text">理解Context：AI代理的基石</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Context的优先级管理"><span class="toc-text">Context的优先级管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不同Claude模型的Context处理能力对比"><span class="toc-text">不同Claude模型的Context处理能力对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优化Context的实用技巧"><span class="toc-text">优化Context的实用技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#管理Context使用量：效率的守护者"><span class="toc-text">管理Context使用量：效率的守护者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#核心技巧：任务分阶段拆解"><span class="toc-text">核心技巧：任务分阶段拆解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跨模型协作：Plan后Review"><span class="toc-text">跨模型协作：Plan后Review</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-subagents：分工协作的利器"><span class="toc-text">使用 subagents：分工协作的利器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他高级技巧"><span class="toc-text">其他高级技巧</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结：Context优化的完整路径"><span class="toc-text">总结：Context优化的完整路径</span></a></li></ol>
     </div>
   </section>
 
