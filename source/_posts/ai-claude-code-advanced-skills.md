@@ -114,6 +114,12 @@ Claude家族模型包括Claude 3 Haiku（轻量快速型）、Claude 3.5 Sonnet�
 
 例如，先用Haiku列出算法步骤，再用Opus检查潜在漏洞和优化点。
 
+### 使用 subagents：分工协作的利器
+
+Claude Code支持subagents，可以帮助你将任务分解成多个子任务，并将结果集成。实际上，claude code 中是有一些开箱即用的 sub agents 的，可能你并没有注意。 比如读取仓库代码的 Explore sub agent，专门用来指定计划的 plan agent 等等。这些 agent 会 claude code 干活的时候分配任务给他们， 然后他们干完活再通过摘要的形式返回给主窗口。有时候你会看到“press Ctrl+B run this in the background” 之类的提示，这很可能就是 sub agent 正在运行。
+
+最最关键的是：每个 subagent 都是独立的上下文，也就是说它的存在不会使得主 context 过大。缺点也是一样，由于他不会包含主 context 的所有信息，因此有些内容可能就需要重新获取一遍（费 token，但是不费主 context 占用量）。因此在合适的时候使用 subagent 对于节省主 context 占用是非常有用的，不过如果使用不当，不仅没有效果，反而可能使得你的 token 暴涨。更多 sub agents 介绍以及使用技巧，请参考 [claude code sub agents 官方文档](https://code.claude.com/docs/zh-TW/sub-agents)
+
 ### 其他高级技巧
 
 借鉴开发者社区（如Reddit和Anthropic论坛）的热门分享，这里列出几项高赞技巧：
