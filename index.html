@@ -354,6 +354,10 @@
           
         
           
+        
+          
+        
+          
             
               <div class='post-wrapper'>
                 <article class="post reveal ">
@@ -920,12 +924,6 @@
         
           
         
-          
-        
-          
-        
-          
-        
       
     
     
@@ -1058,117 +1056,6 @@
           <a href="/blog/tags/仓位管理/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 仓位管理</a>
         
       </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal no-title">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/blog/2026/05/21/trading-journal-05-21/">
-      2026-05-21
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://lucifer.ren/blog" rel="nofollow">
-        
-          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
-        
-        <p>lucifer</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2026-05-21</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-  
-    <div style="margin-right: 10px;">
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-keyboard"></i>
-          <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">63字</span>
-        </span>
-      </span>
-      &nbsp; | &nbsp;
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-hourglass-half"></i>
-          <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">1分</span>
-        </span>
-      </span>
-    </div>
-  
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <div class="readmore">
-          <a href="/blog/2026/05/21/trading-journal-05-21/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
     
   </section>
 </article>
@@ -2251,6 +2138,141 @@
           </div>
         
       
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2025/12/21/v8-json-stringify/">
+      我们是如何让 JSON.stringify 的速度提升两倍以上的
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2025-12-21</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/v8/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>前端&nbsp;/&nbsp;v8</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">3k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">11分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>大家好，我是 lucifer~</p>
+<p>今天咱们来聊聊一个前端开发中常见的“幕后英雄”——<code>JSON.stringify</code>。你知道吗？这个函数在 V8 引擎（Chrome 和 Node.js 的 JavaScript 引擎）里最近被优化得飞起，速度直接翻倍以上！咱们会用通俗的话解释概念，加点背景知识和生活比喻，还会配上代码示例帮你理解。如果你边看边敲代码，效果会更好哦——记住，实践出真知！</p>
+<p>为什么选这个话题？因为 <code>JSON.stringify</code> 几乎无处不在：发网络请求、存 localStorage、日志记录……它慢一点，整个网页就卡一点。优化它，就等于给你的 app 装了个涡轮增压器。咱们先从基础聊起，然后深入优化细节，最后看看实际效果。走起！</p>
+      
+        <div class="readmore">
+          <a href="/blog/2025/12/21/v8-json-stringify/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/tags/v8/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> v8</a>
+        
+          <a href="/blog/tags/javascript/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> javascript</a>
+        
+          <a href="/blog/tags/json/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> json</a>
+        
+          <a href="/blog/tags/stringify/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> stringify</a>
+        
+          <a href="/blog/tags/性能优化/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 性能优化</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
     
   </section>
   
@@ -2260,7 +2282,7 @@
         <div class="prev-next">
           
           <p class="current">
-            1 / 26
+            1 / 25
           </p>
           
             <a class="next" rel="next" href="/blog/page/2/">
