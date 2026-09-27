@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2026-07-25T07:15:31.569Z</updated>
+  <updated>2026-09-27T06:04:42.709Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,86 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一切皆插件：DeepSeek Harness</title>
+    <link href="https://lucifer.ren/blog/2026/09/27/dsh/"/>
+    <id>https://lucifer.ren/blog/2026/09/27/dsh/</id>
+    <published>2026-09-26T16:00:00.000Z</published>
+    <updated>2026-09-27T06:04:42.709Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Agent 是一个非常流行的概念。模型负责思考，但模型自己并不能读文件、跑命令、记住上下文、在真实环境里把一件事做完。网上关于 Agent 的资料非常多，Claude Code、Codex 这类产品大家也用得不少，但是把「模型之外那一层」从零讲清楚的却很少。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ai" scheme="https://lucifer.ren/blog/categories/ai/"/>
+    
+      <category term="agent" scheme="https://lucifer.ren/blog/categories/ai/agent/"/>
+    
+    
+      <category term="deepseek" scheme="https://lucifer.ren/blog/tags/deepseek/"/>
+    
+      <category term="harness" scheme="https://lucifer.ren/blog/tags/harness/"/>
+    
+      <category term="agent" scheme="https://lucifer.ren/blog/tags/agent/"/>
+    
+      <category term="cordis" scheme="https://lucifer.ren/blog/tags/cordis/"/>
+    
+      <category term="plugin" scheme="https://lucifer.ren/blog/tags/plugin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>配置文件的保险箱：dotr</title>
+    <link href="https://lucifer.ren/blog/2026/09/20/dotr/"/>
+    <id>https://lucifer.ren/blog/2026/09/20/dotr/</id>
+    <published>2026-09-19T16:00:00.000Z</published>
+    <updated>2026-09-27T06:25:56.960Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;配置备份是一个非常常见的需求。用了十几年电脑的人，多半都踩过一次：某天机器开不了机，或者一条命令把 &lt;code&gt;.zshrc&lt;/code&gt; 覆盖了，然后发现真正重要的东西并不在 Git 里，而在 home 目录那些说不清该不该提交的文件里。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="dotfiles" scheme="https://lucifer.ren/blog/tags/dotfiles/"/>
+    
+      <category term="配置备份" scheme="https://lucifer.ren/blog/tags/%E9%85%8D%E7%BD%AE%E5%A4%87%E4%BB%BD/"/>
+    
+      <category term="配置管理" scheme="https://lucifer.ren/blog/tags/%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86/"/>
+    
+      <category term="备份工具" scheme="https://lucifer.ren/blog/tags/%E5%A4%87%E4%BB%BD%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="rust" scheme="https://lucifer.ren/blog/tags/rust/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://lucifer.ren/blog/2026/08/01/japan-k-line/"/>
+    <id>https://lucifer.ren/blog/2026/08/01/japan-k-line/</id>
+    <published>2026-08-01T06:50:34.397Z</published>
+    <updated>2026-08-01T07:08:33.990Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>我不知道的《易经》</title>
@@ -160,9 +240,9 @@
     
       <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
     
-      <category term="代币经济学" scheme="https://lucifer.ren/blog/tags/%E4%BB%A3%E5%B8%81%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
-    
       <category term="Tokenomics" scheme="https://lucifer.ren/blog/tags/Tokenomics/"/>
+    
+      <category term="代币经济学" scheme="https://lucifer.ren/blog/tags/%E4%BB%A3%E5%B8%81%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
     
   </entry>
   
@@ -487,83 +567,6 @@
       <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
     
       <category term="量化交易" scheme="https://lucifer.ren/blog/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DePIN 觉醒：Web3 如何让你的闲置硬件变黄金</title>
-    <link href="https://lucifer.ren/blog/2025/09/20/web3-depin/"/>
-    <id>https://lucifer.ren/blog/2025/09/20/web3-depin/</id>
-    <published>2025-09-19T16:00:00.000Z</published>
-    <updated>2025-10-01T08:28:41.027Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;大家好，我是 Lucifer，又来聊聊 Web3 的那些有趣事儿了。今天咱们来聊聊 DePIN，全称 Decentralized Physical Infrastructure Networks，去中心化物理基础设施网络。听起来有点抽象？别急，相信我，它真的超级接地气。想象一下，你家里的闲置硬盘、路由器，甚至是手机的计算力，都能变成赚钱的“矿机”，而这一切都靠区块链来协调和激励。这不只是科幻，它已经在重塑我们对基础设施的认知，让 Web3 从虚拟世界真正走进物理现实。&lt;/p&gt;
-&lt;p&gt;如果你是 Web3 新手，我建议你边读边动手——文章里我会用 Python 代码模拟一些核心过程，只有亲手跑一遍，你才能真正感受到 DePIN 的魅力。准备好了吗？咱们一步步来。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-      <category term="depin" scheme="https://lucifer.ren/blog/tags/depin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自己动手制作 Web3 代币估值表</title>
-    <link href="https://lucifer.ren/blog/2025/09/16/web3-value-center/"/>
-    <id>https://lucifer.ren/blog/2025/09/16/web3-value-center/</id>
-    <published>2025-09-15T16:00:00.000Z</published>
-    <updated>2025-09-14T07:07:24.773Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Web3 的投资世界充满机会，但如何判断一个代币是“物美价廉”还是“虚高泡沫”？传统的股票估值用 PE、PB 等指标，结合历史百分位判断高低。Web3 代币也有类似逻辑，但指标更贴合区块链特性：链上数据如总锁定价值（TVL）、费用收入和活跃用户（DAU）增长率，能揭示代币的内在价值。参考传统金融平台（如&lt;a href=&quot;https://danjuanfunds.com/djmodule/value-center&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;蛋卷基金&lt;/a&gt;的价值中心），我们可以用这些指标，结合历史百分位，构建一个直观的 Web3 代币估值表，判断单个代币（如 UNI 或 ETH）的低估、中估或高估。&lt;/p&gt;
-&lt;p&gt;估值表会不会很难做？是也不是。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;不难，因为自己定义一个极简的估值很简单。本文就教你如果做一个自己的估值表，让你理解其背后究竟做了什么事情。&lt;/li&gt;
-&lt;li&gt;难。因为做一个能客观真实反应估值的表非常难，因为这需要加入很多变量，调整很多算法，这个不在本文讨论范围，大家感兴趣的话可以给我留言，人数多的话我会单独写一篇文章。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;本文将聚焦&lt;strong&gt;单个代币的估值&lt;/strong&gt;，提出一个自定义的&lt;strong&gt;复合算法&lt;/strong&gt;，整合三个指标：MC/TVL Ratio（市值/TVL）、Fee Yield（费用收益率）和 DAU Growth（活跃用户增长率），生成一个 0-1 的估值分数，清晰定义“低估”（&lt;0.3）、“中估”（0.3-0.7）、“高估”（&gt;0.7）。我会用文字拆解原理，再用 Python 3 代码模拟实现（以 UNI 为例），从数据采集到可视化，全程透明。代码可直接跑，稍改就能用真实 API 判断任何代币。想保护你的 Web3 资产？先看看 MPC 钱包的冷知识：&lt;a href=&quot;https://lucifer.ren/blog/2025/03/05/web3-mpc/&quot;&gt;更加安全的区块链钱包：MPC 钱包&lt;/a&gt;。开始吧！&lt;/0.3）、“中估”（0.3-0.7）、“高估”（&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-      <category term="代币经济学" scheme="https://lucifer.ren/blog/tags/%E4%BB%A3%E5%B8%81%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>当 RWA 遇上幸福小区玉米</title>
-    <link href="https://lucifer.ren/blog/2025/09/14/web3-corn-rwa/"/>
-    <id>https://lucifer.ren/blog/2025/09/14/web3-corn-rwa/</id>
-    <published>2025-09-13T16:00:00.000Z</published>
-    <updated>2025-09-14T09:03:29.158Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;大家好，我是 Lucifer，欢迎来到我的博客。今天我们来聊一个有趣的话题：RWA（Real World Assets，真实世界资产）如何与日常生活中的小事物结合？想象一下，你家小区里的玉米摊，那一穗穗金黄的玉米，不仅能填饱肚子，还能变成链上的数字资产？这听起来有点科幻，但 Web3 技术让它变得触手可及。我们将从零开始，探讨如何将幸福小区玉米的实时价格与 RWA 代币挂钩，构建一个简单的玉米价格锚定代币，并将其部署到区块链上。整个过程会涉及预言机、智能合约、代币标准等组件，我会用 Python3 代码来模拟关键原理，但别担心，每段代码前都会有详细的文字描述，帮你一步步理解背后的逻辑。最后，我们还会结合最近很火的马云投资的云峰的 Pharos 项目，来聊聊 RWA 赛道的实际应用。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="rwa" scheme="https://lucifer.ren/blog/tags/rwa/"/>
     
   </entry>
   
