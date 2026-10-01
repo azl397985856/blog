@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2026-09-27T06:04:42.709Z</updated>
+  <updated>2026-10-01T10:22:43.303Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>蜡烛图技术分析</title>
+    <link href="https://lucifer.ren/blog/2026/10/01/japan-k-line/"/>
+    <id>https://lucifer.ren/blog/2026/10/01/japan-k-line/</id>
+    <published>2026-09-30T16:00:00.000Z</published>
+    <updated>2026-10-01T10:22:43.303Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文主要介绍蜡烛图各种形态。&lt;/p&gt;
+&lt;p&gt;从趋势上来看大体上分为两种：反转形态和持续形态。&lt;br&gt;从 K 线数量上来看大体上分为四种：单一 K 线、两根 K 线、三根 K 线、一大堆 K 线。&lt;/p&gt;
+&lt;p&gt;熟练掌握这些 K 线，再结合一些其他技术分析（比如交易量， 均线，通道线，缠论等等），那么在技术分析的道路上你就已经走了很远了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="理财" scheme="https://lucifer.ren/blog/categories/%E7%90%86%E8%B4%A2/"/>
+    
+      <category term="K线" scheme="https://lucifer.ren/blog/categories/%E7%90%86%E8%B4%A2/K%E7%BA%BF/"/>
+    
+      <category term="蜡烛图" scheme="https://lucifer.ren/blog/categories/%E7%90%86%E8%B4%A2/K%E7%BA%BF/%E8%9C%A1%E7%83%9B%E5%9B%BE/"/>
+    
+    
+      <category term="理财" scheme="https://lucifer.ren/blog/tags/%E7%90%86%E8%B4%A2/"/>
+    
+      <category term="股票" scheme="https://lucifer.ren/blog/tags/%E8%82%A1%E7%A5%A8/"/>
+    
+      <category term="K线" scheme="https://lucifer.ren/blog/tags/K%E7%BA%BF/"/>
+    
+      <category term="蜡烛图" scheme="https://lucifer.ren/blog/tags/%E8%9C%A1%E7%83%9B%E5%9B%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>一切皆插件：DeepSeek Harness</title>
@@ -71,28 +103,6 @@
       <category term="备份工具" scheme="https://lucifer.ren/blog/tags/%E5%A4%87%E4%BB%BD%E5%B7%A5%E5%85%B7/"/>
     
       <category term="rust" scheme="https://lucifer.ren/blog/tags/rust/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://lucifer.ren/blog/2026/08/01/japan-k-line/"/>
-    <id>https://lucifer.ren/blog/2026/08/01/japan-k-line/</id>
-    <published>2026-08-01T06:50:34.397Z</published>
-    <updated>2026-08-01T07:08:33.990Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
