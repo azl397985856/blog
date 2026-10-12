@@ -394,249 +394,305 @@ def draw_route_map(key, title, elements, routes, filename, note=""):
 
 
 def fig_routes():
-    """真实地图底图 + 营地标注（组合/累计XP/掉落）+ 序号路线箭头。
+    """真实地图标注 v3：底图与全部点位数据来自 Liquipedia Preview（权威）。
 
-    坐标 = Liquipedia 底图像素坐标（512 基准），图上红X/蓝X为对面/己方出生、
-    黄圆=金矿、房子=中立建筑（均为底图自带）。营地圆点与文字为标注层：
-    XP 口径 = 打完该营地后的累计经验（换算自文内实测等级节点）；
-    标 ? 的建筑对应关系与「待补」数据请按实测更新后重跑本脚本。
+    数据文件 tools/war3-preview-data.json 由 Preview wikitext 解析而来：
+    建筑(酒馆/商店/市场/实验室/雇兵营)、金矿(含储量)、出生点、野怪营地
+    (easy/medium/hard = 绿/黄/红点，含怪物组合与掉落)。实测 XP 以 _XP 覆盖。
+    Concealed Hill 无 Preview 数据，单独用检测坐标处理。
     """
+    import json
     from matplotlib.lines import Line2D
 
-    BASE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                        "war3-base")
-    C, B = "#c13a34", "#1f6fb0"  # 主路线红 / 备选蓝
+    TOOLS = os.path.dirname(os.path.abspath(__file__))
+    BASE = os.path.join(TOOLS, "war3-base")
+    DATA = json.load(open(os.path.join(TOOLS, "war3-preview-data.json")))
+    C, B = "#c13a34", "#1f6fb0"
+    LVL_COLOR = {"easy": "#1fa06b", "medium": "#e8a13a", "hard": "#e8554e"}
+    LVL_NAME = {"easy": "绿", "medium": "黄", "hard": "红"}
+    BLD_NAME = {"tavern": "酒馆", "merchant": "地精商店", "marketplace": "市场",
+                "laboratory": "地精实验室", "merccamp": "雇佣兵营地"}
+    ITEM = {"Permanent": "永久", "Charged": "消耗", "Power Up": "升级书"}
+    CN = {
+        "Ogre Warrior": "食人魔战士", "Ogre Magi": "食人魔法师", "Ogre Mauler": "食人魔碎击者",
+        "Forest Troll Trapper": "森林巨魔捕兽者", "Forest Troll Berserker": "森林巨魔狂战士",
+        "Forest Troll High Priest": "森林巨魔高级祭司", "Forest Troll Warlord": "森林巨魔督军",
+        "Forest Troll Shadow Priest": "森林巨魔暗影祭司", "Forest Troll": "森林巨魔",
+        "Gnoll": "豺狼人", "Gnoll Warden": "豺狼人看守", "Gnoll Brute": "豺狼人蛮兵",
+        "Gnoll Poacher": "豺狼人偷猎者", "Gnoll Overseer": "豺狼人监工", "Gnoll Assassin": "豺狼人刺客",
+        "Murloc Nightcrawler": "鱼人夜行者", "Murloc Huntsman": "鱼人猎手",
+        "Murloc Tiderunner": "鱼人潮行者", "Murloc Flesheater": "食人鱼人",
+        "Mur'gul Snarecaster": "穆格尔诱捕师", "Mur'gul Tidewarrior": "穆格尔潮汐战士",
+        "Mur'gul Blood-Gill": "穆格尔血鳃", "Mur'gul Marauder": "穆格尔掠夺者",
+        "Kobold": "狗头人", "Kobold Geomancer": "狗头人地卜师", "Kobold Tunneler": "狗头人掘地者",
+        "Kobold Taskmaster": "狗头人监工", "Renegade Wizard": "变节法师", "Rogue": "盗贼",
+        "Enforcer": "压迫者", "Brigand": "强盗", "Apprentice Wizard": "学徒法师",
+        "Rock Golem": "岩石傀儡", "Mud Golem": "泥浆傀儡", "Granite Golem": "花岗岩傀儡",
+        "Sasquatch": "大脚野人", "Mammoth": "猛犸",
+        "Tuskarr Trapper": "海象人捕兽者", "Tuskarr Spearman": "海象人枪兵", "Tuskarr Sorcerer": "海象人术士",
+        "Furbolg Shaman": "熊怪萨满", "Furbolg Tracker": "熊怪追踪者",
+        "Polar Furbolg Tracker": "极地熊怪追踪者", "Giant Polar Bear": "巨型北极熊", "Polar Bear": "北极熊",
+        "Timber Wolf": "森林狼", "Frost Wolf": "冰霜狼", "Dire Frost Wolf": "凶猛冰霜狼",
+        "Giant Sea Turtle": "巨型海龟", "Gargantuan Sea Turtle": "庞然海龟", "Sea Turtle": "海龟",
+        "Hydra Hatchling": "九头蛇幼体", "Sea Giant": "海巨人", "Sea Giant Hunter": "海巨人猎手",
+        "Makrura Snapper": "马克拉拉撕裂者", "Makrura Tidecaller": "马克拉拉唤潮者",
+        "Reef Elemental": "礁石元素", "Enraged Elemental": "狂暴元素",
+        "Skeleton Warrior": "骷髅战士", "Skeleton Archer": "骷髅弓手", "Sludge Flinger": "淤泥喷射者",
+        "Skeletal Orc": "骷髅兽人", "Stormreaver Hermit": "风暴掠夺者隐士",
+        "Stormreaver Apprentice": "风暴掠夺者学徒", "Red Dragon Whelp": "红龙幼龙",
+        "Voidwalker": "虚空行者", "Ice Troll Trapper": "冰巨魔捕兽者", "Ice Troll Priest": "冰巨魔祭司",
+        "Ice Troll Berserker": "冰巨魔狂战士", "Ice Troll High Priest": "冰巨魔高级祭司",
+    }
 
-    def P(x, y):  # 512 基准坐标缩放
-        return (x, y)
+    def comp_cn(creeps):
+        return "+".join(f"{CN.get(c['name'], c['name'])}{'×' + str(c['count']) if c['count'] > 1 else ''}"
+                        for c in creeps)
 
-    def draw(key, title, labels, camps, routes, note):
-        img = plt.imread(os.path.join(BASE, f"{key}.png"))
+    def drops_cn(creeps):
+        parts = [f"{ITEM.get(c['item'], c['item'])}{c['ilvl']}"
+                 for c in creeps if c["item"]]
+        return "掉落: " + "/".join(parts) if parts else ""
+
+    def near(d, x, y, types="spot", tol=0.06):
+        src = d["spots"] if types == "spot" else d["objects"]
+        best, bd = None, 1
+        for e in src:
+            dist = abs(e["x"] - x) + abs(e["y"] - y)
+            if dist < bd:
+                best, bd = e, dist
+        return best if bd <= tol else None
+
+    def draw_data(key, title, my, opp, steps, extras, routes, note,
+                  my_lab=("center", "top"), opp_lab=("center", "top"), bld_hide=(),
+                  legend_loc="upper left"):
+        """steps: [(x,y,序号别名,实测行)]；extras: [(x,y,text,ha,va)]"""
+        d = DATA[key]
+        img = plt.imread(os.path.join(BASE, f"preview-{key}.jpg"))
         h, w = img.shape[:2]
-        sx, sy = w / 512.0, h / 512.0
-        fig, ax = plt.subplots(figsize=(7.6, 7.6 * h / w))
+        fig, ax = plt.subplots(figsize=(7.8, 7.8 * h / w))
         ax.imshow(img)
-        ax.set_xlim(0, w)
-        ax.set_ylim(h, 0)
-        ax.axis("off")
+        ax.set_xlim(0, w); ax.set_ylim(h, 0); ax.axis("off")
+        X, Y = lambda fx: fx * w, lambda fy: fy * h
+        def lab(xx, yy, s, ha="center", va="top", fs=6.8, c=INK):
+            ax.text(xx, yy, s, ha=ha, va=va, fontsize=fs, color=c, zorder=7,
+                    linespacing=1.35,
+                    bbox=dict(boxstyle="round,pad=0.25", fc="white", ec="#c8ccd2",
+                              lw=.7, alpha=.6))
 
-        def tx(x, y):  # 512 -> 像素
-            return x * sx, y * sy
+        # 金矿 / 建筑 / 野怪点 / 出生
+        for o in d["objects"]:
+            if o["type"] == "goldmine":
+                ax.scatter([X(o["x"])], [Y(o["y"])], s=120, color="#e8c13a",
+                           edgecolor="white", lw=1.2, zorder=4)
+        for o in d["objects"]:
+            if o["type"] in BLD_NAME:
+                ax.scatter([X(o["x"])], [Y(o["y"])], s=80, color="#4a9bb0", marker="s",
+                           edgecolor="white", lw=1.1, zorder=4)
+                if (o["x"], o["y"]) not in bld_hide:
+                    ax.text(X(o["x"]), Y(o["y"]) - 7, BLD_NAME[o["type"]], ha="center", va="bottom",
+                            fontsize=6.2, color=INK, zorder=7,
+                            bbox=dict(boxstyle="round,pad=0.15", fc="white", ec="none", alpha=.6))
+        for s in d["spots"]:
+            ax.scatter([X(s["x"])], [Y(s["y"])], s=95, color=LVL_COLOR.get(s["level"], "#999"),
+                       edgecolor="white", lw=1.1, zorder=4)
+        ax.scatter([X(my[0])], [Y(my[1])], s=190, color=B, marker="s", edgecolor="white", lw=1.5, zorder=5)
+        mx = 13 if my_lab[0] in ("left", "right") else 0
+        myy = 12 if my_lab[1] in ("top", "bottom") else 0
+        lab(X(my[0]) + (mx if my_lab[0] == "left" else -mx), Y(my[1]) + (myy if my_lab[1] == "top" else -myy),
+            "己方出生", my_lab[0], my_lab[1], 7)
+        ax.scatter([X(opp[0])], [Y(opp[1])], s=190, color=C, marker="s", edgecolor="white", lw=1.5, zorder=5)
+        ox_ = 13 if opp_lab[0] in ("left", "right") else 0
+        oy_ = 12 if opp_lab[1] in ("top", "bottom") else 0
+        lab(X(opp[0]) + (ox_ if opp_lab[0] == "left" else -ox_), Y(opp[1]) + (oy_ if opp_lab[1] == "top" else -oy_),
+            "对面出生", opp_lab[0], opp_lab[1], 7)
 
-        # 路线箭头（底图上、标签下）
-        for ri, (pts, color, ls, _lab) in enumerate(routes):
-            px = [tx(*p) for p in pts]
+        # 路线箭头 + 带序号的营地标签（组合/掉落/实测自动生成）
+        for pts, color, ls, _leg in routes:
+            px = [(X(x), Y(y)) for x, y in pts]
             for i in range(len(px) - 1):
-                ax.add_patch(FancyArrowPatch(px[i], px[i + 1],
-                             arrowstyle="-|>", mutation_scale=18,
-                             color=color, lw=2.4, ls=ls, zorder=3,
-                             connectionstyle="arc3,rad=0.12",
-                             shrinkA=9, shrinkB=9))
-            offs = [(-16, -18), (16, 18), (-16, 18)]
-            ox, oy = offs[ri % len(offs)]
-            for i, (x, y) in enumerate(px):
-                ax.scatter([x + ox], [y + oy], s=200, color="white",
-                           edgecolor=color, lw=1.8, zorder=5)
-                ax.text(x + ox, y + oy, str(i + 1), ha="center", va="center",
-                        fontsize=8, color=color, fontweight="bold", zorder=6)
-
-        # 野怪营地圆点（推演位置：以底图地形为参照）
-        for kind, x, y, _lab in camps:
-            color = {"camp_g": "#1fa06b", "camp_y": "#e8a13a",
-                     "camp_r": "#e8554e"}[kind]
-            cx, cy = tx(x, y)
-            ax.scatter([cx], [cy], s=260, color=color, alpha=.9,
-                       edgecolor="white", lw=1.6, zorder=4)
-
-        # 文字标注（白底圆角框）
-        for x, y, text, ha, va in labels:
-            lx, ly = tx(x, y)
-            ax.text(lx, ly, text, ha=ha, va=va, fontsize=6.8, color=INK,
-                    zorder=7, linespacing=1.35,
-                    bbox=dict(boxstyle="round,pad=0.28", fc="white",
-                              ec="#c8ccd2", lw=.7, alpha=.92))
+                ax.add_patch(FancyArrowPatch(px[i], px[i + 1], arrowstyle="-|>",
+                             mutation_scale=17, color=color, lw=2.3, ls=ls, zorder=3,
+                             connectionstyle="arc3,rad=0.12", shrinkA=8, shrinkB=8))
+        for st in steps:
+            x, y, alias, measured = st[:4]
+            ha, va = (st[4], st[5]) if len(st) > 5 else ("center", "top")
+            s = near(d, x, y)
+            if not s:
+                continue
+            lines = [alias + f"〔{LVL_NAME.get(s['level'], '?')}〕", comp_cn(s["creeps"])]
+            dr = drops_cn(s["creeps"])
+            if dr:
+                lines.append(dr)
+            if measured:
+                lines.append(measured)
+            lab(X(x), Y(y) + (10 if va == "top" else -10), "\n".join(lines), ha, va)
+        for x, y, text, ha, va in extras:
+            lab(X(x), Y(y), text, ha, va)
 
         handles = [
-            Line2D([], [], color=C, lw=2.4, label=routes[0][3]),
+            Line2D([], [], color=LVL_COLOR["easy"], marker="o", ls="", markersize=7, label="绿点(easy)"),
+            Line2D([], [], color=LVL_COLOR["medium"], marker="o", ls="", markersize=7, label="黄点(medium)"),
+            Line2D([], [], color=LVL_COLOR["hard"], marker="o", ls="", markersize=7, label="红点(hard)"),
+            Line2D([], [], color="#e8c13a", marker="o", ls="", markersize=7, label="金矿"),
+            Line2D([], [], color="#4a9bb0", marker="s", ls="", markersize=7, label="中立建筑"),
         ]
-        if len(routes) > 1:
-            handles.append(Line2D([], [], color=B, lw=2.4, ls="--",
-                                  label=routes[1][3]))
-        for col, name in (("#1fa06b", "绿点野怪"), ("#e8a13a", "黄点野怪"),
-                          ("#e8554e", "红点野怪")):
-            if any(k == name[0] for k, *_ in [(c[0][0], c) for c in camps
-                  if {"绿点野怪": "camp_g", "黄点野怪": "camp_y",
-                      "红点野怪": "camp_r"}[name] == c[0]]):
-                handles.append(Line2D([], [], color=col, marker="o", ls="",
-                                      markersize=8, label=name))
-        ax.legend(handles=handles, loc="upper left", fontsize=7.5,
-                  framealpha=.9, facecolor="white")
-
+        for pts, color, ls, leg in routes:
+            handles.append(Line2D([], [], color=color, lw=2.3, ls=ls, label=leg))
+        ax.legend(handles=handles, loc=legend_loc, fontsize=6.3, framealpha=.75,
+                  facecolor="white", handlelength=1.1, labelspacing=0.25, borderpad=0.5)
         ax.set_title(title, fontsize=12, color=INK, pad=8)
-        ax.text(w / 2, h + 14, note, ha="center", fontsize=7.8, color=SUB)
+        ax.text(w / 2, h + 12, note, ha="center", fontsize=7.5, color=SUB)
         save(fig, f"route-{key}.png")
 
-    # ---------------- Echo Isles：出生 左上(对面)/右上(己方)，左右镜像
-    draw("ei", "Echo Isles 练级路线（真实地图标注）",
-         labels=[
-             (447, 188, "雇佣兵营地?\n实测: 练完≈2.3(累计230XP)", "center", "top"),
-             (415, 296, "分矿\n累计XP 待补", "center", "top"),
-             (352, 100, "门口333 ≈120XP(推)", "center", "top"),
-             (330, 148, "基地下方绿点\n收尾至 3.0(累计300)", "center", "top"),
-             (250, 186, "中心营地?\n组合/XP 待补", "center", "top"),
-             (455, 55, "己方出生", "left", "top"),
-             (95, 55, "对面出生", "right", "top"),
-         ],
-         camps=[
-             ("camp_y", 383, 78, ""), ("camp_g", 408, 130, ""),
-         ],
-         routes=[
-             ([(452, 200), (405, 285), (408, 130)], C, "-",
-               "顺序一：雇兵营→分矿→绿点"),
-             ([(405, 285), (452, 200), (408, 130)], B, "--",
-               "顺序二：分矿→雇兵营→绿点"),
-         ],
-         note="红X/蓝X=对面/己方出生，黄圆=金矿（底图自带）；标?者待核对，掉落待补")
+    # ---------------- EI：己方右上，雇佣兵营地在右缘（已实测确认）
+    draw_data("ei", "Echo Isles 练级路线（真实地图标注）",
+        my=(0.75, 0.05), opp=(0.15, 0.05), opp_lab=("left", "center"),
+        steps=[
+            (0.84, 0.47, "① 雇佣兵营地(右)", "实测: 练完≈2.3(累计230)"),
+            (0.76, 0.66, "② 分矿营", "实测: 练完2.7(累计270)"),
+            (0.66, 0.815, "③ 基地下方绿点", "收尾至 3.0(累计300)", "center", "top"),
+        ],
+        extras=[
+            (0.66, 0.03, "门口333〔绿〕可做起手", "center", "bottom"),
+            (0.845, 0.795, "分矿 12500", "left", "top"),
+            (0.79, 0.095, "主矿 13500", "left", "top"),
+        ],
+        routes=[
+            ([(0.84, 0.47), (0.76, 0.66), (0.68, 0.79)], C, "-", "顺序一: 雇兵营→分矿→绿点"),
+            ([(0.76, 0.66), (0.84, 0.47), (0.68, 0.79)], B, "--", "顺序二: 分矿→雇兵营→绿点"),
+        ],
+        note="建筑与营地数据来自 Liquipedia Preview(全图唯一商店在下中, 市场在上中, 中央酒馆)；实测XP来自路线节点")
 
-    # ---------------- Concealed Hill：出生 右上(对面)/左下(己方)
-    draw("ch", "Concealed Hill 练级路线（真实地图标注）",
-         labels=[
-             (168, 352, "门口555黄点\n实测: 练完1.8(累计180)", "center", "top"),
-             (245, 318, "绿点533海龟\n实测: 练完2.2(累计220)", "center", "top"),
-             (296, 452, "分矿\n实测: 练完3.0(累计300)", "center", "top"),
-             (262, 252, "红点附近绿点\n实测: 练完2.7(累计270)", "center", "top"),
-             (330, 330, "商店\n实测: 练完3.1(累计310)", "center", "top"),
-             (272, 300, "中央红点\n可勾到酒馆截杀", "center", "top"),
-             (448, 62, "对面出生", "left", "top"),
-             (118, 415, "己方出生", "right", "top"),
-         ],
-         camps=[
-             ("camp_y", 205, 358, ""), ("camp_g", 258, 332, ""),
-             ("camp_g", 275, 262, ""), ("camp_r", 282, 298, ""),
-         ],
-         routes=[
-             ([(205, 358), (258, 332), (302, 455)], C, "-",
-               "主路线：555→533→分矿"),
-             ([(275, 262), (338, 322)], B, "--", "延伸：红点附近绿点→商店"),
-         ],
-         note="双温泉位置底图未标注；酒馆/商店/佣兵营对应关系待核对，掉落待补")
+    # ---------------- AM：己方左下
+    draw_data("am", "Amazonia 练级路线（真实地图标注）",
+        my=(0.12, 0.81), opp=(0.78, 0.06),
+        steps=[
+            (0.84, 0.84, "① 雇佣兵营地·勾电盾", "实测: 练完2.0(累计200)"),
+            (0.57, 0.87, "② 分矿营(金20000)", "泥浆傀儡无尸体, 亡灵练级难受", "center", "bottom"),
+            (0.41, 0.85, "③ 门口营", "", "right", "top"),
+        ],
+        extras=[(0.93, 0.615, "硬点: 花岗岩傀儡\n掉永久5级(可插哨守等对面练)", "right", "top")],
+        routes=[([(0.84, 0.84), (0.57, 0.92), (0.41, 0.85)], C, "-",
+                 "雇兵营(勾电盾)→分矿→门口营")],
+        note="分矿 20000 金且难开；勾电盾=让电盾套在怪堆里的单位身上白电一圈")
 
-    # ---------------- Amazonia：出生 右上(对面)/左下(己方)
-    draw("am", "Amazonia 练级路线（真实地图标注）",
-         labels=[
-             (100, 100, "雇佣兵营地?\n实测: 练完2.0(累计200)\n掉落: 可勾电盾加速", "center", "top"),
-             (80, 348, "分矿(三怪无尸体，亡灵练级难受)\nXP 待补", "center", "bottom"),
-             (200, 480, "门口营地\nXP 待补", "center", "top"),
-             (450, 72, "对面出生", "left", "top"),
-             (112, 408, "己方出生", "right", "top"),
-         ],
-         camps=[
-             ("camp_y", 128, 88, ""), ("camp_g", 208, 470, ""),
-         ],
-         routes=[
-             ([(120, 96), (75, 388), (200, 468)], C, "-",
-               "佣兵营(勾电盾)→分矿→门口营"),
-         ],
-         note="勾电盾=让电盾套在怪堆里的单位身上白电一圈；酒馆/商店对应待核对")
+    # ---------------- TM：己方左上(卡傀儡)，对面右下
+    draw_data("tm", "Twisted Meadows 练级路线（真实地图标注）",
+        my=(0.26, 0.12), opp=(0.73, 0.80),
+        steps=[
+            (0.27, 0.34, "① 门口营(豺狼人)", "", "center", "bottom"),
+            (0.47, 0.32, "② 雇佣兵营地", "实测(NE): 练完2.0(累计200); 掉落小永久+大消耗", "center", "top"),
+            (0.155, 0.075, "③ 傀儡营(守角岛矿)", "兵营+大G卡傀儡抢消耗5级(有失败率)", "left", "center"),
+        ],
+        extras=[(0.33, 0.15, "主矿 12500", "left", "center"),
+                (0.14, 0.335, "分矿 12500", "center", "top")],
+        routes=[([(0.27, 0.34), (0.47, 0.32), (0.14, 0.07)], C, "-",
+                 "门口→佣兵营→傀儡分矿(卡位)")],
+        bld_hide={(0.36, 0.07)},
+        note="4人图取左上/右下对角；角岛只能空抵；全图 1酒馆+2商店+2雇兵营+4实验室(Preview 数据)")
 
-    # ---------------- Twisted Meadows：4人图，1v1 常用 左上(己)/右下(对)
-    draw("tm", "Twisted Meadows 练级路线（真实地图标注）",
-         labels=[
-             (152, 92, "己方出生\n可兵营+大G卡傀儡抢宝", "center", "bottom"),
-             (392, 396, "对面出生(右下)\n对称组合之一", "center", "top"),
-             (232, 148, "雇佣兵营地?\n实测: 练完2.0(累计200)\n掉落: 小永久+大消耗", "center", "top"),
-             (70, 66, "分矿·傀儡守\nXP 待补", "center", "top"),
-             (250, 380, "中心营地?\nXP 待补", "center", "top"),
-         ],
-         camps=[
-             ("camp_y", 205, 180, ""), ("camp_r", 250, 340, ""),
-         ],
-         routes=[
-             ([(195, 172), (238, 160), (80, 78)], C, "-",
-               "门口→佣兵营→傀儡分矿(卡位)"),
-         ],
-         note="4人图，1v1 多为左上/右下对角；傀儡守矿开矿成本高；卡傀儡有失败率需多练")
+    # ---------------- AL：己方右上
+    draw_data("al", "Autumn Leaves 练级路线（真实地图标注）",
+        my=(0.72, 0.10), opp=(0.25, 0.90),
+        steps=[
+            (0.805, 0.185, "① 门口白狼绿点", ""),
+            (0.33, 0.27, "② 商店门口大脚营", "实测(NE): 练完2.0(累计200)"),
+            (0.705, 0.435, "③ 家门口分矿(金12000)", ""),
+        ],
+        extras=[(0.705, 0.465, "分矿 12000", "center", "top"),
+                (0.72, 0.10, "主矿 12500", "left", "center")],
+        routes=[([(0.805, 0.185), (0.33, 0.27), (0.705, 0.435)], C, "-",
+                 "白狼绿点→商店门口营→家门口分矿")],
+        note="W3C 数据: 对 NE 明显劣势、对 HUM/UD 略优；两处分矿近中部, 易开但易被干扰")
 
-    # ---------------- Autumn Leaves：出生 右上(己)/左下(对)
-    draw("al", "Autumn Leaves 练级路线（真实地图标注）",
-         labels=[
-             (368, 152, "门口白狼绿点\nXP 待补", "center", "bottom"),
-             (315, 355, "商店\n实测: 练完2.0(累计200)", "center", "top"),
-             (452, 38, "己方出生", "left", "top"),
-             (140, 425, "对面出生", "right", "top"),
-             (322, 232, "分矿位·易开\nXP 待补", "center", "top"),
-         ],
-         camps=[
-             ("camp_g", 385, 132, ""),
-         ],
-         routes=[
-             ([(382, 138), (338, 348), (352, 218)], C, "-",
-               "白狼绿点→商店→家门口分矿"),
-         ],
-         note="W3C 数据: 对 NE 明显劣势、对 HUM/UD 略优；掉落待补")
+    # ---------------- ST：己方右下
+    draw_data("st", "Springtime 练级路线（真实地图标注）",
+        my=(0.92, 0.76), opp=(0.04, 0.19),
+        steps=[
+            (0.66, 0.77, "① 门口海象人营(猛犸)", "实测(NE): 练完1.7(累计170)"),
+            (0.51, 0.89, "② 分矿营(金12500)", "实测(NE): 练完2.4(累计240)"),
+        ],
+        extras=[(0.53, 0.44, "★中央矿 10000\n无守护, 双方都能偷, 侦查必查", "center", "top")],
+        routes=[([(0.66, 0.77), (0.51, 0.89)], C, "-", "海象人→分矿")],
+        note="双酒馆/双商店/双实验室/双雇兵营(Preview 数据)；中央矿是全图主题")
 
-    # ---------------- Springtime：出生 左上(对面)/右下(己方)
-    draw("st", "Springtime 练级路线（真实地图标注）",
-         labels=[
-             (370, 290, "门口绿点海象人\n实测: 练完1.7(累计170)", "center", "top"),
-             (300, 200, "雇佣兵营地?\n冰巨魔系(牧师无驱散)", "center", "top"),
-             (258, 258, "★中央矿(无守护)\n双方都能偷, 侦查必查", "center", "top"),
-             (150, 130, "分矿\n实测: 练完2.4(累计240)", "center", "top"),
-             (100, 110, "对面出生", "right", "top"),
-             (452, 348, "己方出生", "left", "top"),
-         ],
-         camps=[
-             ("camp_g", 382, 302, ""),
-         ],
-         routes=[
-             ([(380, 300), (308, 212), (165, 140)], C, "-",
-               "海象人→雇兵营→分矿"),
-         ],
-         note="中央无守护金矿为全图主题；佣兵营/商店对应待核对，掉落待补")
+    # ---------------- HF：己方左上
+    draw_data("hf", "HammerFall 练级路线（真实地图标注）",
+        my=(0.10, 0.09), opp=(0.88, 0.99), my_lab=("right", "center"), opp_lab=("left", "center"),
+        steps=[
+            (0.25, 0.34, "① 门口绿点豺狼人", "实测: 练完1.4(累计140), 留一只不打"),
+            (0.35, 0.67, "② 绿点海龟", "实测: 练完2.0(累计200)"),
+            (0.12, 0.57, "③ 分矿(金10000)", "实测: 练完2.0(累计200); 营地警戒范围大"),
+            (0.67, 0.47, "④ 九头蛇绿点", "实测: 练完2.5(累计250)"),
+            (0.33, 0.43, "⑤ 地精实验室前营", "实测: 练完3.1(累计310); 实验室=飞艇补给点"),
+        ],
+        extras=[],
+        routes=[([(0.25, 0.34), (0.35, 0.67), (0.10, 0.60), (0.67, 0.47), (0.33, 0.43)],
+                 C, "-", "豺狼→海龟→分矿→九头蛇→实验室")],
+        legend_loc="upper right",
+        note="小图双自然矿可打三矿；建筑为 2实验室+2商店+酒馆(Preview 数据)")
 
-    # ---------------- HammerFall：出生 左上(对面)/右下(己方)
-    draw("hf", "HammerFall 练级路线（真实地图标注）",
-         labels=[
-             (128, 122, "门口绿点豺狼人\n实测: 练完1.4(累计140)\n留一只小豺狼不打", "center", "top"),
-             (95, 185, "绿点海龟\n实测: 练完2.0(累计200)", "center", "top"),
-             (62, 262, "分矿·警戒范围大\n实测: 练完2.0(累计200)", "center", "top"),
-             (218, 172, "九头蛇绿点\n实测: 练完2.5(累计250)", "center", "top"),
-             (272, 140, "地精实验室\n实测: 练完3.1(累计310)\n=飞艇补给点", "center", "top"),
-             (270, 430, "三矿位矿点\n双分矿可打三矿", "center", "top"),
-             (100, 62, "对面出生", "right", "top"),
-             (452, 415, "己方出生", "left", "top"),
-         ],
-         camps=[
-             ("camp_g", 152, 135, ""), ("camp_g", 105, 200, ""),
-             ("camp_g", 230, 185, ""),
-         ],
-         routes=[
-             ([(148, 138), (105, 198), (62, 258), (228, 182), (262, 152)],
-              C, "-", "豺狼(留一只)→海龟→分矿→九头蛇→实验室"),
-         ],
-         note="小图可打三矿；地精实验室=飞艇补给点，攻防双方都要抢；掉落待补")
+    # ---------------- TH：己方右下
+    draw_data("th", "TideHunter 练级路线（真实地图标注）",
+        my=(0.75, 0.89), opp=(0.08, 0.17),
+        steps=[
+            (0.91, 0.49, "① 门口黄点·潮汐(穆格尔)", ""),
+            (0.70, 0.57, "② 绿点海龟", "两绿点组合即到 2 级"),
+            (0.78, 0.40, "③ 绿点", ""),
+            (0.79, 0.69, "④ 地精实验室前营", "", "center", "top"),
+        ],
+        extras=[(0.945, 0.472, "分矿 11500", "center", "bottom")],
+        bld_hide={(0.79, 0.69)},
+        routes=[([(0.91, 0.49), (0.70, 0.57), (0.78, 0.40), (0.79, 0.69)], C, "-",
+                 "潮汐→绿→绿→实验室")],
+        note="分矿偏远且怪警戒+100, 对面开矿慢；建筑: 2实验室+市场+商店+酒馆(Preview 数据)")
 
-    # ---------------- TideHunter：出生 左上(对面)/右下(己方)
-    draw("th", "TideHunter 练级路线（真实地图标注）",
-         labels=[
-             (140, 196, "门口黄点·潮汐\nBR可造得很近，累计XP 待补", "center", "top"),
-             (95, 230, "绿点\n两绿点组合到2级", "center", "top"),
-             (215, 240, "绿点", "center", "top"),
-             (55, 345, "分矿·远+警戒+100\n对面开矿慢", "center", "top"),
-             (290, 205, "地精实验室?", "center", "top"),
-             (250, 268, "地精商人?/酒馆?", "center", "top"),
-             (100, 122, "对面出生", "right", "top"),
-             (452, 415, "己方出生", "left", "top"),
-         ],
-         camps=[
-             ("camp_y", 162, 178, ""), ("camp_g", 112, 245, ""),
-             ("camp_g", 232, 252, ""),
-         ],
-         routes=[
-             ([(160, 180), (112, 243), (232, 252), (288, 218)], C, "-",
-               "潮汐→绿→绿(两绿点到2)→实验室"),
-         ],
-         note="分矿远+怪警戒+100，利于前期压制；掉落待补")
+    # ---------------- CH：无 Preview 数据，用检测坐标（建筑身份待核对）
+    img = plt.imread(os.path.join(BASE, "ch.png"))
+    h, w = img.shape[:2]
+    fig, ax = plt.subplots(figsize=(7.2, 7.2))
+    ax.imshow(img); ax.set_xlim(0, 512); ax.set_ylim(512, 0); ax.axis("off")
+    ch_mines = [(106, 37), (320, 51), (186, 231), (92, 457), (314, 473)]
+    ch_houses = [(162, 144), (36, 170), (373, 186), (260, 188), (40, 332),
+                 (156, 332), (378, 348), (252, 384)]
+    for x, y in ch_mines:
+        ax.scatter([x], [y], s=120, color="#e8c13a", edgecolor="white", lw=1.2, zorder=4)
+    for x, y in ch_houses:
+        ax.scatter([x], [y], s=70, color="#4a9bb0", marker="s", edgecolor="white", lw=1.1, zorder=4)
+    ax.scatter([113], [440], s=190, color=B, marker="s", edgecolor="white", lw=1.5, zorder=5)
+    ax.scatter([295], [73], s=190, color=C, marker="s", edgecolor="white", lw=1.5, zorder=5)
+    def ch_lab(x, y, s, ha="center", va="top", fs=6.8):
+        ax.text(x, y, s, ha=ha, va=va, fontsize=fs, color=INK, zorder=7,
+                linespacing=1.35,
+                bbox=dict(boxstyle="round,pad=0.25", fc="white", ec="#c8ccd2",
+                          lw=.7, alpha=.6))
+    ch_lab(113, 452, "己方出生(左下)", "center", "top")
+    ch_lab(295, 85, "对面出生(右上)", "center", "top")
+    ch_lab(186, 243, "中央矿(全图共5矿, 中心1个)", "center", "top")
+    ch_lab(92, 470, "主矿", "center", "top")
+    ch_lab(320, 64, "主矿", "center", "top")
+    for pts, color, ls, _l in [([(205, 358), (258, 332), (302, 455)], C, "-", None),
+                               ([(275, 262), (338, 322)], B, "--", None)]:
+        for i in range(len(pts) - 1):
+            ax.add_patch(FancyArrowPatch(pts[i], pts[i + 1], arrowstyle="-|>",
+                         mutation_scale=17, color=color, lw=2.3, ls=ls, zorder=3,
+                         connectionstyle="arc3,rad=0.12", shrinkA=8, shrinkB=8))
+    ch_lab(205, 348, "① 门口555黄点\n实测: 练完1.8(累计180)\n组合/掉落待补", "center", "top")
+    ch_lab(258, 322, "② 绿点533海龟\n实测: 练完2.2(累计220)", "center", "top")
+    ch_lab(302, 468, "③ 分矿\n实测: 练完3.0(累计300)", "center", "top")
+    ch_lab(275, 252, "延伸① 红点附近绿点\n实测: 练完2.7(累计270)", "center", "bottom")
+    ch_lab(338, 335, "延伸② 商店?\n实测: 练完3.1(累计310)", "center", "top")
+    ch_lab(160, 296, "中央红点可勾到酒馆截杀\n(酒馆/雇兵营/商店身份待核对)", "center", "top")
+    ax.legend(handles=[
+        Line2D([], [], color=C, lw=2.3, label="主路线 555→533→分矿"),
+        Line2D([], [], color=B, lw=2.3, ls="--", label="延伸 红点附近绿点→商店"),
+        Line2D([], [], color="#e8c13a", marker="o", ls="", markersize=7, label="金矿"),
+        Line2D([], [], color="#4a9bb0", marker="s", ls="", markersize=7, label="中立建筑(身份待核)"),
+    ], loc="upper left", fontsize=7, framealpha=.75, facecolor="white")
+    ax.set_title("Concealed Hill 练级路线（真实地图标注）", fontsize=12, color=INK, pad=8)
+    ax.text(w / 2, h + 12, "CH 无 Preview 数据: 建筑身份与营地组合待游戏内核对", ha="center",
+            fontsize=7.5, color=SUB)
+    save(fig, "route-ch.png")
 
 
 if __name__ == "__main__":
