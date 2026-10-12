@@ -404,7 +404,7 @@ def fig_routes():
     from matplotlib.lines import Line2D
 
     BASE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                        "..", "source", "images", "war3", "base")
+                        "war3-base")
     C, B = "#c13a34", "#1f6fb0"  # 主路线红 / 备选蓝
 
     def P(x, y):  # 512 基准坐标缩放
@@ -525,7 +525,7 @@ def fig_routes():
     draw("am", "Amazonia 练级路线（真实地图标注）",
          labels=[
              (100, 100, "雇佣兵营地?\n实测: 练完2.0(累计200)\n掉落: 可勾电盾加速", "center", "top"),
-             (80, 390, "分矿(三怪无尸体\n→亡灵练级难受)", "center", "top"),
+             (80, 348, "分矿(三怪无尸体，亡灵练级难受)\nXP 待补", "center", "bottom"),
              (200, 480, "门口营地\nXP 待补", "center", "top"),
              (450, 72, "对面出生", "left", "top"),
              (112, 408, "己方出生", "right", "top"),
@@ -560,17 +560,17 @@ def fig_routes():
     # ---------------- Autumn Leaves：出生 右上(己)/左下(对)
     draw("al", "Autumn Leaves 练级路线（真实地图标注）",
          labels=[
-             (400, 105, "门口白狼绿点\nXP 待补", "center", "top"),
+             (368, 152, "门口白狼绿点\nXP 待补", "center", "bottom"),
              (315, 355, "商店\n实测: 练完2.0(累计200)", "center", "top"),
-             (390, 40, "己方出生", "left", "top"),
+             (452, 38, "己方出生", "left", "top"),
              (140, 425, "对面出生", "right", "top"),
-             (352, 200, "分矿位·易开\nXP 待补", "center", "top"),
+             (322, 232, "分矿位·易开\nXP 待补", "center", "top"),
          ],
          camps=[
-             ("camp_g", 400, 120, ""),
+             ("camp_g", 385, 132, ""),
          ],
          routes=[
-             ([(398, 118), (338, 348), (370, 48)], C, "-",
+             ([(382, 138), (338, 348), (352, 218)], C, "-",
                "白狼绿点→商店→家门口分矿"),
          ],
          note="W3C 数据: 对 NE 明显劣势、对 HUM/UD 略优；掉落待补")
@@ -619,7 +619,7 @@ def fig_routes():
     # ---------------- TideHunter：出生 左上(对面)/右下(己方)
     draw("th", "TideHunter 练级路线（真实地图标注）",
          labels=[
-             (140, 165, "门口黄点·潮汐\nBR可造得很近\n累计XP 待补", "center", "top"),
+             (140, 196, "门口黄点·潮汐\nBR可造得很近，累计XP 待补", "center", "top"),
              (95, 230, "绿点\n两绿点组合到2级", "center", "top"),
              (215, 240, "绿点", "center", "top"),
              (55, 345, "分矿·远+警戒+100\n对面开矿慢", "center", "top"),
