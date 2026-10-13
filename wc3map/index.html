@@ -353,7 +353,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">530字</span>
+          <span class="post-count">495字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -396,41 +396,44 @@
 <tbody>
 <tr>
 <td>v0.2</td>
-<td>基础版：四英雄换名 + 四个回忆技能 + 职业称号</td>
+<td>基础版：四英雄 + 回忆技能 + 职业称号（旧分配：程序员=圣骑士 法官=血法师 画家=剑圣）</td>
 <td><a href="/blog/files/FF_4Brothers_v0.2.w3x">FF_4Brothers_v0.2.w3x</a></td>
 </tr>
 <tr>
 <td>v0.3</td>
-<td>v0.2 + <strong>技能图标</strong>（审判=净化权杖 / 离家出走=幽灵 / 我要回家了=回城卷轴 / 重启=发电机）</td>
+<td>v0.2 + <strong>技能图标</strong></td>
 <td><a href="/blog/files/FF_4Brothers_v0.3.w3x">FF_4Brothers_v0.3.w3x</a></td>
 </tr>
 <tr>
 <td>v0.4</td>
-<td>v0.3 + <strong>职业色调</strong>（程序员偏蓝 / 土木偏黄 / 画家偏绿 / 法官偏白 + 法官微放大）</td>
+<td>v0.3 + <strong>职业色调</strong></td>
 <td><a href="/blog/files/FF_4Brothers_v0.4.w3x">FF_4Brothers_v0.4.w3x</a></td>
 </tr>
 <tr>
 <td>v0.4m</td>
-<td>v0.4 + <strong>实验性模型替换</strong>（程序员→地精工程师、法官→恐惧魔王；若模型显示异常请忽略此版）</td>
+<td>v0.4 + <strong>实验模型</strong>（旧分配）</td>
 <td><a href="/blog/files/FF_4Brothers_v0.4m.w3x">FF_4Brothers_v0.4m.w3x</a></td>
 </tr>
 <tr>
-<td><strong>v0.5</strong></td>
-<td>v0.4 + <strong>施法台词</strong>（放技能时英雄头顶浮出台词：宣判有罪 / 这个家呆不下去了 / 我要回家了阳阳在家等我呢 / 重启一下就好了）</td>
+<td>v0.5</td>
+<td>v0.4 + <strong>施法台词</strong>（旧分配）</td>
 <td><a href="/blog/files/FF_4Brothers_v0.5.w3x">FF_4Brothers_v0.5.w3x</a></td>
+</tr>
+<tr>
+<td><strong>v0.6</strong></td>
+<td>v0.5 + <strong>英雄重分配</strong>（法官=圣骑士 / 画家=血法师 / 程序员=剑圣 / 土木=山丘，技能跟人走）+ <strong>电脑位 AI</strong>（空位加电脑：自动买英雄 / 自动加点 / 带兵推线 / 残血回撤）</td>
+<td><a href="/blog/files/FF_4Brothers_v0.6.w3x">FF_4Brothers_v0.6.w3x</a></td>
+</tr>
+<tr>
+<td><strong>v0.6m</strong></td>
+<td>v0.6 + <strong>实验模型</strong>（程序员=地精工程师）</td>
+<td><a href="/blog/files/FF_4Brothers_v0.6m.w3x">FF_4Brothers_v0.6m.w3x</a></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p><strong>推荐测试顺序</strong>：v0.5（完整体验）→ v0.4m（看模型替换效果）→ 其余对比。</p>
-<h2 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h2><ol>
-<li>开图不掉线</li>
-<li>酒馆里选出：程序员·路志鹏 / 土木工程师·路志远 / 画家·路鹏飞 / 法官·方超</li>
-<li>四个回忆技能：图标正确、施法时头顶浮出台词（v0.5）</li>
-<li>中文显示正常（技能名 / 台词 / 地图名）</li>
-<li>v0.4m：程序员是否变成地精工程师模型、法官是否变成恐惧魔王模型（如果出现绿色方块 = 模型路径无效，此版作废）</li>
-</ol>
-<h2 id="四英雄"><a href="#四英雄" class="headerlink" title="四英雄"></a>四英雄</h2><div class="table-container">
+<p><strong>推荐测试顺序</strong>：v0.6（最新完整版，重点测 AI）→ v0.6m（看模型）→ 旧版对比。</p>
+<h2 id="四英雄（v0-6-新分配）"><a href="#四英雄（v0-6-新分配）" class="headerlink" title="四英雄（v0.6 新分配）"></a>四英雄（v0.6 新分配）</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -441,9 +444,9 @@
 </thead>
 <tbody>
 <tr>
-<td>程序员·路志鹏</td>
+<td>法官·方超</td>
 <td>圣骑士</td>
-<td>圣光 / 神圣护盾 / 专注光环 / <strong>重启</strong>（复活周围友军）</td>
+<td>圣光 / <strong>审判</strong>（法槌眩晕） / 专注光环 / 复活</td>
 </tr>
 <tr>
 <td>土木工程师·路志远</td>
@@ -451,18 +454,25 @@
 <td>风暴之锤 / 雷霆一击 / <strong>离家出走</strong>（隐身跑路） / 天神下凡</td>
 </tr>
 <tr>
-<td>画家·路鹏飞</td>
+<td>程序员·路志鹏</td>
 <td>剑圣</td>
-<td>疾风步 / <strong>我要回家了</strong>（带友军集体传送） / FF 原技能 / 剑刃风暴</td>
+<td>疾风步 / <strong>重启</strong>（复活周围友军） / FF 原技能 / 剑刃风暴</td>
 </tr>
 <tr>
-<td>法官·方超</td>
+<td>画家·路鹏飞</td>
 <td>血法师</td>
-<td>烈焰风暴 / <strong>审判</strong>（锤击眩晕） / 魔法吮吸 / 凤凰</td>
+<td>烈焰风暴（火焰作画） / <strong>我要回家了</strong>（带友军传送） / 魔法吮吸 / 凤凰</td>
 </tr>
 </tbody>
 </table>
 </div>
+<h2 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h2><ol>
+<li>开图不掉线</li>
+<li>酒馆里选出四位（称号+名字见上表）</li>
+<li>回忆技能：图标正确、施法头顶浮出台词</li>
+<li><strong>AI（v0.6 重点）</strong>：lobby 空位加电脑 → 开局电脑会去酒馆买英雄、自动加点、带兵推进、残血回撤</li>
+<li>v0.6m：程序员是否变成地精工程师模型（绿方块 = 此版作废）</li>
+</ol>
 
       </div>
       
