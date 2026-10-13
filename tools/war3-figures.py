@@ -411,7 +411,10 @@ def fig_routes():
     LVL_COLOR = {"easy": "#1fa06b", "medium": "#e8a13a", "hard": "#e8554e"}
     LVL_NAME = {"easy": "绿", "medium": "黄", "hard": "红"}
     BLD_NAME = {"tavern": "酒馆", "merchant": "地精商店", "marketplace": "市场",
-                "laboratory": "地精实验室", "merccamp": "雇佣兵营地"}
+                "laboratory": "地精实验室", "merccamp": "雇佣兵营地",
+                "fountainhealth": "医疗泉"}
+    BLD_CHAR = {"tavern": "酒", "merchant": "商", "marketplace": "市",
+                "laboratory": "实", "merccamp": "雇", "fountainhealth": "泉"}
     ITEM = {"Permanent": "永久", "Charged": "消耗", "Power Up": "升级书"}
     CN = {
         "Ogre Warrior": "食人魔战士", "Ogre Magi": "食人魔法师", "Ogre Mauler": "食人魔碎击者",
@@ -442,6 +445,8 @@ def fig_routes():
         "Stormreaver Apprentice": "风暴掠夺者学徒", "Red Dragon Whelp": "红龙幼龙",
         "Voidwalker": "虚空行者", "Ice Troll Trapper": "冰巨魔捕兽者", "Ice Troll Priest": "冰巨魔祭司",
         "Ice Troll Berserker": "冰巨魔狂战士", "Ice Troll High Priest": "冰巨魔高级祭司",
+        "Spider Crab Limbripper": "蜘蛛蟹裂肢者", "Red Drake": "红幼龙",
+        "Ogre Lord": "食人魔领主",
     }
 
     def comp_cn(creeps):
@@ -479,19 +484,23 @@ def fig_routes():
                     bbox=dict(boxstyle="round,pad=0.25", fc="white", ec="#c8ccd2",
                               lw=.7, alpha=.6))
 
-        # 金矿 / 建筑 / 野怪点 / 出生
+        # 单字信号标记：仿游戏小地图 ping，深底金字，一字一义
+        def tag(xx, yy, ch_, fs=10.5):
+            ax.text(xx, yy, ch_, ha="center", va="center", fontsize=fs, fontweight="bold",
+                    color="#ffd23f", zorder=6,
+                    bbox=dict(boxstyle="round,pad=0.35", fc="#141414", ec="#e0a92f",
+                              lw=1.1, alpha=.82))
+
+        # 金矿 / 中立建筑 / 野怪点 / 出生
+        chars_seen = {}
         for o in d["objects"]:
             if o["type"] == "goldmine":
-                ax.scatter([X(o["x"])], [Y(o["y"])], s=120, color="#e8c13a",
-                           edgecolor="white", lw=1.2, zorder=4)
-        for o in d["objects"]:
-            if o["type"] in BLD_NAME:
-                ax.scatter([X(o["x"])], [Y(o["y"])], s=80, color="#4a9bb0", marker="s",
-                           edgecolor="white", lw=1.1, zorder=4)
-                if (o["x"], o["y"]) not in bld_hide:
-                    ax.text(X(o["x"]), Y(o["y"]) - 7, BLD_NAME[o["type"]], ha="center", va="bottom",
-                            fontsize=6.2, color=INK, zorder=7,
-                            bbox=dict(boxstyle="round,pad=0.15", fc="white", ec="none", alpha=.6))
+                tag(X(o["x"]), Y(o["y"]), "矿")
+                chars_seen["矿"] = "金矿"
+            elif o["type"] in BLD_CHAR and (o["x"], o["y"]) not in bld_hide:
+                ch_ = BLD_CHAR[o["type"]]
+                tag(X(o["x"]), Y(o["y"]), ch_)
+                chars_seen[ch_] = BLD_NAME[o["type"]]
         for s in d["spots"]:
             ax.scatter([X(s["x"])], [Y(s["y"])], s=95, color=LVL_COLOR.get(s["level"], "#999"),
                        edgecolor="white", lw=1.1, zorder=4)
@@ -533,14 +542,14 @@ def fig_routes():
             Line2D([], [], color=LVL_COLOR["easy"], marker="o", ls="", markersize=7, label="绿点(easy)"),
             Line2D([], [], color=LVL_COLOR["medium"], marker="o", ls="", markersize=7, label="黄点(medium)"),
             Line2D([], [], color=LVL_COLOR["hard"], marker="o", ls="", markersize=7, label="红点(hard)"),
-            Line2D([], [], color="#e8c13a", marker="o", ls="", markersize=7, label="金矿"),
-            Line2D([], [], color="#4a9bb0", marker="s", ls="", markersize=7, label="中立建筑"),
         ]
         for pts, color, ls, leg in routes:
             handles.append(Line2D([], [], color=color, lw=2.3, ls=ls, label=leg))
         ax.legend(handles=handles, loc=legend_loc, fontsize=6.3, framealpha=.75,
                   facecolor="white", handlelength=1.1, labelspacing=0.25, borderpad=0.5)
         ax.set_title(title, fontsize=12, color=INK, pad=8)
+        gloss = "  ".join(f"{k}={v}" for k, v in chars_seen.items())
+        note = f"{note}；单字标记: {gloss}"
         ax.text(w / 2, h + 12, note, ha="center", fontsize=7.5, color=SUB)
         save(fig, f"route-{key}.png")
 
@@ -588,7 +597,6 @@ def fig_routes():
                 (0.14, 0.335, "分矿 12500", "center", "top")],
         routes=[([(0.27, 0.34), (0.47, 0.32), (0.14, 0.07)], C, "-",
                  "门口→佣兵营→傀儡分矿(卡位)")],
-        bld_hide={(0.36, 0.07)},
         note="4人图取左上/右下对角；角岛只能空抵；全图 1酒馆+2商店+2雇兵营+4实验室(Preview 数据)")
 
     # ---------------- AL：己方右上
@@ -642,57 +650,31 @@ def fig_routes():
             (0.79, 0.69, "④ 地精实验室前营", "", "center", "top"),
         ],
         extras=[(0.945, 0.472, "分矿 11500", "center", "bottom")],
-        bld_hide={(0.79, 0.69)},
         routes=[([(0.91, 0.49), (0.70, 0.57), (0.78, 0.40), (0.79, 0.69)], C, "-",
                  "潮汐→绿→绿→实验室")],
         note="分矿偏远且怪警戒+100, 对面开矿慢；建筑: 2实验室+市场+商店+酒馆(Preview 数据)")
 
-    # ---------------- CH：无 Preview 数据，用检测坐标（建筑身份待核对）
-    img = plt.imread(os.path.join(BASE, "ch.png"))
-    h, w = img.shape[:2]
-    fig, ax = plt.subplots(figsize=(7.2, 7.2))
-    ax.imshow(img); ax.set_xlim(0, 512); ax.set_ylim(512, 0); ax.axis("off")
-    ch_mines = [(106, 37), (320, 51), (186, 231), (92, 457), (314, 473)]
-    ch_houses = [(162, 144), (36, 170), (373, 186), (260, 188), (40, 332),
-                 (156, 332), (378, 348), (252, 384)]
-    for x, y in ch_mines:
-        ax.scatter([x], [y], s=120, color="#e8c13a", edgecolor="white", lw=1.2, zorder=4)
-    for x, y in ch_houses:
-        ax.scatter([x], [y], s=70, color="#4a9bb0", marker="s", edgecolor="white", lw=1.1, zorder=4)
-    ax.scatter([113], [440], s=190, color=B, marker="s", edgecolor="white", lw=1.5, zorder=5)
-    ax.scatter([295], [73], s=190, color=C, marker="s", edgecolor="white", lw=1.5, zorder=5)
-    def ch_lab(x, y, s, ha="center", va="top", fs=6.8):
-        ax.text(x, y, s, ha=ha, va=va, fontsize=fs, color=INK, zorder=7,
-                linespacing=1.35,
-                bbox=dict(boxstyle="round,pad=0.25", fc="white", ec="#c8ccd2",
-                          lw=.7, alpha=.6))
-    ch_lab(113, 452, "己方出生(左下)", "center", "top")
-    ch_lab(295, 85, "对面出生(右上)", "center", "top")
-    ch_lab(186, 243, "中央矿(全图共5矿, 中心1个)", "center", "top")
-    ch_lab(92, 470, "主矿", "center", "top")
-    ch_lab(320, 64, "主矿", "center", "top")
-    for pts, color, ls, _l in [([(205, 358), (258, 332), (302, 455)], C, "-", None),
-                               ([(275, 262), (338, 322)], B, "--", None)]:
-        for i in range(len(pts) - 1):
-            ax.add_patch(FancyArrowPatch(pts[i], pts[i + 1], arrowstyle="-|>",
-                         mutation_scale=17, color=color, lw=2.3, ls=ls, zorder=3,
-                         connectionstyle="arc3,rad=0.12", shrinkA=8, shrinkB=8))
-    ch_lab(205, 348, "① 门口555黄点\n实测: 练完1.8(累计180)\n组合/掉落待补", "center", "top")
-    ch_lab(258, 322, "② 绿点533海龟\n实测: 练完2.2(累计220)", "center", "top")
-    ch_lab(302, 468, "③ 分矿\n实测: 练完3.0(累计300)", "center", "top")
-    ch_lab(275, 252, "延伸① 红点附近绿点\n实测: 练完2.7(累计270)", "center", "bottom")
-    ch_lab(338, 335, "延伸② 商店?\n实测: 练完3.1(累计310)", "center", "top")
-    ch_lab(160, 296, "中央红点可勾到酒馆截杀\n(酒馆/雇兵营/商店身份待核对)", "center", "top")
-    ax.legend(handles=[
-        Line2D([], [], color=C, lw=2.3, label="主路线 555→533→分矿"),
-        Line2D([], [], color=B, lw=2.3, ls="--", label="延伸 红点附近绿点→商店"),
-        Line2D([], [], color="#e8c13a", marker="o", ls="", markersize=7, label="金矿"),
-        Line2D([], [], color="#4a9bb0", marker="s", ls="", markersize=7, label="中立建筑(身份待核)"),
-    ], loc="upper left", fontsize=7, framealpha=.75, facecolor="white")
-    ax.set_title("Concealed Hill 练级路线（真实地图标注）", fontsize=12, color=INK, pad=8)
-    ax.text(w / 2, h + 12, "CH 无 Preview 数据: 建筑身份与营地组合待游戏内核对", ha="center",
-            fontsize=7.5, color=SUB)
-    save(fig, "route-ch.png")
+    # ---------------- CH：Preview 数据已补抓（2026-10-13），建筑身份权威确认
+    draw_data("ch", "Concealed Hill 练级路线（真实地图标注）",
+        my=(0.145, 0.887), opp=(0.746, 0.057), my_lab=("right", "top"),
+        steps=[
+            (0.116, 0.745, "① 门口黄点·食人魔", "实测: 练完1.8(累计180)", "left", "bottom"),
+            (0.458, 0.953, "② 绿点海龟", "实测: 练完2.2(累计220)", "center", "bottom"),
+            (0.712, 0.909, "③ 分矿营(豺狼守)", "实测: 练完3.0(累计300)", "center", "bottom"),
+            (0.906, 0.775, "延伸① 红点旁绿点·狗头人", "实测: 练完2.7(累计270)", "right", "top"),
+            (0.574, 0.700, "延伸② 商店门口营", "实测: 练完3.1(累计310)", "center", "top"),
+        ],
+        extras=[
+            (0.205, 0.945, "主矿 12500", "left", "center"),
+            (0.425, 0.408, "中央矿 12500\n红点食人魔领主守", "right", "center"),
+        ],
+        routes=[
+            ([(0.116, 0.745), (0.458, 0.953), (0.712, 0.909)], C, "-",
+             "主路线 门口→海龟→分矿"),
+            ([(0.712, 0.909), (0.906, 0.775), (0.574, 0.700)], B, "--",
+             "延伸 分矿→狗头人绿点→商店营"),
+        ],
+        note="5 矿均 12500；医疗泉由红幼龙红点守(Preview 数据)")
 
 
 if __name__ == "__main__":
