@@ -4941,5 +4941,589 @@
     ]
    }
   ]
+ },
+ "ni": {
+  "image": "Wc3 Northern Isles.jpg",
+  "objects": [
+   {
+    "type": "tavern",
+    "x": 0.5082,
+    "y": 0.4604,
+    "gold": "",
+    "n": ""
+   },
+   {
+    "type": "spawn",
+    "x": 0.0587,
+    "y": 0.7873,
+    "gold": "",
+    "n": "1"
+   },
+   {
+    "type": "spawn",
+    "x": 0.8659,
+    "y": 0.0938,
+    "gold": "",
+    "n": "2"
+   },
+   {
+    "type": "goldmine",
+    "x": 0.0817,
+    "y": 0.8193,
+    "gold": "13500",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.8889,
+    "y": 0.1278,
+    "gold": "13500",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.518,
+    "y": 0.87,
+    "gold": "10000",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.4967,
+    "y": 0.0969,
+    "gold": "10000",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.8905,
+    "y": 0.8062,
+    "gold": "9000",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.1626,
+    "y": 0.1553,
+    "gold": "9000",
+    "n": ""
+   },
+   {
+    "type": "laboratory",
+    "x": 0.2557,
+    "y": 0.3645,
+    "gold": "",
+    "n": ""
+   },
+   {
+    "type": "laboratory",
+    "x": 0.7712,
+    "y": 0.5639,
+    "gold": "",
+    "n": ""
+   },
+   {
+    "type": "merchant",
+    "x": 0.4175,
+    "y": 0.3458,
+    "gold": "",
+    "n": ""
+   },
+   {
+    "type": "marketplace",
+    "x": 0.5989,
+    "y": 0.5771,
+    "gold": "",
+    "n": ""
+   }
+  ],
+  "spots": [
+   {
+    "x": 0.2459,
+    "y": 0.9526,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Ogre Warrior",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "2"
+     },
+     {
+      "name": "Ice Troll",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Gnoll Warden",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.7337,
+    "y": 0.0308,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Ogre Warrior",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "2"
+     },
+     {
+      "name": "Ice Troll",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Gnoll Warden",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.2467,
+    "y": 0.5527,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Murloc Flesheater",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "1"
+     },
+     {
+      "name": "Murloc Huntsman",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.7549,
+    "y": 0.3822,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Murloc Flesheater",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "1"
+     },
+     {
+      "name": "Murloc Huntsman",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.3758,
+    "y": 0.7048,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Murloc Flesheater",
+      "count": 1,
+      "item": "Charged",
+      "ilvl": "2"
+     },
+     {
+      "name": "Murloc Huntsman",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Murloc Tiderunner",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.6258,
+    "y": 0.2379,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Murloc Flesheater",
+      "count": 1,
+      "item": "Charged",
+      "ilvl": "2"
+     },
+     {
+      "name": "Murloc Huntsman",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Murloc Tiderunner",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.0997,
+    "y": 0.4858,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Ogre Magi",
+      "count": 1,
+      "item": "Charged",
+      "ilvl": "3"
+     },
+     {
+      "name": "Tuskarr Warrior",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Tuskarr Trapper",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.9117,
+    "y": 0.4361,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Ogre Magi",
+      "count": 1,
+      "item": "Charged",
+      "ilvl": "3"
+     },
+     {
+      "name": "Tuskarr Warrior",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Tuskarr Trapper",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.6895,
+    "y": 0.8348,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Overlord Arachnathid",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "2"
+     },
+     {
+      "name": "Nerubian Webspinner",
+      "count": 1,
+      "item": "Charged",
+      "ilvl": "2"
+     },
+     {
+      "name": "Warrior Arachnathid",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Barbed Arachnathid (Creep)",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Crystal Arachnathid",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.3448,
+    "y": 0.1278,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Overlord Arachnathid",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "2"
+     },
+     {
+      "name": "Nerubian Webspinner",
+      "count": 1,
+      "item": "Charged",
+      "ilvl": "2"
+     },
+     {
+      "name": "Warrior Arachnathid",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Barbed Arachnathid (Creep)",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Crystal Arachnathid",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.4918,
+    "y": 0.8216,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Ogre Magi",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "3"
+     },
+     {
+      "name": "Tuskarr Trapper",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Ice Troll",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Ice Troll Priest",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.5245,
+    "y": 0.1289,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Ogre Magi",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "3"
+     },
+     {
+      "name": "Tuskarr Trapper",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Ice Troll",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Ice Troll Priest",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.8758,
+    "y": 0.7599,
+    "level": "hard",
+    "creeps": [
+     {
+      "name": "Magnataur Reaver",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "5"
+     },
+     {
+      "name": "Ogre Magi",
+      "count": 1,
+      "item": "Power Up",
+      "ilvl": "2"
+     },
+     {
+      "name": "Ogre Warrior",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Polar Furbolg Shaman",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.1781,
+    "y": 0.196,
+    "level": "hard",
+    "creeps": [
+     {
+      "name": "Magnataur Reaver",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "5"
+     },
+     {
+      "name": "Ogre Magi",
+      "count": 1,
+      "item": "Power Up",
+      "ilvl": "2"
+     },
+     {
+      "name": "Ogre Warrior",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Polar Furbolg Shaman",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.4444,
+    "y": 0.3767,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Gnoll Overseer",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "4"
+     },
+     {
+      "name": "Gnoll Brute",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Gnoll Warden",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Gnoll Assassin",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.5776,
+    "y": 0.5463,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Ice Troll Warlord",
+      "count": 1,
+      "item": "Charged",
+      "ilvl": "4"
+     },
+     {
+      "name": "Ice Troll",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Ice Troll High Priest",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Ice Troll Berserker",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.2737,
+    "y": 0.4053,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Polar Furbolg Tracker",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "3"
+     },
+     {
+      "name": "Tuskarr Sorcerer",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.7451,
+    "y": 0.5319,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Polar Furbolg Tracker",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "3"
+     },
+     {
+      "name": "Tuskarr Sorcerer",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   }
+  ]
  }
 }

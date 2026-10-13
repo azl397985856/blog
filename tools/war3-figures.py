@@ -97,6 +97,7 @@ def fig_map_pool():
         ("CH", 3.6, 3.6, KEEP, "双温泉+酒馆\n万金油续航好"),
         ("ST", 3.2, 3.1, KEEP, "中央免费矿\n偷矿攻防主题"),
         ("AM", 4.2, 3.3, KEEP, "雇兵营好练\n分矿无尸体克 UD"),
+        ("NI", 4.9, 3.4, KEEP, "经典竞技图\n分矿近+角落矿"),
         ("AL", 4.6, 2.2, WARN, "对 NE 明显劣势\n对 HUM/UD 略优"),
         ("TM", 5.6, 1.2, BAN, "大图多矿\n运营族主场"),
     ]
@@ -445,8 +446,13 @@ def fig_routes():
         "Stormreaver Apprentice": "风暴掠夺者学徒", "Red Dragon Whelp": "红龙幼龙",
         "Voidwalker": "虚空行者", "Ice Troll Trapper": "冰巨魔捕兽者", "Ice Troll Priest": "冰巨魔祭司",
         "Ice Troll Berserker": "冰巨魔狂战士", "Ice Troll High Priest": "冰巨魔高级祭司",
+        "Ice Troll": "冰巨魔", "Ice Troll Warlord": "冰巨魔督军",
         "Spider Crab Limbripper": "蜘蛛蟹裂肢者", "Red Drake": "红幼龙",
         "Ogre Lord": "食人魔领主",
+        "Tuskarr Warrior": "海象人战士", "Polar Furbolg Shaman": "极地熊怪萨满",
+        "Magnataur Reaver": "猛犸掠夺者", "Nerubian Webspinner": "蛛网编织者",
+        "Overlord Arachnathid": "蛛甲兽统领", "Warrior Arachnathid": "蛛甲兽战士",
+        "Barbed Arachnathid (Creep)": "倒钩蛛甲兽", "Crystal Arachnathid": "水晶蛛甲兽",
     }
 
     def comp_cn(creeps):
@@ -675,6 +681,24 @@ def fig_routes():
              "延伸 分矿→狗头人绿点→商店营"),
         ],
         note="5 矿均 12500；医疗泉由红幼龙红点守(Preview 数据)")
+
+    # ---------------- NI：北方群岛（2026-10-13 补抓，S12 图池此前遗漏）
+    draw_data("ni", "Northern Isles 练级路线（真实地图标注）",
+        my=(0.059, 0.787), opp=(0.866, 0.094), my_lab=("left", "bottom"),
+        steps=[
+            (0.246, 0.953, "① 门口绿点·食人魔", "推演路线, XP 待实测", "left", "bottom"),
+            (0.376, 0.705, "② 鱼人绿点", "", "center", "top"),
+            (0.492, 0.822, "③ 分矿营", "顺势开分矿(10000金)", "center", "top"),
+        ],
+        extras=[
+            (0.10, 0.845, "主矿 13500", "center", "top"),
+            (0.163, 0.135, "角落矿 9000\n猛犸红点守(掉永久5)", "left", "top"),
+        ],
+        routes=[([(0.246, 0.953), (0.376, 0.705), (0.492, 0.822)], C, "-",
+                 "门口→鱼人→分矿营"),
+                ([(0.492, 0.822), (0.274, 0.405)], B, "--",
+                 "延伸 分矿→实验室前营")],
+        note="1酒馆+2实验室+1商店+1市场；主矿13500/分矿10000/角落矿9000(Preview 数据)")
 
 
 if __name__ == "__main__":

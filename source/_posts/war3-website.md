@@ -62,11 +62,14 @@ KK 平台 1v1 天梯榜的前 100 名，大致对应平台最高分段：对手�
 | Echo Isles v2.2 | EI | 小型经典对称图 | 节奏快、骚扰往返短，剑圣收益高 | 保留，主战场 |
 | Concealed Hill | CH | 中型，双温泉+酒馆 | 续航容错好，万金油舒服 | 保留，主战场 |
 | Amazonia | AM | 中型经典图 | 雇兵营好练级；分矿无尸体克 UD | 保留（对 UD 尤其要保） |
+| Northern Isles | NI | 中型横向雪图 108×86，对角出生 | 经典竞技图（1.30 官方天梯/WGL 用图）；自然分矿 10000 近；角落矿 9000 猛犸守 | 保留 |
 | Twisted Meadows v1.9 | TM | 大型多矿图 | 傀儡守矿、易守难攻，运营族主场 | **首选 ban** |
 | Autumn Leaves v2.0 | AL | 中型新图（Tenshi 作） | 家门口分矿极易开；W3C 数据打 NE 明显劣势、打 HUM/UD 略优 | **第二 ban**（怕 NE 时） |
 | Springtime v1.3 | ST | 雪图 90×90，对角出生 | 中央有无守护金矿，偷矿/反偷矿是全图主题 | 保留 |
 | HammerFall S3 | HF | 小图 84×84（Village） | 两个分矿位可打三矿；实验室+雇兵营；已有兽族实测开局 | 保留，主力图 |
 | TideHunter3 v1.2 | TH | 海岛图 90×90（Sunken Ruins） | 任意两绿点即到 2 级；分矿偏远、怪警戒大，对面开矿难 | 保留 |
+
+> Northern Isles（NI）为 2026-10-13 补入库——最初清点图池时遗漏了这张图，点位与营地数据同样来自 Liquipedia Preview（权威）。
 
 ![S12 地图池：兽族视角全景](https://lucifer.ren/blog/images/war3/map-pool.png)
 
@@ -82,6 +85,7 @@ KK 平台 1v1 天梯榜的前 100 名，大致对应平台最高分段：对手�
 - **能 ban 2 张：TM + Autumn Leaves（怕 NE 时）。** AL 家门口的分矿极易开（NE 吹风/开矿体系舒服），W3C 数据 ORC 对 NE 在这张图明显劣势（NE 方胜率约 59%，顶级兽族对 NE 常直接 veto 这张图）；但注意同一份数据里 ORC 打 HUM（约 54.6%）、打 UD（约 52.1%）反而占优——所以如果自己分段里 HUM/UD 居多，第二张 ban 改从 ST/TH 里挑一张自己更不顺手的。
 - **能 ban 3 张：TM + AL + ST/TH 中更不顺手的一张。**
 - **HammerFall 无论如何别 ban**：小图 84×84 节奏快，兽族已有实测开局，且这张图专门适合拆家/多线（狼骑、蝙蝠的主场），是兽族的优势场。
+- **Northern Isles 也不进 ban 位**：经典竞技图各对位平衡，分矿近、酒馆中立英雄可抢，兽族没有结构性劣势——真要挑刺就是角落矿被 UD 偷时要多查（见 2.4 NI 档案）。
 
 ban 图顺序提前想好写进地图卡，不要临场纠结；赛季中后段可以根据榜上对手的对位分布再调整。
 
@@ -287,6 +291,30 @@ ban 图顺序提前想好写进地图卡，不要临场纠结；赛季中后段�
 ![TideHunter 练级路线示意](https://lucifer.ren/blog/images/war3/route-th.png)
 
 **其他种族（前期笔记）**：NE 门口黄点（潮汐，BR 可以造得很近）。
+
+#### Northern Isles（NI）—— 保留（2026-10-13 补入库）
+
+**基本信息**（Liquipedia Preview 权威数据）
+
+| 项目 | 内容 |
+| --- | --- |
+| 出身 | Filmting 作，2018 年 Hive Workshop 上传，1.30 加入官方天梯；WGL 2018 决赛用图 |
+| 体量 | 108×86 横向雪图（Lordaeron Winter），对角出生（左下/右上） |
+| 中立建筑 | 中央酒馆、双地精实验室、地精商店、市场（可淘装备） |
+| 矿点 | 主矿 13500；自然分矿 10000×2（下中/上中，离主基近）；角落矿 9000×2（猛犸掠夺者红点守，掉**永久5**） |
+| 关键营地 | 门口绿点（食人魔+冰巨魔+豺狼看守，掉永久2）、鱼人绿点（掉消耗2）、分矿营（食人魔法师+海象人，掉永久3）、商店豺狼监工营（掉**永久4**）、市场冰巨魔督军营（掉消耗4）、实验室前营（极地熊怪追踪者+海象人术士×2，掉永久3）、蛛甲兽营（掉永久2+消耗2） |
+| 定制掉落 | 2 级宝物池为属性书+2/知识书（官方定制） |
+
+**兽族分析**：老牌竞技图、平衡成熟，各对位都有成熟打法可抄。自然分矿 10000 离家近、门口一马平川——狼骑拆家流与双矿运营都舒服；双实验室意味着飞艇多线骚扰随时可买；雪图+对角出生，地面骚扰距离长，先知狼骚扰比剑圣跑图更顺。角落矿的永久5 是全场最大宝物点，对面 UD 偷角落矿时必查。
+
+**练级路线**（【推演】，XP 节拍待实测）
+
+1. 门口绿点（食人魔营）→ 鱼人绿点 → 分矿营（打完顺势开 10000 分矿）。
+2. 延伸：分矿 → 实验室前营（3 级方向）。
+
+![Northern Isles 练级路线示意](https://lucifer.ren/blog/images/war3/route-ni.png)
+
+**对位注意**：中央酒馆+市场，中立英雄与淘货节奏都要抢；对角出生，首发骚扰要走实验室飞艇或绕外侧海路，侦查别只看正面一条线。
 
 ### 2.5 抢怪与反抢怪
 
@@ -587,8 +615,8 @@ ban 图顺序提前想好写进地图卡，不要临场纠结；赛季中后段�
 - 先知首发的商店可以延后到升本后在第二、三个地洞之间补——省下的前期资源全变猎头。
 - 二发 TC 出来后尽快练到 3 级（2 级战争践踏）再接正面；对速矿局二发熊猫更好用。
 - 对双神秘圣地破法男女法：萨满+科多，或转飞龙。破法魔免但不禁网和撞击——狼骑网住齐射照杀。
-- 对步枪万金油：可以不造兽栏，重步大 G+萨满闪电盾硬吃齐射（大 G 高甲克制穿刺），提前开分矿拖后期。
-- 对速矿：双兽栏飞龙或掠夺狼骑直接压制分矿，别让它双矿安稳暴兵。
+- 对步枪万金油：可以不造兽栏，重步大 G+萨满闪电盾硬吃齐射（大 G 高甲克制穿刺），提前开分矿拖后期。其最强一波在神秘圣地刚落地、男女巫各 2-3 个时——慢科技要在这之前留好萨满/白牛存量，别裸科技。
+- 对速矿：双兽栏飞龙或掠夺狼骑直接压制分矿，别让它双矿安稳暴兵。骚扰目标不是杀农民（民兵一响很难杀），而是**反复取消分矿大厅和箭塔**，把对面 210 木的升本无限延后；分矿落地前后是 HUM 兵力真空（步兵防御没研究好、水元素在 CD），狼骑拆分矿、飞龙点农民都在这个窗口最疼；别跟守卫塔阵对射——拆矿用狼骑掠夺，正面试先知 C 分矿农民。
 - 对直升机坦克拆家：猎头+蝙蝠对空，自家拆家线照跑，比的就是换家效率。
 - 对狮鹫：蝙蝠自杀+狼骑网住齐射，拖到成型就难办，尽量三本狮鹫海之前解决战斗。
 - 反 TR 见上文 TR 塔流小节。
@@ -616,15 +644,16 @@ ban 图顺序提前想好写进地图卡，不要临场纠结；赛季中后段�
 
 - 二发英雄跟着对面阵容走：对面 BM/FS 骚扰型 → 二发小 Y（蛇棒克无甲女猎/小鹿）；对面 KotG → 二发 TC（冲击波不吃剑圣哑火的亏）；我方小 Y 首发时二发剑圣或深渊领主，抓对面开矿可以地精修补匠 all-in（待实测）。
 - 二发英雄练到 3 级再接正面：蛇棒 2 级、治疗波 2 级都是质变。
-- 对 KotG 女猎海：单灵殿重步大 G+萨满，**先把护甲升到 +2 再打 50 人口一波**，期间不早开矿；闪电盾给大 G 往人堆里送。
-- 对熊鹿：大 G 碰不到熊就网住打——狼骑+萨满是答案，科多找机会吞熊；返老还童就是白牛大驱散的业务范围。
+- 对 KotG 女猎海：单灵殿重步大 G+萨满，**先把护甲升到 +2 再打 50 人口一波**，期间不早开矿；闪电盾给大 G 往人堆里送；二发 TC 用冲击波清女猎，或小 Y 蛇棒守家；对面转熊鹿就补白牛、狼骑网熊。剑圣路过顺手清掉挂在树上的哨兵猫头鹰——对面早升哨兵就是为了盯你。
+- 对熊鹿：大 G 碰不到熊就网住打——狼骑+萨满是答案，科多找机会吞熊；返老还童就是白牛大驱散的业务范围。**赢法是抢在三本大师熊成型前发力**——wc3-gym 的评估是熊成型后正面对大部分兽族部队占优，兽族靠前期压制、科多、狼骑拆经济赢。
+- 对娜迦 AC 鸟德推：成型比三本吹风早一拍，**二本一好就要准备接团**——猎头穿刺硬克无甲 AC/风德，白牛大驱散解妖火；娜迦身板脆，剑圣贴脸或狼骑网住集火娜迦是破局点。
 - 对吹风：白牛有抗魔皮肤，吹不起来，是整套部队的定海神针；萨满的净化是单体驱散不够用，必须升白牛大驱散。对面会烧 TC 的蓝（冲击波 90 蓝），TC 蓝量管理要做好。抓二本是这局的胜负手——剑圣+豪猪冲对面二本建筑取消，拖延吹风成型。真被吹风成型了，就分矿塔阵+建筑防御拖三本，让对面无机可乘。
 - 对面 KotG 首发时别出猎头——成型前会被女猎海白吃；对面 DH 首发时猎头随便打。
 - NE 拆地洞很快（高版本调整），磨坊的建筑防御科技别省（待实测：版本差异）。
 
 #### 对位细节：对 UD
 
-对面主流战术：DK 蜘蛛流、天地鬼、毁灭者体系、冰龙、憎恶+绞肉车、女妖诅咒、三英雄连杀。
+对面主流战术：科技蜘蛛、DK 蜘蛛流、CL 甲虫蜘蛛、天地鬼、毁灭者体系、冰龙、憎恶+绞肉车、女妖诅咒、三英雄连杀。
 
 万金油笔记：
 
@@ -638,7 +667,10 @@ ban 图顺序提前想好写进地图卡，不要临场纠结；赛季中后段�
 - 先知猎头对 UD 也是一线选择：前期压制力强，二本分矿或三本都成立。
 - 猎头走穿刺攻防：克制蜘蛛，后期对雕像/毁灭的对空齐射也是全队最高；三本狂战士必升，但狂猎头要离对面大范围 AOE 远一点。
 - 兽栏出科多+狼骑，灵殿和图腾可以延后——UD 前期没有驱散，科多前压吞憎恶/蜘蛛很安全；等到对面女妖上场再补白牛（女妖诅咒一挂，剑圣等于半残）。
-- 对毁灭：电球 BM（见上）、狼骑网住、猎头齐射三件套；白牛灵魂链铺好，毁灭吸蓝前把 TC 的蓝烧在践踏上。
+- 对毁灭：电球 BM（见上）、狼骑网住、猎头齐射三件套；白牛灵魂链铺好。
+- 对蜘蛛流前期窗口：蜘蛛 3 只成型前 UD 家里基本只有 DK 单英雄——剑圣首发就打这个窗口进门骚扰，逼 DK 回防拖慢练级。
+- 对科技蜘蛛：更要抢前期——wc3-gym 对位表原话「对 ORC 前期非常脆，二本三本才是最优」，三本腐球+毁灭成型前都是兽族的强势期。
+- 对 CL 甲虫蜘蛛推：甲虫是召唤物，萨满净化/白牛大驱散直接清（同镜像清狼/火元素）；对面蜘蛛会钻地躲捕网——粉/显影带好，照出来集火；二发若是黑暗游侠，猎头流要小心（wc3-gym 明说 DR 克先知猎头）。
 - 对天地鬼：猎头+蝙蝠对空，地洞火力收尾，TC 踩地板打断阵型。
 - 对冰龙：蝙蝠自杀最优先，其次网住+齐射。
 - UD 三英雄连杀（CN 连招）克英雄：英雄无敌/血瓶常备，站位分散，别给连招机会。
@@ -686,6 +718,12 @@ ban 图顺序提前想好写进地图卡，不要临场纠结；赛季中后段�
 
 > 根据情况升级基地的自然活力；如果选择老鹿，自然活力优先级更高。
 
+**战术定位与时间窗**（wc3-gym DH 快熊科技篇）：
+
+- NE 公认最稳的骨架，四个种族都能打；两个弱点窗口很明确：**二本升三本的科技期**家里只有 AC/小鹿，怕一波强推；**开局全科技没资源开分矿**，前期经济全押主矿。
+- 对 ORC 常见转型：DH + 兽王 + 吹风，或深渊领主/熊猫二发 + 纯熊强推。
+- 熊内战（NE 镜像）的胜负手是三攻三防和英雄人手一根保存杖。
+
 #### 吹风（对 ORC）
 
 **天梯上兽族很多都不造兵营的，遇到这种可以直接 TR，二本再来个火焰领主压制，不用吹风了。**
@@ -695,25 +733,34 @@ ban 图顺序提前想好写进地图卡，不要临场纠结；赛季中后段�
 3. 二本好后是弱势期，不过可以通过双英雄加 AC 来对面家里拆地洞度过（这个时候往往是晚上，AC 还可以隐身，打完回去喝井水）。
 4. 三本吹风好了，三发英雄后是强势期。
 
+#### 娜迦 AC 鸟德推（对 ORC）
+
+娜迦首发 + 弓箭手 + 风德的二本节奏推（wc3-gym 专篇），对 NE/ORC/HUM 都常用，成型比三本吹风早一拍。
+
+- 首发娜迦带 AC 练级：冰箭减速 + AC 齐射，专门点杀落单单位和英雄，练级路上顺带压制。
+- 二本补风德：妖火降甲放大 AC 齐射伤害，双英雄控场强推；拖到三本才补吹风。这套不给对手慢科技的时间，成型节奏比三本吹风早一拍。
+
 #### 女猎手海（KotG）
 
 老鹿首发 + 女猎手速推：二本之前最强的时间窗，靠缠绕和机动性白吃落单部队。
 
-应对要点（兽族视角）：
+运营情报（wc3-gym 1 AoW 女猎科技篇）：
 
-- 护甲 +2 之前别接正面，也别急着开矿；大 G+萨满闪电盾是标准答案。
-- 二发 TC 用冲击波清女猎，小 Y 蛇棒守家。
-- 对面转熊鹿就补白牛（驱散返老还童）、狼骑网熊。
+- 这套**对兽族（剑圣+大 G 开局）时最常见**——冲的就是二本前兽族没有反制女猎的手段这个空档。
+- **会早升「哨兵」**：女猎的猫头鹰哨兵挂树提供视野，专门盯剑圣动向。
+- 二本标准转型：二发炼金（医疗喷雾奶女猎）顶前排，后排补弓箭手，资源富余升月刃。
+- 弱点：无对空、没走 BR 练级线所以英雄等级偏低、后期疲软，拖过二本强度曲线明显下滑。
 
 #### 其他流行战术速查
 
-| 战术 | 特征 | 兽族应对 |
-| --- | --- | --- |
-| 熊鹿 | 见上文熊鹿详述 | 狼骑网熊 + 科多吞熊，白牛驱散返老还童 |
-| 吹风 | 见上文吹风 | 白牛抗魔皮肤 + 大驱散，抓二本；猎头流绕开 |
-| 女猎手海 | KotG 速推，二本前最凶 | 护甲 +2 + 萨满闪电盾，别早开矿 |
-| 奇美拉 / 角鹰 | 三本空军 | 蝙蝠自杀 + 网住齐射；飞龙对拼占优 |
-| 塔推（针对无兵营兽族） | 二本火领 + 塔直接压地洞 | 双地洞 / 先知开局，反 TR 见 4.2 |
+| 战术 | 特征 |
+| --- | --- |
+| 熊鹿 | 见上文熊鹿详述 |
+| 吹风 | 见上文吹风 |
+| 女猎手海 | KotG 速推，二本前最凶 |
+| 娜迦 AC 鸟德推 | 娜迦首发冰箭+AC 齐射，二本风德妖火降甲 |
+| 奇美拉 / 角鹰 | 三本空军 |
+| 塔推（针对无兵营兽族） | 二本火领 + 塔直接压地洞 |
 
 #### 对 HUM
 
@@ -725,15 +772,28 @@ ban 图顺序提前想好写进地图卡，不要临场纠结；赛季中后段�
 
 ### 4.4 HUM
 
+#### 大法速矿（一营练级后开矿）
+
+天梯 HUM 见面率最高的骨架（wc3-gym AM 一营开矿篇）：大法 + 水元素练掉家门口一个营地 → 民兵抢开分矿 → 双矿暴兵。主基地和分矿之间有营地可练的图是这套的主场（wc3-gym 点名 TH、AL、LR、NI——全在 S12 图池）。
+
+时间线基准：
+
+- **分矿大厅必须在 18:00（第一个天黑）前落地、24:00（午夜）前升二本**——HUM 自己心里的两条及格线。
+- 开矿防守协议：2-3 个民兵 + 主基地重新排队农民补采金，打完的民兵直接转去敲分矿大厅——农民周转极快。
+- 开矿后：不停农民/步兵，攒 210 木升二本，伐木补到 12 农民并升伐木改良；分矿哨塔升守卫塔、主基升神秘之塔、研究防御（顶穿刺）；二英雄出来前把人口压在 45 以内吃无维护费红利。
+
+兽族怎么反速矿，统一收在 4.2「对位细节：对 HUM」的对速矿条目。
+
 #### 万金油（男女巫 + 火枪）
 
 - 1 农民祭坛，4 农民采金。
 - 第一个造出来的农民造农场，第二个造兵营；兵营好了出 1-2 个步兵。
 - 大法师出门，民兵 + 水元素按地图板块的路线练级，水元素顺便侦查对面动向。
 - 农民不断，攒钱升二本；快升本时根据对手动向决定要不要补第二个兵营。
-- 二本好第一时间放神秘圣地 + 二英雄山丘之王；女巫学减速、牧师学治疗，火枪补到 3-4 个。
+- 二本好第一时间放神秘圣地 + 二英雄山丘之王；**女巫的减速和牧师的治疗都是自带**（自动施放），要研究的是女巫的隐身/变羊、牧师的驱散/心灵火；火枪补到 3-4 个。
 - 团战核心：锤子先手点杀，减速挂住对面主力，火枪后排齐射，残血兵及时拉走。
 - 被针对时：对面高甲近战多 → 转破法、小炮；对面爆空军 → 直升机、龙鹰；对面换家 → 坦克对拆，同时守住分矿。
+- 时间窗：这套最强的一波在**二本神秘圣地刚落地、男女巫各补到 2-3 个时**——走科技的对手都把这波列为科技期最难顶的强推（NE 视角攻略原话）。
 
 #### 立体部队（骑士 + 小炮 + 狮鹫）
 
@@ -741,14 +801,14 @@ ban 图顺序提前想好写进地图卡，不要临场纠结；赛季中后段�
 
 #### 其他流行战术速查
 
-| 战术 | 特征 | 兽族应对 |
-| --- | --- | --- |
-| 大法速矿双矿 | 民兵速开分矿，双矿暴兵 | 先知骚扰分矿；双兽栏飞龙 / 掠夺狼骑压制经济 |
-| 破法男女法 | 破法魔免吸增益，男女法减速加血 | 萨满 + 科多或转飞龙；狼骑网住破法齐射 |
-| MK 火枪 | 锤子先手点杀英雄 | 灵魂链分摊 + 分散站位；白牛解减速，网 MK |
-| 直升机坦克 | 对空 + 拆家换家 | 猎头 / 蝙蝠对空，自家拆家线照跑 |
-| 狮鹫海 | 三本空军海 | 蝙蝠自杀 + 网住齐射，别拖到成型 |
-| 火领塔推 TR | 约 3 分钟步兵 + 民兵 + 箭塔到家 | 反 TR 全套见 4.2 TR 塔流 |
+| 战术 | 特征 |
+| --- | --- |
+| 大法速矿双矿 | 民兵速开分矿，双矿暴兵 |
+| 破法男女法 | 破法魔免吸增益，男女法减速加血 |
+| MK 火枪 | 锤子先手点杀英雄 |
+| 直升机坦克 | 对空 + 拆家换家 |
+| 狮鹫海 | 三本空军海 |
+| 火领塔推 TR | 约 3 分钟步兵 + 民兵 + 箭塔到家 |
 
 ### 4.5 UD
 
@@ -756,22 +816,54 @@ ban 图顺序提前想好写进地图卡，不要临场纠结；赛季中后段�
 
 - 开局：祭坛 → 通灵塔 → 地穴，死亡骑士出门练级，蜘蛛跟着 DK 走。
 - 蜘蛛 3-4 个成型前以练级为主，齐射点杀 + 拉扯（打一下走一步），英雄等级优先。
-- 二本放屠宰场，雕像回血回蓝，攒钱转毁灭者；毁灭出门第一件事吸对面英雄的蓝。
+- 二本放屠宰场，雕像回血回蓝，攒钱转毁灭者；毁灭出门第一件事是**吞噬魔法**清对面的增益和召唤物（驱散成功才回血回蓝），蓝不够用**吸收法力**从友方雕像/单位抽——吸收法力只能对友方单位用，碰不了对面的蓝（Liquipedia）。
 - 二发巫妖，霜星 + 死亡缠绕（CN 连招）点杀英雄和关键兵。
 - 家防靠通灵塔升级蛛网怪塔，分矿腐地的 timing 要专门练。
 
 UD 是英雄等级种族：DK 和巫妖的等级基本等于胜率，路线卡里优先保证双英雄经验。
 
+时间窗（wc3-gym DK 蜘蛛篇）：
+
+- UD 新手标准开局——「前期最弱、后期最稳」：蜘蛛 3 只成型前家里基本只有 DK 单英雄，最怕这个窗口被打进门骚扰。
+- 强势曲线从二本雕像开始：回血回蓝让 DK 绕图不用回城，三本转毁灭是终极形态。
+
+#### 科技蜘蛛（速科技 DK 蜘蛛）
+
+版本主流骨架（wc3-gym「Fast Death Knight with Fiends」篇）：和上面稳蜘蛛开局的区别是**升本优先于出蜘蛛**——用最少的兵换最快的科技。
+
+- 开局节奏：**8 人口出 DK**（最快的英雄），升本前只出 1 只蜘蛛，随后直奔二本；二本雕像、三本腐球是两个发力点。
+- 50 人口标准军团：6 蜘蛛 + 2 雕像 + 3 英雄。
+- 家防便宜是底气：一座蛛网怪塔 + 部队就能挡住绝大多数骚扰。
+- 强弱势（wc3-gym 对位表）：对 ORC「前期非常脆，但二本三本是最优解」；对 NE 占优 KotG/Warden、怕 DH；对 HUM 全策略能打、吃三本 timing。
+- 代价是前期地图控制权：蜘蛛一只只慢慢补的时候拦不住对面——这套路怕的就是被前期按死。
+
+#### CL 甲虫蜘蛛（速科技 + 二本一波）
+
+地穴领主首发的速科技蜘蛛（wc3-gym「Crypt Lord Fast Fiends」篇）：靠甲虫白嫖战斗力，二本好带雕像强推，新手友好、团战操作量小。
+
+- CL 首发出门：1 级点甲虫并**自动施放**；2 级点**刺穿**或**甲壳**（同时关掉甲虫自动改手动）；3 级固定点 2 级甲虫，然后才去买酒馆二发。
+  - 刺穿：对面开了矿 / 人海（步兵海、民兵、狗海）时点修理农民和集群。
+  - 甲壳：CL 变铁人，配护甲戒指几乎杀不死；对 NE 默认甲壳——反正蓝会被 DH 烧掉，刺穿放不出来。
+- **2:45 前开始升二本**。酒馆二发选：黑暗游侠（把对面小兵一个个变骷髅滚雪球，克先知猎头）/ 娜迦（冰箭控英雄，2 级点法力护盾保命）/ 深渊领主（1 级嚎叫 30% 减伤）；DK 也能二发（缠绕奶蜘蛛）。
+- **推的时机 = 第一座雕像出来**（最好等 CL 到 3 级）：4-5 蜘蛛 + 6 甲虫 + 1 雕像直接开拔。
+- 推家细节：**优先拆对面放在外面的商店**——商店很脆，对面 TP 回来前拆得掉，断他的药膏/蓝瓶补给很伤；警惕民兵集合反打。
+- 团战是消耗战：蜘蛛被集火就**钻地**（时机好能躲风暴之锤、狼骑捕网），埋地回血快，约 10 秒后钻出来接着打；战场上每具尸体都是再召唤 2 只甲虫的原料。
+- 推不动就 TP 走，升三本转蜘蛛毁灭，或按局面补女妖。
+
 #### 其他流行战术速查
 
-| 战术 | 特征 | 兽族应对 |
-| --- | --- | --- |
-| 天地鬼 | 食尸鬼 + 石像鬼二本速推 | 猎头对空 + 蝙蝠自杀，地洞火力收尾；TC 踩地板 |
-| 毁灭体系 | 雕像回蓝转毁灭吸蓝 | 电球 BM（见 4.2）；狼骑网毁灭，猎头齐射 |
-| 冰龙 | 三本单核空军 | 蝙蝠自杀最优先；其次网住 + 齐射 |
-| 憎恶 + 绞肉车 | 正面前压推线 | 科多吞憎恶；大 G 萨满拖到三本 |
-| 女妖诅咒 | 诅咒降命中，克剑圣普攻 | 白牛大驱散；BM 别裸奔，无敌必带 |
-| 三英雄连杀 | DK + 巫妖 CN 连招点杀英雄 | 英雄无敌 / 血瓶续航；站位分散，别给连招机会 |
+| 战术 | 特征 |
+| --- | --- |
+| 科技蜘蛛 | 见上文科技蜘蛛详述（版本主流） |
+| CL 甲虫蜘蛛 | 见上文 CL 甲虫蜘蛛详述 |
+| 天地鬼 | 食尸鬼 + 石像鬼二本速推 |
+| 毁灭体系 | 雕像奶量转毁灭（吞噬驱散 + 友方吸蓝） |
+| 冰龙 | 三本单核空军 |
+| 憎恶 + 绞肉车 | 正面前压推线 |
+| 女妖诅咒 | 诅咒降命中，克普攻英雄 |
+| 三英雄连杀 | DK + 巫妖 CN 连招点杀英雄 |
+
+补充情报（wc3-gym 单塔速天鬼篇）：纯天鬼被明确标注为**不推荐对 ORC**——直天鬼输给蝙蝠+猎头；这套主要用于对 NE/HUM 的经济骚扰。
 
 ## 五、快捷键：定制一套顺手键位
 
@@ -798,7 +890,629 @@ Hotkey=V
 
 改键纪律：只改高频操作；一次改两三个，用自定义局或人机固化 30 局再改下一批；改之前检查和编队键、站位键（H/S/A）没有冲突。
 
-偷懒但极其好用的整体方案：把单位热键和科技热键**整体改成 QWE / ZXC 三排**——左手不用离开主键位区，出兵、升科技、放技能全部顺手，比逐条挑着改更快成型（游戏内设置或 CustomKeys.txt 都能实现）。
+偷懒但极其好用的整体方案：把单位热键和科技热键**整体改成 QWER / ASD / ZXC 三排**——左手不用离开主键位区，出兵、升科技、放技能全部顺手，比逐条挑着改更快成型。下面是完整落地步骤。
+
+**方案原理**
+
+右下命令卡是 4 列 × 3 行的固定网格。把每个按钮的热键设成它所在格子对应的键盘位，从此**记格子，不记字母**——换任何种族、任何建筑，手指位置不变：
+
+| 命令卡 | 第 1 列 | 第 2 列 | 第 3 列 | 第 4 列 |
+| --- | --- | --- | --- | --- |
+| 第 1 行 | Q | W | E | R |
+| 第 2 行 | A | S | D | F |
+| 第 3 行 | Z | X | C | V |
+
+通用命令（攻击 A、停止 S、保持 H、移动 M、巡逻 P）**不用动**——本来就顺，且与三排不冲突；数字编队 1-0 与 Ctrl/Shift 加编也不受影响。理论上第四列 R/F/V 稍远，实际第四列多为低频按钮（升级大师级之类），够得着。
+
+**重制版：三步完成**
+
+重制版内置了网格预设，不用编辑任何文件：
+
+1. 主菜单 → 选项 → **控制** → 热键。
+2. 预设（Profile）里选 **「网格 / Grid」** 布局，保存。
+3. 进自定义局检查一遍：选兵营、祭坛、兽栏各按一遍 Q/W/E 确认格子正确。个别不满意的键可在「自定义按键」里单独微调。
+
+**1.27：编辑 CustomKeys.txt 的完整流程**
+
+1.27 没有内置网格，靠 `CustomKeys.txt` 手工实现。要编辑的文件就一个：
+
+1. **找目录**：魔兽安装根目录（与 `war3.exe` 同级）。KK 平台用户在 KK 客户端「设置 → 游戏路径/安装目录」里查看实际路径再打开。
+2. **建文件**：目录下有官方模板 `CustomKeysSample.txt`（四族全部单位、技能、科技段落都在里面）。**复制一份，重命名为 `CustomKeys.txt`**——游戏只认这个名字，识别到它就整包生效。
+3. **认格式**：文件由一段段条目组成，每段三行：
+
+```
+[段名]
+Tip=训练兽族步兵(Q)     ← 按钮上显示的文字，括号字母要跟着改，否则显示与实际不符
+Hotkey=Q                ← 实际生效的按键
+```
+
+4. **定位段落**：Sample 模板是英文的，用按钮的英文名搜索（如 `Train Grunt`＝训练大 G、`Berserker Upgrade`＝狂战士升级、`Pillage`＝掠夺）。搜到段落后只改 `Hotkey=` 和 `Tip=` 括号里的字母，段名 `[xxx]` 一个字符都不要动。
+5. **决定字母**：进一局单人游戏，选中建筑看按钮在第几行第几列，按上面的映射表写字母（第 1 行第 1 列 → Q，第 2 行第 3 列 → D，以此类推）。
+6. **保存为 ANSI 编码**：记事本「另存为 → 编码选 ANSI」。写中文提示时必须 ANSI，UTF-8 会乱码。
+7. **重启游戏**生效；开自定义局逐建筑核对。
+
+**兽族优先改清单**（按使用频率，一晚能全部改完）：
+
+| 建筑/单位 | 高频按钮 |
+| --- | --- |
+| 大厅 | 升二本 / 升三本 |
+| 兵营 | 大 G、猎头、狂战士升级、巨魔再生 |
+| 战争磨坊 | 攻击 / 护甲升级、尖刺、了望塔 |
+| 祭坛 | 四个英雄（剑圣 / 先知 / 牛头 / 暗影猎手） |
+| 兽栏 | 狼骑 + 捕网、科多 + 战鼓、飞龙 + 浸毒长矛、蝙蝠 + 液态火 |
+| 灵魂归宿 | 萨满 / 巫医 / 白牛（灵魂行者）、大师级 ×3、灵魂链、大驱散 |
+| 巫毒小屋 | 买道具按钮（与 5.3 小键盘方案配合） |
+| 英雄技能 | 剑圣疾风步 / 镜像 / 致命一击；先知幽灵狼 / 闪电链；牛头战争践踏 / 冲击波；小 Y 治疗波 / 妖术 / 蛇棒 |
+
+**现成文件：兽族网格版 CustomKeys.txt（可直接下载使用）**
+
+上面这套网格不用手工逐段改——已经做好了一份：**[CustomKeys-ORC-Grid.txt（完整文件下载）](https://lucifer.ren/blog/files/CustomKeys-ORC-Grid.txt)**，共 304 段，内容包括：
+
+- 兽族全套：出兵（大 G / 猎头 / 狼骑 / 科多 / 飞龙 / 蝙蝠 / 牛头 / 萨满 / 巫医 / 白牛）、科技（升本 / 攻防 / 捕网 / 战鼓 / 浸毒 / 液态火 / 大师级 / 巨魔再生 / 掠夺 / 尖刺）、建筑建造、四个本族英雄全部技能；
+- 通用段：集结点 / 取消 / 加技能点 / 建造菜单（**攻击 / 停止 / 保持 / 移动 / 巡逻保持默认 A/S/H/M/P，未被网格化**）；
+- 酒馆中立英雄及技能（熊猫 / 娜迦 / 深渊 / 黑女 / 兽王 / 地精 / 炼金 / 火领技能——二发熊猫、火领直接可用）；
+- 商店 / 雇佣兵营地 / 地精实验室 / 市场的全部购买按钮。
+
+数据底本来自开源社区项目 [tlo9/Warcraft-3-Keybinds](https://github.com/tlo9/Warcraft-3-Keybinds) 的 QWERTY 网格版，按兽族需求裁剪并逐段校验过「按键 = 按钮格子位置」。文件为纯 ASCII，不存在编码坑；用法同上文流程：下载 → 放进 1.27 游戏根目录（重制版放 `Documents\Warcraft III\CustomKeyBindings\`）→ 重启游戏。想回默认就删掉这个文件。
+
+文件里每段的 `Buttonpos=列,行` 就是按钮在命令卡的格子坐标（0 起 数），`Hotkey` 与之一一对应；`Tip` 里的 `|cffffcc00…|r` 是让按键字母在按钮上高亮显示的颜色码，照抄即可。下面贴出兽族主体部分的完整内容（通用段 + 大厅到四英雄技能；酒馆与商店部分见下载文件）：
+
+```
+; CustomKeys.txt  -  ORC grid layout: QWER/ASDF/ZXVC by button position
+
+; Source base: github.com/tlo9/Warcraft-3-Keybinds  CustomKeys-QWERTY-Grid.txt
+
+; Where to put this file:
+
+;   patch 1.27  -> game install root, next to war3.exe / Frozen Throne.exe
+
+;   Reforged    -> Documents\Warcraft III\CustomKeyBindings\CustomKeys.txt
+
+; Grid = row1 QWER, row2 ASDF, row3 ZXCV (button position decides the key).
+
+; Attack/Stop/Hold/Move/Patrol stay DEFAULT (A/S/H/M/P).
+
+; Plain ASCII - save as ANSI. Delete the file to reset to default keys.
+
+; ==================================================================
+
+; COMMON: rally/cancel/hero-skill-point/build menu (attack/stop/hold/move/patrol stay DEFAULT A/S/H/M/P)
+
+; ==================================================================
+
+[cmdrally]
+Tip=(|cffffcc00F|r) Set Rally Point
+Hotkey=F
+[ARal]
+Buttonpos=3,1
+
+[cmdcancel]
+Tip=(|CFF00FF00Esc|r) Cancel
+Hotkey=512
+Buttonpos=3,2
+
+[cmdcancelbuild]
+Tip=(|CFF00FF00Esc|r) Cancel
+Hotkey=512
+Buttonpos=3,2
+
+[cmdselectskill]
+Tip=(|cffffcc00F|r) Set Hero Ability
+Hotkey=F
+Buttonpos=3,1
+
+[cmdattackground]
+Tip=(|cffffcc00F|r) Attack Ground
+Hotkey=F
+Buttonpos=3,1
+
+[cmdbuildorc]
+Tip=(|cffffcc00Z|r) Build Structure
+Hotkey=Z
+[AObu]
+Buttonpos=0,2
+
+; ==================================================================
+
+; GREAT HALL: upgrades + peon + pillage
+
+; ==================================================================
+
+[ostr]
+Tip=(|cffffcc00Z|r) Upgrade To Stronghold
+Hotkey=Z
+Buttonpos=0,2
+
+[ofrt]
+Tip=(|cffffcc00Z|r) Upgrade To Fortress
+Hotkey=Z
+Buttonpos=0,2
+
+[opeo]
+Tip=(|cffffcc00Q|r) Train Peon
+Hotkey=Q
+Buttonpos=0,0
+
+[ropg]
+Tip=(|cffffcc00E|r) Research Pillage
+Hotkey=E
+Buttonpos=2,0
+
+; ==================================================================
+
+; BARRACKS: grunt/headhunter/berserker + regen
+
+; ==================================================================
+
+[ogru]
+Tip=(|cffffcc00Q|r) Train Grunt
+Hotkey=Q
+Buttonpos=0,0
+
+[ohun]
+Tip=(|cffffcc00W|r) Train Troll Headhunter
+Hotkey=W
+Buttonpos=1,0
+
+[otbk]
+Tip=(|cffffcc00W|r) Train Troll Berserker
+Hotkey=W
+Buttonpos=1,0
+
+[robs]
+Tip=(|cffffcc00Z|r) Research Berserker Strength
+Hotkey=Z
+Buttonpos=0,2
+
+[rotr]
+Tip=(|cffffcc00S|r) Research Troll Regeneration
+Hotkey=S
+Buttonpos=1,1
+
+[robk]
+Tip=(|cffffcc00X|r) Berserker Upgrade
+Hotkey=X
+Buttonpos=1,2
+
+; ==================================================================
+
+; WAR MILL: weapon/armor/plating upgrades + spikes + watch tower
+
+; ==================================================================
+
+[ofor]
+Tip=(|cffffcc00E|r) Build War Mill
+Hotkey=E
+Buttonpos=2,0
+
+[owtw]
+Tip=(|cffffcc00R|r) Build Watch Tower
+Hotkey=R
+Buttonpos=3,0
+
+[rome]
+Tip=(|cffffcc00Q|r) Upgrade to Steel Melee Weapons,(|cffffcc00Q|r) Upgrade to Thorium Melee Weapons,(|cffffcc00Q|r) Upgrade to Arcanite Melee Weapons
+Hotkey=Q,Q,Q
+Buttonpos=0,0
+
+[rora]
+Tip=(|cffffcc00W|r) Upgrade to Steel Ranged Weapons,(|cffffcc00W|r) Upgrade to Thorium Ranged Weapons,(|cffffcc00W|r) Upgrade to Arcanite Ranged Weapons
+Hotkey=W,W,W
+Buttonpos=1,0
+
+[rhar]
+Tip=(|cffffcc00A|r) Upgrade to Iron Plating,(|cffffcc00A|r) Upgrade to Steel Plating,(|cffffcc00A|r) Upgrade to Mithril Plating
+Hotkey=A,A,A
+Buttonpos=0,1
+
+[rosp]
+Tip=(|cffffcc00E|r) Upgrade to Spiked Barricades,(|cffffcc00E|r) Upgrade to Improved Spiked Barricades,(|cffffcc00E|r) Upgrade to Advanced Spike Barricades
+Hotkey=E,E,E
+Buttonpos=2,0
+
+; ==================================================================
+
+; ALTAR: 4 orc heroes
+
+; ==================================================================
+
+[oalt]
+Tip=(|cffffcc00S|r) Build Altar of Storms
+Hotkey=S
+Buttonpos=1,1
+
+[Ofar]
+Tip=(|cffffcc00X|r) Summon Far Seer
+Revivetip=(|cffffcc00X|r) Revive Far Seer
+Awakentip=(|cffffcc00X|r) Awaken Far Seer
+Hotkey=X
+Buttonpos=1,2
+
+[Obla]
+Tip=(|cffffcc00Z|r) Summon Blademaster
+Revivetip=(|cffffcc00Z|r) Revive Blademaster
+Awakentip=(|cffffcc00Z|r) Awaken Blademaster
+Hotkey=Z
+Buttonpos=0,2
+
+[Otch]
+Tip=Earthshaker
+Buttonpos=3,0
+
+[Oshd]
+Tip=(|cffffcc00A|r) Summon Shadow Hunter
+Revivetip=(|cffffcc00A|r) Revive Shadow Hunter
+Awakentip=(|cffffcc00A|r) Awaken Shadow Hunter
+Hotkey=A
+Buttonpos=0,1
+
+; ==================================================================
+
+; BEASTIARY: raider/kodo/batrider + ensnare/drums/venom/liquid fire
+
+; ==================================================================
+
+[obea]
+Tip=(|cffffcc00F|r) Build Beastiary
+Hotkey=F
+Buttonpos=3,1
+
+[orai]
+Tip=(|cffffcc00Q|r) Train Raider
+Hotkey=Q
+Buttonpos=0,0
+
+[okod]
+Tip=(|cffffcc00E|r) Train Kodo Beast
+Hotkey=E
+Buttonpos=2,0
+
+[otbr]
+Tip=(|cffffcc00R|r) Train Troll Batrider
+Hotkey=R
+Buttonpos=3,0
+
+[roen]
+Tip=(|cffffcc00Z|r) Research Ensnare
+Hotkey=Z
+Buttonpos=0,2
+
+[rwdm]
+Tip=(|cffffcc00C|r) Upgrade War Drums
+Hotkey=C
+Buttonpos=2,2
+
+[rovs]
+Tip=(|cffffcc00S|r) Research Envenomed Weapon
+Hotkey=S
+Buttonpos=1,1
+
+[rolf]
+Tip=(|cffffcc00D|r) Research Liquid Fire
+Hotkey=D
+Buttonpos=2,1
+
+[aens]
+Tip=(|cffffcc00Z|r) Ensnare
+Hotkey=Z
+Buttonpos=0,2
+
+[adev]
+Tip=(|cffffcc00Z|r) Devour
+Hotkey=Z
+Buttonpos=0,2
+
+[auco]
+Tip=(|cffffcc00Z|r) Unstable Concoction
+Hotkey=Z
+Buttonpos=0,2
+
+; ==================================================================
+
+; SPIRIT LODGE: shaman/witch doctor/spirit walker + adept/master
+
+; ==================================================================
+
+[osld]
+Tip=(|cffffcc00D|r) Build Spirit Lodge
+Hotkey=D
+Buttonpos=2,1
+
+[oshm]
+Tip=(|cffffcc00Q|r) Train Shaman
+Hotkey=Q
+Buttonpos=0,0
+
+[odoc]
+Tip=(|cffffcc00W|r) Train Troll Witch Doctor
+Hotkey=W
+Buttonpos=1,0
+
+[ospm]
+Tip=(|cffffcc00E|r) Train Spirit Walker
+Hotkey=E
+Buttonpos=2,0
+
+[rost]
+Tip=(|cffffcc00Z|r) Shaman Adept Training,(|cffffcc00Z|r) Shaman Master Training
+Hotkey=Z,Z
+Buttonpos=0,2
+
+[rowt]
+Tip=(|cffffcc00C|r) Spirit Walker Adept Training,(|cffffcc00C|r) Spirit Walker Master Training
+Hotkey=C,C
+Buttonpos=2,2
+
+[aprg]
+Tip=(|cffffcc00Z|r) Purge
+Hotkey=Z
+Buttonpos=0,2
+
+[alsh]
+Tip=(|cffffcc00X|r) Lightning Shield
+Hotkey=X
+Buttonpos=1,2
+
+[ablo]
+Tip=(|cffffcc00C|r) Bloodlust
+UnTip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=C
+Buttonpos=2,2
+Unbuttonpos=2,2
+
+[aeye]
+Tip=(|cffffcc00Z|r) Sentry Ward
+Hotkey=Z
+Buttonpos=0,2
+
+[asta]
+Tip=(|cffffcc00X|r) Stasis Trap
+Hotkey=X
+Buttonpos=1,2
+
+[ahwd]
+Tip=(|cffffcc00C|r) Healing Ward
+Hotkey=C
+Buttonpos=2,2
+
+[aspl]
+Tip=(|cffffcc00Z|r) Spirit Link
+Hotkey=Z
+Buttonpos=0,2
+
+[aast]
+Tip=(|cffffcc00C|r) Ancestral Spirit
+Hotkey=C
+Buttonpos=2,2
+
+[adcn]
+Tip=(|cffffcc00X|r) Disenchant
+Hotkey=X
+Buttonpos=1,2
+
+; ==================================================================
+
+; TAUREN TOTEM: tauren + pulverize
+
+; ==================================================================
+
+[otto]
+Tip=(|cffffcc00Z|r) Build Tauren Totem
+Hotkey=Z
+Buttonpos=0,2
+
+[otau]
+Tip=(|cffffcc00Q|r) Train Tauren
+Hotkey=Q
+Buttonpos=0,0
+
+[rows]
+Tip=(|cffffcc00Z|r) Research Pulverize
+Hotkey=Z
+Buttonpos=0,2
+
+[awar]
+Tip=Pulverize
+Buttonpos=0,2
+
+; ==================================================================
+
+; BURROW + VOODOO LOUNGE
+
+; ==================================================================
+
+[otrb]
+Tip=(|cffffcc00A|r) Build Burrow
+Hotkey=A
+Buttonpos=0,1
+
+[ovln]
+Tip=(|cffffcc00X|r) Build Voodoo Lounge
+Hotkey=X
+Buttonpos=1,2
+
+[rubu]
+Tip=(|cffffcc00S|r) Research Burrow
+Hotkey=S
+Buttonpos=1,1
+
+[abur]
+Tip=(|cffffcc00V|r) Burrow
+UnTip=(|cffffcc00V|r) Unburrow
+Hotkey=V
+Unhotkey=V
+Buttonpos=3,2
+Unbuttonpos=3,2
+
+[abu2]
+Tip=(|cffffcc00V|r) Burrow
+UnTip=(|cffffcc00V|r) Unburrow
+Hotkey=V
+Unhotkey=V
+Buttonpos=3,2
+Unbuttonpos=3,2
+
+[abu3]
+Tip=(|cffffcc00V|r) Burrow
+UnTip=(|cffffcc00V|r) Unburrow
+Hotkey=V
+Unhotkey=V
+Buttonpos=3,2
+Unbuttonpos=3,2
+
+; ==================================================================
+
+; BLADEMASTER: wind walk/mirror image/critical/blade storm
+
+; ==================================================================
+
+[aowk]
+Tip=(|cffffcc00Z|r) Wind Walk - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Wind Walk - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Wind Walk - [|cffffcc00Level 3|r]
+Researchtip=(|cffffcc00Q|r) Learn Wind Walk - [|cffffcc00Level %d|r]
+Hotkey=Z
+Researchhotkey=Q
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[aomi]
+Tip=(|cffffcc00X|r) Mirror Image - [|cffffcc00Level 1|r],(|cffffcc00X|r) Mirror Image - [|cffffcc00Level 2|r],(|cffffcc00X|r) Mirror Image - [|cffffcc00Level 3|r]
+Researchtip=(|cffffcc00W|r) Learn Mirror Image - [|cffffcc00Level %d|r]
+Hotkey=X
+Researchhotkey=W
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[aocr]
+Tip=Critical Strike - [|cffffcc00Level 1|r],Critical Strike - [|cffffcc00Level 2|r],Critical Strike - [|cffffcc00Level 3|r]
+Researchtip=(|cffffcc00E|r) Learn Critical Strike - [|cffffcc00Level %d|r]
+Researchhotkey=E
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[aoww]
+Tip=(|cffffcc00V|r) Bladestorm
+Researchtip=(|cffffcc00R|r) Learn Bladestorm
+Hotkey=V
+Researchhotkey=R
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+; ==================================================================
+
+; FAR SEER: chain lightning/far sight/feral spirit/earthquake
+
+; ==================================================================
+
+[aocl]
+Tip=(|cffffcc00Z|r) Chain Lightning - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Chain Lightning - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Chain Lightning - [|cffffcc00Level 3|r]
+Researchtip=(|cffffcc00Q|r) Learn Chain Lightning - [|cffffcc00Level %d|r]
+Hotkey=Z
+Researchhotkey=Q
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[aofs]
+Tip=(|cffffcc00X|r) Far Sight - [|cffffcc00Level 1|r],(|cffffcc00X|r) Far Sight - [|cffffcc00Level 2|r],(|cffffcc00X|r) Far Sight - [|cffffcc00Level 3|r]
+Researchtip=(|cffffcc00W|r) Learn Far Sight - [|cffffcc00Level %d|r]
+Hotkey=X
+Researchhotkey=W
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[aosf]
+Tip=(|cffffcc00C|r) Feral Spirit - [|cffffcc00Level 1|r],(|cffffcc00C|r) Feral Spirit - [|cffffcc00Level 2|r],(|cffffcc00C|r) Feral Spirit - [|cffffcc00Level 3|r]
+Researchtip=(|cffffcc00E|r) Learn Feral Spirit - [|cffffcc00Level %d|r]
+Hotkey=C
+Researchhotkey=E
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[aoeq]
+Tip=(|cffffcc00V|r) Earthquake
+Researchtip=(|cffffcc00R|r) Learn Earthquake
+Hotkey=V
+Researchhotkey=R
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+; ==================================================================
+
+; TAUREN CHIEFTAIN: shockwave/war stomp/endurance aura
+
+; ==================================================================
+
+[aosh]
+Tip=(|cffffcc00Z|r) Shockwave - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Shockwave - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Shockwave - [|cffffcc00Level 3|r]
+Researchtip=(|cffffcc00Q|r) Learn Shockwave - [|cffffcc00Level %d|r]
+Hotkey=Z
+Researchhotkey=Q
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[aows]
+Tip=(|cffffcc00X|r) War Stomp - [|cffffcc00Level 1|r],(|cffffcc00X|r) War Stomp - [|cffffcc00Level 2|r],(|cffffcc00X|r) War Stomp - [|cffffcc00Level 3|r]
+Researchtip=(|cffffcc00W|r) Learn War Stomp - [|cffffcc00Level %d|r]
+Hotkey=X
+Researchhotkey=W
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[aoae]
+Tip=Endurance Aura - [|cffffcc00Level 1|r],Endurance Aura - [|cffffcc00Level 2|r],Endurance Aura - [|cffffcc00Level 3|r]
+Researchtip=(|cffffcc00E|r) Learn Endurance Aura - [|cffffcc00Level %d|r]
+Researchhotkey=E
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+; ==================================================================
+
+; SHADOW HUNTER: healing wave/hex/serpent ward/big bad voodoo
+
+; ==================================================================
+
+[aohw]
+Tip=(|cffffcc00Z|r) Healing Wave - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Healing Wave - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Healing Wave - [|cffffcc00Level 3|r]
+Researchtip=(|cffffcc00Q|r) Learn Healing Wave - [|cffffcc00Level %d|r]
+Hotkey=Z
+Researchhotkey=Q
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[aohx]
+Tip=(|cffffcc00X|r) Hex - [|cffffcc00Level 1|r],(|cffffcc00X|r) Hex - [|cffffcc00Level 2|r],(|cffffcc00X|r) Hex - [|cffffcc00Level 3|r]
+Researchtip=(|cffffcc00W|r) Learn Hex - [|cffffcc00Level %d|r]
+Hotkey=X
+Researchhotkey=W
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[aosw]
+Tip=(|cffffcc00C|r) Serpent Ward - [|cffffcc00Level 1|r],(|cffffcc00C|r) Serpent Ward - [|cffffcc00Level 2|r],(|cffffcc00C|r) Serpent Ward - [|cffffcc00Level 3|r]
+Researchtip=(|cffffcc00E|r) Learn Serpent Ward - [|cffffcc00Level %d|r]
+Hotkey=C
+Researchhotkey=E
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[aovd]
+Tip=(|cffffcc00V|r) Big Bad Voodoo
+Researchtip=(|cffffcc00R|r) Learn Big Bad Voodoo
+Hotkey=V
+Researchhotkey=R
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+; ==================================================================
+```
+
+**常见坑**
+
+- 段名拼错或段名不存在 → 该条不生效，游戏不报错，只能进游戏逐个核对；拿不准就从 Sample 原文复制。
+- `Tip=` 括号字母没同步 → 界面显示的快捷键提示是错的，练成肌肉记忆前会被误导。
+- 改崩了 → 删掉 `CustomKeys.txt`（或从 Sample 重新复制），游戏回到默认。
+- KK 平台的「改键」功能是**全局物理键映射**，做不了按按钮定制——它负责道具栏（小键盘迁主键区，见 5.3），与 CustomKeys.txt 分工互补。
+
+**切换适应期**：改完头两周手会习惯性按老键位（老兵按 M 出门这种），属于正常现象；用自定义局或人机打 20-30 局固化，之后就是「任何种族拿来就打」的通用手型。
 
 ### 5.2 编队
 
@@ -821,34 +1535,52 @@ Hotkey=V
 - 设定 7 为 `
 - 设定 8 为 -
 
+> 注意：这两个键**不在 CustomKeys.txt 里设置**。物品栏槽位的小键盘键位是游戏硬编码，CustomKeys.txt 只管命令卡按钮（出兵 / 科技 / 技能 / 商店购买），没有物品栏的段。道具栏迁移走 **KK 平台的改键功能**（全局物理键映射）：在平台改键设置里把主键盘 `` ` `` 映射为小键盘 7、`-` 映射为小键盘 8，进游戏按 `` ` `` 和 `-` 就是道具栏下排两格。重制版玩家更简单：选项 → 控制 → 自定义按键里直接改物品栏槽位。
+
 ### 5.4 中立商店
 
-- 显影：D
-- 单传：E
-- 无敌：N
-- 鞋子：S
-- 头环：C
-- 回程：T
+> 下表为**默认字母热键**，用于记商品与背账；若已使用 5.1 的网格版 CustomKeys.txt，商店购买按钮同样按**格子位置**（QWER / ASD / ZXC）触发，按字母是买不到的。
+
+地精商人商品（价格单位：金；来自 Liquipedia 道具页，已核对版本史确认与 1.27 一致）：
+
+| 道具 | 默认键 | 价格 | 说明 |
+| --- | --- | --- | --- |
+| 显影（粉） | D | 75 | 反隐；对剑圣/疾风步、UD 阴影必买 |
+| 单传（传送权杖） | E | 150 | 单英雄传送，骚扰/逃生/回防三用 |
+| 无敌药水 | N | 400 | 7 秒无敌；团战保核心英雄，剑圣站桩的前提之一 |
+| 鞋子 | S | 250 | +60 移速；库存 2、开局 220 秒后才上架，60 秒补一个——想双鞋要算补货时间 |
+| 头环 | C | 200 | 全属性 +2；剑圣偷宝的第一目标 |
+| 群补（治疗卷轴） | T | 250 | 全队回血 150；先知猎头体系的刚需，抢购 |
+| 群防（保护卷轴） | — | 150 | 全队 +2 护甲，接团前顺手买 |
 
 ### 5.5 商店公共道具
 
-- 小净化：C
-- 回城：T
-- 小血瓶：P
-- 小蓝瓶：M
-- 显影：D
+各族商店都卖的「公共款」：
+
+| 道具 | 默认键 | 价格（金） | 说明 |
+| --- | --- | --- | --- |
+| 小净化 | C | 70 | 40 秒回 100 蓝，英雄挂机回蓝 |
+| 回城（TP） | T | **350** | 注意：1.27 是 350，重制版 1.32 起才降为 325——按 350 做预算 |
+| 小血瓶 | P | 150 | 瞬回 250 血 |
+| 小蓝瓶 | M | 150 | 瞬回 150 蓝 |
 
 ### 5.6 种族商店
 
-**ORC**
+**ORC（巫毒小屋）**
 
-- 药膏：H
-- 加速：S
+| 道具 | 默认键 | 价格（金） | 说明 |
+| --- | --- | --- | --- |
+| 药膏 | H | 100 | 12 秒回 400 血，练级续航核心 |
+| 加速卷 | S | 70 | 全队 +60% 移速 10 秒，追杀/撤退/抢怪三用 |
+| 电球 | — | 375 | 三本上架；攻击附带净化减速，BM 对 UD 毁灭的答案 |
 
-**NE**
+**NE**：月亮石 50（铺小路/封侦查）、保存 150（把英雄或兵传回家）、毒球 325（三本，攻击附带毒伤）。
 
-- 月亮石：N
-- 保存：E
+**HUM**：火球 250（三本，攻击溅射）。
+
+**UD**：骷髅棒 150（攒尸体、探路、卡位）、显影 75（Tomb 也卖）、腐蚀球 375（三本，减 5 护甲）。
+
+**球类速查（三本各族商店）**：电球 375（ORC，净化减速）/ 毒球 325（NE，持续毒伤）/ 火球 250（HUM，溅射）/ 腐蚀球 375（UD，减甲）。价格口径同上，1.27。
 
 ## 六、微操：让 APM 花在刀刃上
 
@@ -1137,6 +1869,8 @@ S12 赛季只剩最后 10 天，冲榜按下面的节奏走：
 
 冲刺期纪律：不练新图、不试新战术；连败 2 局停；复盘优先看输得最多的对位。赛季结算后回到 11.1 的长期框架，按「兽族补全 → 其他三族」的顺序继续完善本文。
 
+**赛季切换（S12 → S13）**：新赛季公告一般在旧赛季结束后几天内挂出（kkdzpt.com），届时第一件事是**核对 S13 地图池**——地图池每个赛季都会换几张，本文 2.2 的图池、ban 建议、2.4 的逐图档案都以 S12 为准；地图变了就按第二章的方法重新调研（Liquipedia 地图页 + Preview 点位数据 + W3C 对位统计），保留的图继续用本文档案，新图照 NI 的流程补：抓 Preview 数据 → 画路线图 → 实测校准 XP 节拍。
+
 ## 十二、细节备忘（速查）
 
 1. 二发三发祭坛英雄需要 425 黄金和 100 木，二发三发酒馆英雄需要 425 黄金和 135 木。
@@ -1199,7 +1933,16 @@ S12 赛季只剩最后 10 天，冲榜按下面的节奏走：
 - StarWar
 - WSB
 - BCup
-- 海豚杯
+- 海豚杯（海豚魔兽冠军杯，HFhaituntun 主办、KK 官方支持）
+
+**去哪看**：这些中文赛事没有独立官网，按平台找——
+
+| 渠道 | 用途 |
+| --- | --- |
+| [网易大神 WAR3 赛事专题](https://ds.163.com/topic/WAR3%E8%B5%9B%E4%BA%8B) | 赛程/结果汇总，第一站 |
+| 抖音「魔兽争霸 安吉解说号」直播间 | 海豚杯等赛事的直播主阵地 |
+| B 站直播区 + 搜索 | 赛事回放与选手第一视角（搜赛事名或选手 ID：ColorFul彩色、120、浪漫等） |
+| 虎牙直播 | WAR3 赛事直播的另一主要平台 |
 
 ### 工具
 
