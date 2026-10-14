@@ -5,3 +5,6 @@ db.json
 node_modules/
 public/
 .deploy*/
+__pycache__/
+tools/wc3-footman/base/
+tools/wc3-footman/dist/

@@ -25,6 +25,7 @@
           <% if (value.url && value.icon) { %>
             <a href="<%- url_for(value.url) %>"
               class="social <%- value.icon %> flat-btn"
+              title="<%- value.name || '' %>"
               target="_blank"
               rel="external nofollow noopener noreferrer">
             </a>
