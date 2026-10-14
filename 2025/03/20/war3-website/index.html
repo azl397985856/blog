@@ -361,7 +361,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">26.3k字</span>
+          <span class="post-count">27.8k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -369,7 +369,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">97分</span>
+          <span class="post-count">102分</span>
         </span>
       </span>
     </div>
@@ -904,11 +904,15 @@
 </table>
 </div>
 <p><strong>兽族分析</strong>：老牌竞技图、平衡成熟，各对位都有成熟打法可抄。自然分矿 10000 离家近、门口一马平川——狼骑拆家流与双矿运营都舒服；双实验室意味着飞艇多线骚扰随时可买；雪图+对角出生，地面骚扰距离长，先知狼骚扰比剑圣跑图更顺。角落矿的永久5 是全场最大宝物点，对面 UD 偷角落矿时必查。</p>
-<p><strong>练级路线</strong>（【推演】，XP 节拍待实测）</p>
+<p><strong>练级路线</strong>（【推演·计算】：battle.net 官方野怪等级 + Liquipedia 经验公式，1 本单英雄口径，待实测校准）</p>
 <ol>
-<li>门口绿点（食人魔营）→ 鱼人绿点 → 分矿营（打完顺势开 10000 分矿）。</li>
-<li>延伸：分矿 → 实验室前营（3 级方向）。</li>
+<li>门口绿点（食人魔营，基础 160）→ <strong>1.6</strong>；鱼人绿点（带 2 只潮行者，基础 150）→ <strong>2.2</strong>；分矿营（基础 280）→ <strong>2.8</strong>，打完顺势开 10000 分矿。</li>
+<li>延伸 A：实验室前营（基础 380）→ <strong>3.5</strong>。</li>
+<li>延伸 B（抢宝路线）：打完分矿营直取角落矿猛犸红营（基础 495，掉永久 5）→ <strong>3.7</strong>，顺手开 9000 角落矿。</li>
 </ol>
+<blockquote>
+<p>计算口径见三章（3.1 单位基础经验表 + 3.2 TFT 野怪衰减 + 升级需求表）。结论：<strong>NI 打完分矿营还差一点到 3 级（CH 第三个营地就到 3.0），上 3 慢半拍</strong>——好在分矿营与开矿同一条路线，节拍天然顺。二本单英雄经验 +15%，实际会比表略快。等级为「打完本营后」的累计等级（小数 = 当前级进度）。</p>
+</blockquote>
 <p><img src="https://lucifer.ren/blog/images/war3/route-ni.png" alt="Northern Isles 练级路线示意"></p>
 <p><strong>对位注意</strong>：中央酒馆+市场，中立英雄与淘货节奏都要抢；对角出生，首发骚扰要走实验室飞艇或绕外侧海路，侦查别只看正面一条线。</p>
 <h3 id="2-5-抢怪与反抢怪"><a href="#2-5-抢怪与反抢怪" class="headerlink" title="2.5 抢怪与反抢怪"></a>2.5 抢怪与反抢怪</h3><p>被抢一个怪就不知道怎么办，是分段上不去的常见原因。几条原则：</p>
@@ -997,7 +1001,7 @@
 </tbody>
 </table>
 </div>
-<p>中立部队给予的经验值。玩家单位是同级别中立部队的 1.25 倍（杀掉一个 1 级玩家单位得 25 点）：</p>
+<p>普通单位（含野怪与玩家单位）按单位等级给予的基础经验（Liquipedia「Experience」，1.27/TFT 口径）：</p>
 <div class="table-container">
 <table>
 <thead>
@@ -1017,30 +1021,34 @@
 </thead>
 <tbody>
 <tr>
-<td>获得的经验值</td>
-<td>20</td>
-<td>30</td>
+<td>基础经验值</td>
+<td>25</td>
 <td>40</td>
 <td>60</td>
-<td>80</td>
-<td>120</td>
-<td>160</td>
-<td>240</td>
-<td>320</td>
-<td>400</td>
+<td>85</td>
+<td>115</td>
+<td>150</td>
+<td>190</td>
+<td>235</td>
+<td>285</td>
+<td>340</td>
 </tr>
 </tbody>
 </table>
 </div>
+<blockquote>
+<p>野怪与玩家单位的基础经验是<strong>同一张表</strong>，差别在下面的衰减规则——杀玩家单位拿全额，打野怪按英雄等级打折。（旧资料里的 20/30/40… 是 RoC 时代数值，1.27 不适用；上表已用实测回验——CH 路线五个实测节拍点命中四个，误差 ≤0.07 级。）</p>
+</blockquote>
 <p><img src="https://lucifer.ren/blog/images/war3/xp-tables.png" alt="英雄升级经验曲线与击杀经验对比"></p>
-<h3 id="3-2-三条规则"><a href="#3-2-三条规则" class="headerlink" title="3.2 三条规则"></a>3.2 三条规则</h3><ol>
+<h3 id="3-2-四条规则"><a href="#3-2-四条规则" class="headerlink" title="3.2 四条规则"></a>3.2 四条规则</h3><ol>
 <li>只有英雄在经验范围内，击杀才给经验；多个英雄在附近时经验平分。谁杀的不重要，英雄离得近才重要——民兵、水元素、小精灵炸的怪，经验都算英雄的。</li>
-<li>英雄等级高了以后（大约 5 级起），打野怪获得的经验会明显衰减。前期抓紧练级、后期转向对抗，根源就在这里。</li>
-<li>杀玩家单位比打野怪「值钱」（1.25 倍），中期的每一次小规模交战也是升级来源，追着杀兵就是在抢经验。</li>
+<li><strong>TFT 野怪经验按英雄等级打折（Liquipedia）</strong>：1 级英雄 ×80%、2 级 ×70%、3 级 ×60%、4 级 ×50%、<strong>5 级及以上打野怪不给经验</strong>。前期抓紧练级、后期转向对抗，根源就在这里。</li>
+<li>杀玩家单位拿<strong>全额</strong>基础经验——对 1 级英雄相当于野怪的 1.25 倍。中期的每一次小规模交战也是升级来源，追着杀兵就是在抢经验。</li>
+<li>单英雄加成：二本只剩一个英雄时经验 +15%，三本 +30%（拥有过的英雄死了也算数，不触发是因为还有第二个活着的英雄）。</li>
 </ol>
 <h3 id="3-3-怎么用：算账示范"><a href="#3-3-怎么用：算账示范" class="headerlink" title="3.3 怎么用：算账示范"></a>3.3 怎么用：算账示范</h3><ul>
-<li>升 2 级需要累计 200 点：一个 5 级怪（80）+ 一个 4 级怪（60）+ 两个 3 级怪（40×2）= 220，练完这组刚好过 2 级。</li>
-<li>升 3 级需要累计 500 点：比如 555 营地（240）+ 333 营地（120）+ 33 营地（80）+ 一只 1 级小怪（20）= 460，还差一点，就得再补一个营地或者抢一波兵。</li>
+<li>升 2 级需要累计 200 点：1 级英雄打野怪实得 = 基础 ×80%。一个 4 级怪（85）+ 两个 3 级怪（60×2）= 基础 205 → 实得 164，练完 1.8 级——这正是 CH 门口食人魔营的实测值（1.8）。</li>
+<li>升 3 级需要累计 500 点：把路线上每个营地的基础值 ×当前折扣加一遍。NI 的「门口 160 → 鱼人 150 → 分矿营 280」三连：1 级折扣实得 128 + 120 = 248（刚过 2 级），2 级折扣再 +196 = 444，还差一点到 3——所以 NI 上 3 慢半拍，详见 2.4 NI 档案。</li>
 <li>规划路线时把每个营地的经验加一遍：低于目标等级的路线要么补营地、要么换路线，练完发现等级不对再回头想，就来不及了。</li>
 </ul>
 <p>第二节地图板块里「练完 2.7 级」这类节点，就是按这个方法实测记录下来的。换新图时，按同一方法建立自己的账本即可。</p>
@@ -1679,6 +1687,47 @@
 </table>
 </div>
 <p>补充情报（wc3-gym 单塔速天鬼篇）：纯天鬼被明确标注为<strong>不推荐对 ORC</strong>——直天鬼输给蝙蝠+猎头；这套主要用于对 NE/HUM 的经济骚扰。</p>
+<h3 id="4-6-中立英雄速查"><a href="#4-6-中立英雄速查" class="headerlink" title="4.6 中立英雄速查"></a>4.6 中立英雄速查</h3><p>酒馆英雄按出场场景速查（细节见对应小节）：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>中立英雄</th>
+<th>常见出场</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>熊猫</td>
+<td>对 HUM 速矿局二发（4.2）</td>
+</tr>
+<tr>
+<td>娜迦</td>
+<td>兽族 TR 二发（4.2）；NE AC 鸟德推首发（4.3）</td>
+</tr>
+<tr>
+<td>深渊领主</td>
+<td>CL 体系嚎叫减伤（4.5）；镜像后期三发（4.2）</td>
+</tr>
+<tr>
+<td>黑暗游侠</td>
+<td>UD 侧反先知猎头、骷髅滚雪球（4.5/4.2 对 UD）</td>
+</tr>
+<tr>
+<td>兽王</td>
+<td>吹风二发（4.2 对 NE）</td>
+</tr>
+<tr>
+<td>地精修补匠</td>
+<td>抓对面开矿 all-in（4.2，待实测）</td>
+</tr>
+<tr>
+<td>炼金</td>
+<td>奶女猎二发、吹风三发（4.3）</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2 id="五、快捷键：定制一套顺手键位"><a href="#五、快捷键：定制一套顺手键位" class="headerlink" title="五、快捷键：定制一套顺手键位"></a>五、快捷键：定制一套顺手键位</h2><h3 id="5-1-改键的三条途径"><a href="#5-1-改键的三条途径" class="headerlink" title="5.1 改键的三条途径"></a>5.1 改键的三条途径</h3><ol>
 <li><strong>CustomKeys.txt（1.27）</strong>：改每个按钮的热键，粒度最细，兵营造兵、研究科技、每个技能都能定制。</li>
 <li><strong>重制版游戏内设置</strong>：设置 → 控制 → 自定义按键，逐条改，还能整体切换「经典 / 网格」布局。</li>
@@ -1975,6 +2024,19 @@
 <p><strong>HUM</strong>：火球 250（三本，攻击溅射）。</p>
 <p><strong>UD</strong>：骷髅棒 150（攒尸体、探路、卡位）、显影 75（Tomb 也卖）、腐蚀球 375（三本，减 5 护甲）。</p>
 <p><strong>球类速查（三本各族商店）</strong>：电球 375（ORC，净化减速）/ 毒球 325（NE，持续毒伤）/ 火球 250（HUM，溅射）/ 腐蚀球 375（UD，减甲）。价格口径同上，1.27。</p>
+<h3 id="5-7-买装优先级（兽族）"><a href="#5-7-买装优先级（兽族）" class="headerlink" title="5.7 买装优先级（兽族）"></a>5.7 买装优先级（兽族）</h3><p>价格见上面三张表（1.27 口径）。买装顺序（依据 4.2 各对位笔记）：</p>
+<ol>
+<li>剑圣体系先头环/鞋——偷宝或买粉二选一起手。</li>
+<li>无敌 400 是团战刚需。</li>
+<li>群补 250 见者有份——买不到自己用，也别让对面买。</li>
+<li>TP 350 常备一张，死一次英雄就亏穿单价。</li>
+</ol>
+<h3 id="5-8-其他游戏设置"><a href="#5-8-其他游戏设置" class="headerlink" title="5.8 其他游戏设置"></a>5.8 其他游戏设置</h3><ul>
+<li>血条常显：选项 → 游戏性 → 单位生命值显示设为「总是」；按住 Alt 临时显示。</li>
+<li>魔法条：同页面有对应开关（1.27 与重制版菜单措辞不同，以实际菜单为准，待实测：1.27 具体选项名）。</li>
+<li>视距：鼠标滚轮拉到最远即默认最大；1.27/重制版都无法超出原生上限。</li>
+<li>小地图信号：Alt+G 点小地图，给队友 ping 位置。</li>
+</ul>
 <h2 id="六、微操：让-APM-花在刀刃上"><a href="#六、微操：让-APM-花在刀刃上" class="headerlink" title="六、微操：让 APM 花在刀刃上"></a>六、微操：让 APM 花在刀刃上</h2><h3 id="6-1-两条评判标准"><a href="#6-1-两条评判标准" class="headerlink" title="6.1 两条评判标准"></a>6.1 两条评判标准</h3><p>微操好主要有两个标准：</p>
 <ol>
 <li><strong>知道用谁打谁，并且知道操作的优先级顺序</strong>。比如 UD 打 NE，要用毁灭打熊，用蜘蛛打小鹿；操作优先级是英雄 &gt; 毁灭 &gt; 蜘蛛 &gt; 小狗。</li>
@@ -2137,7 +2199,95 @@
 <li>UD：毁灭者是召唤物和奶妈的克星（吸魔+驱散），蜘蛛齐射点杀脆皮。</li>
 <li>NE：小鹿驱散挂毒打奶妈，山岭嘲讽吸伤害，角鹰/奇美拉制空。</li>
 </ul>
-<p>攻防类型的完整克制表建议直接查 warcraft3.info 的数据页（见文末友情链接）：查一次，把自己主力兵种打对面主流兵种是加成还是减伤记牢，够用一辈子。</p>
+<p>攻防类型的完整克制表如下（battle.net 官方表）——把自己主力兵种打对面主流兵种是加成还是减伤记牢，够用一辈子：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>攻击 \ 护甲</th>
+<th>轻甲</th>
+<th>中甲</th>
+<th>重甲</th>
+<th>城甲</th>
+<th>英雄</th>
+<th>无甲</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>普通（多数近战）</td>
+<td>100</td>
+<td><strong>150</strong></td>
+<td>100</td>
+<td>70</td>
+<td>100</td>
+<td>100</td>
+</tr>
+<tr>
+<td>穿刺（多数远程）</td>
+<td><strong>200</strong></td>
+<td>75</td>
+<td>100</td>
+<td>35</td>
+<td>50</td>
+<td><strong>150</strong></td>
+</tr>
+<tr>
+<td>攻城</td>
+<td>100</td>
+<td>50</td>
+<td>100</td>
+<td><strong>150</strong></td>
+<td>50</td>
+<td><strong>150</strong></td>
+</tr>
+<tr>
+<td>魔法</td>
+<td>125</td>
+<td>75</td>
+<td><strong>200</strong></td>
+<td>35</td>
+<td>50</td>
+<td>100</td>
+</tr>
+<tr>
+<td>英雄攻击</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>50</td>
+<td>100</td>
+<td>100</td>
+</tr>
+<tr>
+<td>混沌</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+</tr>
+<tr>
+<td>法术</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td><strong>70</strong></td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>速记：普通克中甲（大 G 打蜘蛛）、穿刺克轻甲和无甲（猎头打 AC/小鹿/女猎）、攻城克建筑、魔法克重甲、<strong>法术打英雄一律七折</strong>。虚灵单位只能被魔法攻击命中；魔免单位（破法、毁灭、小鹿）免疫法术伤害。</p>
+<p>护甲公式：正甲减伤 = 0.06×甲 / (1 + 0.06×甲)（20 甲 ≈ 多 55% 有效血量）；负甲增伤 = 2 − 0.94^(−甲)（−10 甲 ≈ 多承 46% 伤害）。</p>
+<p>两个算例（数值均 Liquipedia 核实）：</p>
+<ul>
+<li><strong>DK 一级 C 打英雄多少血</strong>：死亡缠绕伤害 100/200/300，伤害走法术行 → 对英雄甲 ×70% = <strong>70/140/210</strong>；奶量 200/400/600（只奶得动亡灵友军），75 蓝 6 秒 CD。</li>
+<li><strong>10 个蜘蛛一轮齐射打小鹿多少血</strong>：蜘蛛均伤 28.5（26-31）穿刺，小鹿无甲 435 血 → 穿刺对无甲 ×150%，每只均值 42.75，10 只 ≈ <strong>428——恰好差 7 血秒不掉满血小鹿</strong>，实战记得让英雄补刀。</li>
+</ul>
+<p>地形方面：WC3 没有星际式的高地命中惩罚，地形影响主要是路径——树林绕行/卡位、卡树吸仇恨（2.6）、岛矿只能空运（TM 角岛）；高处的收益是视野而不是闪避。</p>
 <h3 id="8-6-人口估算：把「能不能打」变成算术题"><a href="#8-6-人口估算：把「能不能打」变成算术题" class="headerlink" title="8.6 人口估算：把「能不能打」变成算术题"></a>8.6 人口估算：把「能不能打」变成算术题</h3><p>看到对面一堆兵，第一反应应该是三个数：<strong>对面作战人口多少、自己作战人口多少、差多少</strong>。差 10 人口（约等于一队 2 人口兵或两三个 4 人口兵）就别硬接正面；5 人口以内看阵型和英雄等级。这和算经验值一样，是纯算术，练十局就有手感。</p>
 <p><strong>第一步：背单位人口表（1.27，已逐项核对 Liquipedia 单位页）</strong></p>
 <div class="table-container">
@@ -2275,6 +2425,13 @@
 <li><strong>决策失误</strong>：为什么当时选择了这个战术而不是另一个？</li>
 <li><strong>资源浪费</strong>：是否有工人长时间空闲？金币或木材是否溢出？</li>
 </ul>
+<p>复盘算账——战损三本账：</p>
+<ul>
+<li><strong>造价账</strong>：这波换掉的东西值多少金木（对照单位造价）。</li>
+<li><strong>经验账</strong>：送出的经验让对面英雄升了几级——UD 局尤其致命（DK/巫妖等级 = 胜率）。</li>
+<li><strong>时间账</strong>：重造的这段时间战线少多少人、对面多干了什么（开矿/拆家）。</li>
+</ul>
+<p>兽族大 G 便宜耐造，消耗战里三本账常常都是赚的；先手算几局找手感，成熟后可按主流兵种做成速查表（待研究）。</p>
 <h3 id="10-3-命名与积累"><a href="#10-3-命名与积累" class="headerlink" title="10.3 命名与积累"></a>10.3 命名与积累</h3><p>录像按 <code>日期_对阵_地图_胜负_一句话死因</code> 命名。每周把输因归类一次，占比最大的那类，就是下一周的专项训练内容。</p>
 <h2 id="十一、90-天训练计划"><a href="#十一、90-天训练计划" class="headerlink" title="十一、90 天训练计划"></a>十一、90 天训练计划</h2><p>前提：每周至少 10-12 小时。达不到就拉长周期，比例不变。</p>
 <h3 id="11-1-阶段安排"><a href="#11-1-阶段安排" class="headerlink" title="11.1 阶段安排"></a>11.1 阶段安排</h3><div class="table-container">
@@ -2383,7 +2540,7 @@
 </table>
 </div>
 <p>冲刺期纪律：不练新图、不试新战术；连败 2 局停；复盘优先看输得最多的对位。赛季结算后回到 11.1 的长期框架，按「兽族补全 → 其他三族」的顺序继续完善本文。</p>
-<p><strong>赛季切换（S12 → S13）</strong>：新赛季公告一般在旧赛季结束后几天内挂出（kkdzpt.com），届时第一件事是<strong>核对 S13 地图池</strong>——地图池每个赛季都会换几张，本文 2.2 的图池、ban 建议、2.4 的逐图档案都以 S12 为准；地图变了就按第二章的方法重新调研（Liquipedia 地图页 + Preview 点位数据 + W3C 对位统计），保留的图继续用本文档案，新图照 NI 的流程补：抓 Preview 数据 → 画路线图 → 实测校准 XP 节拍。</p>
+<p><strong>赛季切换（S12 → S13）</strong>：新赛季公告一般在旧赛季结束后几天内挂出（kkdzpt.com），届时第一件事是<strong>核对 S13 地图池</strong>——地图池每个赛季都会换几张，本文 2.2 的图池、ban 建议、2.4 的逐图档案都以 S12 为准；地图变了就按第二章的方法重新调研（Liquipedia 地图页 + Preview 点位数据 + W3C 对位统计），保留的图继续用本文档案，新图照 NI 的流程补：抓 Preview 数据 → 画路线图 → 计算法出 XP 节拍（口径见 2.4 NI 档案）→ 实测校准。</p>
 <h2 id="十二、细节备忘（速查）"><a href="#十二、细节备忘（速查）" class="headerlink" title="十二、细节备忘（速查）"></a>十二、细节备忘（速查）</h2><ol>
 <li>二发三发祭坛英雄需要 425 黄金和 100 木，二发三发酒馆英雄需要 425 黄金和 135 木。</li>
 </ol>
@@ -2422,14 +2579,12 @@
 <h3 id="维护费（破人口）"><a href="#维护费（破人口）" class="headerlink" title="维护费（破人口）"></a>维护费（破人口）</h3><ul>
 <li>51 人口起为低维护费（采金 7/10），81 人口起为高维护费（采金 4/10）。所以 40 和 80 是两个关键坎：破人口之前，先把手里的钱花掉（补兵、升科技、买道具）。</li>
 </ul>
-<h3 id="待研究清单"><a href="#待研究清单" class="headerlink" title="待研究清单"></a>待研究清单</h3><ul>
-<li>英雄的选择（包括中立英雄）</li>
-<li>道具分析</li>
-<li>游戏里的时间（白天几点，晚上几点）</li>
-<li>伤害计算（比如 DK 一级 C 打英雄多少血，10 个蜘蛛一轮齐射打小鹿多少血等等）</li>
-<li>战损计算</li>
-<li>游戏设置（血条蓝条显示，视距等等）</li>
-<li>攻防克制、地形</li>
+<h3 id="昼夜与时间（Liquipedia「Daytime」）"><a href="#昼夜与时间（Liquipedia「Daytime」）" class="headerlink" title="昼夜与时间（Liquipedia「Daytime」）"></a>昼夜与时间（Liquipedia「Daytime」）</h3><ul>
+<li>一个昼夜循环 = <strong>480 秒</strong>：白天 240 秒（游戏时 06:00 → 18:00）+ 黑夜 240 秒；屏幕顶部指示器 8 个球，每球 30 秒。</li>
+<li>开局 06:00，第一个天黑（18:00）≈ 开局 4 分钟，午夜（24:00）≈ 6 分钟——4.4 大法速矿「18:00 分矿落地、24:00 升二本」两条及格线就是卡这两个点。</li>
+<li>夜里发生什么：全部单位夜间视野大减（NE 可升超远视力补回）；NE 单位<strong>只在夜间回血</strong>、月井只在夜间回蓝、女猎/AC 夜间静止影遁（4.3 吹风笔记「晚上 AC 隐身拆地洞」用的就是这套）；ORC/HUM 单位昼夜都回血；UD 单位只在腐地上回血（昼夜均可）。</li>
+<li><strong>野怪夜间睡觉</strong>：睡着不主动攻击，被打、附近有建筑建造、或有人用旁边的中立建筑才醒——夜间偷怪、绕营地走路、单英雄偷宝都吃这个机制（配合 2.5 抢怪）。注意部分营地有不睡觉的「哨兵怪」，靠太近会吵醒全营。</li>
+<li>NE 月亮石（50 金，5.5 表）可造 30 秒人工黑夜，应急回井水。</li>
 </ul>
 <h2 id="十三、赛事、工具与资源"><a href="#十三、赛事、工具与资源" class="headerlink" title="十三、赛事、工具与资源"></a>十三、赛事、工具与资源</h2><h3 id="赛事"><a href="#赛事" class="headerlink" title="赛事"></a>赛事</h3><ul>
 <li>StarWar</li>
@@ -2495,10 +2650,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-10-13T00:00:00+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-10-14T00:00:00+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2026年10月13日</p>
+    <p>更新于 2026年10月14日</p>
   </a>
 </div>
 
@@ -2777,7 +2932,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、目标拆解：前-100-是什么水平"><span class="toc-text">一、目标拆解：前 100 是什么水平</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、种族与地图：先做减法"><span class="toc-text">二、种族与地图：先做减法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-种族：一个主族就够"><span class="toc-text">2.1 种族：一个主族就够</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-S12-赛季地图池与-ban-图策略（兽族视角）"><span class="toc-text">2.2 S12 赛季地图池与 ban 图策略（兽族视角）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-地图卡：每张图记录什么"><span class="toc-text">2.3 地图卡：每张图记录什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-逐图档案（兽族篇）"><span class="toc-text">2.4 逐图档案（兽族篇）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Echo-Isles-v2-2（EI）——-保留，主战场"><span class="toc-text">Echo Isles v2.2（EI）—— 保留，主战场</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Concealed-Hill（CH）——-保留，主战场"><span class="toc-text">Concealed Hill（CH）—— 保留，主战场</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Amazonia（AM）——-保留，对-UD-优先保"><span class="toc-text">Amazonia（AM）—— 保留，对 UD 优先保</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Twisted-Meadows-v1-9（TM）——-首选-ban"><span class="toc-text">Twisted Meadows v1.9（TM）—— 首选 ban</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Autumn-Leaves-v2-0（AL）——-对-NE-时的头号-ban-位"><span class="toc-text">Autumn Leaves v2.0（AL）—— 对 NE 时的头号 ban 位</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Springtime-v1-3（ST）——-中央免费矿的攻防"><span class="toc-text">Springtime v1.3（ST）—— 中央免费矿的攻防</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HammerFall-S3（HF）——-三矿小图，拆家主场"><span class="toc-text">HammerFall S3（HF）—— 三矿小图，拆家主场</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TideHunter3-v1-2（TH）——-绿点体系海岛图"><span class="toc-text">TideHunter3 v1.2（TH）—— 绿点体系海岛图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Northern-Isles（NI）——-保留（2026-10-13-补入库）"><span class="toc-text">Northern Isles（NI）—— 保留（2026-10-13 补入库）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-抢怪与反抢怪"><span class="toc-text">2.5 抢怪与反抢怪</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-练级效率：勾怪与减伤"><span class="toc-text">2.6 练级效率：勾怪与减伤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、经验值：把升级变成算术题"><span class="toc-text">三、经验值：把升级变成算术题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-三张表"><span class="toc-text">3.1 三张表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-三条规则"><span class="toc-text">3.2 三条规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-怎么用：算账示范"><span class="toc-text">3.3 怎么用：算账示范</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、战术与开局：一招鲜，吃遍天"><span class="toc-text">四、战术与开局：一招鲜，吃遍天</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-单战术原则与换战术的判断"><span class="toc-text">4.1 单战术原则与换战术的判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-ORC"><span class="toc-text">4.2 ORC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#开局三选一：单地洞、双地洞、无兵营速科技"><span class="toc-text">开局三选一：单地洞、双地洞、无兵营速科技</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#万金油（大-G-狼骑-白牛-萨满）"><span class="toc-text">万金油（大 G + 狼骑 + 白牛 / 萨满）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#先知猎头流"><span class="toc-text">先知猎头流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#飞龙流（大猎头流）"><span class="toc-text">飞龙流（大猎头流）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#剑圣开局细节（镜像与对-NE-的核心）"><span class="toc-text">剑圣开局细节（镜像与对 NE 的核心）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#狼骑拆家流"><span class="toc-text">狼骑拆家流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#蝙蝠流"><span class="toc-text">蝙蝠流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三本牛头流"><span class="toc-text">三本牛头流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TR-塔流（二本塔推）"><span class="toc-text">TR 塔流（二本塔推）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对位细节：对-HUM"><span class="toc-text">对位细节：对 HUM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对位细节：对-NE"><span class="toc-text">对位细节：对 NE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对位细节：对-UD"><span class="toc-text">对位细节：对 UD</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对位细节：镜像-ORC"><span class="toc-text">对位细节：镜像 ORC</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-NE"><span class="toc-text">4.3 NE</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#熊鹿"><span class="toc-text">熊鹿</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#吹风（对-ORC）"><span class="toc-text">吹风（对 ORC）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#娜迦-AC-鸟德推（对-ORC）"><span class="toc-text">娜迦 AC 鸟德推（对 ORC）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#女猎手海（KotG）"><span class="toc-text">女猎手海（KotG）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他流行战术速查"><span class="toc-text">其他流行战术速查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对-HUM"><span class="toc-text">对 HUM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对-NE-对-UD"><span class="toc-text">对 NE / 对 UD</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-HUM"><span class="toc-text">4.4 HUM</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#大法速矿（一营练级后开矿）"><span class="toc-text">大法速矿（一营练级后开矿）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#万金油（男女巫-火枪）"><span class="toc-text">万金油（男女巫 + 火枪）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#立体部队（骑士-小炮-狮鹫）"><span class="toc-text">立体部队（骑士 + 小炮 + 狮鹫）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他流行战术速查-1"><span class="toc-text">其他流行战术速查</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-UD"><span class="toc-text">4.5 UD</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#蜘蛛流（地穴恶魔核心）"><span class="toc-text">蜘蛛流（地穴恶魔核心）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#科技蜘蛛（速科技-DK-蜘蛛）"><span class="toc-text">科技蜘蛛（速科技 DK 蜘蛛）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CL-甲虫蜘蛛（速科技-二本一波）"><span class="toc-text">CL 甲虫蜘蛛（速科技 + 二本一波）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他流行战术速查-2"><span class="toc-text">其他流行战术速查</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、快捷键：定制一套顺手键位"><span class="toc-text">五、快捷键：定制一套顺手键位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-改键的三条途径"><span class="toc-text">5.1 改键的三条途径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-编队"><span class="toc-text">5.2 编队</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-道具栏（小键盘）"><span class="toc-text">5.3 道具栏（小键盘）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-中立商店"><span class="toc-text">5.4 中立商店</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-商店公共道具"><span class="toc-text">5.5 商店公共道具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-6-种族商店"><span class="toc-text">5.6 种族商店</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、微操：让-APM-花在刀刃上"><span class="toc-text">六、微操：让 APM 花在刀刃上</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-两条评判标准"><span class="toc-text">6.1 两条评判标准</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-操作优先级金字塔"><span class="toc-text">6.2 操作优先级金字塔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-各族操作重点"><span class="toc-text">6.3 各族操作重点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-无效-APM-黑名单"><span class="toc-text">6.4 无效 APM 黑名单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-练法"><span class="toc-text">6.5 练法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、骚扰与反骚扰"><span class="toc-text">七、骚扰与反骚扰</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-骚扰的目的与手段"><span class="toc-text">7.1 骚扰的目的与手段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-反骚扰体系"><span class="toc-text">7.2 反骚扰体系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-分矿安全"><span class="toc-text">7.3 分矿安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-建筑学：四族的封口与布防"><span class="toc-text">7.4 建筑学：四族的封口与布防</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、侦查、兵种克制与人口估算"><span class="toc-text">八、侦查、兵种克制与人口估算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-开局侦查的目的"><span class="toc-text">8.1 开局侦查的目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-中期侦查的目的"><span class="toc-text">8.2 中期侦查的目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-侦查常识"><span class="toc-text">8.3 侦查常识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-侦查单位"><span class="toc-text">8.4 侦查单位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-5-兵种克制"><span class="toc-text">8.5 兵种克制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-6-人口估算：把「能不能打」变成算术题"><span class="toc-text">8.6 人口估算：把「能不能打」变成算术题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#九、攻防升级"><span class="toc-text">九、攻防升级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-提升有多大"><span class="toc-text">9.1 提升有多大</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-顺序、时机与取舍"><span class="toc-text">9.2 顺序、时机与取舍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十、复盘：把输棋变成经验"><span class="toc-text">十、复盘：把输棋变成经验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-看大师录像"><span class="toc-text">10.1 看大师录像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-复盘自己的录像"><span class="toc-text">10.2 复盘自己的录像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-3-命名与积累"><span class="toc-text">10.3 命名与积累</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十一、90-天训练计划"><span class="toc-text">十一、90 天训练计划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-1-阶段安排"><span class="toc-text">11.1 阶段安排</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-2-每日模板"><span class="toc-text">11.2 每日模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-3-冲分纪律"><span class="toc-text">11.3 冲分纪律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-4-S12-收官冲刺（2026-10-03-→-10-13）"><span class="toc-text">11.4 S12 收官冲刺（2026-10-03 → 10-13）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十二、细节备忘（速查）"><span class="toc-text">十二、细节备忘（速查）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#通用"><span class="toc-text">通用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ORC"><span class="toc-text">ORC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NE"><span class="toc-text">NE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UD"><span class="toc-text">UD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HUM"><span class="toc-text">HUM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#维护费（破人口）"><span class="toc-text">维护费（破人口）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#待研究清单"><span class="toc-text">待研究清单</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十三、赛事、工具与资源"><span class="toc-text">十三、赛事、工具与资源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#赛事"><span class="toc-text">赛事</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工具"><span class="toc-text">工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#游戏下载"><span class="toc-text">游戏下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#友情链接"><span class="toc-text">友情链接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十四、结语"><span class="toc-text">十四、结语</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、目标拆解：前-100-是什么水平"><span class="toc-text">一、目标拆解：前 100 是什么水平</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、种族与地图：先做减法"><span class="toc-text">二、种族与地图：先做减法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-种族：一个主族就够"><span class="toc-text">2.1 种族：一个主族就够</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-S12-赛季地图池与-ban-图策略（兽族视角）"><span class="toc-text">2.2 S12 赛季地图池与 ban 图策略（兽族视角）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-地图卡：每张图记录什么"><span class="toc-text">2.3 地图卡：每张图记录什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-逐图档案（兽族篇）"><span class="toc-text">2.4 逐图档案（兽族篇）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Echo-Isles-v2-2（EI）——-保留，主战场"><span class="toc-text">Echo Isles v2.2（EI）—— 保留，主战场</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Concealed-Hill（CH）——-保留，主战场"><span class="toc-text">Concealed Hill（CH）—— 保留，主战场</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Amazonia（AM）——-保留，对-UD-优先保"><span class="toc-text">Amazonia（AM）—— 保留，对 UD 优先保</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Twisted-Meadows-v1-9（TM）——-首选-ban"><span class="toc-text">Twisted Meadows v1.9（TM）—— 首选 ban</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Autumn-Leaves-v2-0（AL）——-对-NE-时的头号-ban-位"><span class="toc-text">Autumn Leaves v2.0（AL）—— 对 NE 时的头号 ban 位</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Springtime-v1-3（ST）——-中央免费矿的攻防"><span class="toc-text">Springtime v1.3（ST）—— 中央免费矿的攻防</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HammerFall-S3（HF）——-三矿小图，拆家主场"><span class="toc-text">HammerFall S3（HF）—— 三矿小图，拆家主场</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TideHunter3-v1-2（TH）——-绿点体系海岛图"><span class="toc-text">TideHunter3 v1.2（TH）—— 绿点体系海岛图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Northern-Isles（NI）——-保留（2026-10-13-补入库）"><span class="toc-text">Northern Isles（NI）—— 保留（2026-10-13 补入库）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-抢怪与反抢怪"><span class="toc-text">2.5 抢怪与反抢怪</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-练级效率：勾怪与减伤"><span class="toc-text">2.6 练级效率：勾怪与减伤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、经验值：把升级变成算术题"><span class="toc-text">三、经验值：把升级变成算术题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-三张表"><span class="toc-text">3.1 三张表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-四条规则"><span class="toc-text">3.2 四条规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-怎么用：算账示范"><span class="toc-text">3.3 怎么用：算账示范</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、战术与开局：一招鲜，吃遍天"><span class="toc-text">四、战术与开局：一招鲜，吃遍天</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-单战术原则与换战术的判断"><span class="toc-text">4.1 单战术原则与换战术的判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-ORC"><span class="toc-text">4.2 ORC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#开局三选一：单地洞、双地洞、无兵营速科技"><span class="toc-text">开局三选一：单地洞、双地洞、无兵营速科技</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#万金油（大-G-狼骑-白牛-萨满）"><span class="toc-text">万金油（大 G + 狼骑 + 白牛 / 萨满）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#先知猎头流"><span class="toc-text">先知猎头流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#飞龙流（大猎头流）"><span class="toc-text">飞龙流（大猎头流）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#剑圣开局细节（镜像与对-NE-的核心）"><span class="toc-text">剑圣开局细节（镜像与对 NE 的核心）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#狼骑拆家流"><span class="toc-text">狼骑拆家流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#蝙蝠流"><span class="toc-text">蝙蝠流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三本牛头流"><span class="toc-text">三本牛头流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TR-塔流（二本塔推）"><span class="toc-text">TR 塔流（二本塔推）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对位细节：对-HUM"><span class="toc-text">对位细节：对 HUM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对位细节：对-NE"><span class="toc-text">对位细节：对 NE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对位细节：对-UD"><span class="toc-text">对位细节：对 UD</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对位细节：镜像-ORC"><span class="toc-text">对位细节：镜像 ORC</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-NE"><span class="toc-text">4.3 NE</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#熊鹿"><span class="toc-text">熊鹿</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#吹风（对-ORC）"><span class="toc-text">吹风（对 ORC）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#娜迦-AC-鸟德推（对-ORC）"><span class="toc-text">娜迦 AC 鸟德推（对 ORC）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#女猎手海（KotG）"><span class="toc-text">女猎手海（KotG）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他流行战术速查"><span class="toc-text">其他流行战术速查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对-HUM"><span class="toc-text">对 HUM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对-NE-对-UD"><span class="toc-text">对 NE / 对 UD</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-HUM"><span class="toc-text">4.4 HUM</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#大法速矿（一营练级后开矿）"><span class="toc-text">大法速矿（一营练级后开矿）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#万金油（男女巫-火枪）"><span class="toc-text">万金油（男女巫 + 火枪）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#立体部队（骑士-小炮-狮鹫）"><span class="toc-text">立体部队（骑士 + 小炮 + 狮鹫）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他流行战术速查-1"><span class="toc-text">其他流行战术速查</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-UD"><span class="toc-text">4.5 UD</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#蜘蛛流（地穴恶魔核心）"><span class="toc-text">蜘蛛流（地穴恶魔核心）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#科技蜘蛛（速科技-DK-蜘蛛）"><span class="toc-text">科技蜘蛛（速科技 DK 蜘蛛）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CL-甲虫蜘蛛（速科技-二本一波）"><span class="toc-text">CL 甲虫蜘蛛（速科技 + 二本一波）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他流行战术速查-2"><span class="toc-text">其他流行战术速查</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-中立英雄速查"><span class="toc-text">4.6 中立英雄速查</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、快捷键：定制一套顺手键位"><span class="toc-text">五、快捷键：定制一套顺手键位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-改键的三条途径"><span class="toc-text">5.1 改键的三条途径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-编队"><span class="toc-text">5.2 编队</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-道具栏（小键盘）"><span class="toc-text">5.3 道具栏（小键盘）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-中立商店"><span class="toc-text">5.4 中立商店</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-商店公共道具"><span class="toc-text">5.5 商店公共道具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-6-种族商店"><span class="toc-text">5.6 种族商店</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-7-买装优先级（兽族）"><span class="toc-text">5.7 买装优先级（兽族）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-8-其他游戏设置"><span class="toc-text">5.8 其他游戏设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、微操：让-APM-花在刀刃上"><span class="toc-text">六、微操：让 APM 花在刀刃上</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-两条评判标准"><span class="toc-text">6.1 两条评判标准</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-操作优先级金字塔"><span class="toc-text">6.2 操作优先级金字塔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-各族操作重点"><span class="toc-text">6.3 各族操作重点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-无效-APM-黑名单"><span class="toc-text">6.4 无效 APM 黑名单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-练法"><span class="toc-text">6.5 练法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、骚扰与反骚扰"><span class="toc-text">七、骚扰与反骚扰</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-骚扰的目的与手段"><span class="toc-text">7.1 骚扰的目的与手段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-反骚扰体系"><span class="toc-text">7.2 反骚扰体系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-分矿安全"><span class="toc-text">7.3 分矿安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-建筑学：四族的封口与布防"><span class="toc-text">7.4 建筑学：四族的封口与布防</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、侦查、兵种克制与人口估算"><span class="toc-text">八、侦查、兵种克制与人口估算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-开局侦查的目的"><span class="toc-text">8.1 开局侦查的目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-中期侦查的目的"><span class="toc-text">8.2 中期侦查的目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-侦查常识"><span class="toc-text">8.3 侦查常识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-侦查单位"><span class="toc-text">8.4 侦查单位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-5-兵种克制"><span class="toc-text">8.5 兵种克制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-6-人口估算：把「能不能打」变成算术题"><span class="toc-text">8.6 人口估算：把「能不能打」变成算术题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#九、攻防升级"><span class="toc-text">九、攻防升级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-提升有多大"><span class="toc-text">9.1 提升有多大</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-顺序、时机与取舍"><span class="toc-text">9.2 顺序、时机与取舍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十、复盘：把输棋变成经验"><span class="toc-text">十、复盘：把输棋变成经验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-看大师录像"><span class="toc-text">10.1 看大师录像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-复盘自己的录像"><span class="toc-text">10.2 复盘自己的录像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-3-命名与积累"><span class="toc-text">10.3 命名与积累</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十一、90-天训练计划"><span class="toc-text">十一、90 天训练计划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-1-阶段安排"><span class="toc-text">11.1 阶段安排</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-2-每日模板"><span class="toc-text">11.2 每日模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-3-冲分纪律"><span class="toc-text">11.3 冲分纪律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-4-S12-收官冲刺（2026-10-03-→-10-13）"><span class="toc-text">11.4 S12 收官冲刺（2026-10-03 → 10-13）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十二、细节备忘（速查）"><span class="toc-text">十二、细节备忘（速查）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#通用"><span class="toc-text">通用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ORC"><span class="toc-text">ORC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NE"><span class="toc-text">NE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UD"><span class="toc-text">UD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HUM"><span class="toc-text">HUM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#维护费（破人口）"><span class="toc-text">维护费（破人口）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#昼夜与时间（Liquipedia「Daytime」）"><span class="toc-text">昼夜与时间（Liquipedia「Daytime」）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十三、赛事、工具与资源"><span class="toc-text">十三、赛事、工具与资源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#赛事"><span class="toc-text">赛事</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工具"><span class="toc-text">工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#游戏下载"><span class="toc-text">游戏下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#友情链接"><span class="toc-text">友情链接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十四、结语"><span class="toc-text">十四、结语</span></a></li></ol>
     </div>
   </section>
 
