@@ -65,13 +65,13 @@ def fig_xp():
     for s in ("top", "right"):
         ax1.spines[s].set_visible(False)
 
-    neutral = [20, 30, 40, 60, 80, 120, 160, 240, 320, 400]
-    player = [round(x * 1.25) for x in neutral]
+    neutral = [25, 40, 60, 85, 115, 150, 190, 235, 285, 340]
+    player = [round(x * 0.8) for x in neutral]
     w = .38
-    ax2.bar([i - w / 2 for i in lv], neutral, width=w, color=GUIDE, label="中立野怪")
-    ax2.bar([i + w / 2 for i in lv], player, width=w, color=ACCENT, label="玩家单位（x1.25）")
-    ax2.set_ylim(0, 560)
-    ax2.set_title("击杀获取经验：野怪 vs 玩家单位", fontsize=11, color=INK)
+    ax2.bar([i - w / 2 for i in lv], neutral, width=w, color=ACCENT, label="单位基础经验")
+    ax2.bar([i + w / 2 for i in lv], player, width=w, color=GUIDE, label="野怪实得（1级英雄×0.8）")
+    ax2.set_ylim(0, 400)
+    ax2.set_title("击杀获取经验：基础值 vs 野怪实得", fontsize=11, color=INK)
     ax2.set_xlabel("单位等级", color=SUB)
     ax2.set_ylabel("单杀经验", color=SUB)
     ax2.set_xticks(lv)
@@ -682,23 +682,23 @@ def fig_routes():
         ],
         note="5 矿均 12500；医疗泉由红幼龙红点守(Preview 数据)")
 
-    # ---------------- NI：北方群岛（2026-10-13 补抓，S12 图池此前遗漏）
+    # ---------------- NI：北方群岛（2026-10-13 补抓，S12 图池此前遗漏；XP=battle.net怪等级+Liquipedia公式计算）
     draw_data("ni", "Northern Isles 练级路线（真实地图标注）",
         my=(0.059, 0.787), opp=(0.866, 0.094), my_lab=("left", "bottom"),
         steps=[
-            (0.246, 0.953, "① 门口绿点·食人魔", "推演路线, XP 待实测", "left", "bottom"),
-            (0.376, 0.705, "② 鱼人绿点", "", "center", "top"),
-            (0.492, 0.822, "③ 分矿营", "顺势开分矿(10000金)", "center", "top"),
+            (0.246, 0.953, "① 门口绿点·食人魔", "推演·计算 1.6", "left", "bottom"),
+            (0.376, 0.705, "② 鱼人绿点", "2.2", "center", "top"),
+            (0.492, 0.822, "③ 分矿营", "2.8 顺势开分矿(10000金)", "center", "top"),
         ],
         extras=[
             (0.10, 0.845, "主矿 13500", "center", "top"),
-            (0.163, 0.135, "角落矿 9000\n猛犸红点守(掉永久5)", "left", "top"),
+            (0.163, 0.135, "角落矿 9000\n猛犸红点守(掉永久5)\n直取后 3.7", "left", "top"),
         ],
         routes=[([(0.246, 0.953), (0.376, 0.705), (0.492, 0.822)], C, "-",
                  "门口→鱼人→分矿营"),
                 ([(0.492, 0.822), (0.274, 0.405)], B, "--",
-                 "延伸 分矿→实验室前营")],
-        note="1酒馆+2实验室+1商店+1市场；主矿13500/分矿10000/角落矿9000(Preview 数据)")
+                 "延伸 分矿→实验室前营(3.5)")],
+        note="1酒馆+2实验室+1商店+1市场；主矿13500/分矿10000/角落矿9000(Preview 数据)；等级=推演·计算(1本单英雄口径)")
 
 
 if __name__ == "__main__":
