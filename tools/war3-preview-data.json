@@ -5525,5 +5525,641 @@
     ]
    }
   ]
+ },
+ "lr": {
+  "image": "Wc3 Last Refuge.JPG",
+  "objects": [
+   {
+    "type": "tavern",
+    "x": 0.4894,
+    "y": 0.4436,
+    "gold": "",
+    "n": ""
+   },
+   {
+    "type": "spawn",
+    "x": 0.8383,
+    "y": 0.0623,
+    "gold": "",
+    "n": "1"
+   },
+   {
+    "type": "spawn",
+    "x": 0.0481,
+    "y": 0.8327,
+    "gold": "",
+    "n": "2"
+   },
+   {
+    "type": "goldmine",
+    "x": 0.8613,
+    "y": 0.0923,
+    "gold": "12500",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.0711,
+    "y": 0.8627,
+    "gold": "12500",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.6873,
+    "y": 0.8456,
+    "gold": "10000",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.3014,
+    "y": 0.0989,
+    "gold": "10000",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.1035,
+    "y": 0.2614,
+    "gold": "12500",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.9359,
+    "y": 0.6307,
+    "gold": "12500",
+    "n": ""
+   },
+   {
+    "type": "laboratory",
+    "x": 0.3711,
+    "y": 0.7655,
+    "gold": "",
+    "n": ""
+   },
+   {
+    "type": "laboratory",
+    "x": 0.5915,
+    "y": 0.1601,
+    "gold": "",
+    "n": ""
+   },
+   {
+    "type": "merccamp",
+    "x": 0.507,
+    "y": 0.9567,
+    "gold": "",
+    "n": ""
+   },
+   {
+    "type": "merccamp",
+    "x": 0.4866,
+    "y": 0.0343,
+    "gold": "",
+    "n": ""
+   },
+   {
+    "type": "merchant",
+    "x": 0.2965,
+    "y": 0.4183,
+    "gold": "",
+    "n": ""
+   },
+   {
+    "type": "merchant",
+    "x": 0.6866,
+    "y": 0.4518,
+    "gold": "",
+    "n": ""
+   }
+  ],
+  "spots": [
+   {
+    "x": 0.6556,
+    "y": 0.826,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Ogre Magi",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "2"
+     },
+     {
+      "name": "Forest Troll Trapper",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.3387,
+    "y": 0.1381,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Ogre Magi",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "2"
+     },
+     {
+      "name": "Forest Troll Trapper",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.1472,
+    "y": 0.2982,
+    "level": "hard",
+    "creeps": [
+     {
+      "name": "Ogre Lord",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "5"
+     },
+     {
+      "name": "Ogre Magi",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Forest Troll High Priest",
+      "count": 1,
+      "item": "Power Up",
+      "ilvl": "1"
+     },
+     {
+      "name": "Forest Troll Berserker",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.8831,
+    "y": 0.6201,
+    "level": "hard",
+    "creeps": [
+     {
+      "name": "Ogre Lord",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "5"
+     },
+     {
+      "name": "Ogre Magi",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Forest Troll High Priest",
+      "count": 1,
+      "item": "Power Up",
+      "ilvl": "1"
+     },
+     {
+      "name": "Forest Troll Berserker",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.6303,
+    "y": 0.1969,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Ogre Magi",
+      "count": 1,
+      "item": "Charged",
+      "ilvl": "4"
+     },
+     {
+      "name": "Ogre Mauler",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Forest Troll High Priest",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Forest Troll Berserker",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.3246,
+    "y": 0.7508,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Ogre Magi",
+      "count": 1,
+      "item": "Charged",
+      "ilvl": "4"
+     },
+     {
+      "name": "Ogre Mauler",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Forest Troll High Priest",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Forest Troll Berserker",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.4937,
+    "y": 0.0784,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Rock Golem",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "4"
+     },
+     {
+      "name": "Forest Troll High Priest",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Forest Troll Trapper",
+      "count": 1,
+      "item": "Power Up",
+      "ilvl": "1"
+     },
+     {
+      "name": "Forest Troll Trapper",
+      "count": 1,
+      "item": "Power Up",
+      "ilvl": "1"
+     },
+     {
+      "name": "Mud Golem",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.5049,
+    "y": 0.9109,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Rock Golem",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "4"
+     },
+     {
+      "name": "Forest Troll High Priest",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Forest Troll Trapper",
+      "count": 1,
+      "item": "Power Up",
+      "ilvl": "1"
+     },
+     {
+      "name": "Forest Troll Trapper",
+      "count": 1,
+      "item": "Power Up",
+      "ilvl": "1"
+     },
+     {
+      "name": "Mud Golem",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.3176,
+    "y": 0.46,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Ogre Magi",
+      "count": 1,
+      "item": "Charged",
+      "ilvl": "3"
+     },
+     {
+      "name": "Ogre Warrior",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Forest Troll Trapper",
+      "count": 1,
+      "item": "Power Up",
+      "ilvl": "2"
+     },
+     {
+      "name": "Forest Troll Trapper",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.6613,
+    "y": 0.4191,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Ogre Magi",
+      "count": 1,
+      "item": "Charged",
+      "ilvl": "3"
+     },
+     {
+      "name": "Ogre Warrior",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Forest Troll Trapper",
+      "count": 1,
+      "item": "Power Up",
+      "ilvl": "2"
+     },
+     {
+      "name": "Forest Troll Trapper",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.3585,
+    "y": 0.9412,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Ogre Warrior",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "2"
+     },
+     {
+      "name": "Forest Troll Trapper",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.6317,
+    "y": 0.0392,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Ogre Warrior",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "2"
+     },
+     {
+      "name": "Forest Troll Trapper",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.5106,
+    "y": 0.2026,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Murloc Nightcrawler",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "1"
+     },
+     {
+      "name": "Murloc Huntsman",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Murloc Tiderunner",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.4662,
+    "y": 0.7198,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Murloc Nightcrawler",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "1"
+     },
+     {
+      "name": "Murloc Huntsman",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Murloc Tiderunner",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.5007,
+    "y": 0.6168,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Forest Troll High Priest",
+      "count": 1,
+      "item": "Charged",
+      "ilvl": "2"
+     },
+     {
+      "name": "Forest Troll",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.4894,
+    "y": 0.268,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Forest Troll High Priest",
+      "count": 1,
+      "item": "Charged",
+      "ilvl": "2"
+     },
+     {
+      "name": "Forest Troll",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.362,
+    "y": 0.3513,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Gnoll Overseer",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "2"
+     },
+     {
+      "name": "Gnoll Warden",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Gnoll Assassin",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.6359,
+    "y": 0.5278,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Gnoll Overseer",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "2"
+     },
+     {
+      "name": "Gnoll Warden",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Gnoll Assassin",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.1528,
+    "y": 0.1348,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Gargantuan Sea Turtle",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "3"
+     },
+     {
+      "name": "Murloc Nightcrawler",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Murloc Huntsman",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.9,
+    "y": 0.8587,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Gargantuan Sea Turtle",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "3"
+     },
+     {
+      "name": "Murloc Nightcrawler",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Murloc Huntsman",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   }
+  ]
  }
 }
