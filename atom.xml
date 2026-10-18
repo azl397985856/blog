@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>lucifer的网络博客</title>
+  
+  <subtitle>LeetCode 前端</subtitle>
+  <link href="/blog/atom.xml" rel="self"/>
+  
+  <link href="https://lucifer.ren/blog/"/>
+  <updated>2026-10-02T13:16:10.483Z</updated>
+  <id>https://lucifer.ren/blog/</id>
+  
+  <author>
+    <name>lucifer</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>蜡烛图技术分析</title>
+    <link href="https://lucifer.ren/blog/2026/10/01/japan-k-line/"/>
+    <id>https://lucifer.ren/blog/2026/10/01/japan-k-line/</id>
+    <published>2026-09-30T16:00:00.000Z</published>
+    <updated>2026-10-02T13:16:10.483Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文主要介绍蜡烛图各种形态。&lt;/p&gt;
+&lt;p&gt;从趋势上来看大体上分为两种：反转形态和持续形态。&lt;br&gt;从 K 线数量上来看大体上分为四种：单一 K 线、两根 K 线、三根 K 线、一大堆 K 线。&lt;/p&gt;
+&lt;p&gt;熟练掌握这些 K 线，再结合一些其他技术分析（比如交易量， 均线，通道线，缠论等等），那么在技术分析的道路上你就已经走了很远了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="理财" scheme="https://lucifer.ren/blog/categories/%E7%90%86%E8%B4%A2/"/>
+    
+      <category term="K线" scheme="https://lucifer.ren/blog/categories/%E7%90%86%E8%B4%A2/K%E7%BA%BF/"/>
+    
+      <category term="蜡烛图" scheme="https://lucifer.ren/blog/categories/%E7%90%86%E8%B4%A2/K%E7%BA%BF/%E8%9C%A1%E7%83%9B%E5%9B%BE/"/>
+    
+    
+      <category term="理财" scheme="https://lucifer.ren/blog/tags/%E7%90%86%E8%B4%A2/"/>
+    
+      <category term="股票" scheme="https://lucifer.ren/blog/tags/%E8%82%A1%E7%A5%A8/"/>
+    
+      <category term="K线" scheme="https://lucifer.ren/blog/tags/K%E7%BA%BF/"/>
+    
+      <category term="蜡烛图" scheme="https://lucifer.ren/blog/tags/%E8%9C%A1%E7%83%9B%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一切皆插件：DeepSeek Harness</title>
+    <link href="https://lucifer.ren/blog/2026/09/27/dsh/"/>
+    <id>https://lucifer.ren/blog/2026/09/27/dsh/</id>
+    <published>2026-09-26T16:00:00.000Z</published>
+    <updated>2026-09-27T06:04:42.709Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Agent 是一个非常流行的概念。模型负责思考，但模型自己并不能读文件、跑命令、记住上下文、在真实环境里把一件事做完。网上关于 Agent 的资料非常多，Claude Code、Codex 这类产品大家也用得不少，但是把「模型之外那一层」从零讲清楚的却很少。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ai" scheme="https://lucifer.ren/blog/categories/ai/"/>
+    
+      <category term="agent" scheme="https://lucifer.ren/blog/categories/ai/agent/"/>
+    
+    
+      <category term="deepseek" scheme="https://lucifer.ren/blog/tags/deepseek/"/>
+    
+      <category term="harness" scheme="https://lucifer.ren/blog/tags/harness/"/>
+    
+      <category term="agent" scheme="https://lucifer.ren/blog/tags/agent/"/>
+    
+      <category term="cordis" scheme="https://lucifer.ren/blog/tags/cordis/"/>
+    
+      <category term="plugin" scheme="https://lucifer.ren/blog/tags/plugin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>配置文件的保险箱：dotr</title>
+    <link href="https://lucifer.ren/blog/2026/09/20/dotr/"/>
+    <id>https://lucifer.ren/blog/2026/09/20/dotr/</id>
+    <published>2026-09-19T16:00:00.000Z</published>
+    <updated>2026-09-27T06:25:56.960Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;配置备份是一个非常常见的需求。用了十几年电脑的人，多半都踩过一次：某天机器开不了机，或者一条命令把 &lt;code&gt;.zshrc&lt;/code&gt; 覆盖了，然后发现真正重要的东西并不在 Git 里，而在 home 目录那些说不清该不该提交的文件里。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="dotfiles" scheme="https://lucifer.ren/blog/tags/dotfiles/"/>
+    
+      <category term="配置备份" scheme="https://lucifer.ren/blog/tags/%E9%85%8D%E7%BD%AE%E5%A4%87%E4%BB%BD/"/>
+    
+      <category term="配置管理" scheme="https://lucifer.ren/blog/tags/%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86/"/>
+    
+      <category term="备份工具" scheme="https://lucifer.ren/blog/tags/%E5%A4%87%E4%BB%BD%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="rust" scheme="https://lucifer.ren/blog/tags/rust/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我不知道的《易经》</title>
+    <link href="https://lucifer.ren/blog/2026/07/25/yi-jing/"/>
+    <id>https://lucifer.ren/blog/2026/07/25/yi-jing/</id>
+    <published>2026-07-24T16:00:00.000Z</published>
+    <updated>2026-07-25T07:15:31.569Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前很长一段时间，我对《易经》的印象很固定：玄、算卦、没什么实际用处、看不懂。一提到它，脑子里浮现的就是摇铜钱、查卦辞、说吉凶那一套。直到最近系统看了一些材料，才发现自己之前的理解偏差很大。它其实不是一本“算命书”，而是一套观察变化、做判断的框架。下面把我目前的浅薄认识整理一下，尽量从基础讲起。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="易经" scheme="https://lucifer.ren/blog/categories/%E6%98%93%E7%BB%8F/"/>
+    
+      <category term="读后感" scheme="https://lucifer.ren/blog/categories/%E6%98%93%E7%BB%8F/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+    
+      <category term="易经" scheme="https://lucifer.ren/blog/tags/%E6%98%93%E7%BB%8F/"/>
+    
+      <category term="读后感" scheme="https://lucifer.ren/blog/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Freqtrade 进阶：把多个弱信号拧成一根绳——多信号评分策略实战</title>
+    <link href="https://lucifer.ren/blog/2026/07/20/web3-freqtrade-2/"/>
+    <id>https://lucifer.ren/blog/2026/07/20/web3-freqtrade-2/</id>
+    <published>2026-07-19T16:00:00.000Z</published>
+    <updated>2026-07-25T07:53:32.604Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大家好，我是 Lucifer，又来聊聊 Web3 的那些有趣事儿了。今天咱们来聊聊 Freqtrade。&lt;/p&gt;
+&lt;p&gt;上一篇我们从零搭好了 Freqtrade，写了个最简单的 SMA 交叉策略。很多人跑完回测后跟我说：“这策略也太简单了，实盘根本扛不住。”&lt;/p&gt;
+&lt;p&gt;说得对。那篇是入门用的“Hello World”。真正能活下来的策略，从来不是依赖某一个“神级指标”，而是把一堆看起来不怎么样的弱信号，用正确的方式组合起来。&lt;/p&gt;
+&lt;p&gt;今天这篇是正式续篇。我们会把「组合弱信号」这个核心思想，落地成一个能直接在 Freqtrade 里跑的策略。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="量化交易" scheme="https://lucifer.ren/blog/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>加密交易的风险管理：仓位、止损与资金分配</title>
+    <link href="https://lucifer.ren/blog/2026/05/22/web3-risk-management/"/>
+    <id>https://lucifer.ren/blog/2026/05/22/web3-risk-management/</id>
+    <published>2026-05-21T16:00:00.000Z</published>
+    <updated>2026-05-22T14:05:02.863Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="理财" scheme="https://lucifer.ren/blog/categories/%E7%90%86%E8%B4%A2/"/>
+    
+      <category term="交易" scheme="https://lucifer.ren/blog/categories/%E4%BA%A4%E6%98%93/"/>
+    
+    
+      <category term="投资" scheme="https://lucifer.ren/blog/tags/%E6%8A%95%E8%B5%84/"/>
+    
+      <category term="交易" scheme="https://lucifer.ren/blog/tags/%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="风险管理" scheme="https://lucifer.ren/blog/tags/%E9%A3%8E%E9%99%A9%E7%AE%A1%E7%90%86/"/>
+    
+      <category term="仓位管理" scheme="https://lucifer.ren/blog/tags/%E4%BB%93%E4%BD%8D%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>永续合约：无到期日的杠杆交易是如何运作的</title>
+    <link href="https://lucifer.ren/blog/2026/05/12/web3-perpetual/"/>
+    <id>https://lucifer.ren/blog/2026/05/12/web3-perpetual/</id>
+    <published>2026-05-11T16:00:00.000Z</published>
+    <updated>2026-05-22T06:42:28.080Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;永续合约（Perpetual Contract）是加密货币交易量最大的衍生品，日交易量超过现货数倍。它让你不用持有 BTC 就能做多做空，用 $100 撬动 $10,000 的头寸。但杠杆是双刃剑——放大收益的同时也放大亏损，爆仓一瞬间就是归零。本文将从原理出发，拆解永续合约的核心机制：Funding Rate 如何锚定现货价格、标记价格如何防止恶意清算、以及保证金和清算的数学关系。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="DeFi" scheme="https://lucifer.ren/blog/tags/DeFi/"/>
+    
+      <category term="永续合约" scheme="https://lucifer.ren/blog/tags/%E6%B0%B8%E7%BB%AD%E5%90%88%E7%BA%A6/"/>
+    
+      <category term="衍生品" scheme="https://lucifer.ren/blog/tags/%E8%A1%8D%E7%94%9F%E5%93%81/"/>
+    
+      <category term="dYdX" scheme="https://lucifer.ren/blog/tags/dYdX/"/>
+    
+      <category term="GMX" scheme="https://lucifer.ren/blog/tags/GMX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>代币经济学：如何判断一个代币值不值得买</title>
+    <link href="https://lucifer.ren/blog/2026/05/03/web3-tokenomics/"/>
+    <id>https://lucifer.ren/blog/2026/05/03/web3-tokenomics/</id>
+    <published>2026-05-02T16:00:00.000Z</published>
+    <updated>2026-05-22T06:42:28.081Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;你研究了一个项目，技术很好，团队很强，社区活跃。然后你看了一眼代币分配：团队持有 40%，6 个月后全部解锁。你还会买吗？代币经济学（Tokenomics）就是帮你回答这类问题的框架——它研究代币的供应、分配、流通和价值捕获机制，决定了”这个代币的价格长期是涨还是跌”的底层逻辑。如果说技术决定项目能不能活，那 Tokenomics 决定代币值不值钱。本文将拆解代币经济学的核心要素，教你用量化方法评估一个代币的长期价值。&lt;/p&gt;
+&lt;p&gt;这篇文章是对之前 &lt;a href=&quot;https://lucifer.ren/blog/2025/09/16/web3-value-center/&quot;&gt;自己动手制作 Web3 代币估值表&lt;/a&gt; 的上游知识补充——先理解 Tokenomics，再做估值才有根基。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="投资" scheme="https://lucifer.ren/blog/tags/%E6%8A%95%E8%B5%84/"/>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="Tokenomics" scheme="https://lucifer.ren/blog/tags/Tokenomics/"/>
+    
+      <category term="代币经济学" scheme="https://lucifer.ren/blog/tags/%E4%BB%A3%E5%B8%81%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>稳定币机制全解：从 USDT 到 UST 崩盘的启示</title>
+    <link href="https://lucifer.ren/blog/2026/05/02/web3-stablecoin/"/>
+    <id>https://lucifer.ren/blog/2026/05/02/web3-stablecoin/</id>
+    <published>2026-05-01T16:00:00.000Z</published>
+    <updated>2026-05-22T06:42:28.080Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在加密世界的剧烈波动中，稳定币是唯一的”避风港”。它们锚定美元（或其他法币），让你在 DeFi 中借贷、交易、计价时不用担心结算那一刻价格已经变了 10%。但稳定币远非”稳定”——2022 年 5 月 UST 脱锚引发 $400 亿蒸发就是血淋淋的教训。本文将解析三种主流稳定币机制的原理、权衡和风险，帮你理解”1 美元”背后到底靠什么在撑。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="稳定币" scheme="https://lucifer.ren/blog/tags/%E7%A8%B3%E5%AE%9A%E5%B8%81/"/>
+    
+      <category term="USDT" scheme="https://lucifer.ren/blog/tags/USDT/"/>
+    
+      <category term="USDC" scheme="https://lucifer.ren/blog/tags/USDC/"/>
+    
+      <category term="DAI" scheme="https://lucifer.ren/blog/tags/DAI/"/>
+    
+      <category term="UST" scheme="https://lucifer.ren/blog/tags/UST/"/>
+    
+      <category term="MakerDAO" scheme="https://lucifer.ren/blog/tags/MakerDAO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DeFi 保险：谁来保护你的链上资产？</title>
+    <link href="https://lucifer.ren/blog/2026/04/22/web3-defi-insurance/"/>
+    <id>https://lucifer.ren/blog/2026/04/22/web3-defi-insurance/</id>
+    <published>2026-04-21T16:00:00.000Z</published>
+    <updated>2026-05-22T06:42:28.079Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2022 年 DeFi 黑客攻击造成超过 $30 亿损失，2023 年仍有近 $20 亿被盗。你在 AAVE 存了 10 万 USDC，万一合约被攻破怎么办？你跨链走 Wormhole，万一桥被黑了呢？传统金融有 FDIC 存款保险、证券投资者保护基金，DeFi 世界同样需要保险——但它的实现方式完全不同。本文将解析 DeFi 保险的运作原理、覆盖范围、定价机制，以及为什么这个赛道虽然重要却发展缓慢。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="DeFi" scheme="https://lucifer.ren/blog/tags/DeFi/"/>
+    
+      <category term="保险" scheme="https://lucifer.ren/blog/tags/%E4%BF%9D%E9%99%A9/"/>
+    
+      <category term="Nexus Mutual" scheme="https://lucifer.ren/blog/tags/Nexus-Mutual/"/>
+    
+      <category term="智能合约安全" scheme="https://lucifer.ren/blog/tags/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Claude Code 高级指南：驾驭上下文的艺术</title>
+    <link href="https://lucifer.ren/blog/2026/01/25/ai-claude-code-advanced-skills/"/>
+    <id>https://lucifer.ren/blog/2026/01/25/ai-claude-code-advanced-skills/</id>
+    <published>2026-01-24T16:00:00.000Z</published>
+    <updated>2026-03-11T02:58:59.467Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在AI辅助编程的时代浪潮中，Claude Code作为Anthropic的旗舰工具，已然成为开发者提升效率的核心引擎。它不只是代码生成器，更是连接创意与实现的桥梁。本文将从基础概念层层展开，深入探讨高级优化策略，帮助你全面掌握这一工具。无论你是编程新手还是资深专家，都能从中汲取实用洞见。我们将结合真实场景和示例，确保内容易于理解且可直接应用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ai" scheme="https://lucifer.ren/blog/categories/ai/"/>
+    
+    
+      <category term="ai" scheme="https://lucifer.ren/blog/tags/ai/"/>
+    
+      <category term="claude" scheme="https://lucifer.ren/blog/tags/claude/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NotebookLM：AI 驱动的知识炼金术，瞬间转化复杂信息为易懂洞见</title>
+    <link href="https://lucifer.ren/blog/2026/01/01/ai-notebooklm/"/>
+    <id>https://lucifer.ren/blog/2026/01/01/ai-notebooklm/</id>
+    <published>2025-12-31T16:00:00.000Z</published>
+    <updated>2026-01-03T04:54:57.562Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在信息爆炸的时代，我们常常面对海量内容，却苦于时间有限、理解力不足。想象一下，你遇到一篇技术深度文章，充满了专业术语和复杂逻辑，本来需要花几个小时研读，现在只需几分钟就能掌握核心，甚至转化成生动视频。这听起来像科幻？不，这就是 Google 的 NotebookLM —— 一个 AI 驱动的研究和笔记工具。它利用 Google Gemini 等先进模型，帮助用户上传来源、自动分析、生成总结，并通过互动对话或多媒体输出，让知识获取变得如探囊取物般简单。&lt;/p&gt;
+&lt;p&gt;NotebookLM 并非简单的总结器，而是你的“思考伙伴”。它于 2023 年推出，由 Google Labs 开发，旨在帮助研究者、学生和专业人士处理文档、网页等材料。到 2026 年初，它已演变为支持协作编辑、闪卡生成和测验功能的综合平台。根据 Google 官方支持页面，它能上传 PDF、网站、Google Docs 等多种格式，并通过 AI 提炼关键信息，避免用户手动整理的繁琐。作为一个免费工具（部分高级功能需 Google 账户），它强调隐私：所有处理均在本地或云端安全进行，不用于训练模型。&lt;/p&gt;
+&lt;p&gt;本文将基于实际使用体验，逐步拆解 NotebookLM 的工作原理和优势。我们不会深挖底层 AI 算法（那属于 Google 的黑箱），而是聚焦实用场景，用类比和例子说明如何让它成为你的知识加速器。让我们从一个简单链接入手，看看它如何变魔术。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ai" scheme="https://lucifer.ren/blog/categories/ai/"/>
+    
+    
+      <category term="ai" scheme="https://lucifer.ren/blog/tags/ai/"/>
+    
+      <category term="notebooklm" scheme="https://lucifer.ren/blog/tags/notebooklm/"/>
+    
+      <category term="google" scheme="https://lucifer.ren/blog/tags/google/"/>
+    
+      <category term="gemini" scheme="https://lucifer.ren/blog/tags/gemini/"/>
+    
+      <category term="knowledge-management" scheme="https://lucifer.ren/blog/tags/knowledge-management/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>当下流动性池分析</title>
+    <link href="https://lucifer.ren/blog/2025/12/31/web3-lp-2025/"/>
+    <id>https://lucifer.ren/blog/2025/12/31/web3-lp-2025/</id>
+    <published>2025-12-30T16:00:00.000Z</published>
+    <updated>2026-01-02T13:54:59.777Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在去中心化金融（DeFi）生态中，流动性池是自动做市商（AMM）机制的核心组成部分。它允许用户通过提供资产来赚取费用，同时为交易者提供即时交换服务，而无需依赖传统的订单簿。流动性池的设计直接影响交易滑点、资金效率和流动性提供者（LP）的风险回报比。随着 DeFi 的演进，不同协议不断优化池子模型，以应对永久性损失（Impermanent Loss, IL）、滑点和多资产支持等问题。本文将分析当下几个主流流动性池协议，包括 Uniswap V3、Balancer、Curve 和 Bancor V3。我们将通过通俗的解释、类比和 Python 代码模拟来剖析其原理，帮助读者理解这些机制如何在实际中运作。所有模拟均基于简化假设，旨在说明核心概念，而非精确预测。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="swap" scheme="https://lucifer.ren/blog/tags/swap/"/>
+    
+      <category term="uniswap" scheme="https://lucifer.ren/blog/tags/uniswap/"/>
+    
+      <category term="v4" scheme="https://lucifer.ren/blog/tags/v4/"/>
+    
+      <category term="balancer" scheme="https://lucifer.ren/blog/tags/balancer/"/>
+    
+      <category term="curve" scheme="https://lucifer.ren/blog/tags/curve/"/>
+    
+      <category term="bancor" scheme="https://lucifer.ren/blog/tags/bancor/"/>
+    
+      <category term="流动性池" scheme="https://lucifer.ren/blog/tags/%E6%B5%81%E5%8A%A8%E6%80%A7%E6%B1%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>苹果AI转型：Siri升级与生态潜力</title>
+    <link href="https://lucifer.ren/blog/2025/12/24/ai-apple/"/>
+    <id>https://lucifer.ren/blog/2025/12/24/ai-apple/</id>
+    <published>2025-12-23T16:00:00.000Z</published>
+    <updated>2025-12-24T14:35:25.856Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大家好，我是Lucifer。作为一名长期关注AI领域的从业者，我注意到苹果近期在AI方面的组织调整颇具意义。如果你对AI如何逐步融入日常生活和工作感兴趣，或是好奇苹果在这一领域的战略布局，这篇文章或许能提供一些insights。我会尽量用平实的语言阐述，避免过多技术 jargon，从苹果的最新动态谈起。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="ai" scheme="https://lucifer.ren/blog/categories/ai/"/>
+    
+    
+      <category term="ai" scheme="https://lucifer.ren/blog/tags/ai/"/>
+    
+      <category term="apple" scheme="https://lucifer.ren/blog/tags/apple/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我们是如何让 JSON.stringify 的速度提升两倍以上的</title>
+    <link href="https://lucifer.ren/blog/2025/12/21/v8-json-stringify/"/>
+    <id>https://lucifer.ren/blog/2025/12/21/v8-json-stringify/</id>
+    <published>2025-12-20T16:00:00.000Z</published>
+    <updated>2025-12-21T05:54:23.050Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大家好，我是 lucifer~&lt;/p&gt;
+&lt;p&gt;今天咱们来聊聊一个前端开发中常见的“幕后英雄”——&lt;code&gt;JSON.stringify&lt;/code&gt;。你知道吗？这个函数在 V8 引擎（Chrome 和 Node.js 的 JavaScript 引擎）里最近被优化得飞起，速度直接翻倍以上！咱们会用通俗的话解释概念，加点背景知识和生活比喻，还会配上代码示例帮你理解。如果你边看边敲代码，效果会更好哦——记住，实践出真知！&lt;/p&gt;
+&lt;p&gt;为什么选这个话题？因为 &lt;code&gt;JSON.stringify&lt;/code&gt; 几乎无处不在：发网络请求、存 localStorage、日志记录……它慢一点，整个网页就卡一点。优化它，就等于给你的 app 装了个涡轮增压器。咱们先从基础聊起，然后深入优化细节，最后看看实际效果。走起！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lucifer.ren/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="v8" scheme="https://lucifer.ren/blog/categories/v8/"/>
+    
+    
+      <category term="v8" scheme="https://lucifer.ren/blog/tags/v8/"/>
+    
+      <category term="javascript" scheme="https://lucifer.ren/blog/tags/javascript/"/>
+    
+      <category term="json" scheme="https://lucifer.ren/blog/tags/json/"/>
+    
+      <category term="stringify" scheme="https://lucifer.ren/blog/tags/stringify/"/>
+    
+      <category term="性能优化" scheme="https://lucifer.ren/blog/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ACP：AI 代理协作协议在 Web3 空投自动化中的应用</title>
+    <link href="https://lucifer.ren/blog/2025/12/07/web3-acp/"/>
+    <id>https://lucifer.ren/blog/2025/12/07/web3-acp/</id>
+    <published>2025-12-06T16:00:00.000Z</published>
+    <updated>2025-12-07T05:32:37.143Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 AI 与 Web3 的交汇处，代理系统正重塑自动化任务的执行方式。传统的空投“撸毛”过程依赖手动监控和脚本执行，效率低下且易受检测。本文探讨 Agent Communication Protocol (ACP)，一种新兴协议如何通过标准化代理间通信，实现高效、隐私保护的自动化协作。我们将从 AI 协议基础入手，逐步剖析 ACP 的原理、实现细节，并提供可运行的代码示例。内容基于当前（2025 年 12 月）开源社区进展，旨在为开发者提供实用指导。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="acp" scheme="https://lucifer.ren/blog/tags/acp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从零构建一个真正工作的简单搜索引擎</title>
+    <link href="https://lucifer.ren/blog/2025/11/30/build-search-engine-by-your-own/"/>
+    <id>https://lucifer.ren/blog/2025/11/30/build-search-engine-by-your-own/</id>
+    <published>2025-11-29T16:00:00.000Z</published>
+    <updated>2025-11-30T08:56:22.638Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大家好，我是 Lucifer。今天我们来聊聊如何用 Python 构建一个简单的搜索引擎。为什么写这篇？因为教程要么是黑箱框架（Elasticsearch 配置一堆），要么是浅尝辄止（就字符串匹配）。我希望带你从零起步，实现一个&lt;strong&gt;真正能工作的版本&lt;/strong&gt;：它能用倒排索引存储文档、多种方式切分文本（tokenization）、计算权重，并根据相关度排序返回结果。&lt;/p&gt;
+&lt;p&gt;这篇文章聚焦核心：倒排索引 + tokenization + 权重系统。我们用 Python 的 dict 模拟一切，不需外部库，只用内置字符串处理和 math。&lt;strong&gt;边看边敲代码&lt;/strong&gt;，预计阅读+实践：20 分钟。Python 3 环境准备好？走起！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="搜索" scheme="https://lucifer.ren/blog/categories/%E6%90%9C%E7%B4%A2/"/>
+    
+    
+      <category term="搜索引擎" scheme="https://lucifer.ren/blog/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    
+      <category term="倒排索引" scheme="https://lucifer.ren/blog/tags/%E5%80%92%E6%8E%92%E7%B4%A2%E5%BC%95/"/>
+    
+      <category term="从零实现" scheme="https://lucifer.ren/blog/tags/%E4%BB%8E%E9%9B%B6%E5%AE%9E%E7%8E%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>限制即提示：算法解题的隐秘指引</title>
+    <link href="https://lucifer.ren/blog/2025/11/22/lc-3755/"/>
+    <id>https://lucifer.ren/blog/2025/11/22/lc-3755/</id>
+    <published>2025-11-21T16:00:00.000Z</published>
+    <updated>2025-12-07T11:01:29.571Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在算法题目的世界里，限制条件（Constraints）往往被视为障碍，但实际上，它们是解题过程中的宝贵提示。这些限制不仅定义了问题的边界，还暗示了高效算法的方向，帮助我们避开低效路径。例如，一个“有序数组”的限制往往提示二分搜索的可能性；“无环图”限制建议树遍历如 DFS；“值域有限”限制指向计数排序或桶排序，而不是通用排序。又如，在“两数之和”中，n=10^4 提示哈希 O(n)而非 O(n^2)；在“最大子数组和”中，连续+n=10^5 提示 Kadane DP。本文以 LeetCode 3755「最大平衡异或子数组的长度」为例，剖析如何将限制转化为解题利器。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://lucifer.ren/blog/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="题解" scheme="https://lucifer.ren/blog/tags/%E9%A2%98%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何阅读财报：从入门到进阶指南</title>
+    <link href="https://lucifer.ren/blog/2025/11/03/how-to-read-financial-report/"/>
+    <id>https://lucifer.ren/blog/2025/11/03/how-to-read-financial-report/</id>
+    <published>2025-11-02T16:00:00.000Z</published>
+    <updated>2025-11-30T08:56:36.914Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;财报（财务报表）是企业经营状况的“体检报告”，包括资产负债表、利润表、现金流量表、所有者权益变动表和附注。它帮助投资者、管理者和分析师评估企业的财务健康、盈利能力和风险。阅读财报不是死记硬背，而是通过逻辑分析找出问题。以下我将一步步解释如何阅读、哪些信息重要/不重要，以及造假风险。内容基于权威财务分析框架，适合投资小白和专业人士。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="财报" scheme="https://lucifer.ren/blog/categories/%E8%B4%A2%E6%8A%A5/"/>
+    
+    
+      <category term="财报" scheme="https://lucifer.ren/blog/tags/%E8%B4%A2%E6%8A%A5/"/>
+    
+      <category term="投资" scheme="https://lucifer.ren/blog/tags/%E6%8A%95%E8%B5%84/"/>
+    
+      <category term="金融" scheme="https://lucifer.ren/blog/tags/%E9%87%91%E8%9E%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Freqtrade 量化风暴：Python 铸就的加密交易自动化帝国</title>
+    <link href="https://lucifer.ren/blog/2025/10/01/web3-freqtrade/"/>
+    <id>https://lucifer.ren/blog/2025/10/01/web3-freqtrade/</id>
+    <published>2025-09-30T16:00:00.000Z</published>
+    <updated>2025-10-01T08:29:07.995Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大家好，我是 Lucifer，又来聊聊 Web3 的那些有趣事儿了。今天咱们来聊聊 Freqtrade。&lt;/p&gt;
+&lt;p&gt;你们有没有过那种深夜盯着K线图，脑子里全是“要是机器帮我下单就好了”的冲动？在加密货币的世界里，市场像过山车一样刺激，但手动交易往往让你错过黄金窗口，或者被情绪拖进深渊。量化交易，就是用算法和数据来驯服这头野兽。今天，我们来聊聊 Freqtrade 这个开源神器——一个纯 Python 驱动的加密交易机器人。它不是什么高大上的黑箱工具，而是让你从零起步，快速构建自动化交易系统的利器。基于 GitHub 上这个热门项目（&lt;a href=&quot;https://github.com/freqtrade/freqtrade&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;freqtrade&lt;/a&gt;），我们一步步拆解它，从安装到策略定制，再到实战回测和报警接入。相信我，跟着读完，你就能在本地跑起自己的量化小帝国了。走起！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="量化交易" scheme="https://lucifer.ren/blog/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"/>
+    
+  </entry>
+  
+</feed>
