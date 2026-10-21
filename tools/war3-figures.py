@@ -395,6 +395,99 @@ def draw_route_map(key, title, elements, routes, filename, note=""):
     save(fig, filename)
 
 
+# ---------------------------------------------------------------- 14. 战术机制示意图（2.6/6.2）
+def fig_tactics():
+    import numpy as np
+
+    # 14a 剑圣破隐卡位（阻止巨魔祭司放心灵火）
+    fig, ax = plt.subplots(figsize=(7.4, 5.8))
+    ax.set_xlim(0, 10); ax.set_ylim(0, 8); ax.axis("off")
+    ax.add_patch(plt.Circle((4.0, 4.7), 2.5, fill=False, ls="--", ec=GUIDE, lw=1.2))
+    ax.text(4.0, 7.45, "营地仇恨范围", ha="center", fontsize=9, color=SUB)
+    ax.scatter([4.0], [5.4], s=430, marker="^", color=WARN, zorder=5)
+    ax.text(4.0, 5.95, "巨魔祭司", ha="center", fontsize=10, color=INK, fontweight="bold")
+    for mx, my in [(2.9, 4.3), (5.1, 4.5), (3.3, 6.0), (4.9, 6.1)]:
+        ax.scatter([mx], [my], s=210, marker="o", color=GUIDE, zorder=3)
+    ax.text(2.6, 3.6, "营地其他怪", fontsize=8.5, color=SUB)
+    ax.scatter([5.95], [2.95], s=430, marker="s", color=KEEP, zorder=5)
+    ax.annotate("", xy=(4.5, 4.85), xytext=(5.72, 3.2),
+                arrowprops=dict(arrowstyle="-|>", lw=2.4, color=KEEP))
+    ax.text(6.05, 2.5, "剑圣（疾风步中）", fontsize=10, color=KEEP)
+    ax.annotate("祭司的 4 点钟方向贴脸，\n用攻击主动破隐（别等隐身自然结束）",
+                xy=(4.55, 4.8), xytext=(6.7, 4.9), fontsize=9.5, color=BAN,
+                arrowprops=dict(arrowstyle="->", lw=1.2, color=BAN))
+    ax.text(5.0, 0.75, "进仇恨圈前全程隐身、且不让其他单位先进圈\n成功后整营不再施放心灵火（CH/LR 商店营实测点位）",
+            ha="center", fontsize=8.8, color=SUB, linespacing=1.5)
+    ax.set_title("剑圣破隐卡位：阻止巨魔祭司放心灵火", fontsize=12, color=INK)
+    save(fig, "bm-innerfire.png")
+
+    # 14b 围杀：移动 M vs 攻击 A
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 4.9))
+    for ax, ok in ((ax1, True), (ax2, False)):
+        ax.set_xlim(-3, 3); ax.set_ylim(-3, 3); ax.set_aspect("equal"); ax.axis("off")
+        th = np.linspace(0, 2 * np.pi, 9 if ok else 7)[:-1]
+        for a in th:
+            x, y = 1.7 * np.cos(a), 1.7 * np.sin(a)
+            ax.scatter([x], [y], s=300, color=ACCENT, zorder=4)
+            ax.annotate("", xy=(x * .62, y * .62), xytext=(x * .88, y * .88),
+                        arrowprops=dict(arrowstyle="-|>", lw=1.3, color=ACCENT))
+        ax.scatter([0], [0], s=430, marker="X", color=BAN, zorder=5)
+        ax.text(0, -.45, "目标英雄", ha="center", fontsize=9.5, color=BAN)
+    ax1.set_title("正确：移动指令 M 收口 ✓（无缺口）", fontsize=11.5, color=KEEP)
+    ax2.set_title("错误：攻击指令 A 留缺口 ✗（目标溜走）", fontsize=11.5, color=BAN)
+    ax2.annotate("", xy=(2.95, 2.6), xytext=(1.15, .95),
+                 arrowprops=dict(arrowstyle="-|>", lw=2.2, color=BAN, ls="--"))
+    ax2.text(1.35, 1.7, "从缺口逃出", fontsize=9.5, color=BAN)
+    fig.suptitle("围杀用 M 不用 A：攻击指令会让单位互相卡位留出缺口", fontsize=12.5, color=INK)
+    fig.tight_layout(rect=[0, 0, 1, .93])
+    save(fig, "surround-mva.png")
+
+    # 14c 3 单位扎堆才触发野怪 AOE
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 4.4))
+    for ax in (ax1, ax2):
+        ax.set_xlim(0, 10); ax.set_ylim(0, 7); ax.axis("off")
+        ax.scatter([5.2], [5.6], s=430, marker="^", color=WARN, zorder=5)
+        ax.text(5.2, 6.15, "食人魔王（冲击波）/ 花岗岩傀儡（踩地板）", ha="center", fontsize=9, color=INK)
+    for mx, my in [(4.6, 3.4), (5.2, 2.9), (5.8, 3.3), (5.2, 3.9)]:
+        ax1.scatter([mx], [my], s=290, color=ACCENT, zorder=4)
+    ax1.add_patch(Polygon([(5.2, 5.6), (3.2, 2.2), (7.2, 2.2)], closed=True,
+                          fc=BAN, alpha=.22, ec=BAN, lw=1.2))
+    ax1.text(5.2, 1.4, "≥3 个单位扎堆 → AOE 命中全部 ✗", ha="center", fontsize=10.5, color=BAN)
+    for mx, my in [(2.8, 3.2), (5.2, 2.4), (7.6, 3.2), (4.0, 4.4), (6.4, 4.6)]:
+        ax2.scatter([mx], [my], s=290, color=ACCENT, zorder=4)
+    ax2.text(5.2, 1.4, "散开：任一波形/圆圈打不满 3 个 → 技能不放 ✓", ha="center", fontsize=10.5, color=KEEP)
+    ax2.text(5.2, .55, "（伤害为 0 之外还省掉了减速/眩晕）", ha="center", fontsize=8.8, color=SUB)
+    fig.suptitle("野怪 AOE 的触发条件：3 个及以上单位被一次打到", fontsize=12.5, color=INK)
+    fig.tight_layout(rect=[0, 0, 1, .92])
+    save(fig, "creep-aoe3.png")
+
+    # 14d 卡位（body block）救残血
+    fig, ax = plt.subplots(figsize=(9.4, 4.6))
+    ax.set_xlim(0, 14); ax.set_ylim(0, 7); ax.axis("off")
+    ax.add_patch(FancyBboxPatch((.6, 2.4), 1.8, 1.8, boxstyle="round,pad=0.1",
+                                fc="#e8e2d2", ec=SUB, lw=1.2))
+    ax.text(1.5, 3.3, "基地", ha="center", fontsize=10, color=INK)
+    ax.scatter([6.2], [4.1], s=330, marker="o", facecolors="none", edgecolors=BAN, lw=2, zorder=5)
+    ax.text(6.2, 4.75, "残血单位", ha="center", fontsize=9.5, color=BAN)
+    ax.annotate("", xy=(2.9, 3.6), xytext=(5.7, 4.05),
+                arrowprops=dict(arrowstyle="-|>", lw=2, color=BAN, ls="--"))
+    ax.scatter([8.3], [3.0], s=330, color=ACCENT, zorder=5)
+    ax.text(8.3, 2.35, "卡位单位（健康）", ha="center", fontsize=9.5, color=ACCENT)
+    ax.annotate("", xy=(7.1, 3.35), xytext=(8.0, 3.05),
+                arrowprops=dict(arrowstyle="-|>", lw=1.6, color=ACCENT))
+    for cx, cy in (11.3, 3.6), (11.9, 2.6):
+        ax.scatter([cx], [cy], s=330, marker="s", color=WARN, zorder=5)
+    ax.annotate("", xy=(9.1, 3.0), xytext=(10.9, 3.2),
+                arrowprops=dict(arrowstyle="-|>", lw=2, color=WARN))
+    ax.text(11.6, 4.35, "追兵（更快）", ha="center", fontsize=9.5, color=WARN)
+    ax.text(7.3, 6.1, "用身体挡住追兵路线，为残血单位赢回跑回基地的时间",
+            ha="center", fontsize=10, color=INK)
+    ax.text(7.3, .7, "进攻端同理：卡位减速逃走的英雄/单位，配合围杀（见上图）用",
+            ha="center", fontsize=8.8, color=SUB)
+    ax.set_title("卡位（Body Block）：一堵换一命", fontsize=12, color=INK)
+    save(fig, "body-block.png")
+
+
 def fig_routes():
     """真实地图标注 v3：底图与全部点位数据来自 Liquipedia Preview（权威）。
 
@@ -722,6 +815,7 @@ def fig_routes():
 if __name__ == "__main__":
     fig_xp()
     fig_map_pool()
+    fig_tactics()
     fig_ban_flow()
     fig_pyramid()
     fig_population()
