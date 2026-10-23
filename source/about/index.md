@@ -7,16 +7,26 @@ valine:
 sidebar: false
 ---
 
-我是一个 Github 40K star 的前端架构师，leetcode 刷题插件 leetcode-cheatsheet 作者，掌握各种算法套路，写了十几万字的算法刷题套路电子书，公众号回复**电子书**获取。
+我是 azl397985856，一名前端架构师，GitHub 40K star 开源作者。本职写代码，业余是魔兽争霸 3 兽族玩家，正在 KK 平台冲天梯前 100。
 
-除了我的本职工作外，我会在开源社区进行一些输出和分享，比较受欢迎的有[宇宙最强的前端面试指南](https://github.com/azl397985856/fe-interview) 和[我的第一本小书](https://github.com/azl397985856/automate-everything)
+## 开源与写作
 
-我的实体书《算法通关之路》已经出版。如果有人想要做些贡献或者合作的也可以直接用下面的邮箱联系我, azl397985856@gmail.com。
+- [宇宙最强的前端面试指南](https://github.com/azl397985856/fe-interview) —— GitHub 40K star 的前端面试开源项目
+- [automate-everything](https://github.com/azl397985856/automate-everything) —— 我的第一本开源小书
+- [leetcode-cheatsheet](https://github.com/azl397985856/leetcode-cheatsheet) —— leetcode 刷题插件
+- 实体书 **《算法通关之路》** 已出版
 
-我的前端干货，比如性能优化，工程化，架构思想以及前端领域的算法都会在公众号《脑洞前端》同步。
+前端干货（性能优化、工程化、架构思想以及前端领域的算法）会在公众号 **《脑洞前端》** 同步；刷题相关内容在公众号 **《力扣加加》**——微信搜索公众号名称即可关注。
 
-<img width="300" src="https://p.ipic.vip/bp35i7.jpg">
+## 魔兽争霸 3
 
-刷题困难？关注公众号《力扣加加》就够了。
+业余时间在打 WC3，主族兽族，目标 KK 平台 1v1 天梯前 100。冲榜过程的所有笔记——练级路线图、战术手册、机制图解、数据速查——都整理在了：
 
-<img src="https://p.ipic.vip/n8gbxo.jpg">
+- 图文手册：[《让魔兽再次伟大》](/blog/2025/03/20/war3-website/)
+- 配套数据站：[WAR3 训练营](https://lucifer.ren/war3-lab/)（练级地图计算器 / 战术手册 / 微操图解）
+
+## 联系我
+
+- **邮箱**：[azl397985856@gmail.com](mailto:azl397985856@gmail.com)（合作 / 贡献 / 转载）
+- **微信**：DevelopeEngineer
+- 或者直接在下方留言板留言
