@@ -353,7 +353,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">495字</span>
+          <span class="post-count">701字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -361,7 +361,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">1分</span>
+          <span class="post-count">2分</span>
         </span>
       </span>
     </div>
@@ -396,7 +396,7 @@
 <tbody>
 <tr>
 <td>v0.2</td>
-<td>基础版：四英雄 + 回忆技能 + 职业称号（旧分配：程序员=圣骑士 法官=血法师 画家=剑圣）</td>
+<td>基础版：四英雄 + 回忆技能（英雄分配同 v0.6；无图标/色调/台词；2026-10-25 重建：保留原文件头）</td>
 <td><a href="/blog/files/FF_4Brothers_v0.2.w3x">FF_4Brothers_v0.2.w3x</a></td>
 </tr>
 <tr>
@@ -433,6 +433,36 @@
 </table>
 </div>
 <p><strong>推荐测试顺序</strong>：v0.6（最新完整版，重点测 AI）→ v0.6m（看模型）→ 旧版对比。</p>
+<h2 id="加载崩溃排查（2026-10-25）"><a href="#加载崩溃排查（2026-10-25）" class="headerlink" title="加载崩溃排查（2026-10-25）"></a>加载崩溃排查（2026-10-25）</h2><p>有版本的地图在实机加载中报「内存资源不足 / CustomObjectField」崩溃。已修复两处候选问题（缩放字段类型、文件头被重写），并准备三个<strong>诊断版</strong>用于逐层定位——请按顺序各加载一次，记下从哪一版开始崩：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>内容</th>
+<th>用于定位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/blog/files/FF_4Brothers_v0.0.w3x">v0.0</a></td>
+<td>底图 5.5.3W 原字节（未做任何修改）</td>
+<td>客户端能否加载带保护壳的底图</td>
+</tr>
+<tr>
+<td><a href="/blog/files/FF_4Brothers_v0.2b.w3x">v0.2b</a></td>
+<td>重打包 + 地图文本，对象表零改动</td>
+<td>崩溃是否出在重打包/文件头层</td>
+</tr>
+<tr>
+<td><a href="/blog/files/FF_4Brothers_v0.2c.w3x">v0.2c</a></td>
+<td>v0.2b + 英雄改名（不加新技能）</td>
+<td>崩溃是否出在英雄对象改动</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>测完把结果（哪版崩/哪版好 + 弹窗 Object 一行内容）反馈即可，其余版本不动。</p>
 <h2 id="四英雄（v0-6-新分配）"><a href="#四英雄（v0-6-新分配）" class="headerlink" title="四英雄（v0.6 新分配）"></a>四英雄（v0.6 新分配）</h2><div class="table-container">
 <table>
 <thead>
