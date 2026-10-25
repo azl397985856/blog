@@ -105,6 +105,9 @@ def make_w3u(profile):
             obj.mods.append(m)
         m.value = val
 
+    if not profile.get("renames", True):
+        return f.encode()
+
     for rc, spec in BROTHERS.items():
         obj = f.find(rc)
         assert obj, rc
@@ -131,6 +134,8 @@ def make_w3u(profile):
 def make_w3a(profile):
     f = w3obj.ObjFile.parse(open(os.path.join(EXTRACT, "war3map.w3a"), "rb").read(),
                             use_optional_ints=True)
+    if not profile.get("skills", True):
+        return f.encode()
 
     for (new, orig, name, tip, ext, levels, icon, _quote, _fx) in SKILLS:
         obj = w3obj.Obj(orig, new)
@@ -526,11 +531,9 @@ def build(replacements, out_path):
     block_enc = _encrypt_block(struct.pack("<%dI" % len(new_block_words), *new_block_words),
                                _mpq_hash("(block table)", MPQ_HASH_FILE_KEY))
 
-    end = raw.index(b"\x00", 8)
-    flags, editor = struct.unpack_from("<II", raw, end + 1)
-    head = b"HM3W" + struct.pack("<I", 0) + b"FourBrothers FootmenFrenzy 5.5.3W" + b"\x00" + \
-        struct.pack("<II", flags, editor)
-    hm3w = head + b"\x00" * (base - len(head))
+    # HM3W 头原样保留：原实现曾把地图名重写为 "FourBrothers FootmenFrenzy 5.5.3W"，
+    # 全版本（含 v0.2）实机加载崩溃，头部字节是首要嫌疑（壳/加载器可能校验头部一致性）
+    hm3w = raw[:base]
 
     out = bytearray(hm3w)
     out += header
@@ -548,6 +551,14 @@ def build(replacements, out_path):
 
 
 PROFILES = {
+    # 诊断梯（2026-10-25 用户实机反馈 v0.2 也崩溃 → ussc 不是唯一/主因，逐层二分）：
+    #   v0.2b = 仅重打包 + wts（对象表零改动） → 测「重打包/头部」层
+    #   v0.2c = v0.2b + 英雄改名（不加新技能） → 测 w3u 改动层
+    #   v0.2h = 完整 v0.2 内容（改名+AZ 技能，无图标） → 对照已知崩溃的 v0.2
+    # 全部保留原 HM3W 头；v0.0 = 底图原字节改名副本，直接 cp，不走 build
+    "v0.2b": dict(renames=False, skills=False),
+    "v0.2c": dict(renames=True, skills=False),
+    "v0.2h": dict(renames=True, skills=True),
     "v0.3": dict(icons=True),
     "v0.4": dict(icons=True, tints=True),
     "v0.4m": dict(icons=True, tints=True, models=True),

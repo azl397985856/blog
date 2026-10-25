@@ -15,7 +15,7 @@ type: "wc3map"
 
 | 版本 | 改动内容 | 下载 |
 |---|---|---|
-| v0.2 | 基础版：四英雄 + 回忆技能 + 职业称号（旧分配：程序员=圣骑士 法官=血法师 画家=剑圣） | [FF_4Brothers_v0.2.w3x](/blog/files/FF_4Brothers_v0.2.w3x) |
+| v0.2 | 基础版：四英雄 + 回忆技能（英雄分配同 v0.6；无图标/色调/台词；2026-10-25 重建：保留原文件头） | [FF_4Brothers_v0.2.w3x](/blog/files/FF_4Brothers_v0.2.w3x) |
 | v0.3 | v0.2 + **技能图标** | [FF_4Brothers_v0.3.w3x](/blog/files/FF_4Brothers_v0.3.w3x) |
 | v0.4 | v0.3 + **职业色调** | [FF_4Brothers_v0.4.w3x](/blog/files/FF_4Brothers_v0.4.w3x) |
 | v0.4m | v0.4 + **实验模型**（旧分配） | [FF_4Brothers_v0.4m.w3x](/blog/files/FF_4Brothers_v0.4m.w3x) |
@@ -24,6 +24,18 @@ type: "wc3map"
 | **v0.6m** | v0.6 + **实验模型**（程序员=地精工程师） | [FF_4Brothers_v0.6m.w3x](/blog/files/FF_4Brothers_v0.6m.w3x) |
 
 **推荐测试顺序**：v0.6（最新完整版，重点测 AI）→ v0.6m（看模型）→ 旧版对比。
+
+## 加载崩溃排查（2026-10-25）
+
+有版本的地图在实机加载中报「内存资源不足 / CustomObjectField」崩溃。已修复两处候选问题（缩放字段类型、文件头被重写），并准备三个**诊断版**用于逐层定位——请按顺序各加载一次，记下从哪一版开始崩：
+
+| 版本 | 内容 | 用于定位 |
+|---|---|---|
+| [v0.0](/blog/files/FF_4Brothers_v0.0.w3x) | 底图 5.5.3W 原字节（未做任何修改） | 客户端能否加载带保护壳的底图 |
+| [v0.2b](/blog/files/FF_4Brothers_v0.2b.w3x) | 重打包 + 地图文本，对象表零改动 | 崩溃是否出在重打包/文件头层 |
+| [v0.2c](/blog/files/FF_4Brothers_v0.2c.w3x) | v0.2b + 英雄改名（不加新技能） | 崩溃是否出在英雄对象改动 |
+
+测完把结果（哪版崩/哪版好 + 弹窗 Object 一行内容）反馈即可，其余版本不动。
 
 ## 四英雄（v0.6 新分配）
 
