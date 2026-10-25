@@ -353,7 +353,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">701字</span>
+          <span class="post-count">1k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -361,7 +361,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">2分</span>
+          <span class="post-count">3分</span>
         </span>
       </span>
     </div>
@@ -433,6 +433,32 @@
 </table>
 </div>
 <p><strong>推荐测试顺序</strong>：v0.6（最新完整版，重点测 AI）→ v0.6m（看模型）→ 旧版对比。</p>
+<h2 id="⚠️-全版本崩溃-→-标准重建版（2026-10-25，优先测这俩）"><a href="#⚠️-全版本崩溃-→-标准重建版（2026-10-25，优先测这俩）" class="headerlink" title="⚠️ 全版本崩溃 → 标准重建版（2026-10-25，优先测这俩）"></a>⚠️ 全版本崩溃 → 标准重建版（2026-10-25，优先测这俩）</h2><p>实机反馈：壳版（v0.0/v0.2b/v0.2c/v0.2/v0.3-v0.6m）在<strong>裸客户端和 KK 平台上全部</strong>加载中崩溃<br>（报「内存资源不足 / CustomObjectField」）。根因结论：原版 FF 5.5.3W 是保护壳地图，对象数据<br>（w3u/w3a）被改写成非标准格式，这种「壳 + 非标准表」的组合在各类客户端上都依赖特定加载环境，<br>我们的重打包无法复现它。</p>
+<p><strong>解法 = 去壳标准重建</strong>：整图按「世界编辑器直接保存」的标准结构重新打包——标准 MPQ + 对象表<br>转回标准格式 + 壳内资产（路径表/贴图/模型）按引用路径落位。产出两张：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>内容</th>
+<th>下载</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>v0.0s</strong></td>
+<td>底图 5.5.3W 内容的标准重建（无任何四兄弟改动）</td>
+<td><a href="/blog/files/FF_4Brothers_v0.0s.w3x">FF_4Brothers_v0.0s.w3x</a></td>
+</tr>
+<tr>
+<td><strong>v0.6s</strong></td>
+<td>v0.6 全部内容（英雄重分配 + 回忆技能 + 施法台词 + AI）的标准重建</td>
+<td><a href="/blog/files/FF_4Brothers_v0.6s.w3x">FF_4Brothers_v0.6s.w3x</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>测试顺序</strong>：先 v0.0s（验证管线），能进图再测 v0.6s（验证我们的内容）。已知风险：壳内导入<br>贴图/模型的文件名映射是推断的，可能有个别贴图错位（粉/绿方块）——那只是 cosmetic，请重点<br>反馈<strong>能不能进图</strong>、以及进图后玩法是否正常。</p>
 <h2 id="加载崩溃排查（2026-10-25）"><a href="#加载崩溃排查（2026-10-25）" class="headerlink" title="加载崩溃排查（2026-10-25）"></a>加载崩溃排查（2026-10-25）</h2><p>有版本的地图在实机加载中报「内存资源不足 / CustomObjectField」崩溃。已修复两处候选问题（缩放字段类型、文件头被重写），并准备三个<strong>诊断版</strong>用于逐层定位——请按顺序各加载一次，记下从哪一版开始崩：</p>
 <div class="table-container">
 <table>
