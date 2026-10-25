@@ -27,7 +27,9 @@ class Mod:
         self.level = None      # w3a only
         self.pointer = None    # w3a only
 
-    def encode(self):
+    def encode(self, with_end=True):
+        """with_end=False strips the FF-variant trailing int, producing the
+        standard-format record (vanilla-parser compatible) for shell-free rebuilds."""
         out = self.mod_id + struct.pack("<I", self.value_type)
         if self.level is not None:
             out += struct.pack("<I", self.level) + struct.pack("<I", self.pointer)
@@ -37,7 +39,9 @@ class Mod:
             out += struct.pack("<f", self.value)
         else:
             out += struct.pack("<i", self.value)
-        return out + self.end
+        if with_end:
+            out += self.end
+        return out
 
 
 class Obj:
@@ -64,10 +68,10 @@ class Obj:
             self.mods.append(m)
         m.value = text if isinstance(text, bytes) else text.encode("gbk")
 
-    def encode(self):
+    def encode(self, with_end=True):
         out = self.orig + self.new + struct.pack("<I", len(self.mods))
         for m in self.mods:
-            out += m.encode()
+            out += m.encode(with_end)
         return out
 
 
@@ -118,12 +122,12 @@ class ObjFile:
             f.tables[ti] = objs
         return f
 
-    def encode(self):
+    def encode(self, with_end=True):
         out = struct.pack("<I", self.version)
         for objs in self.tables:
             out += struct.pack("<I", len(objs))
             for obj in objs:
-                out += obj.encode()
+                out += obj.encode(with_end)
         return out
 
     def iter_objs(self):

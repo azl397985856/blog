@@ -190,6 +190,9 @@ social:
   - icon: fas fa-dragon
     url: wc3map/
     name: 魔兽地图 · 四兄弟 Footmen Frenzy 纪念版（多版本下载）
+  - icon: fas fa-paper-plane
+    url: https://wormhole.app
+    name: Wormhole · 免登录文件分享（端到端加密，10GB/24小时）
 
 # 分享按钮
 # 当id为qrcode时需要安装插件  npm i -S hexo-helper-qrcode
