@@ -127,6 +127,23 @@ dist/FF_4Brothers_vX.Y.w3x               # 1.27 可玩的单文件地图
   4 字节），FF 保护壳对不同对象表用了不同改写；validate_obj.py 据此更新认知（w3u/w3a 用 end4 模型）。
 - 用户复测顺序：v0.0 → v0.2b → v0.2c → v0.2/v0.6；结果解读表见版本页「加载崩溃排查」节。
 
+### 2026-10-25（三）· KK/裸客户端全崩 → 去壳标准重建 ✅（v0.0s / v0.6s 已上架）
+
+- 用户实机：**裸客户端与 KK 平台全部崩溃**（含 v0.0 底图原字节版）→「壳 + end4 表 + 重打包」组合
+  在一切客户端不可读，原版可玩性依赖特定加载环境，壳路线放弃。
+- **rebuild_std.py 新管线**：MPQWriter 打标准 MPQ（4096 扇区）+ w3u/w3a 经
+  `w3obj.encode(with_end=False)` 转标准格式（去掉每条修改尾部 4 字节）+ 壳资产落位：
+  blk06→war3mapPath.map；blk27→war3mapImported\hk_pool.tga、blk22→hk_test.tga（war3mapSkin.txt
+  引用此二名）；blk17/18/21/28→war3mapImported\hk_model1-4.mdl；blk16→UI\Minimap\
+  MinimapIconCreepLoc2.blp；其余 TGA 一并注册进重建的 war3map.imp（v1，flag 0x0d）。
+  补最小 war3mapUnits.doo（int 5,11,0——底图无此文件，全图单位由脚本创建）。
+- **v0.0s**（底图内容标准重建）/ **v0.6s**（v0.6 全功能）上架版本页「标准重建版」节；
+  自校验=标准模型严格走查 w3u/w3a 精确到 EOF。资产文件名映射为推断，cosmetic 风险已知。
+- **测试规则（用户指定）：所有测试版本必须上架 blog**（用户机器无魔兽）。
+- **Mac 测试环境（进行中）**：Intel i9 + Wine（wine-stable cask）+ archive.org
+  War3-RoC-TFT_1.27a-1.27b 包 enUS 安装器（1.49GB）——目标=wine 直开地图复现加载崩溃，
+  此后每版出包可本地自测，不再依赖用户手工往返。
+
 ### 2026-10-13 · v0.6 / v0.6m 出包 ✅（英雄重分配 + AI 首版，已托管待测）
 
 - **英雄重分配**（用户提议，技能跟人走、身体换）：
