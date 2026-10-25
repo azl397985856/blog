@@ -209,9 +209,9 @@ class MPQReader:
         if real == 0:
             return b""
         n_sectors = max(1, -(-real // self.block_size))
-        offsets = struct.unpack_from("<%dI" % (n_sectors + 1), self.data, base + off)
+        offsets = struct.unpack_from("<%dI" % (n_sectors + 1), self.data, self.base + off)
         # offsets are relative to the file block start (see MPQWriter.build)
-        return self.data[base + off + offsets[0]:base + off + offsets[-1]]
+        return self.data[self.base + off + offsets[0]:self.base + off + offsets[-1]]
 
 
 if __name__ == "__main__":

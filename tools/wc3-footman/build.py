@@ -95,6 +95,16 @@ def make_w3u(profile):
             obj.mods.append(m)
         m.value = val
 
+    def set_float(obj, mod_id, val):
+        m = obj.get(mod_id)
+        if m is None:
+            m = w3obj.Mod()
+            m.mod_id = mod_id
+            m.value_type = 1  # 底图 107 处 ussc 全是 type=1 float；type=0 int 会触发加载期 CustomObjectField 崩溃
+            m.end = b"\x00\x00\x00\x00"
+            obj.mods.append(m)
+        m.value = val
+
     for rc, spec in BROTHERS.items():
         obj = f.find(rc)
         assert obj, rc
@@ -108,7 +118,9 @@ def make_w3u(profile):
             set_int(obj, b"uclr", r)
             set_int(obj, b"uclg", g)
             set_int(obj, b"uclb", b)
-            set_int(obj, b"ussc", int(100 * spec.get("scale", 1.0)))
+            scale = spec.get("scale", 1.0)
+            if scale != 1.0:  # 底图只给非默认缩放写 ussc
+                set_float(obj, b"ussc", scale)
         if profile.get("models"):
             model = spec.get("model_v04m") or spec.get("model")
             if model:
