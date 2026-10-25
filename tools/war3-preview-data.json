@@ -6163,219 +6163,167 @@
   ]
  },
  "lt2": {
+  "image": "classic LT minimap (1.27a)",
   "objects": [
    {
+    "type": "spawn",
+    "x": 0.5806,
+    "y": 0.9315,
+    "gold": "",
+    "n": ""
+   },
+   {
     "type": "goldmine",
-    "x": 0.0484,
-    "y": 0.3226,
+    "x": 0.6169,
+    "y": 0.9637,
+    "gold": "12500",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.0403,
+    "y": 0.7097,
     "gold": "12500",
     "n": ""
    },
    {
     "type": "goldmine",
     "x": 0.0645,
-    "y": 0.6613,
+    "y": 0.3629,
     "gold": "12500",
     "n": ""
    },
    {
     "type": "laboratory",
-    "x": 0.6815,
-    "y": 0.8226,
+    "x": 0.6794,
+    "y": 0.8145,
     "gold": "",
     "n": ""
    },
    {
     "type": "goldmine",
-    "x": 0.7097,
-    "y": 0.0484,
-    "gold": "12500",
-    "n": ""
-   },
-   {
-    "type": "tavern",
-    "x": 0.3831,
-    "y": 0.3589,
-    "gold": "",
-    "n": ""
-   },
-   {
-    "type": "tavern",
-    "x": 0.6169,
-    "y": 0.6411,
-    "gold": "",
-    "n": ""
-   },
-   {
-    "type": "goldmine",
-    "x": 0.9516,
-    "y": 0.0484,
-    "gold": "12500",
-    "n": ""
-   },
-   {
-    "type": "goldmine",
-    "x": 0.629,
-    "y": 0.9355,
-    "gold": "12500",
-    "n": ""
-   },
-   {
-    "type": "fountainhealth",
-    "x": 0.5,
-    "y": 0.5,
-    "gold": "",
-    "n": ""
-   },
-   {
-    "type": "merchant",
-    "x": 0.3831,
-    "y": 0.6331,
-    "gold": "",
-    "n": ""
-   },
-   {
-    "type": "goldmine",
-    "x": 0.9355,
-    "y": 0.9516,
-    "gold": "12500",
-    "n": ""
-   },
-   {
-    "type": "goldmine",
-    "x": 0.0645,
-    "y": 0.0484,
-    "gold": "12500",
-    "n": ""
-   },
-   {
-    "type": "merchant",
-    "x": 0.6169,
-    "y": 0.3669,
-    "gold": "",
-    "n": ""
-   },
-   {
-    "type": "goldmine",
-    "x": 0.9355,
-    "y": 0.3387,
-    "gold": "12500",
-    "n": ""
-   },
-   {
-    "type": "goldmine",
-    "x": 0.9516,
-    "y": 0.6774,
-    "gold": "12500",
-    "n": ""
-   },
-   {
-    "type": "goldmine",
-    "x": 0.2903,
-    "y": 0.9516,
-    "gold": "12500",
-    "n": ""
-   },
-   {
-    "type": "laboratory",
-    "x": 0.3185,
-    "y": 0.1774,
-    "gold": "",
-    "n": ""
-   },
-   {
-    "type": "goldmine",
-    "x": 0.0484,
-    "y": 0.9516,
-    "gold": "12500",
-    "n": ""
-   },
-   {
-    "type": "goldmine",
-    "x": 0.371,
+    "x": 0.7823,
     "y": 0.0645,
     "gold": "12500",
     "n": ""
    },
    {
-    "type": "marketplace",
-    "x": 0.1855,
-    "y": 0.7137,
-    "gold": "",
-    "n": ""
-   },
-   {
-    "type": "marketplace",
-    "x": 0.8145,
-    "y": 0.2863,
+    "type": "spawn",
+    "x": 0.0726,
+    "y": 0.6734,
     "gold": "",
     "n": ""
    },
    {
     "type": "spawn",
-    "x": 0.0968,
-    "y": 0.625,
+    "x": 0.4637,
+    "y": 0.1048,
     "gold": "",
     "n": ""
    },
    {
     "type": "spawn",
-    "x": 0.4073,
-    "y": 0.0968,
+    "x": 0.9315,
+    "y": 0.3871,
     "gold": "",
     "n": ""
    },
    {
-    "type": "spawn",
-    "x": 0.9032,
-    "y": 0.375,
+    "type": "goldmine",
+    "x": 0.9516,
+    "y": 0.0484,
+    "gold": "12500",
+    "n": ""
+   },
+   {
+    "type": "fountainhealth",
+    "x": 0.496,
+    "y": 0.504,
     "gold": "",
     "n": ""
    },
    {
-    "type": "spawn",
-    "x": 0.5968,
-    "y": 0.9032,
+    "type": "merchant",
+    "x": 0.1613,
+    "y": 0.7702,
+    "gold": "",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.0363,
+    "y": 0.9718,
+    "gold": "12500",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.4355,
+    "y": 0.0645,
+    "gold": "12500",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.9597,
+    "y": 0.9798,
+    "gold": "12500",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.0363,
+    "y": 0.0403,
+    "gold": "12500",
+    "n": ""
+   },
+   {
+    "type": "merchant",
+    "x": 0.8508,
+    "y": 0.2823,
+    "gold": "",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.9597,
+    "y": 0.3468,
+    "gold": "12500",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.9435,
+    "y": 0.6855,
+    "gold": "12500",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.2621,
+    "y": 0.9718,
+    "gold": "12500",
+    "n": ""
+   },
+   {
+    "type": "laboratory",
+    "x": 0.3266,
+    "y": 0.2137,
     "gold": "",
     "n": ""
    }
   ],
   "spots": [
    {
-    "x": 0.5848,
-    "y": 0.4156,
-    "level": "easy",
-    "creeps": [
-     {
-      "name": "Gnoll Poacher",
-      "count": 1,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Gnoll Brute",
-      "count": 1,
-      "item": "Power Up",
-      "ilvl": "1"
-     },
-     {
-      "name": "Ogre Mauler",
-      "count": 1,
-      "item": "Permanent",
-      "ilvl": "2"
-     }
-    ]
-   },
-   {
-    "x": 0.0651,
-    "y": 0.3395,
+    "x": 0.9426,
+    "y": 0.6732,
     "level": "medium",
     "creeps": [
      {
       "name": "Forest Troll Berserker",
       "count": 2,
-      "item": "Power Up",
-      "ilvl": "1"
+      "item": "Permanent",
+      "ilvl": "2"
      },
      {
       "name": "Forest Troll Shadow Priest",
@@ -6392,69 +6340,56 @@
     ]
    },
    {
-    "x": 0.613,
-    "y": 0.9192,
+    "x": 0.062,
+    "y": 0.6862,
     "level": "medium",
     "creeps": [
      {
       "name": "Forest Troll Berserker",
       "count": 3,
-      "item": "Power Up",
-      "ilvl": "1"
+      "item": "Permanent",
+      "ilvl": "4"
      },
      {
       "name": "Rock Golem",
       "count": 1,
-      "item": "Permanent",
-      "ilvl": "4"
+      "item": "",
+      "ilvl": ""
      }
     ]
    },
    {
-    "x": 0.0802,
-    "y": 0.6452,
+    "x": 0.9472,
+    "y": 0.3692,
     "level": "medium",
     "creeps": [
      {
       "name": "Forest Troll Berserker",
       "count": 3,
-      "item": "Power Up",
-      "ilvl": "1"
+      "item": "Permanent",
+      "ilvl": "4"
      },
      {
       "name": "Rock Golem",
       "count": 1,
-      "item": "Permanent",
-      "ilvl": "4"
+      "item": "",
+      "ilvl": ""
      }
     ]
    },
    {
-    "x": 0.9198,
-    "y": 0.3548,
-    "level": "medium",
-    "creeps": [
-     {
-      "name": "Forest Troll Berserker",
-      "count": 3,
-      "item": "Power Up",
-      "ilvl": "1"
-     },
-     {
-      "name": "Rock Golem",
-      "count": 1,
-      "item": "Permanent",
-      "ilvl": "4"
-     }
-    ]
-   },
-   {
-    "x": 0.4999,
-    "y": 0.5002,
+    "x": 0.4962,
+    "y": 0.5032,
     "level": "hard",
     "creeps": [
      {
-      "name": "Gnoll Poacher",
+      "name": "Gnoll Warden",
+      "count": 2,
+      "item": "Charged",
+      "ilvl": "4"
+     },
+     {
+      "name": "Gnoll Overseer",
       "count": 2,
       "item": "",
       "ilvl": ""
@@ -6466,13 +6401,7 @@
       "ilvl": ""
      },
      {
-      "name": "Gnoll Overseer",
-      "count": 2,
-      "item": "Charged",
-      "ilvl": "3"
-     },
-     {
-      "name": "Gnoll Warden",
+      "name": "Gnoll Poacher",
       "count": 2,
       "item": "",
       "ilvl": ""
@@ -6480,41 +6409,10 @@
     ]
    },
    {
-    "x": 0.8046,
-    "y": 0.2945,
+    "x": 0.0452,
+    "y": 0.957,
     "level": "medium",
     "creeps": [
-     {
-      "name": "Forest Troll Berserker",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Forest Troll High Priest",
-      "count": 1,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Rock Golem",
-      "count": 1,
-      "item": "Charged",
-      "ilvl": "4"
-     }
-    ]
-   },
-   {
-    "x": 0.693,
-    "y": 0.0651,
-    "level": "medium",
-    "creeps": [
-     {
-      "name": "Forest Troll Berserker",
-      "count": 2,
-      "item": "Permanent",
-      "ilvl": "2"
-     },
      {
       "name": "Forest Troll Shadow Priest",
       "count": 1,
@@ -6522,6 +6420,18 @@
       "ilvl": ""
      },
      {
+      "name": "Forest Troll Berserker",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Rock Golem",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
       "name": "Ogre Warrior",
       "count": 1,
       "item": "",
@@ -6530,90 +6440,90 @@
     ]
    },
    {
-    "x": 0.6693,
-    "y": 0.8066,
-    "level": "hard",
-    "creeps": [
-     {
-      "name": "Forest Troll Trapper",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Ogre Lord",
-      "count": 1,
-      "item": "Permanent",
-      "ilvl": "5"
-     },
-     {
-      "name": "Ogre Warrior",
-      "count": 1,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Ogre Magi",
-      "count": 1,
-      "item": "Power Up",
-      "ilvl": "2"
-     }
-    ]
-   },
-   {
-    "x": 0.4152,
-    "y": 0.5847,
+    "x": 0.5735,
+    "y": 0.4263,
     "level": "easy",
     "creeps": [
-     {
-      "name": "Gnoll Poacher",
-      "count": 1,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Gnoll Brute",
-      "count": 1,
-      "item": "Power Up",
-      "ilvl": "1"
-     },
      {
       "name": "Ogre Mauler",
       "count": 1,
       "item": "Permanent",
       "ilvl": "2"
-     }
-    ]
-   },
-   {
-    "x": 0.3738,
-    "y": 0.6424,
-    "level": "medium",
-    "creeps": [
+     },
      {
-      "name": "Forest Troll Berserker",
-      "count": 2,
+      "name": "Gnoll Poacher",
+      "count": 1,
       "item": "",
       "ilvl": ""
      },
      {
-      "name": "Ogre Magi",
+      "name": "Gnoll Brute",
       "count": 1,
-      "item": "Permanent",
-      "ilvl": "3"
+      "item": "",
+      "ilvl": ""
      }
     ]
    },
    {
-    "x": 0.1957,
-    "y": 0.7057,
+    "x": 0.668,
+    "y": 0.7966,
+    "level": "hard",
+    "creeps": [
+     {
+      "name": "Forest Troll Trapper",
+      "count": 2,
+      "item": "Permanent",
+      "ilvl": "5"
+     },
+     {
+      "name": "Ogre Magi",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Ogre Warrior",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Ogre Lord",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.6549,
+    "y": 0.5057,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Gnoll Poacher",
+      "count": 2,
+      "item": "Permanent",
+      "ilvl": "1"
+     },
+     {
+      "name": "Gnoll Brute",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.1826,
+    "y": 0.7725,
     "level": "medium",
     "creeps": [
      {
       "name": "Forest Troll Berserker",
       "count": 2,
-      "item": "",
-      "ilvl": ""
+      "item": "Permanent",
+      "ilvl": "4"
      },
      {
       "name": "Forest Troll High Priest",
@@ -6624,16 +6534,22 @@
      {
       "name": "Rock Golem",
       "count": 1,
-      "item": "Charged",
-      "ilvl": "4"
+      "item": "",
+      "ilvl": ""
      }
     ]
    },
    {
-    "x": 0.4138,
-    "y": 0.4141,
+    "x": 0.4194,
+    "y": 0.4254,
     "level": "easy",
     "creeps": [
+     {
+      "name": "Forest Troll Trapper",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "1"
+     },
      {
       "name": "Forest Troll Shadow Priest",
       "count": 1,
@@ -6643,27 +6559,21 @@
      {
       "name": "Forest Troll Berserker",
       "count": 1,
-      "item": "Permanent",
-      "ilvl": "2"
-     },
-     {
-      "name": "Forest Troll Trapper",
-      "count": 1,
       "item": "",
       "ilvl": ""
      }
     ]
    },
    {
-    "x": 0.5433,
-    "y": 0.1969,
+    "x": 0.42,
+    "y": 0.5836,
     "level": "easy",
     "creeps": [
      {
-      "name": "Forest Troll Trapper",
+      "name": "Gnoll Brute",
       "count": 1,
-      "item": "",
-      "ilvl": ""
+      "item": "Permanent",
+      "ilvl": "2"
      },
      {
       "name": "Gnoll Poacher",
@@ -6672,88 +6582,7 @@
       "ilvl": ""
      },
      {
-      "name": "Gnoll Brute",
-      "count": 1,
-      "item": "Permanent",
-      "ilvl": "1"
-     }
-    ]
-   },
-   {
-    "x": 0.3303,
-    "y": 0.1937,
-    "level": "hard",
-    "creeps": [
-     {
-      "name": "Forest Troll Trapper",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Ogre Lord",
-      "count": 1,
-      "item": "Permanent",
-      "ilvl": "5"
-     },
-     {
-      "name": "Ogre Warrior",
-      "count": 1,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Ogre Magi",
-      "count": 1,
-      "item": "Power Up",
-      "ilvl": "2"
-     }
-    ]
-   },
-   {
-    "x": 0.0738,
-    "y": 0.0577,
-    "level": "hard",
-    "creeps": [
-     {
-      "name": "Forest Troll",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Red Drake",
-      "count": 2,
-      "item": "Power Up",
-      "ilvl": "2"
-     },
-     {
-      "name": "Granite Golem",
-      "count": 1,
-      "item": "Charged",
-      "ilvl": "6"
-     }
-    ]
-   },
-   {
-    "x": 0.3068,
-    "y": 0.9348,
-    "level": "medium",
-    "creeps": [
-     {
-      "name": "Forest Troll Berserker",
-      "count": 2,
-      "item": "Permanent",
-      "ilvl": "2"
-     },
-     {
-      "name": "Forest Troll Shadow Priest",
-      "count": 1,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Ogre Warrior",
+      "name": "Ogre Mauler",
       "count": 1,
       "item": "",
       "ilvl": ""
@@ -6761,174 +6590,37 @@
     ]
    },
    {
-    "x": 0.9258,
-    "y": 0.9418,
-    "level": "hard",
-    "creeps": [
-     {
-      "name": "Forest Troll",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Red Drake",
-      "count": 2,
-      "item": "Power Up",
-      "ilvl": "2"
-     },
-     {
-      "name": "Granite Golem",
-      "count": 1,
-      "item": "Charged",
-      "ilvl": "6"
-     }
-    ]
-   },
-   {
-    "x": 0.387,
-    "y": 0.0808,
+    "x": 0.4556,
+    "y": 0.0884,
     "level": "medium",
     "creeps": [
      {
       "name": "Forest Troll Berserker",
       "count": 3,
-      "item": "Power Up",
-      "ilvl": "1"
+      "item": "Permanent",
+      "ilvl": "4"
      },
      {
       "name": "Rock Golem",
       "count": 1,
-      "item": "Permanent",
-      "ilvl": "4"
-     }
-    ]
-   },
-   {
-    "x": 0.5859,
-    "y": 0.586,
-    "level": "easy",
-    "creeps": [
-     {
-      "name": "Forest Troll Shadow Priest",
-      "count": 1,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Forest Troll Berserker",
-      "count": 1,
-      "item": "Permanent",
-      "ilvl": "2"
-     },
-     {
-      "name": "Forest Troll Trapper",
-      "count": 1,
       "item": "",
       "ilvl": ""
      }
     ]
    },
    {
-    "x": 0.6562,
-    "y": 0.5771,
+    "x": 0.5962,
+    "y": 0.9481,
     "level": "medium",
     "creeps": [
      {
-      "name": "Enraged Elemental",
-      "count": 2,
-      "item": "Power Up",
-      "ilvl": "2"
-     },
-     {
-      "name": "Renegade Wizard",
-      "count": 1,
-      "item": "Charged",
-      "ilvl": "2"
-     }
-    ]
-   },
-   {
-    "x": 0.8033,
-    "y": 0.5097,
-    "level": "easy",
-    "creeps": [
-     {
-      "name": "Forest Troll Trapper",
-      "count": 1,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Gnoll Poacher",
-      "count": 1,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Gnoll Brute",
-      "count": 1,
+      "name": "Forest Troll Berserker",
+      "count": 3,
       "item": "Permanent",
-      "ilvl": "1"
-     }
-    ]
-   },
-   {
-    "x": 0.196,
-    "y": 0.4906,
-    "level": "easy",
-    "creeps": [
-     {
-      "name": "Forest Troll Trapper",
-      "count": 1,
-      "item": "",
-      "ilvl": ""
+      "ilvl": "4"
      },
      {
-      "name": "Gnoll Poacher",
-      "count": 1,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Gnoll Brute",
-      "count": 1,
-      "item": "Permanent",
-      "ilvl": "1"
-     }
-    ]
-   },
-   {
-    "x": 0.9388,
-    "y": 0.0614,
-    "level": "hard",
-    "creeps": [
-     {
-      "name": "Assassin",
-      "count": 1,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Black Drake",
-      "count": 1,
-      "item": "Power Up",
-      "ilvl": "2"
-     },
-     {
-      "name": "Brigand",
-      "count": 1,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Berserk Elemental",
-      "count": 1,
-      "item": "Permanent",
-      "ilvl": "6"
-     },
-     {
-      "name": "Enforcer",
+      "name": "Rock Golem",
       "count": 1,
       "item": "",
       "ilvl": ""
@@ -6936,8 +6628,8 @@
     ]
    },
    {
-    "x": 0.9349,
-    "y": 0.6609,
+    "x": 0.7707,
+    "y": 0.0694,
     "level": "medium",
     "creeps": [
      {
@@ -6961,10 +6653,178 @@
     ]
    },
    {
-    "x": 0.4573,
-    "y": 0.8018,
+    "x": 0.3486,
+    "y": 0.2192,
+    "level": "hard",
+    "creeps": [
+     {
+      "name": "Forest Troll Trapper",
+      "count": 2,
+      "item": "Permanent",
+      "ilvl": "5"
+     },
+     {
+      "name": "Ogre Lord",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Ogre Warrior",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Ogre Magi",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.0554,
+    "y": 0.0589,
+    "level": "hard",
+    "creeps": [
+     {
+      "name": "Red Drake",
+      "count": 2,
+      "item": "Charged",
+      "ilvl": "6"
+     },
+     {
+      "name": "Forest Troll",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Granite Golem",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.9505,
+    "y": 0.0748,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Ogre Warrior",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Rock Golem",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Forest Troll Berserker",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Forest Troll Shadow Priest",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.9463,
+    "y": 0.968,
+    "level": "hard",
+    "creeps": [
+     {
+      "name": "Red Drake",
+      "count": 2,
+      "item": "Charged",
+      "ilvl": "6"
+     },
+     {
+      "name": "Forest Troll",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Granite Golem",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.2733,
+    "y": 0.9717,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Forest Troll Berserker",
+      "count": 2,
+      "item": "Permanent",
+      "ilvl": "2"
+     },
+     {
+      "name": "Ogre Warrior",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Forest Troll Shadow Priest",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.8388,
+    "y": 0.2781,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Forest Troll Berserker",
+      "count": 2,
+      "item": "Permanent",
+      "ilvl": "4"
+     },
+     {
+      "name": "Rock Golem",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Forest Troll High Priest",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.5738,
+    "y": 0.5833,
     "level": "easy",
     "creeps": [
+     {
+      "name": "Forest Troll Shadow Priest",
+      "count": 1,
+      "item": "Permanent",
+      "ilvl": "1"
+     },
      {
       "name": "Forest Troll Trapper",
       "count": 1,
@@ -6972,50 +6832,45 @@
       "ilvl": ""
      },
      {
-      "name": "Gnoll Poacher",
+      "name": "Forest Troll Berserker",
       "count": 1,
       "item": "",
       "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.4967,
+    "y": 0.6568,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Gnoll Poacher",
+      "count": 2,
+      "item": "Permanent",
+      "ilvl": "1"
      },
      {
       "name": "Gnoll Brute",
       "count": 1,
-      "item": "Permanent",
-      "ilvl": "1"
+      "item": "",
+      "ilvl": ""
      }
     ]
    },
    {
-    "x": 0.0612,
-    "y": 0.9387,
-    "level": "hard",
+    "x": 0.3479,
+    "y": 0.5034,
+    "level": "easy",
     "creeps": [
      {
-      "name": "Assassin",
-      "count": 1,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Black Drake",
-      "count": 1,
-      "item": "Power Up",
-      "ilvl": "2"
-     },
-     {
-      "name": "Brigand",
-      "count": 1,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Berserk Elemental",
-      "count": 1,
+      "name": "Gnoll Poacher",
+      "count": 2,
       "item": "Permanent",
-      "ilvl": "6"
+      "ilvl": "1"
      },
      {
-      "name": "Enforcer",
+      "name": "Gnoll Brute",
       "count": 1,
       "item": "",
       "ilvl": ""
@@ -7023,109 +6878,80 @@
     ]
    },
    {
-    "x": 0.6263,
-    "y": 0.3574,
+    "x": 0.4974,
+    "y": 0.3616,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Gnoll Poacher",
+      "count": 2,
+      "item": "Permanent",
+      "ilvl": "1"
+     },
+     {
+      "name": "Gnoll Brute",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.065,
+    "y": 0.3755,
     "level": "medium",
     "creeps": [
      {
       "name": "Forest Troll Berserker",
       "count": 2,
+      "item": "Permanent",
+      "ilvl": "2"
+     },
+     {
+      "name": "Forest Troll Shadow Priest",
+      "count": 1,
       "item": "",
       "ilvl": ""
      },
      {
-      "name": "Ogre Magi",
+      "name": "Ogre Warrior",
       "count": 1,
-      "item": "Permanent",
-      "ilvl": "3"
-     }
-    ]
-   },
-   {
-    "x": 0.3442,
-    "y": 0.4235,
-    "level": "medium",
-    "creeps": [
-     {
-      "name": "Enraged Elemental",
-      "count": 2,
-      "item": "Power Up",
-      "ilvl": "2"
-     },
-     {
-      "name": "Renegade Wizard",
-      "count": 1,
-      "item": "Charged",
-      "ilvl": "2"
+      "item": "",
+      "ilvl": ""
      }
     ]
    }
-  ],
-  "image": "LostTemple2 ladder minimap (wc3maps)"
+  ]
  },
  "tr2": {
+  "image": "classic TR minimap (1.27a)",
   "objects": [
    {
     "type": "spawn",
     "x": 0.3413,
     "y": 0.1538,
     "gold": "",
-    "n": "1"
-   },
-   {
-    "type": "spawn",
-    "x": 0.1058,
-    "y": 0.3798,
-    "gold": "",
-    "n": "2"
+    "n": ""
    },
    {
     "type": "spawn",
     "x": 0.9038,
     "y": 0.6587,
     "gold": "",
-    "n": "3"
+    "n": ""
    },
    {
     "type": "spawn",
     "x": 0.6971,
     "y": 0.8942,
     "gold": "",
-    "n": "4"
-   },
-   {
-    "type": "goldmine",
-    "x": 0.9423,
-    "y": 0.7019,
-    "gold": "12500",
     "n": ""
    },
    {
-    "type": "goldmine",
-    "x": 0.0673,
-    "y": 0.3365,
-    "gold": "12500",
-    "n": ""
-   },
-   {
-    "type": "goldmine",
-    "x": 0.3077,
-    "y": 0.1058,
-    "gold": "12500",
-    "n": ""
-   },
-   {
-    "type": "goldmine",
-    "x": 0.7308,
-    "y": 0.9423,
-    "gold": "12500",
-    "n": ""
-   },
-   {
-    "type": "goldmine",
-    "x": 0.7308,
-    "y": 0.5192,
-    "gold": "12500",
+    "type": "spawn",
+    "x": 0.1058,
+    "y": 0.3798,
+    "gold": "",
     "n": ""
    },
    {
@@ -7137,9 +6963,23 @@
    },
    {
     "type": "goldmine",
-    "x": 0.8606,
-    "y": 0.1587,
-    "gold": "12500",
+    "x": 0.0673,
+    "y": 0.3365,
+    "gold": "15000",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.7308,
+    "y": 0.9423,
+    "gold": "15000",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.9423,
+    "y": 0.7019,
+    "gold": "15000",
     "n": ""
    },
    {
@@ -7150,10 +6990,10 @@
     "n": ""
    },
    {
-    "type": "merchant",
-    "x": 0.2788,
-    "y": 0.7788,
-    "gold": "",
+    "type": "goldmine",
+    "x": 0.5096,
+    "y": 0.3317,
+    "gold": "12500",
     "n": ""
    },
    {
@@ -7165,8 +7005,8 @@
    },
    {
     "type": "goldmine",
-    "x": 0.5096,
-    "y": 0.3317,
+    "x": 0.8606,
+    "y": 0.1587,
     "gold": "12500",
     "n": ""
    },
@@ -7174,6 +7014,27 @@
     "type": "goldmine",
     "x": 0.3077,
     "y": 0.5481,
+    "gold": "12500",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.3077,
+    "y": 0.1058,
+    "gold": "12500",
+    "n": ""
+   },
+   {
+    "type": "merchant",
+    "x": 0.2788,
+    "y": 0.7788,
+    "gold": "",
+    "n": ""
+   },
+   {
+    "type": "goldmine",
+    "x": 0.7308,
+    "y": 0.5192,
     "gold": "12500",
     "n": ""
    },
@@ -7187,60 +7048,16 @@
   ],
   "spots": [
    {
-    "x": 0.9078,
-    "y": 0.6718,
-    "level": "medium",
+    "x": 0.1951,
+    "y": 0.8552,
+    "level": "hard",
     "creeps": [
-     {
-      "name": "Forest Troll Trapper",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
      {
       "name": "Ogre Warrior",
       "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Forest Troll Warlord",
-      "count": 1,
       "item": "Permanent",
-      "ilvl": "4"
-     }
-    ]
-   },
-   {
-    "x": 0.8145,
-    "y": 0.7825,
-    "level": "medium",
-    "creeps": [
-     {
-      "name": "Giant Sea Turtle",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
+      "ilvl": "5"
      },
-     {
-      "name": "Spider Crab Behemoth",
-      "count": 1,
-      "item": "Permanent",
-      "ilvl": "3"
-     },
-     {
-      "name": "Spider Crab Shorecrawler",
-      "count": 1,
-      "item": "",
-      "ilvl": ""
-     }
-    ]
-   },
-   {
-    "x": 0.8445,
-    "y": 0.1736,
-    "level": "hard",
-    "creeps": [
      {
       "name": "Forest Troll Berserker",
       "count": 2,
@@ -7248,72 +7065,16 @@
       "ilvl": ""
      },
      {
-      "name": "Ogre Warrior",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
       "name": "Ogre Lord",
       "count": 1,
-      "item": "Permanent",
-      "ilvl": "5"
-     },
-     {
-      "name": "Ogre Magi",
-      "count": 1,
-      "item": "Power Up",
-      "ilvl": "2"
-     }
-    ]
-   },
-   {
-    "x": 0.2036,
-    "y": 0.2357,
-    "level": "medium",
-    "creeps": [
-     {
-      "name": "Giant Sea Turtle",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Spider Crab Behemoth",
-      "count": 1,
-      "item": "Permanent",
-      "ilvl": "3"
-     },
-     {
-      "name": "Spider Crab Shorecrawler",
-      "count": 1,
-      "item": "",
-      "ilvl": ""
-     }
-    ]
-   },
-   {
-    "x": 0.2903,
-    "y": 0.7622,
-    "level": "medium",
-    "creeps": [
-     {
-      "name": "Forest Troll Trapper",
-      "count": 2,
-      "item": "Power Up",
-      "ilvl": "2"
-     },
-     {
-      "name": "Ogre Warrior",
-      "count": 2,
       "item": "",
       "ilvl": ""
      },
      {
       "name": "Ogre Magi",
       "count": 1,
-      "item": "Permanent",
-      "ilvl": "3"
+      "item": "",
+      "ilvl": ""
      }
     ]
    },
@@ -7325,64 +7086,14 @@
      {
       "name": "Giant Sea Turtle",
       "count": 2,
-      "item": "Power Up",
-      "ilvl": "1"
+      "item": "Charged",
+      "ilvl": "3"
      },
      {
       "name": "Gargantuan Sea Turtle",
       "count": 1,
-      "item": "Charged",
-      "ilvl": "3"
-     }
-    ]
-   },
-   {
-    "x": 0.7143,
-    "y": 0.507,
-    "level": "medium",
-    "creeps": [
-     {
-      "name": "Giant Sea Turtle",
-      "count": 2,
-      "item": "Power Up",
-      "ilvl": "1"
-     },
-     {
-      "name": "Gargantuan Sea Turtle",
-      "count": 1,
-      "item": "Charged",
-      "ilvl": "3"
-     }
-    ]
-   },
-   {
-    "x": 0.1905,
-    "y": 0.8513,
-    "level": "hard",
-    "creeps": [
-     {
-      "name": "Forest Troll Berserker",
-      "count": 2,
       "item": "",
       "ilvl": ""
-     },
-     {
-      "name": "Ogre Warrior",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Ogre Lord",
-      "count": 1,
-      "item": "Permanent",
-      "ilvl": "5"
-     },
-     {
-      "name": "Ogre Magi",
-      "count": 1,
-      "item": "Power Up",
-      "ilvl": "2"
      }
     ]
    },
@@ -7394,8 +7105,8 @@
      {
       "name": "Forest Troll Trapper",
       "count": 2,
-      "item": "Power Up",
-      "ilvl": "2"
+      "item": "Permanent",
+      "ilvl": "3"
      },
      {
       "name": "Ogre Warrior",
@@ -7406,254 +7117,46 @@
      {
       "name": "Ogre Magi",
       "count": 1,
-      "item": "Permanent",
-      "ilvl": "3"
+      "item": "",
+      "ilvl": ""
      }
     ]
    },
    {
-    "x": 0.7075,
-    "y": 0.9096,
-    "level": "medium",
-    "creeps": [
-     {
-      "name": "Forest Troll Trapper",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Ogre Warrior",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Forest Troll Warlord",
-      "count": 1,
-      "item": "Permanent",
-      "ilvl": "4"
-     }
-    ]
-   },
-   {
-    "x": 0.7932,
-    "y": 0.5441,
+    "x": 0.7884,
+    "y": 0.5537,
     "level": "easy",
     "creeps": [
      {
       "name": "Sea Turtle Hatchling",
       "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Giant Sea Turtle",
-      "count": 1,
       "item": "Permanent",
       "ilvl": "1"
-     }
-    ]
-   },
-   {
-    "x": 0.5213,
-    "y": 0.3443,
-    "level": "medium",
-    "creeps": [
+     },
      {
       "name": "Giant Sea Turtle",
-      "count": 2,
-      "item": "Power Up",
-      "ilvl": "1"
-     },
-     {
-      "name": "Gargantuan Sea Turtle",
       "count": 1,
-      "item": "Charged",
-      "ilvl": "3"
-     }
-    ]
-   },
-   {
-    "x": 0.325,
-    "y": 0.5543,
-    "level": "medium",
-    "creeps": [
-     {
-      "name": "Giant Sea Turtle",
-      "count": 2,
-      "item": "Power Up",
-      "ilvl": "1"
-     },
-     {
-      "name": "Gargantuan Sea Turtle",
-      "count": 1,
-      "item": "Charged",
-      "ilvl": "3"
-     }
-    ]
-   },
-   {
-    "x": 0.0915,
-    "y": 0.3573,
-    "level": "medium",
-    "creeps": [
-     {
-      "name": "Forest Troll Trapper",
-      "count": 2,
       "item": "",
       "ilvl": ""
-     },
-     {
-      "name": "Ogre Warrior",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Forest Troll Warlord",
-      "count": 1,
-      "item": "Permanent",
-      "ilvl": "4"
      }
     ]
    },
    {
-    "x": 0.4171,
-    "y": 0.9147,
+    "x": 0.1066,
+    "y": 0.6752,
     "level": "easy",
     "creeps": [
      {
       "name": "Forest Troll",
       "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Ogre Warrior",
-      "count": 2,
       "item": "Permanent",
       "ilvl": "2"
-     }
-    ]
-   },
-   {
-    "x": 0.5808,
-    "y": 0.7754,
-    "level": "easy",
-    "creeps": [
-     {
-      "name": "Sea Turtle Hatchling",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Giant Sea Turtle",
-      "count": 1,
-      "item": "Permanent",
-      "ilvl": "1"
-     }
-    ]
-   },
-   {
-    "x": 0.8955,
-    "y": 0.3832,
-    "level": "easy",
-    "creeps": [
-     {
-      "name": "Forest Troll",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Ogre Warrior",
-      "count": 2,
-      "item": "Permanent",
-      "ilvl": "2"
-     }
-    ]
-   },
-   {
-    "x": 0.6085,
-    "y": 0.0825,
-    "level": "easy",
-    "creeps": [
-     {
-      "name": "Forest Troll",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Ogre Warrior",
-      "count": 2,
-      "item": "Permanent",
-      "ilvl": "2"
-     }
-    ]
-   },
-   {
-    "x": 0.1075,
-    "y": 0.6811,
-    "level": "easy",
-    "creeps": [
-     {
-      "name": "Forest Troll",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Ogre Warrior",
-      "count": 2,
-      "item": "Permanent",
-      "ilvl": "2"
-     }
-    ]
-   },
-   {
-    "x": 0.3242,
-    "y": 0.1342,
-    "level": "medium",
-    "creeps": [
-     {
-      "name": "Forest Troll Trapper",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
      },
      {
       "name": "Ogre Warrior",
       "count": 2,
       "item": "",
       "ilvl": ""
-     },
-     {
-      "name": "Forest Troll Warlord",
-      "count": 1,
-      "item": "Permanent",
-      "ilvl": "4"
-     }
-    ]
-   },
-   {
-    "x": 0.2431,
-    "y": 0.4992,
-    "level": "easy",
-    "creeps": [
-     {
-      "name": "Sea Turtle Hatchling",
-      "count": 2,
-      "item": "",
-      "ilvl": ""
-     },
-     {
-      "name": "Giant Sea Turtle",
-      "count": 1,
-      "item": "Permanent",
-      "ilvl": "1"
      }
     ]
    },
@@ -7665,18 +7168,375 @@
      {
       "name": "Sea Turtle Hatchling",
       "count": 2,
-      "item": "",
-      "ilvl": ""
+      "item": "Permanent",
+      "ilvl": "1"
      },
      {
       "name": "Giant Sea Turtle",
       "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.5213,
+    "y": 0.3443,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Giant Sea Turtle",
+      "count": 2,
+      "item": "Charged",
+      "ilvl": "3"
+     },
+     {
+      "name": "Gargantuan Sea Turtle",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.0906,
+    "y": 0.3573,
+    "level": "hard",
+    "creeps": [
+     {
+      "name": "Forest Troll Berserker",
+      "count": 2,
+      "item": "Permanent",
+      "ilvl": "4"
+     },
+     {
+      "name": "Ogre Warrior",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Forest Troll Warlord",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.7143,
+    "y": 0.507,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Giant Sea Turtle",
+      "count": 2,
+      "item": "Charged",
+      "ilvl": "3"
+     },
+     {
+      "name": "Gargantuan Sea Turtle",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.325,
+    "y": 0.5543,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Giant Sea Turtle",
+      "count": 2,
+      "item": "Charged",
+      "ilvl": "3"
+     },
+     {
+      "name": "Gargantuan Sea Turtle",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.2038,
+    "y": 0.2395,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Murloc Nightcrawler",
+      "count": 2,
+      "item": "Charged",
+      "ilvl": "3"
+     },
+     {
+      "name": "Murloc Huntsman",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Gargantuan Sea Turtle",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.2431,
+    "y": 0.4992,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Sea Turtle Hatchling",
+      "count": 2,
       "item": "Permanent",
       "ilvl": "1"
+     },
+     {
+      "name": "Giant Sea Turtle",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.6085,
+    "y": 0.0825,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Ogre Warrior",
+      "count": 2,
+      "item": "Permanent",
+      "ilvl": "2"
+     },
+     {
+      "name": "Forest Troll",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.7086,
+    "y": 0.9124,
+    "level": "hard",
+    "creeps": [
+     {
+      "name": "Ogre Warrior",
+      "count": 2,
+      "item": "Permanent",
+      "ilvl": "4"
+     },
+     {
+      "name": "Forest Troll Berserker",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Forest Troll Warlord",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.2902,
+    "y": 0.7627,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Ogre Warrior",
+      "count": 2,
+      "item": "Permanent",
+      "ilvl": "3"
+     },
+     {
+      "name": "Forest Troll Trapper",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Ogre Magi",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.9077,
+    "y": 0.6758,
+    "level": "hard",
+    "creeps": [
+     {
+      "name": "Ogre Warrior",
+      "count": 2,
+      "item": "Permanent",
+      "ilvl": "4"
+     },
+     {
+      "name": "Forest Troll Berserker",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Forest Troll Warlord",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.3239,
+    "y": 0.1345,
+    "level": "hard",
+    "creeps": [
+     {
+      "name": "Forest Troll Berserker",
+      "count": 2,
+      "item": "Permanent",
+      "ilvl": "4"
+     },
+     {
+      "name": "Ogre Warrior",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Forest Troll Warlord",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.5808,
+    "y": 0.7754,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Sea Turtle Hatchling",
+      "count": 2,
+      "item": "Permanent",
+      "ilvl": "1"
+     },
+     {
+      "name": "Giant Sea Turtle",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.4171,
+    "y": 0.9144,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Ogre Warrior",
+      "count": 2,
+      "item": "Permanent",
+      "ilvl": "2"
+     },
+     {
+      "name": "Forest Troll",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.8955,
+    "y": 0.3832,
+    "level": "easy",
+    "creeps": [
+     {
+      "name": "Ogre Warrior",
+      "count": 2,
+      "item": "Permanent",
+      "ilvl": "2"
+     },
+     {
+      "name": "Forest Troll",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.8447,
+    "y": 0.1728,
+    "level": "hard",
+    "creeps": [
+     {
+      "name": "Forest Troll Berserker",
+      "count": 2,
+      "item": "Permanent",
+      "ilvl": "5"
+     },
+     {
+      "name": "Ogre Warrior",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Ogre Lord",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Ogre Magi",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
+     }
+    ]
+   },
+   {
+    "x": 0.81,
+    "y": 0.7802,
+    "level": "medium",
+    "creeps": [
+     {
+      "name": "Murloc Nightcrawler",
+      "count": 2,
+      "item": "Charged",
+      "ilvl": "3"
+     },
+     {
+      "name": "Murloc Huntsman",
+      "count": 2,
+      "item": "",
+      "ilvl": ""
+     },
+     {
+      "name": "Gargantuan Sea Turtle",
+      "count": 1,
+      "item": "",
+      "ilvl": ""
      }
     ]
    }
-  ],
-  "image": "TurtleRock2 ladder minimap (wc3maps)"
+  ]
  }
 }
