@@ -115,8 +115,9 @@ class ObjFile:
                     else:
                         m.value = struct.unpack_from("<i", data, p)[0]
                         p += 4
-                    m.end = data[p:p + 4]
-                    p += 4
+                    if use_optional_ints:
+                        m.end = data[p:p + 4]
+                        p += 4
                     obj.mods.append(m)
                 objs.append(obj)
             f.tables[ti] = objs

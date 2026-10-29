@@ -119,14 +119,24 @@ class MPQWriter:
                 # offset table itself is at its head), so entry 0 = table size.
                 # StormLib: RawFilePos = block_offset + SectorOffsets[i].
                 table_len = 4 * (n_sectors + 1)
+                # Compress each sector (zlib raw deflate, mask 0x02) like
+                # Blizzard maps do (flags 0x80000200); stored (mask 0) when
+                # incompressible. Storm never sees the uncompressed
+                # multi-sector path on real maps.
+                import zlib
+                body = bytearray()
                 offsets = [table_len]
-                for i in range(1, n_sectors + 1):
-                    offsets.append(table_len + min(i * self.block_size, len(data)))
+                for i in range(n_sectors):
+                    sector = data[i * self.block_size:(i + 1) * self.block_size]
+                    co = zlib.compressobj(6, zlib.DEFLATED, 15)
+                    comp = co.compress(sector) + co.flush()
+                    body += b"\x02" + comp
+                    offsets.append(table_len + len(body))
                 sector_table = struct.pack("<%dI" % len(offsets), *offsets)
-                assert offsets[-1] == len(sector_table) + len(data)
-                blob = sector_table + data
+                assert offsets[-1] == len(sector_table) + len(body)
+                blob = sector_table + bytes(body)
                 blocks.append((pos, len(blob), len(data),
-                               FLAG_EXISTS))
+                               FLAG_EXISTS | 0x00000200))
             else:  # zero-length file: no sector table
                 blob = b""
                 blocks.append((pos, 0, 0, FLAG_EXISTS))
@@ -205,13 +215,32 @@ class MPQReader:
         key = (_mpq_hash(name, MPQ_HASH_NAME_A), _mpq_hash(name, MPQ_HASH_NAME_B))
         idx = self.slots[key]
         off, arch, real, flags = self.block_table[idx * 4:idx * 4 + 4]
-        assert flags & FLAG_EXISTS and not flags & (0x00000100 | 0x00000200), "stored only"
+        assert flags & FLAG_EXISTS and not flags & FLAG_SINGLE_UNIT, "single-unit unsupported"
         if real == 0:
             return b""
         n_sectors = max(1, -(-real // self.block_size))
         offsets = struct.unpack_from("<%dI" % (n_sectors + 1), self.data, self.base + off)
         # offsets are relative to the file block start (see MPQWriter.build)
-        return self.data[self.base + off + offsets[0]:self.base + off + offsets[-1]]
+        compressed = flags & 0x00000200
+        out = []
+        for s in range(n_sectors):
+            a, b = self.base + off + offsets[s], self.base + off + offsets[s + 1]
+            if compressed:
+                block = self.data[a:b]
+                mask = block[0]
+                body = block[1:]
+                if mask == 0:
+                    out.append(body)
+                elif mask & 0x02:
+                    import zlib
+                    out.append(zlib.decompress(body, 15))
+                else:
+                    raise ValueError(f"sector mask {mask:#x} in {name}")
+            else:
+                out.append(self.data[a:b])
+        data = b"".join(out)
+        assert len(data) == real, f"{name}: {len(data)} != {real}"
+        return data
 
 
 if __name__ == "__main__":
@@ -250,11 +279,11 @@ if __name__ == "__main__":
 
     archive = MPQArchive(target, listfile=False)
     archive.header
-    extracted = archive.read_file("(listfile)")
+    extracted = archive.read_file("(listfile)", force_decompress=True)
     assert extracted == payloads["(listfile)"]
-    assert archive.read_file("war3map.wts") == payloads["war3map.wts"]
-    assert archive.read_file("war3map.j") == payloads["war3map.j"]
-    assert archive.read_file("war3mapUnits.doo") == payloads["war3mapUnits.doo"]
+    assert archive.read_file("war3map.wts", force_decompress=True) == payloads["war3map.wts"]
+    assert archive.read_file("war3map.j", force_decompress=True) == payloads["war3map.j"]
+    assert archive.read_file("war3mapUnits.doo", force_decompress=True) == payloads["war3mapUnits.doo"]
     os.remove(target)
     print("MPQ self-test OK: %d files, archive %d bytes, both readers agree"
           % (len(payloads), len(blob)))
