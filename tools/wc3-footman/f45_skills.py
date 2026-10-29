@@ -52,7 +52,7 @@ DIALOG_RENAMES = [
 # forms to fund the BFX trigger injection. Textual \b replace-all is safe:
 # the script has zero dynamic ExecuteFunc, and string literals referencing
 # function names are renamed together with the definitions.
-IDENTIFIER_RENAMES = [
+BASE_RENAMES = [
     ("YDWETriggerRegisterEnterRectSimpleNull", "yd_trerm"),
     ("YDWEGetUnitsInRangeOfLocMatchingNull", "yd_gurml"),
     ("YDWEGetUnitsOfPlayerMatchingNull", "yd_guopm"),
@@ -63,6 +63,22 @@ IDENTIFIER_RENAMES = [
     ("udg_chufadanwei", "udg_cfdw"),
 ]
 
+EXTRA_RENAMES = [  # applied in order until the compressed blob fits the slot
+    ("YDWEBase___yd_PlayerColor", "yd_pcol"),
+    ("udg_shifangdian", "udg_sfd"),
+    ("udg_bikaqiumubiao", "udg_bkmb"),
+    ("YDWETimerSystem___TaskListNext", "yd_tsnx"),
+    ("YDWETimerDestroyEffect", "yd_tdes"),
+    ("udg_bikaqiuweizhi", "udg_bkwz"),
+    ("YDWEPolledWaitNull", "yd_pwait"),
+    ("udg_jianrenfengbao", "udg_jrfb"),
+    ("udg_mubiaodian", "udg_mbd"),
+    ("udg_jiuguan", "udg_jg1"),
+    ("YDWERPGGetKey", "yd_rgk"),
+    ("udg_shijian", "udg_sj12"),
+]
+
+IDENTIFIER_RENAMES = BASE_RENAMES
 HERO_APPEND = {
     "H005": ("AHhb,AHds,A04Y,A0FL,A011", "AZ01"),
     "H00A": ("AHtc,AHtb,A00D,AHav,A01C", "AZ02"),
@@ -274,35 +290,7 @@ def patch_script_real(raw):
     nf = sum(1 for l in j.splitlines() if l.lstrip("﻿").strip().startswith("function "))
     ne = sum(1 for l in j.splitlines() if l.strip() == "endfunction")
     assert nf == ne, "JASS unbalanced: %d vs %d" % (nf, ne)
-    # The packer filled blk182's slot exactly; make room for BFX by dropping
-    # \r at line endings. Some strings here ARE multiline (Preload-injection
-    # literals with escaped quotes carry real CRLF content) — a JASS-aware
-    # scanner drops CR only outside string literals.
-    out_chars = []
-    in_str = False
-    esc = False
-    for ch in j:
-        if esc:
-            out_chars.append(ch)
-            esc = False
-        elif in_str:
-            if ch == "\\":
-                out_chars.append(ch)
-                esc = True
-            elif ch == '"':
-                in_str = False
-                out_chars.append(ch)
-            else:
-                out_chars.append(ch)
-        elif ch == '"':
-            in_str = True
-            out_chars.append(ch)
-        elif ch == "\r":
-            continue
-        else:
-            out_chars.append(ch)
-    assert not in_str, "string literal left open — scanner desynced"
-    return "".join(out_chars).encode("utf-8") + tail
+    return j.encode("utf-8") + tail  # native CRLF kept verbatim
 
 
 def patch_hm3w(data, new_name):
@@ -330,9 +318,6 @@ def main():
     ua = m.read_block(142).decode("utf-8")
     expected[142] = patch_hero_abilities(ua).encode("utf-8")
 
-    real_j = m.read_block_storm(REAL_J_BLOCK, STORM_KEY)
-    expected[REAL_J_BLOCK] = patch_script_real(real_j)
-
     # Tail budget for the grown real-script block: archive tail minus the tiny
     # sibling block (blk183, cipher snapshot needed — the grown blob overwrites
     # it), the hash table, and the block table (all 184 entries — the zero-size
@@ -342,6 +327,71 @@ def main():
     sib_raw = {183: bytes(m.data[BASE + m.block(183)[0]:BASE + m.block(183)[0] + m.block(183)[1]])}
     archive_size = struct.unpack_from("<I", m.data, BASE + 8)[0]
     budget = archive_size - m.block(REAL_J_BLOCK)[0] - len(sib_raw[183]) - 4096 - 184 * 16
+
+    real_j = m.read_block_storm(REAL_J_BLOCK, STORM_KEY)
+    # Self-adaptive slot fit: rename file-defined identifiers (highest
+    # byte-yield first, short target names) until the recompressed blob fits.
+    self_mod = sys.modules[__name__]
+    cand_pool = []
+    seen = {o for o, _ in BASE_RENAMES}
+    defined = set(re.findall(r'^function\s+([A-Za-z_][A-Za-z0-9_]*)', real_j.decode("utf-8", "replace"), re.M))
+    gb = real_j.decode("utf-8", "replace")
+    gb = gb[:gb.find("\nfunction")]
+    for line in gb.splitlines():
+        s = line.strip()
+        mm = re.match(r'^([A-Za-z_][A-Za-z0-9_]*)\s+(\w+)$', s)
+        if mm: defined.add(mm.group(1))
+        mm = re.match(r'^(\w+)\s+array\s+([A-Za-z_][A-Za-z0-9_]*)$', s)
+        if mm: defined.add(mm.group(2))
+    body_txt = real_j.decode("utf-8", "replace")
+    used_short = {n for _, n in BASE_RENAMES}
+    short_letters = "abcdefghijklmnopqrstuvwxyz"
+    short_names = (["yd_" + a for a in short_letters] +
+                   ["udg_" + a for a in short_letters] +
+                   ["yd_" + a + b for a in short_letters for b in short_letters])
+    si = 0
+    for k in sorted(defined, key=lambda x: -len(re.findall(r'\b%s\b' % re.escape(x), body_txt)) * (len(x) - 6)):
+        if k in seen or len(k) <= 10 or k.startswith("yd_"):
+            continue
+        n = len(re.findall(r'\b%s\b' % re.escape(k), body_txt))
+        if n < 5:
+            break
+        while si < len(short_names) and (short_names[si] in used_short or re.search(r"\b%s\b" % short_names[si], body_txt)):
+            si += 1
+        if si >= len(short_names):
+            break
+        cand_pool.append((k, short_names[si]))
+        used_short.add(short_names[si])
+        seen.add(k)
+        si += 1
+
+    def _best_sec(sec):
+        best = None
+        for st in (zlib.Z_DEFAULT_STRATEGY, zlib.Z_FILTERED, zlib.Z_RLE):
+            for ml in (8, 9):
+                c = zlib.compressobj(9, zlib.DEFLATED, 15, ml, st)
+                b = c.compress(sec) + c.flush()
+                if best is None or len(b) < len(best):
+                    best = b
+        return best
+
+    self_mod.IDENTIFIER_RENAMES = list(BASE_RENAMES)
+    n_extra = 0
+    while True:
+        expected[REAL_J_BLOCK] = patch_script_real(real_j)
+        n_sec = max(1, -(-len(expected[REAL_J_BLOCK]) // m.sector_size))
+        approx = 4 * (n_sec + 1) + sum(1 + len(_best_sec(expected[REAL_J_BLOCK][s*m.sector_size:(s+1)*m.sector_size])) for s in range(n_sec))
+        if approx <= budget:
+            break
+        if n_extra >= len(cand_pool):
+            raise SystemExit("cannot fit blk182 even with all candidate renames")
+        self_mod.IDENTIFIER_RENAMES = list(BASE_RENAMES) + cand_pool[:n_extra + 1]
+        n_extra += 1
+    # rebuild the rename pairs actually used (old, new)
+    self_mod.IDENTIFIER_RENAMES = (list(BASE_RENAMES) + cand_pool[:n_extra])
+    print("identifier renames: %d base + %d extra" % (len(BASE_RENAMES), n_extra))
+    # (expected[REAL_J_BLOCK] already holds the final patched content)
+
 
     for idx, content in expected.items():
         if idx == REAL_J_BLOCK:
