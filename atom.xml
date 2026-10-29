@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2026-10-28T15:58:39.417Z</updated>
+  <updated>2026-10-28T16:50:09.881Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《查拉图斯特拉如是说》导读：一本反福音书</title>
+    <link href="https://lucifer.ren/blog/2026/10/29/zarathustra/"/>
+    <id>https://lucifer.ren/blog/2026/10/29/zarathustra/</id>
+    <published>2026-10-28T16:00:00.000Z</published>
+    <updated>2026-10-28T16:50:09.881Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上一篇导读写的是哲学史上最难读的”压缩品”（《逻辑哲学论》：80 页、七个命题、每句话挤到极限）。这一篇正好相反：《查拉图斯特拉如是说》是哲学史上最”易读”的难书——全书由八十篇演讲和散文诗组成，字面上人人能读，但大多数人读完只带走几句格言，对全书在做什么毫无概念。它的难不在密度，而在四个地方：&lt;strong&gt;语言是福音书的戏仿&lt;/strong&gt;（不懂戏仿对象就读不出讽刺）、&lt;strong&gt;教义藏在寓言和故事里&lt;/strong&gt;（不给你”2.0211”式的编号）、&lt;strong&gt;叙事弧线隐身&lt;/strong&gt;（四部相隔三年写成，主角还在不断自我推翻）、&lt;strong&gt;它是哲学史上被误读得最惨的书&lt;/strong&gt;（没有之一）。&lt;/p&gt;
+&lt;p&gt;和上一篇相同的约定：这篇是地图不是替代品，目标是让你带着全图把原著当工具书。引文都标了章节，德文依据古腾堡计划 #7205 电子版逐条核对，&lt;strong&gt;中文引文由我自译&lt;/strong&gt;，与你手头译本的措辞会有出入，严格引用时以你的译本为准。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="哲学" scheme="https://lucifer.ren/blog/categories/%E5%93%B2%E5%AD%A6/"/>
+    
+      <category term="读书" scheme="https://lucifer.ren/blog/categories/%E5%93%B2%E5%AD%A6/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+      <category term="哲学" scheme="https://lucifer.ren/blog/tags/%E5%93%B2%E5%AD%A6/"/>
+    
+      <category term="读书" scheme="https://lucifer.ren/blog/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="尼采" scheme="https://lucifer.ren/blog/tags/%E5%B0%BC%E9%87%87/"/>
+    
+      <category term="查拉图斯特拉" scheme="https://lucifer.ren/blog/tags/%E6%9F%A5%E6%8B%89%E5%9B%BE%E6%96%AF%E7%89%B9%E6%8B%89/"/>
+    
+  </entry>
   
   <entry>
     <title>《逻辑哲学论》导读：世界、图像与沉默</title>
@@ -72,34 +101,6 @@
   </entry>
   
   <entry>
-    <title>摄影与 vlog 自学路线：从手机开始</title>
-    <link href="https://lucifer.ren/blog/2026/10/26/learn-photography-vlog/"/>
-    <id>https://lucifer.ren/blog/2026/10/26/learn-photography-vlog/</id>
-    <published>2026-10-25T16:00:00.000Z</published>
-    <updated>2026-10-25T16:40:35.898Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;想系统学拍照和拍视频（vlog，主要拍风景），给自己的约束是：手机起步、每周预算 3 小时以内、拍好的片子发 B 站和小红书记录，不做账号运营。这篇把我梳理的自学路线落成文，核心是「月度轮换」里的第一个主攻月课表，以及后续每四个月回来一次的进阶路径。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="生活" scheme="https://lucifer.ren/blog/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-      <category term="自我提升" scheme="https://lucifer.ren/blog/categories/%E7%94%9F%E6%B4%BB/%E8%87%AA%E6%88%91%E6%8F%90%E5%8D%87/"/>
-    
-    
-      <category term="学习路线" scheme="https://lucifer.ren/blog/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
-    
-      <category term="摄影" scheme="https://lucifer.ren/blog/tags/%E6%91%84%E5%BD%B1/"/>
-    
-      <category term="vlog" scheme="https://lucifer.ren/blog/tags/vlog/"/>
-    
-      <category term="手机摄影" scheme="https://lucifer.ren/blog/tags/%E6%89%8B%E6%9C%BA%E6%91%84%E5%BD%B1/"/>
-    
-  </entry>
-  
-  <entry>
     <title>炒股多年之后，把理财学成体系</title>
     <link href="https://lucifer.ren/blog/2026/10/26/learn-personal-finance/"/>
     <id>https://lucifer.ren/blog/2026/10/26/learn-personal-finance/</id>
@@ -124,6 +125,34 @@
       <category term="学习路线" scheme="https://lucifer.ren/blog/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
     
       <category term="资产配置" scheme="https://lucifer.ren/blog/tags/%E8%B5%84%E4%BA%A7%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>摄影与 vlog 自学路线：从手机开始</title>
+    <link href="https://lucifer.ren/blog/2026/10/26/learn-photography-vlog/"/>
+    <id>https://lucifer.ren/blog/2026/10/26/learn-photography-vlog/</id>
+    <published>2026-10-25T16:00:00.000Z</published>
+    <updated>2026-10-25T16:40:35.898Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;想系统学拍照和拍视频（vlog，主要拍风景），给自己的约束是：手机起步、每周预算 3 小时以内、拍好的片子发 B 站和小红书记录，不做账号运营。这篇把我梳理的自学路线落成文，核心是「月度轮换」里的第一个主攻月课表，以及后续每四个月回来一次的进阶路径。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="生活" scheme="https://lucifer.ren/blog/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="自我提升" scheme="https://lucifer.ren/blog/categories/%E7%94%9F%E6%B4%BB/%E8%87%AA%E6%88%91%E6%8F%90%E5%8D%87/"/>
+    
+    
+      <category term="学习路线" scheme="https://lucifer.ren/blog/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
+    
+      <category term="摄影" scheme="https://lucifer.ren/blog/tags/%E6%91%84%E5%BD%B1/"/>
+    
+      <category term="vlog" scheme="https://lucifer.ren/blog/tags/vlog/"/>
+    
+      <category term="手机摄影" scheme="https://lucifer.ren/blog/tags/%E6%89%8B%E6%9C%BA%E6%91%84%E5%BD%B1/"/>
     
   </entry>
   
@@ -415,9 +444,9 @@
     
       <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
     
-      <category term="代币经济学" scheme="https://lucifer.ren/blog/tags/%E4%BB%A3%E5%B8%81%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
-    
       <category term="Tokenomics" scheme="https://lucifer.ren/blog/tags/Tokenomics/"/>
+    
+      <category term="代币经济学" scheme="https://lucifer.ren/blog/tags/%E4%BB%A3%E5%B8%81%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
     
   </entry>
   
@@ -570,28 +599,6 @@
       <category term="bancor" scheme="https://lucifer.ren/blog/tags/bancor/"/>
     
       <category term="流动性池" scheme="https://lucifer.ren/blog/tags/%E6%B5%81%E5%8A%A8%E6%80%A7%E6%B1%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>苹果AI转型：Siri升级与生态潜力</title>
-    <link href="https://lucifer.ren/blog/2025/12/24/ai-apple/"/>
-    <id>https://lucifer.ren/blog/2025/12/24/ai-apple/</id>
-    <published>2025-12-23T16:00:00.000Z</published>
-    <updated>2025-12-24T14:35:25.856Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;大家好，我是Lucifer。作为一名长期关注AI领域的从业者，我注意到苹果近期在AI方面的组织调整颇具意义。如果你对AI如何逐步融入日常生活和工作感兴趣，或是好奇苹果在这一领域的战略布局，这篇文章或许能提供一些insights。我会尽量用平实的语言阐述，避免过多技术 jargon，从苹果的最新动态谈起。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="ai" scheme="https://lucifer.ren/blog/categories/ai/"/>
-    
-    
-      <category term="ai" scheme="https://lucifer.ren/blog/tags/ai/"/>
-    
-      <category term="apple" scheme="https://lucifer.ren/blog/tags/apple/"/>
     
   </entry>
   
