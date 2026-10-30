@@ -190,6 +190,9 @@ social:
   - icon: fas fa-dragon
     url: wc3map/
     name: 魔兽地图 · 四兄弟 Footmen Frenzy 纪念版（多版本下载）
+  - icon: fas fa-chalkboard-teacher
+    url: /blog/files/war3-coach-portable.zip
+    name: war3-coach · 魔兽训练辅助工具（回放分析+对手库，免安装便携版，下载解压即用）
   - icon: fas fa-paper-plane
     url: https://wormhole.app
     name: Wormhole · 免登录文件分享（端到端加密，10GB/24小时）
