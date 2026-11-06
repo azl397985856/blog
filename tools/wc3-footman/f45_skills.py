@@ -210,6 +210,10 @@ function InitBrothersFX takes nothing returns nothing
 endfunction
 
 """
+# The game's map script is CRLF throughout; this triple-quoted source block is
+# LF in the repo. Normalize idempotently so the injected trigger inherits CRLF
+# (the 2026-11-03 fix_crlf.py post-pass, folded into the build).
+BFX_JASS = BFX_JASS.replace("\r\n", "\n").replace("\n", "\r\n")
 
 
 def patch_ability_data(text):
@@ -239,6 +243,13 @@ def patch_ability_data(text):
     out = text
     plan = [("AHtb", "AZ01"), ("AOwk", "AZ02"), ("AHmt", "AZ03")]
     new_y = last_y + 1
+    # The file ends with a bare "E" terminator WITHOUT a trailing newline.
+    # Strip it first and append rows into the body, then re-attach it verbatim:
+    # a naive out+= would fuse E and the first new row into an illegal "EC;..."
+    # line (2026-11-05 root cause of the create-to-lobby kick — the game's SLK
+    # parser either dies on the record or stops at E and never sees AZ01-04).
+    assert text.endswith("\r\nE"), "SLK does not end with bare E terminator"
+    out = text[:-1]
     for base, az in plan:
         seg = row_segment(base)
         out += renumber(seg, new_y, az)
@@ -246,6 +257,7 @@ def patch_ability_data(text):
     # AZ04 minimal resurrect row (engine class defaults, like A011's style)
     out += ('C;X1;Y%d;K"AZ04"\r\nC;X2;K"AHre"\r\nC;X15;K1\r\nC;X72;K1\r\n'
             'C;X75;K6\r\n' % new_y)
+    out += "E"
     out = out.replace("B;X87;Y%d;D0" % last_y, "B;X87;Y%d;D0" % (last_y + 4))
     return out
 
@@ -431,6 +443,15 @@ def main():
     ad2 = dst.read_block(36).decode("utf-8")
     for az in ("AZ01", "AZ02", "AZ03", "AZ04"):
         assert re.search(r'K"%s"' % az, ad2)
+    # SLK structural invariants: exactly one standalone E terminator line, no
+    # fused "EC;" record (the 2026-11-05 lobby-kick bug), file still ends bare E.
+    assert ad2.endswith("\r\nE") and not ad2.endswith("\r\nE\r\n")
+    assert ad2.count("\r\nE\r\n") == 0  # terminator must not appear mid-file
+    assert "\nEC;" not in ad2 and ad2.count("EC;") == 0
+    assert len(re.findall(r'C;X1;Y\d+;K"AZ0\d"', ad2)) == 4
+    ini2 = dst.read_block(71).decode("utf-8")
+    for az in ("AZ01", "AZ02", "AZ03", "AZ04"):
+        assert "[%s]" % az in ini2, az
     j2 = dst.read_block_storm(REAL_J_BLOCK, STORM_KEY)
     body = j2.decode("utf-8", "replace")  # whole file; GBK tail has none of these markers
     assert body.count("InitBrothersFX") == 2, body.count("InitBrothersFX")  # definition + call in main

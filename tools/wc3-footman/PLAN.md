@@ -100,6 +100,30 @@ dist/FF_4Brothers_vX.Y.w3x               # 1.27 可玩的单文件地图
 
 ## 八、迭代记录
 
+### 2026-11-06 · F45 SKILL 版「创建即回大厅」根因修复 ✅（已重建待实测）
+
+- **用户实机反馈**：F45_BROTHERS_SKILL 创建游戏后立刻被踢回大厅；稳定版 F45_BROTHERS 正常。
+- **排查路径**：①提取 blk182（真 war3map.j，Storm 加密）diff 注入段，pjass + common.j/blizzard.j
+  静态检查——SKILL 版与基线同样只报原图自带的 `CSM_Z65Z is uninitialized`，脚本语法排除；
+  ②mpyq 第三方解析器交叉验证两包：MPQ 结构无差异、12 个标准文件可读，内容差异恰好只有
+  AbilityData.slk / UnitAbilities.slk 两个 SLK；③SLK 逐行 diff 发现 `-E` / `+EC;X1;Y944;K"AZ01"`。
+- **根因（字节级实锤）**：AbilityData.slk 的结尾是**没有换行符的裸 `E` 终止符**（`...neutral"\r\nE`），
+  patch_ability_data 直接 `out +=` 追加新技能行，把 `E` 和第一行新内容粘成非法记录
+  `EC;X1;Y944;K"AZ01"`，且全文件再无独立 E 行——游戏 SLK 解析器要么拒绝该记录要么提前终止，
+  AZ01-04 全部未注册，英雄 heroAbilList 引用不存在的能力 → 创建即踢回大厅。
+  完美解释为何 11-03 的 CRLF 修复（只动 blk182）无效——病灶一直在 blk036。
+- **修复**：patch_ability_data 先摘掉悬尾 E、正文追加、再原样接回（`assert text.endswith("\r\nE")`）；
+  BFX_JASS 注入段 LF→CRLF 幂等归一（把 fix_crlf.py 后处理折进构建，该脚本可退役）；
+  main() 新增 SLK 结构断言（裸 E 结尾/零 EC;/四条 AZ 行/INI 四 section）。
+- **验证**：内置 roundtrip + hash table 全等断言过；mpyq 读回新包 AbilityData.slk——
+  bare E 归位、零粘行、AZ01-04 (Y944-947) 齐全、四英雄技能列表正确；pjass 与基线同错（无新错）。
+  新 md5=466606b0a00aa39dceda6fa147574054，已拷博客双名托管（F45_/FF4B_BROTHERS_SKILL.w3x）。
+- **Wine 实机验证失败记录**：宿主 Wine (staging 11.18) 的 war3-green 在 CD-key 弹窗后点确认即
+  c0000409 崩溃（免CD Game.dll 的 Wine 兼容性问题，与地图无关；VM 里该弹窗是已知现象、点掉即过）。
+  实机验证仍以用户 1.27 客户端为准。
+- **教训（同 ussc 条）**：文本追加类补丁必须先断言目标文件尾结构（悬尾终止符/换行约定），
+  「解析/编码对称」的自研工具看不见这种畸形——第三方裁判（mpyq/diff）这次照样立功。
+
 ### 2026-10-25 · ussc 崩溃修复 ✅（v0.4-v0.6m 五版重建，已托管）
 
 - **用户实机反馈**：地图加载中崩溃——"内存资源不足，无法处理此命令，Object: CustomObjectField"（1.27 网吧客户端）。
