@@ -102,6 +102,8 @@ dist/FF_4Brothers_vX.Y.w3x               # 1.27 可玩的单文件地图
 
 ### 2026-11-06 · F45 SKILL 版「创建即回大厅」根因修复 ✅（已重建待实测）
 
+
+
 - **用户实机反馈**：F45_BROTHERS_SKILL 创建游戏后立刻被踢回大厅；稳定版 F45_BROTHERS 正常。
 - **排查路径**：①提取 blk182（真 war3map.j，Storm 加密）diff 注入段，pjass + common.j/blizzard.j
   静态检查——SKILL 版与基线同样只报原图自带的 `CSM_Z65Z is uninitialized`，脚本语法排除；
@@ -123,6 +125,42 @@ dist/FF_4Brothers_vX.Y.w3x               # 1.27 可玩的单文件地图
   实机验证仍以用户 1.27 客户端为准。
 - **教训（同 ussc 条）**：文本追加类补丁必须先断言目标文件尾结构（悬尾终止符/换行约定），
   「解析/编码对称」的自研工具看不见这种畸形——第三方裁判（mpyq/diff）这次照样立功。
+
+### 2026-11-06（续）· 本地实机验证实验记录（未打通，结论存档）
+
+- **目的**：在本地复现「创建即回大厅」并验证修复后的 SKILL 包。未达成——所有本地通道被
+  1.27 启动器的 CD-key 弹窗挡死（与地图无关）。考古结论存档：
+- **CD-key 弹窗的完整解剖**：
+  - 文案 "Warcraft III was unable to find a CD Key…" **不在任何二进制里**——在
+    War3xLocal.mpq 的启动错误字符串表（blk125：already running/DirectX/OpenGL/open War3.mpq/
+    **find a CD Key**/language version 共 6 条，RCString 机制按索引加载）。
+  - 弹窗代码 = war3.exe 0x2a310 函数（标题 "Warcraft III" 硬编码 0x45c9e8，文案指针 0x45e3c0
+    运行时加载，MessageBoxW IAT 0x45c5a4），弹完正常 ret 不退出进程；无直接 E8 调用者。
+  - war3.exe 不含注册表值名/ExitProcess 导入；key 校验逻辑在 game.dll（注册表读取疑似经
+    Storm.dll，值名运行时拼接，"Software\Blizzard Entertainment" @Storm 0x42c5c）。
+  - 上会话的 nocd 补丁（26 字节 diff @game.dll 0x43c91）：cave 里 cmp ecx,3 错误码免疫 +
+    函数入口 ret——实测**弹窗依然出现**（补丁没拦住弹窗，只试图拦错误码），「VM 点掉后主菜单
+    继续」在 from-vm 截图中**从未被证实**（fix127a-after.png 停在弹窗本身）。
+  - fixpack 的 KEYHEX 注册表 BINARY 是手工拼的非法 key；三种格式（SZ 明文/BINARY/WOW6432Node）
+    全部写入后弹窗依旧 → 校验从未通过过，VM/Wine 从未有有效 key。
+- **Wine (staging 11.18) 的死点**：弹窗窗口开在虚拟屏幕外（X≈2085 > 屏宽 2048），而
+  mac 图形驱动**不支持虚拟桌面**（explorer /desktop 与注册表 Desktops 均无效；构建内只有
+  winemac.so 无 winex11.so，XQuartz 路线死）；屏幕外窗口 AX 不可达（AppleScript 挪窗/点按钮
+  失败）、CGEvent 屏幕外点击不生效、screencapture -l 拒截；frontmost+回车会触发游戏退出路径
+  （war3-green 补丁版直接 c0000409，war3/(1.27a VM 口径) 干净退出）。
+  Windows 上 MessageBox 异步不阻塞主线程所以 VM「弹窗挂着游戏跑」，Wine 同步阻塞——这是
+  VM 与 Wine 行为差异的根源。
+- **本次新增的测试基建**（可复用）：
+  - pjass 本地构建（bison；`./pjass common.j blizzard.j war3map.j`）——基线 F4.5 脚本
+    恒有一条 `CSM_Z65Z is uninitialized`（原图自带、游戏接受），注入后无新错即合格。
+  - **MPQ 加密文件无文件名解密**：已知明文攻击（sector 表首 DWORD = 表长 tlen，
+    低 8 位分桶 256 次恢复 fix key → K+1+s 解扇区），已用于 War3Patch.mpq（576/576 全解）
+    与 War3xLocal.mpq（187/1095 文件，其余为非加密但压缩失败的块可再攻）。
+  - War3.mpq 的 UI\StartupStrings.txt 仅有 DirectX/已运行两条（绿色版精简过）。
+- **实机验证的可行路径**（下次可选）：①用户 1.27 客户端一句话实测（永远首选）；
+  ②UTM VM 需用户手动 ▶︎（QEMULauncher）+ VM 内手动交互，无法全自动；
+  ③真正打通本地 = 给 1.27a/b Game.dll 写完整 key 校验绕过补丁（需继续逆向 Storm 的
+  校验入口，工作量另估）。
 
 ### 2026-10-25 · ussc 崩溃修复 ✅（v0.4-v0.6m 五版重建，已托管）
 
