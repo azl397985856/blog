@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2026-10-28T16:50:09.881Z</updated>
+  <updated>2026-11-15T07:17:01.814Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -15,6 +15,325 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>blob：你的 L2 转账为什么只要几分钱</title>
+    <link href="https://lucifer.ren/blog/2026/11/14/web3-blob/"/>
+    <id>https://lucifer.ren/blog/2026/11/14/web3-blob/</id>
+    <published>2026-11-13T16:00:00.000Z</published>
+    <updated>2026-11-15T07:17:01.814Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 L2（比如 Arbitrum、Base）上转一笔账，手续费只要几分钱；同样的动作放到以太坊主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 &lt;strong&gt;blob&lt;/strong&gt; 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 的生死有什么关系。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="Ethereum" scheme="https://lucifer.ren/blog/tags/Ethereum/"/>
+    
+      <category term="L2" scheme="https://lucifer.ren/blog/tags/L2/"/>
+    
+      <category term="blob" scheme="https://lucifer.ren/blog/tags/blob/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MEV 的另一半：合并后的出块拍卖</title>
+    <link href="https://lucifer.ren/blog/2026/11/13/web3-mev-supply-chain/"/>
+    <id>https://lucifer.ren/blog/2026/11/13/web3-mev-supply-chain/</id>
+    <published>2026-11-12T16:00:00.000Z</published>
+    <updated>2026-11-15T07:17:44.175Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上一篇&lt;a href=&quot;https://lucifer.ren/blog/2025/07/06/web3-mev/&quot; title=&quot;Web3 的 Anti MEV：深入剖析“夹”与反制之道&quot;&gt;《Web3 的 Anti MEV：深入剖析“夹”与反制之道》&lt;/a&gt;我们抓了个现行：攻击者扫 mempool、插抢跑交易、夹走 40 USDT，全程都在“矿工”的眼皮底下完成。但你可能隐约察觉到一个时代错误——那篇文章里的主角，叫&lt;strong&gt;矿工&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;问题是，2022 年 9 月以太坊合并（The Merge）转入 PoS 之后，链上已经没有矿工了。出块不再靠算力硬拼，改成“押 32 ETH 押金，每 12 秒摇号抽一位验证者当值”。于是两个更尖锐的问题冒了出来：现在到底谁在排序交易？三明治们攫取的 MEV，又被谁分走了？&lt;/p&gt;
+&lt;p&gt;一句话剧透：排序权被拆成了一条四个工种的流水线——Searcher 蹲点捕猎、Builder 打包报价、Relay 中转担保、Validator 签字收钱，每 12 秒办一场拍卖决定这个 slot 归谁。&lt;strong&gt;以前夹你的是一个矿工，现在夹你的是一条流水线。&lt;/strong&gt;顺带说一句，你常听说的 blob——让 L2 转账只要几分钱的那位——和这套流水线共享同一个”稀缺资源交给市场拍卖”的思想，但那是另一篇的主角（见文末相关阅读），本文只讲流水线。&lt;/p&gt;
+&lt;p&gt;老规矩，代码驱动：本文用一段可直接运行的 Python 模拟，把一场 MEV-Boost 拍卖的分账跑给你看。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="Ethereum" scheme="https://lucifer.ren/blog/tags/Ethereum/"/>
+    
+      <category term="MEV" scheme="https://lucifer.ren/blog/tags/MEV/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DAO：没有老板的公司，以及它怎么被一秒钟搬空</title>
+    <link href="https://lucifer.ren/blog/2026/11/12/web3-dao/"/>
+    <id>https://lucifer.ren/blog/2026/11/12/web3-dao/</id>
+    <published>2026-11-11T16:00:00.000Z</published>
+    <updated>2026-11-15T03:19:25.894Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大家好，我是 Lucifer。之前写 &lt;a href=&quot;https://lucifer.ren/blog/2025/09/20/web3-depin/&quot; title=&quot;DePIN 觉醒&quot;&gt;DePIN&lt;/a&gt; 的时候，我随口带过一句”通过 DAO，你可以用 token 投票决定网络升级”。当时一笔带过，但这句话背后其实站着一种完整的组织形态——它没有 CEO、没有董事会、没有财务总监，金库里的钱却比很多上市公司还多。这就是今天的主角：DAO，去中心化自治组织。&lt;/p&gt;
+&lt;p&gt;先剧透一个真实结局。2022 年 4 月，有人对这种”没有老板的公司”下手了：一分钟前他还是个穷光蛋，靠闪电贷借来约 10 亿美元的投票权，投完票、搬完金库、把票原样还回去，前后约 13 秒，净落袋近亿美元。他利用了几个代码漏洞？零。偷了谁的私钥？没有。他走的完全是正规流程：提案、投票、执行，一步一步，手续齐全。Beanstalk 协议金库里约 1.82 亿美元，就这么被”合法地”搬空了。&lt;/p&gt;
+&lt;p&gt;这篇文章咱们就把这件事讲透：DAO 到底怎么运转？为什么能被一秒钟搬空？防御方手里那几张牌又怎么打？照例，全程用 Python 模拟关键过程，建议你亲手跑一遍——治理这件事，光看懂没用，得亲眼看到攻击的净利润那个数字，你才会记住”公示期”三个字值多少钱。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="DAO" scheme="https://lucifer.ren/blog/tags/DAO/"/>
+    
+      <category term="治理" scheme="https://lucifer.ren/blog/tags/%E6%B2%BB%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>账户抽象：把 EOA 升级成智能合约账户</title>
+    <link href="https://lucifer.ren/blog/2026/11/11/web3-account-abstraction/"/>
+    <id>https://lucifer.ren/blog/2026/11/11/web3-account-abstraction/</id>
+    <published>2026-11-10T16:00:00.000Z</published>
+    <updated>2026-11-15T03:17:47.384Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;先说一个很多人都遇到过的尴尬：钱包里躺着几百 USDC，想转一点给朋友，界面却弹出一行字——“ETH 余额不足，无法支付 gas”。你明明有钱，却连手续费都交不起，像揣着一沓现金站在只收硬币的售货机前。更绝望的是另一种场景：抄助记词的那张纸丢了。没有”忘记密码”，没有客服，没有申诉入口，链上资产从此变成一座纪念碑。&lt;/p&gt;
+&lt;p&gt;这些尴尬不怪钱包 App 做得烂，怪以太坊账户模型的”出厂设置”。&lt;a href=&quot;https://lucifer.ren/blog/2025/02/16/web3-wallet/&quot; title=&quot;Web3 的入口 - 区块链钱包&quot;&gt;《Web3 的入口 - 区块链钱包》&lt;/a&gt;里介绍过的私钥账户叫 EOA（Externally Owned Account，外部账户），你可以把它理解成&lt;strong&gt;一把钥匙管一切的旧式机械门锁&lt;/strong&gt;：一把钥匙就是全部，丢了就完了，没有挂失，没有备用方案。而&lt;strong&gt;账户抽象（Account Abstraction，AA）&lt;/strong&gt;想干的事，说白了就一件：&lt;strong&gt;把这把旧门锁换成智能门锁&lt;/strong&gt;——账户从”一把私钥”升级成”一段可编程的合约”，”怎么验身份、怎么付 gas、怎么执行”，全由代码说了算。&lt;/p&gt;
+&lt;p&gt;熟悉我的朋友应该知道，我经常从零实现一些东西帮助理解，本文照例代码驱动：先用 Python 模拟 ERC-4337 里一个 UserOperation 从提交到结算的完整生命周期，再模拟社交恢复与 guardian 串通攻击，中间穿插 EIP-7702 的机制讲解，所有输出均为真实运行结果，纯标准库，复制即可跑。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="Ethereum" scheme="https://lucifer.ren/blog/tags/Ethereum/"/>
+    
+      <category term="账户抽象" scheme="https://lucifer.ren/blog/tags/%E8%B4%A6%E6%88%B7%E6%8A%BD%E8%B1%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>合约安全审计入门：读不懂 Solidity，也能看懂审计报告</title>
+    <link href="https://lucifer.ren/blog/2026/11/10/web3-security-audit/"/>
+    <id>https://lucifer.ren/blog/2026/11/10/web3-security-audit/</id>
+    <published>2026-11-09T16:00:00.000Z</published>
+    <updated>2026-11-15T11:54:18.317Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;还记得&lt;a href=&quot;https://lucifer.ren/blog/2025/03/01/web3-hacker-1/&quot; title=&quot;我是一个区块链黑客（第一篇）&quot;&gt;《我是一个区块链黑客（第一篇）》&lt;/a&gt;结尾那份防范清单吗？最后一条写着”定期审计合约代码”——一句话打发了价值几十万美元的行业服务，堪称全文最省钱的一条建议。无独有偶，聊 DeFi 保险的&lt;a href=&quot;https://lucifer.ren/blog/2026/04/22/web3-defi-insurance/&quot; title=&quot;DeFi 保险：谁来保护你的链上资产？&quot;&gt;《DeFi 保险：谁来保护你的链上资产？》&lt;/a&gt;更直接，把”审计次数”列进了协议风险评分表。&lt;/p&gt;
+&lt;p&gt;那么问题来了：审计到底是什么？谁在审？报告怎么读？普通人能不能自己跑两下？本文就回答这四个问题。&lt;/p&gt;
+&lt;p&gt;先把心态立正：&lt;strong&gt;审计不是保险单&lt;/strong&gt;。这话怎么理解？想想体检。体检报告只能告诉你”抽血那天的你”状态如何，不能保证你一年不生病；车过了年检，上了高速照样可能爆胎。被多家审计公司轮番体检过的协议也一样——Euler Finance 审过不止一轮，2023 年 3 月还是被闪电贷攻击卷走 1.97 亿美元（后来黑客退还了大部分，堪称行业奇观）。原因并不神秘：审计是时间盒（time-boxed）内的抽检，不是数学证明。几个工程师花一两周，对着几万行代码找毛病，找到的是”他们能找到的”，而不是”不存在的”。&lt;/p&gt;
+&lt;p&gt;本文按四个问题展开：漏洞长什么样、审计怎么跑、报告怎么读、以及你自己怎么动手。读不懂 Solidity 没关系——审计报告本来就不全是写给程序员的，普通用户才是最该会读它的人。看完至少能看懂报告；看得懂代码更好，文末有个一百来行的玩具扫描器等你复现。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="安全" scheme="https://lucifer.ren/blog/tags/%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="审计" scheme="https://lucifer.ren/blog/tags/%E5%AE%A1%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>上新币之前，先做这五项检查：Rug Pull 与貔貅盘识别</title>
+    <link href="https://lucifer.ren/blog/2026/11/08/web3-rug-pull/"/>
+    <id>https://lucifer.ren/blog/2026/11/08/web3-rug-pull/</id>
+    <published>2026-11-07T16:00:00.000Z</published>
+    <updated>2026-11-15T11:54:09.408Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 Web3 里买新币，死法基本就三种，而且个个经典。第一种叫&lt;strong&gt;硬 rug&lt;/strong&gt;：项目方直接把流动性池撤空卷款跑路，代币瞬间归零，从”因为相信所以看见”到”查无此币”只需要一笔交易。第二种叫&lt;strong&gt;软 rug&lt;/strong&gt;：团队握着大份额代币按兵不动，看起来岁月静好，然后每天精准砸一点，温水煮青蛙，你甚至说不清自己是哪天死的。第三种最阴，叫&lt;strong&gt;貔貅盘（honeypot）&lt;/strong&gt;——以只进不出的上古神兽命名：你买得进，卖不出，要么卖出直接 revert，要么卖出税高达 99%，1000 USDT 进去，50 USDT 出来，”客服”还会劝你长期持有必有回报。&lt;/p&gt;
+&lt;p&gt;很多人觉得识别这些骗局需要深厚的合约功底，其实不需要。发币的门槛低到令人发指：一段二三十行的 ERC-20 模板代码，复制粘贴改个名字，五分钟上线，全部成本就是几美元的 Gas 费。门槛越低，骗子密度越高。所以”上新币之前先做检查”不是选修课，是必修课——你不检查合约，合约就会检查你的钱包。&lt;/p&gt;
+&lt;p&gt;这篇文章不讲大道理，只讲五项买前检查：流动性安全、合约权限、卖出模拟、持仓分布、团队背景。每项都配一个菜市场、买房、相亲级别的类比——你哪怕记不住术语，把类比记住也能躲掉大半的坑——外加”为什么 + 怎么查”，最后用三段纯标准库的 Python 代码把检查思路自动化。学完至少能躲开 80% 明晃晃的坑，剩下 20% 属于&lt;a href=&quot;https://lucifer.ren/blog/2026/11/10/web3-security-audit/&quot;&gt;《合约安全审计入门》&lt;/a&gt;的专业范畴，那篇是审计工程师视角，本文是你掏钱之前五分钟的快速体检。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="安全" scheme="https://lucifer.ren/blog/tags/%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="链上分析" scheme="https://lucifer.ren/blog/tags/%E9%93%BE%E4%B8%8A%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>夏普比率：怎么判断一个策略是真好还是运气好</title>
+    <link href="https://lucifer.ren/blog/2026/11/07/web3-strategy-metrics/"/>
+    <id>https://lucifer.ren/blog/2026/11/07/web3-strategy-metrics/</id>
+    <published>2026-11-06T16:00:00.000Z</published>
+    <updated>2026-11-15T03:22:35.555Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大家好，我是 Lucifer。今天聊一个做量化的人天天要面对的问题：回测报告里的夏普比率，到底是本事，还是运气。&lt;/p&gt;
+&lt;p&gt;你大概率经历过这个瞬间：Freqtrade 回测跑完，终端哗啦啦吐出一堆指标——总收益、夏普比率、索提诺比率、卡玛比率、最大回撤……大多数人只盯着收益率那一行，眼睛发直，手已经悬在”实盘启动”按钮上了。稍微冷静一点的会瞟一眼 Sharpe 1.8，然后开始灵魂拷问：1.8，算”策略很强”，还是算”我菜到看不懂”？&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://lucifer.ren/blog/2025/07/01/trading-system-demo/&quot; title=&quot;《小菜的交易系统》&quot;&gt;《小菜的交易系统》&lt;/a&gt;里说过，一套交易系统必须”可量化”——进场理由要量化、出场条件要量化，绩效同样要量化。量化绩效量化的是什么？不只是”赚了多少”，而是&lt;strong&gt;每一份收益背后，你扛了多少惊吓&lt;/strong&gt;。这套体系叫风险调整后收益指标，本文用纯标准库 Python（random / statistics / math）把它们挨个算一遍，所有代码和数字都是真实运行的。最后回答那个终极问题：你的夏普，是本事，还是猴子掷飞镖。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="理财" scheme="https://lucifer.ren/blog/categories/%E7%90%86%E8%B4%A2/"/>
+    
+      <category term="量化" scheme="https://lucifer.ren/blog/categories/%E7%90%86%E8%B4%A2/%E9%87%8F%E5%8C%96/"/>
+    
+    
+      <category term="理财" scheme="https://lucifer.ren/blog/tags/%E7%90%86%E8%B4%A2/"/>
+    
+      <category term="交易" scheme="https://lucifer.ren/blog/tags/%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="量化" scheme="https://lucifer.ren/blog/tags/%E9%87%8F%E5%8C%96/"/>
+    
+      <category term="夏普比率" scheme="https://lucifer.ren/blog/tags/%E5%A4%8F%E6%99%AE%E6%AF%94%E7%8E%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>无常损失：当 LP 到底亏不亏，把账算清楚</title>
+    <link href="https://lucifer.ren/blog/2026/11/05/web3-impermanent-loss/"/>
+    <id>https://lucifer.ren/blog/2026/11/05/web3-impermanent-loss/</id>
+    <published>2026-11-04T16:00:00.000Z</published>
+    <updated>2026-11-15T03:38:20.968Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前面两篇文章，我们把”把币存进池子当 LP”这件事讲得热血沸腾：&lt;a href=&quot;https://lucifer.ren/blog/2025/03/28/web3-swap-staking/&quot; title=&quot;Web3 金融的基石 - Swap 和 Staking&quot;&gt;《Web3 金融的基石 - Swap 和 Staking》&lt;/a&gt; 用 &lt;code&gt;x·y=k&lt;/code&gt; 从零搭了个池子，亲眼看着手续费一分一分进账；&lt;a href=&quot;https://lucifer.ren/blog/2025/12/31/web3-lp-2025/&quot; title=&quot;当下流动性池分析&quot;&gt;《当下流动性池分析》&lt;/a&gt; 又盘点了各家池子的设计，从 Uniswap V2 一路看到 Curve。看起来当 LP 就是”躺赚手续费”，稳得很。&lt;/p&gt;
+&lt;p&gt;但如果你真去当过 LP，大概率经历过这样的时刻：ETH 从 3000 涨到 6000，你打开钱包一看，仓位总价值确实涨了——可隔壁拿着币啥也不干的朋友，涨得比你多得多。你安慰自己”至少我还有手续费”，然后心里隐隐有个声音：我该不会……亏了吧？&lt;/p&gt;
+&lt;p&gt;这个声音有名字，叫&lt;strong&gt;无常损失&lt;/strong&gt;（Impermanent Loss，IL）。先别急，别急着去搜定义，我们用一个摆摊的比喻把它钉在墙上：&lt;/p&gt;
+&lt;p&gt;你和朋友合伙摆摊。你出 1 个 ETH，朋友出 3000 USDT，凑成一份 6000 美元的货，放进摊子的收银台。这个摊子是程序控制的，脾气写死在代码里：&lt;strong&gt;只要价格一动，它就自动”卖掉涨得多的、收进跌得多的”&lt;/strong&gt;。ETH 涨了？摊子根本不等你想，先把涨了的 ETH 卖给排队的客人；ETH 跌了？摊子反手往里收贬值的币。等你俩哪天散伙清点，把手里的东西折成钱，跟”当初不摆摊、俩人死拿着资产不动”比——总是少一截。&lt;/p&gt;
+&lt;p&gt;少的那一截，就是无常损失。&lt;/p&gt;
+&lt;p&gt;大部分文章讲到这里就跑路了，丢下一句”LP 会亏一点，手续费能补回来”就消失。本文不跑路：把手伸进 &lt;code&gt;x·y=k&lt;/code&gt; 里，一笔一笔把账算到底，最后用 Python 验证每一个数字。读完后你应该能自己回答三个问题：亏多少？为什么叫”无常”？手续费什么时候填得平这个坑？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="DeFi" scheme="https://lucifer.ren/blog/tags/DeFi/"/>
+    
+      <category term="LP" scheme="https://lucifer.ren/blog/tags/LP/"/>
+    
+      <category term="AMM" scheme="https://lucifer.ren/blog/tags/AMM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>预言机：DeFi 里的价格到底是从哪来的？</title>
+    <link href="https://lucifer.ren/blog/2026/11/03/web3-oracle/"/>
+    <id>https://lucifer.ren/blog/2026/11/03/web3-oracle/</id>
+    <published>2026-11-02T16:00:00.000Z</published>
+    <updated>2026-11-15T11:54:00.369Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大家好，我是 Lucifer。之前写&lt;a href=&quot;https://lucifer.ren/blog/2025/09/14/web3-corn-rwa/&quot; title=&quot;当 RWA 遇上幸福小区玉米&quot;&gt;RWA&lt;/a&gt;的时候，我把预言机比作”信使”：链下世界的玉米价格、黄金报价，得靠一位信使穿过链上链下那堵墙，把消息递进来。当时一笔带过，今天把这位信使请出来，当面问三个问题：&lt;strong&gt;你带来的消息是哪来的？可信吗？有没有人塞你红包？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;你可能觉得这是技术宅的闲磕牙。还真不是。DeFi 里几乎所有要命的时刻，背后都挂着同一个问题——“现在价格是多少”。借贷协议靠价格算抵押品价值、触发清算；稳定币靠价格守锚定；永续合约靠价格结算资金费率。价格对，天下太平；价格被污染 10 分钟，几个亿的真金白银就会换主人。2022 年 Mango Markets 一夜之间被搬走约 1.14 亿美元——攻击者没黑一行合约代码，他只是把”价格”这个数换掉了。&lt;/p&gt;
+&lt;p&gt;这篇文章我们就把预言机从头捋一遍：链上为什么看不到外面的价格、为什么不能随便抄个现货价、Chainlink 和 Pyth 各自在忙什么、TWAP 是怎么把操纵变成烧钱大战的，最后照例用两段 Python 模拟把原理跑给你看。放心，全程初中数学。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="DeFi" scheme="https://lucifer.ren/blog/tags/DeFi/"/>
+    
+      <category term="预言机" scheme="https://lucifer.ren/blog/tags/%E9%A2%84%E8%A8%80%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>钱包开发（续）：助记词、HD 派生与地址的来龙去脉</title>
+    <link href="https://lucifer.ren/blog/2026/11/01/web3-wallet-dev/"/>
+    <id>https://lucifer.ren/blog/2026/11/01/web3-wallet-dev/</id>
+    <published>2026-10-31T16:00:00.000Z</published>
+    <updated>2026-11-15T03:09:28.237Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 &lt;a href=&quot;https://lucifer.ren/blog/2025/02/16/web3-wallet/&quot; title=&quot;Web3 的入口 - 区块链钱包&quot;&gt;《Web3 的入口 - 区块链钱包》&lt;/a&gt; 的结尾，我立过一个 flag：钱包开发的细节还没讲，留言多就专门写一篇。一年半过去了，留言不算多，但这个债我一直记着——毕竟在 web3 圈子混，欠的债是要还的，我只是不想用私钥签名赖账。&lt;/p&gt;
+&lt;p&gt;那篇文章留了三个没讲清楚的尾巴：私钥到底从哪来？助记词怎么就变成了一串钥匙？地址又是怎么从公钥变出来的？而且为了教学方便，旧文的示例里把公钥直接当地址用（就是 &lt;code&gt;get_address()&lt;/code&gt; 里返回的那串 hex），真实的推导根本不是这么回事，本文就来补上这一课。&lt;/p&gt;
+&lt;p&gt;先把全程的路线图亮出来，你可以把它当成一次”寻根之旅”：一串随机数从出生（熵），到翻译成人话（助记词），磨成始祖（种子），繁衍出一族后代（私钥），最后领到能晒出来的门牌号（地址）。这条链是：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;熵 → 助记词 → 种子 → 派生路径 → 私钥 → 公钥 → 地址&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;只有走完这条线，你才能真正理解那句听起来很魔法的话——“同一套助记词能同时管理以太坊、比特币、Solana 上无数个钱包”。这不是魔法，是三份 BIP 规范（BIP39、BIP32、BIP44）叠出来的组合技。本文全程代码驱动，每一段代码都是我真实跑过的，老规矩，建议你跟着敲一遍。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="钱包" scheme="https://lucifer.ren/blog/tags/%E9%92%B1%E5%8C%85/"/>
+    
+      <category term="密码学" scheme="https://lucifer.ren/blog/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Gas：链上一切行为的价格标签</title>
+    <link href="https://lucifer.ren/blog/2026/10/30/web3-gas/"/>
+    <id>https://lucifer.ren/blog/2026/10/30/web3-gas/</id>
+    <published>2026-10-29T16:00:00.000Z</published>
+    <updated>2026-11-15T07:17:44.179Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在&lt;a href=&quot;https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/&quot; title=&quot;《从零开始构建区块链》&quot;&gt;《从零开始构建区块链》&lt;/a&gt;里，我们亲手搓过一条玩具链：转账、挖矿、查余额，全程免费，转账像发微信消息一样轻快。但那条链有个没说破的”作弊”：真实链上不是这样的。你在以太坊上哪怕只转 0.001 ETH，也得先掏一笔手续费；赶上牛市高峰，一次 DeFi 操作的 gas 费够吃顿火锅，部署合约更是”豪门消费”。&lt;/p&gt;
+&lt;p&gt;很多新手第一次被 web3 劝退，不是因为看不懂钱包界面，而是被 gas 吓退的：为什么转个账还要钱？为什么贵的时候一笔要几十美元？这笔钱到底给了谁？为什么不干脆免费？&lt;/p&gt;
+&lt;p&gt;这篇文章就把 gas 掰开揉碎讲明白：它是什么、怎么定价、EIP-1559 之后钱包里那三个数字（base fee、priority fee、max fee）到底是什么意思，以及为什么有一部分费用会被当众”烧掉”。老规矩，最后用 Python 把整个机制模拟一遍，所有输出都是真实运行结果，欢迎对着敲。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
+    
+      <category term="Ethereum" scheme="https://lucifer.ren/blog/tags/Ethereum/"/>
+    
+      <category term="Gas" scheme="https://lucifer.ren/blog/tags/Gas/"/>
+    
+  </entry>
   
   <entry>
     <title>《查拉图斯特拉如是说》导读：一本反福音书</title>
@@ -105,7 +424,7 @@
     <link href="https://lucifer.ren/blog/2026/10/26/learn-personal-finance/"/>
     <id>https://lucifer.ren/blog/2026/10/26/learn-personal-finance/</id>
     <published>2026-10-25T16:00:00.000Z</published>
-    <updated>2026-10-25T16:41:15.456Z</updated>
+    <updated>2026-11-15T03:03:43.016Z</updated>
     
     <summary type="html">
     
@@ -174,9 +493,9 @@
       <category term="自我提升" scheme="https://lucifer.ren/blog/categories/%E7%94%9F%E6%B4%BB/%E8%87%AA%E6%88%91%E6%8F%90%E5%8D%87/"/>
     
     
-      <category term="自我提升" scheme="https://lucifer.ren/blog/tags/%E8%87%AA%E6%88%91%E6%8F%90%E5%8D%87/"/>
-    
       <category term="计划" scheme="https://lucifer.ren/blog/tags/%E8%AE%A1%E5%88%92/"/>
+    
+      <category term="自我提升" scheme="https://lucifer.ren/blog/tags/%E8%87%AA%E6%88%91%E6%8F%90%E5%8D%87/"/>
     
       <category term="年度目标" scheme="https://lucifer.ren/blog/tags/%E5%B9%B4%E5%BA%A6%E7%9B%AE%E6%A0%87/"/>
     
@@ -215,13 +534,14 @@
     <link href="https://lucifer.ren/blog/2026/10/01/japan-k-line/"/>
     <id>https://lucifer.ren/blog/2026/10/01/japan-k-line/</id>
     <published>2026-09-30T16:00:00.000Z</published>
-    <updated>2026-10-02T13:16:10.483Z</updated>
+    <updated>2026-11-15T03:03:43.015Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;本文主要介绍蜡烛图各种形态。&lt;/p&gt;
 &lt;p&gt;从趋势上来看大体上分为两种：反转形态和持续形态。&lt;br&gt;从 K 线数量上来看大体上分为四种：单一 K 线、两根 K 线、三根 K 线、一大堆 K 线。&lt;/p&gt;
-&lt;p&gt;熟练掌握这些 K 线，再结合一些其他技术分析（比如交易量， 均线，通道线，缠论等等），那么在技术分析的道路上你就已经走了很远了。&lt;/p&gt;
+&lt;p&gt;所有形态都有一个共同前提：&lt;strong&gt;先有趋势，才有反转&lt;/strong&gt;。同样一组 K 线，出现在下跌趋势末尾是看涨反转信号，出现在横盘里可能什么都不是——所以对照下文识别形态时，永远先问自己”当前的趋势是什么”（趋势的量化判断可以结合均线，见文末相关阅读）。&lt;/p&gt;
+&lt;p&gt;熟练掌握这些 K 线，再结合一些其他技术分析（比如交易量， 均线，通道线，&lt;a href=&quot;https://lucifer.ren/blog/2025/06/20/zen-k-line/&quot; title=&quot;缠论&quot;&gt;缠论&lt;/a&gt;等等），那么在技术分析的道路上你就已经走了很远了。&lt;/p&gt;
     
     </summary>
     
@@ -269,336 +589,6 @@
       <category term="cordis" scheme="https://lucifer.ren/blog/tags/cordis/"/>
     
       <category term="plugin" scheme="https://lucifer.ren/blog/tags/plugin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>配置文件的保险箱：dotr</title>
-    <link href="https://lucifer.ren/blog/2026/09/20/dotr/"/>
-    <id>https://lucifer.ren/blog/2026/09/20/dotr/</id>
-    <published>2026-09-19T16:00:00.000Z</published>
-    <updated>2026-09-27T06:25:56.960Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;配置备份是一个非常常见的需求。用了十几年电脑的人，多半都踩过一次：某天机器开不了机，或者一条命令把 &lt;code&gt;.zshrc&lt;/code&gt; 覆盖了，然后发现真正重要的东西并不在 Git 里，而在 home 目录那些说不清该不该提交的文件里。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="工具" scheme="https://lucifer.ren/blog/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="dotfiles" scheme="https://lucifer.ren/blog/tags/dotfiles/"/>
-    
-      <category term="配置备份" scheme="https://lucifer.ren/blog/tags/%E9%85%8D%E7%BD%AE%E5%A4%87%E4%BB%BD/"/>
-    
-      <category term="配置管理" scheme="https://lucifer.ren/blog/tags/%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86/"/>
-    
-      <category term="备份工具" scheme="https://lucifer.ren/blog/tags/%E5%A4%87%E4%BB%BD%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="rust" scheme="https://lucifer.ren/blog/tags/rust/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我不知道的《易经》</title>
-    <link href="https://lucifer.ren/blog/2026/07/25/yi-jing/"/>
-    <id>https://lucifer.ren/blog/2026/07/25/yi-jing/</id>
-    <published>2026-07-24T16:00:00.000Z</published>
-    <updated>2026-07-25T07:15:31.569Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;之前很长一段时间，我对《易经》的印象很固定：玄、算卦、没什么实际用处、看不懂。一提到它，脑子里浮现的就是摇铜钱、查卦辞、说吉凶那一套。直到最近系统看了一些材料，才发现自己之前的理解偏差很大。它其实不是一本“算命书”，而是一套观察变化、做判断的框架。下面把我目前的浅薄认识整理一下，尽量从基础讲起。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="易经" scheme="https://lucifer.ren/blog/categories/%E6%98%93%E7%BB%8F/"/>
-    
-      <category term="读后感" scheme="https://lucifer.ren/blog/categories/%E6%98%93%E7%BB%8F/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
-    
-    
-      <category term="易经" scheme="https://lucifer.ren/blog/tags/%E6%98%93%E7%BB%8F/"/>
-    
-      <category term="读后感" scheme="https://lucifer.ren/blog/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Freqtrade 进阶：把多个弱信号拧成一根绳——多信号评分策略实战</title>
-    <link href="https://lucifer.ren/blog/2026/07/20/web3-freqtrade-2/"/>
-    <id>https://lucifer.ren/blog/2026/07/20/web3-freqtrade-2/</id>
-    <published>2026-07-19T16:00:00.000Z</published>
-    <updated>2026-07-25T07:53:32.604Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;大家好，我是 Lucifer，又来聊聊 Web3 的那些有趣事儿了。今天咱们来聊聊 Freqtrade。&lt;/p&gt;
-&lt;p&gt;上一篇我们从零搭好了 Freqtrade，写了个最简单的 SMA 交叉策略。很多人跑完回测后跟我说：“这策略也太简单了，实盘根本扛不住。”&lt;/p&gt;
-&lt;p&gt;说得对。那篇是入门用的“Hello World”。真正能活下来的策略，从来不是依赖某一个“神级指标”，而是把一堆看起来不怎么样的弱信号，用正确的方式组合起来。&lt;/p&gt;
-&lt;p&gt;今天这篇是正式续篇。我们会把「组合弱信号」这个核心思想，落地成一个能直接在 Freqtrade 里跑的策略。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-      <category term="量化交易" scheme="https://lucifer.ren/blog/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>加密交易的风险管理：仓位、止损与资金分配</title>
-    <link href="https://lucifer.ren/blog/2026/05/22/web3-risk-management/"/>
-    <id>https://lucifer.ren/blog/2026/05/22/web3-risk-management/</id>
-    <published>2026-05-21T16:00:00.000Z</published>
-    <updated>2026-05-22T14:05:02.863Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="理财" scheme="https://lucifer.ren/blog/categories/%E7%90%86%E8%B4%A2/"/>
-    
-      <category term="交易" scheme="https://lucifer.ren/blog/categories/%E4%BA%A4%E6%98%93/"/>
-    
-    
-      <category term="投资" scheme="https://lucifer.ren/blog/tags/%E6%8A%95%E8%B5%84/"/>
-    
-      <category term="交易" scheme="https://lucifer.ren/blog/tags/%E4%BA%A4%E6%98%93/"/>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-      <category term="风险管理" scheme="https://lucifer.ren/blog/tags/%E9%A3%8E%E9%99%A9%E7%AE%A1%E7%90%86/"/>
-    
-      <category term="仓位管理" scheme="https://lucifer.ren/blog/tags/%E4%BB%93%E4%BD%8D%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>永续合约：无到期日的杠杆交易是如何运作的</title>
-    <link href="https://lucifer.ren/blog/2026/05/12/web3-perpetual/"/>
-    <id>https://lucifer.ren/blog/2026/05/12/web3-perpetual/</id>
-    <published>2026-05-11T16:00:00.000Z</published>
-    <updated>2026-05-22T06:42:28.080Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;永续合约（Perpetual Contract）是加密货币交易量最大的衍生品，日交易量超过现货数倍。它让你不用持有 BTC 就能做多做空，用 $100 撬动 $10,000 的头寸。但杠杆是双刃剑——放大收益的同时也放大亏损，爆仓一瞬间就是归零。本文将从原理出发，拆解永续合约的核心机制：Funding Rate 如何锚定现货价格、标记价格如何防止恶意清算、以及保证金和清算的数学关系。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-      <category term="DeFi" scheme="https://lucifer.ren/blog/tags/DeFi/"/>
-    
-      <category term="永续合约" scheme="https://lucifer.ren/blog/tags/%E6%B0%B8%E7%BB%AD%E5%90%88%E7%BA%A6/"/>
-    
-      <category term="衍生品" scheme="https://lucifer.ren/blog/tags/%E8%A1%8D%E7%94%9F%E5%93%81/"/>
-    
-      <category term="dYdX" scheme="https://lucifer.ren/blog/tags/dYdX/"/>
-    
-      <category term="GMX" scheme="https://lucifer.ren/blog/tags/GMX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>代币经济学：如何判断一个代币值不值得买</title>
-    <link href="https://lucifer.ren/blog/2026/05/03/web3-tokenomics/"/>
-    <id>https://lucifer.ren/blog/2026/05/03/web3-tokenomics/</id>
-    <published>2026-05-02T16:00:00.000Z</published>
-    <updated>2026-05-22T06:42:28.081Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;你研究了一个项目，技术很好，团队很强，社区活跃。然后你看了一眼代币分配：团队持有 40%，6 个月后全部解锁。你还会买吗？代币经济学（Tokenomics）就是帮你回答这类问题的框架——它研究代币的供应、分配、流通和价值捕获机制，决定了”这个代币的价格长期是涨还是跌”的底层逻辑。如果说技术决定项目能不能活，那 Tokenomics 决定代币值不值钱。本文将拆解代币经济学的核心要素，教你用量化方法评估一个代币的长期价值。&lt;/p&gt;
-&lt;p&gt;这篇文章是对之前 &lt;a href=&quot;https://lucifer.ren/blog/2025/09/16/web3-value-center/&quot;&gt;自己动手制作 Web3 代币估值表&lt;/a&gt; 的上游知识补充——先理解 Tokenomics，再做估值才有根基。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="投资" scheme="https://lucifer.ren/blog/tags/%E6%8A%95%E8%B5%84/"/>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-      <category term="Tokenomics" scheme="https://lucifer.ren/blog/tags/Tokenomics/"/>
-    
-      <category term="代币经济学" scheme="https://lucifer.ren/blog/tags/%E4%BB%A3%E5%B8%81%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>稳定币机制全解：从 USDT 到 UST 崩盘的启示</title>
-    <link href="https://lucifer.ren/blog/2026/05/02/web3-stablecoin/"/>
-    <id>https://lucifer.ren/blog/2026/05/02/web3-stablecoin/</id>
-    <published>2026-05-01T16:00:00.000Z</published>
-    <updated>2026-05-22T06:42:28.080Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在加密世界的剧烈波动中，稳定币是唯一的”避风港”。它们锚定美元（或其他法币），让你在 DeFi 中借贷、交易、计价时不用担心结算那一刻价格已经变了 10%。但稳定币远非”稳定”——2022 年 5 月 UST 脱锚引发 $400 亿蒸发就是血淋淋的教训。本文将解析三种主流稳定币机制的原理、权衡和风险，帮你理解”1 美元”背后到底靠什么在撑。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-      <category term="稳定币" scheme="https://lucifer.ren/blog/tags/%E7%A8%B3%E5%AE%9A%E5%B8%81/"/>
-    
-      <category term="USDT" scheme="https://lucifer.ren/blog/tags/USDT/"/>
-    
-      <category term="USDC" scheme="https://lucifer.ren/blog/tags/USDC/"/>
-    
-      <category term="DAI" scheme="https://lucifer.ren/blog/tags/DAI/"/>
-    
-      <category term="UST" scheme="https://lucifer.ren/blog/tags/UST/"/>
-    
-      <category term="MakerDAO" scheme="https://lucifer.ren/blog/tags/MakerDAO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DeFi 保险：谁来保护你的链上资产？</title>
-    <link href="https://lucifer.ren/blog/2026/04/22/web3-defi-insurance/"/>
-    <id>https://lucifer.ren/blog/2026/04/22/web3-defi-insurance/</id>
-    <published>2026-04-21T16:00:00.000Z</published>
-    <updated>2026-05-22T06:42:28.079Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;2022 年 DeFi 黑客攻击造成超过 $30 亿损失，2023 年仍有近 $20 亿被盗。你在 AAVE 存了 10 万 USDC，万一合约被攻破怎么办？你跨链走 Wormhole，万一桥被黑了呢？传统金融有 FDIC 存款保险、证券投资者保护基金，DeFi 世界同样需要保险——但它的实现方式完全不同。本文将解析 DeFi 保险的运作原理、覆盖范围、定价机制，以及为什么这个赛道虽然重要却发展缓慢。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-      <category term="DeFi" scheme="https://lucifer.ren/blog/tags/DeFi/"/>
-    
-      <category term="保险" scheme="https://lucifer.ren/blog/tags/%E4%BF%9D%E9%99%A9/"/>
-    
-      <category term="Nexus Mutual" scheme="https://lucifer.ren/blog/tags/Nexus-Mutual/"/>
-    
-      <category term="智能合约安全" scheme="https://lucifer.ren/blog/tags/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%AE%89%E5%85%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Claude Code 高级指南：驾驭上下文的艺术</title>
-    <link href="https://lucifer.ren/blog/2026/01/25/ai-claude-code-advanced-skills/"/>
-    <id>https://lucifer.ren/blog/2026/01/25/ai-claude-code-advanced-skills/</id>
-    <published>2026-01-24T16:00:00.000Z</published>
-    <updated>2026-03-11T02:58:59.467Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在AI辅助编程的时代浪潮中，Claude Code作为Anthropic的旗舰工具，已然成为开发者提升效率的核心引擎。它不只是代码生成器，更是连接创意与实现的桥梁。本文将从基础概念层层展开，深入探讨高级优化策略，帮助你全面掌握这一工具。无论你是编程新手还是资深专家，都能从中汲取实用洞见。我们将结合真实场景和示例，确保内容易于理解且可直接应用。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="ai" scheme="https://lucifer.ren/blog/categories/ai/"/>
-    
-    
-      <category term="ai" scheme="https://lucifer.ren/blog/tags/ai/"/>
-    
-      <category term="claude" scheme="https://lucifer.ren/blog/tags/claude/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NotebookLM：AI 驱动的知识炼金术，瞬间转化复杂信息为易懂洞见</title>
-    <link href="https://lucifer.ren/blog/2026/01/01/ai-notebooklm/"/>
-    <id>https://lucifer.ren/blog/2026/01/01/ai-notebooklm/</id>
-    <published>2025-12-31T16:00:00.000Z</published>
-    <updated>2026-01-03T04:54:57.562Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在信息爆炸的时代，我们常常面对海量内容，却苦于时间有限、理解力不足。想象一下，你遇到一篇技术深度文章，充满了专业术语和复杂逻辑，本来需要花几个小时研读，现在只需几分钟就能掌握核心，甚至转化成生动视频。这听起来像科幻？不，这就是 Google 的 NotebookLM —— 一个 AI 驱动的研究和笔记工具。它利用 Google Gemini 等先进模型，帮助用户上传来源、自动分析、生成总结，并通过互动对话或多媒体输出，让知识获取变得如探囊取物般简单。&lt;/p&gt;
-&lt;p&gt;NotebookLM 并非简单的总结器，而是你的“思考伙伴”。它于 2023 年推出，由 Google Labs 开发，旨在帮助研究者、学生和专业人士处理文档、网页等材料。到 2026 年初，它已演变为支持协作编辑、闪卡生成和测验功能的综合平台。根据 Google 官方支持页面，它能上传 PDF、网站、Google Docs 等多种格式，并通过 AI 提炼关键信息，避免用户手动整理的繁琐。作为一个免费工具（部分高级功能需 Google 账户），它强调隐私：所有处理均在本地或云端安全进行，不用于训练模型。&lt;/p&gt;
-&lt;p&gt;本文将基于实际使用体验，逐步拆解 NotebookLM 的工作原理和优势。我们不会深挖底层 AI 算法（那属于 Google 的黑箱），而是聚焦实用场景，用类比和例子说明如何让它成为你的知识加速器。让我们从一个简单链接入手，看看它如何变魔术。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="ai" scheme="https://lucifer.ren/blog/categories/ai/"/>
-    
-    
-      <category term="ai" scheme="https://lucifer.ren/blog/tags/ai/"/>
-    
-      <category term="notebooklm" scheme="https://lucifer.ren/blog/tags/notebooklm/"/>
-    
-      <category term="google" scheme="https://lucifer.ren/blog/tags/google/"/>
-    
-      <category term="gemini" scheme="https://lucifer.ren/blog/tags/gemini/"/>
-    
-      <category term="knowledge-management" scheme="https://lucifer.ren/blog/tags/knowledge-management/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>当下流动性池分析</title>
-    <link href="https://lucifer.ren/blog/2025/12/31/web3-lp-2025/"/>
-    <id>https://lucifer.ren/blog/2025/12/31/web3-lp-2025/</id>
-    <published>2025-12-30T16:00:00.000Z</published>
-    <updated>2026-01-02T13:54:59.777Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在去中心化金融（DeFi）生态中，流动性池是自动做市商（AMM）机制的核心组成部分。它允许用户通过提供资产来赚取费用，同时为交易者提供即时交换服务，而无需依赖传统的订单簿。流动性池的设计直接影响交易滑点、资金效率和流动性提供者（LP）的风险回报比。随着 DeFi 的演进，不同协议不断优化池子模型，以应对永久性损失（Impermanent Loss, IL）、滑点和多资产支持等问题。本文将分析当下几个主流流动性池协议，包括 Uniswap V3、Balancer、Curve 和 Bancor V3。我们将通过通俗的解释、类比和 Python 代码模拟来剖析其原理，帮助读者理解这些机制如何在实际中运作。所有模拟均基于简化假设，旨在说明核心概念，而非精确预测。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="区块链" scheme="https://lucifer.ren/blog/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="web3" scheme="https://lucifer.ren/blog/tags/web3/"/>
-    
-      <category term="swap" scheme="https://lucifer.ren/blog/tags/swap/"/>
-    
-      <category term="uniswap" scheme="https://lucifer.ren/blog/tags/uniswap/"/>
-    
-      <category term="v4" scheme="https://lucifer.ren/blog/tags/v4/"/>
-    
-      <category term="balancer" scheme="https://lucifer.ren/blog/tags/balancer/"/>
-    
-      <category term="curve" scheme="https://lucifer.ren/blog/tags/curve/"/>
-    
-      <category term="bancor" scheme="https://lucifer.ren/blog/tags/bancor/"/>
-    
-      <category term="流动性池" scheme="https://lucifer.ren/blog/tags/%E6%B5%81%E5%8A%A8%E6%80%A7%E6%B1%A0/"/>
     
   </entry>
   

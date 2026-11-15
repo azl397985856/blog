@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>钱包开发（续）：助记词、HD 派生与地址的来龙去脉 | lucifer的网络博客</title>
+  
+  <meta name="keywords" content="前端 leetocde 数据结构 算法 lucifer 大前端 性能优化 前端架构 前端工程化">
+  
+  
+  <meta name="description" content="lucifer的个人博客，用来记录LeeCode刷题过程和心得，以及构建大前端知识体系">
+  
+
+  
+  <link rel="alternate" href="/blog/atom.xml" title="lucifer的网络博客">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+  
+
+  
+    <link rel="stylesheet" href="https://lucifer.ren/blog/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVTTYT432Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FVTTYT432Q');
+    </script>
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?576ec211e11a69128667eb8c11a6cffe";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+  <script
+    src="https://my.openwrite.cn/js/readmore.js"
+    type="text/javascript"
+  ></script>
+  <script>
+    var btw = new BTWPlugin();
+    setTimeout(function () {
+      window.btw.init({
+        id: "container",
+        blogId: "17446-1571644985832-648",
+        name: "力扣加加",
+        qrcode: "https://p.ipic.vip/n8gbxo.jpg",
+        keyword: "more",
+      });
+    }, 100);
+  </script>
+  <body>
+    
+    
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>lucifer</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/blog/"
+            
+            
+            id="blog">
+            <i class='fas fa-home fa-fw'></i>&nbsp;主页
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="http://leetcode-solution.cn/"
+            
+            
+            id="http:leetcode-solution.cn">
+            <i class='fas fa-laptop-code fa-fw'></i>&nbsp;官网
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/friends/"
+            
+            
+            id="blogfriends">
+            <i class='fas fa-link fa-fw'></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/about/"
+            
+            
+            id="blogabout">
+            <i class='fas fa-id-card-alt fa-fw'></i>&nbsp;联系我
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/blog/' >
+        
+          lucifer的网络博客
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/blog/"
+                  
+                  
+                  id="blog">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;回到主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/categories/"
+                  
+                  
+                  id="blogcategories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/tags/"
+                  
+                  
+                  id="blogtags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/archives/"
+                  
+                  
+                  id="blogarchives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/blog/"
+                
+                
+                id="blog">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/archives/"
+                
+                
+                id="blogarchives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/about/"
+                
+                
+                id="blogabout">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+    <div id="container" class="l_body">
+      <div class="body-wrapper">
+        <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/blog/2026/11/01/web3-wallet-dev/">
+        钱包开发（续）：助记词、HD 派生与地址的来龙去脉
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2026-11-01</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/区块链/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>区块链</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">6.6k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">25分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>在 <a href="https://lucifer.ren/blog/2025/02/16/web3-wallet/" title="Web3 的入口 - 区块链钱包">《Web3 的入口 - 区块链钱包》</a> 的结尾，我立过一个 flag：钱包开发的细节还没讲，留言多就专门写一篇。一年半过去了，留言不算多，但这个债我一直记着——毕竟在 web3 圈子混，欠的债是要还的，我只是不想用私钥签名赖账。</p>
+<p>那篇文章留了三个没讲清楚的尾巴：私钥到底从哪来？助记词怎么就变成了一串钥匙？地址又是怎么从公钥变出来的？而且为了教学方便，旧文的示例里把公钥直接当地址用（就是 <code>get_address()</code> 里返回的那串 hex），真实的推导根本不是这么回事，本文就来补上这一课。</p>
+<p>先把全程的路线图亮出来，你可以把它当成一次”寻根之旅”：一串随机数从出生（熵），到翻译成人话（助记词），磨成始祖（种子），繁衍出一族后代（私钥），最后领到能晒出来的门牌号（地址）。这条链是：</p>
+<p><strong>熵 → 助记词 → 种子 → 派生路径 → 私钥 → 公钥 → 地址</strong></p>
+<p>只有走完这条线，你才能真正理解那句听起来很魔法的话——“同一套助记词能同时管理以太坊、比特币、Solana 上无数个钱包”。这不是魔法，是三份 BIP 规范（BIP39、BIP32、BIP44）叠出来的组合技。本文全程代码驱动，每一段代码都是我真实跑过的，老规矩，建议你跟着敲一遍。</p>
+<a id="more"></a>
+<h2 id="私钥：就是一个数字，别怕"><a href="#私钥：就是一个数字，别怕" class="headerlink" title="私钥：就是一个数字，别怕"></a>私钥：就是一个数字，别怕</h2><p>先来祛魅。私钥听起来神秘兮兮的，说白了：<strong>它就是一个 256 位的随机数</strong>，没有任何格式上的魔法。</p>
+<p>打个比方。如果区块链是一家银行，私钥就是你保险柜的密码。这个保险柜有个特点：<strong>不认人，只认密码</strong>——谁能一字不差报出密码，谁就是主人。所以圈子里那句名言”not your keys, not your coins”，翻译过来就是：密码不在你手里，保险柜就不算你的。</p>
+<p>硬要说约束的话，是这个数必须落在 1 到 n-1 之间，n 是 secp256k1 椭圆曲线的阶（一个略小于 2^256 的素数）。也就是说，你的私钥只是从约 2^256 个数字里挑出来的一个。</p>
+<p>“随机”很重要。你要是拿自己的生日、手机号来当私钥，那黑客都不用破解密码学，试一圈生日就能把你的资产收走——等于把保险柜密码设成了 123456。所以正经钱包都用密码学安全的随机源（<code>os.urandom</code>、硬件真随机数）来生成。</p>
+<p>你可能要问了：那我不停地猜数字，总能撞上别人的私钥吧？先别急，我们算一笔账。2^256 ≈ 1.16 × 10^77，而可观测宇宙的原子总数大约是 10^80 量级。换句话说，把宇宙里每个原子都变成一台超级计算机、从宇宙诞生猜到宇宙热寂，撞中某个特定私钥的概率依然约等于零。所以与其琢磨猜别人的私钥，不如想想怎么别把自己手里的弄丢——历史上丢币的案例，99% 是人祸而不是密码学被攻破。</p>
+<h2 id="公钥：拿私钥在”公共模具”上压一个点"><a href="#公钥：拿私钥在”公共模具”上压一个点" class="headerlink" title="公钥：拿私钥在”公共模具”上压一个点"></a>公钥：拿私钥在”公共模具”上压一个点</h2><p>有了私钥 k，公钥是通过椭圆曲线上的”乘法”算出来的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">公钥 P = k × G</span><br></pre></td></tr></table></figure>
+<p>这里 G 是 secp256k1 曲线上一个固定的基点。它不是秘密，全世界的钱包用的都是同一个 G——你可以把它理解成一台<strong>印钞机的公共模具</strong>：模具人人可见，但往模具里放什么”料”（私钥），决定压出来的是什么（公钥）。</p>
+<p>曲线方程和域运算本文不展开（想啃数学的可以去读标准文档），只需要建立一个直觉：</p>
+<ul>
+<li><strong>正推容易</strong>：知道 k 和 G，算 P 只是一堆固定规则的加法，毫秒级完成。像把苹果榨成汁，咔咔几下就好。</li>
+<li><strong>反推不可行</strong>：知道 P 和 G，想反推出 k？这就是著名的”椭圆曲线离散对数问题”，目前没有多项式时间的算法。想把果汁还原成苹果，做不到。</li>
+</ul>
+<p>这就是非对称加密的基石：公钥可以随便给人看，私钥死也不能丢。用 Python 的 <code>ecdsa</code> 库演示一下（<code>pip install ecdsa</code>）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> ecdsa <span class="keyword">import</span> SigningKey, SECP256k1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 私钥的本质：一个落在 1 ~ n-1 之间的 256 位随机数</span></span><br><span class="line">n = SECP256k1.order</span><br><span class="line">print(<span class="string">"曲线阶 n ="</span>, hex(n))</span><br><span class="line"></span><br><span class="line">priv = int.from_bytes(os.urandom(<span class="number">32</span>), <span class="string">"big"</span>) % n  <span class="comment"># 约束在曲线阶之内</span></span><br><span class="line">sk = SigningKey.from_secret_exponent(priv, curve=SECP256k1)</span><br><span class="line">pub = sk.verifying_key.to_string()  <span class="comment"># 64 字节 = X(32) + Y(32)</span></span><br><span class="line">print(<span class="string">"私钥:"</span>, hex(priv))</span><br><span class="line">print(<span class="string">"公钥:"</span>, pub.hex())</span><br></pre></td></tr></table></figure>
+<p>真实运行输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">曲线阶 n = 0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141</span><br><span class="line">私钥: 0x131006660e89706acad506d025714ddd01194c10dbcc153c259d959c61b8462d</span><br><span class="line">公钥: 1a8f1b783b0ff9d1ef7e9693bde8f3939d9c6dd80dfb9fc7fdeeba699982a8cf2bb292334361407f8e2257441cb7c292787c00a9b16b451228302bc9646d9364</span><br></pre></td></tr></table></figure>
+<p>（私钥是随机生成的，你跑出来会是另一对私钥公钥，曲线阶 n 则永远是这个值——它是全宇宙通用的”模具参数”。）</p>
+<p>看输出：私钥是一个大整数；公钥是 128 个 hex 字符。注意，公钥是 64 字节：曲线点的 X 坐标 32 字节 + Y 坐标 32 字节，这叫<strong>非压缩公钥</strong>——公钥本质上是曲线上的一个点，有横坐标和纵坐标。如果在前面再拼一个 <code>04</code> 前缀，就是完整的 65 字节非压缩格式（<code>04 || X || Y</code>）。记住这个结构，算地址的时候会用到。</p>
+<h2 id="BIP39：把一串-0-1-翻译成人话"><a href="#BIP39：把一串-0-1-翻译成人话" class="headerlink" title="BIP39：把一串 0/1 翻译成人话"></a>BIP39：把一串 0/1 翻译成人话</h2><p>先抛个问题：一个 256 位的私钥，用 hex 写出来是 64 个字符。让人手抄 64 个十六进制字符，抄错一个字符资产就没了——这跟让人背圆周率没什么区别，反人类。</p>
+<p>BIP39 的思路很朴素：<strong>人不擅长背符号，但擅长背词。</strong> 所以它准备了一本 2048 个单词的”密码本”，专门把 0/1 串翻译成人话。</p>
+<p>完整流程是这样的：</p>
+<ol>
+<li><strong>掷骰子</strong>：生成 <strong>128 位熵</strong>（16 字节随机数）。这 128 下骰子的结果，就是你整个钱包宇宙的”奇点”；</li>
+<li><strong>算自检位</strong>：对熵做 SHA256，取哈希结果的<strong>前 4 位</strong>作为校验和。玩过身份证的都知道，身份证号最后一位就是校验码，专门防抄错——助记词这里是同款思路；</li>
+<li><strong>拼起来</strong>：熵（128 bit）+ 校验和（4 bit）拼成 <strong>132 bit</strong>；</li>
+<li><strong>切段</strong>：切成 <strong>12 段，每段 11 bit</strong>；</li>
+<li><strong>查密码本</strong>：每段 11 bit 是一个 0~2047 的数字，当页码去查那本 <strong>2048 个单词的标准词表</strong>，翻出 12 个单词。</li>
+</ol>
+<p>反过来（导入助记词恢复钱包）也一样：12 个词查回 12 个页码，拼回 132 bit，重新算一遍 SHA256 验证校验和，再取出熵。<strong>自检位的意义就在这</strong>：你抄错一个词，拼出来的 bit 序列大概率过不了校验，钱包直接报错，而不是默默给你恢复出一个空钱包。</p>
+<p>最后一步，把助记词磨成种子。这一步用的是 PBKDF2——一种<strong>故意设计得很慢</strong>的密钥推导函数。为什么故意慢？你想想有些 App，密码连错几次就让你干等 30 秒，就是在拖暴力破解的后腿。PBKDF2 同理：攻击者每试一个助记词，都得老老实实跑完 2048 轮哈希，成本直接翻 2048 倍。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line"><span class="comment"># 核心调用示意：密码 = 助记词，盐 = "mnemonic" + passphrase，2048 轮迭代</span></span><br><span class="line"><span class="comment"># （mnemonic 用下文动手环节的 mini 词表演示值；passphrase 是可选项，这里先取空串）</span></span><br><span class="line">mnemonic = <span class="string">"abstract abandon ability"</span></span><br><span class="line">passphrase = <span class="string">""</span></span><br><span class="line">salt = (<span class="string">"mnemonic"</span> + passphrase).encode(<span class="string">"utf-8"</span>)</span><br><span class="line">seed = hashlib.pbkdf2_hmac(<span class="string">"sha512"</span>, mnemonic.encode(<span class="string">"utf-8"</span>), salt, <span class="number">2048</span>)</span><br><span class="line">print(<span class="string">"种子:"</span>, seed.hex())</span><br></pre></td></tr></table></figure>
+<p>输入是助记词（当密码）和 <code>mnemonic + passphrase</code>（当盐），磨 2048 轮，产出 <strong>512 位的种子</strong>。这个 passphrase 是可选项，江湖人称”第 25 个词”——同一个助记词配不同 passphrase，磨出来的种子完全不同。相当于 12 个词是”卡”，passphrase 是”密码”：光捡到卡，刷不开门。</p>
+<blockquote>
+<p>下文动手环节里，为了能在文章里把整个流程跑完看得清清楚楚，我用了一张只有 16 个词的 mini 词表演示（索引从 11 bit 缩到 4 bit）。<strong>这是纯粹的教学简化，真实的 BIP39 词表是 2048 个词 × 11 bit 索引</strong>，流程一模一样，只是规模不同。千万别拿 mini 词表生成”助记词”去管理资产。</p>
+</blockquote>
+<h2 id="BIP32-BIP44：一个祖先，繁衍出一棵家谱树"><a href="#BIP32-BIP44：一个祖先，繁衍出一棵家谱树" class="headerlink" title="BIP32/BIP44：一个祖先，繁衍出一棵家谱树"></a>BIP32/BIP44：一个祖先，繁衍出一棵家谱树</h2><p>现在的链这么多，每种代币又要管理一堆地址。如果每生成一个新地址就要重新备份一次私钥，那备份能打到怀疑人生。</p>
+<p>BIP32 提出的方案叫 <strong>HD 钱包（Hierarchical Deterministic，分层确定性）</strong>。名字唬人，意思很家常：<strong>一个祖先，繁衍出一棵家谱树。</strong> 种子是始祖，往下儿子生孙子、孙子生曾孙，子又生孙，孙又生子。每个成员在家谱上的位置由”路径”唯一确定——路径唯一，这个人就唯一。”确定性”说的就是这事儿：同样的种子，长出来的树一模一样；同样的路径，走到的人一模一样。你没有必要保存每个后代，只要记住始祖，族谱上的人随用随取。</p>
+<h3 id="CKD：孩子是怎么生出来的"><a href="#CKD：孩子是怎么生出来的" class="headerlink" title="CKD：孩子是怎么生出来的"></a>CKD：孩子是怎么生出来的</h3><p>从父密钥推子密钥的过程叫 CKD（Child Key Derivation）。听着玄，核心就一次 HMAC-SHA512：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">I = HMAC-SHA512(key = 父 chain code, data = 父密钥 || 索引(4字节))</span><br></pre></td></tr></table></figure>
+<p>输出 64 字节，劈成两半：</p>
+<ul>
+<li><strong>左 256 bit（IL）</strong>：子私钥的”偏移量”，参与计算 <code>子私钥 = (IL + 父私钥) mod n</code>；</li>
+<li><strong>右 256 bit（IR）</strong>：子 chain code，传给子辈接着往下生。</li>
+</ul>
+<p>chain code 是什么？你可以把它理解成<strong>这一房人的”基因”</strong>。生一次娃，基因就换一版，所以同一索引在不同层级派生出的结果完全不同——大房的老三和三房的老三，压根不是一个人。</p>
+<h3 id="hardened-派生-vs-普通派生：上没上锁的门"><a href="#hardened-派生-vs-普通派生：上没上锁的门" class="headerlink" title="hardened 派生 vs 普通派生：上没上锁的门"></a>hardened 派生 vs 普通派生：上没上锁的门</h3><p>派生路径里的撇号（<code>44&#39;</code>）你一定注意到了。这个撇号表示 <strong>hardened（强化）派生</strong>，索引要加上 2^31。两者的区别在生娃时用什么”材料”：</p>
+<ul>
+<li><strong>hardened</strong>：data 用<strong>父私钥</strong>参与。相当于这间房上了锁，没有户主的钥匙（私钥）就生不出孩子。更安全，但外人帮不上忙；</li>
+<li><strong>普通</strong>：data 用<strong>父公钥</strong>参与。好处是”只读钱包”可以完全不碰私钥，就从账户口派生出所有子地址来监听余额——只看账本不动钱；风险是，如果某个子私钥连同父公钥、chain code 一起泄漏，攻击者能反推出父私钥，全家私钥团灭。</li>
+</ul>
+<p>所以 BIP44 的设计是：purpose、coin type、account 这几级全部用 hardened，把不同账户硬隔离（各家锁各家的门）；change 和 address_index 两级用普通派生，方便观察钱包。安全与便利，各取所需。</p>
+<h3 id="m-44’-60’-0’-0-0：从省到门牌号"><a href="#m-44’-60’-0’-0-0：从省到门牌号" class="headerlink" title="m/44’/60’/0’/0/0：从省到门牌号"></a>m/44’/60’/0’/0/0：从省到门牌号</h3><p>这串看起来像乱码的路径，就是最常见的”以太坊第一个账户”的派生路径。别怕，它就是一个<strong>逐级定位</strong>的过程，跟收快递填地址一个道理：先定省，再定市，再定区，最后才是街道门牌号。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>段</th>
+<th>含义</th>
+<th>类比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>m</code></td>
+<td>主密钥（master），由种子直接生成</td>
+<td>户主本人</td>
+</tr>
+<tr>
+<td><code>44&#39;</code></td>
+<td>purpose，固定为 44，表示”我遵循 BIP44 标准”</td>
+<td>行政区划国标，大家按同一套规则填地址</td>
+</tr>
+<tr>
+<td><code>60&#39;</code></td>
+<td>coin type，币种编号，60 是以太坊在 SLIP-44 注册表里的编号</td>
+<td>省</td>
+</tr>
+<tr>
+<td><code>0&#39;</code></td>
+<td>account，账户序号，第 0 个账户（hardened，账户之间互相隔离）</td>
+<td>市</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td>change，0 = 外部链（收款地址），1 = 找零链</td>
+<td>区</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td>address_index，该链条下的第 0 个地址</td>
+<td>街道门牌号</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>还是觉得绕？直接看树长什么样：</p>
+<p><img src="https://lucifer.ren/blog/images/web3/wallet-hd-tree.png" alt="HD 派生树：一颗种子繁衍出一族钥匙，路径就是从树顶走到某个地址的门牌号"></p>
+<p>想开第二个账户？把 account 从 0 改成 1（<code>m/44&#39;/60&#39;/1&#39;/0/0</code>）。想要第二个收款地址？把最后的门牌号 0 改成 1，以此类推。前四级不动，只换门牌。</p>
+<blockquote>
+<p>要说明的是：真实的 BIP32 实现里，普通派生时子<strong>公钥</strong>还需要一步椭圆曲线点加法（<code>子公钥 = 父公钥 + IL×G</code>）才能和子私钥对应上。本文的演示只跑 HMAC-SHA512 链和私钥层面的模加，展示的是派生的<strong>结构</strong>，省略了椭圆曲线那一步，特此诚实标注。</p>
+</blockquote>
+<h2 id="地址：公钥的”摘要”"><a href="#地址：公钥的”摘要”" class="headerlink" title="地址：公钥的”摘要”"></a>地址：公钥的”摘要”</h2><p>到了解开旧文伏笔的时刻。旧文里我把公钥直接当地址用（偷懒了），真实的以太坊地址是这样算的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Keccak-256(非压缩公钥去掉 04 前缀的 64 字节) 的最后 20 字节</span><br></pre></td></tr></table></figure>
+<p>也就是对 <code>X || Y</code> 那 64 字节做 Keccak-256 哈希，丢掉前 12 字节，剩下 20 字节（40 个 hex 字符）就是地址。一个 256 位的公钥，被”摘要”成了一个 160 位的地址。</p>
+<p>为什么叫”摘要”？跟论文摘要一个道理：全文（公钥）太长，平时递名片用摘要（地址）就够了。但从摘要还原不出全文——哈希是单向的，谁也没法从地址反推出公钥，更别说私钥了。</p>
+<blockquote>
+<p>彩蛋：这里的 Keccak-256 和 NIST 标准的 SHA3-256 不是同一个函数。Keccak 赢得了 SHA3 竞赛之后，NIST 把填充规则改了才发布为 SHA3。以太坊选在改动之前就用上了原始版 Keccak，所以 <code>keccak256(m) != sha3_256(m)</code>。用标准库的 SHA3 算地址，会算出一个”没人拥有”的地址，这是历史遗留的经典坑。</p>
+</blockquote>
+<h3 id="EIP-55：给地址装个”验证码”"><a href="#EIP-55：给地址装个”验证码”" class="headerlink" title="EIP-55：给地址装个”验证码”"></a>EIP-55：给地址装个”验证码”</h3><p>以太坊地址不区分大小写——<code>0xabc</code> 和 <code>0xABC</code> 是同一个地址。这带来一个问题：转账时抄错一个字母，没人拦你，钱就飞了。</p>
+<p>EIP-55 的方案很巧妙：<strong>对地址的小写形式再算一次 Keccak-256</strong>，用哈希结果的每个 nibble（4 bit）决定对应位置字母的大小写（nibble ≥ 8 就大写）。数字不受影响，字母的大小写里则藏了一层校验信息——这就是地址自带的”验证码”，跟快递单号最后那位防错校验位是一个思路。抄错一个字母，钱包校验不过，直接报警拒转。这个机制在下面动手环节会真实演示。</p>
+<h3 id="比特币那边：零钱钱包-vs-银行账户"><a href="#比特币那边：零钱钱包-vs-银行账户" class="headerlink" title="比特币那边：零钱钱包 vs 银行账户"></a>比特币那边：零钱钱包 vs 银行账户</h3><p>比特币的地址体系是另一套画风：早期地址用 Base58Check 编码（特意去掉了 <code>0OIl</code> 这些容易看混的字符——连编码都在防手滑），SegWit 之后用 Bech32（<code>bc1</code> 开头），编码细节本文一句带过，感兴趣可以自行展开。</p>
+<p>更值得对照的是<strong>记账方式</strong>，两边简直是两种人：</p>
+<ul>
+<li><strong>比特币：UTXO 模型</strong>（Unspent Transaction Output）。账本里压根没有”余额”这个字段，只有一堆没被花掉的输出。你的钱包就像一个装现金的<strong>零钱钱包</strong>：里面躺着几张固定面额的”钞票”（UTXO），所谓余额，就是所有钞票面额的总和。花 1 个 BTC，实际是掏出一张整钞<strong>烧掉</strong>，重新印两张新的：一张给对方，一张找零给自己。现金付账，找零的本质是”烧旧票、印新票”。</li>
+<li><strong>以太坊：账户模型</strong>。每个地址就是一个账户对象，自带余额字段。转账就是把 A 的余额减一点、B 的加一点，跟<strong>银行账户</strong>一模一样。</li>
+</ul>
+<p>还记得 <a href="https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/" title="《从零开始构建区块链》">《从零开始构建区块链》</a> 里那个 <code>balances</code> 字典吗？那就是账户模型。所以旧文玩具链的交互逻辑更像以太坊，不是巧合，是因为账户模型写起教学代码来简单——UTXO 光是找零逻辑就能多写两百行。</p>
+<h2 id="同一套助记词，为什么能管多条链"><a href="#同一套助记词，为什么能管多条链" class="headerlink" title="同一套助记词，为什么能管多条链"></a>同一套助记词，为什么能管多条链</h2><p><img src="https://lucifer.ren/blog/images/web3/wallet-multichain.png" alt="同一套助记词派生多条链：ETH 走 m/44&#39;/60&#39; 加 secp256k1，SOL 走 m/44&#39;/501&#39; 加 ed25519"></p>
+<p>现在把前面的知识串起来，谜底就揭开了：</p>
+<ol>
+<li><strong>BIP39 让助记词变成唯一的种子</strong>——这一步和链无关，纯粹是”人话变字节”；</li>
+<li><strong>BIP32 让种子长成一棵无限的密钥树</strong>——这一步也和链无关；</li>
+<li><strong>BIP44 给每条链在树上分了一个”区号”（coin type）</strong>——以太坊是 60，比特币是 0，Solana 是 501。</li>
+</ol>
+<p>所以”多链钱包”的本质就是：<strong>同一棵家谱树上，每条链认领自己的分叉。</strong> 就像同一个家族，老大落户北京（60 号分舵），老二落户上海（501 号分舵），但户口本还是同一本。EVM 系的链（Base、BNB Chain、Polygon……）干脆共用 <code>m/44&#39;/60&#39;</code>，因为它们本来就是一个生态，地址格式都一样。</p>
+<p>有一点要诚实说明：Solana 用的是 <strong>ed25519</strong> 曲线（不是 secp256k1），派生算法的细节也有差异（ed25519 的 hardened 派生实现各有讲究），所以严格说是”同一个种子沿不同路径/曲线派生出不同链的钥匙”，而不是简单地换个 coin type 就完事。这也是旧文”多链支持”一节里 <code>SolanaWallet</code> 要单独实现的原因——接口要适配，曲线和派生也得适配。</p>
+<h2 id="动手模拟：从熵到地址的完整之旅"><a href="#动手模拟：从熵到地址的完整之旅" class="headerlink" title="动手模拟：从熵到地址的完整之旅"></a>动手模拟：从熵到地址的完整之旅</h2><p>上面这张多链分叉图就是终点风景，我们先回到起点，把整条流水线亲自走一遍。全程路线如下：</p>
+<p><img src="https://lucifer.ren/blog/images/web3/wallet-pipeline.png" alt="从熵到地址的完整流水线：每个环节&quot;干了什么&quot;都标在箭头上"></p>
+<p>下面把整条链路用 Python 跑一遍。三段代码是<strong>真实串联</strong>的：第一段磨出的种子喂给第二段，第二段摘出的私钥喂给第三段。依赖安装：<code>pip install ecdsa eth-account</code>（第二段只用标准库）。</p>
+<h3 id="第一步：掷骰子-→-助记词-→-种子"><a href="#第一步：掷骰子-→-助记词-→-种子" class="headerlink" title="第一步：掷骰子 → 助记词 → 种子"></a>第一步：掷骰子 → 助记词 → 种子</h3><p>先看代码。再次强调：<strong>16 词 mini 词表是教学简化，真实 BIP39 是 2048 词 × 11 bit</strong>。另外这次运气不错，跑出来的助记词正好是词表前三个词，属于”BIP39 学区房”了：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="comment"># mini 词表：真实 BIP39 英文词表的前 16 个词（完整词表有 2048 个词，这里是教学简化）</span></span><br><span class="line">WORDLIST = [</span><br><span class="line">    <span class="string">"abandon"</span>, <span class="string">"ability"</span>, <span class="string">"able"</span>, <span class="string">"about"</span>, <span class="string">"above"</span>, <span class="string">"absent"</span>, <span class="string">"absorb"</span>,</span><br><span class="line">    <span class="string">"abstract"</span>, <span class="string">"absurd"</span>, <span class="string">"abuse"</span>, <span class="string">"access"</span>, <span class="string">"accident"</span>, <span class="string">"account"</span>,</span><br><span class="line">    <span class="string">"accuse"</span>, <span class="string">"achieve"</span>, <span class="string">"acid"</span>,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一步：生成熵。真实 BIP39 用 128 bit（16 字节），这里用 8 bit（1 字节）方便演示</span></span><br><span class="line">entropy = os.urandom(<span class="number">1</span>)</span><br><span class="line">print(<span class="string">"熵（8 bit）:"</span>, entropy.hex())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二步：取 SHA256(熵) 的前 4 bit 作为校验和（真实 BIP39 同款套路）</span></span><br><span class="line">checksum = hashlib.sha256(entropy).digest()[<span class="number">0</span>] &gt;&gt; <span class="number">4</span></span><br><span class="line">print(<span class="string">"校验和（4 bit）:"</span>, bin(checksum)[<span class="number">2</span>:].zfill(<span class="number">4</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第三步：熵 + 校验和 拼成 12 bit，切成 3 段 x 4 bit，每段当索引查词表</span></span><br><span class="line">bits = bin(int.from_bytes(entropy, <span class="string">"big"</span>))[<span class="number">2</span>:].zfill(<span class="number">8</span>) + bin(checksum)[<span class="number">2</span>:].zfill(<span class="number">4</span>)</span><br><span class="line">print(<span class="string">"拼接结果（12 bit）:"</span>, bits)</span><br><span class="line"></span><br><span class="line">words = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">    index = int(bits[i * <span class="number">4</span>:(i + <span class="number">1</span>) * <span class="number">4</span>], <span class="number">2</span>)  <span class="comment"># 4 bit 索引 -&gt; 16 选 1</span></span><br><span class="line">    words.append(WORDLIST[index])</span><br><span class="line">    print(<span class="string">f"  第 <span class="subst">&#123;i&#125;</span> 段 <span class="subst">&#123;bits[i * <span class="number">4</span>:(i + <span class="number">1</span>) * <span class="number">4</span>]&#125;</span> -&gt; 索引 <span class="subst">&#123;index&#125;</span> -&gt; <span class="subst">&#123;WORDLIST[index]&#125;</span>"</span>)</span><br><span class="line"></span><br><span class="line">mnemonic = <span class="string">" "</span>.join(words)</span><br><span class="line">print(<span class="string">"助记词:"</span>, mnemonic)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第四步：校验和验证（钱包帮你恢复助记词时做的就是这件事）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">verify</span><span class="params">(ws)</span>:</span></span><br><span class="line">    idxs = [WORDLIST.index(w) <span class="keyword">for</span> w <span class="keyword">in</span> ws]</span><br><span class="line">    bs = <span class="string">""</span>.join(bin(i)[<span class="number">2</span>:].zfill(<span class="number">4</span>) <span class="keyword">for</span> i <span class="keyword">in</span> idxs)</span><br><span class="line">    ent = int(bs[:<span class="number">-4</span>], <span class="number">2</span>).to_bytes(<span class="number">1</span>, <span class="string">"big"</span>)</span><br><span class="line">    <span class="keyword">return</span> bin(hashlib.sha256(ent).digest()[<span class="number">0</span>] &gt;&gt; <span class="number">4</span>)[<span class="number">2</span>:].zfill(<span class="number">4</span>) == bs[<span class="number">-4</span>:]</span><br><span class="line"></span><br><span class="line">print(<span class="string">"校验通过:"</span>, verify(words))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 抄错一个词（换成词表里的另一个词）试试</span></span><br><span class="line">bad = words.copy()</span><br><span class="line">bad[<span class="number">1</span>] = <span class="string">"abandon"</span> <span class="keyword">if</span> bad[<span class="number">1</span>] != <span class="string">"abandon"</span> <span class="keyword">else</span> <span class="string">"acid"</span></span><br><span class="line">print(<span class="string">"抄错后的助记词:"</span>, <span class="string">" "</span>.join(bad))</span><br><span class="line">print(<span class="string">"抄错后校验通过:"</span>, verify(bad))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第五步：PBKDF2 从助记词导出 512 bit 种子（这一步与真实 BIP39 完全一致）</span></span><br><span class="line">passphrase = <span class="string">""</span>  <span class="comment"># BIP39 的可选"第 25 个词"</span></span><br><span class="line">seed = hashlib.pbkdf2_hmac(<span class="string">"sha512"</span>, mnemonic.encode(<span class="string">"utf-8"</span>),</span><br><span class="line">                           <span class="string">b"mnemonic"</span> + passphrase.encode(), <span class="number">2048</span>)</span><br><span class="line">print(<span class="string">"种子（512 bit）:"</span>, seed.hex())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 同样的助记词，换个 passphrase，种子完全不同</span></span><br><span class="line">seed2 = hashlib.pbkdf2_hmac(<span class="string">"sha512"</span>, mnemonic.encode(<span class="string">"utf-8"</span>),</span><br><span class="line">                            <span class="string">b"mnemonic"</span> + <span class="string">b"lucifer"</span>, <span class="number">2048</span>)</span><br><span class="line">print(<span class="string">"带 passphrase 的种子:"</span>, seed2.hex())</span><br></pre></td></tr></table></figure>
+<p>真实运行输出（熵是随机的，你跑出来的值会不同，流程一致）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">熵（8 bit）: 70</span><br><span class="line">校验和（4 bit）: 0001</span><br><span class="line">拼接结果（12 bit）: 011100000001</span><br><span class="line">  第 0 段 0111 -&gt; 索引 7 -&gt; abstract</span><br><span class="line">  第 1 段 0000 -&gt; 索引 0 -&gt; abandon</span><br><span class="line">  第 2 段 0001 -&gt; 索引 1 -&gt; ability</span><br><span class="line">助记词: abstract abandon ability</span><br><span class="line">校验通过: True</span><br><span class="line">抄错后的助记词: abstract acid ability</span><br><span class="line">抄错后校验通过: False</span><br><span class="line">种子（512 bit）: c3b40dfbaadd3376c57de1030ab4a741904db444bc8a316e7eb33f870f6d2e020b490120e6e512d3ff5e5a1b54a818b69bab9db789c80f1a96644d6d223eb4d2</span><br><span class="line">带 passphrase 的种子: 6260cb49db028a6d02461bda3ff00457906404a8b93942f7d57322fee572609361cab35e8f72c784e319bdb8866e9e605ef4af3daef88542c10333734d34948e</span><br></pre></td></tr></table></figure>
+<p>重点看输出最后四行：</p>
+<ul>
+<li>抄错一个词，校验立刻 <code>False</code>——这就是”自检位”在兜底，真实钱包会直接拒绝你导入，而不是默默给你恢复一个空钱包；</li>
+<li>同样的助记词，加个 passphrase <code>lucifer</code>，种子立马面目全非——这就是”第 25 个词”的作用：卡还在，密码换了，门就刷不开了。</li>
+</ul>
+<h3 id="第二步：种子-→-m-44’-60’-0’-0-0"><a href="#第二步：种子-→-m-44’-60’-0’-0-0" class="headerlink" title="第二步：种子 → m/44’/60’/0’/0/0"></a>第二步：种子 → m/44’/60’/0’/0/0</h3><p>拿着上一步磨出的种子，沿标准路径逐级”生娃”。简化点前文已标注：普通派生时真实实现用的是父公钥（并涉及椭圆曲线运算），这里统一用父私钥演示结构：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> hmac</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上一步 PBKDF2 导出的 512 bit 种子（演示用，直接写死）</span></span><br><span class="line">seed = bytes.fromhex(</span><br><span class="line">    <span class="string">"c3b40dfbaadd3376c57de1030ab4a741904db444bc8a316e7eb33f870f6d2e020"</span></span><br><span class="line">    <span class="string">"b490120e6e512d3ff5e5a1b54a818b69bab9db789c80f1a96644d6d223eb4d2"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># secp256k1 曲线的阶 n（私钥必须落在 1 ~ n-1 之间）</span></span><br><span class="line">N = <span class="number">0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 主密钥生成：HMAC-SHA512(密钥="Bitcoin seed", 数据=种子)</span></span><br><span class="line">I = hmac.new(<span class="string">b"Bitcoin seed"</span>, seed, hashlib.sha512).digest()</span><br><span class="line">key, chain_code = I[:<span class="number">32</span>], I[<span class="number">32</span>:]</span><br><span class="line">print(<span class="string">"m        私钥:"</span>, key.hex())</span><br><span class="line">print(<span class="string">"m        链码:"</span>, chain_code.hex())</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ckd</span><span class="params">(key, chain_code, index, hardened)</span>:</span></span><br><span class="line">    <span class="comment"># 简化版子密钥推导（CKD）</span></span><br><span class="line">    <span class="comment"># hardened 派生的索引要加上 0x80000000，普通派生不加</span></span><br><span class="line">    idx = index + <span class="number">0x80000000</span> <span class="keyword">if</span> hardened <span class="keyword">else</span> index</span><br><span class="line">    data = key + idx.to_bytes(<span class="number">4</span>, <span class="string">"big"</span>)</span><br><span class="line">    I = hmac.new(chain_code, data, hashlib.sha512).digest()</span><br><span class="line">    offset, new_cc = I[:<span class="number">32</span>], I[<span class="number">32</span>:]</span><br><span class="line">    <span class="comment"># 子私钥 = (偏移 + 父私钥) mod n，这个整数加法是真实 BIP32 的做法</span></span><br><span class="line">    child = ((int.from_bytes(offset, <span class="string">"big"</span>) + int.from_bytes(key, <span class="string">"big"</span>))</span><br><span class="line">             % N).to_bytes(<span class="number">32</span>, <span class="string">"big"</span>)</span><br><span class="line">    <span class="keyword">return</span> child, new_cc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 逐级派生 m/44'/60'/0'/0/0</span></span><br><span class="line">path = [(<span class="string">"44'"</span>, <span class="number">44</span>, <span class="literal">True</span>), (<span class="string">"60'"</span>, <span class="number">60</span>, <span class="literal">True</span>), (<span class="string">"0'"</span>, <span class="number">0</span>, <span class="literal">True</span>),</span><br><span class="line">        (<span class="string">"0"</span>, <span class="number">0</span>, <span class="literal">False</span>), (<span class="string">"0"</span>, <span class="number">0</span>, <span class="literal">False</span>)]</span><br><span class="line"><span class="keyword">for</span> label, index, hardened <span class="keyword">in</span> path:</span><br><span class="line">    key, chain_code = ckd(key, chain_code, index, hardened)</span><br><span class="line">    kind = <span class="string">"hardened"</span> <span class="keyword">if</span> hardened <span class="keyword">else</span> <span class="string">"normal  "</span></span><br><span class="line">    print(<span class="string">f"m/.../<span class="subst">&#123;label:&lt;<span class="number">4</span>&#125;</span> (<span class="subst">&#123;kind&#125;</span>) 私钥: <span class="subst">&#123;key.hex()&#125;</span>"</span>)</span><br><span class="line">    print(<span class="string">f"           链码: <span class="subst">&#123;chain_code.hex()&#125;</span>"</span>)</span><br></pre></td></tr></table></figure>
+<p>真实运行输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">m        私钥: bead5d1f4dc7aae04363a25201d3a64605281d20e967ba3c5a233ee7d9ff412e</span><br><span class="line">m        链码: 22d70672b4cf7fe4d9b81d593a7aee35b00d6258a2574e0b8ada2d4bcbf4f387</span><br><span class="line">m/.../44&apos;  (hardened) 私钥: a0194bee994bf6c82bd0bde2892c5163cee5399f77e3efba805c731fbd84f466</span><br><span class="line">           链码: b31852a1ac9d37b13912b5fbb53bad42750b28aafc1d4a9307490e37bebd04fe</span><br><span class="line">m/.../60&apos;  (hardened) 私钥: 5e8ccbb878c85112f1b134496ced95e7bc19c255f43d2a990ba3489cb40eb643</span><br><span class="line">           链码: 6ece86ae48b831529f2b13741d1b53123caf58c16ac83df9be52d68c478f4fcc</span><br><span class="line">m/.../0&apos;   (hardened) 私钥: 19240f047209a2a9624de675d78032951a523eeb19535c6ea0cd14690d1b4765</span><br><span class="line">           链码: 511ab77096ee56c02f8afca5ccbe1be9ca567ae1446601a2f1b71d4a1c2b4a93</span><br><span class="line">m/.../0    (normal  ) 私钥: 3e1115ff3f6dedef6f44af5da3012ff768a623abb1e369fa7e75c0a3782d693c</span><br><span class="line">           链码: 471d4a523dcd58dc44ed07e3e5a31951f2fc502419a0d9892c43fb8853e207ab</span><br><span class="line">m/.../0    (normal  ) 私钥: 4e97676d8746ce5ccadf86f6b63f93a185a429e243980870a621fd5602eb39f2</span><br><span class="line">           链码: d309c9aab7192d15c530ae123da04208eec1ac8bb03de57a6e92f7dbb4c8afe4</span><br></pre></td></tr></table></figure>
+<p>看输出有个很有意思的现象：每走一级，chain code 都换了一个——父子各有各的”基因”，这就是”分层”的骨架。最后一行 <code>4e97676d...</code>，就是我们这套助记词在以太坊上的第一个账户私钥（按简化演示口径）。</p>
+<h3 id="第三步：私钥-→-公钥-→-地址"><a href="#第三步：私钥-→-公钥-→-地址" class="headerlink" title="第三步：私钥 → 公钥 → 地址"></a>第三步：私钥 → 公钥 → 地址</h3><p>最后把旧文欠的真实推导补上（依赖 <code>pip install ecdsa eth-account</code>），并且用官方库交叉验证我们手推的结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> eth_utils</span><br><span class="line"><span class="keyword">from</span> ecdsa <span class="keyword">import</span> SigningKey, SECP256k1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上一步 m/44'/60'/0'/0/0 派生出的私钥</span></span><br><span class="line">private_key_hex = <span class="string">"4e97676d8746ce5ccadf86f6b63f93a185a429e243980870a621fd5602eb39f2"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一步：私钥 -&gt; 公钥（椭圆曲线乘法：正推容易，反推不可行）</span></span><br><span class="line">sk = SigningKey.from_string(bytes.fromhex(private_key_hex), curve=SECP256k1)</span><br><span class="line">pubkey = sk.verifying_key.to_string()  <span class="comment"># 64 字节 = X(32) + Y(32)，即非压缩公钥去掉 04 前缀</span></span><br><span class="line">print(<span class="string">"公钥（64 字节） :"</span>, pubkey.hex())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二步：Keccak-256 哈希，取最后 20 字节就是地址</span></span><br><span class="line">digest = eth_utils.keccak(pubkey)</span><br><span class="line">address = digest[<span class="number">-20</span>:]</span><br><span class="line">print(<span class="string">"Keccak-256 摘要:"</span>, digest.hex())</span><br><span class="line">print(<span class="string">"地址（全小写） :"</span>, <span class="string">"0x"</span> + address.hex())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第三步：EIP-55 校验和大小写。对地址小写形式再算一次 Keccak，</span></span><br><span class="line"><span class="comment"># 摘要的每个 nibble &gt;= 8，对应位置的字母就大写</span></span><br><span class="line">addr_hex = address.hex()</span><br><span class="line">hash_hex = eth_utils.keccak(addr_hex.encode(<span class="string">"ascii"</span>)).hex()</span><br><span class="line">checksummed = <span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> i, ch <span class="keyword">in</span> enumerate(addr_hex):</span><br><span class="line">    <span class="keyword">if</span> ch.isdigit():</span><br><span class="line">        checksummed += ch</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        checksummed += ch.upper() <span class="keyword">if</span> int(hash_hex[i], <span class="number">16</span>) &gt;= <span class="number">8</span> <span class="keyword">else</span> ch</span><br><span class="line">print(<span class="string">"EIP-55 校验和地址:"</span>, <span class="string">"0x"</span> + checksummed)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用官方库交叉验证我们手推的地址是否正确</span></span><br><span class="line"><span class="keyword">from</span> eth_account <span class="keyword">import</span> Account</span><br><span class="line">acct = Account.from_key(private_key_hex)</span><br><span class="line">print(<span class="string">"eth_account 官方库验证:"</span>, acct.address)</span><br><span class="line">print(<span class="string">"两者一致:"</span>, acct.address == <span class="string">"0x"</span> + checksummed)</span><br></pre></td></tr></table></figure>
+<p>真实运行输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">公钥（64 字节） : 5b43ded3eb938c342df50a59688f9145e4b761ee1fe1f21b2d94298be9683c0dd0890d030e00b687527eb55a02d283d95ec1f13879d78cb2577340a29ed55438</span><br><span class="line">Keccak-256 摘要: 8a892211360024364097c80019a6f32fa1ee7d489d23494a4adfed1dff26fab4</span><br><span class="line">地址（全小写） : 0x19a6f32fa1ee7d489d23494a4adfed1dff26fab4</span><br><span class="line">EIP-55 校验和地址: 0x19a6f32Fa1EE7D489d23494A4adfeD1dfF26Fab4</span><br><span class="line">eth_account 官方库验证: 0x19a6f32Fa1EE7D489d23494A4adfeD1dfF26Fab4</span><br><span class="line">两者一致: True</span><br></pre></td></tr></table></figure>
+<p>自己手推的 EIP-55 地址和官方库算出来的一模一样，这感觉比期末考试对答案还爽。注意看地址里混着的大写字母——那就是 EIP-55 藏进去的”验证码”。你现在也可以去旧文提到的 <a href="https://bip39.best/" title="bip39 网站" target="_blank" rel="noopener">bip39 网站</a> 输入自己的助记词对照各条链的派生路径，亲眼看看 60 和 501 是怎么分家的。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最后把整条流水线再串一遍（对着动手环节开头那张图看更清楚）：</p>
+<ol>
+<li><strong>熵</strong>（128 bit 随机数，掷骰子）经过 SHA256 自检位、查 2048 词密码本，变成<strong>助记词</strong>（BIP39，2048 词 × 11 bit，本文演示用了 16 词 mini 词表）；</li>
+<li>助记词经过 PBKDF2（慢磨 2048 轮，盐是 <code>mnemonic + passphrase</code>）变成 <strong>512 位种子</strong>；</li>
+<li>种子用 HMAC-SHA512 生成主密钥和主 chain code，然后沿 <code>m/purpose&#39;/coin_type&#39;/account&#39;/change/address_index</code> 这棵家谱树逐级 <strong>HD 派生</strong>（BIP32 定义算法，BIP44 定义路径语义），hardened 把各家锁上门，普通派生留给只读钱包；</li>
+<li><strong>私钥</strong>经椭圆曲线乘法（公共模具 G）压出<strong>公钥</strong>（secp256k1，正向秒算，反向无解）；</li>
+<li><strong>公钥</strong>经 Keccak-256 取后 20 字节得<strong>地址</strong>，EIP-55 再给它藏一层大小写”验证码”。</li>
+</ol>
+<p>至此你也应该明白了：钱包软件从来没有”保存”过你的任何一个地址的私钥，它保存的只是那 12/24 个词，其余的一切都是每次需要时现场算出来的。同一套助记词管多链，不过是同一棵树上的不同分叉而已。</p>
+<p>当然，这也是把双刃剑：家谱树好用，但树根一漏，全族团灭。想分散风险，可以看单私钥的另一条出路——把密钥拆成多个分片保存（MPC 钱包）；想知道私钥和地址在 DeFi 里怎么被人拿去授权花你的钱，可以看授权与撤销授权那篇。链接都在下面。</p>
+<p>本文所有代码都在 Python 3.11 下真实运行过，完整脚本如有需要可以留言。下一篇（如果有的话）打算讲讲交易签名与验证的细节——私钥拿到了，怎么给一笔交易签字，签出来的东西链上怎么验。欢迎留言催更，虽然上次留言也不多。</p>
+<h2 id="相关阅读"><a href="#相关阅读" class="headerlink" title="相关阅读"></a>相关阅读</h2><ul>
+<li><a href="https://lucifer.ren/blog/2025/02/16/web3-wallet/" title="Web3 的入口 - 区块链钱包">《Web3 的入口 - 区块链钱包》</a>：本文的直接前置，钱包与 Dapp 的交互在那篇</li>
+<li><a href="https://lucifer.ren/blog/2025/03/05/web3-mpc/" title="更加安全的区块链钱包：MPC 钱包">《更加安全的区块链钱包：MPC 钱包》</a>：单私钥的另一条出路——密钥拆分</li>
+<li><a href="https://lucifer.ren/blog/2025/04/02/web3-approve/" title="Web3 中的授权与撤销授权">《Web3 中的授权与撤销授权》</a>：私钥怎么签名交易、地址在授权里的角色</li>
+<li><a href="https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/" title="《从零开始构建区块链》">《从零开始构建区块链》</a>：旧文里公钥直当地址的教学简化，本文补上真实推导</li>
+</ul>
+<p>感谢大家的阅读，希望本文对大家有所帮助。</p>
+
+      </div>
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-15T11:09:28+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 2026年11月15日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/区块链/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>区块链</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/web3/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>web3</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/钱包/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>钱包</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/密码学/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>密码学</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aQW7DMAxE0dz/0u62QWH1D2kHMfW9CgLX8stiKpF8vfB1/Ll+f0/uXD/z7JuLLxkyZDyWcSyv9T3r5dM7zz6vV5chQ8Y+jLMES5dZ38Ofxt9NhgwZMngIkidwtgwZMmTcx0gPol8auDJkyPhKBg9EXlbrRPONZ3EZMmQ8kFGLxc98vqW/IUOGjEcxjvDirU2y9ey8yduKMmTIGM3oLEOimR9WO2wZMmTMZqTDW52Rr3SPF8BkyJCxAYMEa61Yn4Zs2uZ8C1wZMmQMZZCY45hOEf+C0psMGTKGMlrDDY2iGw/feMxChgwZ4xh8uKE2YNEpyaVlPhkyZExl8E1hrRzGB7zIiqfrypAhYzSDL1ALxH5Ak+iXIUPGPoza0AM/oNaiNmDLkCFjKIM3HfsvytsAhCRDhozdGLyglo5TdA6rwVoyZMjYgMFDMN1EdpoEwZZUhgwZGzBqA6l8CCMt1cUFOBkyZIxm9BuNtXYC2UoS6mX9UhkyZDyEQcKxFp1klbQ9EBTdZMiQMYiRkmqvmLYiLvi/IUOGjEEMXhrj28R0zIsU107vlCFDxlDGEV53jK6mQx7BrytDhowRjLRZyKO5/1e1ATIZMmRMZaSHxtqAVwcfVw1lyJAxlFELvjQ6+9s+NGwhQ4YMGeGQBF+FFNf+OZHLkCFDRmnAgm9Aa8EtQ4aMfRi8PZmObaXDFsU4liFDxmhGehzlgXhVKa1/nJYhQ8ZjGT9TmUHP2+K1TAAAAABJRU5ErkJggg=='>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2026/11/01/web3-wallet-dev/&title=钱包开发（续）：助记词、HD 派生与地址的来龙去脉 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=在 《Web3 的入口 - 区块链钱包》 的结尾，我立过一个 flag：钱包开发的细节还没讲，留言多就专门写一篇。一年半过去了，留言不算多，但这个债我一直记着——毕竟在 web3 圈子混，欠的债是要还的，我只是不想用私钥签名赖账。
+那篇文章留了三个没讲清楚的尾巴：私钥到底从哪来？助记词怎么就变成了一串钥匙？地址又是怎么从公钥变出来的？而且为了教学方便，旧文的示例里把公钥直接当地址用（就是 get_address() 里返回的那串 hex），真实的推导根本不是这么回事，本文就来补上这一课。
+先把全程的路线图亮出来，你可以把它当成一次”寻根之旅”：一串随机数从出生（熵），到翻译成人话（助记词），磨成始祖（种子），繁衍出一族后代（私钥），最后领到能晒出来的门牌号（地址）。这条链是：
+熵 → 助记词 → 种子 → 派生路径 → 私钥 → 公钥 → 地址
+只有走完这条线，你才能真正理解那句听起来很魔法的话——“同一套助记词能同时管理以太坊、比特币、Solana 上无数个钱包”。这不是魔法，是三份 BIP 规范（BIP39、BIP32、BIP44）叠出来的组合技。本文全程代码驱动，每一段代码都是我真实跑过的，老规矩，建议你跟着敲一遍。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2026/11/01/web3-wallet-dev/&title=钱包开发（续）：助记词、HD 派生与地址的来龙去脉 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=在 《Web3 的入口 - 区块链钱包》 的结尾，我立过一个 flag：钱包开发的细节还没讲，留言多就专门写一篇。一年半过去了，留言不算多，但这个债我一直记着——毕竟在 web3 圈子混，欠的债是要还的，我只是不想用私钥签名赖账。
+那篇文章留了三个没讲清楚的尾巴：私钥到底从哪来？助记词怎么就变成了一串钥匙？地址又是怎么从公钥变出来的？而且为了教学方便，旧文的示例里把公钥直接当地址用（就是 get_address() 里返回的那串 hex），真实的推导根本不是这么回事，本文就来补上这一课。
+先把全程的路线图亮出来，你可以把它当成一次”寻根之旅”：一串随机数从出生（熵），到翻译成人话（助记词），磨成始祖（种子），繁衍出一族后代（私钥），最后领到能晒出来的门牌号（地址）。这条链是：
+熵 → 助记词 → 种子 → 派生路径 → 私钥 → 公钥 → 地址
+只有走完这条线，你才能真正理解那句听起来很魔法的话——“同一套助记词能同时管理以太坊、比特币、Solana 上无数个钱包”。这不是魔法，是三份 BIP 规范（BIP39、BIP32、BIP44）叠出来的组合技。本文全程代码驱动，每一段代码都是我真实跑过的，老规矩，建议你跟着敲一遍。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2026/11/01/web3-wallet-dev/&title=钱包开发（续）：助记词、HD 派生与地址的来龙去脉 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=在 《Web3 的入口 - 区块链钱包》 的结尾，我立过一个 flag：钱包开发的细节还没讲，留言多就专门写一篇。一年半过去了，留言不算多，但这个债我一直记着——毕竟在 web3 圈子混，欠的债是要还的，我只是不想用私钥签名赖账。
+那篇文章留了三个没讲清楚的尾巴：私钥到底从哪来？助记词怎么就变成了一串钥匙？地址又是怎么从公钥变出来的？而且为了教学方便，旧文的示例里把公钥直接当地址用（就是 get_address() 里返回的那串 hex），真实的推导根本不是这么回事，本文就来补上这一课。
+先把全程的路线图亮出来，你可以把它当成一次”寻根之旅”：一串随机数从出生（熵），到翻译成人话（助记词），磨成始祖（种子），繁衍出一族后代（私钥），最后领到能晒出来的门牌号（地址）。这条链是：
+熵 → 助记词 → 种子 → 派生路径 → 私钥 → 公钥 → 地址
+只有走完这条线，你才能真正理解那句听起来很魔法的话——“同一套助记词能同时管理以太坊、比特币、Solana 上无数个钱包”。这不是魔法，是三份 BIP 规范（BIP39、BIP32、BIP44）叠出来的组合技。本文全程代码驱动，每一段代码都是我真实跑过的，老规矩，建议你跟着敲一遍。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                          <h4>
+                              <a href="/blog/2026/11/03/web3-oracle/" rel="prev" title="预言机：DeFi 里的价格到底是从哪来的？">
+                                
+                                    预言机：DeFi 里的价格到底是从哪来的？
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/区块链/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 区块链</a> <a class="tag" href="/blog/tags/web3/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> web3</a> <a class="tag" href="/blog/tags/DeFi/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> DeFi</a> <a class="tag" href="/blog/tags/预言机/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 预言机</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/blog/2026/10/30/web3-gas/" rel="prev" title="Gas：链上一切行为的价格标签">
+                                  
+                                      Gas：链上一切行为的价格标签
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/区块链/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 区块链</a> <a class="tag" href="/blog/tags/web3/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> web3</a> <a class="tag" href="/blog/tags/Ethereum/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Ethereum</a> <a class="tag" href="/blog/tags/Gas/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Gas</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '钱包开发（续）：助记词、HD 派生与地址的来龙去脉',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/blog/atom.xml"
+              class="social fas fa-rss flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://www.zhihu.com/people/lu-xiao-13-70/activities"
+              class="social fab fa-zhihu flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:azl397985856@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/azl397985856"
+              class="social fab fa-github flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/playlist?id=978545815&userid=632167080"
+              class="social fas fa-headphones-alt flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="/blog/wc3map/"
+              class="social fas fa-dragon flat-btn"
+              title="魔兽地图 · 四兄弟 Footmen Frenzy 纪念版（多版本下载）"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="/blog/files/war3-coach-portable.zip"
+              class="social fas fa-chalkboard-teacher flat-btn"
+              title="war3-coach · 魔兽训练辅助工具（回放分析+对手库，免安装便携版，下载解压即用）"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://wormhole.app"
+              class="social fas fa-paper-plane flat-btn"
+              title="Wormhole · 免登录文件分享（端到端加密，10GB/24小时）"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#私钥：就是一个数字，别怕"><span class="toc-text">私钥：就是一个数字，别怕</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#公钥：拿私钥在”公共模具”上压一个点"><span class="toc-text">公钥：拿私钥在”公共模具”上压一个点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BIP39：把一串-0-1-翻译成人话"><span class="toc-text">BIP39：把一串 0/1 翻译成人话</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BIP32-BIP44：一个祖先，繁衍出一棵家谱树"><span class="toc-text">BIP32/BIP44：一个祖先，繁衍出一棵家谱树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CKD：孩子是怎么生出来的"><span class="toc-text">CKD：孩子是怎么生出来的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hardened-派生-vs-普通派生：上没上锁的门"><span class="toc-text">hardened 派生 vs 普通派生：上没上锁的门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#m-44’-60’-0’-0-0：从省到门牌号"><span class="toc-text">m/44’/60’/0’/0/0：从省到门牌号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#地址：公钥的”摘要”"><span class="toc-text">地址：公钥的”摘要”</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#EIP-55：给地址装个”验证码”"><span class="toc-text">EIP-55：给地址装个”验证码”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#比特币那边：零钱钱包-vs-银行账户"><span class="toc-text">比特币那边：零钱钱包 vs 银行账户</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#同一套助记词，为什么能管多条链"><span class="toc-text">同一套助记词，为什么能管多条链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动手模拟：从熵到地址的完整之旅"><span class="toc-text">动手模拟：从熵到地址的完整之旅</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一步：掷骰子-→-助记词-→-种子"><span class="toc-text">第一步：掷骰子 → 助记词 → 种子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二步：种子-→-m-44’-60’-0’-0-0"><span class="toc-text">第二步：种子 → m/44’/60’/0’/0/0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三步：私钥-→-公钥-→-地址"><span class="toc-text">第三步：私钥 → 公钥 → 地址</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关阅读"><span class="toc-text">相关阅读</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;我的开源项目</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/leetcode" href="https://github.com/azl397985856/leetcode"
+          
+          
+          id="https:github.comazl397985856leetcode">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          算法刷题
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/fe-interview" href="https://github.com/azl397985856/fe-interview"
+          
+          
+          id="https:github.comazl397985856fe-interview">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          大前端
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/daily-featured" href="https://github.com/azl397985856/daily-featured"
+          
+          
+          id="https:github.comazl397985856daily-featured">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          每日一荐
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;全部分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+    href="/blog/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/blog/categories/91天学算法/" href="/blog/categories/91天学算法/"><div class='name'>91天学算法</div><div class='badge'>(28)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/CD/" href="/blog/categories/CD/"><div class='name'>CD</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Easy/" href="/blog/categories/Easy/"><div class='name'>Easy</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Github/" href="/blog/categories/Github/"><div class='name'>Github</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Hard/" href="/blog/categories/Hard/"><div class='name'>Hard</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/LeetCode/" href="/blog/categories/LeetCode/"><div class='name'>LeetCode</div><div class='badge'>(23)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/LeetCode题解书/" href="/blog/categories/LeetCode/LeetCode题解书/"><div class='name'>LeetCode题解书</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/刷题技巧/" href="/blog/categories/LeetCode/刷题技巧/"><div class='name'>刷题技巧</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/动态规划/" href="/blog/categories/LeetCode/动态规划/"><div class='name'>动态规划</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Medium/" href="/blog/categories/Medium/"><div class='name'>Medium</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/React/" href="/blog/categories/React/"><div class='name'>React</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/TypeScript/" href="/blog/categories/TypeScript/"><div class='name'>TypeScript</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/ai/" href="/blog/categories/ai/"><div class='name'>ai</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/ai/agent/" href="/blog/categories/ai/agent/"><div class='name'>agent</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/devtool/" href="/blog/categories/devtool/"><div class='name'>devtool</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/rust/" href="/blog/categories/rust/"><div class='name'>rust</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/rust/node-binding/" href="/blog/categories/rust/node-binding/"><div class='name'>node binding</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/rust/node-binding/node-gyp/" href="/blog/categories/rust/node-binding/node-gyp/"><div class='name'>node-gyp</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/v8/" href="/blog/categories/v8/"><div class='name'>v8</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/vite/" href="/blog/categories/vite/"><div class='name'>vite</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/《算法通关之路》/" href="/blog/categories/《算法通关之路》/"><div class='name'>《算法通关之路》</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/中等/" href="/blog/categories/中等/"><div class='name'>中等</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书/" href="/blog/categories/书/"><div class='name'>书</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/书/算法/" href="/blog/categories/书/算法/"><div class='name'>算法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书单/" href="/blog/categories/书单/"><div class='name'>书单</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书摘/" href="/blog/categories/书摘/"><div class='name'>书摘</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/二分/" href="/blog/categories/二分/"><div class='name'>二分</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/二叉树/" href="/blog/categories/二叉树/"><div class='name'>二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/交易/" href="/blog/categories/交易/"><div class='name'>交易</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/公众号/" href="/blog/categories/公众号/"><div class='name'>公众号</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/刷题技巧/" href="/blog/categories/刷题技巧/"><div class='name'>刷题技巧</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/刷题方法/" href="/blog/categories/刷题方法/"><div class='name'>刷题方法</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/前端/" href="/blog/categories/前端/"><div class='name'>前端</div><div class='badge'>(30)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/TypeScript/" href="/blog/categories/前端/TypeScript/"><div class='name'>TypeScript</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/TypeScript/泛型/" href="/blog/categories/前端/TypeScript/泛型/"><div class='name'>泛型</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/css-in-js/" href="/blog/categories/前端/css-in-js/"><div class='name'>css-in-js</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/eslint/" href="/blog/categories/前端/eslint/"><div class='name'>eslint</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/web-component/" href="/blog/categories/前端/web-component/"><div class='name'>web-component</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/webkit/" href="/blog/categories/前端/webkit/"><div class='name'>webkit</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/测试/" href="/blog/categories/前端/测试/"><div class='name'>测试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/浏览器/" href="/blog/categories/前端/浏览器/"><div class='name'>浏览器</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/算法/" href="/blog/categories/前端/算法/"><div class='name'>算法</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/组件化/" href="/blog/categories/前端/组件化/"><div class='name'>组件化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/前缀和/" href="/blog/categories/前缀和/"><div class='name'>前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前缀和/二维前缀和/" href="/blog/categories/前缀和/二维前缀和/"><div class='name'>二维前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/力扣加加/" href="/blog/categories/力扣加加/"><div class='name'>力扣加加</div><div class='badge'>(30)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/动态规划/" href="/blog/categories/动态规划/"><div class='name'>动态规划</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/区块链/" href="/blog/categories/区块链/"><div class='name'>区块链</div><div class='badge'>(34)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/命令行/" href="/blog/categories/命令行/"><div class='name'>命令行</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/哲学/" href="/blog/categories/哲学/"><div class='name'>哲学</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/哲学/读书/" href="/blog/categories/哲学/读书/"><div class='name'>读书</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/图/" href="/blog/categories/图/"><div class='name'>图</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/堆/" href="/blog/categories/堆/"><div class='name'>堆</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/好未来/" href="/blog/categories/好未来/"><div class='name'>好未来</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/学习方法/" href="/blog/categories/学习方法/"><div class='name'>学习方法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/工具/" href="/blog/categories/工具/"><div class='name'>工具</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/工具/Chrome/" href="/blog/categories/工具/Chrome/"><div class='name'>Chrome</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/工具/VSCODE/" href="/blog/categories/工具/VSCODE/"><div class='name'>VSCODE</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/工具/终端/" href="/blog/categories/工具/终端/"><div class='name'>终端</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/年终总结/" href="/blog/categories/年终总结/"><div class='name'>年终总结</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/异议！/" href="/blog/categories/异议！/"><div class='name'>异议！</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/成长/" href="/blog/categories/成长/"><div class='name'>成长</div><div class='badge'>(0)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/成长经历/" href="/blog/categories/成长经历/"><div class='name'>成长经历</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/技术大会/" href="/blog/categories/技术大会/"><div class='name'>技术大会</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/D2/" href="/blog/categories/技术大会/D2/"><div class='name'>D2</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/Google-IO/" href="/blog/categories/技术大会/Google-IO/"><div class='name'>Google IO</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/JSConf/" href="/blog/categories/技术大会/JSConf/"><div class='name'>JSConf</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/QCon/" href="/blog/categories/技术大会/QCon/"><div class='name'>QCon</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/React-Conf/" href="/blog/categories/技术大会/React-Conf/"><div class='name'>React Conf</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/插件/" href="/blog/categories/插件/"><div class='name'>插件</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/插件/浏览器插件/" href="/blog/categories/插件/浏览器插件/"><div class='name'>浏览器插件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/插件/算法/" href="/blog/categories/插件/算法/"><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/搜索/" href="/blog/categories/搜索/"><div class='name'>搜索</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数学/" href="/blog/categories/数学/"><div class='name'>数学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数学/算法/" href="/blog/categories/数学/算法/"><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构/" href="/blog/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/hashtable/" href="/blog/categories/数据结构/hashtable/"><div class='name'>hashtable</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/二叉搜索树/" href="/blog/categories/数据结构/二叉搜索树/"><div class='name'>二叉搜索树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/图/" href="/blog/categories/数据结构/图/"><div class='name'>图</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/字符串/" href="/blog/categories/数据结构/字符串/"><div class='name'>字符串</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/平衡二叉树/" href="/blog/categories/数据结构/平衡二叉树/"><div class='name'>平衡二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/数组/" href="/blog/categories/数据结构/数组/"><div class='name'>数组</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/算法/" href="/blog/categories/数据结构/算法/"><div class='name'>算法</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/链表/" href="/blog/categories/数据结构/链表/"><div class='name'>链表</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，二叉树/" href="/blog/categories/数据结构，二叉树/"><div class='name'>数据结构，二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，单调栈/" href="/blog/categories/数据结构，单调栈/"><div class='name'>数据结构，单调栈</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，字符串/" href="/blog/categories/数据结构，字符串/"><div class='name'>数据结构，字符串</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，数组/" href="/blog/categories/数据结构，数组/"><div class='name'>数据结构，数组</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/日记/" href="/blog/categories/日记/"><div class='name'>日记</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/日记/技术/" href="/blog/categories/日记/技术/"><div class='name'>技术</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/易经/" href="/blog/categories/易经/"><div class='name'>易经</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/易经/读后感/" href="/blog/categories/易经/读后感/"><div class='name'>读后感</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/春招/" href="/blog/categories/春招/"><div class='name'>春招</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/栈/" href="/blog/categories/栈/"><div class='name'>栈</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/树/" href="/blog/categories/树/"><div class='name'>树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/树状数组/" href="/blog/categories/树状数组/"><div class='name'>树状数组</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/校招/" href="/blog/categories/校招/"><div class='name'>校招</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/模拟面试/" href="/blog/categories/模拟面试/"><div class='name'>模拟面试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/每日一荐/" href="/blog/categories/每日一荐/"><div class='name'>每日一荐</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-09/" href="/blog/categories/每日一荐/2019-09/"><div class='name'>2019-09</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-10/" href="/blog/categories/每日一荐/2019-10/"><div class='name'>2019-10</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-11/" href="/blog/categories/每日一荐/2019-11/"><div class='name'>2019-11</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-12/" href="/blog/categories/每日一荐/2019-12/"><div class='name'>2019-12</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2020-01/" href="/blog/categories/每日一荐/2020-01/"><div class='name'>2020-01</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2020-03/" href="/blog/categories/每日一荐/2020-03/"><div class='name'>2020-03</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2022-04/" href="/blog/categories/每日一荐/2022-04/"><div class='name'>2022-04</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/浏览器/" href="/blog/categories/浏览器/"><div class='name'>浏览器</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/浏览器/webkit/" href="/blog/categories/浏览器/webkit/"><div class='name'>webkit</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/浏览器/事件/" href="/blog/categories/浏览器/事件/"><div class='name'>事件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/理财/" href="/blog/categories/理财/"><div class='name'>理财</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/理财/K线/" href="/blog/categories/理财/K线/"><div class='name'>K线</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/理财/K线/蜡烛图/" href="/blog/categories/理财/K线/蜡烛图/"><div class='name'>蜡烛图</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/理财/量化/" href="/blog/categories/理财/量化/"><div class='name'>量化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/生活/" href="/blog/categories/生活/"><div class='name'>生活</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/生活/自我提升/" href="/blog/categories/生活/自我提升/"><div class='name'>自我提升</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/电影/" href="/blog/categories/电影/"><div class='name'>电影</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/电影/观后感/" href="/blog/categories/电影/观后感/"><div class='name'>观后感</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/百度/" href="/blog/categories/百度/"><div class='name'>百度</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法/" href="/blog/categories/算法/"><div class='name'>算法</div><div class='badge'>(30)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/BFS/" href="/blog/categories/算法/BFS/"><div class='name'>BFS</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/DFS/" href="/blog/categories/算法/DFS/"><div class='name'>DFS</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/二分法/" href="/blog/categories/算法/二分法/"><div class='name'>二分法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/位运算/" href="/blog/categories/算法/位运算/"><div class='name'>位运算</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/前端/" href="/blog/categories/算法/前端/"><div class='name'>前端</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/前端/面试/" href="/blog/categories/算法/前端/面试/"><div class='name'>面试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/前缀和/" href="/blog/categories/算法/前缀和/"><div class='name'>前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/动态规划/" href="/blog/categories/算法/动态规划/"><div class='name'>动态规划</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/双指针/" href="/blog/categories/算法/双指针/"><div class='name'>双指针</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/回文/" href="/blog/categories/算法/回文/"><div class='name'>回文</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/回溯/" href="/blog/categories/算法/回溯/"><div class='name'>回溯</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/子序列/" href="/blog/categories/算法/子序列/"><div class='name'>子序列</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/就地算法/" href="/blog/categories/算法/就地算法/"><div class='name'>就地算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/布隆过滤器/" href="/blog/categories/算法/布隆过滤器/"><div class='name'>布隆过滤器</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/循环移位/" href="/blog/categories/算法/循环移位/"><div class='name'>循环移位</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/数学/" href="/blog/categories/算法/数学/"><div class='name'>数学</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/概率/" href="/blog/categories/算法/概率/"><div class='name'>概率</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/母题/" href="/blog/categories/算法/母题/"><div class='name'>母题</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/滑动窗口/" href="/blog/categories/算法/滑动窗口/"><div class='name'>滑动窗口</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/状态压缩/" href="/blog/categories/算法/状态压缩/"><div class='name'>状态压缩</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/背包问题/" href="/blog/categories/算法/背包问题/"><div class='name'>背包问题</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/递归/" href="/blog/categories/算法/递归/"><div class='name'>递归</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/链表反转/" href="/blog/categories/算法/链表反转/"><div class='name'>链表反转</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法比赛/" href="/blog/categories/算法比赛/"><div class='name'>算法比赛</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，动态规划/" href="/blog/categories/算法，动态规划/"><div class='name'>算法，动态规划</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，序列化/" href="/blog/categories/算法，序列化/"><div class='name'>算法，序列化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，滑动窗口/" href="/blog/categories/算法，滑动窗口/"><div class='name'>算法，滑动窗口</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/线段树/" href="/blog/categories/线段树/"><div class='name'>线段树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/经验分享/" href="/blog/categories/经验分享/"><div class='name'>经验分享</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/编程之美/" href="/blog/categories/编程之美/"><div class='name'>编程之美</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/缠论/" href="/blog/categories/缠论/"><div class='name'>缠论</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/缠论/交易/" href="/blog/categories/缠论/交易/"><div class='name'>交易</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/缠论/交易/理财/" href="/blog/categories/缠论/交易/理财/"><div class='name'>理财</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/自动化/" href="/blog/categories/自动化/"><div class='name'>自动化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/蓄水池抽样/" href="/blog/categories/蓄水池抽样/"><div class='name'>蓄水池抽样</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/虾皮/" href="/blog/categories/虾皮/"><div class='name'>虾皮</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/解题模板/" href="/blog/categories/解题模板/"><div class='name'>解题模板</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/谷歌/" href="/blog/categories/谷歌/"><div class='name'>谷歌</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/谷歌/软实力/" href="/blog/categories/谷歌/软实力/"><div class='name'>软实力</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/谷歌/面试/" href="/blog/categories/谷歌/面试/"><div class='name'>面试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/财报/" href="/blog/categories/财报/"><div class='name'>财报</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/贪婪/" href="/blog/categories/贪婪/"><div class='name'>贪婪</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/走出科学/" href="/blog/categories/走出科学/"><div class='name'>走出科学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/软件工具/" href="/blog/categories/软件工具/"><div class='name'>软件工具</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/递推/" href="/blog/categories/递推/"><div class='name'>递推</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/递推/动态规划/" href="/blog/categories/递推/动态规划/"><div class='name'>动态规划</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/链表/" href="/blog/categories/链表/"><div class='name'>链表</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/面经/" href="/blog/categories/面经/"><div class='name'>面经</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/面试/" href="/blog/categories/面试/"><div class='name'>面试</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/面试/字节跳动/" href="/blog/categories/面试/字节跳动/"><div class='name'>字节跳动</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/题解/" href="/blog/categories/题解/"><div class='name'>题解</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/魔兽争霸3/" href="/blog/categories/魔兽争霸3/"><div class='name'>魔兽争霸3</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+    href="/blog/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/blog/tags/2022/" style="font-size: 14px; color: #999">2022</a> <a href="/blog/tags/91天学算法/" style="font-size: 19.63px; color: #737373">91天学算法</a> <a href="/blog/tags/AI/" style="font-size: 14px; color: #999">AI</a> <a href="/blog/tags/AMM/" style="font-size: 14px; color: #999">AMM</a> <a href="/blog/tags/AST/" style="font-size: 14px; color: #999">AST</a> <a href="/blog/tags/BFS/" style="font-size: 14.63px; color: #959595">BFS</a> <a href="/blog/tags/BigPipe/" style="font-size: 14px; color: #999">BigPipe</a> <a href="/blog/tags/CD/" style="font-size: 14px; color: #999">CD</a> <a href="/blog/tags/CSS/" style="font-size: 14px; color: #999">CSS</a> <a href="/blog/tags/Canvas/" style="font-size: 14px; color: #999">Canvas</a> <a href="/blog/tags/Chrome/" style="font-size: 15.25px; color: #919191">Chrome</a> <a href="/blog/tags/D2/" style="font-size: 14px; color: #999">D2</a> <a href="/blog/tags/DAI/" style="font-size: 14px; color: #999">DAI</a> <a href="/blog/tags/DAO/" style="font-size: 14px; color: #999">DAO</a> <a href="/blog/tags/DEX/" style="font-size: 14px; color: #999">DEX</a> <a href="/blog/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/blog/tags/DeFi/" style="font-size: 15.88px; color: #8c8c8c">DeFi</a> <a href="/blog/tags/Easy/" style="font-size: 14px; color: #999">Easy</a> <a href="/blog/tags/Ethereum/" style="font-size: 15.88px; color: #8c8c8c">Ethereum</a> <a href="/blog/tags/Floyd-Warshall/" style="font-size: 14px; color: #999">Floyd-Warshall</a> <a href="/blog/tags/GMX/" style="font-size: 14px; color: #999">GMX</a> <a href="/blog/tags/Gas/" style="font-size: 14px; color: #999">Gas</a> <a href="/blog/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/blog/tags/Github/" style="font-size: 14.63px; color: #959595">Github</a> <a href="/blog/tags/Google-IO/" style="font-size: 14px; color: #999">Google IO</a> <a href="/blog/tags/Hard/" style="font-size: 14px; color: #999">Hard</a> <a href="/blog/tags/JSConf/" style="font-size: 14px; color: #999">JSConf</a> <a href="/blog/tags/KK平台/" style="font-size: 14px; color: #999">KK平台</a> <a href="/blog/tags/K线/" style="font-size: 14px; color: #999">K线</a> <a href="/blog/tags/L2/" style="font-size: 14.63px; color: #959595">L2</a> <a href="/blog/tags/LP/" style="font-size: 14px; color: #999">LP</a> <a href="/blog/tags/LeetCode/" style="font-size: 22.75px; color: #5e5e5e">LeetCode</a> <a href="/blog/tags/LeetCode日记/" style="font-size: 19px; color: #777">LeetCode日记</a> <a href="/blog/tags/MEV/" style="font-size: 14.63px; color: #959595">MEV</a> <a href="/blog/tags/MPC-钱包/" style="font-size: 14px; color: #999">MPC 钱包</a> <a href="/blog/tags/Mac/" style="font-size: 14px; color: #999">Mac</a> <a href="/blog/tags/MakerDAO/" style="font-size: 14px; color: #999">MakerDAO</a> <a href="/blog/tags/Medium/" style="font-size: 14.63px; color: #959595">Medium</a> <a href="/blog/tags/Nexus-Mutual/" style="font-size: 14px; color: #999">Nexus Mutual</a> <a href="/blog/tags/PPT/" style="font-size: 14.63px; color: #959595">PPT</a> <a href="/blog/tags/QCon/" style="font-size: 14px; color: #999">QCon</a> <a href="/blog/tags/RFC/" style="font-size: 14px; color: #999">RFC</a> <a href="/blog/tags/React/" style="font-size: 14px; color: #999">React</a> <a href="/blog/tags/Tokenomics/" style="font-size: 14px; color: #999">Tokenomics</a> <a href="/blog/tags/TypeScript/" style="font-size: 18.38px; color: #7b7b7b">TypeScript</a> <a href="/blog/tags/USDC/" style="font-size: 14px; color: #999">USDC</a> <a href="/blog/tags/USDT/" style="font-size: 14px; color: #999">USDT</a> <a href="/blog/tags/UST/" style="font-size: 14px; color: #999">UST</a> <a href="/blog/tags/VSCODE/" style="font-size: 15.25px; color: #919191">VSCODE</a> <a href="/blog/tags/Warp/" style="font-size: 14px; color: #999">Warp</a> <a href="/blog/tags/Web3-钱包/" style="font-size: 14px; color: #999">Web3 钱包</a> <a href="/blog/tags/aave/" style="font-size: 14px; color: #999">aave</a> <a href="/blog/tags/acp/" style="font-size: 14px; color: #999">acp</a> <a href="/blog/tags/agent/" style="font-size: 14px; color: #999">agent</a> <a href="/blog/tags/ai/" style="font-size: 15.88px; color: #8c8c8c">ai</a> <a href="/blog/tags/apple/" style="font-size: 14px; color: #999">apple</a> <a href="/blog/tags/approve/" style="font-size: 14.63px; color: #959595">approve</a> <a href="/blog/tags/balancer/" style="font-size: 14px; color: #999">balancer</a> <a href="/blog/tags/bancor/" style="font-size: 14px; color: #999">bancor</a> <a href="/blog/tags/blob/" style="font-size: 14px; color: #999">blob</a> <a href="/blog/tags/borrow/" style="font-size: 14px; color: #999">borrow</a> <a href="/blog/tags/chatgpt/" style="font-size: 14px; color: #999">chatgpt</a> <a href="/blog/tags/chrome/" style="font-size: 14px; color: #999">chrome</a> <a href="/blog/tags/claude/" style="font-size: 14px; color: #999">claude</a> <a href="/blog/tags/cordis/" style="font-size: 14px; color: #999">cordis</a> <a href="/blog/tags/css-in-js/" style="font-size: 14px; color: #999">css-in-js</a> <a href="/blog/tags/curve/" style="font-size: 14px; color: #999">curve</a> <a href="/blog/tags/dYdX/" style="font-size: 14px; color: #999">dYdX</a> <a href="/blog/tags/deepseek/" style="font-size: 14px; color: #999">deepseek</a> <a href="/blog/tags/defi/" style="font-size: 14px; color: #999">defi</a> <a href="/blog/tags/depin/" style="font-size: 14px; color: #999">depin</a> <a href="/blog/tags/dex/" style="font-size: 14px; color: #999">dex</a> <a href="/blog/tags/dotfiles/" style="font-size: 14px; color: #999">dotfiles</a> <a href="/blog/tags/eslint/" style="font-size: 14px; color: #999">eslint</a> <a href="/blog/tags/gemini/" style="font-size: 14px; color: #999">gemini</a> <a href="/blog/tags/google/" style="font-size: 14px; color: #999">google</a> <a href="/blog/tags/harness/" style="font-size: 14px; color: #999">harness</a> <a href="/blog/tags/iTerm2/" style="font-size: 14px; color: #999">iTerm2</a> <a href="/blog/tags/immutable/" style="font-size: 14px; color: #999">immutable</a> <a href="/blog/tags/immutablejs/" style="font-size: 14px; color: #999">immutablejs</a> <a href="/blog/tags/javascript/" style="font-size: 14px; color: #999">javascript</a> <a href="/blog/tags/json/" style="font-size: 14px; color: #999">json</a> <a href="/blog/tags/k-线/" style="font-size: 14px; color: #999">k 线</a> <a href="/blog/tags/k-问题/" style="font-size: 14px; color: #999">k 问题</a> <a href="/blog/tags/knowledge-management/" style="font-size: 14px; color: #999">knowledge-management</a> <a href="/blog/tags/lending/" style="font-size: 14px; color: #999">lending</a> <a href="/blog/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/blog/tags/node-binding/" style="font-size: 14px; color: #999">node binding</a> <a href="/blog/tags/node-gyp/" style="font-size: 14px; color: #999">node-gyp</a> <a href="/blog/tags/notebooklm/" style="font-size: 14px; color: #999">notebooklm</a> <a href="/blog/tags/pendle/" style="font-size: 14px; color: #999">pendle</a> <a href="/blog/tags/plugin/" style="font-size: 14px; color: #999">plugin</a> <a href="/blog/tags/rust/" style="font-size: 14.63px; color: #959595">rust</a> <a href="/blog/tags/rwa/" style="font-size: 14px; color: #999">rwa</a> <a href="/blog/tags/staking/" style="font-size: 14px; color: #999">staking</a> <a href="/blog/tags/stringify/" style="font-size: 14px; color: #999">stringify</a> <a href="/blog/tags/swap/" style="font-size: 15.25px; color: #919191">swap</a> <a href="/blog/tags/swc/" style="font-size: 14px; color: #999">swc</a> <a href="/blog/tags/uniswap/" style="font-size: 14.63px; color: #959595">uniswap</a> <a href="/blog/tags/v4/" style="font-size: 14.63px; color: #959595">v4</a> <a href="/blog/tags/v8/" style="font-size: 14px; color: #999">v8</a> <a href="/blog/tags/vite/" style="font-size: 14px; color: #999">vite</a> <a href="/blog/tags/vlog/" style="font-size: 14px; color: #999">vlog</a> <a href="/blog/tags/vue/" style="font-size: 14px; color: #999">vue</a> <a href="/blog/tags/web-component/" style="font-size: 14px; color: #999">web-component</a> <a href="/blog/tags/web3/" style="font-size: 21.5px; color: #666">web3</a> <a href="/blog/tags/webkit/" style="font-size: 14px; color: #999">webkit</a> <a href="/blog/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/blog/tags/《算法通关之路》/" style="font-size: 14px; color: #999">《算法通关之路》</a> <a href="/blog/tags/中位数/" style="font-size: 14px; color: #999">中位数</a> <a href="/blog/tags/中等/" style="font-size: 14.63px; color: #959595">中等</a> <a href="/blog/tags/乘法逆元/" style="font-size: 14px; color: #999">乘法逆元</a> <a href="/blog/tags/书/" style="font-size: 15.25px; color: #919191">书</a> <a href="/blog/tags/书单/" style="font-size: 14px; color: #999">书单</a> <a href="/blog/tags/书摘/" style="font-size: 14px; color: #999">书摘</a> <a href="/blog/tags/事件/" style="font-size: 14px; color: #999">事件</a> <a href="/blog/tags/事件循环/" style="font-size: 14px; color: #999">事件循环</a> <a href="/blog/tags/二分/" style="font-size: 15.25px; color: #919191">二分</a> <a href="/blog/tags/二分法/" style="font-size: 14px; color: #999">二分法</a> <a href="/blog/tags/二叉树/" style="font-size: 15.25px; color: #919191">二叉树</a> <a href="/blog/tags/交易/" style="font-size: 15.25px; color: #919191">交易</a> <a href="/blog/tags/交易系统/" style="font-size: 14px; color: #999">交易系统</a> <a href="/blog/tags/从零实现/" style="font-size: 14px; color: #999">从零实现</a> <a href="/blog/tags/仓位管理/" style="font-size: 14px; color: #999">仓位管理</a> <a href="/blog/tags/代币经济学/" style="font-size: 14.63px; color: #959595">代币经济学</a> <a href="/blog/tags/代码生成器/" style="font-size: 14px; color: #999">代码生成器</a> <a href="/blog/tags/位运算/" style="font-size: 14px; color: #999">位运算</a> <a href="/blog/tags/侧链/" style="font-size: 14px; color: #999">侧链</a> <a href="/blog/tags/保险/" style="font-size: 14px; color: #999">保险</a> <a href="/blog/tags/倒排索引/" style="font-size: 14px; color: #999">倒排索引</a> <a href="/blog/tags/公众号/" style="font-size: 14px; color: #999">公众号</a> <a href="/blog/tags/公益/" style="font-size: 14px; color: #999">公益</a> <a href="/blog/tags/冷钱包/" style="font-size: 14px; color: #999">冷钱包</a> <a href="/blog/tags/删除-k-个字符/" style="font-size: 14px; color: #999">删除 k 个字符</a> <a href="/blog/tags/刷题/" style="font-size: 15.25px; color: #919191">刷题</a> <a href="/blog/tags/刷题技巧/" style="font-size: 17.13px; color: #848484">刷题技巧</a> <a href="/blog/tags/刷题方法/" style="font-size: 15.25px; color: #919191">刷题方法</a> <a href="/blog/tags/前端/" style="font-size: 19.63px; color: #737373">前端</a> <a href="/blog/tags/前端，自动化，automator/" style="font-size: 14px; color: #999">前端，自动化，automator</a> <a href="/blog/tags/前缀和/" style="font-size: 15.88px; color: #8c8c8c">前缀和</a> <a href="/blog/tags/前缀表达式/" style="font-size: 14px; color: #999">前缀表达式</a> <a href="/blog/tags/力扣加加/" style="font-size: 20.88px; color: #6a6a6a">力扣加加</a> <a href="/blog/tags/动态规划/" style="font-size: 19px; color: #777">动态规划</a> <a href="/blog/tags/区块链/" style="font-size: 22.13px; color: #626262">区块链</a> <a href="/blog/tags/单元测试/" style="font-size: 14px; color: #999">单元测试</a> <a href="/blog/tags/单调栈/" style="font-size: 14px; color: #999">单调栈</a> <a href="/blog/tags/博物馆/" style="font-size: 14px; color: #999">博物馆</a> <a href="/blog/tags/命令行/" style="font-size: 14.63px; color: #959595">命令行</a> <a href="/blog/tags/哲学/" style="font-size: 14.63px; color: #959595">哲学</a> <a href="/blog/tags/回溯/" style="font-size: 14px; color: #999">回溯</a> <a href="/blog/tags/困难/" style="font-size: 14.63px; color: #959595">困难</a> <a href="/blog/tags/图/" style="font-size: 14.63px; color: #959595">图</a> <a href="/blog/tags/图片处理/" style="font-size: 14px; color: #999">图片处理</a> <a href="/blog/tags/堆/" style="font-size: 14.63px; color: #959595">堆</a> <a href="/blog/tags/备份工具/" style="font-size: 14px; color: #999">备份工具</a> <a href="/blog/tags/夏普比率/" style="font-size: 14px; color: #999">夏普比率</a> <a href="/blog/tags/多签钱包/" style="font-size: 14px; color: #999">多签钱包</a> <a href="/blog/tags/天梯/" style="font-size: 14px; color: #999">天梯</a> <a href="/blog/tags/好未来/" style="font-size: 14px; color: #999">好未来</a> <a href="/blog/tags/子数组/" style="font-size: 14px; color: #999">子数组</a> <a href="/blog/tags/字符串/" style="font-size: 14.63px; color: #959595">字符串</a> <a href="/blog/tags/字节跳动/" style="font-size: 15.25px; color: #919191">字节跳动</a> <a href="/blog/tags/学习方法/" style="font-size: 14.63px; color: #959595">学习方法</a> <a href="/blog/tags/学习路线/" style="font-size: 15.88px; color: #8c8c8c">学习路线</a> <a href="/blog/tags/安全/" style="font-size: 14.63px; color: #959595">安全</a> <a href="/blog/tags/审计/" style="font-size: 14px; color: #999">审计</a> <a href="/blog/tags/密码学/" style="font-size: 14px; color: #999">密码学</a> <a href="/blog/tags/尼采/" style="font-size: 14px; color: #999">尼采</a> <a href="/blog/tags/工具/" style="font-size: 17.13px; color: #848484">工具</a> <a href="/blog/tags/年度目标/" style="font-size: 14px; color: #999">年度目标</a> <a href="/blog/tags/年终总结/" style="font-size: 14px; color: #999">年终总结</a> <a href="/blog/tags/序列化/" style="font-size: 14px; color: #999">序列化</a> <a href="/blog/tags/异常处理/" style="font-size: 14.63px; color: #959595">异常处理</a> <a href="/blog/tags/异议！/" style="font-size: 14px; color: #999">异议！</a> <a href="/blog/tags/循环移位/" style="font-size: 14px; color: #999">循环移位</a> <a href="/blog/tags/微前端/" style="font-size: 14px; color: #999">微前端</a> <a href="/blog/tags/必备软件/" style="font-size: 14px; color: #999">必备软件</a> <a href="/blog/tags/志愿者/" style="font-size: 14px; color: #999">志愿者</a> <a href="/blog/tags/性能优化/" style="font-size: 14px; color: #999">性能优化</a> <a href="/blog/tags/成长经历/" style="font-size: 14.63px; color: #959595">成长经历</a> <a href="/blog/tags/手机摄影/" style="font-size: 14px; color: #999">手机摄影</a> <a href="/blog/tags/扩展程序/" style="font-size: 14px; color: #999">扩展程序</a> <a href="/blog/tags/技术大会/" style="font-size: 14px; color: #999">技术大会</a> <a href="/blog/tags/技术调研/" style="font-size: 14px; color: #999">技术调研</a> <a href="/blog/tags/技能/" style="font-size: 14.63px; color: #959595">技能</a> <a href="/blog/tags/投资/" style="font-size: 15.88px; color: #8c8c8c">投资</a> <a href="/blog/tags/持续集成/" style="font-size: 14px; color: #999">持续集成</a> <a href="/blog/tags/插件/" style="font-size: 17.13px; color: #848484">插件</a> <a href="/blog/tags/搜索/" style="font-size: 14px; color: #999">搜索</a> <a href="/blog/tags/搜索引擎/" style="font-size: 14px; color: #999">搜索引擎</a> <a href="/blog/tags/摄影/" style="font-size: 14px; color: #999">摄影</a> <a href="/blog/tags/攻略/" style="font-size: 14px; color: #999">攻略</a> <a href="/blog/tags/效率/" style="font-size: 14px; color: #999">效率</a> <a href="/blog/tags/数字钱包/" style="font-size: 14px; color: #999">数字钱包</a> <a href="/blog/tags/数学/" style="font-size: 15.88px; color: #8c8c8c">数学</a> <a href="/blog/tags/数据结构/" style="font-size: 23.38px; color: #595959">数据结构</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，Hard/" style="font-size: 14.63px; color: #959595">数据结构，算法，LeetCode 日记，Hard</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，中等/" style="font-size: 14px; color: #999">数据结构，算法，LeetCode 日记，中等</a> <a href="/blog/tags/数组/" style="font-size: 14.63px; color: #959595">数组</a> <a href="/blog/tags/文物/" style="font-size: 14px; color: #999">文物</a> <a href="/blog/tags/日记/" style="font-size: 14.63px; color: #959595">日记</a> <a href="/blog/tags/易经/" style="font-size: 14px; color: #999">易经</a> <a href="/blog/tags/春招/" style="font-size: 15.25px; color: #919191">春招</a> <a href="/blog/tags/智能合约安全/" style="font-size: 14px; color: #999">智能合约安全</a> <a href="/blog/tags/最大公约数/" style="font-size: 14px; color: #999">最大公约数</a> <a href="/blog/tags/最大表示法/" style="font-size: 14px; color: #999">最大表示法</a> <a href="/blog/tags/最小表示法/" style="font-size: 14px; color: #999">最小表示法</a> <a href="/blog/tags/最长上升子序列/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/blog/tags/最长公共子序列/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/blog/tags/查拉图斯特拉/" style="font-size: 14px; color: #999">查拉图斯特拉</a> <a href="/blog/tags/栈/" style="font-size: 14px; color: #999">栈</a> <a href="/blog/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/blog/tags/树状数组/" style="font-size: 14px; color: #999">树状数组</a> <a href="/blog/tags/校招/" style="font-size: 16.5px; color: #888">校招</a> <a href="/blog/tags/概率/" style="font-size: 14.63px; color: #959595">概率</a> <a href="/blog/tags/模块/" style="font-size: 14px; color: #999">模块</a> <a href="/blog/tags/模拟面试/" style="font-size: 14px; color: #999">模拟面试</a> <a href="/blog/tags/模运算/" style="font-size: 14px; color: #999">模运算</a> <a href="/blog/tags/母题/" style="font-size: 14px; color: #999">母题</a> <a href="/blog/tags/每日一荐/" style="font-size: 17.75px; color: #808080">每日一荐</a> <a href="/blog/tags/永续合约/" style="font-size: 14px; color: #999">永续合约</a> <a href="/blog/tags/沟通/" style="font-size: 14px; color: #999">沟通</a> <a href="/blog/tags/治理/" style="font-size: 14px; color: #999">治理</a> <a href="/blog/tags/泛型/" style="font-size: 14.63px; color: #959595">泛型</a> <a href="/blog/tags/流动性池/" style="font-size: 14px; color: #999">流动性池</a> <a href="/blog/tags/测试/" style="font-size: 14px; color: #999">测试</a> <a href="/blog/tags/浏览器/" style="font-size: 15.25px; color: #919191">浏览器</a> <a href="/blog/tags/游戏/" style="font-size: 14px; color: #999">游戏</a> <a href="/blog/tags/滑动窗口/" style="font-size: 16.5px; color: #888">滑动窗口</a> <a href="/blog/tags/滤镜/" style="font-size: 14px; color: #999">滤镜</a> <a href="/blog/tags/焦作/" style="font-size: 14px; color: #999">焦作</a> <a href="/blog/tags/状态压缩/" style="font-size: 14px; color: #999">状态压缩</a> <a href="/blog/tags/状态机/" style="font-size: 14px; color: #999">状态机</a> <a href="/blog/tags/理财/" style="font-size: 15.88px; color: #8c8c8c">理财</a> <a href="/blog/tags/电子书/" style="font-size: 14px; color: #999">电子书</a> <a href="/blog/tags/电影/" style="font-size: 14.63px; color: #959595">电影</a> <a href="/blog/tags/百度/" style="font-size: 14px; color: #999">百度</a> <a href="/blog/tags/监控/" style="font-size: 14px; color: #999">监控</a> <a href="/blog/tags/秋招/" style="font-size: 14px; color: #999">秋招</a> <a href="/blog/tags/稳定币/" style="font-size: 14px; color: #999">稳定币</a> <a href="/blog/tags/算法/" style="font-size: 24px; color: #555">算法</a> <a href="/blog/tags/算法提高班/" style="font-size: 20.25px; color: #6f6f6f">算法提高班</a> <a href="/blog/tags/算法比赛/" style="font-size: 14px; color: #999">算法比赛</a> <a href="/blog/tags/算法系列/" style="font-size: 15.88px; color: #8c8c8c">算法系列</a> <a href="/blog/tags/算法通关之路/" style="font-size: 14px; color: #999">算法通关之路</a> <a href="/blog/tags/算法，最近公共祖先/" style="font-size: 14px; color: #999">算法，最近公共祖先</a> <a href="/blog/tags/线段树/" style="font-size: 14.63px; color: #959595">线段树</a> <a href="/blog/tags/组件化/" style="font-size: 14px; color: #999">组件化</a> <a href="/blog/tags/终端/" style="font-size: 14px; color: #999">终端</a> <a href="/blog/tags/经验分享/" style="font-size: 15.25px; color: #919191">经验分享</a> <a href="/blog/tags/维特根斯坦/" style="font-size: 14px; color: #999">维特根斯坦</a> <a href="/blog/tags/编程之美/" style="font-size: 14px; color: #999">编程之美</a> <a href="/blog/tags/缠论/" style="font-size: 14px; color: #999">缠论</a> <a href="/blog/tags/股票/" style="font-size: 14px; color: #999">股票</a> <a href="/blog/tags/自我提升/" style="font-size: 14px; color: #999">自我提升</a> <a href="/blog/tags/草稿/" style="font-size: 14.63px; color: #959595">草稿</a> <a href="/blog/tags/蓄水池抽样/" style="font-size: 14px; color: #999">蓄水池抽样</a> <a href="/blog/tags/虾皮/" style="font-size: 14px; color: #999">虾皮</a> <a href="/blog/tags/蜡烛图/" style="font-size: 14px; color: #999">蜡烛图</a> <a href="/blog/tags/衍生品/" style="font-size: 14px; color: #999">衍生品</a> <a href="/blog/tags/装机/" style="font-size: 14px; color: #999">装机</a> <a href="/blog/tags/解题模板/" style="font-size: 14px; color: #999">解题模板</a> <a href="/blog/tags/计划/" style="font-size: 14px; color: #999">计划</a> <a href="/blog/tags/读书/" style="font-size: 14.63px; color: #959595">读书</a> <a href="/blog/tags/读后感/" style="font-size: 14px; color: #999">读后感</a> <a href="/blog/tags/谷歌/" style="font-size: 15.25px; color: #919191">谷歌</a> <a href="/blog/tags/财报/" style="font-size: 14px; color: #999">财报</a> <a href="/blog/tags/账户抽象/" style="font-size: 14px; color: #999">账户抽象</a> <a href="/blog/tags/贪婪/" style="font-size: 14px; color: #999">贪婪</a> <a href="/blog/tags/贪心/" style="font-size: 14px; color: #999">贪心</a> <a href="/blog/tags/资产配置/" style="font-size: 14px; color: #999">资产配置</a> <a href="/blog/tags/走出科学/" style="font-size: 14px; color: #999">走出科学</a> <a href="/blog/tags/逆向思维/" style="font-size: 14px; color: #999">逆向思维</a> <a href="/blog/tags/递归/" style="font-size: 14px; color: #999">递归</a> <a href="/blog/tags/逻辑哲学论/" style="font-size: 14px; color: #999">逻辑哲学论</a> <a href="/blog/tags/配置备份/" style="font-size: 14px; color: #999">配置备份</a> <a href="/blog/tags/配置管理/" style="font-size: 14px; color: #999">配置管理</a> <a href="/blog/tags/量化/" style="font-size: 14px; color: #999">量化</a> <a href="/blog/tags/量化交易/" style="font-size: 14.63px; color: #959595">量化交易</a> <a href="/blog/tags/金融/" style="font-size: 14px; color: #999">金融</a> <a href="/blog/tags/钱包/" style="font-size: 15.25px; color: #919191">钱包</a> <a href="/blog/tags/链上分析/" style="font-size: 14px; color: #999">链上分析</a> <a href="/blog/tags/链表/" style="font-size: 15.25px; color: #919191">链表</a> <a href="/blog/tags/陷阱题/" style="font-size: 14px; color: #999">陷阱题</a> <a href="/blog/tags/面经/" style="font-size: 15.88px; color: #8c8c8c">面经</a> <a href="/blog/tags/面试/" style="font-size: 16.5px; color: #888">面试</a> <a href="/blog/tags/预言机/" style="font-size: 14px; color: #999">预言机</a> <a href="/blog/tags/题解/" style="font-size: 17.75px; color: #808080">题解</a> <a href="/blog/tags/风险管理/" style="font-size: 14px; color: #999">风险管理</a> <a href="/blog/tags/魔兽争霸3/" style="font-size: 14px; color: #999">魔兽争霸3</a> <a href="/blog/tags/黑客/" style="font-size: 14px; color: #999">黑客</a>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget list'>
+  
+<header class='pure'>
+  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;强烈推荐</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="entry">
+      
+        <li><a class="flat-box" title="https://lucifer.ren/blog/2022/04/26/books-2022/" href="https://lucifer.ren/blog/2022/04/26/books-2022/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;西法的 2022 书单推荐
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=0iygwnzh" href="https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=0iygwnzh"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;【阿里云】轻量应用服务器2核2G 低至60元/年起
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://leetcode-solution.cn/book-intro" href="https://leetcode-solution.cn/book-intro"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;《算法通关之路》
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://yasuotu.com" href="https://yasuotu.com"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;图片在线压缩
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/fe-lucifer/fanqiang" href="https://github.com/fe-lucifer/fanqiang"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;科学上网
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://mxclub.github.io/resume/" href="https://mxclub.github.io/resume/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;简历主题
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+   
+  <div class="social-wrapper">
+     
+    <a
+      href="/blog/atom.xml"
+      class="social fas fa-rss flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://www.zhihu.com/people/lu-xiao-13-70/activities"
+      class="social fab fa-zhihu flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="mailto:azl397985856@gmail.com"
+      class="social fas fa-envelope flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://github.com/azl397985856"
+      class="social fab fa-github flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://music.163.com/playlist?id=978545815&amp;userid=632167080"
+      class="social fas fa-headphones-alt flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="/blog/wc3map/"
+      class="social fas fa-dragon flat-btn"
+      title="魔兽地图 · 四兄弟 Footmen Frenzy 纪念版（多版本下载）"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="/blog/files/war3-coach-portable.zip"
+      class="social fas fa-chalkboard-teacher flat-btn"
+      title="war3-coach · 魔兽训练辅助工具（回放分析+对手库，免安装便携版，下载解压即用）"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://wormhole.app"
+      class="social fas fa-paper-plane flat-btn"
+      title="Wormhole · 免登录文件分享（端到端加密，10GB/24小时）"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+     
+  </div>
+  
+  <br />
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename"
+      >Material X</a
+    >
+    作为主题  。
+  </div>
+
+  <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+  <script>
+    var now = new Date();
+    function createtime() {
+      var grt = new Date("08/10/2018 17:38:00"); //在此处修改你的建站时间，格式：月/日/年 时:分:秒
+      now.setTime(now.getTime() + 250);
+      days = (now - grt) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+      hnum = Math.floor(hours);
+      if (String(hnum).length == 1) {
+        hnum = "0" + hnum;
+      }
+      minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+      mnum = Math.floor(minutes);
+      if (String(mnum).length == 1) {
+        mnum = "0" + mnum;
+      }
+      seconds =
+        (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+      snum = Math.round(seconds);
+      if (String(snum).length == 1) {
+        snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML =
+        "本站已安全运行 " + dnum + " 天 ";
+      document.getElementById("times").innerHTML =
+        hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()", 250);
+  </script>
+</footer>
+<script>
+  setLoadingBarProgress(80);
+</script>
+
+
+        <script>
+          setLoadingBarProgress(60);
+        </script>
+      </div>
+      <a class="s-top fas fa-arrow-up fa-fw" href="javascript:void(0)"></a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "aea1377036afe4cd0343",
+      clientSecret: "815c638dea8644b7a4b97905707cf72b45555f6d",
+      repo: "blog",
+      owner: "azl397985856",
+      admin: "azl397985856",
+      
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
+
+
+
+
+
+  <script src="https://lucifer.ren/blog/js/app.js"></script>
+
+
+  <script src="https://lucifer.ren/blog/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+    <script>
+      setLoadingBarProgress(100);
+    </script>
+  </body>
+</html>

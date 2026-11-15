@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Gas：链上一切行为的价格标签 | lucifer的网络博客</title>
+  
+  <meta name="keywords" content="前端 leetocde 数据结构 算法 lucifer 大前端 性能优化 前端架构 前端工程化">
+  
+  
+  <meta name="description" content="lucifer的个人博客，用来记录LeeCode刷题过程和心得，以及构建大前端知识体系">
+  
+
+  
+  <link rel="alternate" href="/blog/atom.xml" title="lucifer的网络博客">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+  
+
+  
+    <link rel="stylesheet" href="https://lucifer.ren/blog/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVTTYT432Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FVTTYT432Q');
+    </script>
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?576ec211e11a69128667eb8c11a6cffe";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+  <script
+    src="https://my.openwrite.cn/js/readmore.js"
+    type="text/javascript"
+  ></script>
+  <script>
+    var btw = new BTWPlugin();
+    setTimeout(function () {
+      window.btw.init({
+        id: "container",
+        blogId: "17446-1571644985832-648",
+        name: "力扣加加",
+        qrcode: "https://p.ipic.vip/n8gbxo.jpg",
+        keyword: "more",
+      });
+    }, 100);
+  </script>
+  <body>
+    
+    
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>lucifer</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/blog/"
+            
+            
+            id="blog">
+            <i class='fas fa-home fa-fw'></i>&nbsp;主页
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="http://leetcode-solution.cn/"
+            
+            
+            id="http:leetcode-solution.cn">
+            <i class='fas fa-laptop-code fa-fw'></i>&nbsp;官网
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/friends/"
+            
+            
+            id="blogfriends">
+            <i class='fas fa-link fa-fw'></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/about/"
+            
+            
+            id="blogabout">
+            <i class='fas fa-id-card-alt fa-fw'></i>&nbsp;联系我
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/blog/' >
+        
+          lucifer的网络博客
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/blog/"
+                  
+                  
+                  id="blog">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;回到主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/categories/"
+                  
+                  
+                  id="blogcategories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/tags/"
+                  
+                  
+                  id="blogtags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/archives/"
+                  
+                  
+                  id="blogarchives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/blog/"
+                
+                
+                id="blog">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/archives/"
+                
+                
+                id="blogarchives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/about/"
+                
+                
+                id="blogabout">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+    <div id="container" class="l_body">
+      <div class="body-wrapper">
+        <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/blog/2026/10/30/web3-gas/">
+        Gas：链上一切行为的价格标签
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2026-10-30</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/区块链/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>区块链</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">5.7k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">21分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>在<a href="https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/" title="《从零开始构建区块链》">《从零开始构建区块链》</a>里，我们亲手搓过一条玩具链：转账、挖矿、查余额，全程免费，转账像发微信消息一样轻快。但那条链有个没说破的”作弊”：真实链上不是这样的。你在以太坊上哪怕只转 0.001 ETH，也得先掏一笔手续费；赶上牛市高峰，一次 DeFi 操作的 gas 费够吃顿火锅，部署合约更是”豪门消费”。</p>
+<p>很多新手第一次被 web3 劝退，不是因为看不懂钱包界面，而是被 gas 吓退的：为什么转个账还要钱？为什么贵的时候一笔要几十美元？这笔钱到底给了谁？为什么不干脆免费？</p>
+<p>这篇文章就把 gas 掰开揉碎讲明白：它是什么、怎么定价、EIP-1559 之后钱包里那三个数字（base fee、priority fee、max fee）到底是什么意思，以及为什么有一部分费用会被当众”烧掉”。老规矩，最后用 Python 把整个机制模拟一遍，所有输出都是真实运行结果，欢迎对着敲。</p>
+<a id="more"></a>
+<h2 id="为什么链上做什么都要钱"><a href="#为什么链上做什么都要钱" class="headerlink" title="为什么链上做什么都要钱"></a>为什么链上做什么都要钱</h2><p>先回答灵魂拷问：为什么玩具链可以免费，真实链不行？你琢磨一下自助餐厅为什么要限时、限盘——答案就藏在里面。三个原因，一个比一个硬。</p>
+<p><strong>第一，防垃圾交易：自助餐不限量，大胃王会把店吃垮。</strong> 假如链上免费，任何人都能零成本发交易。我写个脚本一天发十亿笔”从 A 转 0 ETH 给 B”，全网每个节点都得验证、广播、存储它们——区块链没有客服，也没有防火墙，唯一能挡住洪水猛兽的就是价格。收费之后，发一亿笔垃圾等于烧一亿笔的钱，就像每拿一盘菜都要付盘子的钱，拿一亿盘谁也付不起，攻击这事自然就没人干了。</p>
+<p><strong>第二，防死循环：给全网装一个共享充电宝式的计费表。</strong> 以太坊的 EVM 是图灵完备的，合约里可以写 <code>while(true)</code>。如果没有计价机制，一个”永远跑不完”的合约就能把全网节点的 CPU 永久占死——一台笔记本就能瘫痪整条链。Gas 的解法和共享充电宝一模一样：借的时候先预付，按小时扣费，余额归零直接断电。执行前先预付 gas，执行中每条指令都在扣表，表跑光了 EVM 直接抛 out of gas、交易回滚。你的循环再疯狂，也最多烧掉你预付的那点电费，绝不会无限吃掉节点资源。</p>
+<p><strong>第三，给验证者发工资，顺便给计算定价。</strong> 节点帮你验证交易、存储整条链，电费和硬盘是真金白银的支出，没有运费谁肯给你跑腿。而”收多少钱”不能拍脑袋：读一次余额、算一次哈希、写一个存储位，成本天差地别，就像寄信、寄家具、寄冷链海鲜不能一个价。Gas 就是这套统一定价体系——把一切链上行为折算成”计算量”，再统一乘以单价。</p>
+<p>一句话总结：gas 不是以太坊想赚你钱，而是一家不限量的自助餐厅，必然被大胃王吃垮。</p>
+<h2 id="Gas-到底是什么：电表上的”度”"><a href="#Gas-到底是什么：电表上的”度”" class="headerlink" title="Gas 到底是什么：电表上的”度”"></a>Gas 到底是什么：电表上的”度”</h2><p>用最顺手的比喻：<strong>gas 是电表上的”度”，不是钱。</strong> 你在家用电，电表走字，月底按度数交电费。链上完全一样：</p>
+<ul>
+<li><code>gasUsed</code>：这笔交易实际走了多少”度电”（计算量），要等执行完才知道，所以钱包里显示的永远是”预估”。</li>
+<li><code>gasPrice</code>：每一度电的单价，单位是 gwei。</li>
+<li>实际费用 = gasUsed × gasPrice。</li>
+</ul>
+<p>先说说 gwei 这个怪名字。1 gwei = 十亿分之一 ETH（10⁻⁹），1 ETH = 10 亿 gwei。为什么要发明这么小的单位？因为 gas 单价动辄十几、几十 gwei，换算成 ETH 就是 0.000000015——眼睛数零都数不过来。有了 gwei，就像日常说”一瓶水三块五”而不是”0.0000035 万元”，说人话而已。</p>
+<p>那 ETH 在其中的角色是什么？注意 gas 本身是抽象的”计算量”，不是钱，它必须锚定到一种资产才有价格，以太坊选择了自家的 ETH。所以完整的心智模型是：<strong>gas 是用电量，gwei 是每度电的单价，ETH 是结算货币</strong>。你在链上的每一步操作，本质上都是用 ETH 交电费。</p>
+<p>顺带一提，这也是 ETH 需求的基本盘之一：只要有人在用这条链，就有人在买入 ETH 来交 gas。这个伏笔我们后面讲燃烧时再回收。</p>
+<h2 id="常见操作要烧多少-gas"><a href="#常见操作要烧多少-gas" class="headerlink" title="常见操作要烧多少 gas"></a>常见操作要烧多少 gas</h2><p>直接上直觉表（数字是量级参考，会随合约实现和链版本浮动，不用背精确值）：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>大约耗量（gas）</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ETH 转账</td>
+<td>21000</td>
+<td>协议固定值，转 1 分钱和转 1 个亿耗量一样</td>
+</tr>
+<tr>
+<td>ERC-20 transfer</td>
+<td>约 5 万 ~ 6.5 万</td>
+<td>代币转账是合约调用，比原生转账贵 3 倍左右</td>
+</tr>
+<tr>
+<td>approve 授权</td>
+<td>约 4.6 万</td>
+<td>所以”授权一次、用 N 次”是常见省钱策略</td>
+</tr>
+<tr>
+<td>SSTORE 写新存储槽</td>
+<td>20000 / 槽</td>
+<td>单步最贵的操作之一</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img src="https://lucifer.ren/blog/images/web3/gas-ops-cost.png" alt="常见链上操作的 gas 耗量对比：SSTORE 写存储、转账、授权、代币转账"></p>
+<p>你可能要问了：写一个存储槽 20000 gas，而 EVM 的加法指令 ADD 只要 3 gas，差了六千多倍，凭什么？</p>
+<p>打个比方就明白了。算术是”打过就扔的草稿纸”——全网每个节点各自算一遍 1+1，算完就可以把草稿揉掉。存储不一样：你写进合约的一个数字，全网每个节点都必须立刻同步，并且从今往后<strong>永远记住、永远复制</strong>。这相当于你在草稿纸上涂了一笔 vs 在全村每家每户的账本上各记一笔，人家得替你记一辈子。存储的成本不是”一次性支出”，而是”全体节点的永久性负债”。存储贵，不是协议小气，是它真的贵。</p>
+<p>再看 21000 这个数字。ETH 原生转账之所以便宜，是因为它只是账本上改两个数字；ERC-20 转账要执行合约代码、读写存储、发事件，每一步都在电表上跳字，所以贵出三倍。理解了这一点，你就理解了”链上行为的价格 = 全网为它付出的记忆和计算”。</p>
+<h2 id="EIP-1559：钱包里那张账单"><a href="#EIP-1559：钱包里那张账单" class="headerlink" title="EIP-1559：钱包里那张账单"></a>EIP-1559：钱包里那张账单</h2><p>2021 年 8 月伦敦升级之前，gas 定价是纯拍卖：你自己喊一个 gasPrice，矿工挑喊得最高的打包，钱全进矿工口袋。就像打车不打表、全凭司机喊价——拥堵时你永远不知道该给多少：喊低了排不上队，喊高了白花钱，全靠赌，体验极差。</p>
+<p>EIP-1559 之后改成打表计价，一张账单拆成了三个数。拿打车来对照，一一对应：</p>
+<ul>
+<li><strong>base fee：计价器上的官方车费。</strong> 协议根据区块拥挤度自动算出，同一区块内所有人价格一致，你不用猜。画个重点：<strong>这部分会被直接销毁</strong>，司机拿不到、平台也拿不到，谁也拿不到。</li>
+<li><strong>priority fee（小费）：给司机的小费。</strong> 自愿加，想让交易插队就多给，不急就少给。</li>
+<li><strong>max fee：你的预算上限。</strong> 出发前跟司机说好”最多花这么多”，实际按”官方车费 + 小费”结算，没用完的退给你，多退少不补。</li>
+</ul>
+<p>钱包里那个吓人的”最大费用”预估就是这么来的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">最大费用 = maxFeePerGas × gasLimit      （按最坏情况先锁定的预算）</span><br><span class="line">实际费用 = (baseFee + priorityFee) × gasUsed</span><br></pre></td></tr></table></figure>
+<p>注意两行用的不是同一组数：上面是”单价上限 × 用量上限”，下面是”实际单价 × 实际用量”，两头都留了余量，所以实际费用通常明显小于最大费用，差额自动退回。交易完成后你经常看到”实际花费比预估少”，那不是钱包算错了，是多退少不补在正常工作。</p>
+<p>那 max fee 这个上限，钱包是怎么拍出来的？一个常见做法是 <code>maxFee = 2 × 当前 base fee + 小费</code>。为什么是 2 倍？因为你的交易未必下一块就被打包，而 base fee 每块最多涨 12.5%，连涨 6 块正好约 2 倍（1.125⁶ ≈ 2.03）。留 2 倍余量，就算接下来连续 6 个满块，你的交易也不会因为出价低于官方价而卡死。</p>
+<p>对比一下老的 legacy 交易：它只有一个 gasPrice 字段，相当于不打表的侃价车，现在也还能发。链会从里面先扣掉当时的 base fee 烧掉，剩下的差价全部当小费给验证者——注意，<strong>没有退款</strong>。也就是说 legacy 是”喊多少付多少”，EIP-1559 是”最多付这么多，用不完退给你”。所以主流钱包默认都走 EIP-1559，你日常看到的那张小账单，就是上面这三个数。</p>
+<h2 id="base-fee-是怎么自动调节的"><a href="#base-fee-是怎么自动调节的" class="headerlink" title="base fee 是怎么自动调节的"></a>base fee 是怎么自动调节的</h2><p>base fee 不是拍脑袋定的，每个区块都按上一块的拥堵情况重新计算。把它想成景区门票，规则一下子就通了：</p>
+<p>景区每天最多卖 3 万张票（区块 gas 上限，伦敦升级时是 30M gas），但运营方最舒服的状态是每天 1.5 万人进园——<strong>目标正好是上限的一半</strong>（15M gas）。于是定三条规矩：</p>
+<ol>
+<li>今天进园人数超过 1.5 万，说明景区太挤，明天门票涨价，把一部分游客”劝”到别的时间来；</li>
+<li>今天人少，说明票价太贵没人来，明天降价促销；</li>
+<li><strong>每天最多涨跌 12.5%</strong>，不许一天翻倍，防止票价坐过山车。</li>
+</ol>
+<p>公式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">下一块 base fee = 本块 base fee + 本块 base fee × (used − target) / target / 8</span><br></pre></td></tr></table></figure>
+<p>拆开看这个公式：<code>(used − target) / target</code> 是”今天比目标多进了百分之几”，范围从 -100%（空块）到 +100%（满块）；再除以 8，就把涨跌幅压到了 ±12.5% 以内。满块时 (30M − 15M) / 15M / 8 = 1/8 = 12.5%，空块时正好相反是 -12.5%。</p>
+<p>直觉上这是一台恒温器：房间太热（景区太挤）就涨价把人热出去，下块凉快了价格自然回落；房间太冷（没人来）就降价促销，吸引交易填进来。理想状态是让区块大小稳定悬浮在目标值附近——不挤，也不空。</p>
+<p>（上限不是写死的，由验证者投票调节，这几年上调过几轮；但”目标 = 上限的一半”和”每块最多变动 12.5%”这两条规则一直没变。下面的模拟就用经典的 30M/15M 参数。）</p>
+<h2 id="燃烧：把协议收入还给全体持币人"><a href="#燃烧：把协议收入还给全体持币人" class="headerlink" title="燃烧：把协议收入还给全体持币人"></a>燃烧：把协议收入还给全体持币人</h2><p>传统互联网里，手续费是平台的收入，进老板口袋。但以太坊做了一个非常反直觉的设计：base fee 直接销毁，这笔 ETH 从流通中永久消失，没有任何地址能把它取出来。</p>
+<p>你可能要问了：好好的钱，为什么要当众烧掉？</p>
+<p><strong>第一，防操纵。</strong> 假设官方车费归司机所有，会发生什么？司机最有利可图的事，就是雇一群人站到马路中间——故意把区块塞满（哪怕塞垃圾交易），把下一块的 base fee 抬上去，自己多收。烧掉之后，制造拥堵一分钱好处都没有，操纵动机直接归零。</p>
+<p><strong>第二，价值回流。</strong> gas 费本质是全体用户为网络安全和运行支付的成本，这笔钱不该被中间环节截留。当众烧掉，等价于按持币比例给所有 ETH 持有者变相分红——你琢磨一下：流通中的 ETH 变少了，剩下的每一枚 ETH 对应的那份”链上股份”就变多了。全网用得越旺，烧得越多，你手里的币就越稀缺。和上市公司回购股票注销是同一个道理：股本少了，每股含金量就上去了。</p>
+<p>这就接上了代币经济学的通缩叙事：以太坊按 PoS 规则每年增发新 ETH 作为验证者奖励，如果某段时间网络繁忙、燃烧量超过增发量，ETH 总供应量就净减少——这就是 2021 年之后反复被讨论的”ETH 通缩”的机制源头，详细的分析在我那篇<a href="https://lucifer.ren/blog/2026/05/03/web3-tokenomics/" title="代币经济学：如何判断一个代币值不值得买">《代币经济学：如何判断一个代币值不值得买》</a>里。</p>
+<h2 id="为什么-L2-便宜"><a href="#为什么-L2-便宜" class="headerlink" title="为什么 L2 便宜"></a>为什么 L2 便宜</h2><p>L1 的问题不是计算慢，而是地皮小：全网每 12 秒只有一块空间（伦敦升级时上限 30M gas），全球所有用户、所有协议都在抢同一块地皮，地价自然被拍上天。</p>
+<p>L2 的思路是拼车：把成百上千笔交易搬到链下执行，最后只把一份压缩后的”结果数据”放回 L1 存证。一个人付一次 L1 的钱，几百人分摊，单价自然掉下来。而 2024 年上线的 blob（EIP-4844）又给 L2 数据开辟了独立的收费市场，让数据成本再降一个量级——这部分机制我在<a href="https://lucifer.ren/blog/2026/11/14/web3-blob/" title="blob：你的 L2 转账为什么只要几分钱">《blob：你的 L2 转账为什么只要几分钱》</a>里有展开。往根上讲，L2 存在的动机就是”L1 gas 太贵”，想看它具体怎么实现的，可以翻<a href="https://lucifer.ren/blog/2025/02/29/web3-l2-from-zero/" title="从零实现区块链 - 侧链与L2">《从零实现区块链 - 侧链与L2》</a>。</p>
+<h2 id="用-Python-算一笔账"><a href="#用-Python-算一笔账" class="headerlink" title="用 Python 算一笔账"></a>用 Python 算一笔账</h2><p>概念讲完了，老规矩，上代码。先讲直觉：一笔交易的真实美元成本 = 走了多少度电（gasUsed）× 每度电单价（base fee + 小费）× ETH 汇率。下面的计算器就是把这三个数乘起来：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 费用计算器：一笔交易到底花多少美元</span></span><br><span class="line"><span class="comment"># 公式：费用(ETH) = gasUsed × gasPrice(gwei) / 1e9</span></span><br><span class="line"><span class="comment"># 注意 EIP-1559 之后，实际单价 = base fee + priority fee</span></span><br><span class="line"></span><br><span class="line">GWEI_PER_ETH = <span class="number">1e9</span>  <span class="comment"># 1 ETH = 10^9 gwei</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc_fee</span><span class="params">(name, gas_used, base_fee_gwei, tip_gwei, eth_price)</span>:</span></span><br><span class="line">    <span class="string">"""算一笔交易的 ETH 费用和美元费用"""</span></span><br><span class="line">    gas_price_gwei = base_fee_gwei + tip_gwei  <span class="comment"># 实际单价 = base fee + 小费</span></span><br><span class="line">    fee_eth = gas_used * gas_price_gwei / GWEI_PER_ETH  <span class="comment"># 费用（ETH）</span></span><br><span class="line">    fee_usd = fee_eth * eth_price  <span class="comment"># 费用（美元）</span></span><br><span class="line">    print(<span class="string">f"<span class="subst">&#123;name:&lt;<span class="number">14</span>&#125;</span> gasUsed = <span class="subst">&#123;gas_used:&gt;<span class="number">6</span>&#125;</span>   "</span></span><br><span class="line">          <span class="string">f"单价 = <span class="subst">&#123;gas_price_gwei:&gt;<span class="number">3</span>&#125;</span> gwei   "</span></span><br><span class="line">          <span class="string">f"费用 = <span class="subst">&#123;fee_eth:<span class="number">.6</span>f&#125;</span> ETH ≈ $<span class="subst">&#123;fee_usd:<span class="number">.2</span>f&#125;</span>"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ETH_PRICE = <span class="number">3000.0</span>  <span class="comment"># 假设 ETH 价格 $3000</span></span><br><span class="line">BASE_FEE = <span class="number">15</span>       <span class="comment"># gwei，不堵不空的日常 base fee</span></span><br><span class="line">TIP = <span class="number">1</span>             <span class="comment"># gwei，给验证者的小费</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">f"假设：ETH = $<span class="subst">&#123;ETH_PRICE:<span class="number">.0</span>f&#125;</span>，base fee = <span class="subst">&#123;BASE_FEE&#125;</span> gwei，priority fee = <span class="subst">&#123;TIP&#125;</span> gwei\n"</span>)</span><br><span class="line">calc_fee(<span class="string">"ETH 转账"</span>, <span class="number">21</span>_000, BASE_FEE, TIP, ETH_PRICE)</span><br><span class="line">calc_fee(<span class="string">"approve 授权"</span>, <span class="number">46</span>_000, BASE_FEE, TIP, ETH_PRICE)</span><br><span class="line">calc_fee(<span class="string">"ERC-20 转账"</span>, <span class="number">65</span>_000, BASE_FEE, TIP, ETH_PRICE)</span><br></pre></td></tr></table></figure>
+<p>真实运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">假设：ETH = $3000，base fee = 15 gwei，priority fee = 1 gwei</span><br><span class="line"></span><br><span class="line">ETH 转账         gasUsed =  21000   单价 =  16 gwei   费用 = 0.000336 ETH ≈ $1.01</span><br><span class="line">approve 授权     gasUsed =  46000   单价 =  16 gwei   费用 = 0.000736 ETH ≈ $2.21</span><br><span class="line">ERC-20 转账      gasUsed =  65000   单价 =  16 gwei   费用 = 0.001040 ETH ≈ $3.12</span><br></pre></td></tr></table></figure>
+<p>解读一下：在一个不堵不空的午后（base fee 15 gwei），ETH 转账大约 $1，授权 $2.21，代币转账 $3.12。再对照下图看结构：每一笔的大头都是红色（base fee，直接烧掉），给验证者的蓝色小费只有零头。换个角度感受 gas 的尺度：21000 gas × 16 gwei 只有 0.000336 ETH——链上一次操作的”电量”其实小得惊人。平时让你肉疼的从来不是计算本身，而是拥堵时段的单价，以及把成千上万次运算卷进一帧交易的复杂合约。</p>
+<p><img src="https://lucifer.ren/blog/images/web3/gas-fee-structure.png" alt="一笔交易的 gas 账单构成：红色 base fee 被烧掉，蓝色 priority fee 给验证者"></p>
+<h2 id="用-Python-模拟-base-fee-的心跳"><a href="#用-Python-模拟-base-fee-的心跳" class="headerlink" title="用 Python 模拟 base fee 的心跳"></a>用 Python 模拟 base fee 的心跳</h2><p>第二个模拟：把 EIP-1559 的 base fee 调节公式完整实现一遍，看看景区票价在”连续爆满 → 突然空场 → 平稳”的客流量下如何呼吸。直觉先行：满块就是”3 万张票全卖光”，连续爆满就连续涨价（每次最多 12.5%）；空块就是”一张票没卖出去”，连续降价；用量正好等于目标时，票价原地不动。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># EIP-1559 base fee 演化模拟</span></span><br><span class="line"><span class="comment"># 真实公式：next_base_fee = base_fee + base_fee × (used - target) / target / 8</span></span><br><span class="line"><span class="comment"># 即：用得比目标多就涨、少就降，每块最大变动 12.5%（= 1/8）</span></span><br><span class="line"><span class="comment"># 目标区块大小 = 上限的一半：上限 30M gas，目标 15M gas</span></span><br><span class="line"></span><br><span class="line">GAS_LIMIT = <span class="number">30</span>_000_000   <span class="comment"># 区块 gas 上限 30M</span></span><br><span class="line">TARGET = GAS_LIMIT // <span class="number">2</span>  <span class="comment"># 目标 15M</span></span><br><span class="line">DENOM = <span class="number">8</span>                <span class="comment"># EIP-1559 的分母，满块时涨幅 = 1/8 = 12.5%</span></span><br><span class="line"></span><br><span class="line">base_fee = <span class="number">30.0</span>          <span class="comment"># 从 30 gwei 开始</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 剧本：连续 5 块拥挤（满块 30M）→ 突然 3 块空闲（0 gas）→ 4 块平稳（正好 15M）</span></span><br><span class="line">script = [(<span class="string">"拥挤"</span>, <span class="number">30</span>_000_000)] * <span class="number">5</span> + [(<span class="string">"空闲"</span>, <span class="number">0</span>)] * <span class="number">3</span> + [(<span class="string">"平稳"</span>, TARGET)] * <span class="number">4</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">f"初始 base fee = <span class="subst">&#123;base_fee:g&#125;</span> gwei，目标 = <span class="subst">&#123;TARGET // <span class="number">1</span>_000_000&#125;</span>M gas，上限 = <span class="subst">&#123;GAS_LIMIT // <span class="number">1</span>_000_000&#125;</span>M gas\n"</span>)</span><br><span class="line">print(<span class="string">f"<span class="subst">&#123;<span class="string">'区块'</span>:&gt;<span class="number">4</span>&#125;</span>  <span class="subst">&#123;<span class="string">'场景'</span>:&lt;<span class="number">4</span>&#125;</span>  <span class="subst">&#123;<span class="string">'used gas'</span>:&gt;<span class="number">10</span>&#125;</span>  <span class="subst">&#123;<span class="string">'本块 base fee'</span>:&gt;<span class="number">13</span>&#125;</span>  <span class="subst">&#123;<span class="string">'下一块 base fee'</span>:&gt;<span class="number">14</span>&#125;</span>  <span class="subst">&#123;<span class="string">'涨跌'</span>:&gt;<span class="number">8</span>&#125;</span>"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i, (scene, used) <span class="keyword">in</span> enumerate(script, <span class="number">1</span>):</span><br><span class="line">    delta = (used - TARGET) / TARGET / DENOM  <span class="comment"># 本块涨跌比例</span></span><br><span class="line">    next_fee = base_fee * (<span class="number">1</span> + delta)         <span class="comment"># 下一块的 base fee</span></span><br><span class="line">    change = <span class="string">f"<span class="subst">&#123;delta * <span class="number">100</span>:+<span class="number">.2</span>f&#125;</span>%"</span></span><br><span class="line">    print(<span class="string">f"<span class="subst">&#123;i:&gt;<span class="number">4</span>&#125;</span>  <span class="subst">&#123;scene:&lt;<span class="number">4</span>&#125;</span>  <span class="subst">&#123;used:&gt;<span class="number">10</span>,&#125;</span>  <span class="subst">&#123;base_fee:&gt;<span class="number">12.4</span>f&#125;</span>g  <span class="subst">&#123;next_fee:&gt;<span class="number">12.4</span>f&#125;</span>g  <span class="subst">&#123;change:&gt;<span class="number">8</span>&#125;</span>"</span>)</span><br><span class="line">    base_fee = next_fee</span><br><span class="line"></span><br><span class="line">print(<span class="string">f"\n结束时的 base fee = <span class="subst">&#123;base_fee:<span class="number">.4</span>f&#125;</span> gwei（起点 30 gwei）"</span>)</span><br></pre></td></tr></table></figure>
+<p>真实运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">初始 base fee = 30 gwei，目标 = 15M gas，上限 = 30M gas</span><br><span class="line"></span><br><span class="line">  区块  场景      used gas    本块 base fee    下一块 base fee        涨跌</span><br><span class="line">   1  拥挤    30,000,000       30.0000g       33.7500g   +12.50%</span><br><span class="line">   2  拥挤    30,000,000       33.7500g       37.9688g   +12.50%</span><br><span class="line">   3  拥挤    30,000,000       37.9688g       42.7148g   +12.50%</span><br><span class="line">   4  拥挤    30,000,000       42.7148g       48.0542g   +12.50%</span><br><span class="line">   5  拥挤    30,000,000       48.0542g       54.0610g   +12.50%</span><br><span class="line">   6  空闲             0       54.0610g       47.3034g   -12.50%</span><br><span class="line">   7  空闲             0       47.3034g       41.3904g   -12.50%</span><br><span class="line">   8  空闲             0       41.3904g       36.2166g   -12.50%</span><br><span class="line">   9  平稳    15,000,000       36.2166g       36.2166g    +0.00%</span><br><span class="line">  10  平稳    15,000,000       36.2166g       36.2166g    +0.00%</span><br><span class="line">  11  平稳    15,000,000       36.2166g       36.2166g    +0.00%</span><br><span class="line">  12  平稳    15,000,000       36.2166g       36.2166g    +0.00%</span><br><span class="line"></span><br><span class="line">结束时的 base fee = 36.2166 gwei（起点 30 gwei）</span><br></pre></td></tr></table></figure>
+<p><img src="https://lucifer.ren/blog/images/web3/gas-basefee-curve.png" alt="base fee 随拥堵升降的完整心跳：连续满块每块 +12.5%，空块 -12.5%，平稳后冻结"></p>
+<p>三个值得咂摸的观察：</p>
+<ol>
+<li><strong>连续拥挤是复利式上涨</strong>：5 个满块，base fee 从 30 gwei 涨到 54 gwei，每块精确 +12.5%。这就是 NFT mint 和热门代币发行时 gas 指数飙升的数学原理——景区连着爆满五天，票价就一路爬坡，拥堵持续得越久，价格爬得越陡。</li>
+<li><strong>有个反直觉的细节</strong>：涨了 5 块（30 → 54），为什么 3 块空闲只跌回 36.2，没回到 30？因为”跌 12.5%”的基数也在变——先涨 12.5% 再跌 12.5%，回不到原点，百分比涨跌不是对称可逆的。这个设计让票价对持续爆满反应充分、对短暂空场回落温和，避免价格来回剧烈震荡。</li>
+<li><strong>平稳块上价格冻结</strong>：用量正好等于目标时 delta = 0，恒温器到达设定温度就停机。这就是协议想要的稳态：区块大小悬浮在目标值附近，价格不涨不跌。</li>
+</ol>
+<h2 id="实用小贴士"><a href="#实用小贴士" class="headerlink" title="实用小贴士"></a>实用小贴士</h2><p>原理讲完，给几个日常真正用得上的。</p>
+<p><strong>1. 什么时候 gas 便宜？景区人少的时候。</strong> base fee 只看拥挤度，所以答案就是挑人少。经验上，链上的高峰大体跟着美国的工作时段走，相对便宜的窗口是周末、深夜，以及非美国时段——比如美东时间的凌晨，对应北京时间的午后到傍晚。重要但不着急的操作（给冷钱包转账、做授权），挑低谷发能省下不少。不过这只是经验规律，一次热门 mint 就能把景区挤爆，动手前看一眼 gas 追踪器上的实时 base fee 最靠谱。</p>
+<p><strong>2. 撤销授权也要花 gas。</strong> 撤销的原理是再调一次 <code>approve</code>，把额度设成 0——所以它本身就是一笔真实的链上交易，和前面表里的 approve 是同一个量级，一样要付钱。定期清理授权时，记得把这笔预算算进去：安全从来不是免费的。授权为什么有风险、该怎么管理，见<a href="https://lucifer.ren/blog/2025/04/02/web3-approve/" title="Web3 中的授权与撤销授权">《Web3 中的授权与撤销授权》</a>。</p>
+<p><strong>3. 多签交互贵，贵出了 MPC。</strong> 在以太坊上，多签本质是一个智能合约：钱包本身要先花 gas 部署，之后每动一次钱都是一次合约调用，合约还得在链上把 M 个签名挨个验一遍。对照前面的直觉表就明白了——普通转账只要 21000，而走合约、验签、读写存储，每一步都在电表上跳字，所以它天然比一笔普通转账贵。这正是 MPC 钱包出现的动机之一：把”多方共同签名”这件事挪到链下用密码学解决，链上看到的只是一笔普通交易，自然也只付普通交易的 gas。详见<a href="https://lucifer.ren/blog/2025/03/05/web3-mpc/" title="更加安全的区块链钱包：MPC 钱包">《更加安全的区块链钱包：MPC 钱包》</a>。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>把这篇的硬核知识收进口袋：</p>
+<ul>
+<li>gas 是计算量单位，不是钱；费用 = gasUsed × gasPrice；gwei 是单价单位（10⁻⁹ ETH），ETH 是结算货币。</li>
+<li>收费的三重动机：防垃圾交易（自助餐不能不限量）、防死循环（给图灵完备的 EVM 装电表）、付验证者工资。</li>
+<li>耗量直觉：ETH 转账固定 21000；代币转账和授权是它的三倍量级；写存储槽 20000 一档，因为存储是”全网所有节点永久记住”的负债。</li>
+<li>EIP-1559 把账单拆成三个数：base fee（协议定价、自动调节、直接燃烧）+ priority fee（给验证者的小费）+ max fee（用户上限，多退少不补）。</li>
+<li>base fee 是景区门票：目标 = 上限的一半，人多了涨价、人少了降价，每块最多 ±12.5%。</li>
+<li>燃烧把”协议收入”按持币比例变相还给全体持币人，是 ETH 通缩叙事的机制源头。</li>
+<li>L2 便宜是因为执行搬到了链下、只把压缩数据放回 L1，blob 让数据成本再降一个量级。</li>
+</ul>
+<p>一句话：理解了 gas，你就理解了区块链”一切行为皆有价格”的世界观——这条链上没有免费的午餐，但正因为每一步都有价，它才挡得住垃圾、跑不死循环、养得活全球成千上万个节点。</p>
+<h2 id="相关阅读"><a href="#相关阅读" class="headerlink" title="相关阅读"></a>相关阅读</h2><ul>
+<li><a href="https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/" title="《从零开始构建区块链》">《从零开始构建区块链》</a>：免费玩具链 vs 真实链</li>
+<li><a href="https://lucifer.ren/blog/2025/04/02/web3-approve/" title="Web3 中的授权与撤销授权">《Web3 中的授权与撤销授权》</a>：approve 和撤销都是真实交易，都要花 gas</li>
+<li><a href="https://lucifer.ren/blog/2025/03/05/web3-mpc/" title="更加安全的区块链钱包：MPC 钱包">《更加安全的区块链钱包：MPC 钱包》</a>：多签每次交互都烧 gas 的痛点</li>
+<li><a href="https://lucifer.ren/blog/2026/05/03/web3-tokenomics/" title="代币经济学：如何判断一个代币值不值得买">《代币经济学：如何判断一个代币值不值得买》</a>：EIP-1559 燃烧与 ETH 通缩</li>
+<li><a href="https://lucifer.ren/blog/2025/02/29/web3-l2-from-zero/" title="从零实现区块链 - 侧链与L2">《从零实现区块链 - 侧链与L2》</a>：L2 存在的动机就是 L1 gas 贵</li>
+<li><a href="https://lucifer.ren/blog/2026/11/14/web3-blob/" title="blob：你的 L2 转账为什么只要几分钱">《blob：你的 L2 转账为什么只要几分钱》</a>：blob 交易让 L2 数据成本再降一个量级</li>
+</ul>
+
+      </div>
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-15T15:17:44+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 2026年11月15日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/区块链/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>区块链</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/web3/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>web3</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/Ethereum/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Ethereum</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/Gas/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Gas</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3a3U4CQQwGUN//pTExXmCQ5Ws7GHf2zBVBWeZo0vTv4yM+t69z//r+ncf3H8+zZyZPXnYwMDBOy0i+/tnr6oWOr3j8nBd/GgwMjAswJkG2FwOTZyZ3w8DAwDgmHVOrP8XAwMBYFXDnaWIegjEwMDCqRWy1uE2oeZheVotjYGCckNEbDPzN67fPNzAwMP4941Y8eUDMm/69m/x4GgYGxtaM49RtbZJXLWgTfHQ5DAyMkzPet7aV/GaCjJJFDAyMrRnzD+eNuTyVrK6OYWBgXIEx+ZrJmle1AMbAwMDorYX1EsE8HEdrFhgYGBdgFJrvcSpZXd2ohulfSBgYGBdg9BZVeyE4v3ShlMXAwNiaMWmlVVcoJsOJZimLgYGxBSNPCicLE9VSuVpIY2Bg7M3I07s8vOahM2/5NfdHMDAwTs6Yjxt7qxWrGnDf72BgYFyA0WulVVdRe8VwVBJjYGBszahuYVTDa2+c2Vy8wMDAuACjl95NBpaTIPui0YaBgbERI0kNe+A8rcwbbdH/AQMDY1NGb0miyq4udeVhGgMDY29GHtrmbf28Gdf8FAYGxqaMW/Gsas9N1jIwMDCuxsjPfKhZTRx734uBgbErYxJkJ6tdzWI1H2FiYGBsx6heMR8GVBttedBf0G7DwMDYjjFp+ucJZTP1xMDAwIiHnXmo7Y1Io3ksBgbGpozqkDL5bL4Ou2zZAgMDY1NGtYBMAuhxeveO8I2BgbEp4xN78lbkTV9rwgAAAABJRU5ErkJggg=='>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2026/10/30/web3-gas/&title=Gas：链上一切行为的价格标签 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=在《从零开始构建区块链》里，我们亲手搓过一条玩具链：转账、挖矿、查余额，全程免费，转账像发微信消息一样轻快。但那条链有个没说破的”作弊”：真实链上不是这样的。你在以太坊上哪怕只转 0.001 ETH，也得先掏一笔手续费；赶上牛市高峰，一次 DeFi 操作的 gas 费够吃顿火锅，部署合约更是”豪门消费”。
+很多新手第一次被 web3 劝退，不是因为看不懂钱包界面，而是被 gas 吓退的：为什么转个账还要钱？为什么贵的时候一笔要几十美元？这笔钱到底给了谁？为什么不干脆免费？
+这篇文章就把 gas 掰开揉碎讲明白：它是什么、怎么定价、EIP-1559 之后钱包里那三个数字（base fee、priority fee、max fee）到底是什么意思，以及为什么有一部分费用会被当众”烧掉”。老规矩，最后用 Python 把整个机制模拟一遍，所有输出都是真实运行结果，欢迎对着敲。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2026/10/30/web3-gas/&title=Gas：链上一切行为的价格标签 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=在《从零开始构建区块链》里，我们亲手搓过一条玩具链：转账、挖矿、查余额，全程免费，转账像发微信消息一样轻快。但那条链有个没说破的”作弊”：真实链上不是这样的。你在以太坊上哪怕只转 0.001 ETH，也得先掏一笔手续费；赶上牛市高峰，一次 DeFi 操作的 gas 费够吃顿火锅，部署合约更是”豪门消费”。
+很多新手第一次被 web3 劝退，不是因为看不懂钱包界面，而是被 gas 吓退的：为什么转个账还要钱？为什么贵的时候一笔要几十美元？这笔钱到底给了谁？为什么不干脆免费？
+这篇文章就把 gas 掰开揉碎讲明白：它是什么、怎么定价、EIP-1559 之后钱包里那三个数字（base fee、priority fee、max fee）到底是什么意思，以及为什么有一部分费用会被当众”烧掉”。老规矩，最后用 Python 把整个机制模拟一遍，所有输出都是真实运行结果，欢迎对着敲。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2026/10/30/web3-gas/&title=Gas：链上一切行为的价格标签 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=在《从零开始构建区块链》里，我们亲手搓过一条玩具链：转账、挖矿、查余额，全程免费，转账像发微信消息一样轻快。但那条链有个没说破的”作弊”：真实链上不是这样的。你在以太坊上哪怕只转 0.001 ETH，也得先掏一笔手续费；赶上牛市高峰，一次 DeFi 操作的 gas 费够吃顿火锅，部署合约更是”豪门消费”。
+很多新手第一次被 web3 劝退，不是因为看不懂钱包界面，而是被 gas 吓退的：为什么转个账还要钱？为什么贵的时候一笔要几十美元？这笔钱到底给了谁？为什么不干脆免费？
+这篇文章就把 gas 掰开揉碎讲明白：它是什么、怎么定价、EIP-1559 之后钱包里那三个数字（base fee、priority fee、max fee）到底是什么意思，以及为什么有一部分费用会被当众”烧掉”。老规矩，最后用 Python 把整个机制模拟一遍，所有输出都是真实运行结果，欢迎对着敲。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                          <h4>
+                              <a href="/blog/2026/11/01/web3-wallet-dev/" rel="prev" title="钱包开发（续）：助记词、HD 派生与地址的来龙去脉">
+                                
+                                    钱包开发（续）：助记词、HD 派生与地址的来龙去脉
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/区块链/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 区块链</a> <a class="tag" href="/blog/tags/web3/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> web3</a> <a class="tag" href="/blog/tags/钱包/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 钱包</a> <a class="tag" href="/blog/tags/密码学/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 密码学</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/blog/2026/10/29/zarathustra/" rel="prev" title="《查拉图斯特拉如是说》导读：一本反福音书">
+                                  
+                                      《查拉图斯特拉如是说》导读：一本反福音书
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/哲学/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 哲学</a> <a class="tag" href="/blog/tags/读书/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 读书</a> <a class="tag" href="/blog/tags/尼采/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 尼采</a> <a class="tag" href="/blog/tags/查拉图斯特拉/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 查拉图斯特拉</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Gas：链上一切行为的价格标签',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/blog/atom.xml"
+              class="social fas fa-rss flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://www.zhihu.com/people/lu-xiao-13-70/activities"
+              class="social fab fa-zhihu flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:azl397985856@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/azl397985856"
+              class="social fab fa-github flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/playlist?id=978545815&userid=632167080"
+              class="social fas fa-headphones-alt flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="/blog/wc3map/"
+              class="social fas fa-dragon flat-btn"
+              title="魔兽地图 · 四兄弟 Footmen Frenzy 纪念版（多版本下载）"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="/blog/files/war3-coach-portable.zip"
+              class="social fas fa-chalkboard-teacher flat-btn"
+              title="war3-coach · 魔兽训练辅助工具（回放分析+对手库，免安装便携版，下载解压即用）"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://wormhole.app"
+              class="social fas fa-paper-plane flat-btn"
+              title="Wormhole · 免登录文件分享（端到端加密，10GB/24小时）"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么链上做什么都要钱"><span class="toc-text">为什么链上做什么都要钱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gas-到底是什么：电表上的”度”"><span class="toc-text">Gas 到底是什么：电表上的”度”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见操作要烧多少-gas"><span class="toc-text">常见操作要烧多少 gas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EIP-1559：钱包里那张账单"><span class="toc-text">EIP-1559：钱包里那张账单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#base-fee-是怎么自动调节的"><span class="toc-text">base fee 是怎么自动调节的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#燃烧：把协议收入还给全体持币人"><span class="toc-text">燃烧：把协议收入还给全体持币人</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么-L2-便宜"><span class="toc-text">为什么 L2 便宜</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用-Python-算一笔账"><span class="toc-text">用 Python 算一笔账</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用-Python-模拟-base-fee-的心跳"><span class="toc-text">用 Python 模拟 base fee 的心跳</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实用小贴士"><span class="toc-text">实用小贴士</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关阅读"><span class="toc-text">相关阅读</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;我的开源项目</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/leetcode" href="https://github.com/azl397985856/leetcode"
+          
+          
+          id="https:github.comazl397985856leetcode">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          算法刷题
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/fe-interview" href="https://github.com/azl397985856/fe-interview"
+          
+          
+          id="https:github.comazl397985856fe-interview">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          大前端
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/daily-featured" href="https://github.com/azl397985856/daily-featured"
+          
+          
+          id="https:github.comazl397985856daily-featured">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          每日一荐
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;全部分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+    href="/blog/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/blog/categories/91天学算法/" href="/blog/categories/91天学算法/"><div class='name'>91天学算法</div><div class='badge'>(28)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/CD/" href="/blog/categories/CD/"><div class='name'>CD</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Easy/" href="/blog/categories/Easy/"><div class='name'>Easy</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Github/" href="/blog/categories/Github/"><div class='name'>Github</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Hard/" href="/blog/categories/Hard/"><div class='name'>Hard</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/LeetCode/" href="/blog/categories/LeetCode/"><div class='name'>LeetCode</div><div class='badge'>(23)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/LeetCode题解书/" href="/blog/categories/LeetCode/LeetCode题解书/"><div class='name'>LeetCode题解书</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/刷题技巧/" href="/blog/categories/LeetCode/刷题技巧/"><div class='name'>刷题技巧</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/动态规划/" href="/blog/categories/LeetCode/动态规划/"><div class='name'>动态规划</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Medium/" href="/blog/categories/Medium/"><div class='name'>Medium</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/React/" href="/blog/categories/React/"><div class='name'>React</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/TypeScript/" href="/blog/categories/TypeScript/"><div class='name'>TypeScript</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/ai/" href="/blog/categories/ai/"><div class='name'>ai</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/ai/agent/" href="/blog/categories/ai/agent/"><div class='name'>agent</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/devtool/" href="/blog/categories/devtool/"><div class='name'>devtool</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/rust/" href="/blog/categories/rust/"><div class='name'>rust</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/rust/node-binding/" href="/blog/categories/rust/node-binding/"><div class='name'>node binding</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/rust/node-binding/node-gyp/" href="/blog/categories/rust/node-binding/node-gyp/"><div class='name'>node-gyp</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/v8/" href="/blog/categories/v8/"><div class='name'>v8</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/vite/" href="/blog/categories/vite/"><div class='name'>vite</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/《算法通关之路》/" href="/blog/categories/《算法通关之路》/"><div class='name'>《算法通关之路》</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/中等/" href="/blog/categories/中等/"><div class='name'>中等</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书/" href="/blog/categories/书/"><div class='name'>书</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/书/算法/" href="/blog/categories/书/算法/"><div class='name'>算法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书单/" href="/blog/categories/书单/"><div class='name'>书单</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书摘/" href="/blog/categories/书摘/"><div class='name'>书摘</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/二分/" href="/blog/categories/二分/"><div class='name'>二分</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/二叉树/" href="/blog/categories/二叉树/"><div class='name'>二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/交易/" href="/blog/categories/交易/"><div class='name'>交易</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/公众号/" href="/blog/categories/公众号/"><div class='name'>公众号</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/刷题技巧/" href="/blog/categories/刷题技巧/"><div class='name'>刷题技巧</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/刷题方法/" href="/blog/categories/刷题方法/"><div class='name'>刷题方法</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/前端/" href="/blog/categories/前端/"><div class='name'>前端</div><div class='badge'>(30)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/TypeScript/" href="/blog/categories/前端/TypeScript/"><div class='name'>TypeScript</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/TypeScript/泛型/" href="/blog/categories/前端/TypeScript/泛型/"><div class='name'>泛型</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/css-in-js/" href="/blog/categories/前端/css-in-js/"><div class='name'>css-in-js</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/eslint/" href="/blog/categories/前端/eslint/"><div class='name'>eslint</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/web-component/" href="/blog/categories/前端/web-component/"><div class='name'>web-component</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/webkit/" href="/blog/categories/前端/webkit/"><div class='name'>webkit</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/测试/" href="/blog/categories/前端/测试/"><div class='name'>测试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/浏览器/" href="/blog/categories/前端/浏览器/"><div class='name'>浏览器</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/算法/" href="/blog/categories/前端/算法/"><div class='name'>算法</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/组件化/" href="/blog/categories/前端/组件化/"><div class='name'>组件化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/前缀和/" href="/blog/categories/前缀和/"><div class='name'>前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前缀和/二维前缀和/" href="/blog/categories/前缀和/二维前缀和/"><div class='name'>二维前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/力扣加加/" href="/blog/categories/力扣加加/"><div class='name'>力扣加加</div><div class='badge'>(30)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/动态规划/" href="/blog/categories/动态规划/"><div class='name'>动态规划</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/区块链/" href="/blog/categories/区块链/"><div class='name'>区块链</div><div class='badge'>(34)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/命令行/" href="/blog/categories/命令行/"><div class='name'>命令行</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/哲学/" href="/blog/categories/哲学/"><div class='name'>哲学</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/哲学/读书/" href="/blog/categories/哲学/读书/"><div class='name'>读书</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/图/" href="/blog/categories/图/"><div class='name'>图</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/堆/" href="/blog/categories/堆/"><div class='name'>堆</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/好未来/" href="/blog/categories/好未来/"><div class='name'>好未来</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/学习方法/" href="/blog/categories/学习方法/"><div class='name'>学习方法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/工具/" href="/blog/categories/工具/"><div class='name'>工具</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/工具/Chrome/" href="/blog/categories/工具/Chrome/"><div class='name'>Chrome</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/工具/VSCODE/" href="/blog/categories/工具/VSCODE/"><div class='name'>VSCODE</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/工具/终端/" href="/blog/categories/工具/终端/"><div class='name'>终端</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/年终总结/" href="/blog/categories/年终总结/"><div class='name'>年终总结</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/异议！/" href="/blog/categories/异议！/"><div class='name'>异议！</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/成长/" href="/blog/categories/成长/"><div class='name'>成长</div><div class='badge'>(0)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/成长经历/" href="/blog/categories/成长经历/"><div class='name'>成长经历</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/技术大会/" href="/blog/categories/技术大会/"><div class='name'>技术大会</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/D2/" href="/blog/categories/技术大会/D2/"><div class='name'>D2</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/Google-IO/" href="/blog/categories/技术大会/Google-IO/"><div class='name'>Google IO</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/JSConf/" href="/blog/categories/技术大会/JSConf/"><div class='name'>JSConf</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/QCon/" href="/blog/categories/技术大会/QCon/"><div class='name'>QCon</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/React-Conf/" href="/blog/categories/技术大会/React-Conf/"><div class='name'>React Conf</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/插件/" href="/blog/categories/插件/"><div class='name'>插件</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/插件/浏览器插件/" href="/blog/categories/插件/浏览器插件/"><div class='name'>浏览器插件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/插件/算法/" href="/blog/categories/插件/算法/"><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/搜索/" href="/blog/categories/搜索/"><div class='name'>搜索</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数学/" href="/blog/categories/数学/"><div class='name'>数学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数学/算法/" href="/blog/categories/数学/算法/"><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构/" href="/blog/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/hashtable/" href="/blog/categories/数据结构/hashtable/"><div class='name'>hashtable</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/二叉搜索树/" href="/blog/categories/数据结构/二叉搜索树/"><div class='name'>二叉搜索树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/图/" href="/blog/categories/数据结构/图/"><div class='name'>图</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/字符串/" href="/blog/categories/数据结构/字符串/"><div class='name'>字符串</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/平衡二叉树/" href="/blog/categories/数据结构/平衡二叉树/"><div class='name'>平衡二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/数组/" href="/blog/categories/数据结构/数组/"><div class='name'>数组</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/算法/" href="/blog/categories/数据结构/算法/"><div class='name'>算法</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/链表/" href="/blog/categories/数据结构/链表/"><div class='name'>链表</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，二叉树/" href="/blog/categories/数据结构，二叉树/"><div class='name'>数据结构，二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，单调栈/" href="/blog/categories/数据结构，单调栈/"><div class='name'>数据结构，单调栈</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，字符串/" href="/blog/categories/数据结构，字符串/"><div class='name'>数据结构，字符串</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，数组/" href="/blog/categories/数据结构，数组/"><div class='name'>数据结构，数组</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/日记/" href="/blog/categories/日记/"><div class='name'>日记</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/日记/技术/" href="/blog/categories/日记/技术/"><div class='name'>技术</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/易经/" href="/blog/categories/易经/"><div class='name'>易经</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/易经/读后感/" href="/blog/categories/易经/读后感/"><div class='name'>读后感</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/春招/" href="/blog/categories/春招/"><div class='name'>春招</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/栈/" href="/blog/categories/栈/"><div class='name'>栈</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/树/" href="/blog/categories/树/"><div class='name'>树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/树状数组/" href="/blog/categories/树状数组/"><div class='name'>树状数组</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/校招/" href="/blog/categories/校招/"><div class='name'>校招</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/模拟面试/" href="/blog/categories/模拟面试/"><div class='name'>模拟面试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/每日一荐/" href="/blog/categories/每日一荐/"><div class='name'>每日一荐</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-09/" href="/blog/categories/每日一荐/2019-09/"><div class='name'>2019-09</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-10/" href="/blog/categories/每日一荐/2019-10/"><div class='name'>2019-10</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-11/" href="/blog/categories/每日一荐/2019-11/"><div class='name'>2019-11</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-12/" href="/blog/categories/每日一荐/2019-12/"><div class='name'>2019-12</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2020-01/" href="/blog/categories/每日一荐/2020-01/"><div class='name'>2020-01</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2020-03/" href="/blog/categories/每日一荐/2020-03/"><div class='name'>2020-03</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2022-04/" href="/blog/categories/每日一荐/2022-04/"><div class='name'>2022-04</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/浏览器/" href="/blog/categories/浏览器/"><div class='name'>浏览器</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/浏览器/webkit/" href="/blog/categories/浏览器/webkit/"><div class='name'>webkit</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/浏览器/事件/" href="/blog/categories/浏览器/事件/"><div class='name'>事件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/理财/" href="/blog/categories/理财/"><div class='name'>理财</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/理财/K线/" href="/blog/categories/理财/K线/"><div class='name'>K线</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/理财/K线/蜡烛图/" href="/blog/categories/理财/K线/蜡烛图/"><div class='name'>蜡烛图</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/理财/量化/" href="/blog/categories/理财/量化/"><div class='name'>量化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/生活/" href="/blog/categories/生活/"><div class='name'>生活</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/生活/自我提升/" href="/blog/categories/生活/自我提升/"><div class='name'>自我提升</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/电影/" href="/blog/categories/电影/"><div class='name'>电影</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/电影/观后感/" href="/blog/categories/电影/观后感/"><div class='name'>观后感</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/百度/" href="/blog/categories/百度/"><div class='name'>百度</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法/" href="/blog/categories/算法/"><div class='name'>算法</div><div class='badge'>(30)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/BFS/" href="/blog/categories/算法/BFS/"><div class='name'>BFS</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/DFS/" href="/blog/categories/算法/DFS/"><div class='name'>DFS</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/二分法/" href="/blog/categories/算法/二分法/"><div class='name'>二分法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/位运算/" href="/blog/categories/算法/位运算/"><div class='name'>位运算</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/前端/" href="/blog/categories/算法/前端/"><div class='name'>前端</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/前端/面试/" href="/blog/categories/算法/前端/面试/"><div class='name'>面试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/前缀和/" href="/blog/categories/算法/前缀和/"><div class='name'>前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/动态规划/" href="/blog/categories/算法/动态规划/"><div class='name'>动态规划</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/双指针/" href="/blog/categories/算法/双指针/"><div class='name'>双指针</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/回文/" href="/blog/categories/算法/回文/"><div class='name'>回文</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/回溯/" href="/blog/categories/算法/回溯/"><div class='name'>回溯</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/子序列/" href="/blog/categories/算法/子序列/"><div class='name'>子序列</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/就地算法/" href="/blog/categories/算法/就地算法/"><div class='name'>就地算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/布隆过滤器/" href="/blog/categories/算法/布隆过滤器/"><div class='name'>布隆过滤器</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/循环移位/" href="/blog/categories/算法/循环移位/"><div class='name'>循环移位</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/数学/" href="/blog/categories/算法/数学/"><div class='name'>数学</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/概率/" href="/blog/categories/算法/概率/"><div class='name'>概率</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/母题/" href="/blog/categories/算法/母题/"><div class='name'>母题</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/滑动窗口/" href="/blog/categories/算法/滑动窗口/"><div class='name'>滑动窗口</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/状态压缩/" href="/blog/categories/算法/状态压缩/"><div class='name'>状态压缩</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/背包问题/" href="/blog/categories/算法/背包问题/"><div class='name'>背包问题</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/递归/" href="/blog/categories/算法/递归/"><div class='name'>递归</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/链表反转/" href="/blog/categories/算法/链表反转/"><div class='name'>链表反转</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法比赛/" href="/blog/categories/算法比赛/"><div class='name'>算法比赛</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，动态规划/" href="/blog/categories/算法，动态规划/"><div class='name'>算法，动态规划</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，序列化/" href="/blog/categories/算法，序列化/"><div class='name'>算法，序列化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，滑动窗口/" href="/blog/categories/算法，滑动窗口/"><div class='name'>算法，滑动窗口</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/线段树/" href="/blog/categories/线段树/"><div class='name'>线段树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/经验分享/" href="/blog/categories/经验分享/"><div class='name'>经验分享</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/编程之美/" href="/blog/categories/编程之美/"><div class='name'>编程之美</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/缠论/" href="/blog/categories/缠论/"><div class='name'>缠论</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/缠论/交易/" href="/blog/categories/缠论/交易/"><div class='name'>交易</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/缠论/交易/理财/" href="/blog/categories/缠论/交易/理财/"><div class='name'>理财</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/自动化/" href="/blog/categories/自动化/"><div class='name'>自动化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/蓄水池抽样/" href="/blog/categories/蓄水池抽样/"><div class='name'>蓄水池抽样</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/虾皮/" href="/blog/categories/虾皮/"><div class='name'>虾皮</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/解题模板/" href="/blog/categories/解题模板/"><div class='name'>解题模板</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/谷歌/" href="/blog/categories/谷歌/"><div class='name'>谷歌</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/谷歌/软实力/" href="/blog/categories/谷歌/软实力/"><div class='name'>软实力</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/谷歌/面试/" href="/blog/categories/谷歌/面试/"><div class='name'>面试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/财报/" href="/blog/categories/财报/"><div class='name'>财报</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/贪婪/" href="/blog/categories/贪婪/"><div class='name'>贪婪</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/走出科学/" href="/blog/categories/走出科学/"><div class='name'>走出科学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/软件工具/" href="/blog/categories/软件工具/"><div class='name'>软件工具</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/递推/" href="/blog/categories/递推/"><div class='name'>递推</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/递推/动态规划/" href="/blog/categories/递推/动态规划/"><div class='name'>动态规划</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/链表/" href="/blog/categories/链表/"><div class='name'>链表</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/面经/" href="/blog/categories/面经/"><div class='name'>面经</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/面试/" href="/blog/categories/面试/"><div class='name'>面试</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/面试/字节跳动/" href="/blog/categories/面试/字节跳动/"><div class='name'>字节跳动</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/题解/" href="/blog/categories/题解/"><div class='name'>题解</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/魔兽争霸3/" href="/blog/categories/魔兽争霸3/"><div class='name'>魔兽争霸3</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+    href="/blog/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/blog/tags/2022/" style="font-size: 14px; color: #999">2022</a> <a href="/blog/tags/91天学算法/" style="font-size: 19.63px; color: #737373">91天学算法</a> <a href="/blog/tags/AI/" style="font-size: 14px; color: #999">AI</a> <a href="/blog/tags/AMM/" style="font-size: 14px; color: #999">AMM</a> <a href="/blog/tags/AST/" style="font-size: 14px; color: #999">AST</a> <a href="/blog/tags/BFS/" style="font-size: 14.63px; color: #959595">BFS</a> <a href="/blog/tags/BigPipe/" style="font-size: 14px; color: #999">BigPipe</a> <a href="/blog/tags/CD/" style="font-size: 14px; color: #999">CD</a> <a href="/blog/tags/CSS/" style="font-size: 14px; color: #999">CSS</a> <a href="/blog/tags/Canvas/" style="font-size: 14px; color: #999">Canvas</a> <a href="/blog/tags/Chrome/" style="font-size: 15.25px; color: #919191">Chrome</a> <a href="/blog/tags/D2/" style="font-size: 14px; color: #999">D2</a> <a href="/blog/tags/DAI/" style="font-size: 14px; color: #999">DAI</a> <a href="/blog/tags/DAO/" style="font-size: 14px; color: #999">DAO</a> <a href="/blog/tags/DEX/" style="font-size: 14px; color: #999">DEX</a> <a href="/blog/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/blog/tags/DeFi/" style="font-size: 15.88px; color: #8c8c8c">DeFi</a> <a href="/blog/tags/Easy/" style="font-size: 14px; color: #999">Easy</a> <a href="/blog/tags/Ethereum/" style="font-size: 15.88px; color: #8c8c8c">Ethereum</a> <a href="/blog/tags/Floyd-Warshall/" style="font-size: 14px; color: #999">Floyd-Warshall</a> <a href="/blog/tags/GMX/" style="font-size: 14px; color: #999">GMX</a> <a href="/blog/tags/Gas/" style="font-size: 14px; color: #999">Gas</a> <a href="/blog/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/blog/tags/Github/" style="font-size: 14.63px; color: #959595">Github</a> <a href="/blog/tags/Google-IO/" style="font-size: 14px; color: #999">Google IO</a> <a href="/blog/tags/Hard/" style="font-size: 14px; color: #999">Hard</a> <a href="/blog/tags/JSConf/" style="font-size: 14px; color: #999">JSConf</a> <a href="/blog/tags/KK平台/" style="font-size: 14px; color: #999">KK平台</a> <a href="/blog/tags/K线/" style="font-size: 14px; color: #999">K线</a> <a href="/blog/tags/L2/" style="font-size: 14.63px; color: #959595">L2</a> <a href="/blog/tags/LP/" style="font-size: 14px; color: #999">LP</a> <a href="/blog/tags/LeetCode/" style="font-size: 22.75px; color: #5e5e5e">LeetCode</a> <a href="/blog/tags/LeetCode日记/" style="font-size: 19px; color: #777">LeetCode日记</a> <a href="/blog/tags/MEV/" style="font-size: 14.63px; color: #959595">MEV</a> <a href="/blog/tags/MPC-钱包/" style="font-size: 14px; color: #999">MPC 钱包</a> <a href="/blog/tags/Mac/" style="font-size: 14px; color: #999">Mac</a> <a href="/blog/tags/MakerDAO/" style="font-size: 14px; color: #999">MakerDAO</a> <a href="/blog/tags/Medium/" style="font-size: 14.63px; color: #959595">Medium</a> <a href="/blog/tags/Nexus-Mutual/" style="font-size: 14px; color: #999">Nexus Mutual</a> <a href="/blog/tags/PPT/" style="font-size: 14.63px; color: #959595">PPT</a> <a href="/blog/tags/QCon/" style="font-size: 14px; color: #999">QCon</a> <a href="/blog/tags/RFC/" style="font-size: 14px; color: #999">RFC</a> <a href="/blog/tags/React/" style="font-size: 14px; color: #999">React</a> <a href="/blog/tags/Tokenomics/" style="font-size: 14px; color: #999">Tokenomics</a> <a href="/blog/tags/TypeScript/" style="font-size: 18.38px; color: #7b7b7b">TypeScript</a> <a href="/blog/tags/USDC/" style="font-size: 14px; color: #999">USDC</a> <a href="/blog/tags/USDT/" style="font-size: 14px; color: #999">USDT</a> <a href="/blog/tags/UST/" style="font-size: 14px; color: #999">UST</a> <a href="/blog/tags/VSCODE/" style="font-size: 15.25px; color: #919191">VSCODE</a> <a href="/blog/tags/Warp/" style="font-size: 14px; color: #999">Warp</a> <a href="/blog/tags/Web3-钱包/" style="font-size: 14px; color: #999">Web3 钱包</a> <a href="/blog/tags/aave/" style="font-size: 14px; color: #999">aave</a> <a href="/blog/tags/acp/" style="font-size: 14px; color: #999">acp</a> <a href="/blog/tags/agent/" style="font-size: 14px; color: #999">agent</a> <a href="/blog/tags/ai/" style="font-size: 15.88px; color: #8c8c8c">ai</a> <a href="/blog/tags/apple/" style="font-size: 14px; color: #999">apple</a> <a href="/blog/tags/approve/" style="font-size: 14.63px; color: #959595">approve</a> <a href="/blog/tags/balancer/" style="font-size: 14px; color: #999">balancer</a> <a href="/blog/tags/bancor/" style="font-size: 14px; color: #999">bancor</a> <a href="/blog/tags/blob/" style="font-size: 14px; color: #999">blob</a> <a href="/blog/tags/borrow/" style="font-size: 14px; color: #999">borrow</a> <a href="/blog/tags/chatgpt/" style="font-size: 14px; color: #999">chatgpt</a> <a href="/blog/tags/chrome/" style="font-size: 14px; color: #999">chrome</a> <a href="/blog/tags/claude/" style="font-size: 14px; color: #999">claude</a> <a href="/blog/tags/cordis/" style="font-size: 14px; color: #999">cordis</a> <a href="/blog/tags/css-in-js/" style="font-size: 14px; color: #999">css-in-js</a> <a href="/blog/tags/curve/" style="font-size: 14px; color: #999">curve</a> <a href="/blog/tags/dYdX/" style="font-size: 14px; color: #999">dYdX</a> <a href="/blog/tags/deepseek/" style="font-size: 14px; color: #999">deepseek</a> <a href="/blog/tags/defi/" style="font-size: 14px; color: #999">defi</a> <a href="/blog/tags/depin/" style="font-size: 14px; color: #999">depin</a> <a href="/blog/tags/dex/" style="font-size: 14px; color: #999">dex</a> <a href="/blog/tags/dotfiles/" style="font-size: 14px; color: #999">dotfiles</a> <a href="/blog/tags/eslint/" style="font-size: 14px; color: #999">eslint</a> <a href="/blog/tags/gemini/" style="font-size: 14px; color: #999">gemini</a> <a href="/blog/tags/google/" style="font-size: 14px; color: #999">google</a> <a href="/blog/tags/harness/" style="font-size: 14px; color: #999">harness</a> <a href="/blog/tags/iTerm2/" style="font-size: 14px; color: #999">iTerm2</a> <a href="/blog/tags/immutable/" style="font-size: 14px; color: #999">immutable</a> <a href="/blog/tags/immutablejs/" style="font-size: 14px; color: #999">immutablejs</a> <a href="/blog/tags/javascript/" style="font-size: 14px; color: #999">javascript</a> <a href="/blog/tags/json/" style="font-size: 14px; color: #999">json</a> <a href="/blog/tags/k-线/" style="font-size: 14px; color: #999">k 线</a> <a href="/blog/tags/k-问题/" style="font-size: 14px; color: #999">k 问题</a> <a href="/blog/tags/knowledge-management/" style="font-size: 14px; color: #999">knowledge-management</a> <a href="/blog/tags/lending/" style="font-size: 14px; color: #999">lending</a> <a href="/blog/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/blog/tags/node-binding/" style="font-size: 14px; color: #999">node binding</a> <a href="/blog/tags/node-gyp/" style="font-size: 14px; color: #999">node-gyp</a> <a href="/blog/tags/notebooklm/" style="font-size: 14px; color: #999">notebooklm</a> <a href="/blog/tags/pendle/" style="font-size: 14px; color: #999">pendle</a> <a href="/blog/tags/plugin/" style="font-size: 14px; color: #999">plugin</a> <a href="/blog/tags/rust/" style="font-size: 14.63px; color: #959595">rust</a> <a href="/blog/tags/rwa/" style="font-size: 14px; color: #999">rwa</a> <a href="/blog/tags/staking/" style="font-size: 14px; color: #999">staking</a> <a href="/blog/tags/stringify/" style="font-size: 14px; color: #999">stringify</a> <a href="/blog/tags/swap/" style="font-size: 15.25px; color: #919191">swap</a> <a href="/blog/tags/swc/" style="font-size: 14px; color: #999">swc</a> <a href="/blog/tags/uniswap/" style="font-size: 14.63px; color: #959595">uniswap</a> <a href="/blog/tags/v4/" style="font-size: 14.63px; color: #959595">v4</a> <a href="/blog/tags/v8/" style="font-size: 14px; color: #999">v8</a> <a href="/blog/tags/vite/" style="font-size: 14px; color: #999">vite</a> <a href="/blog/tags/vlog/" style="font-size: 14px; color: #999">vlog</a> <a href="/blog/tags/vue/" style="font-size: 14px; color: #999">vue</a> <a href="/blog/tags/web-component/" style="font-size: 14px; color: #999">web-component</a> <a href="/blog/tags/web3/" style="font-size: 21.5px; color: #666">web3</a> <a href="/blog/tags/webkit/" style="font-size: 14px; color: #999">webkit</a> <a href="/blog/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/blog/tags/《算法通关之路》/" style="font-size: 14px; color: #999">《算法通关之路》</a> <a href="/blog/tags/中位数/" style="font-size: 14px; color: #999">中位数</a> <a href="/blog/tags/中等/" style="font-size: 14.63px; color: #959595">中等</a> <a href="/blog/tags/乘法逆元/" style="font-size: 14px; color: #999">乘法逆元</a> <a href="/blog/tags/书/" style="font-size: 15.25px; color: #919191">书</a> <a href="/blog/tags/书单/" style="font-size: 14px; color: #999">书单</a> <a href="/blog/tags/书摘/" style="font-size: 14px; color: #999">书摘</a> <a href="/blog/tags/事件/" style="font-size: 14px; color: #999">事件</a> <a href="/blog/tags/事件循环/" style="font-size: 14px; color: #999">事件循环</a> <a href="/blog/tags/二分/" style="font-size: 15.25px; color: #919191">二分</a> <a href="/blog/tags/二分法/" style="font-size: 14px; color: #999">二分法</a> <a href="/blog/tags/二叉树/" style="font-size: 15.25px; color: #919191">二叉树</a> <a href="/blog/tags/交易/" style="font-size: 15.25px; color: #919191">交易</a> <a href="/blog/tags/交易系统/" style="font-size: 14px; color: #999">交易系统</a> <a href="/blog/tags/从零实现/" style="font-size: 14px; color: #999">从零实现</a> <a href="/blog/tags/仓位管理/" style="font-size: 14px; color: #999">仓位管理</a> <a href="/blog/tags/代币经济学/" style="font-size: 14.63px; color: #959595">代币经济学</a> <a href="/blog/tags/代码生成器/" style="font-size: 14px; color: #999">代码生成器</a> <a href="/blog/tags/位运算/" style="font-size: 14px; color: #999">位运算</a> <a href="/blog/tags/侧链/" style="font-size: 14px; color: #999">侧链</a> <a href="/blog/tags/保险/" style="font-size: 14px; color: #999">保险</a> <a href="/blog/tags/倒排索引/" style="font-size: 14px; color: #999">倒排索引</a> <a href="/blog/tags/公众号/" style="font-size: 14px; color: #999">公众号</a> <a href="/blog/tags/公益/" style="font-size: 14px; color: #999">公益</a> <a href="/blog/tags/冷钱包/" style="font-size: 14px; color: #999">冷钱包</a> <a href="/blog/tags/删除-k-个字符/" style="font-size: 14px; color: #999">删除 k 个字符</a> <a href="/blog/tags/刷题/" style="font-size: 15.25px; color: #919191">刷题</a> <a href="/blog/tags/刷题技巧/" style="font-size: 17.13px; color: #848484">刷题技巧</a> <a href="/blog/tags/刷题方法/" style="font-size: 15.25px; color: #919191">刷题方法</a> <a href="/blog/tags/前端/" style="font-size: 19.63px; color: #737373">前端</a> <a href="/blog/tags/前端，自动化，automator/" style="font-size: 14px; color: #999">前端，自动化，automator</a> <a href="/blog/tags/前缀和/" style="font-size: 15.88px; color: #8c8c8c">前缀和</a> <a href="/blog/tags/前缀表达式/" style="font-size: 14px; color: #999">前缀表达式</a> <a href="/blog/tags/力扣加加/" style="font-size: 20.88px; color: #6a6a6a">力扣加加</a> <a href="/blog/tags/动态规划/" style="font-size: 19px; color: #777">动态规划</a> <a href="/blog/tags/区块链/" style="font-size: 22.13px; color: #626262">区块链</a> <a href="/blog/tags/单元测试/" style="font-size: 14px; color: #999">单元测试</a> <a href="/blog/tags/单调栈/" style="font-size: 14px; color: #999">单调栈</a> <a href="/blog/tags/博物馆/" style="font-size: 14px; color: #999">博物馆</a> <a href="/blog/tags/命令行/" style="font-size: 14.63px; color: #959595">命令行</a> <a href="/blog/tags/哲学/" style="font-size: 14.63px; color: #959595">哲学</a> <a href="/blog/tags/回溯/" style="font-size: 14px; color: #999">回溯</a> <a href="/blog/tags/困难/" style="font-size: 14.63px; color: #959595">困难</a> <a href="/blog/tags/图/" style="font-size: 14.63px; color: #959595">图</a> <a href="/blog/tags/图片处理/" style="font-size: 14px; color: #999">图片处理</a> <a href="/blog/tags/堆/" style="font-size: 14.63px; color: #959595">堆</a> <a href="/blog/tags/备份工具/" style="font-size: 14px; color: #999">备份工具</a> <a href="/blog/tags/夏普比率/" style="font-size: 14px; color: #999">夏普比率</a> <a href="/blog/tags/多签钱包/" style="font-size: 14px; color: #999">多签钱包</a> <a href="/blog/tags/天梯/" style="font-size: 14px; color: #999">天梯</a> <a href="/blog/tags/好未来/" style="font-size: 14px; color: #999">好未来</a> <a href="/blog/tags/子数组/" style="font-size: 14px; color: #999">子数组</a> <a href="/blog/tags/字符串/" style="font-size: 14.63px; color: #959595">字符串</a> <a href="/blog/tags/字节跳动/" style="font-size: 15.25px; color: #919191">字节跳动</a> <a href="/blog/tags/学习方法/" style="font-size: 14.63px; color: #959595">学习方法</a> <a href="/blog/tags/学习路线/" style="font-size: 15.88px; color: #8c8c8c">学习路线</a> <a href="/blog/tags/安全/" style="font-size: 14.63px; color: #959595">安全</a> <a href="/blog/tags/审计/" style="font-size: 14px; color: #999">审计</a> <a href="/blog/tags/密码学/" style="font-size: 14px; color: #999">密码学</a> <a href="/blog/tags/尼采/" style="font-size: 14px; color: #999">尼采</a> <a href="/blog/tags/工具/" style="font-size: 17.13px; color: #848484">工具</a> <a href="/blog/tags/年度目标/" style="font-size: 14px; color: #999">年度目标</a> <a href="/blog/tags/年终总结/" style="font-size: 14px; color: #999">年终总结</a> <a href="/blog/tags/序列化/" style="font-size: 14px; color: #999">序列化</a> <a href="/blog/tags/异常处理/" style="font-size: 14.63px; color: #959595">异常处理</a> <a href="/blog/tags/异议！/" style="font-size: 14px; color: #999">异议！</a> <a href="/blog/tags/循环移位/" style="font-size: 14px; color: #999">循环移位</a> <a href="/blog/tags/微前端/" style="font-size: 14px; color: #999">微前端</a> <a href="/blog/tags/必备软件/" style="font-size: 14px; color: #999">必备软件</a> <a href="/blog/tags/志愿者/" style="font-size: 14px; color: #999">志愿者</a> <a href="/blog/tags/性能优化/" style="font-size: 14px; color: #999">性能优化</a> <a href="/blog/tags/成长经历/" style="font-size: 14.63px; color: #959595">成长经历</a> <a href="/blog/tags/手机摄影/" style="font-size: 14px; color: #999">手机摄影</a> <a href="/blog/tags/扩展程序/" style="font-size: 14px; color: #999">扩展程序</a> <a href="/blog/tags/技术大会/" style="font-size: 14px; color: #999">技术大会</a> <a href="/blog/tags/技术调研/" style="font-size: 14px; color: #999">技术调研</a> <a href="/blog/tags/技能/" style="font-size: 14.63px; color: #959595">技能</a> <a href="/blog/tags/投资/" style="font-size: 15.88px; color: #8c8c8c">投资</a> <a href="/blog/tags/持续集成/" style="font-size: 14px; color: #999">持续集成</a> <a href="/blog/tags/插件/" style="font-size: 17.13px; color: #848484">插件</a> <a href="/blog/tags/搜索/" style="font-size: 14px; color: #999">搜索</a> <a href="/blog/tags/搜索引擎/" style="font-size: 14px; color: #999">搜索引擎</a> <a href="/blog/tags/摄影/" style="font-size: 14px; color: #999">摄影</a> <a href="/blog/tags/攻略/" style="font-size: 14px; color: #999">攻略</a> <a href="/blog/tags/效率/" style="font-size: 14px; color: #999">效率</a> <a href="/blog/tags/数字钱包/" style="font-size: 14px; color: #999">数字钱包</a> <a href="/blog/tags/数学/" style="font-size: 15.88px; color: #8c8c8c">数学</a> <a href="/blog/tags/数据结构/" style="font-size: 23.38px; color: #595959">数据结构</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，Hard/" style="font-size: 14.63px; color: #959595">数据结构，算法，LeetCode 日记，Hard</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，中等/" style="font-size: 14px; color: #999">数据结构，算法，LeetCode 日记，中等</a> <a href="/blog/tags/数组/" style="font-size: 14.63px; color: #959595">数组</a> <a href="/blog/tags/文物/" style="font-size: 14px; color: #999">文物</a> <a href="/blog/tags/日记/" style="font-size: 14.63px; color: #959595">日记</a> <a href="/blog/tags/易经/" style="font-size: 14px; color: #999">易经</a> <a href="/blog/tags/春招/" style="font-size: 15.25px; color: #919191">春招</a> <a href="/blog/tags/智能合约安全/" style="font-size: 14px; color: #999">智能合约安全</a> <a href="/blog/tags/最大公约数/" style="font-size: 14px; color: #999">最大公约数</a> <a href="/blog/tags/最大表示法/" style="font-size: 14px; color: #999">最大表示法</a> <a href="/blog/tags/最小表示法/" style="font-size: 14px; color: #999">最小表示法</a> <a href="/blog/tags/最长上升子序列/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/blog/tags/最长公共子序列/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/blog/tags/查拉图斯特拉/" style="font-size: 14px; color: #999">查拉图斯特拉</a> <a href="/blog/tags/栈/" style="font-size: 14px; color: #999">栈</a> <a href="/blog/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/blog/tags/树状数组/" style="font-size: 14px; color: #999">树状数组</a> <a href="/blog/tags/校招/" style="font-size: 16.5px; color: #888">校招</a> <a href="/blog/tags/概率/" style="font-size: 14.63px; color: #959595">概率</a> <a href="/blog/tags/模块/" style="font-size: 14px; color: #999">模块</a> <a href="/blog/tags/模拟面试/" style="font-size: 14px; color: #999">模拟面试</a> <a href="/blog/tags/模运算/" style="font-size: 14px; color: #999">模运算</a> <a href="/blog/tags/母题/" style="font-size: 14px; color: #999">母题</a> <a href="/blog/tags/每日一荐/" style="font-size: 17.75px; color: #808080">每日一荐</a> <a href="/blog/tags/永续合约/" style="font-size: 14px; color: #999">永续合约</a> <a href="/blog/tags/沟通/" style="font-size: 14px; color: #999">沟通</a> <a href="/blog/tags/治理/" style="font-size: 14px; color: #999">治理</a> <a href="/blog/tags/泛型/" style="font-size: 14.63px; color: #959595">泛型</a> <a href="/blog/tags/流动性池/" style="font-size: 14px; color: #999">流动性池</a> <a href="/blog/tags/测试/" style="font-size: 14px; color: #999">测试</a> <a href="/blog/tags/浏览器/" style="font-size: 15.25px; color: #919191">浏览器</a> <a href="/blog/tags/游戏/" style="font-size: 14px; color: #999">游戏</a> <a href="/blog/tags/滑动窗口/" style="font-size: 16.5px; color: #888">滑动窗口</a> <a href="/blog/tags/滤镜/" style="font-size: 14px; color: #999">滤镜</a> <a href="/blog/tags/焦作/" style="font-size: 14px; color: #999">焦作</a> <a href="/blog/tags/状态压缩/" style="font-size: 14px; color: #999">状态压缩</a> <a href="/blog/tags/状态机/" style="font-size: 14px; color: #999">状态机</a> <a href="/blog/tags/理财/" style="font-size: 15.88px; color: #8c8c8c">理财</a> <a href="/blog/tags/电子书/" style="font-size: 14px; color: #999">电子书</a> <a href="/blog/tags/电影/" style="font-size: 14.63px; color: #959595">电影</a> <a href="/blog/tags/百度/" style="font-size: 14px; color: #999">百度</a> <a href="/blog/tags/监控/" style="font-size: 14px; color: #999">监控</a> <a href="/blog/tags/秋招/" style="font-size: 14px; color: #999">秋招</a> <a href="/blog/tags/稳定币/" style="font-size: 14px; color: #999">稳定币</a> <a href="/blog/tags/算法/" style="font-size: 24px; color: #555">算法</a> <a href="/blog/tags/算法提高班/" style="font-size: 20.25px; color: #6f6f6f">算法提高班</a> <a href="/blog/tags/算法比赛/" style="font-size: 14px; color: #999">算法比赛</a> <a href="/blog/tags/算法系列/" style="font-size: 15.88px; color: #8c8c8c">算法系列</a> <a href="/blog/tags/算法通关之路/" style="font-size: 14px; color: #999">算法通关之路</a> <a href="/blog/tags/算法，最近公共祖先/" style="font-size: 14px; color: #999">算法，最近公共祖先</a> <a href="/blog/tags/线段树/" style="font-size: 14.63px; color: #959595">线段树</a> <a href="/blog/tags/组件化/" style="font-size: 14px; color: #999">组件化</a> <a href="/blog/tags/终端/" style="font-size: 14px; color: #999">终端</a> <a href="/blog/tags/经验分享/" style="font-size: 15.25px; color: #919191">经验分享</a> <a href="/blog/tags/维特根斯坦/" style="font-size: 14px; color: #999">维特根斯坦</a> <a href="/blog/tags/编程之美/" style="font-size: 14px; color: #999">编程之美</a> <a href="/blog/tags/缠论/" style="font-size: 14px; color: #999">缠论</a> <a href="/blog/tags/股票/" style="font-size: 14px; color: #999">股票</a> <a href="/blog/tags/自我提升/" style="font-size: 14px; color: #999">自我提升</a> <a href="/blog/tags/草稿/" style="font-size: 14.63px; color: #959595">草稿</a> <a href="/blog/tags/蓄水池抽样/" style="font-size: 14px; color: #999">蓄水池抽样</a> <a href="/blog/tags/虾皮/" style="font-size: 14px; color: #999">虾皮</a> <a href="/blog/tags/蜡烛图/" style="font-size: 14px; color: #999">蜡烛图</a> <a href="/blog/tags/衍生品/" style="font-size: 14px; color: #999">衍生品</a> <a href="/blog/tags/装机/" style="font-size: 14px; color: #999">装机</a> <a href="/blog/tags/解题模板/" style="font-size: 14px; color: #999">解题模板</a> <a href="/blog/tags/计划/" style="font-size: 14px; color: #999">计划</a> <a href="/blog/tags/读书/" style="font-size: 14.63px; color: #959595">读书</a> <a href="/blog/tags/读后感/" style="font-size: 14px; color: #999">读后感</a> <a href="/blog/tags/谷歌/" style="font-size: 15.25px; color: #919191">谷歌</a> <a href="/blog/tags/财报/" style="font-size: 14px; color: #999">财报</a> <a href="/blog/tags/账户抽象/" style="font-size: 14px; color: #999">账户抽象</a> <a href="/blog/tags/贪婪/" style="font-size: 14px; color: #999">贪婪</a> <a href="/blog/tags/贪心/" style="font-size: 14px; color: #999">贪心</a> <a href="/blog/tags/资产配置/" style="font-size: 14px; color: #999">资产配置</a> <a href="/blog/tags/走出科学/" style="font-size: 14px; color: #999">走出科学</a> <a href="/blog/tags/逆向思维/" style="font-size: 14px; color: #999">逆向思维</a> <a href="/blog/tags/递归/" style="font-size: 14px; color: #999">递归</a> <a href="/blog/tags/逻辑哲学论/" style="font-size: 14px; color: #999">逻辑哲学论</a> <a href="/blog/tags/配置备份/" style="font-size: 14px; color: #999">配置备份</a> <a href="/blog/tags/配置管理/" style="font-size: 14px; color: #999">配置管理</a> <a href="/blog/tags/量化/" style="font-size: 14px; color: #999">量化</a> <a href="/blog/tags/量化交易/" style="font-size: 14.63px; color: #959595">量化交易</a> <a href="/blog/tags/金融/" style="font-size: 14px; color: #999">金融</a> <a href="/blog/tags/钱包/" style="font-size: 15.25px; color: #919191">钱包</a> <a href="/blog/tags/链上分析/" style="font-size: 14px; color: #999">链上分析</a> <a href="/blog/tags/链表/" style="font-size: 15.25px; color: #919191">链表</a> <a href="/blog/tags/陷阱题/" style="font-size: 14px; color: #999">陷阱题</a> <a href="/blog/tags/面经/" style="font-size: 15.88px; color: #8c8c8c">面经</a> <a href="/blog/tags/面试/" style="font-size: 16.5px; color: #888">面试</a> <a href="/blog/tags/预言机/" style="font-size: 14px; color: #999">预言机</a> <a href="/blog/tags/题解/" style="font-size: 17.75px; color: #808080">题解</a> <a href="/blog/tags/风险管理/" style="font-size: 14px; color: #999">风险管理</a> <a href="/blog/tags/魔兽争霸3/" style="font-size: 14px; color: #999">魔兽争霸3</a> <a href="/blog/tags/黑客/" style="font-size: 14px; color: #999">黑客</a>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget list'>
+  
+<header class='pure'>
+  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;强烈推荐</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="entry">
+      
+        <li><a class="flat-box" title="https://lucifer.ren/blog/2022/04/26/books-2022/" href="https://lucifer.ren/blog/2022/04/26/books-2022/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;西法的 2022 书单推荐
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=0iygwnzh" href="https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=0iygwnzh"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;【阿里云】轻量应用服务器2核2G 低至60元/年起
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://leetcode-solution.cn/book-intro" href="https://leetcode-solution.cn/book-intro"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;《算法通关之路》
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://yasuotu.com" href="https://yasuotu.com"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;图片在线压缩
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/fe-lucifer/fanqiang" href="https://github.com/fe-lucifer/fanqiang"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;科学上网
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://mxclub.github.io/resume/" href="https://mxclub.github.io/resume/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;简历主题
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+   
+  <div class="social-wrapper">
+     
+    <a
+      href="/blog/atom.xml"
+      class="social fas fa-rss flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://www.zhihu.com/people/lu-xiao-13-70/activities"
+      class="social fab fa-zhihu flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="mailto:azl397985856@gmail.com"
+      class="social fas fa-envelope flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://github.com/azl397985856"
+      class="social fab fa-github flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://music.163.com/playlist?id=978545815&amp;userid=632167080"
+      class="social fas fa-headphones-alt flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="/blog/wc3map/"
+      class="social fas fa-dragon flat-btn"
+      title="魔兽地图 · 四兄弟 Footmen Frenzy 纪念版（多版本下载）"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="/blog/files/war3-coach-portable.zip"
+      class="social fas fa-chalkboard-teacher flat-btn"
+      title="war3-coach · 魔兽训练辅助工具（回放分析+对手库，免安装便携版，下载解压即用）"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://wormhole.app"
+      class="social fas fa-paper-plane flat-btn"
+      title="Wormhole · 免登录文件分享（端到端加密，10GB/24小时）"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+     
+  </div>
+  
+  <br />
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename"
+      >Material X</a
+    >
+    作为主题  。
+  </div>
+
+  <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+  <script>
+    var now = new Date();
+    function createtime() {
+      var grt = new Date("08/10/2018 17:38:00"); //在此处修改你的建站时间，格式：月/日/年 时:分:秒
+      now.setTime(now.getTime() + 250);
+      days = (now - grt) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+      hnum = Math.floor(hours);
+      if (String(hnum).length == 1) {
+        hnum = "0" + hnum;
+      }
+      minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+      mnum = Math.floor(minutes);
+      if (String(mnum).length == 1) {
+        mnum = "0" + mnum;
+      }
+      seconds =
+        (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+      snum = Math.round(seconds);
+      if (String(snum).length == 1) {
+        snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML =
+        "本站已安全运行 " + dnum + " 天 ";
+      document.getElementById("times").innerHTML =
+        hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()", 250);
+  </script>
+</footer>
+<script>
+  setLoadingBarProgress(80);
+</script>
+
+
+        <script>
+          setLoadingBarProgress(60);
+        </script>
+      </div>
+      <a class="s-top fas fa-arrow-up fa-fw" href="javascript:void(0)"></a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "aea1377036afe4cd0343",
+      clientSecret: "815c638dea8644b7a4b97905707cf72b45555f6d",
+      repo: "blog",
+      owner: "azl397985856",
+      admin: "azl397985856",
+      
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
+
+
+
+
+
+  <script src="https://lucifer.ren/blog/js/app.js"></script>
+
+
+  <script src="https://lucifer.ren/blog/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+    <script>
+      setLoadingBarProgress(100);
+    </script>
+  </body>
+</html>

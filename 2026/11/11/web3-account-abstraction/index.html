@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>账户抽象：把 EOA 升级成智能合约账户 | lucifer的网络博客</title>
+  
+  <meta name="keywords" content="前端 leetocde 数据结构 算法 lucifer 大前端 性能优化 前端架构 前端工程化">
+  
+  
+  <meta name="description" content="lucifer的个人博客，用来记录LeeCode刷题过程和心得，以及构建大前端知识体系">
+  
+
+  
+  <link rel="alternate" href="/blog/atom.xml" title="lucifer的网络博客">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+  
+
+  
+    <link rel="stylesheet" href="https://lucifer.ren/blog/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVTTYT432Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FVTTYT432Q');
+    </script>
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?576ec211e11a69128667eb8c11a6cffe";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+  <script
+    src="https://my.openwrite.cn/js/readmore.js"
+    type="text/javascript"
+  ></script>
+  <script>
+    var btw = new BTWPlugin();
+    setTimeout(function () {
+      window.btw.init({
+        id: "container",
+        blogId: "17446-1571644985832-648",
+        name: "力扣加加",
+        qrcode: "https://p.ipic.vip/n8gbxo.jpg",
+        keyword: "more",
+      });
+    }, 100);
+  </script>
+  <body>
+    
+    
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>lucifer</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/blog/"
+            
+            
+            id="blog">
+            <i class='fas fa-home fa-fw'></i>&nbsp;主页
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="http://leetcode-solution.cn/"
+            
+            
+            id="http:leetcode-solution.cn">
+            <i class='fas fa-laptop-code fa-fw'></i>&nbsp;官网
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/friends/"
+            
+            
+            id="blogfriends">
+            <i class='fas fa-link fa-fw'></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/about/"
+            
+            
+            id="blogabout">
+            <i class='fas fa-id-card-alt fa-fw'></i>&nbsp;联系我
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/blog/' >
+        
+          lucifer的网络博客
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/blog/"
+                  
+                  
+                  id="blog">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;回到主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/categories/"
+                  
+                  
+                  id="blogcategories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/tags/"
+                  
+                  
+                  id="blogtags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/archives/"
+                  
+                  
+                  id="blogarchives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/blog/"
+                
+                
+                id="blog">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/archives/"
+                
+                
+                id="blogarchives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/about/"
+                
+                
+                id="blogabout">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+    <div id="container" class="l_body">
+      <div class="body-wrapper">
+        <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/blog/2026/11/11/web3-account-abstraction/">
+        账户抽象：把 EOA 升级成智能合约账户
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2026-11-11</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/区块链/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>区块链</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">8.4k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">33分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>先说一个很多人都遇到过的尴尬：钱包里躺着几百 USDC，想转一点给朋友，界面却弹出一行字——“ETH 余额不足，无法支付 gas”。你明明有钱，却连手续费都交不起，像揣着一沓现金站在只收硬币的售货机前。更绝望的是另一种场景：抄助记词的那张纸丢了。没有”忘记密码”，没有客服，没有申诉入口，链上资产从此变成一座纪念碑。</p>
+<p>这些尴尬不怪钱包 App 做得烂，怪以太坊账户模型的”出厂设置”。<a href="https://lucifer.ren/blog/2025/02/16/web3-wallet/" title="Web3 的入口 - 区块链钱包">《Web3 的入口 - 区块链钱包》</a>里介绍过的私钥账户叫 EOA（Externally Owned Account，外部账户），你可以把它理解成<strong>一把钥匙管一切的旧式机械门锁</strong>：一把钥匙就是全部，丢了就完了，没有挂失，没有备用方案。而<strong>账户抽象（Account Abstraction，AA）</strong>想干的事，说白了就一件：<strong>把这把旧门锁换成智能门锁</strong>——账户从”一把私钥”升级成”一段可编程的合约”，”怎么验身份、怎么付 gas、怎么执行”，全由代码说了算。</p>
+<p>熟悉我的朋友应该知道，我经常从零实现一些东西帮助理解，本文照例代码驱动：先用 Python 模拟 ERC-4337 里一个 UserOperation 从提交到结算的完整生命周期，再模拟社交恢复与 guardian 串通攻击，中间穿插 EIP-7702 的机制讲解，所有输出均为真实运行结果，纯标准库，复制即可跑。</p>
+<a id="more"></a>
+<h2 id="EOA：一把钥匙管一切的旧门锁"><a href="#EOA：一把钥匙管一切的旧门锁" class="headerlink" title="EOA：一把钥匙管一切的旧门锁"></a>EOA：一把钥匙管一切的旧门锁</h2><p>EOA 就是”一把私钥对应一个地址”，链上最常见的账户形态，也是绝大多数 web3 事故的案发现场。它到底哪里不行？拿你家那把老式机械门锁对比一下，你立刻就懂了。三宗罪：</p>
+<p><strong>罪一：钥匙丢了，家就没了。</strong> 现实里银行卡丢了能挂失补办，门锁钥匙丢了能找师傅换锁芯。EOA 没有这套服务——地址是由私钥推导出来的，换钥匙等于换账户、等于搬家。所以私钥一丢，资产永久冻结；一被偷，瞬间搬空。谁捡到钥匙谁就是主人，进门无声、不可逆，连”改密码”这个选项都不存在。</p>
+<p><strong>罪二：交物业费只收现金。</strong> 协议规定，手续费只能从交易发起者自己的 ETH 余额里扣，gas 的来龙去脉见<a href="https://lucifer.ren/blog/2026/10/30/web3-gas/">《Gas：链上一切行为的价格标签》</a>。就像一个只收现金、还不收人民币以外任何东西的物业——你手机里有的是余额，没用，人家不认。所以”一堆 USDC 加零 ETH”在链上等于寸步难行，微信代缴？没这功能。</p>
+<p><strong>罪三：进门规则只有一种。</strong> EOA 的验证逻辑就一条：签名对，放行。你想加一条”每天最多转 100””只许转白名单地址””小孩只能进书房”？没地方写，这把锁出厂时就没留这个接口。</p>
+<p>三宗罪的病根是同一个：<strong>EOA 的账户逻辑焊死在协议层</strong>，谁也改不了。而智能合约的逻辑是代码，想怎么写就怎么写。把账户从”一把私钥”变成”一段合约”，上面这些限制就都变成了”几行代码的事”——这就是智能合约账户。两边摆在一起看更直观：</p>
+<p><img src="https://lucifer.ren/blog/images/web3/aa-eoa-vs-contract.png" alt="EOA 与智能合约账户对比：左边一把钥匙配一扇死门，右边智能门锁自带恢复、限额、代付"></p>
+<h2 id="换上智能门锁，日子能过成什么样"><a href="#换上智能门锁，日子能过成什么样" class="headerlink" title="换上智能门锁，日子能过成什么样"></a>换上智能门锁，日子能过成什么样</h2><p>先别急着看机制，看看换锁之后的具体好处——每一条，都对应旧锁的一宗罪：</p>
+<ul>
+<li><strong>社交恢复</strong>：钥匙丢了？让几个你信任的人投票，配一把新的，资产原地不动。丢钥匙 ≠ 丢钱，怎么做到的下一节细讲。</li>
+<li><strong>批量调用</strong>：approve + swap 一次签名、原子执行，成则全成，败则全败。还记得<a href="https://lucifer.ren/blog/2025/04/02/web3-approve/" title="Web3 中的授权与撤销授权">《Web3 中的授权与撤销授权》</a>里那笔单独的 approve 交易吗？没了——进门、开灯、撤防盗一个动作全办完。</li>
+<li><strong>gas 代付</strong>：应用方替你垫 ETH，你用 USDC 结账，甚至完全免费——物业费有人代缴，新用户零门槛入场。</li>
+<li><strong>消费限额 / 白名单</strong>：单日限额、大额延迟到账、只许调用指定合约。”小孩只能进书房”这句话，终于可以写进锁里了。私钥就算被钓鱼，损失也被框死。</li>
+<li><strong>session key</strong>：给游戏发一把”临时小钥匙”：只能调用这个游戏合约、最多花 5 USDC、两小时后自动过期——像给钟点工办的临时门禁卡，到点自动作废。再也不用每砍一刀怪就签一次名。</li>
+</ul>
+<p>好，愿景画完了。问题是怎么实现——这就引出了本文的主角之一。</p>
+<h2 id="ERC-4337：不改协议，先点一份外卖"><a href="#ERC-4337：不改协议，先点一份外卖" class="headerlink" title="ERC-4337：不改协议，先点一份外卖"></a>ERC-4337：不改协议，先点一份外卖</h2><p>最直接的思路是改协议，让合约账户也能发起交易。这条路社区从 2017 年就开始铺（Vitalik 的 EIP-86，后来的 EIP-2938 等一批提案），但全部阵亡——动共识层就是硬分叉，所有客户端一起改，协调成本高到没人敢接盘。</p>
+<p>2021 年提出的 ERC-4337 换了个思路：<strong>协议一行不改，在应用层再造一套”交易系统”</strong>。它不依赖任何硬分叉，靠部署一组合约实现，2023 年 3 月在主网生效。</p>
+<p>这套系统一共五个角色，第一次读文档的人十个有九个绕晕。别慌，用点外卖串一遍，五分钟记牢：</p>
+<ul>
+<li><strong>UserOperation（UserOp）＝你写的订单</strong>。它不是交易，是一张”意图单”：sender 是你家门牌号（你的账户合约地址），callData 写着”要一份鱼香肉丝”（想执行的调用），nonce 是订单号、防重复下单，signature 是你的亲笔签名。</li>
+<li><strong>Bundler ＝跑腿小哥</strong>。蹲在接单大厅（专用内存池 alt mempool）里抢单，把一批订单<strong>合并成一次配送</strong>，塞进一笔真正的交易上链。小哥先垫配送费（gas），事后报销——他自己就是个普通 EOA。</li>
+<li><strong>EntryPoint ＝外卖平台</strong>。全局唯一的入口合约，整套系统的裁判。平台负责核验订单真伪：逐单验签、查订单号防重放、确认付得起配送费，然后调度你家门锁开工。</li>
+<li><strong>Account ＝你家的智能门锁</strong>。订单送到后，门锁自己判断”这单是不是主人下的”——判断逻辑写在你的合约里（<code>validateUserOp</code> 函数），单签、多签、passkey、社交恢复，随便你定义。</li>
+<li><strong>Paymaster ＝会员免运费</strong>。可选角色，声明”这单配送费我出”；平台核验时还会问它一句”这单你认吗”，事后再向用户收 USDC 当运费——相当于代金券抵扣。</li>
+</ul>
+<h3 id="一张订单的一生"><a href="#一张订单的一生" class="headerlink" title="一张订单的一生"></a>一张订单的一生</h3><p>一张 UserOp 从提交到结算，就是一次外卖的旅程：</p>
+<ol>
+<li>钱包构造订单（UserOp），你签字，扔进接单大厅 alt mempool——它独立于普通交易池，带严格的准入规则（限制验证阶段可访问的状态和操作码），防止有人用”模拟通过、上链必挂”的订单白嫖小哥，也就是防 DoS。</li>
+<li>跑腿小哥抢单，<strong>先在本地把每张订单模拟跑一遍</strong>，会失败或亏本的一律丢掉，剩下的打包成一笔交易，调用 <code>EntryPoint.handleOps</code> 送单。</li>
+<li><strong>平台核验订单</strong>：EntryPoint 逐个调用账户的 <code>validateUserOp</code>（验签、检查 nonce 防重放、确认付得起 gas）；带了 Paymaster 的，再问它一句”这单你认吗”。</li>
+<li><strong>门锁收货开工</strong>：EntryPoint 逐个把 callData 交给账户合约执行，真正的转账、swap 在这一步发生。</li>
+<li><strong>结账</strong>：有 Paymaster 的调用它的 <code>postOp</code> 做事后结算（比如向你收 USDC）；EntryPoint 从账户或 Paymaster 的预存款里扣掉实际 gas 付给小哥，并发出事件回执。</li>
+</ol>
+<p>两个细节值得记住：第一，Paymaster（以及多数账户）的 gas 钱是<strong>预存在 EntryPoint 合约里</strong>的，所以你的”ETH 余额”可以一直是零——运费早就在平台充值过了；第二，验证失败会让整笔 bundle 回滚、小哥白付 gas——这就是小哥抢单前必须先模拟的原因，赔本的配送他不接。</p>
+<p><img src="https://lucifer.ren/blog/images/web3/aa-userop-flow.png" alt="ERC-4337 的点外卖流程：你写订单、跑腿小哥抢单合并、平台验单、会员代付运费、智能门锁收货"></p>
+<h2 id="钥匙丢了怎么办：五个保管人里三个点头"><a href="#钥匙丢了怎么办：五个保管人里三个点头" class="headerlink" title="钥匙丢了怎么办：五个保管人里三个点头"></a>钥匙丢了怎么办：五个保管人里三个点头</h2><p>智能合约账户最有杀伤力的能力，值得单独拆开讲。</p>
+<p>先想一个现实场景：手机丢了，你不会崩溃——去运营商门店验个身份，补一张卡，原来的号码照用。<strong>社交恢复干的就是这件事</strong>，只不过运营商换成了你自己的亲友团。用家门钥匙的语言说：账户合约里除了 owner（你天天揣着的签名钥匙），还登记一组 <strong>guardian（守护人）</strong>和一个阈值，比如 3-of-5——<strong>家门钥匙丢了，5 个保管人里 3 个点头，就能给你配把新钥匙</strong>。</p>
+<p>但这里有一层精妙的设计，画个重点：<strong>保管人凑再多人，也只能帮你换锁，进不了你家门</strong>。转账入口只认 owner 的签名，guardian 的签名在那里一文不值——5 个保管人加起来，也搬不走你家一台电视。</p>
+<p>恢复流程走一遍：钥匙丢了 → 生成一把新钥匙 → 请 guardian 对”把 owner 换成新地址”这件事签名 → 凑够 3 个 → 合约进入<strong>宽限期（timelock）</strong> → 到期生效，旧钥匙作废。全程资产不动、地址不变，变的只是”谁有权签名”。常见的实现还会给现任 owner 一个否决权，防止 guardian 趁你失联时偷换。</p>
+<p>guardian 怎么选？原则是<strong>分散、类型混合</strong>：亲友可能被社工，自己的另一台设备可能和手机一起丢，机构服务可能倒闭，各有各的失效模式，混着配才不会一锅端。全选同一类，等于把鸡蛋放回同一个篮子。</p>
+<p>那 guardian 串通怎么办？对比一下两条路的”作案体验”就明白了。guardian 想摸钱，必须先走”换 owner”这条路，而这条路是<strong>公开的</strong>（链上可见）、<strong>慢的</strong>（有宽限期）、<strong>可否决的</strong>（现任 owner 能取消）；私钥被盗呢？瞬间、无声、不可逆。但也别把这读成”guardian 串通无害”——如果宽限期内没人发现，多数 guardian 确实能夺走账户，所以阈值、宽限期、异常提醒三样缺一不可。这套取舍，下面的代码会完整演示。</p>
+<p><img src="https://lucifer.ren/blog/images/web3/aa-social-recovery.png" alt="社交恢复示意：5 个 guardian 中 3 个签名即可换新钥匙，但 guardian 只能换锁、搬不走家里的资产"></p>
+<h2 id="EIP-7702：老房子不动产权证，请个专业管家"><a href="#EIP-7702：老房子不动产权证，请个专业管家" class="headerlink" title="EIP-7702：老房子不动产权证，请个专业管家"></a>EIP-7702：老房子不动产权证，请个专业管家</h2><p>4337 很优雅，但有个尴尬：<strong>它的账户是一个新的合约地址</strong>。你用了五年的 EOA，上面的资产、授权、NFT、链上履历，全得搬家。让存量用户换地址，就像让用户换手机号，阻力巨大。</p>
+<p>EIP-7702 专治这个，2025 年 5 月随 Pectra 升级上线主网。打个比方：<strong>老房子不动产权证不变，给房子请了个专业管家</strong>。它新增了一种交易类型（<code>0x04</code>），交易里带一个<strong>授权列表</strong>：EOA 的主人用私钥签一条授权——“把我的账户代码指向合约 X”。授权生效后，EOA 的代码位置会被写入一个<strong>委托标记</strong>：<code>0xef0100 || 合约地址</code>（共 23 字节）。此后任何人调用这个 EOA，跑的都是合约 X 的代码，但读写的是 EOA 自己的存储和余额——门牌号没变，房子还是你的房子，只是日常打理换成了专业管家。</p>
+<p>再强调一遍我在 approve 那篇里特别指出的事实：<strong>这个管家是长期聘用，不是干一单就走人的钟点工</strong>。”交易期间临时获得合约能力、用完自动恢复”这种流传甚广的说法，与最终上线的行为不符——委托在交易结束后持久存在，会一直挂在账户上，直到你再签一笔 7702 授权把它改掉或清空（指向零地址）。所以签 7702 授权 ≈ 把账户的执行逻辑长期交给那个合约，委托给恶意合约等同于把家门钥匙连同规章制度一起交出去，钱包对这类签名必须给出醒目提示。</p>
+<p>还有个容易被忽略的事实：<strong>原私钥依然有效，而且权限最高</strong>——它随时可以换管家、发普通交易。所以 7702 给了你批量调用、gas 代付、限额这些功能，却<strong>治不了私钥单点的病根</strong>：钥匙被偷，小偷照样能把管家换掉。想根治，终点站还是带社交恢复的合约账户。</p>
+<p>7702 与 4337 不是竞争关系，而是上下游：委托指向的合约完全可以是一个兼容 4337 的账户实现，于是老 EOA 也能发订单、用免运费。一句话：7702 解决”存量房子怎么请管家”，4337 提供”请来管家之后的基础设施”。</p>
+<h2 id="4337-vs-7702：一张表看懂怎么选"><a href="#4337-vs-7702：一张表看懂怎么选" class="headerlink" title="4337 vs 7702：一张表看懂怎么选"></a>4337 vs 7702：一张表看懂怎么选</h2><p>机制都讲完了，选型是道送分题：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>ERC-4337</th>
+<th>EIP-7702</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>账户形态</td>
+<td>独立的合约账户</td>
+<td>EOA 上挂一个委托标记</td>
+</tr>
+<tr>
+<td>要不要换地址</td>
+<td>要，新账户是新合约地址</td>
+<td>不要，原地址原地升级</td>
+</tr>
+<tr>
+<td>初始成本</td>
+<td>要部署账户合约（可用工厂延迟到第一笔 UserOp）</td>
+<td>一笔带授权的交易，委托到已部署的合约，无需部署</td>
+</tr>
+<tr>
+<td>私钥单点</td>
+<td>可消除：owner 可换，旧钥匙作废</td>
+<td>治不了：原私钥始终是最高权限</td>
+</tr>
+<tr>
+<td>与现有钱包生态兼容性</td>
+<td>合约地址，部分 DApp 需适配（如签名验证走 ERC-1271）</td>
+<td>最好：地址、资产、历史授权全部保留</td>
+</tr>
+<tr>
+<td>适合场景</td>
+<td>新用户、应用内嵌钱包、需要社交恢复与多因子</td>
+<td>存量 EOA 想要批量调用、代付、限额</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>我的粗暴总结：新开户直接上 4337 合约账户；老账户想尝鲜用 7702；但只要”私钥绝对不能丢”还是你的第一诉求，终点站都是带社交恢复的合约账户。</p>
+<h2 id="AA-vs-MPC：拆钥匙片和换门锁是两码事"><a href="#AA-vs-MPC：拆钥匙片和换门锁是两码事" class="headerlink" title="AA vs MPC：拆钥匙片和换门锁是两码事"></a>AA vs MPC：拆钥匙片和换门锁是两码事</h2><p>讲到”解决私钥单点”，你可能会想起<a href="https://lucifer.ren/blog/2025/03/05/web3-mpc/" title="更加安全的区块链钱包：MPC 钱包">《更加安全的区块链钱包：MPC 钱包》</a>。MPC 和 AA 常被放在一起比，其实根本不在一个维度：</p>
+<ul>
+<li><strong>MPC 是密码学手段</strong>：把一把钥匙拆成三片，三方各藏一片，签名时三方各算各的、凑出一个完整签名——完整私钥从头到尾没出现过。但你琢磨一下就发现：<strong>锁没换</strong>。链上看到的仍是一个普通 EOA 的普通签名，账户还是那个”笨”账户，不能批量、不能代付、不能限额。</li>
+<li><strong>AA 是账户形态升级</strong>：钥匙还是一把（或者几把），但锁换成智能的了，规则写在合约里，由链上强制执行。</li>
+</ul>
+<p>所以二者解决的是不同层的问题：MPC 管”<strong>钥匙怎么保管</strong>“，AA 管”<strong>门锁怎么运作</strong>“，完全可以叠加——用 MPC 保管合约账户的 owner 钥匙，钥匙层没有单点，锁上还有限额和恢复兜底。顺带一提，MPC 那篇里讲的多签钱包，本质上就是智能合约账户的老前辈。</p>
+<h2 id="Python-模拟"><a href="#Python-模拟" class="headerlink" title="Python 模拟"></a>Python 模拟</h2><p>老规矩，代码说话。两段都只用标准库；为了不引第三方依赖，签名用”私钥拼消息再哈希”来模拟（真实链上是 ECDSA 验签，且链上从不保存私钥，代码里的 <code>PRIVATE_KEYS</code> 字典纯属模拟道具）。第一段模拟 UserOperation 的一生，第二段模拟社交恢复与 guardian 串通攻击。</p>
+<h3 id="模拟一：UserOperation-的一生"><a href="#模拟一：UserOperation-的一生" class="headerlink" title="模拟一：UserOperation 的一生"></a>模拟一：UserOperation 的一生</h3><p>还是外卖那个局：Alice、Bob、Carol 各有 1000 USDC、0 ETH——搁旧门锁时代，这仨人谁也别想动账。现在每人都装了智能门锁（部署了自己的账户合约）：Alice 和 Carol 想转账，勾选了会员免运费，请 Paymaster 代付；Bob 想 approve + swap 批量执行，走自费通道，用自己的预存款付 gas；另外还有个 Mallory 伪造 Alice 的签名，想浑水摸鱼下一单。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ERC-4337 UserOperation 生命周期模拟（纯标准库）：UserOp -&gt; alt mempool -&gt; bundler</span></span><br><span class="line"><span class="comment"># 预检打包 -&gt; EntryPoint 验签/执行/结算 -&gt; 事件回执</span></span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">PRIVATE_KEYS = &#123;&#125;   <span class="comment"># 地址 -&gt; 私钥（真实链上不存私钥，这里只为本地验签能跑）</span></span><br><span class="line">NAMES = &#123;&#125;          <span class="comment"># 地址 -&gt; 昵称</span></span><br><span class="line">USDC_BALANCE = &#123;&#125;   <span class="comment"># 地址 -&gt; USDC 余额</span></span><br><span class="line">ETH_BALANCE = &#123;&#125;    <span class="comment"># 地址 -&gt; ETH 余额（见证奇迹：用户全程为 0）</span></span><br><span class="line">ALT_MEMPOOL = []    <span class="comment"># 另类内存池：只收严格格式的 UserOp，与普通交易池隔离（防 DoS）</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sign</span><span class="params">(pk, msg)</span>:</span>  <span class="comment"># 模拟 ECDSA：私钥 + 消息 -&gt; 签名（真实世界是椭圆曲线，这里用哈希代替）</span></span><br><span class="line">    <span class="keyword">return</span> hashlib.sha256(<span class="string">f"<span class="subst">&#123;pk&#125;</span>|<span class="subst">&#123;msg&#125;</span>"</span>.encode()).hexdigest()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">new_account</span><span class="params">(name)</span>:</span>  <span class="comment"># 注册新身份：生成私钥与地址</span></span><br><span class="line">    pk = hashlib.sha256(<span class="string">f"seed:<span class="subst">&#123;name&#125;</span>"</span>.encode()).hexdigest()</span><br><span class="line">    addr = <span class="string">"0x"</span> + hashlib.sha256(<span class="string">f"addr:<span class="subst">&#123;name&#125;</span>"</span>.encode()).hexdigest()[:<span class="number">40</span>]</span><br><span class="line">    PRIVATE_KEYS[addr], NAMES[addr] = pk, name</span><br><span class="line">    <span class="keyword">return</span> addr</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">label</span><span class="params">(a)</span>:</span>   <span class="keyword">return</span> NAMES.get(a, a[:<span class="number">10</span>])</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">usdc_of</span><span class="params">(a)</span>:</span> <span class="keyword">return</span> USDC_BALANCE.get(a, <span class="number">0.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">post_op</span><span class="params">(paymaster, user, fee=<span class="number">0.5</span>)</span>:</span>  <span class="comment"># Paymaster 的 postOp：垫付后向用户收 0.5 USDC 服务费</span></span><br><span class="line">    USDC_BALANCE[user] = usdc_of(user) - fee</span><br><span class="line">    USDC_BALANCE[paymaster] = usdc_of(paymaster) + fee</span><br><span class="line">    <span class="keyword">return</span> fee</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserOp</span>:</span>  <span class="comment"># 仿交易的"意图对象"：描述想做什么 + 如何证明"我是本人"</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, sender, call_data, nonce, paymaster=None)</span>:</span></span><br><span class="line">        self.sender = sender          <span class="comment"># 账户合约地址，不再是裸 EOA</span></span><br><span class="line">        self.call_data = call_data    <span class="comment"># 想执行的调用列表</span></span><br><span class="line">        self.nonce = nonce            <span class="comment"># 防重放序号</span></span><br><span class="line">        self.paymaster = paymaster    <span class="comment"># 可选：代付 gas 的 Paymaster</span></span><br><span class="line">        self.signature = <span class="literal">None</span>         <span class="comment"># owner 对整个 UserOp 的签名</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canonical</span><span class="params">(self)</span>:</span>  <span class="comment"># 规范序列化：签名与验签必须基于完全相同的字节</span></span><br><span class="line">        <span class="keyword">return</span> json.dumps([self.sender, self.call_data, self.nonce, self.paymaster],</span><br><span class="line">                          ensure_ascii=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sign_with</span><span class="params">(self, owner)</span>:</span></span><br><span class="line">        self.signature = sign(PRIVATE_KEYS[owner], self.canonical())</span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Account</span>:</span>  <span class="comment"># 每个用户自己的账户合约：地址即账户，owner 是唯一的日常钥匙</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, owner)</span>:</span></span><br><span class="line">        self.owner = owner</span><br><span class="line">        self.addr = <span class="string">"0x"</span> + hashlib.sha256(<span class="string">f"acct:<span class="subst">&#123;owner&#125;</span>"</span>.encode()).hexdigest()[:<span class="number">40</span>]</span><br><span class="line">        NAMES[self.addr] = <span class="string">f"<span class="subst">&#123;label(owner)&#125;</span>的账户合约"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">validate_user_op</span><span class="params">(self, op, expected_nonce)</span>:</span>  <span class="comment"># EntryPoint 回调：合约自己验签</span></span><br><span class="line">        <span class="keyword">if</span> op.sender != self.addr <span class="keyword">or</span> op.nonce != expected_nonce:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> sign(PRIVATE_KEYS[self.owner], op.canonical()) == op.signature</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">execute</span><span class="params">(acct, call)</span>:</span>  <span class="comment"># 迷你 EVM：只认三种调用（真实实现是合约代码在 EVM 里执行）</span></span><br><span class="line">    <span class="keyword">if</span> call[<span class="number">0</span>] == <span class="string">"usdc_transfer"</span>:</span><br><span class="line">        _, to, amt = call</span><br><span class="line">        <span class="keyword">assert</span> usdc_of(acct.owner) &gt;= amt, <span class="string">"USDC 余额不足"</span></span><br><span class="line">        USDC_BALANCE[acct.owner] -= amt</span><br><span class="line">        USDC_BALANCE[to] = usdc_of(to) + amt</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f"转 <span class="subst">&#123;amt&#125;</span> USDC 给 <span class="subst">&#123;label(to)&#125;</span>"</span></span><br><span class="line">    <span class="keyword">if</span> call[<span class="number">0</span>] == <span class="string">"approve"</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f"授权 <span class="subst">&#123;label(call[<span class="number">1</span>])&#125;</span> 可动用 <span class="subst">&#123;call[<span class="number">2</span>]&#125;</span> USDC"</span></span><br><span class="line">    <span class="keyword">if</span> call[<span class="number">0</span>] == <span class="string">"swap"</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f"在 DEX <span class="subst">&#123;call[<span class="number">1</span>]&#125;</span>"</span></span><br><span class="line">    <span class="keyword">raise</span> ValueError(<span class="string">f"未知调用 <span class="subst">&#123;call[<span class="number">0</span>]&#125;</span>"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">entry_point_handle_ops</span><span class="params">(bundle, accounts, bundler_addr, deposits, nonces)</span>:</span>  <span class="comment"># 全局唯一入口合约</span></span><br><span class="line">    events, gas_price = [], <span class="number">2e-9</span>  <span class="comment"># 2 gwei，简化处理</span></span><br><span class="line">    print(<span class="string">f"\n&gt;&gt;&gt; EntryPoint.handleOps() 收到 bundle：<span class="subst">&#123;len(bundle)&#125;</span> 个 UserOp"</span>)</span><br><span class="line">    <span class="keyword">for</span> idx, op <span class="keyword">in</span> enumerate(bundle, <span class="number">1</span>):</span><br><span class="line">        acct = accounts[op.sender]</span><br><span class="line">        gas = <span class="number">21000</span> + len(op.canonical().encode()) * <span class="number">50</span>   <span class="comment"># 简化的 gas 模型</span></span><br><span class="line">        cost = gas * gas_price</span><br><span class="line">        expected = nonces.get(op.sender, <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> acct.validate_user_op(op, expected):       <span class="comment"># 第 1 步：验签 + 防重放</span></span><br><span class="line">            <span class="keyword">raise</span> RuntimeError(<span class="string">f"FailedOp(#<span class="subst">&#123;idx&#125;</span>)：验证失败，整笔 bundle 回滚，Bundler 白付 gas"</span>)</span><br><span class="line">        print(<span class="string">f"  #<span class="subst">&#123;idx&#125;</span> [1] validateUserOp 通过：<span class="subst">&#123;label(op.sender)&#125;</span> 签名有效，nonce=<span class="subst">&#123;expected&#125;</span>"</span>)</span><br><span class="line">        results = [execute(acct, c) <span class="keyword">for</span> c <span class="keyword">in</span> op.call_data]  <span class="comment"># 第 2 步：执行意图</span></span><br><span class="line">        nonces[op.sender] = expected + <span class="number">1</span>                  <span class="comment"># 成功后才递增 nonce</span></span><br><span class="line">        print(<span class="string">f"  #<span class="subst">&#123;idx&#125;</span> [2] 执行：<span class="subst">&#123;<span class="string">'；'</span>.join(results)&#125;</span>"</span>)</span><br><span class="line">        <span class="comment"># 第 3 步：gas 结算。有 Paymaster 用 Paymaster，否则扣账户自己的预存款</span></span><br><span class="line">        payer = op.paymaster <span class="keyword">or</span> op.sender</span><br><span class="line">        deposits[payer] = deposits.get(payer, <span class="number">0.0</span>) - cost</span><br><span class="line">        <span class="comment"># EntryPoint 把实际消耗补偿给 Bundler（它垫付了整笔 bundle 交易的手续费）</span></span><br><span class="line">        deposits[bundler_addr] = deposits.get(bundler_addr, <span class="number">0.0</span>) + cost</span><br><span class="line">        extra = <span class="string">""</span></span><br><span class="line">        <span class="keyword">if</span> op.paymaster:</span><br><span class="line">            extra = <span class="string">f"；postOp 向用户收 <span class="subst">&#123;post_op(op.paymaster, acct.owner)&#125;</span> USDC 服务费"</span></span><br><span class="line">        print(<span class="string">f"  #<span class="subst">&#123;idx&#125;</span> [3] gas=<span class="subst">&#123;gas&#125;</span>（<span class="subst">&#123;cost:<span class="number">.9</span>f&#125;</span> ETH）由 <span class="subst">&#123;label(payer)&#125;</span> 支付<span class="subst">&#123;extra&#125;</span>"</span>)</span><br><span class="line">        events.append(<span class="string">f"UserOperationEvent(sender=<span class="subst">&#123;label(op.sender)&#125;</span>, success=True, "</span></span><br><span class="line">                      <span class="string">f"gas 付款方=<span class="subst">&#123;label(payer)&#125;</span>, 实际费用=<span class="subst">&#123;cost:<span class="number">.9</span>f&#125;</span> ETH)"</span>)</span><br><span class="line">    print(<span class="string">"\n--- 本 bundle 产生的事件回执 ---"</span>)</span><br><span class="line">    <span class="keyword">for</span> e <span class="keyword">in</span> events:</span><br><span class="line">        print(<span class="string">"   "</span> + e)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bundler_pack</span><span class="params">(limit, accounts)</span>:</span>  <span class="comment"># 打包者预检：真实 Bundler 会先本地模拟，防赔本防 DoS</span></span><br><span class="line">    cands, ALT_MEMPOOL[:] = ALT_MEMPOOL[:limit], ALT_MEMPOOL[limit:]</span><br><span class="line">    picked, dropped = [], []</span><br><span class="line">    <span class="keyword">for</span> op <span class="keyword">in</span> cands:</span><br><span class="line">        ok = sign(PRIVATE_KEYS[accounts[op.sender].owner], op.canonical()) == op.signature</span><br><span class="line">        (picked <span class="keyword">if</span> ok <span class="keyword">else</span> dropped).append(op)</span><br><span class="line">    print(<span class="string">f"[bundler] Bundler-01 预检 alt mempool 中的 <span class="subst">&#123;len(cands)&#125;</span> 个 UserOp："</span>)</span><br><span class="line">    <span class="keyword">for</span> op <span class="keyword">in</span> picked:</span><br><span class="line">        print(<span class="string">f"   [通过] <span class="subst">&#123;label(op.sender)&#125;</span>：<span class="subst">&#123;op.call_data[<span class="number">0</span>][<span class="number">0</span>]&#125;</span> 等调用"</span>)</span><br><span class="line">    <span class="keyword">for</span> op <span class="keyword">in</span> dropped:</span><br><span class="line">        print(<span class="string">f"   [丢弃] <span class="subst">&#123;label(op.sender)&#125;</span>：签名预检失败，赔本买卖不做"</span>)</span><br><span class="line">    print(<span class="string">f"[bundler] 将 <span class="subst">&#123;len(picked)&#125;</span> 个 UserOp 打包成一笔 bundle 交易（calldata = handleOps）"</span>)</span><br><span class="line">    <span class="keyword">return</span> picked</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    alice, bob, carol = new_account(<span class="string">"Alice"</span>), new_account(<span class="string">"Bob"</span>), new_account(<span class="string">"Carol"</span>)</span><br><span class="line">    dex, bundler = new_account(<span class="string">"UniswapV2Router"</span>), new_account(<span class="string">"Bundler-01"</span>)</span><br><span class="line">    <span class="keyword">for</span> u <span class="keyword">in</span> (alice, bob, carol):   <span class="comment"># 三个用户全是 USDC，ETH 余额为 0（EOA 时代的经典窘境）</span></span><br><span class="line">        USDC_BALANCE[u] = <span class="number">1000.0</span></span><br><span class="line">    a, b, c = Account(alice), Account(bob), Account(carol)  <span class="comment"># 每人部署一个自己的账户合约</span></span><br><span class="line">    accounts = &#123;x.addr: x <span class="keyword">for</span> x <span class="keyword">in</span> (a, b, c)&#125;</span><br><span class="line">    pm = <span class="string">"0x"</span> + hashlib.sha256(<span class="string">b"pm:GaslessSwapPaymaster"</span>).hexdigest()[:<span class="number">40</span>]; NAMES[pm] = <span class="string">"GaslessSwapPaymaster"</span></span><br><span class="line">    deposits = &#123;pm: <span class="number">0.05</span>, b.addr: <span class="number">0.01</span>&#125;   <span class="comment"># gas 专款预存在 EntryPoint：Paymaster 一份，Bob 自付一份</span></span><br><span class="line">    ops = [</span><br><span class="line">        UserOp(a.addr, [(<span class="string">"usdc_transfer"</span>, bob, <span class="number">30</span>)], <span class="number">0</span>, pm).sign_with(alice),</span><br><span class="line">        UserOp(b.addr, [(<span class="string">"approve"</span>, dex, <span class="number">500</span>), (<span class="string">"swap"</span>, <span class="string">"用 100 USDC 换 ETH"</span>)], <span class="number">0</span>).sign_with(bob),</span><br><span class="line">        UserOp(c.addr, [(<span class="string">"usdc_transfer"</span>, alice, <span class="number">10</span>)], <span class="number">0</span>, pm).sign_with(carol),</span><br><span class="line">    ]</span><br><span class="line">    op_evil = UserOp(a.addr, [(<span class="string">"usdc_transfer"</span>, new_account(<span class="string">"Mallory"</span>), <span class="number">999</span>)], <span class="number">1</span>)</span><br><span class="line">    op_evil.signature = <span class="string">"0x"</span> + <span class="string">"66"</span> * <span class="number">32</span>   <span class="comment"># Mallory 伪造的签名</span></span><br><span class="line">    ALT_MEMPOOL.extend(ops + [op_evil])    <span class="comment"># 用户把签好的 UserOp 扔进 alt mempool</span></span><br><span class="line"></span><br><span class="line">    entry_point_handle_ops(bundler_pack(<span class="number">4</span>, accounts), accounts, bundler, deposits, &#123;&#125;)</span><br><span class="line">    print(<span class="string">"\n--- 结账时刻：费用流全景 ---"</span>)</span><br><span class="line">    <span class="keyword">for</span> u <span class="keyword">in</span> (alice, bob, carol):</span><br><span class="line">        print(<span class="string">f"   <span class="subst">&#123;label(u)&#125;</span>：ETH=<span class="subst">&#123;ETH_BALANCE.get(u, <span class="number">0.0</span>):<span class="number">.9</span>f&#125;</span>，USDC=<span class="subst">&#123;usdc_of(u):<span class="number">.2</span>f&#125;</span>"</span>)</span><br><span class="line">    print(<span class="string">f"   Paymaster 结余：EntryPoint 预存 <span class="subst">&#123;deposits[pm]:<span class="number">.9</span>f&#125;</span> ETH，收到服务费 <span class="subst">&#123;usdc_of(pm):<span class="number">.2</span>f&#125;</span> USDC"</span>)</span><br><span class="line">    print(<span class="string">f"   Bob 的账户合约 gas 预存结余：<span class="subst">&#123;deposits[b.addr]:<span class="number">.9</span>f&#125;</span> ETH"</span>)</span><br><span class="line">    print(<span class="string">f"   Bundler-01 垫付获补偿：<span class="subst">&#123;deposits[bundler]:<span class="number">.9</span>f&#125;</span> ETH"</span>)</span><br><span class="line"></span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">[bundler] Bundler-01 预检 alt mempool 中的 4 个 UserOp：</span><br><span class="line">   [通过] Alice的账户合约：usdc_transfer 等调用</span><br><span class="line">   [通过] Bob的账户合约：approve 等调用</span><br><span class="line">   [通过] Carol的账户合约：usdc_transfer 等调用</span><br><span class="line">   [丢弃] Alice的账户合约：签名预检失败，赔本买卖不做</span><br><span class="line">[bundler] 将 3 个 UserOp 打包成一笔 bundle 交易（calldata = handleOps）</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; EntryPoint.handleOps() 收到 bundle：3 个 UserOp</span><br><span class="line">  #1 [1] validateUserOp 通过：Alice的账户合约 签名有效，nonce=0</span><br><span class="line">  #1 [2] 执行：转 30 USDC 给 Bob</span><br><span class="line">  #1 [3] gas=29300（0.000058600 ETH）由 GaslessSwapPaymaster 支付；postOp 向用户收 0.5 USDC 服务费</span><br><span class="line">  #2 [1] validateUserOp 通过：Bob的账户合约 签名有效，nonce=0</span><br><span class="line">  #2 [2] 执行：授权 UniswapV2Router 可动用 500 USDC；在 DEX 用 100 USDC 换 ETH</span><br><span class="line">  #2 [3] gas=28750（0.000057500 ETH）由 Bob的账户合约 支付</span><br><span class="line">  #3 [1] validateUserOp 通过：Carol的账户合约 签名有效，nonce=0</span><br><span class="line">  #3 [2] 执行：转 10 USDC 给 Alice</span><br><span class="line">  #3 [3] gas=29300（0.000058600 ETH）由 GaslessSwapPaymaster 支付；postOp 向用户收 0.5 USDC 服务费</span><br><span class="line"></span><br><span class="line">--- 本 bundle 产生的事件回执 ---</span><br><span class="line">   UserOperationEvent(sender=Alice的账户合约, success=True, gas 付款方=GaslessSwapPaymaster, 实际费用=0.000058600 ETH)</span><br><span class="line">   UserOperationEvent(sender=Bob的账户合约, success=True, gas 付款方=Bob的账户合约, 实际费用=0.000057500 ETH)</span><br><span class="line">   UserOperationEvent(sender=Carol的账户合约, success=True, gas 付款方=GaslessSwapPaymaster, 实际费用=0.000058600 ETH)</span><br><span class="line"></span><br><span class="line">--- 结账时刻：费用流全景 ---</span><br><span class="line">   Alice：ETH=0.000000000，USDC=979.50</span><br><span class="line">   Bob：ETH=0.000000000，USDC=1030.00</span><br><span class="line">   Carol：ETH=0.000000000，USDC=989.50</span><br><span class="line">   Paymaster 结余：EntryPoint 预存 0.049882800 ETH，收到服务费 1.00 USDC</span><br><span class="line">   Bob 的账户合约 gas 预存结余：0.009942500 ETH</span><br><span class="line">   Bundler-01 垫付获补偿：0.000174700 ETH</span><br></pre></td></tr></table></figure>
+<p>对着外卖把几个看点串起来：</p>
+<ul>
+<li>4 张订单进接单大厅，跑腿小哥预检时把伪造签名的那张丢了——真实世界里小哥不做赔本买卖，恶意订单根本进不了配送箱。</li>
+<li>运费流对得上账：Paymaster 垫付 2 × 0.0000586 ETH，Bob 自付 0.0000575 ETH，合计 0.0001747 ETH，正好是跑腿小哥收到的报销；Paymaster 另收了 1 USDC”运费”。</li>
+<li>最关键的还是那句：三个用户的 ETH 自始至终是 0，事全办成了——“用 USDC 付 gas”，”只收现金”的死规矩就这么破掉了。</li>
+<li>诚实的简化说明：gas 模型和 0.5 USDC 费率是随手定的；迷你 EVM 里的 approve 和 swap 只返回描述、不真动余额（所以 Bob 的 USDC 没少 100）；真实的 EntryPoint 是两个循环——先跑完所有 UserOp 的验证、再统一执行——这里为了好读合成了一个循环。</li>
+</ul>
+<h3 id="模拟二：社交恢复与-guardian-串通"><a href="#模拟二：社交恢复与-guardian-串通" class="headerlink" title="模拟二：社交恢复与 guardian 串通"></a>模拟二：社交恢复与 guardian 串通</h3><p>换到门锁视角：Alice 的账户有 5 个 guardian（闺蜜、弟弟、旧手机备份、两家机构），阈值 3/5，宽限期 3 天。三个场景：日常转账；钥匙丢了走补钥匙流程；Mallory 串通 3 个 guardian 发起攻击——看看”只能换锁、搬不走东西”这条设计是不是真的扛得住。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 社交恢复模拟（纯标准库）</span></span><br><span class="line"><span class="comment"># 5 个 guardian、3 签通过 -&gt; 换新 owner；恶意 guardian 串通也只能换 owner，不能直接搬资产</span></span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line">PRIVATE_KEYS = &#123;&#125;   <span class="comment"># 地址 -&gt; 私钥（模拟用，真实链上不存）</span></span><br><span class="line">NAMES = &#123;&#125;          <span class="comment"># 地址 -&gt; 昵称</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sign</span><span class="params">(pk, msg)</span>:</span>  <span class="comment"># 模拟 ECDSA 签名</span></span><br><span class="line">    <span class="keyword">return</span> hashlib.sha256(<span class="string">f"<span class="subst">&#123;pk&#125;</span>|<span class="subst">&#123;msg&#125;</span>"</span>.encode()).hexdigest()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">new_account</span><span class="params">(name)</span>:</span></span><br><span class="line">    pk = hashlib.sha256(<span class="string">f"seed:<span class="subst">&#123;name&#125;</span>"</span>.encode()).hexdigest()</span><br><span class="line">    addr = <span class="string">"0x"</span> + hashlib.sha256(<span class="string">f"addr:<span class="subst">&#123;name&#125;</span>"</span>.encode()).hexdigest()[:<span class="number">40</span>]</span><br><span class="line">    PRIVATE_KEYS[addr], NAMES[addr] = pk, name</span><br><span class="line">    <span class="keyword">return</span> addr</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">label</span><span class="params">(a)</span>:</span> <span class="keyword">return</span> NAMES.get(a, a[:<span class="number">10</span>])</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sig_by</span><span class="params">(who, msg)</span>:</span> <span class="keyword">return</span> sign(PRIVATE_KEYS[who], msg)   <span class="comment"># 用某人的钥匙对消息签名</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">VaultAccount</span>:</span></span><br><span class="line">    <span class="string">"""带社交恢复的智能合约账户。权限设计（关键）：</span></span><br><span class="line"><span class="string">    - execute_transfer()：只认"当前 owner"的签名 —— 资产动用权</span></span><br><span class="line"><span class="string">    - request_recovery()：凑够阈值个 guardian 签名 —— 只能换 owner，碰不到资产</span></span><br><span class="line"><span class="string">    - cancel_recovery()：owner 可一票否决进行中的恢复 —— 防恶意 guardian 偷换"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, owner, guardians, threshold=<span class="number">3</span>, delay=<span class="number">3</span>)</span>:</span></span><br><span class="line">        self.owner, self.guardians, self.threshold = owner, list(guardians), threshold</span><br><span class="line">        self.delay = delay        <span class="comment"># 恢复宽限期（天）：换 owner 不是瞬间生效</span></span><br><span class="line">        self.usdc = <span class="number">1000.0</span>        <span class="comment"># 资产挂在账户合约名下，不挂在任何私钥名下</span></span><br><span class="line">        self.sent = &#123;&#125;            <span class="comment"># 转出记录：收款地址 -&gt; 累计金额</span></span><br><span class="line">        self.recovery_nonce = <span class="number">0</span>   <span class="comment"># 防重放：每次恢复流程序号递增</span></span><br><span class="line">        self.pending = <span class="literal">None</span>       <span class="comment"># 进行中的恢复：(new_owner, 剩余宽限天数)</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">execute_transfer</span><span class="params">(self, signature, message, amount, to)</span>:</span>  <span class="comment"># 转账：只认当前 owner 的签名</span></span><br><span class="line">        <span class="keyword">if</span> signature != sign(PRIVATE_KEYS[self.owner], message):</span><br><span class="line">            <span class="keyword">return</span> <span class="string">f"[拒绝] 签名不是当前 owner（<span class="subst">&#123;label(self.owner)&#125;</span>）出的，转账被拒"</span></span><br><span class="line">        self.usdc -= amount</span><br><span class="line">        self.sent[to] = self.sent.get(to, <span class="number">0.0</span>) + amount</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f"[成功] 转 <span class="subst">&#123;amount:<span class="number">.0</span>f&#125;</span> USDC 给 <span class="subst">&#123;label(to)&#125;</span>，账户余额 <span class="subst">&#123;self.usdc:<span class="number">.0</span>f&#125;</span> USDC"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">recovery_message</span><span class="params">(self, new_owner)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">f"RECOVERY|nonce=<span class="subst">&#123;self.recovery_nonce&#125;</span>|new_owner=<span class="subst">&#123;new_owner&#125;</span>"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">request_recovery</span><span class="params">(self, new_owner, votes)</span>:</span>  <span class="comment"># guardians 投票：凑够阈值才进入宽限期</span></span><br><span class="line">        msg = self.recovery_message(new_owner)</span><br><span class="line">        valid = &#123;g <span class="keyword">for</span> (g, sig) <span class="keyword">in</span> votes</span><br><span class="line">                 <span class="keyword">if</span> g <span class="keyword">in</span> self.guardians <span class="keyword">and</span> sign(PRIVATE_KEYS[g], msg) == sig&#125;</span><br><span class="line">        <span class="keyword">if</span> len(valid) &lt; self.threshold:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">f"[拒绝] 有效 guardian 签名 <span class="subst">&#123;len(valid)&#125;</span>/<span class="subst">&#123;self.threshold&#125;</span>，恢复请求不生效"</span></span><br><span class="line">        self.pending = (new_owner, self.delay)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f"[受理] <span class="subst">&#123;len(valid)&#125;</span> 名 guardian 投票通过，换 owner 进入 <span class="subst">&#123;self.delay&#125;</span> 天宽限期（链上公开可查）"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tick</span><span class="params">(self, days=<span class="number">1</span>)</span>:</span>  <span class="comment"># 时间流逝：宽限期倒计时</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.pending:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"[无事发生] 当前没有进行中的恢复"</span></span><br><span class="line">        new_owner, remaining = self.pending[<span class="number">0</span>], self.pending[<span class="number">1</span>] - days</span><br><span class="line">        <span class="keyword">if</span> remaining &gt; <span class="number">0</span>:</span><br><span class="line">            self.pending = (new_owner, remaining)</span><br><span class="line">            <span class="keyword">return</span> <span class="string">f"[等待] 宽限期还剩 <span class="subst">&#123;remaining&#125;</span> 天"</span></span><br><span class="line">        old, self.owner, self.pending = self.owner, new_owner, <span class="literal">None</span></span><br><span class="line">        self.recovery_nonce += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">f"[生效] owner 已从 <span class="subst">&#123;label(old)&#125;</span> 换为 <span class="subst">&#123;label(new_owner)&#125;</span>，旧钥匙从此作废"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cancel_recovery</span><span class="params">(self, signature, message)</span>:</span>  <span class="comment"># owner 一票否决进行中的恢复</span></span><br><span class="line">        <span class="keyword">if</span> signature == sign(PRIVATE_KEYS[self.owner], message):</span><br><span class="line">            self.pending = <span class="literal">None</span></span><br><span class="line">            <span class="keyword">return</span> <span class="string">"[成功] 当前 owner 否决了这次恢复，恶意换钥匙失败"</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"[拒绝] 只有当前 owner 能取消恢复"</span></span><br><span class="line"></span><br><span class="line">alice, alice_new, mallory = new_account(<span class="string">"Alice"</span>), new_account(<span class="string">"Alice-新手机"</span>), new_account(<span class="string">"Mallory"</span>)</span><br><span class="line"><span class="comment"># guardian 阵容：亲友 + 设备 + 机构混合</span></span><br><span class="line">g1, g2, g3 = new_account(<span class="string">"闺蜜小王"</span>), new_account(<span class="string">"弟弟"</span>), new_account(<span class="string">"旧手机备份"</span>)</span><br><span class="line">g4, g5 = new_account(<span class="string">"钱包服务商恢复服务"</span>), new_account(<span class="string">"机构托管商B"</span>)</span><br><span class="line">vault = VaultAccount(alice, [g1, g2, g3, g4, g5], threshold=<span class="number">3</span>, delay=<span class="number">3</span>)</span><br><span class="line">print(<span class="string">f"账户部署完成：owner = <span class="subst">&#123;label(vault.owner)&#125;</span>，资产 = <span class="subst">&#123;vault.usdc:<span class="number">.0</span>f&#125;</span> USDC（挂在账户合约名下）"</span>)</span><br><span class="line">print(<span class="string">f"   guardians = <span class="subst">&#123;[label(g) <span class="keyword">for</span> g <span class="keyword">in</span> vault.guardians]&#125;</span>（阈值 3/5，宽限期 3 天）"</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"\n[场景1] Alice 日常转账："</span>)</span><br><span class="line">msg1 = <span class="string">f"transfer 100 USDC to <span class="subst">&#123;label(g2)&#125;</span>"</span></span><br><span class="line">print(<span class="string">"   "</span> + vault.execute_transfer(sig_by(alice, msg1), msg1, <span class="number">100</span>, g2))</span><br><span class="line"></span><br><span class="line">print(<span class="string">"\n[场景2] Alice 存私钥的手机摔坏了，钥匙没了（但她人还在）"</span>)</span><br><span class="line">msg_r = vault.recovery_message(alice_new)</span><br><span class="line">votes = [(g, sig_by(g, msg_r)) <span class="keyword">for</span> g <span class="keyword">in</span> (g1, g2, g4)]   <span class="comment"># 闺蜜 + 弟弟 + 机构</span></span><br><span class="line">print(<span class="string">"   发起恢复："</span> + vault.request_recovery(alice_new, votes))</span><br><span class="line">print(<span class="string">"   第 1 天："</span> + vault.tick())</span><br><span class="line">print(<span class="string">"   第 2~3 天："</span> + vault.tick(<span class="number">2</span>))</span><br><span class="line">msg_old = <span class="string">f"transfer 900 USDC to <span class="subst">&#123;label(mallory)&#125;</span>"</span></span><br><span class="line">print(<span class="string">"   旧钥匙垂死挣扎："</span> + vault.execute_transfer(sig_by(alice, msg_old), msg_old, <span class="number">900</span>, mallory))</span><br><span class="line">msg2 = <span class="string">f"transfer 50 USDC to <span class="subst">&#123;label(g1)&#125;</span>"</span></span><br><span class="line">print(<span class="string">"   新钥匙接管转账："</span> + vault.execute_transfer(sig_by(alice_new, msg2), msg2, <span class="number">50</span>, g1))</span><br><span class="line"></span><br><span class="line">print(<span class="string">"\n[场景3] 攻击视角：Mallory 串通了 3 个 guardian（弟弟/旧手机/机构B）"</span>)</span><br><span class="line">gang = (g2, g3, g5)</span><br><span class="line">msg_evil = <span class="string">f"transfer 900 USDC to <span class="subst">&#123;label(mallory)&#125;</span>"</span></span><br><span class="line">tries = [vault.execute_transfer(sig_by(g, msg_evil), msg_evil, <span class="number">900</span>, mallory) <span class="keyword">for</span> g <span class="keyword">in</span> gang]</span><br><span class="line">print(<span class="string">f"   3 人各签一次直冲转账入口：<span class="subst">&#123;sum(t.startswith(<span class="string">'[拒绝]'</span>) <span class="keyword">for</span> t <span class="keyword">in</span> tries)&#125;</span>/3 被拒"</span>)</span><br><span class="line">print(<span class="string">"   拒绝原因："</span> + tries[<span class="number">0</span>])</span><br><span class="line">msg_bad = vault.recovery_message(mallory)</span><br><span class="line">print(<span class="string">"   改走合法路径换 owner："</span> + vault.request_recovery(mallory, [(g, sig_by(g, msg_bad)) <span class="keyword">for</span> g <span class="keyword">in</span> gang]))</span><br><span class="line">print(<span class="string">"   第 1 天："</span> + vault.tick())</span><br><span class="line">cancel_msg = <span class="string">f"CANCEL|nonce=<span class="subst">&#123;vault.recovery_nonce&#125;</span>"</span></span><br><span class="line">print(<span class="string">"   Alice 发现这笔不是自己发起的恢复，一票否决："</span> +</span><br><span class="line">      vault.cancel_recovery(sig_by(vault.owner, cancel_msg), cancel_msg))</span><br><span class="line">print(<span class="string">"   第 2 天："</span> + vault.tick())</span><br><span class="line">print(<span class="string">f"\n[结局] 账户余额 <span class="subst">&#123;vault.usdc:<span class="number">.0</span>f&#125;</span> USDC，Mallory 到手 <span class="subst">&#123;vault.sent.get(mallory, <span class="number">0.0</span>):<span class="number">.0</span>f&#125;</span> USDC；"</span></span><br><span class="line">      <span class="string">f"当前 owner：<span class="subst">&#123;label(vault.owner)&#125;</span>"</span>)</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">账户部署完成：owner = Alice，资产 = 1000 USDC（挂在账户合约名下）</span><br><span class="line">   guardians = [&apos;闺蜜小王&apos;, &apos;弟弟&apos;, &apos;旧手机备份&apos;, &apos;钱包服务商恢复服务&apos;, &apos;机构托管商B&apos;]（阈值 3/5，宽限期 3 天）</span><br><span class="line"></span><br><span class="line">[场景1] Alice 日常转账：</span><br><span class="line">   [成功] 转 100 USDC 给 弟弟，账户余额 900 USDC</span><br><span class="line"></span><br><span class="line">[场景2] Alice 存私钥的手机摔坏了，钥匙没了（但她人还在）</span><br><span class="line">   发起恢复：[受理] 3 名 guardian 投票通过，换 owner 进入 3 天宽限期（链上公开可查）</span><br><span class="line">   第 1 天：[等待] 宽限期还剩 2 天</span><br><span class="line">   第 2~3 天：[生效] owner 已从 Alice 换为 Alice-新手机，旧钥匙从此作废</span><br><span class="line">   旧钥匙垂死挣扎：[拒绝] 签名不是当前 owner（Alice-新手机）出的，转账被拒</span><br><span class="line">   新钥匙接管转账：[成功] 转 50 USDC 给 闺蜜小王，账户余额 850 USDC</span><br><span class="line"></span><br><span class="line">[场景3] 攻击视角：Mallory 串通了 3 个 guardian（弟弟/旧手机/机构B）</span><br><span class="line">   3 人各签一次直冲转账入口：3/3 被拒</span><br><span class="line">   拒绝原因：[拒绝] 签名不是当前 owner（Alice-新手机）出的，转账被拒</span><br><span class="line">   改走合法路径换 owner：[受理] 3 名 guardian 投票通过，换 owner 进入 3 天宽限期（链上公开可查）</span><br><span class="line">   第 1 天：[等待] 宽限期还剩 2 天</span><br><span class="line">   Alice 发现这笔不是自己发起的恢复，一票否决：[成功] 当前 owner 否决了这次恢复，恶意换钥匙失败</span><br><span class="line">   第 2 天：[无事发生] 当前没有进行中的恢复</span><br><span class="line"></span><br><span class="line">[结局] 账户余额 850 USDC，Mallory 到手 0 USDC；当前 owner：Alice-新手机</span><br></pre></td></tr></table></figure>
+<p>三个场景对应三个结论：</p>
+<ul>
+<li><strong>场景 2</strong>：3 个 guardian 点头，把 owner 换成新钥匙，宽限期过后生效，旧钥匙连”垂死挣扎”的机会都没有——丢钥匙从”家没了”降级成”跑一趟补卡”，补完照用。</li>
+<li><strong>场景 3 前半</strong>：3 个串通的 guardian 各签一次想直接搬走 900 USDC，3/3 全被拒。guardian 的签名只对”换锁”有效，搬家通道根本不看它——保管人凑再多人，也进不了你家门。</li>
+<li><strong>场景 3 后半</strong>：他们只能改走”换锁”这条合法路径，而这会进入 3 天公开宽限期，现任 owner 一票否决，攻击失败。慢、公开、可撤销——这就是智能门锁对”串通攻击”的降维打击。</li>
+<li>泼盆冷水：如果宽限期内 Alice 没看链上记录、没设提醒，3 个串通的 guardian 是真能夺走账户的。社交恢复把”钥匙丢了”从绝症治成了感冒，但没把人性变成防弹衣。</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>把这一篇用一把锁、一份外卖收个尾：</p>
+<ul>
+<li><strong>账户抽象</strong> = 把账户的验证、付费、执行逻辑从协议层挪到合约层——把”一把钥匙管一切的旧门锁”换成可编程的智能门锁；</li>
+<li><strong>ERC-4337</strong> 不改协议，在应用层点了一份外卖：你写订单（UserOperation）、跑腿小哥抢单合并（Bundler）、平台核验验签（EntryPoint）、会员免运费（Paymaster）、智能门锁收货执行（Account），2023 年 3 月上线主网；</li>
+<li><strong>EIP-7702</strong> 随 2025 年 5 月的 Pectra 上线：老房子不动产权证，签一条授权请来<strong>长期管家</strong>（<code>0xef0100 || 地址</code> 的持久委托标记，不换人就一直聘着），原地址直接获得合约能力；但原私钥仍是最高权限，私钥单点没有被根治；</li>
+<li><strong>社交恢复</strong>是 AA 最杀手级的应用：guardian 只能换锁、不能搬东西，配合宽限期和否决权，把单点故障变成多人治理——钥匙丢了等于跑一趟补卡，而不是家没了；</li>
+<li><strong>MPC 与 AA 正交</strong>：一个管钥匙怎么保管（拆成三片）、一个管门锁怎么运作（换智能锁），可以组合使用。</li>
+</ul>
+<p>旧门锁用了十年，早就该换了。以太坊的账户升级就是一场全网的”换锁工程”，4337 和 7702 是两把不同型号的智能锁——至于装了智能锁之后还能玩出什么花样（批量、限额、无 gas、passkey），你自己就是产品经理。</p>
+<h2 id="相关阅读"><a href="#相关阅读" class="headerlink" title="相关阅读"></a>相关阅读</h2><ul>
+<li><a href="https://lucifer.ren/blog/2025/04/02/web3-approve/" title="Web3 中的授权与撤销授权">《Web3 中的授权与撤销授权》</a>：EIP-7702 在那篇只讲了授权切片，本文是全景</li>
+<li><a href="https://lucifer.ren/blog/2025/02/16/web3-wallet/" title="Web3 的入口 - 区块链钱包">《Web3 的入口 - 区块链钱包》</a>：EOA 与钱包的关系</li>
+<li><a href="https://lucifer.ren/blog/2025/03/05/web3-mpc/" title="更加安全的区块链钱包：MPC 钱包">《更加安全的区块链钱包：MPC 钱包》</a>：密钥拆分路线 vs 账户升级路线</li>
+<li><a href="https://lucifer.ren/blog/2026/10/30/web3-gas/">《Gas：链上一切行为的价格标签》</a>：理解 paymaster 代付的前提是懂 gas</li>
+<li><a href="https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/" title="《从零开始构建区块链》">《从零开始构建区块链》</a>：EOA/合约账户的底层是交易与合约调用</li>
+</ul>
+
+      </div>
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-15T11:17:47+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 2026年11月15日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/区块链/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>区块链</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/web3/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>web3</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/Ethereum/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Ethereum</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/账户抽象/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>账户抽象</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvklEQVR42u3cwVIrMQwEwPz/T/OucNgwI9mPHDonKpvsuk2VJSQVr1f8+vr2+v7O+6uzbyVXD7/w8PDwFkt/v6xkQe83ZbP09+t5ehYeHh7ePV5yuxnp8cHBGd5uBx4eHt5n8pKgkhz3Cbu9Mx4eHt7n82aMU6ECDw8P7295p474pyQ7ScGT8HOx1oKHh4cX8/Iu0uf8fKW/h4eHh7fuqufHfX63vK01W+GPO+Dh4eFd4LVt+/bIbmGbgu/jJ/Hw8PCO8vKxqrOl2LOljcfP4OHh4V3gzb6Wl1yTcNIWf2ejrnh4eHhneZujPy+/tqOoeUio+3t4eHh4C96NQ7wNLbOuXRQY8PDw8C7wNoGhHa5Kxlv/U3jAw8PDW/D26fLZZthsU6LSLR4eHt4hXptYn21utYl7nr4PSxJ4eHh4wT3zQsAstW0ryrOk/JffGx4eHt5RXtuqb5Pa9p3ZFkTBDA8PD+8Qb9OIylPezWBBsoZ6JgIPDw/vAq8tTOyLC20T7lhnDw8PD6/kRVXeMgy0bbNTyfrjduDh4eFd4OWPz9PfzXH/ftPbYIaHh4d3g5cXW/eDrW0JI2/URa0vPDw8vDWvbeFvgkfS1kpGsopBLjw8PLwLvE3RNi/71gNSR0seeHh4eDd4SWN+c9MkHU+KEW3BAg8PD+8eLw8M+d7kQaK9Z1ukwMPDw7vHmx3rs9ZUcnVWEHksRuDh4eFd5uUhoR3GygPDplSx6u/h4eHhvSb/JSkfrprVPNrGW74dP67i4eHhXeDlrzbxzcuy7z+5LyLj4eHh3eDtl745oNuxgDoFx8PDw7vGSw7r9pH5CMImdkUzZXh4eHh/ysuT2lna3YaBX7YYDw8P72N4bXE2GcCaFUQOp9R4eHh4MW8zGrUpTGxKvcnm4uHh4d3gbf7gn7WpZkMJq+EAPDw8vDO8f7qpNcpSEi8AAAAAAElFTkSuQmCC'>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2026/11/11/web3-account-abstraction/&title=账户抽象：把 EOA 升级成智能合约账户 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=先说一个很多人都遇到过的尴尬：钱包里躺着几百 USDC，想转一点给朋友，界面却弹出一行字——“ETH 余额不足，无法支付 gas”。你明明有钱，却连手续费都交不起，像揣着一沓现金站在只收硬币的售货机前。更绝望的是另一种场景：抄助记词的那张纸丢了。没有”忘记密码”，没有客服，没有申诉入口，链上资产从此变成一座纪念碑。
+这些尴尬不怪钱包 App 做得烂，怪以太坊账户模型的”出厂设置”。《Web3 的入口 - 区块链钱包》里介绍过的私钥账户叫 EOA（Externally Owned Account，外部账户），你可以把它理解成一把钥匙管一切的旧式机械门锁：一把钥匙就是全部，丢了就完了，没有挂失，没有备用方案。而账户抽象（Account Abstraction，AA）想干的事，说白了就一件：把这把旧门锁换成智能门锁——账户从”一把私钥”升级成”一段可编程的合约”，”怎么验身份、怎么付 gas、怎么执行”，全由代码说了算。
+熟悉我的朋友应该知道，我经常从零实现一些东西帮助理解，本文照例代码驱动：先用 Python 模拟 ERC-4337 里一个 UserOperation 从提交到结算的完整生命周期，再模拟社交恢复与 guardian 串通攻击，中间穿插 EIP-7702 的机制讲解，所有输出均为真实运行结果，纯标准库，复制即可跑。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2026/11/11/web3-account-abstraction/&title=账户抽象：把 EOA 升级成智能合约账户 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=先说一个很多人都遇到过的尴尬：钱包里躺着几百 USDC，想转一点给朋友，界面却弹出一行字——“ETH 余额不足，无法支付 gas”。你明明有钱，却连手续费都交不起，像揣着一沓现金站在只收硬币的售货机前。更绝望的是另一种场景：抄助记词的那张纸丢了。没有”忘记密码”，没有客服，没有申诉入口，链上资产从此变成一座纪念碑。
+这些尴尬不怪钱包 App 做得烂，怪以太坊账户模型的”出厂设置”。《Web3 的入口 - 区块链钱包》里介绍过的私钥账户叫 EOA（Externally Owned Account，外部账户），你可以把它理解成一把钥匙管一切的旧式机械门锁：一把钥匙就是全部，丢了就完了，没有挂失，没有备用方案。而账户抽象（Account Abstraction，AA）想干的事，说白了就一件：把这把旧门锁换成智能门锁——账户从”一把私钥”升级成”一段可编程的合约”，”怎么验身份、怎么付 gas、怎么执行”，全由代码说了算。
+熟悉我的朋友应该知道，我经常从零实现一些东西帮助理解，本文照例代码驱动：先用 Python 模拟 ERC-4337 里一个 UserOperation 从提交到结算的完整生命周期，再模拟社交恢复与 guardian 串通攻击，中间穿插 EIP-7702 的机制讲解，所有输出均为真实运行结果，纯标准库，复制即可跑。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2026/11/11/web3-account-abstraction/&title=账户抽象：把 EOA 升级成智能合约账户 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=先说一个很多人都遇到过的尴尬：钱包里躺着几百 USDC，想转一点给朋友，界面却弹出一行字——“ETH 余额不足，无法支付 gas”。你明明有钱，却连手续费都交不起，像揣着一沓现金站在只收硬币的售货机前。更绝望的是另一种场景：抄助记词的那张纸丢了。没有”忘记密码”，没有客服，没有申诉入口，链上资产从此变成一座纪念碑。
+这些尴尬不怪钱包 App 做得烂，怪以太坊账户模型的”出厂设置”。《Web3 的入口 - 区块链钱包》里介绍过的私钥账户叫 EOA（Externally Owned Account，外部账户），你可以把它理解成一把钥匙管一切的旧式机械门锁：一把钥匙就是全部，丢了就完了，没有挂失，没有备用方案。而账户抽象（Account Abstraction，AA）想干的事，说白了就一件：把这把旧门锁换成智能门锁——账户从”一把私钥”升级成”一段可编程的合约”，”怎么验身份、怎么付 gas、怎么执行”，全由代码说了算。
+熟悉我的朋友应该知道，我经常从零实现一些东西帮助理解，本文照例代码驱动：先用 Python 模拟 ERC-4337 里一个 UserOperation 从提交到结算的完整生命周期，再模拟社交恢复与 guardian 串通攻击，中间穿插 EIP-7702 的机制讲解，所有输出均为真实运行结果，纯标准库，复制即可跑。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                          <h4>
+                              <a href="/blog/2026/11/12/web3-dao/" rel="prev" title="DAO：没有老板的公司，以及它怎么被一秒钟搬空">
+                                
+                                    DAO：没有老板的公司，以及它怎么被一秒钟搬空
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/区块链/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 区块链</a> <a class="tag" href="/blog/tags/web3/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> web3</a> <a class="tag" href="/blog/tags/DAO/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> DAO</a> <a class="tag" href="/blog/tags/治理/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 治理</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/blog/2026/11/10/web3-security-audit/" rel="prev" title="合约安全审计入门：读不懂 Solidity，也能看懂审计报告">
+                                  
+                                      合约安全审计入门：读不懂 Solidity，也能看懂审计报告
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/区块链/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 区块链</a> <a class="tag" href="/blog/tags/web3/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> web3</a> <a class="tag" href="/blog/tags/安全/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 安全</a> <a class="tag" href="/blog/tags/审计/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 审计</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '账户抽象：把 EOA 升级成智能合约账户',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/blog/atom.xml"
+              class="social fas fa-rss flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://www.zhihu.com/people/lu-xiao-13-70/activities"
+              class="social fab fa-zhihu flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:azl397985856@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/azl397985856"
+              class="social fab fa-github flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/playlist?id=978545815&userid=632167080"
+              class="social fas fa-headphones-alt flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="/blog/wc3map/"
+              class="social fas fa-dragon flat-btn"
+              title="魔兽地图 · 四兄弟 Footmen Frenzy 纪念版（多版本下载）"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="/blog/files/war3-coach-portable.zip"
+              class="social fas fa-chalkboard-teacher flat-btn"
+              title="war3-coach · 魔兽训练辅助工具（回放分析+对手库，免安装便携版，下载解压即用）"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://wormhole.app"
+              class="social fas fa-paper-plane flat-btn"
+              title="Wormhole · 免登录文件分享（端到端加密，10GB/24小时）"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#EOA：一把钥匙管一切的旧门锁"><span class="toc-text">EOA：一把钥匙管一切的旧门锁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#换上智能门锁，日子能过成什么样"><span class="toc-text">换上智能门锁，日子能过成什么样</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ERC-4337：不改协议，先点一份外卖"><span class="toc-text">ERC-4337：不改协议，先点一份外卖</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一张订单的一生"><span class="toc-text">一张订单的一生</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#钥匙丢了怎么办：五个保管人里三个点头"><span class="toc-text">钥匙丢了怎么办：五个保管人里三个点头</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EIP-7702：老房子不动产权证，请个专业管家"><span class="toc-text">EIP-7702：老房子不动产权证，请个专业管家</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4337-vs-7702：一张表看懂怎么选"><span class="toc-text">4337 vs 7702：一张表看懂怎么选</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AA-vs-MPC：拆钥匙片和换门锁是两码事"><span class="toc-text">AA vs MPC：拆钥匙片和换门锁是两码事</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-模拟"><span class="toc-text">Python 模拟</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模拟一：UserOperation-的一生"><span class="toc-text">模拟一：UserOperation 的一生</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模拟二：社交恢复与-guardian-串通"><span class="toc-text">模拟二：社交恢复与 guardian 串通</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关阅读"><span class="toc-text">相关阅读</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;我的开源项目</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/leetcode" href="https://github.com/azl397985856/leetcode"
+          
+          
+          id="https:github.comazl397985856leetcode">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          算法刷题
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/fe-interview" href="https://github.com/azl397985856/fe-interview"
+          
+          
+          id="https:github.comazl397985856fe-interview">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          大前端
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/daily-featured" href="https://github.com/azl397985856/daily-featured"
+          
+          
+          id="https:github.comazl397985856daily-featured">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          每日一荐
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;全部分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+    href="/blog/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/blog/categories/91天学算法/" href="/blog/categories/91天学算法/"><div class='name'>91天学算法</div><div class='badge'>(28)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/CD/" href="/blog/categories/CD/"><div class='name'>CD</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Easy/" href="/blog/categories/Easy/"><div class='name'>Easy</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Github/" href="/blog/categories/Github/"><div class='name'>Github</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Hard/" href="/blog/categories/Hard/"><div class='name'>Hard</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/LeetCode/" href="/blog/categories/LeetCode/"><div class='name'>LeetCode</div><div class='badge'>(23)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/LeetCode题解书/" href="/blog/categories/LeetCode/LeetCode题解书/"><div class='name'>LeetCode题解书</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/刷题技巧/" href="/blog/categories/LeetCode/刷题技巧/"><div class='name'>刷题技巧</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/动态规划/" href="/blog/categories/LeetCode/动态规划/"><div class='name'>动态规划</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Medium/" href="/blog/categories/Medium/"><div class='name'>Medium</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/React/" href="/blog/categories/React/"><div class='name'>React</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/TypeScript/" href="/blog/categories/TypeScript/"><div class='name'>TypeScript</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/ai/" href="/blog/categories/ai/"><div class='name'>ai</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/ai/agent/" href="/blog/categories/ai/agent/"><div class='name'>agent</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/devtool/" href="/blog/categories/devtool/"><div class='name'>devtool</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/rust/" href="/blog/categories/rust/"><div class='name'>rust</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/rust/node-binding/" href="/blog/categories/rust/node-binding/"><div class='name'>node binding</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/rust/node-binding/node-gyp/" href="/blog/categories/rust/node-binding/node-gyp/"><div class='name'>node-gyp</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/v8/" href="/blog/categories/v8/"><div class='name'>v8</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/vite/" href="/blog/categories/vite/"><div class='name'>vite</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/《算法通关之路》/" href="/blog/categories/《算法通关之路》/"><div class='name'>《算法通关之路》</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/中等/" href="/blog/categories/中等/"><div class='name'>中等</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书/" href="/blog/categories/书/"><div class='name'>书</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/书/算法/" href="/blog/categories/书/算法/"><div class='name'>算法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书单/" href="/blog/categories/书单/"><div class='name'>书单</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书摘/" href="/blog/categories/书摘/"><div class='name'>书摘</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/二分/" href="/blog/categories/二分/"><div class='name'>二分</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/二叉树/" href="/blog/categories/二叉树/"><div class='name'>二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/交易/" href="/blog/categories/交易/"><div class='name'>交易</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/公众号/" href="/blog/categories/公众号/"><div class='name'>公众号</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/刷题技巧/" href="/blog/categories/刷题技巧/"><div class='name'>刷题技巧</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/刷题方法/" href="/blog/categories/刷题方法/"><div class='name'>刷题方法</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/前端/" href="/blog/categories/前端/"><div class='name'>前端</div><div class='badge'>(30)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/TypeScript/" href="/blog/categories/前端/TypeScript/"><div class='name'>TypeScript</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/TypeScript/泛型/" href="/blog/categories/前端/TypeScript/泛型/"><div class='name'>泛型</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/css-in-js/" href="/blog/categories/前端/css-in-js/"><div class='name'>css-in-js</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/eslint/" href="/blog/categories/前端/eslint/"><div class='name'>eslint</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/web-component/" href="/blog/categories/前端/web-component/"><div class='name'>web-component</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/webkit/" href="/blog/categories/前端/webkit/"><div class='name'>webkit</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/测试/" href="/blog/categories/前端/测试/"><div class='name'>测试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/浏览器/" href="/blog/categories/前端/浏览器/"><div class='name'>浏览器</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/算法/" href="/blog/categories/前端/算法/"><div class='name'>算法</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/组件化/" href="/blog/categories/前端/组件化/"><div class='name'>组件化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/前缀和/" href="/blog/categories/前缀和/"><div class='name'>前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前缀和/二维前缀和/" href="/blog/categories/前缀和/二维前缀和/"><div class='name'>二维前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/力扣加加/" href="/blog/categories/力扣加加/"><div class='name'>力扣加加</div><div class='badge'>(30)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/动态规划/" href="/blog/categories/动态规划/"><div class='name'>动态规划</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/区块链/" href="/blog/categories/区块链/"><div class='name'>区块链</div><div class='badge'>(34)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/命令行/" href="/blog/categories/命令行/"><div class='name'>命令行</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/哲学/" href="/blog/categories/哲学/"><div class='name'>哲学</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/哲学/读书/" href="/blog/categories/哲学/读书/"><div class='name'>读书</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/图/" href="/blog/categories/图/"><div class='name'>图</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/堆/" href="/blog/categories/堆/"><div class='name'>堆</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/好未来/" href="/blog/categories/好未来/"><div class='name'>好未来</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/学习方法/" href="/blog/categories/学习方法/"><div class='name'>学习方法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/工具/" href="/blog/categories/工具/"><div class='name'>工具</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/工具/Chrome/" href="/blog/categories/工具/Chrome/"><div class='name'>Chrome</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/工具/VSCODE/" href="/blog/categories/工具/VSCODE/"><div class='name'>VSCODE</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/工具/终端/" href="/blog/categories/工具/终端/"><div class='name'>终端</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/年终总结/" href="/blog/categories/年终总结/"><div class='name'>年终总结</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/异议！/" href="/blog/categories/异议！/"><div class='name'>异议！</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/成长/" href="/blog/categories/成长/"><div class='name'>成长</div><div class='badge'>(0)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/成长经历/" href="/blog/categories/成长经历/"><div class='name'>成长经历</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/技术大会/" href="/blog/categories/技术大会/"><div class='name'>技术大会</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/D2/" href="/blog/categories/技术大会/D2/"><div class='name'>D2</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/Google-IO/" href="/blog/categories/技术大会/Google-IO/"><div class='name'>Google IO</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/JSConf/" href="/blog/categories/技术大会/JSConf/"><div class='name'>JSConf</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/QCon/" href="/blog/categories/技术大会/QCon/"><div class='name'>QCon</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/React-Conf/" href="/blog/categories/技术大会/React-Conf/"><div class='name'>React Conf</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/插件/" href="/blog/categories/插件/"><div class='name'>插件</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/插件/浏览器插件/" href="/blog/categories/插件/浏览器插件/"><div class='name'>浏览器插件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/插件/算法/" href="/blog/categories/插件/算法/"><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/搜索/" href="/blog/categories/搜索/"><div class='name'>搜索</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数学/" href="/blog/categories/数学/"><div class='name'>数学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数学/算法/" href="/blog/categories/数学/算法/"><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构/" href="/blog/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/hashtable/" href="/blog/categories/数据结构/hashtable/"><div class='name'>hashtable</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/二叉搜索树/" href="/blog/categories/数据结构/二叉搜索树/"><div class='name'>二叉搜索树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/图/" href="/blog/categories/数据结构/图/"><div class='name'>图</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/字符串/" href="/blog/categories/数据结构/字符串/"><div class='name'>字符串</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/平衡二叉树/" href="/blog/categories/数据结构/平衡二叉树/"><div class='name'>平衡二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/数组/" href="/blog/categories/数据结构/数组/"><div class='name'>数组</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/算法/" href="/blog/categories/数据结构/算法/"><div class='name'>算法</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/链表/" href="/blog/categories/数据结构/链表/"><div class='name'>链表</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，二叉树/" href="/blog/categories/数据结构，二叉树/"><div class='name'>数据结构，二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，单调栈/" href="/blog/categories/数据结构，单调栈/"><div class='name'>数据结构，单调栈</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，字符串/" href="/blog/categories/数据结构，字符串/"><div class='name'>数据结构，字符串</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，数组/" href="/blog/categories/数据结构，数组/"><div class='name'>数据结构，数组</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/日记/" href="/blog/categories/日记/"><div class='name'>日记</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/日记/技术/" href="/blog/categories/日记/技术/"><div class='name'>技术</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/易经/" href="/blog/categories/易经/"><div class='name'>易经</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/易经/读后感/" href="/blog/categories/易经/读后感/"><div class='name'>读后感</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/春招/" href="/blog/categories/春招/"><div class='name'>春招</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/栈/" href="/blog/categories/栈/"><div class='name'>栈</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/树/" href="/blog/categories/树/"><div class='name'>树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/树状数组/" href="/blog/categories/树状数组/"><div class='name'>树状数组</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/校招/" href="/blog/categories/校招/"><div class='name'>校招</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/模拟面试/" href="/blog/categories/模拟面试/"><div class='name'>模拟面试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/每日一荐/" href="/blog/categories/每日一荐/"><div class='name'>每日一荐</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-09/" href="/blog/categories/每日一荐/2019-09/"><div class='name'>2019-09</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-10/" href="/blog/categories/每日一荐/2019-10/"><div class='name'>2019-10</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-11/" href="/blog/categories/每日一荐/2019-11/"><div class='name'>2019-11</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-12/" href="/blog/categories/每日一荐/2019-12/"><div class='name'>2019-12</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2020-01/" href="/blog/categories/每日一荐/2020-01/"><div class='name'>2020-01</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2020-03/" href="/blog/categories/每日一荐/2020-03/"><div class='name'>2020-03</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2022-04/" href="/blog/categories/每日一荐/2022-04/"><div class='name'>2022-04</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/浏览器/" href="/blog/categories/浏览器/"><div class='name'>浏览器</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/浏览器/webkit/" href="/blog/categories/浏览器/webkit/"><div class='name'>webkit</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/浏览器/事件/" href="/blog/categories/浏览器/事件/"><div class='name'>事件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/理财/" href="/blog/categories/理财/"><div class='name'>理财</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/理财/K线/" href="/blog/categories/理财/K线/"><div class='name'>K线</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/理财/K线/蜡烛图/" href="/blog/categories/理财/K线/蜡烛图/"><div class='name'>蜡烛图</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/理财/量化/" href="/blog/categories/理财/量化/"><div class='name'>量化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/生活/" href="/blog/categories/生活/"><div class='name'>生活</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/生活/自我提升/" href="/blog/categories/生活/自我提升/"><div class='name'>自我提升</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/电影/" href="/blog/categories/电影/"><div class='name'>电影</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/电影/观后感/" href="/blog/categories/电影/观后感/"><div class='name'>观后感</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/百度/" href="/blog/categories/百度/"><div class='name'>百度</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法/" href="/blog/categories/算法/"><div class='name'>算法</div><div class='badge'>(30)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/BFS/" href="/blog/categories/算法/BFS/"><div class='name'>BFS</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/DFS/" href="/blog/categories/算法/DFS/"><div class='name'>DFS</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/二分法/" href="/blog/categories/算法/二分法/"><div class='name'>二分法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/位运算/" href="/blog/categories/算法/位运算/"><div class='name'>位运算</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/前端/" href="/blog/categories/算法/前端/"><div class='name'>前端</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/前端/面试/" href="/blog/categories/算法/前端/面试/"><div class='name'>面试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/前缀和/" href="/blog/categories/算法/前缀和/"><div class='name'>前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/动态规划/" href="/blog/categories/算法/动态规划/"><div class='name'>动态规划</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/双指针/" href="/blog/categories/算法/双指针/"><div class='name'>双指针</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/回文/" href="/blog/categories/算法/回文/"><div class='name'>回文</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/回溯/" href="/blog/categories/算法/回溯/"><div class='name'>回溯</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/子序列/" href="/blog/categories/算法/子序列/"><div class='name'>子序列</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/就地算法/" href="/blog/categories/算法/就地算法/"><div class='name'>就地算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/布隆过滤器/" href="/blog/categories/算法/布隆过滤器/"><div class='name'>布隆过滤器</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/循环移位/" href="/blog/categories/算法/循环移位/"><div class='name'>循环移位</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/数学/" href="/blog/categories/算法/数学/"><div class='name'>数学</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/概率/" href="/blog/categories/算法/概率/"><div class='name'>概率</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/母题/" href="/blog/categories/算法/母题/"><div class='name'>母题</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/滑动窗口/" href="/blog/categories/算法/滑动窗口/"><div class='name'>滑动窗口</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/状态压缩/" href="/blog/categories/算法/状态压缩/"><div class='name'>状态压缩</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/背包问题/" href="/blog/categories/算法/背包问题/"><div class='name'>背包问题</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/递归/" href="/blog/categories/算法/递归/"><div class='name'>递归</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/链表反转/" href="/blog/categories/算法/链表反转/"><div class='name'>链表反转</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法比赛/" href="/blog/categories/算法比赛/"><div class='name'>算法比赛</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，动态规划/" href="/blog/categories/算法，动态规划/"><div class='name'>算法，动态规划</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，序列化/" href="/blog/categories/算法，序列化/"><div class='name'>算法，序列化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，滑动窗口/" href="/blog/categories/算法，滑动窗口/"><div class='name'>算法，滑动窗口</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/线段树/" href="/blog/categories/线段树/"><div class='name'>线段树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/经验分享/" href="/blog/categories/经验分享/"><div class='name'>经验分享</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/编程之美/" href="/blog/categories/编程之美/"><div class='name'>编程之美</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/缠论/" href="/blog/categories/缠论/"><div class='name'>缠论</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/缠论/交易/" href="/blog/categories/缠论/交易/"><div class='name'>交易</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/缠论/交易/理财/" href="/blog/categories/缠论/交易/理财/"><div class='name'>理财</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/自动化/" href="/blog/categories/自动化/"><div class='name'>自动化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/蓄水池抽样/" href="/blog/categories/蓄水池抽样/"><div class='name'>蓄水池抽样</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/虾皮/" href="/blog/categories/虾皮/"><div class='name'>虾皮</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/解题模板/" href="/blog/categories/解题模板/"><div class='name'>解题模板</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/谷歌/" href="/blog/categories/谷歌/"><div class='name'>谷歌</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/谷歌/软实力/" href="/blog/categories/谷歌/软实力/"><div class='name'>软实力</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/谷歌/面试/" href="/blog/categories/谷歌/面试/"><div class='name'>面试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/财报/" href="/blog/categories/财报/"><div class='name'>财报</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/贪婪/" href="/blog/categories/贪婪/"><div class='name'>贪婪</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/走出科学/" href="/blog/categories/走出科学/"><div class='name'>走出科学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/软件工具/" href="/blog/categories/软件工具/"><div class='name'>软件工具</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/递推/" href="/blog/categories/递推/"><div class='name'>递推</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/递推/动态规划/" href="/blog/categories/递推/动态规划/"><div class='name'>动态规划</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/链表/" href="/blog/categories/链表/"><div class='name'>链表</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/面经/" href="/blog/categories/面经/"><div class='name'>面经</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/面试/" href="/blog/categories/面试/"><div class='name'>面试</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/面试/字节跳动/" href="/blog/categories/面试/字节跳动/"><div class='name'>字节跳动</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/题解/" href="/blog/categories/题解/"><div class='name'>题解</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/魔兽争霸3/" href="/blog/categories/魔兽争霸3/"><div class='name'>魔兽争霸3</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+    href="/blog/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/blog/tags/2022/" style="font-size: 14px; color: #999">2022</a> <a href="/blog/tags/91天学算法/" style="font-size: 19.63px; color: #737373">91天学算法</a> <a href="/blog/tags/AI/" style="font-size: 14px; color: #999">AI</a> <a href="/blog/tags/AMM/" style="font-size: 14px; color: #999">AMM</a> <a href="/blog/tags/AST/" style="font-size: 14px; color: #999">AST</a> <a href="/blog/tags/BFS/" style="font-size: 14.63px; color: #959595">BFS</a> <a href="/blog/tags/BigPipe/" style="font-size: 14px; color: #999">BigPipe</a> <a href="/blog/tags/CD/" style="font-size: 14px; color: #999">CD</a> <a href="/blog/tags/CSS/" style="font-size: 14px; color: #999">CSS</a> <a href="/blog/tags/Canvas/" style="font-size: 14px; color: #999">Canvas</a> <a href="/blog/tags/Chrome/" style="font-size: 15.25px; color: #919191">Chrome</a> <a href="/blog/tags/D2/" style="font-size: 14px; color: #999">D2</a> <a href="/blog/tags/DAI/" style="font-size: 14px; color: #999">DAI</a> <a href="/blog/tags/DAO/" style="font-size: 14px; color: #999">DAO</a> <a href="/blog/tags/DEX/" style="font-size: 14px; color: #999">DEX</a> <a href="/blog/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/blog/tags/DeFi/" style="font-size: 15.88px; color: #8c8c8c">DeFi</a> <a href="/blog/tags/Easy/" style="font-size: 14px; color: #999">Easy</a> <a href="/blog/tags/Ethereum/" style="font-size: 15.88px; color: #8c8c8c">Ethereum</a> <a href="/blog/tags/Floyd-Warshall/" style="font-size: 14px; color: #999">Floyd-Warshall</a> <a href="/blog/tags/GMX/" style="font-size: 14px; color: #999">GMX</a> <a href="/blog/tags/Gas/" style="font-size: 14px; color: #999">Gas</a> <a href="/blog/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/blog/tags/Github/" style="font-size: 14.63px; color: #959595">Github</a> <a href="/blog/tags/Google-IO/" style="font-size: 14px; color: #999">Google IO</a> <a href="/blog/tags/Hard/" style="font-size: 14px; color: #999">Hard</a> <a href="/blog/tags/JSConf/" style="font-size: 14px; color: #999">JSConf</a> <a href="/blog/tags/KK平台/" style="font-size: 14px; color: #999">KK平台</a> <a href="/blog/tags/K线/" style="font-size: 14px; color: #999">K线</a> <a href="/blog/tags/L2/" style="font-size: 14.63px; color: #959595">L2</a> <a href="/blog/tags/LP/" style="font-size: 14px; color: #999">LP</a> <a href="/blog/tags/LeetCode/" style="font-size: 22.75px; color: #5e5e5e">LeetCode</a> <a href="/blog/tags/LeetCode日记/" style="font-size: 19px; color: #777">LeetCode日记</a> <a href="/blog/tags/MEV/" style="font-size: 14.63px; color: #959595">MEV</a> <a href="/blog/tags/MPC-钱包/" style="font-size: 14px; color: #999">MPC 钱包</a> <a href="/blog/tags/Mac/" style="font-size: 14px; color: #999">Mac</a> <a href="/blog/tags/MakerDAO/" style="font-size: 14px; color: #999">MakerDAO</a> <a href="/blog/tags/Medium/" style="font-size: 14.63px; color: #959595">Medium</a> <a href="/blog/tags/Nexus-Mutual/" style="font-size: 14px; color: #999">Nexus Mutual</a> <a href="/blog/tags/PPT/" style="font-size: 14.63px; color: #959595">PPT</a> <a href="/blog/tags/QCon/" style="font-size: 14px; color: #999">QCon</a> <a href="/blog/tags/RFC/" style="font-size: 14px; color: #999">RFC</a> <a href="/blog/tags/React/" style="font-size: 14px; color: #999">React</a> <a href="/blog/tags/Tokenomics/" style="font-size: 14px; color: #999">Tokenomics</a> <a href="/blog/tags/TypeScript/" style="font-size: 18.38px; color: #7b7b7b">TypeScript</a> <a href="/blog/tags/USDC/" style="font-size: 14px; color: #999">USDC</a> <a href="/blog/tags/USDT/" style="font-size: 14px; color: #999">USDT</a> <a href="/blog/tags/UST/" style="font-size: 14px; color: #999">UST</a> <a href="/blog/tags/VSCODE/" style="font-size: 15.25px; color: #919191">VSCODE</a> <a href="/blog/tags/Warp/" style="font-size: 14px; color: #999">Warp</a> <a href="/blog/tags/Web3-钱包/" style="font-size: 14px; color: #999">Web3 钱包</a> <a href="/blog/tags/aave/" style="font-size: 14px; color: #999">aave</a> <a href="/blog/tags/acp/" style="font-size: 14px; color: #999">acp</a> <a href="/blog/tags/agent/" style="font-size: 14px; color: #999">agent</a> <a href="/blog/tags/ai/" style="font-size: 15.88px; color: #8c8c8c">ai</a> <a href="/blog/tags/apple/" style="font-size: 14px; color: #999">apple</a> <a href="/blog/tags/approve/" style="font-size: 14.63px; color: #959595">approve</a> <a href="/blog/tags/balancer/" style="font-size: 14px; color: #999">balancer</a> <a href="/blog/tags/bancor/" style="font-size: 14px; color: #999">bancor</a> <a href="/blog/tags/blob/" style="font-size: 14px; color: #999">blob</a> <a href="/blog/tags/borrow/" style="font-size: 14px; color: #999">borrow</a> <a href="/blog/tags/chatgpt/" style="font-size: 14px; color: #999">chatgpt</a> <a href="/blog/tags/chrome/" style="font-size: 14px; color: #999">chrome</a> <a href="/blog/tags/claude/" style="font-size: 14px; color: #999">claude</a> <a href="/blog/tags/cordis/" style="font-size: 14px; color: #999">cordis</a> <a href="/blog/tags/css-in-js/" style="font-size: 14px; color: #999">css-in-js</a> <a href="/blog/tags/curve/" style="font-size: 14px; color: #999">curve</a> <a href="/blog/tags/dYdX/" style="font-size: 14px; color: #999">dYdX</a> <a href="/blog/tags/deepseek/" style="font-size: 14px; color: #999">deepseek</a> <a href="/blog/tags/defi/" style="font-size: 14px; color: #999">defi</a> <a href="/blog/tags/depin/" style="font-size: 14px; color: #999">depin</a> <a href="/blog/tags/dex/" style="font-size: 14px; color: #999">dex</a> <a href="/blog/tags/dotfiles/" style="font-size: 14px; color: #999">dotfiles</a> <a href="/blog/tags/eslint/" style="font-size: 14px; color: #999">eslint</a> <a href="/blog/tags/gemini/" style="font-size: 14px; color: #999">gemini</a> <a href="/blog/tags/google/" style="font-size: 14px; color: #999">google</a> <a href="/blog/tags/harness/" style="font-size: 14px; color: #999">harness</a> <a href="/blog/tags/iTerm2/" style="font-size: 14px; color: #999">iTerm2</a> <a href="/blog/tags/immutable/" style="font-size: 14px; color: #999">immutable</a> <a href="/blog/tags/immutablejs/" style="font-size: 14px; color: #999">immutablejs</a> <a href="/blog/tags/javascript/" style="font-size: 14px; color: #999">javascript</a> <a href="/blog/tags/json/" style="font-size: 14px; color: #999">json</a> <a href="/blog/tags/k-线/" style="font-size: 14px; color: #999">k 线</a> <a href="/blog/tags/k-问题/" style="font-size: 14px; color: #999">k 问题</a> <a href="/blog/tags/knowledge-management/" style="font-size: 14px; color: #999">knowledge-management</a> <a href="/blog/tags/lending/" style="font-size: 14px; color: #999">lending</a> <a href="/blog/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/blog/tags/node-binding/" style="font-size: 14px; color: #999">node binding</a> <a href="/blog/tags/node-gyp/" style="font-size: 14px; color: #999">node-gyp</a> <a href="/blog/tags/notebooklm/" style="font-size: 14px; color: #999">notebooklm</a> <a href="/blog/tags/pendle/" style="font-size: 14px; color: #999">pendle</a> <a href="/blog/tags/plugin/" style="font-size: 14px; color: #999">plugin</a> <a href="/blog/tags/rust/" style="font-size: 14.63px; color: #959595">rust</a> <a href="/blog/tags/rwa/" style="font-size: 14px; color: #999">rwa</a> <a href="/blog/tags/staking/" style="font-size: 14px; color: #999">staking</a> <a href="/blog/tags/stringify/" style="font-size: 14px; color: #999">stringify</a> <a href="/blog/tags/swap/" style="font-size: 15.25px; color: #919191">swap</a> <a href="/blog/tags/swc/" style="font-size: 14px; color: #999">swc</a> <a href="/blog/tags/uniswap/" style="font-size: 14.63px; color: #959595">uniswap</a> <a href="/blog/tags/v4/" style="font-size: 14.63px; color: #959595">v4</a> <a href="/blog/tags/v8/" style="font-size: 14px; color: #999">v8</a> <a href="/blog/tags/vite/" style="font-size: 14px; color: #999">vite</a> <a href="/blog/tags/vlog/" style="font-size: 14px; color: #999">vlog</a> <a href="/blog/tags/vue/" style="font-size: 14px; color: #999">vue</a> <a href="/blog/tags/web-component/" style="font-size: 14px; color: #999">web-component</a> <a href="/blog/tags/web3/" style="font-size: 21.5px; color: #666">web3</a> <a href="/blog/tags/webkit/" style="font-size: 14px; color: #999">webkit</a> <a href="/blog/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/blog/tags/《算法通关之路》/" style="font-size: 14px; color: #999">《算法通关之路》</a> <a href="/blog/tags/中位数/" style="font-size: 14px; color: #999">中位数</a> <a href="/blog/tags/中等/" style="font-size: 14.63px; color: #959595">中等</a> <a href="/blog/tags/乘法逆元/" style="font-size: 14px; color: #999">乘法逆元</a> <a href="/blog/tags/书/" style="font-size: 15.25px; color: #919191">书</a> <a href="/blog/tags/书单/" style="font-size: 14px; color: #999">书单</a> <a href="/blog/tags/书摘/" style="font-size: 14px; color: #999">书摘</a> <a href="/blog/tags/事件/" style="font-size: 14px; color: #999">事件</a> <a href="/blog/tags/事件循环/" style="font-size: 14px; color: #999">事件循环</a> <a href="/blog/tags/二分/" style="font-size: 15.25px; color: #919191">二分</a> <a href="/blog/tags/二分法/" style="font-size: 14px; color: #999">二分法</a> <a href="/blog/tags/二叉树/" style="font-size: 15.25px; color: #919191">二叉树</a> <a href="/blog/tags/交易/" style="font-size: 15.25px; color: #919191">交易</a> <a href="/blog/tags/交易系统/" style="font-size: 14px; color: #999">交易系统</a> <a href="/blog/tags/从零实现/" style="font-size: 14px; color: #999">从零实现</a> <a href="/blog/tags/仓位管理/" style="font-size: 14px; color: #999">仓位管理</a> <a href="/blog/tags/代币经济学/" style="font-size: 14.63px; color: #959595">代币经济学</a> <a href="/blog/tags/代码生成器/" style="font-size: 14px; color: #999">代码生成器</a> <a href="/blog/tags/位运算/" style="font-size: 14px; color: #999">位运算</a> <a href="/blog/tags/侧链/" style="font-size: 14px; color: #999">侧链</a> <a href="/blog/tags/保险/" style="font-size: 14px; color: #999">保险</a> <a href="/blog/tags/倒排索引/" style="font-size: 14px; color: #999">倒排索引</a> <a href="/blog/tags/公众号/" style="font-size: 14px; color: #999">公众号</a> <a href="/blog/tags/公益/" style="font-size: 14px; color: #999">公益</a> <a href="/blog/tags/冷钱包/" style="font-size: 14px; color: #999">冷钱包</a> <a href="/blog/tags/删除-k-个字符/" style="font-size: 14px; color: #999">删除 k 个字符</a> <a href="/blog/tags/刷题/" style="font-size: 15.25px; color: #919191">刷题</a> <a href="/blog/tags/刷题技巧/" style="font-size: 17.13px; color: #848484">刷题技巧</a> <a href="/blog/tags/刷题方法/" style="font-size: 15.25px; color: #919191">刷题方法</a> <a href="/blog/tags/前端/" style="font-size: 19.63px; color: #737373">前端</a> <a href="/blog/tags/前端，自动化，automator/" style="font-size: 14px; color: #999">前端，自动化，automator</a> <a href="/blog/tags/前缀和/" style="font-size: 15.88px; color: #8c8c8c">前缀和</a> <a href="/blog/tags/前缀表达式/" style="font-size: 14px; color: #999">前缀表达式</a> <a href="/blog/tags/力扣加加/" style="font-size: 20.88px; color: #6a6a6a">力扣加加</a> <a href="/blog/tags/动态规划/" style="font-size: 19px; color: #777">动态规划</a> <a href="/blog/tags/区块链/" style="font-size: 22.13px; color: #626262">区块链</a> <a href="/blog/tags/单元测试/" style="font-size: 14px; color: #999">单元测试</a> <a href="/blog/tags/单调栈/" style="font-size: 14px; color: #999">单调栈</a> <a href="/blog/tags/博物馆/" style="font-size: 14px; color: #999">博物馆</a> <a href="/blog/tags/命令行/" style="font-size: 14.63px; color: #959595">命令行</a> <a href="/blog/tags/哲学/" style="font-size: 14.63px; color: #959595">哲学</a> <a href="/blog/tags/回溯/" style="font-size: 14px; color: #999">回溯</a> <a href="/blog/tags/困难/" style="font-size: 14.63px; color: #959595">困难</a> <a href="/blog/tags/图/" style="font-size: 14.63px; color: #959595">图</a> <a href="/blog/tags/图片处理/" style="font-size: 14px; color: #999">图片处理</a> <a href="/blog/tags/堆/" style="font-size: 14.63px; color: #959595">堆</a> <a href="/blog/tags/备份工具/" style="font-size: 14px; color: #999">备份工具</a> <a href="/blog/tags/夏普比率/" style="font-size: 14px; color: #999">夏普比率</a> <a href="/blog/tags/多签钱包/" style="font-size: 14px; color: #999">多签钱包</a> <a href="/blog/tags/天梯/" style="font-size: 14px; color: #999">天梯</a> <a href="/blog/tags/好未来/" style="font-size: 14px; color: #999">好未来</a> <a href="/blog/tags/子数组/" style="font-size: 14px; color: #999">子数组</a> <a href="/blog/tags/字符串/" style="font-size: 14.63px; color: #959595">字符串</a> <a href="/blog/tags/字节跳动/" style="font-size: 15.25px; color: #919191">字节跳动</a> <a href="/blog/tags/学习方法/" style="font-size: 14.63px; color: #959595">学习方法</a> <a href="/blog/tags/学习路线/" style="font-size: 15.88px; color: #8c8c8c">学习路线</a> <a href="/blog/tags/安全/" style="font-size: 14.63px; color: #959595">安全</a> <a href="/blog/tags/审计/" style="font-size: 14px; color: #999">审计</a> <a href="/blog/tags/密码学/" style="font-size: 14px; color: #999">密码学</a> <a href="/blog/tags/尼采/" style="font-size: 14px; color: #999">尼采</a> <a href="/blog/tags/工具/" style="font-size: 17.13px; color: #848484">工具</a> <a href="/blog/tags/年度目标/" style="font-size: 14px; color: #999">年度目标</a> <a href="/blog/tags/年终总结/" style="font-size: 14px; color: #999">年终总结</a> <a href="/blog/tags/序列化/" style="font-size: 14px; color: #999">序列化</a> <a href="/blog/tags/异常处理/" style="font-size: 14.63px; color: #959595">异常处理</a> <a href="/blog/tags/异议！/" style="font-size: 14px; color: #999">异议！</a> <a href="/blog/tags/循环移位/" style="font-size: 14px; color: #999">循环移位</a> <a href="/blog/tags/微前端/" style="font-size: 14px; color: #999">微前端</a> <a href="/blog/tags/必备软件/" style="font-size: 14px; color: #999">必备软件</a> <a href="/blog/tags/志愿者/" style="font-size: 14px; color: #999">志愿者</a> <a href="/blog/tags/性能优化/" style="font-size: 14px; color: #999">性能优化</a> <a href="/blog/tags/成长经历/" style="font-size: 14.63px; color: #959595">成长经历</a> <a href="/blog/tags/手机摄影/" style="font-size: 14px; color: #999">手机摄影</a> <a href="/blog/tags/扩展程序/" style="font-size: 14px; color: #999">扩展程序</a> <a href="/blog/tags/技术大会/" style="font-size: 14px; color: #999">技术大会</a> <a href="/blog/tags/技术调研/" style="font-size: 14px; color: #999">技术调研</a> <a href="/blog/tags/技能/" style="font-size: 14.63px; color: #959595">技能</a> <a href="/blog/tags/投资/" style="font-size: 15.88px; color: #8c8c8c">投资</a> <a href="/blog/tags/持续集成/" style="font-size: 14px; color: #999">持续集成</a> <a href="/blog/tags/插件/" style="font-size: 17.13px; color: #848484">插件</a> <a href="/blog/tags/搜索/" style="font-size: 14px; color: #999">搜索</a> <a href="/blog/tags/搜索引擎/" style="font-size: 14px; color: #999">搜索引擎</a> <a href="/blog/tags/摄影/" style="font-size: 14px; color: #999">摄影</a> <a href="/blog/tags/攻略/" style="font-size: 14px; color: #999">攻略</a> <a href="/blog/tags/效率/" style="font-size: 14px; color: #999">效率</a> <a href="/blog/tags/数字钱包/" style="font-size: 14px; color: #999">数字钱包</a> <a href="/blog/tags/数学/" style="font-size: 15.88px; color: #8c8c8c">数学</a> <a href="/blog/tags/数据结构/" style="font-size: 23.38px; color: #595959">数据结构</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，Hard/" style="font-size: 14.63px; color: #959595">数据结构，算法，LeetCode 日记，Hard</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，中等/" style="font-size: 14px; color: #999">数据结构，算法，LeetCode 日记，中等</a> <a href="/blog/tags/数组/" style="font-size: 14.63px; color: #959595">数组</a> <a href="/blog/tags/文物/" style="font-size: 14px; color: #999">文物</a> <a href="/blog/tags/日记/" style="font-size: 14.63px; color: #959595">日记</a> <a href="/blog/tags/易经/" style="font-size: 14px; color: #999">易经</a> <a href="/blog/tags/春招/" style="font-size: 15.25px; color: #919191">春招</a> <a href="/blog/tags/智能合约安全/" style="font-size: 14px; color: #999">智能合约安全</a> <a href="/blog/tags/最大公约数/" style="font-size: 14px; color: #999">最大公约数</a> <a href="/blog/tags/最大表示法/" style="font-size: 14px; color: #999">最大表示法</a> <a href="/blog/tags/最小表示法/" style="font-size: 14px; color: #999">最小表示法</a> <a href="/blog/tags/最长上升子序列/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/blog/tags/最长公共子序列/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/blog/tags/查拉图斯特拉/" style="font-size: 14px; color: #999">查拉图斯特拉</a> <a href="/blog/tags/栈/" style="font-size: 14px; color: #999">栈</a> <a href="/blog/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/blog/tags/树状数组/" style="font-size: 14px; color: #999">树状数组</a> <a href="/blog/tags/校招/" style="font-size: 16.5px; color: #888">校招</a> <a href="/blog/tags/概率/" style="font-size: 14.63px; color: #959595">概率</a> <a href="/blog/tags/模块/" style="font-size: 14px; color: #999">模块</a> <a href="/blog/tags/模拟面试/" style="font-size: 14px; color: #999">模拟面试</a> <a href="/blog/tags/模运算/" style="font-size: 14px; color: #999">模运算</a> <a href="/blog/tags/母题/" style="font-size: 14px; color: #999">母题</a> <a href="/blog/tags/每日一荐/" style="font-size: 17.75px; color: #808080">每日一荐</a> <a href="/blog/tags/永续合约/" style="font-size: 14px; color: #999">永续合约</a> <a href="/blog/tags/沟通/" style="font-size: 14px; color: #999">沟通</a> <a href="/blog/tags/治理/" style="font-size: 14px; color: #999">治理</a> <a href="/blog/tags/泛型/" style="font-size: 14.63px; color: #959595">泛型</a> <a href="/blog/tags/流动性池/" style="font-size: 14px; color: #999">流动性池</a> <a href="/blog/tags/测试/" style="font-size: 14px; color: #999">测试</a> <a href="/blog/tags/浏览器/" style="font-size: 15.25px; color: #919191">浏览器</a> <a href="/blog/tags/游戏/" style="font-size: 14px; color: #999">游戏</a> <a href="/blog/tags/滑动窗口/" style="font-size: 16.5px; color: #888">滑动窗口</a> <a href="/blog/tags/滤镜/" style="font-size: 14px; color: #999">滤镜</a> <a href="/blog/tags/焦作/" style="font-size: 14px; color: #999">焦作</a> <a href="/blog/tags/状态压缩/" style="font-size: 14px; color: #999">状态压缩</a> <a href="/blog/tags/状态机/" style="font-size: 14px; color: #999">状态机</a> <a href="/blog/tags/理财/" style="font-size: 15.88px; color: #8c8c8c">理财</a> <a href="/blog/tags/电子书/" style="font-size: 14px; color: #999">电子书</a> <a href="/blog/tags/电影/" style="font-size: 14.63px; color: #959595">电影</a> <a href="/blog/tags/百度/" style="font-size: 14px; color: #999">百度</a> <a href="/blog/tags/监控/" style="font-size: 14px; color: #999">监控</a> <a href="/blog/tags/秋招/" style="font-size: 14px; color: #999">秋招</a> <a href="/blog/tags/稳定币/" style="font-size: 14px; color: #999">稳定币</a> <a href="/blog/tags/算法/" style="font-size: 24px; color: #555">算法</a> <a href="/blog/tags/算法提高班/" style="font-size: 20.25px; color: #6f6f6f">算法提高班</a> <a href="/blog/tags/算法比赛/" style="font-size: 14px; color: #999">算法比赛</a> <a href="/blog/tags/算法系列/" style="font-size: 15.88px; color: #8c8c8c">算法系列</a> <a href="/blog/tags/算法通关之路/" style="font-size: 14px; color: #999">算法通关之路</a> <a href="/blog/tags/算法，最近公共祖先/" style="font-size: 14px; color: #999">算法，最近公共祖先</a> <a href="/blog/tags/线段树/" style="font-size: 14.63px; color: #959595">线段树</a> <a href="/blog/tags/组件化/" style="font-size: 14px; color: #999">组件化</a> <a href="/blog/tags/终端/" style="font-size: 14px; color: #999">终端</a> <a href="/blog/tags/经验分享/" style="font-size: 15.25px; color: #919191">经验分享</a> <a href="/blog/tags/维特根斯坦/" style="font-size: 14px; color: #999">维特根斯坦</a> <a href="/blog/tags/编程之美/" style="font-size: 14px; color: #999">编程之美</a> <a href="/blog/tags/缠论/" style="font-size: 14px; color: #999">缠论</a> <a href="/blog/tags/股票/" style="font-size: 14px; color: #999">股票</a> <a href="/blog/tags/自我提升/" style="font-size: 14px; color: #999">自我提升</a> <a href="/blog/tags/草稿/" style="font-size: 14.63px; color: #959595">草稿</a> <a href="/blog/tags/蓄水池抽样/" style="font-size: 14px; color: #999">蓄水池抽样</a> <a href="/blog/tags/虾皮/" style="font-size: 14px; color: #999">虾皮</a> <a href="/blog/tags/蜡烛图/" style="font-size: 14px; color: #999">蜡烛图</a> <a href="/blog/tags/衍生品/" style="font-size: 14px; color: #999">衍生品</a> <a href="/blog/tags/装机/" style="font-size: 14px; color: #999">装机</a> <a href="/blog/tags/解题模板/" style="font-size: 14px; color: #999">解题模板</a> <a href="/blog/tags/计划/" style="font-size: 14px; color: #999">计划</a> <a href="/blog/tags/读书/" style="font-size: 14.63px; color: #959595">读书</a> <a href="/blog/tags/读后感/" style="font-size: 14px; color: #999">读后感</a> <a href="/blog/tags/谷歌/" style="font-size: 15.25px; color: #919191">谷歌</a> <a href="/blog/tags/财报/" style="font-size: 14px; color: #999">财报</a> <a href="/blog/tags/账户抽象/" style="font-size: 14px; color: #999">账户抽象</a> <a href="/blog/tags/贪婪/" style="font-size: 14px; color: #999">贪婪</a> <a href="/blog/tags/贪心/" style="font-size: 14px; color: #999">贪心</a> <a href="/blog/tags/资产配置/" style="font-size: 14px; color: #999">资产配置</a> <a href="/blog/tags/走出科学/" style="font-size: 14px; color: #999">走出科学</a> <a href="/blog/tags/逆向思维/" style="font-size: 14px; color: #999">逆向思维</a> <a href="/blog/tags/递归/" style="font-size: 14px; color: #999">递归</a> <a href="/blog/tags/逻辑哲学论/" style="font-size: 14px; color: #999">逻辑哲学论</a> <a href="/blog/tags/配置备份/" style="font-size: 14px; color: #999">配置备份</a> <a href="/blog/tags/配置管理/" style="font-size: 14px; color: #999">配置管理</a> <a href="/blog/tags/量化/" style="font-size: 14px; color: #999">量化</a> <a href="/blog/tags/量化交易/" style="font-size: 14.63px; color: #959595">量化交易</a> <a href="/blog/tags/金融/" style="font-size: 14px; color: #999">金融</a> <a href="/blog/tags/钱包/" style="font-size: 15.25px; color: #919191">钱包</a> <a href="/blog/tags/链上分析/" style="font-size: 14px; color: #999">链上分析</a> <a href="/blog/tags/链表/" style="font-size: 15.25px; color: #919191">链表</a> <a href="/blog/tags/陷阱题/" style="font-size: 14px; color: #999">陷阱题</a> <a href="/blog/tags/面经/" style="font-size: 15.88px; color: #8c8c8c">面经</a> <a href="/blog/tags/面试/" style="font-size: 16.5px; color: #888">面试</a> <a href="/blog/tags/预言机/" style="font-size: 14px; color: #999">预言机</a> <a href="/blog/tags/题解/" style="font-size: 17.75px; color: #808080">题解</a> <a href="/blog/tags/风险管理/" style="font-size: 14px; color: #999">风险管理</a> <a href="/blog/tags/魔兽争霸3/" style="font-size: 14px; color: #999">魔兽争霸3</a> <a href="/blog/tags/黑客/" style="font-size: 14px; color: #999">黑客</a>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget list'>
+  
+<header class='pure'>
+  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;强烈推荐</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="entry">
+      
+        <li><a class="flat-box" title="https://lucifer.ren/blog/2022/04/26/books-2022/" href="https://lucifer.ren/blog/2022/04/26/books-2022/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;西法的 2022 书单推荐
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=0iygwnzh" href="https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=0iygwnzh"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;【阿里云】轻量应用服务器2核2G 低至60元/年起
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://leetcode-solution.cn/book-intro" href="https://leetcode-solution.cn/book-intro"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;《算法通关之路》
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://yasuotu.com" href="https://yasuotu.com"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;图片在线压缩
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/fe-lucifer/fanqiang" href="https://github.com/fe-lucifer/fanqiang"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;科学上网
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://mxclub.github.io/resume/" href="https://mxclub.github.io/resume/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;简历主题
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+   
+  <div class="social-wrapper">
+     
+    <a
+      href="/blog/atom.xml"
+      class="social fas fa-rss flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://www.zhihu.com/people/lu-xiao-13-70/activities"
+      class="social fab fa-zhihu flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="mailto:azl397985856@gmail.com"
+      class="social fas fa-envelope flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://github.com/azl397985856"
+      class="social fab fa-github flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://music.163.com/playlist?id=978545815&amp;userid=632167080"
+      class="social fas fa-headphones-alt flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="/blog/wc3map/"
+      class="social fas fa-dragon flat-btn"
+      title="魔兽地图 · 四兄弟 Footmen Frenzy 纪念版（多版本下载）"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="/blog/files/war3-coach-portable.zip"
+      class="social fas fa-chalkboard-teacher flat-btn"
+      title="war3-coach · 魔兽训练辅助工具（回放分析+对手库，免安装便携版，下载解压即用）"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://wormhole.app"
+      class="social fas fa-paper-plane flat-btn"
+      title="Wormhole · 免登录文件分享（端到端加密，10GB/24小时）"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+     
+  </div>
+  
+  <br />
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename"
+      >Material X</a
+    >
+    作为主题  。
+  </div>
+
+  <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+  <script>
+    var now = new Date();
+    function createtime() {
+      var grt = new Date("08/10/2018 17:38:00"); //在此处修改你的建站时间，格式：月/日/年 时:分:秒
+      now.setTime(now.getTime() + 250);
+      days = (now - grt) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+      hnum = Math.floor(hours);
+      if (String(hnum).length == 1) {
+        hnum = "0" + hnum;
+      }
+      minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+      mnum = Math.floor(minutes);
+      if (String(mnum).length == 1) {
+        mnum = "0" + mnum;
+      }
+      seconds =
+        (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+      snum = Math.round(seconds);
+      if (String(snum).length == 1) {
+        snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML =
+        "本站已安全运行 " + dnum + " 天 ";
+      document.getElementById("times").innerHTML =
+        hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()", 250);
+  </script>
+</footer>
+<script>
+  setLoadingBarProgress(80);
+</script>
+
+
+        <script>
+          setLoadingBarProgress(60);
+        </script>
+      </div>
+      <a class="s-top fas fa-arrow-up fa-fw" href="javascript:void(0)"></a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "aea1377036afe4cd0343",
+      clientSecret: "815c638dea8644b7a4b97905707cf72b45555f6d",
+      repo: "blog",
+      owner: "azl397985856",
+      admin: "azl397985856",
+      
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
+
+
+
+
+
+  <script src="https://lucifer.ren/blog/js/app.js"></script>
+
+
+  <script src="https://lucifer.ren/blog/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+    <script>
+      setLoadingBarProgress(100);
+    </script>
+  </body>
+</html>

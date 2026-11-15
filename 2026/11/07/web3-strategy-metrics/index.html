@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>夏普比率：怎么判断一个策略是真好还是运气好 | lucifer的网络博客</title>
+  
+  <meta name="keywords" content="前端 leetocde 数据结构 算法 lucifer 大前端 性能优化 前端架构 前端工程化">
+  
+  
+  <meta name="description" content="lucifer的个人博客，用来记录LeeCode刷题过程和心得，以及构建大前端知识体系">
+  
+
+  
+  <link rel="alternate" href="/blog/atom.xml" title="lucifer的网络博客">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+  
+
+  
+    <link rel="stylesheet" href="https://lucifer.ren/blog/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVTTYT432Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FVTTYT432Q');
+    </script>
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?576ec211e11a69128667eb8c11a6cffe";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+  <script
+    src="https://my.openwrite.cn/js/readmore.js"
+    type="text/javascript"
+  ></script>
+  <script>
+    var btw = new BTWPlugin();
+    setTimeout(function () {
+      window.btw.init({
+        id: "container",
+        blogId: "17446-1571644985832-648",
+        name: "力扣加加",
+        qrcode: "https://p.ipic.vip/n8gbxo.jpg",
+        keyword: "more",
+      });
+    }, 100);
+  </script>
+  <body>
+    
+    
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>lucifer</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/blog/"
+            
+            
+            id="blog">
+            <i class='fas fa-home fa-fw'></i>&nbsp;主页
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="http://leetcode-solution.cn/"
+            
+            
+            id="http:leetcode-solution.cn">
+            <i class='fas fa-laptop-code fa-fw'></i>&nbsp;官网
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/friends/"
+            
+            
+            id="blogfriends">
+            <i class='fas fa-link fa-fw'></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/about/"
+            
+            
+            id="blogabout">
+            <i class='fas fa-id-card-alt fa-fw'></i>&nbsp;联系我
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/blog/' >
+        
+          lucifer的网络博客
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/blog/"
+                  
+                  
+                  id="blog">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;回到主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/categories/"
+                  
+                  
+                  id="blogcategories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/tags/"
+                  
+                  
+                  id="blogtags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/archives/"
+                  
+                  
+                  id="blogarchives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/blog/"
+                
+                
+                id="blog">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/archives/"
+                
+                
+                id="blogarchives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/about/"
+                
+                
+                id="blogabout">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+    <div id="container" class="l_body">
+      <div class="body-wrapper">
+        <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/blog/2026/11/07/web3-strategy-metrics/">
+        夏普比率：怎么判断一个策略是真好还是运气好
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2026-11-07</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/理财/量化/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>理财&nbsp;/&nbsp;量化</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">6.3k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">23分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>大家好，我是 Lucifer。今天聊一个做量化的人天天要面对的问题：回测报告里的夏普比率，到底是本事，还是运气。</p>
+<p>你大概率经历过这个瞬间：Freqtrade 回测跑完，终端哗啦啦吐出一堆指标——总收益、夏普比率、索提诺比率、卡玛比率、最大回撤……大多数人只盯着收益率那一行，眼睛发直，手已经悬在”实盘启动”按钮上了。稍微冷静一点的会瞟一眼 Sharpe 1.8，然后开始灵魂拷问：1.8，算”策略很强”，还是算”我菜到看不懂”？</p>
+<p><a href="https://lucifer.ren/blog/2025/07/01/trading-system-demo/" title="《小菜的交易系统》">《小菜的交易系统》</a>里说过，一套交易系统必须”可量化”——进场理由要量化、出场条件要量化，绩效同样要量化。量化绩效量化的是什么？不只是”赚了多少”，而是<strong>每一份收益背后，你扛了多少惊吓</strong>。这套体系叫风险调整后收益指标，本文用纯标准库 Python（random / statistics / math）把它们挨个算一遍，所有代码和数字都是真实运行的。最后回答那个终极问题：你的夏普，是本事，还是猴子掷飞镖。</p>
+<a id="more"></a>
+<h2 id="一、单看收益率，等于裸奔"><a href="#一、单看收益率，等于裸奔" class="headerlink" title="一、单看收益率，等于裸奔"></a>一、单看收益率，等于裸奔</h2><p>先做个选择题，两个策略摆你面前，你选哪个？</p>
+<ul>
+<li>策略 A：年化 100%，最大回撤 80%</li>
+<li>策略 B：年化 30%，最大回撤 8%</li>
+</ul>
+<p>只看收益率，A 吊打 B，没悬念。但把”风险”放进来看，画风就变了：</p>
+<ul>
+<li>策略 A 亏 80% 之后，要涨 400% 才能回本。100 万进去，最低点剩 20 万——绝大多数人在 -50% 的位置就已经心态爆炸割肉离场，根本活不到”回本那天”。年化 100% 的前提，是你先扛住一段水下 80% 的岁月，像一份年薪百万、但每年要先赌一次命的工作。</li>
+<li>策略 B 回撤 8%，亏损期你该吃吃该睡睡——8% 就是这个策略的”正常呼吸幅度”，像坐公交，颠两下是路况，不是车祸。</li>
+</ul>
+<p>画个重点：<strong>收益率回答的是”赚多快”，回撤和波动回答的是”路上有多颠”。</strong>把两者合起来看的指标，叫风险调整后收益：<strong>每承担一单位风险，换来多少收益</strong>。下面从最有名的那个开始。</p>
+<h2 id="二、夏普比率：每受一份惊吓，换多少钱"><a href="#二、夏普比率：每受一份惊吓，换多少钱" class="headerlink" title="二、夏普比率：每受一份惊吓，换多少钱"></a>二、夏普比率：每受一份惊吓，换多少钱</h2><p>夏普比率由 William Sharpe 提出（1990 年诺贝尔经济学奖），定义长这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sharpe = (Rp − Rf) / σp</span><br></pre></td></tr></table></figure>
+<p>看着吓人，翻译成大白话就一句：<strong>每受一份惊吓，换多少钱。</strong>挨个拆：</p>
+<ul>
+<li><strong>分子 Rp − Rf</strong>：你比”躺赢”多赚的部分。Rf 是无风险利率——钱放在完全不冒险的地方也能躺赚的那点利息。夏普只认冒险换来的钱，躺赚的不算本事，所以要先减掉。</li>
+<li><strong>分母 σp</strong>：收益的标准差，也就是波动率——净值每天上蹿下跳的幅度。翻译过来就是”惊吓剂量”。</li>
+</ul>
+<p>你可能在想：赚 30% 不就行了，管它路上怎么颠？还真不行。看下面两条曲线——终点一样，一年都赚 65%，但策略 A 全程坐过山车，半道还挖了个 -15% 的坑，你大概率在坑里割肉离场，根本领不到终点的奖金；策略 B 匀速爬坡，你睡得着觉。</p>
+<p><img src="https://lucifer.ren/blog/images/web3/sharpe-two-curves.png" alt="收益相同、波动不同的两条资金曲线：红色过山车年化夏普约 1.4，绿色匀速爬坡约 4.3，终点一样含金量天差地别"></p>
+<p>画个重点：<strong>夏普惩罚的正是这种颠簸——终点相同，谁走得稳谁的分数高。</strong>同样年赚 30%，一个策略让你天天心跳过速，一个策略让你睡到自然醒，后者的夏普高得多：钱一样多，每份惊吓换到的钱不一样，含金量就不一样。</p>
+<h3 id="无风险利率取多少？"><a href="#无风险利率取多少？" class="headerlink" title="无风险利率取多少？"></a>无风险利率取多少？</h3><p>教科书答案是<strong>美国 3 个月期国债收益率</strong>——“无风险”的锚就是政府短期信用，全球机构默认用它。加密圈的常见做法是<strong>直接简化为 0</strong>：一是比较两个策略的相对优劣时，Rf 对所有策略同减一个常数，排序基本不变；二是少一个要交代的参数，代码更干净。代价是所有策略的夏普都被整体抬高了一点，所以跨市场、跨文章比较夏普时，先确认口径一致。本文所有计算取 Rf = 0。</p>
+<h3 id="为什么要乘-√365-或-√252？"><a href="#为什么要乘-√365-或-√252？" class="headerlink" title="为什么要乘 √365 或 √252？"></a>为什么要乘 √365 或 √252？</h3><p>直接用日收益算出来的夏普，量纲是”每天的性价比”，没法和年化收益对话，所以要年化。年化系数 √N 的出处是概率论，不是玄学。直觉版是这样的：</p>
+<p>先记住一个常识：<strong>时间拉得越长，波动反而越”平”。</strong>抛 10 次硬币，正面比例可能是 30% 这种离谱数字；抛一万次，比例几乎贴着 50%——一次一次的随机，在长过程中互相抵消了。日收益也一样：365 天的总波动，不是日波动的 365 倍，而是 √365 倍（方差才相加，开根号之后就缩了）。</p>
+<p>麻烦在这儿：<strong>波动会互相抵消，收益不会。</strong>赚就是赚，365 天的总收益是日均值的实打实 365 倍。于是：</p>
+<ul>
+<li>收益端：日均值 × 365（线性放大）；</li>
+<li>风险端：日波动 × √365（只放大了 √365 倍）。</li>
+</ul>
+<p>两边一除，年化夏普 = (μ/σ) × √N。<strong>√N 就是补上”风险端没跟着收益端一起线性放大”的那笔账</strong>——不做这个补偿，周期越长的夏普显得越低，纯属记账错误，不是策略变差了。</p>
+<p>N 取多少，看你的市场一年有几根日 K 线：</p>
+<ul>
+<li><strong>加密市场 7×24 全年无休</strong>：N = 365，√365 ≈ 19.10；</li>
+<li><strong>美股一年约 252 个交易日</strong>（52 周 × 5 天 = 260，扣除法定假日）：N = 252，√252 ≈ 15.87。</li>
+</ul>
+<p>拿股票的 √252 去年化加密策略，所有夏普都会被系统性压低约 17%——一个低级但极常见的错误，回去检查一下你手里的回测框架。</p>
+<h3 id="经验标尺（以及两个警惕）"><a href="#经验标尺（以及两个警惕）" class="headerlink" title="经验标尺（以及两个警惕）"></a>经验标尺（以及两个警惕）</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>年化夏普</th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 0.5</td>
+<td>弱：这个收益波动比，不如定投指数省心</td>
+</tr>
+<tr>
+<td>0.5 ~ 1</td>
+<td>一般：有点东西，但不够付你的盯盘时间</td>
+</tr>
+<tr>
+<td>1 ~ 2</td>
+<td>良好：专业机构的主战场，多数 CTA 和趋势策略落在这里</td>
+</tr>
+<tr>
+<td>&gt; 2</td>
+<td>优秀：先别激动，看下面两个警惕</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>警惕一：高频/做市策略的夏普天然高。</strong>日均成交几千次，单次风险被海量交易摊平，顶级做市商夏普 10+ 不稀奇。拿日线策略的 1.5 去跟人家的 8 比，是拿马拉松成绩去对比百米冠军的配速——类别不同，不可直接对表。</p>
+<p><strong>警惕二：样本短的夏普不可信。</strong>这是本文真正想说的重点，先埋个伏笔，第七节放 1000 只猴子出来捅破它。</p>
+<p>顺便一提，Freqtrade hyperopt 里的 <code>SharpeHyperOptLoss</code> 损失函数，就是在直接优化本文讲的这个数字——hyperopt 的玩法见<a href="https://lucifer.ren/blog/2026/07/20/web3-freqtrade-2/" title="多信号评分策略实战">《多信号评分策略实战》</a>，优化目标选得好不好，直接决定你调出来的是策略还是过拟合怪兽。</p>
+<h2 id="三、夏普的兄弟们：Sortino、最大回撤、Calmar"><a href="#三、夏普的兄弟们：Sortino、最大回撤、Calmar" class="headerlink" title="三、夏普的兄弟们：Sortino、最大回撤、Calmar"></a>三、夏普的兄弟们：Sortino、最大回撤、Calmar</h2><p>夏普有个先天槽点：分母 σp 把上涨也算成”惊吓”。账户暴涨 20% 对你来说不是惊吓，是惊喜——顶多让你下个月的消费预算开始膨胀。于是有了修正版。</p>
+<p><strong>Sortino（索提诺比率）</strong>：把分母换成下行波动——只统计亏损日的颠簸，盈利日记 0，再同样年化。它只惩罚”你不想要的波动”，保守派专用。</p>
+<p><strong>最大回撤 MDD（Maximum Drawdown）</strong>：峰谷法——沿净值曲线从左走到右，每创一个历史新高就记下来，然后看净值离这个高点最深跌到哪，取历史最惨的一次。它不是比率，是一个百分比：-34% 就是最惨那一刻你的账面浮亏。回答的问题是：”这策略最难熬的时候，有多难熬？”</p>
+<p><img src="https://lucifer.ren/blog/images/web3/sharpe-drawdown.png" alt="最大回撤的峰谷示意：绿色点是历史最高点，红色点是它之后的谷底，两点之间的跌幅就是 MDD"></p>
+<p><strong>Calmar（卡玛比率）</strong>：年化收益 / |MDD|，回撤视角的性价比——收益除以你挨过的最重那一拳。</p>
+<p>四个指标各看一面，谁也替代不了谁：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>一句话公式</th>
+<th>惩罚什么</th>
+<th>适合回答的问题</th>
+<th>盲区</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>夏普</td>
+<td>(收益−无风险) / 总波动</td>
+<td>全部波动（含上涨）</td>
+<td>整体性价比</td>
+<td>把暴涨也当风险</td>
+</tr>
+<tr>
+<td>Sortino</td>
+<td>收益 / 下行波动</td>
+<td>只算下跌</td>
+<td>我只在乎亏</td>
+<td>下跌样本少，估计不稳</td>
+</tr>
+<tr>
+<td>MDD</td>
+<td>峰到谷的最大跌幅</td>
+<td>最惨的一跌</td>
+<td>极端时刻能否扛住</td>
+<td>只记最差一次，不管频率</td>
+</tr>
+<tr>
+<td>Calmar</td>
+<td>年化收益 / \</td>
+<td>MDD\</td>
+<td></td>
+<td>最惨的一跌</td>
+<td>回撤性价比</td>
+<td>分母只有一次事件，极不稳定</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>注意最后一列：每个指标都有盲区。Freqtrade 的回测报告把这一家四口全打出来，就是让你对着看，而不是只截其中一张发朋友圈——报告在哪看，见<a href="https://lucifer.ren/blog/2025/10/01/web3-freqtrade/" title="Freqtrade 量化风暴">《Freqtrade 量化风暴》</a>。</p>
+<h2 id="四、手搓一个指标计算器"><a href="#四、手搓一个指标计算器" class="headerlink" title="四、手搓一个指标计算器"></a>四、手搓一个指标计算器</h2><p>光说不练假把式。下面用纯标准库把五个数一次算齐：输入一段模拟日收益序列（365 天，日均值 0.15%，日标准差 1.5%——典型”加密风格”参数），输出全套指标。看代码前先给直觉：净值曲线就是每天 (1+r) 连乘；夏普和 Sortino 都在算”均值除以某种波动”，差别只在波动怎么定义；MDD 用峰谷法一遍扫出来。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> statistics</span><br><span class="line"></span><br><span class="line">random.seed(<span class="number">42</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># --- 模拟一段"加密风格"的日收益序列：365 天，日均值 0.15%，日标准差 1.5% ---</span></span><br><span class="line">N = <span class="number">365</span></span><br><span class="line">returns = [random.gauss(<span class="number">0.0015</span>, <span class="number">0.015</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(N)]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">perf_report</span><span class="params">(rets, periods=<span class="number">365</span>)</span>:</span></span><br><span class="line">    <span class="string">"""输入一段日收益序列，输出整套风险调整后指标（加密 7x24，一年 365 期）"""</span></span><br><span class="line">    n = len(rets)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 1) 净值曲线：每天 (1+r) 连乘，顺便用峰谷法扫最大回撤</span></span><br><span class="line">    nav = <span class="number">1.0</span></span><br><span class="line">    peak = <span class="number">1.0</span></span><br><span class="line">    mdd = <span class="number">0.0</span>                          <span class="comment"># 最大回撤：历史高点到之后最低点的最大跌幅</span></span><br><span class="line">    <span class="keyword">for</span> r <span class="keyword">in</span> rets:</span><br><span class="line">        nav *= (<span class="number">1</span> + r)</span><br><span class="line">        peak = max(peak, nav)          <span class="comment"># 先更新历史新高</span></span><br><span class="line">        mdd = min(mdd, nav / peak - <span class="number">1</span>) <span class="comment"># 再记录当前净值离高点跌了多少</span></span><br><span class="line"></span><br><span class="line">    total_return = nav - <span class="number">1</span></span><br><span class="line">    ann_return = nav ** (periods / n) - <span class="number">1</span>       <span class="comment"># 几何年化：按期数复利放大</span></span><br><span class="line"></span><br><span class="line">    mean_r = statistics.mean(rets)</span><br><span class="line">    std_r = statistics.stdev(rets)              <span class="comment"># 样本标准差（除以 n-1）</span></span><br><span class="line">    ann_vol = std_r * math.sqrt(periods)        <span class="comment"># 年化波动 = 日波动 × sqrt(365)</span></span><br><span class="line"></span><br><span class="line">    sharpe = (mean_r - <span class="number">0.0</span>) / std_r * math.sqrt(periods)  <span class="comment"># 无风险利率简化取 0</span></span><br><span class="line"></span><br><span class="line">    downside = [min(r, <span class="number">0.0</span>) <span class="keyword">for</span> r <span class="keyword">in</span> rets]      <span class="comment"># 只留下亏损的日子，盈利日记 0</span></span><br><span class="line">    dd_dev = math.sqrt(sum(d * d <span class="keyword">for</span> d <span class="keyword">in</span> downside) / n)</span><br><span class="line">    sortino = mean_r / dd_dev * math.sqrt(periods)</span><br><span class="line"></span><br><span class="line">    calmar = ann_return / abs(mdd)              <span class="comment"># 年化收益 / |最大回撤|</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">f"样本天数        : <span class="subst">&#123;n&#125;</span>"</span>)</span><br><span class="line">    print(<span class="string">f"累计收益        : <span class="subst">&#123;total_return:+<span class="number">.2</span>%&#125;</span>"</span>)</span><br><span class="line">    print(<span class="string">f"年化收益        : <span class="subst">&#123;ann_return:+<span class="number">.2</span>%&#125;</span>"</span>)</span><br><span class="line">    print(<span class="string">f"年化波动        : <span class="subst">&#123;ann_vol:<span class="number">.2</span>%&#125;</span>"</span>)</span><br><span class="line">    print(<span class="string">f"夏普比率        : <span class="subst">&#123;sharpe:<span class="number">.2</span>f&#125;</span>"</span>)</span><br><span class="line">    print(<span class="string">f"索提诺比率      : <span class="subst">&#123;sortino:<span class="number">.2</span>f&#125;</span>"</span>)</span><br><span class="line">    print(<span class="string">f"最大回撤 MDD    : <span class="subst">&#123;mdd:<span class="number">.2</span>%&#125;</span>"</span>)</span><br><span class="line">    print(<span class="string">f"卡玛比率 Calmar : <span class="subst">&#123;calmar:<span class="number">.2</span>f&#125;</span>"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">perf_report(returns)</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果</strong>（真实输出）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">样本天数        : 365</span><br><span class="line">累计收益        : +159.74%</span><br><span class="line">年化收益        : +159.74%</span><br><span class="line">年化波动        : 28.89%</span><br><span class="line">夏普比率        : 3.45</span><br><span class="line">索提诺比率      : 5.67</span><br><span class="line">最大回撤 MDD    : -12.34%</span><br><span class="line">卡玛比率 Calmar : 12.94</span><br></pre></td></tr></table></figure>
+<p>三个细节值得圈出来：</p>
+<ol>
+<li><strong>夏普 3.45 明显虚高</strong>。按塞进去的真实参数算，理论夏普 = (0.15% / 1.5%) × √365 ≈ 1.91，但这一年的样本均值恰好走了运，算出来 3.45。看清楚：<strong>样本噪音不需要任何人造假，就能把数字抬高 80%</strong>——这还只是抽样抽歪了，没有任何人捣鬼。</li>
+<li><strong>Calmar 12.94 离谱</strong>。年化波动 28.9% 的资产，最大回撤只有 -12.34%？纯粹是这段样本恰好没赶上深回撤——像体检那天恰好没发烧，不代表身体好。Calmar 的分母是”最惨的一跌”这单独一个事件，天然比夏普不稳，一年样本的 Calmar 参考价值有限。</li>
+<li><strong>累计收益 = 年化收益</strong>，是因为样本恰好 365 天（n 等于年化期数）。如果你只回测了半年，几何年化会把数字按复利放大——所以看任何报告先看样本长度，再看数字。</li>
+</ol>
+<p>顺带说：这段模拟序列的真实参数确实有 edge（日均值 0.15% &gt; 0，是我们亲手塞的），所以 3.45 虽虚高，方向没错。真正瘆人的问题是：一个<strong>零 edge</strong> 的策略，光靠运气能把夏普飘到多高？第七节，放猴子出来。</p>
+<h2 id="五、胜率、盈亏比与期望值：一笔摆摊的账"><a href="#五、胜率、盈亏比与期望值：一笔摆摊的账" class="headerlink" title="五、胜率、盈亏比与期望值：一笔摆摊的账"></a>五、胜率、盈亏比与期望值：一笔摆摊的账</h2><p>夏普家族看的是日收益序列；还有一组指标看”每一笔交易”：胜率、盈亏比、期望值。先统一单位——本文用 R 计价，1R = 你单笔愿意亏掉的风险额（比如本金的 1%）。亏 1R = 打到止损；赚 1.5R = 盈利是风险额的 1.5 倍。</p>
+<p>每笔交易的期望值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">期望 = 胜率 × 平均盈利 − 败率 × 平均亏损</span><br></pre></td></tr></table></figure>
+<p>别急着背公式，这笔账摆摊的人天天在算。你摆摊进货，一批货压 100 块（就是 1R），进了 10 批：</p>
+<ul>
+<li>成 5.5 批，每批赚 150 块（盈亏比 1.5）——赚回 825 块；</li>
+<li>砸 4.5 批，每批赔 100 块——赔掉 450 块。</li>
+</ul>
+<p>10 批净赚 375 块，平均每批 +37.5 块，折算回来就是<strong>期望 +0.375 R/笔</strong>。你错将近一半的次数照样赚钱，原因只有一条：<strong>赢单比亏单大</strong>。摊贩不会因为砸了两批货就收摊，只要每一批的账算下来是正的，重复进货就是印钱。</p>
+<p>用这本账看两种熟悉的面孔：</p>
+<ul>
+<li><strong>扛单党</strong>：胜率 95%，平均赚 0.1R（赚点小钱就跑），偶尔一次扛到爆亏 3R。摆摊版：每批赚 10 块，天天开张、眉开眼笑；偶尔一批砸手里，赔 300。期望 = 0.95 × 0.1 − 0.05 × 3 = <strong>-0.055 R/笔</strong>。天天都在赚，数学上在给市场免费打工——摊位看着红火，年底一算账，倒贴房租。不加止损的网格、逆势加仓的抄底党，很多都是这个画像。</li>
+<li><strong>趋势党</strong>：胜率 55%，平均赚 1.5R，平均亏 1R。就是上面那个摊子：十批货错四批半，照样稳稳赚钱。</li>
+</ul>
+<p>记住 55% 和 1.5 这两个数字，马上还要出场。</p>
+<p><a href="https://lucifer.ren/blog/2026/05/22/web3-risk-management/" title="加密交易的风险管理">《加密交易的风险管理》</a>里讲过 Kelly 公式：f<em> = (bp − q) / b，最优仓位由胜率 p 和赔率 b 决定。那篇文章留下的悬念是：”胜率 55%、赔率 1.5”这些输入从哪来？答案现在揭晓：<em>*不是拍脑袋，是从你自己的交易记录里统计出来的</em></em>。下一节实操——顺便看看，统计出来的数能歪到什么程度。</p>
+<h2 id="六、从交易记录统计：凯利公式的进料口"><a href="#六、从交易记录统计：凯利公式的进料口" class="headerlink" title="六、从交易记录统计：凯利公式的进料口"></a>六、从交易记录统计：凯利公式的进料口</h2><p>模拟一个真实参数已知的策略（真实胜率 55%、真实盈亏比 1.5，每笔金额带 ±30% 随机波动），让它打 100 笔交易。然后假装我们不知道真相，只看交易记录做统计——你回测的时候，能看到的也只有交易记录。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> statistics</span><br><span class="line"></span><br><span class="line">random.seed(<span class="number">7</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># --- 模拟 100 笔交易：真实胜率 55%，真实盈亏比 1.5（每笔金额带 ±30% 随机波动） ---</span></span><br><span class="line">N_TRADES = <span class="number">100</span></span><br><span class="line">pnl = []</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(N_TRADES):</span><br><span class="line">    <span class="keyword">if</span> random.random() &lt; <span class="number">0.55</span>:                        <span class="comment"># 赢</span></span><br><span class="line">        pnl.append(<span class="number">1.5</span> * random.uniform(<span class="number">0.7</span>, <span class="number">1.3</span>))    <span class="comment"># 赚约 1.5R</span></span><br><span class="line">    <span class="keyword">else</span>:                                             <span class="comment"># 输</span></span><br><span class="line">        pnl.append(<span class="number">-1.0</span> * random.uniform(<span class="number">0.7</span>, <span class="number">1.3</span>))   <span class="comment"># 亏约 1R</span></span><br><span class="line"></span><br><span class="line">wins = [x <span class="keyword">for</span> x <span class="keyword">in</span> pnl <span class="keyword">if</span> x &gt; <span class="number">0</span>]</span><br><span class="line">losses = [x <span class="keyword">for</span> x <span class="keyword">in</span> pnl <span class="keyword">if</span> x &lt;= <span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">win_rate = len(wins) / N_TRADES                   <span class="comment"># 统计胜率</span></span><br><span class="line">avg_win = statistics.mean(wins)                   <span class="comment"># 平均每笔赚多少 R</span></span><br><span class="line">avg_loss = abs(statistics.mean(losses))           <span class="comment"># 平均每笔亏多少 R</span></span><br><span class="line">payoff = avg_win / avg_loss                       <span class="comment"># 盈亏比</span></span><br><span class="line">expectancy = win_rate * avg_win - (<span class="number">1</span> - win_rate) * avg_loss  <span class="comment"># 期望值（R/笔）</span></span><br><span class="line">kelly = win_rate - (<span class="number">1</span> - win_rate) / payoff        <span class="comment"># 凯利公式给出的仓位</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">f"交易笔数        : <span class="subst">&#123;N_TRADES&#125;</span>"</span>)</span><br><span class="line">print(<span class="string">f"统计胜率        : <span class="subst">&#123;win_rate:<span class="number">.1</span>%&#125;</span>   (真实值 55%)"</span>)</span><br><span class="line">print(<span class="string">f"平均盈利        : +<span class="subst">&#123;avg_win:<span class="number">.2</span>f&#125;</span> R"</span>)</span><br><span class="line">print(<span class="string">f"平均亏损        : -<span class="subst">&#123;avg_loss:<span class="number">.2</span>f&#125;</span> R"</span>)</span><br><span class="line">print(<span class="string">f"盈亏比          : <span class="subst">&#123;payoff:<span class="number">.2</span>f&#125;</span>   (真实值 1.5)"</span>)</span><br><span class="line">print(<span class="string">f"期望值          : <span class="subst">&#123;expectancy:+<span class="number">.3</span>f&#125;</span> R/笔"</span>)</span><br><span class="line">print(<span class="string">f"凯利仓位 f*     : <span class="subst">&#123;kelly:<span class="number">.1</span>%&#125;</span>"</span>)</span><br><span class="line">print(<span class="string">f"半凯利          : <span class="subst">&#123;kelly / <span class="number">2</span>:<span class="number">.1</span>%&#125;</span>"</span>)</span><br><span class="line">print(<span class="string">f"单笔固定风险 1% : 相当于凯利仓位的 <span class="subst">&#123;<span class="number">0.01</span> / kelly:<span class="number">.0</span>%&#125;</span>"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># --- 同一个策略重复统计 20 次，看统计值围绕真实值怎么飘 ---</span></span><br><span class="line">rates = []</span><br><span class="line">payoffs = []</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">20</span>):</span><br><span class="line">    w = <span class="number">0</span></span><br><span class="line">    sum_w = <span class="number">0.0</span></span><br><span class="line">    sum_l = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(N_TRADES):</span><br><span class="line">        <span class="keyword">if</span> random.random() &lt; <span class="number">0.55</span>:</span><br><span class="line">            w += <span class="number">1</span></span><br><span class="line">            sum_w += <span class="number">1.5</span> * random.uniform(<span class="number">0.7</span>, <span class="number">1.3</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            sum_l += <span class="number">1.0</span> * random.uniform(<span class="number">0.7</span>, <span class="number">1.3</span>)</span><br><span class="line">    rates.append(w / N_TRADES)</span><br><span class="line">    payoffs.append((sum_w / w) / (sum_l / (N_TRADES - w)))</span><br><span class="line"></span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line">print(<span class="string">f"同一策略统计 20 次的胜率范围  : <span class="subst">&#123;min(rates):<span class="number">.0</span>%&#125;</span> ~ <span class="subst">&#123;max(rates):<span class="number">.0</span>%&#125;</span> (真实 55%)"</span>)</span><br><span class="line">print(<span class="string">f"同一策略统计 20 次的盈亏比范围: <span class="subst">&#123;min(payoffs):<span class="number">.2</span>f&#125;</span> ~ <span class="subst">&#123;max(payoffs):<span class="number">.2</span>f&#125;</span> (真实 1.5)"</span>)</span><br><span class="line">se = math.sqrt(<span class="number">0.55</span> * <span class="number">0.45</span> / N_TRADES)</span><br><span class="line">print(<span class="string">f"100 笔样本的胜率标准误        : ±<span class="subst">&#123;se:<span class="number">.1</span>%&#125;</span>"</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果</strong>（真实输出）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">交易笔数        : 100</span><br><span class="line">统计胜率        : 63.0%   (真实值 55%)</span><br><span class="line">平均盈利        : +1.45 R</span><br><span class="line">平均亏损        : -1.02 R</span><br><span class="line">盈亏比          : 1.42   (真实值 1.5)</span><br><span class="line">期望值          : +0.538 R/笔</span><br><span class="line">凯利仓位 f*     : 37.0%</span><br><span class="line">半凯利          : 18.5%</span><br><span class="line">单笔固定风险 1% : 相当于凯利仓位的 3%</span><br><span class="line"></span><br><span class="line">同一策略统计 20 次的胜率范围  : 49% ~ 62% (真实 55%)</span><br><span class="line">同一策略统计 20 次的盈亏比范围: 1.39 ~ 1.68 (真实 1.5)</span><br><span class="line">100 笔样本的胜率标准误        : ±5.0%</span><br></pre></td></tr></table></figure>
+<p>看懂这份输出，比看懂任何营销海报都重要：</p>
+<ul>
+<li><strong>统计胜率 63%，真实只有 55%</strong>——差 8 个点，但这完全在正常范围内：100 笔样本的胜率标准误约 ±5%，63% 也就是偏离 1.6 个标准误而已。同一个策略重复统计 20 次，胜率在 49%~62% 之间飘。你以为的”状态好坏”，很多时候只是抽样噪音——同一锅汤舀一勺尝咸淡，这一勺的咸淡不代表整锅。</li>
+<li><strong>凯利公式对输入误差极其敏感</strong>。真实参数下的凯利是 25%，但统计胜率被高估到 63% 后，凯利直接膨胀到 37%——胜率高估 8 个点，建议仓位多吃近一半。这就是风险管理那篇强调”实盘用半凯利甚至四分之一凯利”的数学原因：不是怂，是在对冲统计误差。</li>
+<li><strong>单笔固定风险 1%，只相当于这份凯利建议的 3%</strong>，保守得近乎无聊。但复利的本质是活着，无聊地活着比刺激地死去强。</li>
+</ul>
+<p>实操结论：统计值围绕真实值波动，样本越大越接近真相。100 笔起步，300 笔像样；至于 30 笔交易统计出的”胜率 70%”——30 笔的标准误约 ±9%，运气好统计出 70%、运气差就能统计出 40%，全看抽到哪一手——建议直接当段子听。</p>
+<h2 id="七、运气还是技巧：1000-只猴子的审判"><a href="#七、运气还是技巧：1000-只猴子的审判" class="headerlink" title="七、运气还是技巧：1000 只猴子的审判"></a>七、运气还是技巧：1000 只猴子的审判</h2><p>前面所有铺垫，都是为了回答开场那个问题。思路粗暴而优雅：<strong>造 1000 个”零期望”的纯随机策略</strong>——每天从均值为 0 的正态分布里抽一个收益率，没有任何 edge，纯抛硬币。你可以把它们想象成 1000 只猴子掷飞镖。然后挨个算年化夏普，看猴群整体能考出什么成绩——尤其是最好的那只猴子，能好到什么程度。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> statistics</span><br><span class="line"></span><br><span class="line">random.seed(<span class="number">2026</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">annual_sharpe</span><span class="params">(rets)</span>:</span></span><br><span class="line">    <span class="string">"""年化夏普 = 日均值 / 日标准差 × sqrt(365)"""</span></span><br><span class="line">    <span class="keyword">return</span> statistics.mean(rets) / statistics.stdev(rets) * math.sqrt(<span class="number">365</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">monte_carlo</span><span class="params">(n_days, n_runs=<span class="number">1000</span>)</span>:</span></span><br><span class="line">    <span class="string">"""跑 n_runs 个"零期望"纯随机策略，返回年化夏普的排序分布"""</span></span><br><span class="line">    sharps = []</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(n_runs):</span><br><span class="line">        rets = [random.gauss(<span class="number">0</span>, <span class="number">0.01</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(n_days)]</span><br><span class="line">        sharps.append(annual_sharpe(rets))</span><br><span class="line">    sharps.sort()</span><br><span class="line">    <span class="keyword">return</span> sharps</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n_days <span class="keyword">in</span> (<span class="number">365</span>, <span class="number">30</span>):</span><br><span class="line">    sharps = monte_carlo(n_days)</span><br><span class="line">    above = sum(<span class="number">1</span> <span class="keyword">for</span> s <span class="keyword">in</span> sharps <span class="keyword">if</span> s &gt; <span class="number">1.8</span>)</span><br><span class="line">    print(<span class="string">f"--- 样本 <span class="subst">&#123;n_days&#125;</span> 天：1000 个零期望随机策略的年化夏普 ---"</span>)</span><br><span class="line">    print(<span class="string">f"中位数           : <span class="subst">&#123;statistics.median(sharps):+<span class="number">.3</span>f&#125;</span>"</span>)</span><br><span class="line">    print(<span class="string">f"95 分位          : <span class="subst">&#123;sharps[<span class="number">949</span>]:+<span class="number">.3</span>f&#125;</span>"</span>)</span><br><span class="line">    print(<span class="string">f"最大值           : <span class="subst">&#123;sharps[<span class="number">-1</span>]:+<span class="number">.3</span>f&#125;</span>"</span>)</span><br><span class="line">    print(<span class="string">f"夏普 &gt; 1.8 的比例 : <span class="subst">&#123;above / <span class="number">10</span>:<span class="number">.1</span>f&#125;</span>%"</span>)</span><br><span class="line">    print(<span class="string">""</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果</strong>（真实输出）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">--- 样本 365 天：1000 个零期望随机策略的年化夏普 ---</span><br><span class="line">中位数           : +0.045</span><br><span class="line">95 分位          : +1.647</span><br><span class="line">最大值           : +3.125</span><br><span class="line">夏普 &gt; 1.8 的比例 : 3.9%</span><br><span class="line"></span><br><span class="line">--- 样本 30 天：1000 个零期望随机策略的年化夏普 ---</span><br><span class="line">中位数           : -0.011</span><br><span class="line">95 分位          : +5.726</span><br><span class="line">最大值           : +11.800</span><br><span class="line">夏普 &gt; 1.8 的比例 : 30.4%</span><br></pre></td></tr></table></figure>
+<p>把结果翻译成人话：</p>
+<ul>
+<li><strong>365 天样本</strong>：1000 只猴子，夏普中位数约 0（意料之中，它们本来啥也不是），但 95 分位高达 <strong>1.647</strong>，最强的那只干到 <strong>3.125</strong>。也就是说，纯靠运气的”策略”，有 5% 的概率考出 1.65 以上，3.9% 的概率考出 1.8 以上。</li>
+<li><strong>30 天样本</strong>：95 分位飙到 <strong>5.726</strong>，最大值 <strong>11.8</strong>，30.4% 的猴子夏普超过 1.8。”我这个策略跑了俩月，夏普 5”——统计学上这句话的信息量约等于”我今天出门穿了袜子”。</li>
+</ul>
+<p><img src="https://lucifer.ren/blog/images/web3/sharpe-montecarlo.png" alt="1000 个零 edge 随机策略的年化夏普分布：绿色虚线是 95 分位 1.647，红线是 1.8，只有 3.9% 的猴子蒙进红线"></p>
+<p>看图更直白：蓝色柱子是猴群的常态成绩，右边那条红色小尾巴，就是纯运气能摸到的高度。<strong>你的策略得跑赢猴群的 95%，才轮得到谈”本事”。</strong></p>
+<p>这也不是巧合，是统计学亲手送的记忆点：当样本是 365 天时，年化夏普 = (μ/σ) × √365，数值上恰好就是检验”均值是否为零”的 t 统计量（t = μ / (σ/√365)）。而 t 分布的单侧 5% 临界值是 1.645——蒙特卡洛实测 95 分位 1.647，严丝合缝。30 天样本同理：1.70 × √(365/30) ≈ 5.9，和实测的 5.726 也对上了。</p>
+<p>于是判定标准出炉：</p>
+<blockquote>
+<p><strong>你的策略夏普，必须显著压过同样本量的随机 95 分位，才配讨论”是不是真有东西”。</strong><br>跑满一年：夏普 &gt; 1.65 才刚过及格线——纯随机只有约 4% 的概率伪装到这个水平；<br>只跑 30 天：随机策略三成都能上 1.8，你的夏普等于没测。</p>
+</blockquote>
+<p>回收开场的伏笔。夏普 1.8，如果是 365 天样本跑出来的：刚过 1.65 的显著性线，可以说”可能有真东西”，但优势不大，且仍有约 4% 的概率它纯属运气；如果是 30 天样本跑出来的：请回炉重造。第四节那个夏普 3.45 的模拟策略，已经超过了 1000 只猴子的最大值 3.125——它确实有 edge（毕竟是我们亲手塞进去的）。关键在于：如果你不做这场审判，报告里的 3.45 和运气冒充者的 3.13，长得一模一样。</p>
+<h2 id="八、防过拟合：模拟考的高分不算数"><a href="#八、防过拟合：模拟考的高分不算数" class="headerlink" title="八、防过拟合：模拟考的高分不算数"></a>八、防过拟合：模拟考的高分不算数</h2><p>最后泼一盆必要的冷水。本文算的所有指标都是”样本内成绩”，相当于模拟考——而模拟考是可以作弊的：参数扫描扫到夏普 3.8、未来函数偷看明天的收盘价、用全市场历史筛出”恰好躲过每次大跌”的规则——回测曲线上是天使，实盘上是祭品。真正算数的是样本外：模拟盘，或者干脆实盘小仓。前视偏差、幸存者偏差、参数过拟合，每一个都值得单独写一篇（已列入写作清单）。今天只需要记住一条铁律：<strong>回测指标的唯一用途是生成假设，验证必须靠样本外</strong>。夏普压过了 1.65，而且是样本外算出来的，才轮到你兴奋。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>单看收益率等于裸奔，风险调整后收益才是策略的真实成绩单：同样赚 30%，睡得着觉的那个含金量更高。</li>
+<li>夏普 = (Rp − Rf) / σp，翻译过来是”每受一份惊吓，换多少钱”。无风险利率教科书取美债收益率，加密圈常简化为 0；年化系数来自 √N——加密 365 天、美股 252 天，别拿错。</li>
+<li>标尺：<0.5 弱，0.5~1 一般，1~2 良好，>2 优秀但要警惕——高频策略夏普天然高，短样本夏普天然不可信。</0.5></li>
+<li>Sortino 只罚下跌，MDD 记录最惨一跌，Calmar 看回撤性价比；每个指标都有盲区，要对着看。</li>
+<li>期望 = 胜率 × 平均盈利 − 败率 × 平均亏损，就是摆摊的账：赢单比亏单大，错一半照样赚；凯利公式的胜率和赔率从交易记录统计而来，而 100 笔的统计误差就足以把建议仓位吹大近一半。</li>
+<li>蒙特卡洛审判线：一年样本的夏普要压过 1.65（恰好是 t 检验 5% 显著水平的随机上界），30 天样本的夏普约等于抛硬币的录音回放。</li>
+<li>以上一切，只在样本外可信——模拟考的高分不算数。</li>
+</ul>
+<h2 id="相关阅读"><a href="#相关阅读" class="headerlink" title="相关阅读"></a>相关阅读</h2><ul>
+<li><a href="https://lucifer.ren/blog/2025/10/01/web3-freqtrade/" title="Freqtrade 量化风暴">《Freqtrade 量化风暴》</a>：回测输出的指标在哪看</li>
+<li><a href="https://lucifer.ren/blog/2026/07/20/web3-freqtrade-2/" title="多信号评分策略实战">《多信号评分策略实战》</a>：hyperopt 的 SharpeHyperOptLoss 就是在优化本文的夏普</li>
+<li><a href="https://lucifer.ren/blog/2026/05/22/web3-risk-management/" title="加密交易的风险管理">《加密交易的风险管理》</a>：Kelly 公式的胜率与赔率输入，本文教你怎么从交易记录里算出来</li>
+<li><a href="https://lucifer.ren/blog/2025/07/01/trading-system-demo/" title="《小菜的交易系统》">《小菜的交易系统》</a>：”可量化”的落点就是这套指标</li>
+</ul>
+
+      </div>
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-15T11:22:35+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 2026年11月15日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/理财/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>理财</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/交易/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>交易</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/量化/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>量化</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/夏普比率/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>夏普比率</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqElEQVR42u3aQW7DMAwEwPz/0y3QaxB7SYpJUIxPRZq6Gh0kYsnHI35+/p7nT5LPX33z+c35Nw8/eHh4eK2lv3quF329xOst6K0h/z4eHh7eNq93ZF8v4hpwinpjwcPDw/so73rRydYkB32yBjw8PLz/wesBki37iosBDw8P71AJm0QMCTUp2dezFjw8PLyYV22AfcPPi/09PDw8vEFXPTlw5wMBVV5htXh4eHgLvGprKjmgJ2VxPnyQB8p4eHh4G7y8zZ8PleZvOBUWF4pvPDw8vAGvGn1OwtbewEFv5AsPDw9vm1cNcKtXRS8yTrbg5hM8PDy8t/DyAOK6FK6+JwkpqrEIHh4e3gav+g964015CpKT8rIeDw8P7ywvz3qT31YDhV5zq4DHw8PDW+DlxXF+PeRv621EXr7j4eHh7fF60Wrewq82wCZhRJOKh4eHF/MmSzzVuCrMglXHDvDw8PDWeHnjKi+Fk3hinkDfbBkeHh7eMm8+NDAfz6qGFIWhKzw8PLxlXrX8Tbam979624GHh4e3xzvwB+PRgTxjzi8bPDw8vD1eL3LtNbQmgOpG4+Hh4e3xepje9dCLYnvXCR4eHt47efPx/XmkWw0jRruOh4eHd4hXfaqL67XHesMNeHh4eGd5kwGpfLCgyusV61HWgoeHh7fG6x39eWyR173V0v+mAYaHh4c35vWO+DyuTSr66gDBgUgCDw8Pb8DrhQ7VUrg6OtDb4puhKzw8PLxDvFMlb/LqfFmTJlyzuMfDw8Mr8vLLoHdw93r6vfe/jCHw8PDwFniTtlM+p3CKUQgm8PDw8D7K68UK89Gr3grx8PDwvoc3HyqdMPLeFh4eHt42rxpGVAPZpByvRh5RQw4PDw9vgddrgOXN/smhXx3Yaj54eHh4Ke8X/Lw1ygdlsP8AAAAASUVORK5CYII='>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2026/11/07/web3-strategy-metrics/&title=夏普比率：怎么判断一个策略是真好还是运气好 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=大家好，我是 Lucifer。今天聊一个做量化的人天天要面对的问题：回测报告里的夏普比率，到底是本事，还是运气。
+你大概率经历过这个瞬间：Freqtrade 回测跑完，终端哗啦啦吐出一堆指标——总收益、夏普比率、索提诺比率、卡玛比率、最大回撤……大多数人只盯着收益率那一行，眼睛发直，手已经悬在”实盘启动”按钮上了。稍微冷静一点的会瞟一眼 Sharpe 1.8，然后开始灵魂拷问：1.8，算”策略很强”，还是算”我菜到看不懂”？
+《小菜的交易系统》里说过，一套交易系统必须”可量化”——进场理由要量化、出场条件要量化，绩效同样要量化。量化绩效量化的是什么？不只是”赚了多少”，而是每一份收益背后，你扛了多少惊吓。这套体系叫风险调整后收益指标，本文用纯标准库 Python（random / statistics / math）把它们挨个算一遍，所有代码和数字都是真实运行的。最后回答那个终极问题：你的夏普，是本事，还是猴子掷飞镖。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2026/11/07/web3-strategy-metrics/&title=夏普比率：怎么判断一个策略是真好还是运气好 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=大家好，我是 Lucifer。今天聊一个做量化的人天天要面对的问题：回测报告里的夏普比率，到底是本事，还是运气。
+你大概率经历过这个瞬间：Freqtrade 回测跑完，终端哗啦啦吐出一堆指标——总收益、夏普比率、索提诺比率、卡玛比率、最大回撤……大多数人只盯着收益率那一行，眼睛发直，手已经悬在”实盘启动”按钮上了。稍微冷静一点的会瞟一眼 Sharpe 1.8，然后开始灵魂拷问：1.8，算”策略很强”，还是算”我菜到看不懂”？
+《小菜的交易系统》里说过，一套交易系统必须”可量化”——进场理由要量化、出场条件要量化，绩效同样要量化。量化绩效量化的是什么？不只是”赚了多少”，而是每一份收益背后，你扛了多少惊吓。这套体系叫风险调整后收益指标，本文用纯标准库 Python（random / statistics / math）把它们挨个算一遍，所有代码和数字都是真实运行的。最后回答那个终极问题：你的夏普，是本事，还是猴子掷飞镖。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2026/11/07/web3-strategy-metrics/&title=夏普比率：怎么判断一个策略是真好还是运气好 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=大家好，我是 Lucifer。今天聊一个做量化的人天天要面对的问题：回测报告里的夏普比率，到底是本事，还是运气。
+你大概率经历过这个瞬间：Freqtrade 回测跑完，终端哗啦啦吐出一堆指标——总收益、夏普比率、索提诺比率、卡玛比率、最大回撤……大多数人只盯着收益率那一行，眼睛发直，手已经悬在”实盘启动”按钮上了。稍微冷静一点的会瞟一眼 Sharpe 1.8，然后开始灵魂拷问：1.8，算”策略很强”，还是算”我菜到看不懂”？
+《小菜的交易系统》里说过，一套交易系统必须”可量化”——进场理由要量化、出场条件要量化，绩效同样要量化。量化绩效量化的是什么？不只是”赚了多少”，而是每一份收益背后，你扛了多少惊吓。这套体系叫风险调整后收益指标，本文用纯标准库 Python（random / statistics / math）把它们挨个算一遍，所有代码和数字都是真实运行的。最后回答那个终极问题：你的夏普，是本事，还是猴子掷飞镖。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                          <h4>
+                              <a href="/blog/2026/11/08/web3-rug-pull/" rel="prev" title="上新币之前，先做这五项检查：Rug Pull 与貔貅盘识别">
+                                
+                                    上新币之前，先做这五项检查：Rug Pull 与貔貅盘识别
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/区块链/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 区块链</a> <a class="tag" href="/blog/tags/web3/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> web3</a> <a class="tag" href="/blog/tags/安全/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 安全</a> <a class="tag" href="/blog/tags/链上分析/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 链上分析</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/blog/2026/11/05/web3-impermanent-loss/" rel="prev" title="无常损失：当 LP 到底亏不亏，把账算清楚">
+                                  
+                                      无常损失：当 LP 到底亏不亏，把账算清楚
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/区块链/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 区块链</a> <a class="tag" href="/blog/tags/web3/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> web3</a> <a class="tag" href="/blog/tags/DeFi/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> DeFi</a> <a class="tag" href="/blog/tags/LP/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LP</a> <a class="tag" href="/blog/tags/AMM/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> AMM</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '夏普比率：怎么判断一个策略是真好还是运气好',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/blog/atom.xml"
+              class="social fas fa-rss flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://www.zhihu.com/people/lu-xiao-13-70/activities"
+              class="social fab fa-zhihu flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:azl397985856@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/azl397985856"
+              class="social fab fa-github flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/playlist?id=978545815&userid=632167080"
+              class="social fas fa-headphones-alt flat-btn"
+              title=""
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="/blog/wc3map/"
+              class="social fas fa-dragon flat-btn"
+              title="魔兽地图 · 四兄弟 Footmen Frenzy 纪念版（多版本下载）"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="/blog/files/war3-coach-portable.zip"
+              class="social fas fa-chalkboard-teacher flat-btn"
+              title="war3-coach · 魔兽训练辅助工具（回放分析+对手库，免安装便携版，下载解压即用）"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://wormhole.app"
+              class="social fas fa-paper-plane flat-btn"
+              title="Wormhole · 免登录文件分享（端到端加密，10GB/24小时）"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、单看收益率，等于裸奔"><span class="toc-text">一、单看收益率，等于裸奔</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、夏普比率：每受一份惊吓，换多少钱"><span class="toc-text">二、夏普比率：每受一份惊吓，换多少钱</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#无风险利率取多少？"><span class="toc-text">无风险利率取多少？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要乘-√365-或-√252？"><span class="toc-text">为什么要乘 √365 或 √252？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#经验标尺（以及两个警惕）"><span class="toc-text">经验标尺（以及两个警惕）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、夏普的兄弟们：Sortino、最大回撤、Calmar"><span class="toc-text">三、夏普的兄弟们：Sortino、最大回撤、Calmar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、手搓一个指标计算器"><span class="toc-text">四、手搓一个指标计算器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、胜率、盈亏比与期望值：一笔摆摊的账"><span class="toc-text">五、胜率、盈亏比与期望值：一笔摆摊的账</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、从交易记录统计：凯利公式的进料口"><span class="toc-text">六、从交易记录统计：凯利公式的进料口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、运气还是技巧：1000-只猴子的审判"><span class="toc-text">七、运气还是技巧：1000 只猴子的审判</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、防过拟合：模拟考的高分不算数"><span class="toc-text">八、防过拟合：模拟考的高分不算数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关阅读"><span class="toc-text">相关阅读</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;我的开源项目</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/leetcode" href="https://github.com/azl397985856/leetcode"
+          
+          
+          id="https:github.comazl397985856leetcode">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          算法刷题
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/fe-interview" href="https://github.com/azl397985856/fe-interview"
+          
+          
+          id="https:github.comazl397985856fe-interview">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          大前端
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/azl397985856/daily-featured" href="https://github.com/azl397985856/daily-featured"
+          
+          
+          id="https:github.comazl397985856daily-featured">
+          
+            <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+          
+          每日一荐
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;全部分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+    href="/blog/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/blog/categories/91天学算法/" href="/blog/categories/91天学算法/"><div class='name'>91天学算法</div><div class='badge'>(28)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/CD/" href="/blog/categories/CD/"><div class='name'>CD</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Easy/" href="/blog/categories/Easy/"><div class='name'>Easy</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Github/" href="/blog/categories/Github/"><div class='name'>Github</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Hard/" href="/blog/categories/Hard/"><div class='name'>Hard</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/LeetCode/" href="/blog/categories/LeetCode/"><div class='name'>LeetCode</div><div class='badge'>(23)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/LeetCode题解书/" href="/blog/categories/LeetCode/LeetCode题解书/"><div class='name'>LeetCode题解书</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/刷题技巧/" href="/blog/categories/LeetCode/刷题技巧/"><div class='name'>刷题技巧</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/LeetCode/动态规划/" href="/blog/categories/LeetCode/动态规划/"><div class='name'>动态规划</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/Medium/" href="/blog/categories/Medium/"><div class='name'>Medium</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/React/" href="/blog/categories/React/"><div class='name'>React</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/TypeScript/" href="/blog/categories/TypeScript/"><div class='name'>TypeScript</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/ai/" href="/blog/categories/ai/"><div class='name'>ai</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/ai/agent/" href="/blog/categories/ai/agent/"><div class='name'>agent</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/devtool/" href="/blog/categories/devtool/"><div class='name'>devtool</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/rust/" href="/blog/categories/rust/"><div class='name'>rust</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/rust/node-binding/" href="/blog/categories/rust/node-binding/"><div class='name'>node binding</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/rust/node-binding/node-gyp/" href="/blog/categories/rust/node-binding/node-gyp/"><div class='name'>node-gyp</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/v8/" href="/blog/categories/v8/"><div class='name'>v8</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/vite/" href="/blog/categories/vite/"><div class='name'>vite</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/《算法通关之路》/" href="/blog/categories/《算法通关之路》/"><div class='name'>《算法通关之路》</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/中等/" href="/blog/categories/中等/"><div class='name'>中等</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书/" href="/blog/categories/书/"><div class='name'>书</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/书/算法/" href="/blog/categories/书/算法/"><div class='name'>算法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书单/" href="/blog/categories/书单/"><div class='name'>书单</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/书摘/" href="/blog/categories/书摘/"><div class='name'>书摘</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/二分/" href="/blog/categories/二分/"><div class='name'>二分</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/二叉树/" href="/blog/categories/二叉树/"><div class='name'>二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/交易/" href="/blog/categories/交易/"><div class='name'>交易</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/公众号/" href="/blog/categories/公众号/"><div class='name'>公众号</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/刷题技巧/" href="/blog/categories/刷题技巧/"><div class='name'>刷题技巧</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/刷题方法/" href="/blog/categories/刷题方法/"><div class='name'>刷题方法</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/前端/" href="/blog/categories/前端/"><div class='name'>前端</div><div class='badge'>(30)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/TypeScript/" href="/blog/categories/前端/TypeScript/"><div class='name'>TypeScript</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/TypeScript/泛型/" href="/blog/categories/前端/TypeScript/泛型/"><div class='name'>泛型</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/css-in-js/" href="/blog/categories/前端/css-in-js/"><div class='name'>css-in-js</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/eslint/" href="/blog/categories/前端/eslint/"><div class='name'>eslint</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/web-component/" href="/blog/categories/前端/web-component/"><div class='name'>web-component</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/webkit/" href="/blog/categories/前端/webkit/"><div class='name'>webkit</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/测试/" href="/blog/categories/前端/测试/"><div class='name'>测试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/浏览器/" href="/blog/categories/前端/浏览器/"><div class='name'>浏览器</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/算法/" href="/blog/categories/前端/算法/"><div class='name'>算法</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前端/组件化/" href="/blog/categories/前端/组件化/"><div class='name'>组件化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/前缀和/" href="/blog/categories/前缀和/"><div class='name'>前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/前缀和/二维前缀和/" href="/blog/categories/前缀和/二维前缀和/"><div class='name'>二维前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/力扣加加/" href="/blog/categories/力扣加加/"><div class='name'>力扣加加</div><div class='badge'>(30)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/动态规划/" href="/blog/categories/动态规划/"><div class='name'>动态规划</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/区块链/" href="/blog/categories/区块链/"><div class='name'>区块链</div><div class='badge'>(34)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/命令行/" href="/blog/categories/命令行/"><div class='name'>命令行</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/哲学/" href="/blog/categories/哲学/"><div class='name'>哲学</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/哲学/读书/" href="/blog/categories/哲学/读书/"><div class='name'>读书</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/图/" href="/blog/categories/图/"><div class='name'>图</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/堆/" href="/blog/categories/堆/"><div class='name'>堆</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/好未来/" href="/blog/categories/好未来/"><div class='name'>好未来</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/学习方法/" href="/blog/categories/学习方法/"><div class='name'>学习方法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/工具/" href="/blog/categories/工具/"><div class='name'>工具</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/工具/Chrome/" href="/blog/categories/工具/Chrome/"><div class='name'>Chrome</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/工具/VSCODE/" href="/blog/categories/工具/VSCODE/"><div class='name'>VSCODE</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/工具/终端/" href="/blog/categories/工具/终端/"><div class='name'>终端</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/年终总结/" href="/blog/categories/年终总结/"><div class='name'>年终总结</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/异议！/" href="/blog/categories/异议！/"><div class='name'>异议！</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/成长/" href="/blog/categories/成长/"><div class='name'>成长</div><div class='badge'>(0)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/成长经历/" href="/blog/categories/成长经历/"><div class='name'>成长经历</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/技术大会/" href="/blog/categories/技术大会/"><div class='name'>技术大会</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/D2/" href="/blog/categories/技术大会/D2/"><div class='name'>D2</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/Google-IO/" href="/blog/categories/技术大会/Google-IO/"><div class='name'>Google IO</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/JSConf/" href="/blog/categories/技术大会/JSConf/"><div class='name'>JSConf</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/QCon/" href="/blog/categories/技术大会/QCon/"><div class='name'>QCon</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/技术大会/React-Conf/" href="/blog/categories/技术大会/React-Conf/"><div class='name'>React Conf</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/插件/" href="/blog/categories/插件/"><div class='name'>插件</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/插件/浏览器插件/" href="/blog/categories/插件/浏览器插件/"><div class='name'>浏览器插件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/插件/算法/" href="/blog/categories/插件/算法/"><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/搜索/" href="/blog/categories/搜索/"><div class='name'>搜索</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数学/" href="/blog/categories/数学/"><div class='name'>数学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数学/算法/" href="/blog/categories/数学/算法/"><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构/" href="/blog/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/hashtable/" href="/blog/categories/数据结构/hashtable/"><div class='name'>hashtable</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/二叉搜索树/" href="/blog/categories/数据结构/二叉搜索树/"><div class='name'>二叉搜索树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/图/" href="/blog/categories/数据结构/图/"><div class='name'>图</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/字符串/" href="/blog/categories/数据结构/字符串/"><div class='name'>字符串</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/平衡二叉树/" href="/blog/categories/数据结构/平衡二叉树/"><div class='name'>平衡二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/数组/" href="/blog/categories/数据结构/数组/"><div class='name'>数组</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/算法/" href="/blog/categories/数据结构/算法/"><div class='name'>算法</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/数据结构/链表/" href="/blog/categories/数据结构/链表/"><div class='name'>链表</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，二叉树/" href="/blog/categories/数据结构，二叉树/"><div class='name'>数据结构，二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，单调栈/" href="/blog/categories/数据结构，单调栈/"><div class='name'>数据结构，单调栈</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，字符串/" href="/blog/categories/数据结构，字符串/"><div class='name'>数据结构，字符串</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/数据结构，数组/" href="/blog/categories/数据结构，数组/"><div class='name'>数据结构，数组</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/日记/" href="/blog/categories/日记/"><div class='name'>日记</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/日记/技术/" href="/blog/categories/日记/技术/"><div class='name'>技术</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/易经/" href="/blog/categories/易经/"><div class='name'>易经</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/易经/读后感/" href="/blog/categories/易经/读后感/"><div class='name'>读后感</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/春招/" href="/blog/categories/春招/"><div class='name'>春招</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/栈/" href="/blog/categories/栈/"><div class='name'>栈</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/树/" href="/blog/categories/树/"><div class='name'>树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/树状数组/" href="/blog/categories/树状数组/"><div class='name'>树状数组</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/校招/" href="/blog/categories/校招/"><div class='name'>校招</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/模拟面试/" href="/blog/categories/模拟面试/"><div class='name'>模拟面试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/每日一荐/" href="/blog/categories/每日一荐/"><div class='name'>每日一荐</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-09/" href="/blog/categories/每日一荐/2019-09/"><div class='name'>2019-09</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-10/" href="/blog/categories/每日一荐/2019-10/"><div class='name'>2019-10</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-11/" href="/blog/categories/每日一荐/2019-11/"><div class='name'>2019-11</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2019-12/" href="/blog/categories/每日一荐/2019-12/"><div class='name'>2019-12</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2020-01/" href="/blog/categories/每日一荐/2020-01/"><div class='name'>2020-01</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2020-03/" href="/blog/categories/每日一荐/2020-03/"><div class='name'>2020-03</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/每日一荐/2022-04/" href="/blog/categories/每日一荐/2022-04/"><div class='name'>2022-04</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/浏览器/" href="/blog/categories/浏览器/"><div class='name'>浏览器</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/浏览器/webkit/" href="/blog/categories/浏览器/webkit/"><div class='name'>webkit</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/浏览器/事件/" href="/blog/categories/浏览器/事件/"><div class='name'>事件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/理财/" href="/blog/categories/理财/"><div class='name'>理财</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/理财/K线/" href="/blog/categories/理财/K线/"><div class='name'>K线</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/理财/K线/蜡烛图/" href="/blog/categories/理财/K线/蜡烛图/"><div class='name'>蜡烛图</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/理财/量化/" href="/blog/categories/理财/量化/"><div class='name'>量化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/生活/" href="/blog/categories/生活/"><div class='name'>生活</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/生活/自我提升/" href="/blog/categories/生活/自我提升/"><div class='name'>自我提升</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/电影/" href="/blog/categories/电影/"><div class='name'>电影</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/电影/观后感/" href="/blog/categories/电影/观后感/"><div class='name'>观后感</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/百度/" href="/blog/categories/百度/"><div class='name'>百度</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法/" href="/blog/categories/算法/"><div class='name'>算法</div><div class='badge'>(30)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/BFS/" href="/blog/categories/算法/BFS/"><div class='name'>BFS</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/DFS/" href="/blog/categories/算法/DFS/"><div class='name'>DFS</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/二分法/" href="/blog/categories/算法/二分法/"><div class='name'>二分法</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/位运算/" href="/blog/categories/算法/位运算/"><div class='name'>位运算</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/前端/" href="/blog/categories/算法/前端/"><div class='name'>前端</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/前端/面试/" href="/blog/categories/算法/前端/面试/"><div class='name'>面试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/前缀和/" href="/blog/categories/算法/前缀和/"><div class='name'>前缀和</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/动态规划/" href="/blog/categories/算法/动态规划/"><div class='name'>动态规划</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/双指针/" href="/blog/categories/算法/双指针/"><div class='name'>双指针</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/回文/" href="/blog/categories/算法/回文/"><div class='name'>回文</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/回溯/" href="/blog/categories/算法/回溯/"><div class='name'>回溯</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/子序列/" href="/blog/categories/算法/子序列/"><div class='name'>子序列</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/就地算法/" href="/blog/categories/算法/就地算法/"><div class='name'>就地算法</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/布隆过滤器/" href="/blog/categories/算法/布隆过滤器/"><div class='name'>布隆过滤器</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/循环移位/" href="/blog/categories/算法/循环移位/"><div class='name'>循环移位</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/数学/" href="/blog/categories/算法/数学/"><div class='name'>数学</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/概率/" href="/blog/categories/算法/概率/"><div class='name'>概率</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/母题/" href="/blog/categories/算法/母题/"><div class='name'>母题</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/滑动窗口/" href="/blog/categories/算法/滑动窗口/"><div class='name'>滑动窗口</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/状态压缩/" href="/blog/categories/算法/状态压缩/"><div class='name'>状态压缩</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/背包问题/" href="/blog/categories/算法/背包问题/"><div class='name'>背包问题</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/递归/" href="/blog/categories/算法/递归/"><div class='name'>递归</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/算法/链表反转/" href="/blog/categories/算法/链表反转/"><div class='name'>链表反转</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法比赛/" href="/blog/categories/算法比赛/"><div class='name'>算法比赛</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，动态规划/" href="/blog/categories/算法，动态规划/"><div class='name'>算法，动态规划</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，序列化/" href="/blog/categories/算法，序列化/"><div class='name'>算法，序列化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/算法，滑动窗口/" href="/blog/categories/算法，滑动窗口/"><div class='name'>算法，滑动窗口</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/线段树/" href="/blog/categories/线段树/"><div class='name'>线段树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/经验分享/" href="/blog/categories/经验分享/"><div class='name'>经验分享</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/编程之美/" href="/blog/categories/编程之美/"><div class='name'>编程之美</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/缠论/" href="/blog/categories/缠论/"><div class='name'>缠论</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/缠论/交易/" href="/blog/categories/缠论/交易/"><div class='name'>交易</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/缠论/交易/理财/" href="/blog/categories/缠论/交易/理财/"><div class='name'>理财</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/自动化/" href="/blog/categories/自动化/"><div class='name'>自动化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/蓄水池抽样/" href="/blog/categories/蓄水池抽样/"><div class='name'>蓄水池抽样</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/虾皮/" href="/blog/categories/虾皮/"><div class='name'>虾皮</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/解题模板/" href="/blog/categories/解题模板/"><div class='name'>解题模板</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/谷歌/" href="/blog/categories/谷歌/"><div class='name'>谷歌</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/谷歌/软实力/" href="/blog/categories/谷歌/软实力/"><div class='name'>软实力</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/谷歌/面试/" href="/blog/categories/谷歌/面试/"><div class='name'>面试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/财报/" href="/blog/categories/财报/"><div class='name'>财报</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/贪婪/" href="/blog/categories/贪婪/"><div class='name'>贪婪</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/走出科学/" href="/blog/categories/走出科学/"><div class='name'>走出科学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/软件工具/" href="/blog/categories/软件工具/"><div class='name'>软件工具</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/递推/" href="/blog/categories/递推/"><div class='name'>递推</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/递推/动态规划/" href="/blog/categories/递推/动态规划/"><div class='name'>动态规划</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/链表/" href="/blog/categories/链表/"><div class='name'>链表</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/面经/" href="/blog/categories/面经/"><div class='name'>面经</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/面试/" href="/blog/categories/面试/"><div class='name'>面试</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/面试/字节跳动/" href="/blog/categories/面试/字节跳动/"><div class='name'>字节跳动</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/题解/" href="/blog/categories/题解/"><div class='name'>题解</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/魔兽争霸3/" href="/blog/categories/魔兽争霸3/"><div class='name'>魔兽争霸3</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+    href="/blog/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/blog/tags/2022/" style="font-size: 14px; color: #999">2022</a> <a href="/blog/tags/91天学算法/" style="font-size: 19.63px; color: #737373">91天学算法</a> <a href="/blog/tags/AI/" style="font-size: 14px; color: #999">AI</a> <a href="/blog/tags/AMM/" style="font-size: 14px; color: #999">AMM</a> <a href="/blog/tags/AST/" style="font-size: 14px; color: #999">AST</a> <a href="/blog/tags/BFS/" style="font-size: 14.63px; color: #959595">BFS</a> <a href="/blog/tags/BigPipe/" style="font-size: 14px; color: #999">BigPipe</a> <a href="/blog/tags/CD/" style="font-size: 14px; color: #999">CD</a> <a href="/blog/tags/CSS/" style="font-size: 14px; color: #999">CSS</a> <a href="/blog/tags/Canvas/" style="font-size: 14px; color: #999">Canvas</a> <a href="/blog/tags/Chrome/" style="font-size: 15.25px; color: #919191">Chrome</a> <a href="/blog/tags/D2/" style="font-size: 14px; color: #999">D2</a> <a href="/blog/tags/DAI/" style="font-size: 14px; color: #999">DAI</a> <a href="/blog/tags/DAO/" style="font-size: 14px; color: #999">DAO</a> <a href="/blog/tags/DEX/" style="font-size: 14px; color: #999">DEX</a> <a href="/blog/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/blog/tags/DeFi/" style="font-size: 15.88px; color: #8c8c8c">DeFi</a> <a href="/blog/tags/Easy/" style="font-size: 14px; color: #999">Easy</a> <a href="/blog/tags/Ethereum/" style="font-size: 15.88px; color: #8c8c8c">Ethereum</a> <a href="/blog/tags/Floyd-Warshall/" style="font-size: 14px; color: #999">Floyd-Warshall</a> <a href="/blog/tags/GMX/" style="font-size: 14px; color: #999">GMX</a> <a href="/blog/tags/Gas/" style="font-size: 14px; color: #999">Gas</a> <a href="/blog/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/blog/tags/Github/" style="font-size: 14.63px; color: #959595">Github</a> <a href="/blog/tags/Google-IO/" style="font-size: 14px; color: #999">Google IO</a> <a href="/blog/tags/Hard/" style="font-size: 14px; color: #999">Hard</a> <a href="/blog/tags/JSConf/" style="font-size: 14px; color: #999">JSConf</a> <a href="/blog/tags/KK平台/" style="font-size: 14px; color: #999">KK平台</a> <a href="/blog/tags/K线/" style="font-size: 14px; color: #999">K线</a> <a href="/blog/tags/L2/" style="font-size: 14.63px; color: #959595">L2</a> <a href="/blog/tags/LP/" style="font-size: 14px; color: #999">LP</a> <a href="/blog/tags/LeetCode/" style="font-size: 22.75px; color: #5e5e5e">LeetCode</a> <a href="/blog/tags/LeetCode日记/" style="font-size: 19px; color: #777">LeetCode日记</a> <a href="/blog/tags/MEV/" style="font-size: 14.63px; color: #959595">MEV</a> <a href="/blog/tags/MPC-钱包/" style="font-size: 14px; color: #999">MPC 钱包</a> <a href="/blog/tags/Mac/" style="font-size: 14px; color: #999">Mac</a> <a href="/blog/tags/MakerDAO/" style="font-size: 14px; color: #999">MakerDAO</a> <a href="/blog/tags/Medium/" style="font-size: 14.63px; color: #959595">Medium</a> <a href="/blog/tags/Nexus-Mutual/" style="font-size: 14px; color: #999">Nexus Mutual</a> <a href="/blog/tags/PPT/" style="font-size: 14.63px; color: #959595">PPT</a> <a href="/blog/tags/QCon/" style="font-size: 14px; color: #999">QCon</a> <a href="/blog/tags/RFC/" style="font-size: 14px; color: #999">RFC</a> <a href="/blog/tags/React/" style="font-size: 14px; color: #999">React</a> <a href="/blog/tags/Tokenomics/" style="font-size: 14px; color: #999">Tokenomics</a> <a href="/blog/tags/TypeScript/" style="font-size: 18.38px; color: #7b7b7b">TypeScript</a> <a href="/blog/tags/USDC/" style="font-size: 14px; color: #999">USDC</a> <a href="/blog/tags/USDT/" style="font-size: 14px; color: #999">USDT</a> <a href="/blog/tags/UST/" style="font-size: 14px; color: #999">UST</a> <a href="/blog/tags/VSCODE/" style="font-size: 15.25px; color: #919191">VSCODE</a> <a href="/blog/tags/Warp/" style="font-size: 14px; color: #999">Warp</a> <a href="/blog/tags/Web3-钱包/" style="font-size: 14px; color: #999">Web3 钱包</a> <a href="/blog/tags/aave/" style="font-size: 14px; color: #999">aave</a> <a href="/blog/tags/acp/" style="font-size: 14px; color: #999">acp</a> <a href="/blog/tags/agent/" style="font-size: 14px; color: #999">agent</a> <a href="/blog/tags/ai/" style="font-size: 15.88px; color: #8c8c8c">ai</a> <a href="/blog/tags/apple/" style="font-size: 14px; color: #999">apple</a> <a href="/blog/tags/approve/" style="font-size: 14.63px; color: #959595">approve</a> <a href="/blog/tags/balancer/" style="font-size: 14px; color: #999">balancer</a> <a href="/blog/tags/bancor/" style="font-size: 14px; color: #999">bancor</a> <a href="/blog/tags/blob/" style="font-size: 14px; color: #999">blob</a> <a href="/blog/tags/borrow/" style="font-size: 14px; color: #999">borrow</a> <a href="/blog/tags/chatgpt/" style="font-size: 14px; color: #999">chatgpt</a> <a href="/blog/tags/chrome/" style="font-size: 14px; color: #999">chrome</a> <a href="/blog/tags/claude/" style="font-size: 14px; color: #999">claude</a> <a href="/blog/tags/cordis/" style="font-size: 14px; color: #999">cordis</a> <a href="/blog/tags/css-in-js/" style="font-size: 14px; color: #999">css-in-js</a> <a href="/blog/tags/curve/" style="font-size: 14px; color: #999">curve</a> <a href="/blog/tags/dYdX/" style="font-size: 14px; color: #999">dYdX</a> <a href="/blog/tags/deepseek/" style="font-size: 14px; color: #999">deepseek</a> <a href="/blog/tags/defi/" style="font-size: 14px; color: #999">defi</a> <a href="/blog/tags/depin/" style="font-size: 14px; color: #999">depin</a> <a href="/blog/tags/dex/" style="font-size: 14px; color: #999">dex</a> <a href="/blog/tags/dotfiles/" style="font-size: 14px; color: #999">dotfiles</a> <a href="/blog/tags/eslint/" style="font-size: 14px; color: #999">eslint</a> <a href="/blog/tags/gemini/" style="font-size: 14px; color: #999">gemini</a> <a href="/blog/tags/google/" style="font-size: 14px; color: #999">google</a> <a href="/blog/tags/harness/" style="font-size: 14px; color: #999">harness</a> <a href="/blog/tags/iTerm2/" style="font-size: 14px; color: #999">iTerm2</a> <a href="/blog/tags/immutable/" style="font-size: 14px; color: #999">immutable</a> <a href="/blog/tags/immutablejs/" style="font-size: 14px; color: #999">immutablejs</a> <a href="/blog/tags/javascript/" style="font-size: 14px; color: #999">javascript</a> <a href="/blog/tags/json/" style="font-size: 14px; color: #999">json</a> <a href="/blog/tags/k-线/" style="font-size: 14px; color: #999">k 线</a> <a href="/blog/tags/k-问题/" style="font-size: 14px; color: #999">k 问题</a> <a href="/blog/tags/knowledge-management/" style="font-size: 14px; color: #999">knowledge-management</a> <a href="/blog/tags/lending/" style="font-size: 14px; color: #999">lending</a> <a href="/blog/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/blog/tags/node-binding/" style="font-size: 14px; color: #999">node binding</a> <a href="/blog/tags/node-gyp/" style="font-size: 14px; color: #999">node-gyp</a> <a href="/blog/tags/notebooklm/" style="font-size: 14px; color: #999">notebooklm</a> <a href="/blog/tags/pendle/" style="font-size: 14px; color: #999">pendle</a> <a href="/blog/tags/plugin/" style="font-size: 14px; color: #999">plugin</a> <a href="/blog/tags/rust/" style="font-size: 14.63px; color: #959595">rust</a> <a href="/blog/tags/rwa/" style="font-size: 14px; color: #999">rwa</a> <a href="/blog/tags/staking/" style="font-size: 14px; color: #999">staking</a> <a href="/blog/tags/stringify/" style="font-size: 14px; color: #999">stringify</a> <a href="/blog/tags/swap/" style="font-size: 15.25px; color: #919191">swap</a> <a href="/blog/tags/swc/" style="font-size: 14px; color: #999">swc</a> <a href="/blog/tags/uniswap/" style="font-size: 14.63px; color: #959595">uniswap</a> <a href="/blog/tags/v4/" style="font-size: 14.63px; color: #959595">v4</a> <a href="/blog/tags/v8/" style="font-size: 14px; color: #999">v8</a> <a href="/blog/tags/vite/" style="font-size: 14px; color: #999">vite</a> <a href="/blog/tags/vlog/" style="font-size: 14px; color: #999">vlog</a> <a href="/blog/tags/vue/" style="font-size: 14px; color: #999">vue</a> <a href="/blog/tags/web-component/" style="font-size: 14px; color: #999">web-component</a> <a href="/blog/tags/web3/" style="font-size: 21.5px; color: #666">web3</a> <a href="/blog/tags/webkit/" style="font-size: 14px; color: #999">webkit</a> <a href="/blog/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/blog/tags/《算法通关之路》/" style="font-size: 14px; color: #999">《算法通关之路》</a> <a href="/blog/tags/中位数/" style="font-size: 14px; color: #999">中位数</a> <a href="/blog/tags/中等/" style="font-size: 14.63px; color: #959595">中等</a> <a href="/blog/tags/乘法逆元/" style="font-size: 14px; color: #999">乘法逆元</a> <a href="/blog/tags/书/" style="font-size: 15.25px; color: #919191">书</a> <a href="/blog/tags/书单/" style="font-size: 14px; color: #999">书单</a> <a href="/blog/tags/书摘/" style="font-size: 14px; color: #999">书摘</a> <a href="/blog/tags/事件/" style="font-size: 14px; color: #999">事件</a> <a href="/blog/tags/事件循环/" style="font-size: 14px; color: #999">事件循环</a> <a href="/blog/tags/二分/" style="font-size: 15.25px; color: #919191">二分</a> <a href="/blog/tags/二分法/" style="font-size: 14px; color: #999">二分法</a> <a href="/blog/tags/二叉树/" style="font-size: 15.25px; color: #919191">二叉树</a> <a href="/blog/tags/交易/" style="font-size: 15.25px; color: #919191">交易</a> <a href="/blog/tags/交易系统/" style="font-size: 14px; color: #999">交易系统</a> <a href="/blog/tags/从零实现/" style="font-size: 14px; color: #999">从零实现</a> <a href="/blog/tags/仓位管理/" style="font-size: 14px; color: #999">仓位管理</a> <a href="/blog/tags/代币经济学/" style="font-size: 14.63px; color: #959595">代币经济学</a> <a href="/blog/tags/代码生成器/" style="font-size: 14px; color: #999">代码生成器</a> <a href="/blog/tags/位运算/" style="font-size: 14px; color: #999">位运算</a> <a href="/blog/tags/侧链/" style="font-size: 14px; color: #999">侧链</a> <a href="/blog/tags/保险/" style="font-size: 14px; color: #999">保险</a> <a href="/blog/tags/倒排索引/" style="font-size: 14px; color: #999">倒排索引</a> <a href="/blog/tags/公众号/" style="font-size: 14px; color: #999">公众号</a> <a href="/blog/tags/公益/" style="font-size: 14px; color: #999">公益</a> <a href="/blog/tags/冷钱包/" style="font-size: 14px; color: #999">冷钱包</a> <a href="/blog/tags/删除-k-个字符/" style="font-size: 14px; color: #999">删除 k 个字符</a> <a href="/blog/tags/刷题/" style="font-size: 15.25px; color: #919191">刷题</a> <a href="/blog/tags/刷题技巧/" style="font-size: 17.13px; color: #848484">刷题技巧</a> <a href="/blog/tags/刷题方法/" style="font-size: 15.25px; color: #919191">刷题方法</a> <a href="/blog/tags/前端/" style="font-size: 19.63px; color: #737373">前端</a> <a href="/blog/tags/前端，自动化，automator/" style="font-size: 14px; color: #999">前端，自动化，automator</a> <a href="/blog/tags/前缀和/" style="font-size: 15.88px; color: #8c8c8c">前缀和</a> <a href="/blog/tags/前缀表达式/" style="font-size: 14px; color: #999">前缀表达式</a> <a href="/blog/tags/力扣加加/" style="font-size: 20.88px; color: #6a6a6a">力扣加加</a> <a href="/blog/tags/动态规划/" style="font-size: 19px; color: #777">动态规划</a> <a href="/blog/tags/区块链/" style="font-size: 22.13px; color: #626262">区块链</a> <a href="/blog/tags/单元测试/" style="font-size: 14px; color: #999">单元测试</a> <a href="/blog/tags/单调栈/" style="font-size: 14px; color: #999">单调栈</a> <a href="/blog/tags/博物馆/" style="font-size: 14px; color: #999">博物馆</a> <a href="/blog/tags/命令行/" style="font-size: 14.63px; color: #959595">命令行</a> <a href="/blog/tags/哲学/" style="font-size: 14.63px; color: #959595">哲学</a> <a href="/blog/tags/回溯/" style="font-size: 14px; color: #999">回溯</a> <a href="/blog/tags/困难/" style="font-size: 14.63px; color: #959595">困难</a> <a href="/blog/tags/图/" style="font-size: 14.63px; color: #959595">图</a> <a href="/blog/tags/图片处理/" style="font-size: 14px; color: #999">图片处理</a> <a href="/blog/tags/堆/" style="font-size: 14.63px; color: #959595">堆</a> <a href="/blog/tags/备份工具/" style="font-size: 14px; color: #999">备份工具</a> <a href="/blog/tags/夏普比率/" style="font-size: 14px; color: #999">夏普比率</a> <a href="/blog/tags/多签钱包/" style="font-size: 14px; color: #999">多签钱包</a> <a href="/blog/tags/天梯/" style="font-size: 14px; color: #999">天梯</a> <a href="/blog/tags/好未来/" style="font-size: 14px; color: #999">好未来</a> <a href="/blog/tags/子数组/" style="font-size: 14px; color: #999">子数组</a> <a href="/blog/tags/字符串/" style="font-size: 14.63px; color: #959595">字符串</a> <a href="/blog/tags/字节跳动/" style="font-size: 15.25px; color: #919191">字节跳动</a> <a href="/blog/tags/学习方法/" style="font-size: 14.63px; color: #959595">学习方法</a> <a href="/blog/tags/学习路线/" style="font-size: 15.88px; color: #8c8c8c">学习路线</a> <a href="/blog/tags/安全/" style="font-size: 14.63px; color: #959595">安全</a> <a href="/blog/tags/审计/" style="font-size: 14px; color: #999">审计</a> <a href="/blog/tags/密码学/" style="font-size: 14px; color: #999">密码学</a> <a href="/blog/tags/尼采/" style="font-size: 14px; color: #999">尼采</a> <a href="/blog/tags/工具/" style="font-size: 17.13px; color: #848484">工具</a> <a href="/blog/tags/年度目标/" style="font-size: 14px; color: #999">年度目标</a> <a href="/blog/tags/年终总结/" style="font-size: 14px; color: #999">年终总结</a> <a href="/blog/tags/序列化/" style="font-size: 14px; color: #999">序列化</a> <a href="/blog/tags/异常处理/" style="font-size: 14.63px; color: #959595">异常处理</a> <a href="/blog/tags/异议！/" style="font-size: 14px; color: #999">异议！</a> <a href="/blog/tags/循环移位/" style="font-size: 14px; color: #999">循环移位</a> <a href="/blog/tags/微前端/" style="font-size: 14px; color: #999">微前端</a> <a href="/blog/tags/必备软件/" style="font-size: 14px; color: #999">必备软件</a> <a href="/blog/tags/志愿者/" style="font-size: 14px; color: #999">志愿者</a> <a href="/blog/tags/性能优化/" style="font-size: 14px; color: #999">性能优化</a> <a href="/blog/tags/成长经历/" style="font-size: 14.63px; color: #959595">成长经历</a> <a href="/blog/tags/手机摄影/" style="font-size: 14px; color: #999">手机摄影</a> <a href="/blog/tags/扩展程序/" style="font-size: 14px; color: #999">扩展程序</a> <a href="/blog/tags/技术大会/" style="font-size: 14px; color: #999">技术大会</a> <a href="/blog/tags/技术调研/" style="font-size: 14px; color: #999">技术调研</a> <a href="/blog/tags/技能/" style="font-size: 14.63px; color: #959595">技能</a> <a href="/blog/tags/投资/" style="font-size: 15.88px; color: #8c8c8c">投资</a> <a href="/blog/tags/持续集成/" style="font-size: 14px; color: #999">持续集成</a> <a href="/blog/tags/插件/" style="font-size: 17.13px; color: #848484">插件</a> <a href="/blog/tags/搜索/" style="font-size: 14px; color: #999">搜索</a> <a href="/blog/tags/搜索引擎/" style="font-size: 14px; color: #999">搜索引擎</a> <a href="/blog/tags/摄影/" style="font-size: 14px; color: #999">摄影</a> <a href="/blog/tags/攻略/" style="font-size: 14px; color: #999">攻略</a> <a href="/blog/tags/效率/" style="font-size: 14px; color: #999">效率</a> <a href="/blog/tags/数字钱包/" style="font-size: 14px; color: #999">数字钱包</a> <a href="/blog/tags/数学/" style="font-size: 15.88px; color: #8c8c8c">数学</a> <a href="/blog/tags/数据结构/" style="font-size: 23.38px; color: #595959">数据结构</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，Hard/" style="font-size: 14.63px; color: #959595">数据结构，算法，LeetCode 日记，Hard</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，中等/" style="font-size: 14px; color: #999">数据结构，算法，LeetCode 日记，中等</a> <a href="/blog/tags/数组/" style="font-size: 14.63px; color: #959595">数组</a> <a href="/blog/tags/文物/" style="font-size: 14px; color: #999">文物</a> <a href="/blog/tags/日记/" style="font-size: 14.63px; color: #959595">日记</a> <a href="/blog/tags/易经/" style="font-size: 14px; color: #999">易经</a> <a href="/blog/tags/春招/" style="font-size: 15.25px; color: #919191">春招</a> <a href="/blog/tags/智能合约安全/" style="font-size: 14px; color: #999">智能合约安全</a> <a href="/blog/tags/最大公约数/" style="font-size: 14px; color: #999">最大公约数</a> <a href="/blog/tags/最大表示法/" style="font-size: 14px; color: #999">最大表示法</a> <a href="/blog/tags/最小表示法/" style="font-size: 14px; color: #999">最小表示法</a> <a href="/blog/tags/最长上升子序列/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/blog/tags/最长公共子序列/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/blog/tags/查拉图斯特拉/" style="font-size: 14px; color: #999">查拉图斯特拉</a> <a href="/blog/tags/栈/" style="font-size: 14px; color: #999">栈</a> <a href="/blog/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/blog/tags/树状数组/" style="font-size: 14px; color: #999">树状数组</a> <a href="/blog/tags/校招/" style="font-size: 16.5px; color: #888">校招</a> <a href="/blog/tags/概率/" style="font-size: 14.63px; color: #959595">概率</a> <a href="/blog/tags/模块/" style="font-size: 14px; color: #999">模块</a> <a href="/blog/tags/模拟面试/" style="font-size: 14px; color: #999">模拟面试</a> <a href="/blog/tags/模运算/" style="font-size: 14px; color: #999">模运算</a> <a href="/blog/tags/母题/" style="font-size: 14px; color: #999">母题</a> <a href="/blog/tags/每日一荐/" style="font-size: 17.75px; color: #808080">每日一荐</a> <a href="/blog/tags/永续合约/" style="font-size: 14px; color: #999">永续合约</a> <a href="/blog/tags/沟通/" style="font-size: 14px; color: #999">沟通</a> <a href="/blog/tags/治理/" style="font-size: 14px; color: #999">治理</a> <a href="/blog/tags/泛型/" style="font-size: 14.63px; color: #959595">泛型</a> <a href="/blog/tags/流动性池/" style="font-size: 14px; color: #999">流动性池</a> <a href="/blog/tags/测试/" style="font-size: 14px; color: #999">测试</a> <a href="/blog/tags/浏览器/" style="font-size: 15.25px; color: #919191">浏览器</a> <a href="/blog/tags/游戏/" style="font-size: 14px; color: #999">游戏</a> <a href="/blog/tags/滑动窗口/" style="font-size: 16.5px; color: #888">滑动窗口</a> <a href="/blog/tags/滤镜/" style="font-size: 14px; color: #999">滤镜</a> <a href="/blog/tags/焦作/" style="font-size: 14px; color: #999">焦作</a> <a href="/blog/tags/状态压缩/" style="font-size: 14px; color: #999">状态压缩</a> <a href="/blog/tags/状态机/" style="font-size: 14px; color: #999">状态机</a> <a href="/blog/tags/理财/" style="font-size: 15.88px; color: #8c8c8c">理财</a> <a href="/blog/tags/电子书/" style="font-size: 14px; color: #999">电子书</a> <a href="/blog/tags/电影/" style="font-size: 14.63px; color: #959595">电影</a> <a href="/blog/tags/百度/" style="font-size: 14px; color: #999">百度</a> <a href="/blog/tags/监控/" style="font-size: 14px; color: #999">监控</a> <a href="/blog/tags/秋招/" style="font-size: 14px; color: #999">秋招</a> <a href="/blog/tags/稳定币/" style="font-size: 14px; color: #999">稳定币</a> <a href="/blog/tags/算法/" style="font-size: 24px; color: #555">算法</a> <a href="/blog/tags/算法提高班/" style="font-size: 20.25px; color: #6f6f6f">算法提高班</a> <a href="/blog/tags/算法比赛/" style="font-size: 14px; color: #999">算法比赛</a> <a href="/blog/tags/算法系列/" style="font-size: 15.88px; color: #8c8c8c">算法系列</a> <a href="/blog/tags/算法通关之路/" style="font-size: 14px; color: #999">算法通关之路</a> <a href="/blog/tags/算法，最近公共祖先/" style="font-size: 14px; color: #999">算法，最近公共祖先</a> <a href="/blog/tags/线段树/" style="font-size: 14.63px; color: #959595">线段树</a> <a href="/blog/tags/组件化/" style="font-size: 14px; color: #999">组件化</a> <a href="/blog/tags/终端/" style="font-size: 14px; color: #999">终端</a> <a href="/blog/tags/经验分享/" style="font-size: 15.25px; color: #919191">经验分享</a> <a href="/blog/tags/维特根斯坦/" style="font-size: 14px; color: #999">维特根斯坦</a> <a href="/blog/tags/编程之美/" style="font-size: 14px; color: #999">编程之美</a> <a href="/blog/tags/缠论/" style="font-size: 14px; color: #999">缠论</a> <a href="/blog/tags/股票/" style="font-size: 14px; color: #999">股票</a> <a href="/blog/tags/自我提升/" style="font-size: 14px; color: #999">自我提升</a> <a href="/blog/tags/草稿/" style="font-size: 14.63px; color: #959595">草稿</a> <a href="/blog/tags/蓄水池抽样/" style="font-size: 14px; color: #999">蓄水池抽样</a> <a href="/blog/tags/虾皮/" style="font-size: 14px; color: #999">虾皮</a> <a href="/blog/tags/蜡烛图/" style="font-size: 14px; color: #999">蜡烛图</a> <a href="/blog/tags/衍生品/" style="font-size: 14px; color: #999">衍生品</a> <a href="/blog/tags/装机/" style="font-size: 14px; color: #999">装机</a> <a href="/blog/tags/解题模板/" style="font-size: 14px; color: #999">解题模板</a> <a href="/blog/tags/计划/" style="font-size: 14px; color: #999">计划</a> <a href="/blog/tags/读书/" style="font-size: 14.63px; color: #959595">读书</a> <a href="/blog/tags/读后感/" style="font-size: 14px; color: #999">读后感</a> <a href="/blog/tags/谷歌/" style="font-size: 15.25px; color: #919191">谷歌</a> <a href="/blog/tags/财报/" style="font-size: 14px; color: #999">财报</a> <a href="/blog/tags/账户抽象/" style="font-size: 14px; color: #999">账户抽象</a> <a href="/blog/tags/贪婪/" style="font-size: 14px; color: #999">贪婪</a> <a href="/blog/tags/贪心/" style="font-size: 14px; color: #999">贪心</a> <a href="/blog/tags/资产配置/" style="font-size: 14px; color: #999">资产配置</a> <a href="/blog/tags/走出科学/" style="font-size: 14px; color: #999">走出科学</a> <a href="/blog/tags/逆向思维/" style="font-size: 14px; color: #999">逆向思维</a> <a href="/blog/tags/递归/" style="font-size: 14px; color: #999">递归</a> <a href="/blog/tags/逻辑哲学论/" style="font-size: 14px; color: #999">逻辑哲学论</a> <a href="/blog/tags/配置备份/" style="font-size: 14px; color: #999">配置备份</a> <a href="/blog/tags/配置管理/" style="font-size: 14px; color: #999">配置管理</a> <a href="/blog/tags/量化/" style="font-size: 14px; color: #999">量化</a> <a href="/blog/tags/量化交易/" style="font-size: 14.63px; color: #959595">量化交易</a> <a href="/blog/tags/金融/" style="font-size: 14px; color: #999">金融</a> <a href="/blog/tags/钱包/" style="font-size: 15.25px; color: #919191">钱包</a> <a href="/blog/tags/链上分析/" style="font-size: 14px; color: #999">链上分析</a> <a href="/blog/tags/链表/" style="font-size: 15.25px; color: #919191">链表</a> <a href="/blog/tags/陷阱题/" style="font-size: 14px; color: #999">陷阱题</a> <a href="/blog/tags/面经/" style="font-size: 15.88px; color: #8c8c8c">面经</a> <a href="/blog/tags/面试/" style="font-size: 16.5px; color: #888">面试</a> <a href="/blog/tags/预言机/" style="font-size: 14px; color: #999">预言机</a> <a href="/blog/tags/题解/" style="font-size: 17.75px; color: #808080">题解</a> <a href="/blog/tags/风险管理/" style="font-size: 14px; color: #999">风险管理</a> <a href="/blog/tags/魔兽争霸3/" style="font-size: 14px; color: #999">魔兽争霸3</a> <a href="/blog/tags/黑客/" style="font-size: 14px; color: #999">黑客</a>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget list'>
+  
+<header class='pure'>
+  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;强烈推荐</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="entry">
+      
+        <li><a class="flat-box" title="https://lucifer.ren/blog/2022/04/26/books-2022/" href="https://lucifer.ren/blog/2022/04/26/books-2022/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;西法的 2022 书单推荐
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=0iygwnzh" href="https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=0iygwnzh"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;【阿里云】轻量应用服务器2核2G 低至60元/年起
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://leetcode-solution.cn/book-intro" href="https://leetcode-solution.cn/book-intro"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;《算法通关之路》
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://yasuotu.com" href="https://yasuotu.com"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;图片在线压缩
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://github.com/fe-lucifer/fanqiang" href="https://github.com/fe-lucifer/fanqiang"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;科学上网
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://mxclub.github.io/resume/" href="https://mxclub.github.io/resume/"
+          
+          
+          >
+          <div class='name'>
+            
+              <i class=" fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;简历主题
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+   
+  <div class="social-wrapper">
+     
+    <a
+      href="/blog/atom.xml"
+      class="social fas fa-rss flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://www.zhihu.com/people/lu-xiao-13-70/activities"
+      class="social fab fa-zhihu flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="mailto:azl397985856@gmail.com"
+      class="social fas fa-envelope flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://github.com/azl397985856"
+      class="social fab fa-github flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://music.163.com/playlist?id=978545815&amp;userid=632167080"
+      class="social fas fa-headphones-alt flat-btn"
+      title=""
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="/blog/wc3map/"
+      class="social fas fa-dragon flat-btn"
+      title="魔兽地图 · 四兄弟 Footmen Frenzy 纪念版（多版本下载）"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="/blog/files/war3-coach-portable.zip"
+      class="social fas fa-chalkboard-teacher flat-btn"
+      title="war3-coach · 魔兽训练辅助工具（回放分析+对手库，免安装便携版，下载解压即用）"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+      
+    <a
+      href="https://wormhole.app"
+      class="social fas fa-paper-plane flat-btn"
+      title="Wormhole · 免登录文件分享（端到端加密，10GB/24小时）"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+    >
+    </a>
+     
+  </div>
+  
+  <br />
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename"
+      >Material X</a
+    >
+    作为主题  。
+  </div>
+
+  <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+  <script>
+    var now = new Date();
+    function createtime() {
+      var grt = new Date("08/10/2018 17:38:00"); //在此处修改你的建站时间，格式：月/日/年 时:分:秒
+      now.setTime(now.getTime() + 250);
+      days = (now - grt) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+      hnum = Math.floor(hours);
+      if (String(hnum).length == 1) {
+        hnum = "0" + hnum;
+      }
+      minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+      mnum = Math.floor(minutes);
+      if (String(mnum).length == 1) {
+        mnum = "0" + mnum;
+      }
+      seconds =
+        (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+      snum = Math.round(seconds);
+      if (String(snum).length == 1) {
+        snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML =
+        "本站已安全运行 " + dnum + " 天 ";
+      document.getElementById("times").innerHTML =
+        hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()", 250);
+  </script>
+</footer>
+<script>
+  setLoadingBarProgress(80);
+</script>
+
+
+        <script>
+          setLoadingBarProgress(60);
+        </script>
+      </div>
+      <a class="s-top fas fa-arrow-up fa-fw" href="javascript:void(0)"></a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "aea1377036afe4cd0343",
+      clientSecret: "815c638dea8644b7a4b97905707cf72b45555f6d",
+      repo: "blog",
+      owner: "azl397985856",
+      admin: "azl397985856",
+      
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
+
+
+
+
+
+  <script src="https://lucifer.ren/blog/js/app.js"></script>
+
+
+  <script src="https://lucifer.ren/blog/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+    <script>
+      setLoadingBarProgress(100);
+    </script>
+  </body>
+</html>

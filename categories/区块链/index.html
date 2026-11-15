@@ -321,8 +321,8 @@
       
         
   <h2 class="title">
-    <a href="/blog/2026/07/20/web3-freqtrade-2/">
-      Freqtrade 进阶：把多个弱信号拧成一根绳——多信号评分策略实战
+    <a href="/blog/2026/11/14/web3-blob/">
+      blob：你的 L2 转账为什么只要几分钱
     </a>
   </h2>
 
@@ -352,7 +352,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2026-07-20</p>
+    <p>2026-11-14</p>
   </a>
 </div>
 
@@ -384,7 +384,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">1.5k字</span>
+          <span class="post-count">2.4k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -392,7 +392,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">6分</span>
+          <span class="post-count">9分</span>
         </span>
       </span>
     </div>
@@ -410,13 +410,10 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>大家好，我是 Lucifer，又来聊聊 Web3 的那些有趣事儿了。今天咱们来聊聊 Freqtrade。</p>
-<p>上一篇我们从零搭好了 Freqtrade，写了个最简单的 SMA 交叉策略。很多人跑完回测后跟我说：“这策略也太简单了，实盘根本扛不住。”</p>
-<p>说得对。那篇是入门用的“Hello World”。真正能活下来的策略，从来不是依赖某一个“神级指标”，而是把一堆看起来不怎么样的弱信号，用正确的方式组合起来。</p>
-<p>今天这篇是正式续篇。我们会把「组合弱信号」这个核心思想，落地成一个能直接在 Freqtrade 里跑的策略。</p>
+      <p>在 L2（比如 Arbitrum、Base）上转一笔账，手续费只要几分钱；同样的动作放到以太坊主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 <strong>blob</strong> 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 的生死有什么关系。</p>
       
         <div class="readmore">
-          <a href="/blog/2026/07/20/web3-freqtrade-2/" class="flat-box">
+          <a href="/blog/2026/11/14/web3-blob/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -430,7 +427,11 @@
         
           <a href="/blog/tags/web3/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> web3</a>
         
-          <a href="/blog/tags/量化交易/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 量化交易</a>
+          <a href="/blog/tags/Ethereum/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Ethereum</a>
+        
+          <a href="/blog/tags/L2/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> L2</a>
+        
+          <a href="/blog/tags/blob/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> blob</a>
         
       </div>
     
@@ -453,8 +454,8 @@
       
         
   <h2 class="title">
-    <a href="/blog/2026/05/12/web3-perpetual/">
-      永续合约：无到期日的杠杆交易是如何运作的
+    <a href="/blog/2026/11/13/web3-mev-supply-chain/">
+      MEV 的另一半：合并后的出块拍卖
     </a>
   </h2>
 
@@ -484,7 +485,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2026-05-12</p>
+    <p>2026-11-13</p>
   </a>
 </div>
 
@@ -516,7 +517,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">3.5k字</span>
+          <span class="post-count">5.6k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -524,7 +525,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">14分</span>
+          <span class="post-count">21分</span>
         </span>
       </span>
     </div>
@@ -542,10 +543,682 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>永续合约（Perpetual Contract）是加密货币交易量最大的衍生品，日交易量超过现货数倍。它让你不用持有 BTC 就能做多做空，用 $100 撬动 $10,000 的头寸。但杠杆是双刃剑——放大收益的同时也放大亏损，爆仓一瞬间就是归零。本文将从原理出发，拆解永续合约的核心机制：Funding Rate 如何锚定现货价格、标记价格如何防止恶意清算、以及保证金和清算的数学关系。</p>
+      <p>上一篇<a href="https://lucifer.ren/blog/2025/07/06/web3-mev/" title="Web3 的 Anti MEV：深入剖析“夹”与反制之道">《Web3 的 Anti MEV：深入剖析“夹”与反制之道》</a>我们抓了个现行：攻击者扫 mempool、插抢跑交易、夹走 40 USDT，全程都在“矿工”的眼皮底下完成。但你可能隐约察觉到一个时代错误——那篇文章里的主角，叫<strong>矿工</strong>。</p>
+<p>问题是，2022 年 9 月以太坊合并（The Merge）转入 PoS 之后，链上已经没有矿工了。出块不再靠算力硬拼，改成“押 32 ETH 押金，每 12 秒摇号抽一位验证者当值”。于是两个更尖锐的问题冒了出来：现在到底谁在排序交易？三明治们攫取的 MEV，又被谁分走了？</p>
+<p>一句话剧透：排序权被拆成了一条四个工种的流水线——Searcher 蹲点捕猎、Builder 打包报价、Relay 中转担保、Validator 签字收钱，每 12 秒办一场拍卖决定这个 slot 归谁。<strong>以前夹你的是一个矿工，现在夹你的是一条流水线。</strong>顺带说一句，你常听说的 blob——让 L2 转账只要几分钱的那位——和这套流水线共享同一个”稀缺资源交给市场拍卖”的思想，但那是另一篇的主角（见文末相关阅读），本文只讲流水线。</p>
+<p>老规矩，代码驱动：本文用一段可直接运行的 Python 模拟，把一场 MEV-Boost 拍卖的分账跑给你看。</p>
       
         <div class="readmore">
-          <a href="/blog/2026/05/12/web3-perpetual/" class="flat-box">
+          <a href="/blog/2026/11/13/web3-mev-supply-chain/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/tags/区块链/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 区块链</a>
+        
+          <a href="/blog/tags/web3/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> web3</a>
+        
+          <a href="/blog/tags/Ethereum/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Ethereum</a>
+        
+          <a href="/blog/tags/MEV/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> MEV</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2026/11/12/web3-dao/">
+      DAO：没有老板的公司，以及它怎么被一秒钟搬空
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2026-11-12</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/区块链/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>区块链</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">7k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">26分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>大家好，我是 Lucifer。之前写 <a href="https://lucifer.ren/blog/2025/09/20/web3-depin/" title="DePIN 觉醒">DePIN</a> 的时候，我随口带过一句”通过 DAO，你可以用 token 投票决定网络升级”。当时一笔带过，但这句话背后其实站着一种完整的组织形态——它没有 CEO、没有董事会、没有财务总监，金库里的钱却比很多上市公司还多。这就是今天的主角：DAO，去中心化自治组织。</p>
+<p>先剧透一个真实结局。2022 年 4 月，有人对这种”没有老板的公司”下手了：一分钟前他还是个穷光蛋，靠闪电贷借来约 10 亿美元的投票权，投完票、搬完金库、把票原样还回去，前后约 13 秒，净落袋近亿美元。他利用了几个代码漏洞？零。偷了谁的私钥？没有。他走的完全是正规流程：提案、投票、执行，一步一步，手续齐全。Beanstalk 协议金库里约 1.82 亿美元，就这么被”合法地”搬空了。</p>
+<p>这篇文章咱们就把这件事讲透：DAO 到底怎么运转？为什么能被一秒钟搬空？防御方手里那几张牌又怎么打？照例，全程用 Python 模拟关键过程，建议你亲手跑一遍——治理这件事，光看懂没用，得亲眼看到攻击的净利润那个数字，你才会记住”公示期”三个字值多少钱。</p>
+      
+        <div class="readmore">
+          <a href="/blog/2026/11/12/web3-dao/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/tags/区块链/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 区块链</a>
+        
+          <a href="/blog/tags/web3/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> web3</a>
+        
+          <a href="/blog/tags/DAO/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> DAO</a>
+        
+          <a href="/blog/tags/治理/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 治理</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2026/11/11/web3-account-abstraction/">
+      账户抽象：把 EOA 升级成智能合约账户
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2026-11-11</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/区块链/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>区块链</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">8.4k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">33分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>先说一个很多人都遇到过的尴尬：钱包里躺着几百 USDC，想转一点给朋友，界面却弹出一行字——“ETH 余额不足，无法支付 gas”。你明明有钱，却连手续费都交不起，像揣着一沓现金站在只收硬币的售货机前。更绝望的是另一种场景：抄助记词的那张纸丢了。没有”忘记密码”，没有客服，没有申诉入口，链上资产从此变成一座纪念碑。</p>
+<p>这些尴尬不怪钱包 App 做得烂，怪以太坊账户模型的”出厂设置”。<a href="https://lucifer.ren/blog/2025/02/16/web3-wallet/" title="Web3 的入口 - 区块链钱包">《Web3 的入口 - 区块链钱包》</a>里介绍过的私钥账户叫 EOA（Externally Owned Account，外部账户），你可以把它理解成<strong>一把钥匙管一切的旧式机械门锁</strong>：一把钥匙就是全部，丢了就完了，没有挂失，没有备用方案。而<strong>账户抽象（Account Abstraction，AA）</strong>想干的事，说白了就一件：<strong>把这把旧门锁换成智能门锁</strong>——账户从”一把私钥”升级成”一段可编程的合约”，”怎么验身份、怎么付 gas、怎么执行”，全由代码说了算。</p>
+<p>熟悉我的朋友应该知道，我经常从零实现一些东西帮助理解，本文照例代码驱动：先用 Python 模拟 ERC-4337 里一个 UserOperation 从提交到结算的完整生命周期，再模拟社交恢复与 guardian 串通攻击，中间穿插 EIP-7702 的机制讲解，所有输出均为真实运行结果，纯标准库，复制即可跑。</p>
+      
+        <div class="readmore">
+          <a href="/blog/2026/11/11/web3-account-abstraction/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/tags/区块链/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 区块链</a>
+        
+          <a href="/blog/tags/web3/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> web3</a>
+        
+          <a href="/blog/tags/Ethereum/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Ethereum</a>
+        
+          <a href="/blog/tags/账户抽象/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 账户抽象</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2026/11/10/web3-security-audit/">
+      合约安全审计入门：读不懂 Solidity，也能看懂审计报告
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2026-11-10</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/区块链/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>区块链</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">7.5k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">28分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>还记得<a href="https://lucifer.ren/blog/2025/03/01/web3-hacker-1/" title="我是一个区块链黑客（第一篇）">《我是一个区块链黑客（第一篇）》</a>结尾那份防范清单吗？最后一条写着”定期审计合约代码”——一句话打发了价值几十万美元的行业服务，堪称全文最省钱的一条建议。无独有偶，聊 DeFi 保险的<a href="https://lucifer.ren/blog/2026/04/22/web3-defi-insurance/" title="DeFi 保险：谁来保护你的链上资产？">《DeFi 保险：谁来保护你的链上资产？》</a>更直接，把”审计次数”列进了协议风险评分表。</p>
+<p>那么问题来了：审计到底是什么？谁在审？报告怎么读？普通人能不能自己跑两下？本文就回答这四个问题。</p>
+<p>先把心态立正：<strong>审计不是保险单</strong>。这话怎么理解？想想体检。体检报告只能告诉你”抽血那天的你”状态如何，不能保证你一年不生病；车过了年检，上了高速照样可能爆胎。被多家审计公司轮番体检过的协议也一样——Euler Finance 审过不止一轮，2023 年 3 月还是被闪电贷攻击卷走 1.97 亿美元（后来黑客退还了大部分，堪称行业奇观）。原因并不神秘：审计是时间盒（time-boxed）内的抽检，不是数学证明。几个工程师花一两周，对着几万行代码找毛病，找到的是”他们能找到的”，而不是”不存在的”。</p>
+<p>本文按四个问题展开：漏洞长什么样、审计怎么跑、报告怎么读、以及你自己怎么动手。读不懂 Solidity 没关系——审计报告本来就不全是写给程序员的，普通用户才是最该会读它的人。看完至少能看懂报告；看得懂代码更好，文末有个一百来行的玩具扫描器等你复现。</p>
+      
+        <div class="readmore">
+          <a href="/blog/2026/11/10/web3-security-audit/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/tags/区块链/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 区块链</a>
+        
+          <a href="/blog/tags/web3/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> web3</a>
+        
+          <a href="/blog/tags/安全/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 安全</a>
+        
+          <a href="/blog/tags/审计/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 审计</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2026/11/08/web3-rug-pull/">
+      上新币之前，先做这五项检查：Rug Pull 与貔貅盘识别
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2026-11-08</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/区块链/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>区块链</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">7.3k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">26分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>在 Web3 里买新币，死法基本就三种，而且个个经典。第一种叫<strong>硬 rug</strong>：项目方直接把流动性池撤空卷款跑路，代币瞬间归零，从”因为相信所以看见”到”查无此币”只需要一笔交易。第二种叫<strong>软 rug</strong>：团队握着大份额代币按兵不动，看起来岁月静好，然后每天精准砸一点，温水煮青蛙，你甚至说不清自己是哪天死的。第三种最阴，叫<strong>貔貅盘（honeypot）</strong>——以只进不出的上古神兽命名：你买得进，卖不出，要么卖出直接 revert，要么卖出税高达 99%，1000 USDT 进去，50 USDT 出来，”客服”还会劝你长期持有必有回报。</p>
+<p>很多人觉得识别这些骗局需要深厚的合约功底，其实不需要。发币的门槛低到令人发指：一段二三十行的 ERC-20 模板代码，复制粘贴改个名字，五分钟上线，全部成本就是几美元的 Gas 费。门槛越低，骗子密度越高。所以”上新币之前先做检查”不是选修课，是必修课——你不检查合约，合约就会检查你的钱包。</p>
+<p>这篇文章不讲大道理，只讲五项买前检查：流动性安全、合约权限、卖出模拟、持仓分布、团队背景。每项都配一个菜市场、买房、相亲级别的类比——你哪怕记不住术语，把类比记住也能躲掉大半的坑——外加”为什么 + 怎么查”，最后用三段纯标准库的 Python 代码把检查思路自动化。学完至少能躲开 80% 明晃晃的坑，剩下 20% 属于<a href="https://lucifer.ren/blog/2026/11/10/web3-security-audit/">《合约安全审计入门》</a>的专业范畴，那篇是审计工程师视角，本文是你掏钱之前五分钟的快速体检。</p>
+      
+        <div class="readmore">
+          <a href="/blog/2026/11/08/web3-rug-pull/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/tags/区块链/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 区块链</a>
+        
+          <a href="/blog/tags/web3/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> web3</a>
+        
+          <a href="/blog/tags/安全/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 安全</a>
+        
+          <a href="/blog/tags/链上分析/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 链上分析</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2026/11/05/web3-impermanent-loss/">
+      无常损失：当 LP 到底亏不亏，把账算清楚
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://lucifer.ren/blog" rel="nofollow">
+        
+          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
+        
+        <p>lucifer</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2026-11-05</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/区块链/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>区块链</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div style="margin-right: 10px;">
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-keyboard"></i>
+          <span class="post-meta-item-text">  字数统计: </span>
+          <span class="post-count">5.9k字</span>
+        </span>
+      </span>
+      &nbsp; | &nbsp;
+      <span class="post-time">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-hourglass-half"></i>
+          <span class="post-meta-item-text">  阅读时长≈</span>
+          <span class="post-count">23分</span>
+        </span>
+      </span>
+    </div>
+  
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>前面两篇文章，我们把”把币存进池子当 LP”这件事讲得热血沸腾：<a href="https://lucifer.ren/blog/2025/03/28/web3-swap-staking/" title="Web3 金融的基石 - Swap 和 Staking">《Web3 金融的基石 - Swap 和 Staking》</a> 用 <code>x·y=k</code> 从零搭了个池子，亲眼看着手续费一分一分进账；<a href="https://lucifer.ren/blog/2025/12/31/web3-lp-2025/" title="当下流动性池分析">《当下流动性池分析》</a> 又盘点了各家池子的设计，从 Uniswap V2 一路看到 Curve。看起来当 LP 就是”躺赚手续费”，稳得很。</p>
+<p>但如果你真去当过 LP，大概率经历过这样的时刻：ETH 从 3000 涨到 6000，你打开钱包一看，仓位总价值确实涨了——可隔壁拿着币啥也不干的朋友，涨得比你多得多。你安慰自己”至少我还有手续费”，然后心里隐隐有个声音：我该不会……亏了吧？</p>
+<p>这个声音有名字，叫<strong>无常损失</strong>（Impermanent Loss，IL）。先别急，别急着去搜定义，我们用一个摆摊的比喻把它钉在墙上：</p>
+<p>你和朋友合伙摆摊。你出 1 个 ETH，朋友出 3000 USDT，凑成一份 6000 美元的货，放进摊子的收银台。这个摊子是程序控制的，脾气写死在代码里：<strong>只要价格一动，它就自动”卖掉涨得多的、收进跌得多的”</strong>。ETH 涨了？摊子根本不等你想，先把涨了的 ETH 卖给排队的客人；ETH 跌了？摊子反手往里收贬值的币。等你俩哪天散伙清点，把手里的东西折成钱，跟”当初不摆摊、俩人死拿着资产不动”比——总是少一截。</p>
+<p>少的那一截，就是无常损失。</p>
+<p>大部分文章讲到这里就跑路了，丢下一句”LP 会亏一点，手续费能补回来”就消失。本文不跑路：把手伸进 <code>x·y=k</code> 里，一笔一笔把账算到底，最后用 Python 验证每一个数字。读完后你应该能自己回答三个问题：亏多少？为什么叫”无常”？手续费什么时候填得平这个坑？</p>
+      
+        <div class="readmore">
+          <a href="/blog/2026/11/05/web3-impermanent-loss/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -561,13 +1234,9 @@
         
           <a href="/blog/tags/DeFi/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> DeFi</a>
         
-          <a href="/blog/tags/永续合约/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 永续合约</a>
+          <a href="/blog/tags/LP/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> LP</a>
         
-          <a href="/blog/tags/衍生品/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 衍生品</a>
-        
-          <a href="/blog/tags/dYdX/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> dYdX</a>
-        
-          <a href="/blog/tags/GMX/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> GMX</a>
+          <a href="/blog/tags/AMM/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> AMM</a>
         
       </div>
     
@@ -590,8 +1259,8 @@
       
         
   <h2 class="title">
-    <a href="/blog/2026/05/03/web3-tokenomics/">
-      代币经济学：如何判断一个代币值不值得买
+    <a href="/blog/2026/11/03/web3-oracle/">
+      预言机：DeFi 里的价格到底是从哪来的？
     </a>
   </h2>
 
@@ -621,7 +1290,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2026-05-03</p>
+    <p>2026-11-03</p>
   </a>
 </div>
 
@@ -653,7 +1322,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">3.5k字</span>
+          <span class="post-count">6.7k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -661,7 +1330,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">14分</span>
+          <span class="post-count">23分</span>
         </span>
       </span>
     </div>
@@ -679,283 +1348,12 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>你研究了一个项目，技术很好，团队很强，社区活跃。然后你看了一眼代币分配：团队持有 40%，6 个月后全部解锁。你还会买吗？代币经济学（Tokenomics）就是帮你回答这类问题的框架——它研究代币的供应、分配、流通和价值捕获机制，决定了”这个代币的价格长期是涨还是跌”的底层逻辑。如果说技术决定项目能不能活，那 Tokenomics 决定代币值不值钱。本文将拆解代币经济学的核心要素，教你用量化方法评估一个代币的长期价值。</p>
-<p>这篇文章是对之前 <a href="https://lucifer.ren/blog/2025/09/16/web3-value-center/">自己动手制作 Web3 代币估值表</a> 的上游知识补充——先理解 Tokenomics，再做估值才有根基。</p>
+      <p>大家好，我是 Lucifer。之前写<a href="https://lucifer.ren/blog/2025/09/14/web3-corn-rwa/" title="当 RWA 遇上幸福小区玉米">RWA</a>的时候，我把预言机比作”信使”：链下世界的玉米价格、黄金报价，得靠一位信使穿过链上链下那堵墙，把消息递进来。当时一笔带过，今天把这位信使请出来，当面问三个问题：<strong>你带来的消息是哪来的？可信吗？有没有人塞你红包？</strong></p>
+<p>你可能觉得这是技术宅的闲磕牙。还真不是。DeFi 里几乎所有要命的时刻，背后都挂着同一个问题——“现在价格是多少”。借贷协议靠价格算抵押品价值、触发清算；稳定币靠价格守锚定；永续合约靠价格结算资金费率。价格对，天下太平；价格被污染 10 分钟，几个亿的真金白银就会换主人。2022 年 Mango Markets 一夜之间被搬走约 1.14 亿美元——攻击者没黑一行合约代码，他只是把”价格”这个数换掉了。</p>
+<p>这篇文章我们就把预言机从头捋一遍：链上为什么看不到外面的价格、为什么不能随便抄个现货价、Chainlink 和 Pyth 各自在忙什么、TWAP 是怎么把操纵变成烧钱大战的，最后照例用两段 Python 模拟把原理跑给你看。放心，全程初中数学。</p>
       
         <div class="readmore">
-          <a href="/blog/2026/05/03/web3-tokenomics/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/tags/投资/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 投资</a>
-        
-          <a href="/blog/tags/区块链/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 区块链</a>
-        
-          <a href="/blog/tags/web3/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> web3</a>
-        
-          <a href="/blog/tags/Tokenomics/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Tokenomics</a>
-        
-          <a href="/blog/tags/代币经济学/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 代币经济学</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/blog/2026/05/02/web3-stablecoin/">
-      稳定币机制全解：从 USDT 到 UST 崩盘的启示
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://lucifer.ren/blog" rel="nofollow">
-        
-          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
-        
-        <p>lucifer</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2026-05-02</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/categories/区块链/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>区块链</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-  
-    <div style="margin-right: 10px;">
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-keyboard"></i>
-          <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">2.8k字</span>
-        </span>
-      </span>
-      &nbsp; | &nbsp;
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-hourglass-half"></i>
-          <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">11分</span>
-        </span>
-      </span>
-    </div>
-  
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>在加密世界的剧烈波动中，稳定币是唯一的”避风港”。它们锚定美元（或其他法币），让你在 DeFi 中借贷、交易、计价时不用担心结算那一刻价格已经变了 10%。但稳定币远非”稳定”——2022 年 5 月 UST 脱锚引发 $400 亿蒸发就是血淋淋的教训。本文将解析三种主流稳定币机制的原理、权衡和风险，帮你理解”1 美元”背后到底靠什么在撑。</p>
-      
-        <div class="readmore">
-          <a href="/blog/2026/05/02/web3-stablecoin/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/tags/区块链/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 区块链</a>
-        
-          <a href="/blog/tags/web3/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> web3</a>
-        
-          <a href="/blog/tags/稳定币/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 稳定币</a>
-        
-          <a href="/blog/tags/USDT/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> USDT</a>
-        
-          <a href="/blog/tags/USDC/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> USDC</a>
-        
-          <a href="/blog/tags/DAI/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> DAI</a>
-        
-          <a href="/blog/tags/UST/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> UST</a>
-        
-          <a href="/blog/tags/MakerDAO/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> MakerDAO</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/blog/2026/04/22/web3-defi-insurance/">
-      DeFi 保险：谁来保护你的链上资产？
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://lucifer.ren/blog" rel="nofollow">
-        
-          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
-        
-        <p>lucifer</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2026-04-22</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/categories/区块链/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>区块链</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-  
-    <div style="margin-right: 10px;">
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-keyboard"></i>
-          <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">3.5k字</span>
-        </span>
-      </span>
-      &nbsp; | &nbsp;
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-hourglass-half"></i>
-          <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">14分</span>
-        </span>
-      </span>
-    </div>
-  
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>2022 年 DeFi 黑客攻击造成超过 $30 亿损失，2023 年仍有近 $20 亿被盗。你在 AAVE 存了 10 万 USDC，万一合约被攻破怎么办？你跨链走 Wormhole，万一桥被黑了呢？传统金融有 FDIC 存款保险、证券投资者保护基金，DeFi 世界同样需要保险——但它的实现方式完全不同。本文将解析 DeFi 保险的运作原理、覆盖范围、定价机制，以及为什么这个赛道虽然重要却发展缓慢。</p>
-      
-        <div class="readmore">
-          <a href="/blog/2026/04/22/web3-defi-insurance/" class="flat-box">
+          <a href="/blog/2026/11/03/web3-oracle/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -971,11 +1369,7 @@
         
           <a href="/blog/tags/DeFi/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> DeFi</a>
         
-          <a href="/blog/tags/保险/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 保险</a>
-        
-          <a href="/blog/tags/Nexus-Mutual/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Nexus Mutual</a>
-        
-          <a href="/blog/tags/智能合约安全/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 智能合约安全</a>
+          <a href="/blog/tags/预言机/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 预言机</a>
         
       </div>
     
@@ -998,8 +1392,8 @@
       
         
   <h2 class="title">
-    <a href="/blog/2025/12/31/web3-lp-2025/">
-      当下流动性池分析
+    <a href="/blog/2026/11/01/web3-wallet-dev/">
+      钱包开发（续）：助记词、HD 派生与地址的来龙去脉
     </a>
   </h2>
 
@@ -1029,7 +1423,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2025-12-31</p>
+    <p>2026-11-01</p>
   </a>
 </div>
 
@@ -1061,7 +1455,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">2.5k字</span>
+          <span class="post-count">6.6k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -1069,7 +1463,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">10分</span>
+          <span class="post-count">25分</span>
         </span>
       </span>
     </div>
@@ -1087,10 +1481,14 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>在去中心化金融（DeFi）生态中，流动性池是自动做市商（AMM）机制的核心组成部分。它允许用户通过提供资产来赚取费用，同时为交易者提供即时交换服务，而无需依赖传统的订单簿。流动性池的设计直接影响交易滑点、资金效率和流动性提供者（LP）的风险回报比。随着 DeFi 的演进，不同协议不断优化池子模型，以应对永久性损失（Impermanent Loss, IL）、滑点和多资产支持等问题。本文将分析当下几个主流流动性池协议，包括 Uniswap V3、Balancer、Curve 和 Bancor V3。我们将通过通俗的解释、类比和 Python 代码模拟来剖析其原理，帮助读者理解这些机制如何在实际中运作。所有模拟均基于简化假设，旨在说明核心概念，而非精确预测。</p>
+      <p>在 <a href="https://lucifer.ren/blog/2025/02/16/web3-wallet/" title="Web3 的入口 - 区块链钱包">《Web3 的入口 - 区块链钱包》</a> 的结尾，我立过一个 flag：钱包开发的细节还没讲，留言多就专门写一篇。一年半过去了，留言不算多，但这个债我一直记着——毕竟在 web3 圈子混，欠的债是要还的，我只是不想用私钥签名赖账。</p>
+<p>那篇文章留了三个没讲清楚的尾巴：私钥到底从哪来？助记词怎么就变成了一串钥匙？地址又是怎么从公钥变出来的？而且为了教学方便，旧文的示例里把公钥直接当地址用（就是 <code>get_address()</code> 里返回的那串 hex），真实的推导根本不是这么回事，本文就来补上这一课。</p>
+<p>先把全程的路线图亮出来，你可以把它当成一次”寻根之旅”：一串随机数从出生（熵），到翻译成人话（助记词），磨成始祖（种子），繁衍出一族后代（私钥），最后领到能晒出来的门牌号（地址）。这条链是：</p>
+<p><strong>熵 → 助记词 → 种子 → 派生路径 → 私钥 → 公钥 → 地址</strong></p>
+<p>只有走完这条线，你才能真正理解那句听起来很魔法的话——“同一套助记词能同时管理以太坊、比特币、Solana 上无数个钱包”。这不是魔法，是三份 BIP 规范（BIP39、BIP32、BIP44）叠出来的组合技。本文全程代码驱动，每一段代码都是我真实跑过的，老规矩，建议你跟着敲一遍。</p>
       
         <div class="readmore">
-          <a href="/blog/2025/12/31/web3-lp-2025/" class="flat-box">
+          <a href="/blog/2026/11/01/web3-wallet-dev/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -1104,19 +1502,9 @@
         
           <a href="/blog/tags/web3/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> web3</a>
         
-          <a href="/blog/tags/swap/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> swap</a>
+          <a href="/blog/tags/钱包/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 钱包</a>
         
-          <a href="/blog/tags/uniswap/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> uniswap</a>
-        
-          <a href="/blog/tags/v4/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> v4</a>
-        
-          <a href="/blog/tags/balancer/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> balancer</a>
-        
-          <a href="/blog/tags/curve/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> curve</a>
-        
-          <a href="/blog/tags/bancor/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> bancor</a>
-        
-          <a href="/blog/tags/流动性池/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 流动性池</a>
+          <a href="/blog/tags/密码学/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 密码学</a>
         
       </div>
     
@@ -1139,8 +1527,8 @@
       
         
   <h2 class="title">
-    <a href="/blog/2025/12/07/web3-acp/">
-      ACP：AI 代理协作协议在 Web3 空投自动化中的应用
+    <a href="/blog/2026/10/30/web3-gas/">
+      Gas：链上一切行为的价格标签
     </a>
   </h2>
 
@@ -1170,7 +1558,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2025-12-07</p>
+    <p>2026-10-30</p>
   </a>
 </div>
 
@@ -1202,7 +1590,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">4k字</span>
+          <span class="post-count">5.7k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -1210,7 +1598,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">19分</span>
+          <span class="post-count">21分</span>
         </span>
       </span>
     </div>
@@ -1228,10 +1616,12 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>在 AI 与 Web3 的交汇处，代理系统正重塑自动化任务的执行方式。传统的空投“撸毛”过程依赖手动监控和脚本执行，效率低下且易受检测。本文探讨 Agent Communication Protocol (ACP)，一种新兴协议如何通过标准化代理间通信，实现高效、隐私保护的自动化协作。我们将从 AI 协议基础入手，逐步剖析 ACP 的原理、实现细节，并提供可运行的代码示例。内容基于当前（2025 年 12 月）开源社区进展，旨在为开发者提供实用指导。</p>
+      <p>在<a href="https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/" title="《从零开始构建区块链》">《从零开始构建区块链》</a>里，我们亲手搓过一条玩具链：转账、挖矿、查余额，全程免费，转账像发微信消息一样轻快。但那条链有个没说破的”作弊”：真实链上不是这样的。你在以太坊上哪怕只转 0.001 ETH，也得先掏一笔手续费；赶上牛市高峰，一次 DeFi 操作的 gas 费够吃顿火锅，部署合约更是”豪门消费”。</p>
+<p>很多新手第一次被 web3 劝退，不是因为看不懂钱包界面，而是被 gas 吓退的：为什么转个账还要钱？为什么贵的时候一笔要几十美元？这笔钱到底给了谁？为什么不干脆免费？</p>
+<p>这篇文章就把 gas 掰开揉碎讲明白：它是什么、怎么定价、EIP-1559 之后钱包里那三个数字（base fee、priority fee、max fee）到底是什么意思，以及为什么有一部分费用会被当众”烧掉”。老规矩，最后用 Python 把整个机制模拟一遍，所有输出都是真实运行结果，欢迎对着敲。</p>
       
         <div class="readmore">
-          <a href="/blog/2025/12/07/web3-acp/" class="flat-box">
+          <a href="/blog/2026/10/30/web3-gas/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -1245,402 +1635,9 @@
         
           <a href="/blog/tags/web3/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> web3</a>
         
-          <a href="/blog/tags/acp/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> acp</a>
+          <a href="/blog/tags/Ethereum/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Ethereum</a>
         
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/blog/2025/10/01/web3-freqtrade/">
-      Freqtrade 量化风暴：Python 铸就的加密交易自动化帝国
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://lucifer.ren/blog" rel="nofollow">
-        
-          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
-        
-        <p>lucifer</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2025-10-01</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/categories/区块链/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>区块链</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-  
-    <div style="margin-right: 10px;">
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-keyboard"></i>
-          <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">2.3k字</span>
-        </span>
-      </span>
-      &nbsp; | &nbsp;
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-hourglass-half"></i>
-          <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">8分</span>
-        </span>
-      </span>
-    </div>
-  
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>大家好，我是 Lucifer，又来聊聊 Web3 的那些有趣事儿了。今天咱们来聊聊 Freqtrade。</p>
-<p>你们有没有过那种深夜盯着K线图，脑子里全是“要是机器帮我下单就好了”的冲动？在加密货币的世界里，市场像过山车一样刺激，但手动交易往往让你错过黄金窗口，或者被情绪拖进深渊。量化交易，就是用算法和数据来驯服这头野兽。今天，我们来聊聊 Freqtrade 这个开源神器——一个纯 Python 驱动的加密交易机器人。它不是什么高大上的黑箱工具，而是让你从零起步，快速构建自动化交易系统的利器。基于 GitHub 上这个热门项目（<a href="https://github.com/freqtrade/freqtrade" target="_blank" rel="noopener">freqtrade</a>），我们一步步拆解它，从安装到策略定制，再到实战回测和报警接入。相信我，跟着读完，你就能在本地跑起自己的量化小帝国了。走起！</p>
-      
-        <div class="readmore">
-          <a href="/blog/2025/10/01/web3-freqtrade/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/tags/区块链/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 区块链</a>
-        
-          <a href="/blog/tags/web3/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> web3</a>
-        
-          <a href="/blog/tags/量化交易/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 量化交易</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/blog/2025/09/20/web3-depin/">
-      DePIN 觉醒：Web3 如何让你的闲置硬件变黄金
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://lucifer.ren/blog" rel="nofollow">
-        
-          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
-        
-        <p>lucifer</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2025-09-20</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/categories/区块链/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>区块链</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-  
-    <div style="margin-right: 10px;">
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-keyboard"></i>
-          <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">2.3k字</span>
-        </span>
-      </span>
-      &nbsp; | &nbsp;
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-hourglass-half"></i>
-          <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">8分</span>
-        </span>
-      </span>
-    </div>
-  
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>大家好，我是 Lucifer，又来聊聊 Web3 的那些有趣事儿了。今天咱们来聊聊 DePIN，全称 Decentralized Physical Infrastructure Networks，去中心化物理基础设施网络。听起来有点抽象？别急，相信我，它真的超级接地气。想象一下，你家里的闲置硬盘、路由器，甚至是手机的计算力，都能变成赚钱的“矿机”，而这一切都靠区块链来协调和激励。这不只是科幻，它已经在重塑我们对基础设施的认知，让 Web3 从虚拟世界真正走进物理现实。</p>
-<p>如果你是 Web3 新手，我建议你边读边动手——文章里我会用 Python 代码模拟一些核心过程，只有亲手跑一遍，你才能真正感受到 DePIN 的魅力。准备好了吗？咱们一步步来。</p>
-      
-        <div class="readmore">
-          <a href="/blog/2025/09/20/web3-depin/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/tags/区块链/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 区块链</a>
-        
-          <a href="/blog/tags/web3/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> web3</a>
-        
-          <a href="/blog/tags/depin/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> depin</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/blog/2025/09/16/web3-value-center/">
-      自己动手制作 Web3 代币估值表
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="https://lucifer.ren/blog" rel="nofollow">
-        
-          <img src="https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4">
-        
-        <p>lucifer</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2025-09-16</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/categories/区块链/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>区块链</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-  
-    <div style="margin-right: 10px;">
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-keyboard"></i>
-          <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">2k字</span>
-        </span>
-      </span>
-      &nbsp; | &nbsp;
-      <span class="post-time">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-hourglass-half"></i>
-          <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">8分</span>
-        </span>
-      </span>
-    </div>
-  
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>Web3 的投资世界充满机会，但如何判断一个代币是“物美价廉”还是“虚高泡沫”？传统的股票估值用 PE、PB 等指标，结合历史百分位判断高低。Web3 代币也有类似逻辑，但指标更贴合区块链特性：链上数据如总锁定价值（TVL）、费用收入和活跃用户（DAU）增长率，能揭示代币的内在价值。参考传统金融平台（如<a href="https://danjuanfunds.com/djmodule/value-center" target="_blank" rel="noopener">蛋卷基金</a>的价值中心），我们可以用这些指标，结合历史百分位，构建一个直观的 Web3 代币估值表，判断单个代币（如 UNI 或 ETH）的低估、中估或高估。</p>
-<p>估值表会不会很难做？是也不是。</p>
-<ul>
-<li>不难，因为自己定义一个极简的估值很简单。本文就教你如果做一个自己的估值表，让你理解其背后究竟做了什么事情。</li>
-<li>难。因为做一个能客观真实反应估值的表非常难，因为这需要加入很多变量，调整很多算法，这个不在本文讨论范围，大家感兴趣的话可以给我留言，人数多的话我会单独写一篇文章。</li>
-</ul>
-<p>本文将聚焦<strong>单个代币的估值</strong>，提出一个自定义的<strong>复合算法</strong>，整合三个指标：MC/TVL Ratio（市值/TVL）、Fee Yield（费用收益率）和 DAU Growth（活跃用户增长率），生成一个 0-1 的估值分数，清晰定义“低估”（<0.3）、“中估”（0.3-0.7）、“高估”（>0.7）。我会用文字拆解原理，再用 Python 3 代码模拟实现（以 UNI 为例），从数据采集到可视化，全程透明。代码可直接跑，稍改就能用真实 API 判断任何代币。想保护你的 Web3 资产？先看看 MPC 钱包的冷知识：<a href="https://lucifer.ren/blog/2025/03/05/web3-mpc/">更加安全的区块链钱包：MPC 钱包</a>。开始吧！</0.3）、“中估”（0.3-0.7）、“高估”（></p>
-      
-        <div class="readmore">
-          <a href="/blog/2025/09/16/web3-value-center/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/tags/区块链/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 区块链</a>
-        
-          <a href="/blog/tags/web3/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> web3</a>
-        
-          <a href="/blog/tags/代币经济学/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 代币经济学</a>
+          <a href="/blog/tags/Gas/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Gas</a>
         
       </div>
     
@@ -1659,7 +1656,7 @@
         <div class="prev-next">
           
           <p class="current">
-            1 / 3
+            1 / 4
           </p>
           
             <a class="next" rel="next" href="/blog/categories/区块链/page/2/">
@@ -2114,7 +2111,7 @@
         
           <li><a class="flat-box" title="/blog/categories/动态规划/" href="/blog/categories/动态规划/"><div class='name'>动态规划</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/blog/categories/区块链/" href="/blog/categories/区块链/"><div class='name'>区块链</div><div class='badge'>(24)</div></a></li>
+          <li><a class="flat-box" title="/blog/categories/区块链/" href="/blog/categories/区块链/"><div class='name'>区块链</div><div class='badge'>(34)</div></a></li>
         
           <li><a class="flat-box" title="/blog/categories/命令行/" href="/blog/categories/命令行/"><div class='name'>命令行</div><div class='badge'>(1)</div></a></li>
         
@@ -2141,6 +2138,8 @@
           <li><a class="flat-box" title="/blog/categories/年终总结/" href="/blog/categories/年终总结/"><div class='name'>年终总结</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/blog/categories/异议！/" href="/blog/categories/异议！/"><div class='name'>异议！</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/成长/" href="/blog/categories/成长/"><div class='name'>成长</div><div class='badge'>(0)</div></a></li>
         
           <li><a class="flat-box" title="/blog/categories/成长经历/" href="/blog/categories/成长经历/"><div class='name'>成长经历</div><div class='badge'>(2)</div></a></li>
         
@@ -2236,11 +2235,13 @@
         
           <li><a class="flat-box child" title="/blog/categories/浏览器/事件/" href="/blog/categories/浏览器/事件/"><div class='name'>事件</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/blog/categories/理财/" href="/blog/categories/理财/"><div class='name'>理财</div><div class='badge'>(3)</div></a></li>
+          <li><a class="flat-box" title="/blog/categories/理财/" href="/blog/categories/理财/"><div class='name'>理财</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box child" title="/blog/categories/理财/K线/" href="/blog/categories/理财/K线/"><div class='name'>K线</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box child" title="/blog/categories/理财/K线/蜡烛图/" href="/blog/categories/理财/K线/蜡烛图/"><div class='name'>蜡烛图</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/blog/categories/理财/量化/" href="/blog/categories/理财/量化/"><div class='name'>量化</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/blog/categories/生活/" href="/blog/categories/生活/"><div class='name'>生活</div><div class='badge'>(5)</div></a></li>
         
@@ -2410,7 +2411,7 @@
 </header>
 
     <div class='content pure'>
-      <a href="/blog/tags/2022/" style="font-size: 14px; color: #999">2022</a> <a href="/blog/tags/91天学算法/" style="font-size: 20.88px; color: #6a6a6a">91天学算法</a> <a href="/blog/tags/AI/" style="font-size: 14px; color: #999">AI</a> <a href="/blog/tags/AST/" style="font-size: 14px; color: #999">AST</a> <a href="/blog/tags/BFS/" style="font-size: 14.63px; color: #959595">BFS</a> <a href="/blog/tags/BigPipe/" style="font-size: 14px; color: #999">BigPipe</a> <a href="/blog/tags/CD/" style="font-size: 14px; color: #999">CD</a> <a href="/blog/tags/CSS/" style="font-size: 14px; color: #999">CSS</a> <a href="/blog/tags/Canvas/" style="font-size: 14px; color: #999">Canvas</a> <a href="/blog/tags/Chrome/" style="font-size: 15.25px; color: #919191">Chrome</a> <a href="/blog/tags/D2/" style="font-size: 14px; color: #999">D2</a> <a href="/blog/tags/DAI/" style="font-size: 14px; color: #999">DAI</a> <a href="/blog/tags/DEX/" style="font-size: 14px; color: #999">DEX</a> <a href="/blog/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/blog/tags/DeFi/" style="font-size: 14.63px; color: #959595">DeFi</a> <a href="/blog/tags/Easy/" style="font-size: 14px; color: #999">Easy</a> <a href="/blog/tags/Floyd-Warshall/" style="font-size: 14px; color: #999">Floyd-Warshall</a> <a href="/blog/tags/GMX/" style="font-size: 14px; color: #999">GMX</a> <a href="/blog/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/blog/tags/Github/" style="font-size: 14.63px; color: #959595">Github</a> <a href="/blog/tags/Google-IO/" style="font-size: 14px; color: #999">Google IO</a> <a href="/blog/tags/Hard/" style="font-size: 14px; color: #999">Hard</a> <a href="/blog/tags/JSConf/" style="font-size: 14px; color: #999">JSConf</a> <a href="/blog/tags/KK平台/" style="font-size: 14px; color: #999">KK平台</a> <a href="/blog/tags/K线/" style="font-size: 14px; color: #999">K线</a> <a href="/blog/tags/L2/" style="font-size: 14px; color: #999">L2</a> <a href="/blog/tags/LeetCode/" style="font-size: 22.75px; color: #5e5e5e">LeetCode</a> <a href="/blog/tags/LeetCode日记/" style="font-size: 19px; color: #777">LeetCode日记</a> <a href="/blog/tags/MEV/" style="font-size: 14px; color: #999">MEV</a> <a href="/blog/tags/MPC-钱包/" style="font-size: 14px; color: #999">MPC 钱包</a> <a href="/blog/tags/Mac/" style="font-size: 14px; color: #999">Mac</a> <a href="/blog/tags/MakerDAO/" style="font-size: 14px; color: #999">MakerDAO</a> <a href="/blog/tags/Medium/" style="font-size: 14.63px; color: #959595">Medium</a> <a href="/blog/tags/Nexus-Mutual/" style="font-size: 14px; color: #999">Nexus Mutual</a> <a href="/blog/tags/PPT/" style="font-size: 14.63px; color: #959595">PPT</a> <a href="/blog/tags/QCon/" style="font-size: 14px; color: #999">QCon</a> <a href="/blog/tags/RFC/" style="font-size: 14px; color: #999">RFC</a> <a href="/blog/tags/React/" style="font-size: 14px; color: #999">React</a> <a href="/blog/tags/Tokenomics/" style="font-size: 14px; color: #999">Tokenomics</a> <a href="/blog/tags/TypeScript/" style="font-size: 18.38px; color: #7b7b7b">TypeScript</a> <a href="/blog/tags/USDC/" style="font-size: 14px; color: #999">USDC</a> <a href="/blog/tags/USDT/" style="font-size: 14px; color: #999">USDT</a> <a href="/blog/tags/UST/" style="font-size: 14px; color: #999">UST</a> <a href="/blog/tags/VSCODE/" style="font-size: 15.25px; color: #919191">VSCODE</a> <a href="/blog/tags/Warp/" style="font-size: 14px; color: #999">Warp</a> <a href="/blog/tags/Web3-钱包/" style="font-size: 14px; color: #999">Web3 钱包</a> <a href="/blog/tags/aave/" style="font-size: 14px; color: #999">aave</a> <a href="/blog/tags/acp/" style="font-size: 14px; color: #999">acp</a> <a href="/blog/tags/agent/" style="font-size: 14px; color: #999">agent</a> <a href="/blog/tags/ai/" style="font-size: 15.88px; color: #8c8c8c">ai</a> <a href="/blog/tags/apple/" style="font-size: 14px; color: #999">apple</a> <a href="/blog/tags/approve/" style="font-size: 14.63px; color: #959595">approve</a> <a href="/blog/tags/balancer/" style="font-size: 14px; color: #999">balancer</a> <a href="/blog/tags/bancor/" style="font-size: 14px; color: #999">bancor</a> <a href="/blog/tags/borrow/" style="font-size: 14px; color: #999">borrow</a> <a href="/blog/tags/chatgpt/" style="font-size: 14px; color: #999">chatgpt</a> <a href="/blog/tags/chrome/" style="font-size: 14px; color: #999">chrome</a> <a href="/blog/tags/claude/" style="font-size: 14px; color: #999">claude</a> <a href="/blog/tags/cordis/" style="font-size: 14px; color: #999">cordis</a> <a href="/blog/tags/css-in-js/" style="font-size: 14px; color: #999">css-in-js</a> <a href="/blog/tags/curve/" style="font-size: 14px; color: #999">curve</a> <a href="/blog/tags/dYdX/" style="font-size: 14px; color: #999">dYdX</a> <a href="/blog/tags/deepseek/" style="font-size: 14px; color: #999">deepseek</a> <a href="/blog/tags/defi/" style="font-size: 14px; color: #999">defi</a> <a href="/blog/tags/depin/" style="font-size: 14px; color: #999">depin</a> <a href="/blog/tags/dex/" style="font-size: 14px; color: #999">dex</a> <a href="/blog/tags/dotfiles/" style="font-size: 14px; color: #999">dotfiles</a> <a href="/blog/tags/eslint/" style="font-size: 14px; color: #999">eslint</a> <a href="/blog/tags/gemini/" style="font-size: 14px; color: #999">gemini</a> <a href="/blog/tags/google/" style="font-size: 14px; color: #999">google</a> <a href="/blog/tags/harness/" style="font-size: 14px; color: #999">harness</a> <a href="/blog/tags/iTerm2/" style="font-size: 14px; color: #999">iTerm2</a> <a href="/blog/tags/immutable/" style="font-size: 14px; color: #999">immutable</a> <a href="/blog/tags/immutablejs/" style="font-size: 14px; color: #999">immutablejs</a> <a href="/blog/tags/javascript/" style="font-size: 14px; color: #999">javascript</a> <a href="/blog/tags/json/" style="font-size: 14px; color: #999">json</a> <a href="/blog/tags/k-线/" style="font-size: 14px; color: #999">k 线</a> <a href="/blog/tags/k-问题/" style="font-size: 14px; color: #999">k 问题</a> <a href="/blog/tags/knowledge-management/" style="font-size: 14px; color: #999">knowledge-management</a> <a href="/blog/tags/lending/" style="font-size: 14px; color: #999">lending</a> <a href="/blog/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/blog/tags/node-binding/" style="font-size: 14px; color: #999">node binding</a> <a href="/blog/tags/node-gyp/" style="font-size: 14px; color: #999">node-gyp</a> <a href="/blog/tags/notebooklm/" style="font-size: 14px; color: #999">notebooklm</a> <a href="/blog/tags/pendle/" style="font-size: 14px; color: #999">pendle</a> <a href="/blog/tags/plugin/" style="font-size: 14px; color: #999">plugin</a> <a href="/blog/tags/rust/" style="font-size: 14.63px; color: #959595">rust</a> <a href="/blog/tags/rwa/" style="font-size: 14px; color: #999">rwa</a> <a href="/blog/tags/staking/" style="font-size: 14px; color: #999">staking</a> <a href="/blog/tags/stringify/" style="font-size: 14px; color: #999">stringify</a> <a href="/blog/tags/swap/" style="font-size: 15.25px; color: #919191">swap</a> <a href="/blog/tags/swc/" style="font-size: 14px; color: #999">swc</a> <a href="/blog/tags/uniswap/" style="font-size: 14.63px; color: #959595">uniswap</a> <a href="/blog/tags/v4/" style="font-size: 14.63px; color: #959595">v4</a> <a href="/blog/tags/v8/" style="font-size: 14px; color: #999">v8</a> <a href="/blog/tags/vite/" style="font-size: 14px; color: #999">vite</a> <a href="/blog/tags/vlog/" style="font-size: 14px; color: #999">vlog</a> <a href="/blog/tags/vue/" style="font-size: 14px; color: #999">vue</a> <a href="/blog/tags/web-component/" style="font-size: 14px; color: #999">web-component</a> <a href="/blog/tags/web3/" style="font-size: 19.63px; color: #737373">web3</a> <a href="/blog/tags/webkit/" style="font-size: 14px; color: #999">webkit</a> <a href="/blog/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/blog/tags/《算法通关之路》/" style="font-size: 14px; color: #999">《算法通关之路》</a> <a href="/blog/tags/中位数/" style="font-size: 14px; color: #999">中位数</a> <a href="/blog/tags/中等/" style="font-size: 14.63px; color: #959595">中等</a> <a href="/blog/tags/乘法逆元/" style="font-size: 14px; color: #999">乘法逆元</a> <a href="/blog/tags/书/" style="font-size: 15.25px; color: #919191">书</a> <a href="/blog/tags/书单/" style="font-size: 14px; color: #999">书单</a> <a href="/blog/tags/书摘/" style="font-size: 14px; color: #999">书摘</a> <a href="/blog/tags/事件/" style="font-size: 14px; color: #999">事件</a> <a href="/blog/tags/事件循环/" style="font-size: 14px; color: #999">事件循环</a> <a href="/blog/tags/二分/" style="font-size: 15.25px; color: #919191">二分</a> <a href="/blog/tags/二分法/" style="font-size: 14px; color: #999">二分法</a> <a href="/blog/tags/二叉树/" style="font-size: 15.25px; color: #919191">二叉树</a> <a href="/blog/tags/交易/" style="font-size: 14.63px; color: #959595">交易</a> <a href="/blog/tags/交易系统/" style="font-size: 14px; color: #999">交易系统</a> <a href="/blog/tags/从零实现/" style="font-size: 14px; color: #999">从零实现</a> <a href="/blog/tags/仓位管理/" style="font-size: 14px; color: #999">仓位管理</a> <a href="/blog/tags/代币经济学/" style="font-size: 14.63px; color: #959595">代币经济学</a> <a href="/blog/tags/代码生成器/" style="font-size: 14px; color: #999">代码生成器</a> <a href="/blog/tags/位运算/" style="font-size: 14px; color: #999">位运算</a> <a href="/blog/tags/侧链/" style="font-size: 14px; color: #999">侧链</a> <a href="/blog/tags/保险/" style="font-size: 14px; color: #999">保险</a> <a href="/blog/tags/倒排索引/" style="font-size: 14px; color: #999">倒排索引</a> <a href="/blog/tags/公众号/" style="font-size: 14px; color: #999">公众号</a> <a href="/blog/tags/公益/" style="font-size: 14px; color: #999">公益</a> <a href="/blog/tags/冷钱包/" style="font-size: 14px; color: #999">冷钱包</a> <a href="/blog/tags/删除-k-个字符/" style="font-size: 14px; color: #999">删除 k 个字符</a> <a href="/blog/tags/刷题/" style="font-size: 15.25px; color: #919191">刷题</a> <a href="/blog/tags/刷题技巧/" style="font-size: 17.13px; color: #848484">刷题技巧</a> <a href="/blog/tags/刷题方法/" style="font-size: 15.25px; color: #919191">刷题方法</a> <a href="/blog/tags/前端/" style="font-size: 20.88px; color: #6a6a6a">前端</a> <a href="/blog/tags/前端，自动化，automator/" style="font-size: 14px; color: #999">前端，自动化，automator</a> <a href="/blog/tags/前缀和/" style="font-size: 15.88px; color: #8c8c8c">前缀和</a> <a href="/blog/tags/前缀表达式/" style="font-size: 14px; color: #999">前缀表达式</a> <a href="/blog/tags/力扣加加/" style="font-size: 22.13px; color: #626262">力扣加加</a> <a href="/blog/tags/动态规划/" style="font-size: 19px; color: #777">动态规划</a> <a href="/blog/tags/区块链/" style="font-size: 20.25px; color: #6f6f6f">区块链</a> <a href="/blog/tags/单元测试/" style="font-size: 14px; color: #999">单元测试</a> <a href="/blog/tags/单调栈/" style="font-size: 14px; color: #999">单调栈</a> <a href="/blog/tags/博物馆/" style="font-size: 14px; color: #999">博物馆</a> <a href="/blog/tags/命令行/" style="font-size: 14.63px; color: #959595">命令行</a> <a href="/blog/tags/哲学/" style="font-size: 14.63px; color: #959595">哲学</a> <a href="/blog/tags/回溯/" style="font-size: 14px; color: #999">回溯</a> <a href="/blog/tags/困难/" style="font-size: 14.63px; color: #959595">困难</a> <a href="/blog/tags/图/" style="font-size: 14.63px; color: #959595">图</a> <a href="/blog/tags/图片处理/" style="font-size: 14px; color: #999">图片处理</a> <a href="/blog/tags/堆/" style="font-size: 14.63px; color: #959595">堆</a> <a href="/blog/tags/备份工具/" style="font-size: 14px; color: #999">备份工具</a> <a href="/blog/tags/多签钱包/" style="font-size: 14px; color: #999">多签钱包</a> <a href="/blog/tags/天梯/" style="font-size: 14px; color: #999">天梯</a> <a href="/blog/tags/好未来/" style="font-size: 14px; color: #999">好未来</a> <a href="/blog/tags/子数组/" style="font-size: 14px; color: #999">子数组</a> <a href="/blog/tags/字符串/" style="font-size: 14.63px; color: #959595">字符串</a> <a href="/blog/tags/字节跳动/" style="font-size: 15.25px; color: #919191">字节跳动</a> <a href="/blog/tags/学习方法/" style="font-size: 14.63px; color: #959595">学习方法</a> <a href="/blog/tags/学习路线/" style="font-size: 15.88px; color: #8c8c8c">学习路线</a> <a href="/blog/tags/尼采/" style="font-size: 14px; color: #999">尼采</a> <a href="/blog/tags/工具/" style="font-size: 17.13px; color: #848484">工具</a> <a href="/blog/tags/年度目标/" style="font-size: 14px; color: #999">年度目标</a> <a href="/blog/tags/年终总结/" style="font-size: 14px; color: #999">年终总结</a> <a href="/blog/tags/序列化/" style="font-size: 14px; color: #999">序列化</a> <a href="/blog/tags/异常处理/" style="font-size: 14.63px; color: #959595">异常处理</a> <a href="/blog/tags/异议！/" style="font-size: 14px; color: #999">异议！</a> <a href="/blog/tags/循环移位/" style="font-size: 14px; color: #999">循环移位</a> <a href="/blog/tags/微前端/" style="font-size: 14px; color: #999">微前端</a> <a href="/blog/tags/必备软件/" style="font-size: 14px; color: #999">必备软件</a> <a href="/blog/tags/志愿者/" style="font-size: 14px; color: #999">志愿者</a> <a href="/blog/tags/性能优化/" style="font-size: 14px; color: #999">性能优化</a> <a href="/blog/tags/成长经历/" style="font-size: 14.63px; color: #959595">成长经历</a> <a href="/blog/tags/手机摄影/" style="font-size: 14px; color: #999">手机摄影</a> <a href="/blog/tags/扩展程序/" style="font-size: 14px; color: #999">扩展程序</a> <a href="/blog/tags/技术大会/" style="font-size: 14px; color: #999">技术大会</a> <a href="/blog/tags/技术调研/" style="font-size: 14px; color: #999">技术调研</a> <a href="/blog/tags/技能/" style="font-size: 14.63px; color: #959595">技能</a> <a href="/blog/tags/投资/" style="font-size: 15.88px; color: #8c8c8c">投资</a> <a href="/blog/tags/持续集成/" style="font-size: 14px; color: #999">持续集成</a> <a href="/blog/tags/插件/" style="font-size: 17.13px; color: #848484">插件</a> <a href="/blog/tags/搜索/" style="font-size: 14px; color: #999">搜索</a> <a href="/blog/tags/搜索引擎/" style="font-size: 14px; color: #999">搜索引擎</a> <a href="/blog/tags/摄影/" style="font-size: 14px; color: #999">摄影</a> <a href="/blog/tags/攻略/" style="font-size: 14px; color: #999">攻略</a> <a href="/blog/tags/效率/" style="font-size: 14px; color: #999">效率</a> <a href="/blog/tags/数字钱包/" style="font-size: 14px; color: #999">数字钱包</a> <a href="/blog/tags/数学/" style="font-size: 15.88px; color: #8c8c8c">数学</a> <a href="/blog/tags/数据结构/" style="font-size: 23.38px; color: #595959">数据结构</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，Hard/" style="font-size: 14.63px; color: #959595">数据结构，算法，LeetCode 日记，Hard</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，中等/" style="font-size: 14px; color: #999">数据结构，算法，LeetCode 日记，中等</a> <a href="/blog/tags/数组/" style="font-size: 14.63px; color: #959595">数组</a> <a href="/blog/tags/文物/" style="font-size: 14px; color: #999">文物</a> <a href="/blog/tags/日记/" style="font-size: 14.63px; color: #959595">日记</a> <a href="/blog/tags/易经/" style="font-size: 14px; color: #999">易经</a> <a href="/blog/tags/春招/" style="font-size: 15.25px; color: #919191">春招</a> <a href="/blog/tags/智能合约安全/" style="font-size: 14px; color: #999">智能合约安全</a> <a href="/blog/tags/最大公约数/" style="font-size: 14px; color: #999">最大公约数</a> <a href="/blog/tags/最大表示法/" style="font-size: 14px; color: #999">最大表示法</a> <a href="/blog/tags/最小表示法/" style="font-size: 14px; color: #999">最小表示法</a> <a href="/blog/tags/最长上升子序列/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/blog/tags/最长公共子序列/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/blog/tags/查拉图斯特拉/" style="font-size: 14px; color: #999">查拉图斯特拉</a> <a href="/blog/tags/栈/" style="font-size: 14px; color: #999">栈</a> <a href="/blog/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/blog/tags/树状数组/" style="font-size: 14px; color: #999">树状数组</a> <a href="/blog/tags/校招/" style="font-size: 16.5px; color: #888">校招</a> <a href="/blog/tags/概率/" style="font-size: 14.63px; color: #959595">概率</a> <a href="/blog/tags/模块/" style="font-size: 14px; color: #999">模块</a> <a href="/blog/tags/模拟面试/" style="font-size: 14px; color: #999">模拟面试</a> <a href="/blog/tags/模运算/" style="font-size: 14px; color: #999">模运算</a> <a href="/blog/tags/母题/" style="font-size: 14px; color: #999">母题</a> <a href="/blog/tags/每日一荐/" style="font-size: 17.75px; color: #808080">每日一荐</a> <a href="/blog/tags/永续合约/" style="font-size: 14px; color: #999">永续合约</a> <a href="/blog/tags/沟通/" style="font-size: 14px; color: #999">沟通</a> <a href="/blog/tags/泛型/" style="font-size: 14.63px; color: #959595">泛型</a> <a href="/blog/tags/流动性池/" style="font-size: 14px; color: #999">流动性池</a> <a href="/blog/tags/测试/" style="font-size: 14px; color: #999">测试</a> <a href="/blog/tags/浏览器/" style="font-size: 15.25px; color: #919191">浏览器</a> <a href="/blog/tags/游戏/" style="font-size: 14px; color: #999">游戏</a> <a href="/blog/tags/滑动窗口/" style="font-size: 16.5px; color: #888">滑动窗口</a> <a href="/blog/tags/滤镜/" style="font-size: 14px; color: #999">滤镜</a> <a href="/blog/tags/焦作/" style="font-size: 14px; color: #999">焦作</a> <a href="/blog/tags/状态压缩/" style="font-size: 14px; color: #999">状态压缩</a> <a href="/blog/tags/状态机/" style="font-size: 14px; color: #999">状态机</a> <a href="/blog/tags/理财/" style="font-size: 15.25px; color: #919191">理财</a> <a href="/blog/tags/电子书/" style="font-size: 14px; color: #999">电子书</a> <a href="/blog/tags/电影/" style="font-size: 14.63px; color: #959595">电影</a> <a href="/blog/tags/百度/" style="font-size: 14px; color: #999">百度</a> <a href="/blog/tags/监控/" style="font-size: 14px; color: #999">监控</a> <a href="/blog/tags/秋招/" style="font-size: 14px; color: #999">秋招</a> <a href="/blog/tags/稳定币/" style="font-size: 14px; color: #999">稳定币</a> <a href="/blog/tags/算法/" style="font-size: 24px; color: #555">算法</a> <a href="/blog/tags/算法提高班/" style="font-size: 21.5px; color: #666">算法提高班</a> <a href="/blog/tags/算法比赛/" style="font-size: 14px; color: #999">算法比赛</a> <a href="/blog/tags/算法系列/" style="font-size: 15.88px; color: #8c8c8c">算法系列</a> <a href="/blog/tags/算法通关之路/" style="font-size: 14px; color: #999">算法通关之路</a> <a href="/blog/tags/算法，最近公共祖先/" style="font-size: 14px; color: #999">算法，最近公共祖先</a> <a href="/blog/tags/线段树/" style="font-size: 14.63px; color: #959595">线段树</a> <a href="/blog/tags/组件化/" style="font-size: 14px; color: #999">组件化</a> <a href="/blog/tags/终端/" style="font-size: 14px; color: #999">终端</a> <a href="/blog/tags/经验分享/" style="font-size: 15.25px; color: #919191">经验分享</a> <a href="/blog/tags/维特根斯坦/" style="font-size: 14px; color: #999">维特根斯坦</a> <a href="/blog/tags/编程之美/" style="font-size: 14px; color: #999">编程之美</a> <a href="/blog/tags/缠论/" style="font-size: 14px; color: #999">缠论</a> <a href="/blog/tags/股票/" style="font-size: 14px; color: #999">股票</a> <a href="/blog/tags/自我提升/" style="font-size: 14px; color: #999">自我提升</a> <a href="/blog/tags/草稿/" style="font-size: 14.63px; color: #959595">草稿</a> <a href="/blog/tags/蓄水池抽样/" style="font-size: 14px; color: #999">蓄水池抽样</a> <a href="/blog/tags/虾皮/" style="font-size: 14px; color: #999">虾皮</a> <a href="/blog/tags/蜡烛图/" style="font-size: 14px; color: #999">蜡烛图</a> <a href="/blog/tags/衍生品/" style="font-size: 14px; color: #999">衍生品</a> <a href="/blog/tags/装机/" style="font-size: 14px; color: #999">装机</a> <a href="/blog/tags/解题模板/" style="font-size: 14px; color: #999">解题模板</a> <a href="/blog/tags/计划/" style="font-size: 14px; color: #999">计划</a> <a href="/blog/tags/读书/" style="font-size: 14.63px; color: #959595">读书</a> <a href="/blog/tags/读后感/" style="font-size: 14px; color: #999">读后感</a> <a href="/blog/tags/谷歌/" style="font-size: 15.25px; color: #919191">谷歌</a> <a href="/blog/tags/财报/" style="font-size: 14px; color: #999">财报</a> <a href="/blog/tags/贪婪/" style="font-size: 14px; color: #999">贪婪</a> <a href="/blog/tags/贪心/" style="font-size: 14px; color: #999">贪心</a> <a href="/blog/tags/资产配置/" style="font-size: 14px; color: #999">资产配置</a> <a href="/blog/tags/走出科学/" style="font-size: 14px; color: #999">走出科学</a> <a href="/blog/tags/逆向思维/" style="font-size: 14px; color: #999">逆向思维</a> <a href="/blog/tags/递归/" style="font-size: 14px; color: #999">递归</a> <a href="/blog/tags/逻辑哲学论/" style="font-size: 14px; color: #999">逻辑哲学论</a> <a href="/blog/tags/配置备份/" style="font-size: 14px; color: #999">配置备份</a> <a href="/blog/tags/配置管理/" style="font-size: 14px; color: #999">配置管理</a> <a href="/blog/tags/量化交易/" style="font-size: 14.63px; color: #959595">量化交易</a> <a href="/blog/tags/金融/" style="font-size: 14px; color: #999">金融</a> <a href="/blog/tags/钱包/" style="font-size: 14.63px; color: #959595">钱包</a> <a href="/blog/tags/链表/" style="font-size: 15.25px; color: #919191">链表</a> <a href="/blog/tags/陷阱题/" style="font-size: 14px; color: #999">陷阱题</a> <a href="/blog/tags/面经/" style="font-size: 15.88px; color: #8c8c8c">面经</a> <a href="/blog/tags/面试/" style="font-size: 16.5px; color: #888">面试</a> <a href="/blog/tags/题解/" style="font-size: 17.75px; color: #808080">题解</a> <a href="/blog/tags/风险管理/" style="font-size: 14px; color: #999">风险管理</a> <a href="/blog/tags/魔兽争霸3/" style="font-size: 14px; color: #999">魔兽争霸3</a> <a href="/blog/tags/黑客/" style="font-size: 14px; color: #999">黑客</a>
+      <a href="/blog/tags/2022/" style="font-size: 14px; color: #999">2022</a> <a href="/blog/tags/91天学算法/" style="font-size: 19.63px; color: #737373">91天学算法</a> <a href="/blog/tags/AI/" style="font-size: 14px; color: #999">AI</a> <a href="/blog/tags/AMM/" style="font-size: 14px; color: #999">AMM</a> <a href="/blog/tags/AST/" style="font-size: 14px; color: #999">AST</a> <a href="/blog/tags/BFS/" style="font-size: 14.63px; color: #959595">BFS</a> <a href="/blog/tags/BigPipe/" style="font-size: 14px; color: #999">BigPipe</a> <a href="/blog/tags/CD/" style="font-size: 14px; color: #999">CD</a> <a href="/blog/tags/CSS/" style="font-size: 14px; color: #999">CSS</a> <a href="/blog/tags/Canvas/" style="font-size: 14px; color: #999">Canvas</a> <a href="/blog/tags/Chrome/" style="font-size: 15.25px; color: #919191">Chrome</a> <a href="/blog/tags/D2/" style="font-size: 14px; color: #999">D2</a> <a href="/blog/tags/DAI/" style="font-size: 14px; color: #999">DAI</a> <a href="/blog/tags/DAO/" style="font-size: 14px; color: #999">DAO</a> <a href="/blog/tags/DEX/" style="font-size: 14px; color: #999">DEX</a> <a href="/blog/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/blog/tags/DeFi/" style="font-size: 15.88px; color: #8c8c8c">DeFi</a> <a href="/blog/tags/Easy/" style="font-size: 14px; color: #999">Easy</a> <a href="/blog/tags/Ethereum/" style="font-size: 15.88px; color: #8c8c8c">Ethereum</a> <a href="/blog/tags/Floyd-Warshall/" style="font-size: 14px; color: #999">Floyd-Warshall</a> <a href="/blog/tags/GMX/" style="font-size: 14px; color: #999">GMX</a> <a href="/blog/tags/Gas/" style="font-size: 14px; color: #999">Gas</a> <a href="/blog/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/blog/tags/Github/" style="font-size: 14.63px; color: #959595">Github</a> <a href="/blog/tags/Google-IO/" style="font-size: 14px; color: #999">Google IO</a> <a href="/blog/tags/Hard/" style="font-size: 14px; color: #999">Hard</a> <a href="/blog/tags/JSConf/" style="font-size: 14px; color: #999">JSConf</a> <a href="/blog/tags/KK平台/" style="font-size: 14px; color: #999">KK平台</a> <a href="/blog/tags/K线/" style="font-size: 14px; color: #999">K线</a> <a href="/blog/tags/L2/" style="font-size: 14.63px; color: #959595">L2</a> <a href="/blog/tags/LP/" style="font-size: 14px; color: #999">LP</a> <a href="/blog/tags/LeetCode/" style="font-size: 22.75px; color: #5e5e5e">LeetCode</a> <a href="/blog/tags/LeetCode日记/" style="font-size: 19px; color: #777">LeetCode日记</a> <a href="/blog/tags/MEV/" style="font-size: 14.63px; color: #959595">MEV</a> <a href="/blog/tags/MPC-钱包/" style="font-size: 14px; color: #999">MPC 钱包</a> <a href="/blog/tags/Mac/" style="font-size: 14px; color: #999">Mac</a> <a href="/blog/tags/MakerDAO/" style="font-size: 14px; color: #999">MakerDAO</a> <a href="/blog/tags/Medium/" style="font-size: 14.63px; color: #959595">Medium</a> <a href="/blog/tags/Nexus-Mutual/" style="font-size: 14px; color: #999">Nexus Mutual</a> <a href="/blog/tags/PPT/" style="font-size: 14.63px; color: #959595">PPT</a> <a href="/blog/tags/QCon/" style="font-size: 14px; color: #999">QCon</a> <a href="/blog/tags/RFC/" style="font-size: 14px; color: #999">RFC</a> <a href="/blog/tags/React/" style="font-size: 14px; color: #999">React</a> <a href="/blog/tags/Tokenomics/" style="font-size: 14px; color: #999">Tokenomics</a> <a href="/blog/tags/TypeScript/" style="font-size: 18.38px; color: #7b7b7b">TypeScript</a> <a href="/blog/tags/USDC/" style="font-size: 14px; color: #999">USDC</a> <a href="/blog/tags/USDT/" style="font-size: 14px; color: #999">USDT</a> <a href="/blog/tags/UST/" style="font-size: 14px; color: #999">UST</a> <a href="/blog/tags/VSCODE/" style="font-size: 15.25px; color: #919191">VSCODE</a> <a href="/blog/tags/Warp/" style="font-size: 14px; color: #999">Warp</a> <a href="/blog/tags/Web3-钱包/" style="font-size: 14px; color: #999">Web3 钱包</a> <a href="/blog/tags/aave/" style="font-size: 14px; color: #999">aave</a> <a href="/blog/tags/acp/" style="font-size: 14px; color: #999">acp</a> <a href="/blog/tags/agent/" style="font-size: 14px; color: #999">agent</a> <a href="/blog/tags/ai/" style="font-size: 15.88px; color: #8c8c8c">ai</a> <a href="/blog/tags/apple/" style="font-size: 14px; color: #999">apple</a> <a href="/blog/tags/approve/" style="font-size: 14.63px; color: #959595">approve</a> <a href="/blog/tags/balancer/" style="font-size: 14px; color: #999">balancer</a> <a href="/blog/tags/bancor/" style="font-size: 14px; color: #999">bancor</a> <a href="/blog/tags/blob/" style="font-size: 14px; color: #999">blob</a> <a href="/blog/tags/borrow/" style="font-size: 14px; color: #999">borrow</a> <a href="/blog/tags/chatgpt/" style="font-size: 14px; color: #999">chatgpt</a> <a href="/blog/tags/chrome/" style="font-size: 14px; color: #999">chrome</a> <a href="/blog/tags/claude/" style="font-size: 14px; color: #999">claude</a> <a href="/blog/tags/cordis/" style="font-size: 14px; color: #999">cordis</a> <a href="/blog/tags/css-in-js/" style="font-size: 14px; color: #999">css-in-js</a> <a href="/blog/tags/curve/" style="font-size: 14px; color: #999">curve</a> <a href="/blog/tags/dYdX/" style="font-size: 14px; color: #999">dYdX</a> <a href="/blog/tags/deepseek/" style="font-size: 14px; color: #999">deepseek</a> <a href="/blog/tags/defi/" style="font-size: 14px; color: #999">defi</a> <a href="/blog/tags/depin/" style="font-size: 14px; color: #999">depin</a> <a href="/blog/tags/dex/" style="font-size: 14px; color: #999">dex</a> <a href="/blog/tags/dotfiles/" style="font-size: 14px; color: #999">dotfiles</a> <a href="/blog/tags/eslint/" style="font-size: 14px; color: #999">eslint</a> <a href="/blog/tags/gemini/" style="font-size: 14px; color: #999">gemini</a> <a href="/blog/tags/google/" style="font-size: 14px; color: #999">google</a> <a href="/blog/tags/harness/" style="font-size: 14px; color: #999">harness</a> <a href="/blog/tags/iTerm2/" style="font-size: 14px; color: #999">iTerm2</a> <a href="/blog/tags/immutable/" style="font-size: 14px; color: #999">immutable</a> <a href="/blog/tags/immutablejs/" style="font-size: 14px; color: #999">immutablejs</a> <a href="/blog/tags/javascript/" style="font-size: 14px; color: #999">javascript</a> <a href="/blog/tags/json/" style="font-size: 14px; color: #999">json</a> <a href="/blog/tags/k-线/" style="font-size: 14px; color: #999">k 线</a> <a href="/blog/tags/k-问题/" style="font-size: 14px; color: #999">k 问题</a> <a href="/blog/tags/knowledge-management/" style="font-size: 14px; color: #999">knowledge-management</a> <a href="/blog/tags/lending/" style="font-size: 14px; color: #999">lending</a> <a href="/blog/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/blog/tags/node-binding/" style="font-size: 14px; color: #999">node binding</a> <a href="/blog/tags/node-gyp/" style="font-size: 14px; color: #999">node-gyp</a> <a href="/blog/tags/notebooklm/" style="font-size: 14px; color: #999">notebooklm</a> <a href="/blog/tags/pendle/" style="font-size: 14px; color: #999">pendle</a> <a href="/blog/tags/plugin/" style="font-size: 14px; color: #999">plugin</a> <a href="/blog/tags/rust/" style="font-size: 14.63px; color: #959595">rust</a> <a href="/blog/tags/rwa/" style="font-size: 14px; color: #999">rwa</a> <a href="/blog/tags/staking/" style="font-size: 14px; color: #999">staking</a> <a href="/blog/tags/stringify/" style="font-size: 14px; color: #999">stringify</a> <a href="/blog/tags/swap/" style="font-size: 15.25px; color: #919191">swap</a> <a href="/blog/tags/swc/" style="font-size: 14px; color: #999">swc</a> <a href="/blog/tags/uniswap/" style="font-size: 14.63px; color: #959595">uniswap</a> <a href="/blog/tags/v4/" style="font-size: 14.63px; color: #959595">v4</a> <a href="/blog/tags/v8/" style="font-size: 14px; color: #999">v8</a> <a href="/blog/tags/vite/" style="font-size: 14px; color: #999">vite</a> <a href="/blog/tags/vlog/" style="font-size: 14px; color: #999">vlog</a> <a href="/blog/tags/vue/" style="font-size: 14px; color: #999">vue</a> <a href="/blog/tags/web-component/" style="font-size: 14px; color: #999">web-component</a> <a href="/blog/tags/web3/" style="font-size: 21.5px; color: #666">web3</a> <a href="/blog/tags/webkit/" style="font-size: 14px; color: #999">webkit</a> <a href="/blog/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/blog/tags/《算法通关之路》/" style="font-size: 14px; color: #999">《算法通关之路》</a> <a href="/blog/tags/中位数/" style="font-size: 14px; color: #999">中位数</a> <a href="/blog/tags/中等/" style="font-size: 14.63px; color: #959595">中等</a> <a href="/blog/tags/乘法逆元/" style="font-size: 14px; color: #999">乘法逆元</a> <a href="/blog/tags/书/" style="font-size: 15.25px; color: #919191">书</a> <a href="/blog/tags/书单/" style="font-size: 14px; color: #999">书单</a> <a href="/blog/tags/书摘/" style="font-size: 14px; color: #999">书摘</a> <a href="/blog/tags/事件/" style="font-size: 14px; color: #999">事件</a> <a href="/blog/tags/事件循环/" style="font-size: 14px; color: #999">事件循环</a> <a href="/blog/tags/二分/" style="font-size: 15.25px; color: #919191">二分</a> <a href="/blog/tags/二分法/" style="font-size: 14px; color: #999">二分法</a> <a href="/blog/tags/二叉树/" style="font-size: 15.25px; color: #919191">二叉树</a> <a href="/blog/tags/交易/" style="font-size: 15.25px; color: #919191">交易</a> <a href="/blog/tags/交易系统/" style="font-size: 14px; color: #999">交易系统</a> <a href="/blog/tags/从零实现/" style="font-size: 14px; color: #999">从零实现</a> <a href="/blog/tags/仓位管理/" style="font-size: 14px; color: #999">仓位管理</a> <a href="/blog/tags/代币经济学/" style="font-size: 14.63px; color: #959595">代币经济学</a> <a href="/blog/tags/代码生成器/" style="font-size: 14px; color: #999">代码生成器</a> <a href="/blog/tags/位运算/" style="font-size: 14px; color: #999">位运算</a> <a href="/blog/tags/侧链/" style="font-size: 14px; color: #999">侧链</a> <a href="/blog/tags/保险/" style="font-size: 14px; color: #999">保险</a> <a href="/blog/tags/倒排索引/" style="font-size: 14px; color: #999">倒排索引</a> <a href="/blog/tags/公众号/" style="font-size: 14px; color: #999">公众号</a> <a href="/blog/tags/公益/" style="font-size: 14px; color: #999">公益</a> <a href="/blog/tags/冷钱包/" style="font-size: 14px; color: #999">冷钱包</a> <a href="/blog/tags/删除-k-个字符/" style="font-size: 14px; color: #999">删除 k 个字符</a> <a href="/blog/tags/刷题/" style="font-size: 15.25px; color: #919191">刷题</a> <a href="/blog/tags/刷题技巧/" style="font-size: 17.13px; color: #848484">刷题技巧</a> <a href="/blog/tags/刷题方法/" style="font-size: 15.25px; color: #919191">刷题方法</a> <a href="/blog/tags/前端/" style="font-size: 19.63px; color: #737373">前端</a> <a href="/blog/tags/前端，自动化，automator/" style="font-size: 14px; color: #999">前端，自动化，automator</a> <a href="/blog/tags/前缀和/" style="font-size: 15.88px; color: #8c8c8c">前缀和</a> <a href="/blog/tags/前缀表达式/" style="font-size: 14px; color: #999">前缀表达式</a> <a href="/blog/tags/力扣加加/" style="font-size: 20.88px; color: #6a6a6a">力扣加加</a> <a href="/blog/tags/动态规划/" style="font-size: 19px; color: #777">动态规划</a> <a href="/blog/tags/区块链/" style="font-size: 22.13px; color: #626262">区块链</a> <a href="/blog/tags/单元测试/" style="font-size: 14px; color: #999">单元测试</a> <a href="/blog/tags/单调栈/" style="font-size: 14px; color: #999">单调栈</a> <a href="/blog/tags/博物馆/" style="font-size: 14px; color: #999">博物馆</a> <a href="/blog/tags/命令行/" style="font-size: 14.63px; color: #959595">命令行</a> <a href="/blog/tags/哲学/" style="font-size: 14.63px; color: #959595">哲学</a> <a href="/blog/tags/回溯/" style="font-size: 14px; color: #999">回溯</a> <a href="/blog/tags/困难/" style="font-size: 14.63px; color: #959595">困难</a> <a href="/blog/tags/图/" style="font-size: 14.63px; color: #959595">图</a> <a href="/blog/tags/图片处理/" style="font-size: 14px; color: #999">图片处理</a> <a href="/blog/tags/堆/" style="font-size: 14.63px; color: #959595">堆</a> <a href="/blog/tags/备份工具/" style="font-size: 14px; color: #999">备份工具</a> <a href="/blog/tags/夏普比率/" style="font-size: 14px; color: #999">夏普比率</a> <a href="/blog/tags/多签钱包/" style="font-size: 14px; color: #999">多签钱包</a> <a href="/blog/tags/天梯/" style="font-size: 14px; color: #999">天梯</a> <a href="/blog/tags/好未来/" style="font-size: 14px; color: #999">好未来</a> <a href="/blog/tags/子数组/" style="font-size: 14px; color: #999">子数组</a> <a href="/blog/tags/字符串/" style="font-size: 14.63px; color: #959595">字符串</a> <a href="/blog/tags/字节跳动/" style="font-size: 15.25px; color: #919191">字节跳动</a> <a href="/blog/tags/学习方法/" style="font-size: 14.63px; color: #959595">学习方法</a> <a href="/blog/tags/学习路线/" style="font-size: 15.88px; color: #8c8c8c">学习路线</a> <a href="/blog/tags/安全/" style="font-size: 14.63px; color: #959595">安全</a> <a href="/blog/tags/审计/" style="font-size: 14px; color: #999">审计</a> <a href="/blog/tags/密码学/" style="font-size: 14px; color: #999">密码学</a> <a href="/blog/tags/尼采/" style="font-size: 14px; color: #999">尼采</a> <a href="/blog/tags/工具/" style="font-size: 17.13px; color: #848484">工具</a> <a href="/blog/tags/年度目标/" style="font-size: 14px; color: #999">年度目标</a> <a href="/blog/tags/年终总结/" style="font-size: 14px; color: #999">年终总结</a> <a href="/blog/tags/序列化/" style="font-size: 14px; color: #999">序列化</a> <a href="/blog/tags/异常处理/" style="font-size: 14.63px; color: #959595">异常处理</a> <a href="/blog/tags/异议！/" style="font-size: 14px; color: #999">异议！</a> <a href="/blog/tags/循环移位/" style="font-size: 14px; color: #999">循环移位</a> <a href="/blog/tags/微前端/" style="font-size: 14px; color: #999">微前端</a> <a href="/blog/tags/必备软件/" style="font-size: 14px; color: #999">必备软件</a> <a href="/blog/tags/志愿者/" style="font-size: 14px; color: #999">志愿者</a> <a href="/blog/tags/性能优化/" style="font-size: 14px; color: #999">性能优化</a> <a href="/blog/tags/成长经历/" style="font-size: 14.63px; color: #959595">成长经历</a> <a href="/blog/tags/手机摄影/" style="font-size: 14px; color: #999">手机摄影</a> <a href="/blog/tags/扩展程序/" style="font-size: 14px; color: #999">扩展程序</a> <a href="/blog/tags/技术大会/" style="font-size: 14px; color: #999">技术大会</a> <a href="/blog/tags/技术调研/" style="font-size: 14px; color: #999">技术调研</a> <a href="/blog/tags/技能/" style="font-size: 14.63px; color: #959595">技能</a> <a href="/blog/tags/投资/" style="font-size: 15.88px; color: #8c8c8c">投资</a> <a href="/blog/tags/持续集成/" style="font-size: 14px; color: #999">持续集成</a> <a href="/blog/tags/插件/" style="font-size: 17.13px; color: #848484">插件</a> <a href="/blog/tags/搜索/" style="font-size: 14px; color: #999">搜索</a> <a href="/blog/tags/搜索引擎/" style="font-size: 14px; color: #999">搜索引擎</a> <a href="/blog/tags/摄影/" style="font-size: 14px; color: #999">摄影</a> <a href="/blog/tags/攻略/" style="font-size: 14px; color: #999">攻略</a> <a href="/blog/tags/效率/" style="font-size: 14px; color: #999">效率</a> <a href="/blog/tags/数字钱包/" style="font-size: 14px; color: #999">数字钱包</a> <a href="/blog/tags/数学/" style="font-size: 15.88px; color: #8c8c8c">数学</a> <a href="/blog/tags/数据结构/" style="font-size: 23.38px; color: #595959">数据结构</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，Hard/" style="font-size: 14.63px; color: #959595">数据结构，算法，LeetCode 日记，Hard</a> <a href="/blog/tags/数据结构，算法，LeetCode-日记，中等/" style="font-size: 14px; color: #999">数据结构，算法，LeetCode 日记，中等</a> <a href="/blog/tags/数组/" style="font-size: 14.63px; color: #959595">数组</a> <a href="/blog/tags/文物/" style="font-size: 14px; color: #999">文物</a> <a href="/blog/tags/日记/" style="font-size: 14.63px; color: #959595">日记</a> <a href="/blog/tags/易经/" style="font-size: 14px; color: #999">易经</a> <a href="/blog/tags/春招/" style="font-size: 15.25px; color: #919191">春招</a> <a href="/blog/tags/智能合约安全/" style="font-size: 14px; color: #999">智能合约安全</a> <a href="/blog/tags/最大公约数/" style="font-size: 14px; color: #999">最大公约数</a> <a href="/blog/tags/最大表示法/" style="font-size: 14px; color: #999">最大表示法</a> <a href="/blog/tags/最小表示法/" style="font-size: 14px; color: #999">最小表示法</a> <a href="/blog/tags/最长上升子序列/" style="font-size: 14px; color: #999">最长上升子序列</a> <a href="/blog/tags/最长公共子序列/" style="font-size: 14px; color: #999">最长公共子序列</a> <a href="/blog/tags/查拉图斯特拉/" style="font-size: 14px; color: #999">查拉图斯特拉</a> <a href="/blog/tags/栈/" style="font-size: 14px; color: #999">栈</a> <a href="/blog/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/blog/tags/树状数组/" style="font-size: 14px; color: #999">树状数组</a> <a href="/blog/tags/校招/" style="font-size: 16.5px; color: #888">校招</a> <a href="/blog/tags/概率/" style="font-size: 14.63px; color: #959595">概率</a> <a href="/blog/tags/模块/" style="font-size: 14px; color: #999">模块</a> <a href="/blog/tags/模拟面试/" style="font-size: 14px; color: #999">模拟面试</a> <a href="/blog/tags/模运算/" style="font-size: 14px; color: #999">模运算</a> <a href="/blog/tags/母题/" style="font-size: 14px; color: #999">母题</a> <a href="/blog/tags/每日一荐/" style="font-size: 17.75px; color: #808080">每日一荐</a> <a href="/blog/tags/永续合约/" style="font-size: 14px; color: #999">永续合约</a> <a href="/blog/tags/沟通/" style="font-size: 14px; color: #999">沟通</a> <a href="/blog/tags/治理/" style="font-size: 14px; color: #999">治理</a> <a href="/blog/tags/泛型/" style="font-size: 14.63px; color: #959595">泛型</a> <a href="/blog/tags/流动性池/" style="font-size: 14px; color: #999">流动性池</a> <a href="/blog/tags/测试/" style="font-size: 14px; color: #999">测试</a> <a href="/blog/tags/浏览器/" style="font-size: 15.25px; color: #919191">浏览器</a> <a href="/blog/tags/游戏/" style="font-size: 14px; color: #999">游戏</a> <a href="/blog/tags/滑动窗口/" style="font-size: 16.5px; color: #888">滑动窗口</a> <a href="/blog/tags/滤镜/" style="font-size: 14px; color: #999">滤镜</a> <a href="/blog/tags/焦作/" style="font-size: 14px; color: #999">焦作</a> <a href="/blog/tags/状态压缩/" style="font-size: 14px; color: #999">状态压缩</a> <a href="/blog/tags/状态机/" style="font-size: 14px; color: #999">状态机</a> <a href="/blog/tags/理财/" style="font-size: 15.88px; color: #8c8c8c">理财</a> <a href="/blog/tags/电子书/" style="font-size: 14px; color: #999">电子书</a> <a href="/blog/tags/电影/" style="font-size: 14.63px; color: #959595">电影</a> <a href="/blog/tags/百度/" style="font-size: 14px; color: #999">百度</a> <a href="/blog/tags/监控/" style="font-size: 14px; color: #999">监控</a> <a href="/blog/tags/秋招/" style="font-size: 14px; color: #999">秋招</a> <a href="/blog/tags/稳定币/" style="font-size: 14px; color: #999">稳定币</a> <a href="/blog/tags/算法/" style="font-size: 24px; color: #555">算法</a> <a href="/blog/tags/算法提高班/" style="font-size: 20.25px; color: #6f6f6f">算法提高班</a> <a href="/blog/tags/算法比赛/" style="font-size: 14px; color: #999">算法比赛</a> <a href="/blog/tags/算法系列/" style="font-size: 15.88px; color: #8c8c8c">算法系列</a> <a href="/blog/tags/算法通关之路/" style="font-size: 14px; color: #999">算法通关之路</a> <a href="/blog/tags/算法，最近公共祖先/" style="font-size: 14px; color: #999">算法，最近公共祖先</a> <a href="/blog/tags/线段树/" style="font-size: 14.63px; color: #959595">线段树</a> <a href="/blog/tags/组件化/" style="font-size: 14px; color: #999">组件化</a> <a href="/blog/tags/终端/" style="font-size: 14px; color: #999">终端</a> <a href="/blog/tags/经验分享/" style="font-size: 15.25px; color: #919191">经验分享</a> <a href="/blog/tags/维特根斯坦/" style="font-size: 14px; color: #999">维特根斯坦</a> <a href="/blog/tags/编程之美/" style="font-size: 14px; color: #999">编程之美</a> <a href="/blog/tags/缠论/" style="font-size: 14px; color: #999">缠论</a> <a href="/blog/tags/股票/" style="font-size: 14px; color: #999">股票</a> <a href="/blog/tags/自我提升/" style="font-size: 14px; color: #999">自我提升</a> <a href="/blog/tags/草稿/" style="font-size: 14.63px; color: #959595">草稿</a> <a href="/blog/tags/蓄水池抽样/" style="font-size: 14px; color: #999">蓄水池抽样</a> <a href="/blog/tags/虾皮/" style="font-size: 14px; color: #999">虾皮</a> <a href="/blog/tags/蜡烛图/" style="font-size: 14px; color: #999">蜡烛图</a> <a href="/blog/tags/衍生品/" style="font-size: 14px; color: #999">衍生品</a> <a href="/blog/tags/装机/" style="font-size: 14px; color: #999">装机</a> <a href="/blog/tags/解题模板/" style="font-size: 14px; color: #999">解题模板</a> <a href="/blog/tags/计划/" style="font-size: 14px; color: #999">计划</a> <a href="/blog/tags/读书/" style="font-size: 14.63px; color: #959595">读书</a> <a href="/blog/tags/读后感/" style="font-size: 14px; color: #999">读后感</a> <a href="/blog/tags/谷歌/" style="font-size: 15.25px; color: #919191">谷歌</a> <a href="/blog/tags/财报/" style="font-size: 14px; color: #999">财报</a> <a href="/blog/tags/账户抽象/" style="font-size: 14px; color: #999">账户抽象</a> <a href="/blog/tags/贪婪/" style="font-size: 14px; color: #999">贪婪</a> <a href="/blog/tags/贪心/" style="font-size: 14px; color: #999">贪心</a> <a href="/blog/tags/资产配置/" style="font-size: 14px; color: #999">资产配置</a> <a href="/blog/tags/走出科学/" style="font-size: 14px; color: #999">走出科学</a> <a href="/blog/tags/逆向思维/" style="font-size: 14px; color: #999">逆向思维</a> <a href="/blog/tags/递归/" style="font-size: 14px; color: #999">递归</a> <a href="/blog/tags/逻辑哲学论/" style="font-size: 14px; color: #999">逻辑哲学论</a> <a href="/blog/tags/配置备份/" style="font-size: 14px; color: #999">配置备份</a> <a href="/blog/tags/配置管理/" style="font-size: 14px; color: #999">配置管理</a> <a href="/blog/tags/量化/" style="font-size: 14px; color: #999">量化</a> <a href="/blog/tags/量化交易/" style="font-size: 14.63px; color: #959595">量化交易</a> <a href="/blog/tags/金融/" style="font-size: 14px; color: #999">金融</a> <a href="/blog/tags/钱包/" style="font-size: 15.25px; color: #919191">钱包</a> <a href="/blog/tags/链上分析/" style="font-size: 14px; color: #999">链上分析</a> <a href="/blog/tags/链表/" style="font-size: 15.25px; color: #919191">链表</a> <a href="/blog/tags/陷阱题/" style="font-size: 14px; color: #999">陷阱题</a> <a href="/blog/tags/面经/" style="font-size: 15.88px; color: #8c8c8c">面经</a> <a href="/blog/tags/面试/" style="font-size: 16.5px; color: #888">面试</a> <a href="/blog/tags/预言机/" style="font-size: 14px; color: #999">预言机</a> <a href="/blog/tags/题解/" style="font-size: 17.75px; color: #808080">题解</a> <a href="/blog/tags/风险管理/" style="font-size: 14px; color: #999">风险管理</a> <a href="/blog/tags/魔兽争霸3/" style="font-size: 14px; color: #999">魔兽争霸3</a> <a href="/blog/tags/黑客/" style="font-size: 14px; color: #999">黑客</a>
     </div>
   </section>
 
