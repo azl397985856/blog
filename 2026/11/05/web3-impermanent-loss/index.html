@@ -361,7 +361,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">5.9k字</span>
+          <span class="post-count">7.7k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -369,7 +369,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">23分</span>
+          <span class="post-count">29分</span>
         </span>
       </span>
     </div>
@@ -388,45 +388,93 @@
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
         <p>前面两篇文章，我们把”把币存进池子当 LP”这件事讲得热血沸腾：<a href="https://lucifer.ren/blog/2025/03/28/web3-swap-staking/" title="Web3 金融的基石 - Swap 和 Staking">《Web3 金融的基石 - Swap 和 Staking》</a> 用 <code>x·y=k</code> 从零搭了个池子，亲眼看着手续费一分一分进账；<a href="https://lucifer.ren/blog/2025/12/31/web3-lp-2025/" title="当下流动性池分析">《当下流动性池分析》</a> 又盘点了各家池子的设计，从 Uniswap V2 一路看到 Curve。看起来当 LP 就是”躺赚手续费”，稳得很。</p>
-<p>但如果你真去当过 LP，大概率经历过这样的时刻：ETH 从 3000 涨到 6000，你打开钱包一看，仓位总价值确实涨了——可隔壁拿着币啥也不干的朋友，涨得比你多得多。你安慰自己”至少我还有手续费”，然后心里隐隐有个声音：我该不会……亏了吧？</p>
-<p>这个声音有名字，叫<strong>无常损失</strong>（Impermanent Loss，IL）。先别急，别急着去搜定义，我们用一个摆摊的比喻把它钉在墙上：</p>
-<p>你和朋友合伙摆摊。你出 1 个 ETH，朋友出 3000 USDT，凑成一份 6000 美元的货，放进摊子的收银台。这个摊子是程序控制的，脾气写死在代码里：<strong>只要价格一动，它就自动”卖掉涨得多的、收进跌得多的”</strong>。ETH 涨了？摊子根本不等你想，先把涨了的 ETH 卖给排队的客人；ETH 跌了？摊子反手往里收贬值的币。等你俩哪天散伙清点，把手里的东西折成钱，跟”当初不摆摊、俩人死拿着资产不动”比——总是少一截。</p>
-<p>少的那一截，就是无常损失。</p>
-<p>大部分文章讲到这里就跑路了，丢下一句”LP 会亏一点，手续费能补回来”就消失。本文不跑路：把手伸进 <code>x·y=k</code> 里，一笔一笔把账算到底，最后用 Python 验证每一个数字。读完后你应该能自己回答三个问题：亏多少？为什么叫”无常”？手续费什么时候填得平这个坑？</p>
-<a id="more"></a>
-<h2 id="先回忆一下-x·y-k"><a href="#先回忆一下-x·y-k" class="headerlink" title="先回忆一下 x·y = k"></a>先回忆一下 x·y = k</h2><p>老规矩，先把前置知识钉在墙上。AMM 池子就是那个收银台：两种币，储备量分别为 <code>x</code> 和 <code>y</code>，任何人 swap 时池子始终维持：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x · y = k（常数）</span><br></pre></td></tr></table></figure>
-<p>池内价格就是 <code>y/x</code>。有人买走 ETH（<code>x</code> 变小），<code>y</code> 就必须变大，价格随之上涨。画个重点：<strong>价格不是预言机报的，是这条乘积曲线自己”长”出来的</strong>——像跷跷板，一头下去另一头必然翘起来，支点的位置就是价格。完整推导和滑点原理在 <a href="https://lucifer.ren/blog/2025/03/28/web3-swap-staking/" title="Web3 金融的基石 - Swap 和 Staking">《Web3 金融的基石 - Swap 和 Staking》</a> 里，本文不重复，只需要记住两件事：</p>
+<p>开讲前，先把这篇文章的门槛钉在墙上：<strong>看懂它只需要两样东西——会乘除，以及知道”套利”是什么意思</strong>。套利，就是发现同一个东西在两个地方标价不同，从便宜的一边买、到贵的一边卖，把价差搬平、顺便赚走差价。除此之外不需要任何背景知识：专业名词第一次出现时，我会用大白话现场解释——本博客讲过的知识就链接到旧文，博客外的知识就链接到权威文档。</p>
+<p>但如果你真去当过 LP——把自己的 ETH（以太坊的币）和 USDT（一种 1:1 锚定美元的稳定币，价格几乎不动）存进池子换手续费的人——大概率经历过这样的时刻：ETH 从 3000 涨到 6000，你打开钱包一看，仓位总价值确实涨了——可隔壁拿着币啥也不干的朋友，涨得比你多得多。你安慰自己”至少我还有手续费”，然后心里隐隐有个声音：我该不会……亏了吧？</p>
+<p>这个声音有名字——但先别急着去搜定义，名字马上揭晓。我们从一个苹果摊讲起，全程只用”元”和”斤”：</p>
+<h2 id="开场故事：一个只用元和斤的苹果摊"><a href="#开场故事：一个只用元和斤的苹果摊" class="headerlink" title="开场故事：一个只用元和斤的苹果摊"></a>开场故事：一个只用元和斤的苹果摊</h2><p>你和朋友合伙开了一个”苹果换现金”的兑换摊。你出 100 斤苹果——外面市价 30 元/斤，正好值 3000 元；朋友出 3000 元现金。摊子总资产 6000 元，你们各占一半。</p>
+<p>摊子没有老板拍脑袋定价，规矩写死在程序里，只有两条：</p>
 <ol>
-<li><code>k</code> 在 swap 中不变——摆摊的规矩，货柜两边的乘积恒等；</li>
+<li><strong>摊子的报价 = 摊里的现金 ÷ 摊里的苹果</strong>。开张时 3000 ÷ 100 = 30 元/斤，和外面市价持平；</li>
+<li><strong>每做成一笔兑换，”现金 × 苹果”这个乘积必须保持不变</strong>（开张时是 3000 × 100 = 30000）。这条规矩的妙处在于：苹果被买走变少，报价就自动变贵；苹果被塞进来变多，报价就自动变便宜。不需要任何人盯盘，摊子自己就会”看行情抬价压价”。</li>
+</ol>
+<p>为什么偏偏定成”乘积不变”？因为这是最简单、又能让报价自动跟着供需走的办法，细节放在下面进阶小节讲。</p>
+<p>第二天，外面苹果市价涨到了 60 元/斤。摊子没人碰过，报价还傻乎乎地停在 30 元/斤——等于在半价甩卖。</p>
+<p>套利顾客闻着味儿来了。他干的就是开头说的那件事：摊里 30 元/斤、外面 60 元/斤，从摊里买一斤、转手出去就净赚 30 元。于是他不停把现金塞进摊子换走便宜苹果。注意摊子的脾气：他每买走一斤，摊里的苹果变少、现金变多，摊子的下一斤报价就自动涨一点——30.5、35、42、50……他一路买到摊内报价也被抬到 60 元/斤、和外面持平，再买无利可图，才收手。</p>
+<p>此时盘点摊子：里面只剩约 <strong>70.7 斤苹果</strong> 和 <strong>4242.6 元现金</strong>（这两个数字是怎么算出来的先别管，下面”进阶”小节有一步不跳的精算，你先记住结果就行）。</p>
+<p>散伙清点的时刻到了，把两种命运摆在一起看：</p>
+<ul>
+<li><strong>开摊的你</strong>：摊子总资产 = 70.7 斤 × 60 元 + 4242.6 元 ≈ <strong>8485 元</strong>；</li>
+<li><strong>没开摊、死拿的你</strong>：100 斤苹果原地不动，外加 3000 元现金，100 × 60 + 3000 = <strong>9000 元</strong>。</li>
+</ul>
+<p>9000 − 8485 ≈ <strong>515 元，约 5.7%</strong>。这就是全部剧情：你什么都没做错——一步没乱操作，苹果还翻倍涨价了——可你就是比”啥也不干”少了 515 元。</p>
+<p>更扎心的是看清楚那 4242.6 元现金是怎么来的：是摊子替你把苹果在 30 到 60 元之间一路贱卖给套利顾客换来的。换句话说，<strong>你一根手指都没动，摊子已经替你把涨价的苹果全卖光了</strong>——苹果越涨，它卖得越起劲。</p>
+<h2 id="术语登场：这-5-7-行话叫”无常损失”"><a href="#术语登场：这-5-7-行话叫”无常损失”" class="headerlink" title="术语登场：这 5.7% 行话叫”无常损失”"></a>术语登场：这 5.7% 行话叫”无常损失”</h2><p>你比死拿少的那 5.7%，在行话里有个名字：<strong>无常损失</strong>（Impermanent Loss，圈内常缩写成 IL）。”比死拿少一截钱”是白话，”无常损失”是这同一件事在 DeFi（去中心化金融，跑在区块链上的金融程序）里的学名。把苹果摊原样搬回链上，每个道具都有对应物，连数字都一模一样：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>苹果摊</th>
+<th>链上世界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100 斤苹果（值 3000 元）</td>
+<td>1 个 ETH（值 3000 美元）</td>
+</tr>
+<tr>
+<td>3000 元现金</td>
+<td>3000 USDT（1:1 锚定美元的稳定币）</td>
+</tr>
+<tr>
+<td>报价 = 现金 ÷ 苹果、乘积守恒的摊子规矩</td>
+<td>Uniswap 这类 AMM 池子的 <code>x·y=k</code> 公式</td>
+</tr>
+<tr>
+<td>出 6000 元本钱的你和合伙人</td>
+<td>存入 6000 美元币的 LP</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>其中 AMM（Automated Market Maker，自动做市商），指”没有挂单的买卖双方、报价由写死的数学公式自动生成”的兑换程序。苹果价 30 → 60 元，就是 ETH 价格 3000 → 6000 美元；摊子剩 70.7 斤苹果 + 4242.6 元，就是池子剩 0.7071 个 ETH + 4242.64 USDT；结局同样是 8485 对 9000，差 5.7%。</p>
+<p>这个概念的权威说法，中文可以看 Binance Academy 的<a href="https://www.binance.com/zh-CN/academy/articles/impermanent-loss-explained" title="什么是无常损失" target="_blank" rel="noopener">《什么是无常损失》</a>；官方英文文档可以看 <a href="https://developers.uniswap.org/docs/protocols/v2/concepts/understanding-returns" title="Understanding Returns | Uniswap Developers" target="_blank" rel="noopener">Uniswap 文档的 Understanding Returns</a>——里面推导的公式和本文进阶小节算出来的完全一致。</p>
+<p>大部分文章讲到这里就跑路了，丢下一句”LP 会亏一点，手续费能补回来”就消失。本文不跑路：先用苹果摊把每个角度的直觉讲透，再把 <code>x·y=k</code> 里的账一笔一笔算到底，最后用 Python 验证每一个数字。读完后你应该能自己回答三个问题：亏多少？为什么叫”无常”？手续费什么时候填得平这个坑？</p>
+<a id="more"></a>
+<h2 id="进阶：为什么恰好是-5-7"><a href="#进阶：为什么恰好是-5-7" class="headerlink" title="进阶：为什么恰好是 5.7%"></a>进阶：为什么恰好是 5.7%</h2><p><strong>想跳过推导可只记结论：价格翻倍 ≈ 亏 5.7%，翻 4 倍 ≈ 亏 20%。</strong> 本节把手伸进公式，把开场苹果摊的每个数字精算到小数点后两位；不想跟代数的朋友，直接跳到下一节”速查表”即可，不影响后文阅读。</p>
+<h3 id="先回忆一下-x·y-k"><a href="#先回忆一下-x·y-k" class="headerlink" title="先回忆一下 x·y = k"></a>先回忆一下 x·y = k</h3><p>老规矩，先把前置知识钉在墙上。AMM 池子——就是故事里那个摊子——的规矩用字母写出来：池子里有两种币，储备量分别为 <code>x</code> 和 <code>y</code>，任何人 swap（兑换）时池子始终维持：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x · y = k（常数）</span><br></pre></td></tr></table></figure>
+<p>对照苹果摊：<code>x</code> 是苹果斤数，<code>y</code> 是现金数额，<code>k</code> 是 30000。池内价格就是 <code>y/x</code>——正是摊子规矩第一条”报价 = 现金 ÷ 苹果”。有人买走 ETH（<code>x</code> 变小），<code>y</code> 就必须变大，价格随之上涨。画个重点：<strong>价格不是外部行情源报的（行话里把这种外部行情源叫作预言机），是这条乘积曲线自己”长”出来的</strong>——像跷跷板，一头下去另一头必然翘起来，支点的位置就是价格。完整推导和滑点原理在 <a href="https://lucifer.ren/blog/2025/03/28/web3-swap-staking/" title="Web3 金融的基石 - Swap 和 Staking">《Web3 金融的基石 - Swap 和 Staking》</a> 里，本文不重复，只需要记住两件事：</p>
+<ol>
+<li><code>k</code> 在 swap 中不变——摊子规矩第二条”乘积守恒”，货柜两边的乘积恒等；</li>
 <li><strong>池内价格只由储备比例决定</strong>——这恰恰是无常损失的祸根。</li>
 </ol>
-<h2 id="一笔具体的账：ETH-价格翻倍，LP-剩多少"><a href="#一笔具体的账：ETH-价格翻倍，LP-剩多少" class="headerlink" title="一笔具体的账：ETH 价格翻倍，LP 剩多少"></a>一笔具体的账：ETH 价格翻倍，LP 剩多少</h2><p>还记得开头那个摊子吗？现在给它来一次压力测试：ETH 价格翻倍，散伙清点，看看到底少多少。下面每一步我都先说”现在要干嘛、为什么要算这一步”，你跟着走就行。</p>
-<h3 id="手推版"><a href="#手推版" class="headerlink" title="手推版"></a>手推版</h3><p>设定初始状态：你往一个 ETH/USDT 池子里存入 <code>x₀ = 1</code> ETH 和 <code>y₀ = 3000</code> USDT，此时池内价格 <code>P₀ = 3000</code>，恒定乘积 <code>k = x₀ · y₀ = 3000</code>。你占池子一定份额（假设你是唯一 LP，份额多少不影响百分比结论）。</p>
-<p><strong>第一步：外部价格翻倍。</strong> 现在要干嘛？先制造价差。某天，中心化交易所等外部市场的 ETH 价格涨到 <code>P₁ = 6000</code>，但你的池子没人动过，池内价格还是 3000。先别急，这不是坏事的开始——价差是套利者的血条，接下来发生的一切都由它驱动。</p>
-<p><strong>第二步：套利者搬平价差。</strong> 现在要干嘛？让池内价格追上外部价格——这一步是整篇故事的发动机，无常损失就是在这儿产生的。谁来干？套利者。他们冲进池子用 USDT 买走”便宜”的 ETH，一路买到池内价格等于外部价格 6000 才罢手。设套利后的储备为 <code>x₁</code> 和 <code>y₁</code>，它们必须同时满足两条规矩：</p>
+<h3 id="一笔具体的账：价格翻倍，摊里剩多少"><a href="#一笔具体的账：价格翻倍，摊里剩多少" class="headerlink" title="一笔具体的账：价格翻倍，摊里剩多少"></a>一笔具体的账：价格翻倍，摊里剩多少</h3><p>还记得开场那个苹果摊吗？现在把它按链上数字原样重演一遍，两边的数字一一对应：100 斤苹果 ↔ 1 个 ETH，3000 元现金 ↔ 3000 USDT，60 元/斤 ↔ 6000 美元。下面每一步我都先说”现在要干嘛、为什么要算这一步”，你跟着走就行。</p>
+<h4 id="手推版"><a href="#手推版" class="headerlink" title="手推版"></a>手推版</h4><p>设定初始状态：你往一个 ETH/USDT 池子里存入 <code>x₀ = 1</code> ETH 和 <code>y₀ = 3000</code> USDT，此时池内价格 <code>P₀ = 3000</code>，恒定乘积 <code>k = x₀ · y₀ = 3000</code>。你占池子一定份额（假设你是唯一 LP，份额多少不影响百分比结论）。</p>
+<p><strong>第一步：外部价格翻倍。</strong> 现在要干嘛？先制造价差。某天，中心化交易所（币安这类由公司运营的传统交易平台）等外部市场的 ETH 价格涨到 <code>P₁ = 6000</code>，但你的池子没人动过，池内价格还是 3000。先别急，这不是坏事的开始——价差是套利者的血条，接下来发生的一切都由它驱动。</p>
+<p><strong>第二步：套利者搬平价差。</strong> 现在要干嘛？让池内价格追上外部价格——这一步是整篇故事的发动机，无常损失就是在这儿产生的。谁来干？套利者，也就是开场故事里那位闻着味儿来的顾客。他们冲进池子用 USDT 买走”便宜”的 ETH，一路买到池内价格等于外部价格 6000 才罢手。设套利后的储备为 <code>x₁</code> 和 <code>y₁</code>，它们必须同时满足两条规矩：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y₁ / x₁ = 6000    （价格被搬平）</span><br><span class="line">x₁ · y₁ = 3000    （k 不变）</span><br></pre></td></tr></table></figure>
 <p>为什么是两个方程？因为池子被买得再凶，规矩一条都不能破：价格得对上，乘积也得守住。两条方程、两个未知数，解是唯一的：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x₁ = √(3000/6000) = √0.5 ≈ 0.7071 ETH</span><br><span class="line">y₁ = 3000 / 0.7071 ≈ 4242.64 USDT</span><br></pre></td></tr></table></figure>
-<p>翻译成人话：套利者从你的摊子上买走了约 0.2929 个 ETH。你一根手指都没动，摊子却替你做了决定——<strong>在上涨行情里自动卖 ETH，而且越涨越卖，永远在低位出货</strong>。这个画面请刻在脑子里，它是理解一切的钥匙。</p>
+<p>翻译成人话：套利者从你的摊子上买走了约 0.2929 个 ETH。你一根手指都没动，摊子却替你做了决定——<strong>在上涨行情里自动卖 ETH，而且越涨越卖，永远在低位出货</strong>。这个画面请刻在脑子里，它是理解一切的钥匙。苹果版对照：摊里的苹果从 100 斤被买到剩约 70.71 斤、现金涨到约 4242.64 元——开场故事里那两个”先别管”的数字，就是这么来的。</p>
 <p><strong>第三步：清点摊子。</strong> 现在要干嘛？散伙清点，把摊子里的东西按新价格 6000 折成钱：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">V_LP = 0.7071 × 6000 + 4242.64 ≈ 4242.64 + 4242.64 ≈ 8485.28 USDT</span><br></pre></td></tr></table></figure>
-<p>这里有个小彩蛋：两项居然相等。这不是巧合，<code>x₁·P₁ = √(k/P₁)·P₁ = √(k·P₁) = y₁</code>——乘积曲线天生对称，币那一半和钱那一半折成价值后一样多。第五节的通式推导会吃到这个红利。</p>
-<p><strong>第四步：拉一个对照组。</strong> 为什么要拉对照组？因为”亏不亏”得有参照系——跟谁比？跟当初不摆摊、死攥着原来的 1 ETH + 3000 USDT 不动的自己比：</p>
+<p>这里有个小彩蛋：两项居然相等。这不是巧合，<code>x₁·P₁ = √(k/P₁)·P₁ = √(k·P₁) = y₁</code>——乘积曲线天生对称，币那一半和钱那一半折成价值后一样多。下面”通用公式”小节的推导会吃到这个红利。</p>
+<p><strong>第四步：拉一个对照组。</strong> 为什么要拉对照组？因为”亏不亏”得有参照系——跟谁比？跟当初不摆摊、死攥着原来的 1 ETH + 3000 USDT 不动的自己比（英文圈管这叫 HODL，”拿住不卖”的黑话，下面代码里的变量名用的就是它）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">V_HODL = 1 × 6000 + 3000 = 9000 USDT</span><br></pre></td></tr></table></figure>
 <p><strong>第五步：差额结账：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">V_LP − V_HODL = 8485.28 − 9000 = −514.72 USDT</span><br><span class="line">IL = 8485.28 / 9000 − 1 ≈ −5.72%</span><br></pre></td></tr></table></figure>
 <p>画个重点，这里是最容易被误解的地方：<strong>LP 并没有亏绝对金额</strong>——投入的 6000 USDT 等值资产变成了 8485.28，涨了 41.4%，恭喜。但 HODL 党涨了 50%。无常损失是<strong>相对”拿着不动”的机会成本</strong>，不是账面亏损。市场涨了 50% 而你只涨了 41.4%，那 5.72% 就是 AMM 机制向你收的”过路费”。</p>
-<h3 id="代码验证"><a href="#代码验证" class="headerlink" title="代码验证"></a>代码验证</h3><p>口算容易错，上代码。先说直觉：五步里真正干活的是第二步，套利搬平价差，数学上就是解一个二元方程。代码把这个方程封装成函数，任何价格倍数都能一秒出账单：</p>
+<h4 id="代码验证"><a href="#代码验证" class="headerlink" title="代码验证"></a>代码验证</h4><p>口算容易错，上代码。先说直觉：五步里真正干活的是第二步，套利搬平价差，数学上就是解一个二元方程。代码把这个方程封装成函数，任何价格倍数都能一秒出账单：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 无常损失完整模拟：初始 1 ETH + 3000 USDT，价格翻倍</span></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">simulate_price_change</span><span class="params">(r: float)</span>:</span></span><br><span class="line">    <span class="string">"""外部价格变为原来的 r 倍后，套利者搬平价差，计算 LP 的账单"""</span></span><br><span class="line">    x0, y0 = <span class="number">1.0</span>, <span class="number">3000.0</span>        <span class="comment"># 初始储备：1 ETH + 3000 USDT</span></span><br><span class="line">    p0 = y0 / x0                <span class="comment"># 初始池内价格 3000</span></span><br><span class="line">    k = x0 * y0                 <span class="comment"># 恒定乘积 k = 3000</span></span><br><span class="line">    p1 = p0 * r                 <span class="comment"># 外部新价格</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 套利后池内价格 = 外部价格：y1/x1 = p1 且 x1*y1 = k</span></span><br><span class="line">    x1 = math.sqrt(k / p1)</span><br><span class="line">    y1 = k / x1</span><br><span class="line"></span><br><span class="line">    lp_value = x1 * p1 + y1         <span class="comment"># LP 持仓价值（按新价格计价）</span></span><br><span class="line">    hodl_value = x0 * p1 + y0       <span class="comment"># 如果一直 HODL 的价值</span></span><br><span class="line">    il = lp_value / hodl_value - <span class="number">1</span>  <span class="comment"># 无常损失百分比</span></span><br><span class="line">    <span class="keyword">return</span> x1, y1, lp_value, hodl_value, il</span><br><span class="line"></span><br><span class="line"><span class="comment"># ---- 完整模拟：价格翻倍 ----</span></span><br><span class="line">x0, y0, p0, k = <span class="number">1.0</span>, <span class="number">3000.0</span>, <span class="number">3000.0</span>, <span class="number">3000.0</span></span><br><span class="line">print(<span class="string">f"初始池子: <span class="subst">&#123;x0&#125;</span> ETH + <span class="subst">&#123;y0&#125;</span> USDT, k = <span class="subst">&#123;k&#125;</span>, 价格 <span class="subst">&#123;p0&#125;</span>"</span>)</span><br><span class="line">x1, y1, lp_value, hodl_value, il = simulate_price_change(<span class="number">2.0</span>)</span><br><span class="line">print(<span class="string">f"套利后池子: <span class="subst">&#123;x1:<span class="number">.4</span>f&#125;</span> ETH + <span class="subst">&#123;y1:<span class="number">.2</span>f&#125;</span> USDT (k = <span class="subst">&#123;x1*y1:<span class="number">.2</span>f&#125;</span>)"</span>)</span><br><span class="line">print(<span class="string">f"LP 持仓价值: <span class="subst">&#123;x1:<span class="number">.4</span>f&#125;</span> x 6000 + <span class="subst">&#123;y1:<span class="number">.2</span>f&#125;</span> = <span class="subst">&#123;lp_value:<span class="number">.2</span>f&#125;</span> USDT"</span>)</span><br><span class="line">print(<span class="string">f"HODL 价值:   1 x 6000 + 3000 = <span class="subst">&#123;hodl_value:<span class="number">.2</span>f&#125;</span> USDT"</span>)</span><br><span class="line">print(<span class="string">f"差额: <span class="subst">&#123;lp_value - hodl_value:<span class="number">.2</span>f&#125;</span> USDT"</span>)</span><br><span class="line">print(<span class="string">f"无常损失 IL: <span class="subst">&#123;il:<span class="number">.2</span>%&#125;</span>"</span>)</span><br></pre></td></tr></table></figure>
 <p>运行结果：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">初始池子: 1.0 ETH + 3000.0 USDT, k = 3000.0, 价格 3000.0</span><br><span class="line">套利后池子: 0.7071 ETH + 4242.64 USDT (k = 3000.00)</span><br><span class="line">LP 持仓价值: 0.7071 x 6000 + 4242.64 = 8485.28 USDT</span><br><span class="line">HODL 价值:   1 x 6000 + 3000 = 9000.00 USDT</span><br><span class="line">差额: -514.72 USDT</span><br><span class="line">无常损失 IL: -5.72%</span><br></pre></td></tr></table></figure>
 <p>和手推的完全一致。读一下输出：池子里的 ETH 从 1 个掉到 0.7071 个，USDT 从 3000 涨到 4242.64，<code>k</code> 一分没变——被套利者搬走的 0.2929 个 ETH，就是你那 514.72 差额的实体形态。核心只有两行：<code>x1 = sqrt(k / p1)</code> 和 <code>y1 = k / x1</code>，套利过程被浓缩成解一个二元方程。这正是 AMM 的优雅（和残忍）之处：不需要任何人操纵，价差自己抹平自己，代价记在 LP 头上。</p>
 <p><img src="https://lucifer.ren/blog/images/web3/il-hodl-compare.png" alt="价格翻倍情景下 HODL 与 LP 的持仓价值对比：两边都在涨，但 LP 比 HODL 少了 514.72 USDT"></p>
-<h2 id="通用公式：IL-2√r-1-r-−-1"><a href="#通用公式：IL-2√r-1-r-−-1" class="headerlink" title="通用公式：IL = 2√r/(1+r) − 1"></a>通用公式：IL = 2√r/(1+r) − 1</h2><p>上面的数字太具体了。现在要干嘛？把代数做到底——把”3000””6000”这些死数字换成字母，让公式对任何币对、任何初始价格都成立。为什么值得做？因为只有炼出一个只跟”价格倍数”挂钩的公式，你才能不跑模拟器，心算出任何行情下的 IL。</p>
+<h3 id="通用公式：IL-2√r-1-r-−-1"><a href="#通用公式：IL-2√r-1-r-−-1" class="headerlink" title="通用公式：IL = 2√r/(1+r) − 1"></a>通用公式：IL = 2√r/(1+r) − 1</h3><p>上面的数字太具体了。现在要干嘛？把代数做到底——把”3000””6000”这些死数字换成字母，让公式对任何币对、任何初始价格都成立。为什么值得做？因为只有炼出一个只跟”价格倍数”挂钩的公式，你才能不跑模拟器，心算出任何行情下的 IL。</p>
 <p>设初始储备为 <code>x₀</code>、<code>y₀</code>，初始价格 <code>P₀ = y₀/x₀</code>，<code>k = x₀·y₀</code>。外部价格变为原来的 <code>r</code> 倍，即 <code>P₁ = r·P₀</code>。套利后池内价格等于 <code>P₁</code>，且乘积恒定——还是那两条规矩，还是那组方程，解出来：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x₁ = √(k / P₁)          y₁ = √(k · P₁)</span><br></pre></td></tr></table></figure>
-<p>接下来清点 LP 的家当。为什么敢直接写”两项相等”？用的是上一节那个彩蛋：乘积曲线对称，币的一半和钱的一半折成价值必然一样多，求出一份再乘 2 就行：</p>
+<p>接下来清点 LP 的家当。为什么敢直接写”两项相等”？用的是上一小节那个彩蛋：乘积曲线对称，币的一半和钱的一半折成价值必然一样多，求出一份再乘 2 就行：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">V_LP = x₁·P₁ + y₁</span><br><span class="line">     = √(k/P₁)·P₁ + √(k·P₁)</span><br><span class="line">     = √(k·P₁) + √(k·P₁)</span><br><span class="line">     = 2·√(k·P₁) = 2·√(k·r·P₀) = 2·√(k·r)·√P₀</span><br></pre></td></tr></table></figure>
 <p>把 <code>k = x₀²·P₀</code> 代进去化简——为什么要换这一步？因为 <code>x₀²·P₀</code> 正好等于 <code>x₀·y₀</code>，代完之后所有带 <code>x</code> 的项都会被 <code>y</code> 收编，账面瞬间干净：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">√(k·P₁) = √(x₀²·P₀·r·P₀) = x₀·P₀·√r = y₀·√r</span><br><span class="line">所以：V_LP = 2·y₀·√r</span><br></pre></td></tr></table></figure>
@@ -435,7 +483,7 @@
 <p>最后一步，两者一比，你要的”亏多少”来了。你琢磨一下接下来会发生什么：<code>y₀</code> 被干干净净地消掉了，池子多大、初始价格多少，统统不重要：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IL = V_LP / V_HODL − 1 = 2√r / (1 + r) − 1</span><br></pre></td></tr></table></figure>
 <p>验证一下：<code>r = 2</code> 时，<code>IL = 2√2/3 − 1 ≈ 0.9428 − 1 = −5.72%</code>，和模拟一致。这个公式美得过分——它<strong>只依赖价格倍数 <code>r</code></strong>，跟池子大小、币种、初始价格统统无关。你存 1 个 ETH 还是 10000 个 ETH，结果一样。以后刷到任何”XX 涨了 N 倍”的新闻，N 一代，IL 秒出。</p>
-<h2 id="无常损失速查表"><a href="#无常损失速查表" class="headerlink" title="无常损失速查表"></a>无常损失速查表</h2><p>有了公式，把常用倍数全算出来。先别急着自己心算，开根号这种事交给代码，防止口算翻车：</p>
+<h2 id="无常损失速查表"><a href="#无常损失速查表" class="headerlink" title="无常损失速查表"></a>无常损失速查表</h2><p>一句话直觉先行：<strong>摊子怕的不是方向，是”偏得远”</strong>。苹果从 30 元涨到 60 元，和从 30 元跌到 15 元，你挨的刀一样重；偏得越远，刀越深。有了公式，把常用倍数全算出来。先别急着自己心算，开根号这种事交给代码，防止口算翻车：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 无常损失速查表：IL = 2*sqrt(r)/(1+r) - 1（本块自包含，单独运行即可）</span></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line">print(<span class="string">f"<span class="subst">&#123;<span class="string">'价格变动'</span>:&lt;<span class="number">14</span>&#125;</span><span class="subst">&#123;<span class="string">'r'</span>:&gt;<span class="number">8</span>&#125;</span><span class="subst">&#123;<span class="string">'IL'</span>:&gt;<span class="number">10</span>&#125;</span>"</span>)</span><br><span class="line">cases = [</span><br><span class="line">    (<span class="string">"上涨 1.25 倍"</span>, <span class="number">1.25</span>), (<span class="string">"上涨 1.5 倍"</span>, <span class="number">1.5</span>), (<span class="string">"上涨 2 倍"</span>, <span class="number">2.0</span>),</span><br><span class="line">    (<span class="string">"上涨 3 倍"</span>, <span class="number">3.0</span>), (<span class="string">"上涨 4 倍"</span>, <span class="number">4.0</span>), (<span class="string">"上涨 5 倍"</span>, <span class="number">5.0</span>),</span><br><span class="line">    (<span class="string">"跌到 0.8 倍"</span>, <span class="number">0.8</span>), (<span class="string">"跌到 2/3 倍"</span>, <span class="number">1</span>/<span class="number">1.5</span>), (<span class="string">"跌到 0.5 倍"</span>, <span class="number">0.5</span>),</span><br><span class="line">    (<span class="string">"跌到 1/3 倍"</span>, <span class="number">1</span>/<span class="number">3</span>), (<span class="string">"跌到 0.25 倍"</span>, <span class="number">0.25</span>), (<span class="string">"跌到 0.2 倍"</span>, <span class="number">0.2</span>),</span><br><span class="line">]</span><br><span class="line"><span class="keyword">for</span> label, r <span class="keyword">in</span> cases:</span><br><span class="line">    il = <span class="number">2</span> * math.sqrt(r) / (<span class="number">1</span> + r) - <span class="number">1</span>  <span class="comment"># 闭式公式，与上面的模拟结果一致</span></span><br><span class="line">    print(<span class="string">f"<span class="subst">&#123;label:&lt;<span class="number">14</span>&#125;</span><span class="subst">&#123;r:&gt;<span class="number">8.4</span>f&#125;</span><span class="subst">&#123;il:&gt;<span class="number">10.2</span>%&#125;</span>"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对称性验证：IL(r) 应该等于 IL(1/r)</span></span><br><span class="line">print()</span><br><span class="line">print(<span class="string">"对称性验证 (IL(r) == IL(1/r)):"</span>)</span><br><span class="line"><span class="keyword">for</span> r <span class="keyword">in</span> [<span class="number">1.25</span>, <span class="number">1.5</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>, <span class="number">5.0</span>]:</span><br><span class="line">    il_up = <span class="number">2</span> * math.sqrt(r) / (<span class="number">1</span> + r) - <span class="number">1</span></span><br><span class="line">    il_dn = <span class="number">2</span> * math.sqrt(<span class="number">1</span>/r) / (<span class="number">1</span> + <span class="number">1</span>/r) - <span class="number">1</span></span><br><span class="line">    print(<span class="string">f"  r=<span class="subst">&#123;r:&lt;<span class="number">5</span>&#125;</span> 上涨 <span class="subst">&#123;il_up:<span class="number">.6</span>%&#125;</span> | 下跌 <span class="subst">&#123;il_dn:<span class="number">.6</span>%&#125;</span> | 相等: <span class="subst">&#123;math.isclose(il_up, il_dn)&#125;</span>"</span>)</span><br></pre></td></tr></table></figure>
 <p>运行结果：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">价格变动                 r        IL</span><br><span class="line">上涨 1.25 倍       1.2500    -0.62%</span><br><span class="line">上涨 1.5 倍        1.5000    -2.02%</span><br><span class="line">上涨 2 倍          2.0000    -5.72%</span><br><span class="line">上涨 3 倍          3.0000   -13.40%</span><br><span class="line">上涨 4 倍          4.0000   -20.00%</span><br><span class="line">上涨 5 倍          5.0000   -25.46%</span><br><span class="line">跌到 0.8 倍        0.8000    -0.62%</span><br><span class="line">跌到 2/3 倍        0.6667    -2.02%</span><br><span class="line">跌到 0.5 倍        0.5000    -5.72%</span><br><span class="line">跌到 1/3 倍        0.3333   -13.40%</span><br><span class="line">跌到 0.25 倍       0.2500   -20.00%</span><br><span class="line">跌到 0.2 倍        0.2000   -25.46%</span><br><span class="line"></span><br><span class="line">对称性验证 (IL(r) == IL(1/r)):</span><br><span class="line">  r=1.25  上涨 -0.619201% | 下跌 -0.619201% | 相等: True</span><br><span class="line">  r=1.5   上涨 -2.020410% | 下跌 -2.020410% | 相等: True</span><br><span class="line">  r=2.0   上涨 -5.719096% | 下跌 -5.719096% | 相等: True</span><br><span class="line">  r=3.0   上涨 -13.397460% | 下跌 -13.397460% | 相等: True</span><br><span class="line">  r=4.0   上涨 -20.000000% | 下跌 -20.000000% | 相等: True</span><br><span class="line">  r=5.0   上涨 -25.464401% | 下跌 -25.464401% | 相等: True</span><br></pre></td></tr></table></figure>
@@ -485,23 +533,23 @@
 </div>
 <p>两个重要观察，画个重点：</p>
 <ul>
-<li><strong>对称性</strong>：涨 2 倍亏 5.7%，跌一半也亏 5.7%。<code>IL(r) = IL(1/r)</code> 可以从公式直接证明——把 <code>1/r</code> 代进 <code>2√r/(1+r)</code>，分子分母同乘 <code>√r</code> 就还原回来了。无常损失对方向不敏感，只对偏离幅度敏感——摊子不管行情是喜是悲，只在乎价格离原点有多远。</li>
+<li><strong>对称性</strong>：涨 2 倍亏 5.7%，跌一半也亏 5.7%（苹果 30 → 60 元，和 30 → 15 元，挨的刀一样重）。<code>IL(r) = IL(1/r)</code> 可以从公式直接证明——把 <code>1/r</code> 代进 <code>2√r/(1+r)</code>，分子分母同乘 <code>√r</code> 就还原回来了。无常损失对方向不敏感，只对偏离幅度敏感——摊子不管行情是喜是悲，只在乎价格离原点有多远。</li>
 <li><strong>尾部惩罚很重</strong>：偏离 25% 只亏 0.6%，毛毛雨；偏离 4 倍就亏 20%，伤筋动骨。曲线在两端越跌越陡，说明 LP 真正的敌人不是日常波动，而是单边大行情。</li>
 </ul>
 <p>把这条曲线画出来，形状很像一根下垂的香蕉——所以圈内叫它”香蕉图”：</p>
 <p><img src="https://lucifer.ren/blog/images/web3/il-vs-price.png" alt="无常损失的&quot;香蕉图&quot;：横轴为价格倍数（对数轴），1 倍处损失为零，往两边越偏越亏，两端加速下垂"></p>
 <h2 id="为什么叫”无常”？"><a href="#为什么叫”无常”？" class="headerlink" title="为什么叫”无常”？"></a>为什么叫”无常”？</h2><p>先别急着把这笔损失当成已到账的罚款。它是<strong>有条件的损失</strong>——账单挂在那里，但还没撕下来。</p>
-<p>什么条件下会消失？价格回到原点。假设 ETH 从 6000 又跌回 3000（<code>r</code> 重新等于 1），套利者会沿着来路把储备再搬回去，<code>IL</code> 精确归零，仿佛什么都没发生过。”无常”（impermanent）说的就是这层含义：<strong>损失悬浮在那里，随时可以消失</strong>。</p>
+<p>什么条件下会消失？价格回到原点。苹果版：哪天外面市价又跌回 30 元/斤，套利顾客会反手把便宜苹果塞回摊子，摊子恢复原样。链上版：假设 ETH 从 6000 又跌回 3000（<code>r</code> 重新等于 1），套利者会沿着来路把储备再搬回去，<code>IL</code> 精确归零，仿佛什么都没发生过。”无常”（impermanent）说的就是这层含义：<strong>损失悬浮在那里，随时可以消失</strong>。</p>
 <p>但悬着的账不是不报、时候未到——时候就是你撤池子的那一刻：</p>
 <ul>
 <li><strong>只要你在价格偏离时撤出，损失立刻被”结账”</strong>，从无常变成永久（permanent）。很多 LP 是在行情最疯狂时因为恐慌或收益计算而撤出的，恰好亲手把理论损失签字画押成实际亏损。</li>
 <li><strong>只要价格动过，币的构成就已经变了。</strong> 上涨时池子里的 ETH 被套利者陆续搬走，你手里涨幅最大的资产越来越少，收益天然封顶；下跌时反过来，套利者往摊子上塞贬值的币，你的仓位被动地”越跌越买”。有句圈内老话：LP 是在无脑自动执行”高抛低吸”的反义词——<strong>低抛高吸</strong>。</li>
 </ul>
 <p>所以更准确的心理预期是：<strong>只要价格动过，LP 就已经被收了一次费</strong>，只是这笔费用悬浮着，等价格回来能退给你。手续费收入就是拿来覆盖这笔”过路费”的——这正是下一节的主题。</p>
-<h2 id="手续费填坑：和波动赛跑"><a href="#手续费填坑：和波动赛跑" class="headerlink" title="手续费填坑：和波动赛跑"></a>手续费填坑：和波动赛跑</h2><p>回到摆摊。现在摊子的账本上有两栏：支出一栏是<strong>房租</strong>（无常损失，价格动过就挂账），收入一栏是<strong>流水</strong>（手续费，每一笔 swap 你都有分成）。LP 赚不赚钱，就看流水什么时候填平房租。</p>
-<p>写成加减法（先忽略 gas 和流动性挖矿奖励）：</p>
+<h2 id="手续费填坑：和波动赛跑"><a href="#手续费填坑：和波动赛跑" class="headerlink" title="手续费填坑：和波动赛跑"></a>手续费填坑：和波动赛跑</h2><p>苹果摊版一句话：摊子每帮人兑换一次，就收一笔”跑腿费”（手续费），按份额进你的口袋——这是开摊唯一能往回捞钱的口子。于是摊子的账本上有两栏：支出一栏是<strong>房租</strong>（无常损失，价格动过就挂账），收入一栏是<strong>流水</strong>（手续费，每一笔 swap 你都有分成）。LP 赚不赚钱，就看流水什么时候填平房租。</p>
+<p>写成加减法（先忽略 gas——链上交易要交的网络费——和流动性挖矿奖励——池子额外发的代币补贴）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LP 净收益 ≈ 手续费分成 − 无常损失 IL</span><br></pre></td></tr></table></figure>
-<p>问题变成：一天流水多少，才够付清一次房租？流水厚不厚，取决于三个数：池子的费率、日交易量与 TVL 的比值（换手率，相当于摊子一天翻几次台）、以及你在池子里的份额。下面做个填坑模拟：<code>0.3%</code> 费率，假设我们只占池子 10% 的份额（一个普通用户在大池子里的真实处境），看看在换手率不同的情况下，多少天能赚回一次”价格翻倍”造成的 5.7% 无常损失：</p>
+<p>问题变成：一天流水多少，才够付清一次房租？流水厚不厚，取决于三个数：池子的费率、日交易量与 TVL（Total Value Locked，池子里锁住的总价值）的比值（换手率，相当于摊子一天翻几次台）、以及你在池子里的份额。下面做个填坑模拟：<code>0.3%</code> 费率，假设我们只占池子 10% 的份额（一个普通用户在大池子里的真实处境），看看在换手率不同的情况下，多少天能赚回一次”价格翻倍”造成的 5.7% 无常损失：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 手续费填坑模拟：0.3% 费率，多少天能赚回 5.7% 的 IL？（本块自包含，单独运行即可）</span></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line">fee_rate = <span class="number">0.003</span>          <span class="comment"># 0.3% swap 费率</span></span><br><span class="line">my_share = <span class="number">0.10</span>           <span class="comment"># 假设我们占池子 10% 份额（大池子里小 LP 的真实处境）</span></span><br><span class="line">il_double = <span class="number">2</span> * math.sqrt(<span class="number">2.0</span>) / (<span class="number">1</span> + <span class="number">2.0</span>) - <span class="number">1</span>  <span class="comment"># 翻倍情形的 IL（与上面模拟一致）</span></span><br><span class="line">target_il = abs(il_double)  <span class="comment"># 需填平的 5.72%</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">f"费率: <span class="subst">&#123;fee_rate:<span class="number">.1</span>%&#125;</span>，我占池子份额: <span class="subst">&#123;my_share:<span class="number">.0</span>%&#125;</span>，需填平的 IL: <span class="subst">&#123;target_il:<span class="number">.2</span>%&#125;</span>"</span>)</span><br><span class="line">print(<span class="string">f"<span class="subst">&#123;<span class="string">'日交易量/TVL'</span>:&gt;<span class="number">12</span>&#125;</span><span class="subst">&#123;<span class="string">'日收益率'</span>:&gt;<span class="number">12</span>&#125;</span><span class="subst">&#123;<span class="string">'填平天数'</span>:&gt;<span class="number">10</span>&#125;</span>"</span>)</span><br><span class="line"><span class="keyword">for</span> ratio <span class="keyword">in</span> [<span class="number">0.5</span>, <span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">5.0</span>, <span class="number">10.0</span>]:</span><br><span class="line">    <span class="comment"># 日交易量 = ratio x 池子TVL；全池手续费 = 交易量 x 费率；我按 10% 份额分一块</span></span><br><span class="line">    my_income = ratio * fee_rate * my_share   <span class="comment"># 我的日手续费收入（按池子规模计）</span></span><br><span class="line">    my_capital = my_share                     <span class="comment"># 我的本金（按池子规模计）</span></span><br><span class="line">    daily_yield = my_income / my_capital      <span class="comment"># 相对自己本金的日收益率（份额会约掉！）</span></span><br><span class="line">    days = target_il / daily_yield</span><br><span class="line">    print(<span class="string">f"<span class="subst">&#123;ratio:&gt;<span class="number">12.1</span>f&#125;</span><span class="subst">&#123;daily_yield:&gt;<span class="number">12.4</span>%&#125;</span><span class="subst">&#123;days:&gt;<span class="number">10.1</span>f&#125;</span>"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对照：如果份额是 100%（独自做市一个小池子）</span></span><br><span class="line">print()</span><br><span class="line">print(<span class="string">"对照组：独自做市（份额 100%）："</span>)</span><br><span class="line"><span class="keyword">for</span> ratio <span class="keyword">in</span> [<span class="number">0.5</span>, <span class="number">1.0</span>, <span class="number">2.0</span>]:</span><br><span class="line">    daily_yield = fee_rate * ratio * <span class="number">1.0</span></span><br><span class="line">    days = target_il / daily_yield</span><br><span class="line">    print(<span class="string">f"  日交易量/TVL = <span class="subst">&#123;ratio:&lt;<span class="number">4</span>&#125;</span> 日收益率 <span class="subst">&#123;daily_yield:<span class="number">.4</span>%&#125;</span> -&gt; <span class="subst">&#123;days:<span class="number">.1</span>f&#125;</span> 天填平 IL"</span>)</span><br></pre></td></tr></table></figure>
 <p>运行结果：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">费率: 0.3%，我占池子份额: 10%，需填平的 IL: 5.72%</span><br><span class="line">    日交易量/TVL        日收益率      填平天数</span><br><span class="line">         0.5     0.1500%      38.1</span><br><span class="line">         1.0     0.3000%      19.1</span><br><span class="line">         2.0     0.6000%       9.5</span><br><span class="line">         5.0     1.5000%       3.8</span><br><span class="line">        10.0     3.0000%       1.9</span><br><span class="line"></span><br><span class="line">对照组：独自做市（份额 100%）：</span><br><span class="line">  日交易量/TVL = 0.5  日收益率 0.1500% -&gt; 38.1 天填平 IL</span><br><span class="line">  日交易量/TVL = 1.0  日收益率 0.3000% -&gt; 19.1 天填平 IL</span><br><span class="line">  日交易量/TVL = 2.0  日收益率 0.6000% -&gt; 9.5 天填平 IL</span><br></pre></td></tr></table></figure>
@@ -513,26 +561,26 @@
 </ul>
 <p>把填坑天数画成柱子，冷清和热门的差距一目了然：</p>
 <p><img src="https://lucifer.ren/blog/images/web3/il-fee-breakeven.png" alt="手续费填坑天数 vs 换手率：冷清池子（0.5 倍）要 38 天，热门池子（10 倍）只要 2 天"></p>
-<h2 id="V3-集中流动性：手续费效率与-IL-一起放大"><a href="#V3-集中流动性：手续费效率与-IL-一起放大" class="headerlink" title="V3 集中流动性：手续费效率与 IL 一起放大"></a>V3 集中流动性：手续费效率与 IL 一起放大</h2><p>上面所有推导都是 V2 的世界：你的钱均匀铺满 <code>(0, ∞)</code> 整个价格区间，绝大部分时间在”睡觉”。一句话直觉：<strong>Uniswap V3 就是让你把睡着的钱叫醒，圈进一个窄区间里上杠杆</strong>——比如你赌 ETH 在 2500–3500 之间晃，就把资金全押在这个区间，区间内的流动性密度可以是 V2 的几十倍，手续费效率暴涨。</p>
+<h2 id="V3-集中流动性：手续费效率与-IL-一起放大"><a href="#V3-集中流动性：手续费效率与-IL-一起放大" class="headerlink" title="V3 集中流动性：手续费效率与 IL 一起放大"></a>V3 集中流动性：手续费效率与 IL 一起放大</h2><p>进阶小节里算的账都是 V2 的世界：你的钱均匀铺满 <code>(0, ∞)</code> 整个价格区间，绝大部分时间在”睡觉”——苹果摊版就是你的 6000 元摊位从 1 元到 1000 元的任何苹果价位都得备着货。一句话直觉：<strong>Uniswap V3 就是让你把睡着的钱叫醒，圈进一个窄区间里上杠杆</strong>——相当于把苹果摊改成”只在 50–70 元这个价位窗口重兵布阵”，窗口内每一笔兑换你分到的流水可以是 V2 的几十倍，手续费效率暴涨。</p>
 <p>但天下没有免费的午餐，杠杆放大的是分子也是分母：</p>
 <ul>
 <li><strong>手续费效率提升</strong>：区间内资金利用率高，同样 TVL 分到的手续费成倍增长。</li>
-<li><strong>IL 也被放大</strong>：价格在区间内穿行时，你的币被以远比 V2 快的速度搬走；一旦价格跑出区间，仓位会变成 100% 单币——涨出上界，手里全是 USDT，完美错过后续涨幅；跌穿下界，手里全是 ETH，接盘接得明明白白。区间越窄，单位时间手续费越高，IL 的”结账速度”也越快。</li>
+<li><strong>IL 也被放大</strong>：价格在区间内穿行时，你的币被以远比 V2 快的速度搬走；一旦价格跑出区间，仓位会变成 100% 单币——涨出上界，手里全是 USDT，完美错过后续涨幅；跌穿下界，手里全是 ETH，接盘接得明明白白。苹果版：苹果价冲出 50–70 元的窗口后，涨破 70 元你的摊位就只剩现金、眼睁睁看苹果继续涨，跌破 50 元就只剩苹果、接盘接得明明白白。区间越窄，单位时间手续费越高，IL 的”结账速度”也越快。</li>
 </ul>
 <p>V2 的 IL 是温水，V3 的 IL 是开水。想在 V3/V4 里做 LP，选区间本身就是一门手艺，这块 <a href="https://lucifer.ren/blog/2025/08/10/web3-uniswap-v4/" title="Uniswap V4：更灵活、更高效的去中心化交易所">《Uniswap V4：更灵活、更高效的去中心化交易所》</a> 讲了机制层面的演进，池子选型的横向对比则在 <a href="https://lucifer.ren/blog/2025/12/31/web3-lp-2025/" title="当下流动性池分析">《当下流动性池分析》</a>。</p>
 <h2 id="什么时候当-LP-是合理的"><a href="#什么时候当-LP-是合理的" class="headerlink" title="什么时候当 LP 是合理的"></a>什么时候当 LP 是合理的</h2><p>把本文的账变成一张决策清单，按”房租高低”从少到多排：</p>
 <ul>
-<li><strong>稳定币对（如 USDT/USDC）</strong>：价格几乎不动，<code>r ≈ 1</code>，IL 趋近于零——房租近乎为零，手续费几乎就是纯利润。这是最接近”躺赚”的池子，代价是收益率薄，而且要盯着脱锚风险（稳定币自己也出过事）。</li>
+<li><strong>稳定币对（如 USDT/USDC，两个都是 1:1 锚定美元的稳定币）</strong>：价格几乎不动，<code>r ≈ 1</code>，IL 趋近于零——房租近乎为零，手续费几乎就是纯利润。这是最接近”躺赚”的池子，代价是收益率薄，而且要盯着脱锚风险（锚定失灵、价格不再钉住 1 美元——稳定币自己也出过事）。</li>
 <li><strong>波动小、长期横盘的主流币对</strong>：比如大市值币和稳定币的组合。日常 ±10% 的震荡对应 IL 不到 0.3%，手续费大概率覆盖得住。</li>
-<li><strong>有额外激励的池子</strong>：很多协议用治理代币补贴 LP，相当于商场给摊主发补贴。把激励折算成收益后一起算，如果 <code>手续费 + 激励 &gt; IL 预期</code>，账才算得平。注意激励代币本身也常在暴跌，别把纸面年化当成真实收益。</li>
-<li><strong>暴涨暴跌的币对（尤其 meme 币）要慎入</strong>：价格偏离 4 倍就是 20% 的 IL，而手续费需要极高的换手率才能追上。多数人是在单边行情里被套利者反复收割的那一方。</li>
+<li><strong>有额外激励的池子</strong>：很多协议用治理代币（协议自己发行的、通常带投票权等权益的代币）补贴 LP，相当于商场给摊主发补贴。把激励折算成收益后一起算，如果 <code>手续费 + 激励 &gt; IL 预期</code>，账才算得平。注意激励代币本身也常在暴跌，别把纸面年化当成真实收益。</li>
+<li><strong>暴涨暴跌的币对（尤其 meme 币——靠玩梗和情绪驱动、波动极大的币）要慎入</strong>：价格偏离 4 倍就是 20% 的 IL，而手续费需要极高的换手率才能追上。多数人是在单边行情里被套利者反复收割的那一方。</li>
 </ul>
 <blockquote>
-<p>免责声明：本文所有计算是教学简化（忽略 gas、滑点损耗、协议风险、激励代币波动等），不构成任何投资建议。真金白银入场前，请先用自己的仓位参数把本文的代码跑一遍。</p>
+<p>免责声明：本文所有计算是教学简化（忽略 gas、滑点损耗——大单成交时实际成交价偏离报价的部分、协议风险、激励代币波动等），不构成任何投资建议。真金白银入场前，请先用自己的仓位参数把本文的代码跑一遍。</p>
 </blockquote>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>摊子收了，账本合上，核心结论就几行：</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>苹果摊收了，账本合上，核心结论就几行：</p>
 <ul>
-<li><strong>无常损失的本质</strong>：套利者利用 <code>x·y=k</code> 搬平内外价差，LP 被动执行”低抛高吸”，持仓价值永远跑输死拿不动的 HODL——摊子自动”卖掉涨得多的、收进跌得多的”，散伙清点总比死拿少一截。</li>
+<li><strong>无常损失的本质</strong>：套利者利用 <code>x·y=k</code>——也就是苹果摊那条”乘积不变”的规矩——搬平内外价差，LP 被动执行”低抛高吸”：摊子自动”卖掉涨得多的、收进跌得多的”，散伙清点总比死拿不动的 HODL 少一截。开场故事里那 515 元就是这么少掉的。</li>
 <li><strong>通式</strong>：<code>IL = 2√r/(1+r) − 1</code>，只与价格倍数 <code>r</code> 有关。翻倍（或腰斩）亏 5.7%，4 倍偏离亏 20%，涨跌对称。</li>
 <li><strong>“无常”的含义</strong>：价格回原点，账单作废；中途撤出，当场结账——不是不报、时候未到，时候就是你想走的那一天。</li>
 <li><strong>博弈</strong>：<code>LP 净收益 ≈ 手续费 − IL</code>。就是流水和房租的赛跑，胜负手是换手率（日交易量/TVL）：冷清池子填坑可能要一年，热门池子几十天。</li>
@@ -556,10 +604,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-15T11:38:20+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-17T22:59:32+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2026年11月15日</p>
+    <p>更新于 2026年11月17日</p>
   </a>
 </div>
 
@@ -590,11 +638,58 @@
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
           href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2026/11/05/web3-impermanent-loss/&title=无常损失：当 LP 到底亏不亏，把账算清楚 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=前面两篇文章，我们把”把币存进池子当 LP”这件事讲得热血沸腾：《Web3 金融的基石 - Swap 和 Staking》 用 x·y=k 从零搭了个池子，亲眼看着手续费一分一分进账；《当下流动性池分析》 又盘点了各家池子的设计，从 Uniswap V2 一路看到 Curve。看起来当 LP 就是”躺赚手续费”，稳得很。
-但如果你真去当过 LP，大概率经历过这样的时刻：ETH 从 3000 涨到 6000，你打开钱包一看，仓位总价值确实涨了——可隔壁拿着币啥也不干的朋友，涨得比你多得多。你安慰自己”至少我还有手续费”，然后心里隐隐有个声音：我该不会……亏了吧？
-这个声音有名字，叫无常损失（Impermanent Loss，IL）。先别急，别急着去搜定义，我们用一个摆摊的比喻把它钉在墙上：
-你和朋友合伙摆摊。你出 1 个 ETH，朋友出 3000 USDT，凑成一份 6000 美元的货，放进摊子的收银台。这个摊子是程序控制的，脾气写死在代码里：只要价格一动，它就自动”卖掉涨得多的、收进跌得多的”。ETH 涨了？摊子根本不等你想，先把涨了的 ETH 卖给排队的客人；ETH 跌了？摊子反手往里收贬值的币。等你俩哪天散伙清点，把手里的东西折成钱，跟”当初不摆摊、俩人死拿着资产不动”比——总是少一截。
-少的那一截，就是无常损失。
-大部分文章讲到这里就跑路了，丢下一句”LP 会亏一点，手续费能补回来”就消失。本文不跑路：把手伸进 x·y=k 里，一笔一笔把账算到底，最后用 Python 验证每一个数字。读完后你应该能自己回答三个问题：亏多少？为什么叫”无常”？手续费什么时候填得平这个坑？"
+开讲前，先把这篇文章的门槛钉在墙上：看懂它只需要两样东西——会乘除，以及知道”套利”是什么意思。套利，就是发现同一个东西在两个地方标价不同，从便宜的一边买、到贵的一边卖，把价差搬平、顺便赚走差价。除此之外不需要任何背景知识：专业名词第一次出现时，我会用大白话现场解释——本博客讲过的知识就链接到旧文，博客外的知识就链接到权威文档。
+但如果你真去当过 LP——把自己的 ETH（以太坊的币）和 USDT（一种 1:1 锚定美元的稳定币，价格几乎不动）存进池子换手续费的人——大概率经历过这样的时刻：ETH 从 3000 涨到 6000，你打开钱包一看，仓位总价值确实涨了——可隔壁拿着币啥也不干的朋友，涨得比你多得多。你安慰自己”至少我还有手续费”，然后心里隐隐有个声音：我该不会……亏了吧？
+这个声音有名字——但先别急着去搜定义，名字马上揭晓。我们从一个苹果摊讲起，全程只用”元”和”斤”：
+开场故事：一个只用元和斤的苹果摊你和朋友合伙开了一个”苹果换现金”的兑换摊。你出 100 斤苹果——外面市价 30 元/斤，正好值 3000 元；朋友出 3000 元现金。摊子总资产 6000 元，你们各占一半。
+摊子没有老板拍脑袋定价，规矩写死在程序里，只有两条：
+
+摊子的报价 = 摊里的现金 ÷ 摊里的苹果。开张时 3000 ÷ 100 = 30 元/斤，和外面市价持平；
+每做成一笔兑换，”现金 × 苹果”这个乘积必须保持不变（开张时是 3000 × 100 = 30000）。这条规矩的妙处在于：苹果被买走变少，报价就自动变贵；苹果被塞进来变多，报价就自动变便宜。不需要任何人盯盘，摊子自己就会”看行情抬价压价”。
+
+为什么偏偏定成”乘积不变”？因为这是最简单、又能让报价自动跟着供需走的办法，细节放在下面进阶小节讲。
+第二天，外面苹果市价涨到了 60 元/斤。摊子没人碰过，报价还傻乎乎地停在 30 元/斤——等于在半价甩卖。
+套利顾客闻着味儿来了。他干的就是开头说的那件事：摊里 30 元/斤、外面 60 元/斤，从摊里买一斤、转手出去就净赚 30 元。于是他不停把现金塞进摊子换走便宜苹果。注意摊子的脾气：他每买走一斤，摊里的苹果变少、现金变多，摊子的下一斤报价就自动涨一点——30.5、35、42、50……他一路买到摊内报价也被抬到 60 元/斤、和外面持平，再买无利可图，才收手。
+此时盘点摊子：里面只剩约 70.7 斤苹果 和 4242.6 元现金（这两个数字是怎么算出来的先别管，下面”进阶”小节有一步不跳的精算，你先记住结果就行）。
+散伙清点的时刻到了，把两种命运摆在一起看：
+
+开摊的你：摊子总资产 = 70.7 斤 × 60 元 + 4242.6 元 ≈ 8485 元；
+没开摊、死拿的你：100 斤苹果原地不动，外加 3000 元现金，100 × 60 + 3000 = 9000 元。
+
+9000 − 8485 ≈ 515 元，约 5.7%。这就是全部剧情：你什么都没做错——一步没乱操作，苹果还翻倍涨价了——可你就是比”啥也不干”少了 515 元。
+更扎心的是看清楚那 4242.6 元现金是怎么来的：是摊子替你把苹果在 30 到 60 元之间一路贱卖给套利顾客换来的。换句话说，你一根手指都没动，摊子已经替你把涨价的苹果全卖光了——苹果越涨，它卖得越起劲。
+术语登场：这 5.7% 行话叫”无常损失”你比死拿少的那 5.7%，在行话里有个名字：无常损失（Impermanent Loss，圈内常缩写成 IL）。”比死拿少一截钱”是白话，”无常损失”是这同一件事在 DeFi（去中心化金融，跑在区块链上的金融程序）里的学名。把苹果摊原样搬回链上，每个道具都有对应物，连数字都一模一样：
+
+
+
+
+苹果摊
+链上世界
+
+
+
+
+100 斤苹果（值 3000 元）
+1 个 ETH（值 3000 美元）
+
+
+3000 元现金
+3000 USDT（1:1 锚定美元的稳定币）
+
+
+报价 = 现金 ÷ 苹果、乘积守恒的摊子规矩
+Uniswap 这类 AMM 池子的 x·y=k 公式
+
+
+出 6000 元本钱的你和合伙人
+存入 6000 美元币的 LP
+
+
+
+
+其中 AMM（Automated Market Maker，自动做市商），指”没有挂单的买卖双方、报价由写死的数学公式自动生成”的兑换程序。苹果价 30 → 60 元，就是 ETH 价格 3000 → 6000 美元；摊子剩 70.7 斤苹果 + 4242.6 元，就是池子剩 0.7071 个 ETH + 4242.64 USDT；结局同样是 8485 对 9000，差 5.7%。
+这个概念的权威说法，中文可以看 Binance Academy 的《什么是无常损失》；官方英文文档可以看 Uniswap 文档的 Understanding Returns——里面推导的公式和本文进阶小节算出来的完全一致。
+大部分文章讲到这里就跑路了，丢下一句”LP 会亏一点，手续费能补回来”就消失。本文不跑路：先用苹果摊把每个角度的直觉讲透，再把 x·y=k 里的账一笔一笔算到底，最后用 Python 验证每一个数字。读完后你应该能自己回答三个问题：亏多少？为什么叫”无常”？手续费什么时候填得平这个坑？"
           
           >
           
@@ -607,11 +702,58 @@
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2026/11/05/web3-impermanent-loss/&title=无常损失：当 LP 到底亏不亏，把账算清楚 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=前面两篇文章，我们把”把币存进池子当 LP”这件事讲得热血沸腾：《Web3 金融的基石 - Swap 和 Staking》 用 x·y=k 从零搭了个池子，亲眼看着手续费一分一分进账；《当下流动性池分析》 又盘点了各家池子的设计，从 Uniswap V2 一路看到 Curve。看起来当 LP 就是”躺赚手续费”，稳得很。
-但如果你真去当过 LP，大概率经历过这样的时刻：ETH 从 3000 涨到 6000，你打开钱包一看，仓位总价值确实涨了——可隔壁拿着币啥也不干的朋友，涨得比你多得多。你安慰自己”至少我还有手续费”，然后心里隐隐有个声音：我该不会……亏了吧？
-这个声音有名字，叫无常损失（Impermanent Loss，IL）。先别急，别急着去搜定义，我们用一个摆摊的比喻把它钉在墙上：
-你和朋友合伙摆摊。你出 1 个 ETH，朋友出 3000 USDT，凑成一份 6000 美元的货，放进摊子的收银台。这个摊子是程序控制的，脾气写死在代码里：只要价格一动，它就自动”卖掉涨得多的、收进跌得多的”。ETH 涨了？摊子根本不等你想，先把涨了的 ETH 卖给排队的客人；ETH 跌了？摊子反手往里收贬值的币。等你俩哪天散伙清点，把手里的东西折成钱，跟”当初不摆摊、俩人死拿着资产不动”比——总是少一截。
-少的那一截，就是无常损失。
-大部分文章讲到这里就跑路了，丢下一句”LP 会亏一点，手续费能补回来”就消失。本文不跑路：把手伸进 x·y=k 里，一笔一笔把账算到底，最后用 Python 验证每一个数字。读完后你应该能自己回答三个问题：亏多少？为什么叫”无常”？手续费什么时候填得平这个坑？"
+开讲前，先把这篇文章的门槛钉在墙上：看懂它只需要两样东西——会乘除，以及知道”套利”是什么意思。套利，就是发现同一个东西在两个地方标价不同，从便宜的一边买、到贵的一边卖，把价差搬平、顺便赚走差价。除此之外不需要任何背景知识：专业名词第一次出现时，我会用大白话现场解释——本博客讲过的知识就链接到旧文，博客外的知识就链接到权威文档。
+但如果你真去当过 LP——把自己的 ETH（以太坊的币）和 USDT（一种 1:1 锚定美元的稳定币，价格几乎不动）存进池子换手续费的人——大概率经历过这样的时刻：ETH 从 3000 涨到 6000，你打开钱包一看，仓位总价值确实涨了——可隔壁拿着币啥也不干的朋友，涨得比你多得多。你安慰自己”至少我还有手续费”，然后心里隐隐有个声音：我该不会……亏了吧？
+这个声音有名字——但先别急着去搜定义，名字马上揭晓。我们从一个苹果摊讲起，全程只用”元”和”斤”：
+开场故事：一个只用元和斤的苹果摊你和朋友合伙开了一个”苹果换现金”的兑换摊。你出 100 斤苹果——外面市价 30 元/斤，正好值 3000 元；朋友出 3000 元现金。摊子总资产 6000 元，你们各占一半。
+摊子没有老板拍脑袋定价，规矩写死在程序里，只有两条：
+
+摊子的报价 = 摊里的现金 ÷ 摊里的苹果。开张时 3000 ÷ 100 = 30 元/斤，和外面市价持平；
+每做成一笔兑换，”现金 × 苹果”这个乘积必须保持不变（开张时是 3000 × 100 = 30000）。这条规矩的妙处在于：苹果被买走变少，报价就自动变贵；苹果被塞进来变多，报价就自动变便宜。不需要任何人盯盘，摊子自己就会”看行情抬价压价”。
+
+为什么偏偏定成”乘积不变”？因为这是最简单、又能让报价自动跟着供需走的办法，细节放在下面进阶小节讲。
+第二天，外面苹果市价涨到了 60 元/斤。摊子没人碰过，报价还傻乎乎地停在 30 元/斤——等于在半价甩卖。
+套利顾客闻着味儿来了。他干的就是开头说的那件事：摊里 30 元/斤、外面 60 元/斤，从摊里买一斤、转手出去就净赚 30 元。于是他不停把现金塞进摊子换走便宜苹果。注意摊子的脾气：他每买走一斤，摊里的苹果变少、现金变多，摊子的下一斤报价就自动涨一点——30.5、35、42、50……他一路买到摊内报价也被抬到 60 元/斤、和外面持平，再买无利可图，才收手。
+此时盘点摊子：里面只剩约 70.7 斤苹果 和 4242.6 元现金（这两个数字是怎么算出来的先别管，下面”进阶”小节有一步不跳的精算，你先记住结果就行）。
+散伙清点的时刻到了，把两种命运摆在一起看：
+
+开摊的你：摊子总资产 = 70.7 斤 × 60 元 + 4242.6 元 ≈ 8485 元；
+没开摊、死拿的你：100 斤苹果原地不动，外加 3000 元现金，100 × 60 + 3000 = 9000 元。
+
+9000 − 8485 ≈ 515 元，约 5.7%。这就是全部剧情：你什么都没做错——一步没乱操作，苹果还翻倍涨价了——可你就是比”啥也不干”少了 515 元。
+更扎心的是看清楚那 4242.6 元现金是怎么来的：是摊子替你把苹果在 30 到 60 元之间一路贱卖给套利顾客换来的。换句话说，你一根手指都没动，摊子已经替你把涨价的苹果全卖光了——苹果越涨，它卖得越起劲。
+术语登场：这 5.7% 行话叫”无常损失”你比死拿少的那 5.7%，在行话里有个名字：无常损失（Impermanent Loss，圈内常缩写成 IL）。”比死拿少一截钱”是白话，”无常损失”是这同一件事在 DeFi（去中心化金融，跑在区块链上的金融程序）里的学名。把苹果摊原样搬回链上，每个道具都有对应物，连数字都一模一样：
+
+
+
+
+苹果摊
+链上世界
+
+
+
+
+100 斤苹果（值 3000 元）
+1 个 ETH（值 3000 美元）
+
+
+3000 元现金
+3000 USDT（1:1 锚定美元的稳定币）
+
+
+报价 = 现金 ÷ 苹果、乘积守恒的摊子规矩
+Uniswap 这类 AMM 池子的 x·y=k 公式
+
+
+出 6000 元本钱的你和合伙人
+存入 6000 美元币的 LP
+
+
+
+
+其中 AMM（Automated Market Maker，自动做市商），指”没有挂单的买卖双方、报价由写死的数学公式自动生成”的兑换程序。苹果价 30 → 60 元，就是 ETH 价格 3000 → 6000 美元；摊子剩 70.7 斤苹果 + 4242.6 元，就是池子剩 0.7071 个 ETH + 4242.64 USDT；结局同样是 8485 对 9000，差 5.7%。
+这个概念的权威说法，中文可以看 Binance Academy 的《什么是无常损失》；官方英文文档可以看 Uniswap 文档的 Understanding Returns——里面推导的公式和本文进阶小节算出来的完全一致。
+大部分文章讲到这里就跑路了，丢下一句”LP 会亏一点，手续费能补回来”就消失。本文不跑路：先用苹果摊把每个角度的直觉讲透，再把 x·y=k 里的账一笔一笔算到底，最后用 Python 验证每一个数字。读完后你应该能自己回答三个问题：亏多少？为什么叫”无常”？手续费什么时候填得平这个坑？"
           
           >
           
@@ -624,11 +766,58 @@
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
           href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2026/11/05/web3-impermanent-loss/&title=无常损失：当 LP 到底亏不亏，把账算清楚 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=前面两篇文章，我们把”把币存进池子当 LP”这件事讲得热血沸腾：《Web3 金融的基石 - Swap 和 Staking》 用 x·y=k 从零搭了个池子，亲眼看着手续费一分一分进账；《当下流动性池分析》 又盘点了各家池子的设计，从 Uniswap V2 一路看到 Curve。看起来当 LP 就是”躺赚手续费”，稳得很。
-但如果你真去当过 LP，大概率经历过这样的时刻：ETH 从 3000 涨到 6000，你打开钱包一看，仓位总价值确实涨了——可隔壁拿着币啥也不干的朋友，涨得比你多得多。你安慰自己”至少我还有手续费”，然后心里隐隐有个声音：我该不会……亏了吧？
-这个声音有名字，叫无常损失（Impermanent Loss，IL）。先别急，别急着去搜定义，我们用一个摆摊的比喻把它钉在墙上：
-你和朋友合伙摆摊。你出 1 个 ETH，朋友出 3000 USDT，凑成一份 6000 美元的货，放进摊子的收银台。这个摊子是程序控制的，脾气写死在代码里：只要价格一动，它就自动”卖掉涨得多的、收进跌得多的”。ETH 涨了？摊子根本不等你想，先把涨了的 ETH 卖给排队的客人；ETH 跌了？摊子反手往里收贬值的币。等你俩哪天散伙清点，把手里的东西折成钱，跟”当初不摆摊、俩人死拿着资产不动”比——总是少一截。
-少的那一截，就是无常损失。
-大部分文章讲到这里就跑路了，丢下一句”LP 会亏一点，手续费能补回来”就消失。本文不跑路：把手伸进 x·y=k 里，一笔一笔把账算到底，最后用 Python 验证每一个数字。读完后你应该能自己回答三个问题：亏多少？为什么叫”无常”？手续费什么时候填得平这个坑？"
+开讲前，先把这篇文章的门槛钉在墙上：看懂它只需要两样东西——会乘除，以及知道”套利”是什么意思。套利，就是发现同一个东西在两个地方标价不同，从便宜的一边买、到贵的一边卖，把价差搬平、顺便赚走差价。除此之外不需要任何背景知识：专业名词第一次出现时，我会用大白话现场解释——本博客讲过的知识就链接到旧文，博客外的知识就链接到权威文档。
+但如果你真去当过 LP——把自己的 ETH（以太坊的币）和 USDT（一种 1:1 锚定美元的稳定币，价格几乎不动）存进池子换手续费的人——大概率经历过这样的时刻：ETH 从 3000 涨到 6000，你打开钱包一看，仓位总价值确实涨了——可隔壁拿着币啥也不干的朋友，涨得比你多得多。你安慰自己”至少我还有手续费”，然后心里隐隐有个声音：我该不会……亏了吧？
+这个声音有名字——但先别急着去搜定义，名字马上揭晓。我们从一个苹果摊讲起，全程只用”元”和”斤”：
+开场故事：一个只用元和斤的苹果摊你和朋友合伙开了一个”苹果换现金”的兑换摊。你出 100 斤苹果——外面市价 30 元/斤，正好值 3000 元；朋友出 3000 元现金。摊子总资产 6000 元，你们各占一半。
+摊子没有老板拍脑袋定价，规矩写死在程序里，只有两条：
+
+摊子的报价 = 摊里的现金 ÷ 摊里的苹果。开张时 3000 ÷ 100 = 30 元/斤，和外面市价持平；
+每做成一笔兑换，”现金 × 苹果”这个乘积必须保持不变（开张时是 3000 × 100 = 30000）。这条规矩的妙处在于：苹果被买走变少，报价就自动变贵；苹果被塞进来变多，报价就自动变便宜。不需要任何人盯盘，摊子自己就会”看行情抬价压价”。
+
+为什么偏偏定成”乘积不变”？因为这是最简单、又能让报价自动跟着供需走的办法，细节放在下面进阶小节讲。
+第二天，外面苹果市价涨到了 60 元/斤。摊子没人碰过，报价还傻乎乎地停在 30 元/斤——等于在半价甩卖。
+套利顾客闻着味儿来了。他干的就是开头说的那件事：摊里 30 元/斤、外面 60 元/斤，从摊里买一斤、转手出去就净赚 30 元。于是他不停把现金塞进摊子换走便宜苹果。注意摊子的脾气：他每买走一斤，摊里的苹果变少、现金变多，摊子的下一斤报价就自动涨一点——30.5、35、42、50……他一路买到摊内报价也被抬到 60 元/斤、和外面持平，再买无利可图，才收手。
+此时盘点摊子：里面只剩约 70.7 斤苹果 和 4242.6 元现金（这两个数字是怎么算出来的先别管，下面”进阶”小节有一步不跳的精算，你先记住结果就行）。
+散伙清点的时刻到了，把两种命运摆在一起看：
+
+开摊的你：摊子总资产 = 70.7 斤 × 60 元 + 4242.6 元 ≈ 8485 元；
+没开摊、死拿的你：100 斤苹果原地不动，外加 3000 元现金，100 × 60 + 3000 = 9000 元。
+
+9000 − 8485 ≈ 515 元，约 5.7%。这就是全部剧情：你什么都没做错——一步没乱操作，苹果还翻倍涨价了——可你就是比”啥也不干”少了 515 元。
+更扎心的是看清楚那 4242.6 元现金是怎么来的：是摊子替你把苹果在 30 到 60 元之间一路贱卖给套利顾客换来的。换句话说，你一根手指都没动，摊子已经替你把涨价的苹果全卖光了——苹果越涨，它卖得越起劲。
+术语登场：这 5.7% 行话叫”无常损失”你比死拿少的那 5.7%，在行话里有个名字：无常损失（Impermanent Loss，圈内常缩写成 IL）。”比死拿少一截钱”是白话，”无常损失”是这同一件事在 DeFi（去中心化金融，跑在区块链上的金融程序）里的学名。把苹果摊原样搬回链上，每个道具都有对应物，连数字都一模一样：
+
+
+
+
+苹果摊
+链上世界
+
+
+
+
+100 斤苹果（值 3000 元）
+1 个 ETH（值 3000 美元）
+
+
+3000 元现金
+3000 USDT（1:1 锚定美元的稳定币）
+
+
+报价 = 现金 ÷ 苹果、乘积守恒的摊子规矩
+Uniswap 这类 AMM 池子的 x·y=k 公式
+
+
+出 6000 元本钱的你和合伙人
+存入 6000 美元币的 LP
+
+
+
+
+其中 AMM（Automated Market Maker，自动做市商），指”没有挂单的买卖双方、报价由写死的数学公式自动生成”的兑换程序。苹果价 30 → 60 元，就是 ETH 价格 3000 → 6000 美元；摊子剩 70.7 斤苹果 + 4242.6 元，就是池子剩 0.7071 个 ETH + 4242.64 USDT；结局同样是 8485 对 9000，差 5.7%。
+这个概念的权威说法，中文可以看 Binance Academy 的《什么是无常损失》；官方英文文档可以看 Uniswap 文档的 Understanding Returns——里面推导的公式和本文进阶小节算出来的完全一致。
+大部分文章讲到这里就跑路了，丢下一句”LP 会亏一点，手续费能补回来”就消失。本文不跑路：先用苹果摊把每个角度的直觉讲透，再把 x·y=k 里的账一笔一笔算到底，最后用 Python 验证每一个数字。读完后你应该能自己回答三个问题：亏多少？为什么叫”无常”？手续费什么时候填得平这个坑？"
           
           >
           
@@ -868,7 +1057,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先回忆一下-x·y-k"><span class="toc-text">先回忆一下 x·y = k</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一笔具体的账：ETH-价格翻倍，LP-剩多少"><span class="toc-text">一笔具体的账：ETH 价格翻倍，LP 剩多少</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#手推版"><span class="toc-text">手推版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码验证"><span class="toc-text">代码验证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通用公式：IL-2√r-1-r-−-1"><span class="toc-text">通用公式：IL = 2√r/(1+r) − 1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#无常损失速查表"><span class="toc-text">无常损失速查表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么叫”无常”？"><span class="toc-text">为什么叫”无常”？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#手续费填坑：和波动赛跑"><span class="toc-text">手续费填坑：和波动赛跑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#V3-集中流动性：手续费效率与-IL-一起放大"><span class="toc-text">V3 集中流动性：手续费效率与 IL 一起放大</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么时候当-LP-是合理的"><span class="toc-text">什么时候当 LP 是合理的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关阅读"><span class="toc-text">相关阅读</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开场故事：一个只用元和斤的苹果摊"><span class="toc-text">开场故事：一个只用元和斤的苹果摊</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#术语登场：这-5-7-行话叫”无常损失”"><span class="toc-text">术语登场：这 5.7% 行话叫”无常损失”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进阶：为什么恰好是-5-7"><span class="toc-text">进阶：为什么恰好是 5.7%</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#先回忆一下-x·y-k"><span class="toc-text">先回忆一下 x·y = k</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一笔具体的账：价格翻倍，摊里剩多少"><span class="toc-text">一笔具体的账：价格翻倍，摊里剩多少</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#手推版"><span class="toc-text">手推版</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码验证"><span class="toc-text">代码验证</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通用公式：IL-2√r-1-r-−-1"><span class="toc-text">通用公式：IL = 2√r/(1+r) − 1</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#无常损失速查表"><span class="toc-text">无常损失速查表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么叫”无常”？"><span class="toc-text">为什么叫”无常”？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#手续费填坑：和波动赛跑"><span class="toc-text">手续费填坑：和波动赛跑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#V3-集中流动性：手续费效率与-IL-一起放大"><span class="toc-text">V3 集中流动性：手续费效率与 IL 一起放大</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么时候当-LP-是合理的"><span class="toc-text">什么时候当 LP 是合理的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关阅读"><span class="toc-text">相关阅读</span></a></li></ol>
     </div>
   </section>
 

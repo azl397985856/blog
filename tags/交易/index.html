@@ -370,7 +370,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">6.3k字</span>
+          <span class="post-count">7.6k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -378,7 +378,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">23分</span>
+          <span class="post-count">28分</span>
         </span>
       </span>
     </div>
@@ -396,8 +396,8 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>大家好，我是 Lucifer。今天聊一个做量化的人天天要面对的问题：回测报告里的夏普比率，到底是本事，还是运气。</p>
-<p>你大概率经历过这个瞬间：Freqtrade 回测跑完，终端哗啦啦吐出一堆指标——总收益、夏普比率、索提诺比率、卡玛比率、最大回撤……大多数人只盯着收益率那一行，眼睛发直，手已经悬在”实盘启动”按钮上了。稍微冷静一点的会瞟一眼 Sharpe 1.8，然后开始灵魂拷问：1.8，算”策略很强”，还是算”我菜到看不懂”？</p>
+      <p>大家好，我是 Lucifer。今天聊一个做量化的人天天要面对的问题：回测报告里的夏普比率，到底是本事，还是运气。两个词先补课：”量化”，就是用数据和固定规则、而不是拍脑袋来做买卖决策；”回测”，就是拿历史数据让策略”穿越”一遍，看它过去会赚还是会亏。</p>
+<p>你大概率经历过这个瞬间：Freqtrade（一款开源的加密货币量化交易软件，本文拿它当演示工具）回测跑完，终端哗啦啦吐出一堆指标——总收益、夏普比率、索提诺比率、卡玛比率、最大回撤……大多数人只盯着收益率那一行，眼睛发直，手已经悬在”实盘启动”按钮上了。稍微冷静一点的会瞟一眼 Sharpe 1.8，然后开始灵魂拷问：1.8，算”策略很强”，还是算”我菜到看不懂”？</p>
 <p><a href="https://lucifer.ren/blog/2025/07/01/trading-system-demo/" title="《小菜的交易系统》">《小菜的交易系统》</a>里说过，一套交易系统必须”可量化”——进场理由要量化、出场条件要量化，绩效同样要量化。量化绩效量化的是什么？不只是”赚了多少”，而是<strong>每一份收益背后，你扛了多少惊吓</strong>。这套体系叫风险调整后收益指标，本文用纯标准库 Python（random / statistics / math）把它们挨个算一遍，所有代码和数字都是真实运行的。最后回答那个终极问题：你的夏普，是本事，还是猴子掷飞镖。</p>
       
         <div class="readmore">

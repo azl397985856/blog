@@ -372,7 +372,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">2.4k字</span>
+          <span class="post-count">4.1k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -380,7 +380,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">9分</span>
+          <span class="post-count">15分</span>
         </span>
       </span>
     </div>
@@ -398,7 +398,8 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>在 L2（比如 Arbitrum、Base）上转一笔账，手续费只要几分钱；同样的动作放到以太坊主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 <strong>blob</strong> 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 的生死有什么关系。</p>
+      <p>先对齐两个词。<strong>以太坊主网（L1）</strong>是那条全球共用、最安全也最贵的公共总账本；<strong>L2（二层网络）</strong>是帮主网干活的”分包商”：你的转账先交给分包商处理，又快又便宜，分包商再定期把压缩后的账本汇报回主网。Arbitrum、Base 都是这样的分包商，这套体系怎么从零搭起来，<a href="https://lucifer.ren/blog/2025/02/29/web3-l2-from-zero/" title="从零实现区块链 - 侧链与L2">《从零实现区块链 - 侧链与L2》</a>里完整写过一遍。</p>
+<p>在 L2 上转一笔账，手续费只要几分钱；同样的动作放到主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 <strong>blob</strong> 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 这两代”分包方案”（两个名字后文都会解释）的生死有什么关系。</p>
       
         <div class="readmore">
           <a href="/blog/2026/11/14/web3-blob/" class="flat-box">
@@ -505,7 +506,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">5.6k字</span>
+          <span class="post-count">7k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -513,7 +514,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">21分</span>
+          <span class="post-count">25分</span>
         </span>
       </span>
     </div>
@@ -531,9 +532,9 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>上一篇<a href="https://lucifer.ren/blog/2025/07/06/web3-mev/" title="Web3 的 Anti MEV：深入剖析“夹”与反制之道">《Web3 的 Anti MEV：深入剖析“夹”与反制之道》</a>我们抓了个现行：攻击者扫 mempool、插抢跑交易、夹走 40 USDT，全程都在“矿工”的眼皮底下完成。但你可能隐约察觉到一个时代错误——那篇文章里的主角，叫<strong>矿工</strong>。</p>
-<p>问题是，2022 年 9 月以太坊合并（The Merge）转入 PoS 之后，链上已经没有矿工了。出块不再靠算力硬拼，改成“押 32 ETH 押金，每 12 秒摇号抽一位验证者当值”。于是两个更尖锐的问题冒了出来：现在到底谁在排序交易？三明治们攫取的 MEV，又被谁分走了？</p>
-<p>一句话剧透：排序权被拆成了一条四个工种的流水线——Searcher 蹲点捕猎、Builder 打包报价、Relay 中转担保、Validator 签字收钱，每 12 秒办一场拍卖决定这个 slot 归谁。<strong>以前夹你的是一个矿工，现在夹你的是一条流水线。</strong>顺带说一句，你常听说的 blob——让 L2 转账只要几分钱的那位——和这套流水线共享同一个”稀缺资源交给市场拍卖”的思想，但那是另一篇的主角（见文末相关阅读），本文只讲流水线。</p>
+      <p>上一篇<a href="https://lucifer.ren/blog/2025/07/06/web3-mev/" title="Web3 的 Anti MEV：深入剖析“夹”与反制之道">《Web3 的 Anti MEV：深入剖析“夹”与反制之道》</a>我们抓了个现行：攻击者扫 mempool——所有已发出、还没被打包上链的交易都先在这条“公共候单大厅”里排队，内容人人可见，运作细节前置篇讲过——插抢跑交易、夹走 40 USDT（锚定美元的稳定币，约 1 USDT 兑 1 美元），全程都在“矿工”的眼皮底下完成。但你可能隐约察觉到一个时代错误——那篇文章里的主角，叫<strong>矿工</strong>。</p>
+<p>问题是，2022 年 9 月以太坊合并（The Merge）转入 PoS 之后，链上已经没有矿工了。出块不再靠算力硬拼，改成“押 32 ETH（以太坊网络自己的币）押金，每 12 秒摇号抽一位验证者当值”。于是两个更尖锐的问题冒了出来：现在到底谁在排序交易？三明治们攫取的 MEV，又被谁分走了？</p>
+<p>一句话剧透：排序权被拆成了一条四个工种的流水线——Searcher 蹲点捕猎、Builder 打包报价、Relay 中转担保、Validator 签字收钱，每 12 秒办一场拍卖决定这个 slot 归谁。<strong>以前夹你的是一个矿工，现在夹你的是一条流水线。</strong>顺带说一句，你常听说的 blob（区块里新开的一节“行李车厢”，专门装 L2 的交易数据）——让 L2（架在以太坊之上、替主网分担交易量的第二层网络）转账只要几分钱的那位——和这套流水线共享同一个”稀缺资源交给市场拍卖”的思想，但那是另一篇的主角（见文末相关阅读），本文只讲流水线。</p>
 <p>老规矩，代码驱动：本文用一段可直接运行的 Python 模拟，把一场 MEV-Boost 拍卖的分账跑给你看。</p>
       
         <div class="readmore">
@@ -639,7 +640,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">8.4k字</span>
+          <span class="post-count">9.4k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -647,7 +648,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">33分</span>
+          <span class="post-count">37分</span>
         </span>
       </span>
     </div>
@@ -665,8 +666,8 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>先说一个很多人都遇到过的尴尬：钱包里躺着几百 USDC，想转一点给朋友，界面却弹出一行字——“ETH 余额不足，无法支付 gas”。你明明有钱，却连手续费都交不起，像揣着一沓现金站在只收硬币的售货机前。更绝望的是另一种场景：抄助记词的那张纸丢了。没有”忘记密码”，没有客服，没有申诉入口，链上资产从此变成一座纪念碑。</p>
-<p>这些尴尬不怪钱包 App 做得烂，怪以太坊账户模型的”出厂设置”。<a href="https://lucifer.ren/blog/2025/02/16/web3-wallet/" title="Web3 的入口 - 区块链钱包">《Web3 的入口 - 区块链钱包》</a>里介绍过的私钥账户叫 EOA（Externally Owned Account，外部账户），你可以把它理解成<strong>一把钥匙管一切的旧式机械门锁</strong>：一把钥匙就是全部，丢了就完了，没有挂失，没有备用方案。而<strong>账户抽象（Account Abstraction，AA）</strong>想干的事，说白了就一件：<strong>把这把旧门锁换成智能门锁</strong>——账户从”一把私钥”升级成”一段可编程的合约”，”怎么验身份、怎么付 gas、怎么执行”，全由代码说了算。</p>
+      <p>先说一个很多人都遇到过的尴尬：钱包里躺着几百 USDC（一种和美元 1:1 锚定的链上代币），想转一点给朋友，界面却弹出一行字——“ETH 余额不足，无法支付 gas”。你明明有钱，却连手续费都交不起，像揣着一沓现金站在只收硬币的售货机前。更绝望的是另一种场景：抄助记词的那张纸丢了。没有”忘记密码”，没有客服，没有申诉入口，链上资产从此变成一座纪念碑。</p>
+<p>这些尴尬不怪钱包 App 做得烂，怪以太坊账户模型的”出厂设置”。<a href="https://lucifer.ren/blog/2025/02/16/web3-wallet/" title="Web3 的入口 - 区块链钱包">《Web3 的入口 - 区块链钱包》</a>里介绍过的私钥账户叫 EOA（Externally Owned Account，外部账户），你可以把它理解成<strong>一把钥匙管一切的旧式机械门锁</strong>：一把钥匙就是全部，丢了就完了，没有挂失，没有备用方案。而<strong>账户抽象（Account Abstraction，AA）</strong>想干的事，说白了就一件：<strong>把这把旧门锁换成智能门锁</strong>——账户从”一把私钥”升级成”一段可编程的合约”（智能合约：部署在链上、规则由代码写死、被调用时自动执行的程序），”怎么验身份、怎么付 gas、怎么执行”，全由代码说了算。</p>
 <p>熟悉我的朋友应该知道，我经常从零实现一些东西帮助理解，本文照例代码驱动：先用 Python 模拟 ERC-4337 里一个 UserOperation 从提交到结算的完整生命周期，再模拟社交恢复与 guardian 串通攻击，中间穿插 EIP-7702 的机制讲解，所有输出均为真实运行结果，纯标准库，复制即可跑。</p>
       
         <div class="readmore">
@@ -772,7 +773,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">5.7k字</span>
+          <span class="post-count">7.1k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -780,7 +781,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">21分</span>
+          <span class="post-count">26分</span>
         </span>
       </span>
     </div>
@@ -798,9 +799,9 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>在<a href="https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/" title="《从零开始构建区块链》">《从零开始构建区块链》</a>里，我们亲手搓过一条玩具链：转账、挖矿、查余额，全程免费，转账像发微信消息一样轻快。但那条链有个没说破的”作弊”：真实链上不是这样的。你在以太坊上哪怕只转 0.001 ETH，也得先掏一笔手续费；赶上牛市高峰，一次 DeFi 操作的 gas 费够吃顿火锅，部署合约更是”豪门消费”。</p>
+      <p>在<a href="https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/" title="《从零开始构建区块链》">《从零开始构建区块链》</a>里，我们亲手搓过一条玩具链：转账、挖矿、查余额，全程免费，转账像发微信消息一样轻快。但那条链有个没说破的”作弊”：真实链上不是这样的。你在以太坊上哪怕只转 0.001 ETH，也得先掏一笔手续费；赶上牛市高峰，一次 DeFi 操作（去中心化金融——跑在链上的交易所、借贷这类应用，我在<a href="https://lucifer.ren/blog/2025/08/14/web3-defi/" title="探索 DeFi 借贷与收益率交易的无限潜力">《探索 DeFi 借贷与收益率交易的无限潜力》</a>里写过）的 gas 费够吃顿火锅；部署一段智能合约（长期存放在链上、人人可调用的程序，下文简称合约）更是”豪门消费”。</p>
 <p>很多新手第一次被 web3 劝退，不是因为看不懂钱包界面，而是被 gas 吓退的：为什么转个账还要钱？为什么贵的时候一笔要几十美元？这笔钱到底给了谁？为什么不干脆免费？</p>
-<p>这篇文章就把 gas 掰开揉碎讲明白：它是什么、怎么定价、EIP-1559 之后钱包里那三个数字（base fee、priority fee、max fee）到底是什么意思，以及为什么有一部分费用会被当众”烧掉”。老规矩，最后用 Python 把整个机制模拟一遍，所有输出都是真实运行结果，欢迎对着敲。</p>
+<p>这篇文章就把 gas 掰开揉碎讲明白：它是什么、怎么定价、EIP-1559（以太坊改进提案第 1559 号——一次改写了 gas 定价规则的全网升级，下文细讲）之后钱包里那三个数字（base fee、priority fee、max fee）到底是什么意思，以及为什么有一部分费用会被当众”烧掉”。老规矩，最后用 Python 把整个机制模拟一遍，所有输出都是真实运行结果，欢迎对着敲。</p>
       
         <div class="readmore">
           <a href="/blog/2026/10/30/web3-gas/" class="flat-box">

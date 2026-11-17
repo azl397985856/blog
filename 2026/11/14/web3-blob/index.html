@@ -361,7 +361,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">2.4k字</span>
+          <span class="post-count">4.1k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -369,7 +369,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">9分</span>
+          <span class="post-count">15分</span>
         </span>
       </span>
     </div>
@@ -387,46 +387,57 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>在 L2（比如 Arbitrum、Base）上转一笔账，手续费只要几分钱；同样的动作放到以太坊主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 <strong>blob</strong> 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 的生死有什么关系。</p>
+        <p>先对齐两个词。<strong>以太坊主网（L1）</strong>是那条全球共用、最安全也最贵的公共总账本；<strong>L2（二层网络）</strong>是帮主网干活的”分包商”：你的转账先交给分包商处理，又快又便宜，分包商再定期把压缩后的账本汇报回主网。Arbitrum、Base 都是这样的分包商，这套体系怎么从零搭起来，<a href="https://lucifer.ren/blog/2025/02/29/web3-l2-from-zero/" title="从零实现区块链 - 侧链与L2">《从零实现区块链 - 侧链与L2》</a>里完整写过一遍。</p>
+<p>在 L2 上转一笔账，手续费只要几分钱；同样的动作放到主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 <strong>blob</strong> 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 这两代”分包方案”（两个名字后文都会解释）的生死有什么关系。</p>
 <a id="more"></a>
-<h2 id="blob-是什么"><a href="#blob-是什么" class="headerlink" title="blob 是什么"></a>blob 是什么</h2><p>blob 是一种<strong>新的交易类型（type 3）</strong>：交易里可以携带一段“大块数据”（blob data），这段数据和普通 calldata 分开存储、分开计费。</p>
-<p>打个比方。以前 L2 往 L1 寄数据，走的是 calldata——像把整批货单逐字抄在明信片上寄回去，按字数收钱，而且邮局要永久存档每一张；blob 相当于快递公司新开的<strong>大件集装箱托运</strong>：一口价，不按字数计费，18 天后快递柜清空，只留一张取件码（数据指纹）。</p>
-<p>规格上：</p>
+<h2 id="blob-是什么"><a href="#blob-是什么" class="headerlink" title="blob 是什么"></a>blob 是什么</h2><p>分包商处理完一批交易，必须把”这批交易长什么样”的原始数据交回主网存档：主网上的任何人都得能照着这份数据自己重算一遍账，才敢相信分包商没动手脚。这份回传的数据放在哪，就是整篇文章的主角。</p>
+<p>2024 年 3 月之前，这份数据只能塞进交易的 <strong>calldata</strong> 里。calldata 你可以理解成交易自带的”备注栏”：它随交易一起上链，每个字节都收钱，而且主网节点要把每个字节<strong>永久存档</strong>——哪怕这份数据只在核账那几天有用。</p>
+<p>blob 是一种<strong>新的交易类型（type 3）</strong>：以太坊给不同格式的交易编了号，普通转账走老格式，type 3 这个新格式允许交易额外携带一段”大块数据”（blob data），这段数据和普通 calldata 分开存储、分开计费。</p>
+<p>打个比方。以前 L2 往主网寄数据，走的是 calldata——像把整批货单逐字抄在明信片上寄回去，按字数收钱，而且邮局要永久存档每一张；blob 相当于快递公司新开的<strong>大件集装箱托运</strong>：一口价，不按字数计费，18 天后快递柜清空，只留一张取件码（数据指纹）。</p>
+<p>比喻先到这，下一节把它换成一杯奶茶的钱，具体到元。</p>
+<h2 id="先算一笔生活账"><a href="#先算一笔生活账" class="headerlink" title="先算一笔生活账"></a>先算一笔生活账</h2><p>场景：你在老家开了 30 家分店的连锁奶茶店，每天打烊后，各家分店要把当天的流水账本寄回总部对账。</p>
 <ul>
-<li>每个 blob 约 <strong>128 KiB</strong>，即 4096 个 32 字节的 field element（KZG 承诺验证用的基本单元，细节不展开，知道它是给数据做“指纹”用的就行）；</li>
-<li>每个 blob 固定消耗 <strong>131072 data gas</strong>——注意是固定值，不像 calldata 按字节线性计费。</li>
+<li><strong>老办法：逐页传真。</strong> 传真按页计费，一页 2 块钱。生意越做越大，账本越记越厚，一个月攒到 500 页，光”寄账”一项就是 500 × 2 = <strong>1000 块/月</strong>。更头疼的是，总部规定每张传真纸都要<strong>永久归档</strong>——档案室的纸柜一排排往里加，谁也不敢扔：扔了，以后要查旧账怎么办？</li>
+<li><strong>新办法：整本打包快递。</strong> 把整本账本装进一个标准包裹，快递<strong>一口价 30 块</strong>——塞 300 页是这个价，塞 500 页也是这个价，按件收费、不看厚度。总部拆包核对完，包裹<strong>保留 18 天</strong>就统一销毁，销毁前只把包裹面单上的一张<strong>取件码</strong>撕下来归档：核对早就完成了，真有分店做假账，18 天里早该有人对不上账找上门了，没必要把 500 页纸供一辈子。</li>
 </ul>
-<h2 id="独立费用市场"><a href="#独立费用市场" class="headerlink" title="独立费用市场"></a>独立费用市场</h2><p>blob 有<strong>自己的 base fee</strong>，按 blob 的供需独立调节（机制类似 EIP-1559：用量高于目标就涨价，低于目标就降价），与普通 gas 的费用市场完全分开。这意味着：普通 gas 再拥堵，也不会把 blob 的价格顶上去——加油站和快递柜各定各的价，两套市场互不传染。<br>这个定价套路你在<a href="https://lucifer.ren/blog/2026/11/13/web3-mev-supply-chain/" title="MEV 的另一半：合并后的出块拍卖">《MEV 的另一半：合并后的出块拍卖》</a>里已经见过一次：排序权交给市场拍卖定价，blob 车厢也是同一个思想——稀缺资源，交给市场，而不是交给某个人拍脑袋。</p>
-<h2 id="数量：从-3-6-到-6-9"><a href="#数量：从-3-6-到-6-9" class="headerlink" title="数量：从 3/6 到 6/9"></a>数量：从 3/6 到 6/9</h2><p>时间线摆一下：</p>
+<p>小学数学收尾：一个月从 1000 块降到 30 块，省 970 块，一年就是 11640 块。奶茶店敢给每杯立减 3 毛，让利的底气就从这里来。</p>
+<p>一句话点题：<strong>传真是 calldata（按页计费 + 永久存档），包裹是 blob（按件一口价 + 定期销毁）。</strong>开头那组比喻说的是同一件事的不同细节：明信片≈传真（按字数/按页计费 + 永久存档），集装箱≈包裹（一口价 + 定期销毁），取件码≈销毁后归档的那张面单。生活账里的比例先别较真——真实世界到底省几倍，后文有一笔精确账。</p>
+<h2 id="规格速览：翻译回奶茶店的话"><a href="#规格速览：翻译回奶茶店的话" class="headerlink" title="规格速览：翻译回奶茶店的话"></a>规格速览：翻译回奶茶店的话</h2><p>两条核心规格，每条后面跟一句奶茶店话的复述：</p>
 <ul>
-<li><strong>2024 年 3 月 13 日</strong>，Dencun 升级上线主网，EIP-4844（Proto-Danksharding）随之生效，引入 blob。初期每个 slot 的 blob 目标数 <strong>3</strong>、上限 <strong>6</strong>。</li>
-<li><strong>2025 年 5 月</strong>，Pectra 升级通过 EIP-7691 把每块的 blob 容量翻倍：目标 <strong>6</strong>、上限 <strong>9</strong>——相当于 L2 的“高速路车道”直接拓宽。</li>
+<li>每个 blob 约 <strong>128 KiB</strong>，即 4096 个 32 字节的 field element。field element（域元素）是密码学里的”标准格口”：一格正好装 32 字节，blob 就是 4096 个格口连成一排；给这排格口生成”取件码”（数据指纹）用的是一种叫 <strong>KZG</strong> 的密码学承诺算法，细节不展开，知道它是给数据做”指纹”用的就行。以太坊官方路线图对 blob 的介绍看<a href="https://ethereum.org/zh/roadmap/danksharding/" title="以太坊官方路线图：Danksharding 与 blob" target="_blank" rel="noopener">这里</a>，KZG 的官方解释也在同一页。→ <strong>奶茶店话：包裹有标准箱型，500 页账本一个箱子装得下。</strong></li>
+<li>每个 blob 固定消耗 <strong>131072 data gas</strong>——注意是固定值，不像 calldata 按字节线性计费。gas 是链上一切操作的计价单位，类似电表的”度”，<a href="https://lucifer.ren/blog/2026/10/30/web3-gas/" title="Gas：链上一切行为的价格标签">《Gas：链上一切行为的价格标签》</a>整篇都在拆它；blob 烧的是单独一块表（data gas），不占普通 gas 的度数。→ <strong>奶茶店话：快递一口价，塞满半满同价，按件不按页。</strong></li>
 </ul>
-<h2 id="保质期：18-天"><a href="#保质期：18-天" class="headerlink" title="保质期：18 天"></a>保质期：18 天</h2><p>blob 数据不是永久存储的：共识节点大约 <strong>18 天</strong>后会删除 blob 内容（链上只留下持久的数据指纹承诺）。</p>
-<p>这看起来像缺陷，实际是精妙的设计权衡：18 天足够 L2 完成同步、足够欺诈证明在挑战期内被构建，但<strong>省下了全节点永久存储的负担</strong>——数据“可用过”，但不必“供着”。这就是 data availability（数据可用性）与 data storage（数据存储）的分离：快递柜保证你 18 天内随时能取件，但不负责帮你存一辈子。</p>
-<h2 id="为什么便宜：一本成本账"><a href="#为什么便宜：一本成本账" class="headerlink" title="为什么便宜：一本成本账"></a>为什么便宜：一本成本账</h2><p>同样 128 KiB 数据，走两条路的成本差一个量级：</p>
+<h2 id="独立费用市场"><a href="#独立费用市场" class="headerlink" title="独立费用市场"></a>独立费用市场</h2><p>blob 有<strong>自己的 base fee</strong>。base fee（基础费）是区块按拥挤程度自动算出的”起步价”，机制细节同样在<a href="https://lucifer.ren/blog/2026/10/30/web3-gas/" title="Gas：链上一切行为的价格标签">《Gas：链上一切行为的价格标签》</a>里。blob 的起步价按包裹的供需独立调节（机制类似 EIP-1559：用量高于目标就涨价，低于目标就降价——EIP 是以太坊的”升级工单号”，每个协议改动都有一个编号），与普通 gas 的费用市场完全分开。这意味着：普通 gas 再拥堵，也不会把 blob 的价格顶上去——加油站和快递柜各定各的价，两套市场互不传染。→ <strong>奶茶店话：包裹运价由快递网点自己挂牌，寄件多就涨、少就降，跟奶茶店生意冷热无关。</strong></p>
+<p>这个定价套路你在<a href="https://lucifer.ren/blog/2026/11/13/web3-mev-supply-chain/" title="MEV 的另一半：合并后的出块拍卖">《MEV 的另一半：合并后的出块拍卖》</a>里已经见过一次：排序权交给市场拍卖定价，blob 快递柜也是同一个思想——稀缺资源，交给市场，而不是交给某个人拍脑袋。</p>
+<h2 id="数量：从-3-6-到-6-9"><a href="#数量：从-3-6-到-6-9" class="headerlink" title="数量：从 3/6 到 6/9"></a>数量：从 3/6 到 6/9</h2><p>先补一个词：<strong>slot</strong> 是以太坊的出块节拍，大约每 12 秒一拍；每一拍，链上最多只能装进有限几个 blob——这个配额就是所有 L2 一起抢的”车道”。</p>
+<p>时间线摆一下（Dencun、Pectra 是两次全网升级的代号，以太坊习惯给每次升级起名字，类似手机系统的大版本号）：</p>
 <ul>
-<li><strong>走 calldata</strong>（blob 之前的 L2 老路）：按非零字节 16 gas/字节算，131072 字节 × 16 = 约 <strong>200 万 gas</strong>；</li>
-<li><strong>走 blob</strong>：固定 <strong>131072 gas</strong>，直接便宜 <strong>16 倍</strong>。</li>
+<li><strong>2024 年 3 月 13 日</strong>，Dencun 升级上线主网，EIP-4844（Proto-Danksharding）随之生效，引入 blob。Proto-Danksharding 是”Danksharding 的预热版”——Danksharding 是以太坊官方路线图里未来把包裹配额再放大几十倍的完整方案，名字取自两位研究者 Proto 和 Dankrad。初期每个 slot 的 blob 目标数 <strong>3</strong>、上限 <strong>6</strong>。</li>
+<li><strong>2025 年 5 月</strong>，Pectra 升级通过 EIP-7691 把每块的 blob 容量翻倍：目标 <strong>6</strong>、上限 <strong>9</strong>——相当于 L2 的”高速路车道”直接拓宽。→ <strong>奶茶店话：起初快递网络每一拍只收 3 个包裹、最多 6 个；2025 年扩到目标 6 个、最多 9 个——所有分店共用的寄件窗口加宽了一倍。</strong></li>
 </ul>
-<p>而且差距还在拉大：Pectra 的 EIP-7623 又上调了“把 calldata 纯当数据用”的成本（引入 40 gas/字节的托底价，专治把 calldata 当廉价硬盘用的场景），进一步把数据发布往 blob 上赶。</p>
-<p>用代码把这本账算清楚。我们要算的是：某 L2 每批 512 KiB 的压缩交易数据发回 L1，三条路线——老 calldata、Pectra 后的 calldata 托底价、blob——各花多少钱。假设 ETH 价格 3000 美元、gas 单价 10 gwei，所有路线用同一单价以保证对比公平：</p>
+<h2 id="保质期：18-天"><a href="#保质期：18-天" class="headerlink" title="保质期：18 天"></a>保质期：18 天</h2><p>blob 数据不是永久存储的：共识节点（负责保管链数据、参与出块验证，相当于全网指定的保管员）大约 <strong>18 天</strong>后会删除 blob 内容（链上只留下持久的数据指纹承诺）。</p>
+<p>这看起来像缺陷，实际是精妙的设计权衡：18 天足够 L2 完成同步、足够欺诈证明在挑战期内被构建，但<strong>省下了全节点（自己存着完整链数据的节点）永久存储的负担</strong>——数据”可用过”，但不必”供着”。这就是 data availability（数据可用性）与 data storage（数据存储）的分离：快递柜保证你 18 天内随时能取件，但不负责帮你存一辈子。→ <strong>奶茶店话：包裹 18 天后统一销毁，总部只留一张取件码——对账窗口足够长，档案室却不用一辈子加高。</strong></p>
+<h2 id="为什么便宜：一本成本账"><a href="#为什么便宜：一本成本账" class="headerlink" title="为什么便宜：一本成本账"></a>为什么便宜：一本成本账</h2><p>先给生活版结论。同样一大箱数据（blob 的标准箱型那么大）寄回主网：走 calldata，每个字节收 16 gas；装进 blob，固定 131072 gas ÷ 131072 字节，摊到每个字节只合 1 gas——<strong>同样一箱货，运费差 16 倍</strong>。</p>
+<p>而且差距还在拉大：2025 年的 Pectra 升级里还有一张工单 EIP-7623，专门上调”把 calldata 纯当数据硬盘用”的价格（引入 40 gas/字节的托底价）。相当于快递公司发现大家把传真当廉价硬盘使，干脆上调传真资费，把寄件人往包裹上赶——这一下，差距拉到 <strong>40 倍</strong>。</p>
+<p>这 16 到 40 倍的运费差，就是 L2 敢把”一笔转账几分钱”让利给你的空间。</p>
+<h3 id="进阶：把这本账精确算一遍"><a href="#进阶：把这本账精确算一遍" class="headerlink" title="进阶：把这本账精确算一遍"></a>进阶：把这本账精确算一遍</h3><p><strong>想跳过可只记结论：同样一批数据，calldata 至少是 blob 的 16 倍；EIP-7623 托底价之后，40 倍。</strong>下面给想亲手核对数字的读者。</p>
+<p>用代码把这本账算清楚。我们要算的是：某 L2 每批 512 KiB 的压缩交易数据发回 L1，三条路线——老 calldata、Pectra 后的 calldata 托底价、blob——各花多少钱。假设 ETH 价格 3000 美元、gas 单价 10 gwei（gwei 是 gas 的计价小单位，好比电价里的”分”，1 ETH = 10 亿 gwei），所有路线用同一单价以保证对比公平：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">blob vs calldata：L2 把一批压缩后的交易数据发回 L1，两条路线各花多少 gas？</span></span><br><span class="line"><span class="string">EIP-4844：每个 blob 约 128KiB，固定消耗 131072 data gas</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line">ETH_PRICE_USD = <span class="number">3000.0</span>  <span class="comment"># 假设 ETH 价格 3000 美元（写作时的假设值，仅供换算）</span></span><br><span class="line">GAS_PRICE_GWEI = <span class="number">10.0</span>   <span class="comment"># 假设 gas 单价 10 gwei（两条路线用同一单价，保证对比公平）</span></span><br><span class="line"></span><br><span class="line">BLOB_GAS = <span class="number">131072</span>          <span class="comment"># 每个 blob 固定消耗 131072 gas（EIP-4844）</span></span><br><span class="line">BLOB_SIZE = <span class="number">128</span> * <span class="number">1024</span>     <span class="comment"># 每个 blob 约 128 KiB = 4096 个 32 字节 field element</span></span><br><span class="line">CALLDATA_GAS = <span class="number">16</span>          <span class="comment"># calldata 非零字节单价：16 gas/字节</span></span><br><span class="line">CALLDATA_FLOOR = <span class="number">40</span>        <span class="comment"># EIP-7623（Pectra）后纯数据型交易的 calldata 托底单价</span></span><br><span class="line">BATCH_BYTES = <span class="number">512</span> * <span class="number">1024</span>   <span class="comment"># L2 每批向 L1 发布 512 KiB 压缩后的交易数据</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">usd</span><span class="params">(gas)</span>:</span></span><br><span class="line">    <span class="string">"""把 gas 换算成美元：gas * gwei 单价 * 1e-9(换算成 ETH) * ETH 价格"""</span></span><br><span class="line">    <span class="keyword">return</span> gas * GAS_PRICE_GWEI * <span class="number">1e-9</span> * ETH_PRICE_USD</span><br><span class="line"></span><br><span class="line">calldata_gas_old = BATCH_BYTES * CALLDATA_GAS    <span class="comment"># 老路：数据全塞 calldata</span></span><br><span class="line">calldata_gas_new = BATCH_BYTES * CALLDATA_FLOOR  <span class="comment"># EIP-7623 之后同一条老路的托底价</span></span><br><span class="line">blob_count = -(-BATCH_BYTES // BLOB_SIZE)        <span class="comment"># 需要几个 blob（向上取整）</span></span><br><span class="line">blob_gas = blob_count * BLOB_GAS</span><br><span class="line"></span><br><span class="line">print(<span class="string">"=== L2 一批 512 KiB 数据上 L1 的成本对账 ===\n"</span>)</span><br><span class="line">print(<span class="string">f"路线一(经典):    全走 calldata, <span class="subst">&#123;BATCH_BYTES&#125;</span> 字节 x <span class="subst">&#123;CALLDATA_GAS&#125;</span> gas "</span></span><br><span class="line">      <span class="string">f"= <span class="subst">&#123;calldata_gas_old:,&#125;</span> gas, 约 <span class="subst">&#123;usd(calldata_gas_old):<span class="number">.2</span>f&#125;</span> 美元"</span>)</span><br><span class="line">print(<span class="string">f"路线一(Pectra后): 同一条路, 按 EIP-7623 托底 <span class="subst">&#123;CALLDATA_FLOOR&#125;</span> gas/字节 "</span></span><br><span class="line">      <span class="string">f"= <span class="subst">&#123;calldata_gas_new:,&#125;</span> gas, 约 <span class="subst">&#123;usd(calldata_gas_new):<span class="number">.2</span>f&#125;</span> 美元"</span>)</span><br><span class="line">print(<span class="string">f"路线二(blob):    <span class="subst">&#123;blob_count&#125;</span> 个 blob x <span class="subst">&#123;BLOB_GAS&#125;</span> gas "</span></span><br><span class="line">      <span class="string">f"= <span class="subst">&#123;blob_gas:,&#125;</span> gas, 约 <span class="subst">&#123;usd(blob_gas):<span class="number">.2</span>f&#125;</span> 美元\n"</span>)</span><br><span class="line">print(<span class="string">f"calldata(16 gas/字节) 是 blob 的 <span class="subst">&#123;calldata_gas_old / blob_gas:<span class="number">.0</span>f&#125;</span> 倍"</span>)</span><br><span class="line">print(<span class="string">f"calldata(40 gas/字节托底) 是 blob 的 <span class="subst">&#123;calldata_gas_new / blob_gas:<span class="number">.0</span>f&#125;</span> 倍"</span>)</span><br></pre></td></tr></table></figure>
 <p><strong>代码说明</strong>：</p>
 <ul>
 <li><code>BATCH_BYTES</code>：假设某 L2 每批向 L1 发布 512 KiB 压缩后的交易数据（真实 L2 的批量大小各异，这里取个好算的整数）。</li>
 <li>三条路线：全走 calldata（16 gas/字节，4844 之前的现实）、同一条路按 EIP-7623 的 40 gas/字节托底价重算（Pectra 之后的新现实）、以及全装进 blob（每 128 KiB 一个、每个固定 131072 gas）。</li>
 <li><code>-(-a // b)</code> 是 Python 里不引入库就能向上取整的小技巧。</li>
-<li>gas 单价对两条路线统一用 10 gwei，让对比只反映“机制差异”而非“行情差异”；现实中 blob 的 base fee 独立浮动，行情好时比这个假设还要便宜得多。</li>
+<li>gas 单价对两条路线统一用 10 gwei，让对比只反映”机制差异”而非”行情差异”；现实中 blob 的 base fee 独立浮动，行情好时比这个假设还要便宜得多。</li>
 </ul>
 <p><strong>运行结果</strong>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">=== L2 一批 512 KiB 数据上 L1 的成本对账 ===</span><br><span class="line"></span><br><span class="line">路线一(经典):    全走 calldata, 524288 字节 x 16 gas = 8,388,608 gas, 约 251.66 美元</span><br><span class="line">路线一(Pectra后): 同一条路, 按 EIP-7623 托底 40 gas/字节 = 20,971,520 gas, 约 629.15 美元</span><br><span class="line">路线二(blob):    4 个 blob x 131072 gas = 524,288 gas, 约 15.73 美元</span><br><span class="line"></span><br><span class="line">calldata(16 gas/字节) 是 blob 的 16 倍</span><br><span class="line">calldata(40 gas/字节托底) 是 blob 的 40 倍</span><br></pre></td></tr></table></figure>
-<p>同一批 512 KiB 数据，calldata 要 838 万 gas（约 251 美元），blob 只要 52 万 gas（约 15 美元）——16 倍的差距；再算上 EIP-7623 对纯数据 calldata 的惩罚性托底价，差距拉到 40 倍。L2 把省下来的钱让利给用户，就是“一笔转账几分钱”的由来。（顺带一提，这笔账里用到的 gas 机制——base fee、小费、计费规则——在<a href="https://lucifer.ren/blog/2026/10/30/web3-gas/" title="Gas：链上一切行为的价格标签">《Gas：链上一切行为的价格标签》</a>里有完整拆解。）</p>
+<p>同一批 512 KiB 数据，calldata 要 838 万 gas（约 251 美元），blob 只要 52 万 gas（约 15 美元）——16 倍的差距；再算上 EIP-7623 对纯数据 calldata 的惩罚性托底价，差距拉到 40 倍。L2 把省下来的钱让利给用户，就是”一笔转账几分钱”的由来。（顺带一提，这笔账里用到的 gas 机制——base fee、小费、计费规则——在<a href="https://lucifer.ren/blog/2026/10/30/web3-gas/" title="Gas：链上一切行为的价格标签">《Gas：链上一切行为的价格标签》</a>里有完整拆解。）</p>
 <p><img src="https://lucifer.ren/blog/images/web3/blob-vs-calldata.png" alt="同一批 512 KiB 数据发回 L1 的成本对比：blob 几乎贴地，calldata 贵 16 到 40 倍"></p>
-<h2 id="还债：L2-那篇欠的“数据可用性”"><a href="#还债：L2-那篇欠的“数据可用性”" class="headerlink" title="还债：L2 那篇欠的“数据可用性”"></a>还债：L2 那篇欠的“数据可用性”</h2><p>还记得<a href="https://lucifer.ren/blog/2025/02/29/web3-l2-from-zero/" title="从零实现区块链 - 侧链与L2">《从零实现区块链 - 侧链与L2》</a>里两次自我声明吗？一次说 Plasma“数据可用性问题也让它逐渐被 Rollup 取代”，一次在迷你 Rollup 实现后说“忽略了 Merkle Tree、数据可用性和完整欺诈证明的细节”。这里就是答案。</p>
-<p><strong>Rollup 的工作方式是把用户交易在链下执行，但把压缩后的交易数据发布到 L1。</strong>这些数据放哪？Dencun 之前放 calldata，Dencun 之后放 blob。只要数据摆在一个所有人都能读的地方（由 L1 的共识保证可获取），任何人就能根据这批数据独立重放、验证 Rollup 的状态根是否诚实——Optimistic Rollup 的欺诈证明、ZK Rollup 的有效性证明，全都建立在“数据公开可查”之上。</p>
-<p>打个比方：Rollup 把账本摊在广场上，人人都能抄一份回去对账；Plasma 当年把账本锁在运营者自家抽屉里，用户看不到自己的余额依据，退出就得靠复杂的挑战机制——抽屉一锁死，挑战期就是一场灾难。<strong>Plasma 死于数据可用性无法保证，Rollup 活下来靠的是把数据押在 L1 上，blob 则让这份“保险费”从 251 美元降到 15 美元。</strong>这就是数据可用性这四个字在两条技术路线生死之间的分量。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>blob 的故事一句话收尾：<strong>给 L2 的数据修了一条专用车道，用独立市场定价，便宜 16 倍起步，18 天后自动清空。</strong></p>
+<h2 id="还债：L2-那篇欠的”数据可用性”"><a href="#还债：L2-那篇欠的”数据可用性”" class="headerlink" title="还债：L2 那篇欠的”数据可用性”"></a>还债：L2 那篇欠的”数据可用性”</h2><p>还记得<a href="https://lucifer.ren/blog/2025/02/29/web3-l2-from-zero/" title="从零实现区块链 - 侧链与L2">《从零实现区块链 - 侧链与L2》</a>里两次自我声明吗？一次说 Plasma”数据可用性问题也让它逐渐被 Rollup 取代”，一次在迷你 Rollup 实现后说”忽略了 Merkle Tree、数据可用性和完整欺诈证明的细节”。这里就是答案。</p>
+<p><strong>Rollup 的工作方式是把用户交易在链下执行，但把压缩后的交易数据发布到 L1。</strong>这些数据放哪？Dencun 之前放 calldata，Dencun 之后放 blob。只要数据摆在一个所有人都能读的地方（由 L1 的共识保证可获取），任何人就能根据这批数据独立重放，验证 Rollup 的状态根——整本账算完后压缩出的”总校验码”，账本差一笔它就对不上——是否诚实。Optimistic Rollup（先默认记账人老实，留一段挑战期供人举报）的欺诈证明、ZK Rollup（附一份数学证明自证清白）的有效性证明，全都建立在”数据公开可查”之上。</p>
+<p>打个比方：Rollup 把账本摊在广场上，人人都能抄一份回去对账；Plasma 当年把账本锁在运营者自家抽屉里，用户看不到自己的余额依据，退出就得靠复杂的挑战机制——抽屉一锁死，挑战期就是一场灾难。<strong>Plasma 死于数据可用性无法保证，Rollup 活下来靠的是把数据押在 L1 上，blob 则让这份”保险费”从 251 美元降到 15 美元。</strong>这就是数据可用性这四个字在两条技术路线生死之间的分量。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>blob 的故事一句话收尾：<strong>给 L2 的数据修了一条专用车道，用独立市场定价，便宜 16 倍起步，18 天后自动清空。</strong>再用奶茶店的话说一遍：<strong>给分店的账本换成了包裹快递，一口价，一个月省 970 块，包裹 18 天后自动销毁。</strong></p>
 <ul>
 <li>每个 blob 约 128 KiB，固定消耗 131072 data gas，比 calldata 便宜 16 倍起步（EIP-7623 托底价之后拉到 40 倍）；</li>
 <li>每 slot 目标 3/上限 6，Pectra 之后拓到 6/9，未来 Danksharding 还会继续加车道；</li>
@@ -438,6 +449,7 @@
 <li><a href="https://lucifer.ren/blog/2025/02/29/web3-l2-from-zero/" title="从零实现区块链 - 侧链与L2">《从零实现区块链 - 侧链与L2》</a>：Rollup 与 Plasma 的背景篇，”数据可用性”两次免责声明的原主</li>
 <li><a href="https://lucifer.ren/blog/2026/10/30/web3-gas/" title="Gas：链上一切行为的价格标签">《Gas：链上一切行为的价格标签》</a>：base fee、小费、计费规则的完整拆解</li>
 <li><a href="https://lucifer.ren/blog/2026/11/13/web3-mev-supply-chain/" title="MEV 的另一半：合并后的出块拍卖">《MEV 的另一半：合并后的出块拍卖》</a>：同一个”稀缺资源交给市场拍卖定价”思想的另一半——排序权的拍卖</li>
+<li><a href="https://ethereum.org/zh/roadmap/danksharding/" title="以太坊官方路线图：Danksharding 与 blob" target="_blank" rel="noopener">以太坊官方路线图：Danksharding 与 blob</a>：blob、KZG、Proto-Danksharding 的官方权威介绍（中文）</li>
 </ul>
 
       </div>
@@ -450,10 +462,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-15T15:17:01+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-17T22:51:04+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2026年11月15日</p>
+    <p>更新于 2026年11月17日</p>
   </a>
 </div>
 
@@ -483,7 +495,8 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2026/11/14/web3-blob/&title=blob：你的 L2 转账为什么只要几分钱 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=在 L2（比如 Arbitrum、Base）上转一笔账，手续费只要几分钱；同样的动作放到以太坊主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 blob 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 的生死有什么关系。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2026/11/14/web3-blob/&title=blob：你的 L2 转账为什么只要几分钱 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=先对齐两个词。以太坊主网（L1）是那条全球共用、最安全也最贵的公共总账本；L2（二层网络）是帮主网干活的”分包商”：你的转账先交给分包商处理，又快又便宜，分包商再定期把压缩后的账本汇报回主网。Arbitrum、Base 都是这样的分包商，这套体系怎么从零搭起来，《从零实现区块链 - 侧链与L2》里完整写过一遍。
+在 L2 上转一笔账，手续费只要几分钱；同样的动作放到主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 blob 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 这两代”分包方案”（两个名字后文都会解释）的生死有什么关系。"
           
           >
           
@@ -495,7 +508,8 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2026/11/14/web3-blob/&title=blob：你的 L2 转账为什么只要几分钱 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=在 L2（比如 Arbitrum、Base）上转一笔账，手续费只要几分钱；同样的动作放到以太坊主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 blob 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 的生死有什么关系。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2026/11/14/web3-blob/&title=blob：你的 L2 转账为什么只要几分钱 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=先对齐两个词。以太坊主网（L1）是那条全球共用、最安全也最贵的公共总账本；L2（二层网络）是帮主网干活的”分包商”：你的转账先交给分包商处理，又快又便宜，分包商再定期把压缩后的账本汇报回主网。Arbitrum、Base 都是这样的分包商，这套体系怎么从零搭起来，《从零实现区块链 - 侧链与L2》里完整写过一遍。
+在 L2 上转一笔账，手续费只要几分钱；同样的动作放到主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 blob 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 这两代”分包方案”（两个名字后文都会解释）的生死有什么关系。"
           
           >
           
@@ -507,7 +521,8 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2026/11/14/web3-blob/&title=blob：你的 L2 转账为什么只要几分钱 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=在 L2（比如 Arbitrum、Base）上转一笔账，手续费只要几分钱；同样的动作放到以太坊主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 blob 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 的生死有什么关系。"
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2026/11/14/web3-blob/&title=blob：你的 L2 转账为什么只要几分钱 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=先对齐两个词。以太坊主网（L1）是那条全球共用、最安全也最贵的公共总账本；L2（二层网络）是帮主网干活的”分包商”：你的转账先交给分包商处理，又快又便宜，分包商再定期把压缩后的账本汇报回主网。Arbitrum、Base 都是这样的分包商，这套体系怎么从零搭起来，《从零实现区块链 - 侧链与L2》里完整写过一遍。
+在 L2 上转一笔账，手续费只要几分钱；同样的动作放到主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 blob 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 这两代”分包方案”（两个名字后文都会解释）的生死有什么关系。"
           
           >
           
@@ -728,7 +743,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#blob-是什么"><span class="toc-text">blob 是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#独立费用市场"><span class="toc-text">独立费用市场</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数量：从-3-6-到-6-9"><span class="toc-text">数量：从 3/6 到 6/9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#保质期：18-天"><span class="toc-text">保质期：18 天</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么便宜：一本成本账"><span class="toc-text">为什么便宜：一本成本账</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#还债：L2-那篇欠的“数据可用性”"><span class="toc-text">还债：L2 那篇欠的“数据可用性”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关阅读"><span class="toc-text">相关阅读</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#blob-是什么"><span class="toc-text">blob 是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#先算一笔生活账"><span class="toc-text">先算一笔生活账</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#规格速览：翻译回奶茶店的话"><span class="toc-text">规格速览：翻译回奶茶店的话</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#独立费用市场"><span class="toc-text">独立费用市场</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数量：从-3-6-到-6-9"><span class="toc-text">数量：从 3/6 到 6/9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#保质期：18-天"><span class="toc-text">保质期：18 天</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么便宜：一本成本账"><span class="toc-text">为什么便宜：一本成本账</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进阶：把这本账精确算一遍"><span class="toc-text">进阶：把这本账精确算一遍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#还债：L2-那篇欠的”数据可用性”"><span class="toc-text">还债：L2 那篇欠的”数据可用性”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关阅读"><span class="toc-text">相关阅读</span></a></li></ol>
     </div>
   </section>
 

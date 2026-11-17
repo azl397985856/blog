@@ -382,7 +382,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">2.4k字</span>
+          <span class="post-count">4.1k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -390,7 +390,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">9分</span>
+          <span class="post-count">15分</span>
         </span>
       </span>
     </div>
@@ -408,7 +408,8 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>在 L2（比如 Arbitrum、Base）上转一笔账，手续费只要几分钱；同样的动作放到以太坊主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 <strong>blob</strong> 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 的生死有什么关系。</p>
+      <p>先对齐两个词。<strong>以太坊主网（L1）</strong>是那条全球共用、最安全也最贵的公共总账本；<strong>L2（二层网络）</strong>是帮主网干活的”分包商”：你的转账先交给分包商处理，又快又便宜，分包商再定期把压缩后的账本汇报回主网。Arbitrum、Base 都是这样的分包商，这套体系怎么从零搭起来，<a href="https://lucifer.ren/blog/2025/02/29/web3-l2-from-zero/" title="从零实现区块链 - 侧链与L2">《从零实现区块链 - 侧链与L2》</a>里完整写过一遍。</p>
+<p>在 L2 上转一笔账，手续费只要几分钱；同样的动作放到主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 <strong>blob</strong> 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 这两代”分包方案”（两个名字后文都会解释）的生死有什么关系。</p>
       
         <div class="readmore">
           <a href="/blog/2026/11/14/web3-blob/" class="flat-box">
@@ -515,7 +516,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">5.6k字</span>
+          <span class="post-count">7k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -523,7 +524,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">21分</span>
+          <span class="post-count">25分</span>
         </span>
       </span>
     </div>
@@ -541,9 +542,9 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>上一篇<a href="https://lucifer.ren/blog/2025/07/06/web3-mev/" title="Web3 的 Anti MEV：深入剖析“夹”与反制之道">《Web3 的 Anti MEV：深入剖析“夹”与反制之道》</a>我们抓了个现行：攻击者扫 mempool、插抢跑交易、夹走 40 USDT，全程都在“矿工”的眼皮底下完成。但你可能隐约察觉到一个时代错误——那篇文章里的主角，叫<strong>矿工</strong>。</p>
-<p>问题是，2022 年 9 月以太坊合并（The Merge）转入 PoS 之后，链上已经没有矿工了。出块不再靠算力硬拼，改成“押 32 ETH 押金，每 12 秒摇号抽一位验证者当值”。于是两个更尖锐的问题冒了出来：现在到底谁在排序交易？三明治们攫取的 MEV，又被谁分走了？</p>
-<p>一句话剧透：排序权被拆成了一条四个工种的流水线——Searcher 蹲点捕猎、Builder 打包报价、Relay 中转担保、Validator 签字收钱，每 12 秒办一场拍卖决定这个 slot 归谁。<strong>以前夹你的是一个矿工，现在夹你的是一条流水线。</strong>顺带说一句，你常听说的 blob——让 L2 转账只要几分钱的那位——和这套流水线共享同一个”稀缺资源交给市场拍卖”的思想，但那是另一篇的主角（见文末相关阅读），本文只讲流水线。</p>
+      <p>上一篇<a href="https://lucifer.ren/blog/2025/07/06/web3-mev/" title="Web3 的 Anti MEV：深入剖析“夹”与反制之道">《Web3 的 Anti MEV：深入剖析“夹”与反制之道》</a>我们抓了个现行：攻击者扫 mempool——所有已发出、还没被打包上链的交易都先在这条“公共候单大厅”里排队，内容人人可见，运作细节前置篇讲过——插抢跑交易、夹走 40 USDT（锚定美元的稳定币，约 1 USDT 兑 1 美元），全程都在“矿工”的眼皮底下完成。但你可能隐约察觉到一个时代错误——那篇文章里的主角，叫<strong>矿工</strong>。</p>
+<p>问题是，2022 年 9 月以太坊合并（The Merge）转入 PoS 之后，链上已经没有矿工了。出块不再靠算力硬拼，改成“押 32 ETH（以太坊网络自己的币）押金，每 12 秒摇号抽一位验证者当值”。于是两个更尖锐的问题冒了出来：现在到底谁在排序交易？三明治们攫取的 MEV，又被谁分走了？</p>
+<p>一句话剧透：排序权被拆成了一条四个工种的流水线——Searcher 蹲点捕猎、Builder 打包报价、Relay 中转担保、Validator 签字收钱，每 12 秒办一场拍卖决定这个 slot 归谁。<strong>以前夹你的是一个矿工，现在夹你的是一条流水线。</strong>顺带说一句，你常听说的 blob（区块里新开的一节“行李车厢”，专门装 L2 的交易数据）——让 L2（架在以太坊之上、替主网分担交易量的第二层网络）转账只要几分钱的那位——和这套流水线共享同一个”稀缺资源交给市场拍卖”的思想，但那是另一篇的主角（见文末相关阅读），本文只讲流水线。</p>
 <p>老规矩，代码驱动：本文用一段可直接运行的 Python 模拟，把一场 MEV-Boost 拍卖的分账跑给你看。</p>
       
         <div class="readmore">
@@ -649,7 +650,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">7k字</span>
+          <span class="post-count">8.1k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -657,7 +658,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">26分</span>
+          <span class="post-count">29分</span>
         </span>
       </span>
     </div>
@@ -675,8 +676,8 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>大家好，我是 Lucifer。之前写 <a href="https://lucifer.ren/blog/2025/09/20/web3-depin/" title="DePIN 觉醒">DePIN</a> 的时候，我随口带过一句”通过 DAO，你可以用 token 投票决定网络升级”。当时一笔带过，但这句话背后其实站着一种完整的组织形态——它没有 CEO、没有董事会、没有财务总监，金库里的钱却比很多上市公司还多。这就是今天的主角：DAO，去中心化自治组织。</p>
-<p>先剧透一个真实结局。2022 年 4 月，有人对这种”没有老板的公司”下手了：一分钟前他还是个穷光蛋，靠闪电贷借来约 10 亿美元的投票权，投完票、搬完金库、把票原样还回去，前后约 13 秒，净落袋近亿美元。他利用了几个代码漏洞？零。偷了谁的私钥？没有。他走的完全是正规流程：提案、投票、执行，一步一步，手续齐全。Beanstalk 协议金库里约 1.82 亿美元，就这么被”合法地”搬空了。</p>
+      <p>大家好，我是 Lucifer。之前写 <a href="https://lucifer.ren/blog/2025/09/20/web3-depin/" title="DePIN 觉醒">DePIN</a> 的时候，我随口带过一句”通过 DAO，你可以用 token 投票决定网络升级”（token 即代币：链上人人可持有的数字凭证，谁持有谁就能行使它捆绑的权利）。当时一笔带过，但这句话背后其实站着一种完整的组织形态——它没有 CEO、没有董事会、没有财务总监，金库（这个组织共用的公共钱箱）里的钱却比很多上市公司还多。这就是今天的主角：DAO，去中心化自治组织。</p>
+<p>先剧透一个真实结局。2022 年 4 月，有人对这种”没有老板的公司”下手了：一分钟前他还是个穷光蛋，靠闪电贷——一笔”先借后还、还不上就整笔作废”的链上借贷，下文细讲——借来约 10 亿美元的投票权，投完票、搬完金库、把票原样还回去，前后约 13 秒，净落袋近亿美元。他利用了几个代码漏洞？零。偷了谁的私钥？没有。（私钥是链上账户唯一的钥匙，谁拿到就能转走里面的钱。）他走的完全是正规流程：提案、投票、执行，一步一步，手续齐全。Beanstalk 协议金库里约 1.82 亿美元，就这么被”合法地”搬空了。</p>
 <p>这篇文章咱们就把这件事讲透：DAO 到底怎么运转？为什么能被一秒钟搬空？防御方手里那几张牌又怎么打？照例，全程用 Python 模拟关键过程，建议你亲手跑一遍——治理这件事，光看懂没用，得亲眼看到攻击的净利润那个数字，你才会记住”公示期”三个字值多少钱。</p>
       
         <div class="readmore">
@@ -782,7 +783,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">8.4k字</span>
+          <span class="post-count">9.4k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -790,7 +791,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">33分</span>
+          <span class="post-count">37分</span>
         </span>
       </span>
     </div>
@@ -808,8 +809,8 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>先说一个很多人都遇到过的尴尬：钱包里躺着几百 USDC，想转一点给朋友，界面却弹出一行字——“ETH 余额不足，无法支付 gas”。你明明有钱，却连手续费都交不起，像揣着一沓现金站在只收硬币的售货机前。更绝望的是另一种场景：抄助记词的那张纸丢了。没有”忘记密码”，没有客服，没有申诉入口，链上资产从此变成一座纪念碑。</p>
-<p>这些尴尬不怪钱包 App 做得烂，怪以太坊账户模型的”出厂设置”。<a href="https://lucifer.ren/blog/2025/02/16/web3-wallet/" title="Web3 的入口 - 区块链钱包">《Web3 的入口 - 区块链钱包》</a>里介绍过的私钥账户叫 EOA（Externally Owned Account，外部账户），你可以把它理解成<strong>一把钥匙管一切的旧式机械门锁</strong>：一把钥匙就是全部，丢了就完了，没有挂失，没有备用方案。而<strong>账户抽象（Account Abstraction，AA）</strong>想干的事，说白了就一件：<strong>把这把旧门锁换成智能门锁</strong>——账户从”一把私钥”升级成”一段可编程的合约”，”怎么验身份、怎么付 gas、怎么执行”，全由代码说了算。</p>
+      <p>先说一个很多人都遇到过的尴尬：钱包里躺着几百 USDC（一种和美元 1:1 锚定的链上代币），想转一点给朋友，界面却弹出一行字——“ETH 余额不足，无法支付 gas”。你明明有钱，却连手续费都交不起，像揣着一沓现金站在只收硬币的售货机前。更绝望的是另一种场景：抄助记词的那张纸丢了。没有”忘记密码”，没有客服，没有申诉入口，链上资产从此变成一座纪念碑。</p>
+<p>这些尴尬不怪钱包 App 做得烂，怪以太坊账户模型的”出厂设置”。<a href="https://lucifer.ren/blog/2025/02/16/web3-wallet/" title="Web3 的入口 - 区块链钱包">《Web3 的入口 - 区块链钱包》</a>里介绍过的私钥账户叫 EOA（Externally Owned Account，外部账户），你可以把它理解成<strong>一把钥匙管一切的旧式机械门锁</strong>：一把钥匙就是全部，丢了就完了，没有挂失，没有备用方案。而<strong>账户抽象（Account Abstraction，AA）</strong>想干的事，说白了就一件：<strong>把这把旧门锁换成智能门锁</strong>——账户从”一把私钥”升级成”一段可编程的合约”（智能合约：部署在链上、规则由代码写死、被调用时自动执行的程序），”怎么验身份、怎么付 gas、怎么执行”，全由代码说了算。</p>
 <p>熟悉我的朋友应该知道，我经常从零实现一些东西帮助理解，本文照例代码驱动：先用 Python 模拟 ERC-4337 里一个 UserOperation 从提交到结算的完整生命周期，再模拟社交恢复与 guardian 串通攻击，中间穿插 EIP-7702 的机制讲解，所有输出均为真实运行结果，纯标准库，复制即可跑。</p>
       
         <div class="readmore">
@@ -915,7 +916,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">7.5k字</span>
+          <span class="post-count">8k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -923,7 +924,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">28分</span>
+          <span class="post-count">30分</span>
         </span>
       </span>
     </div>
@@ -943,8 +944,8 @@
     <div class="article-entry" itemprop="articleBody">
       <p>还记得<a href="https://lucifer.ren/blog/2025/03/01/web3-hacker-1/" title="我是一个区块链黑客（第一篇）">《我是一个区块链黑客（第一篇）》</a>结尾那份防范清单吗？最后一条写着”定期审计合约代码”——一句话打发了价值几十万美元的行业服务，堪称全文最省钱的一条建议。无独有偶，聊 DeFi 保险的<a href="https://lucifer.ren/blog/2026/04/22/web3-defi-insurance/" title="DeFi 保险：谁来保护你的链上资产？">《DeFi 保险：谁来保护你的链上资产？》</a>更直接，把”审计次数”列进了协议风险评分表。</p>
 <p>那么问题来了：审计到底是什么？谁在审？报告怎么读？普通人能不能自己跑两下？本文就回答这四个问题。</p>
-<p>先把心态立正：<strong>审计不是保险单</strong>。这话怎么理解？想想体检。体检报告只能告诉你”抽血那天的你”状态如何，不能保证你一年不生病；车过了年检，上了高速照样可能爆胎。被多家审计公司轮番体检过的协议也一样——Euler Finance 审过不止一轮，2023 年 3 月还是被闪电贷攻击卷走 1.97 亿美元（后来黑客退还了大部分，堪称行业奇观）。原因并不神秘：审计是时间盒（time-boxed）内的抽检，不是数学证明。几个工程师花一两周，对着几万行代码找毛病，找到的是”他们能找到的”，而不是”不存在的”。</p>
-<p>本文按四个问题展开：漏洞长什么样、审计怎么跑、报告怎么读、以及你自己怎么动手。读不懂 Solidity 没关系——审计报告本来就不全是写给程序员的，普通用户才是最该会读它的人。看完至少能看懂报告；看得懂代码更好，文末有个一百来行的玩具扫描器等你复现。</p>
+<p>先把心态立正：<strong>审计不是保险单</strong>。这话怎么理解？想想体检。体检报告只能告诉你”抽血那天的你”状态如何，不能保证你一年不生病；车过了年检，上了高速照样可能爆胎。被多家审计公司轮番体检过的协议也一样——Euler Finance 审过不止一轮，2023 年 3 月还是被闪电贷攻击卷走 1.97 亿美元（闪电贷是链上”借币、用完即还、无需抵押”的一笔交易内借贷，等于白送攻击者一根杠杆；后来黑客退还了大部分，堪称行业奇观）。原因并不神秘：审计是时间盒（time-boxed）内的抽检，不是数学证明。几个工程师花一两周，对着几万行代码找毛病，找到的是”他们能找到的”，而不是”不存在的”。</p>
+<p>本文按四个问题展开：漏洞长什么样、审计怎么跑、报告怎么读、以及你自己怎么动手。读不懂 Solidity（写智能合约用的编程语言）没关系——审计报告本来就不全是写给程序员的，普通用户才是最该会读它的人。看完至少能看懂报告；看得懂代码更好，文末有个一百来行的玩具扫描器等你复现。</p>
       
         <div class="readmore">
           <a href="/blog/2026/11/10/web3-security-audit/" class="flat-box">
@@ -1049,7 +1050,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">7.3k字</span>
+          <span class="post-count">8k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -1057,7 +1058,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">26分</span>
+          <span class="post-count">29分</span>
         </span>
       </span>
     </div>
@@ -1075,9 +1076,9 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>在 Web3 里买新币，死法基本就三种，而且个个经典。第一种叫<strong>硬 rug</strong>：项目方直接把流动性池撤空卷款跑路，代币瞬间归零，从”因为相信所以看见”到”查无此币”只需要一笔交易。第二种叫<strong>软 rug</strong>：团队握着大份额代币按兵不动，看起来岁月静好，然后每天精准砸一点，温水煮青蛙，你甚至说不清自己是哪天死的。第三种最阴，叫<strong>貔貅盘（honeypot）</strong>——以只进不出的上古神兽命名：你买得进，卖不出，要么卖出直接 revert，要么卖出税高达 99%，1000 USDT 进去，50 USDT 出来，”客服”还会劝你长期持有必有回报。</p>
-<p>很多人觉得识别这些骗局需要深厚的合约功底，其实不需要。发币的门槛低到令人发指：一段二三十行的 ERC-20 模板代码，复制粘贴改个名字，五分钟上线，全部成本就是几美元的 Gas 费。门槛越低，骗子密度越高。所以”上新币之前先做检查”不是选修课，是必修课——你不检查合约，合约就会检查你的钱包。</p>
-<p>这篇文章不讲大道理，只讲五项买前检查：流动性安全、合约权限、卖出模拟、持仓分布、团队背景。每项都配一个菜市场、买房、相亲级别的类比——你哪怕记不住术语，把类比记住也能躲掉大半的坑——外加”为什么 + 怎么查”，最后用三段纯标准库的 Python 代码把检查思路自动化。学完至少能躲开 80% 明晃晃的坑，剩下 20% 属于<a href="https://lucifer.ren/blog/2026/11/10/web3-security-audit/">《合约安全审计入门》</a>的专业范畴，那篇是审计工程师视角，本文是你掏钱之前五分钟的快速体检。</p>
+      <p>在 Web3 里买新币，死法基本就三种，而且个个经典。第一种叫<strong>硬 rug</strong>：项目方直接把流动性池（买卖双方共同存币的公共金库）撤空卷款跑路，代币瞬间归零，从”因为相信所以看见”到”查无此币”只需要一笔交易。第二种叫<strong>软 rug</strong>：团队握着大份额代币按兵不动，看起来岁月静好，然后每天精准砸一点，温水煮青蛙，你甚至说不清自己是哪天死的。第三种最阴，叫<strong>貔貅盘（honeypot）</strong>——以只进不出的上古神兽命名：你买得进，卖不出，要么卖出直接 revert（交易被合约当场拒收、原样退回，像从没发生过一样），要么卖出税高达 99%，1000 USDT（锚定美元的稳定币，币圈里的数字美元）进去，50 USDT 出来，”客服”还会劝你长期持有必有回报。</p>
+<p>很多人觉得识别这些骗局需要深厚的合约功底，其实不需要。发币的门槛低到令人发指：一段二三十行的 ERC-20 模板代码（ERC-20 是以太坊上发币的标准格式，照着填空就能发一个币），复制粘贴改个名字，五分钟上线，全部成本就是几美元的 Gas 费（链上执行交易要付的手续费）。门槛越低，骗子密度越高。所以”上新币之前先做检查”不是选修课，是必修课——你不检查合约，合约就会检查你的钱包。</p>
+<p>这篇文章不讲大道理，只讲五项买前检查：流动性安全、合约权限、卖出模拟、持仓分布、团队背景。每项都配一个菜市场、买房、相亲级别的类比——你哪怕记不住术语，把类比记住也能躲掉大半的坑——外加”为什么 + 怎么查”，最后用三段纯标准库的 Python 代码（标准库，即 Python 自带的功能，不用安装任何东西）把检查思路自动化。学完至少能躲开 80% 明晃晃的坑，剩下 20% 属于<a href="https://lucifer.ren/blog/2026/11/10/web3-security-audit/">《合约安全审计入门》</a>的专业范畴，那篇是审计工程师视角，本文是你掏钱之前五分钟的快速体检。</p>
       
         <div class="readmore">
           <a href="/blog/2026/11/08/web3-rug-pull/" class="flat-box">
@@ -1182,7 +1183,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">6.3k字</span>
+          <span class="post-count">7.6k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -1190,7 +1191,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">23分</span>
+          <span class="post-count">28分</span>
         </span>
       </span>
     </div>
@@ -1208,8 +1209,8 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>大家好，我是 Lucifer。今天聊一个做量化的人天天要面对的问题：回测报告里的夏普比率，到底是本事，还是运气。</p>
-<p>你大概率经历过这个瞬间：Freqtrade 回测跑完，终端哗啦啦吐出一堆指标——总收益、夏普比率、索提诺比率、卡玛比率、最大回撤……大多数人只盯着收益率那一行，眼睛发直，手已经悬在”实盘启动”按钮上了。稍微冷静一点的会瞟一眼 Sharpe 1.8，然后开始灵魂拷问：1.8，算”策略很强”，还是算”我菜到看不懂”？</p>
+      <p>大家好，我是 Lucifer。今天聊一个做量化的人天天要面对的问题：回测报告里的夏普比率，到底是本事，还是运气。两个词先补课：”量化”，就是用数据和固定规则、而不是拍脑袋来做买卖决策；”回测”，就是拿历史数据让策略”穿越”一遍，看它过去会赚还是会亏。</p>
+<p>你大概率经历过这个瞬间：Freqtrade（一款开源的加密货币量化交易软件，本文拿它当演示工具）回测跑完，终端哗啦啦吐出一堆指标——总收益、夏普比率、索提诺比率、卡玛比率、最大回撤……大多数人只盯着收益率那一行，眼睛发直，手已经悬在”实盘启动”按钮上了。稍微冷静一点的会瞟一眼 Sharpe 1.8，然后开始灵魂拷问：1.8，算”策略很强”，还是算”我菜到看不懂”？</p>
 <p><a href="https://lucifer.ren/blog/2025/07/01/trading-system-demo/" title="《小菜的交易系统》">《小菜的交易系统》</a>里说过，一套交易系统必须”可量化”——进场理由要量化、出场条件要量化，绩效同样要量化。量化绩效量化的是什么？不只是”赚了多少”，而是<strong>每一份收益背后，你扛了多少惊吓</strong>。这套体系叫风险调整后收益指标，本文用纯标准库 Python（random / statistics / math）把它们挨个算一遍，所有代码和数字都是真实运行的。最后回答那个终极问题：你的夏普，是本事，还是猴子掷飞镖。</p>
       
         <div class="readmore">
@@ -1315,7 +1316,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">5.9k字</span>
+          <span class="post-count">7.7k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -1323,7 +1324,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">23分</span>
+          <span class="post-count">29分</span>
         </span>
       </span>
     </div>
@@ -1342,11 +1343,58 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       <p>前面两篇文章，我们把”把币存进池子当 LP”这件事讲得热血沸腾：<a href="https://lucifer.ren/blog/2025/03/28/web3-swap-staking/" title="Web3 金融的基石 - Swap 和 Staking">《Web3 金融的基石 - Swap 和 Staking》</a> 用 <code>x·y=k</code> 从零搭了个池子，亲眼看着手续费一分一分进账；<a href="https://lucifer.ren/blog/2025/12/31/web3-lp-2025/" title="当下流动性池分析">《当下流动性池分析》</a> 又盘点了各家池子的设计，从 Uniswap V2 一路看到 Curve。看起来当 LP 就是”躺赚手续费”，稳得很。</p>
-<p>但如果你真去当过 LP，大概率经历过这样的时刻：ETH 从 3000 涨到 6000，你打开钱包一看，仓位总价值确实涨了——可隔壁拿着币啥也不干的朋友，涨得比你多得多。你安慰自己”至少我还有手续费”，然后心里隐隐有个声音：我该不会……亏了吧？</p>
-<p>这个声音有名字，叫<strong>无常损失</strong>（Impermanent Loss，IL）。先别急，别急着去搜定义，我们用一个摆摊的比喻把它钉在墙上：</p>
-<p>你和朋友合伙摆摊。你出 1 个 ETH，朋友出 3000 USDT，凑成一份 6000 美元的货，放进摊子的收银台。这个摊子是程序控制的，脾气写死在代码里：<strong>只要价格一动，它就自动”卖掉涨得多的、收进跌得多的”</strong>。ETH 涨了？摊子根本不等你想，先把涨了的 ETH 卖给排队的客人；ETH 跌了？摊子反手往里收贬值的币。等你俩哪天散伙清点，把手里的东西折成钱，跟”当初不摆摊、俩人死拿着资产不动”比——总是少一截。</p>
-<p>少的那一截，就是无常损失。</p>
-<p>大部分文章讲到这里就跑路了，丢下一句”LP 会亏一点，手续费能补回来”就消失。本文不跑路：把手伸进 <code>x·y=k</code> 里，一笔一笔把账算到底，最后用 Python 验证每一个数字。读完后你应该能自己回答三个问题：亏多少？为什么叫”无常”？手续费什么时候填得平这个坑？</p>
+<p>开讲前，先把这篇文章的门槛钉在墙上：<strong>看懂它只需要两样东西——会乘除，以及知道”套利”是什么意思</strong>。套利，就是发现同一个东西在两个地方标价不同，从便宜的一边买、到贵的一边卖，把价差搬平、顺便赚走差价。除此之外不需要任何背景知识：专业名词第一次出现时，我会用大白话现场解释——本博客讲过的知识就链接到旧文，博客外的知识就链接到权威文档。</p>
+<p>但如果你真去当过 LP——把自己的 ETH（以太坊的币）和 USDT（一种 1:1 锚定美元的稳定币，价格几乎不动）存进池子换手续费的人——大概率经历过这样的时刻：ETH 从 3000 涨到 6000，你打开钱包一看，仓位总价值确实涨了——可隔壁拿着币啥也不干的朋友，涨得比你多得多。你安慰自己”至少我还有手续费”，然后心里隐隐有个声音：我该不会……亏了吧？</p>
+<p>这个声音有名字——但先别急着去搜定义，名字马上揭晓。我们从一个苹果摊讲起，全程只用”元”和”斤”：</p>
+<h2 id="开场故事：一个只用元和斤的苹果摊"><a href="#开场故事：一个只用元和斤的苹果摊" class="headerlink" title="开场故事：一个只用元和斤的苹果摊"></a>开场故事：一个只用元和斤的苹果摊</h2><p>你和朋友合伙开了一个”苹果换现金”的兑换摊。你出 100 斤苹果——外面市价 30 元/斤，正好值 3000 元；朋友出 3000 元现金。摊子总资产 6000 元，你们各占一半。</p>
+<p>摊子没有老板拍脑袋定价，规矩写死在程序里，只有两条：</p>
+<ol>
+<li><strong>摊子的报价 = 摊里的现金 ÷ 摊里的苹果</strong>。开张时 3000 ÷ 100 = 30 元/斤，和外面市价持平；</li>
+<li><strong>每做成一笔兑换，”现金 × 苹果”这个乘积必须保持不变</strong>（开张时是 3000 × 100 = 30000）。这条规矩的妙处在于：苹果被买走变少，报价就自动变贵；苹果被塞进来变多，报价就自动变便宜。不需要任何人盯盘，摊子自己就会”看行情抬价压价”。</li>
+</ol>
+<p>为什么偏偏定成”乘积不变”？因为这是最简单、又能让报价自动跟着供需走的办法，细节放在下面进阶小节讲。</p>
+<p>第二天，外面苹果市价涨到了 60 元/斤。摊子没人碰过，报价还傻乎乎地停在 30 元/斤——等于在半价甩卖。</p>
+<p>套利顾客闻着味儿来了。他干的就是开头说的那件事：摊里 30 元/斤、外面 60 元/斤，从摊里买一斤、转手出去就净赚 30 元。于是他不停把现金塞进摊子换走便宜苹果。注意摊子的脾气：他每买走一斤，摊里的苹果变少、现金变多，摊子的下一斤报价就自动涨一点——30.5、35、42、50……他一路买到摊内报价也被抬到 60 元/斤、和外面持平，再买无利可图，才收手。</p>
+<p>此时盘点摊子：里面只剩约 <strong>70.7 斤苹果</strong> 和 <strong>4242.6 元现金</strong>（这两个数字是怎么算出来的先别管，下面”进阶”小节有一步不跳的精算，你先记住结果就行）。</p>
+<p>散伙清点的时刻到了，把两种命运摆在一起看：</p>
+<ul>
+<li><strong>开摊的你</strong>：摊子总资产 = 70.7 斤 × 60 元 + 4242.6 元 ≈ <strong>8485 元</strong>；</li>
+<li><strong>没开摊、死拿的你</strong>：100 斤苹果原地不动，外加 3000 元现金，100 × 60 + 3000 = <strong>9000 元</strong>。</li>
+</ul>
+<p>9000 − 8485 ≈ <strong>515 元，约 5.7%</strong>。这就是全部剧情：你什么都没做错——一步没乱操作，苹果还翻倍涨价了——可你就是比”啥也不干”少了 515 元。</p>
+<p>更扎心的是看清楚那 4242.6 元现金是怎么来的：是摊子替你把苹果在 30 到 60 元之间一路贱卖给套利顾客换来的。换句话说，<strong>你一根手指都没动，摊子已经替你把涨价的苹果全卖光了</strong>——苹果越涨，它卖得越起劲。</p>
+<h2 id="术语登场：这-5-7-行话叫”无常损失”"><a href="#术语登场：这-5-7-行话叫”无常损失”" class="headerlink" title="术语登场：这 5.7% 行话叫”无常损失”"></a>术语登场：这 5.7% 行话叫”无常损失”</h2><p>你比死拿少的那 5.7%，在行话里有个名字：<strong>无常损失</strong>（Impermanent Loss，圈内常缩写成 IL）。”比死拿少一截钱”是白话，”无常损失”是这同一件事在 DeFi（去中心化金融，跑在区块链上的金融程序）里的学名。把苹果摊原样搬回链上，每个道具都有对应物，连数字都一模一样：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>苹果摊</th>
+<th>链上世界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100 斤苹果（值 3000 元）</td>
+<td>1 个 ETH（值 3000 美元）</td>
+</tr>
+<tr>
+<td>3000 元现金</td>
+<td>3000 USDT（1:1 锚定美元的稳定币）</td>
+</tr>
+<tr>
+<td>报价 = 现金 ÷ 苹果、乘积守恒的摊子规矩</td>
+<td>Uniswap 这类 AMM 池子的 <code>x·y=k</code> 公式</td>
+</tr>
+<tr>
+<td>出 6000 元本钱的你和合伙人</td>
+<td>存入 6000 美元币的 LP</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>其中 AMM（Automated Market Maker，自动做市商），指”没有挂单的买卖双方、报价由写死的数学公式自动生成”的兑换程序。苹果价 30 → 60 元，就是 ETH 价格 3000 → 6000 美元；摊子剩 70.7 斤苹果 + 4242.6 元，就是池子剩 0.7071 个 ETH + 4242.64 USDT；结局同样是 8485 对 9000，差 5.7%。</p>
+<p>这个概念的权威说法，中文可以看 Binance Academy 的<a href="https://www.binance.com/zh-CN/academy/articles/impermanent-loss-explained" title="什么是无常损失" target="_blank" rel="noopener">《什么是无常损失》</a>；官方英文文档可以看 <a href="https://developers.uniswap.org/docs/protocols/v2/concepts/understanding-returns" title="Understanding Returns | Uniswap Developers" target="_blank" rel="noopener">Uniswap 文档的 Understanding Returns</a>——里面推导的公式和本文进阶小节算出来的完全一致。</p>
+<p>大部分文章讲到这里就跑路了，丢下一句”LP 会亏一点，手续费能补回来”就消失。本文不跑路：先用苹果摊把每个角度的直觉讲透，再把 <code>x·y=k</code> 里的账一笔一笔算到底，最后用 Python 验证每一个数字。读完后你应该能自己回答三个问题：亏多少？为什么叫”无常”？手续费什么时候填得平这个坑？</p>
       
         <div class="readmore">
           <a href="/blog/2026/11/05/web3-impermanent-loss/" class="flat-box">
@@ -1453,7 +1501,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">6.7k字</span>
+          <span class="post-count">7.9k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -1461,7 +1509,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">23分</span>
+          <span class="post-count">28分</span>
         </span>
       </span>
     </div>
@@ -1480,8 +1528,8 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       <p>大家好，我是 Lucifer。之前写<a href="https://lucifer.ren/blog/2025/09/14/web3-corn-rwa/" title="当 RWA 遇上幸福小区玉米">RWA</a>的时候，我把预言机比作”信使”：链下世界的玉米价格、黄金报价，得靠一位信使穿过链上链下那堵墙，把消息递进来。当时一笔带过，今天把这位信使请出来，当面问三个问题：<strong>你带来的消息是哪来的？可信吗？有没有人塞你红包？</strong></p>
-<p>你可能觉得这是技术宅的闲磕牙。还真不是。DeFi 里几乎所有要命的时刻，背后都挂着同一个问题——“现在价格是多少”。借贷协议靠价格算抵押品价值、触发清算；稳定币靠价格守锚定；永续合约靠价格结算资金费率。价格对，天下太平；价格被污染 10 分钟，几个亿的真金白银就会换主人。2022 年 Mango Markets 一夜之间被搬走约 1.14 亿美元——攻击者没黑一行合约代码，他只是把”价格”这个数换掉了。</p>
-<p>这篇文章我们就把预言机从头捋一遍：链上为什么看不到外面的价格、为什么不能随便抄个现货价、Chainlink 和 Pyth 各自在忙什么、TWAP 是怎么把操纵变成烧钱大战的，最后照例用两段 Python 模拟把原理跑给你看。放心，全程初中数学。</p>
+<p>你可能觉得这是技术宅的闲磕牙。还真不是。DeFi（去中心化金融：用代码替代银行、券商、交易所这些中间商的金融服务）里几乎所有要命的时刻，背后都挂着同一个问题——“现在价格是多少”。借贷协议靠价格算抵押品价值、触发清算：抵押品就是押在当铺的那块手表——押表换钱，还不上钱表归当铺；价格跌到不够抵债时，协议会强制卖掉表收回借款，这一步叫清算。稳定币（价格锚定美元的代币，比如后文反复出现的 USDC，1 枚约兑 1 美元）靠价格守锚定；<a href="https://lucifer.ren/blog/2026/05/12/web3-perpetual/" title="永续合约：无到期日的杠杆交易是如何运作的">永续合约</a>（没有到期日的杠杆合约）靠价格结算资金费率——多空双方定期互付的费用，用来把合约价格拉回现货价。价格对，天下太平；价格被污染 10 分钟，几个亿的真金白银就会换主人。2022 年 Mango Markets 一夜之间被搬走约 1.14 亿美元——攻击者没黑一行合约代码，他只是把”价格”这个数换掉了。</p>
+<p>这篇文章我们就把预言机从头捋一遍：链上为什么看不到外面的价格、为什么不能随便抄个现货价、Chainlink 和 Pyth 各自在忙什么、TWAP（Time-Weighted Average Price，时间加权平均价——一种”取一段时间均价”的喂价思路，下文细讲）是怎么把操纵变成烧钱大战的，最后照例用两段 Python 模拟把原理跑给你看。放心，全程初中数学。</p>
       
         <div class="readmore">
           <a href="/blog/2026/11/03/web3-oracle/" class="flat-box">
@@ -1586,7 +1634,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">6.6k字</span>
+          <span class="post-count">7.1k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -1594,7 +1642,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">25分</span>
+          <span class="post-count">26分</span>
         </span>
       </span>
     </div>

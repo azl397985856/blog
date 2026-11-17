@@ -366,7 +366,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">6.7k字</span>
+          <span class="post-count">7.9k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -374,7 +374,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">23分</span>
+          <span class="post-count">28分</span>
         </span>
       </span>
     </div>
@@ -393,8 +393,8 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       <p>大家好，我是 Lucifer。之前写<a href="https://lucifer.ren/blog/2025/09/14/web3-corn-rwa/" title="当 RWA 遇上幸福小区玉米">RWA</a>的时候，我把预言机比作”信使”：链下世界的玉米价格、黄金报价，得靠一位信使穿过链上链下那堵墙，把消息递进来。当时一笔带过，今天把这位信使请出来，当面问三个问题：<strong>你带来的消息是哪来的？可信吗？有没有人塞你红包？</strong></p>
-<p>你可能觉得这是技术宅的闲磕牙。还真不是。DeFi 里几乎所有要命的时刻，背后都挂着同一个问题——“现在价格是多少”。借贷协议靠价格算抵押品价值、触发清算；稳定币靠价格守锚定；永续合约靠价格结算资金费率。价格对，天下太平；价格被污染 10 分钟，几个亿的真金白银就会换主人。2022 年 Mango Markets 一夜之间被搬走约 1.14 亿美元——攻击者没黑一行合约代码，他只是把”价格”这个数换掉了。</p>
-<p>这篇文章我们就把预言机从头捋一遍：链上为什么看不到外面的价格、为什么不能随便抄个现货价、Chainlink 和 Pyth 各自在忙什么、TWAP 是怎么把操纵变成烧钱大战的，最后照例用两段 Python 模拟把原理跑给你看。放心，全程初中数学。</p>
+<p>你可能觉得这是技术宅的闲磕牙。还真不是。DeFi（去中心化金融：用代码替代银行、券商、交易所这些中间商的金融服务）里几乎所有要命的时刻，背后都挂着同一个问题——“现在价格是多少”。借贷协议靠价格算抵押品价值、触发清算：抵押品就是押在当铺的那块手表——押表换钱，还不上钱表归当铺；价格跌到不够抵债时，协议会强制卖掉表收回借款，这一步叫清算。稳定币（价格锚定美元的代币，比如后文反复出现的 USDC，1 枚约兑 1 美元）靠价格守锚定；<a href="https://lucifer.ren/blog/2026/05/12/web3-perpetual/" title="永续合约：无到期日的杠杆交易是如何运作的">永续合约</a>（没有到期日的杠杆合约）靠价格结算资金费率——多空双方定期互付的费用，用来把合约价格拉回现货价。价格对，天下太平；价格被污染 10 分钟，几个亿的真金白银就会换主人。2022 年 Mango Markets 一夜之间被搬走约 1.14 亿美元——攻击者没黑一行合约代码，他只是把”价格”这个数换掉了。</p>
+<p>这篇文章我们就把预言机从头捋一遍：链上为什么看不到外面的价格、为什么不能随便抄个现货价、Chainlink 和 Pyth 各自在忙什么、TWAP（Time-Weighted Average Price，时间加权平均价——一种”取一段时间均价”的喂价思路，下文细讲）是怎么把操纵变成烧钱大战的，最后照例用两段 Python 模拟把原理跑给你看。放心，全程初中数学。</p>
       
         <div class="readmore">
           <a href="/blog/2026/11/03/web3-oracle/" class="flat-box">

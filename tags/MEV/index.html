@@ -368,7 +368,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">5.6k字</span>
+          <span class="post-count">7k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -376,7 +376,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">21分</span>
+          <span class="post-count">25分</span>
         </span>
       </span>
     </div>
@@ -394,9 +394,9 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>上一篇<a href="https://lucifer.ren/blog/2025/07/06/web3-mev/" title="Web3 的 Anti MEV：深入剖析“夹”与反制之道">《Web3 的 Anti MEV：深入剖析“夹”与反制之道》</a>我们抓了个现行：攻击者扫 mempool、插抢跑交易、夹走 40 USDT，全程都在“矿工”的眼皮底下完成。但你可能隐约察觉到一个时代错误——那篇文章里的主角，叫<strong>矿工</strong>。</p>
-<p>问题是，2022 年 9 月以太坊合并（The Merge）转入 PoS 之后，链上已经没有矿工了。出块不再靠算力硬拼，改成“押 32 ETH 押金，每 12 秒摇号抽一位验证者当值”。于是两个更尖锐的问题冒了出来：现在到底谁在排序交易？三明治们攫取的 MEV，又被谁分走了？</p>
-<p>一句话剧透：排序权被拆成了一条四个工种的流水线——Searcher 蹲点捕猎、Builder 打包报价、Relay 中转担保、Validator 签字收钱，每 12 秒办一场拍卖决定这个 slot 归谁。<strong>以前夹你的是一个矿工，现在夹你的是一条流水线。</strong>顺带说一句，你常听说的 blob——让 L2 转账只要几分钱的那位——和这套流水线共享同一个”稀缺资源交给市场拍卖”的思想，但那是另一篇的主角（见文末相关阅读），本文只讲流水线。</p>
+      <p>上一篇<a href="https://lucifer.ren/blog/2025/07/06/web3-mev/" title="Web3 的 Anti MEV：深入剖析“夹”与反制之道">《Web3 的 Anti MEV：深入剖析“夹”与反制之道》</a>我们抓了个现行：攻击者扫 mempool——所有已发出、还没被打包上链的交易都先在这条“公共候单大厅”里排队，内容人人可见，运作细节前置篇讲过——插抢跑交易、夹走 40 USDT（锚定美元的稳定币，约 1 USDT 兑 1 美元），全程都在“矿工”的眼皮底下完成。但你可能隐约察觉到一个时代错误——那篇文章里的主角，叫<strong>矿工</strong>。</p>
+<p>问题是，2022 年 9 月以太坊合并（The Merge）转入 PoS 之后，链上已经没有矿工了。出块不再靠算力硬拼，改成“押 32 ETH（以太坊网络自己的币）押金，每 12 秒摇号抽一位验证者当值”。于是两个更尖锐的问题冒了出来：现在到底谁在排序交易？三明治们攫取的 MEV，又被谁分走了？</p>
+<p>一句话剧透：排序权被拆成了一条四个工种的流水线——Searcher 蹲点捕猎、Builder 打包报价、Relay 中转担保、Validator 签字收钱，每 12 秒办一场拍卖决定这个 slot 归谁。<strong>以前夹你的是一个矿工，现在夹你的是一条流水线。</strong>顺带说一句，你常听说的 blob（区块里新开的一节“行李车厢”，专门装 L2 的交易数据）——让 L2（架在以太坊之上、替主网分担交易量的第二层网络）转账只要几分钱的那位——和这套流水线共享同一个”稀缺资源交给市场拍卖”的思想，但那是另一篇的主角（见文末相关阅读），本文只讲流水线。</p>
 <p>老规矩，代码驱动：本文用一段可直接运行的 Python 模拟，把一场 MEV-Boost 拍卖的分账跑给你看。</p>
       
         <div class="readmore">
@@ -545,9 +545,9 @@
         
           <a href="/blog/tags/web3/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> web3</a>
         
-          <a href="/blog/tags/DEX/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> DEX</a>
-        
           <a href="/blog/tags/MEV/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> MEV</a>
+        
+          <a href="/blog/tags/DEX/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> DEX</a>
         
       </div>
     

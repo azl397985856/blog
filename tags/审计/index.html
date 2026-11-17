@@ -366,7 +366,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">7.5k字</span>
+          <span class="post-count">8k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -374,7 +374,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">28分</span>
+          <span class="post-count">30分</span>
         </span>
       </span>
     </div>
@@ -394,8 +394,8 @@
     <div class="article-entry" itemprop="articleBody">
       <p>还记得<a href="https://lucifer.ren/blog/2025/03/01/web3-hacker-1/" title="我是一个区块链黑客（第一篇）">《我是一个区块链黑客（第一篇）》</a>结尾那份防范清单吗？最后一条写着”定期审计合约代码”——一句话打发了价值几十万美元的行业服务，堪称全文最省钱的一条建议。无独有偶，聊 DeFi 保险的<a href="https://lucifer.ren/blog/2026/04/22/web3-defi-insurance/" title="DeFi 保险：谁来保护你的链上资产？">《DeFi 保险：谁来保护你的链上资产？》</a>更直接，把”审计次数”列进了协议风险评分表。</p>
 <p>那么问题来了：审计到底是什么？谁在审？报告怎么读？普通人能不能自己跑两下？本文就回答这四个问题。</p>
-<p>先把心态立正：<strong>审计不是保险单</strong>。这话怎么理解？想想体检。体检报告只能告诉你”抽血那天的你”状态如何，不能保证你一年不生病；车过了年检，上了高速照样可能爆胎。被多家审计公司轮番体检过的协议也一样——Euler Finance 审过不止一轮，2023 年 3 月还是被闪电贷攻击卷走 1.97 亿美元（后来黑客退还了大部分，堪称行业奇观）。原因并不神秘：审计是时间盒（time-boxed）内的抽检，不是数学证明。几个工程师花一两周，对着几万行代码找毛病，找到的是”他们能找到的”，而不是”不存在的”。</p>
-<p>本文按四个问题展开：漏洞长什么样、审计怎么跑、报告怎么读、以及你自己怎么动手。读不懂 Solidity 没关系——审计报告本来就不全是写给程序员的，普通用户才是最该会读它的人。看完至少能看懂报告；看得懂代码更好，文末有个一百来行的玩具扫描器等你复现。</p>
+<p>先把心态立正：<strong>审计不是保险单</strong>。这话怎么理解？想想体检。体检报告只能告诉你”抽血那天的你”状态如何，不能保证你一年不生病；车过了年检，上了高速照样可能爆胎。被多家审计公司轮番体检过的协议也一样——Euler Finance 审过不止一轮，2023 年 3 月还是被闪电贷攻击卷走 1.97 亿美元（闪电贷是链上”借币、用完即还、无需抵押”的一笔交易内借贷，等于白送攻击者一根杠杆；后来黑客退还了大部分，堪称行业奇观）。原因并不神秘：审计是时间盒（time-boxed）内的抽检，不是数学证明。几个工程师花一两周，对着几万行代码找毛病，找到的是”他们能找到的”，而不是”不存在的”。</p>
+<p>本文按四个问题展开：漏洞长什么样、审计怎么跑、报告怎么读、以及你自己怎么动手。读不懂 Solidity（写智能合约用的编程语言）没关系——审计报告本来就不全是写给程序员的，普通用户才是最该会读它的人。看完至少能看懂报告；看得懂代码更好，文末有个一百来行的玩具扫描器等你复现。</p>
       
         <div class="readmore">
           <a href="/blog/2026/11/10/web3-security-audit/" class="flat-box">

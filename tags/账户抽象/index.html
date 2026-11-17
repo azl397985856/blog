@@ -366,7 +366,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">8.4k字</span>
+          <span class="post-count">9.4k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -374,7 +374,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">33分</span>
+          <span class="post-count">37分</span>
         </span>
       </span>
     </div>
@@ -392,8 +392,8 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>先说一个很多人都遇到过的尴尬：钱包里躺着几百 USDC，想转一点给朋友，界面却弹出一行字——“ETH 余额不足，无法支付 gas”。你明明有钱，却连手续费都交不起，像揣着一沓现金站在只收硬币的售货机前。更绝望的是另一种场景：抄助记词的那张纸丢了。没有”忘记密码”，没有客服，没有申诉入口，链上资产从此变成一座纪念碑。</p>
-<p>这些尴尬不怪钱包 App 做得烂，怪以太坊账户模型的”出厂设置”。<a href="https://lucifer.ren/blog/2025/02/16/web3-wallet/" title="Web3 的入口 - 区块链钱包">《Web3 的入口 - 区块链钱包》</a>里介绍过的私钥账户叫 EOA（Externally Owned Account，外部账户），你可以把它理解成<strong>一把钥匙管一切的旧式机械门锁</strong>：一把钥匙就是全部，丢了就完了，没有挂失，没有备用方案。而<strong>账户抽象（Account Abstraction，AA）</strong>想干的事，说白了就一件：<strong>把这把旧门锁换成智能门锁</strong>——账户从”一把私钥”升级成”一段可编程的合约”，”怎么验身份、怎么付 gas、怎么执行”，全由代码说了算。</p>
+      <p>先说一个很多人都遇到过的尴尬：钱包里躺着几百 USDC（一种和美元 1:1 锚定的链上代币），想转一点给朋友，界面却弹出一行字——“ETH 余额不足，无法支付 gas”。你明明有钱，却连手续费都交不起，像揣着一沓现金站在只收硬币的售货机前。更绝望的是另一种场景：抄助记词的那张纸丢了。没有”忘记密码”，没有客服，没有申诉入口，链上资产从此变成一座纪念碑。</p>
+<p>这些尴尬不怪钱包 App 做得烂，怪以太坊账户模型的”出厂设置”。<a href="https://lucifer.ren/blog/2025/02/16/web3-wallet/" title="Web3 的入口 - 区块链钱包">《Web3 的入口 - 区块链钱包》</a>里介绍过的私钥账户叫 EOA（Externally Owned Account，外部账户），你可以把它理解成<strong>一把钥匙管一切的旧式机械门锁</strong>：一把钥匙就是全部，丢了就完了，没有挂失，没有备用方案。而<strong>账户抽象（Account Abstraction，AA）</strong>想干的事，说白了就一件：<strong>把这把旧门锁换成智能门锁</strong>——账户从”一把私钥”升级成”一段可编程的合约”（智能合约：部署在链上、规则由代码写死、被调用时自动执行的程序），”怎么验身份、怎么付 gas、怎么执行”，全由代码说了算。</p>
 <p>熟悉我的朋友应该知道，我经常从零实现一些东西帮助理解，本文照例代码驱动：先用 Python 模拟 ERC-4337 里一个 UserOperation 从提交到结算的完整生命周期，再模拟社交恢复与 guardian 串通攻击，中间穿插 EIP-7702 的机制讲解，所有输出均为真实运行结果，纯标准库，复制即可跑。</p>
       
         <div class="readmore">

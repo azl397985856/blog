@@ -361,7 +361,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">5.6k字</span>
+          <span class="post-count">7k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -369,7 +369,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">21分</span>
+          <span class="post-count">25分</span>
         </span>
       </span>
     </div>
@@ -387,15 +387,15 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>上一篇<a href="https://lucifer.ren/blog/2025/07/06/web3-mev/" title="Web3 的 Anti MEV：深入剖析“夹”与反制之道">《Web3 的 Anti MEV：深入剖析“夹”与反制之道》</a>我们抓了个现行：攻击者扫 mempool、插抢跑交易、夹走 40 USDT，全程都在“矿工”的眼皮底下完成。但你可能隐约察觉到一个时代错误——那篇文章里的主角，叫<strong>矿工</strong>。</p>
-<p>问题是，2022 年 9 月以太坊合并（The Merge）转入 PoS 之后，链上已经没有矿工了。出块不再靠算力硬拼，改成“押 32 ETH 押金，每 12 秒摇号抽一位验证者当值”。于是两个更尖锐的问题冒了出来：现在到底谁在排序交易？三明治们攫取的 MEV，又被谁分走了？</p>
-<p>一句话剧透：排序权被拆成了一条四个工种的流水线——Searcher 蹲点捕猎、Builder 打包报价、Relay 中转担保、Validator 签字收钱，每 12 秒办一场拍卖决定这个 slot 归谁。<strong>以前夹你的是一个矿工，现在夹你的是一条流水线。</strong>顺带说一句，你常听说的 blob——让 L2 转账只要几分钱的那位——和这套流水线共享同一个”稀缺资源交给市场拍卖”的思想，但那是另一篇的主角（见文末相关阅读），本文只讲流水线。</p>
+        <p>上一篇<a href="https://lucifer.ren/blog/2025/07/06/web3-mev/" title="Web3 的 Anti MEV：深入剖析“夹”与反制之道">《Web3 的 Anti MEV：深入剖析“夹”与反制之道》</a>我们抓了个现行：攻击者扫 mempool——所有已发出、还没被打包上链的交易都先在这条“公共候单大厅”里排队，内容人人可见，运作细节前置篇讲过——插抢跑交易、夹走 40 USDT（锚定美元的稳定币，约 1 USDT 兑 1 美元），全程都在“矿工”的眼皮底下完成。但你可能隐约察觉到一个时代错误——那篇文章里的主角，叫<strong>矿工</strong>。</p>
+<p>问题是，2022 年 9 月以太坊合并（The Merge）转入 PoS 之后，链上已经没有矿工了。出块不再靠算力硬拼，改成“押 32 ETH（以太坊网络自己的币）押金，每 12 秒摇号抽一位验证者当值”。于是两个更尖锐的问题冒了出来：现在到底谁在排序交易？三明治们攫取的 MEV，又被谁分走了？</p>
+<p>一句话剧透：排序权被拆成了一条四个工种的流水线——Searcher 蹲点捕猎、Builder 打包报价、Relay 中转担保、Validator 签字收钱，每 12 秒办一场拍卖决定这个 slot 归谁。<strong>以前夹你的是一个矿工，现在夹你的是一条流水线。</strong>顺带说一句，你常听说的 blob（区块里新开的一节“行李车厢”，专门装 L2 的交易数据）——让 L2（架在以太坊之上、替主网分担交易量的第二层网络）转账只要几分钱的那位——和这套流水线共享同一个”稀缺资源交给市场拍卖”的思想，但那是另一篇的主角（见文末相关阅读），本文只讲流水线。</p>
 <p>老规矩，代码驱动：本文用一段可直接运行的 Python 模拟，把一场 MEV-Boost 拍卖的分账跑给你看。</p>
 <a id="more"></a>
 <h2 id="合并之前：夹你的人叫矿工"><a href="#合并之前：夹你的人叫矿工" class="headerlink" title="合并之前：夹你的人叫矿工"></a>合并之前：夹你的人叫矿工</h2><p>先别急，要讲清楚“变了什么”，得先记住“原来长什么样”。</p>
-<p>合并之前，以太坊和比特币一样是 PoW（工作量证明）。玩法很简单粗暴：<strong>一群矿工用算力赛跑，抢记账权</strong>。系统出一道超难的数学题，谁先算出答案（找到那个合法的 nonce），谁就赢下这个块的记账权，拿走块奖励和手续费。</p>
+<p>合并之前，以太坊和比特币一样是 PoW（工作量证明）。玩法很简单粗暴：<strong>一群矿工用算力赛跑，抢记账权</strong>。系统出一道超难的数学题，谁先算出答案（找到那个合法的 nonce——可以理解成那个唯一的“幸运数字”），谁就赢下这个块的记账权，拿走块奖励和手续费。</p>
 <p>你琢磨一下这个过程：全世界几万台矿机盯着同一道题疯狂内卷，最后只有一个赢家。像一场比谁手速快的抢答赛，奖品是记账权——只不过参赛者拼的不是脑瓜子，是电费和矿机。</p>
-<p>画个重点：<strong>矿工赢下记账权之后，不但决定哪些交易能装进块里，还决定这些交易的先后顺序。</strong>打包和排序，两样权力捏在同一个人手里。所以他想夹你就顺手夹你，想抢跑就自己抢跑——上一篇那批三明治主角，就是从矿工群体里长出来的。MEV 当年的全称叫 <strong>Miner</strong> Extractable Value，“矿工”可提取价值，名副其实。</p>
+<p>画个重点：<strong>矿工赢下记账权之后，不但决定哪些交易能装进块里，还决定这些交易的先后顺序。</strong>打包和排序，两样权力捏在同一个人手里。所以他想夹你就顺手夹你，想抢跑就自己抢跑——上一篇那批三明治主角，就是从矿工群体里长出来的。MEV 当年的全称叫 <strong>Miner</strong> Extractable Value，“矿工”可提取价值，名副其实。顺带一提，以太坊官方文档对 MEV 的定义看<a href="https://ethereum.org/zh/developers/docs/mev/" title="最大可提取价值 (MEV)" target="_blank" rel="noopener">这里</a>。</p>
 <p>PoW 的问题也摆在明面上：费电、慢，安全性全靠算力军备竞赛——你想搞垮网络？行，先买下全网一大半的矿机。</p>
 <h2 id="合并之后：改成“押金-摇号”"><a href="#合并之后：改成“押金-摇号”" class="headerlink" title="合并之后：改成“押金 + 摇号”"></a>合并之后：改成“押金 + 摇号”</h2><p>2022 年 9 月，The Merge，以太坊切换到 PoS（权益证明）。出块逻辑从“赛跑”变成了“押金 + 摇号”，我们一步一步拆：</p>
 <ul>
@@ -406,22 +406,22 @@
 <p>你被摇中了，才有活干；没摇中，这 12 秒与你无关。</p>
 <h3 id="到底变了什么？逐条说"><a href="#到底变了什么？逐条说" class="headerlink" title="到底变了什么？逐条说"></a>到底变了什么？逐条说</h3><p>你可能要问了：不就换个出块方式吗，跟 MEV 有啥关系？</p>
 <p>关系大了。画个重点，PoW 换成 PoS，一共换了四样东西：</p>
-<p><strong>① 出块的人换了。</strong> 从“常年握着大算力、7×24 小时蹲在池子边的职业矿工”，变成“每 12 秒临时轮值一次的普通验证者”——可能就是你家里一台跑着验证节点的小机器。听起来，夹子的门槛好像消失了？</p>
-<p><strong>② 但轮值者既没能力也没时间夹你。</strong> 你琢磨一下：一个 slot 只有 12 秒，摇号摇到你，可能几个月才轮上一次。扫描 mempool、监控 DEX 价差、排交易顺序、拼低延迟网络——这些脏活根本来不及干，一台家用机器也干不过专业机构。于是排序的活儿，<strong>外包出去了</strong>。</p>
+<p><strong>① 出块的人换了。</strong> 从“常年握着大算力、7×24 小时蹲在池子边（池子：把两种代币锁在一起、按公式自动报价的链上兑换柜台，<a href="https://lucifer.ren/blog/2025/03/28/web3-swap-staking/" title="Web3 金融的基石 - Swap 和 Staking">《Web3 金融的基石 - Swap 和 Staking》</a>细讲过）的职业矿工”，变成“每 12 秒临时轮值一次的普通验证者”——可能就是你家里一台跑着验证节点的小机器。听起来，夹子的门槛好像消失了？</p>
+<p><strong>② 但轮值者既没能力也没时间夹你。</strong> 你琢磨一下：一个 slot 只有 12 秒，摇号摇到你，可能几个月才轮上一次。扫描 mempool、监控 DEX（去中心化交易所——没有挂牌撮合，兑换直接发生在上面说的池子里）价差、排交易顺序、拼低延迟网络——这些脏活根本来不及干，一台家用机器也干不过专业机构。于是排序的活儿，<strong>外包出去了</strong>。</p>
 <p><strong>③ MEV 从“顺手赚的外快”变成一条产业链。</strong> 以前矿工一肩挑：找机会、打包、排序、上链全是自己干，MEV 是矿工的副业。现在拆成四个专业工种：Searcher 找机会、Builder 打包、Relay 中转担保、Validator 收最高出价。夹子从副业变成了流水线上的标准工位。</p>
 <p><strong>④ 安全性的来源换了。</strong> 以前靠“算力竞赛”——攻击网络的成本是买矿机，买了还能转卖；现在靠“押金 + 罚没”——攻击成本是质押金，作恶被抓是直接烧掉。想让链停摆？先想想愿不愿意往火里扔几十个亿。</p>
 <p>一句话点题：<strong>以前夹你的是一个矿工，现在夹你的是一条流水线。</strong>流水线长什么样，下一节拆开看。</p>
 <p><img src="https://lucifer.ren/blog/images/web3/mev-pow-vs-pos.png" alt="PoW 与 PoS 的出块方式对比：左边算力赛跑人人能夹你，右边押金摇号轮流当值"></p>
 <h3 id="当值者的活儿，朴素得惊人"><a href="#当值者的活儿，朴素得惊人" class="headerlink" title="当值者的活儿，朴素得惊人"></a>当值者的活儿，朴素得惊人</h3><p>听起来 proposer 责任重大？实际上他的活儿朴素得吓人：<strong>从收到的候选区块里挑一个“最好”的，签个名，广播</strong>。签名，就完事了。</p>
 <p>那组装区块呢——扫描交易、排排序、塞点 MEV 这些“脏活”呢？答案是：默认情况下，proposer <strong>不自己干</strong>，全部外包出去了。为什么会演化成这样，还得从 MEV 的军备竞赛说起。</p>
-<h2 id="MEV-供应链：四个角色一台戏"><a href="#MEV-供应链：四个角色一台戏" class="headerlink" title="MEV 供应链：四个角色一台戏"></a>MEV 供应链：四个角色一台戏</h2><p>随着 DeFi 发展，MEV 的提取越来越专业：拼的是低延迟网络、私人订单流、复杂的排序算法——一台家用验证机根本竞争不过专业机构。你琢磨一下，如果放任每个验证者为了 MEV 自建全套基础设施，结果必然是：<strong>共识层被 MEV 业务绑架，小验证者出局，staking 向巨头集中</strong>。</p>
+<h2 id="MEV-供应链：四个角色一台戏"><a href="#MEV-供应链：四个角色一台戏" class="headerlink" title="MEV 供应链：四个角色一台戏"></a>MEV 供应链：四个角色一台戏</h2><p>随着 DeFi（去中心化金融——把兑换、借贷这些金融服务直接搬到链上，<a href="https://lucifer.ren/blog/2025/08/14/web3-defi/" title="探索 DeFi 借贷与收益率交易的无限潜力">站内的 DeFi 一篇</a>有展开）发展，MEV 的提取越来越专业：拼的是低延迟网络、私人订单流、复杂的排序算法——一台家用验证机根本竞争不过专业机构。你琢磨一下，如果放任每个验证者为了 MEV 自建全套基础设施，结果必然是：<strong>共识层被 MEV 业务绑架，小验证者出局，staking（质押——把币锁进网络、换取参与出块和收益的资格，<a href="https://lucifer.ren/blog/2025/03/28/web3-swap-staking/" title="Web3 金融的基石 - Swap 和 Staking">Swap 一文</a>讲过）向巨头集中</strong>。</p>
 <p>于是社区在协议外做了一个设计决策：<strong>PBS（Proposer-Builder Separation，提议者-构建者分离）</strong>——把“排序权”从共识层剥离出去，拆成四个角色分工协作。用开餐厅打比方：老板（验证者）不再自己研究菜单，把厨房整个外包出去，自己只管端盘子和收钱——“决定上什么菜”和“端盘子”，分开。</p>
-<h3 id="Searcher：蹲点的职业黄牛"><a href="#Searcher：蹲点的职业黄牛" class="headerlink" title="Searcher：蹲点的职业黄牛"></a>Searcher：蹲点的职业黄牛</h3><p>Searcher（搜索者）就是上一篇里那批人的现代形态：扫描 mempool、监控 DEX 价差、盯着借贷协议的清算机会，一旦发现猎物，构造出一个 <strong>bundle（原子包）</strong>——若干笔交易捆在一起提交，<strong>要么全部执行，要么全部回滚</strong>。</p>
-<p>bundle 的原子性是 Searcher 利润保障的关键。上一篇里攻击者最怕什么？怕“抢跑交易被别人插队”，夹到一半夹崩了。在 bundle 里这个问题不存在——包内任何一笔交易失败，整个包从链上状态的角度看等于没发生过。像黄牛组团倒票，票款全齐才交割，缺一张整单作废：Searcher 不会亏本金，最多损失点 gas。</p>
+<h3 id="Searcher：蹲点的职业黄牛"><a href="#Searcher：蹲点的职业黄牛" class="headerlink" title="Searcher：蹲点的职业黄牛"></a>Searcher：蹲点的职业黄牛</h3><p>Searcher（搜索者）就是上一篇里那批人的现代形态：扫描 mempool、监控 DEX 价差、盯着借贷协议的清算机会（借款人抵押品不够值钱时被强制变卖，动手清算的人赚一笔罚金），一旦发现猎物，构造出一个 <strong>bundle（原子包）</strong>——若干笔交易捆在一起提交，<strong>要么全部执行，要么全部回滚</strong>。</p>
+<p>bundle 的原子性是 Searcher 利润保障的关键。上一篇里攻击者最怕什么？怕“抢跑交易被别人插队”，夹到一半夹崩了。在 bundle 里这个问题不存在——包内任何一笔交易失败，整个包从链上状态的角度看等于没发生过。像黄牛组团倒票，票款全齐才交割，缺一张整单作废：Searcher 不会亏本金，最多损失点 gas——链上的手续费，类似转账要付的“跑腿费”。</p>
 <h3 id="Builder：包工头"><a href="#Builder：包工头" class="headerlink" title="Builder：包工头"></a>Builder：包工头</h3><p>Builder（构建者）干的是包工头的活：大量收集各家 Searcher 的 bundle，再混上普通用户的交易，组装成“<strong>利润最大的区块</strong>”，然后向 proposer 报价。</p>
 <p>报价逻辑很直白：这个区块里能提取的 MEV，大头通过出价返还给 proposer——出价越高，中标的概率越大。Builder 自己只留个零头（现实里头部 Builder 之间是贴身肉搏，利润率薄得像纸）。</p>
 <h3 id="Relay：不站队的担保快递柜"><a href="#Relay：不站队的担保快递柜" class="headerlink" title="Relay：不站队的担保快递柜"></a>Relay：不站队的担保快递柜</h3><p>Relay（中继）是 Builder 和 proposer 之间的中间人。先别急，这个角色解决的是一个信任死结：proposer 怎么敢在<strong>没见过区块内容</strong>的情况下签名？万一区块是无效的、害我被罚没押金呢？万一它偷了我的 MEV 呢？</p>
-<p>Relay 的做法像快递柜带担保验货：<strong>先验证 Builder 的报价和区块的有效性</strong>（区块无效会害 proposer 被罚没质押金，所以它必须验），然后只把“出价金额 + 区块哈希”递给 proposer。proposer 对着报价签名——此时他签的是个“盲盒”，签名之后 Relay 才公开区块完整内容。这个“先报价、后验货”的流程保护了双方：proposer 不被骗签无效区块，Builder 的策略在签名前也不会泄露。</p>
+<p>Relay 的做法像快递柜带担保验货：<strong>先验证 Builder 的报价和区块的有效性</strong>（区块无效会害 proposer 被罚没质押金，所以它必须验），然后只把“出价金额 + 区块哈希”递给 proposer（哈希相当于区块内容的指纹）。proposer 对着报价签名——此时他签的是个“盲盒”，签名之后 Relay 才公开区块完整内容。这个“先报价、后验货”的流程保护了双方：proposer 不被骗签无效区块，Builder 的策略在签名前也不会泄露。</p>
 <h3 id="Validator-Proposer：只管收钱的当值房东"><a href="#Validator-Proposer：只管收钱的当值房东" class="headerlink" title="Validator/Proposer：只管收钱的当值房东"></a>Validator/Proposer：只管收钱的当值房东</h3><p>最后是共识层的验证者。轮到他出块的那 12 秒，他什么都不用干，<strong>看谁报价高就签谁的头</strong>——像收租的甲方一样在出价列表里挑数字最大的那个。MEV 的大头以出价的形式流向他，而他不承担任何 MEV 竞争的成本。</p>
 <h3 id="串起来看这条流水线"><a href="#串起来看这条流水线" class="headerlink" title="串起来看这条流水线"></a>串起来看这条流水线</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Searcher（找 MEV，造 bundle）</span><br><span class="line">      │ bundle</span><br><span class="line">      ▼</span><br><span class="line">Builder（组区块，出高价）</span><br><span class="line">      │ 报价 + 区块哈希</span><br><span class="line">      ▼</span><br><span class="line">Relay（验货，当中立信箱）</span><br><span class="line">      │ 最高报价</span><br><span class="line">      ▼</span><br><span class="line">Validator/Proposer（盲签，收钱）</span><br></pre></td></tr></table></figure>
 <p><img src="https://lucifer.ren/blog/images/web3/mev-supply-chain.png" alt="MEV 供应链四角色流水线：bundle 沿管道流动，出价的大头流向 Validator"></p>
@@ -447,7 +447,25 @@
 <li>Builder A 留存 0.0580 ETH，约为区块总 MEV 的 9%——贴身肉搏的包工头，日子并不滋润；</li>
 <li>没中标的清算猎手一分钱没有，但也不亏本金——bundle 的原子性保证了他最多浪费点带宽。像黄牛蹲了一晚上没抢到票，顶多白熬个通宵。</li>
 </ul>
-<h2 id="一张-40-美元的账单：跟着一笔被夹的交易走一遍"><a href="#一张-40-美元的账单：跟着一笔被夹的交易走一遍" class="headerlink" title="一张 40 美元的账单：跟着一笔被夹的交易走一遍"></a>一张 40 美元的账单：跟着一笔被夹的交易走一遍</h2><p>供应链讲的是”谁干活、谁分钱”，但你可能还是没看到最关键的一幕：<strong>钱是怎么从受害者口袋里漏出来的？</strong>上一篇我们模拟过一次完整的”夹”，攻击者毛利 40.08 USDT——这个数字不是天上掉下来的，现在把它一笔一笔对上。</p>
+<h2 id="先用一场演唱会讲懂“夹”"><a href="#先用一场演唱会讲懂“夹”" class="headerlink" title="先用一场演唱会讲懂“夹”"></a>先用一场演唱会讲懂“夹”</h2><p>先别管池子、mempool 这些词，也不碰任何代码——就用一场演唱会，把“夹”这个字讲透。</p>
+<p>某歌手的演唱会太火，官方宣布：第二天上午 10 点加放 1000 张票，统一 1000 元一张。这种票历来的行情是：开抢几秒内一抢而空，之后只在二手市场流通，价格随行就市。黄牛小王盯上了这批票，他还打听到一个关键消息：有个大粉丝团约好了 10 点整进场，一口气要扫 100 张。这种“大买家一来、价格必涨”的票，就是黄牛眼里的头号猎物。</p>
+<p>小王的操作总共三步：</p>
+<ul>
+<li><strong>第一步：抢跑囤票。</strong> 9 点 59 分，他自己先按原价扫走 200 张，付出 200 × 1000 = 200000 元；</li>
+<li><strong>第二步：大单抬价。</strong> 10 点整，粉丝团的 100 张大单涌进来，把这批票的市场价从 1000 元直接顶到 1100 元；</li>
+<li><strong>第三步：反向卖出。</strong> 小王立刻把手里 200 张全部按 1090 元挂出——故意比市价低 10 元，为的是秒成交——瞬间清仓，收回 200 × 1090 = 218000 元。</li>
+</ul>
+<p>收入 218000 元，成本 200000 元，<strong>净赚 18000 元</strong>。全程只用了一次小学乘法和一次小学减法。</p>
+<p>这道题里藏着三句话，就是“夹”的全部秘密：</p>
+<ol>
+<li><strong>小王赚的每一分钱，都来自买家“比原价多付的钱”。</strong>他 200 张票平均每张多卖 90 元（1090 − 1000），200 × 90 正好等于 18000 元；而买家之所以肯多付，全拜粉丝团那张把市价顶到 1100 元的大单所赐——没有那张大单，小王囤的票只能原价割肉；</li>
+<li><strong>他敢抢在粉丝团前面囤票，是因为“知道”大单必到。</strong>在演唱会这个比喻里，这叫打听到内幕；而在链上，这根本不用打听——每一笔还没成交的买单，都会先躺进那条人人可见的“公共候单大厅”（行话叫 mempool，前置篇专门讲过），粉丝团“我要买 100 张”的委托刚一发出来，全城的黄牛就都看见了；</li>
+<li><strong>先囤票 → 等大单抬价 → 高价卖出</strong>，这三步在行话里叫“抢跑、等大户、反向卖出”，合起来就是标题里那个字：<strong>夹</strong>——粉丝团的大单被小王的两笔交易夹在中间，前一笔替他抬轿，后一笔替他收割。</li>
+</ol>
+<p>一句话点题：<strong>粉丝多付的钱 = 黄牛赚的钱，一分不多、一分不少。</strong>粉丝多掏的溢价没有凭空蒸发，只是从这个口袋，搬进了那个口袋。</p>
+<p>把这场演唱会原样搬进 Web3，角色一个不缺：门票换成 ETH，官方原价换成 Uniswap（目前最流行的去中心化交易所）池子里的实时报价，粉丝团的 100 张大单换成一笔 10000 USDT 的买入大单，黄牛小王换成 7×24 小时蹲守的机器人。<a href="https://lucifer.ren/blog/2025/07/06/web3-mev/" title="Web3 的 Anti MEV：深入剖析“夹”与反制之道">上一篇《Web3 的 Anti MEV：深入剖析“夹”与反制之道》</a>就用真实代码跑过一笔一模一样的账。下一节把这笔账按“每个时刻池子里还剩多少币”的口径精确重算一遍——那是进阶精确版，嫌算数啰嗦的话，记住上面那句“粉丝多付的钱 = 黄牛赚的钱”，直接跳到下一节末尾的结论也不影响后面阅读。</p>
+<h2 id="一张-40-美元的账单：跟着一笔被夹的交易走一遍"><a href="#一张-40-美元的账单：跟着一笔被夹的交易走一遍" class="headerlink" title="一张 40 美元的账单：跟着一笔被夹的交易走一遍"></a>一张 40 美元的账单：跟着一笔被夹的交易走一遍</h2><p>先给怕数学的读者一颗定心丸：看不懂下面的池子数字没关系，直接对照上一节的演唱会——<strong>抢跑买 2000 USDT = 小王囤 200 张票，反向卖出 = 小王清仓</strong>。这一节是进阶精确版，想跳过的话，只记一条结论就够：<strong>粉丝多付的钱 = 黄牛赚的钱</strong>。</p>
+<p>供应链讲的是”谁干活、谁分钱”，但你可能还是没看到最关键的一幕：<strong>钱是怎么从受害者口袋里漏出来的？</strong>上一篇我们模拟过一次完整的”夹”，攻击者毛利 40.08 USDT——这个数字不是天上掉下来的，现在把它一笔一笔对上。</p>
 <p>口径沿用上一篇：池子初始 1,000,000 USDT + 1,000 ETH，用户要买 10000 USDT 的 ETH，攻击者抢跑买 2000、等价格推高后卖出。四个时刻的池子状态：</p>
 <div class="table-container">
 <table>
@@ -487,7 +505,7 @@
 </tbody>
 </table>
 </div>
-<p>毛利 = 2040.08 − 2000 = <strong>40.08 USDT</strong>。再看受害者：如果没有攻击者插队，用户这 10000 USDT 能买到 <strong>9.900990</strong> ETH；被夹之后实际到手 <strong>9.861700</strong> ETH——凭空少了 0.039291 ETH，按成交价折合约 <strong>40.2 USDT</strong>。攻击者的毛利和用户的损失严丝合缝对上了：<strong>羊毛真的只出在羊身上，一分不多、一分不少。</strong></p>
+<p>毛利 = 2040.08 − 2000 = <strong>40.08 USDT</strong>。再看受害者：如果没有攻击者插队，用户这 10000 USDT 能买到 <strong>9.900990</strong> ETH；被夹之后实际到手 <strong>9.861700</strong> ETH——凭空少了 0.039291 ETH，按成交价折合约 <strong>40.2 USDT</strong>。这笔“到手变少”的损失，行话叫<strong>滑点</strong>——你下单时看到的价格和实际成交价之间的差，<a href="https://lucifer.ren/blog/2025/03/28/web3-swap-staking/" title="Web3 金融的基石 - Swap 和 Staking">《Web3 金融的基石 - Swap 和 Staking》</a>讲过它的来龙去脉。攻击者的毛利和用户的滑点损失严丝合缝对上了：<strong>羊毛真的只出在羊身上，一分不多、一分不少。</strong></p>
 <p>最后一层：这 40 USDT 顺着流水线怎么分。按本文模拟同款的比例（Searcher 留 12%，Builder 把剩余的 90% 出价给 Validator）：</p>
 <div class="table-container">
 <table>
@@ -584,10 +602,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-15T15:17:44+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-17T22:54:41+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2026年11月15日</p>
+    <p>更新于 2026年11月17日</p>
   </a>
 </div>
 
@@ -617,9 +635,9 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2026/11/13/web3-mev-supply-chain/&title=MEV 的另一半：合并后的出块拍卖 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=上一篇《Web3 的 Anti MEV：深入剖析“夹”与反制之道》我们抓了个现行：攻击者扫 mempool、插抢跑交易、夹走 40 USDT，全程都在“矿工”的眼皮底下完成。但你可能隐约察觉到一个时代错误——那篇文章里的主角，叫矿工。
-问题是，2022 年 9 月以太坊合并（The Merge）转入 PoS 之后，链上已经没有矿工了。出块不再靠算力硬拼，改成“押 32 ETH 押金，每 12 秒摇号抽一位验证者当值”。于是两个更尖锐的问题冒了出来：现在到底谁在排序交易？三明治们攫取的 MEV，又被谁分走了？
-一句话剧透：排序权被拆成了一条四个工种的流水线——Searcher 蹲点捕猎、Builder 打包报价、Relay 中转担保、Validator 签字收钱，每 12 秒办一场拍卖决定这个 slot 归谁。以前夹你的是一个矿工，现在夹你的是一条流水线。顺带说一句，你常听说的 blob——让 L2 转账只要几分钱的那位——和这套流水线共享同一个”稀缺资源交给市场拍卖”的思想，但那是另一篇的主角（见文末相关阅读），本文只讲流水线。
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2026/11/13/web3-mev-supply-chain/&title=MEV 的另一半：合并后的出块拍卖 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=上一篇《Web3 的 Anti MEV：深入剖析“夹”与反制之道》我们抓了个现行：攻击者扫 mempool——所有已发出、还没被打包上链的交易都先在这条“公共候单大厅”里排队，内容人人可见，运作细节前置篇讲过——插抢跑交易、夹走 40 USDT（锚定美元的稳定币，约 1 USDT 兑 1 美元），全程都在“矿工”的眼皮底下完成。但你可能隐约察觉到一个时代错误——那篇文章里的主角，叫矿工。
+问题是，2022 年 9 月以太坊合并（The Merge）转入 PoS 之后，链上已经没有矿工了。出块不再靠算力硬拼，改成“押 32 ETH（以太坊网络自己的币）押金，每 12 秒摇号抽一位验证者当值”。于是两个更尖锐的问题冒了出来：现在到底谁在排序交易？三明治们攫取的 MEV，又被谁分走了？
+一句话剧透：排序权被拆成了一条四个工种的流水线——Searcher 蹲点捕猎、Builder 打包报价、Relay 中转担保、Validator 签字收钱，每 12 秒办一场拍卖决定这个 slot 归谁。以前夹你的是一个矿工，现在夹你的是一条流水线。顺带说一句，你常听说的 blob（区块里新开的一节“行李车厢”，专门装 L2 的交易数据）——让 L2（架在以太坊之上、替主网分担交易量的第二层网络）转账只要几分钱的那位——和这套流水线共享同一个”稀缺资源交给市场拍卖”的思想，但那是另一篇的主角（见文末相关阅读），本文只讲流水线。
 老规矩，代码驱动：本文用一段可直接运行的 Python 模拟，把一场 MEV-Boost 拍卖的分账跑给你看。"
           
           >
@@ -632,9 +650,9 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2026/11/13/web3-mev-supply-chain/&title=MEV 的另一半：合并后的出块拍卖 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=上一篇《Web3 的 Anti MEV：深入剖析“夹”与反制之道》我们抓了个现行：攻击者扫 mempool、插抢跑交易、夹走 40 USDT，全程都在“矿工”的眼皮底下完成。但你可能隐约察觉到一个时代错误——那篇文章里的主角，叫矿工。
-问题是，2022 年 9 月以太坊合并（The Merge）转入 PoS 之后，链上已经没有矿工了。出块不再靠算力硬拼，改成“押 32 ETH 押金，每 12 秒摇号抽一位验证者当值”。于是两个更尖锐的问题冒了出来：现在到底谁在排序交易？三明治们攫取的 MEV，又被谁分走了？
-一句话剧透：排序权被拆成了一条四个工种的流水线——Searcher 蹲点捕猎、Builder 打包报价、Relay 中转担保、Validator 签字收钱，每 12 秒办一场拍卖决定这个 slot 归谁。以前夹你的是一个矿工，现在夹你的是一条流水线。顺带说一句，你常听说的 blob——让 L2 转账只要几分钱的那位——和这套流水线共享同一个”稀缺资源交给市场拍卖”的思想，但那是另一篇的主角（见文末相关阅读），本文只讲流水线。
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2026/11/13/web3-mev-supply-chain/&title=MEV 的另一半：合并后的出块拍卖 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=上一篇《Web3 的 Anti MEV：深入剖析“夹”与反制之道》我们抓了个现行：攻击者扫 mempool——所有已发出、还没被打包上链的交易都先在这条“公共候单大厅”里排队，内容人人可见，运作细节前置篇讲过——插抢跑交易、夹走 40 USDT（锚定美元的稳定币，约 1 USDT 兑 1 美元），全程都在“矿工”的眼皮底下完成。但你可能隐约察觉到一个时代错误——那篇文章里的主角，叫矿工。
+问题是，2022 年 9 月以太坊合并（The Merge）转入 PoS 之后，链上已经没有矿工了。出块不再靠算力硬拼，改成“押 32 ETH（以太坊网络自己的币）押金，每 12 秒摇号抽一位验证者当值”。于是两个更尖锐的问题冒了出来：现在到底谁在排序交易？三明治们攫取的 MEV，又被谁分走了？
+一句话剧透：排序权被拆成了一条四个工种的流水线——Searcher 蹲点捕猎、Builder 打包报价、Relay 中转担保、Validator 签字收钱，每 12 秒办一场拍卖决定这个 slot 归谁。以前夹你的是一个矿工，现在夹你的是一条流水线。顺带说一句，你常听说的 blob（区块里新开的一节“行李车厢”，专门装 L2 的交易数据）——让 L2（架在以太坊之上、替主网分担交易量的第二层网络）转账只要几分钱的那位——和这套流水线共享同一个”稀缺资源交给市场拍卖”的思想，但那是另一篇的主角（见文末相关阅读），本文只讲流水线。
 老规矩，代码驱动：本文用一段可直接运行的 Python 模拟，把一场 MEV-Boost 拍卖的分账跑给你看。"
           
           >
@@ -647,9 +665,9 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2026/11/13/web3-mev-supply-chain/&title=MEV 的另一半：合并后的出块拍卖 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=上一篇《Web3 的 Anti MEV：深入剖析“夹”与反制之道》我们抓了个现行：攻击者扫 mempool、插抢跑交易、夹走 40 USDT，全程都在“矿工”的眼皮底下完成。但你可能隐约察觉到一个时代错误——那篇文章里的主角，叫矿工。
-问题是，2022 年 9 月以太坊合并（The Merge）转入 PoS 之后，链上已经没有矿工了。出块不再靠算力硬拼，改成“押 32 ETH 押金，每 12 秒摇号抽一位验证者当值”。于是两个更尖锐的问题冒了出来：现在到底谁在排序交易？三明治们攫取的 MEV，又被谁分走了？
-一句话剧透：排序权被拆成了一条四个工种的流水线——Searcher 蹲点捕猎、Builder 打包报价、Relay 中转担保、Validator 签字收钱，每 12 秒办一场拍卖决定这个 slot 归谁。以前夹你的是一个矿工，现在夹你的是一条流水线。顺带说一句，你常听说的 blob——让 L2 转账只要几分钱的那位——和这套流水线共享同一个”稀缺资源交给市场拍卖”的思想，但那是另一篇的主角（见文末相关阅读），本文只讲流水线。
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2026/11/13/web3-mev-supply-chain/&title=MEV 的另一半：合并后的出块拍卖 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=上一篇《Web3 的 Anti MEV：深入剖析“夹”与反制之道》我们抓了个现行：攻击者扫 mempool——所有已发出、还没被打包上链的交易都先在这条“公共候单大厅”里排队，内容人人可见，运作细节前置篇讲过——插抢跑交易、夹走 40 USDT（锚定美元的稳定币，约 1 USDT 兑 1 美元），全程都在“矿工”的眼皮底下完成。但你可能隐约察觉到一个时代错误——那篇文章里的主角，叫矿工。
+问题是，2022 年 9 月以太坊合并（The Merge）转入 PoS 之后，链上已经没有矿工了。出块不再靠算力硬拼，改成“押 32 ETH（以太坊网络自己的币）押金，每 12 秒摇号抽一位验证者当值”。于是两个更尖锐的问题冒了出来：现在到底谁在排序交易？三明治们攫取的 MEV，又被谁分走了？
+一句话剧透：排序权被拆成了一条四个工种的流水线——Searcher 蹲点捕猎、Builder 打包报价、Relay 中转担保、Validator 签字收钱，每 12 秒办一场拍卖决定这个 slot 归谁。以前夹你的是一个矿工，现在夹你的是一条流水线。顺带说一句，你常听说的 blob（区块里新开的一节“行李车厢”，专门装 L2 的交易数据）——让 L2（架在以太坊之上、替主网分担交易量的第二层网络）转账只要几分钱的那位——和这套流水线共享同一个”稀缺资源交给市场拍卖”的思想，但那是另一篇的主角（见文末相关阅读），本文只讲流水线。
 老规矩，代码驱动：本文用一段可直接运行的 Python 模拟，把一场 MEV-Boost 拍卖的分账跑给你看。"
           
           >
@@ -890,7 +908,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#合并之前：夹你的人叫矿工"><span class="toc-text">合并之前：夹你的人叫矿工</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#合并之后：改成“押金-摇号”"><span class="toc-text">合并之后：改成“押金 + 摇号”</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#到底变了什么？逐条说"><span class="toc-text">到底变了什么？逐条说</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当值者的活儿，朴素得惊人"><span class="toc-text">当值者的活儿，朴素得惊人</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MEV-供应链：四个角色一台戏"><span class="toc-text">MEV 供应链：四个角色一台戏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Searcher：蹲点的职业黄牛"><span class="toc-text">Searcher：蹲点的职业黄牛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Builder：包工头"><span class="toc-text">Builder：包工头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Relay：不站队的担保快递柜"><span class="toc-text">Relay：不站队的担保快递柜</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Validator-Proposer：只管收钱的当值房东"><span class="toc-text">Validator/Proposer：只管收钱的当值房东</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#串起来看这条流水线"><span class="toc-text">串起来看这条流水线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MEV-Boost：事实上的标配"><span class="toc-text">MEV-Boost：事实上的标配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一张-40-美元的账单：跟着一笔被夹的交易走一遍"><span class="toc-text">一张 40 美元的账单：跟着一笔被夹的交易走一遍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MEV-类型谱系"><span class="toc-text">MEV 类型谱系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关阅读"><span class="toc-text">相关阅读</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#合并之前：夹你的人叫矿工"><span class="toc-text">合并之前：夹你的人叫矿工</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#合并之后：改成“押金-摇号”"><span class="toc-text">合并之后：改成“押金 + 摇号”</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#到底变了什么？逐条说"><span class="toc-text">到底变了什么？逐条说</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当值者的活儿，朴素得惊人"><span class="toc-text">当值者的活儿，朴素得惊人</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MEV-供应链：四个角色一台戏"><span class="toc-text">MEV 供应链：四个角色一台戏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Searcher：蹲点的职业黄牛"><span class="toc-text">Searcher：蹲点的职业黄牛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Builder：包工头"><span class="toc-text">Builder：包工头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Relay：不站队的担保快递柜"><span class="toc-text">Relay：不站队的担保快递柜</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Validator-Proposer：只管收钱的当值房东"><span class="toc-text">Validator/Proposer：只管收钱的当值房东</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#串起来看这条流水线"><span class="toc-text">串起来看这条流水线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MEV-Boost：事实上的标配"><span class="toc-text">MEV-Boost：事实上的标配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#先用一场演唱会讲懂“夹”"><span class="toc-text">先用一场演唱会讲懂“夹”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一张-40-美元的账单：跟着一笔被夹的交易走一遍"><span class="toc-text">一张 40 美元的账单：跟着一笔被夹的交易走一遍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MEV-类型谱系"><span class="toc-text">MEV 类型谱系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关阅读"><span class="toc-text">相关阅读</span></a></li></ol>
     </div>
   </section>
 

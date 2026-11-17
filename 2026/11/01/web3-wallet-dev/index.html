@@ -361,7 +361,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">6.6k字</span>
+          <span class="post-count">7.1k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -369,7 +369,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">25分</span>
+          <span class="post-count">26分</span>
         </span>
       </span>
     </div>
@@ -393,7 +393,7 @@
 <p><strong>熵 → 助记词 → 种子 → 派生路径 → 私钥 → 公钥 → 地址</strong></p>
 <p>只有走完这条线，你才能真正理解那句听起来很魔法的话——“同一套助记词能同时管理以太坊、比特币、Solana 上无数个钱包”。这不是魔法，是三份 BIP 规范（BIP39、BIP32、BIP44）叠出来的组合技。本文全程代码驱动，每一段代码都是我真实跑过的，老规矩，建议你跟着敲一遍。</p>
 <a id="more"></a>
-<h2 id="私钥：就是一个数字，别怕"><a href="#私钥：就是一个数字，别怕" class="headerlink" title="私钥：就是一个数字，别怕"></a>私钥：就是一个数字，别怕</h2><p>先来祛魅。私钥听起来神秘兮兮的，说白了：<strong>它就是一个 256 位的随机数</strong>，没有任何格式上的魔法。</p>
+<h2 id="私钥：就是一个数字，别怕"><a href="#私钥：就是一个数字，别怕" class="headerlink" title="私钥：就是一个数字，别怕"></a>私钥：就是一个数字，别怕</h2><p>先来祛魅。私钥听起来神秘兮兮的，说白了：<strong>它就是一个 256 位的随机数</strong>（256 个 0/1，即 32 字节），没有任何格式上的魔法。</p>
 <p>打个比方。如果区块链是一家银行，私钥就是你保险柜的密码。这个保险柜有个特点：<strong>不认人，只认密码</strong>——谁能一字不差报出密码，谁就是主人。所以圈子里那句名言”not your keys, not your coins”，翻译过来就是：密码不在你手里，保险柜就不算你的。</p>
 <p>硬要说约束的话，是这个数必须落在 1 到 n-1 之间，n 是 secp256k1 椭圆曲线的阶（一个略小于 2^256 的素数）。也就是说，你的私钥只是从约 2^256 个数字里挑出来的一个。</p>
 <p>“随机”很重要。你要是拿自己的生日、手机号来当私钥，那黑客都不用破解密码学，试一圈生日就能把你的资产收走——等于把保险柜密码设成了 123456。所以正经钱包都用密码学安全的随机源（<code>os.urandom</code>、硬件真随机数）来生成。</p>
@@ -404,7 +404,7 @@
 <p>曲线方程和域运算本文不展开（想啃数学的可以去读标准文档），只需要建立一个直觉：</p>
 <ul>
 <li><strong>正推容易</strong>：知道 k 和 G，算 P 只是一堆固定规则的加法，毫秒级完成。像把苹果榨成汁，咔咔几下就好。</li>
-<li><strong>反推不可行</strong>：知道 P 和 G，想反推出 k？这就是著名的”椭圆曲线离散对数问题”，目前没有多项式时间的算法。想把果汁还原成苹果，做不到。</li>
+<li><strong>反推不可行</strong>：知道 P 和 G，想反推出 k？这就是著名的”椭圆曲线离散对数问题”，目前没有任何已知的快速算法。想把果汁还原成苹果，做不到。</li>
 </ul>
 <p>这就是非对称加密的基石：公钥可以随便给人看，私钥死也不能丢。用 Python 的 <code>ecdsa</code> 库演示一下（<code>pip install ecdsa</code>）：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> ecdsa <span class="keyword">import</span> SigningKey, SECP256k1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 私钥的本质：一个落在 1 ~ n-1 之间的 256 位随机数</span></span><br><span class="line">n = SECP256k1.order</span><br><span class="line">print(<span class="string">"曲线阶 n ="</span>, hex(n))</span><br><span class="line"></span><br><span class="line">priv = int.from_bytes(os.urandom(<span class="number">32</span>), <span class="string">"big"</span>) % n  <span class="comment"># 约束在曲线阶之内</span></span><br><span class="line">sk = SigningKey.from_secret_exponent(priv, curve=SECP256k1)</span><br><span class="line">pub = sk.verifying_key.to_string()  <span class="comment"># 64 字节 = X(32) + Y(32)</span></span><br><span class="line">print(<span class="string">"私钥:"</span>, hex(priv))</span><br><span class="line">print(<span class="string">"公钥:"</span>, pub.hex())</span><br></pre></td></tr></table></figure>
@@ -412,34 +412,34 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">曲线阶 n = 0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141</span><br><span class="line">私钥: 0x131006660e89706acad506d025714ddd01194c10dbcc153c259d959c61b8462d</span><br><span class="line">公钥: 1a8f1b783b0ff9d1ef7e9693bde8f3939d9c6dd80dfb9fc7fdeeba699982a8cf2bb292334361407f8e2257441cb7c292787c00a9b16b451228302bc9646d9364</span><br></pre></td></tr></table></figure>
 <p>（私钥是随机生成的，你跑出来会是另一对私钥公钥，曲线阶 n 则永远是这个值——它是全宇宙通用的”模具参数”。）</p>
 <p>看输出：私钥是一个大整数；公钥是 128 个 hex 字符。注意，公钥是 64 字节：曲线点的 X 坐标 32 字节 + Y 坐标 32 字节，这叫<strong>非压缩公钥</strong>——公钥本质上是曲线上的一个点，有横坐标和纵坐标。如果在前面再拼一个 <code>04</code> 前缀，就是完整的 65 字节非压缩格式（<code>04 || X || Y</code>）。记住这个结构，算地址的时候会用到。</p>
-<h2 id="BIP39：把一串-0-1-翻译成人话"><a href="#BIP39：把一串-0-1-翻译成人话" class="headerlink" title="BIP39：把一串 0/1 翻译成人话"></a>BIP39：把一串 0/1 翻译成人话</h2><p>先抛个问题：一个 256 位的私钥，用 hex 写出来是 64 个字符。让人手抄 64 个十六进制字符，抄错一个字符资产就没了——这跟让人背圆周率没什么区别，反人类。</p>
+<h2 id="BIP39：把一串-0-1-翻译成人话"><a href="#BIP39：把一串-0-1-翻译成人话" class="headerlink" title="BIP39：把一串 0/1 翻译成人话"></a>BIP39：把一串 0/1 翻译成人话</h2><p>先抛个问题：一个 256 位的私钥，用 hex 写出来是 64 个字符（hex 就是十六进制：用 0~9 和 a~f 这 16 个符号表示数，两个符号正好表示一个字节）。让人手抄 64 个十六进制字符，抄错一个字符资产就没了——这跟让人背圆周率没什么区别，反人类。</p>
 <p>BIP39 的思路很朴素：<strong>人不擅长背符号，但擅长背词。</strong> 所以它准备了一本 2048 个单词的”密码本”，专门把 0/1 串翻译成人话。</p>
 <p>完整流程是这样的：</p>
 <ol>
-<li><strong>掷骰子</strong>：生成 <strong>128 位熵</strong>（16 字节随机数）。这 128 下骰子的结果，就是你整个钱包宇宙的”奇点”；</li>
-<li><strong>算自检位</strong>：对熵做 SHA256，取哈希结果的<strong>前 4 位</strong>作为校验和。玩过身份证的都知道，身份证号最后一位就是校验码，专门防抄错——助记词这里是同款思路；</li>
+<li><strong>掷骰子</strong>：生成 <strong>128 位熵</strong>（16 字节随机数——“熵”是密码学行话，指的就是这种货真价实的随机字节串）。这 128 下骰子的结果，就是你整个钱包宇宙的”奇点”；</li>
+<li><strong>算自检位</strong>：对熵做 SHA256（一种哈希函数——哈希就是把任意数据压成一串固定长度的”数字指纹”，原文变一点、指纹就面目全非），取指纹的<strong>前 4 位</strong>作为校验和。玩过身份证的都知道，身份证号最后一位就是校验码，专门防抄错——助记词这里是同款思路；</li>
 <li><strong>拼起来</strong>：熵（128 bit）+ 校验和（4 bit）拼成 <strong>132 bit</strong>；</li>
 <li><strong>切段</strong>：切成 <strong>12 段，每段 11 bit</strong>；</li>
 <li><strong>查密码本</strong>：每段 11 bit 是一个 0~2047 的数字，当页码去查那本 <strong>2048 个单词的标准词表</strong>，翻出 12 个单词。</li>
 </ol>
-<p>反过来（导入助记词恢复钱包）也一样：12 个词查回 12 个页码，拼回 132 bit，重新算一遍 SHA256 验证校验和，再取出熵。<strong>自检位的意义就在这</strong>：你抄错一个词，拼出来的 bit 序列大概率过不了校验，钱包直接报错，而不是默默给你恢复出一个空钱包。</p>
+<p>反过来（导入助记词恢复钱包）也一样：12 个词查回 12 个页码，拼回 132 bit，重新算一遍 SHA256 验证校验和，再取出熵。<strong>自检位的意义就在这</strong>：你抄错一个词，拼出来的 bit 序列大概率过不了校验，钱包直接报错，而不是默默给你恢复出一个空钱包。词表和规范的官方原文看<a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" title="BIP-0039: Mnemonic code for generating deterministic keys" target="_blank" rel="noopener">这里</a>。</p>
 <p>最后一步，把助记词磨成种子。这一步用的是 PBKDF2——一种<strong>故意设计得很慢</strong>的密钥推导函数。为什么故意慢？你想想有些 App，密码连错几次就让你干等 30 秒，就是在拖暴力破解的后腿。PBKDF2 同理：攻击者每试一个助记词，都得老老实实跑完 2048 轮哈希，成本直接翻 2048 倍。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line"><span class="comment"># 核心调用示意：密码 = 助记词，盐 = "mnemonic" + passphrase，2048 轮迭代</span></span><br><span class="line"><span class="comment"># （mnemonic 用下文动手环节的 mini 词表演示值；passphrase 是可选项，这里先取空串）</span></span><br><span class="line">mnemonic = <span class="string">"abstract abandon ability"</span></span><br><span class="line">passphrase = <span class="string">""</span></span><br><span class="line">salt = (<span class="string">"mnemonic"</span> + passphrase).encode(<span class="string">"utf-8"</span>)</span><br><span class="line">seed = hashlib.pbkdf2_hmac(<span class="string">"sha512"</span>, mnemonic.encode(<span class="string">"utf-8"</span>), salt, <span class="number">2048</span>)</span><br><span class="line">print(<span class="string">"种子:"</span>, seed.hex())</span><br></pre></td></tr></table></figure>
-<p>输入是助记词（当密码）和 <code>mnemonic + passphrase</code>（当盐），磨 2048 轮，产出 <strong>512 位的种子</strong>。这个 passphrase 是可选项，江湖人称”第 25 个词”——同一个助记词配不同 passphrase，磨出来的种子完全不同。相当于 12 个词是”卡”，passphrase 是”密码”：光捡到卡，刷不开门。</p>
+<p>输入是助记词（当密码）和 <code>mnemonic + passphrase</code>（当盐——“盐”是密码学行话，指公开掺进磨粉过程的一撮配料，让同样的输入也能磨出不同的结果），磨 2048 轮，产出 <strong>512 位的种子</strong>。这个 passphrase 是可选项，江湖人称”第 25 个词”——同一个助记词配不同 passphrase，磨出来的种子完全不同。相当于 12 个词是”卡”，passphrase 是”密码”：光捡到卡，刷不开门。</p>
 <blockquote>
 <p>下文动手环节里，为了能在文章里把整个流程跑完看得清清楚楚，我用了一张只有 16 个词的 mini 词表演示（索引从 11 bit 缩到 4 bit）。<strong>这是纯粹的教学简化，真实的 BIP39 词表是 2048 个词 × 11 bit 索引</strong>，流程一模一样，只是规模不同。千万别拿 mini 词表生成”助记词”去管理资产。</p>
 </blockquote>
 <h2 id="BIP32-BIP44：一个祖先，繁衍出一棵家谱树"><a href="#BIP32-BIP44：一个祖先，繁衍出一棵家谱树" class="headerlink" title="BIP32/BIP44：一个祖先，繁衍出一棵家谱树"></a>BIP32/BIP44：一个祖先，繁衍出一棵家谱树</h2><p>现在的链这么多，每种代币又要管理一堆地址。如果每生成一个新地址就要重新备份一次私钥，那备份能打到怀疑人生。</p>
 <p>BIP32 提出的方案叫 <strong>HD 钱包（Hierarchical Deterministic，分层确定性）</strong>。名字唬人，意思很家常：<strong>一个祖先，繁衍出一棵家谱树。</strong> 种子是始祖，往下儿子生孙子、孙子生曾孙，子又生孙，孙又生子。每个成员在家谱上的位置由”路径”唯一确定——路径唯一，这个人就唯一。”确定性”说的就是这事儿：同样的种子，长出来的树一模一样；同样的路径，走到的人一模一样。你没有必要保存每个后代，只要记住始祖，族谱上的人随用随取。</p>
-<h3 id="CKD：孩子是怎么生出来的"><a href="#CKD：孩子是怎么生出来的" class="headerlink" title="CKD：孩子是怎么生出来的"></a>CKD：孩子是怎么生出来的</h3><p>从父密钥推子密钥的过程叫 CKD（Child Key Derivation）。听着玄，核心就一次 HMAC-SHA512：</p>
+<h3 id="CKD：孩子是怎么生出来的"><a href="#CKD：孩子是怎么生出来的" class="headerlink" title="CKD：孩子是怎么生出来的"></a>CKD：孩子是怎么生出来的</h3><p>从父密钥推子密钥的过程叫 CKD（Child Key Derivation，子密钥推导）。听着玄，核心就一次 HMAC-SHA512（可以理解成一台”带钥匙的搅拌机”：喂进两段数据，吐出 64 字节看起来完全随机的结果，且没法从结果倒推出输入）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">I = HMAC-SHA512(key = 父 chain code, data = 父密钥 || 索引(4字节))</span><br></pre></td></tr></table></figure>
 <p>输出 64 字节，劈成两半：</p>
 <ul>
-<li><strong>左 256 bit（IL）</strong>：子私钥的”偏移量”，参与计算 <code>子私钥 = (IL + 父私钥) mod n</code>；</li>
+<li><strong>左 256 bit（IL）</strong>：子私钥的”偏移量”，参与计算 <code>子私钥 = (IL + 父私钥) mod n</code>（mod 就是”除以 n 取余数”，跟钟表过了 12 点重新数一个道理）；</li>
 <li><strong>右 256 bit（IR）</strong>：子 chain code，传给子辈接着往下生。</li>
 </ul>
 <p>chain code 是什么？你可以把它理解成<strong>这一房人的”基因”</strong>。生一次娃，基因就换一版，所以同一索引在不同层级派生出的结果完全不同——大房的老三和三房的老三，压根不是一个人。</p>
-<h3 id="hardened-派生-vs-普通派生：上没上锁的门"><a href="#hardened-派生-vs-普通派生：上没上锁的门" class="headerlink" title="hardened 派生 vs 普通派生：上没上锁的门"></a>hardened 派生 vs 普通派生：上没上锁的门</h3><p>派生路径里的撇号（<code>44&#39;</code>）你一定注意到了。这个撇号表示 <strong>hardened（强化）派生</strong>，索引要加上 2^31。两者的区别在生娃时用什么”材料”：</p>
+<h3 id="hardened-派生-vs-普通派生：上没上锁的门"><a href="#hardened-派生-vs-普通派生：上没上锁的门" class="headerlink" title="hardened 派生 vs 普通派生：上没上锁的门"></a>hardened 派生 vs 普通派生：上没上锁的门</h3><p>派生路径里的撇号（<code>44&#39;</code>）你一定注意到了。这个撇号表示 <strong>hardened（强化）派生</strong>，索引要加上 2^31（2147483648，相当于把索引的最高位拧成 1，作为”此路已上锁”的标记）。两者的区别在生娃时用什么”材料”：</p>
 <ul>
 <li><strong>hardened</strong>：data 用<strong>父私钥</strong>参与。相当于这间房上了锁，没有户主的钥匙（私钥）就生不出孩子。更安全，但外人帮不上忙；</li>
 <li><strong>普通</strong>：data 用<strong>父公钥</strong>参与。好处是”只读钱包”可以完全不碰私钥，就从账户口派生出所有子地址来监听余额——只看账本不动钱；风险是，如果某个子私钥连同父公钥、chain code 一起泄漏，攻击者能反推出父私钥，全家私钥团灭。</li>
@@ -468,7 +468,7 @@
 </tr>
 <tr>
 <td><code>60&#39;</code></td>
-<td>coin type，币种编号，60 是以太坊在 SLIP-44 注册表里的编号</td>
+<td>coin type，币种编号，60 是以太坊在 SLIP-44 注册表里的编号（一份全网通用的币种编号对照表，每条链都领了一个号）</td>
 <td>省</td>
 </tr>
 <tr>
@@ -497,7 +497,7 @@
 </blockquote>
 <h2 id="地址：公钥的”摘要”"><a href="#地址：公钥的”摘要”" class="headerlink" title="地址：公钥的”摘要”"></a>地址：公钥的”摘要”</h2><p>到了解开旧文伏笔的时刻。旧文里我把公钥直接当地址用（偷懒了），真实的以太坊地址是这样算的：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Keccak-256(非压缩公钥去掉 04 前缀的 64 字节) 的最后 20 字节</span><br></pre></td></tr></table></figure>
-<p>也就是对 <code>X || Y</code> 那 64 字节做 Keccak-256 哈希，丢掉前 12 字节，剩下 20 字节（40 个 hex 字符）就是地址。一个 256 位的公钥，被”摘要”成了一个 160 位的地址。</p>
+<p>也就是对 <code>X || Y</code> 那 64 字节做 Keccak-256 哈希（以太坊选定的哈希函数，跟前面算校验和用的 SHA256 是同族但配方不同），丢掉前 12 字节，剩下 20 字节（40 个 hex 字符）就是地址。一个 256 位的公钥，被”摘要”成了一个 160 位的地址。</p>
 <p>为什么叫”摘要”？跟论文摘要一个道理：全文（公钥）太长，平时递名片用摘要（地址）就够了。但从摘要还原不出全文——哈希是单向的，谁也没法从地址反推出公钥，更别说私钥了。</p>
 <blockquote>
 <p>彩蛋：这里的 Keccak-256 和 NIST 标准的 SHA3-256 不是同一个函数。Keccak 赢得了 SHA3 竞赛之后，NIST 把填充规则改了才发布为 SHA3。以太坊选在改动之前就用上了原始版 Keccak，所以 <code>keccak256(m) != sha3_256(m)</code>。用标准库的 SHA3 算地址，会算出一个”没人拥有”的地址，这是历史遗留的经典坑。</p>
@@ -518,10 +518,11 @@
 <li><strong>BIP32 让种子长成一棵无限的密钥树</strong>——这一步也和链无关；</li>
 <li><strong>BIP44 给每条链在树上分了一个”区号”（coin type）</strong>——以太坊是 60，比特币是 0，Solana 是 501。</li>
 </ol>
-<p>所以”多链钱包”的本质就是：<strong>同一棵家谱树上，每条链认领自己的分叉。</strong> 就像同一个家族，老大落户北京（60 号分舵），老二落户上海（501 号分舵），但户口本还是同一本。EVM 系的链（Base、BNB Chain、Polygon……）干脆共用 <code>m/44&#39;/60&#39;</code>，因为它们本来就是一个生态，地址格式都一样。</p>
+<p>所以”多链钱包”的本质就是：<strong>同一棵家谱树上，每条链认领自己的分叉。</strong> 就像同一个家族，老大落户北京（60 号分舵），老二落户上海（501 号分舵），但户口本还是同一本。EVM 系的链（EVM 即以太坊虚拟机，以太坊上跑智能合约的运行环境；Base、BNB Chain、Polygon…… 都兼容它）干脆共用 <code>m/44&#39;/60&#39;</code>，因为它们本来就是一个生态，地址格式都一样。</p>
 <p>有一点要诚实说明：Solana 用的是 <strong>ed25519</strong> 曲线（不是 secp256k1），派生算法的细节也有差异（ed25519 的 hardened 派生实现各有讲究），所以严格说是”同一个种子沿不同路径/曲线派生出不同链的钥匙”，而不是简单地换个 coin type 就完事。这也是旧文”多链支持”一节里 <code>SolanaWallet</code> 要单独实现的原因——接口要适配，曲线和派生也得适配。</p>
 <h2 id="动手模拟：从熵到地址的完整之旅"><a href="#动手模拟：从熵到地址的完整之旅" class="headerlink" title="动手模拟：从熵到地址的完整之旅"></a>动手模拟：从熵到地址的完整之旅</h2><p>上面这张多链分叉图就是终点风景，我们先回到起点，把整条流水线亲自走一遍。全程路线如下：</p>
 <p><img src="https://lucifer.ren/blog/images/web3/wallet-pipeline.png" alt="从熵到地址的完整流水线：每个环节&quot;干了什么&quot;都标在箭头上"></p>
+<p>先给赶时间的读者省省力：这一节是<strong>进阶精确版</strong>，想跳过可只记一个结论——熵 → 助记词 → 种子 → 一树子钥匙 → 每个地址，全程是确定性计算：<strong>同一套助记词，在任何设备、任何钱包软件上算出的地址都一模一样</strong>。前面几节的比喻已经把”为什么”讲完了，这一节只是把每一步换成真实代码，让你亲眼确认”确实是这么算出来的”。</p>
 <p>下面把整条链路用 Python 跑一遍。三段代码是<strong>真实串联</strong>的：第一段磨出的种子喂给第二段，第二段摘出的私钥喂给第三段。依赖安装：<code>pip install ecdsa eth-account</code>（第二段只用标准库）。</p>
 <h3 id="第一步：掷骰子-→-助记词-→-种子"><a href="#第一步：掷骰子-→-助记词-→-种子" class="headerlink" title="第一步：掷骰子 → 助记词 → 种子"></a>第一步：掷骰子 → 助记词 → 种子</h3><p>先看代码。再次强调：<strong>16 词 mini 词表是教学简化，真实 BIP39 是 2048 词 × 11 bit</strong>。另外这次运气不错，跑出来的助记词正好是词表前三个词，属于”BIP39 学区房”了：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="comment"># mini 词表：真实 BIP39 英文词表的前 16 个词（完整词表有 2048 个词，这里是教学简化）</span></span><br><span class="line">WORDLIST = [</span><br><span class="line">    <span class="string">"abandon"</span>, <span class="string">"ability"</span>, <span class="string">"able"</span>, <span class="string">"about"</span>, <span class="string">"above"</span>, <span class="string">"absent"</span>, <span class="string">"absorb"</span>,</span><br><span class="line">    <span class="string">"abstract"</span>, <span class="string">"absurd"</span>, <span class="string">"abuse"</span>, <span class="string">"access"</span>, <span class="string">"accident"</span>, <span class="string">"account"</span>,</span><br><span class="line">    <span class="string">"accuse"</span>, <span class="string">"achieve"</span>, <span class="string">"acid"</span>,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一步：生成熵。真实 BIP39 用 128 bit（16 字节），这里用 8 bit（1 字节）方便演示</span></span><br><span class="line">entropy = os.urandom(<span class="number">1</span>)</span><br><span class="line">print(<span class="string">"熵（8 bit）:"</span>, entropy.hex())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二步：取 SHA256(熵) 的前 4 bit 作为校验和（真实 BIP39 同款套路）</span></span><br><span class="line">checksum = hashlib.sha256(entropy).digest()[<span class="number">0</span>] &gt;&gt; <span class="number">4</span></span><br><span class="line">print(<span class="string">"校验和（4 bit）:"</span>, bin(checksum)[<span class="number">2</span>:].zfill(<span class="number">4</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第三步：熵 + 校验和 拼成 12 bit，切成 3 段 x 4 bit，每段当索引查词表</span></span><br><span class="line">bits = bin(int.from_bytes(entropy, <span class="string">"big"</span>))[<span class="number">2</span>:].zfill(<span class="number">8</span>) + bin(checksum)[<span class="number">2</span>:].zfill(<span class="number">4</span>)</span><br><span class="line">print(<span class="string">"拼接结果（12 bit）:"</span>, bits)</span><br><span class="line"></span><br><span class="line">words = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">    index = int(bits[i * <span class="number">4</span>:(i + <span class="number">1</span>) * <span class="number">4</span>], <span class="number">2</span>)  <span class="comment"># 4 bit 索引 -&gt; 16 选 1</span></span><br><span class="line">    words.append(WORDLIST[index])</span><br><span class="line">    print(<span class="string">f"  第 <span class="subst">&#123;i&#125;</span> 段 <span class="subst">&#123;bits[i * <span class="number">4</span>:(i + <span class="number">1</span>) * <span class="number">4</span>]&#125;</span> -&gt; 索引 <span class="subst">&#123;index&#125;</span> -&gt; <span class="subst">&#123;WORDLIST[index]&#125;</span>"</span>)</span><br><span class="line"></span><br><span class="line">mnemonic = <span class="string">" "</span>.join(words)</span><br><span class="line">print(<span class="string">"助记词:"</span>, mnemonic)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第四步：校验和验证（钱包帮你恢复助记词时做的就是这件事）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">verify</span><span class="params">(ws)</span>:</span></span><br><span class="line">    idxs = [WORDLIST.index(w) <span class="keyword">for</span> w <span class="keyword">in</span> ws]</span><br><span class="line">    bs = <span class="string">""</span>.join(bin(i)[<span class="number">2</span>:].zfill(<span class="number">4</span>) <span class="keyword">for</span> i <span class="keyword">in</span> idxs)</span><br><span class="line">    ent = int(bs[:<span class="number">-4</span>], <span class="number">2</span>).to_bytes(<span class="number">1</span>, <span class="string">"big"</span>)</span><br><span class="line">    <span class="keyword">return</span> bin(hashlib.sha256(ent).digest()[<span class="number">0</span>] &gt;&gt; <span class="number">4</span>)[<span class="number">2</span>:].zfill(<span class="number">4</span>) == bs[<span class="number">-4</span>:]</span><br><span class="line"></span><br><span class="line">print(<span class="string">"校验通过:"</span>, verify(words))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 抄错一个词（换成词表里的另一个词）试试</span></span><br><span class="line">bad = words.copy()</span><br><span class="line">bad[<span class="number">1</span>] = <span class="string">"abandon"</span> <span class="keyword">if</span> bad[<span class="number">1</span>] != <span class="string">"abandon"</span> <span class="keyword">else</span> <span class="string">"acid"</span></span><br><span class="line">print(<span class="string">"抄错后的助记词:"</span>, <span class="string">" "</span>.join(bad))</span><br><span class="line">print(<span class="string">"抄错后校验通过:"</span>, verify(bad))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第五步：PBKDF2 从助记词导出 512 bit 种子（这一步与真实 BIP39 完全一致）</span></span><br><span class="line">passphrase = <span class="string">""</span>  <span class="comment"># BIP39 的可选"第 25 个词"</span></span><br><span class="line">seed = hashlib.pbkdf2_hmac(<span class="string">"sha512"</span>, mnemonic.encode(<span class="string">"utf-8"</span>),</span><br><span class="line">                           <span class="string">b"mnemonic"</span> + passphrase.encode(), <span class="number">2048</span>)</span><br><span class="line">print(<span class="string">"种子（512 bit）:"</span>, seed.hex())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 同样的助记词，换个 passphrase，种子完全不同</span></span><br><span class="line">seed2 = hashlib.pbkdf2_hmac(<span class="string">"sha512"</span>, mnemonic.encode(<span class="string">"utf-8"</span>),</span><br><span class="line">                            <span class="string">b"mnemonic"</span> + <span class="string">b"lucifer"</span>, <span class="number">2048</span>)</span><br><span class="line">print(<span class="string">"带 passphrase 的种子:"</span>, seed2.hex())</span><br></pre></td></tr></table></figure>
@@ -551,10 +552,10 @@
 <li><strong>公钥</strong>经 Keccak-256 取后 20 字节得<strong>地址</strong>，EIP-55 再给它藏一层大小写”验证码”。</li>
 </ol>
 <p>至此你也应该明白了：钱包软件从来没有”保存”过你的任何一个地址的私钥，它保存的只是那 12/24 个词，其余的一切都是每次需要时现场算出来的。同一套助记词管多链，不过是同一棵树上的不同分叉而已。</p>
-<p>当然，这也是把双刃剑：家谱树好用，但树根一漏，全族团灭。想分散风险，可以看单私钥的另一条出路——把密钥拆成多个分片保存（MPC 钱包）；想知道私钥和地址在 DeFi 里怎么被人拿去授权花你的钱，可以看授权与撤销授权那篇。链接都在下面。</p>
+<p>当然，这也是把双刃剑：家谱树好用，但树根一漏，全族团灭。想分散风险，可以看单私钥的另一条出路——把密钥拆成多个分片保存（MPC 钱包）；想知道私钥和地址在 DeFi（去中心化金融）里怎么被人拿去授权花你的钱，可以看授权与撤销授权那篇。链接都在下面。</p>
 <p>本文所有代码都在 Python 3.11 下真实运行过，完整脚本如有需要可以留言。下一篇（如果有的话）打算讲讲交易签名与验证的细节——私钥拿到了，怎么给一笔交易签字，签出来的东西链上怎么验。欢迎留言催更，虽然上次留言也不多。</p>
 <h2 id="相关阅读"><a href="#相关阅读" class="headerlink" title="相关阅读"></a>相关阅读</h2><ul>
-<li><a href="https://lucifer.ren/blog/2025/02/16/web3-wallet/" title="Web3 的入口 - 区块链钱包">《Web3 的入口 - 区块链钱包》</a>：本文的直接前置，钱包与 Dapp 的交互在那篇</li>
+<li><a href="https://lucifer.ren/blog/2025/02/16/web3-wallet/" title="Web3 的入口 - 区块链钱包">《Web3 的入口 - 区块链钱包》</a>：本文的直接前置，钱包与 Dapp（去中心化应用）的交互在那篇</li>
 <li><a href="https://lucifer.ren/blog/2025/03/05/web3-mpc/" title="更加安全的区块链钱包：MPC 钱包">《更加安全的区块链钱包：MPC 钱包》</a>：单私钥的另一条出路——密钥拆分</li>
 <li><a href="https://lucifer.ren/blog/2025/04/02/web3-approve/" title="Web3 中的授权与撤销授权">《Web3 中的授权与撤销授权》</a>：私钥怎么签名交易、地址在授权里的角色</li>
 <li><a href="https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/" title="《从零开始构建区块链》">《从零开始构建区块链》</a>：旧文里公钥直当地址的教学简化，本文补上真实推导</li>
@@ -571,10 +572,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-15T11:09:28+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-17T23:08:53+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2026年11月15日</p>
+    <p>更新于 2026年11月17日</p>
   </a>
 </div>
 

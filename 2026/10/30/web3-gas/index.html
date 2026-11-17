@@ -361,7 +361,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">5.7k字</span>
+          <span class="post-count">7.1k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -369,7 +369,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">21分</span>
+          <span class="post-count">26分</span>
         </span>
       </span>
     </div>
@@ -387,14 +387,14 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>在<a href="https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/" title="《从零开始构建区块链》">《从零开始构建区块链》</a>里，我们亲手搓过一条玩具链：转账、挖矿、查余额，全程免费，转账像发微信消息一样轻快。但那条链有个没说破的”作弊”：真实链上不是这样的。你在以太坊上哪怕只转 0.001 ETH，也得先掏一笔手续费；赶上牛市高峰，一次 DeFi 操作的 gas 费够吃顿火锅，部署合约更是”豪门消费”。</p>
+        <p>在<a href="https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/" title="《从零开始构建区块链》">《从零开始构建区块链》</a>里，我们亲手搓过一条玩具链：转账、挖矿、查余额，全程免费，转账像发微信消息一样轻快。但那条链有个没说破的”作弊”：真实链上不是这样的。你在以太坊上哪怕只转 0.001 ETH，也得先掏一笔手续费；赶上牛市高峰，一次 DeFi 操作（去中心化金融——跑在链上的交易所、借贷这类应用，我在<a href="https://lucifer.ren/blog/2025/08/14/web3-defi/" title="探索 DeFi 借贷与收益率交易的无限潜力">《探索 DeFi 借贷与收益率交易的无限潜力》</a>里写过）的 gas 费够吃顿火锅；部署一段智能合约（长期存放在链上、人人可调用的程序，下文简称合约）更是”豪门消费”。</p>
 <p>很多新手第一次被 web3 劝退，不是因为看不懂钱包界面，而是被 gas 吓退的：为什么转个账还要钱？为什么贵的时候一笔要几十美元？这笔钱到底给了谁？为什么不干脆免费？</p>
-<p>这篇文章就把 gas 掰开揉碎讲明白：它是什么、怎么定价、EIP-1559 之后钱包里那三个数字（base fee、priority fee、max fee）到底是什么意思，以及为什么有一部分费用会被当众”烧掉”。老规矩，最后用 Python 把整个机制模拟一遍，所有输出都是真实运行结果，欢迎对着敲。</p>
+<p>这篇文章就把 gas 掰开揉碎讲明白：它是什么、怎么定价、EIP-1559（以太坊改进提案第 1559 号——一次改写了 gas 定价规则的全网升级，下文细讲）之后钱包里那三个数字（base fee、priority fee、max fee）到底是什么意思，以及为什么有一部分费用会被当众”烧掉”。老规矩，最后用 Python 把整个机制模拟一遍，所有输出都是真实运行结果，欢迎对着敲。</p>
 <a id="more"></a>
 <h2 id="为什么链上做什么都要钱"><a href="#为什么链上做什么都要钱" class="headerlink" title="为什么链上做什么都要钱"></a>为什么链上做什么都要钱</h2><p>先回答灵魂拷问：为什么玩具链可以免费，真实链不行？你琢磨一下自助餐厅为什么要限时、限盘——答案就藏在里面。三个原因，一个比一个硬。</p>
 <p><strong>第一，防垃圾交易：自助餐不限量，大胃王会把店吃垮。</strong> 假如链上免费，任何人都能零成本发交易。我写个脚本一天发十亿笔”从 A 转 0 ETH 给 B”，全网每个节点都得验证、广播、存储它们——区块链没有客服，也没有防火墙，唯一能挡住洪水猛兽的就是价格。收费之后，发一亿笔垃圾等于烧一亿笔的钱，就像每拿一盘菜都要付盘子的钱，拿一亿盘谁也付不起，攻击这事自然就没人干了。</p>
-<p><strong>第二，防死循环：给全网装一个共享充电宝式的计费表。</strong> 以太坊的 EVM 是图灵完备的，合约里可以写 <code>while(true)</code>。如果没有计价机制，一个”永远跑不完”的合约就能把全网节点的 CPU 永久占死——一台笔记本就能瘫痪整条链。Gas 的解法和共享充电宝一模一样：借的时候先预付，按小时扣费，余额归零直接断电。执行前先预付 gas，执行中每条指令都在扣表，表跑光了 EVM 直接抛 out of gas、交易回滚。你的循环再疯狂，也最多烧掉你预付的那点电费，绝不会无限吃掉节点资源。</p>
-<p><strong>第三，给验证者发工资，顺便给计算定价。</strong> 节点帮你验证交易、存储整条链，电费和硬盘是真金白银的支出，没有运费谁肯给你跑腿。而”收多少钱”不能拍脑袋：读一次余额、算一次哈希、写一个存储位，成本天差地别，就像寄信、寄家具、寄冷链海鲜不能一个价。Gas 就是这套统一定价体系——把一切链上行为折算成”计算量”，再统一乘以单价。</p>
+<p><strong>第二，防死循环：给全网装一个共享充电宝式的计费表。</strong> 以太坊的 EVM（以太坊虚拟机，链上所有合约的运行环境——你可以把它想成一台全网每个节点都装了一份的公共计算机）是图灵完备的（理论上任何计算逻辑都写得出来，换句话说，也写得出跑不完的循环），所以合约里完全可以写 <code>while(true)</code>。如果没有计价机制，一个”永远跑不完”的合约就能把全网节点的 CPU 永久占死——一台笔记本就能瘫痪整条链。Gas 的解法和共享充电宝一模一样：借的时候先预付，按小时扣费，余额归零直接断电。执行前先预付 gas，执行中每条指令都在扣表，表跑光了，EVM 直接报 out of gas（电量耗尽），整笔交易回滚作废、当作没发生过。你的循环再疯狂，也最多烧掉你预付的那点电费，绝不会无限吃掉节点资源。</p>
+<p><strong>第三，给验证者发工资，顺便给计算定价。</strong> 验证者（负责把交易打包上链、维护整条链的节点运营者，你可以理解为以太坊如今的矿工）帮你验证交易、存储整条链，电费和硬盘是真金白银的支出，没有运费谁肯给你跑腿。而”收多少钱”不能拍脑袋：读一次余额、算一次哈希、写一个存储位，成本天差地别，就像寄信、寄家具、寄冷链海鲜不能一个价。Gas 就是这套统一定价体系——把一切链上行为折算成”计算量”，再统一乘以单价。</p>
 <p>一句话总结：gas 不是以太坊想赚你钱，而是一家不限量的自助餐厅，必然被大胃王吃垮。</p>
 <h2 id="Gas-到底是什么：电表上的”度”"><a href="#Gas-到底是什么：电表上的”度”" class="headerlink" title="Gas 到底是什么：电表上的”度”"></a>Gas 到底是什么：电表上的”度”</h2><p>用最顺手的比喻：<strong>gas 是电表上的”度”，不是钱。</strong> 你在家用电，电表走字，月底按度数交电费。链上完全一样：</p>
 <ul>
@@ -404,7 +404,7 @@
 </ul>
 <p>先说说 gwei 这个怪名字。1 gwei = 十亿分之一 ETH（10⁻⁹），1 ETH = 10 亿 gwei。为什么要发明这么小的单位？因为 gas 单价动辄十几、几十 gwei，换算成 ETH 就是 0.000000015——眼睛数零都数不过来。有了 gwei，就像日常说”一瓶水三块五”而不是”0.0000035 万元”，说人话而已。</p>
 <p>那 ETH 在其中的角色是什么？注意 gas 本身是抽象的”计算量”，不是钱，它必须锚定到一种资产才有价格，以太坊选择了自家的 ETH。所以完整的心智模型是：<strong>gas 是用电量，gwei 是每度电的单价，ETH 是结算货币</strong>。你在链上的每一步操作，本质上都是用 ETH 交电费。</p>
-<p>顺带一提，这也是 ETH 需求的基本盘之一：只要有人在用这条链，就有人在买入 ETH 来交 gas。这个伏笔我们后面讲燃烧时再回收。</p>
+<p>顺带一提，这也是 ETH 需求的基本盘之一：只要有人在用这条链，就有人在买入 ETH 来交 gas。这个伏笔我们后面讲燃烧时再回收。想看官方口径，以太坊官方中文文档的<a href="https://ethereum.org/zh/developers/docs/gas/" title="以太坊 Gas 与费用：技术概述" target="_blank" rel="noopener">《Gas 与费用》</a>一页对 gas 的解释更系统，可以对照着读。</p>
 <h2 id="常见操作要烧多少-gas"><a href="#常见操作要烧多少-gas" class="headerlink" title="常见操作要烧多少 gas"></a>常见操作要烧多少 gas</h2><p>直接上直觉表（数字是量级参考，会随合约实现和链版本浮动，不用背精确值）：</p>
 <div class="table-container">
 <table>
@@ -422,19 +422,19 @@
 <td>协议固定值，转 1 分钱和转 1 个亿耗量一样</td>
 </tr>
 <tr>
-<td>ERC-20 transfer</td>
+<td>ERC-20 转账</td>
 <td>约 5 万 ~ 6.5 万</td>
-<td>代币转账是合约调用，比原生转账贵 3 倍左右</td>
+<td>ERC-20 是以太坊上”自定义代币”的统一发行标准——你在交易所见到的 USDT 这类代币多半是它。代币转账是合约调用，比原生转账贵 3 倍左右</td>
 </tr>
 <tr>
 <td>approve 授权</td>
 <td>约 4.6 万</td>
-<td>所以”授权一次、用 N 次”是常见省钱策略</td>
+<td>approve（授权）= 提前允许某个应用随时动用你的代币，点一次管长期。所以”授权一次、用 N 次”是常见省钱策略</td>
 </tr>
 <tr>
 <td>SSTORE 写新存储槽</td>
 <td>20000 / 槽</td>
-<td>单步最贵的操作之一</td>
+<td>SSTORE 是合约往存储里写一条数据的指令，”存储槽”就是账本上的一格。单步最贵的操作之一</td>
 </tr>
 </tbody>
 </table>
@@ -442,8 +442,8 @@
 <p><img src="https://lucifer.ren/blog/images/web3/gas-ops-cost.png" alt="常见链上操作的 gas 耗量对比：SSTORE 写存储、转账、授权、代币转账"></p>
 <p>你可能要问了：写一个存储槽 20000 gas，而 EVM 的加法指令 ADD 只要 3 gas，差了六千多倍，凭什么？</p>
 <p>打个比方就明白了。算术是”打过就扔的草稿纸”——全网每个节点各自算一遍 1+1，算完就可以把草稿揉掉。存储不一样：你写进合约的一个数字，全网每个节点都必须立刻同步，并且从今往后<strong>永远记住、永远复制</strong>。这相当于你在草稿纸上涂了一笔 vs 在全村每家每户的账本上各记一笔，人家得替你记一辈子。存储的成本不是”一次性支出”，而是”全体节点的永久性负债”。存储贵，不是协议小气，是它真的贵。</p>
-<p>再看 21000 这个数字。ETH 原生转账之所以便宜，是因为它只是账本上改两个数字；ERC-20 转账要执行合约代码、读写存储、发事件，每一步都在电表上跳字，所以贵出三倍。理解了这一点，你就理解了”链上行为的价格 = 全网为它付出的记忆和计算”。</p>
-<h2 id="EIP-1559：钱包里那张账单"><a href="#EIP-1559：钱包里那张账单" class="headerlink" title="EIP-1559：钱包里那张账单"></a>EIP-1559：钱包里那张账单</h2><p>2021 年 8 月伦敦升级之前，gas 定价是纯拍卖：你自己喊一个 gasPrice，矿工挑喊得最高的打包，钱全进矿工口袋。就像打车不打表、全凭司机喊价——拥堵时你永远不知道该给多少：喊低了排不上队，喊高了白花钱，全靠赌，体验极差。</p>
+<p>再看 21000 这个数字。ETH 原生转账之所以便宜，是因为它只是账本上改两个数字；ERC-20 转账要执行合约代码、读写存储、发事件（向链外世界广播一条”转账发生了”的记录），每一步都在电表上跳字，所以贵出三倍。理解了这一点，你就理解了”链上行为的价格 = 全网为它付出的记忆和计算”。</p>
+<h2 id="EIP-1559：钱包里那张账单"><a href="#EIP-1559：钱包里那张账单" class="headerlink" title="EIP-1559：钱包里那张账单"></a>EIP-1559：钱包里那张账单</h2><p>2021 年 8 月的伦敦升级（以太坊的一次全网规则升级，EIP-1559 就是这次升级的主角）之前，gas 定价是纯拍卖：你自己喊一个 gasPrice，矿工挑喊得最高的打包，钱全进矿工口袋。就像打车不打表、全凭司机喊价——拥堵时你永远不知道该给多少：喊低了排不上队，喊高了白花钱，全靠赌，体验极差。</p>
 <p>EIP-1559 之后改成打表计价，一张账单拆成了三个数。拿打车来对照，一一对应：</p>
 <ul>
 <li><strong>base fee：计价器上的官方车费。</strong> 协议根据区块拥挤度自动算出，同一区块内所有人价格一致，你不用猜。画个重点：<strong>这部分会被直接销毁</strong>，司机拿不到、平台也拿不到，谁也拿不到。</li>
@@ -453,10 +453,19 @@
 <p>钱包里那个吓人的”最大费用”预估就是这么来的：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">最大费用 = maxFeePerGas × gasLimit      （按最坏情况先锁定的预算）</span><br><span class="line">实际费用 = (baseFee + priorityFee) × gasUsed</span><br></pre></td></tr></table></figure>
 <p>注意两行用的不是同一组数：上面是”单价上限 × 用量上限”，下面是”实际单价 × 实际用量”，两头都留了余量，所以实际费用通常明显小于最大费用，差额自动退回。交易完成后你经常看到”实际花费比预估少”，那不是钱包算错了，是多退少不补在正常工作。</p>
-<p>那 max fee 这个上限，钱包是怎么拍出来的？一个常见做法是 <code>maxFee = 2 × 当前 base fee + 小费</code>。为什么是 2 倍？因为你的交易未必下一块就被打包，而 base fee 每块最多涨 12.5%，连涨 6 块正好约 2 倍（1.125⁶ ≈ 2.03）。留 2 倍余量，就算接下来连续 6 个满块，你的交易也不会因为出价低于官方价而卡死。</p>
-<p>对比一下老的 legacy 交易：它只有一个 gasPrice 字段，相当于不打表的侃价车，现在也还能发。链会从里面先扣掉当时的 base fee 烧掉，剩下的差价全部当小费给验证者——注意，<strong>没有退款</strong>。也就是说 legacy 是”喊多少付多少”，EIP-1559 是”最多付这么多，用不完退给你”。所以主流钱包默认都走 EIP-1559，你日常看到的那张小账单，就是上面这三个数。</p>
-<h2 id="base-fee-是怎么自动调节的"><a href="#base-fee-是怎么自动调节的" class="headerlink" title="base fee 是怎么自动调节的"></a>base fee 是怎么自动调节的</h2><p>base fee 不是拍脑袋定的，每个区块都按上一块的拥堵情况重新计算。把它想成景区门票，规则一下子就通了：</p>
-<p>景区每天最多卖 3 万张票（区块 gas 上限，伦敦升级时是 30M gas），但运营方最舒服的状态是每天 1.5 万人进园——<strong>目标正好是上限的一半</strong>（15M gas）。于是定三条规矩：</p>
+<p>那 max fee 这个上限，钱包是怎么拍出来的？一个常见做法是 <code>maxFee = 2 × 当前 base fee + 小费</code>。为什么是 2 倍？因为你的交易未必下一块就被打包，而 base fee 每块最多涨 12.5%，连涨 6 块正好约 2 倍（1.125⁶ ≈ 2.03）。留 2 倍余量，就算接下来连续 6 个满块（区块被交易塞到上限，好比景区门票全部卖光），你的交易也不会因为出价低于官方价而卡死。</p>
+<p>对比一下老的 legacy 交易（EIP-1559 之前的旧版交易格式）：它只有一个 gasPrice 字段，相当于不打表的侃价车，现在也还能发。链会从里面先扣掉当时的 base fee 烧掉，剩下的差价全部当小费给验证者——注意，<strong>没有退款</strong>。也就是说 legacy 是”喊多少付多少”，EIP-1559 是”最多付这么多，用不完退给你”。所以主流钱包默认都走 EIP-1559，你日常看到的那张小账单，就是上面这三个数。</p>
+<h2 id="小明的一天：一张完整的-gas-账单"><a href="#小明的一天：一张完整的-gas-账单" class="headerlink" title="小明的一天：一张完整的 gas 账单"></a>小明的一天：一张完整的 gas 账单</h2><p>三个数都认识了，但”落到我头上到底多少钱”可能还是模糊。我们换人民币算。跟拍小明普通的一天——假设这是个寻常的工作日、单价全天没变，小明钱包里放着 ETH，这一天他不炒币、不抢购，就干了三件最普通的事：</p>
+<ul>
+<li><strong>早上</strong>：给朋友转 0.1 ETH，就当是从自己的银行账户给朋友转了笔钱。固定起步费，花了 <strong>20 块</strong>。</li>
+<li><strong>中午</strong>：在一个链上应用里点了”授权”，也就是允许这个应用以后可以随时替他动用代币，相当于开通免密支付。花了 <strong>46 块</strong>。</li>
+<li><strong>晚上</strong>：真的用这个应用换了一笔代币——应用帮他在链上完成一次”一种币换另一种币”的兑换，步骤比单纯转账复杂得多。花了 <strong>65 块</strong>。</li>
+</ul>
+<p>一天下来，小明的”路费”合计 <strong>131 块</strong>。钱不算多，但三笔的差别值得琢磨：转个钱 20 块，点个”授权”反而 46 块，换个币 65 块，凭什么？</p>
+<p>先揭晓谜底：这三笔钱不是随口编的，它们一一对应三种最常见的链上操作——转账固定消耗 21000 gas，授权约 46000 gas，代币转账约 65000 gas，都能在前面的直觉表里找到。三笔费用的比例（约 1 : 2.3 : 3.3）和三个耗量的比例（约 1 : 2.2 : 3.1）基本一致。<strong>注意单位别搞混：21000、46000、65000 是”走了多少度电”，单位是 gas 不是块钱，乘上当时的单价才变成小明付的钱。</strong>至于为什么点个”授权”比转钱还贵一倍多——授权是一次合约调用、还要动存储，回头看”全村每家每户的账本各记一笔”那段就明白了。</p>
+<p>再补最后一块拼图：单价。小明赶上的是平峰时段。链上单价是随人流浮动的——早高峰（欧美用户活跃的时段）全网抢着上链，同样这笔转账可能从 20 块变成 60 块；深夜没人用，可能只要几块钱。换句话说，<strong>花的钱 = 干的活（gas）× 当时的单价</strong>：前者由你点了什么决定，明码标价；后者由全网有多挤决定，自动浮动。这个会涨跌的”单价”就是 base fee——它怎么跟着人流呼吸，下一节细讲。</p>
+<h2 id="base-fee-是怎么自动调节的"><a href="#base-fee-是怎么自动调节的" class="headerlink" title="base fee 是怎么自动调节的"></a>base fee 是怎么自动调节的</h2><p>上一节结尾说，单价随人流浮动——它是怎么做到的？base fee 不是拍脑袋定的，每个区块都按上一块的拥堵情况重新计算。把它想成景区门票，规则一下子就通了：</p>
+<p>景区每天最多卖 3 万张票（区块 gas 上限，伦敦升级时是 30M gas——M 就是百万，30M 即 3000 万），但运营方最舒服的状态是每天 1.5 万人进园——<strong>目标正好是上限的一半</strong>（15M gas）。于是定三条规矩：</p>
 <ol>
 <li>今天进园人数超过 1.5 万，说明景区太挤，明天门票涨价，把一部分游客”劝”到别的时间来；</li>
 <li>今天人少，说明票价太贵没人来，明天降价促销；</li>
@@ -471,14 +480,14 @@
 <p>你可能要问了：好好的钱，为什么要当众烧掉？</p>
 <p><strong>第一，防操纵。</strong> 假设官方车费归司机所有，会发生什么？司机最有利可图的事，就是雇一群人站到马路中间——故意把区块塞满（哪怕塞垃圾交易），把下一块的 base fee 抬上去，自己多收。烧掉之后，制造拥堵一分钱好处都没有，操纵动机直接归零。</p>
 <p><strong>第二，价值回流。</strong> gas 费本质是全体用户为网络安全和运行支付的成本，这笔钱不该被中间环节截留。当众烧掉，等价于按持币比例给所有 ETH 持有者变相分红——你琢磨一下：流通中的 ETH 变少了，剩下的每一枚 ETH 对应的那份”链上股份”就变多了。全网用得越旺，烧得越多，你手里的币就越稀缺。和上市公司回购股票注销是同一个道理：股本少了，每股含金量就上去了。</p>
-<p>这就接上了代币经济学的通缩叙事：以太坊按 PoS 规则每年增发新 ETH 作为验证者奖励，如果某段时间网络繁忙、燃烧量超过增发量，ETH 总供应量就净减少——这就是 2021 年之后反复被讨论的”ETH 通缩”的机制源头，详细的分析在我那篇<a href="https://lucifer.ren/blog/2026/05/03/web3-tokenomics/" title="代币经济学：如何判断一个代币值不值得买">《代币经济学：如何判断一个代币值不值得买》</a>里。</p>
-<h2 id="为什么-L2-便宜"><a href="#为什么-L2-便宜" class="headerlink" title="为什么 L2 便宜"></a>为什么 L2 便宜</h2><p>L1 的问题不是计算慢，而是地皮小：全网每 12 秒只有一块空间（伦敦升级时上限 30M gas），全球所有用户、所有协议都在抢同一块地皮，地价自然被拍上天。</p>
-<p>L2 的思路是拼车：把成百上千笔交易搬到链下执行，最后只把一份压缩后的”结果数据”放回 L1 存证。一个人付一次 L1 的钱，几百人分摊，单价自然掉下来。而 2024 年上线的 blob（EIP-4844）又给 L2 数据开辟了独立的收费市场，让数据成本再降一个量级——这部分机制我在<a href="https://lucifer.ren/blog/2026/11/14/web3-blob/" title="blob：你的 L2 转账为什么只要几分钱">《blob：你的 L2 转账为什么只要几分钱》</a>里有展开。往根上讲，L2 存在的动机就是”L1 gas 太贵”，想看它具体怎么实现的，可以翻<a href="https://lucifer.ren/blog/2025/02/29/web3-l2-from-zero/" title="从零实现区块链 - 侧链与L2">《从零实现区块链 - 侧链与L2》</a>。</p>
-<h2 id="用-Python-算一笔账"><a href="#用-Python-算一笔账" class="headerlink" title="用 Python 算一笔账"></a>用 Python 算一笔账</h2><p>概念讲完了，老规矩，上代码。先讲直觉：一笔交易的真实美元成本 = 走了多少度电（gasUsed）× 每度电单价（base fee + 小费）× ETH 汇率。下面的计算器就是把这三个数乘起来：</p>
+<p>这就接上了代币经济学的通缩叙事：以太坊按 PoS（权益证明，如今的以太坊不再拼算力挖矿，而是由锁币质押的验证者轮流记账）规则每年增发（新铸造）一定量的新 ETH 作为验证者奖励，如果某段时间网络繁忙、燃烧量超过增发量，ETH 总供应量就净减少——这就是 2021 年之后反复被讨论的”ETH 通缩”的机制源头，详细的分析在我那篇<a href="https://lucifer.ren/blog/2026/05/03/web3-tokenomics/" title="代币经济学：如何判断一个代币值不值得买">《代币经济学：如何判断一个代币值不值得买》</a>里。</p>
+<h2 id="为什么-L2-便宜"><a href="#为什么-L2-便宜" class="headerlink" title="为什么 L2 便宜"></a>为什么 L2 便宜</h2><p>先交代两个缩写：L1（Layer 1）就是以太坊主链本身，前面所有讨论都发生在它上面；L2（Layer 2）是搭在主链之上的”第二层”网络，先替主链把一大批交易处理完。L1 的问题不是计算慢，而是地皮小：全网每 12 秒只有一块空间（伦敦升级时上限 30M gas，也就是 3000 万），全球所有用户、所有协议都在抢同一块地皮，地价自然被拍上天。</p>
+<p>L2 的思路是拼车：把成百上千笔交易搬到链下执行，最后只把一份压缩后的”结果数据”放回 L1 存证。一个人付一次 L1 的钱，几百人分摊，单价自然掉下来。而 2024 年上线的 blob（EIP-4844，一种专门帮 L2 捎带数据的新交易类型）又给 L2 数据开辟了独立的收费市场，让数据成本再降一个量级——这部分机制我在<a href="https://lucifer.ren/blog/2026/11/14/web3-blob/" title="blob：你的 L2 转账为什么只要几分钱">《blob：你的 L2 转账为什么只要几分钱》</a>里有展开。往根上讲，L2 存在的动机就是”L1 gas 太贵”，想看它具体怎么实现的，可以翻<a href="https://lucifer.ren/blog/2025/02/29/web3-l2-from-zero/" title="从零实现区块链 - 侧链与L2">《从零实现区块链 - 侧链与L2》</a>。</p>
+<h2 id="用-Python-算一笔账"><a href="#用-Python-算一笔账" class="headerlink" title="用 Python 算一笔账"></a>用 Python 算一笔账</h2><p>概念讲完了，老规矩，上代码。还记得小明那天 131 块的账单吗？下面把这三笔账单按真实公式算一遍。从这一节起是<strong>进阶精确版</strong>，不想跟公式的读者只记一条结论就够：一笔交易的真实美元成本 = 走了多少度电（gasUsed）× 每度电单价（base fee + 小费）× ETH 汇率。下面的计算器就是把这三个数乘起来：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 费用计算器：一笔交易到底花多少美元</span></span><br><span class="line"><span class="comment"># 公式：费用(ETH) = gasUsed × gasPrice(gwei) / 1e9</span></span><br><span class="line"><span class="comment"># 注意 EIP-1559 之后，实际单价 = base fee + priority fee</span></span><br><span class="line"></span><br><span class="line">GWEI_PER_ETH = <span class="number">1e9</span>  <span class="comment"># 1 ETH = 10^9 gwei</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc_fee</span><span class="params">(name, gas_used, base_fee_gwei, tip_gwei, eth_price)</span>:</span></span><br><span class="line">    <span class="string">"""算一笔交易的 ETH 费用和美元费用"""</span></span><br><span class="line">    gas_price_gwei = base_fee_gwei + tip_gwei  <span class="comment"># 实际单价 = base fee + 小费</span></span><br><span class="line">    fee_eth = gas_used * gas_price_gwei / GWEI_PER_ETH  <span class="comment"># 费用（ETH）</span></span><br><span class="line">    fee_usd = fee_eth * eth_price  <span class="comment"># 费用（美元）</span></span><br><span class="line">    print(<span class="string">f"<span class="subst">&#123;name:&lt;<span class="number">14</span>&#125;</span> gasUsed = <span class="subst">&#123;gas_used:&gt;<span class="number">6</span>&#125;</span>   "</span></span><br><span class="line">          <span class="string">f"单价 = <span class="subst">&#123;gas_price_gwei:&gt;<span class="number">3</span>&#125;</span> gwei   "</span></span><br><span class="line">          <span class="string">f"费用 = <span class="subst">&#123;fee_eth:<span class="number">.6</span>f&#125;</span> ETH ≈ $<span class="subst">&#123;fee_usd:<span class="number">.2</span>f&#125;</span>"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ETH_PRICE = <span class="number">3000.0</span>  <span class="comment"># 假设 ETH 价格 $3000</span></span><br><span class="line">BASE_FEE = <span class="number">15</span>       <span class="comment"># gwei，不堵不空的日常 base fee</span></span><br><span class="line">TIP = <span class="number">1</span>             <span class="comment"># gwei，给验证者的小费</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">f"假设：ETH = $<span class="subst">&#123;ETH_PRICE:<span class="number">.0</span>f&#125;</span>，base fee = <span class="subst">&#123;BASE_FEE&#125;</span> gwei，priority fee = <span class="subst">&#123;TIP&#125;</span> gwei\n"</span>)</span><br><span class="line">calc_fee(<span class="string">"ETH 转账"</span>, <span class="number">21</span>_000, BASE_FEE, TIP, ETH_PRICE)</span><br><span class="line">calc_fee(<span class="string">"approve 授权"</span>, <span class="number">46</span>_000, BASE_FEE, TIP, ETH_PRICE)</span><br><span class="line">calc_fee(<span class="string">"ERC-20 转账"</span>, <span class="number">65</span>_000, BASE_FEE, TIP, ETH_PRICE)</span><br></pre></td></tr></table></figure>
 <p>真实运行结果：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">假设：ETH = $3000，base fee = 15 gwei，priority fee = 1 gwei</span><br><span class="line"></span><br><span class="line">ETH 转账         gasUsed =  21000   单价 =  16 gwei   费用 = 0.000336 ETH ≈ $1.01</span><br><span class="line">approve 授权     gasUsed =  46000   单价 =  16 gwei   费用 = 0.000736 ETH ≈ $2.21</span><br><span class="line">ERC-20 转账      gasUsed =  65000   单价 =  16 gwei   费用 = 0.001040 ETH ≈ $3.12</span><br></pre></td></tr></table></figure>
-<p>解读一下：在一个不堵不空的午后（base fee 15 gwei），ETH 转账大约 $1，授权 $2.21，代币转账 $3.12。再对照下图看结构：每一笔的大头都是红色（base fee，直接烧掉），给验证者的蓝色小费只有零头。换个角度感受 gas 的尺度：21000 gas × 16 gwei 只有 0.000336 ETH——链上一次操作的”电量”其实小得惊人。平时让你肉疼的从来不是计算本身，而是拥堵时段的单价，以及把成千上万次运算卷进一帧交易的复杂合约。</p>
+<p>解读一下：在一个不堵不空的午后（base fee 15 gwei），ETH 转账大约 $1，授权 $2.21，代币转账 $3.12——三者的比例约 1 : 2.2 : 3.1，和耗量的比例一模一样，跟小明账单里 20 : 46 : 65 的形状也对得上（他赶上的是平峰价，这里是不堵不空的低谷价，所以绝对值更低）。再对照下图看结构：每一笔的大头都是红色（base fee，直接烧掉），给验证者的蓝色小费只有零头。换个角度感受 gas 的尺度：21000 gas × 16 gwei 只有 0.000336 ETH——链上一次操作的”电量”其实小得惊人。平时让你肉疼的从来不是计算本身，而是拥堵时段的单价，以及把成千上万次运算卷进一帧交易的复杂合约。</p>
 <p><img src="https://lucifer.ren/blog/images/web3/gas-fee-structure.png" alt="一笔交易的 gas 账单构成：红色 base fee 被烧掉，蓝色 priority fee 给验证者"></p>
 <h2 id="用-Python-模拟-base-fee-的心跳"><a href="#用-Python-模拟-base-fee-的心跳" class="headerlink" title="用 Python 模拟 base fee 的心跳"></a>用 Python 模拟 base fee 的心跳</h2><p>第二个模拟：把 EIP-1559 的 base fee 调节公式完整实现一遍，看看景区票价在”连续爆满 → 突然空场 → 平稳”的客流量下如何呼吸。直觉先行：满块就是”3 万张票全卖光”，连续爆满就连续涨价（每次最多 12.5%）；空块就是”一张票没卖出去”，连续降价；用量正好等于目标时，票价原地不动。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># EIP-1559 base fee 演化模拟</span></span><br><span class="line"><span class="comment"># 真实公式：next_base_fee = base_fee + base_fee × (used - target) / target / 8</span></span><br><span class="line"><span class="comment"># 即：用得比目标多就涨、少就降，每块最大变动 12.5%（= 1/8）</span></span><br><span class="line"><span class="comment"># 目标区块大小 = 上限的一半：上限 30M gas，目标 15M gas</span></span><br><span class="line"></span><br><span class="line">GAS_LIMIT = <span class="number">30</span>_000_000   <span class="comment"># 区块 gas 上限 30M</span></span><br><span class="line">TARGET = GAS_LIMIT // <span class="number">2</span>  <span class="comment"># 目标 15M</span></span><br><span class="line">DENOM = <span class="number">8</span>                <span class="comment"># EIP-1559 的分母，满块时涨幅 = 1/8 = 12.5%</span></span><br><span class="line"></span><br><span class="line">base_fee = <span class="number">30.0</span>          <span class="comment"># 从 30 gwei 开始</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 剧本：连续 5 块拥挤（满块 30M）→ 突然 3 块空闲（0 gas）→ 4 块平稳（正好 15M）</span></span><br><span class="line">script = [(<span class="string">"拥挤"</span>, <span class="number">30</span>_000_000)] * <span class="number">5</span> + [(<span class="string">"空闲"</span>, <span class="number">0</span>)] * <span class="number">3</span> + [(<span class="string">"平稳"</span>, TARGET)] * <span class="number">4</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">f"初始 base fee = <span class="subst">&#123;base_fee:g&#125;</span> gwei，目标 = <span class="subst">&#123;TARGET // <span class="number">1</span>_000_000&#125;</span>M gas，上限 = <span class="subst">&#123;GAS_LIMIT // <span class="number">1</span>_000_000&#125;</span>M gas\n"</span>)</span><br><span class="line">print(<span class="string">f"<span class="subst">&#123;<span class="string">'区块'</span>:&gt;<span class="number">4</span>&#125;</span>  <span class="subst">&#123;<span class="string">'场景'</span>:&lt;<span class="number">4</span>&#125;</span>  <span class="subst">&#123;<span class="string">'used gas'</span>:&gt;<span class="number">10</span>&#125;</span>  <span class="subst">&#123;<span class="string">'本块 base fee'</span>:&gt;<span class="number">13</span>&#125;</span>  <span class="subst">&#123;<span class="string">'下一块 base fee'</span>:&gt;<span class="number">14</span>&#125;</span>  <span class="subst">&#123;<span class="string">'涨跌'</span>:&gt;<span class="number">8</span>&#125;</span>"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i, (scene, used) <span class="keyword">in</span> enumerate(script, <span class="number">1</span>):</span><br><span class="line">    delta = (used - TARGET) / TARGET / DENOM  <span class="comment"># 本块涨跌比例</span></span><br><span class="line">    next_fee = base_fee * (<span class="number">1</span> + delta)         <span class="comment"># 下一块的 base fee</span></span><br><span class="line">    change = <span class="string">f"<span class="subst">&#123;delta * <span class="number">100</span>:+<span class="number">.2</span>f&#125;</span>%"</span></span><br><span class="line">    print(<span class="string">f"<span class="subst">&#123;i:&gt;<span class="number">4</span>&#125;</span>  <span class="subst">&#123;scene:&lt;<span class="number">4</span>&#125;</span>  <span class="subst">&#123;used:&gt;<span class="number">10</span>,&#125;</span>  <span class="subst">&#123;base_fee:&gt;<span class="number">12.4</span>f&#125;</span>g  <span class="subst">&#123;next_fee:&gt;<span class="number">12.4</span>f&#125;</span>g  <span class="subst">&#123;change:&gt;<span class="number">8</span>&#125;</span>"</span>)</span><br><span class="line">    base_fee = next_fee</span><br><span class="line"></span><br><span class="line">print(<span class="string">f"\n结束时的 base fee = <span class="subst">&#123;base_fee:<span class="number">.4</span>f&#125;</span> gwei（起点 30 gwei）"</span>)</span><br></pre></td></tr></table></figure>
@@ -487,19 +496,19 @@
 <p><img src="https://lucifer.ren/blog/images/web3/gas-basefee-curve.png" alt="base fee 随拥堵升降的完整心跳：连续满块每块 +12.5%，空块 -12.5%，平稳后冻结"></p>
 <p>三个值得咂摸的观察：</p>
 <ol>
-<li><strong>连续拥挤是复利式上涨</strong>：5 个满块，base fee 从 30 gwei 涨到 54 gwei，每块精确 +12.5%。这就是 NFT mint 和热门代币发行时 gas 指数飙升的数学原理——景区连着爆满五天，票价就一路爬坡，拥堵持续得越久，价格爬得越陡。</li>
+<li><strong>连续拥挤是复利式上涨</strong>（利滚利：每一块都在上一块的基础上再涨）：5 个满块，base fee 从 30 gwei 涨到 54 gwei，每块精确 +12.5%。这就是 NFT mint（抢”铸造”——发行独一无二的数字藏品——的瞬间）和热门代币发行时 gas 指数飙升的数学原理——景区连着爆满五天，票价就一路爬坡，拥堵持续得越久，价格爬得越陡。</li>
 <li><strong>有个反直觉的细节</strong>：涨了 5 块（30 → 54），为什么 3 块空闲只跌回 36.2，没回到 30？因为”跌 12.5%”的基数也在变——先涨 12.5% 再跌 12.5%，回不到原点，百分比涨跌不是对称可逆的。这个设计让票价对持续爆满反应充分、对短暂空场回落温和，避免价格来回剧烈震荡。</li>
 <li><strong>平稳块上价格冻结</strong>：用量正好等于目标时 delta = 0，恒温器到达设定温度就停机。这就是协议想要的稳态：区块大小悬浮在目标值附近，价格不涨不跌。</li>
 </ol>
 <h2 id="实用小贴士"><a href="#实用小贴士" class="headerlink" title="实用小贴士"></a>实用小贴士</h2><p>原理讲完，给几个日常真正用得上的。</p>
-<p><strong>1. 什么时候 gas 便宜？景区人少的时候。</strong> base fee 只看拥挤度，所以答案就是挑人少。经验上，链上的高峰大体跟着美国的工作时段走，相对便宜的窗口是周末、深夜，以及非美国时段——比如美东时间的凌晨，对应北京时间的午后到傍晚。重要但不着急的操作（给冷钱包转账、做授权），挑低谷发能省下不少。不过这只是经验规律，一次热门 mint 就能把景区挤爆，动手前看一眼 gas 追踪器上的实时 base fee 最靠谱。</p>
+<p><strong>1. 什么时候 gas 便宜？景区人少的时候。</strong> base fee 只看拥挤度，所以答案就是挑人少。经验上，链上的高峰大体跟着美国的工作时段走，相对便宜的窗口是周末、深夜，以及非美国时段——比如美东时间的凌晨，对应北京时间的午后到傍晚。重要但不着急的操作（给冷钱包转账——冷钱包是不联网、专门用来存币的钱包；做授权），挑低谷发能省下不少。不过这只是经验规律，一次热门 mint 就能把景区挤爆，动手前看一眼 gas 追踪器（比如 <a href="https://etherscan.io/gastracker" title="Ethereum Gas Tracker | Etherscan" target="_blank" rel="noopener">Etherscan 的 Gas Tracker</a>，打开就能看到当前的实时 base fee）最靠谱。</p>
 <p><strong>2. 撤销授权也要花 gas。</strong> 撤销的原理是再调一次 <code>approve</code>，把额度设成 0——所以它本身就是一笔真实的链上交易，和前面表里的 approve 是同一个量级，一样要付钱。定期清理授权时，记得把这笔预算算进去：安全从来不是免费的。授权为什么有风险、该怎么管理，见<a href="https://lucifer.ren/blog/2025/04/02/web3-approve/" title="Web3 中的授权与撤销授权">《Web3 中的授权与撤销授权》</a>。</p>
-<p><strong>3. 多签交互贵，贵出了 MPC。</strong> 在以太坊上，多签本质是一个智能合约：钱包本身要先花 gas 部署，之后每动一次钱都是一次合约调用，合约还得在链上把 M 个签名挨个验一遍。对照前面的直觉表就明白了——普通转账只要 21000，而走合约、验签、读写存储，每一步都在电表上跳字，所以它天然比一笔普通转账贵。这正是 MPC 钱包出现的动机之一：把”多方共同签名”这件事挪到链下用密码学解决，链上看到的只是一笔普通交易，自然也只付普通交易的 gas。详见<a href="https://lucifer.ren/blog/2025/03/05/web3-mpc/" title="更加安全的区块链钱包：MPC 钱包">《更加安全的区块链钱包：MPC 钱包》</a>。</p>
+<p><strong>3. 多签交互贵，贵出了 MPC。</strong> 多签（Multi-Sig，要求好几把钥匙凑在一起共同签名才能动钱的钱包）在以太坊上本质是一个智能合约：钱包本身要先花 gas 部署，之后每动一次钱都是一次合约调用，合约还得在链上把 M 个签名挨个验一遍。对照前面的直觉表就明白了——普通转账只要 21000，而走合约、验签、读写存储，每一步都在电表上跳字，所以它天然比一笔普通转账贵。这正是 MPC 钱包（把私钥拆成多片分给多方保管、签名在链下完成的方案）出现的动机之一：把”多方共同签名”这件事挪到链下用密码学解决，链上看到的只是一笔普通交易，自然也只付普通交易的 gas。详见<a href="https://lucifer.ren/blog/2025/03/05/web3-mpc/" title="更加安全的区块链钱包：MPC 钱包">《更加安全的区块链钱包：MPC 钱包》</a>。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>把这篇的硬核知识收进口袋：</p>
 <ul>
 <li>gas 是计算量单位，不是钱；费用 = gasUsed × gasPrice；gwei 是单价单位（10⁻⁹ ETH），ETH 是结算货币。</li>
 <li>收费的三重动机：防垃圾交易（自助餐不能不限量）、防死循环（给图灵完备的 EVM 装电表）、付验证者工资。</li>
-<li>耗量直觉：ETH 转账固定 21000；代币转账和授权是它的三倍量级；写存储槽 20000 一档，因为存储是”全网所有节点永久记住”的负债。</li>
+<li>耗量直觉：小明账单的三笔钱背后是三个固定档位——ETH 转账固定 21000，代币转账和授权是它的两三倍，写存储槽 20000 一档，因为存储是”全网所有节点永久记住”的负债。</li>
 <li>EIP-1559 把账单拆成三个数：base fee（协议定价、自动调节、直接燃烧）+ priority fee（给验证者的小费）+ max fee（用户上限，多退少不补）。</li>
 <li>base fee 是景区门票：目标 = 上限的一半，人多了涨价、人少了降价，每块最多 ±12.5%。</li>
 <li>燃烧把”协议收入”按持币比例变相还给全体持币人，是 ETH 通缩叙事的机制源头。</li>
@@ -513,6 +522,7 @@
 <li><a href="https://lucifer.ren/blog/2026/05/03/web3-tokenomics/" title="代币经济学：如何判断一个代币值不值得买">《代币经济学：如何判断一个代币值不值得买》</a>：EIP-1559 燃烧与 ETH 通缩</li>
 <li><a href="https://lucifer.ren/blog/2025/02/29/web3-l2-from-zero/" title="从零实现区块链 - 侧链与L2">《从零实现区块链 - 侧链与L2》</a>：L2 存在的动机就是 L1 gas 贵</li>
 <li><a href="https://lucifer.ren/blog/2026/11/14/web3-blob/" title="blob：你的 L2 转账为什么只要几分钱">《blob：你的 L2 转账为什么只要几分钱》</a>：blob 交易让 L2 数据成本再降一个量级</li>
+<li><a href="https://ethereum.org/zh/developers/docs/gas/" title="以太坊 Gas 与费用：技术概述" target="_blank" rel="noopener">以太坊官方中文文档《Gas 与费用》</a>：官方口径的 gas 定义、EIP-1559 三项费用与燃烧机制</li>
 </ul>
 
       </div>
@@ -525,10 +535,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-15T15:17:44+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-17T22:57:02+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2026年11月15日</p>
+    <p>更新于 2026年11月17日</p>
   </a>
 </div>
 
@@ -558,9 +568,9 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2026/10/30/web3-gas/&title=Gas：链上一切行为的价格标签 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=在《从零开始构建区块链》里，我们亲手搓过一条玩具链：转账、挖矿、查余额，全程免费，转账像发微信消息一样轻快。但那条链有个没说破的”作弊”：真实链上不是这样的。你在以太坊上哪怕只转 0.001 ETH，也得先掏一笔手续费；赶上牛市高峰，一次 DeFi 操作的 gas 费够吃顿火锅，部署合约更是”豪门消费”。
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2026/10/30/web3-gas/&title=Gas：链上一切行为的价格标签 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=在《从零开始构建区块链》里，我们亲手搓过一条玩具链：转账、挖矿、查余额，全程免费，转账像发微信消息一样轻快。但那条链有个没说破的”作弊”：真实链上不是这样的。你在以太坊上哪怕只转 0.001 ETH，也得先掏一笔手续费；赶上牛市高峰，一次 DeFi 操作（去中心化金融——跑在链上的交易所、借贷这类应用，我在《探索 DeFi 借贷与收益率交易的无限潜力》里写过）的 gas 费够吃顿火锅；部署一段智能合约（长期存放在链上、人人可调用的程序，下文简称合约）更是”豪门消费”。
 很多新手第一次被 web3 劝退，不是因为看不懂钱包界面，而是被 gas 吓退的：为什么转个账还要钱？为什么贵的时候一笔要几十美元？这笔钱到底给了谁？为什么不干脆免费？
-这篇文章就把 gas 掰开揉碎讲明白：它是什么、怎么定价、EIP-1559 之后钱包里那三个数字（base fee、priority fee、max fee）到底是什么意思，以及为什么有一部分费用会被当众”烧掉”。老规矩，最后用 Python 把整个机制模拟一遍，所有输出都是真实运行结果，欢迎对着敲。"
+这篇文章就把 gas 掰开揉碎讲明白：它是什么、怎么定价、EIP-1559（以太坊改进提案第 1559 号——一次改写了 gas 定价规则的全网升级，下文细讲）之后钱包里那三个数字（base fee、priority fee、max fee）到底是什么意思，以及为什么有一部分费用会被当众”烧掉”。老规矩，最后用 Python 把整个机制模拟一遍，所有输出都是真实运行结果，欢迎对着敲。"
           
           >
           
@@ -572,9 +582,9 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2026/10/30/web3-gas/&title=Gas：链上一切行为的价格标签 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=在《从零开始构建区块链》里，我们亲手搓过一条玩具链：转账、挖矿、查余额，全程免费，转账像发微信消息一样轻快。但那条链有个没说破的”作弊”：真实链上不是这样的。你在以太坊上哪怕只转 0.001 ETH，也得先掏一笔手续费；赶上牛市高峰，一次 DeFi 操作的 gas 费够吃顿火锅，部署合约更是”豪门消费”。
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2026/10/30/web3-gas/&title=Gas：链上一切行为的价格标签 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=在《从零开始构建区块链》里，我们亲手搓过一条玩具链：转账、挖矿、查余额，全程免费，转账像发微信消息一样轻快。但那条链有个没说破的”作弊”：真实链上不是这样的。你在以太坊上哪怕只转 0.001 ETH，也得先掏一笔手续费；赶上牛市高峰，一次 DeFi 操作（去中心化金融——跑在链上的交易所、借贷这类应用，我在《探索 DeFi 借贷与收益率交易的无限潜力》里写过）的 gas 费够吃顿火锅；部署一段智能合约（长期存放在链上、人人可调用的程序，下文简称合约）更是”豪门消费”。
 很多新手第一次被 web3 劝退，不是因为看不懂钱包界面，而是被 gas 吓退的：为什么转个账还要钱？为什么贵的时候一笔要几十美元？这笔钱到底给了谁？为什么不干脆免费？
-这篇文章就把 gas 掰开揉碎讲明白：它是什么、怎么定价、EIP-1559 之后钱包里那三个数字（base fee、priority fee、max fee）到底是什么意思，以及为什么有一部分费用会被当众”烧掉”。老规矩，最后用 Python 把整个机制模拟一遍，所有输出都是真实运行结果，欢迎对着敲。"
+这篇文章就把 gas 掰开揉碎讲明白：它是什么、怎么定价、EIP-1559（以太坊改进提案第 1559 号——一次改写了 gas 定价规则的全网升级，下文细讲）之后钱包里那三个数字（base fee、priority fee、max fee）到底是什么意思，以及为什么有一部分费用会被当众”烧掉”。老规矩，最后用 Python 把整个机制模拟一遍，所有输出都是真实运行结果，欢迎对着敲。"
           
           >
           
@@ -586,9 +596,9 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2026/10/30/web3-gas/&title=Gas：链上一切行为的价格标签 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=在《从零开始构建区块链》里，我们亲手搓过一条玩具链：转账、挖矿、查余额，全程免费，转账像发微信消息一样轻快。但那条链有个没说破的”作弊”：真实链上不是这样的。你在以太坊上哪怕只转 0.001 ETH，也得先掏一笔手续费；赶上牛市高峰，一次 DeFi 操作的 gas 费够吃顿火锅，部署合约更是”豪门消费”。
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2026/10/30/web3-gas/&title=Gas：链上一切行为的价格标签 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=在《从零开始构建区块链》里，我们亲手搓过一条玩具链：转账、挖矿、查余额，全程免费，转账像发微信消息一样轻快。但那条链有个没说破的”作弊”：真实链上不是这样的。你在以太坊上哪怕只转 0.001 ETH，也得先掏一笔手续费；赶上牛市高峰，一次 DeFi 操作（去中心化金融——跑在链上的交易所、借贷这类应用，我在《探索 DeFi 借贷与收益率交易的无限潜力》里写过）的 gas 费够吃顿火锅；部署一段智能合约（长期存放在链上、人人可调用的程序，下文简称合约）更是”豪门消费”。
 很多新手第一次被 web3 劝退，不是因为看不懂钱包界面，而是被 gas 吓退的：为什么转个账还要钱？为什么贵的时候一笔要几十美元？这笔钱到底给了谁？为什么不干脆免费？
-这篇文章就把 gas 掰开揉碎讲明白：它是什么、怎么定价、EIP-1559 之后钱包里那三个数字（base fee、priority fee、max fee）到底是什么意思，以及为什么有一部分费用会被当众”烧掉”。老规矩，最后用 Python 把整个机制模拟一遍，所有输出都是真实运行结果，欢迎对着敲。"
+这篇文章就把 gas 掰开揉碎讲明白：它是什么、怎么定价、EIP-1559（以太坊改进提案第 1559 号——一次改写了 gas 定价规则的全网升级，下文细讲）之后钱包里那三个数字（base fee、priority fee、max fee）到底是什么意思，以及为什么有一部分费用会被当众”烧掉”。老规矩，最后用 Python 把整个机制模拟一遍，所有输出都是真实运行结果，欢迎对着敲。"
           
           >
           
@@ -828,7 +838,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么链上做什么都要钱"><span class="toc-text">为什么链上做什么都要钱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gas-到底是什么：电表上的”度”"><span class="toc-text">Gas 到底是什么：电表上的”度”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见操作要烧多少-gas"><span class="toc-text">常见操作要烧多少 gas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EIP-1559：钱包里那张账单"><span class="toc-text">EIP-1559：钱包里那张账单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#base-fee-是怎么自动调节的"><span class="toc-text">base fee 是怎么自动调节的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#燃烧：把协议收入还给全体持币人"><span class="toc-text">燃烧：把协议收入还给全体持币人</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么-L2-便宜"><span class="toc-text">为什么 L2 便宜</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用-Python-算一笔账"><span class="toc-text">用 Python 算一笔账</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用-Python-模拟-base-fee-的心跳"><span class="toc-text">用 Python 模拟 base fee 的心跳</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实用小贴士"><span class="toc-text">实用小贴士</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关阅读"><span class="toc-text">相关阅读</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么链上做什么都要钱"><span class="toc-text">为什么链上做什么都要钱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gas-到底是什么：电表上的”度”"><span class="toc-text">Gas 到底是什么：电表上的”度”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见操作要烧多少-gas"><span class="toc-text">常见操作要烧多少 gas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EIP-1559：钱包里那张账单"><span class="toc-text">EIP-1559：钱包里那张账单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小明的一天：一张完整的-gas-账单"><span class="toc-text">小明的一天：一张完整的 gas 账单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#base-fee-是怎么自动调节的"><span class="toc-text">base fee 是怎么自动调节的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#燃烧：把协议收入还给全体持币人"><span class="toc-text">燃烧：把协议收入还给全体持币人</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么-L2-便宜"><span class="toc-text">为什么 L2 便宜</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用-Python-算一笔账"><span class="toc-text">用 Python 算一笔账</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用-Python-模拟-base-fee-的心跳"><span class="toc-text">用 Python 模拟 base fee 的心跳</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实用小贴士"><span class="toc-text">实用小贴士</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关阅读"><span class="toc-text">相关阅读</span></a></li></ol>
     </div>
   </section>
 

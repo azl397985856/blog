@@ -366,7 +366,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-keyboard"></i>
           <span class="post-meta-item-text">  字数统计: </span>
-          <span class="post-count">5.7k字</span>
+          <span class="post-count">7.1k字</span>
         </span>
       </span>
       &nbsp; | &nbsp;
@@ -374,7 +374,7 @@
         <span class="post-meta-item-icon">
           <i class="fa fa-hourglass-half"></i>
           <span class="post-meta-item-text">  阅读时长≈</span>
-          <span class="post-count">21分</span>
+          <span class="post-count">26分</span>
         </span>
       </span>
     </div>
@@ -392,9 +392,9 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>在<a href="https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/" title="《从零开始构建区块链》">《从零开始构建区块链》</a>里，我们亲手搓过一条玩具链：转账、挖矿、查余额，全程免费，转账像发微信消息一样轻快。但那条链有个没说破的”作弊”：真实链上不是这样的。你在以太坊上哪怕只转 0.001 ETH，也得先掏一笔手续费；赶上牛市高峰，一次 DeFi 操作的 gas 费够吃顿火锅，部署合约更是”豪门消费”。</p>
+      <p>在<a href="https://lucifer.ren/blog/2024/11/22/web3-zero-to-one/" title="《从零开始构建区块链》">《从零开始构建区块链》</a>里，我们亲手搓过一条玩具链：转账、挖矿、查余额，全程免费，转账像发微信消息一样轻快。但那条链有个没说破的”作弊”：真实链上不是这样的。你在以太坊上哪怕只转 0.001 ETH，也得先掏一笔手续费；赶上牛市高峰，一次 DeFi 操作（去中心化金融——跑在链上的交易所、借贷这类应用，我在<a href="https://lucifer.ren/blog/2025/08/14/web3-defi/" title="探索 DeFi 借贷与收益率交易的无限潜力">《探索 DeFi 借贷与收益率交易的无限潜力》</a>里写过）的 gas 费够吃顿火锅；部署一段智能合约（长期存放在链上、人人可调用的程序，下文简称合约）更是”豪门消费”。</p>
 <p>很多新手第一次被 web3 劝退，不是因为看不懂钱包界面，而是被 gas 吓退的：为什么转个账还要钱？为什么贵的时候一笔要几十美元？这笔钱到底给了谁？为什么不干脆免费？</p>
-<p>这篇文章就把 gas 掰开揉碎讲明白：它是什么、怎么定价、EIP-1559 之后钱包里那三个数字（base fee、priority fee、max fee）到底是什么意思，以及为什么有一部分费用会被当众”烧掉”。老规矩，最后用 Python 把整个机制模拟一遍，所有输出都是真实运行结果，欢迎对着敲。</p>
+<p>这篇文章就把 gas 掰开揉碎讲明白：它是什么、怎么定价、EIP-1559（以太坊改进提案第 1559 号——一次改写了 gas 定价规则的全网升级，下文细讲）之后钱包里那三个数字（base fee、priority fee、max fee）到底是什么意思，以及为什么有一部分费用会被当众”烧掉”。老规矩，最后用 Python 把整个机制模拟一遍，所有输出都是真实运行结果，欢迎对着敲。</p>
       
         <div class="readmore">
           <a href="/blog/2026/10/30/web3-gas/" class="flat-box">
