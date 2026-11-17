@@ -387,7 +387,7 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>先对齐两个词。<strong>以太坊主网（L1）</strong>是那条全球共用、最安全也最贵的公共总账本；<strong>L2（二层网络）</strong>是帮主网干活的”分包商”：你的转账先交给分包商处理，又快又便宜，分包商再定期把压缩后的账本汇报回主网。Arbitrum、Base 都是这样的分包商，这套体系怎么从零搭起来，<a href="https://lucifer.ren/blog/2025/02/29/web3-l2-from-zero/" title="从零实现区块链 - 侧链与L2">《从零实现区块链 - 侧链与L2》</a>里完整写过一遍。</p>
+        <p>开头先把两个词说清楚。<strong>以太坊主网（L1）</strong>是那条全球共用、最安全也最贵的公共总账本；<strong>L2（二层网络）</strong>是帮主网干活的”分包商”：你的转账先交给分包商处理，又快又便宜，分包商再定期把压缩后的账本汇报回主网。Arbitrum、Base 都是这样的分包商，这套体系怎么从零搭起来，<a href="https://lucifer.ren/blog/2025/02/29/web3-l2-from-zero/" title="从零实现区块链 - 侧链与L2">《从零实现区块链 - 侧链与L2》</a>里完整写过一遍。</p>
 <p>在 L2 上转一笔账，手续费只要几分钱；同样的动作放到主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 <strong>blob</strong> 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 这两代”分包方案”（两个名字后文都会解释）的生死有什么关系。</p>
 <a id="more"></a>
 <h2 id="blob-是什么"><a href="#blob-是什么" class="headerlink" title="blob 是什么"></a>blob 是什么</h2><p>分包商处理完一批交易，必须把”这批交易长什么样”的原始数据交回主网存档：主网上的任何人都得能照着这份数据自己重算一遍账，才敢相信分包商没动手脚。这份回传的数据放在哪，就是整篇文章的主角。</p>
@@ -399,7 +399,7 @@
 <li><strong>老办法：逐页传真。</strong> 传真按页计费，一页 2 块钱。生意越做越大，账本越记越厚，一个月攒到 500 页，光”寄账”一项就是 500 × 2 = <strong>1000 块/月</strong>。更头疼的是，总部规定每张传真纸都要<strong>永久归档</strong>——档案室的纸柜一排排往里加，谁也不敢扔：扔了，以后要查旧账怎么办？</li>
 <li><strong>新办法：整本打包快递。</strong> 把整本账本装进一个标准包裹，快递<strong>一口价 30 块</strong>——塞 300 页是这个价，塞 500 页也是这个价，按件收费、不看厚度。总部拆包核对完，包裹<strong>保留 18 天</strong>就统一销毁，销毁前只把包裹面单上的一张<strong>取件码</strong>撕下来归档：核对早就完成了，真有分店做假账，18 天里早该有人对不上账找上门了，没必要把 500 页纸供一辈子。</li>
 </ul>
-<p>一句话点题：<strong>传真是 calldata（按页计费 + 永久存档），包裹是 blob（按件一口价 + 定期销毁）。</strong>生活账里的比例先别较真——真实世界到底省几倍，后文有一笔精确账。</p>
+<p>一句话点题：<strong>传真是 calldata（按页计费 + 永久存档），包裹是 blob（按件一口价 + 定期销毁）。</strong>生活账里的比例别较真——真实世界到底省几倍，后面咱们仔细算。</p>
 <h2 id="规格速览"><a href="#规格速览" class="headerlink" title="规格速览"></a>规格速览</h2><p>两条核心规格：</p>
 <ul>
 <li>每个 blob 约 <strong>128 KiB</strong>，即 4096 个 32 字节的 field element。field element（域元素）是密码学里的”标准格口”：一格正好装 32 字节，blob 就是 4096 个格口连成一排；给这排格口生成”取件码”（数据指纹）用的是一种叫 <strong>KZG</strong> 的密码学承诺算法，细节不展开，知道它是给数据做”指纹”用的就行。以太坊官方路线图对 blob 的介绍看<a href="https://ethereum.org/zh/roadmap/danksharding/" title="以太坊官方路线图：Danksharding 与 blob" target="_blank" rel="noopener">这里</a>，KZG 的官方解释也在同一页。</li>
@@ -414,8 +414,8 @@
 <li><strong>2025 年 5 月</strong>，Pectra 升级通过 EIP-7691 把每块的 blob 容量翻倍：目标 <strong>6</strong>、上限 <strong>9</strong>——相当于 L2 的“高速路车道”直接拓宽。</li>
 </ul>
 <h2 id="保质期：18-天"><a href="#保质期：18-天" class="headerlink" title="保质期：18 天"></a>保质期：18 天</h2><p>blob 数据不是永久存储的：共识节点（负责保管链数据、参与出块验证，相当于全网指定的保管员）大约 <strong>18 天</strong>后会删除 blob 内容（链上只留下持久的数据指纹承诺）。</p>
-<p>这看起来像缺陷，实际是精妙的设计权衡：18 天足够 L2 完成同步、足够欺诈证明在挑战期内被构建，但<strong>省下了全节点（自己存着完整链数据的节点）永久存储的负担</strong>——数据“可用过”，但不必“供着”。这就是 data availability（数据可用性）与 data storage（数据存储）的分离：快递柜保证你 18 天内随时能取件，但不负责帮你存一辈子。</p>
-<h2 id="为什么便宜：一本成本账"><a href="#为什么便宜：一本成本账" class="headerlink" title="为什么便宜：一本成本账"></a>为什么便宜：一本成本账</h2><p>先给生活版结论。同样一大箱数据（blob 的标准箱型那么大）寄回主网：走 calldata，每个字节收 16 gas；装进 blob，固定 131072 gas ÷ 131072 字节，摊到每个字节只合 1 gas——<strong>同样一箱货，运费差 16 倍</strong>。</p>
+<p>这看起来像缺陷，其实是故意这么设计的：18 天足够 L2 完成同步、足够欺诈证明在挑战期内被构建，但<strong>省下了全节点（自己存着完整链数据的节点）永久存储的负担</strong>——数据“可用过”，但不必“供着”。这就是 data availability（数据可用性）与 data storage（数据存储）的分离：快递柜保证你 18 天内随时能取件，但不负责帮你存一辈子。</p>
+<h2 id="为什么便宜：算笔账"><a href="#为什么便宜：算笔账" class="headerlink" title="为什么便宜：算笔账"></a>为什么便宜：算笔账</h2><p>先给生活版结论。同样一大箱数据（blob 的标准箱型那么大）寄回主网：走 calldata，每个字节收 16 gas；装进 blob，固定 131072 gas ÷ 131072 字节，摊到每个字节只合 1 gas——<strong>同样一箱货，运费差 16 倍</strong>。</p>
 <p>而且差距还在拉大：2025 年的 Pectra 升级里还有一张工单 EIP-7623，专门上调”把 calldata 纯当数据硬盘用”的价格（引入 40 gas/字节的托底价）。相当于快递公司发现大家把传真当廉价硬盘使，干脆上调传真资费，把寄件人往包裹上赶——这一下，差距拉到 <strong>40 倍</strong>。</p>
 <p>这 16 到 40 倍的运费差，就是 L2 敢把”一笔转账几分钱”让利给你的空间。</p>
 <h3 id="进阶：把这本账精确算一遍"><a href="#进阶：把这本账精确算一遍" class="headerlink" title="进阶：把这本账精确算一遍"></a>进阶：把这本账精确算一遍</h3><p><strong>想跳过可只记结论：同样一批数据，calldata 至少是 blob 的 16 倍；EIP-7623 托底价之后，40 倍。</strong>下面给想亲手核对数字的读者。</p>
@@ -434,7 +434,7 @@
 <p><img src="https://lucifer.ren/blog/images/web3/blob-vs-calldata.png" alt="同一批 512 KiB 数据发回 L1 的成本对比：blob 几乎贴地，calldata 贵 16 到 40 倍"></p>
 <h2 id="还债：L2-那篇欠的”数据可用性”"><a href="#还债：L2-那篇欠的”数据可用性”" class="headerlink" title="还债：L2 那篇欠的”数据可用性”"></a>还债：L2 那篇欠的”数据可用性”</h2><p>还记得<a href="https://lucifer.ren/blog/2025/02/29/web3-l2-from-zero/" title="从零实现区块链 - 侧链与L2">《从零实现区块链 - 侧链与L2》</a>里两次自我声明吗？一次说 Plasma”数据可用性问题也让它逐渐被 Rollup 取代”，一次在迷你 Rollup 实现后说”忽略了 Merkle Tree、数据可用性和完整欺诈证明的细节”。这里就是答案。</p>
 <p><strong>Rollup 的工作方式是把用户交易在链下执行，但把压缩后的交易数据发布到 L1。</strong>这些数据放哪？Dencun 之前放 calldata，Dencun 之后放 blob。只要数据摆在一个所有人都能读的地方（由 L1 的共识保证可获取），任何人就能根据这批数据独立重放，验证 Rollup 的状态根——整本账算完后压缩出的”总校验码”，账本差一笔它就对不上——是否诚实。Optimistic Rollup（先默认记账人老实，留一段挑战期供人举报）的欺诈证明、ZK Rollup（附一份数学证明自证清白）的有效性证明，全都建立在”数据公开可查”之上。</p>
-<p>打个比方：Rollup 把账本摊在广场上，人人都能抄一份回去对账；Plasma 当年把账本锁在运营者自家抽屉里，用户看不到自己的余额依据，退出就得靠复杂的挑战机制——抽屉一锁死，挑战期就是一场灾难。<strong>Plasma 死于数据可用性无法保证，Rollup 活下来靠的是把数据押在 L1 上，blob 则让这份”保险费”从 251 美元降到 15 美元。</strong>这就是数据可用性这四个字在两条技术路线生死之间的分量。</p>
+<p>打个比方：Rollup 把账本摊在广场上，人人都能抄一份回去对账；Plasma 当年把账本锁在运营者自家抽屉里，用户看不到自己的余额依据，退出就得靠复杂的挑战机制——抽屉一锁死，挑战期就是一场灾难。<strong>Plasma 死于数据可用性无法保证，Rollup 活下来靠的是把数据押在 L1 上，blob 则让这份”保险费”从 251 美元降到 15 美元。</strong>数据可用性这四个字，就是两条技术路线的生死线。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>blob 的故事一句话收尾：<strong>给 L2 的数据修了一条专用车道，用独立市场定价，便宜 16 倍起步，18 天后自动清空。</strong>换成奶茶店的话：<strong>账本从逐页传真换成了包裹快递，一个月省 970 块。</strong></p>
 <ul>
 <li>每个 blob 约 128 KiB，固定消耗 131072 data gas，比 calldata 便宜 16 倍起步（EIP-7623 托底价之后拉到 40 倍）；</li>
@@ -460,7 +460,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-17T23:37:32+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-17T23:47:54+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2026年11月17日</p>
@@ -493,7 +493,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2026/11/14/web3-blob/&title=blob：你的 L2 转账为什么只要几分钱 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=先对齐两个词。以太坊主网（L1）是那条全球共用、最安全也最贵的公共总账本；L2（二层网络）是帮主网干活的”分包商”：你的转账先交给分包商处理，又快又便宜，分包商再定期把压缩后的账本汇报回主网。Arbitrum、Base 都是这样的分包商，这套体系怎么从零搭起来，《从零实现区块链 - 侧链与L2》里完整写过一遍。
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://lucifer.ren/blog/2026/11/14/web3-blob/&title=blob：你的 L2 转账为什么只要几分钱 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=开头先把两个词说清楚。以太坊主网（L1）是那条全球共用、最安全也最贵的公共总账本；L2（二层网络）是帮主网干活的”分包商”：你的转账先交给分包商处理，又快又便宜，分包商再定期把压缩后的账本汇报回主网。Arbitrum、Base 都是这样的分包商，这套体系怎么从零搭起来，《从零实现区块链 - 侧链与L2》里完整写过一遍。
 在 L2 上转一笔账，手续费只要几分钱；同样的动作放到主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 blob 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 这两代”分包方案”（两个名字后文都会解释）的生死有什么关系。"
           
           >
@@ -506,7 +506,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2026/11/14/web3-blob/&title=blob：你的 L2 转账为什么只要几分钱 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=先对齐两个词。以太坊主网（L1）是那条全球共用、最安全也最贵的公共总账本；L2（二层网络）是帮主网干活的”分包商”：你的转账先交给分包商处理，又快又便宜，分包商再定期把压缩后的账本汇报回主网。Arbitrum、Base 都是这样的分包商，这套体系怎么从零搭起来，《从零实现区块链 - 侧链与L2》里完整写过一遍。
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lucifer.ren/blog/2026/11/14/web3-blob/&title=blob：你的 L2 转账为什么只要几分钱 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=开头先把两个词说清楚。以太坊主网（L1）是那条全球共用、最安全也最贵的公共总账本；L2（二层网络）是帮主网干活的”分包商”：你的转账先交给分包商处理，又快又便宜，分包商再定期把压缩后的账本汇报回主网。Arbitrum、Base 都是这样的分包商，这套体系怎么从零搭起来，《从零实现区块链 - 侧链与L2》里完整写过一遍。
 在 L2 上转一笔账，手续费只要几分钱；同样的动作放到主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 blob 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 这两代”分包方案”（两个名字后文都会解释）的生死有什么关系。"
           
           >
@@ -519,7 +519,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2026/11/14/web3-blob/&title=blob：你的 L2 转账为什么只要几分钱 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=先对齐两个词。以太坊主网（L1）是那条全球共用、最安全也最贵的公共总账本；L2（二层网络）是帮主网干活的”分包商”：你的转账先交给分包商处理，又快又便宜，分包商再定期把压缩后的账本汇报回主网。Arbitrum、Base 都是这样的分包商，这套体系怎么从零搭起来，《从零实现区块链 - 侧链与L2》里完整写过一遍。
+          href="http://service.weibo.com/share/share.php?url=https://lucifer.ren/blog/2026/11/14/web3-blob/&title=blob：你的 L2 转账为什么只要几分钱 | lucifer的网络博客&pics=https://avatars0.githubusercontent.com/u/12479470?s=400&u=442571e44cbd0b67e3503e9551d4445c78f593f8&v=4&summary=开头先把两个词说清楚。以太坊主网（L1）是那条全球共用、最安全也最贵的公共总账本；L2（二层网络）是帮主网干活的”分包商”：你的转账先交给分包商处理，又快又便宜，分包商再定期把压缩后的账本汇报回主网。Arbitrum、Base 都是这样的分包商，这套体系怎么从零搭起来，《从零实现区块链 - 侧链与L2》里完整写过一遍。
 在 L2 上转一笔账，手续费只要几分钱；同样的动作放到主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 blob 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 这两代”分包方案”（两个名字后文都会解释）的生死有什么关系。"
           
           >
@@ -741,7 +741,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#blob-是什么"><span class="toc-text">blob 是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#先算一笔生活账"><span class="toc-text">先算一笔生活账</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#规格速览"><span class="toc-text">规格速览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#独立费用市场"><span class="toc-text">独立费用市场</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数量：从-3-6-到-6-9"><span class="toc-text">数量：从 3/6 到 6/9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#保质期：18-天"><span class="toc-text">保质期：18 天</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么便宜：一本成本账"><span class="toc-text">为什么便宜：一本成本账</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进阶：把这本账精确算一遍"><span class="toc-text">进阶：把这本账精确算一遍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#还债：L2-那篇欠的”数据可用性”"><span class="toc-text">还债：L2 那篇欠的”数据可用性”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关阅读"><span class="toc-text">相关阅读</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#blob-是什么"><span class="toc-text">blob 是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#先算一笔生活账"><span class="toc-text">先算一笔生活账</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#规格速览"><span class="toc-text">规格速览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#独立费用市场"><span class="toc-text">独立费用市场</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数量：从-3-6-到-6-9"><span class="toc-text">数量：从 3/6 到 6/9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#保质期：18-天"><span class="toc-text">保质期：18 天</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么便宜：算笔账"><span class="toc-text">为什么便宜：算笔账</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进阶：把这本账精确算一遍"><span class="toc-text">进阶：把这本账精确算一遍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#还债：L2-那篇欠的”数据可用性”"><span class="toc-text">还债：L2 那篇欠的”数据可用性”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关阅读"><span class="toc-text">相关阅读</span></a></li></ol>
     </div>
   </section>
 

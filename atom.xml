@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://lucifer.ren/blog/"/>
-  <updated>2026-11-17T15:37:32.606Z</updated>
+  <updated>2026-11-17T15:47:54.570Z</updated>
   <id>https://lucifer.ren/blog/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="https://lucifer.ren/blog/2026/11/14/web3-blob/"/>
     <id>https://lucifer.ren/blog/2026/11/14/web3-blob/</id>
     <published>2026-11-13T16:00:00.000Z</published>
-    <updated>2026-11-17T15:37:32.606Z</updated>
+    <updated>2026-11-17T15:47:54.570Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;先对齐两个词。&lt;strong&gt;以太坊主网（L1）&lt;/strong&gt;是那条全球共用、最安全也最贵的公共总账本；&lt;strong&gt;L2（二层网络）&lt;/strong&gt;是帮主网干活的”分包商”：你的转账先交给分包商处理，又快又便宜，分包商再定期把压缩后的账本汇报回主网。Arbitrum、Base 都是这样的分包商，这套体系怎么从零搭起来，&lt;a href=&quot;https://lucifer.ren/blog/2025/02/29/web3-l2-from-zero/&quot; title=&quot;从零实现区块链 - 侧链与L2&quot;&gt;《从零实现区块链 - 侧链与L2》&lt;/a&gt;里完整写过一遍。&lt;/p&gt;
+      &lt;p&gt;开头先把两个词说清楚。&lt;strong&gt;以太坊主网（L1）&lt;/strong&gt;是那条全球共用、最安全也最贵的公共总账本；&lt;strong&gt;L2（二层网络）&lt;/strong&gt;是帮主网干活的”分包商”：你的转账先交给分包商处理，又快又便宜，分包商再定期把压缩后的账本汇报回主网。Arbitrum、Base 都是这样的分包商，这套体系怎么从零搭起来，&lt;a href=&quot;https://lucifer.ren/blog/2025/02/29/web3-l2-from-zero/&quot; title=&quot;从零实现区块链 - 侧链与L2&quot;&gt;《从零实现区块链 - 侧链与L2》&lt;/a&gt;里完整写过一遍。&lt;/p&gt;
 &lt;p&gt;在 L2 上转一笔账，手续费只要几分钱；同样的动作放到主网，动辄几美元。差出上百倍的价格不是 L2 在做慈善，而是一个叫 &lt;strong&gt;blob&lt;/strong&gt; 的东西在 2024 年 3 月悄悄改写了”数据怎么上链”的规则。这篇文章就把这本账算清楚：blob 是什么、它凭什么便宜、为什么 18 天后会”消失”，以及它和 Rollup、Plasma 这两代”分包方案”（两个名字后文都会解释）的生死有什么关系。&lt;/p&gt;
     
     </summary>
@@ -79,7 +79,7 @@
     <link href="https://lucifer.ren/blog/2026/11/12/web3-dao/"/>
     <id>https://lucifer.ren/blog/2026/11/12/web3-dao/</id>
     <published>2026-11-11T16:00:00.000Z</published>
-    <updated>2026-11-17T15:14:17.688Z</updated>
+    <updated>2026-11-17T15:48:25.042Z</updated>
     
     <summary type="html">
     
@@ -107,7 +107,7 @@
     <link href="https://lucifer.ren/blog/2026/11/11/web3-account-abstraction/"/>
     <id>https://lucifer.ren/blog/2026/11/11/web3-account-abstraction/</id>
     <published>2026-11-10T16:00:00.000Z</published>
-    <updated>2026-11-17T15:16:00.499Z</updated>
+    <updated>2026-11-17T15:48:25.043Z</updated>
     
     <summary type="html">
     
@@ -135,7 +135,7 @@
     <link href="https://lucifer.ren/blog/2026/11/10/web3-security-audit/"/>
     <id>https://lucifer.ren/blog/2026/11/10/web3-security-audit/</id>
     <published>2026-11-09T16:00:00.000Z</published>
-    <updated>2026-11-17T15:13:34.055Z</updated>
+    <updated>2026-11-17T15:48:25.046Z</updated>
     
     <summary type="html">
     
@@ -222,7 +222,7 @@
     <link href="https://lucifer.ren/blog/2026/11/05/web3-impermanent-loss/"/>
     <id>https://lucifer.ren/blog/2026/11/05/web3-impermanent-loss/</id>
     <published>2026-11-04T16:00:00.000Z</published>
-    <updated>2026-11-17T14:59:32.822Z</updated>
+    <updated>2026-11-17T15:48:25.045Z</updated>
     
     <summary type="html">
     
@@ -360,7 +360,7 @@
     <link href="https://lucifer.ren/blog/2026/10/30/web3-gas/"/>
     <id>https://lucifer.ren/blog/2026/10/30/web3-gas/</id>
     <published>2026-10-29T16:00:00.000Z</published>
-    <updated>2026-11-17T14:57:02.879Z</updated>
+    <updated>2026-11-17T15:48:25.044Z</updated>
     
     <summary type="html">
     

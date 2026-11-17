@@ -403,7 +403,7 @@
 <li>实际费用 = gasUsed × gasPrice。</li>
 </ul>
 <p>先说说 gwei 这个怪名字。1 gwei = 十亿分之一 ETH（10⁻⁹），1 ETH = 10 亿 gwei。为什么要发明这么小的单位？因为 gas 单价动辄十几、几十 gwei，换算成 ETH 就是 0.000000015——眼睛数零都数不过来。有了 gwei，就像日常说”一瓶水三块五”而不是”0.0000035 万元”，说人话而已。</p>
-<p>那 ETH 在其中的角色是什么？注意 gas 本身是抽象的”计算量”，不是钱，它必须锚定到一种资产才有价格，以太坊选择了自家的 ETH。所以完整的心智模型是：<strong>gas 是用电量，gwei 是每度电的单价，ETH 是结算货币</strong>。你在链上的每一步操作，本质上都是用 ETH 交电费。</p>
+<p>那 ETH 在其中的角色是什么？注意 gas 本身是抽象的”计算量”，不是钱，它必须锚定到一种资产才有价格，以太坊选择了自家的 ETH。所以可以这么类比：<strong>gas 是用电量，gwei 是每度电的单价，ETH 是结算货币</strong>。你在链上的每一步操作，本质上都是用 ETH 交电费。</p>
 <p>顺带一提，这也是 ETH 需求的基本盘之一：只要有人在用这条链，就有人在买入 ETH 来交 gas。这个伏笔我们后面讲燃烧时再回收。想看官方口径，以太坊官方中文文档的<a href="https://ethereum.org/zh/developers/docs/gas/" title="以太坊 Gas 与费用：技术概述" target="_blank" rel="noopener">《Gas 与费用》</a>一页对 gas 的解释更系统，可以对照着读。</p>
 <h2 id="常见操作要烧多少-gas"><a href="#常见操作要烧多少-gas" class="headerlink" title="常见操作要烧多少 gas"></a>常见操作要烧多少 gas</h2><p>直接上直觉表（数字是量级参考，会随合约实现和链版本浮动，不用背精确值）：</p>
 <div class="table-container">
@@ -535,7 +535,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-17T22:57:02+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-17T23:48:25+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2026年11月17日</p>

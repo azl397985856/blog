@@ -436,7 +436,7 @@
 <p><img src="https://lucifer.ren/blog/images/web3/aa-userop-flow.png" alt="ERC-4337 的点外卖流程：你写订单、跑腿小哥抢单合并、平台验单、会员代付运费、智能门锁收货"></p>
 <h2 id="钥匙丢了怎么办：五个保管人里三个点头"><a href="#钥匙丢了怎么办：五个保管人里三个点头" class="headerlink" title="钥匙丢了怎么办：五个保管人里三个点头"></a>钥匙丢了怎么办：五个保管人里三个点头</h2><p>智能合约账户最有杀伤力的能力，值得单独拆开讲。</p>
 <p>先想一个现实场景：手机丢了，你不会崩溃——去运营商门店验个身份，补一张卡，原来的号码照用。<strong>社交恢复干的就是这件事</strong>，只不过运营商换成了你自己的亲友团。用家门钥匙的语言说：账户合约里除了 owner（你天天揣着的签名钥匙），还登记一组 <strong>guardian（守护人）</strong>和一个阈值，比如 3-of-5——<strong>家门钥匙丢了，5 个保管人里 3 个点头，就能给你配把新钥匙</strong>。</p>
-<p>但这里有一层精妙的设计，画个重点：<strong>保管人凑再多人，也只能帮你换锁，进不了你家门</strong>。转账入口只认 owner 的签名，guardian 的签名在那里一文不值——5 个保管人加起来，也搬不走你家一台电视。</p>
+<p>但这里有个关键设计，画个重点：<strong>保管人凑再多人，也只能帮你换锁，进不了你家门</strong>。转账入口只认 owner 的签名，guardian 的签名在那里一文不值——5 个保管人加起来，也搬不走你家一台电视。</p>
 <p>恢复流程走一遍：钥匙丢了 → 生成一把新钥匙 → 请 guardian 对”把 owner 换成新地址”这件事签名 → 凑够 3 个 → 合约进入<strong>宽限期（timelock）</strong> → 到期生效，旧钥匙作废。全程资产不动、地址不变，变的只是”谁有权签名”。常见的实现还会给现任 owner 一个否决权，防止 guardian 趁你失联时偷换。</p>
 <p>guardian 怎么选？原则是<strong>分散、类型混合</strong>：亲友可能被社工，自己的另一台设备可能和手机一起丢，机构服务可能倒闭，各有各的失效模式，混着配才不会一锅端。全选同一类，等于把鸡蛋放回同一个篮子。</p>
 <p>那 guardian 串通怎么办？对比一下两条路的”作案体验”就明白了。guardian 想摸钱，必须先走”换 owner”这条路，而这条路是<strong>公开的</strong>（链上可见）、<strong>慢的</strong>（有宽限期）、<strong>可否决的</strong>（现任 owner 能取消）；私钥被盗呢？瞬间、无声、不可逆。但也别把这读成”guardian 串通无害”——如果宽限期内没人发现，多数 guardian 确实能夺走账户，所以阈值、宽限期、异常提醒三样缺一不可。这套取舍，下面的代码会完整演示。</p>
@@ -550,7 +550,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-17T23:16:00+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-17T23:48:25+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2026年11月17日</p>
