@@ -575,7 +575,7 @@
 <p>再和上一节 Slither 的结果对照一下：同一个 <code>withdraw</code>，Slither 报 <code>reentrancy-eth</code>，我们报 Critical 重入嫌疑；同一个 <code>tx.origin</code>，两边都抓到了。区别只在覆盖面——它有 102 个检测器，我们有 3 个正则。但思路完全一致：<strong>把”人逐行读”变成”机器先筛、人再判断”</strong>。真实的审计公司在这之上还有更重的武器：MythX 这类深度分析平台、Echidna 这类模糊测试工具（用海量随机输入轰炸合约，看它会不会崩出问题）、Certora 这类形式化验证（用数学证明合约在所有情况下都按规则行事）——至于经济模型能不能被玩死，目前还是纯人工科目，机器帮不上忙，还得老医生坐诊。</p>
 <h2 id="七、漏洞赏金：白帽的正当获利路径"><a href="#七、漏洞赏金：白帽的正当获利路径" class="headerlink" title="七、漏洞赏金：白帽的正当获利路径"></a>七、漏洞赏金：白帽的正当获利路径</h2><p>审计之外的另一道防线是<strong>漏洞赏金</strong>，代表平台是 <a href="https://immunefi.com/" target="_blank" rel="noopener">Immunefi</a>。逻辑很简单：白帽发现漏洞，通过平台负责任地披露给项目方，换取赏金；项目方花钱买”雷还没炸”的时间。像旧时官府贴悬赏告示：捉拿要犯，赏银百两——江湖高手有了正路，就不必落草为寇。</p>
 <p>规模感受一下：Wormhole 曾在这里付出过 1000 万美元的单笔赏金（史上最大之一）；LayerZero 挂出过 1500 万美元的赏金上限；整个平台累计发放的赏金已上亿美元。顶级协议赏金上百万美元是常态——对有能力找到漏洞的人，这是一条完全正当、且收入可观的职业路径。</p>
-<p>这也解释了<a href="https://lucifer.ren/blog/2026/04/22/web3-defi-insurance/" title="DeFi 保险：谁来保护你的链上资产？">《DeFi 保险：谁来保护你的链上资产？》</a>里那句”Immunefi 赏金 + 多轮审计的协议更安全”：赏金计划本质上是<strong>把攻击者的期望收益翻转成正收益</strong>——同样发现一个 Critical，偷偷利用可能吃官司、赚一次，走 Immunefi 报告则合法、拿钱、还能上排行榜。悬赏令一贴，小偷的最优解就变成了领赏的守门员，这是除审计之外性价比最高的安全投资。</p>
+<p>这也解释了<a href="https://lucifer.ren/blog/2026/04/22/web3-defi-insurance/" title="DeFi 保险：谁来保护你的链上资产？">《DeFi 保险：谁来保护你的链上资产？》</a>里那句”Immunefi 赏金 + 多轮审计的协议更安全”：赏金计划干的事，就是<strong>把攻击者的期望收益翻转成正收益</strong>——同样发现一个 Critical，偷偷利用可能吃官司、赚一次，走 Immunefi 报告则合法、拿钱、还能上排行榜。悬赏令一贴，小偷的最优解就变成了领赏的守门员，这是除审计之外性价比最高的安全投资。</p>
 <p>边界也要说清：没授权的”先斩后奏”不叫白帽，叫犯罪。Mango 那位当事人事后声称自己是”合法利用市场规则”，结果吃了 CFTC、SEC、DOJ（美国的商品期货委员会、证券交易委员会和司法部）三家连诉——刑事定罪虽然在 2025 年被推翻，但这场耗时数年的官司本身就说明：绕过赏金计划直接搬走资金，法律不会自动站在你这一边。发现漏洞，先找 Immunefi 或项目方的官方渠道，别急着表演。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>回答开头四个问题：</p>
 <ul>
@@ -603,10 +603,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-17T23:48:25+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-18T22:20:08+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2026年11月17日</p>
+    <p>更新于 2026年11月18日</p>
   </a>
 </div>
 

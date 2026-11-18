@@ -496,7 +496,7 @@
 <li><strong>MPC 是密码学手段</strong>：把一把钥匙拆成三片，三方各藏一片，签名时三方各算各的、凑出一个完整签名——完整私钥从头到尾没出现过。但你琢磨一下就发现：<strong>锁没换</strong>。链上看到的仍是一个普通 EOA 的普通签名，账户还是那个”笨”账户，不能批量、不能代付、不能限额。</li>
 <li><strong>AA 是账户形态升级</strong>：钥匙还是一把（或者几把），但锁换成智能的了，规则写在合约里，由链上强制执行。</li>
 </ul>
-<p>所以二者解决的是不同层的问题：MPC 管”<strong>钥匙怎么保管</strong>“，AA 管”<strong>门锁怎么运作</strong>“，完全可以叠加——用 MPC 保管合约账户的 owner 钥匙，钥匙层没有单点，锁上还有限额和恢复兜底。顺带一提，MPC 那篇里讲的多签钱包，本质上就是智能合约账户的老前辈。</p>
+<p>所以二者解决的是不同层的问题：MPC 管”<strong>钥匙怎么保管</strong>“，AA 管”<strong>门锁怎么运作</strong>“，完全可以叠加——用 MPC 保管合约账户的 owner 钥匙，钥匙层没有单点，锁上还有限额和恢复兜底。顺带一提，MPC 那篇里讲的多签钱包，其实就是智能合约账户的老前辈。</p>
 <h2 id="Python-模拟"><a href="#Python-模拟" class="headerlink" title="Python 模拟"></a>Python 模拟</h2><blockquote>
 <p><strong>进阶精确版</strong>：下面两段是完整的可运行模拟，每一步和数字都对着链上真实流程。想跳过可只记结论：四个用户的订单由跑腿小哥打包、平台验签、代金券垫付，三个人一分钱 ETH 都没花就完成了操作。</p>
 </blockquote>
@@ -550,10 +550,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-17T23:48:25+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-18T22:20:08+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2026年11月17日</p>
+    <p>更新于 2026年11月18日</p>
   </a>
 </div>
 

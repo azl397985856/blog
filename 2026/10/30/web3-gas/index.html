@@ -403,7 +403,7 @@
 <li>实际费用 = gasUsed × gasPrice。</li>
 </ul>
 <p>先说说 gwei 这个怪名字。1 gwei = 十亿分之一 ETH（10⁻⁹），1 ETH = 10 亿 gwei。为什么要发明这么小的单位？因为 gas 单价动辄十几、几十 gwei，换算成 ETH 就是 0.000000015——眼睛数零都数不过来。有了 gwei，就像日常说”一瓶水三块五”而不是”0.0000035 万元”，说人话而已。</p>
-<p>那 ETH 在其中的角色是什么？注意 gas 本身是抽象的”计算量”，不是钱，它必须锚定到一种资产才有价格，以太坊选择了自家的 ETH。所以可以这么类比：<strong>gas 是用电量，gwei 是每度电的单价，ETH 是结算货币</strong>。你在链上的每一步操作，本质上都是用 ETH 交电费。</p>
+<p>那 ETH 在其中的角色是什么？注意 gas 本身是抽象的”计算量”，不是钱，它必须锚定到一种资产才有价格，以太坊选择了自家的 ETH。所以可以这么类比：<strong>gas 是用电量，gwei 是每度电的单价，ETH 是结算货币</strong>。你在链上的每一步操作，说白了都是在用 ETH 交电费。</p>
 <p>顺带一提，这也是 ETH 需求的基本盘之一：只要有人在用这条链，就有人在买入 ETH 来交 gas。这个伏笔我们后面讲燃烧时再回收。想看官方口径，以太坊官方中文文档的<a href="https://ethereum.org/zh/developers/docs/gas/" title="以太坊 Gas 与费用：技术概述" target="_blank" rel="noopener">《Gas 与费用》</a>一页对 gas 的解释更系统，可以对照着读。</p>
 <h2 id="常见操作要烧多少-gas"><a href="#常见操作要烧多少-gas" class="headerlink" title="常见操作要烧多少 gas"></a>常见操作要烧多少 gas</h2><p>直接上直觉表（数字是量级参考，会随合约实现和链版本浮动，不用背精确值）：</p>
 <div class="table-container">
@@ -503,7 +503,7 @@
 <h2 id="实用小贴士"><a href="#实用小贴士" class="headerlink" title="实用小贴士"></a>实用小贴士</h2><p>原理讲完，给几个日常真正用得上的。</p>
 <p><strong>1. 什么时候 gas 便宜？景区人少的时候。</strong> base fee 只看拥挤度，所以答案就是挑人少。经验上，链上的高峰大体跟着美国的工作时段走，相对便宜的窗口是周末、深夜，以及非美国时段——比如美东时间的凌晨，对应北京时间的午后到傍晚。重要但不着急的操作（给冷钱包转账——冷钱包是不联网、专门用来存币的钱包；做授权），挑低谷发能省下不少。不过这只是经验规律，一次热门 mint 就能把景区挤爆，动手前看一眼 gas 追踪器（比如 <a href="https://etherscan.io/gastracker" title="Ethereum Gas Tracker | Etherscan" target="_blank" rel="noopener">Etherscan 的 Gas Tracker</a>，打开就能看到当前的实时 base fee）最靠谱。</p>
 <p><strong>2. 撤销授权也要花 gas。</strong> 撤销的原理是再调一次 <code>approve</code>，把额度设成 0——所以它本身就是一笔真实的链上交易，和前面表里的 approve 是同一个量级，一样要付钱。定期清理授权时，记得把这笔预算算进去：安全从来不是免费的。授权为什么有风险、该怎么管理，见<a href="https://lucifer.ren/blog/2025/04/02/web3-approve/" title="Web3 中的授权与撤销授权">《Web3 中的授权与撤销授权》</a>。</p>
-<p><strong>3. 多签交互贵，贵出了 MPC。</strong> 多签（Multi-Sig，要求好几把钥匙凑在一起共同签名才能动钱的钱包）在以太坊上本质是一个智能合约：钱包本身要先花 gas 部署，之后每动一次钱都是一次合约调用，合约还得在链上把 M 个签名挨个验一遍。对照前面的直觉表就明白了——普通转账只要 21000，而走合约、验签、读写存储，每一步都在电表上跳字，所以它天然比一笔普通转账贵。这正是 MPC 钱包（把私钥拆成多片分给多方保管、签名在链下完成的方案）出现的动机之一：把”多方共同签名”这件事挪到链下用密码学解决，链上看到的只是一笔普通交易，自然也只付普通交易的 gas。详见<a href="https://lucifer.ren/blog/2025/03/05/web3-mpc/" title="更加安全的区块链钱包：MPC 钱包">《更加安全的区块链钱包：MPC 钱包》</a>。</p>
+<p><strong>3. 多签交互贵，贵出了 MPC。</strong> 多签（Multi-Sig，要求好几把钥匙凑在一起共同签名才能动钱的钱包）在以太坊上本质是一个智能合约：钱包本身要先花 gas 部署，之后每动一次钱都是一次合约调用，合约还得在链上把 M 个签名挨个验一遍。对照前面的直觉表就明白了——普通转账只要 21000，而走合约、验签、读写存储，每一步都在电表上跳字，所以它天然比一笔普通转账贵。这也是 MPC 钱包（把私钥拆成多片分给多方保管、签名在链下完成的方案）出现的动机之一：把”多方共同签名”这件事挪到链下用密码学解决，链上看到的只是一笔普通交易，自然也只付普通交易的 gas。详见<a href="https://lucifer.ren/blog/2025/03/05/web3-mpc/" title="更加安全的区块链钱包：MPC 钱包">《更加安全的区块链钱包：MPC 钱包》</a>。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>把这篇的硬核知识收进口袋：</p>
 <ul>
 <li>gas 是计算量单位，不是钱；费用 = gasUsed × gasPrice；gwei 是单价单位（10⁻⁹ ETH），ETH 是结算货币。</li>
@@ -535,10 +535,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-17T23:48:25+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-18T22:20:08+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2026年11月17日</p>
+    <p>更新于 2026年11月18日</p>
   </a>
 </div>
 

@@ -411,7 +411,7 @@
 <p>真实运行输出：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">曲线阶 n = 0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141</span><br><span class="line">私钥: 0x131006660e89706acad506d025714ddd01194c10dbcc153c259d959c61b8462d</span><br><span class="line">公钥: 1a8f1b783b0ff9d1ef7e9693bde8f3939d9c6dd80dfb9fc7fdeeba699982a8cf2bb292334361407f8e2257441cb7c292787c00a9b16b451228302bc9646d9364</span><br></pre></td></tr></table></figure>
 <p>（私钥是随机生成的，你跑出来会是另一对私钥公钥，曲线阶 n 则永远是这个值——它是全宇宙通用的”模具参数”。）</p>
-<p>看输出：私钥是一个大整数；公钥是 128 个 hex 字符。注意，公钥是 64 字节：曲线点的 X 坐标 32 字节 + Y 坐标 32 字节，这叫<strong>非压缩公钥</strong>——公钥本质上是曲线上的一个点，有横坐标和纵坐标。如果在前面再拼一个 <code>04</code> 前缀，就是完整的 65 字节非压缩格式（<code>04 || X || Y</code>）。记住这个结构，算地址的时候会用到。</p>
+<p>看输出：私钥是一个大整数；公钥是 128 个 hex 字符。注意，公钥是 64 字节：曲线点的 X 坐标 32 字节 + Y 坐标 32 字节，这叫<strong>非压缩公钥</strong>——公钥说白了就是曲线上的一个点，有横坐标和纵坐标。如果在前面再拼一个 <code>04</code> 前缀，就是完整的 65 字节非压缩格式（<code>04 || X || Y</code>）。记住这个结构，算地址的时候会用到。</p>
 <h2 id="BIP39：把一串-0-1-翻译成人话"><a href="#BIP39：把一串-0-1-翻译成人话" class="headerlink" title="BIP39：把一串 0/1 翻译成人话"></a>BIP39：把一串 0/1 翻译成人话</h2><p>先抛个问题：一个 256 位的私钥，用 hex 写出来是 64 个字符（hex 就是十六进制：用 0~9 和 a~f 这 16 个符号表示数，两个符号正好表示一个字节）。让人手抄 64 个十六进制字符，抄错一个字符资产就没了——这跟让人背圆周率没什么区别，反人类。</p>
 <p>BIP39 的思路很朴素：<strong>人不擅长背符号，但擅长背词。</strong> 所以它准备了一本 2048 个单词的”密码本”，专门把 0/1 串翻译成人话。</p>
 <p>完整流程是这样的：</p>
@@ -572,10 +572,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-17T23:08:53+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-18T22:20:08+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2026年11月17日</p>
+    <p>更新于 2026年11月18日</p>
   </a>
 </div>
 
