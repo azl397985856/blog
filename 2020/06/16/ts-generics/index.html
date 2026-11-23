@@ -614,7 +614,7 @@
 <p>（单链表）</p>
 <p>再比如 <strong>HTMLElement</strong> 的定义。</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">declare</span> <span class="keyword">var</span> HTMLElement: &#123;</span><br><span class="line">    prototype: HTMLElement;</span><br><span class="line">    <span class="keyword">new</span>(): HTMLElement;</span><br><span class="line">&#125;;。</span><br></pre></td></tr></table></figure>
-<p>（<a href="https://github.com/microsoft/TypeScript/blob/master/lib/lib.dom.d.ts" title="HTMLElement Type Definition" target="_blank" rel="noopener">HTMLElement</a>）</p>
+<p>（<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement" title="HTMLElement Type Definition" target="_blank" rel="noopener">HTMLElement</a>）</p>
 <p>上面是<strong>递归声明</strong>，我们再来看一个更复杂一点的递归形式 - <strong>递归调用</strong>，这个递归调用的功能是：<strong>递归地将类型中所有的属性都变成可选</strong>。类似于深拷贝那样，只不过这不是拷贝操作，而是变成可选，并且是作用在类型，而不是值。</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> DeepPartial&lt;T&gt; = T <span class="keyword">extends</span> <span class="built_in">Function</span></span><br><span class="line">  ? T</span><br><span class="line">  : T <span class="keyword">extends</span> object</span><br><span class="line">  ? &#123; [P <span class="keyword">in</span> keyof T]?: DeepPartial&lt;T[P]&gt; &#125;</span><br><span class="line">  : T;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> PartialedWindow = DeepPartial&lt;Window&gt;; <span class="comment">// 现在window 上所有属性都变成了可选啦</span></span><br></pre></td></tr></table></figure>
 <h2 id="TS-泛型工具及实现"><a href="#TS-泛型工具及实现" class="headerlink" title="TS 泛型工具及实现"></a>TS 泛型工具及实现</h2><p>虽然泛型支持函数的嵌套，甚至递归，但是其语法能力肯定和 JS 没法比， 想要实现一个泛型功能真的不是一件容易的事情。这里提供几个例子，看完这几个例子，相信你至少可以达到比葫芦画瓢的水平。这样多看多练，慢慢水平就上来了。</p>
@@ -661,10 +661,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-07T20:34:34+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-23T19:14:05+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2023年1月7日</p>
+    <p>更新于 2026年11月23日</p>
   </a>
 </div>
 

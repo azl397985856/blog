@@ -419,7 +419,7 @@
 <p>需要注意的是，node-gyp 需要 Python 和 C++ 编译器的支持，因此在使用之前需要确保这些依赖已经正确安装在系统上。</p>
 <p>如果你对 node-gyp 也不太了解，可以看下死月的 《Node.js：来一打 C++ 扩展》，这里附上这本书的配套源码，方便大家学习，地址：<a href="https://github.com/XadillaX/nyaa-nodejs-demo" target="_blank" rel="noopener">https://github.com/XadillaX/nyaa-nodejs-demo</a></p>
 <h2 id="node-binding-的使用"><a href="#node-binding-的使用" class="headerlink" title="node binding 的使用"></a>node binding 的使用</h2><p>前面讲了 rolldown 的编译过程，接下来我们来看看编译好的 node binding 是怎么样的，以及如何使用。</p>
-<p>rolldown 的核心 rust 代码在这里实现：<a href="https://github.com/rolldown/rolldown/blob/main/crates/rolldown_binding/src/bundler.rs" target="_blank" rel="noopener">https://github.com/rolldown/rolldown/blob/main/crates/rolldown_binding/src/bundler.rs</a></p>
+<p>rolldown 的核心 rust 代码在这里实现：<a href="https://github.com/rolldown/rolldown" target="_blank" rel="noopener">https://github.com/rolldown/rolldown</a></p>
 <blockquote>
 <p>可以看出这里也是通过 napi 来实现的。</p>
 </blockquote>
@@ -428,7 +428,7 @@
 <p>回答这两个问题前，我们来看下 rolldown 是如何使用这两个文件的。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Bundler &#125; <span class="keyword">from</span> <span class="string">'../binding'</span></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">createBundler</span>(<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">  inputOptions: InputOptions,</span></span></span><br><span class="line"><span class="function"><span class="params">  outputOptions: OutputOptions,</span></span></span><br><span class="line"><span class="function"><span class="params"></span>): <span class="title">Promise</span>&lt;<span class="title">Bundler</span>&gt; </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> Bundler(bindingInputOptions, normalizeOutputOptions(outputOptions))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>代码截取自 <a href="https://github.com/rolldown/rolldown/blob/main/packages/rolldown/src/utils/create-bundler.ts" target="_blank" rel="noopener">https://github.com/rolldown/rolldown/blob/main/packages/rolldown/src/utils/create-bundler.ts</a></p>
+<p>代码截取自 <a href="https://github.com/rolldown/rolldown" target="_blank" rel="noopener">https://github.com/rolldown/rolldown</a></p>
 </blockquote>
 <p>可以看出 binding.js 是一个模块，它对外暴露了 rust 实现的 Bundler 类，使得 JS 代码可以直接调用 rust 实现的 Bundler 类。</p>
 <p>那我们进一步来看看 binding.js 是什么样的。</p>
@@ -473,10 +473,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2024-08-10T13:42:00+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2026-11-23T19:14:05+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2024年8月10日</p>
+    <p>更新于 2026年11月23日</p>
   </a>
 </div>
 
